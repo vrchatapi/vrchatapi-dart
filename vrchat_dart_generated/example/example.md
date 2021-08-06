@@ -1,0 +1,1 @@
+See [vrchat_dart](https://pub.dev/packages/vrchat_dart) for usage examples
