@@ -15,6 +15,7 @@ This is the official response of the VRChat Team (from Tupper more specifically)
 > * Access to API endpoints may break at any given time, with no warning.
 
 As stated, this documentation was not created with the help of the official VRChat team. Therefore this documentation is not an official documentation of the VRChat API and may not be always up to date with the latest versions. If you find that a page or endpoint is not longer valid please create an issue and tell us so we can fix it.
+
 ## Getting Started
 
 See the [example](https://github.com/vrchatapi/vrchatapi-dart/blob/master/vrchat_dart/example/main.dart) for getting started in Dart.
@@ -25,6 +26,6 @@ See [example_flutter](https://github.com/vrchatapi/vrchatapi-dart/tree/master/vr
 
 Contributions to [vrchat_dart_generated](https://pub.dev/packages/vrchat_dart_generated) should only be done to keep it up to date with the [specification](https://github.com/vrchatapi/specification). Clone the specification into the same parent folder as vrchatapi-dart and run `generate.sh` to generate the code.
 
-Contributions to vrchat_dart are welcome, but do not add features that should be handled by the specification.
+Contributions to vrchat_dart are welcome, but do not add features that should be handled by the OpenAPI specification.
 
 Join the [Discord server](https://discord.gg/Ge2APMhPfD) to get in touch with us.
