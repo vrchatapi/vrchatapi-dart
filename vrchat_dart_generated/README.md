@@ -41,7 +41,7 @@ For more information, please visit [https://github.com/VRChatAPI](https://github
 To use the package from [pub.dev](https://pub.dev), please include the following in pubspec.yaml
 ```yaml
 dependencies:
-  vrchat_dart_generated: 1.0.0
+  vrchat_dart_generated: 1.3.3
 ```
 
 ### Github

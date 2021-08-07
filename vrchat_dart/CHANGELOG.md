@@ -1,3 +1,6 @@
+## 1.0.0
+Updated README
+
 ## 0.13.1
 Fixed websocket proxy
 

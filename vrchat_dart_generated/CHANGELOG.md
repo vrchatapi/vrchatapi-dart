@@ -1,3 +1,6 @@
+## 1.3.3
+Updated homepage
+
 ## 1.3.2
 Fixed issues with LimitedWorld
 
