@@ -6,3 +6,6 @@ linter:
     - unawaited_futures
     - unsafe_html
     - use_full_hex_values_for_flutter_colors
+
+analyzer:
+  exclude: [example_flutter/**]
