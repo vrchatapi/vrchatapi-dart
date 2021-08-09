@@ -41,7 +41,7 @@ For more information, please visit [https://github.com/VRChatAPI](https://github
 To use the package from [pub.dev](https://pub.dev), please include the following in pubspec.yaml
 ```yaml
 dependencies:
-  vrchat_dart_generated: 1.3.3
+  vrchat_dart_generated: 1.3.4
 ```
 
 ### Github
@@ -123,7 +123,18 @@ Class | Method | HTTP request | Description
 [*UsersApi*](doc/UsersApi.md) | [**searchActiveUsers**](doc/UsersApi.md#searchactiveusers) | **GET** /users/active | Search Active Users
 [*UsersApi*](doc/UsersApi.md) | [**searchUsers**](doc/UsersApi.md#searchusers) | **GET** /users | Search All Users
 [*UsersApi*](doc/UsersApi.md) | [**updateUser**](doc/UsersApi.md#updateuser) | **PUT** /users/{userId} | Update User Info
-[*WorldsApi*](doc/WorldsApi.md) | [**searchWorlds**](doc/WorldsApi.md#searchworlds) | **GET** /worlds | Search all worlds
+[*WorldsApi*](doc/WorldsApi.md) | [**createWorld**](doc/WorldsApi.md#createworld) | **POST** /worlds | Create World
+[*WorldsApi*](doc/WorldsApi.md) | [**deleteWorld**](doc/WorldsApi.md#deleteworld) | **DELETE** /worlds/{worldId} | Delete World
+[*WorldsApi*](doc/WorldsApi.md) | [**getActiveWorlds**](doc/WorldsApi.md#getactiveworlds) | **GET** /worlds/active | List Active Worlds
+[*WorldsApi*](doc/WorldsApi.md) | [**getFavoritedWorlds**](doc/WorldsApi.md#getfavoritedworlds) | **GET** /worlds/favorites | List Favorited Worlds
+[*WorldsApi*](doc/WorldsApi.md) | [**getRecentWorlds**](doc/WorldsApi.md#getrecentworlds) | **GET** /worlds/recent | List Recent Worlds
+[*WorldsApi*](doc/WorldsApi.md) | [**getWorld**](doc/WorldsApi.md#getworld) | **GET** /worlds/{worldId} | Get World by ID
+[*WorldsApi*](doc/WorldsApi.md) | [**getWorldMetadata**](doc/WorldsApi.md#getworldmetadata) | **GET** /worlds/{worldId}/metadata | Get World Metadata
+[*WorldsApi*](doc/WorldsApi.md) | [**getWorldPublish**](doc/WorldsApi.md#getworldpublish) | **GET** /worlds/{worldId}/publish | Get World Publish Status
+[*WorldsApi*](doc/WorldsApi.md) | [**publishWorld**](doc/WorldsApi.md#publishworld) | **PUT** /worlds/{worldId}/publish | 
+[*WorldsApi*](doc/WorldsApi.md) | [**searchWorlds**](doc/WorldsApi.md#searchworlds) | **GET** /worlds | Search All Worlds
+[*WorldsApi*](doc/WorldsApi.md) | [**unpublishWorld**](doc/WorldsApi.md#unpublishworld) | **DELETE** /worlds/{worldId}/publish | 
+[*WorldsApi*](doc/WorldsApi.md) | [**updateWorld**](doc/WorldsApi.md#updateworld) | **PUT** /worlds/{worldId} | Update World
 
 
 ## Documentation For Models
@@ -146,24 +157,32 @@ Class | Method | HTTP request | Description
  - [InlineObject2](doc/InlineObject2.md)
  - [InlineObject3](doc/InlineObject3.md)
  - [InlineObject4](doc/InlineObject4.md)
+ - [InlineObject5](doc/InlineObject5.md)
+ - [InlineObject6](doc/InlineObject6.md)
  - [InlineResponse200](doc/InlineResponse200.md)
  - [InlineResponse2001](doc/InlineResponse2001.md)
  - [InlineResponse2002](doc/InlineResponse2002.md)
  - [InlineResponse2003](doc/InlineResponse2003.md)
  - [InlineResponse2004](doc/InlineResponse2004.md)
  - [InlineResponse2005](doc/InlineResponse2005.md)
+ - [InlineResponse2006](doc/InlineResponse2006.md)
+ - [InlineResponse2007](doc/InlineResponse2007.md)
  - [InlineResponse401](doc/InlineResponse401.md)
+ - [LimitedUnityPackage](doc/LimitedUnityPackage.md)
  - [LimitedUser](doc/LimitedUser.md)
  - [LimitedWorld](doc/LimitedWorld.md)
  - [MIMEType](doc/MIMEType.md)
  - [Notification](doc/Notification.md)
  - [NotificationType](doc/NotificationType.md)
+ - [Platform](doc/Platform.md)
  - [ReleaseStatus](doc/ReleaseStatus.md)
  - [Response](doc/Response.md)
  - [Success](doc/Success.md)
+ - [UnityPackage](doc/UnityPackage.md)
  - [User](doc/User.md)
  - [UserState](doc/UserState.md)
  - [UserStatus](doc/UserStatus.md)
+ - [World](doc/World.md)
 
 
 ## Documentation For Authorization

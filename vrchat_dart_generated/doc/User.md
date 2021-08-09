@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **tags** | **BuiltList&lt;String&gt;** |  | 
 **developerType** | [**DeveloperType**](DeveloperType.md) |  | 
 **lastLogin** | [**DateTime**](DateTime.md) |  | 
-**lastPlatform** | **String** |  | 
+**lastPlatform** | [**Platform**](Platform.md) |  | 
 **allowAvatarCopying** | **bool** |  | 
 **status** | [**UserStatus**](UserStatus.md) |  | 
 **dateJoined** | [**Date**](Date.md) |  | 

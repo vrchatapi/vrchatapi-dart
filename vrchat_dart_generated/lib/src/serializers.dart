@@ -30,24 +30,32 @@ import 'package:vrchat_dart_generated/src/model/inline_object1.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object2.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object3.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object4.dart';
+import 'package:vrchat_dart_generated/src/model/inline_object5.dart';
+import 'package:vrchat_dart_generated/src/model/inline_object6.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response200.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2001.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2002.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2003.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2004.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2005.dart';
+import 'package:vrchat_dart_generated/src/model/inline_response2006.dart';
+import 'package:vrchat_dart_generated/src/model/inline_response2007.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response401.dart';
+import 'package:vrchat_dart_generated/src/model/limited_unity_package.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user.dart';
 import 'package:vrchat_dart_generated/src/model/limited_world.dart';
 import 'package:vrchat_dart_generated/src/model/mime_type.dart';
 import 'package:vrchat_dart_generated/src/model/notification.dart';
 import 'package:vrchat_dart_generated/src/model/notification_type.dart';
+import 'package:vrchat_dart_generated/src/model/platform.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
 import 'package:vrchat_dart_generated/src/model/response.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
+import 'package:vrchat_dart_generated/src/model/unity_package.dart';
 import 'package:vrchat_dart_generated/src/model/user.dart';
 import 'package:vrchat_dart_generated/src/model/user_state.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
+import 'package:vrchat_dart_generated/src/model/world.dart';
 
 part 'serializers.g.dart';
 
@@ -70,24 +78,32 @@ part 'serializers.g.dart';
   InlineObject2,
   InlineObject3,
   InlineObject4,
+  InlineObject5,
+  InlineObject6,
   InlineResponse200,
   InlineResponse2001,
   InlineResponse2002,
   InlineResponse2003,
   InlineResponse2004,
   InlineResponse2005,
+  InlineResponse2006,
+  InlineResponse2007,
   InlineResponse401,
+  LimitedUnityPackage,
   LimitedUser,
   LimitedWorld,
   MIMEType,
   Notification,
   NotificationType,
+  Platform,
   ReleaseStatus,
   Response,
   Success,
+  UnityPackage,
   User,
   UserState,
   UserStatus,
+  World,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(

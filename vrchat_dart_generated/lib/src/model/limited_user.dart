@@ -5,6 +5,7 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
+import 'package:vrchat_dart_generated/src/model/platform.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -65,7 +66,8 @@ abstract class LimitedUser implements Built<LimitedUser, LimitedUserBuilder> {
   // enum developerTypeEnum {  none,  trusted,  internal,  moderator,  };
 
   @BuiltValueField(wireName: r'last_platform')
-  String get lastPlatform;
+  Platform get lastPlatform;
+  // enum lastPlatformEnum {  standalonewindows,  android,  };
 
   @BuiltValueField(wireName: r'status')
   UserStatus get status;
@@ -151,7 +153,7 @@ class _$LimitedUserSerializer implements StructuredSerializer<LimitedUser> {
     result
       ..add(r'last_platform')
       ..add(serializers.serialize(object.lastPlatform,
-          specifiedType: const FullType(String)));
+          specifiedType: const FullType(Platform)));
     result
       ..add(r'status')
       ..add(serializers.serialize(object.status,
@@ -228,7 +230,7 @@ class _$LimitedUserSerializer implements StructuredSerializer<LimitedUser> {
           break;
         case r'last_platform':
           result.lastPlatform = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(Platform)) as Platform;
           break;
         case r'status':
           result.status = serializers.deserialize(value,

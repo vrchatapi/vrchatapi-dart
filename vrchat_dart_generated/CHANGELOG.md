@@ -1,3 +1,6 @@
+## 1.3.4
+Updated to match specs
+
 ## 1.3.3
 Updated homepage
 

@@ -33,7 +33,7 @@ abstract class File implements Built<File, FileBuilder> {
 
   @BuiltValueField(wireName: r'mimeType')
   MIMEType get mimeType;
-  // enum mimeTypeEnum {  image⁄jpeg,  image⁄jpg,  image⁄png,  image⁄webp,  image⁄gif,  image⁄bmp,  image⁄svg＋xml,  image⁄tiff,  application⁄x-avatar,  application⁄x-world,  application⁄gzip,  application/x-rsync-signature,  application/x-rsync-delta,  application/octet-stream,  };
+  // enum mimeTypeEnum {  image/jpeg,  image/jpg,  image/png,  image/webp,  image/gif,  image/bmp,  image/svg＋xml,  image/tiff,  application/x-avatar,  application/x-world,  application/gzip,  application/x-rsync-signature,  application/x-rsync-delta,  application/octet-stream,  };
 
   @BuiltValueField(wireName: r'extension')
   String get extension_;

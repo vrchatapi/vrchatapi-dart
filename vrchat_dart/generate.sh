@@ -5,8 +5,4 @@ flutter clean
 flutter pub get
 
 flutter pub run build_runner build --delete-conflicting-outputs
-
-cd ../vrchat_dart_generated
-# This code-gen is supposed to run automatically with the OpenAPI generator but it wasn't
-flutter pub run build_runner build --delete-conflicting-outputs
-flutter format .
+flutter format ../vrchat_dart_generated

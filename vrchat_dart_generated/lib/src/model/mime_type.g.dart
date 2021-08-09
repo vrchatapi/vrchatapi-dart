@@ -6,17 +6,20 @@ part of 'mime_type.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const MIMEType _$imagejpeg = const MIMEType._('imagejpeg');
-const MIMEType _$imagejpg = const MIMEType._('imagejpg');
-const MIMEType _$imagepng = const MIMEType._('imagepng');
-const MIMEType _$imagewebp = const MIMEType._('imagewebp');
-const MIMEType _$imagegif = const MIMEType._('imagegif');
-const MIMEType _$imagebmp = const MIMEType._('imagebmp');
-const MIMEType _$imagesvgxml = const MIMEType._('imagesvgxml');
-const MIMEType _$imagetiff = const MIMEType._('imagetiff');
-const MIMEType _$applicationxAvatar = const MIMEType._('applicationxAvatar');
-const MIMEType _$applicationxWorld = const MIMEType._('applicationxWorld');
-const MIMEType _$applicationgzip = const MIMEType._('applicationgzip');
+const MIMEType _$imageSlashJpeg = const MIMEType._('imageSlashJpeg');
+const MIMEType _$imageSlashJpg = const MIMEType._('imageSlashJpg');
+const MIMEType _$imageSlashPng = const MIMEType._('imageSlashPng');
+const MIMEType _$imageSlashWebp = const MIMEType._('imageSlashWebp');
+const MIMEType _$imageSlashGif = const MIMEType._('imageSlashGif');
+const MIMEType _$imageSlashBmp = const MIMEType._('imageSlashBmp');
+const MIMEType _$imageSlashSvgxml = const MIMEType._('imageSlashSvgxml');
+const MIMEType _$imageSlashTiff = const MIMEType._('imageSlashTiff');
+const MIMEType _$applicationSlashXAvatar =
+    const MIMEType._('applicationSlashXAvatar');
+const MIMEType _$applicationSlashXWorld =
+    const MIMEType._('applicationSlashXWorld');
+const MIMEType _$applicationSlashGzip =
+    const MIMEType._('applicationSlashGzip');
 const MIMEType _$applicationSlashXRsyncSignature =
     const MIMEType._('applicationSlashXRsyncSignature');
 const MIMEType _$applicationSlashXRsyncDelta =
@@ -26,28 +29,28 @@ const MIMEType _$applicationSlashOctetStream =
 
 MIMEType _$valueOf(String name) {
   switch (name) {
-    case 'imagejpeg':
-      return _$imagejpeg;
-    case 'imagejpg':
-      return _$imagejpg;
-    case 'imagepng':
-      return _$imagepng;
-    case 'imagewebp':
-      return _$imagewebp;
-    case 'imagegif':
-      return _$imagegif;
-    case 'imagebmp':
-      return _$imagebmp;
-    case 'imagesvgxml':
-      return _$imagesvgxml;
-    case 'imagetiff':
-      return _$imagetiff;
-    case 'applicationxAvatar':
-      return _$applicationxAvatar;
-    case 'applicationxWorld':
-      return _$applicationxWorld;
-    case 'applicationgzip':
-      return _$applicationgzip;
+    case 'imageSlashJpeg':
+      return _$imageSlashJpeg;
+    case 'imageSlashJpg':
+      return _$imageSlashJpg;
+    case 'imageSlashPng':
+      return _$imageSlashPng;
+    case 'imageSlashWebp':
+      return _$imageSlashWebp;
+    case 'imageSlashGif':
+      return _$imageSlashGif;
+    case 'imageSlashBmp':
+      return _$imageSlashBmp;
+    case 'imageSlashSvgxml':
+      return _$imageSlashSvgxml;
+    case 'imageSlashTiff':
+      return _$imageSlashTiff;
+    case 'applicationSlashXAvatar':
+      return _$applicationSlashXAvatar;
+    case 'applicationSlashXWorld':
+      return _$applicationSlashXWorld;
+    case 'applicationSlashGzip':
+      return _$applicationSlashGzip;
     case 'applicationSlashXRsyncSignature':
       return _$applicationSlashXRsyncSignature;
     case 'applicationSlashXRsyncDelta':
@@ -60,17 +63,17 @@ MIMEType _$valueOf(String name) {
 }
 
 final BuiltSet<MIMEType> _$values = new BuiltSet<MIMEType>(const <MIMEType>[
-  _$imagejpeg,
-  _$imagejpg,
-  _$imagepng,
-  _$imagewebp,
-  _$imagegif,
-  _$imagebmp,
-  _$imagesvgxml,
-  _$imagetiff,
-  _$applicationxAvatar,
-  _$applicationxWorld,
-  _$applicationgzip,
+  _$imageSlashJpeg,
+  _$imageSlashJpg,
+  _$imageSlashPng,
+  _$imageSlashWebp,
+  _$imageSlashGif,
+  _$imageSlashBmp,
+  _$imageSlashSvgxml,
+  _$imageSlashTiff,
+  _$applicationSlashXAvatar,
+  _$applicationSlashXWorld,
+  _$applicationSlashGzip,
   _$applicationSlashXRsyncSignature,
   _$applicationSlashXRsyncDelta,
   _$applicationSlashOctetStream,
@@ -78,17 +81,17 @@ final BuiltSet<MIMEType> _$values = new BuiltSet<MIMEType>(const <MIMEType>[
 
 class _$MIMETypeMeta {
   const _$MIMETypeMeta();
-  MIMEType get imagejpeg => _$imagejpeg;
-  MIMEType get imagejpg => _$imagejpg;
-  MIMEType get imagepng => _$imagepng;
-  MIMEType get imagewebp => _$imagewebp;
-  MIMEType get imagegif => _$imagegif;
-  MIMEType get imagebmp => _$imagebmp;
-  MIMEType get imagesvgxml => _$imagesvgxml;
-  MIMEType get imagetiff => _$imagetiff;
-  MIMEType get applicationxAvatar => _$applicationxAvatar;
-  MIMEType get applicationxWorld => _$applicationxWorld;
-  MIMEType get applicationgzip => _$applicationgzip;
+  MIMEType get imageSlashJpeg => _$imageSlashJpeg;
+  MIMEType get imageSlashJpg => _$imageSlashJpg;
+  MIMEType get imageSlashPng => _$imageSlashPng;
+  MIMEType get imageSlashWebp => _$imageSlashWebp;
+  MIMEType get imageSlashGif => _$imageSlashGif;
+  MIMEType get imageSlashBmp => _$imageSlashBmp;
+  MIMEType get imageSlashSvgxml => _$imageSlashSvgxml;
+  MIMEType get imageSlashTiff => _$imageSlashTiff;
+  MIMEType get applicationSlashXAvatar => _$applicationSlashXAvatar;
+  MIMEType get applicationSlashXWorld => _$applicationSlashXWorld;
+  MIMEType get applicationSlashGzip => _$applicationSlashGzip;
   MIMEType get applicationSlashXRsyncSignature =>
       _$applicationSlashXRsyncSignature;
   MIMEType get applicationSlashXRsyncDelta => _$applicationSlashXRsyncDelta;
@@ -106,33 +109,33 @@ Serializer<MIMEType> _$mIMETypeSerializer = new _$MIMETypeSerializer();
 
 class _$MIMETypeSerializer implements PrimitiveSerializer<MIMEType> {
   static const Map<String, Object> _toWire = const <String, Object>{
-    'imagejpeg': 'image⁄jpeg',
-    'imagejpg': 'image⁄jpg',
-    'imagepng': 'image⁄png',
-    'imagewebp': 'image⁄webp',
-    'imagegif': 'image⁄gif',
-    'imagebmp': 'image⁄bmp',
-    'imagesvgxml': 'image⁄svg＋xml',
-    'imagetiff': 'image⁄tiff',
-    'applicationxAvatar': 'application⁄x-avatar',
-    'applicationxWorld': 'application⁄x-world',
-    'applicationgzip': 'application⁄gzip',
+    'imageSlashJpeg': 'image/jpeg',
+    'imageSlashJpg': 'image/jpg',
+    'imageSlashPng': 'image/png',
+    'imageSlashWebp': 'image/webp',
+    'imageSlashGif': 'image/gif',
+    'imageSlashBmp': 'image/bmp',
+    'imageSlashSvgxml': 'image/svg＋xml',
+    'imageSlashTiff': 'image/tiff',
+    'applicationSlashXAvatar': 'application/x-avatar',
+    'applicationSlashXWorld': 'application/x-world',
+    'applicationSlashGzip': 'application/gzip',
     'applicationSlashXRsyncSignature': 'application/x-rsync-signature',
     'applicationSlashXRsyncDelta': 'application/x-rsync-delta',
     'applicationSlashOctetStream': 'application/octet-stream',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
-    'image⁄jpeg': 'imagejpeg',
-    'image⁄jpg': 'imagejpg',
-    'image⁄png': 'imagepng',
-    'image⁄webp': 'imagewebp',
-    'image⁄gif': 'imagegif',
-    'image⁄bmp': 'imagebmp',
-    'image⁄svg＋xml': 'imagesvgxml',
-    'image⁄tiff': 'imagetiff',
-    'application⁄x-avatar': 'applicationxAvatar',
-    'application⁄x-world': 'applicationxWorld',
-    'application⁄gzip': 'applicationgzip',
+    'image/jpeg': 'imageSlashJpeg',
+    'image/jpg': 'imageSlashJpg',
+    'image/png': 'imageSlashPng',
+    'image/webp': 'imageSlashWebp',
+    'image/gif': 'imageSlashGif',
+    'image/bmp': 'imageSlashBmp',
+    'image/svg＋xml': 'imageSlashSvgxml',
+    'image/tiff': 'imageSlashTiff',
+    'application/x-avatar': 'applicationSlashXAvatar',
+    'application/x-world': 'applicationSlashXWorld',
+    'application/gzip': 'applicationSlashGzip',
     'application/x-rsync-signature': 'applicationSlashXRsyncSignature',
     'application/x-rsync-delta': 'applicationSlashXRsyncDelta',
     'application/octet-stream': 'applicationSlashOctetStream',

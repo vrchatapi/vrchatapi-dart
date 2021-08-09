@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **currentAvatarThumbnailImageUrl** | **String** |  | 
 **fallbackAvatar** | **String** |  | 
 **developerType** | [**DeveloperType**](DeveloperType.md) |  | 
-**lastPlatform** | **String** |  | 
+**lastPlatform** | [**Platform**](Platform.md) |  | 
 **status** | [**UserStatus**](UserStatus.md) |  | 
 **isFriend** | **bool** |  | 
 **location** | **String** |  | 

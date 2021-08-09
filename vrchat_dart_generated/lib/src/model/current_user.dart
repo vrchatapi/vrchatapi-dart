@@ -6,6 +6,7 @@ import 'package:vrchat_dart_generated/src/model/date.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
+import 'package:vrchat_dart_generated/src/model/platform.dart';
 import 'package:built_value/json_object.dart';
 import 'package:vrchat_dart_generated/src/model/user_state.dart';
 import 'package:built_value/built_value.dart';
@@ -177,7 +178,8 @@ abstract class CurrentUser implements Built<CurrentUser, CurrentUserBuilder> {
   DateTime get lastLogin;
 
   @BuiltValueField(wireName: r'last_platform')
-  String get lastPlatform;
+  Platform get lastPlatform;
+  // enum lastPlatformEnum {  standalonewindows,  android,  };
 
   @BuiltValueField(wireName: r'allowAvatarCopying')
   bool get allowAvatarCopying;
@@ -378,7 +380,7 @@ class _$CurrentUserSerializer implements StructuredSerializer<CurrentUser> {
     result
       ..add(r'last_platform')
       ..add(serializers.serialize(object.lastPlatform,
-          specifiedType: const FullType(String)));
+          specifiedType: const FullType(Platform)));
     result
       ..add(r'allowAvatarCopying')
       ..add(serializers.serialize(object.allowAvatarCopying,
@@ -581,7 +583,7 @@ class _$CurrentUserSerializer implements StructuredSerializer<CurrentUser> {
           break;
         case r'last_platform':
           result.lastPlatform = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(Platform)) as Platform;
           break;
         case r'allowAvatarCopying':
           result.allowAvatarCopying = serializers.deserialize(value,

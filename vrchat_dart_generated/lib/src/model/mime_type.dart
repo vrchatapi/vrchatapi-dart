@@ -9,28 +9,28 @@ import 'package:built_value/serializer.dart';
 part 'mime_type.g.dart';
 
 class MIMEType extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'image⁄jpeg')
-  static const MIMEType imagejpeg = _$imagejpeg;
-  @BuiltValueEnumConst(wireName: r'image⁄jpg')
-  static const MIMEType imagejpg = _$imagejpg;
-  @BuiltValueEnumConst(wireName: r'image⁄png')
-  static const MIMEType imagepng = _$imagepng;
-  @BuiltValueEnumConst(wireName: r'image⁄webp')
-  static const MIMEType imagewebp = _$imagewebp;
-  @BuiltValueEnumConst(wireName: r'image⁄gif')
-  static const MIMEType imagegif = _$imagegif;
-  @BuiltValueEnumConst(wireName: r'image⁄bmp')
-  static const MIMEType imagebmp = _$imagebmp;
-  @BuiltValueEnumConst(wireName: r'image⁄svg＋xml')
-  static const MIMEType imagesvgxml = _$imagesvgxml;
-  @BuiltValueEnumConst(wireName: r'image⁄tiff')
-  static const MIMEType imagetiff = _$imagetiff;
-  @BuiltValueEnumConst(wireName: r'application⁄x-avatar')
-  static const MIMEType applicationxAvatar = _$applicationxAvatar;
-  @BuiltValueEnumConst(wireName: r'application⁄x-world')
-  static const MIMEType applicationxWorld = _$applicationxWorld;
-  @BuiltValueEnumConst(wireName: r'application⁄gzip')
-  static const MIMEType applicationgzip = _$applicationgzip;
+  @BuiltValueEnumConst(wireName: r'image/jpeg')
+  static const MIMEType imageSlashJpeg = _$imageSlashJpeg;
+  @BuiltValueEnumConst(wireName: r'image/jpg')
+  static const MIMEType imageSlashJpg = _$imageSlashJpg;
+  @BuiltValueEnumConst(wireName: r'image/png')
+  static const MIMEType imageSlashPng = _$imageSlashPng;
+  @BuiltValueEnumConst(wireName: r'image/webp')
+  static const MIMEType imageSlashWebp = _$imageSlashWebp;
+  @BuiltValueEnumConst(wireName: r'image/gif')
+  static const MIMEType imageSlashGif = _$imageSlashGif;
+  @BuiltValueEnumConst(wireName: r'image/bmp')
+  static const MIMEType imageSlashBmp = _$imageSlashBmp;
+  @BuiltValueEnumConst(wireName: r'image/svg＋xml')
+  static const MIMEType imageSlashSvgxml = _$imageSlashSvgxml;
+  @BuiltValueEnumConst(wireName: r'image/tiff')
+  static const MIMEType imageSlashTiff = _$imageSlashTiff;
+  @BuiltValueEnumConst(wireName: r'application/x-avatar')
+  static const MIMEType applicationSlashXAvatar = _$applicationSlashXAvatar;
+  @BuiltValueEnumConst(wireName: r'application/x-world')
+  static const MIMEType applicationSlashXWorld = _$applicationSlashXWorld;
+  @BuiltValueEnumConst(wireName: r'application/gzip')
+  static const MIMEType applicationSlashGzip = _$applicationSlashGzip;
   @BuiltValueEnumConst(wireName: r'application/x-rsync-signature')
   static const MIMEType applicationSlashXRsyncSignature =
       _$applicationSlashXRsyncSignature;

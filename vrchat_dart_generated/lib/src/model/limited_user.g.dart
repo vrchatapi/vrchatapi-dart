@@ -30,7 +30,7 @@ class _$LimitedUser extends LimitedUser {
   @override
   final DeveloperType developerType;
   @override
-  final String lastPlatform;
+  final Platform lastPlatform;
   @override
   final UserStatus status;
   @override
@@ -234,9 +234,10 @@ class LimitedUserBuilder implements Builder<LimitedUser, LimitedUserBuilder> {
   set developerType(DeveloperType? developerType) =>
       _$this._developerType = developerType;
 
-  String? _lastPlatform;
-  String? get lastPlatform => _$this._lastPlatform;
-  set lastPlatform(String? lastPlatform) => _$this._lastPlatform = lastPlatform;
+  Platform? _lastPlatform;
+  Platform? get lastPlatform => _$this._lastPlatform;
+  set lastPlatform(Platform? lastPlatform) =>
+      _$this._lastPlatform = lastPlatform;
 
   UserStatus? _status;
   UserStatus? get status => _$this._status;
