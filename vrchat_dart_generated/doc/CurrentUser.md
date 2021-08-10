@@ -51,9 +51,9 @@ Name | Type | Description | Notes
 **dateJoined** | [**Date**](Date.md) |  | 
 **isFriend** | **bool** |  | [default to false]
 **friendKey** | **String** |  | 
-**onlineFriends** | **BuiltList&lt;String&gt;** |  | 
-**activeFriends** | **BuiltList&lt;String&gt;** |  | 
-**offlineFriends** | **BuiltList&lt;String&gt;** |  | 
+**onlineFriends** | **BuiltList&lt;String&gt;** |  | [optional] 
+**activeFriends** | **BuiltList&lt;String&gt;** |  | [optional] 
+**offlineFriends** | **BuiltList&lt;String&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

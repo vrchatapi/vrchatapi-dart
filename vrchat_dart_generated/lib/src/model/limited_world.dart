@@ -4,7 +4,6 @@
 
 import 'package:built_collection/built_collection.dart';
 import 'package:vrchat_dart_generated/src/model/limited_unity_package.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -62,7 +61,7 @@ abstract class LimitedWorld
   String get organization;
 
   @BuiltValueField(wireName: r'tags')
-  BuiltList<JsonObject> get tags;
+  BuiltList<String> get tags;
 
   @BuiltValueField(wireName: r'favorites')
   num get favorites;
@@ -80,7 +79,7 @@ abstract class LimitedWorld
   String get labsPublicationDate;
 
   @BuiltValueField(wireName: r'unityPackages')
-  BuiltSet<LimitedUnityPackage> get unityPackages;
+  BuiltList<LimitedUnityPackage> get unityPackages;
 
   @BuiltValueField(wireName: r'popularity')
   num get popularity;
@@ -151,7 +150,7 @@ class _$LimitedWorldSerializer implements StructuredSerializer<LimitedWorld> {
     result
       ..add(r'tags')
       ..add(serializers.serialize(object.tags,
-          specifiedType: const FullType(BuiltList, [FullType(JsonObject)])));
+          specifiedType: const FullType(BuiltList, [FullType(String)])));
     result
       ..add(r'favorites')
       ..add(serializers.serialize(object.favorites,
@@ -176,7 +175,7 @@ class _$LimitedWorldSerializer implements StructuredSerializer<LimitedWorld> {
       ..add(r'unityPackages')
       ..add(serializers.serialize(object.unityPackages,
           specifiedType:
-              const FullType(BuiltSet, [FullType(LimitedUnityPackage)])));
+              const FullType(BuiltList, [FullType(LimitedUnityPackage)])));
     result
       ..add(r'popularity')
       ..add(serializers.serialize(object.popularity,
@@ -242,9 +241,8 @@ class _$LimitedWorldSerializer implements StructuredSerializer<LimitedWorld> {
           break;
         case r'tags':
           result.tags.replace(serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, [FullType(JsonObject)]))
-              as BuiltList<JsonObject>);
+                  specifiedType: const FullType(BuiltList, [FullType(String)]))
+              as BuiltList<String>);
           break;
         case r'favorites':
           result.favorites = serializers.deserialize(value,
@@ -268,9 +266,9 @@ class _$LimitedWorldSerializer implements StructuredSerializer<LimitedWorld> {
           break;
         case r'unityPackages':
           result.unityPackages.replace(serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltSet, [FullType(LimitedUnityPackage)]))
-              as BuiltSet<LimitedUnityPackage>);
+                  specifiedType: const FullType(
+                      BuiltList, [FullType(LimitedUnityPackage)]))
+              as BuiltList<LimitedUnityPackage>);
           break;
         case r'popularity':
           result.popularity = serializers.deserialize(value,

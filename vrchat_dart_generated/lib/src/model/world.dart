@@ -84,7 +84,7 @@ abstract class World implements Built<World, WorldBuilder> {
   String get imageUrl;
 
   @BuiltValueField(wireName: r'instances')
-  BuiltList<JsonObject>? get instances;
+  BuiltList<BuiltList<JsonObject>>? get instances;
 
   @BuiltValueField(wireName: r'labsPublicationDate')
   String get labsPublicationDate;
@@ -133,7 +133,7 @@ abstract class World implements Built<World, WorldBuilder> {
   JsonObject get unityPackageUrlObject;
 
   @BuiltValueField(wireName: r'unityPackages')
-  BuiltSet<UnityPackage> get unityPackages;
+  BuiltList<UnityPackage> get unityPackages;
 
   @BuiltValueField(wireName: r'updated_at')
   DateTime get updatedAt;
@@ -229,7 +229,9 @@ class _$WorldSerializer implements StructuredSerializer<World> {
       result
         ..add(r'instances')
         ..add(serializers.serialize(object.instances,
-            specifiedType: const FullType(BuiltList, [FullType(JsonObject)])));
+            specifiedType: const FullType(BuiltList, [
+              FullType(BuiltList, [FullType(JsonObject)])
+            ])));
     }
     result
       ..add(r'labsPublicationDate')
@@ -302,7 +304,7 @@ class _$WorldSerializer implements StructuredSerializer<World> {
     result
       ..add(r'unityPackages')
       ..add(serializers.serialize(object.unityPackages,
-          specifiedType: const FullType(BuiltSet, [FullType(UnityPackage)])));
+          specifiedType: const FullType(BuiltList, [FullType(UnityPackage)])));
     result
       ..add(r'updated_at')
       ..add(serializers.serialize(object.updatedAt,
@@ -379,9 +381,9 @@ class _$WorldSerializer implements StructuredSerializer<World> {
           break;
         case r'instances':
           result.instances.replace(serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, [FullType(JsonObject)]))
-              as BuiltList<JsonObject>);
+              specifiedType: const FullType(BuiltList, [
+                FullType(BuiltList, [FullType(JsonObject)])
+              ])) as BuiltList<BuiltList<JsonObject>>);
           break;
         case r'labsPublicationDate':
           result.labsPublicationDate = serializers.deserialize(value,
@@ -447,8 +449,8 @@ class _$WorldSerializer implements StructuredSerializer<World> {
         case r'unityPackages':
           result.unityPackages.replace(serializers.deserialize(value,
                   specifiedType:
-                      const FullType(BuiltSet, [FullType(UnityPackage)]))
-              as BuiltSet<UnityPackage>);
+                      const FullType(BuiltList, [FullType(UnityPackage)]))
+              as BuiltList<UnityPackage>);
           break;
         case r'updated_at':
           result.updatedAt = serializers.deserialize(value,

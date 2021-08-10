@@ -32,7 +32,7 @@ class _$World extends World {
   @override
   final String imageUrl;
   @override
-  final BuiltList<JsonObject>? instances;
+  final BuiltList<BuiltList<JsonObject>>? instances;
   @override
   final String labsPublicationDate;
   @override
@@ -64,7 +64,7 @@ class _$World extends World {
   @override
   final JsonObject unityPackageUrlObject;
   @override
-  final BuiltSet<UnityPackage> unityPackages;
+  final BuiltList<UnityPackage> unityPackages;
   @override
   final DateTime updatedAt;
   @override
@@ -324,10 +324,10 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
   String? get imageUrl => _$this._imageUrl;
   set imageUrl(String? imageUrl) => _$this._imageUrl = imageUrl;
 
-  ListBuilder<JsonObject>? _instances;
-  ListBuilder<JsonObject> get instances =>
-      _$this._instances ??= new ListBuilder<JsonObject>();
-  set instances(ListBuilder<JsonObject>? instances) =>
+  ListBuilder<BuiltList<JsonObject>>? _instances;
+  ListBuilder<BuiltList<JsonObject>> get instances =>
+      _$this._instances ??= new ListBuilder<BuiltList<JsonObject>>();
+  set instances(ListBuilder<BuiltList<JsonObject>>? instances) =>
       _$this._instances = instances;
 
   String? _labsPublicationDate;
@@ -399,10 +399,10 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
   set unityPackageUrlObject(JsonObject? unityPackageUrlObject) =>
       _$this._unityPackageUrlObject = unityPackageUrlObject;
 
-  SetBuilder<UnityPackage>? _unityPackages;
-  SetBuilder<UnityPackage> get unityPackages =>
-      _$this._unityPackages ??= new SetBuilder<UnityPackage>();
-  set unityPackages(SetBuilder<UnityPackage>? unityPackages) =>
+  ListBuilder<UnityPackage>? _unityPackages;
+  ListBuilder<UnityPackage> get unityPackages =>
+      _$this._unityPackages ??= new ListBuilder<UnityPackage>();
+  set unityPackages(ListBuilder<UnityPackage>? unityPackages) =>
       _$this._unityPackages = unityPackages;
 
   DateTime? _updatedAt;

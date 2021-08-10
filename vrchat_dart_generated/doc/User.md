@@ -22,16 +22,16 @@ Name | Type | Description | Notes
 **state** | [**UserState**](UserState.md) |  | 
 **tags** | **BuiltList&lt;String&gt;** |  | 
 **developerType** | [**DeveloperType**](DeveloperType.md) |  | 
-**lastLogin** | [**DateTime**](DateTime.md) |  | 
+**lastLogin** | **String** |  | 
 **lastPlatform** | [**Platform**](Platform.md) |  | 
 **allowAvatarCopying** | **bool** |  | 
 **status** | [**UserStatus**](UserStatus.md) |  | 
 **dateJoined** | [**Date**](Date.md) |  | 
 **isFriend** | **bool** |  | 
 **friendKey** | **String** |  | 
-**worldId** | **String** |  | [optional] 
-**instanceId** | **String** |  | [optional] 
-**location** | **String** |  | [optional] 
+**worldId** | **String** |  | 
+**instanceId** | **String** |  | 
+**location** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

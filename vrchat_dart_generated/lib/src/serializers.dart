@@ -41,6 +41,8 @@ import 'package:vrchat_dart_generated/src/model/inline_response2005.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2006.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2007.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response401.dart';
+import 'package:vrchat_dart_generated/src/model/instance.dart';
+import 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
 import 'package:vrchat_dart_generated/src/model/limited_unity_package.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user.dart';
 import 'package:vrchat_dart_generated/src/model/limited_world.dart';
@@ -89,6 +91,8 @@ part 'serializers.g.dart';
   InlineResponse2006,
   InlineResponse2007,
   InlineResponse401,
+  Instance,
+  InstancePlatforms,
   LimitedUnityPackage,
   LimitedUser,
   LimitedWorld,

@@ -26,7 +26,7 @@ class _$LimitedWorld extends LimitedWorld {
   @override
   final String organization;
   @override
-  final BuiltList<JsonObject> tags;
+  final BuiltList<String> tags;
   @override
   final num favorites;
   @override
@@ -38,7 +38,7 @@ class _$LimitedWorld extends LimitedWorld {
   @override
   final String labsPublicationDate;
   @override
-  final BuiltSet<LimitedUnityPackage> unityPackages;
+  final BuiltList<LimitedUnityPackage> unityPackages;
   @override
   final num popularity;
   @override
@@ -252,10 +252,9 @@ class LimitedWorldBuilder
   String? get organization => _$this._organization;
   set organization(String? organization) => _$this._organization = organization;
 
-  ListBuilder<JsonObject>? _tags;
-  ListBuilder<JsonObject> get tags =>
-      _$this._tags ??= new ListBuilder<JsonObject>();
-  set tags(ListBuilder<JsonObject>? tags) => _$this._tags = tags;
+  ListBuilder<String>? _tags;
+  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
+  set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
   num? _favorites;
   num? get favorites => _$this._favorites;
@@ -279,10 +278,10 @@ class LimitedWorldBuilder
   set labsPublicationDate(String? labsPublicationDate) =>
       _$this._labsPublicationDate = labsPublicationDate;
 
-  SetBuilder<LimitedUnityPackage>? _unityPackages;
-  SetBuilder<LimitedUnityPackage> get unityPackages =>
-      _$this._unityPackages ??= new SetBuilder<LimitedUnityPackage>();
-  set unityPackages(SetBuilder<LimitedUnityPackage>? unityPackages) =>
+  ListBuilder<LimitedUnityPackage>? _unityPackages;
+  ListBuilder<LimitedUnityPackage> get unityPackages =>
+      _$this._unityPackages ??= new ListBuilder<LimitedUnityPackage>();
+  set unityPackages(ListBuilder<LimitedUnityPackage>? unityPackages) =>
       _$this._unityPackages = unityPackages;
 
   num? _popularity;

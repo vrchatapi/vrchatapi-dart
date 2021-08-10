@@ -46,6 +46,8 @@ export 'package:vrchat_dart_generated/src/model/inline_response2005.dart';
 export 'package:vrchat_dart_generated/src/model/inline_response2006.dart';
 export 'package:vrchat_dart_generated/src/model/inline_response2007.dart';
 export 'package:vrchat_dart_generated/src/model/inline_response401.dart';
+export 'package:vrchat_dart_generated/src/model/instance.dart';
+export 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
 export 'package:vrchat_dart_generated/src/model/limited_unity_package.dart';
 export 'package:vrchat_dart_generated/src/model/limited_user.dart';
 export 'package:vrchat_dart_generated/src/model/limited_world.dart';

@@ -198,13 +198,13 @@ abstract class CurrentUser implements Built<CurrentUser, CurrentUserBuilder> {
   String get friendKey;
 
   @BuiltValueField(wireName: r'onlineFriends')
-  BuiltList<String> get onlineFriends;
+  BuiltList<String>? get onlineFriends;
 
   @BuiltValueField(wireName: r'activeFriends')
-  BuiltList<String> get activeFriends;
+  BuiltList<String>? get activeFriends;
 
   @BuiltValueField(wireName: r'offlineFriends')
-  BuiltList<String> get offlineFriends;
+  BuiltList<String>? get offlineFriends;
 
   CurrentUser._();
 
@@ -401,18 +401,24 @@ class _$CurrentUserSerializer implements StructuredSerializer<CurrentUser> {
       ..add(r'friendKey')
       ..add(serializers.serialize(object.friendKey,
           specifiedType: const FullType(String)));
-    result
-      ..add(r'onlineFriends')
-      ..add(serializers.serialize(object.onlineFriends,
-          specifiedType: const FullType(BuiltList, [FullType(String)])));
-    result
-      ..add(r'activeFriends')
-      ..add(serializers.serialize(object.activeFriends,
-          specifiedType: const FullType(BuiltList, [FullType(String)])));
-    result
-      ..add(r'offlineFriends')
-      ..add(serializers.serialize(object.offlineFriends,
-          specifiedType: const FullType(BuiltList, [FullType(String)])));
+    if (object.onlineFriends != null) {
+      result
+        ..add(r'onlineFriends')
+        ..add(serializers.serialize(object.onlineFriends,
+            specifiedType: const FullType(BuiltList, [FullType(String)])));
+    }
+    if (object.activeFriends != null) {
+      result
+        ..add(r'activeFriends')
+        ..add(serializers.serialize(object.activeFriends,
+            specifiedType: const FullType(BuiltList, [FullType(String)])));
+    }
+    if (object.offlineFriends != null) {
+      result
+        ..add(r'offlineFriends')
+        ..add(serializers.serialize(object.offlineFriends,
+            specifiedType: const FullType(BuiltList, [FullType(String)])));
+    }
     return result;
   }
 

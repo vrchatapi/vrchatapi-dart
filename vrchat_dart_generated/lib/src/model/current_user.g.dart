@@ -94,11 +94,11 @@ class _$CurrentUser extends CurrentUser {
   @override
   final String friendKey;
   @override
-  final BuiltList<String> onlineFriends;
+  final BuiltList<String>? onlineFriends;
   @override
-  final BuiltList<String> activeFriends;
+  final BuiltList<String>? activeFriends;
   @override
-  final BuiltList<String> offlineFriends;
+  final BuiltList<String>? offlineFriends;
 
   factory _$CurrentUser([void Function(CurrentUserBuilder)? updates]) =>
       (new CurrentUserBuilder()..update(updates)).build();
@@ -147,9 +147,9 @@ class _$CurrentUser extends CurrentUser {
       required this.dateJoined,
       required this.isFriend,
       required this.friendKey,
-      required this.onlineFriends,
-      required this.activeFriends,
-      required this.offlineFriends})
+      this.onlineFriends,
+      this.activeFriends,
+      this.offlineFriends})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, 'CurrentUser', 'id');
     BuiltValueNullFieldError.checkNotNull(username, 'CurrentUser', 'username');
@@ -222,12 +222,6 @@ class _$CurrentUser extends CurrentUser {
     BuiltValueNullFieldError.checkNotNull(isFriend, 'CurrentUser', 'isFriend');
     BuiltValueNullFieldError.checkNotNull(
         friendKey, 'CurrentUser', 'friendKey');
-    BuiltValueNullFieldError.checkNotNull(
-        onlineFriends, 'CurrentUser', 'onlineFriends');
-    BuiltValueNullFieldError.checkNotNull(
-        activeFriends, 'CurrentUser', 'activeFriends');
-    BuiltValueNullFieldError.checkNotNull(
-        offlineFriends, 'CurrentUser', 'offlineFriends');
   }
 
   @override
@@ -658,9 +652,9 @@ class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
       _dateJoined = $v.dateJoined;
       _isFriend = $v.isFriend;
       _friendKey = $v.friendKey;
-      _onlineFriends = $v.onlineFriends.toBuilder();
-      _activeFriends = $v.activeFriends.toBuilder();
-      _offlineFriends = $v.offlineFriends.toBuilder();
+      _onlineFriends = $v.onlineFriends?.toBuilder();
+      _activeFriends = $v.activeFriends?.toBuilder();
+      _offlineFriends = $v.offlineFriends?.toBuilder();
       _$v = null;
     }
     return this;
@@ -735,9 +729,9 @@ class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
               dateJoined: BuiltValueNullFieldError.checkNotNull(dateJoined, 'CurrentUser', 'dateJoined'),
               isFriend: BuiltValueNullFieldError.checkNotNull(isFriend, 'CurrentUser', 'isFriend'),
               friendKey: BuiltValueNullFieldError.checkNotNull(friendKey, 'CurrentUser', 'friendKey'),
-              onlineFriends: onlineFriends.build(),
-              activeFriends: activeFriends.build(),
-              offlineFriends: offlineFriends.build());
+              onlineFriends: _onlineFriends?.build(),
+              activeFriends: _activeFriends?.build(),
+              offlineFriends: _offlineFriends?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -759,11 +753,11 @@ class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
         tags.build();
 
         _$failedField = 'onlineFriends';
-        onlineFriends.build();
+        _onlineFriends?.build();
         _$failedField = 'activeFriends';
-        activeFriends.build();
+        _activeFriends?.build();
         _$failedField = 'offlineFriends';
-        offlineFriends.build();
+        _offlineFriends?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'CurrentUser', _$failedField, e.toString());

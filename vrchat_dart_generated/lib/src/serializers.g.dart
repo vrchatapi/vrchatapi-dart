@@ -39,6 +39,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(InlineResponse2006.serializer)
       ..add(InlineResponse2007.serializer)
       ..add(InlineResponse401.serializer)
+      ..add(Instance.serializer)
+      ..add(InstancePlatforms.serializer)
       ..add(LimitedUnityPackage.serializer)
       ..add(LimitedUser.serializer)
       ..add(LimitedWorld.serializer)
@@ -55,38 +57,47 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(UserStatus.serializer)
       ..add(World.serializer)
       ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(BuiltList, const [const FullType(JsonObject)])
+          ]),
+          () => new ListBuilder<BuiltList<JsonObject>>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(UnityPackage)]),
+          () => new ListBuilder<UnityPackage>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(JsonObject)]),
           () => new ListBuilder<JsonObject>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(JsonObject)]),
           () => new ListBuilder<JsonObject>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(JsonObject)]),
           () => new ListBuilder<JsonObject>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
       ..addBuilderFactory(
-          const FullType(BuiltSet, const [const FullType(UnityPackage)]),
-          () => new SetBuilder<UnityPackage>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(JsonObject)]),
-          () => new ListBuilder<JsonObject>())
-      ..addBuilderFactory(
-          const FullType(BuiltSet, const [const FullType(LimitedUnityPackage)]),
-          () => new SetBuilder<LimitedUnityPackage>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
+          const FullType(
+              BuiltList, const [const FullType(LimitedUnityPackage)]),
+          () => new ListBuilder<LimitedUnityPackage>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

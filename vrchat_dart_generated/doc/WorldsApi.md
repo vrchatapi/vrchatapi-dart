@@ -15,11 +15,12 @@ Method | HTTP request | Description
 [**getFavoritedWorlds**](WorldsApi.md#getfavoritedworlds) | **GET** /worlds/favorites | List Favorited Worlds
 [**getRecentWorlds**](WorldsApi.md#getrecentworlds) | **GET** /worlds/recent | List Recent Worlds
 [**getWorld**](WorldsApi.md#getworld) | **GET** /worlds/{worldId} | Get World by ID
+[**getWorldInstance**](WorldsApi.md#getworldinstance) | **GET** /worlds/{worldId}/{instanceId} | Get World Instance
 [**getWorldMetadata**](WorldsApi.md#getworldmetadata) | **GET** /worlds/{worldId}/metadata | Get World Metadata
 [**getWorldPublish**](WorldsApi.md#getworldpublish) | **GET** /worlds/{worldId}/publish | Get World Publish Status
-[**publishWorld**](WorldsApi.md#publishworld) | **PUT** /worlds/{worldId}/publish | 
+[**publishWorld**](WorldsApi.md#publishworld) | **PUT** /worlds/{worldId}/publish | Publish World
 [**searchWorlds**](WorldsApi.md#searchworlds) | **GET** /worlds | Search All Worlds
-[**unpublishWorld**](WorldsApi.md#unpublishworld) | **DELETE** /worlds/{worldId}/publish | 
+[**unpublishWorld**](WorldsApi.md#unpublishworld) | **DELETE** /worlds/{worldId}/publish | Unpublish World
 [**updateWorld**](WorldsApi.md#updateworld) | **PUT** /worlds/{worldId} | Update World
 
 
@@ -374,6 +375,51 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getWorldInstance**
+> Instance getWorldInstance(worldId, instanceId)
+
+Get World Instance
+
+Returns a worlds instance.
+
+### Example 
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+
+final api = VrchatDartGenerated().getWorldsApi();
+final String worldId = worldId_example; // String | 
+final String instanceId = instanceId_example; // String | 
+
+try { 
+    final response = api.getWorldInstance(worldId, instanceId);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling WorldsApi->getWorldInstance: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **worldId** | **String**|  | 
+ **instanceId** | **String**|  | 
+
+### Return type
+
+[**Instance**](Instance.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getWorldMetadata**
 > InlineResponse2006 getWorldMetadata(worldId)
 
@@ -463,7 +509,7 @@ No authorization required
 # **publishWorld**
 > publishWorld(worldId)
 
-
+Publish World
 
 Publishes a world. You can only publish one world per week.
 
@@ -582,7 +628,7 @@ Name | Type | Description  | Notes
 # **unpublishWorld**
 > unpublishWorld(worldId)
 
-
+Unpublish World
 
 Unpublishes a world.
 

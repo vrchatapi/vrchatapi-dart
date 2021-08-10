@@ -1,5 +1,5 @@
 # vrchat_dart_generated (EXPERIMENTAL)
-![VRChat API Banner](https://raw.githubusercontent.com/vrchatapi/vrchatapi.github.io/master/assets/apibanner.png)
+![VRChat API Banner](https://vrchatapi.github.io/assets/img/api_banner_1500x400.png)
 
 # VRChat API Documentation
 This project is an [OPEN Open Source Project](https://openopensource.org)
@@ -41,7 +41,7 @@ For more information, please visit [https://github.com/VRChatAPI](https://github
 To use the package from [pub.dev](https://pub.dev), please include the following in pubspec.yaml
 ```yaml
 dependencies:
-  vrchat_dart_generated: 1.3.4
+  vrchat_dart_generated: 1.3.5
 ```
 
 ### Github
@@ -129,11 +129,12 @@ Class | Method | HTTP request | Description
 [*WorldsApi*](doc/WorldsApi.md) | [**getFavoritedWorlds**](doc/WorldsApi.md#getfavoritedworlds) | **GET** /worlds/favorites | List Favorited Worlds
 [*WorldsApi*](doc/WorldsApi.md) | [**getRecentWorlds**](doc/WorldsApi.md#getrecentworlds) | **GET** /worlds/recent | List Recent Worlds
 [*WorldsApi*](doc/WorldsApi.md) | [**getWorld**](doc/WorldsApi.md#getworld) | **GET** /worlds/{worldId} | Get World by ID
+[*WorldsApi*](doc/WorldsApi.md) | [**getWorldInstance**](doc/WorldsApi.md#getworldinstance) | **GET** /worlds/{worldId}/{instanceId} | Get World Instance
 [*WorldsApi*](doc/WorldsApi.md) | [**getWorldMetadata**](doc/WorldsApi.md#getworldmetadata) | **GET** /worlds/{worldId}/metadata | Get World Metadata
 [*WorldsApi*](doc/WorldsApi.md) | [**getWorldPublish**](doc/WorldsApi.md#getworldpublish) | **GET** /worlds/{worldId}/publish | Get World Publish Status
-[*WorldsApi*](doc/WorldsApi.md) | [**publishWorld**](doc/WorldsApi.md#publishworld) | **PUT** /worlds/{worldId}/publish | 
+[*WorldsApi*](doc/WorldsApi.md) | [**publishWorld**](doc/WorldsApi.md#publishworld) | **PUT** /worlds/{worldId}/publish | Publish World
 [*WorldsApi*](doc/WorldsApi.md) | [**searchWorlds**](doc/WorldsApi.md#searchworlds) | **GET** /worlds | Search All Worlds
-[*WorldsApi*](doc/WorldsApi.md) | [**unpublishWorld**](doc/WorldsApi.md#unpublishworld) | **DELETE** /worlds/{worldId}/publish | 
+[*WorldsApi*](doc/WorldsApi.md) | [**unpublishWorld**](doc/WorldsApi.md#unpublishworld) | **DELETE** /worlds/{worldId}/publish | Unpublish World
 [*WorldsApi*](doc/WorldsApi.md) | [**updateWorld**](doc/WorldsApi.md#updateworld) | **PUT** /worlds/{worldId} | Update World
 
 
@@ -168,6 +169,8 @@ Class | Method | HTTP request | Description
  - [InlineResponse2006](doc/InlineResponse2006.md)
  - [InlineResponse2007](doc/InlineResponse2007.md)
  - [InlineResponse401](doc/InlineResponse401.md)
+ - [Instance](doc/Instance.md)
+ - [InstancePlatforms](doc/InstancePlatforms.md)
  - [LimitedUnityPackage](doc/LimitedUnityPackage.md)
  - [LimitedUser](doc/LimitedUser.md)
  - [LimitedWorld](doc/LimitedWorld.md)

@@ -33,6 +33,8 @@ doc/InlineResponse2005.md
 doc/InlineResponse2006.md
 doc/InlineResponse2007.md
 doc/InlineResponse401.md
+doc/Instance.md
+doc/InstancePlatforms.md
 doc/LimitedUnityPackage.md
 doc/LimitedUser.md
 doc/LimitedWorld.md
@@ -96,6 +98,8 @@ lib/src/model/inline_response2005.dart
 lib/src/model/inline_response2006.dart
 lib/src/model/inline_response2007.dart
 lib/src/model/inline_response401.dart
+lib/src/model/instance.dart
+lib/src/model/instance_platforms.dart
 lib/src/model/limited_unity_package.dart
 lib/src/model/limited_user.dart
 lib/src/model/limited_world.dart
@@ -114,3 +118,5 @@ lib/src/model/world.dart
 lib/src/serializers.dart
 lib/vrchat_dart_generated.dart
 pubspec.yaml
+test/instance_platforms_test.dart
+test/instance_test.dart

@@ -36,7 +36,7 @@ class _$User extends User {
   @override
   final DeveloperType developerType;
   @override
-  final DateTime lastLogin;
+  final String lastLogin;
   @override
   final Platform lastPlatform;
   @override
@@ -50,11 +50,11 @@ class _$User extends User {
   @override
   final String friendKey;
   @override
-  final String? worldId;
+  final String worldId;
   @override
-  final String? instanceId;
+  final String instanceId;
   @override
-  final String? location;
+  final String location;
 
   factory _$User([void Function(UserBuilder)? updates]) =>
       (new UserBuilder()..update(updates)).build();
@@ -81,9 +81,9 @@ class _$User extends User {
       required this.dateJoined,
       required this.isFriend,
       required this.friendKey,
-      this.worldId,
-      this.instanceId,
-      this.location})
+      required this.worldId,
+      required this.instanceId,
+      required this.location})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, 'User', 'id');
     BuiltValueNullFieldError.checkNotNull(username, 'User', 'username');
@@ -113,6 +113,9 @@ class _$User extends User {
     BuiltValueNullFieldError.checkNotNull(dateJoined, 'User', 'dateJoined');
     BuiltValueNullFieldError.checkNotNull(isFriend, 'User', 'isFriend');
     BuiltValueNullFieldError.checkNotNull(friendKey, 'User', 'friendKey');
+    BuiltValueNullFieldError.checkNotNull(worldId, 'User', 'worldId');
+    BuiltValueNullFieldError.checkNotNull(instanceId, 'User', 'instanceId');
+    BuiltValueNullFieldError.checkNotNull(location, 'User', 'location');
   }
 
   @override
@@ -294,9 +297,9 @@ class UserBuilder implements Builder<User, UserBuilder> {
   set developerType(DeveloperType? developerType) =>
       _$this._developerType = developerType;
 
-  DateTime? _lastLogin;
-  DateTime? get lastLogin => _$this._lastLogin;
-  set lastLogin(DateTime? lastLogin) => _$this._lastLogin = lastLogin;
+  String? _lastLogin;
+  String? get lastLogin => _$this._lastLogin;
+  set lastLogin(String? lastLogin) => _$this._lastLogin = lastLogin;
 
   Platform? _lastPlatform;
   Platform? get lastPlatform => _$this._lastPlatform;
@@ -421,9 +424,9 @@ class UserBuilder implements Builder<User, UserBuilder> {
               dateJoined: BuiltValueNullFieldError.checkNotNull(dateJoined, 'User', 'dateJoined'),
               isFriend: BuiltValueNullFieldError.checkNotNull(isFriend, 'User', 'isFriend'),
               friendKey: BuiltValueNullFieldError.checkNotNull(friendKey, 'User', 'friendKey'),
-              worldId: worldId,
-              instanceId: instanceId,
-              location: location);
+              worldId: BuiltValueNullFieldError.checkNotNull(worldId, 'User', 'worldId'),
+              instanceId: BuiltValueNullFieldError.checkNotNull(instanceId, 'User', 'instanceId'),
+              location: BuiltValueNullFieldError.checkNotNull(location, 'User', 'location'));
     } catch (_) {
       late String _$failedField;
       try {

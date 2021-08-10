@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **heat** | **num** |  | [default to 0]
 **id** | **String** |  | 
 **imageUrl** | **String** |  | 
-**instances** | [**BuiltList&lt;JsonObject&gt;**](JsonObject.md) |  | [optional] 
+**instances** | [**BuiltList&lt;BuiltList&lt;JsonObject&gt;&gt;**](BuiltList.md) |  | [optional] 
 **labsPublicationDate** | **String** |  | 
 **name** | **String** |  | 
 **namespace** | **String** |  | 
@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 **tags** | **BuiltList&lt;String&gt;** |  | 
 **thumbnailImageUrl** | **String** |  | 
 **unityPackageUrlObject** | [**JsonObject**](.md) |  | 
-**unityPackages** | [**BuiltSet&lt;UnityPackage&gt;**](UnityPackage.md) |  | 
+**unityPackages** | [**BuiltList&lt;UnityPackage&gt;**](UnityPackage.md) |  | 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
 **version** | **num** |  | [default to 0]
 **visits** | **num** |  | [default to 0]

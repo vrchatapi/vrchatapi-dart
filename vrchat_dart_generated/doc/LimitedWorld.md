@@ -17,13 +17,13 @@ Name | Type | Description | Notes
 **thumbnailImageUrl** | **String** |  | 
 **releaseStatus** | **String** |  | 
 **organization** | **String** |  | 
-**tags** | [**BuiltList&lt;JsonObject&gt;**](JsonObject.md) |  | 
+**tags** | **BuiltList&lt;String&gt;** |  | 
 **favorites** | **num** |  | 
 **createdAt** | **String** |  | 
 **updatedAt** | **String** |  | 
 **publicationDate** | **String** |  | 
 **labsPublicationDate** | **String** |  | 
-**unityPackages** | [**BuiltSet&lt;LimitedUnityPackage&gt;**](LimitedUnityPackage.md) |  | 
+**unityPackages** | [**BuiltList&lt;LimitedUnityPackage&gt;**](LimitedUnityPackage.md) |  | 
 **popularity** | **num** |  | 
 **heat** | **num** |  | 
 **occupants** | **num** |  | 

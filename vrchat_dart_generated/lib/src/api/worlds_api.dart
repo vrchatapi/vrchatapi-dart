@@ -15,6 +15,7 @@ import 'package:vrchat_dart_generated/src/model/inline_object6.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2006.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2007.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response401.dart';
+import 'package:vrchat_dart_generated/src/model/instance.dart';
 import 'package:vrchat_dart_generated/src/model/limited_world.dart';
 import 'package:vrchat_dart_generated/src/model/world.dart';
 
@@ -688,6 +689,83 @@ class WorldsApi {
     );
   }
 
+  /// Get World Instance
+  /// Returns a worlds instance.
+  ///
+  /// Parameters:
+  /// * [worldId]
+  /// * [instanceId]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [Instance] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<Instance>> getWorldInstance({
+    required String worldId,
+    required String instanceId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/worlds/{worldId}/{instanceId}'
+        .replaceAll('{' r'worldId' '}', worldId.toString())
+        .replaceAll('{' r'instanceId' '}', instanceId.toString());
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    Instance _responseData;
+
+    try {
+      const _responseType = FullType(Instance);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as Instance;
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<Instance>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// Get World Metadata
   /// Returns a worlds custom metadata. This is currently believed to be unused. Metadata can be set with &#x60;updateWorld&#x60; and can be any arbitrary object.
   ///
@@ -838,7 +916,7 @@ class WorldsApi {
     );
   }
 
-  /// publishWorld
+  /// Publish World
   /// Publishes a world. You can only publish one world per week.
   ///
   /// Parameters:
@@ -1042,7 +1120,7 @@ class WorldsApi {
     );
   }
 
-  /// unpublishWorld
+  /// Unpublish World
   /// Unpublishes a world.
   ///
   /// Parameters:
