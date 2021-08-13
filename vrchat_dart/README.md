@@ -24,7 +24,7 @@ See [example_flutter](https://github.com/vrchatapi/vrchatapi-dart/tree/master/vr
 
 ## Contributing
 
-Contributions to [vrchat_dart_generated](https://pub.dev/packages/vrchat_dart_generated) should only be done to keep it up to date with the [specification](https://github.com/vrchatapi/specification). Clone the specification into the same parent folder as vrchatapi-dart and run `generate.sh` to generate the code.
+Contributions to [vrchat_dart_generated](https://pub.dev/packages/vrchat_dart_generated) should only be done to keep it up to date with the [specification](https://github.com/vrchatapi/specification). Run `generate.sh` to generate the code.
 
 Contributions to vrchat_dart are welcome, but do not add features that should be handled by the OpenAPI specification.
 
