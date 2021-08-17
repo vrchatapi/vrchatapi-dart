@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'limited_unity_package.g.dart';
 
-///
+/// LimitedUnityPackage
 ///
 /// Properties:
 /// * [platform]

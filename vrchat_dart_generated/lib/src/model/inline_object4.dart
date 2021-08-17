@@ -22,19 +22,17 @@ abstract class InlineObject4
 
   /// Always a zero in string form, despite how many parts uploaded.
   @BuiltValueField(wireName: r'nextPartNumber')
-  InlineObject4NextPartNumberEnum get nextPartNumber;
-  // enum nextPartNumberEnum {  0,  };
+  String get nextPartNumber;
 
   /// Always a zero in string form, despite how many parts uploaded.
   @BuiltValueField(wireName: r'maxParts')
-  InlineObject4MaxPartsEnum get maxParts;
-  // enum maxPartsEnum {  0,  };
+  String get maxParts;
 
   InlineObject4._();
 
   static void _initializeBuilder(InlineObject4Builder b) => b
-    ..nextPartNumber = const InlineObject4NextPartNumberEnum._('0')
-    ..maxParts = const InlineObject4MaxPartsEnum._('0');
+    ..nextPartNumber = '0'
+    ..maxParts = '0';
 
   factory InlineObject4([void updates(InlineObject4Builder b)]) =
       _$InlineObject4;
@@ -64,11 +62,11 @@ class _$InlineObject4Serializer implements StructuredSerializer<InlineObject4> {
     result
       ..add(r'nextPartNumber')
       ..add(serializers.serialize(object.nextPartNumber,
-          specifiedType: const FullType(InlineObject4NextPartNumberEnum)));
+          specifiedType: const FullType(String)));
     result
       ..add(r'maxParts')
       ..add(serializers.serialize(object.maxParts,
-          specifiedType: const FullType(InlineObject4MaxPartsEnum)));
+          specifiedType: const FullType(String)));
     return result;
   }
 
@@ -91,50 +89,14 @@ class _$InlineObject4Serializer implements StructuredSerializer<InlineObject4> {
           break;
         case r'nextPartNumber':
           result.nextPartNumber = serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(InlineObject4NextPartNumberEnum))
-              as InlineObject4NextPartNumberEnum;
+              specifiedType: const FullType(String)) as String;
           break;
         case r'maxParts':
           result.maxParts = serializers.deserialize(value,
-                  specifiedType: const FullType(InlineObject4MaxPartsEnum))
-              as InlineObject4MaxPartsEnum;
+              specifiedType: const FullType(String)) as String;
           break;
       }
     }
     return result.build();
   }
-}
-
-class InlineObject4NextPartNumberEnum extends EnumClass {
-  /// Always a zero in string form, despite how many parts uploaded.
-  @BuiltValueEnumConst(wireName: r'0')
-  static const InlineObject4NextPartNumberEnum n0 =
-      _$inlineObject4NextPartNumberEnum_n0;
-
-  static Serializer<InlineObject4NextPartNumberEnum> get serializer =>
-      _$inlineObject4NextPartNumberEnumSerializer;
-
-  const InlineObject4NextPartNumberEnum._(String name) : super(name);
-
-  static BuiltSet<InlineObject4NextPartNumberEnum> get values =>
-      _$inlineObject4NextPartNumberEnumValues;
-  static InlineObject4NextPartNumberEnum valueOf(String name) =>
-      _$inlineObject4NextPartNumberEnumValueOf(name);
-}
-
-class InlineObject4MaxPartsEnum extends EnumClass {
-  /// Always a zero in string form, despite how many parts uploaded.
-  @BuiltValueEnumConst(wireName: r'0')
-  static const InlineObject4MaxPartsEnum n0 = _$inlineObject4MaxPartsEnum_n0;
-
-  static Serializer<InlineObject4MaxPartsEnum> get serializer =>
-      _$inlineObject4MaxPartsEnumSerializer;
-
-  const InlineObject4MaxPartsEnum._(String name) : super(name);
-
-  static BuiltSet<InlineObject4MaxPartsEnum> get values =>
-      _$inlineObject4MaxPartsEnumValues;
-  static InlineObject4MaxPartsEnum valueOf(String name) =>
-      _$inlineObject4MaxPartsEnumValueOf(name);
 }

@@ -12,6 +12,8 @@ import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:vrchat_dart_generated/src/date_serializer.dart';
 import 'package:vrchat_dart_generated/src/model/date.dart';
 
+import 'package:vrchat_dart_generated/src/model/avatar.dart';
+import 'package:vrchat_dart_generated/src/model/avatar_unity_package_url_object.dart';
 import 'package:vrchat_dart_generated/src/model/config.dart';
 import 'package:vrchat_dart_generated/src/model/config_announcements.dart';
 import 'package:vrchat_dart_generated/src/model/config_download_urls.dart';
@@ -21,17 +23,25 @@ import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/deployment_group.dart';
 import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
+import 'package:vrchat_dart_generated/src/model/favorite.dart';
+import 'package:vrchat_dart_generated/src/model/favorite_group.dart';
+import 'package:vrchat_dart_generated/src/model/favorite_group_visibility.dart';
+import 'package:vrchat_dart_generated/src/model/favorite_type.dart';
 import 'package:vrchat_dart_generated/src/model/file.dart';
 import 'package:vrchat_dart_generated/src/model/file_data.dart';
 import 'package:vrchat_dart_generated/src/model/file_status.dart';
 import 'package:vrchat_dart_generated/src/model/file_version.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object1.dart';
+import 'package:vrchat_dart_generated/src/model/inline_object10.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object2.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object3.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object4.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object5.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object6.dart';
+import 'package:vrchat_dart_generated/src/model/inline_object7.dart';
+import 'package:vrchat_dart_generated/src/model/inline_object8.dart';
+import 'package:vrchat_dart_generated/src/model/inline_object9.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response200.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2001.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2002.dart';
@@ -62,6 +72,8 @@ import 'package:vrchat_dart_generated/src/model/world.dart';
 part 'serializers.g.dart';
 
 @SerializersFor([
+  Avatar,
+  AvatarUnityPackageUrlObject,
   Config,
   ConfigAnnouncements,
   ConfigDownloadUrls,
@@ -71,17 +83,25 @@ part 'serializers.g.dart';
   DeploymentGroup,
   DeveloperType,
   Error,
+  Favorite,
+  FavoriteGroup,
+  FavoriteGroupVisibility,
+  FavoriteType,
   File,
   FileData,
   FileStatus,
   FileVersion,
   InlineObject,
   InlineObject1,
+  InlineObject10,
   InlineObject2,
   InlineObject3,
   InlineObject4,
   InlineObject5,
   InlineObject6,
+  InlineObject7,
+  InlineObject8,
+  InlineObject9,
   InlineResponse200,
   InlineResponse2001,
   InlineResponse2002,
@@ -110,6 +130,18 @@ part 'serializers.g.dart';
   World,
 ])
 Serializers serializers = (_$serializers.toBuilder()
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Avatar)]),
+        () => ListBuilder<Avatar>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(FavoriteGroup)]),
+        () => ListBuilder<FavoriteGroup>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Favorite)]),
+        () => ListBuilder<Favorite>(),
+      )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(File)]),
         () => ListBuilder<File>(),

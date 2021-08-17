@@ -9,7 +9,7 @@ import 'package:built_value/serializer.dart';
 
 part 'limited_world.g.dart';
 
-///
+/// LimitedWorld
 ///
 /// Properties:
 /// * [id]
@@ -67,10 +67,10 @@ abstract class LimitedWorld
   num get favorites;
 
   @BuiltValueField(wireName: r'created_at')
-  String get createdAt;
+  DateTime get createdAt;
 
   @BuiltValueField(wireName: r'updated_at')
-  String get updatedAt;
+  DateTime get updatedAt;
 
   @BuiltValueField(wireName: r'publicationDate')
   String get publicationDate;
@@ -158,11 +158,11 @@ class _$LimitedWorldSerializer implements StructuredSerializer<LimitedWorld> {
     result
       ..add(r'created_at')
       ..add(serializers.serialize(object.createdAt,
-          specifiedType: const FullType(String)));
+          specifiedType: const FullType(DateTime)));
     result
       ..add(r'updated_at')
       ..add(serializers.serialize(object.updatedAt,
-          specifiedType: const FullType(String)));
+          specifiedType: const FullType(DateTime)));
     result
       ..add(r'publicationDate')
       ..add(serializers.serialize(object.publicationDate,
@@ -250,11 +250,11 @@ class _$LimitedWorldSerializer implements StructuredSerializer<LimitedWorld> {
           break;
         case r'created_at':
           result.createdAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(DateTime)) as DateTime;
           break;
         case r'updated_at':
           result.updatedAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(DateTime)) as DateTime;
           break;
         case r'publicationDate':
           result.publicationDate = serializers.deserialize(value,

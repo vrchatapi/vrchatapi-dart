@@ -41,7 +41,7 @@ For more information, please visit [https://github.com/VRChatAPI](https://github
 To use the package from [pub.dev](https://pub.dev), please include the following in pubspec.yaml
 ```yaml
 dependencies:
-  vrchat_dart_generated: 1.3.5
+  vrchat_dart_generated: 1.3.6
 ```
 
 ### Github
@@ -94,6 +94,21 @@ Class | Method | HTTP request | Description
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**verify2FA**](doc/AuthenticationApi.md#verify2fa) | **POST** /auth/twofactorauth/totp/verify | Verify 2FA code
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**verifyAuthToken**](doc/AuthenticationApi.md#verifyauthtoken) | **GET** /auth | Verify Auth Token
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**verifyRecoveryCode**](doc/AuthenticationApi.md#verifyrecoverycode) | **POST** /auth/twofactorauth/otp/verify | Verify 2FA code with Recovery code
+[*AvatarsApi*](doc/AvatarsApi.md) | [**createAvatar**](doc/AvatarsApi.md#createavatar) | **POST** /avatars | Create Avatar
+[*AvatarsApi*](doc/AvatarsApi.md) | [**deleteAvatar**](doc/AvatarsApi.md#deleteavatar) | **DELETE** /avatars/{avatarId} | Delete Avatar
+[*AvatarsApi*](doc/AvatarsApi.md) | [**getAvatar**](doc/AvatarsApi.md#getavatar) | **GET** /avatars/{avatarId} | Get Avatar
+[*AvatarsApi*](doc/AvatarsApi.md) | [**getFavoritedAvatars**](doc/AvatarsApi.md#getfavoritedavatars) | **GET** /avatars/favorites | List Favorited Avatars
+[*AvatarsApi*](doc/AvatarsApi.md) | [**searchAvatars**](doc/AvatarsApi.md#searchavatars) | **GET** /avatars | Search Avatars
+[*AvatarsApi*](doc/AvatarsApi.md) | [**selectAvatar**](doc/AvatarsApi.md#selectavatar) | **PUT** /avatars/{avatarId}/select | Select Avatar
+[*AvatarsApi*](doc/AvatarsApi.md) | [**updateAvatar**](doc/AvatarsApi.md#updateavatar) | **PUT** /avatars/{avatarId} | Update Avatar
+[*FavoritesApi*](doc/FavoritesApi.md) | [**addFavorite**](doc/FavoritesApi.md#addfavorite) | **POST** /favorites | Add Favorite
+[*FavoritesApi*](doc/FavoritesApi.md) | [**clearFavoriteGroup**](doc/FavoritesApi.md#clearfavoritegroup) | **DELETE** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Clear Favorite Group
+[*FavoritesApi*](doc/FavoritesApi.md) | [**getFavorite**](doc/FavoritesApi.md#getfavorite) | **GET** /favorites/{favoriteId} | Show Favorite
+[*FavoritesApi*](doc/FavoritesApi.md) | [**getFavoriteGroup**](doc/FavoritesApi.md#getfavoritegroup) | **GET** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Show Favorite Group
+[*FavoritesApi*](doc/FavoritesApi.md) | [**getFavoriteGroups**](doc/FavoritesApi.md#getfavoritegroups) | **GET** /favorite/groups | List Favorite Groups
+[*FavoritesApi*](doc/FavoritesApi.md) | [**getFavorites**](doc/FavoritesApi.md#getfavorites) | **GET** /favorites | List Favorites
+[*FavoritesApi*](doc/FavoritesApi.md) | [**removeFavorite**](doc/FavoritesApi.md#removefavorite) | **DELETE** /favorites/{favoriteId} | Remove Favorite
+[*FavoritesApi*](doc/FavoritesApi.md) | [**updateFavoriteGroup**](doc/FavoritesApi.md#updatefavoritegroup) | **PUT** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Update Favorite Group
 [*FilesApi*](doc/FilesApi.md) | [**createFile**](doc/FilesApi.md#createfile) | **POST** /file | Create File
 [*FilesApi*](doc/FilesApi.md) | [**createFileVersion**](doc/FilesApi.md#createfileversion) | **POST** /file/{fileId} | Create File Version
 [*FilesApi*](doc/FilesApi.md) | [**deleteFile**](doc/FilesApi.md#deletefile) | **DELETE** /file/{fileId} | Delete File
@@ -131,7 +146,7 @@ Class | Method | HTTP request | Description
 [*WorldsApi*](doc/WorldsApi.md) | [**getWorld**](doc/WorldsApi.md#getworld) | **GET** /worlds/{worldId} | Get World by ID
 [*WorldsApi*](doc/WorldsApi.md) | [**getWorldInstance**](doc/WorldsApi.md#getworldinstance) | **GET** /worlds/{worldId}/{instanceId} | Get World Instance
 [*WorldsApi*](doc/WorldsApi.md) | [**getWorldMetadata**](doc/WorldsApi.md#getworldmetadata) | **GET** /worlds/{worldId}/metadata | Get World Metadata
-[*WorldsApi*](doc/WorldsApi.md) | [**getWorldPublish**](doc/WorldsApi.md#getworldpublish) | **GET** /worlds/{worldId}/publish | Get World Publish Status
+[*WorldsApi*](doc/WorldsApi.md) | [**getWorldPublishStatus**](doc/WorldsApi.md#getworldpublishstatus) | **GET** /worlds/{worldId}/publish | Get World Publish Status
 [*WorldsApi*](doc/WorldsApi.md) | [**publishWorld**](doc/WorldsApi.md#publishworld) | **PUT** /worlds/{worldId}/publish | Publish World
 [*WorldsApi*](doc/WorldsApi.md) | [**searchWorlds**](doc/WorldsApi.md#searchworlds) | **GET** /worlds | Search All Worlds
 [*WorldsApi*](doc/WorldsApi.md) | [**unpublishWorld**](doc/WorldsApi.md#unpublishworld) | **DELETE** /worlds/{worldId}/publish | Unpublish World
@@ -140,6 +155,8 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [Avatar](doc/Avatar.md)
+ - [AvatarUnityPackageUrlObject](doc/AvatarUnityPackageUrlObject.md)
  - [Config](doc/Config.md)
  - [ConfigAnnouncements](doc/ConfigAnnouncements.md)
  - [ConfigDownloadUrls](doc/ConfigDownloadUrls.md)
@@ -149,17 +166,25 @@ Class | Method | HTTP request | Description
  - [DeploymentGroup](doc/DeploymentGroup.md)
  - [DeveloperType](doc/DeveloperType.md)
  - [Error](doc/Error.md)
+ - [Favorite](doc/Favorite.md)
+ - [FavoriteGroup](doc/FavoriteGroup.md)
+ - [FavoriteGroupVisibility](doc/FavoriteGroupVisibility.md)
+ - [FavoriteType](doc/FavoriteType.md)
  - [File](doc/File.md)
  - [FileData](doc/FileData.md)
  - [FileStatus](doc/FileStatus.md)
  - [FileVersion](doc/FileVersion.md)
  - [InlineObject](doc/InlineObject.md)
  - [InlineObject1](doc/InlineObject1.md)
+ - [InlineObject10](doc/InlineObject10.md)
  - [InlineObject2](doc/InlineObject2.md)
  - [InlineObject3](doc/InlineObject3.md)
  - [InlineObject4](doc/InlineObject4.md)
  - [InlineObject5](doc/InlineObject5.md)
  - [InlineObject6](doc/InlineObject6.md)
+ - [InlineObject7](doc/InlineObject7.md)
+ - [InlineObject8](doc/InlineObject8.md)
+ - [InlineObject9](doc/InlineObject9.md)
  - [InlineResponse200](doc/InlineResponse200.md)
  - [InlineResponse2001](doc/InlineResponse2001.md)
  - [InlineResponse2002](doc/InlineResponse2002.md)

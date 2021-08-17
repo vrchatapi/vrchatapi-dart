@@ -150,7 +150,20 @@ class WorldsApi {
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
+            'where': '',
+          },
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
         ...?extra,
       },
       validateStatus: validateStatus,
@@ -723,7 +736,20 @@ class WorldsApi {
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
+            'where': '',
+          },
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
         ...?extra,
       },
       validateStatus: validateStatus,
@@ -767,7 +793,7 @@ class WorldsApi {
   }
 
   /// Get World Metadata
-  /// Returns a worlds custom metadata. This is currently believed to be unused. Metadata can be set with &#x60;updateWorld&#x60; and can be any arbitrary object.
+  /// Return a worlds custom metadata. This is currently believed to be unused. Metadata can be set with &#x60;updateWorld&#x60; and can be any arbitrary object.
   ///
   /// Parameters:
   /// * [worldId]
@@ -798,7 +824,20 @@ class WorldsApi {
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
+            'where': '',
+          },
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
         ...?extra,
       },
       validateStatus: validateStatus,
@@ -842,7 +881,7 @@ class WorldsApi {
   }
 
   /// Get World Publish Status
-  /// Returns a worlds publish status. This is currently believed to be unused.
+  /// Returns a worlds publish status.
   ///
   /// Parameters:
   /// * [worldId]
@@ -855,8 +894,7 @@ class WorldsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [InlineResponse2007] as data
   /// Throws [DioError] if API call or serialization fails
-  @Deprecated('This operation has been deprecated')
-  Future<Response<InlineResponse2007>> getWorldPublish({
+  Future<Response<InlineResponse2007>> getWorldPublishStatus({
     required String worldId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -873,7 +911,20 @@ class WorldsApi {
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
+            'where': '',
+          },
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
         ...?extra,
       },
       validateStatus: validateStatus,
@@ -917,7 +968,7 @@ class WorldsApi {
   }
 
   /// Publish World
-  /// Publishes a world. You can only publish one world per week.
+  /// Publish a world. You can only publish one world per week.
   ///
   /// Parameters:
   /// * [worldId]
@@ -947,7 +998,20 @@ class WorldsApi {
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
+            'where': '',
+          },
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
         ...?extra,
       },
       validateStatus: validateStatus,
@@ -1121,7 +1185,7 @@ class WorldsApi {
   }
 
   /// Unpublish World
-  /// Unpublishes a world.
+  /// Unpublish a world.
   ///
   /// Parameters:
   /// * [worldId]
@@ -1151,7 +1215,20 @@ class WorldsApi {
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
+            'where': '',
+          },
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
         ...?extra,
       },
       validateStatus: validateStatus,
@@ -1201,7 +1278,20 @@ class WorldsApi {
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
+            'where': '',
+          },
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
         ...?extra,
       },
       contentType: 'application/json',

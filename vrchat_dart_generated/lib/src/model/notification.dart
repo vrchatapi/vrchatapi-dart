@@ -8,14 +8,14 @@ import 'package:built_value/serializer.dart';
 
 part 'notification.g.dart';
 
-///
+/// Notification
 ///
 /// Properties:
 /// * [id]
 /// * [senderUserId]
 /// * [senderUsername]
 /// * [type]
-/// * [message] -
+/// * [message]
 /// * [details] - **NOTICE:** This is not a JSON object, this is a json **encoded** object, meaning you have to json-de-encode to get the NotificationDetail object depending on the NotificationType.
 /// * [seen]
 /// * [createdAt]
@@ -34,7 +34,6 @@ abstract class Notification
   NotificationType get type;
   // enum typeEnum {  all,  broadcast,  friendRequest,  invite,  message,  RequestInvite,  votetokick,  };
 
-  ///
   @BuiltValueField(wireName: r'message')
   String get message;
 

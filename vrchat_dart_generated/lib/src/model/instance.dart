@@ -10,7 +10,7 @@ import 'package:built_value/serializer.dart';
 
 part 'instance.g.dart';
 
-///
+/// Instance
 ///
 /// Properties:
 /// * [active]

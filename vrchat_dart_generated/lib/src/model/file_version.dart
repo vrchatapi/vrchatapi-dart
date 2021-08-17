@@ -9,7 +9,7 @@ import 'package:built_value/serializer.dart';
 
 part 'file_version.g.dart';
 
-///
+/// FileVersion
 ///
 /// Properties:
 /// * [version] - Incremental version counter, can only be increased.

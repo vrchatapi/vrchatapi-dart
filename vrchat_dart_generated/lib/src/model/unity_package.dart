@@ -9,7 +9,7 @@ import 'package:built_value/serializer.dart';
 
 part 'unity_package.g.dart';
 
-///
+/// UnityPackage
 ///
 /// Properties:
 /// * [id]
@@ -28,22 +28,22 @@ abstract class UnityPackage
   String get id;
 
   @BuiltValueField(wireName: r'assetUrl')
-  String get assetUrl;
+  String? get assetUrl;
 
   @BuiltValueField(wireName: r'assetUrlObject')
-  JsonObject get assetUrlObject;
+  JsonObject? get assetUrlObject;
 
   @BuiltValueField(wireName: r'pluginUrl')
-  String get pluginUrl;
+  String? get pluginUrl;
 
   @BuiltValueField(wireName: r'pluginUrlObject')
-  JsonObject get pluginUrlObject;
+  JsonObject? get pluginUrlObject;
 
   @BuiltValueField(wireName: r'unityVersion')
   String get unityVersion;
 
   @BuiltValueField(wireName: r'unitySortNumber')
-  num get unitySortNumber;
+  num? get unitySortNumber;
 
   @BuiltValueField(wireName: r'assetVersion')
   num get assetVersion;
@@ -57,7 +57,8 @@ abstract class UnityPackage
 
   UnityPackage._();
 
-  static void _initializeBuilder(UnityPackageBuilder b) => b;
+  static void _initializeBuilder(UnityPackageBuilder b) =>
+      b..unityVersion = '5.3.4p1';
 
   factory UnityPackage([void updates(UnityPackageBuilder b)]) = _$UnityPackage;
 
@@ -80,30 +81,40 @@ class _$UnityPackageSerializer implements StructuredSerializer<UnityPackage> {
       ..add(r'id')
       ..add(serializers.serialize(object.id,
           specifiedType: const FullType(String)));
-    result
-      ..add(r'assetUrl')
-      ..add(serializers.serialize(object.assetUrl,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'assetUrlObject')
-      ..add(serializers.serialize(object.assetUrlObject,
-          specifiedType: const FullType(JsonObject)));
-    result
-      ..add(r'pluginUrl')
-      ..add(serializers.serialize(object.pluginUrl,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'pluginUrlObject')
-      ..add(serializers.serialize(object.pluginUrlObject,
-          specifiedType: const FullType(JsonObject)));
+    if (object.assetUrl != null) {
+      result
+        ..add(r'assetUrl')
+        ..add(serializers.serialize(object.assetUrl,
+            specifiedType: const FullType(String)));
+    }
+    if (object.assetUrlObject != null) {
+      result
+        ..add(r'assetUrlObject')
+        ..add(serializers.serialize(object.assetUrlObject,
+            specifiedType: const FullType(JsonObject)));
+    }
+    if (object.pluginUrl != null) {
+      result
+        ..add(r'pluginUrl')
+        ..add(serializers.serialize(object.pluginUrl,
+            specifiedType: const FullType(String)));
+    }
+    if (object.pluginUrlObject != null) {
+      result
+        ..add(r'pluginUrlObject')
+        ..add(serializers.serialize(object.pluginUrlObject,
+            specifiedType: const FullType(JsonObject)));
+    }
     result
       ..add(r'unityVersion')
       ..add(serializers.serialize(object.unityVersion,
           specifiedType: const FullType(String)));
-    result
-      ..add(r'unitySortNumber')
-      ..add(serializers.serialize(object.unitySortNumber,
-          specifiedType: const FullType(num)));
+    if (object.unitySortNumber != null) {
+      result
+        ..add(r'unitySortNumber')
+        ..add(serializers.serialize(object.unitySortNumber,
+            specifiedType: const FullType(num)));
+    }
     result
       ..add(r'assetVersion')
       ..add(serializers.serialize(object.assetVersion,

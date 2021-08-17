@@ -30,9 +30,9 @@ class _$LimitedWorld extends LimitedWorld {
   @override
   final num favorites;
   @override
-  final String createdAt;
+  final DateTime createdAt;
   @override
-  final String updatedAt;
+  final DateTime updatedAt;
   @override
   final String publicationDate;
   @override
@@ -260,13 +260,13 @@ class LimitedWorldBuilder
   num? get favorites => _$this._favorites;
   set favorites(num? favorites) => _$this._favorites = favorites;
 
-  String? _createdAt;
-  String? get createdAt => _$this._createdAt;
-  set createdAt(String? createdAt) => _$this._createdAt = createdAt;
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  String? _updatedAt;
-  String? get updatedAt => _$this._updatedAt;
-  set updatedAt(String? updatedAt) => _$this._updatedAt = updatedAt;
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
   String? _publicationDate;
   String? get publicationDate => _$this._publicationDate;

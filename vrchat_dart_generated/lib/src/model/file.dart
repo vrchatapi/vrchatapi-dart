@@ -10,11 +10,11 @@ import 'package:built_value/serializer.dart';
 
 part 'file.g.dart';
 
-///
+/// File
 ///
 /// Properties:
 /// * [id]
-/// * [name] -
+/// * [name]
 /// * [ownerId]
 /// * [mimeType]
 /// * [extension_]
@@ -24,7 +24,6 @@ abstract class File implements Built<File, FileBuilder> {
   @BuiltValueField(wireName: r'id')
   String get id;
 
-  ///
   @BuiltValueField(wireName: r'name')
   String get name;
 

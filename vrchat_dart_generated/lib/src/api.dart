@@ -9,6 +9,8 @@ import 'package:vrchat_dart_generated/src/auth/api_key_auth.dart';
 import 'package:vrchat_dart_generated/src/auth/basic_auth.dart';
 import 'package:vrchat_dart_generated/src/auth/oauth.dart';
 import 'package:vrchat_dart_generated/src/api/authentication_api.dart';
+import 'package:vrchat_dart_generated/src/api/avatars_api.dart';
+import 'package:vrchat_dart_generated/src/api/favorites_api.dart';
 import 'package:vrchat_dart_generated/src/api/files_api.dart';
 import 'package:vrchat_dart_generated/src/api/friends_api.dart';
 import 'package:vrchat_dart_generated/src/api/notifications_api.dart';
@@ -76,6 +78,18 @@ class VrchatDartGenerated {
   /// by doing that all interceptors will not be executed
   AuthenticationApi getAuthenticationApi() {
     return AuthenticationApi(dio, serializers);
+  }
+
+  /// Get AvatarsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  AvatarsApi getAvatarsApi() {
+    return AvatarsApi(dio, serializers);
+  }
+
+  /// Get FavoritesApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  FavoritesApi getFavoritesApi() {
+    return FavoritesApi(dio, serializers);
   }
 
   /// Get FilesApi instance, base route and serializer can be overridden by a given but be careful,

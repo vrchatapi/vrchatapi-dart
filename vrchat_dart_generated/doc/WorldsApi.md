@@ -17,7 +17,7 @@ Method | HTTP request | Description
 [**getWorld**](WorldsApi.md#getworld) | **GET** /worlds/{worldId} | Get World by ID
 [**getWorldInstance**](WorldsApi.md#getworldinstance) | **GET** /worlds/{worldId}/{instanceId} | Get World Instance
 [**getWorldMetadata**](WorldsApi.md#getworldmetadata) | **GET** /worlds/{worldId}/metadata | Get World Metadata
-[**getWorldPublish**](WorldsApi.md#getworldpublish) | **GET** /worlds/{worldId}/publish | Get World Publish Status
+[**getWorldPublishStatus**](WorldsApi.md#getworldpublishstatus) | **GET** /worlds/{worldId}/publish | Get World Publish Status
 [**publishWorld**](WorldsApi.md#publishworld) | **PUT** /worlds/{worldId}/publish | Publish World
 [**searchWorlds**](WorldsApi.md#searchworlds) | **GET** /worlds | Search All Worlds
 [**unpublishWorld**](WorldsApi.md#unpublishworld) | **DELETE** /worlds/{worldId}/publish | Unpublish World
@@ -77,6 +77,14 @@ Delete a world. Notice a world is never fully \"deleted\", only its ReleaseStatu
 ### Example 
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: apiKeyCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
 final String worldId = worldId_example; // String | 
@@ -100,7 +108,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -385,6 +393,14 @@ Returns a worlds instance.
 ### Example 
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: apiKeyCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
 final String worldId = worldId_example; // String | 
@@ -411,7 +427,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -425,11 +441,19 @@ No authorization required
 
 Get World Metadata
 
-Returns a worlds custom metadata. This is currently believed to be unused. Metadata can be set with `updateWorld` and can be any arbitrary object.
+Return a worlds custom metadata. This is currently believed to be unused. Metadata can be set with `updateWorld` and can be any arbitrary object.
 
 ### Example 
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: apiKeyCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
 final String worldId = worldId_example; // String | 
@@ -454,7 +478,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -463,25 +487,33 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getWorldPublish**
-> InlineResponse2007 getWorldPublish(worldId)
+# **getWorldPublishStatus**
+> InlineResponse2007 getWorldPublishStatus(worldId)
 
 Get World Publish Status
 
-Returns a worlds publish status. This is currently believed to be unused.
+Returns a worlds publish status.
 
 ### Example 
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: apiKeyCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
 final String worldId = worldId_example; // String | 
 
 try { 
-    final response = api.getWorldPublish(worldId);
+    final response = api.getWorldPublishStatus(worldId);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling WorldsApi->getWorldPublish: $e\n');
+    print('Exception when calling WorldsApi->getWorldPublishStatus: $e\n');
 }
 ```
 
@@ -497,7 +529,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -511,11 +543,19 @@ No authorization required
 
 Publish World
 
-Publishes a world. You can only publish one world per week.
+Publish a world. You can only publish one world per week.
 
 ### Example 
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: apiKeyCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
 final String worldId = worldId_example; // String | 
@@ -539,7 +579,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -630,11 +670,19 @@ Name | Type | Description  | Notes
 
 Unpublish World
 
-Unpublishes a world.
+Unpublish a world.
 
 ### Example 
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: apiKeyCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
 final String worldId = worldId_example; // String | 
@@ -658,7 +706,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -677,6 +725,14 @@ Update information about a specific World.
 ### Example 
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: apiKeyCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
 final String worldId = worldId_example; // String | 
@@ -703,7 +759,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 

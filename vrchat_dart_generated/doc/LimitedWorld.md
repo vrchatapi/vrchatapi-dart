@@ -19,8 +19,8 @@ Name | Type | Description | Notes
 **organization** | **String** |  | 
 **tags** | **BuiltList&lt;String&gt;** |  | 
 **favorites** | **num** |  | 
-**createdAt** | **String** |  | 
-**updatedAt** | **String** |  | 
+**createdAt** | [**DateTime**](DateTime.md) |  | 
+**updatedAt** | [**DateTime**](DateTime.md) |  | 
 **publicationDate** | **String** |  | 
 **labsPublicationDate** | **String** |  | 
 **unityPackages** | [**BuiltList&lt;LimitedUnityPackage&gt;**](LimitedUnityPackage.md) |  | 

@@ -7,6 +7,8 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
+      ..add(Avatar.serializer)
+      ..add(AvatarUnityPackageUrlObject.serializer)
       ..add(Config.serializer)
       ..add(ConfigAnnouncements.serializer)
       ..add(ConfigDownloadUrls.serializer)
@@ -16,6 +18,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(DeploymentGroup.serializer)
       ..add(DeveloperType.serializer)
       ..add(Error.serializer)
+      ..add(Favorite.serializer)
+      ..add(FavoriteGroup.serializer)
+      ..add(FavoriteGroupVisibility.serializer)
+      ..add(FavoriteType.serializer)
       ..add(File.serializer)
       ..add(FileData.serializer)
       ..add(FileDataCategoryEnum.serializer)
@@ -23,13 +29,15 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(FileVersion.serializer)
       ..add(InlineObject.serializer)
       ..add(InlineObject1.serializer)
+      ..add(InlineObject10.serializer)
       ..add(InlineObject2.serializer)
       ..add(InlineObject3.serializer)
       ..add(InlineObject4.serializer)
-      ..add(InlineObject4MaxPartsEnum.serializer)
-      ..add(InlineObject4NextPartNumberEnum.serializer)
       ..add(InlineObject5.serializer)
       ..add(InlineObject6.serializer)
+      ..add(InlineObject7.serializer)
+      ..add(InlineObject8.serializer)
+      ..add(InlineObject9.serializer)
       ..add(InlineResponse200.serializer)
       ..add(InlineResponse2001.serializer)
       ..add(InlineResponse2002.serializer)
@@ -73,6 +81,24 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(JsonObject)]),
           () => new ListBuilder<JsonObject>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
@@ -143,6 +169,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltSet, const [const FullType(FileVersion)]),
           () => new SetBuilder<FileVersion>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltSet, const [const FullType(UnityPackage)]),
+          () => new SetBuilder<UnityPackage>())
       ..addBuilderFactory(
           const FullType(BuiltSet, const [const FullType(ConfigAnnouncements)]),
           () => new SetBuilder<ConfigAnnouncements>())

@@ -9,12 +9,12 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
-**assetUrl** | **String** |  | 
-**assetUrlObject** | [**JsonObject**](.md) |  | 
-**pluginUrl** | **String** |  | 
-**pluginUrlObject** | [**JsonObject**](.md) |  | 
-**unityVersion** | **String** |  | 
-**unitySortNumber** | **num** |  | 
+**assetUrl** | **String** |  | [optional] 
+**assetUrlObject** | [**JsonObject**](.md) |  | [optional] 
+**pluginUrl** | **String** |  | [optional] 
+**pluginUrlObject** | [**JsonObject**](.md) |  | [optional] 
+**unityVersion** | **String** |  | [default to '5.3.4p1']
+**unitySortNumber** | **num** |  | [optional] 
 **assetVersion** | **num** |  | 
 **platform** | [**Platform**](Platform.md) |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | 

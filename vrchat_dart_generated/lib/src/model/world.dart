@@ -11,7 +11,7 @@ import 'package:built_value/serializer.dart';
 
 part 'world.g.dart';
 
-///
+/// World
 ///
 /// Properties:
 /// * [assetUrl]

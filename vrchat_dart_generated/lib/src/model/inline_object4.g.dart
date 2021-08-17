@@ -6,111 +6,13 @@ part of 'inline_object4.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const InlineObject4NextPartNumberEnum _$inlineObject4NextPartNumberEnum_n0 =
-    const InlineObject4NextPartNumberEnum._('n0');
-
-InlineObject4NextPartNumberEnum _$inlineObject4NextPartNumberEnumValueOf(
-    String name) {
-  switch (name) {
-    case 'n0':
-      return _$inlineObject4NextPartNumberEnum_n0;
-    default:
-      throw new ArgumentError(name);
-  }
-}
-
-final BuiltSet<InlineObject4NextPartNumberEnum>
-    _$inlineObject4NextPartNumberEnumValues =
-    new BuiltSet<InlineObject4NextPartNumberEnum>(const <
-        InlineObject4NextPartNumberEnum>[
-  _$inlineObject4NextPartNumberEnum_n0,
-]);
-
-const InlineObject4MaxPartsEnum _$inlineObject4MaxPartsEnum_n0 =
-    const InlineObject4MaxPartsEnum._('n0');
-
-InlineObject4MaxPartsEnum _$inlineObject4MaxPartsEnumValueOf(String name) {
-  switch (name) {
-    case 'n0':
-      return _$inlineObject4MaxPartsEnum_n0;
-    default:
-      throw new ArgumentError(name);
-  }
-}
-
-final BuiltSet<InlineObject4MaxPartsEnum> _$inlineObject4MaxPartsEnumValues =
-    new BuiltSet<InlineObject4MaxPartsEnum>(const <InlineObject4MaxPartsEnum>[
-  _$inlineObject4MaxPartsEnum_n0,
-]);
-
-Serializer<InlineObject4NextPartNumberEnum>
-    _$inlineObject4NextPartNumberEnumSerializer =
-    new _$InlineObject4NextPartNumberEnumSerializer();
-Serializer<InlineObject4MaxPartsEnum> _$inlineObject4MaxPartsEnumSerializer =
-    new _$InlineObject4MaxPartsEnumSerializer();
-
-class _$InlineObject4NextPartNumberEnumSerializer
-    implements PrimitiveSerializer<InlineObject4NextPartNumberEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'n0': '0',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    '0': 'n0',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[InlineObject4NextPartNumberEnum];
-  @override
-  final String wireName = 'InlineObject4NextPartNumberEnum';
-
-  @override
-  Object serialize(
-          Serializers serializers, InlineObject4NextPartNumberEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
-
-  @override
-  InlineObject4NextPartNumberEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InlineObject4NextPartNumberEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
-}
-
-class _$InlineObject4MaxPartsEnumSerializer
-    implements PrimitiveSerializer<InlineObject4MaxPartsEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'n0': '0',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    '0': 'n0',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[InlineObject4MaxPartsEnum];
-  @override
-  final String wireName = 'InlineObject4MaxPartsEnum';
-
-  @override
-  Object serialize(Serializers serializers, InlineObject4MaxPartsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
-
-  @override
-  InlineObject4MaxPartsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InlineObject4MaxPartsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
-}
-
 class _$InlineObject4 extends InlineObject4 {
   @override
   final BuiltSet<String>? etags;
   @override
-  final InlineObject4NextPartNumberEnum nextPartNumber;
+  final String nextPartNumber;
   @override
-  final InlineObject4MaxPartsEnum maxParts;
+  final String maxParts;
 
   factory _$InlineObject4([void Function(InlineObject4Builder)? updates]) =>
       (new InlineObject4Builder()..update(updates)).build();
@@ -164,15 +66,14 @@ class InlineObject4Builder
   SetBuilder<String> get etags => _$this._etags ??= new SetBuilder<String>();
   set etags(SetBuilder<String>? etags) => _$this._etags = etags;
 
-  InlineObject4NextPartNumberEnum? _nextPartNumber;
-  InlineObject4NextPartNumberEnum? get nextPartNumber => _$this._nextPartNumber;
-  set nextPartNumber(InlineObject4NextPartNumberEnum? nextPartNumber) =>
+  String? _nextPartNumber;
+  String? get nextPartNumber => _$this._nextPartNumber;
+  set nextPartNumber(String? nextPartNumber) =>
       _$this._nextPartNumber = nextPartNumber;
 
-  InlineObject4MaxPartsEnum? _maxParts;
-  InlineObject4MaxPartsEnum? get maxParts => _$this._maxParts;
-  set maxParts(InlineObject4MaxPartsEnum? maxParts) =>
-      _$this._maxParts = maxParts;
+  String? _maxParts;
+  String? get maxParts => _$this._maxParts;
+  set maxParts(String? maxParts) => _$this._maxParts = maxParts;
 
   InlineObject4Builder() {
     InlineObject4._initializeBuilder(this);
