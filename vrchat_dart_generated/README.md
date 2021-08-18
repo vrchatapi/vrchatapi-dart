@@ -41,7 +41,7 @@ For more information, please visit [https://github.com/VRChatAPI](https://github
 To use the package from [pub.dev](https://pub.dev), please include the following in pubspec.yaml
 ```yaml
 dependencies:
-  vrchat_dart_generated: 1.3.6
+  vrchat_dart_generated: 1.3.7
 ```
 
 ### Github
@@ -129,6 +129,12 @@ Class | Method | HTTP request | Description
 [*NotificationsApi*](doc/NotificationsApi.md) | [**deleteNotification**](doc/NotificationsApi.md#deletenotification) | **PUT** /auth/user/notifications/{notificationId}/hide | Delete Notification
 [*NotificationsApi*](doc/NotificationsApi.md) | [**getNotifications**](doc/NotificationsApi.md#getnotifications) | **GET** /auth/user/notifications | List Notifications
 [*NotificationsApi*](doc/NotificationsApi.md) | [**markNotificationAsRead**](doc/NotificationsApi.md#marknotificationasread) | **PUT** /auth/user/notifications/{notificationId}/see | Mark As Read
+[*PlayermoderationApi*](doc/PlayermoderationApi.md) | [**clearAllPlayerModerations**](doc/PlayermoderationApi.md#clearallplayermoderations) | **DELETE** /auth/user/playermoderations | Clear All Player Moderations
+[*PlayermoderationApi*](doc/PlayermoderationApi.md) | [**deletePlayerModeration**](doc/PlayermoderationApi.md#deleteplayermoderation) | **DELETE** /auth/user/playermoderations/{playerModerationId} | Delete Player Moderation
+[*PlayermoderationApi*](doc/PlayermoderationApi.md) | [**getPlayerModeration**](doc/PlayermoderationApi.md#getplayermoderation) | **GET** /auth/user/playermoderations/{playerModerationId} | Get Player Moderation
+[*PlayermoderationApi*](doc/PlayermoderationApi.md) | [**getPlayerModerations**](doc/PlayermoderationApi.md#getplayermoderations) | **GET** /auth/user/playermoderations | Search Player Moderations
+[*PlayermoderationApi*](doc/PlayermoderationApi.md) | [**moderateUser**](doc/PlayermoderationApi.md#moderateuser) | **POST** /auth/user/playermoderations | Moderate User
+[*PlayermoderationApi*](doc/PlayermoderationApi.md) | [**unmoderateUser**](doc/PlayermoderationApi.md#unmoderateuser) | **PUT** /auth/user/unplayermoderate | Unmoderate User
 [*SystemApi*](doc/SystemApi.md) | [**getConfig**](doc/SystemApi.md#getconfig) | **GET** /config | Fetch API Config
 [*SystemApi*](doc/SystemApi.md) | [**getCurrentOnlineUsers**](doc/SystemApi.md#getcurrentonlineusers) | **GET** /visits | Current Online Users
 [*SystemApi*](doc/SystemApi.md) | [**getHealth**](doc/SystemApi.md#gethealth) | **GET** /health | Check API Health
@@ -177,6 +183,8 @@ Class | Method | HTTP request | Description
  - [InlineObject](doc/InlineObject.md)
  - [InlineObject1](doc/InlineObject1.md)
  - [InlineObject10](doc/InlineObject10.md)
+ - [InlineObject11](doc/InlineObject11.md)
+ - [InlineObject12](doc/InlineObject12.md)
  - [InlineObject2](doc/InlineObject2.md)
  - [InlineObject3](doc/InlineObject3.md)
  - [InlineObject4](doc/InlineObject4.md)
@@ -203,6 +211,8 @@ Class | Method | HTTP request | Description
  - [Notification](doc/Notification.md)
  - [NotificationType](doc/NotificationType.md)
  - [Platform](doc/Platform.md)
+ - [PlayerModeration](doc/PlayerModeration.md)
+ - [PlayerModerationType](doc/PlayerModerationType.md)
  - [ReleaseStatus](doc/ReleaseStatus.md)
  - [Response](doc/Response.md)
  - [Success](doc/Success.md)

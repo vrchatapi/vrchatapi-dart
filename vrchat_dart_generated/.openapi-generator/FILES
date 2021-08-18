@@ -28,6 +28,8 @@ doc/FriendsApi.md
 doc/InlineObject.md
 doc/InlineObject1.md
 doc/InlineObject10.md
+doc/InlineObject11.md
+doc/InlineObject12.md
 doc/InlineObject2.md
 doc/InlineObject3.md
 doc/InlineObject4.md
@@ -55,6 +57,9 @@ doc/Notification.md
 doc/NotificationType.md
 doc/NotificationsApi.md
 doc/Platform.md
+doc/PlayerModeration.md
+doc/PlayerModerationType.md
+doc/PlayermoderationApi.md
 doc/ReleaseStatus.md
 doc/Response.md
 doc/Success.md
@@ -73,6 +78,7 @@ lib/src/api/favorites_api.dart
 lib/src/api/files_api.dart
 lib/src/api/friends_api.dart
 lib/src/api/notifications_api.dart
+lib/src/api/playermoderation_api.dart
 lib/src/api/system_api.dart
 lib/src/api/users_api.dart
 lib/src/api/worlds_api.dart
@@ -105,6 +111,8 @@ lib/src/model/file_version.dart
 lib/src/model/inline_object.dart
 lib/src/model/inline_object1.dart
 lib/src/model/inline_object10.dart
+lib/src/model/inline_object11.dart
+lib/src/model/inline_object12.dart
 lib/src/model/inline_object2.dart
 lib/src/model/inline_object3.dart
 lib/src/model/inline_object4.dart
@@ -131,6 +139,8 @@ lib/src/model/mime_type.dart
 lib/src/model/notification.dart
 lib/src/model/notification_type.dart
 lib/src/model/platform.dart
+lib/src/model/player_moderation.dart
+lib/src/model/player_moderation_type.dart
 lib/src/model/release_status.dart
 lib/src/model/response.dart
 lib/src/model/success.dart
@@ -142,15 +152,8 @@ lib/src/model/world.dart
 lib/src/serializers.dart
 lib/vrchat_dart_generated.dart
 pubspec.yaml
-test/avatar_test.dart
-test/avatar_unity_package_url_object_test.dart
-test/avatars_api_test.dart
-test/favorite_group_test.dart
-test/favorite_group_visibility_test.dart
-test/favorite_test.dart
-test/favorite_type_test.dart
-test/favorites_api_test.dart
-test/inline_object10_test.dart
-test/inline_object7_test.dart
-test/inline_object8_test.dart
-test/inline_object9_test.dart
+test/inline_object11_test.dart
+test/inline_object12_test.dart
+test/player_moderation_test.dart
+test/player_moderation_type_test.dart
+test/playermoderation_api_test.dart

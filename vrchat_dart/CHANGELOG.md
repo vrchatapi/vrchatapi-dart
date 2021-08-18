@@ -1,3 +1,6 @@
+## 1.1.3
+Updated vrchat_dart_generated
+
 ## 1.1.2
 Updated vrchat_dart_generated
 

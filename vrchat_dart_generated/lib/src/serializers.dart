@@ -34,6 +34,8 @@ import 'package:vrchat_dart_generated/src/model/file_version.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object1.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object10.dart';
+import 'package:vrchat_dart_generated/src/model/inline_object11.dart';
+import 'package:vrchat_dart_generated/src/model/inline_object12.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object2.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object3.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object4.dart';
@@ -60,6 +62,8 @@ import 'package:vrchat_dart_generated/src/model/mime_type.dart';
 import 'package:vrchat_dart_generated/src/model/notification.dart';
 import 'package:vrchat_dart_generated/src/model/notification_type.dart';
 import 'package:vrchat_dart_generated/src/model/platform.dart';
+import 'package:vrchat_dart_generated/src/model/player_moderation.dart';
+import 'package:vrchat_dart_generated/src/model/player_moderation_type.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
 import 'package:vrchat_dart_generated/src/model/response.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
@@ -94,6 +98,8 @@ part 'serializers.g.dart';
   InlineObject,
   InlineObject1,
   InlineObject10,
+  InlineObject11,
+  InlineObject12,
   InlineObject2,
   InlineObject3,
   InlineObject4,
@@ -120,6 +126,8 @@ part 'serializers.g.dart';
   Notification,
   NotificationType,
   Platform,
+  PlayerModeration,
+  PlayerModerationType,
   ReleaseStatus,
   Response,
   Success,
@@ -153,6 +161,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Notification)]),
         () => ListBuilder<Notification>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(PlayerModeration)]),
+        () => ListBuilder<PlayerModeration>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(LimitedUser)]),
