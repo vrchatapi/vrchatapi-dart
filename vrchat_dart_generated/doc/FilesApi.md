@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createFileVersion**
-> File createFileVersion(fileId)
+> File createFileVersion(fileId, inlineObject4)
 
 Create File Version
 
@@ -93,9 +93,10 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getFilesApi();
 final String fileId = file_00000000-0000-0000-0000-000000000000; // String | 
+final InlineObject4 inlineObject4 = ; // InlineObject4 | 
 
 try { 
-    final response = api.createFileVersion(fileId);
+    final response = api.createFileVersion(fileId, inlineObject4);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling FilesApi->createFileVersion: $e\n');
@@ -107,6 +108,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileId** | **String**|  | 
+ **inlineObject4** | [**InlineObject4**](InlineObject4.md)|  | [optional] 
 
 ### Return type
 
@@ -118,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -280,7 +282,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **finishFileDataUpload**
-> File finishFileDataUpload(fileId, versionId, fileType, inlineObject4)
+> File finishFileDataUpload(fileId, versionId, fileType, inlineObject5)
 
 Finish FileData Upload
 
@@ -302,10 +304,10 @@ final api = VrchatDartGenerated().getFilesApi();
 final String fileId = file_00000000-0000-0000-0000-000000000000; // String | 
 final int versionId = 1; // int | 
 final String fileType = file; // String | 
-final InlineObject4 inlineObject4 = ; // InlineObject4 | 
+final InlineObject5 inlineObject5 = ; // InlineObject5 | 
 
 try { 
-    final response = api.finishFileDataUpload(fileId, versionId, fileType, inlineObject4);
+    final response = api.finishFileDataUpload(fileId, versionId, fileType, inlineObject5);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling FilesApi->finishFileDataUpload: $e\n');
@@ -319,7 +321,7 @@ Name | Type | Description  | Notes
  **fileId** | **String**|  | 
  **versionId** | **int**|  | 
  **fileType** | **String**|  | 
- **inlineObject4** | [**InlineObject4**](InlineObject4.md)|  | [optional] 
+ **inlineObject5** | [**InlineObject5**](InlineObject5.md)|  | [optional] 
 
 ### Return type
 

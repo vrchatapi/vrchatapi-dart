@@ -8,16 +8,23 @@ part of 'inline_object8.dart';
 
 class _$InlineObject8 extends InlineObject8 {
   @override
-  final String? displayName;
+  final FavoriteType type;
   @override
-  final FavoriteGroupVisibility? visibility;
+  final String favoriteId;
   @override
-  final BuiltList<String>? tags;
+  final BuiltList<String> tags;
 
   factory _$InlineObject8([void Function(InlineObject8Builder)? updates]) =>
       (new InlineObject8Builder()..update(updates)).build();
 
-  _$InlineObject8._({this.displayName, this.visibility, this.tags}) : super._();
+  _$InlineObject8._(
+      {required this.type, required this.favoriteId, required this.tags})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(type, 'InlineObject8', 'type');
+    BuiltValueNullFieldError.checkNotNull(
+        favoriteId, 'InlineObject8', 'favoriteId');
+    BuiltValueNullFieldError.checkNotNull(tags, 'InlineObject8', 'tags');
+  }
 
   @override
   InlineObject8 rebuild(void Function(InlineObject8Builder) updates) =>
@@ -30,22 +37,22 @@ class _$InlineObject8 extends InlineObject8 {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is InlineObject8 &&
-        displayName == other.displayName &&
-        visibility == other.visibility &&
+        type == other.type &&
+        favoriteId == other.favoriteId &&
         tags == other.tags;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc(0, displayName.hashCode), visibility.hashCode), tags.hashCode));
+    return $jf(
+        $jc($jc($jc(0, type.hashCode), favoriteId.hashCode), tags.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('InlineObject8')
-          ..add('displayName', displayName)
-          ..add('visibility', visibility)
+          ..add('type', type)
+          ..add('favoriteId', favoriteId)
           ..add('tags', tags))
         .toString();
   }
@@ -55,14 +62,13 @@ class InlineObject8Builder
     implements Builder<InlineObject8, InlineObject8Builder> {
   _$InlineObject8? _$v;
 
-  String? _displayName;
-  String? get displayName => _$this._displayName;
-  set displayName(String? displayName) => _$this._displayName = displayName;
+  FavoriteType? _type;
+  FavoriteType? get type => _$this._type;
+  set type(FavoriteType? type) => _$this._type = type;
 
-  FavoriteGroupVisibility? _visibility;
-  FavoriteGroupVisibility? get visibility => _$this._visibility;
-  set visibility(FavoriteGroupVisibility? visibility) =>
-      _$this._visibility = visibility;
+  String? _favoriteId;
+  String? get favoriteId => _$this._favoriteId;
+  set favoriteId(String? favoriteId) => _$this._favoriteId = favoriteId;
 
   ListBuilder<String>? _tags;
   ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
@@ -75,9 +81,9 @@ class InlineObject8Builder
   InlineObject8Builder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _displayName = $v.displayName;
-      _visibility = $v.visibility;
-      _tags = $v.tags?.toBuilder();
+      _type = $v.type;
+      _favoriteId = $v.favoriteId;
+      _tags = $v.tags.toBuilder();
       _$v = null;
     }
     return this;
@@ -100,14 +106,16 @@ class InlineObject8Builder
     try {
       _$result = _$v ??
           new _$InlineObject8._(
-              displayName: displayName,
-              visibility: visibility,
-              tags: _tags?.build());
+              type: BuiltValueNullFieldError.checkNotNull(
+                  type, 'InlineObject8', 'type'),
+              favoriteId: BuiltValueNullFieldError.checkNotNull(
+                  favoriteId, 'InlineObject8', 'favoriteId'),
+              tags: tags.build());
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'tags';
-        _tags?.build();
+        tags.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'InlineObject8', _$failedField, e.toString());

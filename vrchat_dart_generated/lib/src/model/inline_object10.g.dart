@@ -12,13 +12,13 @@ class _$InlineObject10 extends InlineObject10 {
   @override
   final String? id;
   @override
-  final String? name;
+  final String name;
   @override
   final String? description;
   @override
   final BuiltList<String>? tags;
   @override
-  final String? imageUrl;
+  final String imageUrl;
   @override
   final ReleaseStatus? releaseStatus;
   @override
@@ -32,14 +32,18 @@ class _$InlineObject10 extends InlineObject10 {
   _$InlineObject10._(
       {this.assetUrl,
       this.id,
-      this.name,
+      required this.name,
       this.description,
       this.tags,
-      this.imageUrl,
+      required this.imageUrl,
       this.releaseStatus,
       this.version,
       this.unityPackageUrl})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(name, 'InlineObject10', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        imageUrl, 'InlineObject10', 'imageUrl');
+  }
 
   @override
   InlineObject10 rebuild(void Function(InlineObject10Builder) updates) =>
@@ -180,10 +184,12 @@ class InlineObject10Builder
           new _$InlineObject10._(
               assetUrl: assetUrl,
               id: id,
-              name: name,
+              name: BuiltValueNullFieldError.checkNotNull(
+                  name, 'InlineObject10', 'name'),
               description: description,
               tags: _tags?.build(),
-              imageUrl: imageUrl,
+              imageUrl: BuiltValueNullFieldError.checkNotNull(
+                  imageUrl, 'InlineObject10', 'imageUrl'),
               releaseStatus: releaseStatus,
               version: version,
               unityPackageUrl: unityPackageUrl);

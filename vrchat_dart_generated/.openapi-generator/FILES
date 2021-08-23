@@ -30,6 +30,7 @@ doc/InlineObject1.md
 doc/InlineObject10.md
 doc/InlineObject11.md
 doc/InlineObject12.md
+doc/InlineObject13.md
 doc/InlineObject2.md
 doc/InlineObject3.md
 doc/InlineObject4.md
@@ -113,6 +114,7 @@ lib/src/model/inline_object1.dart
 lib/src/model/inline_object10.dart
 lib/src/model/inline_object11.dart
 lib/src/model/inline_object12.dart
+lib/src/model/inline_object13.dart
 lib/src/model/inline_object2.dart
 lib/src/model/inline_object3.dart
 lib/src/model/inline_object4.dart
@@ -152,8 +154,4 @@ lib/src/model/world.dart
 lib/src/serializers.dart
 lib/vrchat_dart_generated.dart
 pubspec.yaml
-test/inline_object11_test.dart
-test/inline_object12_test.dart
-test/player_moderation_test.dart
-test/player_moderation_type_test.dart
-test/playermoderation_api_test.dart
+test/inline_object13_test.dart

@@ -13,6 +13,7 @@ import 'package:vrchat_dart_generated/src/model/error.dart';
 import 'package:vrchat_dart_generated/src/model/file.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object3.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object4.dart';
+import 'package:vrchat_dart_generated/src/model/inline_object5.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2004.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2005.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
@@ -135,6 +136,7 @@ class FilesApi {
   ///
   /// Parameters:
   /// * [fileId]
+  /// * [inlineObject4]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -146,6 +148,7 @@ class FilesApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<File>> createFileVersion({
     required String fileId,
+    InlineObject4? inlineObject4,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -177,11 +180,31 @@ class FilesApi {
         ],
         ...?extra,
       },
+      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(InlineObject4);
+      _bodyData = inlineObject4 == null
+          ? null
+          : _serializers.serialize(inlineObject4, specifiedType: _type);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
     final _response = await _dio.request<Object>(
       _path,
+      data: _bodyData,
       options: _options,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
@@ -465,7 +488,7 @@ class FilesApi {
   /// * [fileId]
   /// * [versionId]
   /// * [fileType]
-  /// * [inlineObject4]
+  /// * [inlineObject5]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -479,7 +502,7 @@ class FilesApi {
     required String fileId,
     required int versionId,
     required String fileType,
-    InlineObject4? inlineObject4,
+    InlineObject5? inlineObject5,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -520,10 +543,10 @@ class FilesApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InlineObject4);
-      _bodyData = inlineObject4 == null
+      const _type = FullType(InlineObject5);
+      _bodyData = inlineObject5 == null
           ? null
-          : _serializers.serialize(inlineObject4, specifiedType: _type);
+          : _serializers.serialize(inlineObject5, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(

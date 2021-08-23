@@ -8,19 +8,38 @@ part of 'inline_object11.dart';
 
 class _$InlineObject11 extends InlineObject11 {
   @override
-  final String moderated;
+  final String? assetUrl;
   @override
-  final PlayerModerationType type;
+  final String? id;
+  @override
+  final String? name;
+  @override
+  final String? description;
+  @override
+  final BuiltList<String>? tags;
+  @override
+  final String? imageUrl;
+  @override
+  final ReleaseStatus? releaseStatus;
+  @override
+  final num? version;
+  @override
+  final String? unityPackageUrl;
 
   factory _$InlineObject11([void Function(InlineObject11Builder)? updates]) =>
       (new InlineObject11Builder()..update(updates)).build();
 
-  _$InlineObject11._({required this.moderated, required this.type})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        moderated, 'InlineObject11', 'moderated');
-    BuiltValueNullFieldError.checkNotNull(type, 'InlineObject11', 'type');
-  }
+  _$InlineObject11._(
+      {this.assetUrl,
+      this.id,
+      this.name,
+      this.description,
+      this.tags,
+      this.imageUrl,
+      this.releaseStatus,
+      this.version,
+      this.unityPackageUrl})
+      : super._();
 
   @override
   InlineObject11 rebuild(void Function(InlineObject11Builder) updates) =>
@@ -34,20 +53,47 @@ class _$InlineObject11 extends InlineObject11 {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is InlineObject11 &&
-        moderated == other.moderated &&
-        type == other.type;
+        assetUrl == other.assetUrl &&
+        id == other.id &&
+        name == other.name &&
+        description == other.description &&
+        tags == other.tags &&
+        imageUrl == other.imageUrl &&
+        releaseStatus == other.releaseStatus &&
+        version == other.version &&
+        unityPackageUrl == other.unityPackageUrl;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, moderated.hashCode), type.hashCode));
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, assetUrl.hashCode), id.hashCode),
+                                name.hashCode),
+                            description.hashCode),
+                        tags.hashCode),
+                    imageUrl.hashCode),
+                releaseStatus.hashCode),
+            version.hashCode),
+        unityPackageUrl.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('InlineObject11')
-          ..add('moderated', moderated)
-          ..add('type', type))
+          ..add('assetUrl', assetUrl)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('description', description)
+          ..add('tags', tags)
+          ..add('imageUrl', imageUrl)
+          ..add('releaseStatus', releaseStatus)
+          ..add('version', version)
+          ..add('unityPackageUrl', unityPackageUrl))
         .toString();
   }
 }
@@ -56,13 +102,43 @@ class InlineObject11Builder
     implements Builder<InlineObject11, InlineObject11Builder> {
   _$InlineObject11? _$v;
 
-  String? _moderated;
-  String? get moderated => _$this._moderated;
-  set moderated(String? moderated) => _$this._moderated = moderated;
+  String? _assetUrl;
+  String? get assetUrl => _$this._assetUrl;
+  set assetUrl(String? assetUrl) => _$this._assetUrl = assetUrl;
 
-  PlayerModerationType? _type;
-  PlayerModerationType? get type => _$this._type;
-  set type(PlayerModerationType? type) => _$this._type = type;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  ListBuilder<String>? _tags;
+  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
+  set tags(ListBuilder<String>? tags) => _$this._tags = tags;
+
+  String? _imageUrl;
+  String? get imageUrl => _$this._imageUrl;
+  set imageUrl(String? imageUrl) => _$this._imageUrl = imageUrl;
+
+  ReleaseStatus? _releaseStatus;
+  ReleaseStatus? get releaseStatus => _$this._releaseStatus;
+  set releaseStatus(ReleaseStatus? releaseStatus) =>
+      _$this._releaseStatus = releaseStatus;
+
+  num? _version;
+  num? get version => _$this._version;
+  set version(num? version) => _$this._version = version;
+
+  String? _unityPackageUrl;
+  String? get unityPackageUrl => _$this._unityPackageUrl;
+  set unityPackageUrl(String? unityPackageUrl) =>
+      _$this._unityPackageUrl = unityPackageUrl;
 
   InlineObject11Builder() {
     InlineObject11._initializeBuilder(this);
@@ -71,8 +147,15 @@ class InlineObject11Builder
   InlineObject11Builder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _moderated = $v.moderated;
-      _type = $v.type;
+      _assetUrl = $v.assetUrl;
+      _id = $v.id;
+      _name = $v.name;
+      _description = $v.description;
+      _tags = $v.tags?.toBuilder();
+      _imageUrl = $v.imageUrl;
+      _releaseStatus = $v.releaseStatus;
+      _version = $v.version;
+      _unityPackageUrl = $v.unityPackageUrl;
       _$v = null;
     }
     return this;
@@ -91,12 +174,30 @@ class InlineObject11Builder
 
   @override
   _$InlineObject11 build() {
-    final _$result = _$v ??
-        new _$InlineObject11._(
-            moderated: BuiltValueNullFieldError.checkNotNull(
-                moderated, 'InlineObject11', 'moderated'),
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, 'InlineObject11', 'type'));
+    _$InlineObject11 _$result;
+    try {
+      _$result = _$v ??
+          new _$InlineObject11._(
+              assetUrl: assetUrl,
+              id: id,
+              name: name,
+              description: description,
+              tags: _tags?.build(),
+              imageUrl: imageUrl,
+              releaseStatus: releaseStatus,
+              version: version,
+              unityPackageUrl: unityPackageUrl);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'tags';
+        _tags?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'InlineObject11', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

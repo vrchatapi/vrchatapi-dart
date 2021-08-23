@@ -30,7 +30,7 @@ part 'inline_object6.g.dart';
 abstract class InlineObject6
     implements Built<InlineObject6, InlineObject6Builder> {
   @BuiltValueField(wireName: r'assetUrl')
-  String? get assetUrl;
+  String get assetUrl;
 
   @BuiltValueField(wireName: r'assetVersion')
   String? get assetVersion;
@@ -51,10 +51,10 @@ abstract class InlineObject6
   String? get id;
 
   @BuiltValueField(wireName: r'imageUrl')
-  String? get imageUrl;
+  String get imageUrl;
 
   @BuiltValueField(wireName: r'name')
-  String? get name;
+  String get name;
 
   @BuiltValueField(wireName: r'platform')
   Platform? get platform;
@@ -98,12 +98,10 @@ class _$InlineObject6Serializer implements StructuredSerializer<InlineObject6> {
   Iterable<Object?> serialize(Serializers serializers, InlineObject6 object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
-    if (object.assetUrl != null) {
-      result
-        ..add(r'assetUrl')
-        ..add(serializers.serialize(object.assetUrl,
-            specifiedType: const FullType(String)));
-    }
+    result
+      ..add(r'assetUrl')
+      ..add(serializers.serialize(object.assetUrl,
+          specifiedType: const FullType(String)));
     if (object.assetVersion != null) {
       result
         ..add(r'assetVersion')
@@ -140,18 +138,14 @@ class _$InlineObject6Serializer implements StructuredSerializer<InlineObject6> {
         ..add(serializers.serialize(object.id,
             specifiedType: const FullType(String)));
     }
-    if (object.imageUrl != null) {
-      result
-        ..add(r'imageUrl')
-        ..add(serializers.serialize(object.imageUrl,
-            specifiedType: const FullType(String)));
-    }
-    if (object.name != null) {
-      result
-        ..add(r'name')
-        ..add(serializers.serialize(object.name,
-            specifiedType: const FullType(String)));
-    }
+    result
+      ..add(r'imageUrl')
+      ..add(serializers.serialize(object.imageUrl,
+          specifiedType: const FullType(String)));
+    result
+      ..add(r'name')
+      ..add(serializers.serialize(object.name,
+          specifiedType: const FullType(String)));
     if (object.platform != null) {
       result
         ..add(r'platform')

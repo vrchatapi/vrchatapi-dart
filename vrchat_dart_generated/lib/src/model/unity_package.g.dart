@@ -26,7 +26,7 @@ class _$UnityPackage extends UnityPackage {
   @override
   final Platform platform;
   @override
-  final DateTime createdAt;
+  final DateTime? createdAt;
 
   factory _$UnityPackage([void Function(UnityPackageBuilder)? updates]) =>
       (new UnityPackageBuilder()..update(updates)).build();
@@ -41,7 +41,7 @@ class _$UnityPackage extends UnityPackage {
       this.unitySortNumber,
       required this.assetVersion,
       required this.platform,
-      required this.createdAt})
+      this.createdAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, 'UnityPackage', 'id');
     BuiltValueNullFieldError.checkNotNull(
@@ -49,8 +49,6 @@ class _$UnityPackage extends UnityPackage {
     BuiltValueNullFieldError.checkNotNull(
         assetVersion, 'UnityPackage', 'assetVersion');
     BuiltValueNullFieldError.checkNotNull(platform, 'UnityPackage', 'platform');
-    BuiltValueNullFieldError.checkNotNull(
-        createdAt, 'UnityPackage', 'createdAt');
   }
 
   @override
@@ -209,8 +207,7 @@ class UnityPackageBuilder
                 assetVersion, 'UnityPackage', 'assetVersion'),
             platform: BuiltValueNullFieldError.checkNotNull(
                 platform, 'UnityPackage', 'platform'),
-            createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, 'UnityPackage', 'createdAt'));
+            createdAt: createdAt);
     replace(_$result);
     return _$result;
   }

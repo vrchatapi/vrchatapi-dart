@@ -13,7 +13,7 @@ import 'package:vrchat_dart_generated/src/model/avatar.dart';
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object10.dart';
-import 'package:vrchat_dart_generated/src/model/inline_object9.dart';
+import 'package:vrchat_dart_generated/src/model/inline_object11.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response401.dart';
 
 class AvatarsApi {
@@ -27,7 +27,7 @@ class AvatarsApi {
   /// Create an avatar. It&#39;s possible to optionally specify a ID if you want a custom one. Attempting to create an Avatar with an already claimed ID will result in a DB error.
   ///
   /// Parameters:
-  /// * [inlineObject9]
+  /// * [inlineObject10]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -38,7 +38,7 @@ class AvatarsApi {
   /// Returns a [Future] containing a [Response] with a [Avatar] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<Avatar>> createAvatar({
-    InlineObject9? inlineObject9,
+    InlineObject10? inlineObject10,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -76,10 +76,10 @@ class AvatarsApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InlineObject9);
-      _bodyData = inlineObject9 == null
+      const _type = FullType(InlineObject10);
+      _bodyData = inlineObject10 == null
           ? null
-          : _serializers.serialize(inlineObject9, specifiedType: _type);
+          : _serializers.serialize(inlineObject10, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -671,7 +671,7 @@ class AvatarsApi {
   ///
   /// Parameters:
   /// * [avatarId]
-  /// * [inlineObject10]
+  /// * [inlineObject11]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -683,7 +683,7 @@ class AvatarsApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<Avatar>> updateAvatar({
     required String avatarId,
-    InlineObject10? inlineObject10,
+    InlineObject11? inlineObject11,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -722,10 +722,10 @@ class AvatarsApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InlineObject10);
-      _bodyData = inlineObject10 == null
+      const _type = FullType(InlineObject11);
+      _bodyData = inlineObject11 == null
           ? null
-          : _serializers.serialize(inlineObject10, specifiedType: _type);
+          : _serializers.serialize(inlineObject11, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(

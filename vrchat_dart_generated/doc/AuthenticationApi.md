@@ -9,7 +9,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteUserById**](AuthenticationApi.md#deleteuserbyid) | **PUT** /user/{userId}/delete | Delete User
+[**deleteUser**](AuthenticationApi.md#deleteuser) | **PUT** /user/{userId}/delete | Delete User
 [**getCurrentUser**](AuthenticationApi.md#getcurrentuser) | **GET** /auth/user | Login and/or Get Current User Info
 [**logout**](AuthenticationApi.md#logout) | **PUT** /logout | Logout
 [**verify2FA**](AuthenticationApi.md#verify2fa) | **POST** /auth/twofactorauth/totp/verify | Verify 2FA code
@@ -17,8 +17,8 @@ Method | HTTP request | Description
 [**verifyRecoveryCode**](AuthenticationApi.md#verifyrecoverycode) | **POST** /auth/twofactorauth/otp/verify | Verify 2FA code with Recovery code
 
 
-# **deleteUserById**
-> CurrentUser deleteUserById(userId)
+# **deleteUser**
+> CurrentUser deleteUser(userId)
 
 Delete User
 
@@ -40,10 +40,10 @@ final api = VrchatDartGenerated().getAuthenticationApi();
 final String userId = userId_example; // String | 
 
 try { 
-    final response = api.deleteUserById(userId);
+    final response = api.deleteUser(userId);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AuthenticationApi->deleteUserById: $e\n');
+    print('Exception when calling AuthenticationApi->deleteUser: $e\n');
 }
 ```
 

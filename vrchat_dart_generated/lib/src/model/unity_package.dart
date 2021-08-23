@@ -53,7 +53,7 @@ abstract class UnityPackage
   // enum platformEnum {  standalonewindows,  android,  };
 
   @BuiltValueField(wireName: r'created_at')
-  DateTime get createdAt;
+  DateTime? get createdAt;
 
   UnityPackage._();
 
@@ -123,10 +123,12 @@ class _$UnityPackageSerializer implements StructuredSerializer<UnityPackage> {
       ..add(r'platform')
       ..add(serializers.serialize(object.platform,
           specifiedType: const FullType(Platform)));
-    result
-      ..add(r'created_at')
-      ..add(serializers.serialize(object.createdAt,
-          specifiedType: const FullType(DateTime)));
+    if (object.createdAt != null) {
+      result
+        ..add(r'created_at')
+        ..add(serializers.serialize(object.createdAt,
+            specifiedType: const FullType(DateTime)));
+    }
     return result;
   }
 

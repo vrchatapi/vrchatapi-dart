@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assetUrl** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 
-**name** | **String** |  | [optional] 
+**name** | **String** |  | 
 **description** | **String** |  | [optional] 
 **tags** | **BuiltList&lt;String&gt;** |  | [optional] 
-**imageUrl** | **String** |  | [optional] 
+**imageUrl** | **String** |  | 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | [optional] 
 **version** | **num** |  | [optional] [default to 1]
 **unityPackageUrl** | **String** |  | [optional] 

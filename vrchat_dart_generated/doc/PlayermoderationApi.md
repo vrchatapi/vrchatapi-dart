@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **moderateUser**
-> PlayerModeration moderateUser(inlineObject11)
+> PlayerModeration moderateUser(inlineObject12)
 
 Moderate User
 
@@ -239,10 +239,10 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getPlayermoderationApi();
-final InlineObject11 inlineObject11 = ; // InlineObject11 | 
+final InlineObject12 inlineObject12 = ; // InlineObject12 | 
 
 try { 
-    final response = api.moderateUser(inlineObject11);
+    final response = api.moderateUser(inlineObject12);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling PlayermoderationApi->moderateUser: $e\n');
@@ -253,7 +253,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject11** | [**InlineObject11**](InlineObject11.md)|  | [optional] 
+ **inlineObject12** | [**InlineObject12**](InlineObject12.md)|  | [optional] 
 
 ### Return type
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unmoderateUser**
-> Error unmoderateUser(inlineObject12)
+> Error unmoderateUser(inlineObject13)
 
 Unmoderate User
 
@@ -290,10 +290,10 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getPlayermoderationApi();
-final InlineObject12 inlineObject12 = ; // InlineObject12 | 
+final InlineObject13 inlineObject13 = ; // InlineObject13 | 
 
 try { 
-    final response = api.unmoderateUser(inlineObject12);
+    final response = api.unmoderateUser(inlineObject13);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling PlayermoderationApi->unmoderateUser: $e\n');
@@ -304,7 +304,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject12** | [**InlineObject12**](InlineObject12.md)|  | [optional] 
+ **inlineObject13** | [**InlineObject13**](InlineObject13.md)|  | [optional] 
 
 ### Return type
 

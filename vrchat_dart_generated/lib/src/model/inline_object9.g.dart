@@ -8,42 +8,16 @@ part of 'inline_object9.dart';
 
 class _$InlineObject9 extends InlineObject9 {
   @override
-  final String? assetUrl;
+  final String? displayName;
   @override
-  final String? id;
-  @override
-  final String name;
-  @override
-  final String? description;
+  final FavoriteGroupVisibility? visibility;
   @override
   final BuiltList<String>? tags;
-  @override
-  final String imageUrl;
-  @override
-  final ReleaseStatus? releaseStatus;
-  @override
-  final num? version;
-  @override
-  final String? unityPackageUrl;
 
   factory _$InlineObject9([void Function(InlineObject9Builder)? updates]) =>
       (new InlineObject9Builder()..update(updates)).build();
 
-  _$InlineObject9._(
-      {this.assetUrl,
-      this.id,
-      required this.name,
-      this.description,
-      this.tags,
-      required this.imageUrl,
-      this.releaseStatus,
-      this.version,
-      this.unityPackageUrl})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(name, 'InlineObject9', 'name');
-    BuiltValueNullFieldError.checkNotNull(
-        imageUrl, 'InlineObject9', 'imageUrl');
-  }
+  _$InlineObject9._({this.displayName, this.visibility, this.tags}) : super._();
 
   @override
   InlineObject9 rebuild(void Function(InlineObject9Builder) updates) =>
@@ -56,47 +30,23 @@ class _$InlineObject9 extends InlineObject9 {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is InlineObject9 &&
-        assetUrl == other.assetUrl &&
-        id == other.id &&
-        name == other.name &&
-        description == other.description &&
-        tags == other.tags &&
-        imageUrl == other.imageUrl &&
-        releaseStatus == other.releaseStatus &&
-        version == other.version &&
-        unityPackageUrl == other.unityPackageUrl;
+        displayName == other.displayName &&
+        visibility == other.visibility &&
+        tags == other.tags;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc(
-                        $jc(
-                            $jc($jc($jc(0, assetUrl.hashCode), id.hashCode),
-                                name.hashCode),
-                            description.hashCode),
-                        tags.hashCode),
-                    imageUrl.hashCode),
-                releaseStatus.hashCode),
-            version.hashCode),
-        unityPackageUrl.hashCode));
+        $jc($jc(0, displayName.hashCode), visibility.hashCode), tags.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('InlineObject9')
-          ..add('assetUrl', assetUrl)
-          ..add('id', id)
-          ..add('name', name)
-          ..add('description', description)
-          ..add('tags', tags)
-          ..add('imageUrl', imageUrl)
-          ..add('releaseStatus', releaseStatus)
-          ..add('version', version)
-          ..add('unityPackageUrl', unityPackageUrl))
+          ..add('displayName', displayName)
+          ..add('visibility', visibility)
+          ..add('tags', tags))
         .toString();
   }
 }
@@ -105,43 +55,18 @@ class InlineObject9Builder
     implements Builder<InlineObject9, InlineObject9Builder> {
   _$InlineObject9? _$v;
 
-  String? _assetUrl;
-  String? get assetUrl => _$this._assetUrl;
-  set assetUrl(String? assetUrl) => _$this._assetUrl = assetUrl;
+  String? _displayName;
+  String? get displayName => _$this._displayName;
+  set displayName(String? displayName) => _$this._displayName = displayName;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
+  FavoriteGroupVisibility? _visibility;
+  FavoriteGroupVisibility? get visibility => _$this._visibility;
+  set visibility(FavoriteGroupVisibility? visibility) =>
+      _$this._visibility = visibility;
 
   ListBuilder<String>? _tags;
   ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
-
-  String? _imageUrl;
-  String? get imageUrl => _$this._imageUrl;
-  set imageUrl(String? imageUrl) => _$this._imageUrl = imageUrl;
-
-  ReleaseStatus? _releaseStatus;
-  ReleaseStatus? get releaseStatus => _$this._releaseStatus;
-  set releaseStatus(ReleaseStatus? releaseStatus) =>
-      _$this._releaseStatus = releaseStatus;
-
-  num? _version;
-  num? get version => _$this._version;
-  set version(num? version) => _$this._version = version;
-
-  String? _unityPackageUrl;
-  String? get unityPackageUrl => _$this._unityPackageUrl;
-  set unityPackageUrl(String? unityPackageUrl) =>
-      _$this._unityPackageUrl = unityPackageUrl;
 
   InlineObject9Builder() {
     InlineObject9._initializeBuilder(this);
@@ -150,15 +75,9 @@ class InlineObject9Builder
   InlineObject9Builder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _assetUrl = $v.assetUrl;
-      _id = $v.id;
-      _name = $v.name;
-      _description = $v.description;
+      _displayName = $v.displayName;
+      _visibility = $v.visibility;
       _tags = $v.tags?.toBuilder();
-      _imageUrl = $v.imageUrl;
-      _releaseStatus = $v.releaseStatus;
-      _version = $v.version;
-      _unityPackageUrl = $v.unityPackageUrl;
       _$v = null;
     }
     return this;
@@ -181,17 +100,9 @@ class InlineObject9Builder
     try {
       _$result = _$v ??
           new _$InlineObject9._(
-              assetUrl: assetUrl,
-              id: id,
-              name: BuiltValueNullFieldError.checkNotNull(
-                  name, 'InlineObject9', 'name'),
-              description: description,
-              tags: _tags?.build(),
-              imageUrl: BuiltValueNullFieldError.checkNotNull(
-                  imageUrl, 'InlineObject9', 'imageUrl'),
-              releaseStatus: releaseStatus,
-              version: version,
-              unityPackageUrl: unityPackageUrl);
+              displayName: displayName,
+              visibility: visibility,
+              tags: _tags?.build());
     } catch (_) {
       late String _$failedField;
       try {

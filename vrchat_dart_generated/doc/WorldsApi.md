@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 
 # **createWorld**
-> World createWorld(inlineObject5)
+> World createWorld(inlineObject6)
 
 Create World
 
@@ -36,10 +36,10 @@ Create a new world. This endpoint requires `assetUrl` to be a valid File object 
 import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getWorldsApi();
-final InlineObject5 inlineObject5 = ; // InlineObject5 | 
+final InlineObject6 inlineObject6 = ; // InlineObject6 | 
 
 try { 
-    final response = api.createWorld(inlineObject5);
+    final response = api.createWorld(inlineObject6);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling WorldsApi->createWorld: $e\n');
@@ -50,7 +50,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject5** | [**InlineObject5**](InlineObject5.md)|  | [optional] 
+ **inlineObject6** | [**InlineObject6**](InlineObject6.md)|  | [optional] 
 
 ### Return type
 
@@ -716,7 +716,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateWorld**
-> World updateWorld(worldId, inlineObject6)
+> World updateWorld(worldId, inlineObject7)
 
 Update World
 
@@ -736,10 +736,10 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getWorldsApi();
 final String worldId = worldId_example; // String | 
-final InlineObject6 inlineObject6 = ; // InlineObject6 | 
+final InlineObject7 inlineObject7 = ; // InlineObject7 | 
 
 try { 
-    final response = api.updateWorld(worldId, inlineObject6);
+    final response = api.updateWorld(worldId, inlineObject7);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling WorldsApi->updateWorld: $e\n');
@@ -751,7 +751,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **worldId** | **String**|  | 
- **inlineObject6** | [**InlineObject6**](InlineObject6.md)|  | [optional] 
+ **inlineObject7** | [**InlineObject7**](InlineObject7.md)|  | [optional] 
 
 ### Return type
 

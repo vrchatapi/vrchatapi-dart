@@ -8,23 +8,53 @@ part of 'inline_object7.dart';
 
 class _$InlineObject7 extends InlineObject7 {
   @override
-  final FavoriteType type;
+  final String? assetUrl;
   @override
-  final String favoriteId;
+  final String? assetVersion;
   @override
-  final BuiltList<String> tags;
+  final String? authorId;
+  @override
+  final String? authorName;
+  @override
+  final int? capacity;
+  @override
+  final String? description;
+  @override
+  final String? id;
+  @override
+  final String? imageUrl;
+  @override
+  final String? name;
+  @override
+  final Platform? platform;
+  @override
+  final ReleaseStatus? releaseStatus;
+  @override
+  final BuiltList<String>? tags;
+  @override
+  final String? unityPackageUrl;
+  @override
+  final String? unityVersion;
 
   factory _$InlineObject7([void Function(InlineObject7Builder)? updates]) =>
       (new InlineObject7Builder()..update(updates)).build();
 
   _$InlineObject7._(
-      {required this.type, required this.favoriteId, required this.tags})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(type, 'InlineObject7', 'type');
-    BuiltValueNullFieldError.checkNotNull(
-        favoriteId, 'InlineObject7', 'favoriteId');
-    BuiltValueNullFieldError.checkNotNull(tags, 'InlineObject7', 'tags');
-  }
+      {this.assetUrl,
+      this.assetVersion,
+      this.authorId,
+      this.authorName,
+      this.capacity,
+      this.description,
+      this.id,
+      this.imageUrl,
+      this.name,
+      this.platform,
+      this.releaseStatus,
+      this.tags,
+      this.unityPackageUrl,
+      this.unityVersion})
+      : super._();
 
   @override
   InlineObject7 rebuild(void Function(InlineObject7Builder) updates) =>
@@ -37,23 +67,71 @@ class _$InlineObject7 extends InlineObject7 {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is InlineObject7 &&
-        type == other.type &&
-        favoriteId == other.favoriteId &&
-        tags == other.tags;
+        assetUrl == other.assetUrl &&
+        assetVersion == other.assetVersion &&
+        authorId == other.authorId &&
+        authorName == other.authorName &&
+        capacity == other.capacity &&
+        description == other.description &&
+        id == other.id &&
+        imageUrl == other.imageUrl &&
+        name == other.name &&
+        platform == other.platform &&
+        releaseStatus == other.releaseStatus &&
+        tags == other.tags &&
+        unityPackageUrl == other.unityPackageUrl &&
+        unityVersion == other.unityVersion;
   }
 
   @override
   int get hashCode {
-    return $jf(
-        $jc($jc($jc(0, type.hashCode), favoriteId.hashCode), tags.hashCode));
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(0,
+                                                            assetUrl.hashCode),
+                                                        assetVersion.hashCode),
+                                                    authorId.hashCode),
+                                                authorName.hashCode),
+                                            capacity.hashCode),
+                                        description.hashCode),
+                                    id.hashCode),
+                                imageUrl.hashCode),
+                            name.hashCode),
+                        platform.hashCode),
+                    releaseStatus.hashCode),
+                tags.hashCode),
+            unityPackageUrl.hashCode),
+        unityVersion.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('InlineObject7')
-          ..add('type', type)
-          ..add('favoriteId', favoriteId)
-          ..add('tags', tags))
+          ..add('assetUrl', assetUrl)
+          ..add('assetVersion', assetVersion)
+          ..add('authorId', authorId)
+          ..add('authorName', authorName)
+          ..add('capacity', capacity)
+          ..add('description', description)
+          ..add('id', id)
+          ..add('imageUrl', imageUrl)
+          ..add('name', name)
+          ..add('platform', platform)
+          ..add('releaseStatus', releaseStatus)
+          ..add('tags', tags)
+          ..add('unityPackageUrl', unityPackageUrl)
+          ..add('unityVersion', unityVersion))
         .toString();
   }
 }
@@ -62,17 +140,63 @@ class InlineObject7Builder
     implements Builder<InlineObject7, InlineObject7Builder> {
   _$InlineObject7? _$v;
 
-  FavoriteType? _type;
-  FavoriteType? get type => _$this._type;
-  set type(FavoriteType? type) => _$this._type = type;
+  String? _assetUrl;
+  String? get assetUrl => _$this._assetUrl;
+  set assetUrl(String? assetUrl) => _$this._assetUrl = assetUrl;
 
-  String? _favoriteId;
-  String? get favoriteId => _$this._favoriteId;
-  set favoriteId(String? favoriteId) => _$this._favoriteId = favoriteId;
+  String? _assetVersion;
+  String? get assetVersion => _$this._assetVersion;
+  set assetVersion(String? assetVersion) => _$this._assetVersion = assetVersion;
+
+  String? _authorId;
+  String? get authorId => _$this._authorId;
+  set authorId(String? authorId) => _$this._authorId = authorId;
+
+  String? _authorName;
+  String? get authorName => _$this._authorName;
+  set authorName(String? authorName) => _$this._authorName = authorName;
+
+  int? _capacity;
+  int? get capacity => _$this._capacity;
+  set capacity(int? capacity) => _$this._capacity = capacity;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _imageUrl;
+  String? get imageUrl => _$this._imageUrl;
+  set imageUrl(String? imageUrl) => _$this._imageUrl = imageUrl;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  Platform? _platform;
+  Platform? get platform => _$this._platform;
+  set platform(Platform? platform) => _$this._platform = platform;
+
+  ReleaseStatus? _releaseStatus;
+  ReleaseStatus? get releaseStatus => _$this._releaseStatus;
+  set releaseStatus(ReleaseStatus? releaseStatus) =>
+      _$this._releaseStatus = releaseStatus;
 
   ListBuilder<String>? _tags;
   ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
+
+  String? _unityPackageUrl;
+  String? get unityPackageUrl => _$this._unityPackageUrl;
+  set unityPackageUrl(String? unityPackageUrl) =>
+      _$this._unityPackageUrl = unityPackageUrl;
+
+  String? _unityVersion;
+  String? get unityVersion => _$this._unityVersion;
+  set unityVersion(String? unityVersion) => _$this._unityVersion = unityVersion;
 
   InlineObject7Builder() {
     InlineObject7._initializeBuilder(this);
@@ -81,9 +205,20 @@ class InlineObject7Builder
   InlineObject7Builder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _type = $v.type;
-      _favoriteId = $v.favoriteId;
-      _tags = $v.tags.toBuilder();
+      _assetUrl = $v.assetUrl;
+      _assetVersion = $v.assetVersion;
+      _authorId = $v.authorId;
+      _authorName = $v.authorName;
+      _capacity = $v.capacity;
+      _description = $v.description;
+      _id = $v.id;
+      _imageUrl = $v.imageUrl;
+      _name = $v.name;
+      _platform = $v.platform;
+      _releaseStatus = $v.releaseStatus;
+      _tags = $v.tags?.toBuilder();
+      _unityPackageUrl = $v.unityPackageUrl;
+      _unityVersion = $v.unityVersion;
       _$v = null;
     }
     return this;
@@ -106,16 +241,25 @@ class InlineObject7Builder
     try {
       _$result = _$v ??
           new _$InlineObject7._(
-              type: BuiltValueNullFieldError.checkNotNull(
-                  type, 'InlineObject7', 'type'),
-              favoriteId: BuiltValueNullFieldError.checkNotNull(
-                  favoriteId, 'InlineObject7', 'favoriteId'),
-              tags: tags.build());
+              assetUrl: assetUrl,
+              assetVersion: assetVersion,
+              authorId: authorId,
+              authorName: authorName,
+              capacity: capacity,
+              description: description,
+              id: id,
+              imageUrl: imageUrl,
+              name: name,
+              platform: platform,
+              releaseStatus: releaseStatus,
+              tags: _tags?.build(),
+              unityPackageUrl: unityPackageUrl,
+              unityVersion: unityVersion);
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'tags';
-        tags.build();
+        _tags?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'InlineObject7', _$failedField, e.toString());

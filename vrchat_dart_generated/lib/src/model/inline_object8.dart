@@ -3,7 +3,7 @@
 //
 
 import 'package:built_collection/built_collection.dart';
-import 'package:vrchat_dart_generated/src/model/favorite_group_visibility.dart';
+import 'package:vrchat_dart_generated/src/model/favorite_type.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -12,21 +12,22 @@ part 'inline_object8.g.dart';
 /// InlineObject8
 ///
 /// Properties:
-/// * [displayName]
-/// * [visibility]
-/// * [tags] - Tags on FavoriteGroups are believed to do nothing.
+/// * [type]
+/// * [favoriteId] - Must be either AvatarID, WorldID or UserID.
+/// * [tags] - Tags indicate which group this favorite belongs to. Adding multiple groups makes it show up in all. Removing it from one in that case removes it from all.
 abstract class InlineObject8
     implements Built<InlineObject8, InlineObject8Builder> {
-  @BuiltValueField(wireName: r'displayName')
-  String? get displayName;
+  @BuiltValueField(wireName: r'type')
+  FavoriteType get type;
+  // enum typeEnum {  world,  friend,  avatar,  };
 
-  @BuiltValueField(wireName: r'visibility')
-  FavoriteGroupVisibility? get visibility;
-  // enum visibilityEnum {  private,  friends,  public,  };
+  /// Must be either AvatarID, WorldID or UserID.
+  @BuiltValueField(wireName: r'favoriteId')
+  String get favoriteId;
 
-  /// Tags on FavoriteGroups are believed to do nothing.
+  /// Tags indicate which group this favorite belongs to. Adding multiple groups makes it show up in all. Removing it from one in that case removes it from all.
   @BuiltValueField(wireName: r'tags')
-  BuiltList<String>? get tags;
+  BuiltList<String> get tags;
 
   InlineObject8._();
 
@@ -51,24 +52,18 @@ class _$InlineObject8Serializer implements StructuredSerializer<InlineObject8> {
   Iterable<Object?> serialize(Serializers serializers, InlineObject8 object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
-    if (object.displayName != null) {
-      result
-        ..add(r'displayName')
-        ..add(serializers.serialize(object.displayName,
-            specifiedType: const FullType(String)));
-    }
-    if (object.visibility != null) {
-      result
-        ..add(r'visibility')
-        ..add(serializers.serialize(object.visibility,
-            specifiedType: const FullType(FavoriteGroupVisibility)));
-    }
-    if (object.tags != null) {
-      result
-        ..add(r'tags')
-        ..add(serializers.serialize(object.tags,
-            specifiedType: const FullType(BuiltList, [FullType(String)])));
-    }
+    result
+      ..add(r'type')
+      ..add(serializers.serialize(object.type,
+          specifiedType: const FullType(FavoriteType)));
+    result
+      ..add(r'favoriteId')
+      ..add(serializers.serialize(object.favoriteId,
+          specifiedType: const FullType(String)));
+    result
+      ..add(r'tags')
+      ..add(serializers.serialize(object.tags,
+          specifiedType: const FullType(BuiltList, [FullType(String)])));
     return result;
   }
 
@@ -84,14 +79,13 @@ class _$InlineObject8Serializer implements StructuredSerializer<InlineObject8> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case r'displayName':
-          result.displayName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+        case r'type':
+          result.type = serializers.deserialize(value,
+              specifiedType: const FullType(FavoriteType)) as FavoriteType;
           break;
-        case r'visibility':
-          result.visibility = serializers.deserialize(value,
-                  specifiedType: const FullType(FavoriteGroupVisibility))
-              as FavoriteGroupVisibility;
+        case r'favoriteId':
+          result.favoriteId = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           break;
         case r'tags':
           result.tags.replace(serializers.deserialize(value,

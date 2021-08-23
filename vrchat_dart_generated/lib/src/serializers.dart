@@ -36,6 +36,7 @@ import 'package:vrchat_dart_generated/src/model/inline_object1.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object10.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object11.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object12.dart';
+import 'package:vrchat_dart_generated/src/model/inline_object13.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object2.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object3.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object4.dart';
@@ -100,6 +101,7 @@ part 'serializers.g.dart';
   InlineObject10,
   InlineObject11,
   InlineObject12,
+  InlineObject13,
   InlineObject2,
   InlineObject3,
   InlineObject4,

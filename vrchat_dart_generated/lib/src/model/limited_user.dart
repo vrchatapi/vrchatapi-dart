@@ -29,7 +29,7 @@ part 'limited_user.g.dart';
 /// * [status]
 /// * [isFriend]
 /// * [location]
-/// * [tags] - Always empty
+/// * [tags] - <- Always empty.
 abstract class LimitedUser implements Built<LimitedUser, LimitedUserBuilder> {
   @BuiltValueField(wireName: r'id')
   String get id;
@@ -79,7 +79,7 @@ abstract class LimitedUser implements Built<LimitedUser, LimitedUserBuilder> {
   @BuiltValueField(wireName: r'location')
   String get location;
 
-  /// Always empty
+  /// <- Always empty.
   @BuiltValueField(wireName: r'tags')
   BuiltList<String> get tags;
 

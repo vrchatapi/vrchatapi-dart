@@ -2,7 +2,6 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -11,28 +10,27 @@ part 'inline_object4.g.dart';
 /// InlineObject4
 ///
 /// Properties:
-/// * [etags] - Array of ETags uploaded.
-/// * [nextPartNumber] - Always a zero in string form, despite how many parts uploaded.
-/// * [maxParts] - Always a zero in string form, despite how many parts uploaded.
+/// * [signatureMd5]
+/// * [signatureSizeInBytes]
+/// * [fileMd5]
+/// * [fileSizeInBytes]
 abstract class InlineObject4
     implements Built<InlineObject4, InlineObject4Builder> {
-  /// Array of ETags uploaded.
-  @BuiltValueField(wireName: r'etags')
-  BuiltSet<String>? get etags;
+  @BuiltValueField(wireName: r'signatureMd5')
+  String get signatureMd5;
 
-  /// Always a zero in string form, despite how many parts uploaded.
-  @BuiltValueField(wireName: r'nextPartNumber')
-  String get nextPartNumber;
+  @BuiltValueField(wireName: r'signatureSizeInBytes')
+  num get signatureSizeInBytes;
 
-  /// Always a zero in string form, despite how many parts uploaded.
-  @BuiltValueField(wireName: r'maxParts')
-  String get maxParts;
+  @BuiltValueField(wireName: r'fileMd5')
+  String? get fileMd5;
+
+  @BuiltValueField(wireName: r'fileSizeInBytes')
+  num? get fileSizeInBytes;
 
   InlineObject4._();
 
-  static void _initializeBuilder(InlineObject4Builder b) => b
-    ..nextPartNumber = '0'
-    ..maxParts = '0';
+  static void _initializeBuilder(InlineObject4Builder b) => b;
 
   factory InlineObject4([void updates(InlineObject4Builder b)]) =
       _$InlineObject4;
@@ -53,20 +51,26 @@ class _$InlineObject4Serializer implements StructuredSerializer<InlineObject4> {
   Iterable<Object?> serialize(Serializers serializers, InlineObject4 object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
-    if (object.etags != null) {
+    result
+      ..add(r'signatureMd5')
+      ..add(serializers.serialize(object.signatureMd5,
+          specifiedType: const FullType(String)));
+    result
+      ..add(r'signatureSizeInBytes')
+      ..add(serializers.serialize(object.signatureSizeInBytes,
+          specifiedType: const FullType(num)));
+    if (object.fileMd5 != null) {
       result
-        ..add(r'etags')
-        ..add(serializers.serialize(object.etags,
-            specifiedType: const FullType(BuiltSet, [FullType(String)])));
+        ..add(r'fileMd5')
+        ..add(serializers.serialize(object.fileMd5,
+            specifiedType: const FullType(String)));
     }
-    result
-      ..add(r'nextPartNumber')
-      ..add(serializers.serialize(object.nextPartNumber,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'maxParts')
-      ..add(serializers.serialize(object.maxParts,
-          specifiedType: const FullType(String)));
+    if (object.fileSizeInBytes != null) {
+      result
+        ..add(r'fileSizeInBytes')
+        ..add(serializers.serialize(object.fileSizeInBytes,
+            specifiedType: const FullType(num)));
+    }
     return result;
   }
 
@@ -82,18 +86,21 @@ class _$InlineObject4Serializer implements StructuredSerializer<InlineObject4> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case r'etags':
-          result.etags.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltSet, [FullType(String)]))
-              as BuiltSet<String>);
-          break;
-        case r'nextPartNumber':
-          result.nextPartNumber = serializers.deserialize(value,
+        case r'signatureMd5':
+          result.signatureMd5 = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case r'maxParts':
-          result.maxParts = serializers.deserialize(value,
+        case r'signatureSizeInBytes':
+          result.signatureSizeInBytes = serializers.deserialize(value,
+              specifiedType: const FullType(num)) as num;
+          break;
+        case r'fileMd5':
+          result.fileMd5 = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          break;
+        case r'fileSizeInBytes':
+          result.fileSizeInBytes = serializers.deserialize(value,
+              specifiedType: const FullType(num)) as num;
           break;
       }
     }

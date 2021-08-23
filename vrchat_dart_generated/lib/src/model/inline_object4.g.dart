@@ -8,22 +8,27 @@ part of 'inline_object4.dart';
 
 class _$InlineObject4 extends InlineObject4 {
   @override
-  final BuiltSet<String>? etags;
+  final String signatureMd5;
   @override
-  final String nextPartNumber;
+  final num signatureSizeInBytes;
   @override
-  final String maxParts;
+  final String? fileMd5;
+  @override
+  final num? fileSizeInBytes;
 
   factory _$InlineObject4([void Function(InlineObject4Builder)? updates]) =>
       (new InlineObject4Builder()..update(updates)).build();
 
   _$InlineObject4._(
-      {this.etags, required this.nextPartNumber, required this.maxParts})
+      {required this.signatureMd5,
+      required this.signatureSizeInBytes,
+      this.fileMd5,
+      this.fileSizeInBytes})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        nextPartNumber, 'InlineObject4', 'nextPartNumber');
+        signatureMd5, 'InlineObject4', 'signatureMd5');
     BuiltValueNullFieldError.checkNotNull(
-        maxParts, 'InlineObject4', 'maxParts');
+        signatureSizeInBytes, 'InlineObject4', 'signatureSizeInBytes');
   }
 
   @override
@@ -37,23 +42,27 @@ class _$InlineObject4 extends InlineObject4 {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is InlineObject4 &&
-        etags == other.etags &&
-        nextPartNumber == other.nextPartNumber &&
-        maxParts == other.maxParts;
+        signatureMd5 == other.signatureMd5 &&
+        signatureSizeInBytes == other.signatureSizeInBytes &&
+        fileMd5 == other.fileMd5 &&
+        fileSizeInBytes == other.fileSizeInBytes;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc(0, etags.hashCode), nextPartNumber.hashCode),
-        maxParts.hashCode));
+    return $jf($jc(
+        $jc($jc($jc(0, signatureMd5.hashCode), signatureSizeInBytes.hashCode),
+            fileMd5.hashCode),
+        fileSizeInBytes.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('InlineObject4')
-          ..add('etags', etags)
-          ..add('nextPartNumber', nextPartNumber)
-          ..add('maxParts', maxParts))
+          ..add('signatureMd5', signatureMd5)
+          ..add('signatureSizeInBytes', signatureSizeInBytes)
+          ..add('fileMd5', fileMd5)
+          ..add('fileSizeInBytes', fileSizeInBytes))
         .toString();
   }
 }
@@ -62,18 +71,23 @@ class InlineObject4Builder
     implements Builder<InlineObject4, InlineObject4Builder> {
   _$InlineObject4? _$v;
 
-  SetBuilder<String>? _etags;
-  SetBuilder<String> get etags => _$this._etags ??= new SetBuilder<String>();
-  set etags(SetBuilder<String>? etags) => _$this._etags = etags;
+  String? _signatureMd5;
+  String? get signatureMd5 => _$this._signatureMd5;
+  set signatureMd5(String? signatureMd5) => _$this._signatureMd5 = signatureMd5;
 
-  String? _nextPartNumber;
-  String? get nextPartNumber => _$this._nextPartNumber;
-  set nextPartNumber(String? nextPartNumber) =>
-      _$this._nextPartNumber = nextPartNumber;
+  num? _signatureSizeInBytes;
+  num? get signatureSizeInBytes => _$this._signatureSizeInBytes;
+  set signatureSizeInBytes(num? signatureSizeInBytes) =>
+      _$this._signatureSizeInBytes = signatureSizeInBytes;
 
-  String? _maxParts;
-  String? get maxParts => _$this._maxParts;
-  set maxParts(String? maxParts) => _$this._maxParts = maxParts;
+  String? _fileMd5;
+  String? get fileMd5 => _$this._fileMd5;
+  set fileMd5(String? fileMd5) => _$this._fileMd5 = fileMd5;
+
+  num? _fileSizeInBytes;
+  num? get fileSizeInBytes => _$this._fileSizeInBytes;
+  set fileSizeInBytes(num? fileSizeInBytes) =>
+      _$this._fileSizeInBytes = fileSizeInBytes;
 
   InlineObject4Builder() {
     InlineObject4._initializeBuilder(this);
@@ -82,9 +96,10 @@ class InlineObject4Builder
   InlineObject4Builder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _etags = $v.etags?.toBuilder();
-      _nextPartNumber = $v.nextPartNumber;
-      _maxParts = $v.maxParts;
+      _signatureMd5 = $v.signatureMd5;
+      _signatureSizeInBytes = $v.signatureSizeInBytes;
+      _fileMd5 = $v.fileMd5;
+      _fileSizeInBytes = $v.fileSizeInBytes;
       _$v = null;
     }
     return this;
@@ -103,26 +118,14 @@ class InlineObject4Builder
 
   @override
   _$InlineObject4 build() {
-    _$InlineObject4 _$result;
-    try {
-      _$result = _$v ??
-          new _$InlineObject4._(
-              etags: _etags?.build(),
-              nextPartNumber: BuiltValueNullFieldError.checkNotNull(
-                  nextPartNumber, 'InlineObject4', 'nextPartNumber'),
-              maxParts: BuiltValueNullFieldError.checkNotNull(
-                  maxParts, 'InlineObject4', 'maxParts'));
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'etags';
-        _etags?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'InlineObject4', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        new _$InlineObject4._(
+            signatureMd5: BuiltValueNullFieldError.checkNotNull(
+                signatureMd5, 'InlineObject4', 'signatureMd5'),
+            signatureSizeInBytes: BuiltValueNullFieldError.checkNotNull(
+                signatureSizeInBytes, 'InlineObject4', 'signatureSizeInBytes'),
+            fileMd5: fileMd5,
+            fileSizeInBytes: fileSizeInBytes);
     replace(_$result);
     return _$result;
   }

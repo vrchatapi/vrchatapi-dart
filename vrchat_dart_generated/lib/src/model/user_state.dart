@@ -9,15 +9,15 @@ import 'package:built_value/serializer.dart';
 part 'user_state.g.dart';
 
 class UserState extends EnumClass {
-  /// * \"online\" User is online in VRChat * \"active\" User is online, but not in VRChat * \"offline\" User is offline
+  /// * \"online\" User is online in VRChat * \"active\" User is online, but not in VRChat * \"offline\" User is offline  Always offline when returned through `getCurrentUser` (/auth/user).
   @BuiltValueEnumConst(wireName: r'offline')
   static const UserState offline = _$offline;
 
-  /// * \"online\" User is online in VRChat * \"active\" User is online, but not in VRChat * \"offline\" User is offline
+  /// * \"online\" User is online in VRChat * \"active\" User is online, but not in VRChat * \"offline\" User is offline  Always offline when returned through `getCurrentUser` (/auth/user).
   @BuiltValueEnumConst(wireName: r'active')
   static const UserState active = _$active;
 
-  /// * \"online\" User is online in VRChat * \"active\" User is online, but not in VRChat * \"offline\" User is offline
+  /// * \"online\" User is online in VRChat * \"active\" User is online, but not in VRChat * \"offline\" User is offline  Always offline when returned through `getCurrentUser` (/auth/user).
   @BuiltValueEnumConst(wireName: r'online')
   static const UserState online = _$online;
 

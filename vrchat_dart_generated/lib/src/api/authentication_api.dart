@@ -36,7 +36,7 @@ class AuthenticationApi {
   ///
   /// Returns a [Future] containing a [Response] with a [CurrentUser] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<CurrentUser>> deleteUserById({
+  Future<Response<CurrentUser>> deleteUser({
     required String userId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

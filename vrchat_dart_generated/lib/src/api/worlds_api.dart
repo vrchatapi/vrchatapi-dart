@@ -10,8 +10,8 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
-import 'package:vrchat_dart_generated/src/model/inline_object5.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object6.dart';
+import 'package:vrchat_dart_generated/src/model/inline_object7.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2006.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2007.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response401.dart';
@@ -30,7 +30,7 @@ class WorldsApi {
   /// Create a new world. This endpoint requires &#x60;assetUrl&#x60; to be a valid File object with &#x60;.vrcw&#x60; file extension, and &#x60;imageUrl&#x60; to be a valid File object with an image file extension.
   ///
   /// Parameters:
-  /// * [inlineObject5]
+  /// * [inlineObject6]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -41,7 +41,7 @@ class WorldsApi {
   /// Returns a [Future] containing a [Response] with a [World] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<World>> createWorld({
-    InlineObject5? inlineObject5,
+    InlineObject6? inlineObject6,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -66,10 +66,10 @@ class WorldsApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InlineObject5);
-      _bodyData = inlineObject5 == null
+      const _type = FullType(InlineObject6);
+      _bodyData = inlineObject6 == null
           ? null
-          : _serializers.serialize(inlineObject5, specifiedType: _type);
+          : _serializers.serialize(inlineObject6, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -1250,7 +1250,7 @@ class WorldsApi {
   ///
   /// Parameters:
   /// * [worldId]
-  /// * [inlineObject6]
+  /// * [inlineObject7]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1262,7 +1262,7 @@ class WorldsApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<World>> updateWorld({
     required String worldId,
-    InlineObject6? inlineObject6,
+    InlineObject7? inlineObject7,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1301,10 +1301,10 @@ class WorldsApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InlineObject6);
-      _bodyData = inlineObject6 == null
+      const _type = FullType(InlineObject7);
+      _bodyData = inlineObject7 == null
           ? null
-          : _serializers.serialize(inlineObject6, specifiedType: _type);
+          : _serializers.serialize(inlineObject7, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(

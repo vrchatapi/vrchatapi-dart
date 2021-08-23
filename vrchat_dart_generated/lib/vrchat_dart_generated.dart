@@ -44,6 +44,7 @@ export 'package:vrchat_dart_generated/src/model/inline_object1.dart';
 export 'package:vrchat_dart_generated/src/model/inline_object10.dart';
 export 'package:vrchat_dart_generated/src/model/inline_object11.dart';
 export 'package:vrchat_dart_generated/src/model/inline_object12.dart';
+export 'package:vrchat_dart_generated/src/model/inline_object13.dart';
 export 'package:vrchat_dart_generated/src/model/inline_object2.dart';
 export 'package:vrchat_dart_generated/src/model/inline_object3.dart';
 export 'package:vrchat_dart_generated/src/model/inline_object4.dart';

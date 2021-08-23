@@ -3,8 +3,6 @@
 //
 
 import 'package:built_collection/built_collection.dart';
-import 'package:vrchat_dart_generated/src/model/release_status.dart';
-import 'package:vrchat_dart_generated/src/model/platform.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -13,71 +11,28 @@ part 'inline_object5.g.dart';
 /// InlineObject5
 ///
 /// Properties:
-/// * [assetUrl]
-/// * [assetVersion]
-/// * [authorId]
-/// * [authorName]
-/// * [capacity]
-/// * [description]
-/// * [id]
-/// * [imageUrl]
-/// * [name]
-/// * [platform]
-/// * [releaseStatus]
-/// * [tags]
-/// * [unityPackageUrl]
-/// * [unityVersion]
+/// * [etags] - Array of ETags uploaded.
+/// * [nextPartNumber] - Always a zero in string form, despite how many parts uploaded.
+/// * [maxParts] - Always a zero in string form, despite how many parts uploaded.
 abstract class InlineObject5
     implements Built<InlineObject5, InlineObject5Builder> {
-  @BuiltValueField(wireName: r'assetUrl')
-  String get assetUrl;
+  /// Array of ETags uploaded.
+  @BuiltValueField(wireName: r'etags')
+  BuiltSet<String>? get etags;
 
-  @BuiltValueField(wireName: r'assetVersion')
-  String? get assetVersion;
+  /// Always a zero in string form, despite how many parts uploaded.
+  @BuiltValueField(wireName: r'nextPartNumber')
+  String get nextPartNumber;
 
-  @BuiltValueField(wireName: r'authorId')
-  String? get authorId;
-
-  @BuiltValueField(wireName: r'authorName')
-  String? get authorName;
-
-  @BuiltValueField(wireName: r'capacity')
-  int? get capacity;
-
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
-  @BuiltValueField(wireName: r'id')
-  String? get id;
-
-  @BuiltValueField(wireName: r'imageUrl')
-  String get imageUrl;
-
-  @BuiltValueField(wireName: r'name')
-  String get name;
-
-  @BuiltValueField(wireName: r'platform')
-  Platform? get platform;
-  // enum platformEnum {  standalonewindows,  android,  };
-
-  @BuiltValueField(wireName: r'releaseStatus')
-  ReleaseStatus? get releaseStatus;
-  // enum releaseStatusEnum {  public,  private,  hidden,  };
-
-  @BuiltValueField(wireName: r'tags')
-  BuiltList<String>? get tags;
-
-  @BuiltValueField(wireName: r'unityPackageUrl')
-  String? get unityPackageUrl;
-
-  @BuiltValueField(wireName: r'unityVersion')
-  String? get unityVersion;
+  /// Always a zero in string form, despite how many parts uploaded.
+  @BuiltValueField(wireName: r'maxParts')
+  String get maxParts;
 
   InlineObject5._();
 
   static void _initializeBuilder(InlineObject5Builder b) => b
-    ..capacity = 16
-    ..unityVersion = '5.3.4p1';
+    ..nextPartNumber = '0'
+    ..maxParts = '0';
 
   factory InlineObject5([void updates(InlineObject5Builder b)]) =
       _$InlineObject5;
@@ -98,84 +53,20 @@ class _$InlineObject5Serializer implements StructuredSerializer<InlineObject5> {
   Iterable<Object?> serialize(Serializers serializers, InlineObject5 object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
-    result
-      ..add(r'assetUrl')
-      ..add(serializers.serialize(object.assetUrl,
-          specifiedType: const FullType(String)));
-    if (object.assetVersion != null) {
+    if (object.etags != null) {
       result
-        ..add(r'assetVersion')
-        ..add(serializers.serialize(object.assetVersion,
-            specifiedType: const FullType(String)));
-    }
-    if (object.authorId != null) {
-      result
-        ..add(r'authorId')
-        ..add(serializers.serialize(object.authorId,
-            specifiedType: const FullType(String)));
-    }
-    if (object.authorName != null) {
-      result
-        ..add(r'authorName')
-        ..add(serializers.serialize(object.authorName,
-            specifiedType: const FullType(String)));
-    }
-    if (object.capacity != null) {
-      result
-        ..add(r'capacity')
-        ..add(serializers.serialize(object.capacity,
-            specifiedType: const FullType(int)));
-    }
-    if (object.description != null) {
-      result
-        ..add(r'description')
-        ..add(serializers.serialize(object.description,
-            specifiedType: const FullType(String)));
-    }
-    if (object.id != null) {
-      result
-        ..add(r'id')
-        ..add(serializers.serialize(object.id,
-            specifiedType: const FullType(String)));
+        ..add(r'etags')
+        ..add(serializers.serialize(object.etags,
+            specifiedType: const FullType(BuiltSet, [FullType(String)])));
     }
     result
-      ..add(r'imageUrl')
-      ..add(serializers.serialize(object.imageUrl,
+      ..add(r'nextPartNumber')
+      ..add(serializers.serialize(object.nextPartNumber,
           specifiedType: const FullType(String)));
     result
-      ..add(r'name')
-      ..add(serializers.serialize(object.name,
+      ..add(r'maxParts')
+      ..add(serializers.serialize(object.maxParts,
           specifiedType: const FullType(String)));
-    if (object.platform != null) {
-      result
-        ..add(r'platform')
-        ..add(serializers.serialize(object.platform,
-            specifiedType: const FullType(Platform)));
-    }
-    if (object.releaseStatus != null) {
-      result
-        ..add(r'releaseStatus')
-        ..add(serializers.serialize(object.releaseStatus,
-            specifiedType: const FullType(ReleaseStatus)));
-    }
-    if (object.tags != null) {
-      result
-        ..add(r'tags')
-        ..add(serializers.serialize(object.tags,
-            specifiedType: const FullType(BuiltList, [FullType(String)])));
-    }
-    if (object.unityPackageUrl != null) {
-      result
-        ..add(r'unityPackageUrl')
-        ..add(serializers.serialize(object.unityPackageUrl,
-            specifiedType: const FullType(String)));
-    }
-    if (object.unityVersion != null) {
-      result
-        ..add(r'unityVersion')
-        ..add(serializers.serialize(object.unityVersion,
-            specifiedType: const FullType(String)));
-    }
     return result;
   }
 
@@ -191,61 +82,17 @@ class _$InlineObject5Serializer implements StructuredSerializer<InlineObject5> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case r'assetUrl':
-          result.assetUrl = serializers.deserialize(value,
+        case r'etags':
+          result.etags.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(BuiltSet, [FullType(String)]))
+              as BuiltSet<String>);
+          break;
+        case r'nextPartNumber':
+          result.nextPartNumber = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case r'assetVersion':
-          result.assetVersion = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case r'authorId':
-          result.authorId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case r'authorName':
-          result.authorName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case r'capacity':
-          result.capacity = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          break;
-        case r'description':
-          result.description = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case r'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case r'imageUrl':
-          result.imageUrl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case r'name':
-          result.name = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case r'platform':
-          result.platform = serializers.deserialize(value,
-              specifiedType: const FullType(Platform)) as Platform;
-          break;
-        case r'releaseStatus':
-          result.releaseStatus = serializers.deserialize(value,
-              specifiedType: const FullType(ReleaseStatus)) as ReleaseStatus;
-          break;
-        case r'tags':
-          result.tags.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>);
-          break;
-        case r'unityPackageUrl':
-          result.unityPackageUrl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case r'unityVersion':
-          result.unityVersion = serializers.deserialize(value,
+        case r'maxParts':
+          result.maxParts = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
       }

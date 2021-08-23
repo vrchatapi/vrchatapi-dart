@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **statusHistory** | **BuiltList&lt;String&gt;** |  | 
 **statusFirstTime** | **bool** |  | 
 **friends** | **BuiltList&lt;String&gt;** |  | 
-**friendGroupNames** | **BuiltList&lt;String&gt;** |  | 
+**friendGroupNames** | **BuiltList&lt;String&gt;** | Always empty array. | 
 **currentAvatarImageUrl** | **String** |  | 
 **currentAvatarThumbnailImageUrl** | **String** |  | 
 **fallbackAvatar** | **String** |  | 

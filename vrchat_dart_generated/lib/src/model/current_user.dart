@@ -36,7 +36,7 @@ part 'current_user.g.dart';
 /// * [statusHistory]
 /// * [statusFirstTime]
 /// * [friends]
-/// * [friendGroupNames]
+/// * [friendGroupNames] - Always empty array.
 /// * [currentAvatarImageUrl]
 /// * [currentAvatarThumbnailImageUrl]
 /// * [fallbackAvatar]
@@ -121,6 +121,7 @@ abstract class CurrentUser implements Built<CurrentUser, CurrentUserBuilder> {
   @BuiltValueField(wireName: r'friends')
   BuiltList<String> get friends;
 
+  /// Always empty array.
   @BuiltValueField(wireName: r'friendGroupNames')
   BuiltList<String> get friendGroupNames;
 

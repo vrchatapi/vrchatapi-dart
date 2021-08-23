@@ -8,7 +8,7 @@ part of 'inline_object6.dart';
 
 class _$InlineObject6 extends InlineObject6 {
   @override
-  final String? assetUrl;
+  final String assetUrl;
   @override
   final String? assetVersion;
   @override
@@ -22,9 +22,9 @@ class _$InlineObject6 extends InlineObject6 {
   @override
   final String? id;
   @override
-  final String? imageUrl;
+  final String imageUrl;
   @override
-  final String? name;
+  final String name;
   @override
   final Platform? platform;
   @override
@@ -40,21 +40,27 @@ class _$InlineObject6 extends InlineObject6 {
       (new InlineObject6Builder()..update(updates)).build();
 
   _$InlineObject6._(
-      {this.assetUrl,
+      {required this.assetUrl,
       this.assetVersion,
       this.authorId,
       this.authorName,
       this.capacity,
       this.description,
       this.id,
-      this.imageUrl,
-      this.name,
+      required this.imageUrl,
+      required this.name,
       this.platform,
       this.releaseStatus,
       this.tags,
       this.unityPackageUrl,
       this.unityVersion})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        assetUrl, 'InlineObject6', 'assetUrl');
+    BuiltValueNullFieldError.checkNotNull(
+        imageUrl, 'InlineObject6', 'imageUrl');
+    BuiltValueNullFieldError.checkNotNull(name, 'InlineObject6', 'name');
+  }
 
   @override
   InlineObject6 rebuild(void Function(InlineObject6Builder) updates) =>
@@ -241,15 +247,18 @@ class InlineObject6Builder
     try {
       _$result = _$v ??
           new _$InlineObject6._(
-              assetUrl: assetUrl,
+              assetUrl: BuiltValueNullFieldError.checkNotNull(
+                  assetUrl, 'InlineObject6', 'assetUrl'),
               assetVersion: assetVersion,
               authorId: authorId,
               authorName: authorName,
               capacity: capacity,
               description: description,
               id: id,
-              imageUrl: imageUrl,
-              name: name,
+              imageUrl: BuiltValueNullFieldError.checkNotNull(
+                  imageUrl, 'InlineObject6', 'imageUrl'),
+              name: BuiltValueNullFieldError.checkNotNull(
+                  name, 'InlineObject6', 'name'),
               platform: platform,
               releaseStatus: releaseStatus,
               tags: _tags?.build(),

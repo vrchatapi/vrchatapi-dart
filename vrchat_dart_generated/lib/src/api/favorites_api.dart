@@ -12,8 +12,8 @@ import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
 import 'package:vrchat_dart_generated/src/model/favorite.dart';
 import 'package:vrchat_dart_generated/src/model/favorite_group.dart';
-import 'package:vrchat_dart_generated/src/model/inline_object7.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object8.dart';
+import 'package:vrchat_dart_generated/src/model/inline_object9.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response401.dart';
 
 class FavoritesApi {
@@ -27,7 +27,7 @@ class FavoritesApi {
   /// Add a new favorite.  Friend groups are named &#x60;group_0&#x60; through &#x60;group_3&#x60;. Avatar and World groups are named &#x60;avatars1&#x60; to &#x60;avatar4&#x60; and &#x60;worlds1&#x60; to &#x60;worlds4&#x60;.  You cannot add people whom you are not friends with to your friends list. Destroying a friendship removes the person as favorite on both sides.
   ///
   /// Parameters:
-  /// * [inlineObject7]
+  /// * [inlineObject8]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -38,7 +38,7 @@ class FavoritesApi {
   /// Returns a [Future] containing a [Response] with a [Favorite] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<Favorite>> addFavorite({
-    InlineObject7? inlineObject7,
+    InlineObject8? inlineObject8,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -76,10 +76,10 @@ class FavoritesApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InlineObject7);
-      _bodyData = inlineObject7 == null
+      const _type = FullType(InlineObject8);
+      _bodyData = inlineObject8 == null
           ? null
-          : _serializers.serialize(inlineObject7, specifiedType: _type);
+          : _serializers.serialize(inlineObject8, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -710,7 +710,7 @@ class FavoritesApi {
   /// * [favoriteGroupType] - The type of group to fetch, must be a valid FavoriteType.
   /// * [favoriteGroupName]
   /// * [userId]
-  /// * [inlineObject8]
+  /// * [inlineObject9]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -724,7 +724,7 @@ class FavoritesApi {
     required String favoriteGroupType,
     required String favoriteGroupName,
     required String userId,
-    InlineObject8? inlineObject8,
+    InlineObject9? inlineObject9,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -768,10 +768,10 @@ class FavoritesApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InlineObject8);
-      _bodyData = inlineObject8 == null
+      const _type = FullType(InlineObject9);
+      _bodyData = inlineObject9 == null
           ? null
-          : _serializers.serialize(inlineObject8, specifiedType: _type);
+          : _serializers.serialize(inlineObject9, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(

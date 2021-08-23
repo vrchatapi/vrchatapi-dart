@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **addFavorite**
-> Favorite addFavorite(inlineObject7)
+> Favorite addFavorite(inlineObject8)
 
 Add Favorite
 
@@ -39,10 +39,10 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFavoritesApi();
-final InlineObject7 inlineObject7 = ; // InlineObject7 | 
+final InlineObject8 inlineObject8 = ; // InlineObject8 | 
 
 try { 
-    final response = api.addFavorite(inlineObject7);
+    final response = api.addFavorite(inlineObject8);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling FavoritesApi->addFavorite: $e\n');
@@ -53,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject7** | [**InlineObject7**](InlineObject7.md)|  | [optional] 
+ **inlineObject8** | [**InlineObject8**](InlineObject8.md)|  | [optional] 
 
 ### Return type
 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateFavoriteGroup**
-> updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, inlineObject8)
+> updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, inlineObject9)
 
 Update Favorite Group
 
@@ -417,10 +417,10 @@ final api = VrchatDartGenerated().getFavoritesApi();
 final String favoriteGroupType = favoriteGroupType_example; // String | The type of group to fetch, must be a valid FavoriteType.
 final String favoriteGroupName = favoriteGroupName_example; // String | 
 final String userId = userId_example; // String | 
-final InlineObject8 inlineObject8 = ; // InlineObject8 | 
+final InlineObject9 inlineObject9 = ; // InlineObject9 | 
 
 try { 
-    api.updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, inlineObject8);
+    api.updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, inlineObject9);
 } catch on DioError (e) {
     print('Exception when calling FavoritesApi->updateFavoriteGroup: $e\n');
 }
@@ -433,7 +433,7 @@ Name | Type | Description  | Notes
  **favoriteGroupType** | **String**| The type of group to fetch, must be a valid FavoriteType. | 
  **favoriteGroupName** | **String**|  | 
  **userId** | **String**|  | 
- **inlineObject8** | [**InlineObject8**](InlineObject8.md)|  | [optional] 
+ **inlineObject9** | [**InlineObject9**](InlineObject9.md)|  | [optional] 
 
 ### Return type
 

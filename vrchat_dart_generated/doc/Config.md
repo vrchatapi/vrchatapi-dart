@@ -9,7 +9,7 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | **String** | VRChat's office address | 
-**announcements** | [**BuiltSet&lt;ConfigAnnouncements&gt;**](ConfigAnnouncements.md) | PSA, Public Announcements | 
+**announcements** | [**BuiltSet&lt;ConfigAnnouncements&gt;**](ConfigAnnouncements.md) | Public Announcements | 
 **apiKey** | **String** | apiKey to be used for all other requests | 
 **appName** | **String** | Game name | [default to 'VrChat']
 **buildVersionTag** | **String** | Build tag of the API server | 

@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **createAvatar**
-> Avatar createAvatar(inlineObject9)
+> Avatar createAvatar(inlineObject10)
 
 Create Avatar
 
@@ -38,10 +38,10 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getAvatarsApi();
-final InlineObject9 inlineObject9 = ; // InlineObject9 | 
+final InlineObject10 inlineObject10 = ; // InlineObject10 | 
 
 try { 
-    final response = api.createAvatar(inlineObject9);
+    final response = api.createAvatar(inlineObject10);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AvatarsApi->createAvatar: $e\n');
@@ -52,7 +52,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject9** | [**InlineObject9**](InlineObject9.md)|  | [optional] 
+ **inlineObject10** | [**InlineObject10**](InlineObject10.md)|  | [optional] 
 
 ### Return type
 
@@ -372,7 +372,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateAvatar**
-> Avatar updateAvatar(avatarId, inlineObject10)
+> Avatar updateAvatar(avatarId, inlineObject11)
 
 Update Avatar
 
@@ -392,10 +392,10 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getAvatarsApi();
 final String avatarId = avatarId_example; // String | 
-final InlineObject10 inlineObject10 = ; // InlineObject10 | 
+final InlineObject11 inlineObject11 = ; // InlineObject11 | 
 
 try { 
-    final response = api.updateAvatar(avatarId, inlineObject10);
+    final response = api.updateAvatar(avatarId, inlineObject11);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AvatarsApi->updateAvatar: $e\n');
@@ -407,7 +407,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **avatarId** | **String**|  | 
- **inlineObject10** | [**InlineObject10**](InlineObject10.md)|  | [optional] 
+ **inlineObject11** | [**InlineObject11**](InlineObject11.md)|  | [optional] 
 
 ### Return type
 

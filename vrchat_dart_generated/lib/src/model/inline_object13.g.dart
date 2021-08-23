@@ -1,39 +1,36 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'inline_object12.dart';
+part of 'inline_object13.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$InlineObject12 extends InlineObject12 {
+class _$InlineObject13 extends InlineObject13 {
   @override
-  final String moderated;
+  final String? moderated;
   @override
   final PlayerModerationType type;
 
-  factory _$InlineObject12([void Function(InlineObject12Builder)? updates]) =>
-      (new InlineObject12Builder()..update(updates)).build();
+  factory _$InlineObject13([void Function(InlineObject13Builder)? updates]) =>
+      (new InlineObject13Builder()..update(updates)).build();
 
-  _$InlineObject12._({required this.moderated, required this.type})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        moderated, 'InlineObject12', 'moderated');
-    BuiltValueNullFieldError.checkNotNull(type, 'InlineObject12', 'type');
+  _$InlineObject13._({this.moderated, required this.type}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(type, 'InlineObject13', 'type');
   }
 
   @override
-  InlineObject12 rebuild(void Function(InlineObject12Builder) updates) =>
+  InlineObject13 rebuild(void Function(InlineObject13Builder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  InlineObject12Builder toBuilder() =>
-      new InlineObject12Builder()..replace(this);
+  InlineObject13Builder toBuilder() =>
+      new InlineObject13Builder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is InlineObject12 &&
+    return other is InlineObject13 &&
         moderated == other.moderated &&
         type == other.type;
   }
@@ -45,16 +42,16 @@ class _$InlineObject12 extends InlineObject12 {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InlineObject12')
+    return (newBuiltValueToStringHelper('InlineObject13')
           ..add('moderated', moderated)
           ..add('type', type))
         .toString();
   }
 }
 
-class InlineObject12Builder
-    implements Builder<InlineObject12, InlineObject12Builder> {
-  _$InlineObject12? _$v;
+class InlineObject13Builder
+    implements Builder<InlineObject13, InlineObject13Builder> {
+  _$InlineObject13? _$v;
 
   String? _moderated;
   String? get moderated => _$this._moderated;
@@ -64,11 +61,11 @@ class InlineObject12Builder
   PlayerModerationType? get type => _$this._type;
   set type(PlayerModerationType? type) => _$this._type = type;
 
-  InlineObject12Builder() {
-    InlineObject12._initializeBuilder(this);
+  InlineObject13Builder() {
+    InlineObject13._initializeBuilder(this);
   }
 
-  InlineObject12Builder get _$this {
+  InlineObject13Builder get _$this {
     final $v = _$v;
     if ($v != null) {
       _moderated = $v.moderated;
@@ -79,24 +76,23 @@ class InlineObject12Builder
   }
 
   @override
-  void replace(InlineObject12 other) {
+  void replace(InlineObject13 other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$InlineObject12;
+    _$v = other as _$InlineObject13;
   }
 
   @override
-  void update(void Function(InlineObject12Builder)? updates) {
+  void update(void Function(InlineObject13Builder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$InlineObject12 build() {
+  _$InlineObject13 build() {
     final _$result = _$v ??
-        new _$InlineObject12._(
-            moderated: BuiltValueNullFieldError.checkNotNull(
-                moderated, 'InlineObject12', 'moderated'),
+        new _$InlineObject13._(
+            moderated: moderated,
             type: BuiltValueNullFieldError.checkNotNull(
-                type, 'InlineObject12', 'type'));
+                type, 'InlineObject13', 'type'));
     replace(_$result);
     return _$result;
   }

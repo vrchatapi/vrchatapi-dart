@@ -30,7 +30,7 @@ abstract class InlineObject10
   String? get id;
 
   @BuiltValueField(wireName: r'name')
-  String? get name;
+  String get name;
 
   @BuiltValueField(wireName: r'description')
   String? get description;
@@ -39,7 +39,7 @@ abstract class InlineObject10
   BuiltList<String>? get tags;
 
   @BuiltValueField(wireName: r'imageUrl')
-  String? get imageUrl;
+  String get imageUrl;
 
   @BuiltValueField(wireName: r'releaseStatus')
   ReleaseStatus? get releaseStatus;
@@ -87,12 +87,10 @@ class _$InlineObject10Serializer
         ..add(serializers.serialize(object.id,
             specifiedType: const FullType(String)));
     }
-    if (object.name != null) {
-      result
-        ..add(r'name')
-        ..add(serializers.serialize(object.name,
-            specifiedType: const FullType(String)));
-    }
+    result
+      ..add(r'name')
+      ..add(serializers.serialize(object.name,
+          specifiedType: const FullType(String)));
     if (object.description != null) {
       result
         ..add(r'description')
@@ -105,12 +103,10 @@ class _$InlineObject10Serializer
         ..add(serializers.serialize(object.tags,
             specifiedType: const FullType(BuiltList, [FullType(String)])));
     }
-    if (object.imageUrl != null) {
-      result
-        ..add(r'imageUrl')
-        ..add(serializers.serialize(object.imageUrl,
-            specifiedType: const FullType(String)));
-    }
+    result
+      ..add(r'imageUrl')
+      ..add(serializers.serialize(object.imageUrl,
+          specifiedType: const FullType(String)));
     if (object.releaseStatus != null) {
       result
         ..add(r'releaseStatus')

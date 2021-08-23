@@ -17,7 +17,7 @@ part 'config.g.dart';
 ///
 /// Properties:
 /// * [address] - VRChat's office address
-/// * [announcements] - PSA, Public Announcements
+/// * [announcements] - Public Announcements
 /// * [apiKey] - apiKey to be used for all other requests
 /// * [appName] - Game name
 /// * [buildVersionTag] - Build tag of the API server
@@ -96,7 +96,7 @@ abstract class Config implements Built<Config, ConfigBuilder> {
   @BuiltValueField(wireName: r'address')
   String get address;
 
-  /// PSA, Public Announcements
+  /// Public Announcements
   @BuiltValueField(wireName: r'announcements')
   BuiltSet<ConfigAnnouncements> get announcements;
 

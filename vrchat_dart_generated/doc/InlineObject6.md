@@ -8,15 +8,15 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**assetUrl** | **String** |  | [optional] 
+**assetUrl** | **String** |  | 
 **assetVersion** | **String** |  | [optional] 
 **authorId** | **String** |  | [optional] 
 **authorName** | **String** |  | [optional] 
 **capacity** | **int** |  | [optional] [default to 16]
 **description** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 
-**imageUrl** | **String** |  | [optional] 
-**name** | **String** |  | [optional] 
+**imageUrl** | **String** |  | 
+**name** | **String** |  | 
 **platform** | [**Platform**](Platform.md) |  | [optional] 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | [optional] 
 **tags** | **BuiltList&lt;String&gt;** |  | [optional] 
