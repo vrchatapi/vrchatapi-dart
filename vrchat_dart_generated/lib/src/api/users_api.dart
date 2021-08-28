@@ -12,7 +12,7 @@ import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object2.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response401.dart';
+import 'package:vrchat_dart_generated/src/model/inline_response403.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user.dart';
 import 'package:vrchat_dart_generated/src/model/user.dart';
 

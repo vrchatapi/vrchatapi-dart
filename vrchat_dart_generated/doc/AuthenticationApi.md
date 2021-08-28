@@ -123,15 +123,11 @@ This endpoint does not need any parameter.
 
 Logout
 
-Invalidates the auth cookie.
+Invalidates the login session.
 
 ### Example 
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 // TODO Configure API key authorization: authCookie
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -156,7 +152,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -222,10 +218,6 @@ Verify whether the currently provided Auth Token is valid.
 ### Example 
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 // TODO Configure API key authorization: authCookie
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -250,7 +242,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 

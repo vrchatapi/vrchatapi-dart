@@ -12,7 +12,6 @@ import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object12.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object13.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response401.dart';
 import 'package:vrchat_dart_generated/src/model/player_moderation.dart';
 
 class PlayermoderationApi {

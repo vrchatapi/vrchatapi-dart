@@ -14,7 +14,6 @@ import 'package:vrchat_dart_generated/src/model/inline_object6.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object7.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2006.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2007.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response401.dart';
 import 'package:vrchat_dart_generated/src/model/instance.dart';
 import 'package:vrchat_dart_generated/src/model/limited_world.dart';
 import 'package:vrchat_dart_generated/src/model/world.dart';

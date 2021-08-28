@@ -14,7 +14,6 @@ import 'package:vrchat_dart_generated/src/model/favorite.dart';
 import 'package:vrchat_dart_generated/src/model/favorite_group.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object8.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object9.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response401.dart';
 
 class FavoritesApi {
   final Dio _dio;

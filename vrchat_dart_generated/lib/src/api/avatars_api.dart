@@ -14,7 +14,6 @@ import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object10.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object11.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response401.dart';
 
 class AvatarsApi {
   final Dio _dio;

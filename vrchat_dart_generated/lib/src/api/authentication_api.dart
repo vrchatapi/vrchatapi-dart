@@ -8,11 +8,11 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
+import 'package:vrchat_dart_generated/src/model/error.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object1.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response200.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2001.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response401.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
 
 class AuthenticationApi {
@@ -198,7 +198,7 @@ class AuthenticationApi {
   }
 
   /// Logout
-  /// Invalidates the auth cookie.
+  /// Invalidates the login session.
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -226,12 +226,6 @@ class AuthenticationApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
-            'where': '',
-          },
           {
             'type': 'apiKey',
             'name': 'authCookie',
@@ -410,12 +404,6 @@ class AuthenticationApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
-            'where': '',
-          },
           {
             'type': 'apiKey',
             'name': 'authCookie',

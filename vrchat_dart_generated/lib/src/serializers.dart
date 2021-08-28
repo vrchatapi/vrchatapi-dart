@@ -53,7 +53,7 @@ import 'package:vrchat_dart_generated/src/model/inline_response2004.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2005.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2006.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2007.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response401.dart';
+import 'package:vrchat_dart_generated/src/model/inline_response403.dart';
 import 'package:vrchat_dart_generated/src/model/instance.dart';
 import 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
 import 'package:vrchat_dart_generated/src/model/limited_unity_package.dart';
@@ -62,6 +62,7 @@ import 'package:vrchat_dart_generated/src/model/limited_world.dart';
 import 'package:vrchat_dart_generated/src/model/mime_type.dart';
 import 'package:vrchat_dart_generated/src/model/notification.dart';
 import 'package:vrchat_dart_generated/src/model/notification_type.dart';
+import 'package:vrchat_dart_generated/src/model/permission.dart';
 import 'package:vrchat_dart_generated/src/model/platform.dart';
 import 'package:vrchat_dart_generated/src/model/player_moderation.dart';
 import 'package:vrchat_dart_generated/src/model/player_moderation_type.dart';
@@ -118,7 +119,7 @@ part 'serializers.g.dart';
   InlineResponse2005,
   InlineResponse2006,
   InlineResponse2007,
-  InlineResponse401,
+  InlineResponse403,
   Instance,
   InstancePlatforms,
   LimitedUnityPackage,
@@ -127,6 +128,7 @@ part 'serializers.g.dart';
   MIMEType,
   Notification,
   NotificationType,
+  Permission,
   Platform,
   PlayerModeration,
   PlayerModerationType,
@@ -163,6 +165,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Notification)]),
         () => ListBuilder<Notification>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Permission)]),
+        () => ListBuilder<Permission>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(PlayerModeration)]),
