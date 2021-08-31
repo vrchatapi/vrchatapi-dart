@@ -71,6 +71,7 @@ export 'package:vrchat_dart_generated/src/model/limited_world.dart';
 export 'package:vrchat_dart_generated/src/model/mime_type.dart';
 export 'package:vrchat_dart_generated/src/model/notification.dart';
 export 'package:vrchat_dart_generated/src/model/notification_type.dart';
+export 'package:vrchat_dart_generated/src/model/past_display_name.dart';
 export 'package:vrchat_dart_generated/src/model/permission.dart';
 export 'package:vrchat_dart_generated/src/model/platform.dart';
 export 'package:vrchat_dart_generated/src/model/player_moderation.dart';

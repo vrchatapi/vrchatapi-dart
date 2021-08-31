@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **bioLinks** | **BuiltList&lt;String&gt;** |  | 
 **profilePicOverride** | **String** |  | 
 **statusDescription** | **String** |  | 
-**pastDisplayNames** | **BuiltList&lt;String&gt;** |  | 
+**pastDisplayNames** | [**BuiltList&lt;PastDisplayName&gt;**](PastDisplayName.md) |  | 
 **hasEmail** | **bool** |  | 
 **hasPendingEmail** | **bool** |  | 
 **obfuscatedEmail** | **String** |  | 

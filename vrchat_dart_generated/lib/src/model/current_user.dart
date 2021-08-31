@@ -6,6 +6,7 @@ import 'package:vrchat_dart_generated/src/model/date.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
+import 'package:vrchat_dart_generated/src/model/past_display_name.dart';
 import 'package:vrchat_dart_generated/src/model/platform.dart';
 import 'package:built_value/json_object.dart';
 import 'package:vrchat_dart_generated/src/model/user_state.dart';
@@ -89,7 +90,7 @@ abstract class CurrentUser implements Built<CurrentUser, CurrentUserBuilder> {
   String get statusDescription;
 
   @BuiltValueField(wireName: r'pastDisplayNames')
-  BuiltList<String> get pastDisplayNames;
+  BuiltList<PastDisplayName> get pastDisplayNames;
 
   @BuiltValueField(wireName: r'hasEmail')
   bool get hasEmail;
@@ -263,7 +264,8 @@ class _$CurrentUserSerializer implements StructuredSerializer<CurrentUser> {
     result
       ..add(r'pastDisplayNames')
       ..add(serializers.serialize(object.pastDisplayNames,
-          specifiedType: const FullType(BuiltList, [FullType(String)])));
+          specifiedType:
+              const FullType(BuiltList, [FullType(PastDisplayName)])));
     result
       ..add(r'hasEmail')
       ..add(serializers.serialize(object.hasEmail,
@@ -469,8 +471,9 @@ class _$CurrentUserSerializer implements StructuredSerializer<CurrentUser> {
           break;
         case r'pastDisplayNames':
           result.pastDisplayNames.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>);
+                  specifiedType:
+                      const FullType(BuiltList, [FullType(PastDisplayName)]))
+              as BuiltList<PastDisplayName>);
           break;
         case r'hasEmail':
           result.hasEmail = serializers.deserialize(value,

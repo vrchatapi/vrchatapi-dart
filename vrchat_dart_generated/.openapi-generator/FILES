@@ -57,6 +57,7 @@ doc/MIMEType.md
 doc/Notification.md
 doc/NotificationType.md
 doc/NotificationsApi.md
+doc/PastDisplayName.md
 doc/Permission.md
 doc/PermissionsApi.md
 doc/Platform.md
@@ -143,6 +144,7 @@ lib/src/model/limited_world.dart
 lib/src/model/mime_type.dart
 lib/src/model/notification.dart
 lib/src/model/notification_type.dart
+lib/src/model/past_display_name.dart
 lib/src/model/permission.dart
 lib/src/model/platform.dart
 lib/src/model/player_moderation.dart
@@ -158,6 +160,4 @@ lib/src/model/world.dart
 lib/src/serializers.dart
 lib/vrchat_dart_generated.dart
 pubspec.yaml
-test/inline_response403_test.dart
-test/permission_test.dart
-test/permissions_api_test.dart
+test/past_display_name_test.dart

@@ -58,6 +58,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(MIMEType.serializer)
       ..add(Notification.serializer)
       ..add(NotificationType.serializer)
+      ..add(PastDisplayName.serializer)
       ..add(Permission.serializer)
       ..add(Platform.serializer)
       ..add(PlayerModeration.serializer)
@@ -134,8 +135,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
+          const FullType(BuiltList, const [const FullType(PastDisplayName)]),
+          () => new ListBuilder<PastDisplayName>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

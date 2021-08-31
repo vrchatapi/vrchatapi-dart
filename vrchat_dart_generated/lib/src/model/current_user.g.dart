@@ -24,7 +24,7 @@ class _$CurrentUser extends CurrentUser {
   @override
   final String statusDescription;
   @override
-  final BuiltList<String> pastDisplayNames;
+  final BuiltList<PastDisplayName> pastDisplayNames;
   @override
   final bool hasEmail;
   @override
@@ -418,10 +418,10 @@ class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
   set statusDescription(String? statusDescription) =>
       _$this._statusDescription = statusDescription;
 
-  ListBuilder<String>? _pastDisplayNames;
-  ListBuilder<String> get pastDisplayNames =>
-      _$this._pastDisplayNames ??= new ListBuilder<String>();
-  set pastDisplayNames(ListBuilder<String>? pastDisplayNames) =>
+  ListBuilder<PastDisplayName>? _pastDisplayNames;
+  ListBuilder<PastDisplayName> get pastDisplayNames =>
+      _$this._pastDisplayNames ??= new ListBuilder<PastDisplayName>();
+  set pastDisplayNames(ListBuilder<PastDisplayName>? pastDisplayNames) =>
       _$this._pastDisplayNames = pastDisplayNames;
 
   bool? _hasEmail;

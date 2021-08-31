@@ -62,6 +62,7 @@ import 'package:vrchat_dart_generated/src/model/limited_world.dart';
 import 'package:vrchat_dart_generated/src/model/mime_type.dart';
 import 'package:vrchat_dart_generated/src/model/notification.dart';
 import 'package:vrchat_dart_generated/src/model/notification_type.dart';
+import 'package:vrchat_dart_generated/src/model/past_display_name.dart';
 import 'package:vrchat_dart_generated/src/model/permission.dart';
 import 'package:vrchat_dart_generated/src/model/platform.dart';
 import 'package:vrchat_dart_generated/src/model/player_moderation.dart';
@@ -128,6 +129,7 @@ part 'serializers.g.dart';
   MIMEType,
   Notification,
   NotificationType,
+  PastDisplayName,
   Permission,
   Platform,
   PlayerModeration,
