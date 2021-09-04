@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFileDataUploadStatus**
-> InlineResponse2004 getFileDataUploadStatus(fileId, versionId, fileType)
+> InlineResponse2003 getFileDataUploadStatus(fileId, versionId, fileType)
 
 Check FileData Upload Status
 
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **startFileDataUpload**
-> InlineResponse2005 startFileDataUpload(fileId, versionId, fileType, partNumber)
+> InlineResponse2004 startFileDataUpload(fileId, versionId, fileType, partNumber)
 
 Start FileData Upload
 
@@ -545,7 +545,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 

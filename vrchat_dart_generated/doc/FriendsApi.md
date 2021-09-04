@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFriendStatus**
-> InlineResponse2003 getFriendStatus(userId)
+> FriendStatus getFriendStatus(userId)
 
 Check Friend Status
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**FriendStatus**](FriendStatus.md)
 
 ### Authorization
 

@@ -98,7 +98,7 @@ For more information, please visit [https://github.com/VRChatAPI](https://github
 To use the package from [pub.dev](https://pub.dev), please include the following in pubspec.yaml
 ```yaml
 dependencies:
-  vrchat_dart_generated: 1.3.10
+  vrchat_dart_generated: 1.3.11
 ```
 
 ### Github
@@ -200,7 +200,6 @@ Class | Method | HTTP request | Description
 [*SystemApi*](doc/SystemApi.md) | [**getSystemTime**](doc/SystemApi.md#getsystemtime) | **GET** /time | Current System Time
 [*UsersApi*](doc/UsersApi.md) | [**getUser**](doc/UsersApi.md#getuser) | **GET** /users/{userId} | Get User by ID
 [*UsersApi*](doc/UsersApi.md) | [**getUserByName**](doc/UsersApi.md#getuserbyname) | **GET** /users/{username}/name | Get User by Username
-[*UsersApi*](doc/UsersApi.md) | [**searchActiveUsers**](doc/UsersApi.md#searchactiveusers) | **GET** /users/active | Search Active Users
 [*UsersApi*](doc/UsersApi.md) | [**searchUsers**](doc/UsersApi.md#searchusers) | **GET** /users | Search All Users
 [*UsersApi*](doc/UsersApi.md) | [**updateUser**](doc/UsersApi.md#updateuser) | **PUT** /users/{userId} | Update User Info
 [*WorldsApi*](doc/WorldsApi.md) | [**createWorld**](doc/WorldsApi.md#createworld) | **POST** /worlds | Create World
@@ -239,6 +238,7 @@ Class | Method | HTTP request | Description
  - [FileData](doc/FileData.md)
  - [FileStatus](doc/FileStatus.md)
  - [FileVersion](doc/FileVersion.md)
+ - [FriendStatus](doc/FriendStatus.md)
  - [InlineObject](doc/InlineObject.md)
  - [InlineObject1](doc/InlineObject1.md)
  - [InlineObject10](doc/InlineObject10.md)
@@ -260,8 +260,6 @@ Class | Method | HTTP request | Description
  - [InlineResponse2004](doc/InlineResponse2004.md)
  - [InlineResponse2005](doc/InlineResponse2005.md)
  - [InlineResponse2006](doc/InlineResponse2006.md)
- - [InlineResponse2007](doc/InlineResponse2007.md)
- - [InlineResponse403](doc/InlineResponse403.md)
  - [Instance](doc/Instance.md)
  - [InstancePlatforms](doc/InstancePlatforms.md)
  - [LimitedUnityPackage](doc/LimitedUnityPackage.md)

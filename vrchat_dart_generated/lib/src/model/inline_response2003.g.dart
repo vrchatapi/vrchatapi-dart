@@ -8,27 +8,40 @@ part of 'inline_response2003.dart';
 
 class _$InlineResponse2003 extends InlineResponse2003 {
   @override
-  final bool isFriend;
+  final String uploadId;
   @override
-  final bool outgoingRequest;
+  final String fileName;
   @override
-  final bool incomingRequest;
+  final num nextPartNumber;
+  @override
+  final num maxParts;
+  @override
+  final BuiltList<JsonObject> parts;
+  @override
+  final BuiltList<JsonObject> etags;
 
   factory _$InlineResponse2003(
           [void Function(InlineResponse2003Builder)? updates]) =>
       (new InlineResponse2003Builder()..update(updates)).build();
 
   _$InlineResponse2003._(
-      {required this.isFriend,
-      required this.outgoingRequest,
-      required this.incomingRequest})
+      {required this.uploadId,
+      required this.fileName,
+      required this.nextPartNumber,
+      required this.maxParts,
+      required this.parts,
+      required this.etags})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        isFriend, 'InlineResponse2003', 'isFriend');
+        uploadId, 'InlineResponse2003', 'uploadId');
     BuiltValueNullFieldError.checkNotNull(
-        outgoingRequest, 'InlineResponse2003', 'outgoingRequest');
+        fileName, 'InlineResponse2003', 'fileName');
     BuiltValueNullFieldError.checkNotNull(
-        incomingRequest, 'InlineResponse2003', 'incomingRequest');
+        nextPartNumber, 'InlineResponse2003', 'nextPartNumber');
+    BuiltValueNullFieldError.checkNotNull(
+        maxParts, 'InlineResponse2003', 'maxParts');
+    BuiltValueNullFieldError.checkNotNull(parts, 'InlineResponse2003', 'parts');
+    BuiltValueNullFieldError.checkNotNull(etags, 'InlineResponse2003', 'etags');
   }
 
   @override
@@ -44,23 +57,35 @@ class _$InlineResponse2003 extends InlineResponse2003 {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is InlineResponse2003 &&
-        isFriend == other.isFriend &&
-        outgoingRequest == other.outgoingRequest &&
-        incomingRequest == other.incomingRequest;
+        uploadId == other.uploadId &&
+        fileName == other.fileName &&
+        nextPartNumber == other.nextPartNumber &&
+        maxParts == other.maxParts &&
+        parts == other.parts &&
+        etags == other.etags;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc(0, isFriend.hashCode), outgoingRequest.hashCode),
-        incomingRequest.hashCode));
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, uploadId.hashCode), fileName.hashCode),
+                    nextPartNumber.hashCode),
+                maxParts.hashCode),
+            parts.hashCode),
+        etags.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('InlineResponse2003')
-          ..add('isFriend', isFriend)
-          ..add('outgoingRequest', outgoingRequest)
-          ..add('incomingRequest', incomingRequest))
+          ..add('uploadId', uploadId)
+          ..add('fileName', fileName)
+          ..add('nextPartNumber', nextPartNumber)
+          ..add('maxParts', maxParts)
+          ..add('parts', parts)
+          ..add('etags', etags))
         .toString();
   }
 }
@@ -69,19 +94,32 @@ class InlineResponse2003Builder
     implements Builder<InlineResponse2003, InlineResponse2003Builder> {
   _$InlineResponse2003? _$v;
 
-  bool? _isFriend;
-  bool? get isFriend => _$this._isFriend;
-  set isFriend(bool? isFriend) => _$this._isFriend = isFriend;
+  String? _uploadId;
+  String? get uploadId => _$this._uploadId;
+  set uploadId(String? uploadId) => _$this._uploadId = uploadId;
 
-  bool? _outgoingRequest;
-  bool? get outgoingRequest => _$this._outgoingRequest;
-  set outgoingRequest(bool? outgoingRequest) =>
-      _$this._outgoingRequest = outgoingRequest;
+  String? _fileName;
+  String? get fileName => _$this._fileName;
+  set fileName(String? fileName) => _$this._fileName = fileName;
 
-  bool? _incomingRequest;
-  bool? get incomingRequest => _$this._incomingRequest;
-  set incomingRequest(bool? incomingRequest) =>
-      _$this._incomingRequest = incomingRequest;
+  num? _nextPartNumber;
+  num? get nextPartNumber => _$this._nextPartNumber;
+  set nextPartNumber(num? nextPartNumber) =>
+      _$this._nextPartNumber = nextPartNumber;
+
+  num? _maxParts;
+  num? get maxParts => _$this._maxParts;
+  set maxParts(num? maxParts) => _$this._maxParts = maxParts;
+
+  ListBuilder<JsonObject>? _parts;
+  ListBuilder<JsonObject> get parts =>
+      _$this._parts ??= new ListBuilder<JsonObject>();
+  set parts(ListBuilder<JsonObject>? parts) => _$this._parts = parts;
+
+  ListBuilder<JsonObject>? _etags;
+  ListBuilder<JsonObject> get etags =>
+      _$this._etags ??= new ListBuilder<JsonObject>();
+  set etags(ListBuilder<JsonObject>? etags) => _$this._etags = etags;
 
   InlineResponse2003Builder() {
     InlineResponse2003._initializeBuilder(this);
@@ -90,9 +128,12 @@ class InlineResponse2003Builder
   InlineResponse2003Builder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _isFriend = $v.isFriend;
-      _outgoingRequest = $v.outgoingRequest;
-      _incomingRequest = $v.incomingRequest;
+      _uploadId = $v.uploadId;
+      _fileName = $v.fileName;
+      _nextPartNumber = $v.nextPartNumber;
+      _maxParts = $v.maxParts;
+      _parts = $v.parts.toBuilder();
+      _etags = $v.etags.toBuilder();
       _$v = null;
     }
     return this;
@@ -111,14 +152,33 @@ class InlineResponse2003Builder
 
   @override
   _$InlineResponse2003 build() {
-    final _$result = _$v ??
-        new _$InlineResponse2003._(
-            isFriend: BuiltValueNullFieldError.checkNotNull(
-                isFriend, 'InlineResponse2003', 'isFriend'),
-            outgoingRequest: BuiltValueNullFieldError.checkNotNull(
-                outgoingRequest, 'InlineResponse2003', 'outgoingRequest'),
-            incomingRequest: BuiltValueNullFieldError.checkNotNull(
-                incomingRequest, 'InlineResponse2003', 'incomingRequest'));
+    _$InlineResponse2003 _$result;
+    try {
+      _$result = _$v ??
+          new _$InlineResponse2003._(
+              uploadId: BuiltValueNullFieldError.checkNotNull(
+                  uploadId, 'InlineResponse2003', 'uploadId'),
+              fileName: BuiltValueNullFieldError.checkNotNull(
+                  fileName, 'InlineResponse2003', 'fileName'),
+              nextPartNumber: BuiltValueNullFieldError.checkNotNull(
+                  nextPartNumber, 'InlineResponse2003', 'nextPartNumber'),
+              maxParts: BuiltValueNullFieldError.checkNotNull(
+                  maxParts, 'InlineResponse2003', 'maxParts'),
+              parts: parts.build(),
+              etags: etags.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'parts';
+        parts.build();
+        _$failedField = 'etags';
+        etags.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'InlineResponse2003', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

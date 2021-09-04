@@ -12,7 +12,6 @@ import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object2.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response403.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user.dart';
 import 'package:vrchat_dart_generated/src/model/user.dart';
 
@@ -186,113 +185,6 @@ class UsersApi {
     }
 
     return Response<User>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// Search Active Users
-  /// Search and list any Active users by text query.  **Has been locked down and now always respond with \&quot;Invalid Admin Credentials\&quot;.**
-  ///
-  /// Parameters:
-  /// * [search] - Username to search for
-  /// * [developerType] - Active user by developer type, none for normal users and internal for moderators
-  /// * [offset] - A zero-based offset from the default object sorting from where search results start.
-  /// * [n] - The number of objects to return.
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<LimitedUser>] as data
-  /// Throws [DioError] if API call or serialization fails
-  @Deprecated('This operation has been deprecated')
-  Future<Response<BuiltList<LimitedUser>>> searchActiveUsers({
-    required String search,
-    String? developerType,
-    int? offset,
-    int? n,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/users/active';
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
-            'where': '',
-          },
-          {
-            'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
-            'where': '',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _queryParameters = <String, dynamic>{
-      r'search':
-          encodeQueryParameter(_serializers, search, const FullType(String)),
-      if (developerType != null)
-        r'developerType': encodeQueryParameter(
-            _serializers, developerType, const FullType(String)),
-      if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
-      if (n != null)
-        r'n': encodeQueryParameter(_serializers, n, const FullType(int)),
-    };
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    BuiltList<LimitedUser> _responseData;
-
-    try {
-      const _responseType = FullType(BuiltList, [FullType(LimitedUser)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<LimitedUser>;
-    } catch (error, stackTrace) {
-      throw DioError(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioErrorType.other,
-        error: error,
-      )..stackTrace = stackTrace;
-    }
-
-    return Response<BuiltList<LimitedUser>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -8,14 +8,19 @@ part of 'inline_response2005.dart';
 
 class _$InlineResponse2005 extends InlineResponse2005 {
   @override
-  final String url;
+  final String id;
+  @override
+  final JsonObject metadata;
 
   factory _$InlineResponse2005(
           [void Function(InlineResponse2005Builder)? updates]) =>
       (new InlineResponse2005Builder()..update(updates)).build();
 
-  _$InlineResponse2005._({required this.url}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(url, 'InlineResponse2005', 'url');
+  _$InlineResponse2005._({required this.id, required this.metadata})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(id, 'InlineResponse2005', 'id');
+    BuiltValueNullFieldError.checkNotNull(
+        metadata, 'InlineResponse2005', 'metadata');
   }
 
   @override
@@ -30,17 +35,21 @@ class _$InlineResponse2005 extends InlineResponse2005 {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is InlineResponse2005 && url == other.url;
+    return other is InlineResponse2005 &&
+        id == other.id &&
+        metadata == other.metadata;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(0, url.hashCode));
+    return $jf($jc($jc(0, id.hashCode), metadata.hashCode));
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InlineResponse2005')..add('url', url))
+    return (newBuiltValueToStringHelper('InlineResponse2005')
+          ..add('id', id)
+          ..add('metadata', metadata))
         .toString();
   }
 }
@@ -49,9 +58,13 @@ class InlineResponse2005Builder
     implements Builder<InlineResponse2005, InlineResponse2005Builder> {
   _$InlineResponse2005? _$v;
 
-  String? _url;
-  String? get url => _$this._url;
-  set url(String? url) => _$this._url = url;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  JsonObject? _metadata;
+  JsonObject? get metadata => _$this._metadata;
+  set metadata(JsonObject? metadata) => _$this._metadata = metadata;
 
   InlineResponse2005Builder() {
     InlineResponse2005._initializeBuilder(this);
@@ -60,7 +73,8 @@ class InlineResponse2005Builder
   InlineResponse2005Builder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _url = $v.url;
+      _id = $v.id;
+      _metadata = $v.metadata;
       _$v = null;
     }
     return this;
@@ -81,8 +95,10 @@ class InlineResponse2005Builder
   _$InlineResponse2005 build() {
     final _$result = _$v ??
         new _$InlineResponse2005._(
-            url: BuiltValueNullFieldError.checkNotNull(
-                url, 'InlineResponse2005', 'url'));
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, 'InlineResponse2005', 'id'),
+            metadata: BuiltValueNullFieldError.checkNotNull(
+                metadata, 'InlineResponse2005', 'metadata'));
     replace(_$result);
     return _$result;
   }

@@ -14,6 +14,7 @@ import 'package:vrchat_dart_generated/src/model/favorite.dart';
 import 'package:vrchat_dart_generated/src/model/favorite_group.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object8.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object9.dart';
+import 'package:vrchat_dart_generated/src/model/success.dart';
 
 class FavoritesApi {
   final Dio _dio;
@@ -142,9 +143,9 @@ class FavoritesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Error] as data
+  /// Returns a [Future] containing a [Response] with a [Success] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Error>> clearFavoriteGroup({
+  Future<Response<Success>> clearFavoriteGroup({
     required String favoriteGroupType,
     required String favoriteGroupName,
     required String userId,
@@ -195,14 +196,14 @@ class FavoritesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Error _responseData;
+    Success _responseData;
 
     try {
-      const _responseType = FullType(Error);
+      const _responseType = FullType(Success);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as Error;
+      ) as Success;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -212,7 +213,7 @@ class FavoritesApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<Error>(
+    return Response<Success>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -627,9 +628,9 @@ class FavoritesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Error] as data
+  /// Returns a [Future] containing a [Response] with a [Success] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Error>> removeFavorite({
+  Future<Response<Success>> removeFavorite({
     required String favoriteId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -673,14 +674,14 @@ class FavoritesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Error _responseData;
+    Success _responseData;
 
     try {
-      const _responseType = FullType(Error);
+      const _responseType = FullType(Success);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as Error;
+      ) as Success;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -690,7 +691,7 @@ class FavoritesApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<Error>(
+    return Response<Success>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

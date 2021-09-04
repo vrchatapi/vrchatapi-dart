@@ -14,8 +14,8 @@ import 'package:vrchat_dart_generated/src/model/file.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object3.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object4.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object5.dart';
+import 'package:vrchat_dart_generated/src/model/inline_response2003.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2004.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response2005.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
 
 class FilesApi {
@@ -697,9 +697,9 @@ class FilesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [InlineResponse2004] as data
+  /// Returns a [Future] containing a [Response] with a [InlineResponse2003] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<InlineResponse2004>> getFileDataUploadStatus({
+  Future<Response<InlineResponse2003>> getFileDataUploadStatus({
     required String fileId,
     required int versionId,
     required String fileType,
@@ -747,14 +747,14 @@ class FilesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    InlineResponse2004 _responseData;
+    InlineResponse2003 _responseData;
 
     try {
-      const _responseType = FullType(InlineResponse2004);
+      const _responseType = FullType(InlineResponse2003);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as InlineResponse2004;
+      ) as InlineResponse2003;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -764,7 +764,7 @@ class FilesApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<InlineResponse2004>(
+    return Response<InlineResponse2003>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -897,9 +897,9 @@ class FilesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [InlineResponse2005] as data
+  /// Returns a [Future] containing a [Response] with a [InlineResponse2004] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<InlineResponse2005>> startFileDataUpload({
+  Future<Response<InlineResponse2004>> startFileDataUpload({
     required String fileId,
     required int versionId,
     required String fileType,
@@ -954,14 +954,14 @@ class FilesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    InlineResponse2005 _responseData;
+    InlineResponse2004 _responseData;
 
     try {
-      const _responseType = FullType(InlineResponse2005);
+      const _responseType = FullType(InlineResponse2004);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as InlineResponse2005;
+      ) as InlineResponse2004;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -971,7 +971,7 @@ class FilesApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<InlineResponse2005>(
+    return Response<InlineResponse2004>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

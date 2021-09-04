@@ -12,8 +12,8 @@ import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object6.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object7.dart';
+import 'package:vrchat_dart_generated/src/model/inline_response2005.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2006.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response2007.dart';
 import 'package:vrchat_dart_generated/src/model/instance.dart';
 import 'package:vrchat_dart_generated/src/model/limited_world.dart';
 import 'package:vrchat_dart_generated/src/model/world.dart';
@@ -803,10 +803,10 @@ class WorldsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [InlineResponse2006] as data
+  /// Returns a [Future] containing a [Response] with a [InlineResponse2005] as data
   /// Throws [DioError] if API call or serialization fails
   @Deprecated('This operation has been deprecated')
-  Future<Response<InlineResponse2006>> getWorldMetadata({
+  Future<Response<InlineResponse2005>> getWorldMetadata({
     required String worldId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -816,6 +816,93 @@ class WorldsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/worlds/{worldId}/metadata'
+        .replaceAll('{' r'worldId' '}', worldId.toString());
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
+            'where': '',
+          },
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    InlineResponse2005 _responseData;
+
+    try {
+      const _responseType = FullType(InlineResponse2005);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as InlineResponse2005;
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<InlineResponse2005>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Get World Publish Status
+  /// Returns a worlds publish status.
+  ///
+  /// Parameters:
+  /// * [worldId]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [InlineResponse2006] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<InlineResponse2006>> getWorldPublishStatus({
+    required String worldId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/worlds/{worldId}/publish'
         .replaceAll('{' r'worldId' '}', worldId.toString());
     final _options = Options(
       method: r'GET',
@@ -868,93 +955,6 @@ class WorldsApi {
     }
 
     return Response<InlineResponse2006>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// Get World Publish Status
-  /// Returns a worlds publish status.
-  ///
-  /// Parameters:
-  /// * [worldId]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [InlineResponse2007] as data
-  /// Throws [DioError] if API call or serialization fails
-  Future<Response<InlineResponse2007>> getWorldPublishStatus({
-    required String worldId,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/worlds/{worldId}/publish'
-        .replaceAll('{' r'worldId' '}', worldId.toString());
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
-            'where': '',
-          },
-          {
-            'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
-            'where': '',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    InlineResponse2007 _responseData;
-
-    try {
-      const _responseType = FullType(InlineResponse2007);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as InlineResponse2007;
-    } catch (error, stackTrace) {
-      throw DioError(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioErrorType.other,
-        error: error,
-      )..stackTrace = stackTrace;
-    }
-
-    return Response<InlineResponse2007>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

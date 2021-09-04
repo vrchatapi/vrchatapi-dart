@@ -326,9 +326,9 @@ class AvatarsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [BuiltList<Avatar>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> getFavoritedAvatars({
+  Future<Response<BuiltList<Avatar>>> getFavoritedAvatars({
     String? featured,
     String? sort,
     int? n,
@@ -424,7 +424,33 @@ class AvatarsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    BuiltList<Avatar> _responseData;
+
+    try {
+      const _responseType = FullType(BuiltList, [FullType(Avatar)]);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as BuiltList<Avatar>;
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<BuiltList<Avatar>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Search Avatars

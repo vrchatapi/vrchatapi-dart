@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFavoritedAvatars**
-> getFavoritedAvatars(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId)
+> BuiltList<Avatar> getFavoritedAvatars(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId)
 
 List Favorited Avatars
 
@@ -206,7 +206,8 @@ final String platform = platform_example; // String | The platform the asset sup
 final String userId = userId_example; // String | Target user to see information on, admin-only.
 
 try { 
-    api.getFavoritedAvatars(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId);
+    final response = api.getFavoritedAvatars(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId);
+    print(response);
 } catch on DioError (e) {
     print('Exception when calling AvatarsApi->getFavoritedAvatars: $e\n');
 }
@@ -232,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**BuiltList&lt;Avatar&gt;**](Avatar.md)
 
 ### Authorization
 

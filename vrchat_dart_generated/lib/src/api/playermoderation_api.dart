@@ -13,6 +13,7 @@ import 'package:vrchat_dart_generated/src/model/error.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object12.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object13.dart';
 import 'package:vrchat_dart_generated/src/model/player_moderation.dart';
+import 'package:vrchat_dart_generated/src/model/success.dart';
 
 class PlayermoderationApi {
   final Dio _dio;
@@ -117,9 +118,9 @@ class PlayermoderationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Error] as data
+  /// Returns a [Future] containing a [Response] with a [Success] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Error>> deletePlayerModeration({
+  Future<Response<Success>> deletePlayerModeration({
     required String playerModerationId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -164,14 +165,14 @@ class PlayermoderationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Error _responseData;
+    Success _responseData;
 
     try {
-      const _responseType = FullType(Error);
+      const _responseType = FullType(Success);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as Error;
+      ) as Success;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -181,7 +182,7 @@ class PlayermoderationApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<Error>(
+    return Response<Success>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -497,9 +498,9 @@ class PlayermoderationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Error] as data
+  /// Returns a [Future] containing a [Response] with a [Success] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Error>> unmoderateUser({
+  Future<Response<Success>> unmoderateUser({
     InlineObject13? inlineObject13,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -562,14 +563,14 @@ class PlayermoderationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Error _responseData;
+    Success _responseData;
 
     try {
-      const _responseType = FullType(Error);
+      const _responseType = FullType(Success);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as Error;
+      ) as Success;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -579,7 +580,7 @@ class PlayermoderationApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<Error>(
+    return Response<Success>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

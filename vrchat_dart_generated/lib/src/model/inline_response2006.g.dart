@@ -8,19 +8,15 @@ part of 'inline_response2006.dart';
 
 class _$InlineResponse2006 extends InlineResponse2006 {
   @override
-  final String id;
-  @override
-  final JsonObject metadata;
+  final bool canPubilsh;
 
   factory _$InlineResponse2006(
           [void Function(InlineResponse2006Builder)? updates]) =>
       (new InlineResponse2006Builder()..update(updates)).build();
 
-  _$InlineResponse2006._({required this.id, required this.metadata})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, 'InlineResponse2006', 'id');
+  _$InlineResponse2006._({required this.canPubilsh}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        metadata, 'InlineResponse2006', 'metadata');
+        canPubilsh, 'InlineResponse2006', 'canPubilsh');
   }
 
   @override
@@ -35,21 +31,18 @@ class _$InlineResponse2006 extends InlineResponse2006 {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is InlineResponse2006 &&
-        id == other.id &&
-        metadata == other.metadata;
+    return other is InlineResponse2006 && canPubilsh == other.canPubilsh;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, id.hashCode), metadata.hashCode));
+    return $jf($jc(0, canPubilsh.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('InlineResponse2006')
-          ..add('id', id)
-          ..add('metadata', metadata))
+          ..add('canPubilsh', canPubilsh))
         .toString();
   }
 }
@@ -58,13 +51,9 @@ class InlineResponse2006Builder
     implements Builder<InlineResponse2006, InlineResponse2006Builder> {
   _$InlineResponse2006? _$v;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  JsonObject? _metadata;
-  JsonObject? get metadata => _$this._metadata;
-  set metadata(JsonObject? metadata) => _$this._metadata = metadata;
+  bool? _canPubilsh;
+  bool? get canPubilsh => _$this._canPubilsh;
+  set canPubilsh(bool? canPubilsh) => _$this._canPubilsh = canPubilsh;
 
   InlineResponse2006Builder() {
     InlineResponse2006._initializeBuilder(this);
@@ -73,8 +62,7 @@ class InlineResponse2006Builder
   InlineResponse2006Builder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id;
-      _metadata = $v.metadata;
+      _canPubilsh = $v.canPubilsh;
       _$v = null;
     }
     return this;
@@ -95,10 +83,8 @@ class InlineResponse2006Builder
   _$InlineResponse2006 build() {
     final _$result = _$v ??
         new _$InlineResponse2006._(
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, 'InlineResponse2006', 'id'),
-            metadata: BuiltValueNullFieldError.checkNotNull(
-                metadata, 'InlineResponse2006', 'metadata'));
+            canPubilsh: BuiltValueNullFieldError.checkNotNull(
+                canPubilsh, 'InlineResponse2006', 'canPubilsh'));
     replace(_$result);
     return _$result;
   }

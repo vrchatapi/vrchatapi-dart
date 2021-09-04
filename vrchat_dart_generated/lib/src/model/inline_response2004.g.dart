@@ -8,40 +8,14 @@ part of 'inline_response2004.dart';
 
 class _$InlineResponse2004 extends InlineResponse2004 {
   @override
-  final String uploadId;
-  @override
-  final String fileName;
-  @override
-  final num nextPartNumber;
-  @override
-  final num maxParts;
-  @override
-  final BuiltList<JsonObject> parts;
-  @override
-  final BuiltList<JsonObject> etags;
+  final String url;
 
   factory _$InlineResponse2004(
           [void Function(InlineResponse2004Builder)? updates]) =>
       (new InlineResponse2004Builder()..update(updates)).build();
 
-  _$InlineResponse2004._(
-      {required this.uploadId,
-      required this.fileName,
-      required this.nextPartNumber,
-      required this.maxParts,
-      required this.parts,
-      required this.etags})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        uploadId, 'InlineResponse2004', 'uploadId');
-    BuiltValueNullFieldError.checkNotNull(
-        fileName, 'InlineResponse2004', 'fileName');
-    BuiltValueNullFieldError.checkNotNull(
-        nextPartNumber, 'InlineResponse2004', 'nextPartNumber');
-    BuiltValueNullFieldError.checkNotNull(
-        maxParts, 'InlineResponse2004', 'maxParts');
-    BuiltValueNullFieldError.checkNotNull(parts, 'InlineResponse2004', 'parts');
-    BuiltValueNullFieldError.checkNotNull(etags, 'InlineResponse2004', 'etags');
+  _$InlineResponse2004._({required this.url}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(url, 'InlineResponse2004', 'url');
   }
 
   @override
@@ -56,36 +30,17 @@ class _$InlineResponse2004 extends InlineResponse2004 {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is InlineResponse2004 &&
-        uploadId == other.uploadId &&
-        fileName == other.fileName &&
-        nextPartNumber == other.nextPartNumber &&
-        maxParts == other.maxParts &&
-        parts == other.parts &&
-        etags == other.etags;
+    return other is InlineResponse2004 && url == other.url;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc($jc($jc(0, uploadId.hashCode), fileName.hashCode),
-                    nextPartNumber.hashCode),
-                maxParts.hashCode),
-            parts.hashCode),
-        etags.hashCode));
+    return $jf($jc(0, url.hashCode));
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InlineResponse2004')
-          ..add('uploadId', uploadId)
-          ..add('fileName', fileName)
-          ..add('nextPartNumber', nextPartNumber)
-          ..add('maxParts', maxParts)
-          ..add('parts', parts)
-          ..add('etags', etags))
+    return (newBuiltValueToStringHelper('InlineResponse2004')..add('url', url))
         .toString();
   }
 }
@@ -94,32 +49,9 @@ class InlineResponse2004Builder
     implements Builder<InlineResponse2004, InlineResponse2004Builder> {
   _$InlineResponse2004? _$v;
 
-  String? _uploadId;
-  String? get uploadId => _$this._uploadId;
-  set uploadId(String? uploadId) => _$this._uploadId = uploadId;
-
-  String? _fileName;
-  String? get fileName => _$this._fileName;
-  set fileName(String? fileName) => _$this._fileName = fileName;
-
-  num? _nextPartNumber;
-  num? get nextPartNumber => _$this._nextPartNumber;
-  set nextPartNumber(num? nextPartNumber) =>
-      _$this._nextPartNumber = nextPartNumber;
-
-  num? _maxParts;
-  num? get maxParts => _$this._maxParts;
-  set maxParts(num? maxParts) => _$this._maxParts = maxParts;
-
-  ListBuilder<JsonObject>? _parts;
-  ListBuilder<JsonObject> get parts =>
-      _$this._parts ??= new ListBuilder<JsonObject>();
-  set parts(ListBuilder<JsonObject>? parts) => _$this._parts = parts;
-
-  ListBuilder<JsonObject>? _etags;
-  ListBuilder<JsonObject> get etags =>
-      _$this._etags ??= new ListBuilder<JsonObject>();
-  set etags(ListBuilder<JsonObject>? etags) => _$this._etags = etags;
+  String? _url;
+  String? get url => _$this._url;
+  set url(String? url) => _$this._url = url;
 
   InlineResponse2004Builder() {
     InlineResponse2004._initializeBuilder(this);
@@ -128,12 +60,7 @@ class InlineResponse2004Builder
   InlineResponse2004Builder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _uploadId = $v.uploadId;
-      _fileName = $v.fileName;
-      _nextPartNumber = $v.nextPartNumber;
-      _maxParts = $v.maxParts;
-      _parts = $v.parts.toBuilder();
-      _etags = $v.etags.toBuilder();
+      _url = $v.url;
       _$v = null;
     }
     return this;
@@ -152,33 +79,10 @@ class InlineResponse2004Builder
 
   @override
   _$InlineResponse2004 build() {
-    _$InlineResponse2004 _$result;
-    try {
-      _$result = _$v ??
-          new _$InlineResponse2004._(
-              uploadId: BuiltValueNullFieldError.checkNotNull(
-                  uploadId, 'InlineResponse2004', 'uploadId'),
-              fileName: BuiltValueNullFieldError.checkNotNull(
-                  fileName, 'InlineResponse2004', 'fileName'),
-              nextPartNumber: BuiltValueNullFieldError.checkNotNull(
-                  nextPartNumber, 'InlineResponse2004', 'nextPartNumber'),
-              maxParts: BuiltValueNullFieldError.checkNotNull(
-                  maxParts, 'InlineResponse2004', 'maxParts'),
-              parts: parts.build(),
-              etags: etags.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'parts';
-        parts.build();
-        _$failedField = 'etags';
-        etags.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'InlineResponse2004', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        new _$InlineResponse2004._(
+            url: BuiltValueNullFieldError.checkNotNull(
+                url, 'InlineResponse2004', 'url'));
     replace(_$result);
     return _$result;
   }

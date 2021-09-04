@@ -10,7 +10,7 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response2003.dart';
+import 'package:vrchat_dart_generated/src/model/friend_status.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user.dart';
 import 'package:vrchat_dart_generated/src/model/notification.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
@@ -208,9 +208,9 @@ class FriendsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [InlineResponse2003] as data
+  /// Returns a [Future] containing a [Response] with a [FriendStatus] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<InlineResponse2003>> getFriendStatus({
+  Future<Response<FriendStatus>> getFriendStatus({
     required String userId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -254,14 +254,14 @@ class FriendsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    InlineResponse2003 _responseData;
+    FriendStatus _responseData;
 
     try {
-      const _responseType = FullType(InlineResponse2003);
+      const _responseType = FullType(FriendStatus);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as InlineResponse2003;
+      ) as FriendStatus;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -271,7 +271,7 @@ class FriendsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<InlineResponse2003>(
+    return Response<FriendStatus>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

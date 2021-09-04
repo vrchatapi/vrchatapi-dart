@@ -31,6 +31,7 @@ import 'package:vrchat_dart_generated/src/model/file.dart';
 import 'package:vrchat_dart_generated/src/model/file_data.dart';
 import 'package:vrchat_dart_generated/src/model/file_status.dart';
 import 'package:vrchat_dart_generated/src/model/file_version.dart';
+import 'package:vrchat_dart_generated/src/model/friend_status.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object1.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object10.dart';
@@ -52,8 +53,6 @@ import 'package:vrchat_dart_generated/src/model/inline_response2003.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2004.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2005.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2006.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response2007.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response403.dart';
 import 'package:vrchat_dart_generated/src/model/instance.dart';
 import 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
 import 'package:vrchat_dart_generated/src/model/limited_unity_package.dart';
@@ -98,6 +97,7 @@ part 'serializers.g.dart';
   FileData,
   FileStatus,
   FileVersion,
+  FriendStatus,
   InlineObject,
   InlineObject1,
   InlineObject10,
@@ -119,8 +119,6 @@ part 'serializers.g.dart';
   InlineResponse2004,
   InlineResponse2005,
   InlineResponse2006,
-  InlineResponse2007,
-  InlineResponse403,
   Instance,
   InstancePlatforms,
   LimitedUnityPackage,
