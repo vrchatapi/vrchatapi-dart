@@ -7,7 +7,6 @@ import 'package:built_collection/built_collection.dart';
 import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
 import 'package:vrchat_dart_generated/src/model/past_display_name.dart';
-import 'package:vrchat_dart_generated/src/model/platform.dart';
 import 'package:built_value/json_object.dart';
 import 'package:vrchat_dart_generated/src/model/user_state.dart';
 import 'package:built_value/built_value.dart';
@@ -55,7 +54,7 @@ part 'current_user.g.dart';
 /// * [tags]
 /// * [developerType]
 /// * [lastLogin]
-/// * [lastPlatform]
+/// * [lastPlatform] - This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
 /// * [allowAvatarCopying]
 /// * [status]
 /// * [dateJoined]
@@ -179,9 +178,9 @@ abstract class CurrentUser implements Built<CurrentUser, CurrentUserBuilder> {
   @BuiltValueField(wireName: r'last_login')
   DateTime get lastLogin;
 
+  /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
   @BuiltValueField(wireName: r'last_platform')
-  Platform get lastPlatform;
-  // enum lastPlatformEnum {  standalonewindows,  android,  };
+  String get lastPlatform;
 
   @BuiltValueField(wireName: r'allowAvatarCopying')
   bool get allowAvatarCopying;
@@ -383,7 +382,7 @@ class _$CurrentUserSerializer implements StructuredSerializer<CurrentUser> {
     result
       ..add(r'last_platform')
       ..add(serializers.serialize(object.lastPlatform,
-          specifiedType: const FullType(Platform)));
+          specifiedType: const FullType(String)));
     result
       ..add(r'allowAvatarCopying')
       ..add(serializers.serialize(object.allowAvatarCopying,
@@ -593,7 +592,7 @@ class _$CurrentUserSerializer implements StructuredSerializer<CurrentUser> {
           break;
         case r'last_platform':
           result.lastPlatform = serializers.deserialize(value,
-              specifiedType: const FullType(Platform)) as Platform;
+              specifiedType: const FullType(String)) as String;
           break;
         case r'allowAvatarCopying':
           result.allowAvatarCopying = serializers.deserialize(value,

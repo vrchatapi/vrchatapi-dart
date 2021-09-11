@@ -38,7 +38,7 @@ class _$User extends User {
   @override
   final String lastLogin;
   @override
-  final Platform lastPlatform;
+  final String lastPlatform;
   @override
   final bool allowAvatarCopying;
   @override
@@ -301,10 +301,9 @@ class UserBuilder implements Builder<User, UserBuilder> {
   String? get lastLogin => _$this._lastLogin;
   set lastLogin(String? lastLogin) => _$this._lastLogin = lastLogin;
 
-  Platform? _lastPlatform;
-  Platform? get lastPlatform => _$this._lastPlatform;
-  set lastPlatform(Platform? lastPlatform) =>
-      _$this._lastPlatform = lastPlatform;
+  String? _lastPlatform;
+  String? get lastPlatform => _$this._lastPlatform;
+  set lastPlatform(String? lastPlatform) => _$this._lastPlatform = lastPlatform;
 
   bool? _allowAvatarCopying;
   bool? get allowAvatarCopying => _$this._allowAvatarCopying;

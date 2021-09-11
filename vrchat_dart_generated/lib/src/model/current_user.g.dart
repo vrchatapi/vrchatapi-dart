@@ -82,7 +82,7 @@ class _$CurrentUser extends CurrentUser {
   @override
   final DateTime lastLogin;
   @override
-  final Platform lastPlatform;
+  final String lastPlatform;
   @override
   final bool allowAvatarCopying;
   @override
@@ -558,10 +558,9 @@ class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
   DateTime? get lastLogin => _$this._lastLogin;
   set lastLogin(DateTime? lastLogin) => _$this._lastLogin = lastLogin;
 
-  Platform? _lastPlatform;
-  Platform? get lastPlatform => _$this._lastPlatform;
-  set lastPlatform(Platform? lastPlatform) =>
-      _$this._lastPlatform = lastPlatform;
+  String? _lastPlatform;
+  String? get lastPlatform => _$this._lastPlatform;
+  set lastPlatform(String? lastPlatform) => _$this._lastPlatform = lastPlatform;
 
   bool? _allowAvatarCopying;
   bool? get allowAvatarCopying => _$this._allowAvatarCopying;

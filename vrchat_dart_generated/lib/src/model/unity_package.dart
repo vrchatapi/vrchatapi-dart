@@ -2,7 +2,6 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:vrchat_dart_generated/src/model/platform.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -20,7 +19,7 @@ part 'unity_package.g.dart';
 /// * [unityVersion]
 /// * [unitySortNumber]
 /// * [assetVersion]
-/// * [platform]
+/// * [platform] - This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
 /// * [createdAt]
 abstract class UnityPackage
     implements Built<UnityPackage, UnityPackageBuilder> {
@@ -48,9 +47,9 @@ abstract class UnityPackage
   @BuiltValueField(wireName: r'assetVersion')
   num get assetVersion;
 
+  /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
   @BuiltValueField(wireName: r'platform')
-  Platform get platform;
-  // enum platformEnum {  standalonewindows,  android,  };
+  String get platform;
 
   @BuiltValueField(wireName: r'created_at')
   DateTime? get createdAt;
@@ -122,7 +121,7 @@ class _$UnityPackageSerializer implements StructuredSerializer<UnityPackage> {
     result
       ..add(r'platform')
       ..add(serializers.serialize(object.platform,
-          specifiedType: const FullType(Platform)));
+          specifiedType: const FullType(String)));
     if (object.createdAt != null) {
       result
         ..add(r'created_at')
@@ -178,7 +177,7 @@ class _$UnityPackageSerializer implements StructuredSerializer<UnityPackage> {
           break;
         case r'platform':
           result.platform = serializers.deserialize(value,
-              specifiedType: const FullType(Platform)) as Platform;
+              specifiedType: const FullType(String)) as String;
           break;
         case r'created_at':
           result.createdAt = serializers.deserialize(value,

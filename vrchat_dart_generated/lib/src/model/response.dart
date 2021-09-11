@@ -14,7 +14,7 @@ part 'response.g.dart';
 /// * [statusCode]
 abstract class Response implements Built<Response, ResponseBuilder> {
   @BuiltValueField(wireName: r'message')
-  String get message;
+  String? get message;
 
   @BuiltValueField(wireName: r'status_code')
   num get statusCode;
@@ -40,10 +40,12 @@ class _$ResponseSerializer implements StructuredSerializer<Response> {
   Iterable<Object?> serialize(Serializers serializers, Response object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
-    result
-      ..add(r'message')
-      ..add(serializers.serialize(object.message,
-          specifiedType: const FullType(String)));
+    if (object.message != null) {
+      result
+        ..add(r'message')
+        ..add(serializers.serialize(object.message,
+            specifiedType: const FullType(String)));
+    }
     result
       ..add(r'status_code')
       ..add(serializers.serialize(object.statusCode,

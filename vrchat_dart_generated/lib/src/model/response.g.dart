@@ -8,15 +8,14 @@ part of 'response.dart';
 
 class _$Response extends Response {
   @override
-  final String message;
+  final String? message;
   @override
   final num statusCode;
 
   factory _$Response([void Function(ResponseBuilder)? updates]) =>
       (new ResponseBuilder()..update(updates)).build();
 
-  _$Response._({required this.message, required this.statusCode}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(message, 'Response', 'message');
+  _$Response._({this.message, required this.statusCode}) : super._() {
     BuiltValueNullFieldError.checkNotNull(statusCode, 'Response', 'statusCode');
   }
 
@@ -89,8 +88,7 @@ class ResponseBuilder implements Builder<Response, ResponseBuilder> {
   _$Response build() {
     final _$result = _$v ??
         new _$Response._(
-            message: BuiltValueNullFieldError.checkNotNull(
-                message, 'Response', 'message'),
+            message: message,
             statusCode: BuiltValueNullFieldError.checkNotNull(
                 statusCode, 'Response', 'statusCode'));
     replace(_$result);

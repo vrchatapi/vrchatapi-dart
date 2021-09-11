@@ -13,6 +13,7 @@ import 'package:vrchat_dart_generated/src/api/avatars_api.dart';
 import 'package:vrchat_dart_generated/src/api/favorites_api.dart';
 import 'package:vrchat_dart_generated/src/api/files_api.dart';
 import 'package:vrchat_dart_generated/src/api/friends_api.dart';
+import 'package:vrchat_dart_generated/src/api/invite_api.dart';
 import 'package:vrchat_dart_generated/src/api/notifications_api.dart';
 import 'package:vrchat_dart_generated/src/api/permissions_api.dart';
 import 'package:vrchat_dart_generated/src/api/playermoderation_api.dart';
@@ -104,6 +105,12 @@ class VrchatDartGenerated {
   /// by doing that all interceptors will not be executed
   FriendsApi getFriendsApi() {
     return FriendsApi(dio, serializers);
+  }
+
+  /// Get InviteApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  InviteApi getInviteApi() {
+    return InviteApi(dio, serializers);
   }
 
   /// Get NotificationsApi instance, base route and serializer can be overridden by a given but be careful,

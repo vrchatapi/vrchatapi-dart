@@ -5,7 +5,6 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
-import 'package:vrchat_dart_generated/src/model/platform.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -25,10 +24,9 @@ part 'limited_user.g.dart';
 /// * [currentAvatarThumbnailImageUrl]
 /// * [fallbackAvatar]
 /// * [developerType]
-/// * [lastPlatform]
+/// * [lastPlatform] - This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
 /// * [status]
 /// * [isFriend]
-/// * [location]
 /// * [tags] - <- Always empty.
 abstract class LimitedUser implements Built<LimitedUser, LimitedUserBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -65,9 +63,9 @@ abstract class LimitedUser implements Built<LimitedUser, LimitedUserBuilder> {
   DeveloperType get developerType;
   // enum developerTypeEnum {  none,  trusted,  internal,  moderator,  };
 
+  /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
   @BuiltValueField(wireName: r'last_platform')
-  Platform get lastPlatform;
-  // enum lastPlatformEnum {  standalonewindows,  android,  };
+  String get lastPlatform;
 
   @BuiltValueField(wireName: r'status')
   UserStatus get status;
@@ -75,9 +73,6 @@ abstract class LimitedUser implements Built<LimitedUser, LimitedUserBuilder> {
 
   @BuiltValueField(wireName: r'isFriend')
   bool get isFriend;
-
-  @BuiltValueField(wireName: r'location')
-  String get location;
 
   /// <- Always empty.
   @BuiltValueField(wireName: r'tags')
@@ -153,7 +148,7 @@ class _$LimitedUserSerializer implements StructuredSerializer<LimitedUser> {
     result
       ..add(r'last_platform')
       ..add(serializers.serialize(object.lastPlatform,
-          specifiedType: const FullType(Platform)));
+          specifiedType: const FullType(String)));
     result
       ..add(r'status')
       ..add(serializers.serialize(object.status,
@@ -162,10 +157,6 @@ class _$LimitedUserSerializer implements StructuredSerializer<LimitedUser> {
       ..add(r'isFriend')
       ..add(serializers.serialize(object.isFriend,
           specifiedType: const FullType(bool)));
-    result
-      ..add(r'location')
-      ..add(serializers.serialize(object.location,
-          specifiedType: const FullType(String)));
     result
       ..add(r'tags')
       ..add(serializers.serialize(object.tags,
@@ -230,7 +221,7 @@ class _$LimitedUserSerializer implements StructuredSerializer<LimitedUser> {
           break;
         case r'last_platform':
           result.lastPlatform = serializers.deserialize(value,
-              specifiedType: const FullType(Platform)) as Platform;
+              specifiedType: const FullType(String)) as String;
           break;
         case r'status':
           result.status = serializers.deserialize(value,
@@ -239,10 +230,6 @@ class _$LimitedUserSerializer implements StructuredSerializer<LimitedUser> {
         case r'isFriend':
           result.isFriend = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
-          break;
-        case r'location':
-          result.location = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
           break;
         case r'tags':
           result.tags.replace(serializers.deserialize(value,

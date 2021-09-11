@@ -53,8 +53,11 @@ import 'package:vrchat_dart_generated/src/model/inline_response2003.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2004.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2005.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2006.dart';
+import 'package:vrchat_dart_generated/src/model/inline_response400.dart';
 import 'package:vrchat_dart_generated/src/model/instance.dart';
 import 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
+import 'package:vrchat_dart_generated/src/model/invite_message.dart';
+import 'package:vrchat_dart_generated/src/model/invite_message_type.dart';
 import 'package:vrchat_dart_generated/src/model/limited_unity_package.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user.dart';
 import 'package:vrchat_dart_generated/src/model/limited_world.dart';
@@ -63,7 +66,6 @@ import 'package:vrchat_dart_generated/src/model/notification.dart';
 import 'package:vrchat_dart_generated/src/model/notification_type.dart';
 import 'package:vrchat_dart_generated/src/model/past_display_name.dart';
 import 'package:vrchat_dart_generated/src/model/permission.dart';
-import 'package:vrchat_dart_generated/src/model/platform.dart';
 import 'package:vrchat_dart_generated/src/model/player_moderation.dart';
 import 'package:vrchat_dart_generated/src/model/player_moderation_type.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
@@ -119,8 +121,11 @@ part 'serializers.g.dart';
   InlineResponse2004,
   InlineResponse2005,
   InlineResponse2006,
+  InlineResponse400,
   Instance,
   InstancePlatforms,
+  InviteMessage,
+  InviteMessageType,
   LimitedUnityPackage,
   LimitedUser,
   LimitedWorld,
@@ -129,7 +134,6 @@ part 'serializers.g.dart';
   NotificationType,
   PastDisplayName,
   Permission,
-  Platform,
   PlayerModeration,
   PlayerModerationType,
   ReleaseStatus,
@@ -161,6 +165,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(LimitedUser)]),
         () => ListBuilder<LimitedUser>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(InviteMessage)]),
+        () => ListBuilder<InviteMessage>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Notification)]),

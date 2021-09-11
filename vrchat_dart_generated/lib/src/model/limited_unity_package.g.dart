@@ -8,7 +8,7 @@ part of 'limited_unity_package.dart';
 
 class _$LimitedUnityPackage extends LimitedUnityPackage {
   @override
-  final Platform platform;
+  final String platform;
   @override
   final String unityVersion;
 
@@ -59,9 +59,9 @@ class LimitedUnityPackageBuilder
     implements Builder<LimitedUnityPackage, LimitedUnityPackageBuilder> {
   _$LimitedUnityPackage? _$v;
 
-  Platform? _platform;
-  Platform? get platform => _$this._platform;
-  set platform(Platform? platform) => _$this._platform = platform;
+  String? _platform;
+  String? get platform => _$this._platform;
+  set platform(String? platform) => _$this._platform = platform;
 
   String? _unityVersion;
   String? get unityVersion => _$this._unityVersion;

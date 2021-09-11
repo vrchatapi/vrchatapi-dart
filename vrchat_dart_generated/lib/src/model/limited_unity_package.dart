@@ -2,7 +2,6 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:vrchat_dart_generated/src/model/platform.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -11,13 +10,13 @@ part 'limited_unity_package.g.dart';
 /// LimitedUnityPackage
 ///
 /// Properties:
-/// * [platform]
+/// * [platform] - This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
 /// * [unityVersion]
 abstract class LimitedUnityPackage
     implements Built<LimitedUnityPackage, LimitedUnityPackageBuilder> {
+  /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
   @BuiltValueField(wireName: r'platform')
-  Platform get platform;
-  // enum platformEnum {  standalonewindows,  android,  };
+  String get platform;
 
   @BuiltValueField(wireName: r'unityVersion')
   String get unityVersion;
@@ -53,7 +52,7 @@ class _$LimitedUnityPackageSerializer
     result
       ..add(r'platform')
       ..add(serializers.serialize(object.platform,
-          specifiedType: const FullType(Platform)));
+          specifiedType: const FullType(String)));
     result
       ..add(r'unityVersion')
       ..add(serializers.serialize(object.unityVersion,
@@ -75,7 +74,7 @@ class _$LimitedUnityPackageSerializer
       switch (key) {
         case r'platform':
           result.platform = serializers.deserialize(value,
-              specifiedType: const FullType(Platform)) as Platform;
+              specifiedType: const FullType(String)) as String;
           break;
         case r'unityVersion':
           result.unityVersion = serializers.deserialize(value,

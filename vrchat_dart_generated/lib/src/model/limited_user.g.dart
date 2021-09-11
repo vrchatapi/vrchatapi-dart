@@ -30,13 +30,11 @@ class _$LimitedUser extends LimitedUser {
   @override
   final DeveloperType developerType;
   @override
-  final Platform lastPlatform;
+  final String lastPlatform;
   @override
   final UserStatus status;
   @override
   final bool isFriend;
-  @override
-  final String location;
   @override
   final BuiltList<String> tags;
 
@@ -58,7 +56,6 @@ class _$LimitedUser extends LimitedUser {
       required this.lastPlatform,
       required this.status,
       required this.isFriend,
-      required this.location,
       required this.tags})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, 'LimitedUser', 'id');
@@ -82,7 +79,6 @@ class _$LimitedUser extends LimitedUser {
         lastPlatform, 'LimitedUser', 'lastPlatform');
     BuiltValueNullFieldError.checkNotNull(status, 'LimitedUser', 'status');
     BuiltValueNullFieldError.checkNotNull(isFriend, 'LimitedUser', 'isFriend');
-    BuiltValueNullFieldError.checkNotNull(location, 'LimitedUser', 'location');
     BuiltValueNullFieldError.checkNotNull(tags, 'LimitedUser', 'tags');
   }
 
@@ -112,7 +108,6 @@ class _$LimitedUser extends LimitedUser {
         lastPlatform == other.lastPlatform &&
         status == other.status &&
         isFriend == other.isFriend &&
-        location == other.location &&
         tags == other.tags;
   }
 
@@ -131,28 +126,20 @@ class _$LimitedUser extends LimitedUser {
                                             $jc(
                                                 $jc(
                                                     $jc(
-                                                        $jc(
-                                                            $jc(
-                                                                $jc(
-                                                                    0,
-                                                                    id
-                                                                        .hashCode),
-                                                                username
-                                                                    .hashCode),
-                                                            displayName
-                                                                .hashCode),
-                                                        bio.hashCode),
-                                                    userIcon.hashCode),
-                                                profilePicOverride.hashCode),
-                                            statusDescription.hashCode),
-                                        currentAvatarImageUrl.hashCode),
-                                    currentAvatarThumbnailImageUrl.hashCode),
-                                fallbackAvatar.hashCode),
-                            developerType.hashCode),
-                        lastPlatform.hashCode),
-                    status.hashCode),
-                isFriend.hashCode),
-            location.hashCode),
+                                                        $jc($jc(0, id.hashCode),
+                                                            username.hashCode),
+                                                        displayName.hashCode),
+                                                    bio.hashCode),
+                                                userIcon.hashCode),
+                                            profilePicOverride.hashCode),
+                                        statusDescription.hashCode),
+                                    currentAvatarImageUrl.hashCode),
+                                currentAvatarThumbnailImageUrl.hashCode),
+                            fallbackAvatar.hashCode),
+                        developerType.hashCode),
+                    lastPlatform.hashCode),
+                status.hashCode),
+            isFriend.hashCode),
         tags.hashCode));
   }
 
@@ -174,7 +161,6 @@ class _$LimitedUser extends LimitedUser {
           ..add('lastPlatform', lastPlatform)
           ..add('status', status)
           ..add('isFriend', isFriend)
-          ..add('location', location)
           ..add('tags', tags))
         .toString();
   }
@@ -234,10 +220,9 @@ class LimitedUserBuilder implements Builder<LimitedUser, LimitedUserBuilder> {
   set developerType(DeveloperType? developerType) =>
       _$this._developerType = developerType;
 
-  Platform? _lastPlatform;
-  Platform? get lastPlatform => _$this._lastPlatform;
-  set lastPlatform(Platform? lastPlatform) =>
-      _$this._lastPlatform = lastPlatform;
+  String? _lastPlatform;
+  String? get lastPlatform => _$this._lastPlatform;
+  set lastPlatform(String? lastPlatform) => _$this._lastPlatform = lastPlatform;
 
   UserStatus? _status;
   UserStatus? get status => _$this._status;
@@ -246,10 +231,6 @@ class LimitedUserBuilder implements Builder<LimitedUser, LimitedUserBuilder> {
   bool? _isFriend;
   bool? get isFriend => _$this._isFriend;
   set isFriend(bool? isFriend) => _$this._isFriend = isFriend;
-
-  String? _location;
-  String? get location => _$this._location;
-  set location(String? location) => _$this._location = location;
 
   ListBuilder<String>? _tags;
   ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
@@ -276,7 +257,6 @@ class LimitedUserBuilder implements Builder<LimitedUser, LimitedUserBuilder> {
       _lastPlatform = $v.lastPlatform;
       _status = $v.status;
       _isFriend = $v.isFriend;
-      _location = $v.location;
       _tags = $v.tags.toBuilder();
       _$v = null;
     }
@@ -323,7 +303,6 @@ class LimitedUserBuilder implements Builder<LimitedUser, LimitedUserBuilder> {
               lastPlatform: BuiltValueNullFieldError.checkNotNull(lastPlatform, 'LimitedUser', 'lastPlatform'),
               status: BuiltValueNullFieldError.checkNotNull(status, 'LimitedUser', 'status'),
               isFriend: BuiltValueNullFieldError.checkNotNull(isFriend, 'LimitedUser', 'isFriend'),
-              location: BuiltValueNullFieldError.checkNotNull(location, 'LimitedUser', 'location'),
               tags: tags.build());
     } catch (_) {
       late String _$failedField;

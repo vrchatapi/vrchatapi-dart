@@ -4,7 +4,6 @@
 
 import 'package:built_collection/built_collection.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
-import 'package:vrchat_dart_generated/src/model/platform.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -22,7 +21,7 @@ part 'inline_object6.g.dart';
 /// * [id]
 /// * [imageUrl]
 /// * [name]
-/// * [platform]
+/// * [platform] - This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
 /// * [releaseStatus]
 /// * [tags]
 /// * [unityPackageUrl]
@@ -56,9 +55,9 @@ abstract class InlineObject6
   @BuiltValueField(wireName: r'name')
   String get name;
 
+  /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
   @BuiltValueField(wireName: r'platform')
-  Platform? get platform;
-  // enum platformEnum {  standalonewindows,  android,  };
+  String? get platform;
 
   @BuiltValueField(wireName: r'releaseStatus')
   ReleaseStatus? get releaseStatus;
@@ -150,7 +149,7 @@ class _$InlineObject6Serializer implements StructuredSerializer<InlineObject6> {
       result
         ..add(r'platform')
         ..add(serializers.serialize(object.platform,
-            specifiedType: const FullType(Platform)));
+            specifiedType: const FullType(String)));
     }
     if (object.releaseStatus != null) {
       result
@@ -229,7 +228,7 @@ class _$InlineObject6Serializer implements StructuredSerializer<InlineObject6> {
           break;
         case r'platform':
           result.platform = serializers.deserialize(value,
-              specifiedType: const FullType(Platform)) as Platform;
+              specifiedType: const FullType(String)) as String;
           break;
         case r'releaseStatus':
           result.releaseStatus = serializers.deserialize(value,

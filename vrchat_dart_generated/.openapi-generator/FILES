@@ -47,8 +47,12 @@ doc/InlineResponse2003.md
 doc/InlineResponse2004.md
 doc/InlineResponse2005.md
 doc/InlineResponse2006.md
+doc/InlineResponse400.md
 doc/Instance.md
 doc/InstancePlatforms.md
+doc/InviteApi.md
+doc/InviteMessage.md
+doc/InviteMessageType.md
 doc/LimitedUnityPackage.md
 doc/LimitedUser.md
 doc/LimitedWorld.md
@@ -59,7 +63,6 @@ doc/NotificationsApi.md
 doc/PastDisplayName.md
 doc/Permission.md
 doc/PermissionsApi.md
-doc/Platform.md
 doc/PlayerModeration.md
 doc/PlayerModerationType.md
 doc/PlayermoderationApi.md
@@ -80,6 +83,7 @@ lib/src/api/avatars_api.dart
 lib/src/api/favorites_api.dart
 lib/src/api/files_api.dart
 lib/src/api/friends_api.dart
+lib/src/api/invite_api.dart
 lib/src/api/notifications_api.dart
 lib/src/api/permissions_api.dart
 lib/src/api/playermoderation_api.dart
@@ -134,8 +138,11 @@ lib/src/model/inline_response2003.dart
 lib/src/model/inline_response2004.dart
 lib/src/model/inline_response2005.dart
 lib/src/model/inline_response2006.dart
+lib/src/model/inline_response400.dart
 lib/src/model/instance.dart
 lib/src/model/instance_platforms.dart
+lib/src/model/invite_message.dart
+lib/src/model/invite_message_type.dart
 lib/src/model/limited_unity_package.dart
 lib/src/model/limited_user.dart
 lib/src/model/limited_world.dart
@@ -144,7 +151,6 @@ lib/src/model/notification.dart
 lib/src/model/notification_type.dart
 lib/src/model/past_display_name.dart
 lib/src/model/permission.dart
-lib/src/model/platform.dart
 lib/src/model/player_moderation.dart
 lib/src/model/player_moderation_type.dart
 lib/src/model/release_status.dart
@@ -158,4 +164,7 @@ lib/src/model/world.dart
 lib/src/serializers.dart
 lib/vrchat_dart_generated.dart
 pubspec.yaml
-test/friend_status_test.dart
+test/inline_response400_test.dart
+test/invite_api_test.dart
+test/invite_message_test.dart
+test/invite_message_type_test.dart

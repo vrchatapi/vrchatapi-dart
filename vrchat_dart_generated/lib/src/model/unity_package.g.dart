@@ -24,7 +24,7 @@ class _$UnityPackage extends UnityPackage {
   @override
   final num assetVersion;
   @override
-  final Platform platform;
+  final String platform;
   @override
   final DateTime? createdAt;
 
@@ -150,9 +150,9 @@ class UnityPackageBuilder
   num? get assetVersion => _$this._assetVersion;
   set assetVersion(num? assetVersion) => _$this._assetVersion = assetVersion;
 
-  Platform? _platform;
-  Platform? get platform => _$this._platform;
-  set platform(Platform? platform) => _$this._platform = platform;
+  String? _platform;
+  String? get platform => _$this._platform;
+  set platform(String? platform) => _$this._platform = platform;
 
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;

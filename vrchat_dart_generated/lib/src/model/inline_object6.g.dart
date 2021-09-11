@@ -26,7 +26,7 @@ class _$InlineObject6 extends InlineObject6 {
   @override
   final String name;
   @override
-  final Platform? platform;
+  final String? platform;
   @override
   final ReleaseStatus? releaseStatus;
   @override
@@ -182,9 +182,9 @@ class InlineObject6Builder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  Platform? _platform;
-  Platform? get platform => _$this._platform;
-  set platform(Platform? platform) => _$this._platform = platform;
+  String? _platform;
+  String? get platform => _$this._platform;
+  set platform(String? platform) => _$this._platform = platform;
 
   ReleaseStatus? _releaseStatus;
   ReleaseStatus? get releaseStatus => _$this._releaseStatus;
