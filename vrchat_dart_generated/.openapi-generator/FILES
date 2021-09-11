@@ -164,7 +164,3 @@ lib/src/model/world.dart
 lib/src/serializers.dart
 lib/vrchat_dart_generated.dart
 pubspec.yaml
-test/inline_response400_test.dart
-test/invite_api_test.dart
-test/invite_message_test.dart
-test/invite_message_type_test.dart
