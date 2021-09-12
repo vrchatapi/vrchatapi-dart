@@ -1,3 +1,6 @@
+## 1.1.10
+Updated vrchat_dart_generated
+
 ## 1.1.9
 Updated dependencies
 

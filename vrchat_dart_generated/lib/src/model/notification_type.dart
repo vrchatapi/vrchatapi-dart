@@ -9,18 +9,16 @@ import 'package:built_value/serializer.dart';
 part 'notification_type.g.dart';
 
 class NotificationType extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'all')
-  static const NotificationType all = _$all;
-  @BuiltValueEnumConst(wireName: r'broadcast')
-  static const NotificationType broadcast = _$broadcast;
   @BuiltValueEnumConst(wireName: r'friendRequest')
   static const NotificationType friendRequest = _$friendRequest;
   @BuiltValueEnumConst(wireName: r'invite')
   static const NotificationType invite = _$invite;
-  @BuiltValueEnumConst(wireName: r'message')
-  static const NotificationType message = _$message;
-  @BuiltValueEnumConst(wireName: r'RequestInvite')
+  @BuiltValueEnumConst(wireName: r'inviteResponse')
+  static const NotificationType inviteResponse = _$inviteResponse;
+  @BuiltValueEnumConst(wireName: r'requestInvite')
   static const NotificationType requestInvite = _$requestInvite;
+  @BuiltValueEnumConst(wireName: r'requestInviteResponse')
+  static const NotificationType requestInviteResponse = _$requestInviteResponse;
   @BuiltValueEnumConst(wireName: r'votetokick')
   static const NotificationType votetokick = _$votetokick;
 

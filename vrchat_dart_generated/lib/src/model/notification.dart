@@ -32,7 +32,7 @@ abstract class Notification
 
   @BuiltValueField(wireName: r'type')
   NotificationType get type;
-  // enum typeEnum {  all,  broadcast,  friendRequest,  invite,  message,  RequestInvite,  votetokick,  };
+  // enum typeEnum {  friendRequest,  invite,  inviteResponse,  requestInvite,  requestInviteResponse,  votetokick,  };
 
   @BuiltValueField(wireName: r'message')
   String get message;

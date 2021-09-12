@@ -6,30 +6,29 @@ part of 'notification_type.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const NotificationType _$all = const NotificationType._('all');
-const NotificationType _$broadcast = const NotificationType._('broadcast');
 const NotificationType _$friendRequest =
     const NotificationType._('friendRequest');
 const NotificationType _$invite = const NotificationType._('invite');
-const NotificationType _$message = const NotificationType._('message');
+const NotificationType _$inviteResponse =
+    const NotificationType._('inviteResponse');
 const NotificationType _$requestInvite =
     const NotificationType._('requestInvite');
+const NotificationType _$requestInviteResponse =
+    const NotificationType._('requestInviteResponse');
 const NotificationType _$votetokick = const NotificationType._('votetokick');
 
 NotificationType _$valueOf(String name) {
   switch (name) {
-    case 'all':
-      return _$all;
-    case 'broadcast':
-      return _$broadcast;
     case 'friendRequest':
       return _$friendRequest;
     case 'invite':
       return _$invite;
-    case 'message':
-      return _$message;
+    case 'inviteResponse':
+      return _$inviteResponse;
     case 'requestInvite':
       return _$requestInvite;
+    case 'requestInviteResponse':
+      return _$requestInviteResponse;
     case 'votetokick':
       return _$votetokick;
     default:
@@ -39,23 +38,21 @@ NotificationType _$valueOf(String name) {
 
 final BuiltSet<NotificationType> _$values =
     new BuiltSet<NotificationType>(const <NotificationType>[
-  _$all,
-  _$broadcast,
   _$friendRequest,
   _$invite,
-  _$message,
+  _$inviteResponse,
   _$requestInvite,
+  _$requestInviteResponse,
   _$votetokick,
 ]);
 
 class _$NotificationTypeMeta {
   const _$NotificationTypeMeta();
-  NotificationType get all => _$all;
-  NotificationType get broadcast => _$broadcast;
   NotificationType get friendRequest => _$friendRequest;
   NotificationType get invite => _$invite;
-  NotificationType get message => _$message;
+  NotificationType get inviteResponse => _$inviteResponse;
   NotificationType get requestInvite => _$requestInvite;
+  NotificationType get requestInviteResponse => _$requestInviteResponse;
   NotificationType get votetokick => _$votetokick;
   NotificationType valueOf(String name) => _$valueOf(name);
   BuiltSet<NotificationType> get values => _$values;
@@ -72,21 +69,19 @@ Serializer<NotificationType> _$notificationTypeSerializer =
 class _$NotificationTypeSerializer
     implements PrimitiveSerializer<NotificationType> {
   static const Map<String, Object> _toWire = const <String, Object>{
-    'all': 'all',
-    'broadcast': 'broadcast',
     'friendRequest': 'friendRequest',
     'invite': 'invite',
-    'message': 'message',
-    'requestInvite': 'RequestInvite',
+    'inviteResponse': 'inviteResponse',
+    'requestInvite': 'requestInvite',
+    'requestInviteResponse': 'requestInviteResponse',
     'votetokick': 'votetokick',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
-    'all': 'all',
-    'broadcast': 'broadcast',
     'friendRequest': 'friendRequest',
     'invite': 'invite',
-    'message': 'message',
-    'RequestInvite': 'requestInvite',
+    'inviteResponse': 'inviteResponse',
+    'requestInvite': 'requestInvite',
+    'requestInviteResponse': 'requestInviteResponse',
     'votetokick': 'votetokick',
   };
 
