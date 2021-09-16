@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **friendGroupNames** | **BuiltList&lt;String&gt;** | Always empty array. | 
 **currentAvatarImageUrl** | **String** |  | 
 **currentAvatarThumbnailImageUrl** | **String** |  | 
-**fallbackAvatar** | **String** |  | 
+**fallbackAvatar** | **String** |  | [optional] 
 **currentAvatar** | **String** |  | 
 **currentAvatarAssetUrl** | **String** |  | 
 **accountDeletionDate** | [**Date**](Date.md) |  | [optional] 

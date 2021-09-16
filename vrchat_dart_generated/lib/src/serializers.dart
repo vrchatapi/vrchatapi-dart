@@ -58,6 +58,8 @@ import 'package:vrchat_dart_generated/src/model/instance.dart';
 import 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
 import 'package:vrchat_dart_generated/src/model/invite_message.dart';
 import 'package:vrchat_dart_generated/src/model/invite_message_type.dart';
+import 'package:vrchat_dart_generated/src/model/invite_request.dart';
+import 'package:vrchat_dart_generated/src/model/invite_response.dart';
 import 'package:vrchat_dart_generated/src/model/limited_unity_package.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user.dart';
 import 'package:vrchat_dart_generated/src/model/limited_world.dart';
@@ -126,6 +128,8 @@ part 'serializers.g.dart';
   InstancePlatforms,
   InviteMessage,
   InviteMessageType,
+  InviteRequest,
+  InviteResponse,
   LimitedUnityPackage,
   LimitedUser,
   LimitedWorld,

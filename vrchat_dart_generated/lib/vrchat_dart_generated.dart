@@ -68,6 +68,8 @@ export 'package:vrchat_dart_generated/src/model/instance.dart';
 export 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
 export 'package:vrchat_dart_generated/src/model/invite_message.dart';
 export 'package:vrchat_dart_generated/src/model/invite_message_type.dart';
+export 'package:vrchat_dart_generated/src/model/invite_request.dart';
+export 'package:vrchat_dart_generated/src/model/invite_response.dart';
 export 'package:vrchat_dart_generated/src/model/limited_unity_package.dart';
 export 'package:vrchat_dart_generated/src/model/limited_user.dart';
 export 'package:vrchat_dart_generated/src/model/limited_world.dart';

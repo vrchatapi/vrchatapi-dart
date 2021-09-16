@@ -52,7 +52,7 @@ class _$CurrentUser extends CurrentUser {
   @override
   final String currentAvatarThumbnailImageUrl;
   @override
-  final String fallbackAvatar;
+  final String? fallbackAvatar;
   @override
   final String currentAvatar;
   @override
@@ -126,7 +126,7 @@ class _$CurrentUser extends CurrentUser {
       required this.friendGroupNames,
       required this.currentAvatarImageUrl,
       required this.currentAvatarThumbnailImageUrl,
-      required this.fallbackAvatar,
+      this.fallbackAvatar,
       required this.currentAvatar,
       required this.currentAvatarAssetUrl,
       this.accountDeletionDate,
@@ -188,8 +188,6 @@ class _$CurrentUser extends CurrentUser {
         currentAvatarImageUrl, 'CurrentUser', 'currentAvatarImageUrl');
     BuiltValueNullFieldError.checkNotNull(currentAvatarThumbnailImageUrl,
         'CurrentUser', 'currentAvatarThumbnailImageUrl');
-    BuiltValueNullFieldError.checkNotNull(
-        fallbackAvatar, 'CurrentUser', 'fallbackAvatar');
     BuiltValueNullFieldError.checkNotNull(
         currentAvatar, 'CurrentUser', 'currentAvatar');
     BuiltValueNullFieldError.checkNotNull(
@@ -707,7 +705,7 @@ class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
               friendGroupNames: friendGroupNames.build(),
               currentAvatarImageUrl: BuiltValueNullFieldError.checkNotNull(currentAvatarImageUrl, 'CurrentUser', 'currentAvatarImageUrl'),
               currentAvatarThumbnailImageUrl: BuiltValueNullFieldError.checkNotNull(currentAvatarThumbnailImageUrl, 'CurrentUser', 'currentAvatarThumbnailImageUrl'),
-              fallbackAvatar: BuiltValueNullFieldError.checkNotNull(fallbackAvatar, 'CurrentUser', 'fallbackAvatar'),
+              fallbackAvatar: fallbackAvatar,
               currentAvatar: BuiltValueNullFieldError.checkNotNull(currentAvatar, 'CurrentUser', 'currentAvatar'),
               currentAvatarAssetUrl: BuiltValueNullFieldError.checkNotNull(currentAvatarAssetUrl, 'CurrentUser', 'currentAvatarAssetUrl'),
               accountDeletionDate: accountDeletionDate,

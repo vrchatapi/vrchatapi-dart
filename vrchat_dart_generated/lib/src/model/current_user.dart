@@ -132,7 +132,7 @@ abstract class CurrentUser implements Built<CurrentUser, CurrentUserBuilder> {
   String get currentAvatarThumbnailImageUrl;
 
   @BuiltValueField(wireName: r'fallbackAvatar')
-  String get fallbackAvatar;
+  String? get fallbackAvatar;
 
   @BuiltValueField(wireName: r'currentAvatar')
   String get currentAvatar;
@@ -317,10 +317,12 @@ class _$CurrentUserSerializer implements StructuredSerializer<CurrentUser> {
       ..add(r'currentAvatarThumbnailImageUrl')
       ..add(serializers.serialize(object.currentAvatarThumbnailImageUrl,
           specifiedType: const FullType(String)));
-    result
-      ..add(r'fallbackAvatar')
-      ..add(serializers.serialize(object.fallbackAvatar,
-          specifiedType: const FullType(String)));
+    if (object.fallbackAvatar != null) {
+      result
+        ..add(r'fallbackAvatar')
+        ..add(serializers.serialize(object.fallbackAvatar,
+            specifiedType: const FullType(String)));
+    }
     result
       ..add(r'currentAvatar')
       ..add(serializers.serialize(object.currentAvatar,

@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **inviteUser**
-> Notification inviteUser(userId)
+> Notification inviteUser(userId, inviteRequest)
 
 Invite User
 
@@ -143,9 +143,10 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getInviteApi();
 final String userId = userId_example; // String | 
+final InviteRequest inviteRequest = ; // InviteRequest | Instance ID when inviting a user.
 
 try { 
-    final response = api.inviteUser(userId);
+    final response = api.inviteUser(userId, inviteRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling InviteApi->inviteUser: $e\n');
@@ -157,6 +158,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**|  | 
+ **inviteRequest** | [**InviteRequest**](InviteRequest.md)| Instance ID when inviting a user. | [optional] 
 
 ### Return type
 
@@ -168,7 +170,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -278,7 +280,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **respondInvite**
-> Notification respondInvite(notificationId)
+> Notification respondInvite(notificationId, inviteResponse)
 
 Respond Invite
 
@@ -298,9 +300,10 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getInviteApi();
 final String notificationId = notificationId_example; // String | 
+final InviteResponse inviteResponse = ; // InviteResponse | Instance ID when inviting a user.
 
 try { 
-    final response = api.respondInvite(notificationId);
+    final response = api.respondInvite(notificationId, inviteResponse);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling InviteApi->respondInvite: $e\n');
@@ -312,6 +315,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **notificationId** | **String**|  | 
+ **inviteResponse** | [**InviteResponse**](InviteResponse.md)| Instance ID when inviting a user. | [optional] 
 
 ### Return type
 
@@ -323,7 +327,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
