@@ -43,7 +43,8 @@ abstract class ConfigDynamicWorldRows
 
   ConfigDynamicWorldRows._();
 
-  static void _initializeBuilder(ConfigDynamicWorldRowsBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ConfigDynamicWorldRowsBuilder b) => b;
 
   factory ConfigDynamicWorldRows(
           [void updates(ConfigDynamicWorldRowsBuilder b)]) =

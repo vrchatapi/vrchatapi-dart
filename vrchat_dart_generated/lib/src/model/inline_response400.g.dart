@@ -54,7 +54,7 @@ class InlineResponse400Builder
   set error(ErrorBuilder? error) => _$this._error = error;
 
   InlineResponse400Builder() {
-    InlineResponse400._initializeBuilder(this);
+    InlineResponse400._defaults(this);
   }
 
   InlineResponse400Builder get _$this {

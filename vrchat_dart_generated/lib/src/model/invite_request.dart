@@ -18,7 +18,8 @@ abstract class InviteRequest
 
   InviteRequest._();
 
-  static void _initializeBuilder(InviteRequestBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(InviteRequestBuilder b) => b;
 
   factory InviteRequest([void updates(InviteRequestBuilder b)]) =
       _$InviteRequest;

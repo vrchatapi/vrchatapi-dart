@@ -80,7 +80,8 @@ abstract class LimitedUser implements Built<LimitedUser, LimitedUserBuilder> {
 
   LimitedUser._();
 
-  static void _initializeBuilder(LimitedUserBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(LimitedUserBuilder b) => b;
 
   factory LimitedUser([void updates(LimitedUserBuilder b)]) = _$LimitedUser;
 

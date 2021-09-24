@@ -57,7 +57,7 @@ class AvatarUnityPackageUrlObjectBuilder
       _$this._unityPackageUrl = unityPackageUrl;
 
   AvatarUnityPackageUrlObjectBuilder() {
-    AvatarUnityPackageUrlObject._initializeBuilder(this);
+    AvatarUnityPackageUrlObject._defaults(this);
   }
 
   AvatarUnityPackageUrlObjectBuilder get _$this {

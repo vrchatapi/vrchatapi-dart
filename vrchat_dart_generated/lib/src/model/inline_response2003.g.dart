@@ -122,7 +122,7 @@ class InlineResponse2003Builder
   set etags(ListBuilder<JsonObject>? etags) => _$this._etags = etags;
 
   InlineResponse2003Builder() {
-    InlineResponse2003._initializeBuilder(this);
+    InlineResponse2003._defaults(this);
   }
 
   InlineResponse2003Builder get _$this {

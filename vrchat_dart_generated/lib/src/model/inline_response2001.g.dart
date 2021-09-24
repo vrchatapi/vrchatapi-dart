@@ -56,7 +56,7 @@ class InlineResponse2001Builder
   set verified(bool? verified) => _$this._verified = verified;
 
   InlineResponse2001Builder() {
-    InlineResponse2001._initializeBuilder(this);
+    InlineResponse2001._defaults(this);
   }
 
   InlineResponse2001Builder get _$this {

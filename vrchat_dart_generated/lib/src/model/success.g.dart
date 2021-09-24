@@ -48,7 +48,7 @@ class SuccessBuilder implements Builder<Success, SuccessBuilder> {
   set success(ResponseBuilder? success) => _$this._success = success;
 
   SuccessBuilder() {
-    Success._initializeBuilder(this);
+    Success._defaults(this);
   }
 
   SuccessBuilder get _$this {

@@ -33,7 +33,8 @@ abstract class Favorite implements Built<Favorite, FavoriteBuilder> {
 
   Favorite._();
 
-  static void _initializeBuilder(FavoriteBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(FavoriteBuilder b) => b;
 
   factory Favorite([void updates(FavoriteBuilder b)]) = _$Favorite;
 

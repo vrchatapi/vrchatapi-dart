@@ -82,7 +82,7 @@ class InlineResponse2002Builder
       _$this._buildVersionTag = buildVersionTag;
 
   InlineResponse2002Builder() {
-    InlineResponse2002._initializeBuilder(this);
+    InlineResponse2002._defaults(this);
   }
 
   InlineResponse2002Builder get _$this {

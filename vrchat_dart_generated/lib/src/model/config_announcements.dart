@@ -24,7 +24,8 @@ abstract class ConfigAnnouncements
 
   ConfigAnnouncements._();
 
-  static void _initializeBuilder(ConfigAnnouncementsBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ConfigAnnouncementsBuilder b) => b;
 
   factory ConfigAnnouncements([void updates(ConfigAnnouncementsBuilder b)]) =
       _$ConfigAnnouncements;

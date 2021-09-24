@@ -125,7 +125,7 @@ class FileBuilder implements Builder<File, FileBuilder> {
       _$this._versions = versions;
 
   FileBuilder() {
-    File._initializeBuilder(this);
+    File._defaults(this);
   }
 
   FileBuilder get _$this {

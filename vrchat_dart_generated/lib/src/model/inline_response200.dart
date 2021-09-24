@@ -22,7 +22,8 @@ abstract class InlineResponse200
 
   InlineResponse200._();
 
-  static void _initializeBuilder(InlineResponse200Builder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(InlineResponse200Builder b) => b;
 
   factory InlineResponse200([void updates(InlineResponse200Builder b)]) =
       _$InlineResponse200;

@@ -120,7 +120,7 @@ class FileVersionBuilder implements Builder<FileVersion, FileVersionBuilder> {
   set deleted(bool? deleted) => _$this._deleted = deleted;
 
   FileVersionBuilder() {
-    FileVersion._initializeBuilder(this);
+    FileVersion._defaults(this);
   }
 
   FileVersionBuilder get _$this {

@@ -67,7 +67,7 @@ class InlineResponse2005Builder
   set metadata(JsonObject? metadata) => _$this._metadata = metadata;
 
   InlineResponse2005Builder() {
-    InlineResponse2005._initializeBuilder(this);
+    InlineResponse2005._defaults(this);
   }
 
   InlineResponse2005Builder get _$this {

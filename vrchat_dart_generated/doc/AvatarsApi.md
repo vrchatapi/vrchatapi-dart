@@ -269,7 +269,7 @@ final api = VrchatDartGenerated().getAvatarsApi();
 final String featured = featured_example; // String | Filters on featured results.
 final String sort = popularity; // String | 
 final String user = user_example; // String | Set to `me` for searching own avatars.
-final String userId = userId_example; // String | Filter by author UserID
+final String userId = userId_example; // String | Filter by UserID.
 final int n = 56; // int | The number of objects to return.
 final String order = descending; // String | 
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
@@ -295,7 +295,7 @@ Name | Type | Description  | Notes
  **featured** | **String**| Filters on featured results. | [optional] 
  **sort** | **String**|  | [optional] [default to 'popularity']
  **user** | **String**| Set to `me` for searching own avatars. | [optional] 
- **userId** | **String**| Filter by author UserID | [optional] 
+ **userId** | **String**| Filter by UserID. | [optional] 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **order** | **String**|  | [optional] [default to 'descending']
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 

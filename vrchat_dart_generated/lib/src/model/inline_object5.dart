@@ -30,7 +30,8 @@ abstract class InlineObject5
 
   InlineObject5._();
 
-  static void _initializeBuilder(InlineObject5Builder b) => b
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(InlineObject5Builder b) => b
     ..nextPartNumber = '0'
     ..maxParts = '0';
 

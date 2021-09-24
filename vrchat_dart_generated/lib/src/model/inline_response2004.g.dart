@@ -54,7 +54,7 @@ class InlineResponse2004Builder
   set url(String? url) => _$this._url = url;
 
   InlineResponse2004Builder() {
-    InlineResponse2004._initializeBuilder(this);
+    InlineResponse2004._defaults(this);
   }
 
   InlineResponse2004Builder get _$this {

@@ -184,7 +184,7 @@ class FileDataBuilder implements Builder<FileData, FileDataBuilder> {
   set uploadId(String? uploadId) => _$this._uploadId = uploadId;
 
   FileDataBuilder() {
-    FileData._initializeBuilder(this);
+    FileData._defaults(this);
   }
 
   FileDataBuilder get _$this {

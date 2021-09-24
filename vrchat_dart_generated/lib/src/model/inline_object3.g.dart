@@ -88,7 +88,7 @@ class InlineObject3Builder
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
   InlineObject3Builder() {
-    InlineObject3._initializeBuilder(this);
+    InlineObject3._defaults(this);
   }
 
   InlineObject3Builder get _$this {

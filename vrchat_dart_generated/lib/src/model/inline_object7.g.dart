@@ -199,7 +199,7 @@ class InlineObject7Builder
   set unityVersion(String? unityVersion) => _$this._unityVersion = unityVersion;
 
   InlineObject7Builder() {
-    InlineObject7._initializeBuilder(this);
+    InlineObject7._defaults(this);
   }
 
   InlineObject7Builder get _$this {

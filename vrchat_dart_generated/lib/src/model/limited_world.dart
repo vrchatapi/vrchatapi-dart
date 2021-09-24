@@ -92,7 +92,8 @@ abstract class LimitedWorld
 
   LimitedWorld._();
 
-  static void _initializeBuilder(LimitedWorldBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(LimitedWorldBuilder b) => b;
 
   factory LimitedWorld([void updates(LimitedWorldBuilder b)]) = _$LimitedWorld;
 

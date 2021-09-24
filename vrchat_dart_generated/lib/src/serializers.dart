@@ -75,6 +75,7 @@ import 'package:vrchat_dart_generated/src/model/response.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
 import 'package:vrchat_dart_generated/src/model/unity_package.dart';
 import 'package:vrchat_dart_generated/src/model/user.dart';
+import 'package:vrchat_dart_generated/src/model/user_exists.dart';
 import 'package:vrchat_dart_generated/src/model/user_state.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
 import 'package:vrchat_dart_generated/src/model/world.dart';
@@ -145,6 +146,7 @@ part 'serializers.g.dart';
   Success,
   UnityPackage,
   User,
+  UserExists,
   UserState,
   UserStatus,
   World,

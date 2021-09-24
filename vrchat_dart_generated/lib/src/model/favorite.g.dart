@@ -86,7 +86,7 @@ class FavoriteBuilder implements Builder<Favorite, FavoriteBuilder> {
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
   FavoriteBuilder() {
-    Favorite._initializeBuilder(this);
+    Favorite._defaults(this);
   }
 
   FavoriteBuilder get _$this {

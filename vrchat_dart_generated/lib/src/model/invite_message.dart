@@ -45,7 +45,8 @@ abstract class InviteMessage
 
   InviteMessage._();
 
-  static void _initializeBuilder(InviteMessageBuilder b) => b
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(InviteMessageBuilder b) => b
     ..remainingCooldownMinutes = 0
     ..canBeUpdated = true;
 

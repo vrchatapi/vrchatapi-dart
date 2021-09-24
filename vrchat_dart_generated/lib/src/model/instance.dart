@@ -106,7 +106,8 @@ abstract class Instance implements Built<Instance, InstanceBuilder> {
 
   Instance._();
 
-  static void _initializeBuilder(InstanceBuilder b) => b
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(InstanceBuilder b) => b
     ..active = true
     ..canRequestInvite = true
     ..full = false

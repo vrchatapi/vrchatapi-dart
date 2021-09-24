@@ -216,7 +216,7 @@ class UsersApi {
   Future<Response<BuiltList<LimitedUser>>> searchUsers({
     String? search,
     String? developerType,
-    int? n,
+    int? n = 60,
     int? offset,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

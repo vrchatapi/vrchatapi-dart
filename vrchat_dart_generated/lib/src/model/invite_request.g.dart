@@ -53,7 +53,7 @@ class InviteRequestBuilder
   set instanceId(String? instanceId) => _$this._instanceId = instanceId;
 
   InviteRequestBuilder() {
-    InviteRequest._initializeBuilder(this);
+    InviteRequest._defaults(this);
   }
 
   InviteRequestBuilder get _$this {

@@ -141,7 +141,7 @@ class FavoriteGroupBuilder
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
   FavoriteGroupBuilder() {
-    FavoriteGroup._initializeBuilder(this);
+    FavoriteGroup._defaults(this);
   }
 
   FavoriteGroupBuilder get _$this {

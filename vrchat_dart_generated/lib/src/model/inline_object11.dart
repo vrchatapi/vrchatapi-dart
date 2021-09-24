@@ -53,7 +53,8 @@ abstract class InlineObject11
 
   InlineObject11._();
 
-  static void _initializeBuilder(InlineObject11Builder b) => b..version = 1;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(InlineObject11Builder b) => b..version = 1;
 
   factory InlineObject11([void updates(InlineObject11Builder b)]) =
       _$InlineObject11;

@@ -141,7 +141,7 @@ class InlineObject2Builder
   set userIcon(String? userIcon) => _$this._userIcon = userIcon;
 
   InlineObject2Builder() {
-    InlineObject2._initializeBuilder(this);
+    InlineObject2._defaults(this);
   }
 
   InlineObject2Builder get _$this {

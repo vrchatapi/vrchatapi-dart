@@ -30,7 +30,8 @@ abstract class Permission implements Built<Permission, PermissionBuilder> {
 
   Permission._();
 
-  static void _initializeBuilder(PermissionBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(PermissionBuilder b) => b;
 
   factory Permission([void updates(PermissionBuilder b)]) = _$Permission;
 

@@ -301,7 +301,7 @@ class FriendsApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<LimitedUser>>> getFriends({
     int? offset,
-    int? n,
+    int? n = 60,
     bool? offline,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

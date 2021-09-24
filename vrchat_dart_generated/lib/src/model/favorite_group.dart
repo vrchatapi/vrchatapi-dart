@@ -51,7 +51,8 @@ abstract class FavoriteGroup
 
   FavoriteGroup._();
 
-  static void _initializeBuilder(FavoriteGroupBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(FavoriteGroupBuilder b) => b;
 
   factory FavoriteGroup([void updates(FavoriteGroupBuilder b)]) =
       _$FavoriteGroup;

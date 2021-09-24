@@ -209,7 +209,8 @@ abstract class CurrentUser implements Built<CurrentUser, CurrentUserBuilder> {
 
   CurrentUser._();
 
-  static void _initializeBuilder(CurrentUserBuilder b) => b..isFriend = false;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(CurrentUserBuilder b) => b..isFriend = false;
 
   factory CurrentUser([void updates(CurrentUserBuilder b)]) = _$CurrentUser;
 

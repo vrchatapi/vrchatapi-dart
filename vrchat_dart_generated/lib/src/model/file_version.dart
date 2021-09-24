@@ -46,7 +46,8 @@ abstract class FileVersion implements Built<FileVersion, FileVersionBuilder> {
 
   FileVersion._();
 
-  static void _initializeBuilder(FileVersionBuilder b) => b
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(FileVersionBuilder b) => b
     ..version = 0
     ..deleted = true;
 

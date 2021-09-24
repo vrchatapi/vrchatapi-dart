@@ -66,7 +66,7 @@ class ConfigAnnouncementsBuilder
   set text(String? text) => _$this._text = text;
 
   ConfigAnnouncementsBuilder() {
-    ConfigAnnouncements._initializeBuilder(this);
+    ConfigAnnouncements._defaults(this);
   }
 
   ConfigAnnouncementsBuilder get _$this {

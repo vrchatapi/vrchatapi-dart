@@ -22,7 +22,8 @@ abstract class InstancePlatforms
 
   InstancePlatforms._();
 
-  static void _initializeBuilder(InstancePlatformsBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(InstancePlatformsBuilder b) => b;
 
   factory InstancePlatforms([void updates(InstancePlatformsBuilder b)]) =
       _$InstancePlatforms;

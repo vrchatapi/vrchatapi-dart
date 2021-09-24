@@ -18,7 +18,8 @@ abstract class Error implements Built<Error, ErrorBuilder> {
 
   Error._();
 
-  static void _initializeBuilder(ErrorBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ErrorBuilder b) => b;
 
   factory Error([void updates(ErrorBuilder b)]) = _$Error;
 

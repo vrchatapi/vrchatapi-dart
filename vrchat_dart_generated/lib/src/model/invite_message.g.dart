@@ -130,7 +130,7 @@ class InviteMessageBuilder
   set canBeUpdated(bool? canBeUpdated) => _$this._canBeUpdated = canBeUpdated;
 
   InviteMessageBuilder() {
-    InviteMessage._initializeBuilder(this);
+    InviteMessage._defaults(this);
   }
 
   InviteMessageBuilder get _$this {

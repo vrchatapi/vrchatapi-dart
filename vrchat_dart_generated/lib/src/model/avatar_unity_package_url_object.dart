@@ -19,7 +19,8 @@ abstract class AvatarUnityPackageUrlObject
 
   AvatarUnityPackageUrlObject._();
 
-  static void _initializeBuilder(AvatarUnityPackageUrlObjectBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(AvatarUnityPackageUrlObjectBuilder b) => b;
 
   factory AvatarUnityPackageUrlObject(
           [void updates(AvatarUnityPackageUrlObjectBuilder b)]) =

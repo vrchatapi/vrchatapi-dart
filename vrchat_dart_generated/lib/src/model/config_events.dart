@@ -64,7 +64,8 @@ abstract class ConfigEvents
 
   ConfigEvents._();
 
-  static void _initializeBuilder(ConfigEventsBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ConfigEventsBuilder b) => b;
 
   factory ConfigEvents([void updates(ConfigEventsBuilder b)]) = _$ConfigEvents;
 

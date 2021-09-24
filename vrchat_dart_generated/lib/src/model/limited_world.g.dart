@@ -297,7 +297,7 @@ class LimitedWorldBuilder
   set occupants(num? occupants) => _$this._occupants = occupants;
 
   LimitedWorldBuilder() {
-    LimitedWorld._initializeBuilder(this);
+    LimitedWorld._defaults(this);
   }
 
   LimitedWorldBuilder get _$this {

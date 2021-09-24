@@ -68,7 +68,7 @@ class LimitedUnityPackageBuilder
   set unityVersion(String? unityVersion) => _$this._unityVersion = unityVersion;
 
   LimitedUnityPackageBuilder() {
-    LimitedUnityPackage._initializeBuilder(this);
+    LimitedUnityPackage._defaults(this);
   }
 
   LimitedUnityPackageBuilder get _$this {

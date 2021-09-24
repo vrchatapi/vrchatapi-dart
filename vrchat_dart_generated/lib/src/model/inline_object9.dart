@@ -30,7 +30,8 @@ abstract class InlineObject9
 
   InlineObject9._();
 
-  static void _initializeBuilder(InlineObject9Builder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(InlineObject9Builder b) => b;
 
   factory InlineObject9([void updates(InlineObject9Builder b)]) =
       _$InlineObject9;

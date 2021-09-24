@@ -796,7 +796,7 @@ class FilesApi {
   Future<Response<BuiltList<File>>> getFiles({
     String? tag,
     String? userId,
-    int? n,
+    int? n = 60,
     int? offset,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

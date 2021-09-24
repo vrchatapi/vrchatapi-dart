@@ -600,7 +600,7 @@ class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
       _$this._offlineFriends = offlineFriends;
 
   CurrentUserBuilder() {
-    CurrentUser._initializeBuilder(this);
+    CurrentUser._defaults(this);
   }
 
   CurrentUserBuilder get _$this {

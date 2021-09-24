@@ -350,6 +350,10 @@ Get information about a specific World.
 ### Example 
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: apiKeyCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
 final String worldId = worldId_example; // String | 
@@ -374,7 +378,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKeyCookie](../README.md#apiKeyCookie)
 
 ### HTTP request headers
 
@@ -611,7 +615,7 @@ final api = VrchatDartGenerated().getWorldsApi();
 final String featured = featured_example; // String | Filters on featured results.
 final String sort = popularity; // String | 
 final String user = user_example; // String | Set to `me` for searching own worlds.
-final String userId = userId_example; // String | Filter by author UserID
+final String userId = userId_example; // String | Filter by UserID.
 final int n = 56; // int | The number of objects to return.
 final String order = descending; // String | 
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
@@ -638,7 +642,7 @@ Name | Type | Description  | Notes
  **featured** | **String**| Filters on featured results. | [optional] 
  **sort** | **String**|  | [optional] [default to 'popularity']
  **user** | **String**| Set to `me` for searching own worlds. | [optional] 
- **userId** | **String**| Filter by author UserID | [optional] 
+ **userId** | **String**| Filter by UserID. | [optional] 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **order** | **String**|  | [optional] [default to 'descending']
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 

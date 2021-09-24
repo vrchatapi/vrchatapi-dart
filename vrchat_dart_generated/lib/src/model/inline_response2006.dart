@@ -18,8 +18,8 @@ abstract class InlineResponse2006
 
   InlineResponse2006._();
 
-  static void _initializeBuilder(InlineResponse2006Builder b) =>
-      b..canPubilsh = true;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(InlineResponse2006Builder b) => b..canPubilsh = true;
 
   factory InlineResponse2006([void updates(InlineResponse2006Builder b)]) =
       _$InlineResponse2006;

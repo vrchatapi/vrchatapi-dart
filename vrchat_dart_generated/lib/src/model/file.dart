@@ -45,7 +45,8 @@ abstract class File implements Built<File, FileBuilder> {
 
   File._();
 
-  static void _initializeBuilder(FileBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(FileBuilder b) => b;
 
   factory File([void updates(FileBuilder b)]) = _$File;
 

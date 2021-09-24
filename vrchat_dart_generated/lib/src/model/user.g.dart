@@ -339,7 +339,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
   set location(String? location) => _$this._location = location;
 
   UserBuilder() {
-    User._initializeBuilder(this);
+    User._defaults(this);
   }
 
   UserBuilder get _$this {

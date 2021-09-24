@@ -44,7 +44,8 @@ abstract class PlayerModeration
 
   PlayerModeration._();
 
-  static void _initializeBuilder(PlayerModerationBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(PlayerModerationBuilder b) => b;
 
   factory PlayerModeration([void updates(PlayerModerationBuilder b)]) =
       _$PlayerModeration;

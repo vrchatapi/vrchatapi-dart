@@ -305,7 +305,7 @@ class InstanceBuilder implements Builder<Instance, InstanceBuilder> {
   set worldId(String? worldId) => _$this._worldId = worldId;
 
   InstanceBuilder() {
-    Instance._initializeBuilder(this);
+    Instance._defaults(this);
   }
 
   InstanceBuilder get _$this {

@@ -140,7 +140,7 @@ class NotificationBuilder
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
   NotificationBuilder() {
-    Notification._initializeBuilder(this);
+    Notification._defaults(this);
   }
 
   NotificationBuilder get _$this {

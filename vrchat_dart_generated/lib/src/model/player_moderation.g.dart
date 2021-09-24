@@ -133,7 +133,7 @@ class PlayerModerationBuilder
   set created(DateTime? created) => _$this._created = created;
 
   PlayerModerationBuilder() {
-    PlayerModeration._initializeBuilder(this);
+    PlayerModeration._defaults(this);
   }
 
   PlayerModerationBuilder get _$this {

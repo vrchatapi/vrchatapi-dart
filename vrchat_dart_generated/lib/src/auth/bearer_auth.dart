@@ -5,7 +5,7 @@
 import 'package:dio/dio.dart';
 import 'package:vrchat_dart_generated/src/auth/auth.dart';
 
-class OAuthInterceptor extends AuthInterceptor {
+class BearerAuthInterceptor extends AuthInterceptor {
   final Map<String, String> tokens = {};
 
   @override
@@ -14,7 +14,7 @@ class OAuthInterceptor extends AuthInterceptor {
     RequestInterceptorHandler handler,
   ) {
     final authInfo = getAuthInfo(options,
-        (secure) => secure['type'] == 'oauth' && secure['type'] == 'oauth2');
+        (secure) => secure['type'] == 'http' && secure['scheme'] == 'bearer');
     for (final info in authInfo) {
       final token = tokens[info['name']];
       if (token != null) {

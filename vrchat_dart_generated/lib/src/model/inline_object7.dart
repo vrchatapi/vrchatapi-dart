@@ -74,7 +74,8 @@ abstract class InlineObject7
 
   InlineObject7._();
 
-  static void _initializeBuilder(InlineObject7Builder b) => b
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(InlineObject7Builder b) => b
     ..capacity = 16
     ..unityVersion = '5.3.4p1';
 

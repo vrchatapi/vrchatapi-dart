@@ -159,7 +159,7 @@ class UnityPackageBuilder
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
   UnityPackageBuilder() {
-    UnityPackage._initializeBuilder(this);
+    UnityPackage._defaults(this);
   }
 
   UnityPackageBuilder get _$this {

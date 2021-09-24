@@ -277,7 +277,7 @@ class AvatarBuilder implements Builder<Avatar, AvatarBuilder> {
   set version(num? version) => _$this._version = version;
 
   AvatarBuilder() {
-    Avatar._initializeBuilder(this);
+    Avatar._defaults(this);
   }
 
   AvatarBuilder get _$this {

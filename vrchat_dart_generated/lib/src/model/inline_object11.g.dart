@@ -141,7 +141,7 @@ class InlineObject11Builder
       _$this._unityPackageUrl = unityPackageUrl;
 
   InlineObject11Builder() {
-    InlineObject11._initializeBuilder(this);
+    InlineObject11._defaults(this);
   }
 
   InlineObject11Builder get _$this {

@@ -66,7 +66,7 @@ class PastDisplayNameBuilder
   set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
   PastDisplayNameBuilder() {
-    PastDisplayName._initializeBuilder(this);
+    PastDisplayName._defaults(this);
   }
 
   PastDisplayNameBuilder get _$this {

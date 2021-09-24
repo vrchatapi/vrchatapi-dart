@@ -55,7 +55,8 @@ abstract class InlineObject2
 
   InlineObject2._();
 
-  static void _initializeBuilder(InlineObject2Builder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(InlineObject2Builder b) => b;
 
   factory InlineObject2([void updates(InlineObject2Builder b)]) =
       _$InlineObject2;

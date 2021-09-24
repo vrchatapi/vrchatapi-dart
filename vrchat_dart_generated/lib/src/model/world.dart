@@ -146,7 +146,8 @@ abstract class World implements Built<World, WorldBuilder> {
 
   World._();
 
-  static void _initializeBuilder(WorldBuilder b) => b
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(WorldBuilder b) => b
     ..favorites = 0
     ..featured = false
     ..heat = 0

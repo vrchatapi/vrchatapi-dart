@@ -133,7 +133,7 @@ class ConfigDynamicWorldRowsBuilder
   set tag(String? tag) => _$this._tag = tag;
 
   ConfigDynamicWorldRowsBuilder() {
-    ConfigDynamicWorldRows._initializeBuilder(this);
+    ConfigDynamicWorldRows._defaults(this);
   }
 
   ConfigDynamicWorldRowsBuilder get _$this {

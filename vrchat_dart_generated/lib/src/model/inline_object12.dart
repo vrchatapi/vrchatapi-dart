@@ -24,7 +24,8 @@ abstract class InlineObject12
 
   InlineObject12._();
 
-  static void _initializeBuilder(InlineObject12Builder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(InlineObject12Builder b) => b;
 
   factory InlineObject12([void updates(InlineObject12Builder b)]) =
       _$InlineObject12;

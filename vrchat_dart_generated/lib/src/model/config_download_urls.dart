@@ -29,7 +29,8 @@ abstract class ConfigDownloadUrls
 
   ConfigDownloadUrls._();
 
-  static void _initializeBuilder(ConfigDownloadUrlsBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ConfigDownloadUrlsBuilder b) => b;
 
   factory ConfigDownloadUrls([void updates(ConfigDownloadUrlsBuilder b)]) =
       _$ConfigDownloadUrls;

@@ -76,7 +76,7 @@ class InlineObject5Builder
   set maxParts(String? maxParts) => _$this._maxParts = maxParts;
 
   InlineObject5Builder() {
-    InlineObject5._initializeBuilder(this);
+    InlineObject5._defaults(this);
   }
 
   InlineObject5Builder get _$this {

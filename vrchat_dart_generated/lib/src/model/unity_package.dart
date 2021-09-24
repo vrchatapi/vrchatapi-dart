@@ -56,8 +56,8 @@ abstract class UnityPackage
 
   UnityPackage._();
 
-  static void _initializeBuilder(UnityPackageBuilder b) =>
-      b..unityVersion = '5.3.4p1';
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(UnityPackageBuilder b) => b..unityVersion = '5.3.4p1';
 
   factory UnityPackage([void updates(UnityPackageBuilder b)]) = _$UnityPackage;
 

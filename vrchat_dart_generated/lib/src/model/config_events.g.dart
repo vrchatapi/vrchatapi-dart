@@ -181,7 +181,7 @@ class ConfigEventsBuilder
       _$this._viewSegmentLength = viewSegmentLength;
 
   ConfigEventsBuilder() {
-    ConfigEvents._initializeBuilder(this);
+    ConfigEvents._defaults(this);
   }
 
   ConfigEventsBuilder get _$this {

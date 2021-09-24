@@ -22,7 +22,8 @@ abstract class PastDisplayName
 
   PastDisplayName._();
 
-  static void _initializeBuilder(PastDisplayNameBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(PastDisplayNameBuilder b) => b;
 
   factory PastDisplayName([void updates(PastDisplayNameBuilder b)]) =
       _$PastDisplayName;

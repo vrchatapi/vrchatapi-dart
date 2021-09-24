@@ -74,6 +74,7 @@ doc/Success.md
 doc/SystemApi.md
 doc/UnityPackage.md
 doc/User.md
+doc/UserExists.md
 doc/UserState.md
 doc/UserStatus.md
 doc/UsersApi.md
@@ -96,6 +97,7 @@ lib/src/api_util.dart
 lib/src/auth/api_key_auth.dart
 lib/src/auth/auth.dart
 lib/src/auth/basic_auth.dart
+lib/src/auth/bearer_auth.dart
 lib/src/auth/oauth.dart
 lib/src/date_serializer.dart
 lib/src/model/avatar.dart
@@ -162,11 +164,10 @@ lib/src/model/response.dart
 lib/src/model/success.dart
 lib/src/model/unity_package.dart
 lib/src/model/user.dart
+lib/src/model/user_exists.dart
 lib/src/model/user_state.dart
 lib/src/model/user_status.dart
 lib/src/model/world.dart
 lib/src/serializers.dart
 lib/vrchat_dart_generated.dart
 pubspec.yaml
-test/invite_request_test.dart
-test/invite_response_test.dart

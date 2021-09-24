@@ -206,14 +206,14 @@ class WorldsApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<LimitedWorld>>> getActiveWorlds({
     String? featured,
-    String? sort,
-    int? n,
-    String? order,
+    String? sort = 'popularity',
+    int? n = 60,
+    String? order = 'descending',
     int? offset,
     String? search,
     String? tag,
     String? notag,
-    String? releaseStatus,
+    String? releaseStatus = 'hidden',
     String? maxUnityVersion,
     String? minUnityVersion,
     String? platform,
@@ -353,14 +353,14 @@ class WorldsApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<LimitedWorld>>> getFavoritedWorlds({
     String? featured,
-    String? sort,
-    int? n,
-    String? order,
+    String? sort = 'popularity',
+    int? n = 60,
+    String? order = 'descending',
     int? offset,
     String? search,
     String? tag,
     String? notag,
-    String? releaseStatus,
+    String? releaseStatus = 'hidden',
     String? maxUnityVersion,
     String? minUnityVersion,
     String? platform,
@@ -504,14 +504,14 @@ class WorldsApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<LimitedWorld>>> getRecentWorlds({
     String? featured,
-    String? sort,
-    int? n,
-    String? order,
+    String? sort = 'popularity',
+    int? n = 60,
+    String? order = 'descending',
     int? offset,
     String? search,
     String? tag,
     String? notag,
-    String? releaseStatus,
+    String? releaseStatus = 'hidden',
     String? maxUnityVersion,
     String? minUnityVersion,
     String? platform,
@@ -658,7 +658,14 @@ class WorldsApi {
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
+            'where': '',
+          },
+        ],
         ...?extra,
       },
       validateStatus: validateStatus,
@@ -1034,7 +1041,7 @@ class WorldsApi {
   /// * [featured] - Filters on featured results.
   /// * [sort]
   /// * [user] - Set to `me` for searching own worlds.
-  /// * [userId] - Filter by author UserID
+  /// * [userId] - Filter by UserID.
   /// * [n] - The number of objects to return.
   /// * [order]
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
@@ -1056,16 +1063,16 @@ class WorldsApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<LimitedWorld>>> searchWorlds({
     String? featured,
-    String? sort,
+    String? sort = 'popularity',
     String? user,
     String? userId,
-    int? n,
-    String? order,
+    int? n = 60,
+    String? order = 'descending',
     int? offset,
     String? search,
     String? tag,
     String? notag,
-    String? releaseStatus,
+    String? releaseStatus = 'hidden',
     String? maxUnityVersion,
     String? minUnityVersion,
     String? platform,

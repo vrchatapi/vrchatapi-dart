@@ -56,7 +56,7 @@ class InlineResponse2006Builder
   set canPubilsh(bool? canPubilsh) => _$this._canPubilsh = canPubilsh;
 
   InlineResponse2006Builder() {
-    InlineResponse2006._initializeBuilder(this);
+    InlineResponse2006._defaults(this);
   }
 
   InlineResponse2006Builder get _$this {

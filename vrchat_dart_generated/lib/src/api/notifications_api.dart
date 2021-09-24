@@ -302,7 +302,7 @@ class NotificationsApi {
     bool? sent,
     bool? hidden,
     String? after,
-    int? n,
+    int? n = 60,
     int? offset,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

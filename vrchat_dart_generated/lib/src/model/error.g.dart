@@ -48,7 +48,7 @@ class ErrorBuilder implements Builder<Error, ErrorBuilder> {
   set error(ResponseBuilder? error) => _$this._error = error;
 
   ErrorBuilder() {
-    Error._initializeBuilder(this);
+    Error._defaults(this);
   }
 
   ErrorBuilder get _$this {

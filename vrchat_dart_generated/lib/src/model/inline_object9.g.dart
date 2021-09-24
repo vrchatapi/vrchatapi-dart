@@ -69,7 +69,7 @@ class InlineObject9Builder
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
   InlineObject9Builder() {
-    InlineObject9._initializeBuilder(this);
+    InlineObject9._defaults(this);
   }
 
   InlineObject9Builder get _$this {

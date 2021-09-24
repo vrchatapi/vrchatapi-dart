@@ -21,7 +21,8 @@ abstract class Response implements Built<Response, ResponseBuilder> {
 
   Response._();
 
-  static void _initializeBuilder(ResponseBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ResponseBuilder b) => b;
 
   factory Response([void updates(ResponseBuilder b)]) = _$Response;
 

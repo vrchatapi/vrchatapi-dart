@@ -7,6 +7,7 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
 import 'package:vrchat_dart_generated/src/model/inline_object.dart';
@@ -14,6 +15,7 @@ import 'package:vrchat_dart_generated/src/model/inline_object1.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response200.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2001.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
+import 'package:vrchat_dart_generated/src/model/user_exists.dart';
 
 class AuthenticationApi {
   final Dio _dio;
@@ -21,6 +23,108 @@ class AuthenticationApi {
   final Serializers _serializers;
 
   const AuthenticationApi(this._dio, this._serializers);
+
+  /// Check User Exists
+  /// Checks if a user by a given &#x60;username&#x60;, &#x60;displayName&#x60; or &#x60;email&#x60; exist. This is used during registration to check if a username has already been taken, during change of displayName to check if a displayName is available, and during change of email to check if the email is already used. In the later two cases the &#x60;excludeUserId&#x60; is used to exclude oneself, otherwise the result would always be true.  It is **REQUIRED** to include **AT LEAST** &#x60;username&#x60;, &#x60;displayName&#x60; **or** &#x60;email&#x60; query parameter. Although they can be combined - in addition with &#x60;excludeUserId&#x60; (generally to exclude yourself) - to further fine-tune the search.
+  ///
+  /// Parameters:
+  /// * [email] - Filter by email.
+  /// * [displayName] - Filter by displayName.
+  /// * [userId] - Filter by UserID.
+  /// * [excludeUserId] - Exclude by UserID.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [UserExists] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<UserExists>> checkUserExists({
+    String? email,
+    String? displayName,
+    String? userId,
+    String? excludeUserId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/auth/exists';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (email != null)
+        r'email':
+            encodeQueryParameter(_serializers, email, const FullType(String)),
+      if (displayName != null)
+        r'displayName': encodeQueryParameter(
+            _serializers, displayName, const FullType(String)),
+      if (userId != null)
+        r'userId':
+            encodeQueryParameter(_serializers, userId, const FullType(String)),
+      if (excludeUserId != null)
+        r'excludeUserId': encodeQueryParameter(
+            _serializers, excludeUserId, const FullType(String)),
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    UserExists _responseData;
+
+    try {
+      const _responseType = FullType(UserExists);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as UserExists;
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<UserExists>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
 
   /// Delete User
   /// Deletes the account with given ID. Normal users only have permission to delete their own account. Account deletion is 14 days from this request, and will be cancelled if you do an authenticated request with the account afterwards.  **VRC+ NOTE:** Despite the 14-days cooldown, any VRC+ subscription will be cancelled **immediately**.  **METHOD NOTE:** Despite this being a Delete action, the method type required is PUT.
@@ -146,6 +250,7 @@ class AuthenticationApi {
           },
           {
             'type': 'http',
+            'scheme': 'basic',
             'name': 'authHeader',
           },
           {

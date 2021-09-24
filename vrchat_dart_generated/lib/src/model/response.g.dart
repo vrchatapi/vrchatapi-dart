@@ -60,7 +60,7 @@ class ResponseBuilder implements Builder<Response, ResponseBuilder> {
   set statusCode(num? statusCode) => _$this._statusCode = statusCode;
 
   ResponseBuilder() {
-    Response._initializeBuilder(this);
+    Response._defaults(this);
   }
 
   ResponseBuilder get _$this {

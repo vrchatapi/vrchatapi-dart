@@ -79,7 +79,7 @@ class ConfigDownloadUrlsBuilder
   set sdk3Worlds(String? sdk3Worlds) => _$this._sdk3Worlds = sdk3Worlds;
 
   ConfigDownloadUrlsBuilder() {
-    ConfigDownloadUrls._initializeBuilder(this);
+    ConfigDownloadUrls._defaults(this);
   }
 
   ConfigDownloadUrlsBuilder get _$this {

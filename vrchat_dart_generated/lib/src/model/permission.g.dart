@@ -82,7 +82,7 @@ class PermissionBuilder implements Builder<Permission, PermissionBuilder> {
   set data(JsonObject? data) => _$this._data = data;
 
   PermissionBuilder() {
-    Permission._initializeBuilder(this);
+    Permission._defaults(this);
   }
 
   PermissionBuilder get _$this {

@@ -418,7 +418,7 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
   set visits(num? visits) => _$this._visits = visits;
 
   WorldBuilder() {
-    World._initializeBuilder(this);
+    World._defaults(this);
   }
 
   WorldBuilder get _$this {

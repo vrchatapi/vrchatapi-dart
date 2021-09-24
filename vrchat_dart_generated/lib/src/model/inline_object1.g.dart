@@ -51,7 +51,7 @@ class InlineObject1Builder
   set code(String? code) => _$this._code = code;
 
   InlineObject1Builder() {
-    InlineObject1._initializeBuilder(this);
+    InlineObject1._defaults(this);
   }
 
   InlineObject1Builder get _$this {

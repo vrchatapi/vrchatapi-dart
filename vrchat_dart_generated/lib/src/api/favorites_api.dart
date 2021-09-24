@@ -425,7 +425,7 @@ class FavoritesApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<FavoriteGroup>] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<FavoriteGroup>>> getFavoriteGroups({
-    int? n,
+    int? n = 60,
     int? offset,
     String? ownerId,
     CancelToken? cancelToken,
@@ -528,7 +528,7 @@ class FavoritesApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<Favorite>] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<Favorite>>> getFavorites({
-    int? n,
+    int? n = 60,
     int? offset,
     String? type,
     String? tag,

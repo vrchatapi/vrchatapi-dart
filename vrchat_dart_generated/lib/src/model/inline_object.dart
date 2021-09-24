@@ -18,7 +18,8 @@ abstract class InlineObject
 
   InlineObject._();
 
-  static void _initializeBuilder(InlineObjectBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(InlineObjectBuilder b) => b;
 
   factory InlineObject([void updates(InlineObjectBuilder b)]) = _$InlineObject;
 

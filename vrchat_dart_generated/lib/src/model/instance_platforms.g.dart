@@ -69,7 +69,7 @@ class InstancePlatformsBuilder
       _$this._standalonewindows = standalonewindows;
 
   InstancePlatformsBuilder() {
-    InstancePlatforms._initializeBuilder(this);
+    InstancePlatforms._defaults(this);
   }
 
   InstancePlatformsBuilder get _$this {

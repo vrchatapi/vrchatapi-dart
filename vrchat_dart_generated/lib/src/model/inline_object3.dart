@@ -33,7 +33,8 @@ abstract class InlineObject3
 
   InlineObject3._();
 
-  static void _initializeBuilder(InlineObject3Builder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(InlineObject3Builder b) => b;
 
   factory InlineObject3([void updates(InlineObject3Builder b)]) =
       _$InlineObject3;

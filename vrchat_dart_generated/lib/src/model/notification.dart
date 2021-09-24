@@ -49,7 +49,8 @@ abstract class Notification
 
   Notification._();
 
-  static void _initializeBuilder(NotificationBuilder b) => b
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(NotificationBuilder b) => b
     ..details = '{}'
     ..seen = false;
 

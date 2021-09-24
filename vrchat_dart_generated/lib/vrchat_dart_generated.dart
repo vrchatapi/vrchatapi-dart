@@ -85,6 +85,7 @@ export 'package:vrchat_dart_generated/src/model/response.dart';
 export 'package:vrchat_dart_generated/src/model/success.dart';
 export 'package:vrchat_dart_generated/src/model/unity_package.dart';
 export 'package:vrchat_dart_generated/src/model/user.dart';
+export 'package:vrchat_dart_generated/src/model/user_exists.dart';
 export 'package:vrchat_dart_generated/src/model/user_state.dart';
 export 'package:vrchat_dart_generated/src/model/user_status.dart';
 export 'package:vrchat_dart_generated/src/model/world.dart';

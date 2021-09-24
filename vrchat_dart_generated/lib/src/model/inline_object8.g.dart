@@ -75,7 +75,7 @@ class InlineObject8Builder
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
   InlineObject8Builder() {
-    InlineObject8._initializeBuilder(this);
+    InlineObject8._defaults(this);
   }
 
   InlineObject8Builder get _$this {

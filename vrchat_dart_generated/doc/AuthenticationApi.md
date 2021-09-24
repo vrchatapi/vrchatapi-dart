@@ -9,6 +9,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**checkUserExists**](AuthenticationApi.md#checkuserexists) | **GET** /auth/exists | Check User Exists
 [**deleteUser**](AuthenticationApi.md#deleteuser) | **PUT** /user/{userId}/delete | Delete User
 [**getCurrentUser**](AuthenticationApi.md#getcurrentuser) | **GET** /auth/user | Login and/or Get Current User Info
 [**logout**](AuthenticationApi.md#logout) | **PUT** /logout | Logout
@@ -16,6 +17,59 @@ Method | HTTP request | Description
 [**verifyAuthToken**](AuthenticationApi.md#verifyauthtoken) | **GET** /auth | Verify Auth Token
 [**verifyRecoveryCode**](AuthenticationApi.md#verifyrecoverycode) | **POST** /auth/twofactorauth/otp/verify | Verify 2FA code with Recovery code
 
+
+# **checkUserExists**
+> UserExists checkUserExists(email, displayName, userId, excludeUserId)
+
+Check User Exists
+
+Checks if a user by a given `username`, `displayName` or `email` exist. This is used during registration to check if a username has already been taken, during change of displayName to check if a displayName is available, and during change of email to check if the email is already used. In the later two cases the `excludeUserId` is used to exclude oneself, otherwise the result would always be true.  It is **REQUIRED** to include **AT LEAST** `username`, `displayName` **or** `email` query parameter. Although they can be combined - in addition with `excludeUserId` (generally to exclude yourself) - to further fine-tune the search.
+
+### Example 
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: apiKeyCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+final String email = email_example; // String | Filter by email.
+final String displayName = displayName_example; // String | Filter by displayName.
+final String userId = userId_example; // String | Filter by UserID.
+final String excludeUserId = excludeUserId_example; // String | Exclude by UserID.
+
+try { 
+    final response = api.checkUserExists(email, displayName, userId, excludeUserId);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AuthenticationApi->checkUserExists: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **String**| Filter by email. | [optional] 
+ **displayName** | **String**| Filter by displayName. | [optional] 
+ **userId** | **String**| Filter by UserID. | [optional] 
+ **excludeUserId** | **String**| Exclude by UserID. | [optional] 
+
+### Return type
+
+[**UserExists**](UserExists.md)
+
+### Authorization
+
+[apiKeyCookie](../README.md#apiKeyCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteUser**
 > CurrentUser deleteUser(userId)

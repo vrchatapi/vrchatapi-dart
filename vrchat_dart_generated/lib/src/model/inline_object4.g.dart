@@ -90,7 +90,7 @@ class InlineObject4Builder
       _$this._fileSizeInBytes = fileSizeInBytes;
 
   InlineObject4Builder() {
-    InlineObject4._initializeBuilder(this);
+    InlineObject4._defaults(this);
   }
 
   InlineObject4Builder get _$this {

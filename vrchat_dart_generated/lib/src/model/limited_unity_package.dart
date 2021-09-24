@@ -23,7 +23,8 @@ abstract class LimitedUnityPackage
 
   LimitedUnityPackage._();
 
-  static void _initializeBuilder(LimitedUnityPackageBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(LimitedUnityPackageBuilder b) => b;
 
   factory LimitedUnityPackage([void updates(LimitedUnityPackageBuilder b)]) =
       _$LimitedUnityPackage;

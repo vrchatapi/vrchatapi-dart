@@ -145,7 +145,7 @@ class InlineObject10Builder
       _$this._unityPackageUrl = unityPackageUrl;
 
   InlineObject10Builder() {
-    InlineObject10._initializeBuilder(this);
+    InlineObject10._defaults(this);
   }
 
   InlineObject10Builder get _$this {

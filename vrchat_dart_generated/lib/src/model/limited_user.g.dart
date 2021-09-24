@@ -237,7 +237,7 @@ class LimitedUserBuilder implements Builder<LimitedUser, LimitedUserBuilder> {
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
   LimitedUserBuilder() {
-    LimitedUser._initializeBuilder(this);
+    LimitedUser._defaults(this);
   }
 
   LimitedUserBuilder get _$this {

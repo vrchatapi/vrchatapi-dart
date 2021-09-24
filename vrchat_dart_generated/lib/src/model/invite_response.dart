@@ -18,7 +18,8 @@ abstract class InviteResponse
 
   InviteResponse._();
 
-  static void _initializeBuilder(InviteResponseBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(InviteResponseBuilder b) => b;
 
   factory InviteResponse([void updates(InviteResponseBuilder b)]) =
       _$InviteResponse;

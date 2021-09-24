@@ -959,7 +959,7 @@ class ConfigBuilder implements Builder<Config, ConfigBuilder> {
       _$this._youtubedlVersion = youtubedlVersion;
 
   ConfigBuilder() {
-    Config._initializeBuilder(this);
+    Config._defaults(this);
   }
 
   ConfigBuilder get _$this {

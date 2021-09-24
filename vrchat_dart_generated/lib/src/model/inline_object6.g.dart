@@ -205,7 +205,7 @@ class InlineObject6Builder
   set unityVersion(String? unityVersion) => _$this._unityVersion = unityVersion;
 
   InlineObject6Builder() {
-    InlineObject6._initializeBuilder(this);
+    InlineObject6._defaults(this);
   }
 
   InlineObject6Builder get _$this {

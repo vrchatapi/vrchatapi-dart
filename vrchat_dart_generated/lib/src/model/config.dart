@@ -387,7 +387,8 @@ abstract class Config implements Built<Config, ConfigBuilder> {
 
   Config._();
 
-  static void _initializeBuilder(ConfigBuilder b) => b
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ConfigBuilder b) => b
     ..appName = 'VrChat'
     ..disableAvatarCopying = false
     ..disableAvatarGating = false

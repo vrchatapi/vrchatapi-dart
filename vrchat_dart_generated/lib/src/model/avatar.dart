@@ -93,7 +93,8 @@ abstract class Avatar implements Built<Avatar, AvatarBuilder> {
 
   Avatar._();
 
-  static void _initializeBuilder(AvatarBuilder b) => b
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(AvatarBuilder b) => b
     ..featured = false
     ..version = 0;
 

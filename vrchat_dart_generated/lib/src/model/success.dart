@@ -18,7 +18,8 @@ abstract class Success implements Built<Success, SuccessBuilder> {
 
   Success._();
 
-  static void _initializeBuilder(SuccessBuilder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(SuccessBuilder b) => b;
 
   factory Success([void updates(SuccessBuilder b)]) = _$Success;
 

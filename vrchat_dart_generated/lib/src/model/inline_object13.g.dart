@@ -62,7 +62,7 @@ class InlineObject13Builder
   set type(PlayerModerationType? type) => _$this._type = type;
 
   InlineObject13Builder() {
-    InlineObject13._initializeBuilder(this);
+    InlineObject13._defaults(this);
   }
 
   InlineObject13Builder get _$this {

@@ -330,14 +330,14 @@ class AvatarsApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<Avatar>>> getFavoritedAvatars({
     String? featured,
-    String? sort,
-    int? n,
-    String? order,
+    String? sort = 'popularity',
+    int? n = 60,
+    String? order = 'descending',
     int? offset,
     String? search,
     String? tag,
     String? notag,
-    String? releaseStatus,
+    String? releaseStatus = 'hidden',
     String? maxUnityVersion,
     String? minUnityVersion,
     String? platform,
@@ -460,7 +460,7 @@ class AvatarsApi {
   /// * [featured] - Filters on featured results.
   /// * [sort]
   /// * [user] - Set to `me` for searching own avatars.
-  /// * [userId] - Filter by author UserID
+  /// * [userId] - Filter by UserID.
   /// * [n] - The number of objects to return.
   /// * [order]
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
@@ -481,15 +481,15 @@ class AvatarsApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<Avatar>>> searchAvatars({
     String? featured,
-    String? sort,
+    String? sort = 'popularity',
     String? user,
     String? userId,
-    int? n,
-    String? order,
+    int? n = 60,
+    String? order = 'descending',
     int? offset,
     String? tag,
     String? notag,
-    String? releaseStatus,
+    String? releaseStatus = 'hidden',
     String? maxUnityVersion,
     String? minUnityVersion,
     String? platform,

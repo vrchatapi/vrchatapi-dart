@@ -62,7 +62,7 @@ class InlineResponse200Builder
   set token(String? token) => _$this._token = token;
 
   InlineResponse200Builder() {
-    InlineResponse200._initializeBuilder(this);
+    InlineResponse200._defaults(this);
   }
 
   InlineResponse200Builder get _$this {

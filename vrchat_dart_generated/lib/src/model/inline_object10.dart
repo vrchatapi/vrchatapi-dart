@@ -53,7 +53,8 @@ abstract class InlineObject10
 
   InlineObject10._();
 
-  static void _initializeBuilder(InlineObject10Builder b) => b..version = 1;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(InlineObject10Builder b) => b..version = 1;
 
   factory InlineObject10([void updates(InlineObject10Builder b)]) =
       _$InlineObject10;

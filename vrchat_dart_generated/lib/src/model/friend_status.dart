@@ -26,7 +26,8 @@ abstract class FriendStatus
 
   FriendStatus._();
 
-  static void _initializeBuilder(FriendStatusBuilder b) => b
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(FriendStatusBuilder b) => b
     ..isFriend = false
     ..outgoingRequest = false
     ..incomingRequest = false;

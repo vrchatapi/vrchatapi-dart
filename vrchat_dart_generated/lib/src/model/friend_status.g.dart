@@ -80,7 +80,7 @@ class FriendStatusBuilder
       _$this._incomingRequest = incomingRequest;
 
   FriendStatusBuilder() {
-    FriendStatus._initializeBuilder(this);
+    FriendStatus._defaults(this);
   }
 
   FriendStatusBuilder get _$this {

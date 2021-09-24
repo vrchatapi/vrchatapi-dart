@@ -18,7 +18,8 @@ abstract class InlineResponse2001
 
   InlineResponse2001._();
 
-  static void _initializeBuilder(InlineResponse2001Builder b) => b;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(InlineResponse2001Builder b) => b;
 
   factory InlineResponse2001([void updates(InlineResponse2001Builder b)]) =
       _$InlineResponse2001;

@@ -54,7 +54,7 @@ class InviteResponseBuilder
   set responseSlot(int? responseSlot) => _$this._responseSlot = responseSlot;
 
   InviteResponseBuilder() {
-    InviteResponse._initializeBuilder(this);
+    InviteResponse._defaults(this);
   }
 
   InviteResponseBuilder get _$this {

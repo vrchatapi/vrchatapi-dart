@@ -45,7 +45,8 @@ abstract class FileData implements Built<FileData, FileDataBuilder> {
 
   FileData._();
 
-  static void _initializeBuilder(FileDataBuilder b) => b..uploadId = '';
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(FileDataBuilder b) => b..uploadId = '';
 
   factory FileData([void updates(FileDataBuilder b)]) = _$FileData;
 
