@@ -18,7 +18,6 @@ Name | Type | Description | Notes
 **statusDescription** | **String** |  | 
 **currentAvatarImageUrl** | **String** |  | 
 **currentAvatarThumbnailImageUrl** | **String** |  | 
-**fallbackAvatar** | **String** |  | 
 **state** | [**UserState**](UserState.md) |  | 
 **tags** | **BuiltList&lt;String&gt;** |  | 
 **developerType** | [**DeveloperType**](DeveloperType.md) |  | 

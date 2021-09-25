@@ -25,7 +25,6 @@ part 'user.g.dart';
 /// * [statusDescription]
 /// * [currentAvatarImageUrl]
 /// * [currentAvatarThumbnailImageUrl]
-/// * [fallbackAvatar]
 /// * [state]
 /// * [tags]
 /// * [developerType]
@@ -69,9 +68,6 @@ abstract class User implements Built<User, UserBuilder> {
 
   @BuiltValueField(wireName: r'currentAvatarThumbnailImageUrl')
   String get currentAvatarThumbnailImageUrl;
-
-  @BuiltValueField(wireName: r'fallbackAvatar')
-  String get fallbackAvatar;
 
   @BuiltValueField(wireName: r'state')
   UserState get state;
@@ -179,10 +175,6 @@ class _$UserSerializer implements StructuredSerializer<User> {
       ..add(serializers.serialize(object.currentAvatarThumbnailImageUrl,
           specifiedType: const FullType(String)));
     result
-      ..add(r'fallbackAvatar')
-      ..add(serializers.serialize(object.fallbackAvatar,
-          specifiedType: const FullType(String)));
-    result
       ..add(r'state')
       ..add(serializers.serialize(object.state,
           specifiedType: const FullType(UserState)));
@@ -287,10 +279,6 @@ class _$UserSerializer implements StructuredSerializer<User> {
           break;
         case r'currentAvatarThumbnailImageUrl':
           result.currentAvatarThumbnailImageUrl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case r'fallbackAvatar':
-          result.fallbackAvatar = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
         case r'state':

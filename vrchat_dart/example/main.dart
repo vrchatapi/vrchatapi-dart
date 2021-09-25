@@ -32,7 +32,7 @@ void main() async {
   final friendsResponse = await api.rawApi.getFriendsApi().getFriends();
   print(friendsResponse.data?.first.username);
 
-  final worldsResponse = await api.rawApi.getWorldsApi().searchWorlds();
+  final worldsResponse = await api.rawApi.getWorldsApi().searchWorlds(releaseStatus: 'public');
   print(worldsResponse.data!.first.name);
 
   // Listen for updates

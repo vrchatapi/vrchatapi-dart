@@ -28,8 +28,6 @@ class _$User extends User {
   @override
   final String currentAvatarThumbnailImageUrl;
   @override
-  final String fallbackAvatar;
-  @override
   final UserState state;
   @override
   final BuiltList<String> tags;
@@ -70,7 +68,6 @@ class _$User extends User {
       required this.statusDescription,
       required this.currentAvatarImageUrl,
       required this.currentAvatarThumbnailImageUrl,
-      required this.fallbackAvatar,
       required this.state,
       required this.tags,
       required this.developerType,
@@ -99,8 +96,6 @@ class _$User extends User {
         currentAvatarImageUrl, 'User', 'currentAvatarImageUrl');
     BuiltValueNullFieldError.checkNotNull(currentAvatarThumbnailImageUrl,
         'User', 'currentAvatarThumbnailImageUrl');
-    BuiltValueNullFieldError.checkNotNull(
-        fallbackAvatar, 'User', 'fallbackAvatar');
     BuiltValueNullFieldError.checkNotNull(state, 'User', 'state');
     BuiltValueNullFieldError.checkNotNull(tags, 'User', 'tags');
     BuiltValueNullFieldError.checkNotNull(
@@ -140,7 +135,6 @@ class _$User extends User {
         currentAvatarImageUrl == other.currentAvatarImageUrl &&
         currentAvatarThumbnailImageUrl ==
             other.currentAvatarThumbnailImageUrl &&
-        fallbackAvatar == other.fallbackAvatar &&
         state == other.state &&
         tags == other.tags &&
         developerType == other.developerType &&
@@ -176,13 +170,13 @@ class _$User extends User {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc(0, id.hashCode), username.hashCode), displayName.hashCode), userIcon.hashCode), bio.hashCode),
-                                                                                bioLinks.hashCode),
-                                                                            profilePicOverride.hashCode),
-                                                                        statusDescription.hashCode),
-                                                                    currentAvatarImageUrl.hashCode),
-                                                                currentAvatarThumbnailImageUrl.hashCode),
-                                                            fallbackAvatar.hashCode),
+                                                                            $jc($jc($jc($jc($jc(0, id.hashCode), username.hashCode), displayName.hashCode), userIcon.hashCode),
+                                                                                bio.hashCode),
+                                                                            bioLinks.hashCode),
+                                                                        profilePicOverride.hashCode),
+                                                                    statusDescription.hashCode),
+                                                                currentAvatarImageUrl.hashCode),
+                                                            currentAvatarThumbnailImageUrl.hashCode),
                                                         state.hashCode),
                                                     tags.hashCode),
                                                 developerType.hashCode),
@@ -212,7 +206,6 @@ class _$User extends User {
           ..add('currentAvatarImageUrl', currentAvatarImageUrl)
           ..add(
               'currentAvatarThumbnailImageUrl', currentAvatarThumbnailImageUrl)
-          ..add('fallbackAvatar', fallbackAvatar)
           ..add('state', state)
           ..add('tags', tags)
           ..add('developerType', developerType)
@@ -278,11 +271,6 @@ class UserBuilder implements Builder<User, UserBuilder> {
       _$this._currentAvatarThumbnailImageUrl;
   set currentAvatarThumbnailImageUrl(String? currentAvatarThumbnailImageUrl) =>
       _$this._currentAvatarThumbnailImageUrl = currentAvatarThumbnailImageUrl;
-
-  String? _fallbackAvatar;
-  String? get fallbackAvatar => _$this._fallbackAvatar;
-  set fallbackAvatar(String? fallbackAvatar) =>
-      _$this._fallbackAvatar = fallbackAvatar;
 
   UserState? _state;
   UserState? get state => _$this._state;
@@ -355,7 +343,6 @@ class UserBuilder implements Builder<User, UserBuilder> {
       _statusDescription = $v.statusDescription;
       _currentAvatarImageUrl = $v.currentAvatarImageUrl;
       _currentAvatarThumbnailImageUrl = $v.currentAvatarThumbnailImageUrl;
-      _fallbackAvatar = $v.fallbackAvatar;
       _state = $v.state;
       _tags = $v.tags.toBuilder();
       _developerType = $v.developerType;
@@ -406,16 +393,13 @@ class UserBuilder implements Builder<User, UserBuilder> {
                   statusDescription, 'User', 'statusDescription'),
               currentAvatarImageUrl: BuiltValueNullFieldError.checkNotNull(
                   currentAvatarImageUrl, 'User', 'currentAvatarImageUrl'),
-              currentAvatarThumbnailImageUrl:
-                  BuiltValueNullFieldError.checkNotNull(
-                      currentAvatarThumbnailImageUrl,
-                      'User',
-                      'currentAvatarThumbnailImageUrl'),
-              fallbackAvatar: BuiltValueNullFieldError.checkNotNull(
-                  fallbackAvatar, 'User', 'fallbackAvatar'),
-              state: BuiltValueNullFieldError.checkNotNull(state, 'User', 'state'),
+              currentAvatarThumbnailImageUrl: BuiltValueNullFieldError.checkNotNull(
+                  currentAvatarThumbnailImageUrl, 'User', 'currentAvatarThumbnailImageUrl'),
+              state:
+                  BuiltValueNullFieldError.checkNotNull(state, 'User', 'state'),
               tags: tags.build(),
-              developerType: BuiltValueNullFieldError.checkNotNull(developerType, 'User', 'developerType'),
+              developerType: BuiltValueNullFieldError.checkNotNull(
+                  developerType, 'User', 'developerType'),
               lastLogin: BuiltValueNullFieldError.checkNotNull(lastLogin, 'User', 'lastLogin'),
               lastPlatform: BuiltValueNullFieldError.checkNotNull(lastPlatform, 'User', 'lastPlatform'),
               allowAvatarCopying: BuiltValueNullFieldError.checkNotNull(allowAvatarCopying, 'User', 'allowAvatarCopying'),
