@@ -9,21 +9,21 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getInviteMessage**](InviteApi.md#getinvitemessage) | **GET** /message/{userId}/message/{messageId} | Get Invite Messages
-[**getInviteMessages**](InviteApi.md#getinvitemessages) | **GET** /message/{userId}/message | List Invite Messages
+[**getInviteMessage**](InviteApi.md#getinvitemessage) | **GET** /message/{userId}/{messageType}/{messageId} | Get Invite Messages
+[**getInviteMessages**](InviteApi.md#getinvitemessages) | **GET** /message/{userId}/{messageType} | List Invite Messages
 [**inviteUser**](InviteApi.md#inviteuser) | **POST** /invite/{userId} | Invite User
 [**requestInvite**](InviteApi.md#requestinvite) | **POST** /requestInvite/{userId} | Request Invite
-[**resetInviteMessage**](InviteApi.md#resetinvitemessage) | **DELETE** /message/{userId}/message/{messageId} | Reset Invite Message
+[**resetInviteMessage**](InviteApi.md#resetinvitemessage) | **DELETE** /message/{userId}/{messageType}/{messageId} | Reset Invite Message
 [**respondInvite**](InviteApi.md#respondinvite) | **POST** /invite/{notificationId}/response | Respond Invite
-[**updateInviteMessage**](InviteApi.md#updateinvitemessage) | **PUT** /message/{userId}/message/{messageId} | Update Invite Message
+[**updateInviteMessage**](InviteApi.md#updateinvitemessage) | **PUT** /message/{userId}/{messageType}/{messageId} | Update Invite Message
 
 
 # **getInviteMessage**
-> InviteMessage getInviteMessage(userId, messageId)
+> InviteMessage getInviteMessage(userId, messageType, messageId)
 
 Get Invite Messages
 
-Returns a single Invite Message. This returns the exact same information but less than `getInviteMessages`. Admin Credentials are required to view messages of other users!
+Returns a single Invite Message. This returns the exact same information but less than `getInviteMessages`. Admin Credentials are required to view messages of other users!  Message type refers to a different collection of messages, used during different types of responses.  * `message` = Message during a normal invite * `response` = Message when replying to a message * `request` = Message when requesting an invite * `requestResponse` = Message when replying to a request for invite
 
 ### Example 
 ```dart
@@ -39,10 +39,11 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getInviteApi();
 final String userId = userId_example; // String | 
+final String messageType = messageType_example; // String | 
 final int messageId = 56; // int | 
 
 try { 
-    final response = api.getInviteMessage(userId, messageId);
+    final response = api.getInviteMessage(userId, messageType, messageId);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling InviteApi->getInviteMessage: $e\n');
@@ -54,6 +55,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**|  | 
+ **messageType** | **String**|  | 
  **messageId** | **int**|  | 
 
 ### Return type
@@ -72,11 +74,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getInviteMessages**
-> BuiltList<InviteMessage> getInviteMessages(userId)
+> BuiltList<InviteMessage> getInviteMessages(userId, messageType)
 
 List Invite Messages
 
-Returns a list of all that users Invite Messages. Admin Credentials are required to view messages of other users!
+Returns a list of all the users Invite Messages. Admin Credentials are required to view messages of other users!  Message type refers to a different collection of messages, used during different types of responses.  * `message` = Message during a normal invite * `response` = Message when replying to a message * `request` = Message when requesting an invite * `requestResponse` = Message when replying to a request for invite
 
 ### Example 
 ```dart
@@ -92,9 +94,10 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getInviteApi();
 final String userId = userId_example; // String | 
+final String messageType = messageType_example; // String | 
 
 try { 
-    final response = api.getInviteMessages(userId);
+    final response = api.getInviteMessages(userId, messageType);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling InviteApi->getInviteMessages: $e\n');
@@ -106,6 +109,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**|  | 
+ **messageType** | **String**|  | 
 
 ### Return type
 
@@ -227,11 +231,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **resetInviteMessage**
-> BuiltList<InviteMessage> resetInviteMessage(userId, messageId)
+> BuiltList<InviteMessage> resetInviteMessage(userId, messageType, messageId)
 
 Reset Invite Message
 
-Resets a single Invite Message back to it's original message, and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Resetting a message respects the rate-limit, but resetting it does not set the rate-limit to 60 like when editing it. It is possible to edit it right after resetting it. Trying to edit a message before the cooldown timer expires results in a 429 Too Fast Error.
+Resets a single Invite Message back to it's original message, and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Resetting a message respects the rate-limit, but resetting it does not set the rate-limit to 60 like when editing it. It is possible to edit it right after resetting it. Trying to edit a message before the cooldown timer expires results in a 429 Too Fast Error.  Message type refers to a different collection of messages, used during different types of responses.  * `message` = Message during a normal invite * `response` = Message when replying to a message * `request` = Message when requesting an invite * `requestResponse` = Message when replying to a request for invite
 
 ### Example 
 ```dart
@@ -247,10 +251,11 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getInviteApi();
 final String userId = userId_example; // String | 
+final String messageType = messageType_example; // String | 
 final int messageId = 56; // int | 
 
 try { 
-    final response = api.resetInviteMessage(userId, messageId);
+    final response = api.resetInviteMessage(userId, messageType, messageId);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling InviteApi->resetInviteMessage: $e\n');
@@ -262,6 +267,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**|  | 
+ **messageType** | **String**|  | 
  **messageId** | **int**|  | 
 
 ### Return type
@@ -333,11 +339,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateInviteMessage**
-> BuiltList<InviteMessage> updateInviteMessage(userId, messageId)
+> BuiltList<InviteMessage> updateInviteMessage(userId, messageType, messageId)
 
 Update Invite Message
 
-Updates a single Invite Message and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Updating a message automatically sets the cooldown timer to 60 minutes. Trying to edit a message before the cooldown timer expires results in a 429 Too Fast Error.
+Updates a single Invite Message and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Updating a message automatically sets the cooldown timer to 60 minutes. Trying to edit a message before the cooldown timer expires results in a 429 Too Fast Error.  Message type refers to a different collection of messages, used during different types of responses.  * `message` = Message during a normal invite * `response` = Message when replying to a message * `request` = Message when requesting an invite * `requestResponse` = Message when replying to a request for invite
 
 ### Example 
 ```dart
@@ -353,10 +359,11 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getInviteApi();
 final String userId = userId_example; // String | 
+final String messageType = messageType_example; // String | 
 final int messageId = 56; // int | 
 
 try { 
-    final response = api.updateInviteMessage(userId, messageId);
+    final response = api.updateInviteMessage(userId, messageType, messageId);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling InviteApi->updateInviteMessage: $e\n');
@@ -368,6 +375,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**|  | 
+ **messageType** | **String**|  | 
  **messageId** | **int**|  | 
 
 ### Return type

@@ -8,25 +8,25 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | 
-**name** | **String** |  | 
 **authorId** | **String** |  | 
 **authorName** | **String** |  | 
-**capacity** | **num** |  | 
-**imageUrl** | **String** |  | 
-**thumbnailImageUrl** | **String** |  | 
-**releaseStatus** | **String** |  | 
-**organization** | **String** |  | 
-**tags** | **BuiltList&lt;String&gt;** |  | 
-**favorites** | **num** |  | 
+**capacity** | **int** |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
-**updatedAt** | [**DateTime**](DateTime.md) |  | 
-**publicationDate** | **String** |  | 
+**favorites** | **int** |  | [default to 0]
+**heat** | **int** |  | [default to 0]
+**id** | **String** |  | 
+**imageUrl** | **String** |  | 
 **labsPublicationDate** | **String** |  | 
+**name** | **String** |  | 
+**occupants** | **int** |  | [default to 0]
+**organization** | **String** |  | [default to 'vrchat']
+**popularity** | **int** |  | [default to 0]
+**publicationDate** | [**DateTime**](DateTime.md) |  | 
+**releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | 
+**tags** | **BuiltList&lt;String&gt;** |  | 
+**thumbnailImageUrl** | **String** |  | 
 **unityPackages** | [**BuiltList&lt;LimitedUnityPackage&gt;**](LimitedUnityPackage.md) |  | 
-**popularity** | **num** |  | 
-**heat** | **num** |  | 
-**occupants** | **num** |  | 
+**updatedAt** | [**DateTime**](DateTime.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

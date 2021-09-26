@@ -10,13 +10,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **bool** |  | [default to true]
 **canRequestInvite** | **bool** |  | [default to true]
-**capacity** | **num** |  | 
-**clientNumber** | **String** |  | 
+**capacity** | **int** |  | 
+**clientNumber** | **int** |  | 
 **full** | **bool** |  | [default to false]
 **id** | **String** |  | 
 **instanceId** | **String** |  | 
 **location** | **String** |  | 
-**nUsers** | **num** |  | 
+**nUsers** | **int** |  | 
 **name** | **String** |  | 
 **nonce** | **String** |  | [optional] 
 **ownerId** | **String** |  | 

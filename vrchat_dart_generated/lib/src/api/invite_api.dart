@@ -22,10 +22,11 @@ class InviteApi {
   const InviteApi(this._dio, this._serializers);
 
   /// Get Invite Messages
-  /// Returns a single Invite Message. This returns the exact same information but less than &#x60;getInviteMessages&#x60;. Admin Credentials are required to view messages of other users!
+  /// Returns a single Invite Message. This returns the exact same information but less than &#x60;getInviteMessages&#x60;. Admin Credentials are required to view messages of other users!  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
   ///
   /// Parameters:
   /// * [userId]
+  /// * [messageType]
   /// * [messageId]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -38,6 +39,7 @@ class InviteApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<InviteMessage>> getInviteMessage({
     required String userId,
+    required String messageType,
     required int messageId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -46,8 +48,9 @@ class InviteApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/message/{userId}/message/{messageId}'
+    final _path = r'/message/{userId}/{messageType}/{messageId}'
         .replaceAll('{' r'userId' '}', userId.toString())
+        .replaceAll('{' r'messageType' '}', messageType.toString())
         .replaceAll('{' r'messageId' '}', messageId.toString());
     final _options = Options(
       method: r'GET',
@@ -112,10 +115,11 @@ class InviteApi {
   }
 
   /// List Invite Messages
-  /// Returns a list of all that users Invite Messages. Admin Credentials are required to view messages of other users!
+  /// Returns a list of all the users Invite Messages. Admin Credentials are required to view messages of other users!  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
   ///
   /// Parameters:
   /// * [userId]
+  /// * [messageType]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -127,6 +131,7 @@ class InviteApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<InviteMessage>>> getInviteMessages({
     required String userId,
+    required String messageType,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -134,8 +139,9 @@ class InviteApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/message/{userId}/message'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/message/{userId}/{messageType}'
+        .replaceAll('{' r'userId' '}', userId.toString())
+        .replaceAll('{' r'messageType' '}', messageType.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -395,10 +401,11 @@ class InviteApi {
   }
 
   /// Reset Invite Message
-  /// Resets a single Invite Message back to it&#39;s original message, and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Resetting a message respects the rate-limit, but resetting it does not set the rate-limit to 60 like when editing it. It is possible to edit it right after resetting it. Trying to edit a message before the cooldown timer expires results in a 429 Too Fast Error.
+  /// Resets a single Invite Message back to it&#39;s original message, and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Resetting a message respects the rate-limit, but resetting it does not set the rate-limit to 60 like when editing it. It is possible to edit it right after resetting it. Trying to edit a message before the cooldown timer expires results in a 429 Too Fast Error.  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
   ///
   /// Parameters:
   /// * [userId]
+  /// * [messageType]
   /// * [messageId]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -411,6 +418,7 @@ class InviteApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<InviteMessage>>> resetInviteMessage({
     required String userId,
+    required String messageType,
     required int messageId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -419,8 +427,9 @@ class InviteApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/message/{userId}/message/{messageId}'
+    final _path = r'/message/{userId}/{messageType}/{messageId}'
         .replaceAll('{' r'userId' '}', userId.toString())
+        .replaceAll('{' r'messageType' '}', messageType.toString())
         .replaceAll('{' r'messageId' '}', messageId.toString());
     final _options = Options(
       method: r'DELETE',
@@ -594,10 +603,11 @@ class InviteApi {
   }
 
   /// Update Invite Message
-  /// Updates a single Invite Message and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Updating a message automatically sets the cooldown timer to 60 minutes. Trying to edit a message before the cooldown timer expires results in a 429 Too Fast Error.
+  /// Updates a single Invite Message and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Updating a message automatically sets the cooldown timer to 60 minutes. Trying to edit a message before the cooldown timer expires results in a 429 Too Fast Error.  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
   ///
   /// Parameters:
   /// * [userId]
+  /// * [messageType]
   /// * [messageId]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -610,6 +620,7 @@ class InviteApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<InviteMessage>>> updateInviteMessage({
     required String userId,
+    required String messageType,
     required int messageId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -618,8 +629,9 @@ class InviteApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/message/{userId}/message/{messageId}'
+    final _path = r'/message/{userId}/{messageType}/{messageId}'
         .replaceAll('{' r'userId' '}', userId.toString())
+        .replaceAll('{' r'messageType' '}', messageType.toString())
         .replaceAll('{' r'messageId' '}', messageId.toString());
     final _options = Options(
       method: r'PUT',

@@ -7,16 +7,15 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
+      ..add(APIConfig.serializer)
+      ..add(APIEventConfig.serializer)
       ..add(Avatar.serializer)
       ..add(AvatarUnityPackageUrlObject.serializer)
-      ..add(Config.serializer)
-      ..add(ConfigAnnouncements.serializer)
-      ..add(ConfigDownloadUrls.serializer)
-      ..add(ConfigDynamicWorldRows.serializer)
-      ..add(ConfigEvents.serializer)
       ..add(CurrentUser.serializer)
       ..add(DeploymentGroup.serializer)
       ..add(DeveloperType.serializer)
+      ..add(DownloadURLList.serializer)
+      ..add(DynamicWorldRow.serializer)
       ..add(Error.serializer)
       ..add(Favorite.serializer)
       ..add(FavoriteGroup.serializer)
@@ -66,6 +65,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Permission.serializer)
       ..add(PlayerModeration.serializer)
       ..add(PlayerModerationType.serializer)
+      ..add(PublicAnnouncement.serializer)
       ..add(ReleaseStatus.serializer)
       ..add(Response.serializer)
       ..add(Success.serializer)
@@ -139,35 +139,35 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(PastDisplayName)]),
           () => new ListBuilder<PastDisplayName>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
@@ -187,12 +187,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltSet, const [const FullType(UnityPackage)]),
           () => new SetBuilder<UnityPackage>())
       ..addBuilderFactory(
-          const FullType(BuiltSet, const [const FullType(ConfigAnnouncements)]),
-          () => new SetBuilder<ConfigAnnouncements>())
+          const FullType(BuiltSet, const [const FullType(PublicAnnouncement)]),
+          () => new SetBuilder<PublicAnnouncement>())
       ..addBuilderFactory(
-          const FullType(
-              BuiltSet, const [const FullType(ConfigDynamicWorldRows)]),
-          () => new SetBuilder<ConfigDynamicWorldRows>())
+          const FullType(BuiltSet, const [const FullType(DynamicWorldRow)]),
+          () => new SetBuilder<DynamicWorldRow>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

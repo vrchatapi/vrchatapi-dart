@@ -12,16 +12,15 @@ import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:vrchat_dart_generated/src/date_serializer.dart';
 import 'package:vrchat_dart_generated/src/model/date.dart';
 
+import 'package:vrchat_dart_generated/src/model/api_config.dart';
+import 'package:vrchat_dart_generated/src/model/api_event_config.dart';
 import 'package:vrchat_dart_generated/src/model/avatar.dart';
 import 'package:vrchat_dart_generated/src/model/avatar_unity_package_url_object.dart';
-import 'package:vrchat_dart_generated/src/model/config.dart';
-import 'package:vrchat_dart_generated/src/model/config_announcements.dart';
-import 'package:vrchat_dart_generated/src/model/config_download_urls.dart';
-import 'package:vrchat_dart_generated/src/model/config_dynamic_world_rows.dart';
-import 'package:vrchat_dart_generated/src/model/config_events.dart';
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/deployment_group.dart';
 import 'package:vrchat_dart_generated/src/model/developer_type.dart';
+import 'package:vrchat_dart_generated/src/model/download_url_list.dart';
+import 'package:vrchat_dart_generated/src/model/dynamic_world_row.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
 import 'package:vrchat_dart_generated/src/model/favorite.dart';
 import 'package:vrchat_dart_generated/src/model/favorite_group.dart';
@@ -70,6 +69,7 @@ import 'package:vrchat_dart_generated/src/model/past_display_name.dart';
 import 'package:vrchat_dart_generated/src/model/permission.dart';
 import 'package:vrchat_dart_generated/src/model/player_moderation.dart';
 import 'package:vrchat_dart_generated/src/model/player_moderation_type.dart';
+import 'package:vrchat_dart_generated/src/model/public_announcement.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
 import 'package:vrchat_dart_generated/src/model/response.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
@@ -83,16 +83,15 @@ import 'package:vrchat_dart_generated/src/model/world.dart';
 part 'serializers.g.dart';
 
 @SerializersFor([
+  APIConfig,
+  APIEventConfig,
   Avatar,
   AvatarUnityPackageUrlObject,
-  Config,
-  ConfigAnnouncements,
-  ConfigDownloadUrls,
-  ConfigDynamicWorldRows,
-  ConfigEvents,
   CurrentUser,
   DeploymentGroup,
   DeveloperType,
+  DownloadURLList,
+  DynamicWorldRow,
   Error,
   Favorite,
   FavoriteGroup,
@@ -141,6 +140,7 @@ part 'serializers.g.dart';
   Permission,
   PlayerModeration,
   PlayerModerationType,
+  PublicAnnouncement,
   ReleaseStatus,
   Response,
   Success,

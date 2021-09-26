@@ -8,218 +8,218 @@ part of 'current_user.dart';
 
 class _$CurrentUser extends CurrentUser {
   @override
-  final String id;
+  final int acceptedTOSVersion;
   @override
-  final String username;
+  final Date? accountDeletionDate;
   @override
-  final String displayName;
+  final BuiltList<String>? activeFriends;
   @override
-  final String userIcon;
+  final bool allowAvatarCopying;
   @override
   final String bio;
   @override
   final BuiltList<String> bioLinks;
   @override
-  final String profilePicOverride;
+  final String currentAvatar;
   @override
-  final String statusDescription;
-  @override
-  final BuiltList<PastDisplayName> pastDisplayNames;
-  @override
-  final bool hasEmail;
-  @override
-  final bool hasPendingEmail;
-  @override
-  final String obfuscatedEmail;
-  @override
-  final String obfuscatedPendingEmail;
-  @override
-  final bool emailVerified;
-  @override
-  final bool hasBirthday;
-  @override
-  final bool unsubscribe;
-  @override
-  final BuiltList<String> statusHistory;
-  @override
-  final bool statusFirstTime;
-  @override
-  final BuiltList<String> friends;
-  @override
-  final BuiltList<String> friendGroupNames;
+  final String currentAvatarAssetUrl;
   @override
   final String currentAvatarImageUrl;
   @override
   final String currentAvatarThumbnailImageUrl;
   @override
+  final Date dateJoined;
+  @override
+  final DeveloperType developerType;
+  @override
+  final String displayName;
+  @override
+  final bool emailVerified;
+  @override
   final String? fallbackAvatar;
   @override
-  final String currentAvatar;
+  final BuiltList<String> friendGroupNames;
   @override
-  final String currentAvatarAssetUrl;
+  final String friendKey;
   @override
-  final Date? accountDeletionDate;
+  final BuiltList<String> friends;
   @override
-  final num acceptedTOSVersion;
+  final bool hasBirthday;
   @override
-  final String steamId;
-  @override
-  final JsonObject steamDetails;
-  @override
-  final String oculusId;
+  final bool hasEmail;
   @override
   final bool hasLoggedInFromClient;
   @override
+  final bool hasPendingEmail;
+  @override
   final String homeLocation;
   @override
-  final bool twoFactorAuthEnabled;
+  final String id;
   @override
-  final UserState state;
-  @override
-  final BuiltList<String> tags;
-  @override
-  final DeveloperType developerType;
+  final bool isFriend;
   @override
   final DateTime lastLogin;
   @override
   final String lastPlatform;
   @override
-  final bool allowAvatarCopying;
+  final String obfuscatedEmail;
   @override
-  final UserStatus status;
+  final String obfuscatedPendingEmail;
   @override
-  final Date dateJoined;
+  final String oculusId;
   @override
-  final bool isFriend;
-  @override
-  final String friendKey;
+  final BuiltList<String>? offlineFriends;
   @override
   final BuiltList<String>? onlineFriends;
   @override
-  final BuiltList<String>? activeFriends;
+  final BuiltList<PastDisplayName> pastDisplayNames;
   @override
-  final BuiltList<String>? offlineFriends;
+  final String profilePicOverride;
+  @override
+  final UserState state;
+  @override
+  final UserStatus status;
+  @override
+  final String statusDescription;
+  @override
+  final bool statusFirstTime;
+  @override
+  final BuiltList<String> statusHistory;
+  @override
+  final JsonObject steamDetails;
+  @override
+  final String steamId;
+  @override
+  final BuiltList<String> tags;
+  @override
+  final bool twoFactorAuthEnabled;
+  @override
+  final bool unsubscribe;
+  @override
+  final String userIcon;
+  @override
+  final String username;
 
   factory _$CurrentUser([void Function(CurrentUserBuilder)? updates]) =>
       (new CurrentUserBuilder()..update(updates)).build();
 
   _$CurrentUser._(
-      {required this.id,
-      required this.username,
-      required this.displayName,
-      required this.userIcon,
+      {required this.acceptedTOSVersion,
+      this.accountDeletionDate,
+      this.activeFriends,
+      required this.allowAvatarCopying,
       required this.bio,
       required this.bioLinks,
-      required this.profilePicOverride,
-      required this.statusDescription,
-      required this.pastDisplayNames,
-      required this.hasEmail,
-      required this.hasPendingEmail,
-      required this.obfuscatedEmail,
-      required this.obfuscatedPendingEmail,
-      required this.emailVerified,
-      required this.hasBirthday,
-      required this.unsubscribe,
-      required this.statusHistory,
-      required this.statusFirstTime,
-      required this.friends,
-      required this.friendGroupNames,
-      required this.currentAvatarImageUrl,
-      required this.currentAvatarThumbnailImageUrl,
-      this.fallbackAvatar,
       required this.currentAvatar,
       required this.currentAvatarAssetUrl,
-      this.accountDeletionDate,
-      required this.acceptedTOSVersion,
-      required this.steamId,
-      required this.steamDetails,
-      required this.oculusId,
-      required this.hasLoggedInFromClient,
-      required this.homeLocation,
-      required this.twoFactorAuthEnabled,
-      required this.state,
-      required this.tags,
+      required this.currentAvatarImageUrl,
+      required this.currentAvatarThumbnailImageUrl,
+      required this.dateJoined,
       required this.developerType,
+      required this.displayName,
+      required this.emailVerified,
+      this.fallbackAvatar,
+      required this.friendGroupNames,
+      required this.friendKey,
+      required this.friends,
+      required this.hasBirthday,
+      required this.hasEmail,
+      required this.hasLoggedInFromClient,
+      required this.hasPendingEmail,
+      required this.homeLocation,
+      required this.id,
+      required this.isFriend,
       required this.lastLogin,
       required this.lastPlatform,
-      required this.allowAvatarCopying,
-      required this.status,
-      required this.dateJoined,
-      required this.isFriend,
-      required this.friendKey,
+      required this.obfuscatedEmail,
+      required this.obfuscatedPendingEmail,
+      required this.oculusId,
+      this.offlineFriends,
       this.onlineFriends,
-      this.activeFriends,
-      this.offlineFriends})
+      required this.pastDisplayNames,
+      required this.profilePicOverride,
+      required this.state,
+      required this.status,
+      required this.statusDescription,
+      required this.statusFirstTime,
+      required this.statusHistory,
+      required this.steamDetails,
+      required this.steamId,
+      required this.tags,
+      required this.twoFactorAuthEnabled,
+      required this.unsubscribe,
+      required this.userIcon,
+      required this.username})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, 'CurrentUser', 'id');
-    BuiltValueNullFieldError.checkNotNull(username, 'CurrentUser', 'username');
     BuiltValueNullFieldError.checkNotNull(
-        displayName, 'CurrentUser', 'displayName');
-    BuiltValueNullFieldError.checkNotNull(userIcon, 'CurrentUser', 'userIcon');
+        acceptedTOSVersion, 'CurrentUser', 'acceptedTOSVersion');
+    BuiltValueNullFieldError.checkNotNull(
+        allowAvatarCopying, 'CurrentUser', 'allowAvatarCopying');
     BuiltValueNullFieldError.checkNotNull(bio, 'CurrentUser', 'bio');
     BuiltValueNullFieldError.checkNotNull(bioLinks, 'CurrentUser', 'bioLinks');
-    BuiltValueNullFieldError.checkNotNull(
-        profilePicOverride, 'CurrentUser', 'profilePicOverride');
-    BuiltValueNullFieldError.checkNotNull(
-        statusDescription, 'CurrentUser', 'statusDescription');
-    BuiltValueNullFieldError.checkNotNull(
-        pastDisplayNames, 'CurrentUser', 'pastDisplayNames');
-    BuiltValueNullFieldError.checkNotNull(hasEmail, 'CurrentUser', 'hasEmail');
-    BuiltValueNullFieldError.checkNotNull(
-        hasPendingEmail, 'CurrentUser', 'hasPendingEmail');
-    BuiltValueNullFieldError.checkNotNull(
-        obfuscatedEmail, 'CurrentUser', 'obfuscatedEmail');
-    BuiltValueNullFieldError.checkNotNull(
-        obfuscatedPendingEmail, 'CurrentUser', 'obfuscatedPendingEmail');
-    BuiltValueNullFieldError.checkNotNull(
-        emailVerified, 'CurrentUser', 'emailVerified');
-    BuiltValueNullFieldError.checkNotNull(
-        hasBirthday, 'CurrentUser', 'hasBirthday');
-    BuiltValueNullFieldError.checkNotNull(
-        unsubscribe, 'CurrentUser', 'unsubscribe');
-    BuiltValueNullFieldError.checkNotNull(
-        statusHistory, 'CurrentUser', 'statusHistory');
-    BuiltValueNullFieldError.checkNotNull(
-        statusFirstTime, 'CurrentUser', 'statusFirstTime');
-    BuiltValueNullFieldError.checkNotNull(friends, 'CurrentUser', 'friends');
-    BuiltValueNullFieldError.checkNotNull(
-        friendGroupNames, 'CurrentUser', 'friendGroupNames');
-    BuiltValueNullFieldError.checkNotNull(
-        currentAvatarImageUrl, 'CurrentUser', 'currentAvatarImageUrl');
-    BuiltValueNullFieldError.checkNotNull(currentAvatarThumbnailImageUrl,
-        'CurrentUser', 'currentAvatarThumbnailImageUrl');
     BuiltValueNullFieldError.checkNotNull(
         currentAvatar, 'CurrentUser', 'currentAvatar');
     BuiltValueNullFieldError.checkNotNull(
         currentAvatarAssetUrl, 'CurrentUser', 'currentAvatarAssetUrl');
     BuiltValueNullFieldError.checkNotNull(
-        acceptedTOSVersion, 'CurrentUser', 'acceptedTOSVersion');
-    BuiltValueNullFieldError.checkNotNull(steamId, 'CurrentUser', 'steamId');
+        currentAvatarImageUrl, 'CurrentUser', 'currentAvatarImageUrl');
+    BuiltValueNullFieldError.checkNotNull(currentAvatarThumbnailImageUrl,
+        'CurrentUser', 'currentAvatarThumbnailImageUrl');
     BuiltValueNullFieldError.checkNotNull(
-        steamDetails, 'CurrentUser', 'steamDetails');
-    BuiltValueNullFieldError.checkNotNull(oculusId, 'CurrentUser', 'oculusId');
+        dateJoined, 'CurrentUser', 'dateJoined');
+    BuiltValueNullFieldError.checkNotNull(
+        developerType, 'CurrentUser', 'developerType');
+    BuiltValueNullFieldError.checkNotNull(
+        displayName, 'CurrentUser', 'displayName');
+    BuiltValueNullFieldError.checkNotNull(
+        emailVerified, 'CurrentUser', 'emailVerified');
+    BuiltValueNullFieldError.checkNotNull(
+        friendGroupNames, 'CurrentUser', 'friendGroupNames');
+    BuiltValueNullFieldError.checkNotNull(
+        friendKey, 'CurrentUser', 'friendKey');
+    BuiltValueNullFieldError.checkNotNull(friends, 'CurrentUser', 'friends');
+    BuiltValueNullFieldError.checkNotNull(
+        hasBirthday, 'CurrentUser', 'hasBirthday');
+    BuiltValueNullFieldError.checkNotNull(hasEmail, 'CurrentUser', 'hasEmail');
     BuiltValueNullFieldError.checkNotNull(
         hasLoggedInFromClient, 'CurrentUser', 'hasLoggedInFromClient');
     BuiltValueNullFieldError.checkNotNull(
+        hasPendingEmail, 'CurrentUser', 'hasPendingEmail');
+    BuiltValueNullFieldError.checkNotNull(
         homeLocation, 'CurrentUser', 'homeLocation');
-    BuiltValueNullFieldError.checkNotNull(
-        twoFactorAuthEnabled, 'CurrentUser', 'twoFactorAuthEnabled');
-    BuiltValueNullFieldError.checkNotNull(state, 'CurrentUser', 'state');
-    BuiltValueNullFieldError.checkNotNull(tags, 'CurrentUser', 'tags');
-    BuiltValueNullFieldError.checkNotNull(
-        developerType, 'CurrentUser', 'developerType');
+    BuiltValueNullFieldError.checkNotNull(id, 'CurrentUser', 'id');
+    BuiltValueNullFieldError.checkNotNull(isFriend, 'CurrentUser', 'isFriend');
     BuiltValueNullFieldError.checkNotNull(
         lastLogin, 'CurrentUser', 'lastLogin');
     BuiltValueNullFieldError.checkNotNull(
         lastPlatform, 'CurrentUser', 'lastPlatform');
     BuiltValueNullFieldError.checkNotNull(
-        allowAvatarCopying, 'CurrentUser', 'allowAvatarCopying');
+        obfuscatedEmail, 'CurrentUser', 'obfuscatedEmail');
+    BuiltValueNullFieldError.checkNotNull(
+        obfuscatedPendingEmail, 'CurrentUser', 'obfuscatedPendingEmail');
+    BuiltValueNullFieldError.checkNotNull(oculusId, 'CurrentUser', 'oculusId');
+    BuiltValueNullFieldError.checkNotNull(
+        pastDisplayNames, 'CurrentUser', 'pastDisplayNames');
+    BuiltValueNullFieldError.checkNotNull(
+        profilePicOverride, 'CurrentUser', 'profilePicOverride');
+    BuiltValueNullFieldError.checkNotNull(state, 'CurrentUser', 'state');
     BuiltValueNullFieldError.checkNotNull(status, 'CurrentUser', 'status');
     BuiltValueNullFieldError.checkNotNull(
-        dateJoined, 'CurrentUser', 'dateJoined');
-    BuiltValueNullFieldError.checkNotNull(isFriend, 'CurrentUser', 'isFriend');
+        statusDescription, 'CurrentUser', 'statusDescription');
     BuiltValueNullFieldError.checkNotNull(
-        friendKey, 'CurrentUser', 'friendKey');
+        statusFirstTime, 'CurrentUser', 'statusFirstTime');
+    BuiltValueNullFieldError.checkNotNull(
+        statusHistory, 'CurrentUser', 'statusHistory');
+    BuiltValueNullFieldError.checkNotNull(
+        steamDetails, 'CurrentUser', 'steamDetails');
+    BuiltValueNullFieldError.checkNotNull(steamId, 'CurrentUser', 'steamId');
+    BuiltValueNullFieldError.checkNotNull(tags, 'CurrentUser', 'tags');
+    BuiltValueNullFieldError.checkNotNull(
+        twoFactorAuthEnabled, 'CurrentUser', 'twoFactorAuthEnabled');
+    BuiltValueNullFieldError.checkNotNull(
+        unsubscribe, 'CurrentUser', 'unsubscribe');
+    BuiltValueNullFieldError.checkNotNull(userIcon, 'CurrentUser', 'userIcon');
+    BuiltValueNullFieldError.checkNotNull(username, 'CurrentUser', 'username');
   }
 
   @override
@@ -233,53 +233,53 @@ class _$CurrentUser extends CurrentUser {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CurrentUser &&
-        id == other.id &&
-        username == other.username &&
-        displayName == other.displayName &&
-        userIcon == other.userIcon &&
+        acceptedTOSVersion == other.acceptedTOSVersion &&
+        accountDeletionDate == other.accountDeletionDate &&
+        activeFriends == other.activeFriends &&
+        allowAvatarCopying == other.allowAvatarCopying &&
         bio == other.bio &&
         bioLinks == other.bioLinks &&
-        profilePicOverride == other.profilePicOverride &&
-        statusDescription == other.statusDescription &&
-        pastDisplayNames == other.pastDisplayNames &&
-        hasEmail == other.hasEmail &&
-        hasPendingEmail == other.hasPendingEmail &&
-        obfuscatedEmail == other.obfuscatedEmail &&
-        obfuscatedPendingEmail == other.obfuscatedPendingEmail &&
-        emailVerified == other.emailVerified &&
-        hasBirthday == other.hasBirthday &&
-        unsubscribe == other.unsubscribe &&
-        statusHistory == other.statusHistory &&
-        statusFirstTime == other.statusFirstTime &&
-        friends == other.friends &&
-        friendGroupNames == other.friendGroupNames &&
+        currentAvatar == other.currentAvatar &&
+        currentAvatarAssetUrl == other.currentAvatarAssetUrl &&
         currentAvatarImageUrl == other.currentAvatarImageUrl &&
         currentAvatarThumbnailImageUrl ==
             other.currentAvatarThumbnailImageUrl &&
-        fallbackAvatar == other.fallbackAvatar &&
-        currentAvatar == other.currentAvatar &&
-        currentAvatarAssetUrl == other.currentAvatarAssetUrl &&
-        accountDeletionDate == other.accountDeletionDate &&
-        acceptedTOSVersion == other.acceptedTOSVersion &&
-        steamId == other.steamId &&
-        steamDetails == other.steamDetails &&
-        oculusId == other.oculusId &&
-        hasLoggedInFromClient == other.hasLoggedInFromClient &&
-        homeLocation == other.homeLocation &&
-        twoFactorAuthEnabled == other.twoFactorAuthEnabled &&
-        state == other.state &&
-        tags == other.tags &&
+        dateJoined == other.dateJoined &&
         developerType == other.developerType &&
+        displayName == other.displayName &&
+        emailVerified == other.emailVerified &&
+        fallbackAvatar == other.fallbackAvatar &&
+        friendGroupNames == other.friendGroupNames &&
+        friendKey == other.friendKey &&
+        friends == other.friends &&
+        hasBirthday == other.hasBirthday &&
+        hasEmail == other.hasEmail &&
+        hasLoggedInFromClient == other.hasLoggedInFromClient &&
+        hasPendingEmail == other.hasPendingEmail &&
+        homeLocation == other.homeLocation &&
+        id == other.id &&
+        isFriend == other.isFriend &&
         lastLogin == other.lastLogin &&
         lastPlatform == other.lastPlatform &&
-        allowAvatarCopying == other.allowAvatarCopying &&
-        status == other.status &&
-        dateJoined == other.dateJoined &&
-        isFriend == other.isFriend &&
-        friendKey == other.friendKey &&
+        obfuscatedEmail == other.obfuscatedEmail &&
+        obfuscatedPendingEmail == other.obfuscatedPendingEmail &&
+        oculusId == other.oculusId &&
+        offlineFriends == other.offlineFriends &&
         onlineFriends == other.onlineFriends &&
-        activeFriends == other.activeFriends &&
-        offlineFriends == other.offlineFriends;
+        pastDisplayNames == other.pastDisplayNames &&
+        profilePicOverride == other.profilePicOverride &&
+        state == other.state &&
+        status == other.status &&
+        statusDescription == other.statusDescription &&
+        statusFirstTime == other.statusFirstTime &&
+        statusHistory == other.statusHistory &&
+        steamDetails == other.steamDetails &&
+        steamId == other.steamId &&
+        tags == other.tags &&
+        twoFactorAuthEnabled == other.twoFactorAuthEnabled &&
+        unsubscribe == other.unsubscribe &&
+        userIcon == other.userIcon &&
+        username == other.username;
   }
 
   @override
@@ -302,78 +302,78 @@ class _$CurrentUser extends CurrentUser {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, id.hashCode), username.hashCode), displayName.hashCode), userIcon.hashCode), bio.hashCode), bioLinks.hashCode), profilePicOverride.hashCode), statusDescription.hashCode), pastDisplayNames.hashCode), hasEmail.hashCode), hasPendingEmail.hashCode), obfuscatedEmail.hashCode), obfuscatedPendingEmail.hashCode), emailVerified.hashCode), hasBirthday.hashCode), unsubscribe.hashCode), statusHistory.hashCode), statusFirstTime.hashCode), friends.hashCode), friendGroupNames.hashCode), currentAvatarImageUrl.hashCode), currentAvatarThumbnailImageUrl.hashCode), fallbackAvatar.hashCode), currentAvatar.hashCode), currentAvatarAssetUrl.hashCode), accountDeletionDate.hashCode), acceptedTOSVersion.hashCode),
-                                                                                steamId.hashCode),
-                                                                            steamDetails.hashCode),
+                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, acceptedTOSVersion.hashCode), accountDeletionDate.hashCode), activeFriends.hashCode), allowAvatarCopying.hashCode), bio.hashCode), bioLinks.hashCode), currentAvatar.hashCode), currentAvatarAssetUrl.hashCode), currentAvatarImageUrl.hashCode), currentAvatarThumbnailImageUrl.hashCode), dateJoined.hashCode), developerType.hashCode), displayName.hashCode), emailVerified.hashCode), fallbackAvatar.hashCode), friendGroupNames.hashCode), friendKey.hashCode), friends.hashCode), hasBirthday.hashCode), hasEmail.hashCode), hasLoggedInFromClient.hashCode), hasPendingEmail.hashCode), homeLocation.hashCode), id.hashCode), isFriend.hashCode), lastLogin.hashCode), lastPlatform.hashCode),
+                                                                                obfuscatedEmail.hashCode),
+                                                                            obfuscatedPendingEmail.hashCode),
                                                                         oculusId.hashCode),
-                                                                    hasLoggedInFromClient.hashCode),
-                                                                homeLocation.hashCode),
-                                                            twoFactorAuthEnabled.hashCode),
-                                                        state.hashCode),
-                                                    tags.hashCode),
-                                                developerType.hashCode),
-                                            lastLogin.hashCode),
-                                        lastPlatform.hashCode),
-                                    allowAvatarCopying.hashCode),
-                                status.hashCode),
-                            dateJoined.hashCode),
-                        isFriend.hashCode),
-                    friendKey.hashCode),
-                onlineFriends.hashCode),
-            activeFriends.hashCode),
-        offlineFriends.hashCode));
+                                                                    offlineFriends.hashCode),
+                                                                onlineFriends.hashCode),
+                                                            pastDisplayNames.hashCode),
+                                                        profilePicOverride.hashCode),
+                                                    state.hashCode),
+                                                status.hashCode),
+                                            statusDescription.hashCode),
+                                        statusFirstTime.hashCode),
+                                    statusHistory.hashCode),
+                                steamDetails.hashCode),
+                            steamId.hashCode),
+                        tags.hashCode),
+                    twoFactorAuthEnabled.hashCode),
+                unsubscribe.hashCode),
+            userIcon.hashCode),
+        username.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('CurrentUser')
-          ..add('id', id)
-          ..add('username', username)
-          ..add('displayName', displayName)
-          ..add('userIcon', userIcon)
+          ..add('acceptedTOSVersion', acceptedTOSVersion)
+          ..add('accountDeletionDate', accountDeletionDate)
+          ..add('activeFriends', activeFriends)
+          ..add('allowAvatarCopying', allowAvatarCopying)
           ..add('bio', bio)
           ..add('bioLinks', bioLinks)
-          ..add('profilePicOverride', profilePicOverride)
-          ..add('statusDescription', statusDescription)
-          ..add('pastDisplayNames', pastDisplayNames)
-          ..add('hasEmail', hasEmail)
-          ..add('hasPendingEmail', hasPendingEmail)
-          ..add('obfuscatedEmail', obfuscatedEmail)
-          ..add('obfuscatedPendingEmail', obfuscatedPendingEmail)
-          ..add('emailVerified', emailVerified)
-          ..add('hasBirthday', hasBirthday)
-          ..add('unsubscribe', unsubscribe)
-          ..add('statusHistory', statusHistory)
-          ..add('statusFirstTime', statusFirstTime)
-          ..add('friends', friends)
-          ..add('friendGroupNames', friendGroupNames)
+          ..add('currentAvatar', currentAvatar)
+          ..add('currentAvatarAssetUrl', currentAvatarAssetUrl)
           ..add('currentAvatarImageUrl', currentAvatarImageUrl)
           ..add(
               'currentAvatarThumbnailImageUrl', currentAvatarThumbnailImageUrl)
-          ..add('fallbackAvatar', fallbackAvatar)
-          ..add('currentAvatar', currentAvatar)
-          ..add('currentAvatarAssetUrl', currentAvatarAssetUrl)
-          ..add('accountDeletionDate', accountDeletionDate)
-          ..add('acceptedTOSVersion', acceptedTOSVersion)
-          ..add('steamId', steamId)
-          ..add('steamDetails', steamDetails)
-          ..add('oculusId', oculusId)
-          ..add('hasLoggedInFromClient', hasLoggedInFromClient)
-          ..add('homeLocation', homeLocation)
-          ..add('twoFactorAuthEnabled', twoFactorAuthEnabled)
-          ..add('state', state)
-          ..add('tags', tags)
+          ..add('dateJoined', dateJoined)
           ..add('developerType', developerType)
+          ..add('displayName', displayName)
+          ..add('emailVerified', emailVerified)
+          ..add('fallbackAvatar', fallbackAvatar)
+          ..add('friendGroupNames', friendGroupNames)
+          ..add('friendKey', friendKey)
+          ..add('friends', friends)
+          ..add('hasBirthday', hasBirthday)
+          ..add('hasEmail', hasEmail)
+          ..add('hasLoggedInFromClient', hasLoggedInFromClient)
+          ..add('hasPendingEmail', hasPendingEmail)
+          ..add('homeLocation', homeLocation)
+          ..add('id', id)
+          ..add('isFriend', isFriend)
           ..add('lastLogin', lastLogin)
           ..add('lastPlatform', lastPlatform)
-          ..add('allowAvatarCopying', allowAvatarCopying)
-          ..add('status', status)
-          ..add('dateJoined', dateJoined)
-          ..add('isFriend', isFriend)
-          ..add('friendKey', friendKey)
+          ..add('obfuscatedEmail', obfuscatedEmail)
+          ..add('obfuscatedPendingEmail', obfuscatedPendingEmail)
+          ..add('oculusId', oculusId)
+          ..add('offlineFriends', offlineFriends)
           ..add('onlineFriends', onlineFriends)
-          ..add('activeFriends', activeFriends)
-          ..add('offlineFriends', offlineFriends))
+          ..add('pastDisplayNames', pastDisplayNames)
+          ..add('profilePicOverride', profilePicOverride)
+          ..add('state', state)
+          ..add('status', status)
+          ..add('statusDescription', statusDescription)
+          ..add('statusFirstTime', statusFirstTime)
+          ..add('statusHistory', statusHistory)
+          ..add('steamDetails', steamDetails)
+          ..add('steamId', steamId)
+          ..add('tags', tags)
+          ..add('twoFactorAuthEnabled', twoFactorAuthEnabled)
+          ..add('unsubscribe', unsubscribe)
+          ..add('userIcon', userIcon)
+          ..add('username', username))
         .toString();
   }
 }
@@ -381,21 +381,26 @@ class _$CurrentUser extends CurrentUser {
 class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
   _$CurrentUser? _$v;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
+  int? _acceptedTOSVersion;
+  int? get acceptedTOSVersion => _$this._acceptedTOSVersion;
+  set acceptedTOSVersion(int? acceptedTOSVersion) =>
+      _$this._acceptedTOSVersion = acceptedTOSVersion;
 
-  String? _username;
-  String? get username => _$this._username;
-  set username(String? username) => _$this._username = username;
+  Date? _accountDeletionDate;
+  Date? get accountDeletionDate => _$this._accountDeletionDate;
+  set accountDeletionDate(Date? accountDeletionDate) =>
+      _$this._accountDeletionDate = accountDeletionDate;
 
-  String? _displayName;
-  String? get displayName => _$this._displayName;
-  set displayName(String? displayName) => _$this._displayName = displayName;
+  ListBuilder<String>? _activeFriends;
+  ListBuilder<String> get activeFriends =>
+      _$this._activeFriends ??= new ListBuilder<String>();
+  set activeFriends(ListBuilder<String>? activeFriends) =>
+      _$this._activeFriends = activeFriends;
 
-  String? _userIcon;
-  String? get userIcon => _$this._userIcon;
-  set userIcon(String? userIcon) => _$this._userIcon = userIcon;
+  bool? _allowAvatarCopying;
+  bool? get allowAvatarCopying => _$this._allowAvatarCopying;
+  set allowAvatarCopying(bool? allowAvatarCopying) =>
+      _$this._allowAvatarCopying = allowAvatarCopying;
 
   String? _bio;
   String? get bio => _$this._bio;
@@ -406,75 +411,15 @@ class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
       _$this._bioLinks ??= new ListBuilder<String>();
   set bioLinks(ListBuilder<String>? bioLinks) => _$this._bioLinks = bioLinks;
 
-  String? _profilePicOverride;
-  String? get profilePicOverride => _$this._profilePicOverride;
-  set profilePicOverride(String? profilePicOverride) =>
-      _$this._profilePicOverride = profilePicOverride;
+  String? _currentAvatar;
+  String? get currentAvatar => _$this._currentAvatar;
+  set currentAvatar(String? currentAvatar) =>
+      _$this._currentAvatar = currentAvatar;
 
-  String? _statusDescription;
-  String? get statusDescription => _$this._statusDescription;
-  set statusDescription(String? statusDescription) =>
-      _$this._statusDescription = statusDescription;
-
-  ListBuilder<PastDisplayName>? _pastDisplayNames;
-  ListBuilder<PastDisplayName> get pastDisplayNames =>
-      _$this._pastDisplayNames ??= new ListBuilder<PastDisplayName>();
-  set pastDisplayNames(ListBuilder<PastDisplayName>? pastDisplayNames) =>
-      _$this._pastDisplayNames = pastDisplayNames;
-
-  bool? _hasEmail;
-  bool? get hasEmail => _$this._hasEmail;
-  set hasEmail(bool? hasEmail) => _$this._hasEmail = hasEmail;
-
-  bool? _hasPendingEmail;
-  bool? get hasPendingEmail => _$this._hasPendingEmail;
-  set hasPendingEmail(bool? hasPendingEmail) =>
-      _$this._hasPendingEmail = hasPendingEmail;
-
-  String? _obfuscatedEmail;
-  String? get obfuscatedEmail => _$this._obfuscatedEmail;
-  set obfuscatedEmail(String? obfuscatedEmail) =>
-      _$this._obfuscatedEmail = obfuscatedEmail;
-
-  String? _obfuscatedPendingEmail;
-  String? get obfuscatedPendingEmail => _$this._obfuscatedPendingEmail;
-  set obfuscatedPendingEmail(String? obfuscatedPendingEmail) =>
-      _$this._obfuscatedPendingEmail = obfuscatedPendingEmail;
-
-  bool? _emailVerified;
-  bool? get emailVerified => _$this._emailVerified;
-  set emailVerified(bool? emailVerified) =>
-      _$this._emailVerified = emailVerified;
-
-  bool? _hasBirthday;
-  bool? get hasBirthday => _$this._hasBirthday;
-  set hasBirthday(bool? hasBirthday) => _$this._hasBirthday = hasBirthday;
-
-  bool? _unsubscribe;
-  bool? get unsubscribe => _$this._unsubscribe;
-  set unsubscribe(bool? unsubscribe) => _$this._unsubscribe = unsubscribe;
-
-  ListBuilder<String>? _statusHistory;
-  ListBuilder<String> get statusHistory =>
-      _$this._statusHistory ??= new ListBuilder<String>();
-  set statusHistory(ListBuilder<String>? statusHistory) =>
-      _$this._statusHistory = statusHistory;
-
-  bool? _statusFirstTime;
-  bool? get statusFirstTime => _$this._statusFirstTime;
-  set statusFirstTime(bool? statusFirstTime) =>
-      _$this._statusFirstTime = statusFirstTime;
-
-  ListBuilder<String>? _friends;
-  ListBuilder<String> get friends =>
-      _$this._friends ??= new ListBuilder<String>();
-  set friends(ListBuilder<String>? friends) => _$this._friends = friends;
-
-  ListBuilder<String>? _friendGroupNames;
-  ListBuilder<String> get friendGroupNames =>
-      _$this._friendGroupNames ??= new ListBuilder<String>();
-  set friendGroupNames(ListBuilder<String>? friendGroupNames) =>
-      _$this._friendGroupNames = friendGroupNames;
+  String? _currentAvatarAssetUrl;
+  String? get currentAvatarAssetUrl => _$this._currentAvatarAssetUrl;
+  set currentAvatarAssetUrl(String? currentAvatarAssetUrl) =>
+      _$this._currentAvatarAssetUrl = currentAvatarAssetUrl;
 
   String? _currentAvatarImageUrl;
   String? get currentAvatarImageUrl => _$this._currentAvatarImageUrl;
@@ -487,70 +432,73 @@ class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
   set currentAvatarThumbnailImageUrl(String? currentAvatarThumbnailImageUrl) =>
       _$this._currentAvatarThumbnailImageUrl = currentAvatarThumbnailImageUrl;
 
+  Date? _dateJoined;
+  Date? get dateJoined => _$this._dateJoined;
+  set dateJoined(Date? dateJoined) => _$this._dateJoined = dateJoined;
+
+  DeveloperType? _developerType;
+  DeveloperType? get developerType => _$this._developerType;
+  set developerType(DeveloperType? developerType) =>
+      _$this._developerType = developerType;
+
+  String? _displayName;
+  String? get displayName => _$this._displayName;
+  set displayName(String? displayName) => _$this._displayName = displayName;
+
+  bool? _emailVerified;
+  bool? get emailVerified => _$this._emailVerified;
+  set emailVerified(bool? emailVerified) =>
+      _$this._emailVerified = emailVerified;
+
   String? _fallbackAvatar;
   String? get fallbackAvatar => _$this._fallbackAvatar;
   set fallbackAvatar(String? fallbackAvatar) =>
       _$this._fallbackAvatar = fallbackAvatar;
 
-  String? _currentAvatar;
-  String? get currentAvatar => _$this._currentAvatar;
-  set currentAvatar(String? currentAvatar) =>
-      _$this._currentAvatar = currentAvatar;
+  ListBuilder<String>? _friendGroupNames;
+  ListBuilder<String> get friendGroupNames =>
+      _$this._friendGroupNames ??= new ListBuilder<String>();
+  set friendGroupNames(ListBuilder<String>? friendGroupNames) =>
+      _$this._friendGroupNames = friendGroupNames;
 
-  String? _currentAvatarAssetUrl;
-  String? get currentAvatarAssetUrl => _$this._currentAvatarAssetUrl;
-  set currentAvatarAssetUrl(String? currentAvatarAssetUrl) =>
-      _$this._currentAvatarAssetUrl = currentAvatarAssetUrl;
+  String? _friendKey;
+  String? get friendKey => _$this._friendKey;
+  set friendKey(String? friendKey) => _$this._friendKey = friendKey;
 
-  Date? _accountDeletionDate;
-  Date? get accountDeletionDate => _$this._accountDeletionDate;
-  set accountDeletionDate(Date? accountDeletionDate) =>
-      _$this._accountDeletionDate = accountDeletionDate;
+  ListBuilder<String>? _friends;
+  ListBuilder<String> get friends =>
+      _$this._friends ??= new ListBuilder<String>();
+  set friends(ListBuilder<String>? friends) => _$this._friends = friends;
 
-  num? _acceptedTOSVersion;
-  num? get acceptedTOSVersion => _$this._acceptedTOSVersion;
-  set acceptedTOSVersion(num? acceptedTOSVersion) =>
-      _$this._acceptedTOSVersion = acceptedTOSVersion;
+  bool? _hasBirthday;
+  bool? get hasBirthday => _$this._hasBirthday;
+  set hasBirthday(bool? hasBirthday) => _$this._hasBirthday = hasBirthday;
 
-  String? _steamId;
-  String? get steamId => _$this._steamId;
-  set steamId(String? steamId) => _$this._steamId = steamId;
-
-  JsonObject? _steamDetails;
-  JsonObject? get steamDetails => _$this._steamDetails;
-  set steamDetails(JsonObject? steamDetails) =>
-      _$this._steamDetails = steamDetails;
-
-  String? _oculusId;
-  String? get oculusId => _$this._oculusId;
-  set oculusId(String? oculusId) => _$this._oculusId = oculusId;
+  bool? _hasEmail;
+  bool? get hasEmail => _$this._hasEmail;
+  set hasEmail(bool? hasEmail) => _$this._hasEmail = hasEmail;
 
   bool? _hasLoggedInFromClient;
   bool? get hasLoggedInFromClient => _$this._hasLoggedInFromClient;
   set hasLoggedInFromClient(bool? hasLoggedInFromClient) =>
       _$this._hasLoggedInFromClient = hasLoggedInFromClient;
 
+  bool? _hasPendingEmail;
+  bool? get hasPendingEmail => _$this._hasPendingEmail;
+  set hasPendingEmail(bool? hasPendingEmail) =>
+      _$this._hasPendingEmail = hasPendingEmail;
+
   String? _homeLocation;
   String? get homeLocation => _$this._homeLocation;
   set homeLocation(String? homeLocation) => _$this._homeLocation = homeLocation;
 
-  bool? _twoFactorAuthEnabled;
-  bool? get twoFactorAuthEnabled => _$this._twoFactorAuthEnabled;
-  set twoFactorAuthEnabled(bool? twoFactorAuthEnabled) =>
-      _$this._twoFactorAuthEnabled = twoFactorAuthEnabled;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
-  UserState? _state;
-  UserState? get state => _$this._state;
-  set state(UserState? state) => _$this._state = state;
-
-  ListBuilder<String>? _tags;
-  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
-  set tags(ListBuilder<String>? tags) => _$this._tags = tags;
-
-  DeveloperType? _developerType;
-  DeveloperType? get developerType => _$this._developerType;
-  set developerType(DeveloperType? developerType) =>
-      _$this._developerType = developerType;
+  bool? _isFriend;
+  bool? get isFriend => _$this._isFriend;
+  set isFriend(bool? isFriend) => _$this._isFriend = isFriend;
 
   DateTime? _lastLogin;
   DateTime? get lastLogin => _$this._lastLogin;
@@ -560,26 +508,25 @@ class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
   String? get lastPlatform => _$this._lastPlatform;
   set lastPlatform(String? lastPlatform) => _$this._lastPlatform = lastPlatform;
 
-  bool? _allowAvatarCopying;
-  bool? get allowAvatarCopying => _$this._allowAvatarCopying;
-  set allowAvatarCopying(bool? allowAvatarCopying) =>
-      _$this._allowAvatarCopying = allowAvatarCopying;
+  String? _obfuscatedEmail;
+  String? get obfuscatedEmail => _$this._obfuscatedEmail;
+  set obfuscatedEmail(String? obfuscatedEmail) =>
+      _$this._obfuscatedEmail = obfuscatedEmail;
 
-  UserStatus? _status;
-  UserStatus? get status => _$this._status;
-  set status(UserStatus? status) => _$this._status = status;
+  String? _obfuscatedPendingEmail;
+  String? get obfuscatedPendingEmail => _$this._obfuscatedPendingEmail;
+  set obfuscatedPendingEmail(String? obfuscatedPendingEmail) =>
+      _$this._obfuscatedPendingEmail = obfuscatedPendingEmail;
 
-  Date? _dateJoined;
-  Date? get dateJoined => _$this._dateJoined;
-  set dateJoined(Date? dateJoined) => _$this._dateJoined = dateJoined;
+  String? _oculusId;
+  String? get oculusId => _$this._oculusId;
+  set oculusId(String? oculusId) => _$this._oculusId = oculusId;
 
-  bool? _isFriend;
-  bool? get isFriend => _$this._isFriend;
-  set isFriend(bool? isFriend) => _$this._isFriend = isFriend;
-
-  String? _friendKey;
-  String? get friendKey => _$this._friendKey;
-  set friendKey(String? friendKey) => _$this._friendKey = friendKey;
+  ListBuilder<String>? _offlineFriends;
+  ListBuilder<String> get offlineFriends =>
+      _$this._offlineFriends ??= new ListBuilder<String>();
+  set offlineFriends(ListBuilder<String>? offlineFriends) =>
+      _$this._offlineFriends = offlineFriends;
 
   ListBuilder<String>? _onlineFriends;
   ListBuilder<String> get onlineFriends =>
@@ -587,17 +534,70 @@ class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
   set onlineFriends(ListBuilder<String>? onlineFriends) =>
       _$this._onlineFriends = onlineFriends;
 
-  ListBuilder<String>? _activeFriends;
-  ListBuilder<String> get activeFriends =>
-      _$this._activeFriends ??= new ListBuilder<String>();
-  set activeFriends(ListBuilder<String>? activeFriends) =>
-      _$this._activeFriends = activeFriends;
+  ListBuilder<PastDisplayName>? _pastDisplayNames;
+  ListBuilder<PastDisplayName> get pastDisplayNames =>
+      _$this._pastDisplayNames ??= new ListBuilder<PastDisplayName>();
+  set pastDisplayNames(ListBuilder<PastDisplayName>? pastDisplayNames) =>
+      _$this._pastDisplayNames = pastDisplayNames;
 
-  ListBuilder<String>? _offlineFriends;
-  ListBuilder<String> get offlineFriends =>
-      _$this._offlineFriends ??= new ListBuilder<String>();
-  set offlineFriends(ListBuilder<String>? offlineFriends) =>
-      _$this._offlineFriends = offlineFriends;
+  String? _profilePicOverride;
+  String? get profilePicOverride => _$this._profilePicOverride;
+  set profilePicOverride(String? profilePicOverride) =>
+      _$this._profilePicOverride = profilePicOverride;
+
+  UserState? _state;
+  UserState? get state => _$this._state;
+  set state(UserState? state) => _$this._state = state;
+
+  UserStatus? _status;
+  UserStatus? get status => _$this._status;
+  set status(UserStatus? status) => _$this._status = status;
+
+  String? _statusDescription;
+  String? get statusDescription => _$this._statusDescription;
+  set statusDescription(String? statusDescription) =>
+      _$this._statusDescription = statusDescription;
+
+  bool? _statusFirstTime;
+  bool? get statusFirstTime => _$this._statusFirstTime;
+  set statusFirstTime(bool? statusFirstTime) =>
+      _$this._statusFirstTime = statusFirstTime;
+
+  ListBuilder<String>? _statusHistory;
+  ListBuilder<String> get statusHistory =>
+      _$this._statusHistory ??= new ListBuilder<String>();
+  set statusHistory(ListBuilder<String>? statusHistory) =>
+      _$this._statusHistory = statusHistory;
+
+  JsonObject? _steamDetails;
+  JsonObject? get steamDetails => _$this._steamDetails;
+  set steamDetails(JsonObject? steamDetails) =>
+      _$this._steamDetails = steamDetails;
+
+  String? _steamId;
+  String? get steamId => _$this._steamId;
+  set steamId(String? steamId) => _$this._steamId = steamId;
+
+  ListBuilder<String>? _tags;
+  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
+  set tags(ListBuilder<String>? tags) => _$this._tags = tags;
+
+  bool? _twoFactorAuthEnabled;
+  bool? get twoFactorAuthEnabled => _$this._twoFactorAuthEnabled;
+  set twoFactorAuthEnabled(bool? twoFactorAuthEnabled) =>
+      _$this._twoFactorAuthEnabled = twoFactorAuthEnabled;
+
+  bool? _unsubscribe;
+  bool? get unsubscribe => _$this._unsubscribe;
+  set unsubscribe(bool? unsubscribe) => _$this._unsubscribe = unsubscribe;
+
+  String? _userIcon;
+  String? get userIcon => _$this._userIcon;
+  set userIcon(String? userIcon) => _$this._userIcon = userIcon;
+
+  String? _username;
+  String? get username => _$this._username;
+  set username(String? username) => _$this._username = username;
 
   CurrentUserBuilder() {
     CurrentUser._defaults(this);
@@ -606,52 +606,52 @@ class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
   CurrentUserBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id;
-      _username = $v.username;
-      _displayName = $v.displayName;
-      _userIcon = $v.userIcon;
+      _acceptedTOSVersion = $v.acceptedTOSVersion;
+      _accountDeletionDate = $v.accountDeletionDate;
+      _activeFriends = $v.activeFriends?.toBuilder();
+      _allowAvatarCopying = $v.allowAvatarCopying;
       _bio = $v.bio;
       _bioLinks = $v.bioLinks.toBuilder();
-      _profilePicOverride = $v.profilePicOverride;
-      _statusDescription = $v.statusDescription;
-      _pastDisplayNames = $v.pastDisplayNames.toBuilder();
-      _hasEmail = $v.hasEmail;
-      _hasPendingEmail = $v.hasPendingEmail;
-      _obfuscatedEmail = $v.obfuscatedEmail;
-      _obfuscatedPendingEmail = $v.obfuscatedPendingEmail;
-      _emailVerified = $v.emailVerified;
-      _hasBirthday = $v.hasBirthday;
-      _unsubscribe = $v.unsubscribe;
-      _statusHistory = $v.statusHistory.toBuilder();
-      _statusFirstTime = $v.statusFirstTime;
-      _friends = $v.friends.toBuilder();
-      _friendGroupNames = $v.friendGroupNames.toBuilder();
-      _currentAvatarImageUrl = $v.currentAvatarImageUrl;
-      _currentAvatarThumbnailImageUrl = $v.currentAvatarThumbnailImageUrl;
-      _fallbackAvatar = $v.fallbackAvatar;
       _currentAvatar = $v.currentAvatar;
       _currentAvatarAssetUrl = $v.currentAvatarAssetUrl;
-      _accountDeletionDate = $v.accountDeletionDate;
-      _acceptedTOSVersion = $v.acceptedTOSVersion;
-      _steamId = $v.steamId;
-      _steamDetails = $v.steamDetails;
-      _oculusId = $v.oculusId;
-      _hasLoggedInFromClient = $v.hasLoggedInFromClient;
-      _homeLocation = $v.homeLocation;
-      _twoFactorAuthEnabled = $v.twoFactorAuthEnabled;
-      _state = $v.state;
-      _tags = $v.tags.toBuilder();
+      _currentAvatarImageUrl = $v.currentAvatarImageUrl;
+      _currentAvatarThumbnailImageUrl = $v.currentAvatarThumbnailImageUrl;
+      _dateJoined = $v.dateJoined;
       _developerType = $v.developerType;
+      _displayName = $v.displayName;
+      _emailVerified = $v.emailVerified;
+      _fallbackAvatar = $v.fallbackAvatar;
+      _friendGroupNames = $v.friendGroupNames.toBuilder();
+      _friendKey = $v.friendKey;
+      _friends = $v.friends.toBuilder();
+      _hasBirthday = $v.hasBirthday;
+      _hasEmail = $v.hasEmail;
+      _hasLoggedInFromClient = $v.hasLoggedInFromClient;
+      _hasPendingEmail = $v.hasPendingEmail;
+      _homeLocation = $v.homeLocation;
+      _id = $v.id;
+      _isFriend = $v.isFriend;
       _lastLogin = $v.lastLogin;
       _lastPlatform = $v.lastPlatform;
-      _allowAvatarCopying = $v.allowAvatarCopying;
-      _status = $v.status;
-      _dateJoined = $v.dateJoined;
-      _isFriend = $v.isFriend;
-      _friendKey = $v.friendKey;
-      _onlineFriends = $v.onlineFriends?.toBuilder();
-      _activeFriends = $v.activeFriends?.toBuilder();
+      _obfuscatedEmail = $v.obfuscatedEmail;
+      _obfuscatedPendingEmail = $v.obfuscatedPendingEmail;
+      _oculusId = $v.oculusId;
       _offlineFriends = $v.offlineFriends?.toBuilder();
+      _onlineFriends = $v.onlineFriends?.toBuilder();
+      _pastDisplayNames = $v.pastDisplayNames.toBuilder();
+      _profilePicOverride = $v.profilePicOverride;
+      _state = $v.state;
+      _status = $v.status;
+      _statusDescription = $v.statusDescription;
+      _statusFirstTime = $v.statusFirstTime;
+      _statusHistory = $v.statusHistory.toBuilder();
+      _steamDetails = $v.steamDetails;
+      _steamId = $v.steamId;
+      _tags = $v.tags.toBuilder();
+      _twoFactorAuthEnabled = $v.twoFactorAuthEnabled;
+      _unsubscribe = $v.unsubscribe;
+      _userIcon = $v.userIcon;
+      _username = $v.username;
       _$v = null;
     }
     return this;
@@ -674,87 +674,89 @@ class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
     try {
       _$result = _$v ??
           new _$CurrentUser._(
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, 'CurrentUser', 'id'),
-              username: BuiltValueNullFieldError.checkNotNull(
-                  username, 'CurrentUser', 'username'),
-              displayName: BuiltValueNullFieldError.checkNotNull(
-                  displayName, 'CurrentUser', 'displayName'),
-              userIcon: BuiltValueNullFieldError.checkNotNull(
-                  userIcon, 'CurrentUser', 'userIcon'),
+              acceptedTOSVersion: BuiltValueNullFieldError.checkNotNull(
+                  acceptedTOSVersion, 'CurrentUser', 'acceptedTOSVersion'),
+              accountDeletionDate: accountDeletionDate,
+              activeFriends: _activeFriends?.build(),
+              allowAvatarCopying: BuiltValueNullFieldError.checkNotNull(
+                  allowAvatarCopying, 'CurrentUser', 'allowAvatarCopying'),
               bio: BuiltValueNullFieldError.checkNotNull(
                   bio, 'CurrentUser', 'bio'),
               bioLinks: bioLinks.build(),
-              profilePicOverride: BuiltValueNullFieldError.checkNotNull(
-                  profilePicOverride, 'CurrentUser', 'profilePicOverride'),
-              statusDescription: BuiltValueNullFieldError.checkNotNull(
-                  statusDescription, 'CurrentUser', 'statusDescription'),
-              pastDisplayNames: pastDisplayNames.build(),
-              hasEmail: BuiltValueNullFieldError.checkNotNull(
-                  hasEmail, 'CurrentUser', 'hasEmail'),
-              hasPendingEmail: BuiltValueNullFieldError.checkNotNull(
-                  hasPendingEmail, 'CurrentUser', 'hasPendingEmail'),
-              obfuscatedEmail: BuiltValueNullFieldError.checkNotNull(obfuscatedEmail, 'CurrentUser', 'obfuscatedEmail'),
-              obfuscatedPendingEmail: BuiltValueNullFieldError.checkNotNull(obfuscatedPendingEmail, 'CurrentUser', 'obfuscatedPendingEmail'),
-              emailVerified: BuiltValueNullFieldError.checkNotNull(emailVerified, 'CurrentUser', 'emailVerified'),
-              hasBirthday: BuiltValueNullFieldError.checkNotNull(hasBirthday, 'CurrentUser', 'hasBirthday'),
-              unsubscribe: BuiltValueNullFieldError.checkNotNull(unsubscribe, 'CurrentUser', 'unsubscribe'),
-              statusHistory: statusHistory.build(),
-              statusFirstTime: BuiltValueNullFieldError.checkNotNull(statusFirstTime, 'CurrentUser', 'statusFirstTime'),
-              friends: friends.build(),
-              friendGroupNames: friendGroupNames.build(),
-              currentAvatarImageUrl: BuiltValueNullFieldError.checkNotNull(currentAvatarImageUrl, 'CurrentUser', 'currentAvatarImageUrl'),
-              currentAvatarThumbnailImageUrl: BuiltValueNullFieldError.checkNotNull(currentAvatarThumbnailImageUrl, 'CurrentUser', 'currentAvatarThumbnailImageUrl'),
-              fallbackAvatar: fallbackAvatar,
-              currentAvatar: BuiltValueNullFieldError.checkNotNull(currentAvatar, 'CurrentUser', 'currentAvatar'),
-              currentAvatarAssetUrl: BuiltValueNullFieldError.checkNotNull(currentAvatarAssetUrl, 'CurrentUser', 'currentAvatarAssetUrl'),
-              accountDeletionDate: accountDeletionDate,
-              acceptedTOSVersion: BuiltValueNullFieldError.checkNotNull(acceptedTOSVersion, 'CurrentUser', 'acceptedTOSVersion'),
-              steamId: BuiltValueNullFieldError.checkNotNull(steamId, 'CurrentUser', 'steamId'),
-              steamDetails: BuiltValueNullFieldError.checkNotNull(steamDetails, 'CurrentUser', 'steamDetails'),
-              oculusId: BuiltValueNullFieldError.checkNotNull(oculusId, 'CurrentUser', 'oculusId'),
-              hasLoggedInFromClient: BuiltValueNullFieldError.checkNotNull(hasLoggedInFromClient, 'CurrentUser', 'hasLoggedInFromClient'),
-              homeLocation: BuiltValueNullFieldError.checkNotNull(homeLocation, 'CurrentUser', 'homeLocation'),
-              twoFactorAuthEnabled: BuiltValueNullFieldError.checkNotNull(twoFactorAuthEnabled, 'CurrentUser', 'twoFactorAuthEnabled'),
-              state: BuiltValueNullFieldError.checkNotNull(state, 'CurrentUser', 'state'),
-              tags: tags.build(),
+              currentAvatar: BuiltValueNullFieldError.checkNotNull(
+                  currentAvatar, 'CurrentUser', 'currentAvatar'),
+              currentAvatarAssetUrl: BuiltValueNullFieldError.checkNotNull(
+                  currentAvatarAssetUrl, 'CurrentUser', 'currentAvatarAssetUrl'),
+              currentAvatarImageUrl: BuiltValueNullFieldError.checkNotNull(
+                  currentAvatarImageUrl, 'CurrentUser', 'currentAvatarImageUrl'),
+              currentAvatarThumbnailImageUrl:
+                  BuiltValueNullFieldError.checkNotNull(
+                      currentAvatarThumbnailImageUrl,
+                      'CurrentUser',
+                      'currentAvatarThumbnailImageUrl'),
+              dateJoined: BuiltValueNullFieldError.checkNotNull(dateJoined, 'CurrentUser', 'dateJoined'),
               developerType: BuiltValueNullFieldError.checkNotNull(developerType, 'CurrentUser', 'developerType'),
+              displayName: BuiltValueNullFieldError.checkNotNull(displayName, 'CurrentUser', 'displayName'),
+              emailVerified: BuiltValueNullFieldError.checkNotNull(emailVerified, 'CurrentUser', 'emailVerified'),
+              fallbackAvatar: fallbackAvatar,
+              friendGroupNames: friendGroupNames.build(),
+              friendKey: BuiltValueNullFieldError.checkNotNull(friendKey, 'CurrentUser', 'friendKey'),
+              friends: friends.build(),
+              hasBirthday: BuiltValueNullFieldError.checkNotNull(hasBirthday, 'CurrentUser', 'hasBirthday'),
+              hasEmail: BuiltValueNullFieldError.checkNotNull(hasEmail, 'CurrentUser', 'hasEmail'),
+              hasLoggedInFromClient: BuiltValueNullFieldError.checkNotNull(hasLoggedInFromClient, 'CurrentUser', 'hasLoggedInFromClient'),
+              hasPendingEmail: BuiltValueNullFieldError.checkNotNull(hasPendingEmail, 'CurrentUser', 'hasPendingEmail'),
+              homeLocation: BuiltValueNullFieldError.checkNotNull(homeLocation, 'CurrentUser', 'homeLocation'),
+              id: BuiltValueNullFieldError.checkNotNull(id, 'CurrentUser', 'id'),
+              isFriend: BuiltValueNullFieldError.checkNotNull(isFriend, 'CurrentUser', 'isFriend'),
               lastLogin: BuiltValueNullFieldError.checkNotNull(lastLogin, 'CurrentUser', 'lastLogin'),
               lastPlatform: BuiltValueNullFieldError.checkNotNull(lastPlatform, 'CurrentUser', 'lastPlatform'),
-              allowAvatarCopying: BuiltValueNullFieldError.checkNotNull(allowAvatarCopying, 'CurrentUser', 'allowAvatarCopying'),
-              status: BuiltValueNullFieldError.checkNotNull(status, 'CurrentUser', 'status'),
-              dateJoined: BuiltValueNullFieldError.checkNotNull(dateJoined, 'CurrentUser', 'dateJoined'),
-              isFriend: BuiltValueNullFieldError.checkNotNull(isFriend, 'CurrentUser', 'isFriend'),
-              friendKey: BuiltValueNullFieldError.checkNotNull(friendKey, 'CurrentUser', 'friendKey'),
+              obfuscatedEmail: BuiltValueNullFieldError.checkNotNull(obfuscatedEmail, 'CurrentUser', 'obfuscatedEmail'),
+              obfuscatedPendingEmail: BuiltValueNullFieldError.checkNotNull(obfuscatedPendingEmail, 'CurrentUser', 'obfuscatedPendingEmail'),
+              oculusId: BuiltValueNullFieldError.checkNotNull(oculusId, 'CurrentUser', 'oculusId'),
+              offlineFriends: _offlineFriends?.build(),
               onlineFriends: _onlineFriends?.build(),
-              activeFriends: _activeFriends?.build(),
-              offlineFriends: _offlineFriends?.build());
+              pastDisplayNames: pastDisplayNames.build(),
+              profilePicOverride: BuiltValueNullFieldError.checkNotNull(profilePicOverride, 'CurrentUser', 'profilePicOverride'),
+              state: BuiltValueNullFieldError.checkNotNull(state, 'CurrentUser', 'state'),
+              status: BuiltValueNullFieldError.checkNotNull(status, 'CurrentUser', 'status'),
+              statusDescription: BuiltValueNullFieldError.checkNotNull(statusDescription, 'CurrentUser', 'statusDescription'),
+              statusFirstTime: BuiltValueNullFieldError.checkNotNull(statusFirstTime, 'CurrentUser', 'statusFirstTime'),
+              statusHistory: statusHistory.build(),
+              steamDetails: BuiltValueNullFieldError.checkNotNull(steamDetails, 'CurrentUser', 'steamDetails'),
+              steamId: BuiltValueNullFieldError.checkNotNull(steamId, 'CurrentUser', 'steamId'),
+              tags: tags.build(),
+              twoFactorAuthEnabled: BuiltValueNullFieldError.checkNotNull(twoFactorAuthEnabled, 'CurrentUser', 'twoFactorAuthEnabled'),
+              unsubscribe: BuiltValueNullFieldError.checkNotNull(unsubscribe, 'CurrentUser', 'unsubscribe'),
+              userIcon: BuiltValueNullFieldError.checkNotNull(userIcon, 'CurrentUser', 'userIcon'),
+              username: BuiltValueNullFieldError.checkNotNull(username, 'CurrentUser', 'username'));
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'activeFriends';
+        _activeFriends?.build();
+
         _$failedField = 'bioLinks';
         bioLinks.build();
 
+        _$failedField = 'friendGroupNames';
+        friendGroupNames.build();
+
+        _$failedField = 'friends';
+        friends.build();
+
+        _$failedField = 'offlineFriends';
+        _offlineFriends?.build();
+        _$failedField = 'onlineFriends';
+        _onlineFriends?.build();
         _$failedField = 'pastDisplayNames';
         pastDisplayNames.build();
 
         _$failedField = 'statusHistory';
         statusHistory.build();
 
-        _$failedField = 'friends';
-        friends.build();
-        _$failedField = 'friendGroupNames';
-        friendGroupNames.build();
-
         _$failedField = 'tags';
         tags.build();
-
-        _$failedField = 'onlineFriends';
-        _onlineFriends?.build();
-        _$failedField = 'activeFriends';
-        _activeFriends?.build();
-        _$failedField = 'offlineFriends';
-        _offlineFriends?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'CurrentUser', _$failedField, e.toString());

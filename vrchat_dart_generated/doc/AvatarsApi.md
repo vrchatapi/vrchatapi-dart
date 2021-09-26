@@ -199,7 +199,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 final String search = search_example; // String | Filters by world name.
 final String tag = tag_example; // String | Tags to include (comma-separated).
 final String notag = notag_example; // String | Tags to exclude (comma-separated).
-final String releaseStatus = hidden; // String | Filter by ReleaseStatus.
+final String releaseStatus = releaseStatus_example; // String | Filter by ReleaseStatus.
 final String maxUnityVersion = maxUnityVersion_example; // String | The maximum Unity version supported by the asset.
 final String minUnityVersion = minUnityVersion_example; // String | The minimum Unity version supported by the asset.
 final String platform = platform_example; // String | The platform the asset supports.
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
  **search** | **String**| Filters by world name. | [optional] 
  **tag** | **String**| Tags to include (comma-separated). | [optional] 
  **notag** | **String**| Tags to exclude (comma-separated). | [optional] 
- **releaseStatus** | **String**| Filter by ReleaseStatus. | [optional] [default to 'hidden']
+ **releaseStatus** | **String**| Filter by ReleaseStatus. | [optional] [default to 'public']
  **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional] 
  **minUnityVersion** | **String**| The minimum Unity version supported by the asset. | [optional] 
  **platform** | **String**| The platform the asset supports. | [optional] 
@@ -275,7 +275,7 @@ final String order = descending; // String |
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final String tag = tag_example; // String | Tags to include (comma-separated).
 final String notag = notag_example; // String | Tags to exclude (comma-separated).
-final String releaseStatus = hidden; // String | Filter by ReleaseStatus.
+final String releaseStatus = releaseStatus_example; // String | Filter by ReleaseStatus.
 final String maxUnityVersion = maxUnityVersion_example; // String | The maximum Unity version supported by the asset.
 final String minUnityVersion = minUnityVersion_example; // String | The minimum Unity version supported by the asset.
 final String platform = platform_example; // String | The platform the asset supports.
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
  **tag** | **String**| Tags to include (comma-separated). | [optional] 
  **notag** | **String**| Tags to exclude (comma-separated). | [optional] 
- **releaseStatus** | **String**| Filter by ReleaseStatus. | [optional] [default to 'hidden']
+ **releaseStatus** | **String**| Filter by ReleaseStatus. | [optional] [default to 'public']
  **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional] 
  **minUnityVersion** | **String**| The minimum Unity version supported by the asset. | [optional] 
  **platform** | **String**| The platform the asset supports. | [optional] 

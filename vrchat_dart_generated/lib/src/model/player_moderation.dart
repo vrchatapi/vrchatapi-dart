@@ -11,36 +11,36 @@ part 'player_moderation.g.dart';
 /// PlayerModeration
 ///
 /// Properties:
-/// * [id]
-/// * [type]
-/// * [sourceUserId]
-/// * [sourceDisplayName]
-/// * [targetUserId]
-/// * [targetDisplayName]
 /// * [created]
+/// * [id]
+/// * [sourceDisplayName]
+/// * [sourceUserId]
+/// * [targetDisplayName]
+/// * [targetUserId]
+/// * [type]
 abstract class PlayerModeration
     implements Built<PlayerModeration, PlayerModerationBuilder> {
+  @BuiltValueField(wireName: r'created')
+  DateTime get created;
+
   @BuiltValueField(wireName: r'id')
   String get id;
-
-  @BuiltValueField(wireName: r'type')
-  PlayerModerationType get type;
-  // enum typeEnum {  mute,  unmute,  block,  unblock,  hideAvatar,  showAvatar,  };
-
-  @BuiltValueField(wireName: r'sourceUserId')
-  String get sourceUserId;
 
   @BuiltValueField(wireName: r'sourceDisplayName')
   String get sourceDisplayName;
 
-  @BuiltValueField(wireName: r'targetUserId')
-  String get targetUserId;
+  @BuiltValueField(wireName: r'sourceUserId')
+  String get sourceUserId;
 
   @BuiltValueField(wireName: r'targetDisplayName')
   String get targetDisplayName;
 
-  @BuiltValueField(wireName: r'created')
-  DateTime get created;
+  @BuiltValueField(wireName: r'targetUserId')
+  String get targetUserId;
+
+  @BuiltValueField(wireName: r'type')
+  PlayerModerationType get type;
+  // enum typeEnum {  mute,  unmute,  block,  unblock,  hideAvatar,  showAvatar,  };
 
   PlayerModeration._();
 
@@ -68,33 +68,33 @@ class _$PlayerModerationSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     result
+      ..add(r'created')
+      ..add(serializers.serialize(object.created,
+          specifiedType: const FullType(DateTime)));
+    result
       ..add(r'id')
       ..add(serializers.serialize(object.id,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'type')
-      ..add(serializers.serialize(object.type,
-          specifiedType: const FullType(PlayerModerationType)));
-    result
-      ..add(r'sourceUserId')
-      ..add(serializers.serialize(object.sourceUserId,
           specifiedType: const FullType(String)));
     result
       ..add(r'sourceDisplayName')
       ..add(serializers.serialize(object.sourceDisplayName,
           specifiedType: const FullType(String)));
     result
-      ..add(r'targetUserId')
-      ..add(serializers.serialize(object.targetUserId,
+      ..add(r'sourceUserId')
+      ..add(serializers.serialize(object.sourceUserId,
           specifiedType: const FullType(String)));
     result
       ..add(r'targetDisplayName')
       ..add(serializers.serialize(object.targetDisplayName,
           specifiedType: const FullType(String)));
     result
-      ..add(r'created')
-      ..add(serializers.serialize(object.created,
-          specifiedType: const FullType(DateTime)));
+      ..add(r'targetUserId')
+      ..add(serializers.serialize(object.targetUserId,
+          specifiedType: const FullType(String)));
+    result
+      ..add(r'type')
+      ..add(serializers.serialize(object.type,
+          specifiedType: const FullType(PlayerModerationType)));
     return result;
   }
 
@@ -110,34 +110,34 @@ class _$PlayerModerationSerializer
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
+        case r'created':
+          result.created = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime;
+          break;
         case r'id':
           result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case r'type':
-          result.type = serializers.deserialize(value,
-                  specifiedType: const FullType(PlayerModerationType))
-              as PlayerModerationType;
-          break;
-        case r'sourceUserId':
-          result.sourceUserId = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
         case r'sourceDisplayName':
           result.sourceDisplayName = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case r'targetUserId':
-          result.targetUserId = serializers.deserialize(value,
+        case r'sourceUserId':
+          result.sourceUserId = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
         case r'targetDisplayName':
           result.targetDisplayName = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case r'created':
-          result.created = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
+        case r'targetUserId':
+          result.targetUserId = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case r'type':
+          result.type = serializers.deserialize(value,
+                  specifiedType: const FullType(PlayerModerationType))
+              as PlayerModerationType;
           break;
       }
     }

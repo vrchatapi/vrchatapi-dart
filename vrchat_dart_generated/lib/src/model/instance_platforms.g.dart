@@ -8,9 +8,9 @@ part of 'instance_platforms.dart';
 
 class _$InstancePlatforms extends InstancePlatforms {
   @override
-  final num android;
+  final int android;
   @override
-  final num standalonewindows;
+  final int standalonewindows;
 
   factory _$InstancePlatforms(
           [void Function(InstancePlatformsBuilder)? updates]) =>
@@ -59,13 +59,13 @@ class InstancePlatformsBuilder
     implements Builder<InstancePlatforms, InstancePlatformsBuilder> {
   _$InstancePlatforms? _$v;
 
-  num? _android;
-  num? get android => _$this._android;
-  set android(num? android) => _$this._android = android;
+  int? _android;
+  int? get android => _$this._android;
+  set android(int? android) => _$this._android = android;
 
-  num? _standalonewindows;
-  num? get standalonewindows => _$this._standalonewindows;
-  set standalonewindows(num? standalonewindows) =>
+  int? _standalonewindows;
+  int? get standalonewindows => _$this._standalonewindows;
+  set standalonewindows(int? standalonewindows) =>
       _$this._standalonewindows = standalonewindows;
 
   InstancePlatformsBuilder() {

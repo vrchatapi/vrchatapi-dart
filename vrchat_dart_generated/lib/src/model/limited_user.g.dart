@@ -8,78 +8,78 @@ part of 'limited_user.dart';
 
 class _$LimitedUser extends LimitedUser {
   @override
-  final String id;
-  @override
-  final String username;
-  @override
-  final String displayName;
-  @override
   final String? bio;
-  @override
-  final String userIcon;
-  @override
-  final String profilePicOverride;
-  @override
-  final String statusDescription;
   @override
   final String currentAvatarImageUrl;
   @override
   final String currentAvatarThumbnailImageUrl;
   @override
-  final String fallbackAvatar;
-  @override
   final DeveloperType developerType;
   @override
-  final String lastPlatform;
+  final String displayName;
   @override
-  final UserStatus status;
+  final String fallbackAvatar;
+  @override
+  final String id;
   @override
   final bool isFriend;
   @override
+  final String lastPlatform;
+  @override
+  final String profilePicOverride;
+  @override
+  final UserStatus status;
+  @override
+  final String statusDescription;
+  @override
   final BuiltList<String> tags;
+  @override
+  final String userIcon;
+  @override
+  final String username;
 
   factory _$LimitedUser([void Function(LimitedUserBuilder)? updates]) =>
       (new LimitedUserBuilder()..update(updates)).build();
 
   _$LimitedUser._(
-      {required this.id,
-      required this.username,
-      required this.displayName,
-      this.bio,
-      required this.userIcon,
-      required this.profilePicOverride,
-      required this.statusDescription,
+      {this.bio,
       required this.currentAvatarImageUrl,
       required this.currentAvatarThumbnailImageUrl,
-      required this.fallbackAvatar,
       required this.developerType,
-      required this.lastPlatform,
-      required this.status,
+      required this.displayName,
+      required this.fallbackAvatar,
+      required this.id,
       required this.isFriend,
-      required this.tags})
+      required this.lastPlatform,
+      required this.profilePicOverride,
+      required this.status,
+      required this.statusDescription,
+      required this.tags,
+      required this.userIcon,
+      required this.username})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, 'LimitedUser', 'id');
-    BuiltValueNullFieldError.checkNotNull(username, 'LimitedUser', 'username');
-    BuiltValueNullFieldError.checkNotNull(
-        displayName, 'LimitedUser', 'displayName');
-    BuiltValueNullFieldError.checkNotNull(userIcon, 'LimitedUser', 'userIcon');
-    BuiltValueNullFieldError.checkNotNull(
-        profilePicOverride, 'LimitedUser', 'profilePicOverride');
-    BuiltValueNullFieldError.checkNotNull(
-        statusDescription, 'LimitedUser', 'statusDescription');
     BuiltValueNullFieldError.checkNotNull(
         currentAvatarImageUrl, 'LimitedUser', 'currentAvatarImageUrl');
     BuiltValueNullFieldError.checkNotNull(currentAvatarThumbnailImageUrl,
         'LimitedUser', 'currentAvatarThumbnailImageUrl');
     BuiltValueNullFieldError.checkNotNull(
-        fallbackAvatar, 'LimitedUser', 'fallbackAvatar');
-    BuiltValueNullFieldError.checkNotNull(
         developerType, 'LimitedUser', 'developerType');
     BuiltValueNullFieldError.checkNotNull(
-        lastPlatform, 'LimitedUser', 'lastPlatform');
-    BuiltValueNullFieldError.checkNotNull(status, 'LimitedUser', 'status');
+        displayName, 'LimitedUser', 'displayName');
+    BuiltValueNullFieldError.checkNotNull(
+        fallbackAvatar, 'LimitedUser', 'fallbackAvatar');
+    BuiltValueNullFieldError.checkNotNull(id, 'LimitedUser', 'id');
     BuiltValueNullFieldError.checkNotNull(isFriend, 'LimitedUser', 'isFriend');
+    BuiltValueNullFieldError.checkNotNull(
+        lastPlatform, 'LimitedUser', 'lastPlatform');
+    BuiltValueNullFieldError.checkNotNull(
+        profilePicOverride, 'LimitedUser', 'profilePicOverride');
+    BuiltValueNullFieldError.checkNotNull(status, 'LimitedUser', 'status');
+    BuiltValueNullFieldError.checkNotNull(
+        statusDescription, 'LimitedUser', 'statusDescription');
     BuiltValueNullFieldError.checkNotNull(tags, 'LimitedUser', 'tags');
+    BuiltValueNullFieldError.checkNotNull(userIcon, 'LimitedUser', 'userIcon');
+    BuiltValueNullFieldError.checkNotNull(username, 'LimitedUser', 'username');
   }
 
   @override
@@ -93,22 +93,22 @@ class _$LimitedUser extends LimitedUser {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is LimitedUser &&
-        id == other.id &&
-        username == other.username &&
-        displayName == other.displayName &&
         bio == other.bio &&
-        userIcon == other.userIcon &&
-        profilePicOverride == other.profilePicOverride &&
-        statusDescription == other.statusDescription &&
         currentAvatarImageUrl == other.currentAvatarImageUrl &&
         currentAvatarThumbnailImageUrl ==
             other.currentAvatarThumbnailImageUrl &&
-        fallbackAvatar == other.fallbackAvatar &&
         developerType == other.developerType &&
-        lastPlatform == other.lastPlatform &&
-        status == other.status &&
+        displayName == other.displayName &&
+        fallbackAvatar == other.fallbackAvatar &&
+        id == other.id &&
         isFriend == other.isFriend &&
-        tags == other.tags;
+        lastPlatform == other.lastPlatform &&
+        profilePicOverride == other.profilePicOverride &&
+        status == other.status &&
+        statusDescription == other.statusDescription &&
+        tags == other.tags &&
+        userIcon == other.userIcon &&
+        username == other.username;
   }
 
   @override
@@ -126,42 +126,46 @@ class _$LimitedUser extends LimitedUser {
                                             $jc(
                                                 $jc(
                                                     $jc(
-                                                        $jc($jc(0, id.hashCode),
-                                                            username.hashCode),
-                                                        displayName.hashCode),
-                                                    bio.hashCode),
-                                                userIcon.hashCode),
-                                            profilePicOverride.hashCode),
-                                        statusDescription.hashCode),
-                                    currentAvatarImageUrl.hashCode),
-                                currentAvatarThumbnailImageUrl.hashCode),
-                            fallbackAvatar.hashCode),
-                        developerType.hashCode),
-                    lastPlatform.hashCode),
-                status.hashCode),
-            isFriend.hashCode),
-        tags.hashCode));
+                                                        $jc(
+                                                            $jc(0,
+                                                                bio.hashCode),
+                                                            currentAvatarImageUrl
+                                                                .hashCode),
+                                                        currentAvatarThumbnailImageUrl
+                                                            .hashCode),
+                                                    developerType.hashCode),
+                                                displayName.hashCode),
+                                            fallbackAvatar.hashCode),
+                                        id.hashCode),
+                                    isFriend.hashCode),
+                                lastPlatform.hashCode),
+                            profilePicOverride.hashCode),
+                        status.hashCode),
+                    statusDescription.hashCode),
+                tags.hashCode),
+            userIcon.hashCode),
+        username.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('LimitedUser')
-          ..add('id', id)
-          ..add('username', username)
-          ..add('displayName', displayName)
           ..add('bio', bio)
-          ..add('userIcon', userIcon)
-          ..add('profilePicOverride', profilePicOverride)
-          ..add('statusDescription', statusDescription)
           ..add('currentAvatarImageUrl', currentAvatarImageUrl)
           ..add(
               'currentAvatarThumbnailImageUrl', currentAvatarThumbnailImageUrl)
-          ..add('fallbackAvatar', fallbackAvatar)
           ..add('developerType', developerType)
-          ..add('lastPlatform', lastPlatform)
-          ..add('status', status)
+          ..add('displayName', displayName)
+          ..add('fallbackAvatar', fallbackAvatar)
+          ..add('id', id)
           ..add('isFriend', isFriend)
-          ..add('tags', tags))
+          ..add('lastPlatform', lastPlatform)
+          ..add('profilePicOverride', profilePicOverride)
+          ..add('status', status)
+          ..add('statusDescription', statusDescription)
+          ..add('tags', tags)
+          ..add('userIcon', userIcon)
+          ..add('username', username))
         .toString();
   }
 }
@@ -169,35 +173,9 @@ class _$LimitedUser extends LimitedUser {
 class LimitedUserBuilder implements Builder<LimitedUser, LimitedUserBuilder> {
   _$LimitedUser? _$v;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  String? _username;
-  String? get username => _$this._username;
-  set username(String? username) => _$this._username = username;
-
-  String? _displayName;
-  String? get displayName => _$this._displayName;
-  set displayName(String? displayName) => _$this._displayName = displayName;
-
   String? _bio;
   String? get bio => _$this._bio;
   set bio(String? bio) => _$this._bio = bio;
-
-  String? _userIcon;
-  String? get userIcon => _$this._userIcon;
-  set userIcon(String? userIcon) => _$this._userIcon = userIcon;
-
-  String? _profilePicOverride;
-  String? get profilePicOverride => _$this._profilePicOverride;
-  set profilePicOverride(String? profilePicOverride) =>
-      _$this._profilePicOverride = profilePicOverride;
-
-  String? _statusDescription;
-  String? get statusDescription => _$this._statusDescription;
-  set statusDescription(String? statusDescription) =>
-      _$this._statusDescription = statusDescription;
 
   String? _currentAvatarImageUrl;
   String? get currentAvatarImageUrl => _$this._currentAvatarImageUrl;
@@ -210,31 +188,57 @@ class LimitedUserBuilder implements Builder<LimitedUser, LimitedUserBuilder> {
   set currentAvatarThumbnailImageUrl(String? currentAvatarThumbnailImageUrl) =>
       _$this._currentAvatarThumbnailImageUrl = currentAvatarThumbnailImageUrl;
 
-  String? _fallbackAvatar;
-  String? get fallbackAvatar => _$this._fallbackAvatar;
-  set fallbackAvatar(String? fallbackAvatar) =>
-      _$this._fallbackAvatar = fallbackAvatar;
-
   DeveloperType? _developerType;
   DeveloperType? get developerType => _$this._developerType;
   set developerType(DeveloperType? developerType) =>
       _$this._developerType = developerType;
 
-  String? _lastPlatform;
-  String? get lastPlatform => _$this._lastPlatform;
-  set lastPlatform(String? lastPlatform) => _$this._lastPlatform = lastPlatform;
+  String? _displayName;
+  String? get displayName => _$this._displayName;
+  set displayName(String? displayName) => _$this._displayName = displayName;
 
-  UserStatus? _status;
-  UserStatus? get status => _$this._status;
-  set status(UserStatus? status) => _$this._status = status;
+  String? _fallbackAvatar;
+  String? get fallbackAvatar => _$this._fallbackAvatar;
+  set fallbackAvatar(String? fallbackAvatar) =>
+      _$this._fallbackAvatar = fallbackAvatar;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   bool? _isFriend;
   bool? get isFriend => _$this._isFriend;
   set isFriend(bool? isFriend) => _$this._isFriend = isFriend;
 
+  String? _lastPlatform;
+  String? get lastPlatform => _$this._lastPlatform;
+  set lastPlatform(String? lastPlatform) => _$this._lastPlatform = lastPlatform;
+
+  String? _profilePicOverride;
+  String? get profilePicOverride => _$this._profilePicOverride;
+  set profilePicOverride(String? profilePicOverride) =>
+      _$this._profilePicOverride = profilePicOverride;
+
+  UserStatus? _status;
+  UserStatus? get status => _$this._status;
+  set status(UserStatus? status) => _$this._status = status;
+
+  String? _statusDescription;
+  String? get statusDescription => _$this._statusDescription;
+  set statusDescription(String? statusDescription) =>
+      _$this._statusDescription = statusDescription;
+
   ListBuilder<String>? _tags;
   ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
+
+  String? _userIcon;
+  String? get userIcon => _$this._userIcon;
+  set userIcon(String? userIcon) => _$this._userIcon = userIcon;
+
+  String? _username;
+  String? get username => _$this._username;
+  set username(String? username) => _$this._username = username;
 
   LimitedUserBuilder() {
     LimitedUser._defaults(this);
@@ -243,21 +247,21 @@ class LimitedUserBuilder implements Builder<LimitedUser, LimitedUserBuilder> {
   LimitedUserBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id;
-      _username = $v.username;
-      _displayName = $v.displayName;
       _bio = $v.bio;
-      _userIcon = $v.userIcon;
-      _profilePicOverride = $v.profilePicOverride;
-      _statusDescription = $v.statusDescription;
       _currentAvatarImageUrl = $v.currentAvatarImageUrl;
       _currentAvatarThumbnailImageUrl = $v.currentAvatarThumbnailImageUrl;
-      _fallbackAvatar = $v.fallbackAvatar;
       _developerType = $v.developerType;
-      _lastPlatform = $v.lastPlatform;
-      _status = $v.status;
+      _displayName = $v.displayName;
+      _fallbackAvatar = $v.fallbackAvatar;
+      _id = $v.id;
       _isFriend = $v.isFriend;
+      _lastPlatform = $v.lastPlatform;
+      _profilePicOverride = $v.profilePicOverride;
+      _status = $v.status;
+      _statusDescription = $v.statusDescription;
       _tags = $v.tags.toBuilder();
+      _userIcon = $v.userIcon;
+      _username = $v.username;
       _$v = null;
     }
     return this;
@@ -280,30 +284,31 @@ class LimitedUserBuilder implements Builder<LimitedUser, LimitedUserBuilder> {
     try {
       _$result = _$v ??
           new _$LimitedUser._(
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, 'LimitedUser', 'id'),
-              username: BuiltValueNullFieldError.checkNotNull(
-                  username, 'LimitedUser', 'username'),
-              displayName: BuiltValueNullFieldError.checkNotNull(
-                  displayName, 'LimitedUser', 'displayName'),
               bio: bio,
-              userIcon: BuiltValueNullFieldError.checkNotNull(
-                  userIcon, 'LimitedUser', 'userIcon'),
-              profilePicOverride: BuiltValueNullFieldError.checkNotNull(
-                  profilePicOverride, 'LimitedUser', 'profilePicOverride'),
-              statusDescription: BuiltValueNullFieldError.checkNotNull(
-                  statusDescription, 'LimitedUser', 'statusDescription'),
               currentAvatarImageUrl: BuiltValueNullFieldError.checkNotNull(
                   currentAvatarImageUrl, 'LimitedUser', 'currentAvatarImageUrl'),
-              currentAvatarThumbnailImageUrl: BuiltValueNullFieldError.checkNotNull(
-                  currentAvatarThumbnailImageUrl, 'LimitedUser', 'currentAvatarThumbnailImageUrl'),
+              currentAvatarThumbnailImageUrl:
+                  BuiltValueNullFieldError.checkNotNull(
+                      currentAvatarThumbnailImageUrl,
+                      'LimitedUser',
+                      'currentAvatarThumbnailImageUrl'),
+              developerType: BuiltValueNullFieldError.checkNotNull(
+                  developerType, 'LimitedUser', 'developerType'),
+              displayName: BuiltValueNullFieldError.checkNotNull(
+                  displayName, 'LimitedUser', 'displayName'),
               fallbackAvatar: BuiltValueNullFieldError.checkNotNull(
                   fallbackAvatar, 'LimitedUser', 'fallbackAvatar'),
-              developerType: BuiltValueNullFieldError.checkNotNull(developerType, 'LimitedUser', 'developerType'),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, 'LimitedUser', 'id'),
+              isFriend:
+                  BuiltValueNullFieldError.checkNotNull(isFriend, 'LimitedUser', 'isFriend'),
               lastPlatform: BuiltValueNullFieldError.checkNotNull(lastPlatform, 'LimitedUser', 'lastPlatform'),
+              profilePicOverride: BuiltValueNullFieldError.checkNotNull(profilePicOverride, 'LimitedUser', 'profilePicOverride'),
               status: BuiltValueNullFieldError.checkNotNull(status, 'LimitedUser', 'status'),
-              isFriend: BuiltValueNullFieldError.checkNotNull(isFriend, 'LimitedUser', 'isFriend'),
-              tags: tags.build());
+              statusDescription: BuiltValueNullFieldError.checkNotNull(statusDescription, 'LimitedUser', 'statusDescription'),
+              tags: tags.build(),
+              userIcon: BuiltValueNullFieldError.checkNotNull(userIcon, 'LimitedUser', 'userIcon'),
+              username: BuiltValueNullFieldError.checkNotNull(username, 'LimitedUser', 'username'));
     } catch (_) {
       late String _$failedField;
       try {

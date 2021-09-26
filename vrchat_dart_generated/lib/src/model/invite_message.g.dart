@@ -8,43 +8,43 @@ part of 'invite_message.dart';
 
 class _$InviteMessage extends InviteMessage {
   @override
-  final String id;
+  final bool canBeUpdated;
   @override
-  final int slot;
+  final String id;
   @override
   final String message;
   @override
   final InviteMessageType messageType;
   @override
-  final DateTime updatedAt;
-  @override
   final int remainingCooldownMinutes;
   @override
-  final bool canBeUpdated;
+  final int slot;
+  @override
+  final DateTime updatedAt;
 
   factory _$InviteMessage([void Function(InviteMessageBuilder)? updates]) =>
       (new InviteMessageBuilder()..update(updates)).build();
 
   _$InviteMessage._(
-      {required this.id,
-      required this.slot,
+      {required this.canBeUpdated,
+      required this.id,
       required this.message,
       required this.messageType,
-      required this.updatedAt,
       required this.remainingCooldownMinutes,
-      required this.canBeUpdated})
+      required this.slot,
+      required this.updatedAt})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        canBeUpdated, 'InviteMessage', 'canBeUpdated');
     BuiltValueNullFieldError.checkNotNull(id, 'InviteMessage', 'id');
-    BuiltValueNullFieldError.checkNotNull(slot, 'InviteMessage', 'slot');
     BuiltValueNullFieldError.checkNotNull(message, 'InviteMessage', 'message');
     BuiltValueNullFieldError.checkNotNull(
         messageType, 'InviteMessage', 'messageType');
     BuiltValueNullFieldError.checkNotNull(
-        updatedAt, 'InviteMessage', 'updatedAt');
-    BuiltValueNullFieldError.checkNotNull(
         remainingCooldownMinutes, 'InviteMessage', 'remainingCooldownMinutes');
+    BuiltValueNullFieldError.checkNotNull(slot, 'InviteMessage', 'slot');
     BuiltValueNullFieldError.checkNotNull(
-        canBeUpdated, 'InviteMessage', 'canBeUpdated');
+        updatedAt, 'InviteMessage', 'updatedAt');
   }
 
   @override
@@ -58,13 +58,13 @@ class _$InviteMessage extends InviteMessage {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is InviteMessage &&
+        canBeUpdated == other.canBeUpdated &&
         id == other.id &&
-        slot == other.slot &&
         message == other.message &&
         messageType == other.messageType &&
-        updatedAt == other.updatedAt &&
         remainingCooldownMinutes == other.remainingCooldownMinutes &&
-        canBeUpdated == other.canBeUpdated;
+        slot == other.slot &&
+        updatedAt == other.updatedAt;
   }
 
   @override
@@ -73,24 +73,24 @@ class _$InviteMessage extends InviteMessage {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, id.hashCode), slot.hashCode),
+                    $jc($jc($jc(0, canBeUpdated.hashCode), id.hashCode),
                         message.hashCode),
                     messageType.hashCode),
-                updatedAt.hashCode),
-            remainingCooldownMinutes.hashCode),
-        canBeUpdated.hashCode));
+                remainingCooldownMinutes.hashCode),
+            slot.hashCode),
+        updatedAt.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('InviteMessage')
+          ..add('canBeUpdated', canBeUpdated)
           ..add('id', id)
-          ..add('slot', slot)
           ..add('message', message)
           ..add('messageType', messageType)
-          ..add('updatedAt', updatedAt)
           ..add('remainingCooldownMinutes', remainingCooldownMinutes)
-          ..add('canBeUpdated', canBeUpdated))
+          ..add('slot', slot)
+          ..add('updatedAt', updatedAt))
         .toString();
   }
 }
@@ -99,13 +99,13 @@ class InviteMessageBuilder
     implements Builder<InviteMessage, InviteMessageBuilder> {
   _$InviteMessage? _$v;
 
+  bool? _canBeUpdated;
+  bool? get canBeUpdated => _$this._canBeUpdated;
+  set canBeUpdated(bool? canBeUpdated) => _$this._canBeUpdated = canBeUpdated;
+
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
-
-  int? _slot;
-  int? get slot => _$this._slot;
-  set slot(int? slot) => _$this._slot = slot;
 
   String? _message;
   String? get message => _$this._message;
@@ -116,18 +116,18 @@ class InviteMessageBuilder
   set messageType(InviteMessageType? messageType) =>
       _$this._messageType = messageType;
 
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
-
   int? _remainingCooldownMinutes;
   int? get remainingCooldownMinutes => _$this._remainingCooldownMinutes;
   set remainingCooldownMinutes(int? remainingCooldownMinutes) =>
       _$this._remainingCooldownMinutes = remainingCooldownMinutes;
 
-  bool? _canBeUpdated;
-  bool? get canBeUpdated => _$this._canBeUpdated;
-  set canBeUpdated(bool? canBeUpdated) => _$this._canBeUpdated = canBeUpdated;
+  int? _slot;
+  int? get slot => _$this._slot;
+  set slot(int? slot) => _$this._slot = slot;
+
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
   InviteMessageBuilder() {
     InviteMessage._defaults(this);
@@ -136,13 +136,13 @@ class InviteMessageBuilder
   InviteMessageBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _canBeUpdated = $v.canBeUpdated;
       _id = $v.id;
-      _slot = $v.slot;
       _message = $v.message;
       _messageType = $v.messageType;
-      _updatedAt = $v.updatedAt;
       _remainingCooldownMinutes = $v.remainingCooldownMinutes;
-      _canBeUpdated = $v.canBeUpdated;
+      _slot = $v.slot;
+      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
@@ -163,22 +163,22 @@ class InviteMessageBuilder
   _$InviteMessage build() {
     final _$result = _$v ??
         new _$InviteMessage._(
+            canBeUpdated: BuiltValueNullFieldError.checkNotNull(
+                canBeUpdated, 'InviteMessage', 'canBeUpdated'),
             id: BuiltValueNullFieldError.checkNotNull(
                 id, 'InviteMessage', 'id'),
-            slot: BuiltValueNullFieldError.checkNotNull(
-                slot, 'InviteMessage', 'slot'),
             message: BuiltValueNullFieldError.checkNotNull(
                 message, 'InviteMessage', 'message'),
             messageType: BuiltValueNullFieldError.checkNotNull(
                 messageType, 'InviteMessage', 'messageType'),
-            updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, 'InviteMessage', 'updatedAt'),
             remainingCooldownMinutes: BuiltValueNullFieldError.checkNotNull(
                 remainingCooldownMinutes,
                 'InviteMessage',
                 'remainingCooldownMinutes'),
-            canBeUpdated: BuiltValueNullFieldError.checkNotNull(
-                canBeUpdated, 'InviteMessage', 'canBeUpdated'));
+            slot: BuiltValueNullFieldError.checkNotNull(
+                slot, 'InviteMessage', 'slot'),
+            updatedAt: BuiltValueNullFieldError.checkNotNull(
+                updatedAt, 'InviteMessage', 'updatedAt'));
     replace(_$result);
     return _$result;
   }

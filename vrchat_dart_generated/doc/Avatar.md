@@ -21,11 +21,11 @@ Name | Type | Description | Notes
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | 
 **tags** | **BuiltList&lt;String&gt;** |  | 
 **thumbnailImageUrl** | **String** |  | 
-**unityPackages** | [**BuiltSet&lt;UnityPackage&gt;**](UnityPackage.md) |  | 
 **unityPackageUrl** | **String** |  | 
 **unityPackageUrlObject** | [**AvatarUnityPackageUrlObject**](AvatarUnityPackageUrlObject.md) |  | 
+**unityPackages** | [**BuiltSet&lt;UnityPackage&gt;**](UnityPackage.md) |  | 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
-**version** | **num** |  | [default to 0]
+**version** | **int** |  | [default to 0]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -8,25 +8,25 @@ part of 'friend_status.dart';
 
 class _$FriendStatus extends FriendStatus {
   @override
+  final bool incomingRequest;
+  @override
   final bool isFriend;
   @override
   final bool outgoingRequest;
-  @override
-  final bool incomingRequest;
 
   factory _$FriendStatus([void Function(FriendStatusBuilder)? updates]) =>
       (new FriendStatusBuilder()..update(updates)).build();
 
   _$FriendStatus._(
-      {required this.isFriend,
-      required this.outgoingRequest,
-      required this.incomingRequest})
+      {required this.incomingRequest,
+      required this.isFriend,
+      required this.outgoingRequest})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        incomingRequest, 'FriendStatus', 'incomingRequest');
     BuiltValueNullFieldError.checkNotNull(isFriend, 'FriendStatus', 'isFriend');
     BuiltValueNullFieldError.checkNotNull(
         outgoingRequest, 'FriendStatus', 'outgoingRequest');
-    BuiltValueNullFieldError.checkNotNull(
-        incomingRequest, 'FriendStatus', 'incomingRequest');
   }
 
   @override
@@ -40,23 +40,23 @@ class _$FriendStatus extends FriendStatus {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is FriendStatus &&
+        incomingRequest == other.incomingRequest &&
         isFriend == other.isFriend &&
-        outgoingRequest == other.outgoingRequest &&
-        incomingRequest == other.incomingRequest;
+        outgoingRequest == other.outgoingRequest;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc(0, isFriend.hashCode), outgoingRequest.hashCode),
-        incomingRequest.hashCode));
+    return $jf($jc($jc($jc(0, incomingRequest.hashCode), isFriend.hashCode),
+        outgoingRequest.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FriendStatus')
+          ..add('incomingRequest', incomingRequest)
           ..add('isFriend', isFriend)
-          ..add('outgoingRequest', outgoingRequest)
-          ..add('incomingRequest', incomingRequest))
+          ..add('outgoingRequest', outgoingRequest))
         .toString();
   }
 }
@@ -64,6 +64,11 @@ class _$FriendStatus extends FriendStatus {
 class FriendStatusBuilder
     implements Builder<FriendStatus, FriendStatusBuilder> {
   _$FriendStatus? _$v;
+
+  bool? _incomingRequest;
+  bool? get incomingRequest => _$this._incomingRequest;
+  set incomingRequest(bool? incomingRequest) =>
+      _$this._incomingRequest = incomingRequest;
 
   bool? _isFriend;
   bool? get isFriend => _$this._isFriend;
@@ -74,11 +79,6 @@ class FriendStatusBuilder
   set outgoingRequest(bool? outgoingRequest) =>
       _$this._outgoingRequest = outgoingRequest;
 
-  bool? _incomingRequest;
-  bool? get incomingRequest => _$this._incomingRequest;
-  set incomingRequest(bool? incomingRequest) =>
-      _$this._incomingRequest = incomingRequest;
-
   FriendStatusBuilder() {
     FriendStatus._defaults(this);
   }
@@ -86,9 +86,9 @@ class FriendStatusBuilder
   FriendStatusBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _incomingRequest = $v.incomingRequest;
       _isFriend = $v.isFriend;
       _outgoingRequest = $v.outgoingRequest;
-      _incomingRequest = $v.incomingRequest;
       _$v = null;
     }
     return this;
@@ -109,12 +109,12 @@ class FriendStatusBuilder
   _$FriendStatus build() {
     final _$result = _$v ??
         new _$FriendStatus._(
+            incomingRequest: BuiltValueNullFieldError.checkNotNull(
+                incomingRequest, 'FriendStatus', 'incomingRequest'),
             isFriend: BuiltValueNullFieldError.checkNotNull(
                 isFriend, 'FriendStatus', 'isFriend'),
             outgoingRequest: BuiltValueNullFieldError.checkNotNull(
-                outgoingRequest, 'FriendStatus', 'outgoingRequest'),
-            incomingRequest: BuiltValueNullFieldError.checkNotNull(
-                incomingRequest, 'FriendStatus', 'incomingRequest'));
+                outgoingRequest, 'FriendStatus', 'outgoingRequest'));
     replace(_$result);
     return _$result;
   }

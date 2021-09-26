@@ -8,46 +8,46 @@ part of 'favorite_group.dart';
 
 class _$FavoriteGroup extends FavoriteGroup {
   @override
+  final String displayName;
+  @override
   final String id;
-  @override
-  final String ownerId;
-  @override
-  final String ownerDisplayName;
   @override
   final String name;
   @override
-  final String displayName;
+  final String ownerDisplayName;
+  @override
+  final String ownerId;
+  @override
+  final BuiltList<String> tags;
   @override
   final FavoriteType type;
   @override
   final FavoriteGroupVisibility visibility;
-  @override
-  final BuiltList<String> tags;
 
   factory _$FavoriteGroup([void Function(FavoriteGroupBuilder)? updates]) =>
       (new FavoriteGroupBuilder()..update(updates)).build();
 
   _$FavoriteGroup._(
-      {required this.id,
-      required this.ownerId,
-      required this.ownerDisplayName,
+      {required this.displayName,
+      required this.id,
       required this.name,
-      required this.displayName,
+      required this.ownerDisplayName,
+      required this.ownerId,
+      required this.tags,
       required this.type,
-      required this.visibility,
-      required this.tags})
+      required this.visibility})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, 'FavoriteGroup', 'id');
-    BuiltValueNullFieldError.checkNotNull(ownerId, 'FavoriteGroup', 'ownerId');
-    BuiltValueNullFieldError.checkNotNull(
-        ownerDisplayName, 'FavoriteGroup', 'ownerDisplayName');
-    BuiltValueNullFieldError.checkNotNull(name, 'FavoriteGroup', 'name');
     BuiltValueNullFieldError.checkNotNull(
         displayName, 'FavoriteGroup', 'displayName');
+    BuiltValueNullFieldError.checkNotNull(id, 'FavoriteGroup', 'id');
+    BuiltValueNullFieldError.checkNotNull(name, 'FavoriteGroup', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        ownerDisplayName, 'FavoriteGroup', 'ownerDisplayName');
+    BuiltValueNullFieldError.checkNotNull(ownerId, 'FavoriteGroup', 'ownerId');
+    BuiltValueNullFieldError.checkNotNull(tags, 'FavoriteGroup', 'tags');
     BuiltValueNullFieldError.checkNotNull(type, 'FavoriteGroup', 'type');
     BuiltValueNullFieldError.checkNotNull(
         visibility, 'FavoriteGroup', 'visibility');
-    BuiltValueNullFieldError.checkNotNull(tags, 'FavoriteGroup', 'tags');
   }
 
   @override
@@ -61,14 +61,14 @@ class _$FavoriteGroup extends FavoriteGroup {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is FavoriteGroup &&
-        id == other.id &&
-        ownerId == other.ownerId &&
-        ownerDisplayName == other.ownerDisplayName &&
-        name == other.name &&
         displayName == other.displayName &&
+        id == other.id &&
+        name == other.name &&
+        ownerDisplayName == other.ownerDisplayName &&
+        ownerId == other.ownerId &&
+        tags == other.tags &&
         type == other.type &&
-        visibility == other.visibility &&
-        tags == other.tags;
+        visibility == other.visibility;
   }
 
   @override
@@ -78,26 +78,26 @@ class _$FavoriteGroup extends FavoriteGroup {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, id.hashCode), ownerId.hashCode),
-                            ownerDisplayName.hashCode),
-                        name.hashCode),
-                    displayName.hashCode),
-                type.hashCode),
-            visibility.hashCode),
-        tags.hashCode));
+                        $jc($jc($jc(0, displayName.hashCode), id.hashCode),
+                            name.hashCode),
+                        ownerDisplayName.hashCode),
+                    ownerId.hashCode),
+                tags.hashCode),
+            type.hashCode),
+        visibility.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FavoriteGroup')
-          ..add('id', id)
-          ..add('ownerId', ownerId)
-          ..add('ownerDisplayName', ownerDisplayName)
-          ..add('name', name)
           ..add('displayName', displayName)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('ownerDisplayName', ownerDisplayName)
+          ..add('ownerId', ownerId)
+          ..add('tags', tags)
           ..add('type', type)
-          ..add('visibility', visibility)
-          ..add('tags', tags))
+          ..add('visibility', visibility))
         .toString();
   }
 }
@@ -106,26 +106,30 @@ class FavoriteGroupBuilder
     implements Builder<FavoriteGroup, FavoriteGroupBuilder> {
   _$FavoriteGroup? _$v;
 
+  String? _displayName;
+  String? get displayName => _$this._displayName;
+  set displayName(String? displayName) => _$this._displayName = displayName;
+
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  String? _ownerId;
-  String? get ownerId => _$this._ownerId;
-  set ownerId(String? ownerId) => _$this._ownerId = ownerId;
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
   String? _ownerDisplayName;
   String? get ownerDisplayName => _$this._ownerDisplayName;
   set ownerDisplayName(String? ownerDisplayName) =>
       _$this._ownerDisplayName = ownerDisplayName;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
+  String? _ownerId;
+  String? get ownerId => _$this._ownerId;
+  set ownerId(String? ownerId) => _$this._ownerId = ownerId;
 
-  String? _displayName;
-  String? get displayName => _$this._displayName;
-  set displayName(String? displayName) => _$this._displayName = displayName;
+  ListBuilder<String>? _tags;
+  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
+  set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
   FavoriteType? _type;
   FavoriteType? get type => _$this._type;
@@ -136,10 +140,6 @@ class FavoriteGroupBuilder
   set visibility(FavoriteGroupVisibility? visibility) =>
       _$this._visibility = visibility;
 
-  ListBuilder<String>? _tags;
-  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
-  set tags(ListBuilder<String>? tags) => _$this._tags = tags;
-
   FavoriteGroupBuilder() {
     FavoriteGroup._defaults(this);
   }
@@ -147,14 +147,14 @@ class FavoriteGroupBuilder
   FavoriteGroupBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id;
-      _ownerId = $v.ownerId;
-      _ownerDisplayName = $v.ownerDisplayName;
-      _name = $v.name;
       _displayName = $v.displayName;
+      _id = $v.id;
+      _name = $v.name;
+      _ownerDisplayName = $v.ownerDisplayName;
+      _ownerId = $v.ownerId;
+      _tags = $v.tags.toBuilder();
       _type = $v.type;
       _visibility = $v.visibility;
-      _tags = $v.tags.toBuilder();
       _$v = null;
     }
     return this;
@@ -177,21 +177,21 @@ class FavoriteGroupBuilder
     try {
       _$result = _$v ??
           new _$FavoriteGroup._(
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, 'FavoriteGroup', 'id'),
-              ownerId: BuiltValueNullFieldError.checkNotNull(
-                  ownerId, 'FavoriteGroup', 'ownerId'),
-              ownerDisplayName: BuiltValueNullFieldError.checkNotNull(
-                  ownerDisplayName, 'FavoriteGroup', 'ownerDisplayName'),
-              name: BuiltValueNullFieldError.checkNotNull(
-                  name, 'FavoriteGroup', 'name'),
               displayName: BuiltValueNullFieldError.checkNotNull(
                   displayName, 'FavoriteGroup', 'displayName'),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, 'FavoriteGroup', 'id'),
+              name: BuiltValueNullFieldError.checkNotNull(
+                  name, 'FavoriteGroup', 'name'),
+              ownerDisplayName: BuiltValueNullFieldError.checkNotNull(
+                  ownerDisplayName, 'FavoriteGroup', 'ownerDisplayName'),
+              ownerId: BuiltValueNullFieldError.checkNotNull(
+                  ownerId, 'FavoriteGroup', 'ownerId'),
+              tags: tags.build(),
               type: BuiltValueNullFieldError.checkNotNull(
                   type, 'FavoriteGroup', 'type'),
               visibility: BuiltValueNullFieldError.checkNotNull(
-                  visibility, 'FavoriteGroup', 'visibility'),
-              tags: tags.build());
+                  visibility, 'FavoriteGroup', 'visibility'));
     } catch (_) {
       late String _$failedField;
       try {

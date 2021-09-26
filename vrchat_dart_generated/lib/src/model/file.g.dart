@@ -8,15 +8,15 @@ part of 'file.dart';
 
 class _$File extends File {
   @override
+  final String extension_;
+  @override
   final String id;
+  @override
+  final MIMEType mimeType;
   @override
   final String name;
   @override
   final String ownerId;
-  @override
-  final MIMEType mimeType;
-  @override
-  final String extension_;
   @override
   final BuiltList<String> tags;
   @override
@@ -26,19 +26,19 @@ class _$File extends File {
       (new FileBuilder()..update(updates)).build();
 
   _$File._(
-      {required this.id,
+      {required this.extension_,
+      required this.id,
+      required this.mimeType,
       required this.name,
       required this.ownerId,
-      required this.mimeType,
-      required this.extension_,
       required this.tags,
       required this.versions})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(extension_, 'File', 'extension_');
     BuiltValueNullFieldError.checkNotNull(id, 'File', 'id');
+    BuiltValueNullFieldError.checkNotNull(mimeType, 'File', 'mimeType');
     BuiltValueNullFieldError.checkNotNull(name, 'File', 'name');
     BuiltValueNullFieldError.checkNotNull(ownerId, 'File', 'ownerId');
-    BuiltValueNullFieldError.checkNotNull(mimeType, 'File', 'mimeType');
-    BuiltValueNullFieldError.checkNotNull(extension_, 'File', 'extension_');
     BuiltValueNullFieldError.checkNotNull(tags, 'File', 'tags');
     BuiltValueNullFieldError.checkNotNull(versions, 'File', 'versions');
   }
@@ -54,11 +54,11 @@ class _$File extends File {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is File &&
+        extension_ == other.extension_ &&
         id == other.id &&
+        mimeType == other.mimeType &&
         name == other.name &&
         ownerId == other.ownerId &&
-        mimeType == other.mimeType &&
-        extension_ == other.extension_ &&
         tags == other.tags &&
         versions == other.versions;
   }
@@ -69,10 +69,10 @@ class _$File extends File {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, id.hashCode), name.hashCode),
-                        ownerId.hashCode),
-                    mimeType.hashCode),
-                extension_.hashCode),
+                    $jc($jc($jc(0, extension_.hashCode), id.hashCode),
+                        mimeType.hashCode),
+                    name.hashCode),
+                ownerId.hashCode),
             tags.hashCode),
         versions.hashCode));
   }
@@ -80,11 +80,11 @@ class _$File extends File {
   @override
   String toString() {
     return (newBuiltValueToStringHelper('File')
+          ..add('extension_', extension_)
           ..add('id', id)
+          ..add('mimeType', mimeType)
           ..add('name', name)
           ..add('ownerId', ownerId)
-          ..add('mimeType', mimeType)
-          ..add('extension_', extension_)
           ..add('tags', tags)
           ..add('versions', versions))
         .toString();
@@ -94,9 +94,17 @@ class _$File extends File {
 class FileBuilder implements Builder<File, FileBuilder> {
   _$File? _$v;
 
+  String? _extension_;
+  String? get extension_ => _$this._extension_;
+  set extension_(String? extension_) => _$this._extension_ = extension_;
+
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
+
+  MIMEType? _mimeType;
+  MIMEType? get mimeType => _$this._mimeType;
+  set mimeType(MIMEType? mimeType) => _$this._mimeType = mimeType;
 
   String? _name;
   String? get name => _$this._name;
@@ -105,14 +113,6 @@ class FileBuilder implements Builder<File, FileBuilder> {
   String? _ownerId;
   String? get ownerId => _$this._ownerId;
   set ownerId(String? ownerId) => _$this._ownerId = ownerId;
-
-  MIMEType? _mimeType;
-  MIMEType? get mimeType => _$this._mimeType;
-  set mimeType(MIMEType? mimeType) => _$this._mimeType = mimeType;
-
-  String? _extension_;
-  String? get extension_ => _$this._extension_;
-  set extension_(String? extension_) => _$this._extension_ = extension_;
 
   ListBuilder<String>? _tags;
   ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
@@ -131,11 +131,11 @@ class FileBuilder implements Builder<File, FileBuilder> {
   FileBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _extension_ = $v.extension_;
       _id = $v.id;
+      _mimeType = $v.mimeType;
       _name = $v.name;
       _ownerId = $v.ownerId;
-      _mimeType = $v.mimeType;
-      _extension_ = $v.extension_;
       _tags = $v.tags.toBuilder();
       _versions = $v.versions.toBuilder();
       _$v = null;
@@ -160,14 +160,14 @@ class FileBuilder implements Builder<File, FileBuilder> {
     try {
       _$result = _$v ??
           new _$File._(
+              extension_: BuiltValueNullFieldError.checkNotNull(
+                  extension_, 'File', 'extension_'),
               id: BuiltValueNullFieldError.checkNotNull(id, 'File', 'id'),
+              mimeType: BuiltValueNullFieldError.checkNotNull(
+                  mimeType, 'File', 'mimeType'),
               name: BuiltValueNullFieldError.checkNotNull(name, 'File', 'name'),
               ownerId: BuiltValueNullFieldError.checkNotNull(
                   ownerId, 'File', 'ownerId'),
-              mimeType: BuiltValueNullFieldError.checkNotNull(
-                  mimeType, 'File', 'mimeType'),
-              extension_: BuiltValueNullFieldError.checkNotNull(
-                  extension_, 'File', 'extension_'),
               tags: tags.build(),
               versions: versions.build());
     } catch (_) {

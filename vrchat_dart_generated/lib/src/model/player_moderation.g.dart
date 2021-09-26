@@ -8,45 +8,45 @@ part of 'player_moderation.dart';
 
 class _$PlayerModeration extends PlayerModeration {
   @override
+  final DateTime created;
+  @override
   final String id;
-  @override
-  final PlayerModerationType type;
-  @override
-  final String sourceUserId;
   @override
   final String sourceDisplayName;
   @override
-  final String targetUserId;
+  final String sourceUserId;
   @override
   final String targetDisplayName;
   @override
-  final DateTime created;
+  final String targetUserId;
+  @override
+  final PlayerModerationType type;
 
   factory _$PlayerModeration(
           [void Function(PlayerModerationBuilder)? updates]) =>
       (new PlayerModerationBuilder()..update(updates)).build();
 
   _$PlayerModeration._(
-      {required this.id,
-      required this.type,
-      required this.sourceUserId,
+      {required this.created,
+      required this.id,
       required this.sourceDisplayName,
-      required this.targetUserId,
+      required this.sourceUserId,
       required this.targetDisplayName,
-      required this.created})
+      required this.targetUserId,
+      required this.type})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, 'PlayerModeration', 'id');
-    BuiltValueNullFieldError.checkNotNull(type, 'PlayerModeration', 'type');
     BuiltValueNullFieldError.checkNotNull(
-        sourceUserId, 'PlayerModeration', 'sourceUserId');
+        created, 'PlayerModeration', 'created');
+    BuiltValueNullFieldError.checkNotNull(id, 'PlayerModeration', 'id');
     BuiltValueNullFieldError.checkNotNull(
         sourceDisplayName, 'PlayerModeration', 'sourceDisplayName');
     BuiltValueNullFieldError.checkNotNull(
-        targetUserId, 'PlayerModeration', 'targetUserId');
+        sourceUserId, 'PlayerModeration', 'sourceUserId');
     BuiltValueNullFieldError.checkNotNull(
         targetDisplayName, 'PlayerModeration', 'targetDisplayName');
     BuiltValueNullFieldError.checkNotNull(
-        created, 'PlayerModeration', 'created');
+        targetUserId, 'PlayerModeration', 'targetUserId');
+    BuiltValueNullFieldError.checkNotNull(type, 'PlayerModeration', 'type');
   }
 
   @override
@@ -61,13 +61,13 @@ class _$PlayerModeration extends PlayerModeration {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is PlayerModeration &&
+        created == other.created &&
         id == other.id &&
-        type == other.type &&
-        sourceUserId == other.sourceUserId &&
         sourceDisplayName == other.sourceDisplayName &&
-        targetUserId == other.targetUserId &&
+        sourceUserId == other.sourceUserId &&
         targetDisplayName == other.targetDisplayName &&
-        created == other.created;
+        targetUserId == other.targetUserId &&
+        type == other.type;
   }
 
   @override
@@ -76,24 +76,24 @@ class _$PlayerModeration extends PlayerModeration {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, id.hashCode), type.hashCode),
-                        sourceUserId.hashCode),
-                    sourceDisplayName.hashCode),
-                targetUserId.hashCode),
-            targetDisplayName.hashCode),
-        created.hashCode));
+                    $jc($jc($jc(0, created.hashCode), id.hashCode),
+                        sourceDisplayName.hashCode),
+                    sourceUserId.hashCode),
+                targetDisplayName.hashCode),
+            targetUserId.hashCode),
+        type.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PlayerModeration')
+          ..add('created', created)
           ..add('id', id)
-          ..add('type', type)
-          ..add('sourceUserId', sourceUserId)
           ..add('sourceDisplayName', sourceDisplayName)
-          ..add('targetUserId', targetUserId)
+          ..add('sourceUserId', sourceUserId)
           ..add('targetDisplayName', targetDisplayName)
-          ..add('created', created))
+          ..add('targetUserId', targetUserId)
+          ..add('type', type))
         .toString();
   }
 }
@@ -102,35 +102,35 @@ class PlayerModerationBuilder
     implements Builder<PlayerModeration, PlayerModerationBuilder> {
   _$PlayerModeration? _$v;
 
+  DateTime? _created;
+  DateTime? get created => _$this._created;
+  set created(DateTime? created) => _$this._created = created;
+
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
-
-  PlayerModerationType? _type;
-  PlayerModerationType? get type => _$this._type;
-  set type(PlayerModerationType? type) => _$this._type = type;
-
-  String? _sourceUserId;
-  String? get sourceUserId => _$this._sourceUserId;
-  set sourceUserId(String? sourceUserId) => _$this._sourceUserId = sourceUserId;
 
   String? _sourceDisplayName;
   String? get sourceDisplayName => _$this._sourceDisplayName;
   set sourceDisplayName(String? sourceDisplayName) =>
       _$this._sourceDisplayName = sourceDisplayName;
 
-  String? _targetUserId;
-  String? get targetUserId => _$this._targetUserId;
-  set targetUserId(String? targetUserId) => _$this._targetUserId = targetUserId;
+  String? _sourceUserId;
+  String? get sourceUserId => _$this._sourceUserId;
+  set sourceUserId(String? sourceUserId) => _$this._sourceUserId = sourceUserId;
 
   String? _targetDisplayName;
   String? get targetDisplayName => _$this._targetDisplayName;
   set targetDisplayName(String? targetDisplayName) =>
       _$this._targetDisplayName = targetDisplayName;
 
-  DateTime? _created;
-  DateTime? get created => _$this._created;
-  set created(DateTime? created) => _$this._created = created;
+  String? _targetUserId;
+  String? get targetUserId => _$this._targetUserId;
+  set targetUserId(String? targetUserId) => _$this._targetUserId = targetUserId;
+
+  PlayerModerationType? _type;
+  PlayerModerationType? get type => _$this._type;
+  set type(PlayerModerationType? type) => _$this._type = type;
 
   PlayerModerationBuilder() {
     PlayerModeration._defaults(this);
@@ -139,13 +139,13 @@ class PlayerModerationBuilder
   PlayerModerationBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id;
-      _type = $v.type;
-      _sourceUserId = $v.sourceUserId;
-      _sourceDisplayName = $v.sourceDisplayName;
-      _targetUserId = $v.targetUserId;
-      _targetDisplayName = $v.targetDisplayName;
       _created = $v.created;
+      _id = $v.id;
+      _sourceDisplayName = $v.sourceDisplayName;
+      _sourceUserId = $v.sourceUserId;
+      _targetDisplayName = $v.targetDisplayName;
+      _targetUserId = $v.targetUserId;
+      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -166,20 +166,20 @@ class PlayerModerationBuilder
   _$PlayerModeration build() {
     final _$result = _$v ??
         new _$PlayerModeration._(
+            created: BuiltValueNullFieldError.checkNotNull(
+                created, 'PlayerModeration', 'created'),
             id: BuiltValueNullFieldError.checkNotNull(
                 id, 'PlayerModeration', 'id'),
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, 'PlayerModeration', 'type'),
-            sourceUserId: BuiltValueNullFieldError.checkNotNull(
-                sourceUserId, 'PlayerModeration', 'sourceUserId'),
             sourceDisplayName: BuiltValueNullFieldError.checkNotNull(
                 sourceDisplayName, 'PlayerModeration', 'sourceDisplayName'),
-            targetUserId: BuiltValueNullFieldError.checkNotNull(
-                targetUserId, 'PlayerModeration', 'targetUserId'),
+            sourceUserId: BuiltValueNullFieldError.checkNotNull(
+                sourceUserId, 'PlayerModeration', 'sourceUserId'),
             targetDisplayName: BuiltValueNullFieldError.checkNotNull(
                 targetDisplayName, 'PlayerModeration', 'targetDisplayName'),
-            created: BuiltValueNullFieldError.checkNotNull(
-                created, 'PlayerModeration', 'created'));
+            targetUserId: BuiltValueNullFieldError.checkNotNull(
+                targetUserId, 'PlayerModeration', 'targetUserId'),
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, 'PlayerModeration', 'type'));
     replace(_$result);
     return _$result;
   }

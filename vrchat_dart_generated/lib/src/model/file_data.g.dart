@@ -68,40 +68,40 @@ class _$FileDataCategoryEnumSerializer
 
 class _$FileData extends FileData {
   @override
-  final String fileName;
+  final FileDataCategoryEnum category;
   @override
-  final String url;
+  final String fileName;
   @override
   final String md5;
   @override
-  final num sizeInBytes;
+  final int sizeInBytes;
   @override
   final FileStatus status;
   @override
-  final FileDataCategoryEnum category;
-  @override
   final String uploadId;
+  @override
+  final String url;
 
   factory _$FileData([void Function(FileDataBuilder)? updates]) =>
       (new FileDataBuilder()..update(updates)).build();
 
   _$FileData._(
-      {required this.fileName,
-      required this.url,
+      {required this.category,
+      required this.fileName,
       required this.md5,
       required this.sizeInBytes,
       required this.status,
-      required this.category,
-      required this.uploadId})
+      required this.uploadId,
+      required this.url})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(category, 'FileData', 'category');
     BuiltValueNullFieldError.checkNotNull(fileName, 'FileData', 'fileName');
-    BuiltValueNullFieldError.checkNotNull(url, 'FileData', 'url');
     BuiltValueNullFieldError.checkNotNull(md5, 'FileData', 'md5');
     BuiltValueNullFieldError.checkNotNull(
         sizeInBytes, 'FileData', 'sizeInBytes');
     BuiltValueNullFieldError.checkNotNull(status, 'FileData', 'status');
-    BuiltValueNullFieldError.checkNotNull(category, 'FileData', 'category');
     BuiltValueNullFieldError.checkNotNull(uploadId, 'FileData', 'uploadId');
+    BuiltValueNullFieldError.checkNotNull(url, 'FileData', 'url');
   }
 
   @override
@@ -115,13 +115,13 @@ class _$FileData extends FileData {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is FileData &&
+        category == other.category &&
         fileName == other.fileName &&
-        url == other.url &&
         md5 == other.md5 &&
         sizeInBytes == other.sizeInBytes &&
         status == other.status &&
-        category == other.category &&
-        uploadId == other.uploadId;
+        uploadId == other.uploadId &&
+        url == other.url;
   }
 
   @override
@@ -130,24 +130,24 @@ class _$FileData extends FileData {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, fileName.hashCode), url.hashCode),
+                    $jc($jc($jc(0, category.hashCode), fileName.hashCode),
                         md5.hashCode),
                     sizeInBytes.hashCode),
                 status.hashCode),
-            category.hashCode),
-        uploadId.hashCode));
+            uploadId.hashCode),
+        url.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FileData')
+          ..add('category', category)
           ..add('fileName', fileName)
-          ..add('url', url)
           ..add('md5', md5)
           ..add('sizeInBytes', sizeInBytes)
           ..add('status', status)
-          ..add('category', category)
-          ..add('uploadId', uploadId))
+          ..add('uploadId', uploadId)
+          ..add('url', url))
         .toString();
   }
 }
@@ -155,33 +155,33 @@ class _$FileData extends FileData {
 class FileDataBuilder implements Builder<FileData, FileDataBuilder> {
   _$FileData? _$v;
 
+  FileDataCategoryEnum? _category;
+  FileDataCategoryEnum? get category => _$this._category;
+  set category(FileDataCategoryEnum? category) => _$this._category = category;
+
   String? _fileName;
   String? get fileName => _$this._fileName;
   set fileName(String? fileName) => _$this._fileName = fileName;
-
-  String? _url;
-  String? get url => _$this._url;
-  set url(String? url) => _$this._url = url;
 
   String? _md5;
   String? get md5 => _$this._md5;
   set md5(String? md5) => _$this._md5 = md5;
 
-  num? _sizeInBytes;
-  num? get sizeInBytes => _$this._sizeInBytes;
-  set sizeInBytes(num? sizeInBytes) => _$this._sizeInBytes = sizeInBytes;
+  int? _sizeInBytes;
+  int? get sizeInBytes => _$this._sizeInBytes;
+  set sizeInBytes(int? sizeInBytes) => _$this._sizeInBytes = sizeInBytes;
 
   FileStatus? _status;
   FileStatus? get status => _$this._status;
   set status(FileStatus? status) => _$this._status = status;
 
-  FileDataCategoryEnum? _category;
-  FileDataCategoryEnum? get category => _$this._category;
-  set category(FileDataCategoryEnum? category) => _$this._category = category;
-
   String? _uploadId;
   String? get uploadId => _$this._uploadId;
   set uploadId(String? uploadId) => _$this._uploadId = uploadId;
+
+  String? _url;
+  String? get url => _$this._url;
+  set url(String? url) => _$this._url = url;
 
   FileDataBuilder() {
     FileData._defaults(this);
@@ -190,13 +190,13 @@ class FileDataBuilder implements Builder<FileData, FileDataBuilder> {
   FileDataBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _category = $v.category;
       _fileName = $v.fileName;
-      _url = $v.url;
       _md5 = $v.md5;
       _sizeInBytes = $v.sizeInBytes;
       _status = $v.status;
-      _category = $v.category;
       _uploadId = $v.uploadId;
+      _url = $v.url;
       _$v = null;
     }
     return this;
@@ -217,18 +217,18 @@ class FileDataBuilder implements Builder<FileData, FileDataBuilder> {
   _$FileData build() {
     final _$result = _$v ??
         new _$FileData._(
+            category: BuiltValueNullFieldError.checkNotNull(
+                category, 'FileData', 'category'),
             fileName: BuiltValueNullFieldError.checkNotNull(
                 fileName, 'FileData', 'fileName'),
-            url: BuiltValueNullFieldError.checkNotNull(url, 'FileData', 'url'),
             md5: BuiltValueNullFieldError.checkNotNull(md5, 'FileData', 'md5'),
             sizeInBytes: BuiltValueNullFieldError.checkNotNull(
                 sizeInBytes, 'FileData', 'sizeInBytes'),
             status: BuiltValueNullFieldError.checkNotNull(
                 status, 'FileData', 'status'),
-            category: BuiltValueNullFieldError.checkNotNull(
-                category, 'FileData', 'category'),
             uploadId: BuiltValueNullFieldError.checkNotNull(
-                uploadId, 'FileData', 'uploadId'));
+                uploadId, 'FileData', 'uploadId'),
+            url: BuiltValueNullFieldError.checkNotNull(url, 'FileData', 'url'));
     replace(_$result);
     return _$result;
   }

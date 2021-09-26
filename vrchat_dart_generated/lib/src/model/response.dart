@@ -17,7 +17,7 @@ abstract class Response implements Built<Response, ResponseBuilder> {
   String? get message;
 
   @BuiltValueField(wireName: r'status_code')
-  num get statusCode;
+  int get statusCode;
 
   Response._();
 
@@ -50,7 +50,7 @@ class _$ResponseSerializer implements StructuredSerializer<Response> {
     result
       ..add(r'status_code')
       ..add(serializers.serialize(object.statusCode,
-          specifiedType: const FullType(num)));
+          specifiedType: const FullType(int)));
     return result;
   }
 
@@ -71,7 +71,7 @@ class _$ResponseSerializer implements StructuredSerializer<Response> {
           break;
         case r'status_code':
           result.statusCode = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
+              specifiedType: const FullType(int)) as int;
           break;
       }
     }

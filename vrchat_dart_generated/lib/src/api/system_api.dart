@@ -7,8 +7,10 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:vrchat_dart_generated/src/model/config.dart';
+import 'package:vrchat_dart_generated/src/api_util.dart';
+import 'package:vrchat_dart_generated/src/model/api_config.dart';
 import 'package:vrchat_dart_generated/src/model/inline_response2002.dart';
+import 'package:vrchat_dart_generated/src/model/inline_response400.dart';
 
 class SystemApi {
   final Dio _dio;
@@ -16,6 +18,87 @@ class SystemApi {
   final Serializers _serializers;
 
   const SystemApi(this._dio, this._serializers);
+
+  /// Download Frontend CSS
+  /// Fetches the CSS code to the frontend React website.
+  ///
+  /// Parameters:
+  /// * [variant] - Specifies which `variant` of the site. Public is the end-user site, while `internal` is the staff-only site with special pages for moderation and management.
+  /// * [branch] - Specifies which git branch the site should load frontend source code from.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [String] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<String>> getCSS({
+    String? variant = 'public',
+    String? branch = 'main',
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/css/app.js';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (variant != null)
+        r'variant':
+            encodeQueryParameter(_serializers, variant, const FullType(String)),
+      if (branch != null)
+        r'branch':
+            encodeQueryParameter(_serializers, branch, const FullType(String)),
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    String _responseData;
+
+    try {
+      _responseData = _response.data as String;
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<String>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
 
   /// Fetch API Config
   /// API config contains configuration that the clients needs to work properly.  Currently the most important value here is &#x60;clientApiKey&#x60; which is used for all other API endpoints.
@@ -28,9 +111,9 @@ class SystemApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Config] as data
+  /// Returns a [Future] containing a [Response] with a [APIConfig] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Config>> getConfig({
+  Future<Response<APIConfig>> getConfig({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -59,14 +142,14 @@ class SystemApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Config _responseData;
+    APIConfig _responseData;
 
     try {
-      const _responseType = FullType(Config);
+      const _responseType = FullType(APIConfig);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as Config;
+      ) as APIConfig;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -76,7 +159,7 @@ class SystemApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<Config>(
+    return Response<APIConfig>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -156,7 +239,7 @@ class SystemApi {
   }
 
   /// Check API Health
-  /// Gets the overall health status, the server name, and the current build version tag of the API.
+  /// ~~Gets the overall health status, the server name, and the current build version tag of the API.~~  **DEPRECATED:** VRChat has suddenly restricted this endpoint for unknown reasons, and now always return 401 Unauthorized.
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -168,6 +251,7 @@ class SystemApi {
   ///
   /// Returns a [Future] containing a [Response] with a [InlineResponse2002] as data
   /// Throws [DioError] if API call or serialization fails
+  @Deprecated('This operation has been deprecated')
   Future<Response<InlineResponse2002>> getHealth({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -215,6 +299,87 @@ class SystemApi {
     }
 
     return Response<InlineResponse2002>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Download Frontend JavaScript
+  /// Fetches the JavaScript code to the frontend React website.
+  ///
+  /// Parameters:
+  /// * [variant] - Specifies which `variant` of the site. Public is the end-user site, while `internal` is the staff-only site with special pages for moderation and management.
+  /// * [branch] - Specifies which git branch the site should load frontend source code from.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [String] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<String>> getJavaScript({
+    String? variant = 'public',
+    String? branch = 'main',
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/js/app.js';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (variant != null)
+        r'variant':
+            encodeQueryParameter(_serializers, variant, const FullType(String)),
+      if (branch != null)
+        r'branch':
+            encodeQueryParameter(_serializers, branch, const FullType(String)),
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    String _responseData;
+
+    try {
+      _responseData = _response.data as String;
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<String>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

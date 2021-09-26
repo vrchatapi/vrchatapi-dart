@@ -8,46 +8,46 @@ part of 'notification.dart';
 
 class _$Notification extends Notification {
   @override
+  final DateTime createdAt;
+  @override
+  final String details;
+  @override
   final String id;
+  @override
+  final String message;
+  @override
+  final bool seen;
   @override
   final String senderUserId;
   @override
   final String senderUsername;
   @override
   final NotificationType type;
-  @override
-  final String message;
-  @override
-  final String details;
-  @override
-  final bool seen;
-  @override
-  final DateTime createdAt;
 
   factory _$Notification([void Function(NotificationBuilder)? updates]) =>
       (new NotificationBuilder()..update(updates)).build();
 
   _$Notification._(
-      {required this.id,
+      {required this.createdAt,
+      required this.details,
+      required this.id,
+      required this.message,
+      required this.seen,
       required this.senderUserId,
       required this.senderUsername,
-      required this.type,
-      required this.message,
-      required this.details,
-      required this.seen,
-      required this.createdAt})
+      required this.type})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt, 'Notification', 'createdAt');
+    BuiltValueNullFieldError.checkNotNull(details, 'Notification', 'details');
     BuiltValueNullFieldError.checkNotNull(id, 'Notification', 'id');
+    BuiltValueNullFieldError.checkNotNull(message, 'Notification', 'message');
+    BuiltValueNullFieldError.checkNotNull(seen, 'Notification', 'seen');
     BuiltValueNullFieldError.checkNotNull(
         senderUserId, 'Notification', 'senderUserId');
     BuiltValueNullFieldError.checkNotNull(
         senderUsername, 'Notification', 'senderUsername');
     BuiltValueNullFieldError.checkNotNull(type, 'Notification', 'type');
-    BuiltValueNullFieldError.checkNotNull(message, 'Notification', 'message');
-    BuiltValueNullFieldError.checkNotNull(details, 'Notification', 'details');
-    BuiltValueNullFieldError.checkNotNull(seen, 'Notification', 'seen');
-    BuiltValueNullFieldError.checkNotNull(
-        createdAt, 'Notification', 'createdAt');
   }
 
   @override
@@ -61,14 +61,14 @@ class _$Notification extends Notification {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Notification &&
+        createdAt == other.createdAt &&
+        details == other.details &&
         id == other.id &&
+        message == other.message &&
+        seen == other.seen &&
         senderUserId == other.senderUserId &&
         senderUsername == other.senderUsername &&
-        type == other.type &&
-        message == other.message &&
-        details == other.details &&
-        seen == other.seen &&
-        createdAt == other.createdAt;
+        type == other.type;
   }
 
   @override
@@ -78,26 +78,26 @@ class _$Notification extends Notification {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, id.hashCode), senderUserId.hashCode),
-                            senderUsername.hashCode),
-                        type.hashCode),
-                    message.hashCode),
-                details.hashCode),
-            seen.hashCode),
-        createdAt.hashCode));
+                        $jc($jc($jc(0, createdAt.hashCode), details.hashCode),
+                            id.hashCode),
+                        message.hashCode),
+                    seen.hashCode),
+                senderUserId.hashCode),
+            senderUsername.hashCode),
+        type.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Notification')
+          ..add('createdAt', createdAt)
+          ..add('details', details)
           ..add('id', id)
+          ..add('message', message)
+          ..add('seen', seen)
           ..add('senderUserId', senderUserId)
           ..add('senderUsername', senderUsername)
-          ..add('type', type)
-          ..add('message', message)
-          ..add('details', details)
-          ..add('seen', seen)
-          ..add('createdAt', createdAt))
+          ..add('type', type))
         .toString();
   }
 }
@@ -106,9 +106,25 @@ class NotificationBuilder
     implements Builder<Notification, NotificationBuilder> {
   _$Notification? _$v;
 
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  String? _details;
+  String? get details => _$this._details;
+  set details(String? details) => _$this._details = details;
+
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
+
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
+
+  bool? _seen;
+  bool? get seen => _$this._seen;
+  set seen(bool? seen) => _$this._seen = seen;
 
   String? _senderUserId;
   String? get senderUserId => _$this._senderUserId;
@@ -123,22 +139,6 @@ class NotificationBuilder
   NotificationType? get type => _$this._type;
   set type(NotificationType? type) => _$this._type = type;
 
-  String? _message;
-  String? get message => _$this._message;
-  set message(String? message) => _$this._message = message;
-
-  String? _details;
-  String? get details => _$this._details;
-  set details(String? details) => _$this._details = details;
-
-  bool? _seen;
-  bool? get seen => _$this._seen;
-  set seen(bool? seen) => _$this._seen = seen;
-
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
   NotificationBuilder() {
     Notification._defaults(this);
   }
@@ -146,14 +146,14 @@ class NotificationBuilder
   NotificationBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _createdAt = $v.createdAt;
+      _details = $v.details;
       _id = $v.id;
+      _message = $v.message;
+      _seen = $v.seen;
       _senderUserId = $v.senderUserId;
       _senderUsername = $v.senderUsername;
       _type = $v.type;
-      _message = $v.message;
-      _details = $v.details;
-      _seen = $v.seen;
-      _createdAt = $v.createdAt;
       _$v = null;
     }
     return this;
@@ -174,21 +174,21 @@ class NotificationBuilder
   _$Notification build() {
     final _$result = _$v ??
         new _$Notification._(
+            createdAt: BuiltValueNullFieldError.checkNotNull(
+                createdAt, 'Notification', 'createdAt'),
+            details: BuiltValueNullFieldError.checkNotNull(
+                details, 'Notification', 'details'),
             id: BuiltValueNullFieldError.checkNotNull(id, 'Notification', 'id'),
+            message: BuiltValueNullFieldError.checkNotNull(
+                message, 'Notification', 'message'),
+            seen: BuiltValueNullFieldError.checkNotNull(
+                seen, 'Notification', 'seen'),
             senderUserId: BuiltValueNullFieldError.checkNotNull(
                 senderUserId, 'Notification', 'senderUserId'),
             senderUsername: BuiltValueNullFieldError.checkNotNull(
                 senderUsername, 'Notification', 'senderUsername'),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, 'Notification', 'type'),
-            message: BuiltValueNullFieldError.checkNotNull(
-                message, 'Notification', 'message'),
-            details: BuiltValueNullFieldError.checkNotNull(
-                details, 'Notification', 'details'),
-            seen: BuiltValueNullFieldError.checkNotNull(
-                seen, 'Notification', 'seen'),
-            createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, 'Notification', 'createdAt'));
+                type, 'Notification', 'type'));
     replace(_$result);
     return _$result;
   }

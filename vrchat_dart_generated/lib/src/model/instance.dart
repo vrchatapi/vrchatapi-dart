@@ -43,10 +43,10 @@ abstract class Instance implements Built<Instance, InstanceBuilder> {
   bool get canRequestInvite;
 
   @BuiltValueField(wireName: r'capacity')
-  num get capacity;
+  int get capacity;
 
   @BuiltValueField(wireName: r'clientNumber')
-  String get clientNumber;
+  int get clientNumber;
 
   @BuiltValueField(wireName: r'full')
   bool get full;
@@ -61,7 +61,7 @@ abstract class Instance implements Built<Instance, InstanceBuilder> {
   String get location;
 
   @BuiltValueField(wireName: r'n_users')
-  num get nUsers;
+  int get nUsers;
 
   @BuiltValueField(wireName: r'name')
   String get name;
@@ -141,11 +141,11 @@ class _$InstanceSerializer implements StructuredSerializer<Instance> {
     result
       ..add(r'capacity')
       ..add(serializers.serialize(object.capacity,
-          specifiedType: const FullType(num)));
+          specifiedType: const FullType(int)));
     result
       ..add(r'clientNumber')
       ..add(serializers.serialize(object.clientNumber,
-          specifiedType: const FullType(String)));
+          specifiedType: const FullType(int)));
     result
       ..add(r'full')
       ..add(serializers.serialize(object.full,
@@ -165,7 +165,7 @@ class _$InstanceSerializer implements StructuredSerializer<Instance> {
     result
       ..add(r'n_users')
       ..add(serializers.serialize(object.nUsers,
-          specifiedType: const FullType(num)));
+          specifiedType: const FullType(int)));
     result
       ..add(r'name')
       ..add(serializers.serialize(object.name,
@@ -248,11 +248,11 @@ class _$InstanceSerializer implements StructuredSerializer<Instance> {
           break;
         case r'capacity':
           result.capacity = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
+              specifiedType: const FullType(int)) as int;
           break;
         case r'clientNumber':
           result.clientNumber = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(int)) as int;
           break;
         case r'full':
           result.full = serializers.deserialize(value,
@@ -272,7 +272,7 @@ class _$InstanceSerializer implements StructuredSerializer<Instance> {
           break;
         case r'n_users':
           result.nUsers = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
+              specifiedType: const FullType(int)) as int;
           break;
         case r'name':
           result.name = serializers.deserialize(value,

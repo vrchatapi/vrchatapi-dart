@@ -11,18 +11,31 @@ part 'notification.g.dart';
 /// Notification
 ///
 /// Properties:
+/// * [createdAt]
+/// * [details] - **NOTICE:** This is not a JSON object, this is a json **encoded** object, meaning you have to json-de-encode to get the NotificationDetail object depending on the NotificationType.
 /// * [id]
+/// * [message]
+/// * [seen]
 /// * [senderUserId]
 /// * [senderUsername]
 /// * [type]
-/// * [message]
-/// * [details] - **NOTICE:** This is not a JSON object, this is a json **encoded** object, meaning you have to json-de-encode to get the NotificationDetail object depending on the NotificationType.
-/// * [seen]
-/// * [createdAt]
 abstract class Notification
     implements Built<Notification, NotificationBuilder> {
+  @BuiltValueField(wireName: r'created_at')
+  DateTime get createdAt;
+
+  /// **NOTICE:** This is not a JSON object, this is a json **encoded** object, meaning you have to json-de-encode to get the NotificationDetail object depending on the NotificationType.
+  @BuiltValueField(wireName: r'details')
+  String get details;
+
   @BuiltValueField(wireName: r'id')
   String get id;
+
+  @BuiltValueField(wireName: r'message')
+  String get message;
+
+  @BuiltValueField(wireName: r'seen')
+  bool get seen;
 
   @BuiltValueField(wireName: r'senderUserId')
   String get senderUserId;
@@ -33,19 +46,6 @@ abstract class Notification
   @BuiltValueField(wireName: r'type')
   NotificationType get type;
   // enum typeEnum {  friendRequest,  invite,  inviteResponse,  requestInvite,  requestInviteResponse,  votetokick,  };
-
-  @BuiltValueField(wireName: r'message')
-  String get message;
-
-  /// **NOTICE:** This is not a JSON object, this is a json **encoded** object, meaning you have to json-de-encode to get the NotificationDetail object depending on the NotificationType.
-  @BuiltValueField(wireName: r'details')
-  String get details;
-
-  @BuiltValueField(wireName: r'seen')
-  bool get seen;
-
-  @BuiltValueField(wireName: r'created_at')
-  DateTime get createdAt;
 
   Notification._();
 
@@ -72,9 +72,25 @@ class _$NotificationSerializer implements StructuredSerializer<Notification> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     result
+      ..add(r'created_at')
+      ..add(serializers.serialize(object.createdAt,
+          specifiedType: const FullType(DateTime)));
+    result
+      ..add(r'details')
+      ..add(serializers.serialize(object.details,
+          specifiedType: const FullType(String)));
+    result
       ..add(r'id')
       ..add(serializers.serialize(object.id,
           specifiedType: const FullType(String)));
+    result
+      ..add(r'message')
+      ..add(serializers.serialize(object.message,
+          specifiedType: const FullType(String)));
+    result
+      ..add(r'seen')
+      ..add(serializers.serialize(object.seen,
+          specifiedType: const FullType(bool)));
     result
       ..add(r'senderUserId')
       ..add(serializers.serialize(object.senderUserId,
@@ -87,22 +103,6 @@ class _$NotificationSerializer implements StructuredSerializer<Notification> {
       ..add(r'type')
       ..add(serializers.serialize(object.type,
           specifiedType: const FullType(NotificationType)));
-    result
-      ..add(r'message')
-      ..add(serializers.serialize(object.message,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'details')
-      ..add(serializers.serialize(object.details,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'seen')
-      ..add(serializers.serialize(object.seen,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'created_at')
-      ..add(serializers.serialize(object.createdAt,
-          specifiedType: const FullType(DateTime)));
     return result;
   }
 
@@ -118,9 +118,25 @@ class _$NotificationSerializer implements StructuredSerializer<Notification> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
+        case r'created_at':
+          result.createdAt = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime;
+          break;
+        case r'details':
+          result.details = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case r'id':
           result.id = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          break;
+        case r'message':
+          result.message = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case r'seen':
+          result.seen = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
           break;
         case r'senderUserId':
           result.senderUserId = serializers.deserialize(value,
@@ -134,22 +150,6 @@ class _$NotificationSerializer implements StructuredSerializer<Notification> {
           result.type = serializers.deserialize(value,
                   specifiedType: const FullType(NotificationType))
               as NotificationType;
-          break;
-        case r'message':
-          result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case r'details':
-          result.details = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case r'seen':
-          result.seen = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          break;
-        case r'created_at':
-          result.createdAt = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
           break;
       }
     }

@@ -8,99 +8,99 @@ part of 'limited_world.dart';
 
 class _$LimitedWorld extends LimitedWorld {
   @override
-  final String id;
-  @override
-  final String name;
-  @override
   final String authorId;
   @override
   final String authorName;
   @override
-  final num capacity;
-  @override
-  final String imageUrl;
-  @override
-  final String thumbnailImageUrl;
-  @override
-  final String releaseStatus;
-  @override
-  final String organization;
-  @override
-  final BuiltList<String> tags;
-  @override
-  final num favorites;
+  final int capacity;
   @override
   final DateTime createdAt;
   @override
-  final DateTime updatedAt;
+  final int favorites;
   @override
-  final String publicationDate;
+  final int heat;
+  @override
+  final String id;
+  @override
+  final String imageUrl;
   @override
   final String labsPublicationDate;
   @override
+  final String name;
+  @override
+  final int occupants;
+  @override
+  final String organization;
+  @override
+  final int popularity;
+  @override
+  final DateTime publicationDate;
+  @override
+  final ReleaseStatus releaseStatus;
+  @override
+  final BuiltList<String> tags;
+  @override
+  final String thumbnailImageUrl;
+  @override
   final BuiltList<LimitedUnityPackage> unityPackages;
   @override
-  final num popularity;
-  @override
-  final num heat;
-  @override
-  final num occupants;
+  final DateTime updatedAt;
 
   factory _$LimitedWorld([void Function(LimitedWorldBuilder)? updates]) =>
       (new LimitedWorldBuilder()..update(updates)).build();
 
   _$LimitedWorld._(
-      {required this.id,
-      required this.name,
-      required this.authorId,
+      {required this.authorId,
       required this.authorName,
       required this.capacity,
-      required this.imageUrl,
-      required this.thumbnailImageUrl,
-      required this.releaseStatus,
-      required this.organization,
-      required this.tags,
-      required this.favorites,
       required this.createdAt,
-      required this.updatedAt,
-      required this.publicationDate,
-      required this.labsPublicationDate,
-      required this.unityPackages,
-      required this.popularity,
+      required this.favorites,
       required this.heat,
-      required this.occupants})
+      required this.id,
+      required this.imageUrl,
+      required this.labsPublicationDate,
+      required this.name,
+      required this.occupants,
+      required this.organization,
+      required this.popularity,
+      required this.publicationDate,
+      required this.releaseStatus,
+      required this.tags,
+      required this.thumbnailImageUrl,
+      required this.unityPackages,
+      required this.updatedAt})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, 'LimitedWorld', 'id');
-    BuiltValueNullFieldError.checkNotNull(name, 'LimitedWorld', 'name');
     BuiltValueNullFieldError.checkNotNull(authorId, 'LimitedWorld', 'authorId');
     BuiltValueNullFieldError.checkNotNull(
         authorName, 'LimitedWorld', 'authorName');
     BuiltValueNullFieldError.checkNotNull(capacity, 'LimitedWorld', 'capacity');
-    BuiltValueNullFieldError.checkNotNull(imageUrl, 'LimitedWorld', 'imageUrl');
-    BuiltValueNullFieldError.checkNotNull(
-        thumbnailImageUrl, 'LimitedWorld', 'thumbnailImageUrl');
-    BuiltValueNullFieldError.checkNotNull(
-        releaseStatus, 'LimitedWorld', 'releaseStatus');
-    BuiltValueNullFieldError.checkNotNull(
-        organization, 'LimitedWorld', 'organization');
-    BuiltValueNullFieldError.checkNotNull(tags, 'LimitedWorld', 'tags');
-    BuiltValueNullFieldError.checkNotNull(
-        favorites, 'LimitedWorld', 'favorites');
     BuiltValueNullFieldError.checkNotNull(
         createdAt, 'LimitedWorld', 'createdAt');
     BuiltValueNullFieldError.checkNotNull(
-        updatedAt, 'LimitedWorld', 'updatedAt');
+        favorites, 'LimitedWorld', 'favorites');
+    BuiltValueNullFieldError.checkNotNull(heat, 'LimitedWorld', 'heat');
+    BuiltValueNullFieldError.checkNotNull(id, 'LimitedWorld', 'id');
+    BuiltValueNullFieldError.checkNotNull(imageUrl, 'LimitedWorld', 'imageUrl');
+    BuiltValueNullFieldError.checkNotNull(
+        labsPublicationDate, 'LimitedWorld', 'labsPublicationDate');
+    BuiltValueNullFieldError.checkNotNull(name, 'LimitedWorld', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        occupants, 'LimitedWorld', 'occupants');
+    BuiltValueNullFieldError.checkNotNull(
+        organization, 'LimitedWorld', 'organization');
+    BuiltValueNullFieldError.checkNotNull(
+        popularity, 'LimitedWorld', 'popularity');
     BuiltValueNullFieldError.checkNotNull(
         publicationDate, 'LimitedWorld', 'publicationDate');
     BuiltValueNullFieldError.checkNotNull(
-        labsPublicationDate, 'LimitedWorld', 'labsPublicationDate');
+        releaseStatus, 'LimitedWorld', 'releaseStatus');
+    BuiltValueNullFieldError.checkNotNull(tags, 'LimitedWorld', 'tags');
+    BuiltValueNullFieldError.checkNotNull(
+        thumbnailImageUrl, 'LimitedWorld', 'thumbnailImageUrl');
     BuiltValueNullFieldError.checkNotNull(
         unityPackages, 'LimitedWorld', 'unityPackages');
     BuiltValueNullFieldError.checkNotNull(
-        popularity, 'LimitedWorld', 'popularity');
-    BuiltValueNullFieldError.checkNotNull(heat, 'LimitedWorld', 'heat');
-    BuiltValueNullFieldError.checkNotNull(
-        occupants, 'LimitedWorld', 'occupants');
+        updatedAt, 'LimitedWorld', 'updatedAt');
   }
 
   @override
@@ -114,25 +114,25 @@ class _$LimitedWorld extends LimitedWorld {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is LimitedWorld &&
-        id == other.id &&
-        name == other.name &&
         authorId == other.authorId &&
         authorName == other.authorName &&
         capacity == other.capacity &&
-        imageUrl == other.imageUrl &&
-        thumbnailImageUrl == other.thumbnailImageUrl &&
-        releaseStatus == other.releaseStatus &&
-        organization == other.organization &&
-        tags == other.tags &&
-        favorites == other.favorites &&
         createdAt == other.createdAt &&
-        updatedAt == other.updatedAt &&
-        publicationDate == other.publicationDate &&
-        labsPublicationDate == other.labsPublicationDate &&
-        unityPackages == other.unityPackages &&
-        popularity == other.popularity &&
+        favorites == other.favorites &&
         heat == other.heat &&
-        occupants == other.occupants;
+        id == other.id &&
+        imageUrl == other.imageUrl &&
+        labsPublicationDate == other.labsPublicationDate &&
+        name == other.name &&
+        occupants == other.occupants &&
+        organization == other.organization &&
+        popularity == other.popularity &&
+        publicationDate == other.publicationDate &&
+        releaseStatus == other.releaseStatus &&
+        tags == other.tags &&
+        thumbnailImageUrl == other.thumbnailImageUrl &&
+        unityPackages == other.unityPackages &&
+        updatedAt == other.updatedAt;
   }
 
   @override
@@ -157,55 +157,54 @@ class _$LimitedWorld extends LimitedWorld {
                                                                         $jc(
                                                                             $jc(
                                                                                 0,
-                                                                                id
+                                                                                authorId
                                                                                     .hashCode),
-                                                                            name
+                                                                            authorName
                                                                                 .hashCode),
-                                                                        authorId
+                                                                        capacity
                                                                             .hashCode),
-                                                                    authorName
+                                                                    createdAt
                                                                         .hashCode),
-                                                                capacity
+                                                                favorites
                                                                     .hashCode),
-                                                            imageUrl.hashCode),
-                                                        thumbnailImageUrl
-                                                            .hashCode),
-                                                    releaseStatus.hashCode),
-                                                organization.hashCode),
-                                            tags.hashCode),
-                                        favorites.hashCode),
-                                    createdAt.hashCode),
-                                updatedAt.hashCode),
+                                                            heat.hashCode),
+                                                        id.hashCode),
+                                                    imageUrl.hashCode),
+                                                labsPublicationDate.hashCode),
+                                            name.hashCode),
+                                        occupants.hashCode),
+                                    organization.hashCode),
+                                popularity.hashCode),
                             publicationDate.hashCode),
-                        labsPublicationDate.hashCode),
-                    unityPackages.hashCode),
-                popularity.hashCode),
-            heat.hashCode),
-        occupants.hashCode));
+                        releaseStatus.hashCode),
+                    tags.hashCode),
+                thumbnailImageUrl.hashCode),
+            unityPackages.hashCode),
+        updatedAt.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('LimitedWorld')
-          ..add('id', id)
-          ..add('name', name)
           ..add('authorId', authorId)
           ..add('authorName', authorName)
           ..add('capacity', capacity)
-          ..add('imageUrl', imageUrl)
-          ..add('thumbnailImageUrl', thumbnailImageUrl)
-          ..add('releaseStatus', releaseStatus)
-          ..add('organization', organization)
-          ..add('tags', tags)
-          ..add('favorites', favorites)
           ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt)
-          ..add('publicationDate', publicationDate)
-          ..add('labsPublicationDate', labsPublicationDate)
-          ..add('unityPackages', unityPackages)
-          ..add('popularity', popularity)
+          ..add('favorites', favorites)
           ..add('heat', heat)
-          ..add('occupants', occupants))
+          ..add('id', id)
+          ..add('imageUrl', imageUrl)
+          ..add('labsPublicationDate', labsPublicationDate)
+          ..add('name', name)
+          ..add('occupants', occupants)
+          ..add('organization', organization)
+          ..add('popularity', popularity)
+          ..add('publicationDate', publicationDate)
+          ..add('releaseStatus', releaseStatus)
+          ..add('tags', tags)
+          ..add('thumbnailImageUrl', thumbnailImageUrl)
+          ..add('unityPackages', unityPackages)
+          ..add('updatedAt', updatedAt))
         .toString();
   }
 }
@@ -213,14 +212,6 @@ class _$LimitedWorld extends LimitedWorld {
 class LimitedWorldBuilder
     implements Builder<LimitedWorld, LimitedWorldBuilder> {
   _$LimitedWorld? _$v;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
 
   String? _authorId;
   String? get authorId => _$this._authorId;
@@ -230,53 +221,69 @@ class LimitedWorldBuilder
   String? get authorName => _$this._authorName;
   set authorName(String? authorName) => _$this._authorName = authorName;
 
-  num? _capacity;
-  num? get capacity => _$this._capacity;
-  set capacity(num? capacity) => _$this._capacity = capacity;
-
-  String? _imageUrl;
-  String? get imageUrl => _$this._imageUrl;
-  set imageUrl(String? imageUrl) => _$this._imageUrl = imageUrl;
-
-  String? _thumbnailImageUrl;
-  String? get thumbnailImageUrl => _$this._thumbnailImageUrl;
-  set thumbnailImageUrl(String? thumbnailImageUrl) =>
-      _$this._thumbnailImageUrl = thumbnailImageUrl;
-
-  String? _releaseStatus;
-  String? get releaseStatus => _$this._releaseStatus;
-  set releaseStatus(String? releaseStatus) =>
-      _$this._releaseStatus = releaseStatus;
-
-  String? _organization;
-  String? get organization => _$this._organization;
-  set organization(String? organization) => _$this._organization = organization;
-
-  ListBuilder<String>? _tags;
-  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
-  set tags(ListBuilder<String>? tags) => _$this._tags = tags;
-
-  num? _favorites;
-  num? get favorites => _$this._favorites;
-  set favorites(num? favorites) => _$this._favorites = favorites;
+  int? _capacity;
+  int? get capacity => _$this._capacity;
+  set capacity(int? capacity) => _$this._capacity = capacity;
 
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+  int? _favorites;
+  int? get favorites => _$this._favorites;
+  set favorites(int? favorites) => _$this._favorites = favorites;
 
-  String? _publicationDate;
-  String? get publicationDate => _$this._publicationDate;
-  set publicationDate(String? publicationDate) =>
-      _$this._publicationDate = publicationDate;
+  int? _heat;
+  int? get heat => _$this._heat;
+  set heat(int? heat) => _$this._heat = heat;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _imageUrl;
+  String? get imageUrl => _$this._imageUrl;
+  set imageUrl(String? imageUrl) => _$this._imageUrl = imageUrl;
 
   String? _labsPublicationDate;
   String? get labsPublicationDate => _$this._labsPublicationDate;
   set labsPublicationDate(String? labsPublicationDate) =>
       _$this._labsPublicationDate = labsPublicationDate;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  int? _occupants;
+  int? get occupants => _$this._occupants;
+  set occupants(int? occupants) => _$this._occupants = occupants;
+
+  String? _organization;
+  String? get organization => _$this._organization;
+  set organization(String? organization) => _$this._organization = organization;
+
+  int? _popularity;
+  int? get popularity => _$this._popularity;
+  set popularity(int? popularity) => _$this._popularity = popularity;
+
+  DateTime? _publicationDate;
+  DateTime? get publicationDate => _$this._publicationDate;
+  set publicationDate(DateTime? publicationDate) =>
+      _$this._publicationDate = publicationDate;
+
+  ReleaseStatus? _releaseStatus;
+  ReleaseStatus? get releaseStatus => _$this._releaseStatus;
+  set releaseStatus(ReleaseStatus? releaseStatus) =>
+      _$this._releaseStatus = releaseStatus;
+
+  ListBuilder<String>? _tags;
+  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
+  set tags(ListBuilder<String>? tags) => _$this._tags = tags;
+
+  String? _thumbnailImageUrl;
+  String? get thumbnailImageUrl => _$this._thumbnailImageUrl;
+  set thumbnailImageUrl(String? thumbnailImageUrl) =>
+      _$this._thumbnailImageUrl = thumbnailImageUrl;
 
   ListBuilder<LimitedUnityPackage>? _unityPackages;
   ListBuilder<LimitedUnityPackage> get unityPackages =>
@@ -284,17 +291,9 @@ class LimitedWorldBuilder
   set unityPackages(ListBuilder<LimitedUnityPackage>? unityPackages) =>
       _$this._unityPackages = unityPackages;
 
-  num? _popularity;
-  num? get popularity => _$this._popularity;
-  set popularity(num? popularity) => _$this._popularity = popularity;
-
-  num? _heat;
-  num? get heat => _$this._heat;
-  set heat(num? heat) => _$this._heat = heat;
-
-  num? _occupants;
-  num? get occupants => _$this._occupants;
-  set occupants(num? occupants) => _$this._occupants = occupants;
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
   LimitedWorldBuilder() {
     LimitedWorld._defaults(this);
@@ -303,25 +302,25 @@ class LimitedWorldBuilder
   LimitedWorldBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id;
-      _name = $v.name;
       _authorId = $v.authorId;
       _authorName = $v.authorName;
       _capacity = $v.capacity;
-      _imageUrl = $v.imageUrl;
-      _thumbnailImageUrl = $v.thumbnailImageUrl;
-      _releaseStatus = $v.releaseStatus;
-      _organization = $v.organization;
-      _tags = $v.tags.toBuilder();
-      _favorites = $v.favorites;
       _createdAt = $v.createdAt;
-      _updatedAt = $v.updatedAt;
-      _publicationDate = $v.publicationDate;
-      _labsPublicationDate = $v.labsPublicationDate;
-      _unityPackages = $v.unityPackages.toBuilder();
-      _popularity = $v.popularity;
+      _favorites = $v.favorites;
       _heat = $v.heat;
+      _id = $v.id;
+      _imageUrl = $v.imageUrl;
+      _labsPublicationDate = $v.labsPublicationDate;
+      _name = $v.name;
       _occupants = $v.occupants;
+      _organization = $v.organization;
+      _popularity = $v.popularity;
+      _publicationDate = $v.publicationDate;
+      _releaseStatus = $v.releaseStatus;
+      _tags = $v.tags.toBuilder();
+      _thumbnailImageUrl = $v.thumbnailImageUrl;
+      _unityPackages = $v.unityPackages.toBuilder();
+      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
@@ -344,35 +343,34 @@ class LimitedWorldBuilder
     try {
       _$result = _$v ??
           new _$LimitedWorld._(
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, 'LimitedWorld', 'id'),
-              name: BuiltValueNullFieldError.checkNotNull(
-                  name, 'LimitedWorld', 'name'),
               authorId: BuiltValueNullFieldError.checkNotNull(
                   authorId, 'LimitedWorld', 'authorId'),
               authorName: BuiltValueNullFieldError.checkNotNull(
                   authorName, 'LimitedWorld', 'authorName'),
               capacity: BuiltValueNullFieldError.checkNotNull(
                   capacity, 'LimitedWorld', 'capacity'),
+              createdAt: BuiltValueNullFieldError.checkNotNull(
+                  createdAt, 'LimitedWorld', 'createdAt'),
+              favorites: BuiltValueNullFieldError.checkNotNull(
+                  favorites, 'LimitedWorld', 'favorites'),
+              heat: BuiltValueNullFieldError.checkNotNull(
+                  heat, 'LimitedWorld', 'heat'),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, 'LimitedWorld', 'id'),
               imageUrl: BuiltValueNullFieldError.checkNotNull(
                   imageUrl, 'LimitedWorld', 'imageUrl'),
-              thumbnailImageUrl: BuiltValueNullFieldError.checkNotNull(
-                  thumbnailImageUrl, 'LimitedWorld', 'thumbnailImageUrl'),
-              releaseStatus: BuiltValueNullFieldError.checkNotNull(
-                  releaseStatus, 'LimitedWorld', 'releaseStatus'),
-              organization: BuiltValueNullFieldError.checkNotNull(
-                  organization, 'LimitedWorld', 'organization'),
-              tags: tags.build(),
-              favorites:
-                  BuiltValueNullFieldError.checkNotNull(favorites, 'LimitedWorld', 'favorites'),
-              createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, 'LimitedWorld', 'createdAt'),
-              updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, 'LimitedWorld', 'updatedAt'),
-              publicationDate: BuiltValueNullFieldError.checkNotNull(publicationDate, 'LimitedWorld', 'publicationDate'),
-              labsPublicationDate: BuiltValueNullFieldError.checkNotNull(labsPublicationDate, 'LimitedWorld', 'labsPublicationDate'),
-              unityPackages: unityPackages.build(),
+              labsPublicationDate: BuiltValueNullFieldError.checkNotNull(
+                  labsPublicationDate, 'LimitedWorld', 'labsPublicationDate'),
+              name: BuiltValueNullFieldError.checkNotNull(name, 'LimitedWorld', 'name'),
+              occupants: BuiltValueNullFieldError.checkNotNull(occupants, 'LimitedWorld', 'occupants'),
+              organization: BuiltValueNullFieldError.checkNotNull(organization, 'LimitedWorld', 'organization'),
               popularity: BuiltValueNullFieldError.checkNotNull(popularity, 'LimitedWorld', 'popularity'),
-              heat: BuiltValueNullFieldError.checkNotNull(heat, 'LimitedWorld', 'heat'),
-              occupants: BuiltValueNullFieldError.checkNotNull(occupants, 'LimitedWorld', 'occupants'));
+              publicationDate: BuiltValueNullFieldError.checkNotNull(publicationDate, 'LimitedWorld', 'publicationDate'),
+              releaseStatus: BuiltValueNullFieldError.checkNotNull(releaseStatus, 'LimitedWorld', 'releaseStatus'),
+              tags: tags.build(),
+              thumbnailImageUrl: BuiltValueNullFieldError.checkNotNull(thumbnailImageUrl, 'LimitedWorld', 'thumbnailImageUrl'),
+              unityPackages: unityPackages.build(),
+              updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, 'LimitedWorld', 'updatedAt'));
     } catch (_) {
       late String _$failedField;
       try {

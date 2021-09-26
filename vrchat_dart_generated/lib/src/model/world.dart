@@ -60,7 +60,7 @@ abstract class World implements Built<World, WorldBuilder> {
   String get authorName;
 
   @BuiltValueField(wireName: r'capacity')
-  num get capacity;
+  int get capacity;
 
   @BuiltValueField(wireName: r'created_at')
   DateTime get createdAt;
@@ -69,13 +69,13 @@ abstract class World implements Built<World, WorldBuilder> {
   String get description;
 
   @BuiltValueField(wireName: r'favorites')
-  num? get favorites;
+  int? get favorites;
 
   @BuiltValueField(wireName: r'featured')
   bool get featured;
 
   @BuiltValueField(wireName: r'heat')
-  num get heat;
+  int get heat;
 
   @BuiltValueField(wireName: r'id')
   String get id;
@@ -96,7 +96,7 @@ abstract class World implements Built<World, WorldBuilder> {
   String get namespace;
 
   @BuiltValueField(wireName: r'occupants')
-  num? get occupants;
+  int? get occupants;
 
   @BuiltValueField(wireName: r'organization')
   String get organization;
@@ -105,16 +105,16 @@ abstract class World implements Built<World, WorldBuilder> {
   JsonObject get pluginUrlObject;
 
   @BuiltValueField(wireName: r'popularity')
-  num get popularity;
+  int get popularity;
 
   @BuiltValueField(wireName: r'previewYoutubeId')
   String? get previewYoutubeId;
 
   @BuiltValueField(wireName: r'privateOccupants')
-  num? get privateOccupants;
+  int? get privateOccupants;
 
   @BuiltValueField(wireName: r'publicOccupants')
-  num? get publicOccupants;
+  int? get publicOccupants;
 
   @BuiltValueField(wireName: r'publicationDate')
   DateTime get publicationDate;
@@ -139,10 +139,10 @@ abstract class World implements Built<World, WorldBuilder> {
   DateTime get updatedAt;
 
   @BuiltValueField(wireName: r'version')
-  num get version;
+  int get version;
 
   @BuiltValueField(wireName: r'visits')
-  num get visits;
+  int get visits;
 
   World._();
 
@@ -195,7 +195,7 @@ class _$WorldSerializer implements StructuredSerializer<World> {
     result
       ..add(r'capacity')
       ..add(serializers.serialize(object.capacity,
-          specifiedType: const FullType(num)));
+          specifiedType: const FullType(int)));
     result
       ..add(r'created_at')
       ..add(serializers.serialize(object.createdAt,
@@ -208,7 +208,7 @@ class _$WorldSerializer implements StructuredSerializer<World> {
       result
         ..add(r'favorites')
         ..add(serializers.serialize(object.favorites,
-            specifiedType: const FullType(num)));
+            specifiedType: const FullType(int)));
     }
     result
       ..add(r'featured')
@@ -217,7 +217,7 @@ class _$WorldSerializer implements StructuredSerializer<World> {
     result
       ..add(r'heat')
       ..add(serializers.serialize(object.heat,
-          specifiedType: const FullType(num)));
+          specifiedType: const FullType(int)));
     result
       ..add(r'id')
       ..add(serializers.serialize(object.id,
@@ -250,7 +250,7 @@ class _$WorldSerializer implements StructuredSerializer<World> {
       result
         ..add(r'occupants')
         ..add(serializers.serialize(object.occupants,
-            specifiedType: const FullType(num)));
+            specifiedType: const FullType(int)));
     }
     result
       ..add(r'organization')
@@ -263,7 +263,7 @@ class _$WorldSerializer implements StructuredSerializer<World> {
     result
       ..add(r'popularity')
       ..add(serializers.serialize(object.popularity,
-          specifiedType: const FullType(num)));
+          specifiedType: const FullType(int)));
     if (object.previewYoutubeId != null) {
       result
         ..add(r'previewYoutubeId')
@@ -274,13 +274,13 @@ class _$WorldSerializer implements StructuredSerializer<World> {
       result
         ..add(r'privateOccupants')
         ..add(serializers.serialize(object.privateOccupants,
-            specifiedType: const FullType(num)));
+            specifiedType: const FullType(int)));
     }
     if (object.publicOccupants != null) {
       result
         ..add(r'publicOccupants')
         ..add(serializers.serialize(object.publicOccupants,
-            specifiedType: const FullType(num)));
+            specifiedType: const FullType(int)));
     }
     result
       ..add(r'publicationDate')
@@ -313,11 +313,11 @@ class _$WorldSerializer implements StructuredSerializer<World> {
     result
       ..add(r'version')
       ..add(serializers.serialize(object.version,
-          specifiedType: const FullType(num)));
+          specifiedType: const FullType(int)));
     result
       ..add(r'visits')
       ..add(serializers.serialize(object.visits,
-          specifiedType: const FullType(num)));
+          specifiedType: const FullType(int)));
     return result;
   }
 
@@ -350,7 +350,7 @@ class _$WorldSerializer implements StructuredSerializer<World> {
           break;
         case r'capacity':
           result.capacity = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
+              specifiedType: const FullType(int)) as int;
           break;
         case r'created_at':
           result.createdAt = serializers.deserialize(value,
@@ -362,7 +362,7 @@ class _$WorldSerializer implements StructuredSerializer<World> {
           break;
         case r'favorites':
           result.favorites = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
+              specifiedType: const FullType(int)) as int;
           break;
         case r'featured':
           result.featured = serializers.deserialize(value,
@@ -370,7 +370,7 @@ class _$WorldSerializer implements StructuredSerializer<World> {
           break;
         case r'heat':
           result.heat = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
+              specifiedType: const FullType(int)) as int;
           break;
         case r'id':
           result.id = serializers.deserialize(value,
@@ -400,7 +400,7 @@ class _$WorldSerializer implements StructuredSerializer<World> {
           break;
         case r'occupants':
           result.occupants = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
+              specifiedType: const FullType(int)) as int;
           break;
         case r'organization':
           result.organization = serializers.deserialize(value,
@@ -412,7 +412,7 @@ class _$WorldSerializer implements StructuredSerializer<World> {
           break;
         case r'popularity':
           result.popularity = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
+              specifiedType: const FullType(int)) as int;
           break;
         case r'previewYoutubeId':
           result.previewYoutubeId = serializers.deserialize(value,
@@ -420,11 +420,11 @@ class _$WorldSerializer implements StructuredSerializer<World> {
           break;
         case r'privateOccupants':
           result.privateOccupants = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
+              specifiedType: const FullType(int)) as int;
           break;
         case r'publicOccupants':
           result.publicOccupants = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
+              specifiedType: const FullType(int)) as int;
           break;
         case r'publicationDate':
           result.publicationDate = serializers.deserialize(value,
@@ -459,11 +459,11 @@ class _$WorldSerializer implements StructuredSerializer<World> {
           break;
         case r'version':
           result.version = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
+              specifiedType: const FullType(int)) as int;
           break;
         case r'visits':
           result.visits = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
+              specifiedType: const FullType(int)) as int;
           break;
       }
     }

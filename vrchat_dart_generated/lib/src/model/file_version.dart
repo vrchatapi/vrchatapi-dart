@@ -12,44 +12,44 @@ part 'file_version.g.dart';
 /// FileVersion
 ///
 /// Properties:
-/// * [version] - Incremental version counter, can only be increased.
-/// * [status]
 /// * [createdAt]
-/// * [file]
-/// * [delta]
-/// * [signature]
 /// * [deleted] - Usually only present if `true`
+/// * [delta]
+/// * [file]
+/// * [signature]
+/// * [status]
+/// * [version] - Incremental version counter, can only be increased.
 abstract class FileVersion implements Built<FileVersion, FileVersionBuilder> {
-  /// Incremental version counter, can only be increased.
-  @BuiltValueField(wireName: r'version')
-  num get version;
-
-  @BuiltValueField(wireName: r'status')
-  FileStatus get status;
-  // enum statusEnum {  waiting,  complete,  none,  };
-
   @BuiltValueField(wireName: r'created_at')
   DateTime get createdAt;
-
-  @BuiltValueField(wireName: r'file')
-  FileData? get file;
-
-  @BuiltValueField(wireName: r'delta')
-  FileData? get delta;
-
-  @BuiltValueField(wireName: r'signature')
-  FileData? get signature;
 
   /// Usually only present if `true`
   @BuiltValueField(wireName: r'deleted')
   bool? get deleted;
 
+  @BuiltValueField(wireName: r'delta')
+  FileData? get delta;
+
+  @BuiltValueField(wireName: r'file')
+  FileData? get file;
+
+  @BuiltValueField(wireName: r'signature')
+  FileData? get signature;
+
+  @BuiltValueField(wireName: r'status')
+  FileStatus get status;
+  // enum statusEnum {  waiting,  complete,  none,  };
+
+  /// Incremental version counter, can only be increased.
+  @BuiltValueField(wireName: r'version')
+  int get version;
+
   FileVersion._();
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(FileVersionBuilder b) => b
-    ..version = 0
-    ..deleted = true;
+    ..deleted = true
+    ..version = 0;
 
   factory FileVersion([void updates(FileVersionBuilder b)]) = _$FileVersion;
 
@@ -69,27 +69,25 @@ class _$FileVersionSerializer implements StructuredSerializer<FileVersion> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     result
-      ..add(r'version')
-      ..add(serializers.serialize(object.version,
-          specifiedType: const FullType(num)));
-    result
-      ..add(r'status')
-      ..add(serializers.serialize(object.status,
-          specifiedType: const FullType(FileStatus)));
-    result
       ..add(r'created_at')
       ..add(serializers.serialize(object.createdAt,
           specifiedType: const FullType(DateTime)));
-    if (object.file != null) {
+    if (object.deleted != null) {
       result
-        ..add(r'file')
-        ..add(serializers.serialize(object.file,
-            specifiedType: const FullType(FileData)));
+        ..add(r'deleted')
+        ..add(serializers.serialize(object.deleted,
+            specifiedType: const FullType(bool)));
     }
     if (object.delta != null) {
       result
         ..add(r'delta')
         ..add(serializers.serialize(object.delta,
+            specifiedType: const FullType(FileData)));
+    }
+    if (object.file != null) {
+      result
+        ..add(r'file')
+        ..add(serializers.serialize(object.file,
             specifiedType: const FullType(FileData)));
     }
     if (object.signature != null) {
@@ -98,12 +96,14 @@ class _$FileVersionSerializer implements StructuredSerializer<FileVersion> {
         ..add(serializers.serialize(object.signature,
             specifiedType: const FullType(FileData)));
     }
-    if (object.deleted != null) {
-      result
-        ..add(r'deleted')
-        ..add(serializers.serialize(object.deleted,
-            specifiedType: const FullType(bool)));
-    }
+    result
+      ..add(r'status')
+      ..add(serializers.serialize(object.status,
+          specifiedType: const FullType(FileStatus)));
+    result
+      ..add(r'version')
+      ..add(serializers.serialize(object.version,
+          specifiedType: const FullType(int)));
     return result;
   }
 
@@ -118,33 +118,33 @@ class _$FileVersionSerializer implements StructuredSerializer<FileVersion> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case r'version':
-          result.version = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
-          break;
-        case r'status':
-          result.status = serializers.deserialize(value,
-              specifiedType: const FullType(FileStatus)) as FileStatus;
-          break;
         case r'created_at':
           result.createdAt = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime;
           break;
-        case r'file':
-          result.file.replace(serializers.deserialize(value,
-              specifiedType: const FullType(FileData)) as FileData);
+        case r'deleted':
+          result.deleted = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
           break;
         case r'delta':
           result.delta.replace(serializers.deserialize(value,
+              specifiedType: const FullType(FileData)) as FileData);
+          break;
+        case r'file':
+          result.file.replace(serializers.deserialize(value,
               specifiedType: const FullType(FileData)) as FileData);
           break;
         case r'signature':
           result.signature.replace(serializers.deserialize(value,
               specifiedType: const FullType(FileData)) as FileData);
           break;
-        case r'deleted':
-          result.deleted = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
+        case r'status':
+          result.status = serializers.deserialize(value,
+              specifiedType: const FullType(FileStatus)) as FileStatus;
+          break;
+        case r'version':
+          result.version = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
           break;
       }
     }

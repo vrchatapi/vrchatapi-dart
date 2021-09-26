@@ -12,9 +12,9 @@ class _$Instance extends Instance {
   @override
   final bool canRequestInvite;
   @override
-  final num capacity;
+  final int capacity;
   @override
-  final String clientNumber;
+  final int clientNumber;
   @override
   final bool full;
   @override
@@ -24,7 +24,7 @@ class _$Instance extends Instance {
   @override
   final String location;
   @override
-  final num nUsers;
+  final int nUsers;
   @override
   final String name;
   @override
@@ -221,13 +221,13 @@ class InstanceBuilder implements Builder<Instance, InstanceBuilder> {
   set canRequestInvite(bool? canRequestInvite) =>
       _$this._canRequestInvite = canRequestInvite;
 
-  num? _capacity;
-  num? get capacity => _$this._capacity;
-  set capacity(num? capacity) => _$this._capacity = capacity;
+  int? _capacity;
+  int? get capacity => _$this._capacity;
+  set capacity(int? capacity) => _$this._capacity = capacity;
 
-  String? _clientNumber;
-  String? get clientNumber => _$this._clientNumber;
-  set clientNumber(String? clientNumber) => _$this._clientNumber = clientNumber;
+  int? _clientNumber;
+  int? get clientNumber => _$this._clientNumber;
+  set clientNumber(int? clientNumber) => _$this._clientNumber = clientNumber;
 
   bool? _full;
   bool? get full => _$this._full;
@@ -245,9 +245,9 @@ class InstanceBuilder implements Builder<Instance, InstanceBuilder> {
   String? get location => _$this._location;
   set location(String? location) => _$this._location = location;
 
-  num? _nUsers;
-  num? get nUsers => _$this._nUsers;
-  set nUsers(num? nUsers) => _$this._nUsers = nUsers;
+  int? _nUsers;
+  int? get nUsers => _$this._nUsers;
+  set nUsers(int? nUsers) => _$this._nUsers = nUsers;
 
   String? _name;
   String? get name => _$this._name;

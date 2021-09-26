@@ -12,24 +12,24 @@ part 'favorite.g.dart';
 /// Favorite
 ///
 /// Properties:
-/// * [id]
-/// * [type]
 /// * [favoriteId] - MUST be either AvatarID, UserID or WorldID.
+/// * [id]
 /// * [tags]
+/// * [type]
 abstract class Favorite implements Built<Favorite, FavoriteBuilder> {
-  @BuiltValueField(wireName: r'id')
-  String get id;
-
-  @BuiltValueField(wireName: r'type')
-  FavoriteType get type;
-  // enum typeEnum {  world,  friend,  avatar,  };
-
   /// MUST be either AvatarID, UserID or WorldID.
   @BuiltValueField(wireName: r'favoriteId')
   String get favoriteId;
 
+  @BuiltValueField(wireName: r'id')
+  String get id;
+
   @BuiltValueField(wireName: r'tags')
   BuiltList<String> get tags;
+
+  @BuiltValueField(wireName: r'type')
+  FavoriteType get type;
+  // enum typeEnum {  world,  friend,  avatar,  };
 
   Favorite._();
 
@@ -54,21 +54,21 @@ class _$FavoriteSerializer implements StructuredSerializer<Favorite> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     result
-      ..add(r'id')
-      ..add(serializers.serialize(object.id,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'type')
-      ..add(serializers.serialize(object.type,
-          specifiedType: const FullType(FavoriteType)));
-    result
       ..add(r'favoriteId')
       ..add(serializers.serialize(object.favoriteId,
+          specifiedType: const FullType(String)));
+    result
+      ..add(r'id')
+      ..add(serializers.serialize(object.id,
           specifiedType: const FullType(String)));
     result
       ..add(r'tags')
       ..add(serializers.serialize(object.tags,
           specifiedType: const FullType(BuiltList, [FullType(String)])));
+    result
+      ..add(r'type')
+      ..add(serializers.serialize(object.type,
+          specifiedType: const FullType(FavoriteType)));
     return result;
   }
 
@@ -83,22 +83,22 @@ class _$FavoriteSerializer implements StructuredSerializer<Favorite> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case r'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case r'type':
-          result.type = serializers.deserialize(value,
-              specifiedType: const FullType(FavoriteType)) as FavoriteType;
-          break;
         case r'favoriteId':
           result.favoriteId = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case r'id':
+          result.id = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
         case r'tags':
           result.tags.replace(serializers.deserialize(value,
                   specifiedType: const FullType(BuiltList, [FullType(String)]))
               as BuiltList<String>);
+          break;
+        case r'type':
+          result.type = serializers.deserialize(value,
+              specifiedType: const FullType(FavoriteType)) as FavoriteType;
           break;
       }
     }

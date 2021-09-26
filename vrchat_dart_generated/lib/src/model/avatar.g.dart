@@ -34,15 +34,15 @@ class _$Avatar extends Avatar {
   @override
   final String thumbnailImageUrl;
   @override
-  final BuiltSet<UnityPackage> unityPackages;
-  @override
   final String unityPackageUrl;
   @override
   final AvatarUnityPackageUrlObject unityPackageUrlObject;
   @override
+  final BuiltSet<UnityPackage> unityPackages;
+  @override
   final DateTime updatedAt;
   @override
-  final num version;
+  final int version;
 
   factory _$Avatar([void Function(AvatarBuilder)? updates]) =>
       (new AvatarBuilder()..update(updates)).build();
@@ -61,9 +61,9 @@ class _$Avatar extends Avatar {
       required this.releaseStatus,
       required this.tags,
       required this.thumbnailImageUrl,
-      required this.unityPackages,
       required this.unityPackageUrl,
       required this.unityPackageUrlObject,
+      required this.unityPackages,
       required this.updatedAt,
       required this.version})
       : super._() {
@@ -81,11 +81,11 @@ class _$Avatar extends Avatar {
     BuiltValueNullFieldError.checkNotNull(
         thumbnailImageUrl, 'Avatar', 'thumbnailImageUrl');
     BuiltValueNullFieldError.checkNotNull(
-        unityPackages, 'Avatar', 'unityPackages');
-    BuiltValueNullFieldError.checkNotNull(
         unityPackageUrl, 'Avatar', 'unityPackageUrl');
     BuiltValueNullFieldError.checkNotNull(
         unityPackageUrlObject, 'Avatar', 'unityPackageUrlObject');
+    BuiltValueNullFieldError.checkNotNull(
+        unityPackages, 'Avatar', 'unityPackages');
     BuiltValueNullFieldError.checkNotNull(updatedAt, 'Avatar', 'updatedAt');
     BuiltValueNullFieldError.checkNotNull(version, 'Avatar', 'version');
   }
@@ -114,9 +114,9 @@ class _$Avatar extends Avatar {
         releaseStatus == other.releaseStatus &&
         tags == other.tags &&
         thumbnailImageUrl == other.thumbnailImageUrl &&
-        unityPackages == other.unityPackages &&
         unityPackageUrl == other.unityPackageUrl &&
         unityPackageUrlObject == other.unityPackageUrlObject &&
+        unityPackages == other.unityPackages &&
         updatedAt == other.updatedAt &&
         version == other.version;
   }
@@ -159,9 +159,9 @@ class _$Avatar extends Avatar {
                                     releaseStatus.hashCode),
                                 tags.hashCode),
                             thumbnailImageUrl.hashCode),
-                        unityPackages.hashCode),
-                    unityPackageUrl.hashCode),
-                unityPackageUrlObject.hashCode),
+                        unityPackageUrl.hashCode),
+                    unityPackageUrlObject.hashCode),
+                unityPackages.hashCode),
             updatedAt.hashCode),
         version.hashCode));
   }
@@ -182,9 +182,9 @@ class _$Avatar extends Avatar {
           ..add('releaseStatus', releaseStatus)
           ..add('tags', tags)
           ..add('thumbnailImageUrl', thumbnailImageUrl)
-          ..add('unityPackages', unityPackages)
           ..add('unityPackageUrl', unityPackageUrl)
           ..add('unityPackageUrlObject', unityPackageUrlObject)
+          ..add('unityPackages', unityPackages)
           ..add('updatedAt', updatedAt)
           ..add('version', version))
         .toString();
@@ -249,12 +249,6 @@ class AvatarBuilder implements Builder<Avatar, AvatarBuilder> {
   set thumbnailImageUrl(String? thumbnailImageUrl) =>
       _$this._thumbnailImageUrl = thumbnailImageUrl;
 
-  SetBuilder<UnityPackage>? _unityPackages;
-  SetBuilder<UnityPackage> get unityPackages =>
-      _$this._unityPackages ??= new SetBuilder<UnityPackage>();
-  set unityPackages(SetBuilder<UnityPackage>? unityPackages) =>
-      _$this._unityPackages = unityPackages;
-
   String? _unityPackageUrl;
   String? get unityPackageUrl => _$this._unityPackageUrl;
   set unityPackageUrl(String? unityPackageUrl) =>
@@ -268,13 +262,19 @@ class AvatarBuilder implements Builder<Avatar, AvatarBuilder> {
           AvatarUnityPackageUrlObjectBuilder? unityPackageUrlObject) =>
       _$this._unityPackageUrlObject = unityPackageUrlObject;
 
+  SetBuilder<UnityPackage>? _unityPackages;
+  SetBuilder<UnityPackage> get unityPackages =>
+      _$this._unityPackages ??= new SetBuilder<UnityPackage>();
+  set unityPackages(SetBuilder<UnityPackage>? unityPackages) =>
+      _$this._unityPackages = unityPackages;
+
   DateTime? _updatedAt;
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
-  num? _version;
-  num? get version => _$this._version;
-  set version(num? version) => _$this._version = version;
+  int? _version;
+  int? get version => _$this._version;
+  set version(int? version) => _$this._version = version;
 
   AvatarBuilder() {
     Avatar._defaults(this);
@@ -296,9 +296,9 @@ class AvatarBuilder implements Builder<Avatar, AvatarBuilder> {
       _releaseStatus = $v.releaseStatus;
       _tags = $v.tags.toBuilder();
       _thumbnailImageUrl = $v.thumbnailImageUrl;
-      _unityPackages = $v.unityPackages.toBuilder();
       _unityPackageUrl = $v.unityPackageUrl;
       _unityPackageUrlObject = $v.unityPackageUrlObject.toBuilder();
+      _unityPackages = $v.unityPackages.toBuilder();
       _updatedAt = $v.updatedAt;
       _version = $v.version;
       _$v = null;
@@ -345,10 +345,10 @@ class AvatarBuilder implements Builder<Avatar, AvatarBuilder> {
               tags: tags.build(),
               thumbnailImageUrl: BuiltValueNullFieldError.checkNotNull(
                   thumbnailImageUrl, 'Avatar', 'thumbnailImageUrl'),
-              unityPackages: unityPackages.build(),
               unityPackageUrl: BuiltValueNullFieldError.checkNotNull(
                   unityPackageUrl, 'Avatar', 'unityPackageUrl'),
               unityPackageUrlObject: unityPackageUrlObject.build(),
+              unityPackages: unityPackages.build(),
               updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, 'Avatar', 'updatedAt'),
               version: BuiltValueNullFieldError.checkNotNull(version, 'Avatar', 'version'));
     } catch (_) {
@@ -357,11 +357,10 @@ class AvatarBuilder implements Builder<Avatar, AvatarBuilder> {
         _$failedField = 'tags';
         tags.build();
 
-        _$failedField = 'unityPackages';
-        unityPackages.build();
-
         _$failedField = 'unityPackageUrlObject';
         unityPackageUrlObject.build();
+        _$failedField = 'unityPackages';
+        unityPackages.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'Avatar', _$failedField, e.toString());

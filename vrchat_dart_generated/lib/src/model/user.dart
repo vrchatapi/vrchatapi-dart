@@ -15,41 +15,32 @@ part 'user.g.dart';
 /// User
 ///
 /// Properties:
-/// * [id]
-/// * [username]
-/// * [displayName]
-/// * [userIcon]
+/// * [allowAvatarCopying]
 /// * [bio]
 /// * [bioLinks]
-/// * [profilePicOverride]
-/// * [statusDescription]
 /// * [currentAvatarImageUrl]
 /// * [currentAvatarThumbnailImageUrl]
-/// * [state]
-/// * [tags]
+/// * [dateJoined]
 /// * [developerType]
+/// * [displayName]
+/// * [friendKey]
+/// * [id]
+/// * [instanceId]
+/// * [isFriend]
 /// * [lastLogin]
 /// * [lastPlatform] - This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
-/// * [allowAvatarCopying]
-/// * [status]
-/// * [dateJoined]
-/// * [isFriend]
-/// * [friendKey]
-/// * [worldId]
-/// * [instanceId]
 /// * [location]
+/// * [profilePicOverride]
+/// * [state]
+/// * [status]
+/// * [statusDescription]
+/// * [tags]
+/// * [userIcon]
+/// * [username]
+/// * [worldId]
 abstract class User implements Built<User, UserBuilder> {
-  @BuiltValueField(wireName: r'id')
-  String get id;
-
-  @BuiltValueField(wireName: r'username')
-  String get username;
-
-  @BuiltValueField(wireName: r'displayName')
-  String get displayName;
-
-  @BuiltValueField(wireName: r'userIcon')
-  String get userIcon;
+  @BuiltValueField(wireName: r'allowAvatarCopying')
+  bool get allowAvatarCopying;
 
   @BuiltValueField(wireName: r'bio')
   String get bio;
@@ -57,28 +48,33 @@ abstract class User implements Built<User, UserBuilder> {
   @BuiltValueField(wireName: r'bioLinks')
   BuiltList<String> get bioLinks;
 
-  @BuiltValueField(wireName: r'profilePicOverride')
-  String get profilePicOverride;
-
-  @BuiltValueField(wireName: r'statusDescription')
-  String get statusDescription;
-
   @BuiltValueField(wireName: r'currentAvatarImageUrl')
   String get currentAvatarImageUrl;
 
   @BuiltValueField(wireName: r'currentAvatarThumbnailImageUrl')
   String get currentAvatarThumbnailImageUrl;
 
-  @BuiltValueField(wireName: r'state')
-  UserState get state;
-  // enum stateEnum {  offline,  active,  online,  };
-
-  @BuiltValueField(wireName: r'tags')
-  BuiltList<String> get tags;
+  @BuiltValueField(wireName: r'date_joined')
+  Date get dateJoined;
 
   @BuiltValueField(wireName: r'developerType')
   DeveloperType get developerType;
   // enum developerTypeEnum {  none,  trusted,  internal,  moderator,  };
+
+  @BuiltValueField(wireName: r'displayName')
+  String get displayName;
+
+  @BuiltValueField(wireName: r'friendKey')
+  String get friendKey;
+
+  @BuiltValueField(wireName: r'id')
+  String get id;
+
+  @BuiltValueField(wireName: r'instanceId')
+  String get instanceId;
+
+  @BuiltValueField(wireName: r'isFriend')
+  bool get isFriend;
 
   @BuiltValueField(wireName: r'last_login')
   String get lastLogin;
@@ -87,30 +83,34 @@ abstract class User implements Built<User, UserBuilder> {
   @BuiltValueField(wireName: r'last_platform')
   String get lastPlatform;
 
-  @BuiltValueField(wireName: r'allowAvatarCopying')
-  bool get allowAvatarCopying;
+  @BuiltValueField(wireName: r'location')
+  String get location;
+
+  @BuiltValueField(wireName: r'profilePicOverride')
+  String get profilePicOverride;
+
+  @BuiltValueField(wireName: r'state')
+  UserState get state;
+  // enum stateEnum {  offline,  active,  online,  };
 
   @BuiltValueField(wireName: r'status')
   UserStatus get status;
   // enum statusEnum {  active,  join me,  ask me,  busy,  offline,  };
 
-  @BuiltValueField(wireName: r'date_joined')
-  Date get dateJoined;
+  @BuiltValueField(wireName: r'statusDescription')
+  String get statusDescription;
 
-  @BuiltValueField(wireName: r'isFriend')
-  bool get isFriend;
+  @BuiltValueField(wireName: r'tags')
+  BuiltList<String> get tags;
 
-  @BuiltValueField(wireName: r'friendKey')
-  String get friendKey;
+  @BuiltValueField(wireName: r'userIcon')
+  String get userIcon;
+
+  @BuiltValueField(wireName: r'username')
+  String get username;
 
   @BuiltValueField(wireName: r'worldId')
   String get worldId;
-
-  @BuiltValueField(wireName: r'instanceId')
-  String get instanceId;
-
-  @BuiltValueField(wireName: r'location')
-  String get location;
 
   User._();
 
@@ -135,21 +135,9 @@ class _$UserSerializer implements StructuredSerializer<User> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     result
-      ..add(r'id')
-      ..add(serializers.serialize(object.id,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'username')
-      ..add(serializers.serialize(object.username,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'displayName')
-      ..add(serializers.serialize(object.displayName,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'userIcon')
-      ..add(serializers.serialize(object.userIcon,
-          specifiedType: const FullType(String)));
+      ..add(r'allowAvatarCopying')
+      ..add(serializers.serialize(object.allowAvatarCopying,
+          specifiedType: const FullType(bool)));
     result
       ..add(r'bio')
       ..add(serializers.serialize(object.bio,
@@ -159,14 +147,6 @@ class _$UserSerializer implements StructuredSerializer<User> {
       ..add(serializers.serialize(object.bioLinks,
           specifiedType: const FullType(BuiltList, [FullType(String)])));
     result
-      ..add(r'profilePicOverride')
-      ..add(serializers.serialize(object.profilePicOverride,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'statusDescription')
-      ..add(serializers.serialize(object.statusDescription,
-          specifiedType: const FullType(String)));
-    result
       ..add(r'currentAvatarImageUrl')
       ..add(serializers.serialize(object.currentAvatarImageUrl,
           specifiedType: const FullType(String)));
@@ -175,17 +155,33 @@ class _$UserSerializer implements StructuredSerializer<User> {
       ..add(serializers.serialize(object.currentAvatarThumbnailImageUrl,
           specifiedType: const FullType(String)));
     result
-      ..add(r'state')
-      ..add(serializers.serialize(object.state,
-          specifiedType: const FullType(UserState)));
-    result
-      ..add(r'tags')
-      ..add(serializers.serialize(object.tags,
-          specifiedType: const FullType(BuiltList, [FullType(String)])));
+      ..add(r'date_joined')
+      ..add(serializers.serialize(object.dateJoined,
+          specifiedType: const FullType(Date)));
     result
       ..add(r'developerType')
       ..add(serializers.serialize(object.developerType,
           specifiedType: const FullType(DeveloperType)));
+    result
+      ..add(r'displayName')
+      ..add(serializers.serialize(object.displayName,
+          specifiedType: const FullType(String)));
+    result
+      ..add(r'friendKey')
+      ..add(serializers.serialize(object.friendKey,
+          specifiedType: const FullType(String)));
+    result
+      ..add(r'id')
+      ..add(serializers.serialize(object.id,
+          specifiedType: const FullType(String)));
+    result
+      ..add(r'instanceId')
+      ..add(serializers.serialize(object.instanceId,
+          specifiedType: const FullType(String)));
+    result
+      ..add(r'isFriend')
+      ..add(serializers.serialize(object.isFriend,
+          specifiedType: const FullType(bool)));
     result
       ..add(r'last_login')
       ..add(serializers.serialize(object.lastLogin,
@@ -195,36 +191,40 @@ class _$UserSerializer implements StructuredSerializer<User> {
       ..add(serializers.serialize(object.lastPlatform,
           specifiedType: const FullType(String)));
     result
-      ..add(r'allowAvatarCopying')
-      ..add(serializers.serialize(object.allowAvatarCopying,
-          specifiedType: const FullType(bool)));
+      ..add(r'location')
+      ..add(serializers.serialize(object.location,
+          specifiedType: const FullType(String)));
+    result
+      ..add(r'profilePicOverride')
+      ..add(serializers.serialize(object.profilePicOverride,
+          specifiedType: const FullType(String)));
+    result
+      ..add(r'state')
+      ..add(serializers.serialize(object.state,
+          specifiedType: const FullType(UserState)));
     result
       ..add(r'status')
       ..add(serializers.serialize(object.status,
           specifiedType: const FullType(UserStatus)));
     result
-      ..add(r'date_joined')
-      ..add(serializers.serialize(object.dateJoined,
-          specifiedType: const FullType(Date)));
+      ..add(r'statusDescription')
+      ..add(serializers.serialize(object.statusDescription,
+          specifiedType: const FullType(String)));
     result
-      ..add(r'isFriend')
-      ..add(serializers.serialize(object.isFriend,
-          specifiedType: const FullType(bool)));
+      ..add(r'tags')
+      ..add(serializers.serialize(object.tags,
+          specifiedType: const FullType(BuiltList, [FullType(String)])));
     result
-      ..add(r'friendKey')
-      ..add(serializers.serialize(object.friendKey,
+      ..add(r'userIcon')
+      ..add(serializers.serialize(object.userIcon,
+          specifiedType: const FullType(String)));
+    result
+      ..add(r'username')
+      ..add(serializers.serialize(object.username,
           specifiedType: const FullType(String)));
     result
       ..add(r'worldId')
       ..add(serializers.serialize(object.worldId,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'instanceId')
-      ..add(serializers.serialize(object.instanceId,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'location')
-      ..add(serializers.serialize(object.location,
           specifiedType: const FullType(String)));
     return result;
   }
@@ -240,21 +240,9 @@ class _$UserSerializer implements StructuredSerializer<User> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case r'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case r'username':
-          result.username = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case r'displayName':
-          result.displayName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case r'userIcon':
-          result.userIcon = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+        case r'allowAvatarCopying':
+          result.allowAvatarCopying = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
           break;
         case r'bio':
           result.bio = serializers.deserialize(value,
@@ -265,14 +253,6 @@ class _$UserSerializer implements StructuredSerializer<User> {
                   specifiedType: const FullType(BuiltList, [FullType(String)]))
               as BuiltList<String>);
           break;
-        case r'profilePicOverride':
-          result.profilePicOverride = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case r'statusDescription':
-          result.statusDescription = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
         case r'currentAvatarImageUrl':
           result.currentAvatarImageUrl = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
@@ -281,18 +261,33 @@ class _$UserSerializer implements StructuredSerializer<User> {
           result.currentAvatarThumbnailImageUrl = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case r'state':
-          result.state = serializers.deserialize(value,
-              specifiedType: const FullType(UserState)) as UserState;
-          break;
-        case r'tags':
-          result.tags.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>);
+        case r'date_joined':
+          result.dateJoined = serializers.deserialize(value,
+              specifiedType: const FullType(Date)) as Date;
           break;
         case r'developerType':
           result.developerType = serializers.deserialize(value,
               specifiedType: const FullType(DeveloperType)) as DeveloperType;
+          break;
+        case r'displayName':
+          result.displayName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case r'friendKey':
+          result.friendKey = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case r'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case r'instanceId':
+          result.instanceId = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case r'isFriend':
+          result.isFriend = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
           break;
         case r'last_login':
           result.lastLogin = serializers.deserialize(value,
@@ -302,36 +297,41 @@ class _$UserSerializer implements StructuredSerializer<User> {
           result.lastPlatform = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case r'allowAvatarCopying':
-          result.allowAvatarCopying = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
+        case r'location':
+          result.location = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case r'profilePicOverride':
+          result.profilePicOverride = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case r'state':
+          result.state = serializers.deserialize(value,
+              specifiedType: const FullType(UserState)) as UserState;
           break;
         case r'status':
           result.status = serializers.deserialize(value,
               specifiedType: const FullType(UserStatus)) as UserStatus;
           break;
-        case r'date_joined':
-          result.dateJoined = serializers.deserialize(value,
-              specifiedType: const FullType(Date)) as Date;
+        case r'statusDescription':
+          result.statusDescription = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           break;
-        case r'isFriend':
-          result.isFriend = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
+        case r'tags':
+          result.tags.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(BuiltList, [FullType(String)]))
+              as BuiltList<String>);
           break;
-        case r'friendKey':
-          result.friendKey = serializers.deserialize(value,
+        case r'userIcon':
+          result.userIcon = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case r'username':
+          result.username = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
         case r'worldId':
           result.worldId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case r'instanceId':
-          result.instanceId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case r'location':
-          result.location = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
       }

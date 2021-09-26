@@ -8,27 +8,27 @@ part of 'favorite.dart';
 
 class _$Favorite extends Favorite {
   @override
-  final String id;
-  @override
-  final FavoriteType type;
-  @override
   final String favoriteId;
   @override
+  final String id;
+  @override
   final BuiltList<String> tags;
+  @override
+  final FavoriteType type;
 
   factory _$Favorite([void Function(FavoriteBuilder)? updates]) =>
       (new FavoriteBuilder()..update(updates)).build();
 
   _$Favorite._(
-      {required this.id,
-      required this.type,
-      required this.favoriteId,
-      required this.tags})
+      {required this.favoriteId,
+      required this.id,
+      required this.tags,
+      required this.type})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, 'Favorite', 'id');
-    BuiltValueNullFieldError.checkNotNull(type, 'Favorite', 'type');
     BuiltValueNullFieldError.checkNotNull(favoriteId, 'Favorite', 'favoriteId');
+    BuiltValueNullFieldError.checkNotNull(id, 'Favorite', 'id');
     BuiltValueNullFieldError.checkNotNull(tags, 'Favorite', 'tags');
+    BuiltValueNullFieldError.checkNotNull(type, 'Favorite', 'type');
   }
 
   @override
@@ -42,26 +42,26 @@ class _$Favorite extends Favorite {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Favorite &&
-        id == other.id &&
-        type == other.type &&
         favoriteId == other.favoriteId &&
-        tags == other.tags;
+        id == other.id &&
+        tags == other.tags &&
+        type == other.type;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, id.hashCode), type.hashCode), favoriteId.hashCode),
-        tags.hashCode));
+        $jc($jc($jc(0, favoriteId.hashCode), id.hashCode), tags.hashCode),
+        type.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Favorite')
-          ..add('id', id)
-          ..add('type', type)
           ..add('favoriteId', favoriteId)
-          ..add('tags', tags))
+          ..add('id', id)
+          ..add('tags', tags)
+          ..add('type', type))
         .toString();
   }
 }
@@ -69,21 +69,21 @@ class _$Favorite extends Favorite {
 class FavoriteBuilder implements Builder<Favorite, FavoriteBuilder> {
   _$Favorite? _$v;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  FavoriteType? _type;
-  FavoriteType? get type => _$this._type;
-  set type(FavoriteType? type) => _$this._type = type;
-
   String? _favoriteId;
   String? get favoriteId => _$this._favoriteId;
   set favoriteId(String? favoriteId) => _$this._favoriteId = favoriteId;
 
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
   ListBuilder<String>? _tags;
   ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
+
+  FavoriteType? _type;
+  FavoriteType? get type => _$this._type;
+  set type(FavoriteType? type) => _$this._type = type;
 
   FavoriteBuilder() {
     Favorite._defaults(this);
@@ -92,10 +92,10 @@ class FavoriteBuilder implements Builder<Favorite, FavoriteBuilder> {
   FavoriteBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id;
-      _type = $v.type;
       _favoriteId = $v.favoriteId;
+      _id = $v.id;
       _tags = $v.tags.toBuilder();
+      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -118,12 +118,12 @@ class FavoriteBuilder implements Builder<Favorite, FavoriteBuilder> {
     try {
       _$result = _$v ??
           new _$Favorite._(
-              id: BuiltValueNullFieldError.checkNotNull(id, 'Favorite', 'id'),
-              type: BuiltValueNullFieldError.checkNotNull(
-                  type, 'Favorite', 'type'),
               favoriteId: BuiltValueNullFieldError.checkNotNull(
                   favoriteId, 'Favorite', 'favoriteId'),
-              tags: tags.build());
+              id: BuiltValueNullFieldError.checkNotNull(id, 'Favorite', 'id'),
+              tags: tags.build(),
+              type: BuiltValueNullFieldError.checkNotNull(
+                  type, 'Favorite', 'type'));
     } catch (_) {
       late String _$failedField;
       try {

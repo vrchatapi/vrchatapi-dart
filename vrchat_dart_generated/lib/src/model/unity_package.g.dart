@@ -8,47 +8,47 @@ part of 'unity_package.dart';
 
 class _$UnityPackage extends UnityPackage {
   @override
-  final String id;
-  @override
   final String? assetUrl;
   @override
   final JsonObject? assetUrlObject;
+  @override
+  final int assetVersion;
+  @override
+  final DateTime? createdAt;
+  @override
+  final String id;
+  @override
+  final String platform;
   @override
   final String? pluginUrl;
   @override
   final JsonObject? pluginUrlObject;
   @override
+  final int? unitySortNumber;
+  @override
   final String unityVersion;
-  @override
-  final num? unitySortNumber;
-  @override
-  final num assetVersion;
-  @override
-  final String platform;
-  @override
-  final DateTime? createdAt;
 
   factory _$UnityPackage([void Function(UnityPackageBuilder)? updates]) =>
       (new UnityPackageBuilder()..update(updates)).build();
 
   _$UnityPackage._(
-      {required this.id,
-      this.assetUrl,
+      {this.assetUrl,
       this.assetUrlObject,
+      required this.assetVersion,
+      this.createdAt,
+      required this.id,
+      required this.platform,
       this.pluginUrl,
       this.pluginUrlObject,
-      required this.unityVersion,
       this.unitySortNumber,
-      required this.assetVersion,
-      required this.platform,
-      this.createdAt})
+      required this.unityVersion})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, 'UnityPackage', 'id');
-    BuiltValueNullFieldError.checkNotNull(
-        unityVersion, 'UnityPackage', 'unityVersion');
     BuiltValueNullFieldError.checkNotNull(
         assetVersion, 'UnityPackage', 'assetVersion');
+    BuiltValueNullFieldError.checkNotNull(id, 'UnityPackage', 'id');
     BuiltValueNullFieldError.checkNotNull(platform, 'UnityPackage', 'platform');
+    BuiltValueNullFieldError.checkNotNull(
+        unityVersion, 'UnityPackage', 'unityVersion');
   }
 
   @override
@@ -62,16 +62,16 @@ class _$UnityPackage extends UnityPackage {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is UnityPackage &&
-        id == other.id &&
         assetUrl == other.assetUrl &&
         assetUrlObject == other.assetUrlObject &&
+        assetVersion == other.assetVersion &&
+        createdAt == other.createdAt &&
+        id == other.id &&
+        platform == other.platform &&
         pluginUrl == other.pluginUrl &&
         pluginUrlObject == other.pluginUrlObject &&
-        unityVersion == other.unityVersion &&
         unitySortNumber == other.unitySortNumber &&
-        assetVersion == other.assetVersion &&
-        platform == other.platform &&
-        createdAt == other.createdAt;
+        unityVersion == other.unityVersion;
   }
 
   @override
@@ -83,30 +83,32 @@ class _$UnityPackage extends UnityPackage {
                     $jc(
                         $jc(
                             $jc(
-                                $jc($jc($jc(0, id.hashCode), assetUrl.hashCode),
-                                    assetUrlObject.hashCode),
-                                pluginUrl.hashCode),
-                            pluginUrlObject.hashCode),
-                        unityVersion.hashCode),
-                    unitySortNumber.hashCode),
-                assetVersion.hashCode),
-            platform.hashCode),
-        createdAt.hashCode));
+                                $jc(
+                                    $jc($jc(0, assetUrl.hashCode),
+                                        assetUrlObject.hashCode),
+                                    assetVersion.hashCode),
+                                createdAt.hashCode),
+                            id.hashCode),
+                        platform.hashCode),
+                    pluginUrl.hashCode),
+                pluginUrlObject.hashCode),
+            unitySortNumber.hashCode),
+        unityVersion.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('UnityPackage')
-          ..add('id', id)
           ..add('assetUrl', assetUrl)
           ..add('assetUrlObject', assetUrlObject)
+          ..add('assetVersion', assetVersion)
+          ..add('createdAt', createdAt)
+          ..add('id', id)
+          ..add('platform', platform)
           ..add('pluginUrl', pluginUrl)
           ..add('pluginUrlObject', pluginUrlObject)
-          ..add('unityVersion', unityVersion)
           ..add('unitySortNumber', unitySortNumber)
-          ..add('assetVersion', assetVersion)
-          ..add('platform', platform)
-          ..add('createdAt', createdAt))
+          ..add('unityVersion', unityVersion))
         .toString();
   }
 }
@@ -114,10 +116,6 @@ class _$UnityPackage extends UnityPackage {
 class UnityPackageBuilder
     implements Builder<UnityPackage, UnityPackageBuilder> {
   _$UnityPackage? _$v;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
 
   String? _assetUrl;
   String? get assetUrl => _$this._assetUrl;
@@ -128,6 +126,22 @@ class UnityPackageBuilder
   set assetUrlObject(JsonObject? assetUrlObject) =>
       _$this._assetUrlObject = assetUrlObject;
 
+  int? _assetVersion;
+  int? get assetVersion => _$this._assetVersion;
+  set assetVersion(int? assetVersion) => _$this._assetVersion = assetVersion;
+
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _platform;
+  String? get platform => _$this._platform;
+  set platform(String? platform) => _$this._platform = platform;
+
   String? _pluginUrl;
   String? get pluginUrl => _$this._pluginUrl;
   set pluginUrl(String? pluginUrl) => _$this._pluginUrl = pluginUrl;
@@ -137,26 +151,14 @@ class UnityPackageBuilder
   set pluginUrlObject(JsonObject? pluginUrlObject) =>
       _$this._pluginUrlObject = pluginUrlObject;
 
+  int? _unitySortNumber;
+  int? get unitySortNumber => _$this._unitySortNumber;
+  set unitySortNumber(int? unitySortNumber) =>
+      _$this._unitySortNumber = unitySortNumber;
+
   String? _unityVersion;
   String? get unityVersion => _$this._unityVersion;
   set unityVersion(String? unityVersion) => _$this._unityVersion = unityVersion;
-
-  num? _unitySortNumber;
-  num? get unitySortNumber => _$this._unitySortNumber;
-  set unitySortNumber(num? unitySortNumber) =>
-      _$this._unitySortNumber = unitySortNumber;
-
-  num? _assetVersion;
-  num? get assetVersion => _$this._assetVersion;
-  set assetVersion(num? assetVersion) => _$this._assetVersion = assetVersion;
-
-  String? _platform;
-  String? get platform => _$this._platform;
-  set platform(String? platform) => _$this._platform = platform;
-
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
   UnityPackageBuilder() {
     UnityPackage._defaults(this);
@@ -165,16 +167,16 @@ class UnityPackageBuilder
   UnityPackageBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id;
       _assetUrl = $v.assetUrl;
       _assetUrlObject = $v.assetUrlObject;
+      _assetVersion = $v.assetVersion;
+      _createdAt = $v.createdAt;
+      _id = $v.id;
+      _platform = $v.platform;
       _pluginUrl = $v.pluginUrl;
       _pluginUrlObject = $v.pluginUrlObject;
-      _unityVersion = $v.unityVersion;
       _unitySortNumber = $v.unitySortNumber;
-      _assetVersion = $v.assetVersion;
-      _platform = $v.platform;
-      _createdAt = $v.createdAt;
+      _unityVersion = $v.unityVersion;
       _$v = null;
     }
     return this;
@@ -195,19 +197,19 @@ class UnityPackageBuilder
   _$UnityPackage build() {
     final _$result = _$v ??
         new _$UnityPackage._(
-            id: BuiltValueNullFieldError.checkNotNull(id, 'UnityPackage', 'id'),
             assetUrl: assetUrl,
             assetUrlObject: assetUrlObject,
-            pluginUrl: pluginUrl,
-            pluginUrlObject: pluginUrlObject,
-            unityVersion: BuiltValueNullFieldError.checkNotNull(
-                unityVersion, 'UnityPackage', 'unityVersion'),
-            unitySortNumber: unitySortNumber,
             assetVersion: BuiltValueNullFieldError.checkNotNull(
                 assetVersion, 'UnityPackage', 'assetVersion'),
+            createdAt: createdAt,
+            id: BuiltValueNullFieldError.checkNotNull(id, 'UnityPackage', 'id'),
             platform: BuiltValueNullFieldError.checkNotNull(
                 platform, 'UnityPackage', 'platform'),
-            createdAt: createdAt);
+            pluginUrl: pluginUrl,
+            pluginUrlObject: pluginUrlObject,
+            unitySortNumber: unitySortNumber,
+            unityVersion: BuiltValueNullFieldError.checkNotNull(
+                unityVersion, 'UnityPackage', 'unityVersion'));
     replace(_$result);
     return _$result;
   }

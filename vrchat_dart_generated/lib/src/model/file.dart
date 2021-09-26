@@ -13,29 +13,29 @@ part 'file.g.dart';
 /// File
 ///
 /// Properties:
+/// * [extension_]
 /// * [id]
+/// * [mimeType]
 /// * [name]
 /// * [ownerId]
-/// * [mimeType]
-/// * [extension_]
 /// * [tags]
 /// * [versions]
 abstract class File implements Built<File, FileBuilder> {
+  @BuiltValueField(wireName: r'extension')
+  String get extension_;
+
   @BuiltValueField(wireName: r'id')
   String get id;
+
+  @BuiltValueField(wireName: r'mimeType')
+  MIMEType get mimeType;
+  // enum mimeTypeEnum {  image/jpeg,  image/jpg,  image/png,  image/webp,  image/gif,  image/bmp,  image/svg＋xml,  image/tiff,  application/x-avatar,  application/x-world,  application/gzip,  application/x-rsync-signature,  application/x-rsync-delta,  application/octet-stream,  };
 
   @BuiltValueField(wireName: r'name')
   String get name;
 
   @BuiltValueField(wireName: r'ownerId')
   String get ownerId;
-
-  @BuiltValueField(wireName: r'mimeType')
-  MIMEType get mimeType;
-  // enum mimeTypeEnum {  image/jpeg,  image/jpg,  image/png,  image/webp,  image/gif,  image/bmp,  image/svg＋xml,  image/tiff,  application/x-avatar,  application/x-world,  application/gzip,  application/x-rsync-signature,  application/x-rsync-delta,  application/octet-stream,  };
-
-  @BuiltValueField(wireName: r'extension')
-  String get extension_;
 
   @BuiltValueField(wireName: r'tags')
   BuiltList<String> get tags;
@@ -66,9 +66,17 @@ class _$FileSerializer implements StructuredSerializer<File> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     result
+      ..add(r'extension')
+      ..add(serializers.serialize(object.extension_,
+          specifiedType: const FullType(String)));
+    result
       ..add(r'id')
       ..add(serializers.serialize(object.id,
           specifiedType: const FullType(String)));
+    result
+      ..add(r'mimeType')
+      ..add(serializers.serialize(object.mimeType,
+          specifiedType: const FullType(MIMEType)));
     result
       ..add(r'name')
       ..add(serializers.serialize(object.name,
@@ -76,14 +84,6 @@ class _$FileSerializer implements StructuredSerializer<File> {
     result
       ..add(r'ownerId')
       ..add(serializers.serialize(object.ownerId,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'mimeType')
-      ..add(serializers.serialize(object.mimeType,
-          specifiedType: const FullType(MIMEType)));
-    result
-      ..add(r'extension')
-      ..add(serializers.serialize(object.extension_,
           specifiedType: const FullType(String)));
     result
       ..add(r'tags')
@@ -107,9 +107,17 @@ class _$FileSerializer implements StructuredSerializer<File> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
+        case r'extension':
+          result.extension_ = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case r'id':
           result.id = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          break;
+        case r'mimeType':
+          result.mimeType = serializers.deserialize(value,
+              specifiedType: const FullType(MIMEType)) as MIMEType;
           break;
         case r'name':
           result.name = serializers.deserialize(value,
@@ -117,14 +125,6 @@ class _$FileSerializer implements StructuredSerializer<File> {
           break;
         case r'ownerId':
           result.ownerId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case r'mimeType':
-          result.mimeType = serializers.deserialize(value,
-              specifiedType: const FullType(MIMEType)) as MIMEType;
-          break;
-        case r'extension':
-          result.extension_ = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
         case r'tags':

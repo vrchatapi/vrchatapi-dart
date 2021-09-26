@@ -16,17 +16,17 @@ class _$World extends World {
   @override
   final String authorName;
   @override
-  final num capacity;
+  final int capacity;
   @override
   final DateTime createdAt;
   @override
   final String description;
   @override
-  final num? favorites;
+  final int? favorites;
   @override
   final bool featured;
   @override
-  final num heat;
+  final int heat;
   @override
   final String id;
   @override
@@ -40,19 +40,19 @@ class _$World extends World {
   @override
   final String namespace;
   @override
-  final num? occupants;
+  final int? occupants;
   @override
   final String organization;
   @override
   final JsonObject pluginUrlObject;
   @override
-  final num popularity;
+  final int popularity;
   @override
   final String? previewYoutubeId;
   @override
-  final num? privateOccupants;
+  final int? privateOccupants;
   @override
-  final num? publicOccupants;
+  final int? publicOccupants;
   @override
   final DateTime publicationDate;
   @override
@@ -68,9 +68,9 @@ class _$World extends World {
   @override
   final DateTime updatedAt;
   @override
-  final num version;
+  final int version;
   @override
-  final num visits;
+  final int visits;
 
   factory _$World([void Function(WorldBuilder)? updates]) =>
       (new WorldBuilder()..update(updates)).build();
@@ -292,9 +292,9 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
   String? get authorName => _$this._authorName;
   set authorName(String? authorName) => _$this._authorName = authorName;
 
-  num? _capacity;
-  num? get capacity => _$this._capacity;
-  set capacity(num? capacity) => _$this._capacity = capacity;
+  int? _capacity;
+  int? get capacity => _$this._capacity;
+  set capacity(int? capacity) => _$this._capacity = capacity;
 
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
@@ -304,17 +304,17 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
-  num? _favorites;
-  num? get favorites => _$this._favorites;
-  set favorites(num? favorites) => _$this._favorites = favorites;
+  int? _favorites;
+  int? get favorites => _$this._favorites;
+  set favorites(int? favorites) => _$this._favorites = favorites;
 
   bool? _featured;
   bool? get featured => _$this._featured;
   set featured(bool? featured) => _$this._featured = featured;
 
-  num? _heat;
-  num? get heat => _$this._heat;
-  set heat(num? heat) => _$this._heat = heat;
+  int? _heat;
+  int? get heat => _$this._heat;
+  set heat(int? heat) => _$this._heat = heat;
 
   String? _id;
   String? get id => _$this._id;
@@ -343,9 +343,9 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
   String? get namespace => _$this._namespace;
   set namespace(String? namespace) => _$this._namespace = namespace;
 
-  num? _occupants;
-  num? get occupants => _$this._occupants;
-  set occupants(num? occupants) => _$this._occupants = occupants;
+  int? _occupants;
+  int? get occupants => _$this._occupants;
+  set occupants(int? occupants) => _$this._occupants = occupants;
 
   String? _organization;
   String? get organization => _$this._organization;
@@ -356,23 +356,23 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
   set pluginUrlObject(JsonObject? pluginUrlObject) =>
       _$this._pluginUrlObject = pluginUrlObject;
 
-  num? _popularity;
-  num? get popularity => _$this._popularity;
-  set popularity(num? popularity) => _$this._popularity = popularity;
+  int? _popularity;
+  int? get popularity => _$this._popularity;
+  set popularity(int? popularity) => _$this._popularity = popularity;
 
   String? _previewYoutubeId;
   String? get previewYoutubeId => _$this._previewYoutubeId;
   set previewYoutubeId(String? previewYoutubeId) =>
       _$this._previewYoutubeId = previewYoutubeId;
 
-  num? _privateOccupants;
-  num? get privateOccupants => _$this._privateOccupants;
-  set privateOccupants(num? privateOccupants) =>
+  int? _privateOccupants;
+  int? get privateOccupants => _$this._privateOccupants;
+  set privateOccupants(int? privateOccupants) =>
       _$this._privateOccupants = privateOccupants;
 
-  num? _publicOccupants;
-  num? get publicOccupants => _$this._publicOccupants;
-  set publicOccupants(num? publicOccupants) =>
+  int? _publicOccupants;
+  int? get publicOccupants => _$this._publicOccupants;
+  set publicOccupants(int? publicOccupants) =>
       _$this._publicOccupants = publicOccupants;
 
   DateTime? _publicationDate;
@@ -409,13 +409,13 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
-  num? _version;
-  num? get version => _$this._version;
-  set version(num? version) => _$this._version = version;
+  int? _version;
+  int? get version => _$this._version;
+  set version(int? version) => _$this._version = version;
 
-  num? _visits;
-  num? get visits => _$this._visits;
-  set visits(num? visits) => _$this._visits = visits;
+  int? _visits;
+  int? get visits => _$this._visits;
+  set visits(int? visits) => _$this._visits = visits;
 
   WorldBuilder() {
     World._defaults(this);

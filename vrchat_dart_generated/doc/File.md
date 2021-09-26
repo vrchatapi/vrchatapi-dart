@@ -8,11 +8,11 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**extension_** | **String** |  | 
 **id** | **String** |  | 
+**mimeType** | [**MIMEType**](MIMEType.md) |  | 
 **name** | **String** |  | 
 **ownerId** | **String** |  | 
-**mimeType** | [**MIMEType**](MIMEType.md) |  | 
-**extension_** | **String** |  | 
 **tags** | **BuiltList&lt;String&gt;** |  | 
 **versions** | [**BuiltSet&lt;FileVersion&gt;**](FileVersion.md) |  | 
 

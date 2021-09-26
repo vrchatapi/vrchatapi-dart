@@ -8,23 +8,23 @@ part of 'permission.dart';
 
 class _$Permission extends Permission {
   @override
-  final String id;
+  final JsonObject? data;
   @override
-  final String ownerId;
+  final String id;
   @override
   final String name;
   @override
-  final JsonObject? data;
+  final String ownerId;
 
   factory _$Permission([void Function(PermissionBuilder)? updates]) =>
       (new PermissionBuilder()..update(updates)).build();
 
   _$Permission._(
-      {required this.id, required this.ownerId, required this.name, this.data})
+      {this.data, required this.id, required this.name, required this.ownerId})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, 'Permission', 'id');
-    BuiltValueNullFieldError.checkNotNull(ownerId, 'Permission', 'ownerId');
     BuiltValueNullFieldError.checkNotNull(name, 'Permission', 'name');
+    BuiltValueNullFieldError.checkNotNull(ownerId, 'Permission', 'ownerId');
   }
 
   @override
@@ -38,26 +38,25 @@ class _$Permission extends Permission {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Permission &&
+        data == other.data &&
         id == other.id &&
-        ownerId == other.ownerId &&
         name == other.name &&
-        data == other.data;
+        ownerId == other.ownerId;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, id.hashCode), ownerId.hashCode), name.hashCode),
-        data.hashCode));
+    return $jf($jc($jc($jc($jc(0, data.hashCode), id.hashCode), name.hashCode),
+        ownerId.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Permission')
+          ..add('data', data)
           ..add('id', id)
-          ..add('ownerId', ownerId)
           ..add('name', name)
-          ..add('data', data))
+          ..add('ownerId', ownerId))
         .toString();
   }
 }
@@ -65,21 +64,21 @@ class _$Permission extends Permission {
 class PermissionBuilder implements Builder<Permission, PermissionBuilder> {
   _$Permission? _$v;
 
+  JsonObject? _data;
+  JsonObject? get data => _$this._data;
+  set data(JsonObject? data) => _$this._data = data;
+
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
-
-  String? _ownerId;
-  String? get ownerId => _$this._ownerId;
-  set ownerId(String? ownerId) => _$this._ownerId = ownerId;
 
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  JsonObject? _data;
-  JsonObject? get data => _$this._data;
-  set data(JsonObject? data) => _$this._data = data;
+  String? _ownerId;
+  String? get ownerId => _$this._ownerId;
+  set ownerId(String? ownerId) => _$this._ownerId = ownerId;
 
   PermissionBuilder() {
     Permission._defaults(this);
@@ -88,10 +87,10 @@ class PermissionBuilder implements Builder<Permission, PermissionBuilder> {
   PermissionBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id;
-      _ownerId = $v.ownerId;
-      _name = $v.name;
       _data = $v.data;
+      _id = $v.id;
+      _name = $v.name;
+      _ownerId = $v.ownerId;
       _$v = null;
     }
     return this;
@@ -112,12 +111,12 @@ class PermissionBuilder implements Builder<Permission, PermissionBuilder> {
   _$Permission build() {
     final _$result = _$v ??
         new _$Permission._(
+            data: data,
             id: BuiltValueNullFieldError.checkNotNull(id, 'Permission', 'id'),
-            ownerId: BuiltValueNullFieldError.checkNotNull(
-                ownerId, 'Permission', 'ownerId'),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, 'Permission', 'name'),
-            data: data);
+            ownerId: BuiltValueNullFieldError.checkNotNull(
+                ownerId, 'Permission', 'ownerId'));
     replace(_$result);
     return _$result;
   }

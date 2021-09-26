@@ -28,9 +28,9 @@ part 'avatar.g.dart';
 /// * [releaseStatus]
 /// * [tags]
 /// * [thumbnailImageUrl]
-/// * [unityPackages]
 /// * [unityPackageUrl]
 /// * [unityPackageUrlObject]
+/// * [unityPackages]
 /// * [updatedAt]
 /// * [version]
 abstract class Avatar implements Built<Avatar, AvatarBuilder> {
@@ -76,20 +76,20 @@ abstract class Avatar implements Built<Avatar, AvatarBuilder> {
   @BuiltValueField(wireName: r'thumbnailImageUrl')
   String get thumbnailImageUrl;
 
-  @BuiltValueField(wireName: r'unityPackages')
-  BuiltSet<UnityPackage> get unityPackages;
-
   @BuiltValueField(wireName: r'unityPackageUrl')
   String get unityPackageUrl;
 
   @BuiltValueField(wireName: r'unityPackageUrlObject')
   AvatarUnityPackageUrlObject get unityPackageUrlObject;
 
+  @BuiltValueField(wireName: r'unityPackages')
+  BuiltSet<UnityPackage> get unityPackages;
+
   @BuiltValueField(wireName: r'updated_at')
   DateTime get updatedAt;
 
   @BuiltValueField(wireName: r'version')
-  num get version;
+  int get version;
 
   Avatar._();
 
@@ -172,10 +172,6 @@ class _$AvatarSerializer implements StructuredSerializer<Avatar> {
       ..add(serializers.serialize(object.thumbnailImageUrl,
           specifiedType: const FullType(String)));
     result
-      ..add(r'unityPackages')
-      ..add(serializers.serialize(object.unityPackages,
-          specifiedType: const FullType(BuiltSet, [FullType(UnityPackage)])));
-    result
       ..add(r'unityPackageUrl')
       ..add(serializers.serialize(object.unityPackageUrl,
           specifiedType: const FullType(String)));
@@ -184,13 +180,17 @@ class _$AvatarSerializer implements StructuredSerializer<Avatar> {
       ..add(serializers.serialize(object.unityPackageUrlObject,
           specifiedType: const FullType(AvatarUnityPackageUrlObject)));
     result
+      ..add(r'unityPackages')
+      ..add(serializers.serialize(object.unityPackages,
+          specifiedType: const FullType(BuiltSet, [FullType(UnityPackage)])));
+    result
       ..add(r'updated_at')
       ..add(serializers.serialize(object.updatedAt,
           specifiedType: const FullType(DateTime)));
     result
       ..add(r'version')
       ..add(serializers.serialize(object.version,
-          specifiedType: const FullType(num)));
+          specifiedType: const FullType(int)));
     return result;
   }
 
@@ -258,12 +258,6 @@ class _$AvatarSerializer implements StructuredSerializer<Avatar> {
           result.thumbnailImageUrl = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case r'unityPackages':
-          result.unityPackages.replace(serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltSet, [FullType(UnityPackage)]))
-              as BuiltSet<UnityPackage>);
-          break;
         case r'unityPackageUrl':
           result.unityPackageUrl = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
@@ -273,13 +267,19 @@ class _$AvatarSerializer implements StructuredSerializer<Avatar> {
                   specifiedType: const FullType(AvatarUnityPackageUrlObject))
               as AvatarUnityPackageUrlObject);
           break;
+        case r'unityPackages':
+          result.unityPackages.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(BuiltSet, [FullType(UnityPackage)]))
+              as BuiltSet<UnityPackage>);
+          break;
         case r'updated_at':
           result.updatedAt = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime;
           break;
         case r'version':
           result.version = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
+              specifiedType: const FullType(int)) as int;
           break;
       }
     }

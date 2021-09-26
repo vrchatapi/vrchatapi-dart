@@ -10,7 +10,7 @@ class _$Response extends Response {
   @override
   final String? message;
   @override
-  final num statusCode;
+  final int statusCode;
 
   factory _$Response([void Function(ResponseBuilder)? updates]) =>
       (new ResponseBuilder()..update(updates)).build();
@@ -55,9 +55,9 @@ class ResponseBuilder implements Builder<Response, ResponseBuilder> {
   String? get message => _$this._message;
   set message(String? message) => _$this._message = message;
 
-  num? _statusCode;
-  num? get statusCode => _$this._statusCode;
-  set statusCode(num? statusCode) => _$this._statusCode = statusCode;
+  int? _statusCode;
+  int? get statusCode => _$this._statusCode;
+  set statusCode(int? statusCode) => _$this._statusCode = statusCode;
 
   ResponseBuilder() {
     Response._defaults(this);

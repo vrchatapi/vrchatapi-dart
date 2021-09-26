@@ -8,36 +8,36 @@ part of 'file_version.dart';
 
 class _$FileVersion extends FileVersion {
   @override
-  final num version;
-  @override
-  final FileStatus status;
-  @override
   final DateTime createdAt;
   @override
-  final FileData? file;
+  final bool? deleted;
   @override
   final FileData? delta;
   @override
+  final FileData? file;
+  @override
   final FileData? signature;
   @override
-  final bool? deleted;
+  final FileStatus status;
+  @override
+  final int version;
 
   factory _$FileVersion([void Function(FileVersionBuilder)? updates]) =>
       (new FileVersionBuilder()..update(updates)).build();
 
   _$FileVersion._(
-      {required this.version,
-      required this.status,
-      required this.createdAt,
-      this.file,
+      {required this.createdAt,
+      this.deleted,
       this.delta,
+      this.file,
       this.signature,
-      this.deleted})
+      required this.status,
+      required this.version})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(version, 'FileVersion', 'version');
-    BuiltValueNullFieldError.checkNotNull(status, 'FileVersion', 'status');
     BuiltValueNullFieldError.checkNotNull(
         createdAt, 'FileVersion', 'createdAt');
+    BuiltValueNullFieldError.checkNotNull(status, 'FileVersion', 'status');
+    BuiltValueNullFieldError.checkNotNull(version, 'FileVersion', 'version');
   }
 
   @override
@@ -51,13 +51,13 @@ class _$FileVersion extends FileVersion {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is FileVersion &&
-        version == other.version &&
-        status == other.status &&
         createdAt == other.createdAt &&
-        file == other.file &&
+        deleted == other.deleted &&
         delta == other.delta &&
+        file == other.file &&
         signature == other.signature &&
-        deleted == other.deleted;
+        status == other.status &&
+        version == other.version;
   }
 
   @override
@@ -66,24 +66,24 @@ class _$FileVersion extends FileVersion {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, version.hashCode), status.hashCode),
-                        createdAt.hashCode),
+                    $jc($jc($jc(0, createdAt.hashCode), deleted.hashCode),
+                        delta.hashCode),
                     file.hashCode),
-                delta.hashCode),
-            signature.hashCode),
-        deleted.hashCode));
+                signature.hashCode),
+            status.hashCode),
+        version.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FileVersion')
-          ..add('version', version)
-          ..add('status', status)
           ..add('createdAt', createdAt)
-          ..add('file', file)
+          ..add('deleted', deleted)
           ..add('delta', delta)
+          ..add('file', file)
           ..add('signature', signature)
-          ..add('deleted', deleted))
+          ..add('status', status)
+          ..add('version', version))
         .toString();
   }
 }
@@ -91,33 +91,33 @@ class _$FileVersion extends FileVersion {
 class FileVersionBuilder implements Builder<FileVersion, FileVersionBuilder> {
   _$FileVersion? _$v;
 
-  num? _version;
-  num? get version => _$this._version;
-  set version(num? version) => _$this._version = version;
-
-  FileStatus? _status;
-  FileStatus? get status => _$this._status;
-  set status(FileStatus? status) => _$this._status = status;
-
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  FileDataBuilder? _file;
-  FileDataBuilder get file => _$this._file ??= new FileDataBuilder();
-  set file(FileDataBuilder? file) => _$this._file = file;
+  bool? _deleted;
+  bool? get deleted => _$this._deleted;
+  set deleted(bool? deleted) => _$this._deleted = deleted;
 
   FileDataBuilder? _delta;
   FileDataBuilder get delta => _$this._delta ??= new FileDataBuilder();
   set delta(FileDataBuilder? delta) => _$this._delta = delta;
 
+  FileDataBuilder? _file;
+  FileDataBuilder get file => _$this._file ??= new FileDataBuilder();
+  set file(FileDataBuilder? file) => _$this._file = file;
+
   FileDataBuilder? _signature;
   FileDataBuilder get signature => _$this._signature ??= new FileDataBuilder();
   set signature(FileDataBuilder? signature) => _$this._signature = signature;
 
-  bool? _deleted;
-  bool? get deleted => _$this._deleted;
-  set deleted(bool? deleted) => _$this._deleted = deleted;
+  FileStatus? _status;
+  FileStatus? get status => _$this._status;
+  set status(FileStatus? status) => _$this._status = status;
+
+  int? _version;
+  int? get version => _$this._version;
+  set version(int? version) => _$this._version = version;
 
   FileVersionBuilder() {
     FileVersion._defaults(this);
@@ -126,13 +126,13 @@ class FileVersionBuilder implements Builder<FileVersion, FileVersionBuilder> {
   FileVersionBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _version = $v.version;
-      _status = $v.status;
       _createdAt = $v.createdAt;
-      _file = $v.file?.toBuilder();
-      _delta = $v.delta?.toBuilder();
-      _signature = $v.signature?.toBuilder();
       _deleted = $v.deleted;
+      _delta = $v.delta?.toBuilder();
+      _file = $v.file?.toBuilder();
+      _signature = $v.signature?.toBuilder();
+      _status = $v.status;
+      _version = $v.version;
       _$v = null;
     }
     return this;
@@ -155,23 +155,23 @@ class FileVersionBuilder implements Builder<FileVersion, FileVersionBuilder> {
     try {
       _$result = _$v ??
           new _$FileVersion._(
-              version: BuiltValueNullFieldError.checkNotNull(
-                  version, 'FileVersion', 'version'),
-              status: BuiltValueNullFieldError.checkNotNull(
-                  status, 'FileVersion', 'status'),
               createdAt: BuiltValueNullFieldError.checkNotNull(
                   createdAt, 'FileVersion', 'createdAt'),
-              file: _file?.build(),
+              deleted: deleted,
               delta: _delta?.build(),
+              file: _file?.build(),
               signature: _signature?.build(),
-              deleted: deleted);
+              status: BuiltValueNullFieldError.checkNotNull(
+                  status, 'FileVersion', 'status'),
+              version: BuiltValueNullFieldError.checkNotNull(
+                  version, 'FileVersion', 'version'));
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'file';
-        _file?.build();
         _$failedField = 'delta';
         _delta?.build();
+        _$failedField = 'file';
+        _file?.build();
         _$failedField = 'signature';
         _signature?.build();
       } catch (e) {

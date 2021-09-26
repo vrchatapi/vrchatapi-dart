@@ -15,10 +15,10 @@ part 'instance_platforms.g.dart';
 abstract class InstancePlatforms
     implements Built<InstancePlatforms, InstancePlatformsBuilder> {
   @BuiltValueField(wireName: r'android')
-  num get android;
+  int get android;
 
   @BuiltValueField(wireName: r'standalonewindows')
-  num get standalonewindows;
+  int get standalonewindows;
 
   InstancePlatforms._();
 
@@ -48,11 +48,11 @@ class _$InstancePlatformsSerializer
     result
       ..add(r'android')
       ..add(serializers.serialize(object.android,
-          specifiedType: const FullType(num)));
+          specifiedType: const FullType(int)));
     result
       ..add(r'standalonewindows')
       ..add(serializers.serialize(object.standalonewindows,
-          specifiedType: const FullType(num)));
+          specifiedType: const FullType(int)));
     return result;
   }
 
@@ -70,11 +70,11 @@ class _$InstancePlatformsSerializer
       switch (key) {
         case r'android':
           result.android = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
+              specifiedType: const FullType(int)) as int;
           break;
         case r'standalonewindows':
           result.standalonewindows = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
+              specifiedType: const FullType(int)) as int;
           break;
       }
     }
