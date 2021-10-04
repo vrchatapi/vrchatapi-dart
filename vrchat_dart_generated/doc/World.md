@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **previewYoutubeId** | **String** |  | [optional] 
 **privateOccupants** | **int** |  | [optional] [default to 0]
 **publicOccupants** | **int** |  | [optional] [default to 0]
-**publicationDate** | [**DateTime**](DateTime.md) |  | 
+**publicationDate** | **String** |  | 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | 
 **tags** | **BuiltList&lt;String&gt;** |  | 
 **thumbnailImageUrl** | **String** |  | 

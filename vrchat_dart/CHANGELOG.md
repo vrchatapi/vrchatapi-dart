@@ -1,4 +1,4 @@
-## 1.2.0
+## 1.2.0-pre.1
 Updated for flutter 2.5.0 and updated vrchat_dart_generated
 
 ## 1.1.11

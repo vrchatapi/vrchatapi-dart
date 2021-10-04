@@ -18,11 +18,11 @@ Name | Type | Description | Notes
 **displayName** | **String** |  | 
 **friendKey** | **String** |  | 
 **id** | **String** |  | 
-**instanceId** | **String** |  | 
+**instanceId** | **String** |  | [optional] 
 **isFriend** | **bool** |  | 
 **lastLogin** | **String** |  | 
 **lastPlatform** | **String** | This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`. | 
-**location** | **String** |  | 
+**location** | **String** |  | [optional] 
 **profilePicOverride** | **String** |  | 
 **state** | [**UserState**](UserState.md) |  | 
 **status** | [**UserStatus**](UserStatus.md) |  | 
@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **tags** | **BuiltList&lt;String&gt;** |  | 
 **userIcon** | **String** |  | 
 **username** | **String** |  | 
-**worldId** | **String** |  | 
+**worldId** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

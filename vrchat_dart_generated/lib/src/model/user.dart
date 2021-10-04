@@ -71,7 +71,7 @@ abstract class User implements Built<User, UserBuilder> {
   String get id;
 
   @BuiltValueField(wireName: r'instanceId')
-  String get instanceId;
+  String? get instanceId;
 
   @BuiltValueField(wireName: r'isFriend')
   bool get isFriend;
@@ -84,7 +84,7 @@ abstract class User implements Built<User, UserBuilder> {
   String get lastPlatform;
 
   @BuiltValueField(wireName: r'location')
-  String get location;
+  String? get location;
 
   @BuiltValueField(wireName: r'profilePicOverride')
   String get profilePicOverride;
@@ -110,7 +110,7 @@ abstract class User implements Built<User, UserBuilder> {
   String get username;
 
   @BuiltValueField(wireName: r'worldId')
-  String get worldId;
+  String? get worldId;
 
   User._();
 
@@ -174,10 +174,12 @@ class _$UserSerializer implements StructuredSerializer<User> {
       ..add(r'id')
       ..add(serializers.serialize(object.id,
           specifiedType: const FullType(String)));
-    result
-      ..add(r'instanceId')
-      ..add(serializers.serialize(object.instanceId,
-          specifiedType: const FullType(String)));
+    if (object.instanceId != null) {
+      result
+        ..add(r'instanceId')
+        ..add(serializers.serialize(object.instanceId,
+            specifiedType: const FullType(String)));
+    }
     result
       ..add(r'isFriend')
       ..add(serializers.serialize(object.isFriend,
@@ -190,10 +192,12 @@ class _$UserSerializer implements StructuredSerializer<User> {
       ..add(r'last_platform')
       ..add(serializers.serialize(object.lastPlatform,
           specifiedType: const FullType(String)));
-    result
-      ..add(r'location')
-      ..add(serializers.serialize(object.location,
-          specifiedType: const FullType(String)));
+    if (object.location != null) {
+      result
+        ..add(r'location')
+        ..add(serializers.serialize(object.location,
+            specifiedType: const FullType(String)));
+    }
     result
       ..add(r'profilePicOverride')
       ..add(serializers.serialize(object.profilePicOverride,
@@ -222,10 +226,12 @@ class _$UserSerializer implements StructuredSerializer<User> {
       ..add(r'username')
       ..add(serializers.serialize(object.username,
           specifiedType: const FullType(String)));
-    result
-      ..add(r'worldId')
-      ..add(serializers.serialize(object.worldId,
-          specifiedType: const FullType(String)));
+    if (object.worldId != null) {
+      result
+        ..add(r'worldId')
+        ..add(serializers.serialize(object.worldId,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 

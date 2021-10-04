@@ -46,7 +46,7 @@ abstract class Instance implements Built<Instance, InstanceBuilder> {
   int get capacity;
 
   @BuiltValueField(wireName: r'clientNumber')
-  int get clientNumber;
+  String get clientNumber;
 
   @BuiltValueField(wireName: r'full')
   bool get full;
@@ -252,7 +252,7 @@ class _$InstanceSerializer implements StructuredSerializer<Instance> {
           break;
         case r'clientNumber':
           result.clientNumber = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(String)) as String;
           break;
         case r'full':
           result.full = serializers.deserialize(value,

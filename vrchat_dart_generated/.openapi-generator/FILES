@@ -171,8 +171,3 @@ lib/src/model/world.dart
 lib/src/serializers.dart
 lib/vrchat_dart_generated.dart
 pubspec.yaml
-test/api_config_test.dart
-test/api_event_config_test.dart
-test/download_url_list_test.dart
-test/dynamic_world_row_test.dart
-test/public_announcement_test.dart

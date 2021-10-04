@@ -14,7 +14,7 @@ class _$Instance extends Instance {
   @override
   final int capacity;
   @override
-  final int clientNumber;
+  final String clientNumber;
   @override
   final bool full;
   @override
@@ -225,9 +225,9 @@ class InstanceBuilder implements Builder<Instance, InstanceBuilder> {
   int? get capacity => _$this._capacity;
   set capacity(int? capacity) => _$this._capacity = capacity;
 
-  int? _clientNumber;
-  int? get clientNumber => _$this._clientNumber;
-  set clientNumber(int? clientNumber) => _$this._clientNumber = clientNumber;
+  String? _clientNumber;
+  String? get clientNumber => _$this._clientNumber;
+  set clientNumber(String? clientNumber) => _$this._clientNumber = clientNumber;
 
   bool? _full;
   bool? get full => _$this._full;

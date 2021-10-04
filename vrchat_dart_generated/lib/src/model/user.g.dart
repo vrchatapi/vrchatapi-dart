@@ -28,7 +28,7 @@ class _$User extends User {
   @override
   final String id;
   @override
-  final String instanceId;
+  final String? instanceId;
   @override
   final bool isFriend;
   @override
@@ -36,7 +36,7 @@ class _$User extends User {
   @override
   final String lastPlatform;
   @override
-  final String location;
+  final String? location;
   @override
   final String profilePicOverride;
   @override
@@ -52,7 +52,7 @@ class _$User extends User {
   @override
   final String username;
   @override
-  final String worldId;
+  final String? worldId;
 
   factory _$User([void Function(UserBuilder)? updates]) =>
       (new UserBuilder()..update(updates)).build();
@@ -68,11 +68,11 @@ class _$User extends User {
       required this.displayName,
       required this.friendKey,
       required this.id,
-      required this.instanceId,
+      this.instanceId,
       required this.isFriend,
       required this.lastLogin,
       required this.lastPlatform,
-      required this.location,
+      this.location,
       required this.profilePicOverride,
       required this.state,
       required this.status,
@@ -80,7 +80,7 @@ class _$User extends User {
       required this.tags,
       required this.userIcon,
       required this.username,
-      required this.worldId})
+      this.worldId})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         allowAvatarCopying, 'User', 'allowAvatarCopying');
@@ -96,11 +96,9 @@ class _$User extends User {
     BuiltValueNullFieldError.checkNotNull(displayName, 'User', 'displayName');
     BuiltValueNullFieldError.checkNotNull(friendKey, 'User', 'friendKey');
     BuiltValueNullFieldError.checkNotNull(id, 'User', 'id');
-    BuiltValueNullFieldError.checkNotNull(instanceId, 'User', 'instanceId');
     BuiltValueNullFieldError.checkNotNull(isFriend, 'User', 'isFriend');
     BuiltValueNullFieldError.checkNotNull(lastLogin, 'User', 'lastLogin');
     BuiltValueNullFieldError.checkNotNull(lastPlatform, 'User', 'lastPlatform');
-    BuiltValueNullFieldError.checkNotNull(location, 'User', 'location');
     BuiltValueNullFieldError.checkNotNull(
         profilePicOverride, 'User', 'profilePicOverride');
     BuiltValueNullFieldError.checkNotNull(state, 'User', 'state');
@@ -110,7 +108,6 @@ class _$User extends User {
     BuiltValueNullFieldError.checkNotNull(tags, 'User', 'tags');
     BuiltValueNullFieldError.checkNotNull(userIcon, 'User', 'userIcon');
     BuiltValueNullFieldError.checkNotNull(username, 'User', 'username');
-    BuiltValueNullFieldError.checkNotNull(worldId, 'User', 'worldId');
   }
 
   @override
@@ -398,11 +395,11 @@ class UserBuilder implements Builder<User, UserBuilder> {
               friendKey:
                   BuiltValueNullFieldError.checkNotNull(friendKey, 'User', 'friendKey'),
               id: BuiltValueNullFieldError.checkNotNull(id, 'User', 'id'),
-              instanceId: BuiltValueNullFieldError.checkNotNull(instanceId, 'User', 'instanceId'),
+              instanceId: instanceId,
               isFriend: BuiltValueNullFieldError.checkNotNull(isFriend, 'User', 'isFriend'),
               lastLogin: BuiltValueNullFieldError.checkNotNull(lastLogin, 'User', 'lastLogin'),
               lastPlatform: BuiltValueNullFieldError.checkNotNull(lastPlatform, 'User', 'lastPlatform'),
-              location: BuiltValueNullFieldError.checkNotNull(location, 'User', 'location'),
+              location: location,
               profilePicOverride: BuiltValueNullFieldError.checkNotNull(profilePicOverride, 'User', 'profilePicOverride'),
               state: BuiltValueNullFieldError.checkNotNull(state, 'User', 'state'),
               status: BuiltValueNullFieldError.checkNotNull(status, 'User', 'status'),
@@ -410,7 +407,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
               tags: tags.build(),
               userIcon: BuiltValueNullFieldError.checkNotNull(userIcon, 'User', 'userIcon'),
               username: BuiltValueNullFieldError.checkNotNull(username, 'User', 'username'),
-              worldId: BuiltValueNullFieldError.checkNotNull(worldId, 'User', 'worldId'));
+              worldId: worldId);
     } catch (_) {
       late String _$failedField;
       try {

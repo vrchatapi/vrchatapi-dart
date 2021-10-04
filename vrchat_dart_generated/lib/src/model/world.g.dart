@@ -54,7 +54,7 @@ class _$World extends World {
   @override
   final int? publicOccupants;
   @override
-  final DateTime publicationDate;
+  final String publicationDate;
   @override
   final ReleaseStatus releaseStatus;
   @override
@@ -375,9 +375,9 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
   set publicOccupants(int? publicOccupants) =>
       _$this._publicOccupants = publicOccupants;
 
-  DateTime? _publicationDate;
-  DateTime? get publicationDate => _$this._publicationDate;
-  set publicationDate(DateTime? publicationDate) =>
+  String? _publicationDate;
+  String? get publicationDate => _$this._publicationDate;
+  set publicationDate(String? publicationDate) =>
       _$this._publicationDate = publicationDate;
 
   ReleaseStatus? _releaseStatus;
