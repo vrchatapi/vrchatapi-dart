@@ -8,7 +8,7 @@ import 'package:openapi_generator_annotations/openapi_generator_annotations.dart
     pubDescription:
         'The generated API used by vrchat_dart. Generated from https://github.com/vrchatapi/specification.',
     pubHomepage: 'https://github.com/vrchatapi/vrchatapi-dart',
-    pubVersion: '1.4.2-pre.1',
+    pubVersion: '1.4.2',
     dateLibrary: DioDateLibrary.core,
   ),
   inputSpecFile: 'https://vrchatapi.github.io/specification/openapi.yaml',

@@ -1,3 +1,6 @@
+## 1.4.2
+Updated to match spec
+
 ## 1.4.2-pre.1
 Several fixes not yet in the spec
 
