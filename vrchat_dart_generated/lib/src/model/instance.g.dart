@@ -30,7 +30,7 @@ class _$Instance extends Instance {
   @override
   final String? nonce;
   @override
-  final String ownerId;
+  final String? ownerId;
   @override
   final bool permanent;
   @override
@@ -67,7 +67,7 @@ class _$Instance extends Instance {
       required this.nUsers,
       required this.name,
       this.nonce,
-      required this.ownerId,
+      this.ownerId,
       required this.permanent,
       required this.photonRegion,
       required this.platforms,
@@ -91,7 +91,6 @@ class _$Instance extends Instance {
     BuiltValueNullFieldError.checkNotNull(location, 'Instance', 'location');
     BuiltValueNullFieldError.checkNotNull(nUsers, 'Instance', 'nUsers');
     BuiltValueNullFieldError.checkNotNull(name, 'Instance', 'name');
-    BuiltValueNullFieldError.checkNotNull(ownerId, 'Instance', 'ownerId');
     BuiltValueNullFieldError.checkNotNull(permanent, 'Instance', 'permanent');
     BuiltValueNullFieldError.checkNotNull(
         photonRegion, 'Instance', 'photonRegion');
@@ -375,7 +374,7 @@ class InstanceBuilder implements Builder<Instance, InstanceBuilder> {
               name: BuiltValueNullFieldError.checkNotNull(
                   name, 'Instance', 'name'),
               nonce: nonce,
-              ownerId: BuiltValueNullFieldError.checkNotNull(ownerId, 'Instance', 'ownerId'),
+              ownerId: ownerId,
               permanent: BuiltValueNullFieldError.checkNotNull(permanent, 'Instance', 'permanent'),
               photonRegion: BuiltValueNullFieldError.checkNotNull(photonRegion, 'Instance', 'photonRegion'),
               platforms: platforms.build(),

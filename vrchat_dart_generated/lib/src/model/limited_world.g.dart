@@ -34,7 +34,7 @@ class _$LimitedWorld extends LimitedWorld {
   @override
   final int popularity;
   @override
-  final DateTime publicationDate;
+  final String publicationDate;
   @override
   final ReleaseStatus releaseStatus;
   @override
@@ -266,9 +266,9 @@ class LimitedWorldBuilder
   int? get popularity => _$this._popularity;
   set popularity(int? popularity) => _$this._popularity = popularity;
 
-  DateTime? _publicationDate;
-  DateTime? get publicationDate => _$this._publicationDate;
-  set publicationDate(DateTime? publicationDate) =>
+  String? _publicationDate;
+  String? get publicationDate => _$this._publicationDate;
+  set publicationDate(String? publicationDate) =>
       _$this._publicationDate = publicationDate;
 
   ReleaseStatus? _releaseStatus;

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **active** | **bool** |  | [default to true]
 **canRequestInvite** | **bool** |  | [default to true]
 **capacity** | **int** |  | 
-**clientNumber** | **int** |  | 
+**clientNumber** | **String** |  | 
 **full** | **bool** |  | [default to false]
 **id** | **String** |  | 
 **instanceId** | **String** |  | 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **nUsers** | **int** |  | 
 **name** | **String** |  | 
 **nonce** | **String** |  | [optional] 
-**ownerId** | **String** |  | 
+**ownerId** | **String** |  | [optional] 
 **permanent** | **bool** |  | [default to false]
 **photonRegion** | **String** |  | 
 **platforms** | [**InstancePlatforms**](InstancePlatforms.md) |  | 

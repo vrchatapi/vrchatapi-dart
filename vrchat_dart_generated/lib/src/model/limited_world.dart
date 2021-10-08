@@ -74,7 +74,7 @@ abstract class LimitedWorld
   int get popularity;
 
   @BuiltValueField(wireName: r'publicationDate')
-  DateTime get publicationDate;
+  String get publicationDate;
 
   @BuiltValueField(wireName: r'releaseStatus')
   ReleaseStatus get releaseStatus;
@@ -174,7 +174,7 @@ class _$LimitedWorldSerializer implements StructuredSerializer<LimitedWorld> {
     result
       ..add(r'publicationDate')
       ..add(serializers.serialize(object.publicationDate,
-          specifiedType: const FullType(DateTime)));
+          specifiedType: const FullType(String)));
     result
       ..add(r'releaseStatus')
       ..add(serializers.serialize(object.releaseStatus,
@@ -265,7 +265,7 @@ class _$LimitedWorldSerializer implements StructuredSerializer<LimitedWorld> {
           break;
         case r'publicationDate':
           result.publicationDate = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
+              specifiedType: const FullType(String)) as String;
           break;
         case r'releaseStatus':
           result.releaseStatus = serializers.deserialize(value,

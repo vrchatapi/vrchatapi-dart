@@ -70,7 +70,7 @@ abstract class Instance implements Built<Instance, InstanceBuilder> {
   String? get nonce;
 
   @BuiltValueField(wireName: r'ownerId')
-  String get ownerId;
+  String? get ownerId;
 
   @BuiltValueField(wireName: r'permanent')
   bool get permanent;
@@ -145,7 +145,7 @@ class _$InstanceSerializer implements StructuredSerializer<Instance> {
     result
       ..add(r'clientNumber')
       ..add(serializers.serialize(object.clientNumber,
-          specifiedType: const FullType(int)));
+          specifiedType: const FullType(String)));
     result
       ..add(r'full')
       ..add(serializers.serialize(object.full,
@@ -176,10 +176,12 @@ class _$InstanceSerializer implements StructuredSerializer<Instance> {
         ..add(serializers.serialize(object.nonce,
             specifiedType: const FullType(String)));
     }
-    result
-      ..add(r'ownerId')
-      ..add(serializers.serialize(object.ownerId,
-          specifiedType: const FullType(String)));
+    if (object.ownerId != null) {
+      result
+        ..add(r'ownerId')
+        ..add(serializers.serialize(object.ownerId,
+            specifiedType: const FullType(String)));
+    }
     result
       ..add(r'permanent')
       ..add(serializers.serialize(object.permanent,

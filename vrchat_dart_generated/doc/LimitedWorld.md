@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **occupants** | **int** |  | [default to 0]
 **organization** | **String** |  | [default to 'vrchat']
 **popularity** | **int** |  | [default to 0]
-**publicationDate** | [**DateTime**](DateTime.md) |  | 
+**publicationDate** | **String** |  | 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | 
 **tags** | **BuiltList&lt;String&gt;** |  | 
 **thumbnailImageUrl** | **String** |  | 
