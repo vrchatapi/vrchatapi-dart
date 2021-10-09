@@ -1,3 +1,8 @@
+## 1.3.0
+- Added missing streaming events
+- Updated streaming event deserialization
+- Added VrcStreamingEventType enum to make handling events easier
+
 ## 1.2.0
 Updated for flutter 2.5.0 and updated vrchat_dart_generated
 

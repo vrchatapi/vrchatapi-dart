@@ -55,7 +55,7 @@ extension VrcStreamingEventTypeExtension on VrcStreamingEventType {
       case 'friend-delete':
         return VrcStreamingEventType.friendDelete;
       case 'friend-update':
-        return VrcStreamingEventType.friendDelete;
+        return VrcStreamingEventType.friendUpdate;
       case 'friend-location':
         return VrcStreamingEventType.friendLocation;
       case 'notification':
@@ -77,6 +77,8 @@ abstract class VrcStreamingEvent {
 }
 
 /// These shouldn't happen unless VRChat adds more events
+///
+/// If you end up getting [UnknownEvent]s please create an issue on GitHub
 class UnknownEvent extends VrcStreamingEvent {
   @override
   VrcStreamingEventType get type => VrcStreamingEventType.unknown;
@@ -227,9 +229,8 @@ class FriendLocationEvent extends FriendEventWithUser {
   VrcStreamingEventType get type => VrcStreamingEventType.friendLocation;
 
   /// The [world] the user joined
-  // TODO: Should this be a full world object?
-  @_LimitedWorldSerializer()
-  final LimitedWorld? world;
+  @_WorldSerializer()
+  final World? world;
 
   /// <worldId:locationId>
   final String? location;

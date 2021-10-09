@@ -1,5 +1,9 @@
 part of '../../vrchat_dart.dart';
 
+/// These classes create [JsonConverter]s from the generated object serializers
+///
+/// (Because rewriting them makes no sense)
+
 class _UserSerializer implements JsonConverter<User, dynamic> {
   const _UserSerializer();
 
@@ -20,24 +24,24 @@ class _UserSerializer implements JsonConverter<User, dynamic> {
   }
 }
 
-class _LimitedWorldSerializer implements JsonConverter<LimitedWorld?, dynamic> {
-  const _LimitedWorldSerializer();
+class _WorldSerializer implements JsonConverter<World?, dynamic> {
+  const _WorldSerializer();
 
   @override
-  LimitedWorld? fromJson(dynamic json) {
+  World? fromJson(dynamic json) {
     if ((json as Map<String, dynamic>).isEmpty) {
       return null;
     }
     return standardSerializers.fromJson(
-      LimitedWorld.serializer,
+      World.serializer,
       jsonEncode(json),
-    ) as LimitedWorld;
+    ) as World;
   }
 
   @override
-  dynamic toJson(LimitedWorld? object) {
+  dynamic toJson(World? object) {
     return standardSerializers.toJson(
-      LimitedWorld.serializer,
+      World.serializer,
       object,
     );
   }

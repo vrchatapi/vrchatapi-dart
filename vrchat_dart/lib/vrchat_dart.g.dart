@@ -78,7 +78,7 @@ FriendLocationEvent _$FriendLocationEventFromJson(Map<String, dynamic> json) =>
     FriendLocationEvent(
       userId: json['userId'] as String,
       user: const _UserSerializer().fromJson(json['user']),
-      world: const _LimitedWorldSerializer().fromJson(json['world']),
+      world: const _WorldSerializer().fromJson(json['world']),
       location: json['location'] as String?,
       instance: json['instance'] as String?,
       canRequestInvite: json['canRequestInvite'] as bool,
@@ -89,7 +89,7 @@ Map<String, dynamic> _$FriendLocationEventToJson(
     <String, dynamic>{
       'userId': instance.userId,
       'user': const _UserSerializer().toJson(instance.user),
-      'world': const _LimitedWorldSerializer().toJson(instance.world),
+      'world': const _WorldSerializer().toJson(instance.world),
       'location': instance.location,
       'instance': instance.instance,
       'canRequestInvite': instance.canRequestInvite,
