@@ -95,14 +95,32 @@ Map<String, dynamic> _$FriendLocationEventToJson(
       'canRequestInvite': instance.canRequestInvite,
     };
 
-NotificationEvent _$NotificationEventFromJson(Map<String, dynamic> json) =>
-    NotificationEvent(
-      notificaiton:
-          const _NotificationSerializer().fromJson(json['notificaiton']),
+NotificationReceivedEvent _$NotificationReceivedEventFromJson(
+        Map<String, dynamic> json) =>
+    NotificationReceivedEvent(
+      notification:
+          const _NotificationSerializer().fromJson(json['notification']),
     );
 
-Map<String, dynamic> _$NotificationEventToJson(NotificationEvent instance) =>
+Map<String, dynamic> _$NotificationReceivedEventToJson(
+        NotificationReceivedEvent instance) =>
     <String, dynamic>{
-      'notificaiton':
-          const _NotificationSerializer().toJson(instance.notificaiton),
+      'notification':
+          const _NotificationSerializer().toJson(instance.notification),
+    };
+
+NotificationResponseEvent _$NotificationResponseEventFromJson(
+        Map<String, dynamic> json) =>
+    NotificationResponseEvent(
+      notificationId: json['notificationId'] as String,
+      receiverId: json['receiverId'] as String,
+      responseId: const _NotificationSerializer().fromJson(json['responseId']),
+    );
+
+Map<String, dynamic> _$NotificationResponseEventToJson(
+        NotificationResponseEvent instance) =>
+    <String, dynamic>{
+      'notificationId': instance.notificationId,
+      'receiverId': instance.receiverId,
+      'responseId': const _NotificationSerializer().toJson(instance.responseId),
     };

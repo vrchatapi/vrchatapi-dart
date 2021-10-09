@@ -13,13 +13,17 @@ class VrcStreaming {
   StreamView<VrcStreamingEvent> get vrcEventStream =>
       StreamView(_vrcEventStreamController.stream);
 
+  bool _started = false;
   WebSocketChannel? _channel;
 
+  /// Create a [VrcStreaming] instance
   VrcStreaming(this._rawApi, this._proxyUrl);
 
   /// Start streaming. First login with the auth API to get an auth cookie.
-  Future<void> start() async {
-    final authToken;
+  void start() async {
+    _started = true;
+
+    final String authToken;
     try {
       final authResponse =
           await _rawApi.getAuthenticationApi().verifyAuthToken();
@@ -31,7 +35,7 @@ class VrcStreaming {
       return;
     }
 
-    final baseUrl;
+    final String baseUrl;
     if (_proxyUrl != null) {
       baseUrl = 'wss://$_proxyUrl/websocket/';
     } else {
@@ -43,10 +47,18 @@ class VrcStreaming {
     );
 
     _channel?.stream.listen(_handleWebsocketEvent);
+
+    await _channel?.sink.done;
+
+    // Restart the connection if streaming isn't stopped
+    if (_started) {
+      start();
+    }
   }
 
   /// Stop streaming
   void stop() {
+    _started = false;
     _channel?.sink.close();
     _channel = null;
   }
@@ -54,40 +66,52 @@ class VrcStreaming {
   void _handleWebsocketEvent(dynamic websocketEvent) {
     final Map<String, dynamic> json = jsonDecode(websocketEvent);
     if (json.containsKey('err')) {
-      print(json);
+      _vrcEventStreamController.add(ErrorEvent(message: json['err']));
       return;
     }
-    final String eventType = json['type'];
-    final Map<String, dynamic> content = jsonDecode(json['content']);
+    final String typeString = json['type'];
+    final eventType = VrcStreamingEventTypeExtension.fromTypeString(typeString);
 
     final VrcStreamingEvent vrcEvent;
     switch (eventType) {
-      case 'friend-online':
-        vrcEvent = FriendOnlineEvent.fromJson(content);
-        break;
-      case 'friend-offline':
-        vrcEvent = FriendOfflineEvent.fromJson(content);
-        break;
-      case 'friend-active':
-        vrcEvent = FriendActiveEvent.fromJson(content);
-        break;
-      case 'friend-add':
-        vrcEvent = FriendAddEvent.fromJson(content);
-        break;
-      case 'friend-delete':
-        vrcEvent = FriendDeleteEvent.fromJson(content);
-        break;
-      case 'friend-update':
-        vrcEvent = FriendUpdateEvent.fromJson(content);
-        break;
-      case 'friend-location':
-        vrcEvent = FriendLocationEvent.fromJson(content);
-        break;
-      case 'notification':
-        vrcEvent = NotificationEvent.fromJson(content);
-        break;
-      default:
+      case VrcStreamingEventType.unknown:
+      // Shouldn't be able to get here with an event type of error, but all cases
+      // must be covered
+      case VrcStreamingEventType.error:
         vrcEvent = UnknownEvent();
+        break;
+      case VrcStreamingEventType.friendOnline:
+        vrcEvent = FriendOnlineEvent.fromJson(jsonDecode(json['content']));
+        break;
+      case VrcStreamingEventType.friendOffline:
+        vrcEvent = FriendOfflineEvent.fromJson(jsonDecode(json['content']));
+        break;
+      case VrcStreamingEventType.friendActive:
+        vrcEvent = FriendActiveEvent.fromJson(jsonDecode(json['content']));
+        break;
+      case VrcStreamingEventType.friendAdd:
+        vrcEvent = FriendAddEvent.fromJson(jsonDecode(json['content']));
+        break;
+      case VrcStreamingEventType.friendDelete:
+        vrcEvent = FriendDeleteEvent.fromJson(jsonDecode(json['content']));
+        break;
+      case VrcStreamingEventType.friendUpdate:
+        vrcEvent = FriendUpdateEvent.fromJson(jsonDecode(json['content']));
+        break;
+      case VrcStreamingEventType.friendLocation:
+        vrcEvent = FriendLocationEvent.fromJson(jsonDecode(json['content']));
+        break;
+      case VrcStreamingEventType.notificationReceived:
+        vrcEvent =
+            NotificationReceivedEvent.fromJson(jsonDecode(json['content']));
+        break;
+      case VrcStreamingEventType.notificationSeen:
+        vrcEvent = NotificationSeenEvent(notificationId: json['content']);
+        break;
+      case VrcStreamingEventType.notificationResponse:
+        vrcEvent =
+            NotificationResponseEvent.fromJson(jsonDecode(json['content']));
+        break;
     }
     _vrcEventStreamController.add(vrcEvent);
   }

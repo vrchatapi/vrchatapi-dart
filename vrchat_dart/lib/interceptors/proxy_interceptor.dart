@@ -5,6 +5,7 @@ class ProxyInterceptor extends dio.Interceptor {
   /// The new [baseUrl] that is the proxy
   final String proxyUrl;
 
+  /// Create a [ProxyInterceptor] with the given [proxyUrl]
   ProxyInterceptor({required this.proxyUrl});
 
   /// Replace the [baseUrl] of all requests with the [proxyUrl]

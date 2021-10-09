@@ -43,7 +43,7 @@ class VrchatDart {
     required String userAgent,
     String? cookiePath,
     String? proxyUrl,
-  }) : this.api = VrcApi(
+  }) : api = VrcApi(
           options: dio.BaseOptions(
             baseUrl: VrchatDartGenerated.basePath,
             connectTimeout: 5000,

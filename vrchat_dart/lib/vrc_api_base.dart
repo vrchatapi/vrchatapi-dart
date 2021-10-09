@@ -13,6 +13,6 @@ abstract class VrcApiBase {
 
   /// DO NOT INSTANTIATE
   VrcApiBase(this.rawApi, String? proxyUrl)
-      : this.auth = Auth(rawApi),
-        this.streaming = VrcStreaming(rawApi, proxyUrl);
+      : auth = Auth(rawApi),
+        streaming = VrcStreaming(rawApi, proxyUrl);
 }

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:vrchat_dart/vrchat_dart.dart';
 
 void main() async {
@@ -32,10 +34,36 @@ void main() async {
   final friendsResponse = await api.rawApi.getFriendsApi().getFriends();
   print(friendsResponse.data?.first.username);
 
-  final worldsResponse = await api.rawApi.getWorldsApi().searchWorlds(releaseStatus: 'public');
+  final worldsResponse =
+      await api.rawApi.getWorldsApi().searchWorlds(releaseStatus: 'public');
   print(worldsResponse.data!.first.name);
 
   // Listen for updates
-  api.streaming.vrcEventStream.listen(print);
-  await api.streaming.start();
+  api.streaming.vrcEventStream.listen(handleVrcEvent);
+  api.streaming.start();
+}
+
+void handleVrcEvent(VrcStreamingEvent event) {
+  final String message;
+  switch (event.type) {
+    case VrcStreamingEventType.unknown:
+      message = 'Unknown [VrcStreamingEvent] received';
+      break;
+    case VrcStreamingEventType.error:
+    case VrcStreamingEventType.friendOnline:
+    case VrcStreamingEventType.friendOffline:
+    case VrcStreamingEventType.friendActive:
+    case VrcStreamingEventType.friendAdd:
+    case VrcStreamingEventType.friendDelete:
+    case VrcStreamingEventType.friendUpdate:
+    case VrcStreamingEventType.friendLocation:
+    case VrcStreamingEventType.notificationReceived:
+    case VrcStreamingEventType.notificationSeen:
+    case VrcStreamingEventType.notificationResponse:
+      message = jsonEncode(event);
+      break;
+  }
+
+  print(event);
+  print(message);
 }

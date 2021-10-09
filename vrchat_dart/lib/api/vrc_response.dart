@@ -5,6 +5,7 @@ class VrcResponse {
   /// The error returned from the API if any
   final VrcError? error;
 
+  /// Create a [VrcResponse] with the given [error]
   VrcResponse({this.error});
 }
 
@@ -35,8 +36,8 @@ class VrcError {
   VrcError.fromDioError(dio.DioError error) {
     final bodyJson = error.response?.data as Map<String, dynamic>?;
 
-    this.message = bodyJson?['error']?['message'] ?? error.message;
-    this.statusCode =
+    message = bodyJson?['error']?['message'] ?? error.message;
+    statusCode =
         bodyJson?['error']?['status_code'] ?? error.response?.statusCode ?? 400;
   }
 
