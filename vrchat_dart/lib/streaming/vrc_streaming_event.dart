@@ -1,4 +1,4 @@
-part of '../../vrchat_dart.dart';
+part of '../vrchat_dart.dart';
 
 /// Enum of all possible types of [VrcStreamingEvent]
 enum VrcStreamingEventType {

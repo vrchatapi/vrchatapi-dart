@@ -1,4 +1,4 @@
-part of '../../vrchat_dart.dart';
+part of '../vrchat_dart.dart';
 
 /// These classes create [JsonConverter]s from the generated object serializers
 ///
@@ -19,6 +19,26 @@ class _UserSerializer implements JsonConverter<User, dynamic> {
   dynamic toJson(User object) {
     return standardSerializers.toJson(
       User.serializer,
+      object,
+    );
+  }
+}
+
+class _LimitedUserSerializer implements JsonConverter<LimitedUser, dynamic> {
+  const _LimitedUserSerializer();
+
+  @override
+  LimitedUser fromJson(dynamic json) {
+    return standardSerializers.fromJson(
+      LimitedUser.serializer,
+      jsonEncode(json),
+    ) as LimitedUser;
+  }
+
+  @override
+  dynamic toJson(LimitedUser object) {
+    return standardSerializers.toJson(
+      LimitedUser.serializer,
       object,
     );
   }

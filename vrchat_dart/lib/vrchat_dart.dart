@@ -17,11 +17,14 @@ part 'api/vrc_response.dart';
 
 // streaming
 part 'streaming/vrc_streaming.dart';
-part 'streaming/events/vrc_streaming_event.dart';
-part 'streaming/events/vrc_streaming_event_serializers.dart';
+part 'streaming/vrc_streaming_event.dart';
 
 // interceptors
-part 'interceptors/proxy_interceptor.dart';
+part 'interceptor/proxy_interceptor.dart';
+
+// convenience
+part 'convenience/serializers.dart';
+part 'convenience/user_extensions.dart';
 
 /// VrchatDart
 class VrchatDart {
