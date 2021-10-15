@@ -28,6 +28,8 @@ part 'limited_user.g.dart';
 /// * [tags] - <- Always empty.
 /// * [userIcon]
 /// * [username]
+/// * [location]
+/// * [friendKey]
 abstract class LimitedUser implements Built<LimitedUser, LimitedUserBuilder> {
   @BuiltValueField(wireName: r'bio')
   String? get bio;
@@ -77,6 +79,12 @@ abstract class LimitedUser implements Built<LimitedUser, LimitedUserBuilder> {
 
   @BuiltValueField(wireName: r'username')
   String get username;
+
+  @BuiltValueField(wireName: r'location')
+  String? get location;
+
+  @BuiltValueField(wireName: r'friendKey')
+  String? get friendKey;
 
   LimitedUser._();
 
@@ -162,6 +170,18 @@ class _$LimitedUserSerializer implements StructuredSerializer<LimitedUser> {
       ..add(r'username')
       ..add(serializers.serialize(object.username,
           specifiedType: const FullType(String)));
+    if (object.location != null) {
+      result
+        ..add(r'location')
+        ..add(serializers.serialize(object.location,
+            specifiedType: const FullType(String)));
+    }
+    if (object.friendKey != null) {
+      result
+        ..add(r'friendKey')
+        ..add(serializers.serialize(object.friendKey,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -235,6 +255,14 @@ class _$LimitedUserSerializer implements StructuredSerializer<LimitedUser> {
           break;
         case r'username':
           result.username = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case r'location':
+          result.location = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case r'friendKey':
+          result.friendKey = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
       }

@@ -1,3 +1,6 @@
+## 1.4.3-pre.1
+Friends endpoint fixes not yet in the spec
+
 ## 1.4.2
 Updated to match spec
 

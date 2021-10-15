@@ -23,6 +23,8 @@ Name | Type | Description | Notes
 **tags** | **BuiltList&lt;String&gt;** | <- Always empty. | 
 **userIcon** | **String** |  | 
 **username** | **String** |  | 
+**location** | **String** |  | [optional] 
+**friendKey** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

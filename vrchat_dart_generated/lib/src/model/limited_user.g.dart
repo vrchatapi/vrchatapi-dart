@@ -37,6 +37,10 @@ class _$LimitedUser extends LimitedUser {
   final String userIcon;
   @override
   final String username;
+  @override
+  final String? location;
+  @override
+  final String? friendKey;
 
   factory _$LimitedUser([void Function(LimitedUserBuilder)? updates]) =>
       (new LimitedUserBuilder()..update(updates)).build();
@@ -56,7 +60,9 @@ class _$LimitedUser extends LimitedUser {
       required this.statusDescription,
       required this.tags,
       required this.userIcon,
-      required this.username})
+      required this.username,
+      this.location,
+      this.friendKey})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         currentAvatarImageUrl, 'LimitedUser', 'currentAvatarImageUrl');
@@ -108,7 +114,9 @@ class _$LimitedUser extends LimitedUser {
         statusDescription == other.statusDescription &&
         tags == other.tags &&
         userIcon == other.userIcon &&
-        username == other.username;
+        username == other.username &&
+        location == other.location &&
+        friendKey == other.friendKey;
   }
 
   @override
@@ -127,24 +135,31 @@ class _$LimitedUser extends LimitedUser {
                                                 $jc(
                                                     $jc(
                                                         $jc(
-                                                            $jc(0,
-                                                                bio.hashCode),
-                                                            currentAvatarImageUrl
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        0,
+                                                                        bio
+                                                                            .hashCode),
+                                                                    currentAvatarImageUrl
+                                                                        .hashCode),
+                                                                currentAvatarThumbnailImageUrl
+                                                                    .hashCode),
+                                                            developerType
                                                                 .hashCode),
-                                                        currentAvatarThumbnailImageUrl
-                                                            .hashCode),
-                                                    developerType.hashCode),
-                                                displayName.hashCode),
-                                            fallbackAvatar.hashCode),
-                                        id.hashCode),
-                                    isFriend.hashCode),
-                                lastPlatform.hashCode),
-                            profilePicOverride.hashCode),
-                        status.hashCode),
-                    statusDescription.hashCode),
-                tags.hashCode),
-            userIcon.hashCode),
-        username.hashCode));
+                                                        displayName.hashCode),
+                                                    fallbackAvatar.hashCode),
+                                                id.hashCode),
+                                            isFriend.hashCode),
+                                        lastPlatform.hashCode),
+                                    profilePicOverride.hashCode),
+                                status.hashCode),
+                            statusDescription.hashCode),
+                        tags.hashCode),
+                    userIcon.hashCode),
+                username.hashCode),
+            location.hashCode),
+        friendKey.hashCode));
   }
 
   @override
@@ -165,7 +180,9 @@ class _$LimitedUser extends LimitedUser {
           ..add('statusDescription', statusDescription)
           ..add('tags', tags)
           ..add('userIcon', userIcon)
-          ..add('username', username))
+          ..add('username', username)
+          ..add('location', location)
+          ..add('friendKey', friendKey))
         .toString();
   }
 }
@@ -240,6 +257,14 @@ class LimitedUserBuilder implements Builder<LimitedUser, LimitedUserBuilder> {
   String? get username => _$this._username;
   set username(String? username) => _$this._username = username;
 
+  String? _location;
+  String? get location => _$this._location;
+  set location(String? location) => _$this._location = location;
+
+  String? _friendKey;
+  String? get friendKey => _$this._friendKey;
+  set friendKey(String? friendKey) => _$this._friendKey = friendKey;
+
   LimitedUserBuilder() {
     LimitedUser._defaults(this);
   }
@@ -262,6 +287,8 @@ class LimitedUserBuilder implements Builder<LimitedUser, LimitedUserBuilder> {
       _tags = $v.tags.toBuilder();
       _userIcon = $v.userIcon;
       _username = $v.username;
+      _location = $v.location;
+      _friendKey = $v.friendKey;
       _$v = null;
     }
     return this;
@@ -308,7 +335,9 @@ class LimitedUserBuilder implements Builder<LimitedUser, LimitedUserBuilder> {
               statusDescription: BuiltValueNullFieldError.checkNotNull(statusDescription, 'LimitedUser', 'statusDescription'),
               tags: tags.build(),
               userIcon: BuiltValueNullFieldError.checkNotNull(userIcon, 'LimitedUser', 'userIcon'),
-              username: BuiltValueNullFieldError.checkNotNull(username, 'LimitedUser', 'username'));
+              username: BuiltValueNullFieldError.checkNotNull(username, 'LimitedUser', 'username'),
+              location: location,
+              friendKey: friendKey);
     } catch (_) {
       late String _$failedField;
       try {
