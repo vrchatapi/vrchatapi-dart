@@ -84,10 +84,10 @@ class UnknownEvent extends VrcStreamingEvent {
   VrcStreamingEventType get type => VrcStreamingEventType.unknown;
 
   /// The raw response from the api
-  final String responseBody;
+  final String rawString;
 
-  /// Create an [UnknownEvent] with the given [responseBody]
-  UnknownEvent({required this.responseBody});
+  /// Create an [UnknownEvent] with the given [rawString]
+  UnknownEvent({required this.rawString});
 }
 
 /// An error message returned from the server

@@ -78,7 +78,7 @@ class VrcStreaming {
       // Shouldn't be able to get here with an event type of error, but all cases
       // must be covered
       case VrcStreamingEventType.error:
-        vrcEvent = UnknownEvent(responseBody: websocketEvent);
+        vrcEvent = UnknownEvent(rawString: websocketEvent);
         break;
       case VrcStreamingEventType.friendOnline:
         vrcEvent = FriendOnlineEvent.fromJson(jsonDecode(json['content']));
