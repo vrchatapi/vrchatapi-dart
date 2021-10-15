@@ -32,7 +32,14 @@ void main() async {
   // API key fetching is automatically handled on successful authentication
 
   final friendsResponse = await api.rawApi.getFriendsApi().getFriends();
-  print(friendsResponse.data?.first.username);
+  final tupper =
+      (await api.rawApi.getUsersApi().getUserByName(username: 'Tupper')).data!;
+
+  // Convenience method to help with storing user objects from different endpoints together
+  final limitedTupper = tupper.toLimitedUser();
+  final friendsAndTupper = [limitedTupper, ...friendsResponse.data!];
+
+  print(friendsAndTupper.first.username);
 
   final worldsResponse =
       await api.rawApi.getWorldsApi().searchWorlds(releaseStatus: 'public');
