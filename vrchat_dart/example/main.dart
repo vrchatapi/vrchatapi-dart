@@ -47,7 +47,9 @@ void handleVrcEvent(VrcStreamingEvent event) {
   final String message;
   switch (event.type) {
     case VrcStreamingEventType.unknown:
-      message = 'Unknown [VrcStreamingEvent] received';
+      final unknownEvent = event as UnknownEvent;
+      message =
+          'Unknown [VrcStreamingEvent] received: ${unknownEvent.responseBody}';
       break;
     case VrcStreamingEventType.error:
     case VrcStreamingEventType.friendOnline:

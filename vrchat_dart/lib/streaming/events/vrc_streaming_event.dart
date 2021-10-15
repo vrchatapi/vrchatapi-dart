@@ -82,6 +82,12 @@ abstract class VrcStreamingEvent {
 class UnknownEvent extends VrcStreamingEvent {
   @override
   VrcStreamingEventType get type => VrcStreamingEventType.unknown;
+
+  /// The raw response from the api
+  final String responseBody;
+
+  /// Create an [UnknownEvent] with the given [responseBody]
+  UnknownEvent({required this.responseBody});
 }
 
 /// An error message returned from the server
