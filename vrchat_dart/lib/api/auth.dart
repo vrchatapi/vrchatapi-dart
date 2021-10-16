@@ -4,8 +4,10 @@ part of '../vrchat_dart.dart';
 class Auth {
   final VrchatDartGenerated _rawApi;
 
-  /// The current user if a successful login has occurred
-  CurrentUser? currentUser;
+  CurrentUser? _currentUser;
+
+  /// The logged in user
+  CurrentUser? get currentUser => _currentUser;
 
   /// Construct an [Auth] object with the given [_rawApi]
   Auth(this._rawApi);
@@ -26,7 +28,7 @@ class Auth {
         },
       );
 
-      currentUser = response.data;
+      _currentUser = response.data;
 
       return AuthResponse();
     } on dio.DioError catch (error) {
@@ -63,10 +65,22 @@ class Auth {
     try {
       final response = await _rawApi.getSystemApi().getConfig();
       _rawApi.setApiKey('vrcApiKey', response.data?.apiKey ?? '');
+      return VrcResponse();
     } on dio.DioError catch (error) {
       return VrcResponse(error: VrcError.fromDioError(error));
     }
+  }
 
-    return VrcResponse();
+  /// Logout
+  ///
+  /// This will set [currentUser] to null
+  Future<VrcResponse> logout() async {
+    try {
+      await _rawApi.getAuthenticationApi().logout();
+      _currentUser = null;
+      return VrcResponse();
+    } on dio.DioError catch (error) {
+      return VrcResponse(error: VrcError.fromDioError(error));
+    }
   }
 }
