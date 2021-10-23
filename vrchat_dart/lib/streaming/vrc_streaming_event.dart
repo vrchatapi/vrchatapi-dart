@@ -29,6 +29,12 @@ enum VrcStreamingEventType {
   /// [FriendLocationEvent] type
   friendLocation,
 
+  /// [UserUpdateEvent] type
+  userUpdate,
+
+  /// [UserLocationEvent] type
+  userLocation,
+
   /// [NotificationReceivedEvent] type
   notificationReceived,
 
@@ -37,6 +43,12 @@ enum VrcStreamingEventType {
 
   /// [NotificationResponseEvent] type
   notificationResponse,
+
+  /// [NotificationHideEvent] type
+  notificationHide,
+
+  /// [NotificationClearEvent] type
+  notificationClear,
 }
 
 /// Convenience methods to call on [VrcStreamingEventType]s
@@ -58,12 +70,20 @@ extension VrcStreamingEventTypeExtension on VrcStreamingEventType {
         return VrcStreamingEventType.friendUpdate;
       case 'friend-location':
         return VrcStreamingEventType.friendLocation;
+      case 'user-update':
+        return VrcStreamingEventType.userUpdate;
+      case 'user-location':
+        return VrcStreamingEventType.userLocation;
       case 'notification':
         return VrcStreamingEventType.notificationReceived;
       case 'see-notification':
         return VrcStreamingEventType.notificationSeen;
       case 'response-notification':
         return VrcStreamingEventType.notificationResponse;
+      case 'hide-notification':
+        return VrcStreamingEventType.notificationHide;
+      case 'clear-notification':
+        return VrcStreamingEventType.notificationClear;
       default:
         return VrcStreamingEventType.unknown;
     }
@@ -122,15 +142,48 @@ abstract class FriendEventWithUser extends FriendEvent {
       : super(userId: userId);
 }
 
-/// This event fires when a friend's state changes to online
+/// Base class for [UserEvent]s
+abstract class UserEvent extends VrcStreamingEvent {
+  /// The [userId] of the user this event is about
+  final String userId;
+
+  /// Create a [UserEvent] with the given [userId]
+  UserEvent({required this.userId});
+}
+
+/// Base class for [NotificationEvent]s
+abstract class NotificationEvent extends VrcStreamingEvent {}
+
+/// A [FriendOnlineEvent] is sent when one of the user’s friends has gone
+/// online in-game. Note that the [world] field will be an empty object when the
+/// friend is on orange/red, or is in a private world.
 @JsonSerializable()
 class FriendOnlineEvent extends FriendEventWithUser {
   @override
   VrcStreamingEventType get type => VrcStreamingEventType.friendOnline;
 
-  /// Create a [FriendOnlineEvent] with the given [userId] and [user]
-  FriendOnlineEvent({required String userId, required User user})
-      : super(userId: userId, user: user);
+  /// The [world] the user joined
+  @_NullableWorldSerializer()
+  final World? world;
+
+  /// <worldId:locationId>
+  final String? location;
+
+  /// <locationId>
+  final String? instance;
+
+  /// If the current user can request invite on this friend
+  final bool canRequestInvite;
+
+  /// Create a [FriendLocationEvent]
+  FriendOnlineEvent({
+    required String userId,
+    required User user,
+    required this.world,
+    required this.location,
+    required this.instance,
+    required this.canRequestInvite,
+  }) : super(userId: userId, user: user);
 
   /// Create a [FriendOnlineEvent] from json
   factory FriendOnlineEvent.fromJson(Map<String, dynamic> json) =>
@@ -140,7 +193,8 @@ class FriendOnlineEvent extends FriendEventWithUser {
   Map<String, dynamic> toJson() => _$FriendOnlineEventToJson(this);
 }
 
-/// This event fires when a friend's state changes to offline
+/// A [FriendOfflineEvent] is sent when one of the user’s friends has gone
+/// offline.
 @JsonSerializable()
 class FriendOfflineEvent extends FriendEvent {
   @override
@@ -157,7 +211,8 @@ class FriendOfflineEvent extends FriendEvent {
   Map<String, dynamic> toJson() => _$FriendOfflineEventToJson(this);
 }
 
-/// This event fires when a friend's state changes to active
+/// A [FriendActiveEvent] is sent when one of the user’s friends is active on
+/// the website.
 @JsonSerializable()
 class FriendActiveEvent extends FriendEventWithUser {
   @override
@@ -175,7 +230,8 @@ class FriendActiveEvent extends FriendEventWithUser {
   Map<String, dynamic> toJson() => _$FriendActiveEventToJson(this);
 }
 
-/// This event fires when current and another user become friends
+/// A [FriendAddEvent] is sent when the user has either accepted a friend
+/// request, or has had one of their friend requests accepted.
 @JsonSerializable()
 class FriendAddEvent extends FriendEventWithUser {
   @override
@@ -193,7 +249,8 @@ class FriendAddEvent extends FriendEventWithUser {
   Map<String, dynamic> toJson() => _$FriendAddEventToJson(this);
 }
 
-/// This event fires when current user and a friend are no longer friends
+/// A [FriendDeleteEvent] is sent when the user has either been removed as
+/// a friend, or has removed someone else as a friend.
 @JsonSerializable()
 class FriendDeleteEvent extends FriendEvent {
   @override
@@ -210,7 +267,8 @@ class FriendDeleteEvent extends FriendEvent {
   Map<String, dynamic> toJson() => _$FriendDeleteEventToJson(this);
 }
 
-/// This event fires when a friend account/profile is updated
+/// A [FriendUpdateEvent] is sent when something about one of the user’s
+/// friends profile has changed.
 @JsonSerializable()
 class FriendUpdateEvent extends FriendEventWithUser {
   @override
@@ -228,14 +286,16 @@ class FriendUpdateEvent extends FriendEventWithUser {
   Map<String, dynamic> toJson() => _$FriendUpdateEventToJson(this);
 }
 
-/// This event fires when a friend's location changes
+/// A [FriendLocationEvent] is sent when one of the user’s friends has changed
+/// instances. Note that the [world] field will be an empty object when the
+/// friend is on orange/red, or is in a private world.
 @JsonSerializable()
 class FriendLocationEvent extends FriendEventWithUser {
   @override
   VrcStreamingEventType get type => VrcStreamingEventType.friendLocation;
 
   /// The [world] the user joined
-  @_WorldSerializer()
+  @_NullableWorldSerializer()
   final World? world;
 
   /// <worldId:locationId>
@@ -265,9 +325,68 @@ class FriendLocationEvent extends FriendEventWithUser {
   Map<String, dynamic> toJson() => _$FriendLocationEventToJson(this);
 }
 
-/// This event fires when receiving a notification
+/// A [UserUpdateEvent] is sent when something regarding the user has been
+/// updated. Note that the [user] object is not a [LimitedUser] object, even
+/// though it has similarities. It’s missing [developerType], [friendKey],
+/// [isFriend], [lastPlatform] and [location]. It also has extra [currentAvatar]
+/// and [currentAvatarAssetUrl] fields.
 @JsonSerializable()
-class NotificationReceivedEvent extends VrcStreamingEvent {
+class UserUpdateEvent extends UserEvent {
+  @override
+  VrcStreamingEventType get type => VrcStreamingEventType.userUpdate;
+
+  /// The [user] object
+  @_UserSerializer()
+  final User user;
+
+  /// Create a [UserUpdateEvent] with the given [userId] and [user]
+  UserUpdateEvent({required String userId, required this.user})
+      : super(userId: userId);
+
+  /// Create a [UserUpdateEvent] from json
+  factory UserUpdateEvent.fromJson(Map<String, dynamic> json) =>
+      _$UserUpdateEventFromJson(json);
+
+  /// Convert a [UserUpdateEvent] to json
+  Map<String, dynamic> toJson() => _$UserUpdateEventToJson(this);
+}
+
+/// A [UserLocationEvent] is sent when the user has changed instances.
+@JsonSerializable()
+class UserLocationEvent extends UserEvent {
+  @override
+  VrcStreamingEventType get type => VrcStreamingEventType.userLocation;
+
+  /// The [world] the user joined
+  @_WorldSerializer()
+  final World world;
+
+  /// <worldId:locationId>
+  final String location;
+
+  /// <locationId>
+  final String instance;
+
+  /// Create a [UserLocationEvent]
+  UserLocationEvent({
+    required String userId,
+    required this.world,
+    required this.location,
+    required this.instance,
+  }) : super(userId: userId);
+
+  /// Create a [UserLocationEvent] from json
+  factory UserLocationEvent.fromJson(Map<String, dynamic> json) =>
+      _$UserLocationEventFromJson(json);
+
+  /// Convert a [UserLocationEvent] to json
+  Map<String, dynamic> toJson() => _$UserLocationEventToJson(this);
+}
+
+/// A [NotificationReceivedEvent] carries a Notification object, and are
+/// used by Invites, Friend Requests and other in-game notifications.
+@JsonSerializable()
+class NotificationReceivedEvent extends NotificationEvent {
   @override
   VrcStreamingEventType get type => VrcStreamingEventType.notificationReceived;
 
@@ -286,8 +405,9 @@ class NotificationReceivedEvent extends VrcStreamingEvent {
   Map<String, dynamic> toJson() => _$NotificationReceivedEventToJson(this);
 }
 
-/// This event fires when a notification has been marked as seen
-class NotificationSeenEvent extends VrcStreamingEvent {
+/// A [NotificationSeenEvent] is sent when the client should mark a
+/// specific notification as seen.
+class NotificationSeenEvent extends NotificationEvent {
   @override
   VrcStreamingEventType get type => VrcStreamingEventType.notificationSeen;
 
@@ -298,9 +418,12 @@ class NotificationSeenEvent extends VrcStreamingEvent {
   NotificationSeenEvent({required this.notificationId});
 }
 
-/// This event fires when receiving a notification response
+/// The [NotificationResponseEvent] is used to respond to a previously
+/// sent event. It carries an ID of the response notification [responseId],
+/// whereby the data is required to be fetched from the API. It also carries
+/// [notificationId] to indicate which notification this is a response to.
 @JsonSerializable()
-class NotificationResponseEvent extends VrcStreamingEvent {
+class NotificationResponseEvent extends NotificationEvent {
   @override
   VrcStreamingEventType get type => VrcStreamingEventType.notificationResponse;
 
@@ -327,4 +450,33 @@ class NotificationResponseEvent extends VrcStreamingEvent {
 
   /// Convert a [NotificationResponseEvent] to json
   Map<String, dynamic> toJson() => _$NotificationResponseEventToJson(this);
+}
+
+/// A [NotificationHideEvent] is sent when the client should hide a notification.
+@JsonSerializable()
+class NotificationHideEvent extends NotificationEvent {
+  @override
+  VrcStreamingEventType get type => VrcStreamingEventType.notificationHide;
+
+  /// The id of the [Notification] to hide
+  final String notificationId;
+
+  /// Create a [NotificationHideEvent] with the given [notificationId]
+  NotificationHideEvent({required this.notificationId});
+
+  /// Create a [NotificationHideEvent] from json
+  factory NotificationHideEvent.fromJson(Map<String, dynamic> json) =>
+      _$NotificationHideEventFromJson(json);
+
+  /// Convert a [NotificationHideEvent] to json
+  Map<String, dynamic> toJson() => _$NotificationHideEventToJson(this);
+}
+
+/// A [NotificationClearEvent] is sent when the client should clear all notifications.
+class NotificationClearEvent extends NotificationEvent {
+  @override
+  VrcStreamingEventType get type => VrcStreamingEventType.notificationClear;
+
+  /// Create a [NotificationClearEvent]
+  NotificationClearEvent();
 }

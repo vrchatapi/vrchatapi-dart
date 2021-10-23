@@ -44,8 +44,8 @@ class _LimitedUserSerializer implements JsonConverter<LimitedUser, dynamic> {
   }
 }
 
-class _WorldSerializer implements JsonConverter<World?, dynamic> {
-  const _WorldSerializer();
+class _NullableWorldSerializer implements JsonConverter<World?, dynamic> {
+  const _NullableWorldSerializer();
 
   @override
   World? fromJson(dynamic json) {
@@ -60,6 +60,26 @@ class _WorldSerializer implements JsonConverter<World?, dynamic> {
 
   @override
   dynamic toJson(World? object) {
+    return standardSerializers.toJson(
+      World.serializer,
+      object,
+    );
+  }
+}
+
+class _WorldSerializer implements JsonConverter<World, dynamic> {
+  const _WorldSerializer();
+
+  @override
+  World fromJson(dynamic json) {
+    return standardSerializers.fromJson(
+      World.serializer,
+      jsonEncode(json),
+    ) as World;
+  }
+
+  @override
+  dynamic toJson(World object) {
     return standardSerializers.toJson(
       World.serializer,
       object,

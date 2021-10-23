@@ -46,7 +46,7 @@ class Auth {
   Future<VrcResponse> verify2fa(String code) async {
     try {
       await _rawApi.getAuthenticationApi().verify2FA(
-            inlineObject: InlineObject(
+            twoFactorAuthCode: TwoFactorAuthCode(
               (builder) => builder.code = code,
             ),
           );

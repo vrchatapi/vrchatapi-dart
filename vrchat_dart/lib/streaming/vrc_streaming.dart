@@ -72,47 +72,57 @@ class VrcStreaming {
     final String typeString = json['type'];
     final eventType = VrcStreamingEventTypeExtension.fromTypeString(typeString);
 
-    final VrcStreamingEvent vrcEvent;
+    final VrcStreamingEvent event;
     switch (eventType) {
       case VrcStreamingEventType.unknown:
       // Shouldn't be able to get here with an event type of error, but all cases
       // must be covered
       case VrcStreamingEventType.error:
-        vrcEvent = UnknownEvent(rawString: websocketEvent);
+        event = UnknownEvent(rawString: websocketEvent);
         break;
       case VrcStreamingEventType.friendOnline:
-        vrcEvent = FriendOnlineEvent.fromJson(jsonDecode(json['content']));
+        event = FriendOnlineEvent.fromJson(jsonDecode(json['content']));
         break;
       case VrcStreamingEventType.friendOffline:
-        vrcEvent = FriendOfflineEvent.fromJson(jsonDecode(json['content']));
+        event = FriendOfflineEvent.fromJson(jsonDecode(json['content']));
         break;
       case VrcStreamingEventType.friendActive:
-        vrcEvent = FriendActiveEvent.fromJson(jsonDecode(json['content']));
+        event = FriendActiveEvent.fromJson(jsonDecode(json['content']));
         break;
       case VrcStreamingEventType.friendAdd:
-        vrcEvent = FriendAddEvent.fromJson(jsonDecode(json['content']));
+        event = FriendAddEvent.fromJson(jsonDecode(json['content']));
         break;
       case VrcStreamingEventType.friendDelete:
-        vrcEvent = FriendDeleteEvent.fromJson(jsonDecode(json['content']));
+        event = FriendDeleteEvent.fromJson(jsonDecode(json['content']));
         break;
       case VrcStreamingEventType.friendUpdate:
-        vrcEvent = FriendUpdateEvent.fromJson(jsonDecode(json['content']));
+        event = FriendUpdateEvent.fromJson(jsonDecode(json['content']));
         break;
       case VrcStreamingEventType.friendLocation:
-        vrcEvent = FriendLocationEvent.fromJson(jsonDecode(json['content']));
+        event = FriendLocationEvent.fromJson(jsonDecode(json['content']));
+        break;
+      case VrcStreamingEventType.userUpdate:
+        event = UserUpdateEvent.fromJson(jsonDecode(json['content']));
+        break;
+      case VrcStreamingEventType.userLocation:
+        event = UserLocationEvent.fromJson(jsonDecode(json['content']));
         break;
       case VrcStreamingEventType.notificationReceived:
-        vrcEvent =
-            NotificationReceivedEvent.fromJson(jsonDecode(json['content']));
+        event = NotificationReceivedEvent.fromJson(jsonDecode(json['content']));
         break;
       case VrcStreamingEventType.notificationSeen:
-        vrcEvent = NotificationSeenEvent(notificationId: json['content']);
+        event = NotificationSeenEvent(notificationId: json['content']);
         break;
       case VrcStreamingEventType.notificationResponse:
-        vrcEvent =
-            NotificationResponseEvent.fromJson(jsonDecode(json['content']));
+        event = NotificationResponseEvent.fromJson(jsonDecode(json['content']));
+        break;
+      case VrcStreamingEventType.notificationHide:
+        event = NotificationHideEvent(notificationId: json['content']);
+        break;
+      case VrcStreamingEventType.notificationClear:
+        event = NotificationClearEvent();
         break;
     }
-    _vrcEventStreamController.add(vrcEvent);
+    _vrcEventStreamController.add(event);
   }
 }

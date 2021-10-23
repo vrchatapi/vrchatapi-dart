@@ -10,12 +10,20 @@ FriendOnlineEvent _$FriendOnlineEventFromJson(Map<String, dynamic> json) =>
     FriendOnlineEvent(
       userId: json['userId'] as String,
       user: const _UserSerializer().fromJson(json['user']),
+      world: const _NullableWorldSerializer().fromJson(json['world']),
+      location: json['location'] as String?,
+      instance: json['instance'] as String?,
+      canRequestInvite: json['canRequestInvite'] as bool,
     );
 
 Map<String, dynamic> _$FriendOnlineEventToJson(FriendOnlineEvent instance) =>
     <String, dynamic>{
       'userId': instance.userId,
       'user': const _UserSerializer().toJson(instance.user),
+      'world': const _NullableWorldSerializer().toJson(instance.world),
+      'location': instance.location,
+      'instance': instance.instance,
+      'canRequestInvite': instance.canRequestInvite,
     };
 
 FriendOfflineEvent _$FriendOfflineEventFromJson(Map<String, dynamic> json) =>
@@ -78,7 +86,7 @@ FriendLocationEvent _$FriendLocationEventFromJson(Map<String, dynamic> json) =>
     FriendLocationEvent(
       userId: json['userId'] as String,
       user: const _UserSerializer().fromJson(json['user']),
-      world: const _WorldSerializer().fromJson(json['world']),
+      world: const _NullableWorldSerializer().fromJson(json['world']),
       location: json['location'] as String?,
       instance: json['instance'] as String?,
       canRequestInvite: json['canRequestInvite'] as bool,
@@ -89,10 +97,38 @@ Map<String, dynamic> _$FriendLocationEventToJson(
     <String, dynamic>{
       'userId': instance.userId,
       'user': const _UserSerializer().toJson(instance.user),
-      'world': const _WorldSerializer().toJson(instance.world),
+      'world': const _NullableWorldSerializer().toJson(instance.world),
       'location': instance.location,
       'instance': instance.instance,
       'canRequestInvite': instance.canRequestInvite,
+    };
+
+UserUpdateEvent _$UserUpdateEventFromJson(Map<String, dynamic> json) =>
+    UserUpdateEvent(
+      userId: json['userId'] as String,
+      user: const _UserSerializer().fromJson(json['user']),
+    );
+
+Map<String, dynamic> _$UserUpdateEventToJson(UserUpdateEvent instance) =>
+    <String, dynamic>{
+      'userId': instance.userId,
+      'user': const _UserSerializer().toJson(instance.user),
+    };
+
+UserLocationEvent _$UserLocationEventFromJson(Map<String, dynamic> json) =>
+    UserLocationEvent(
+      userId: json['userId'] as String,
+      world: const _WorldSerializer().fromJson(json['world']),
+      location: json['location'] as String,
+      instance: json['instance'] as String,
+    );
+
+Map<String, dynamic> _$UserLocationEventToJson(UserLocationEvent instance) =>
+    <String, dynamic>{
+      'userId': instance.userId,
+      'world': const _WorldSerializer().toJson(instance.world),
+      'location': instance.location,
+      'instance': instance.instance,
     };
 
 NotificationReceivedEvent _$NotificationReceivedEventFromJson(
@@ -123,4 +159,16 @@ Map<String, dynamic> _$NotificationResponseEventToJson(
       'notificationId': instance.notificationId,
       'receiverId': instance.receiverId,
       'responseId': const _NotificationSerializer().toJson(instance.responseId),
+    };
+
+NotificationHideEvent _$NotificationHideEventFromJson(
+        Map<String, dynamic> json) =>
+    NotificationHideEvent(
+      notificationId: json['notificationId'] as String,
+    );
+
+Map<String, dynamic> _$NotificationHideEventToJson(
+        NotificationHideEvent instance) =>
+    <String, dynamic>{
+      'notificationId': instance.notificationId,
     };

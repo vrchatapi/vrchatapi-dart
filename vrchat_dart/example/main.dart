@@ -66,10 +66,16 @@ void handleVrcEvent(VrcStreamingEvent event) {
     case VrcStreamingEventType.friendDelete:
     case VrcStreamingEventType.friendUpdate:
     case VrcStreamingEventType.friendLocation:
+    case VrcStreamingEventType.userUpdate:
+    case VrcStreamingEventType.userLocation:
     case VrcStreamingEventType.notificationReceived:
     case VrcStreamingEventType.notificationSeen:
     case VrcStreamingEventType.notificationResponse:
+    case VrcStreamingEventType.notificationHide:
       message = jsonEncode(event);
+      break;
+    case VrcStreamingEventType.notificationClear:
+      message = 'NotificationClear';
       break;
   }
 
