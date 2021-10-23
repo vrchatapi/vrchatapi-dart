@@ -18,6 +18,7 @@ part 'api/vrc_response.dart';
 // streaming
 part 'streaming/vrc_streaming.dart';
 part 'streaming/vrc_streaming_event.dart';
+part 'streaming/streamed_current_user.dart';
 
 // interceptors
 part 'interceptor/proxy_interceptor.dart';

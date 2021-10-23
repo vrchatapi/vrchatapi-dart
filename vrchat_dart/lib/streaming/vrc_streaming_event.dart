@@ -336,8 +336,7 @@ class UserUpdateEvent extends UserEvent {
   VrcStreamingEventType get type => VrcStreamingEventType.userUpdate;
 
   /// The [user] object
-  @_UserSerializer()
-  final User user;
+  final StreamedCurrentUser user;
 
   /// Create a [UserUpdateEvent] with the given [userId] and [user]
   UserUpdateEvent({required String userId, required this.user})

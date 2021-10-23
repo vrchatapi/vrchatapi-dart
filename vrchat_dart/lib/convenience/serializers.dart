@@ -106,3 +106,23 @@ class _NotificationSerializer implements JsonConverter<Notification, dynamic> {
     );
   }
 }
+
+class _UserStatusSerializer implements JsonConverter<UserStatus, dynamic> {
+  const _UserStatusSerializer();
+
+  @override
+  UserStatus fromJson(dynamic json) {
+    return standardSerializers.fromJson(
+      UserStatus.serializer,
+      jsonEncode(json),
+    ) as UserStatus;
+  }
+
+  @override
+  dynamic toJson(UserStatus object) {
+    return standardSerializers.toJson(
+      UserStatus.serializer,
+      object,
+    );
+  }
+}
