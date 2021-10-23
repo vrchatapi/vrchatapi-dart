@@ -1,3 +1,6 @@
+## 1.5.0-pre.1
+Preparing for 1.5.0 release
+
 ## 1.4.3-pre.1
 Friends endpoint fixes not yet in the spec
 

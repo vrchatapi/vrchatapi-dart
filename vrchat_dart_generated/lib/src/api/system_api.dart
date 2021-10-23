@@ -9,8 +9,8 @@ import 'package:dio/dio.dart';
 
 import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/api_config.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response2002.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response400.dart';
+import 'package:vrchat_dart_generated/src/model/api_health.dart';
+import 'package:vrchat_dart_generated/src/model/error.dart';
 
 class SystemApi {
   final Dio _dio;
@@ -249,10 +249,10 @@ class SystemApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [InlineResponse2002] as data
+  /// Returns a [Future] containing a [Response] with a [APIHealth] as data
   /// Throws [DioError] if API call or serialization fails
   @Deprecated('This operation has been deprecated')
-  Future<Response<InlineResponse2002>> getHealth({
+  Future<Response<APIHealth>> getHealth({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -281,14 +281,14 @@ class SystemApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    InlineResponse2002 _responseData;
+    APIHealth _responseData;
 
     try {
-      const _responseType = FullType(InlineResponse2002);
+      const _responseType = FullType(APIHealth);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as InlineResponse2002;
+      ) as APIHealth;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -298,7 +298,7 @@ class SystemApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<InlineResponse2002>(
+    return Response<APIHealth>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

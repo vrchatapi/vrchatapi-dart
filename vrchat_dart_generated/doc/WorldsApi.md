@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 
 # **createWorld**
-> World createWorld(inlineObject6)
+> World createWorld(createWorldRequest)
 
 Create World
 
@@ -36,10 +36,10 @@ Create a new world. This endpoint requires `assetUrl` to be a valid File object 
 import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getWorldsApi();
-final InlineObject6 inlineObject6 = ; // InlineObject6 | 
+final CreateWorldRequest createWorldRequest = ; // CreateWorldRequest | 
 
 try { 
-    final response = api.createWorld(inlineObject6);
+    final response = api.createWorld(createWorldRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling WorldsApi->createWorld: $e\n');
@@ -50,7 +50,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject6** | [**InlineObject6**](InlineObject6.md)|  | [optional] 
+ **createWorldRequest** | [**CreateWorldRequest**](CreateWorldRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -441,7 +441,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getWorldMetadata**
-> InlineResponse2005 getWorldMetadata(worldId)
+> WorldMetadata getWorldMetadata(worldId)
 
 Get World Metadata
 
@@ -478,7 +478,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**WorldMetadata**](WorldMetadata.md)
 
 ### Authorization
 
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getWorldPublishStatus**
-> InlineResponse2006 getWorldPublishStatus(worldId)
+> WorldPublishStatus getWorldPublishStatus(worldId)
 
 Get World Publish Status
 
@@ -529,7 +529,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**WorldPublishStatus**](WorldPublishStatus.md)
 
 ### Authorization
 
@@ -720,7 +720,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateWorld**
-> World updateWorld(worldId, inlineObject7)
+> World updateWorld(worldId, updateWorldRequest)
 
 Update World
 
@@ -740,10 +740,10 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getWorldsApi();
 final String worldId = worldId_example; // String | 
-final InlineObject7 inlineObject7 = ; // InlineObject7 | 
+final UpdateWorldRequest updateWorldRequest = ; // UpdateWorldRequest | 
 
 try { 
-    final response = api.updateWorld(worldId, inlineObject7);
+    final response = api.updateWorld(worldId, updateWorldRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling WorldsApi->updateWorld: $e\n');
@@ -755,7 +755,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **worldId** | **String**|  | 
- **inlineObject7** | [**InlineObject7**](InlineObject7.md)|  | [optional] 
+ **updateWorldRequest** | [**UpdateWorldRequest**](UpdateWorldRequest.md)|  | [optional] 
 
 ### Return type
 

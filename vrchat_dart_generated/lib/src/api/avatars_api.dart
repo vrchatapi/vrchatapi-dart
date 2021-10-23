@@ -10,10 +10,10 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/avatar.dart';
+import 'package:vrchat_dart_generated/src/model/create_avatar_request.dart';
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
-import 'package:vrchat_dart_generated/src/model/inline_object10.dart';
-import 'package:vrchat_dart_generated/src/model/inline_object11.dart';
+import 'package:vrchat_dart_generated/src/model/update_avatar_request.dart';
 
 class AvatarsApi {
   final Dio _dio;
@@ -26,7 +26,7 @@ class AvatarsApi {
   /// Create an avatar. It&#39;s possible to optionally specify a ID if you want a custom one. Attempting to create an Avatar with an already claimed ID will result in a DB error.
   ///
   /// Parameters:
-  /// * [inlineObject10]
+  /// * [createAvatarRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -37,7 +37,7 @@ class AvatarsApi {
   /// Returns a [Future] containing a [Response] with a [Avatar] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<Avatar>> createAvatar({
-    InlineObject10? inlineObject10,
+    CreateAvatarRequest? createAvatarRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -75,10 +75,10 @@ class AvatarsApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InlineObject10);
-      _bodyData = inlineObject10 == null
+      const _type = FullType(CreateAvatarRequest);
+      _bodyData = createAvatarRequest == null
           ? null
-          : _serializers.serialize(inlineObject10, specifiedType: _type);
+          : _serializers.serialize(createAvatarRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -691,12 +691,99 @@ class AvatarsApi {
     );
   }
 
+  /// Select Fallback Avatar
+  /// Switches into that avatar as your fallback avatar.
+  ///
+  /// Parameters:
+  /// * [avatarId]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [CurrentUser] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<CurrentUser>> selectFallbackAvatar({
+    required String avatarId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/avatars/{avatarId}/selectFallback'
+        .replaceAll('{' r'avatarId' '}', avatarId.toString());
+    final _options = Options(
+      method: r'PUT',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
+            'where': '',
+          },
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    CurrentUser _responseData;
+
+    try {
+      const _responseType = FullType(CurrentUser);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as CurrentUser;
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<CurrentUser>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// Update Avatar
   /// Update information about a specific avatar.
   ///
   /// Parameters:
   /// * [avatarId]
-  /// * [inlineObject11]
+  /// * [updateAvatarRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -708,7 +795,7 @@ class AvatarsApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<Avatar>> updateAvatar({
     required String avatarId,
-    InlineObject11? inlineObject11,
+    UpdateAvatarRequest? updateAvatarRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -747,10 +834,10 @@ class AvatarsApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InlineObject11);
-      _bodyData = inlineObject11 == null
+      const _type = FullType(UpdateAvatarRequest);
+      _bodyData = updateAvatarRequest == null
           ? null
-          : _serializers.serialize(inlineObject11, specifiedType: _type);
+          : _serializers.serialize(updateAvatarRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(

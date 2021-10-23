@@ -11,8 +11,8 @@ import 'package:built_collection/built_collection.dart';
 import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
-import 'package:vrchat_dart_generated/src/model/inline_object2.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user.dart';
+import 'package:vrchat_dart_generated/src/model/update_user_request.dart';
 import 'package:vrchat_dart_generated/src/model/user.dart';
 
 class UsersApi {
@@ -308,7 +308,7 @@ class UsersApi {
   ///
   /// Parameters:
   /// * [userId]
-  /// * [inlineObject2]
+  /// * [updateUserRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -320,7 +320,7 @@ class UsersApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<CurrentUser>> updateUser({
     required String userId,
-    InlineObject2? inlineObject2,
+    UpdateUserRequest? updateUserRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -359,10 +359,10 @@ class UsersApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InlineObject2);
-      _bodyData = inlineObject2 == null
+      const _type = FullType(UpdateUserRequest);
+      _bodyData = updateUserRequest == null
           ? null
-          : _serializers.serialize(inlineObject2, specifiedType: _type);
+          : _serializers.serialize(updateUserRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(

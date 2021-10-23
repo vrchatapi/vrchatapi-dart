@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 # **createFile**
-> File createFile(inlineObject3)
+> File createFile(createFileRequest)
 
 Create File
 
@@ -41,10 +41,10 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFilesApi();
-final InlineObject3 inlineObject3 = ; // InlineObject3 | 
+final CreateFileRequest createFileRequest = ; // CreateFileRequest | 
 
 try { 
-    final response = api.createFile(inlineObject3);
+    final response = api.createFile(createFileRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling FilesApi->createFile: $e\n');
@@ -55,7 +55,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject3** | [**InlineObject3**](InlineObject3.md)|  | [optional] 
+ **createFileRequest** | [**CreateFileRequest**](CreateFileRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createFileVersion**
-> File createFileVersion(fileId, inlineObject4)
+> File createFileVersion(fileId, createFileVersionRequest)
 
 Create File Version
 
@@ -93,10 +93,10 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getFilesApi();
 final String fileId = file_00000000-0000-0000-0000-000000000000; // String | 
-final InlineObject4 inlineObject4 = ; // InlineObject4 | 
+final CreateFileVersionRequest createFileVersionRequest = ; // CreateFileVersionRequest | 
 
 try { 
-    final response = api.createFileVersion(fileId, inlineObject4);
+    final response = api.createFileVersion(fileId, createFileVersionRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling FilesApi->createFileVersion: $e\n');
@@ -108,7 +108,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileId** | **String**|  | 
- **inlineObject4** | [**InlineObject4**](InlineObject4.md)|  | [optional] 
+ **createFileVersionRequest** | [**CreateFileVersionRequest**](CreateFileVersionRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -282,7 +282,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **finishFileDataUpload**
-> File finishFileDataUpload(fileId, versionId, fileType, inlineObject5)
+> File finishFileDataUpload(fileId, versionId, fileType, finishFileDataUploadRequest)
 
 Finish FileData Upload
 
@@ -304,10 +304,10 @@ final api = VrchatDartGenerated().getFilesApi();
 final String fileId = file_00000000-0000-0000-0000-000000000000; // String | 
 final int versionId = 1; // int | 
 final String fileType = file; // String | 
-final InlineObject5 inlineObject5 = ; // InlineObject5 | 
+final FinishFileDataUploadRequest finishFileDataUploadRequest = {"etags":["xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"],"nextPartNumber":"0","maxParts":"0"}; // FinishFileDataUploadRequest | Please see documentation on ETag's: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag's should NOT be present when uploading a `signature`.
 
 try { 
-    final response = api.finishFileDataUpload(fileId, versionId, fileType, inlineObject5);
+    final response = api.finishFileDataUpload(fileId, versionId, fileType, finishFileDataUploadRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling FilesApi->finishFileDataUpload: $e\n');
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
  **fileId** | **String**|  | 
  **versionId** | **int**|  | 
  **fileType** | **String**|  | 
- **inlineObject5** | [**InlineObject5**](InlineObject5.md)|  | [optional] 
+ **finishFileDataUploadRequest** | [**FinishFileDataUploadRequest**](FinishFileDataUploadRequest.md)| Please see documentation on ETag's: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag's should NOT be present when uploading a `signature`. | [optional] 
 
 ### Return type
 
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFileDataUploadStatus**
-> InlineResponse2003 getFileDataUploadStatus(fileId, versionId, fileType)
+> FileVersionUploadStatus getFileDataUploadStatus(fileId, versionId, fileType)
 
 Check FileData Upload Status
 
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**FileVersionUploadStatus**](FileVersionUploadStatus.md)
 
 ### Authorization
 
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **startFileDataUpload**
-> InlineResponse2004 startFileDataUpload(fileId, versionId, fileType, partNumber)
+> FileUploadURL startFileDataUpload(fileId, versionId, fileType, partNumber)
 
 Start FileData Upload
 
@@ -545,7 +545,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**FileUploadURL**](FileUploadURL.md)
 
 ### Authorization
 

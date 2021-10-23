@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **moderateUser**
-> PlayerModeration moderateUser(inlineObject12)
+> PlayerModeration moderateUser(moderateUserRequest)
 
 Moderate User
 
@@ -239,10 +239,10 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getPlayermoderationApi();
-final InlineObject12 inlineObject12 = ; // InlineObject12 | 
+final ModerateUserRequest moderateUserRequest = ; // ModerateUserRequest | 
 
 try { 
-    final response = api.moderateUser(inlineObject12);
+    final response = api.moderateUser(moderateUserRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling PlayermoderationApi->moderateUser: $e\n');
@@ -253,7 +253,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject12** | [**InlineObject12**](InlineObject12.md)|  | [optional] 
+ **moderateUserRequest** | [**ModerateUserRequest**](ModerateUserRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -271,11 +271,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unmoderateUser**
-> Success unmoderateUser(inlineObject13)
+> Success unmoderateUser(moderateUserRequest)
 
 Unmoderate User
 
-Removes a player moderation previously added through `moderateUser`. E.g if you previuosly have shown their avatar, but now want to reset it to default.
+Removes a player moderation previously added through `moderateUser`. E.g if you previously have shown their avatar, but now want to reset it to default.
 
 ### Example 
 ```dart
@@ -290,10 +290,10 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getPlayermoderationApi();
-final InlineObject13 inlineObject13 = ; // InlineObject13 | 
+final ModerateUserRequest moderateUserRequest = ; // ModerateUserRequest | 
 
 try { 
-    final response = api.unmoderateUser(inlineObject13);
+    final response = api.unmoderateUser(moderateUserRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling PlayermoderationApi->unmoderateUser: $e\n');
@@ -304,7 +304,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject13** | [**InlineObject13**](InlineObject13.md)|  | [optional] 
+ **moderateUserRequest** | [**ModerateUserRequest**](ModerateUserRequest.md)|  | [optional] 
 
 ### Return type
 

@@ -10,12 +10,11 @@ import 'package:dio/dio.dart';
 import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
-import 'package:vrchat_dart_generated/src/model/inline_object.dart';
-import 'package:vrchat_dart_generated/src/model/inline_object1.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response200.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response2001.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
+import 'package:vrchat_dart_generated/src/model/two_factor_auth_code.dart';
 import 'package:vrchat_dart_generated/src/model/user_exists.dart';
+import 'package:vrchat_dart_generated/src/model/verify2_fa_result.dart';
+import 'package:vrchat_dart_generated/src/model/verify_auth_token_result.dart';
 
 class AuthenticationApi {
   final Dio _dio;
@@ -384,7 +383,7 @@ class AuthenticationApi {
   /// Finishes the login sequence with a normal 2FA-generated code for accounts with 2FA-protection enabled.
   ///
   /// Parameters:
-  /// * [inlineObject]
+  /// * [twoFactorAuthCode]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -392,10 +391,10 @@ class AuthenticationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [InlineResponse2001] as data
+  /// Returns a [Future] containing a [Response] with a [Verify2FAResult] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<InlineResponse2001>> verify2FA({
-    InlineObject? inlineObject,
+  Future<Response<Verify2FAResult>> verify2FA({
+    TwoFactorAuthCode? twoFactorAuthCode,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -427,10 +426,10 @@ class AuthenticationApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InlineObject);
-      _bodyData = inlineObject == null
+      const _type = FullType(TwoFactorAuthCode);
+      _bodyData = twoFactorAuthCode == null
           ? null
-          : _serializers.serialize(inlineObject, specifiedType: _type);
+          : _serializers.serialize(twoFactorAuthCode, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -451,14 +450,14 @@ class AuthenticationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    InlineResponse2001 _responseData;
+    Verify2FAResult _responseData;
 
     try {
-      const _responseType = FullType(InlineResponse2001);
+      const _responseType = FullType(Verify2FAResult);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as InlineResponse2001;
+      ) as Verify2FAResult;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -468,7 +467,7 @@ class AuthenticationApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<InlineResponse2001>(
+    return Response<Verify2FAResult>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -491,9 +490,9 @@ class AuthenticationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [InlineResponse200] as data
+  /// Returns a [Future] containing a [Response] with a [VerifyAuthTokenResult] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<InlineResponse200>> verifyAuthToken({
+  Future<Response<VerifyAuthTokenResult>> verifyAuthToken({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -529,14 +528,14 @@ class AuthenticationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    InlineResponse200 _responseData;
+    VerifyAuthTokenResult _responseData;
 
     try {
-      const _responseType = FullType(InlineResponse200);
+      const _responseType = FullType(VerifyAuthTokenResult);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as InlineResponse200;
+      ) as VerifyAuthTokenResult;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -546,7 +545,7 @@ class AuthenticationApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<InlineResponse200>(
+    return Response<VerifyAuthTokenResult>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -562,7 +561,7 @@ class AuthenticationApi {
   /// Finishes the login sequence with an OTP (One Time Password) recovery code for accounts with 2FA-protection enabled.
   ///
   /// Parameters:
-  /// * [inlineObject1]
+  /// * [twoFactorAuthCode]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -570,10 +569,10 @@ class AuthenticationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [InlineResponse2001] as data
+  /// Returns a [Future] containing a [Response] with a [Verify2FAResult] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<InlineResponse2001>> verifyRecoveryCode({
-    InlineObject1? inlineObject1,
+  Future<Response<Verify2FAResult>> verifyRecoveryCode({
+    TwoFactorAuthCode? twoFactorAuthCode,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -605,10 +604,10 @@ class AuthenticationApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InlineObject1);
-      _bodyData = inlineObject1 == null
+      const _type = FullType(TwoFactorAuthCode);
+      _bodyData = twoFactorAuthCode == null
           ? null
-          : _serializers.serialize(inlineObject1, specifiedType: _type);
+          : _serializers.serialize(twoFactorAuthCode, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -629,14 +628,14 @@ class AuthenticationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    InlineResponse2001 _responseData;
+    Verify2FAResult _responseData;
 
     try {
-      const _responseType = FullType(InlineResponse2001);
+      const _responseType = FullType(Verify2FAResult);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as InlineResponse2001;
+      ) as Verify2FAResult;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -646,7 +645,7 @@ class AuthenticationApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<InlineResponse2001>(
+    return Response<Verify2FAResult>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

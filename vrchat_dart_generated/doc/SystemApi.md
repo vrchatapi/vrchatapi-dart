@@ -141,7 +141,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getHealth**
-> InlineResponse2002 getHealth()
+> APIHealth getHealth()
 
 Check API Health
 
@@ -166,7 +166,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**APIHealth**](APIHealth.md)
 
 ### Authorization
 

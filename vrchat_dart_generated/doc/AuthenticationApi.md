@@ -216,7 +216,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **verify2FA**
-> InlineResponse2001 verify2FA(inlineObject)
+> Verify2FAResult verify2FA(twoFactorAuthCode)
 
 Verify 2FA code
 
@@ -231,10 +231,10 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getAuthenticationApi();
-final InlineObject inlineObject = ; // InlineObject | 
+final TwoFactorAuthCode twoFactorAuthCode = ; // TwoFactorAuthCode | 
 
 try { 
-    final response = api.verify2FA(inlineObject);
+    final response = api.verify2FA(twoFactorAuthCode);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AuthenticationApi->verify2FA: $e\n');
@@ -245,11 +245,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject** | [**InlineObject**](InlineObject.md)|  | [optional] 
+ **twoFactorAuthCode** | [**TwoFactorAuthCode**](TwoFactorAuthCode.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**Verify2FAResult**](Verify2FAResult.md)
 
 ### Authorization
 
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **verifyAuthToken**
-> InlineResponse200 verifyAuthToken()
+> VerifyAuthTokenResult verifyAuthToken()
 
 Verify Auth Token
 
@@ -292,7 +292,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**VerifyAuthTokenResult**](VerifyAuthTokenResult.md)
 
 ### Authorization
 
@@ -306,7 +306,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **verifyRecoveryCode**
-> InlineResponse2001 verifyRecoveryCode(inlineObject1)
+> Verify2FAResult verifyRecoveryCode(twoFactorAuthCode)
 
 Verify 2FA code with Recovery code
 
@@ -321,10 +321,10 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getAuthenticationApi();
-final InlineObject1 inlineObject1 = ; // InlineObject1 | 
+final TwoFactorAuthCode twoFactorAuthCode = ; // TwoFactorAuthCode | 
 
 try { 
-    final response = api.verifyRecoveryCode(inlineObject1);
+    final response = api.verifyRecoveryCode(twoFactorAuthCode);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AuthenticationApi->verifyRecoveryCode: $e\n');
@@ -335,11 +335,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject1** | [**InlineObject1**](InlineObject1.md)|  | [optional] 
+ **twoFactorAuthCode** | [**TwoFactorAuthCode**](TwoFactorAuthCode.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**Verify2FAResult**](Verify2FAResult.md)
 
 ### Authorization
 

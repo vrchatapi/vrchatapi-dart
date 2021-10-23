@@ -9,14 +9,14 @@ import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:vrchat_dart_generated/src/api_util.dart';
+import 'package:vrchat_dart_generated/src/model/create_world_request.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
-import 'package:vrchat_dart_generated/src/model/inline_object6.dart';
-import 'package:vrchat_dart_generated/src/model/inline_object7.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response2005.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response2006.dart';
 import 'package:vrchat_dart_generated/src/model/instance.dart';
 import 'package:vrchat_dart_generated/src/model/limited_world.dart';
+import 'package:vrchat_dart_generated/src/model/update_world_request.dart';
 import 'package:vrchat_dart_generated/src/model/world.dart';
+import 'package:vrchat_dart_generated/src/model/world_metadata.dart';
+import 'package:vrchat_dart_generated/src/model/world_publish_status.dart';
 
 class WorldsApi {
   final Dio _dio;
@@ -29,7 +29,7 @@ class WorldsApi {
   /// Create a new world. This endpoint requires &#x60;assetUrl&#x60; to be a valid File object with &#x60;.vrcw&#x60; file extension, and &#x60;imageUrl&#x60; to be a valid File object with an image file extension.
   ///
   /// Parameters:
-  /// * [inlineObject6]
+  /// * [createWorldRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -40,7 +40,7 @@ class WorldsApi {
   /// Returns a [Future] containing a [Response] with a [World] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<World>> createWorld({
-    InlineObject6? inlineObject6,
+    CreateWorldRequest? createWorldRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -65,10 +65,10 @@ class WorldsApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InlineObject6);
-      _bodyData = inlineObject6 == null
+      const _type = FullType(CreateWorldRequest);
+      _bodyData = createWorldRequest == null
           ? null
-          : _serializers.serialize(inlineObject6, specifiedType: _type);
+          : _serializers.serialize(createWorldRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -810,10 +810,10 @@ class WorldsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [InlineResponse2005] as data
+  /// Returns a [Future] containing a [Response] with a [WorldMetadata] as data
   /// Throws [DioError] if API call or serialization fails
   @Deprecated('This operation has been deprecated')
-  Future<Response<InlineResponse2005>> getWorldMetadata({
+  Future<Response<WorldMetadata>> getWorldMetadata({
     required String worldId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -857,14 +857,14 @@ class WorldsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    InlineResponse2005 _responseData;
+    WorldMetadata _responseData;
 
     try {
-      const _responseType = FullType(InlineResponse2005);
+      const _responseType = FullType(WorldMetadata);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as InlineResponse2005;
+      ) as WorldMetadata;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -874,7 +874,7 @@ class WorldsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<InlineResponse2005>(
+    return Response<WorldMetadata>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -898,9 +898,9 @@ class WorldsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [InlineResponse2006] as data
+  /// Returns a [Future] containing a [Response] with a [WorldPublishStatus] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<InlineResponse2006>> getWorldPublishStatus({
+  Future<Response<WorldPublishStatus>> getWorldPublishStatus({
     required String worldId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -944,14 +944,14 @@ class WorldsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    InlineResponse2006 _responseData;
+    WorldPublishStatus _responseData;
 
     try {
-      const _responseType = FullType(InlineResponse2006);
+      const _responseType = FullType(WorldPublishStatus);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as InlineResponse2006;
+      ) as WorldPublishStatus;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -961,7 +961,7 @@ class WorldsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<InlineResponse2006>(
+    return Response<WorldPublishStatus>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1256,7 +1256,7 @@ class WorldsApi {
   ///
   /// Parameters:
   /// * [worldId]
-  /// * [inlineObject7]
+  /// * [updateWorldRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1268,7 +1268,7 @@ class WorldsApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<World>> updateWorld({
     required String worldId,
-    InlineObject7? inlineObject7,
+    UpdateWorldRequest? updateWorldRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1307,10 +1307,10 @@ class WorldsApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InlineObject7);
-      _bodyData = inlineObject7 == null
+      const _type = FullType(UpdateWorldRequest);
+      _bodyData = updateWorldRequest == null
           ? null
-          : _serializers.serialize(inlineObject7, specifiedType: _type);
+          : _serializers.serialize(updateWorldRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(

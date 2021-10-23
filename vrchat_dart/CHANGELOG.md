@@ -1,3 +1,8 @@
+## 1.4.0
+- Added missing streaming events
+- Added convenience methods to convert between user objects
+- Updated vrchat_dart_generated
+
 ## 1.3.0
 - Added missing streaming events
 - Updated streaming event deserialization

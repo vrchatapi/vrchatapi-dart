@@ -15,11 +15,12 @@ Method | HTTP request | Description
 [**getFavoritedAvatars**](AvatarsApi.md#getfavoritedavatars) | **GET** /avatars/favorites | List Favorited Avatars
 [**searchAvatars**](AvatarsApi.md#searchavatars) | **GET** /avatars | Search Avatars
 [**selectAvatar**](AvatarsApi.md#selectavatar) | **PUT** /avatars/{avatarId}/select | Select Avatar
+[**selectFallbackAvatar**](AvatarsApi.md#selectfallbackavatar) | **PUT** /avatars/{avatarId}/selectFallback | Select Fallback Avatar
 [**updateAvatar**](AvatarsApi.md#updateavatar) | **PUT** /avatars/{avatarId} | Update Avatar
 
 
 # **createAvatar**
-> Avatar createAvatar(inlineObject10)
+> Avatar createAvatar(createAvatarRequest)
 
 Create Avatar
 
@@ -38,10 +39,10 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getAvatarsApi();
-final InlineObject10 inlineObject10 = ; // InlineObject10 | 
+final CreateAvatarRequest createAvatarRequest = ; // CreateAvatarRequest | 
 
 try { 
-    final response = api.createAvatar(inlineObject10);
+    final response = api.createAvatar(createAvatarRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AvatarsApi->createAvatar: $e\n');
@@ -52,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject10** | [**InlineObject10**](InlineObject10.md)|  | [optional] 
+ **createAvatarRequest** | [**CreateAvatarRequest**](CreateAvatarRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -372,8 +373,59 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **selectFallbackAvatar**
+> CurrentUser selectFallbackAvatar(avatarId)
+
+Select Fallback Avatar
+
+Switches into that avatar as your fallback avatar.
+
+### Example 
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: apiKeyCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAvatarsApi();
+final String avatarId = avatarId_example; // String | 
+
+try { 
+    final response = api.selectFallbackAvatar(avatarId);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AvatarsApi->selectFallbackAvatar: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **avatarId** | **String**|  | 
+
+### Return type
+
+[**CurrentUser**](CurrentUser.md)
+
+### Authorization
+
+[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **updateAvatar**
-> Avatar updateAvatar(avatarId, inlineObject11)
+> Avatar updateAvatar(avatarId, updateAvatarRequest)
 
 Update Avatar
 
@@ -393,10 +445,10 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getAvatarsApi();
 final String avatarId = avatarId_example; // String | 
-final InlineObject11 inlineObject11 = ; // InlineObject11 | 
+final UpdateAvatarRequest updateAvatarRequest = ; // UpdateAvatarRequest | 
 
 try { 
-    final response = api.updateAvatar(avatarId, inlineObject11);
+    final response = api.updateAvatar(avatarId, updateAvatarRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AvatarsApi->updateAvatar: $e\n');
@@ -408,7 +460,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **avatarId** | **String**|  | 
- **inlineObject11** | [**InlineObject11**](InlineObject11.md)|  | [optional] 
+ **updateAvatarRequest** | [**UpdateAvatarRequest**](UpdateAvatarRequest.md)|  | [optional] 
 
 ### Return type
 

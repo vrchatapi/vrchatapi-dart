@@ -9,13 +9,13 @@ import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:vrchat_dart_generated/src/api_util.dart';
+import 'package:vrchat_dart_generated/src/model/create_file_request.dart';
+import 'package:vrchat_dart_generated/src/model/create_file_version_request.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
 import 'package:vrchat_dart_generated/src/model/file.dart';
-import 'package:vrchat_dart_generated/src/model/inline_object3.dart';
-import 'package:vrchat_dart_generated/src/model/inline_object4.dart';
-import 'package:vrchat_dart_generated/src/model/inline_object5.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response2003.dart';
-import 'package:vrchat_dart_generated/src/model/inline_response2004.dart';
+import 'package:vrchat_dart_generated/src/model/file_upload_url.dart';
+import 'package:vrchat_dart_generated/src/model/file_version_upload_status.dart';
+import 'package:vrchat_dart_generated/src/model/finish_file_data_upload_request.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
 
 class FilesApi {
@@ -29,7 +29,7 @@ class FilesApi {
   /// Creates a new File object
   ///
   /// Parameters:
-  /// * [inlineObject3]
+  /// * [createFileRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -40,7 +40,7 @@ class FilesApi {
   /// Returns a [Future] containing a [Response] with a [File] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<File>> createFile({
-    InlineObject3? inlineObject3,
+    CreateFileRequest? createFileRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -78,10 +78,10 @@ class FilesApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InlineObject3);
-      _bodyData = inlineObject3 == null
+      const _type = FullType(CreateFileRequest);
+      _bodyData = createFileRequest == null
           ? null
-          : _serializers.serialize(inlineObject3, specifiedType: _type);
+          : _serializers.serialize(createFileRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -136,7 +136,7 @@ class FilesApi {
   ///
   /// Parameters:
   /// * [fileId]
-  /// * [inlineObject4]
+  /// * [createFileVersionRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -148,7 +148,7 @@ class FilesApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<File>> createFileVersion({
     required String fileId,
-    InlineObject4? inlineObject4,
+    CreateFileVersionRequest? createFileVersionRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -187,10 +187,11 @@ class FilesApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InlineObject4);
-      _bodyData = inlineObject4 == null
+      const _type = FullType(CreateFileVersionRequest);
+      _bodyData = createFileVersionRequest == null
           ? null
-          : _serializers.serialize(inlineObject4, specifiedType: _type);
+          : _serializers.serialize(createFileVersionRequest,
+              specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -488,7 +489,7 @@ class FilesApi {
   /// * [fileId]
   /// * [versionId]
   /// * [fileType]
-  /// * [inlineObject5]
+  /// * [finishFileDataUploadRequest] - Please see documentation on ETag's: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag's should NOT be present when uploading a `signature`.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -502,7 +503,7 @@ class FilesApi {
     required String fileId,
     required int versionId,
     required String fileType,
-    InlineObject5? inlineObject5,
+    FinishFileDataUploadRequest? finishFileDataUploadRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -543,10 +544,11 @@ class FilesApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InlineObject5);
-      _bodyData = inlineObject5 == null
+      const _type = FullType(FinishFileDataUploadRequest);
+      _bodyData = finishFileDataUploadRequest == null
           ? null
-          : _serializers.serialize(inlineObject5, specifiedType: _type);
+          : _serializers.serialize(finishFileDataUploadRequest,
+              specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -697,9 +699,9 @@ class FilesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [InlineResponse2003] as data
+  /// Returns a [Future] containing a [Response] with a [FileVersionUploadStatus] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<InlineResponse2003>> getFileDataUploadStatus({
+  Future<Response<FileVersionUploadStatus>> getFileDataUploadStatus({
     required String fileId,
     required int versionId,
     required String fileType,
@@ -747,14 +749,14 @@ class FilesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    InlineResponse2003 _responseData;
+    FileVersionUploadStatus _responseData;
 
     try {
-      const _responseType = FullType(InlineResponse2003);
+      const _responseType = FullType(FileVersionUploadStatus);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as InlineResponse2003;
+      ) as FileVersionUploadStatus;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -764,7 +766,7 @@ class FilesApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<InlineResponse2003>(
+    return Response<FileVersionUploadStatus>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -897,9 +899,9 @@ class FilesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [InlineResponse2004] as data
+  /// Returns a [Future] containing a [Response] with a [FileUploadURL] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<InlineResponse2004>> startFileDataUpload({
+  Future<Response<FileUploadURL>> startFileDataUpload({
     required String fileId,
     required int versionId,
     required String fileType,
@@ -954,14 +956,14 @@ class FilesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    InlineResponse2004 _responseData;
+    FileUploadURL _responseData;
 
     try {
-      const _responseType = FullType(InlineResponse2004);
+      const _responseType = FullType(FileUploadURL);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as InlineResponse2004;
+      ) as FileUploadURL;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -971,7 +973,7 @@ class FilesApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<InlineResponse2004>(
+    return Response<FileUploadURL>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

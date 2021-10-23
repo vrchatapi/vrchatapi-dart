@@ -98,7 +98,7 @@ For more information, please visit [https://github.com/VRChatAPI](https://github
 To use the package from [pub.dev](https://pub.dev), please include the following in pubspec.yaml
 ```yaml
 dependencies:
-  vrchat_dart_generated: 1.4.3-pre.1
+  vrchat_dart_generated: 1.5.0-pre.1
 ```
 
 ### Github
@@ -161,6 +161,7 @@ Class | Method | HTTP request | Description
 [*AvatarsApi*](doc/AvatarsApi.md) | [**getFavoritedAvatars**](doc/AvatarsApi.md#getfavoritedavatars) | **GET** /avatars/favorites | List Favorited Avatars
 [*AvatarsApi*](doc/AvatarsApi.md) | [**searchAvatars**](doc/AvatarsApi.md#searchavatars) | **GET** /avatars | Search Avatars
 [*AvatarsApi*](doc/AvatarsApi.md) | [**selectAvatar**](doc/AvatarsApi.md#selectavatar) | **PUT** /avatars/{avatarId}/select | Select Avatar
+[*AvatarsApi*](doc/AvatarsApi.md) | [**selectFallbackAvatar**](doc/AvatarsApi.md#selectfallbackavatar) | **PUT** /avatars/{avatarId}/selectFallback | Select Fallback Avatar
 [*AvatarsApi*](doc/AvatarsApi.md) | [**updateAvatar**](doc/AvatarsApi.md#updateavatar) | **PUT** /avatars/{avatarId} | Update Avatar
 [*FavoritesApi*](doc/FavoritesApi.md) | [**addFavorite**](doc/FavoritesApi.md#addfavorite) | **POST** /favorites | Add Favorite
 [*FavoritesApi*](doc/FavoritesApi.md) | [**clearFavoriteGroup**](doc/FavoritesApi.md#clearfavoritegroup) | **DELETE** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Clear Favorite Group
@@ -234,8 +235,14 @@ Class | Method | HTTP request | Description
 
  - [APIConfig](doc/APIConfig.md)
  - [APIEventConfig](doc/APIEventConfig.md)
+ - [APIHealth](doc/APIHealth.md)
+ - [AddFavoriteRequest](doc/AddFavoriteRequest.md)
  - [Avatar](doc/Avatar.md)
  - [AvatarUnityPackageUrlObject](doc/AvatarUnityPackageUrlObject.md)
+ - [CreateAvatarRequest](doc/CreateAvatarRequest.md)
+ - [CreateFileRequest](doc/CreateFileRequest.md)
+ - [CreateFileVersionRequest](doc/CreateFileVersionRequest.md)
+ - [CreateWorldRequest](doc/CreateWorldRequest.md)
  - [CurrentUser](doc/CurrentUser.md)
  - [DeploymentGroup](doc/DeploymentGroup.md)
  - [DeveloperType](doc/DeveloperType.md)
@@ -249,30 +256,11 @@ Class | Method | HTTP request | Description
  - [File](doc/File.md)
  - [FileData](doc/FileData.md)
  - [FileStatus](doc/FileStatus.md)
+ - [FileUploadURL](doc/FileUploadURL.md)
  - [FileVersion](doc/FileVersion.md)
+ - [FileVersionUploadStatus](doc/FileVersionUploadStatus.md)
+ - [FinishFileDataUploadRequest](doc/FinishFileDataUploadRequest.md)
  - [FriendStatus](doc/FriendStatus.md)
- - [InlineObject](doc/InlineObject.md)
- - [InlineObject1](doc/InlineObject1.md)
- - [InlineObject10](doc/InlineObject10.md)
- - [InlineObject11](doc/InlineObject11.md)
- - [InlineObject12](doc/InlineObject12.md)
- - [InlineObject13](doc/InlineObject13.md)
- - [InlineObject2](doc/InlineObject2.md)
- - [InlineObject3](doc/InlineObject3.md)
- - [InlineObject4](doc/InlineObject4.md)
- - [InlineObject5](doc/InlineObject5.md)
- - [InlineObject6](doc/InlineObject6.md)
- - [InlineObject7](doc/InlineObject7.md)
- - [InlineObject8](doc/InlineObject8.md)
- - [InlineObject9](doc/InlineObject9.md)
- - [InlineResponse200](doc/InlineResponse200.md)
- - [InlineResponse2001](doc/InlineResponse2001.md)
- - [InlineResponse2002](doc/InlineResponse2002.md)
- - [InlineResponse2003](doc/InlineResponse2003.md)
- - [InlineResponse2004](doc/InlineResponse2004.md)
- - [InlineResponse2005](doc/InlineResponse2005.md)
- - [InlineResponse2006](doc/InlineResponse2006.md)
- - [InlineResponse400](doc/InlineResponse400.md)
  - [Instance](doc/Instance.md)
  - [InstancePlatforms](doc/InstancePlatforms.md)
  - [InviteMessage](doc/InviteMessage.md)
@@ -283,6 +271,7 @@ Class | Method | HTTP request | Description
  - [LimitedUser](doc/LimitedUser.md)
  - [LimitedWorld](doc/LimitedWorld.md)
  - [MIMEType](doc/MIMEType.md)
+ - [ModerateUserRequest](doc/ModerateUserRequest.md)
  - [Notification](doc/Notification.md)
  - [NotificationType](doc/NotificationType.md)
  - [PastDisplayName](doc/PastDisplayName.md)
@@ -293,12 +282,21 @@ Class | Method | HTTP request | Description
  - [ReleaseStatus](doc/ReleaseStatus.md)
  - [Response](doc/Response.md)
  - [Success](doc/Success.md)
+ - [TwoFactorAuthCode](doc/TwoFactorAuthCode.md)
  - [UnityPackage](doc/UnityPackage.md)
+ - [UpdateAvatarRequest](doc/UpdateAvatarRequest.md)
+ - [UpdateFavoriteGroupRequest](doc/UpdateFavoriteGroupRequest.md)
+ - [UpdateUserRequest](doc/UpdateUserRequest.md)
+ - [UpdateWorldRequest](doc/UpdateWorldRequest.md)
  - [User](doc/User.md)
  - [UserExists](doc/UserExists.md)
  - [UserState](doc/UserState.md)
  - [UserStatus](doc/UserStatus.md)
+ - [Verify2FAResult](doc/Verify2FAResult.md)
+ - [VerifyAuthTokenResult](doc/VerifyAuthTokenResult.md)
  - [World](doc/World.md)
+ - [WorldMetadata](doc/WorldMetadata.md)
+ - [WorldPublishStatus](doc/WorldPublishStatus.md)
 
 
 ## Documentation For Authorization

@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateUser**
-> CurrentUser updateUser(userId, inlineObject2)
+> CurrentUser updateUser(userId, updateUserRequest)
 
 Update User Info
 
@@ -195,10 +195,10 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getUsersApi();
 final String userId = userId_example; // String | 
-final InlineObject2 inlineObject2 = ; // InlineObject2 | 
+final UpdateUserRequest updateUserRequest = ; // UpdateUserRequest | 
 
 try { 
-    final response = api.updateUser(userId, inlineObject2);
+    final response = api.updateUser(userId, updateUserRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling UsersApi->updateUser: $e\n');
@@ -210,7 +210,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**|  | 
- **inlineObject2** | [**InlineObject2**](InlineObject2.md)|  | [optional] 
+ **updateUserRequest** | [**UpdateUserRequest**](UpdateUserRequest.md)|  | [optional] 
 
 ### Return type
 

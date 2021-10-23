@@ -10,8 +10,7 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
-import 'package:vrchat_dart_generated/src/model/inline_object12.dart';
-import 'package:vrchat_dart_generated/src/model/inline_object13.dart';
+import 'package:vrchat_dart_generated/src/model/moderate_user_request.dart';
 import 'package:vrchat_dart_generated/src/model/player_moderation.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
 
@@ -384,7 +383,7 @@ class PlayermoderationApi {
   /// Moderate a user, e.g. unmute them or show their avatar.
   ///
   /// Parameters:
-  /// * [inlineObject12]
+  /// * [moderateUserRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -395,7 +394,7 @@ class PlayermoderationApi {
   /// Returns a [Future] containing a [Response] with a [PlayerModeration] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<PlayerModeration>> moderateUser({
-    InlineObject12? inlineObject12,
+    ModerateUserRequest? moderateUserRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -433,10 +432,10 @@ class PlayermoderationApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InlineObject12);
-      _bodyData = inlineObject12 == null
+      const _type = FullType(ModerateUserRequest);
+      _bodyData = moderateUserRequest == null
           ? null
-          : _serializers.serialize(inlineObject12, specifiedType: _type);
+          : _serializers.serialize(moderateUserRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -487,10 +486,10 @@ class PlayermoderationApi {
   }
 
   /// Unmoderate User
-  /// Removes a player moderation previously added through &#x60;moderateUser&#x60;. E.g if you previuosly have shown their avatar, but now want to reset it to default.
+  /// Removes a player moderation previously added through &#x60;moderateUser&#x60;. E.g if you previously have shown their avatar, but now want to reset it to default.
   ///
   /// Parameters:
-  /// * [inlineObject13]
+  /// * [moderateUserRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -501,7 +500,7 @@ class PlayermoderationApi {
   /// Returns a [Future] containing a [Response] with a [Success] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<Success>> unmoderateUser({
-    InlineObject13? inlineObject13,
+    ModerateUserRequest? moderateUserRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -539,10 +538,10 @@ class PlayermoderationApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InlineObject13);
-      _bodyData = inlineObject13 == null
+      const _type = FullType(ModerateUserRequest);
+      _bodyData = moderateUserRequest == null
           ? null
-          : _serializers.serialize(inlineObject13, specifiedType: _type);
+          : _serializers.serialize(moderateUserRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
