@@ -1,7 +1,7 @@
 name: vrchat_dart
 description: This is a Dart client that interacts with the unofficial VRChat API
 homepage: https://github.com/vrchatapi/vrchatapi-dart
-version: 1.4.0-pre.1
+version: 1.4.0
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -19,6 +19,17 @@ dependencies:
 
 dev_dependencies:
   build_runner: ^2.0.6
-  openapi_generator: ^3.2.0+2
+  openapi_generator:
+    git:
+      url: https://github.com/Rexios80/openapi-generator-dart
+      ref: feature/update-bundled-jar
+      path: openapi-generator
   json_serializable: ^6.0.1
   lints: ^1.0.1
+
+dependency_overrides:
+  openapi_generator_cli:
+    git:
+      url: https://github.com/Rexios80/openapi-generator-dart
+      ref: feature/update-bundled-jar
+      path: openapi-generator-cli
