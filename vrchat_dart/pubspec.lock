@@ -289,7 +289,7 @@ packages:
     source: hosted
     version: "3.2.1"
   openapi_generator_cli:
-    dependency: "direct overridden"
+    dependency: "direct dev"
     description:
       path: openapi-generator-cli
       ref: "feature/update-bundled-jar"
@@ -422,7 +422,7 @@ packages:
       name: vrchat_dart_generated
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.5.0-pre.1"
+    version: "1.5.0"
   watcher:
     dependency: transitive
     description:
