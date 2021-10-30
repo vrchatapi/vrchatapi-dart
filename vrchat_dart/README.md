@@ -1,4 +1,4 @@
-![](https://github.com/vrchatapi/vrchatapi.github.io/blob/745d83b7c3df891b774b9eadbff8686aa746f5c0/assets/img/lang/lang_dart_banner_1500x300.png?raw=true)
+![](https://github.com/vrchatapi/vrchatapi.github.io/blob/main/static/assets/img/lang/lang_dart_banner_1500x300.png?raw=true)
 
 # vrchat_dart
 
