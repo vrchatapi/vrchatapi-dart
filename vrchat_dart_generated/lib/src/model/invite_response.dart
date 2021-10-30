@@ -59,10 +59,12 @@ class _$InviteResponseSerializer
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'responseSlot':
-          result.responseSlot = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.responseSlot = valueDes;
           break;
       }
     }

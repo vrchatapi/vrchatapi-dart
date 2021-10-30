@@ -46,7 +46,9 @@ abstract class FileData implements Built<FileData, FileDataBuilder> {
   FileData._();
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(FileDataBuilder b) => b..uploadId = '';
+  static void _defaults(FileDataBuilder b) => b
+    ..category = const FileDataCategoryEnum._('queued')
+    ..uploadId = '';
 
   factory FileData([void updates(FileDataBuilder b)]) = _$FileData;
 
@@ -106,35 +108,43 @@ class _$FileDataSerializer implements StructuredSerializer<FileData> {
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'category':
-          result.category = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(FileDataCategoryEnum))
               as FileDataCategoryEnum;
+          result.category = valueDes;
           break;
         case r'fileName':
-          result.fileName = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.fileName = valueDes;
           break;
         case r'md5':
-          result.md5 = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.md5 = valueDes;
           break;
         case r'sizeInBytes':
-          result.sizeInBytes = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.sizeInBytes = valueDes;
           break;
         case r'status':
-          result.status = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(FileStatus)) as FileStatus;
+          result.status = valueDes;
           break;
         case r'uploadId':
-          result.uploadId = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.uploadId = valueDes;
           break;
         case r'url':
-          result.url = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.url = valueDes;
           break;
       }
     }

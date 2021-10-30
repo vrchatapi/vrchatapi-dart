@@ -93,22 +93,27 @@ class _$CreateFileVersionRequestSerializer
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'signatureMd5':
-          result.signatureMd5 = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.signatureMd5 = valueDes;
           break;
         case r'signatureSizeInBytes':
-          result.signatureSizeInBytes = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(num)) as num;
+          result.signatureSizeInBytes = valueDes;
           break;
         case r'fileMd5':
-          result.fileMd5 = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.fileMd5 = valueDes;
           break;
         case r'fileSizeInBytes':
-          result.fileSizeInBytes = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(num)) as num;
+          result.fileSizeInBytes = valueDes;
           break;
       }
     }

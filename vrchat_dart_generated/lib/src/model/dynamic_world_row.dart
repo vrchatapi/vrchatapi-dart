@@ -110,34 +110,42 @@ class _$DynamicWorldRowSerializer
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'index':
-          result.index = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.index = valueDes;
           break;
         case r'name':
-          result.name = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.name = valueDes;
           break;
         case r'platform':
-          result.platform = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.platform = valueDes;
           break;
         case r'sortHeading':
-          result.sortHeading = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.sortHeading = valueDes;
           break;
         case r'sortOrder':
-          result.sortOrder = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.sortOrder = valueDes;
           break;
         case r'sortOwnership':
-          result.sortOwnership = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.sortOwnership = valueDes;
           break;
         case r'tag':
-          result.tag = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.tag = valueDes;
           break;
       }
     }

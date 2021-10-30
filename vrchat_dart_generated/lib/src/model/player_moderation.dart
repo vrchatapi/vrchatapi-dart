@@ -109,35 +109,43 @@ class _$PlayerModerationSerializer
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'created':
-          result.created = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime;
+          result.created = valueDes;
           break;
         case r'id':
-          result.id = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.id = valueDes;
           break;
         case r'sourceDisplayName':
-          result.sourceDisplayName = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.sourceDisplayName = valueDes;
           break;
         case r'sourceUserId':
-          result.sourceUserId = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.sourceUserId = valueDes;
           break;
         case r'targetDisplayName':
-          result.targetDisplayName = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.targetDisplayName = valueDes;
           break;
         case r'targetUserId':
-          result.targetUserId = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.targetUserId = valueDes;
           break;
         case r'type':
-          result.type = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(PlayerModerationType))
               as PlayerModerationType;
+          result.type = valueDes;
           break;
       }
     }

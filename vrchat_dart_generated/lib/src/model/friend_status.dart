@@ -75,18 +75,22 @@ class _$FriendStatusSerializer implements StructuredSerializer<FriendStatus> {
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'incomingRequest':
-          result.incomingRequest = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.incomingRequest = valueDes;
           break;
         case r'isFriend':
-          result.isFriend = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.isFriend = valueDes;
           break;
         case r'outgoingRequest':
-          result.outgoingRequest = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.outgoingRequest = valueDes;
           break;
       }
     }

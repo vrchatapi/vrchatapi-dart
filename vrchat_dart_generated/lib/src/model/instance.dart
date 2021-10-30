@@ -239,98 +239,121 @@ class _$InstanceSerializer implements StructuredSerializer<Instance> {
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'active':
-          result.active = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.active = valueDes;
           break;
         case r'canRequestInvite':
-          result.canRequestInvite = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.canRequestInvite = valueDes;
           break;
         case r'capacity':
-          result.capacity = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.capacity = valueDes;
           break;
         case r'clientNumber':
-          result.clientNumber = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.clientNumber = valueDes;
           break;
         case r'full':
-          result.full = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.full = valueDes;
           break;
         case r'id':
-          result.id = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.id = valueDes;
           break;
         case r'instanceId':
-          result.instanceId = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.instanceId = valueDes;
           break;
         case r'location':
-          result.location = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.location = valueDes;
           break;
         case r'n_users':
-          result.nUsers = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.nUsers = valueDes;
           break;
         case r'name':
-          result.name = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.name = valueDes;
           break;
         case r'nonce':
-          result.nonce = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.nonce = valueDes;
           break;
         case r'ownerId':
-          result.ownerId = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.ownerId = valueDes;
           break;
         case r'permanent':
-          result.permanent = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.permanent = valueDes;
           break;
         case r'photonRegion':
-          result.photonRegion = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.photonRegion = valueDes;
           break;
         case r'platforms':
-          result.platforms.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(InstancePlatforms))
-              as InstancePlatforms);
+              as InstancePlatforms;
+          result.platforms.replace(valueDes);
           break;
         case r'region':
-          result.region = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.region = valueDes;
           break;
         case r'shortName':
-          result.shortName = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.shortName = valueDes;
           break;
         case r'tags':
-          result.tags.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>);
+              as BuiltList<String>;
+          result.tags.replace(valueDes);
           break;
         case r'type':
-          result.type = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.type = valueDes;
           break;
         case r'users':
-          result.users.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType:
                       const FullType(BuiltList, [FullType(JsonObject)]))
-              as BuiltList<JsonObject>);
+              as BuiltList<JsonObject>;
+          result.users.replace(valueDes);
           break;
         case r'world':
-          result.world = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(JsonObject)) as JsonObject;
+          result.world = valueDes;
           break;
         case r'worldId':
-          result.worldId = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.worldId = valueDes;
           break;
       }
     }

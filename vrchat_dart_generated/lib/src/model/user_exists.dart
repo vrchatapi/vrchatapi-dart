@@ -55,10 +55,12 @@ class _$UserExistsSerializer implements StructuredSerializer<UserExists> {
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'userExists':
-          result.userExists = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.userExists = valueDes;
           break;
       }
     }

@@ -1,3 +1,6 @@
+## 1.5.0
+Updated to openapi-generator 5.3.0
+
 ## 1.5.0-pre.1
 Preparing for 1.5.0 release
 

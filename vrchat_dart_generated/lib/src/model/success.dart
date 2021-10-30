@@ -57,10 +57,12 @@ class _$SuccessSerializer implements StructuredSerializer<Success> {
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'success':
-          result.success.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Response)) as Response);
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(Response)) as Response;
+          result.success.replace(valueDes);
           break;
       }
     }

@@ -24,7 +24,7 @@ Clear All Player Moderations
 
 ⚠️ **This will delete every single player moderation you've ever made.**
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -38,7 +38,7 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getPlayermoderationApi();
 
-try { 
+try {
     final response = api.clearAllPlayerModerations();
     print(response);
 } catch on DioError (e) {
@@ -71,7 +71,7 @@ Delete Player Moderation
 
 Deletes a specific player moderation based on it's `pmod_` ID. The website uses `unmoderateUser` instead. You can delete the same player moderation multiple times successfully.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -86,7 +86,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getPlayermoderationApi();
 final String playerModerationId = playerModerationId_example; // String | 
 
-try { 
+try {
     final response = api.deletePlayerModeration(playerModerationId);
     print(response);
 } catch on DioError (e) {
@@ -122,7 +122,7 @@ Get Player Moderation
 
 Returns a single Player Moderation. This returns the exact same amount of information as the more generalised `getPlayerModerations`.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -137,7 +137,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getPlayermoderationApi();
 final String playerModerationId = playerModerationId_example; // String | 
 
-try { 
+try {
     final response = api.getPlayerModeration(playerModerationId);
     print(response);
 } catch on DioError (e) {
@@ -173,7 +173,7 @@ Search Player Moderations
 
 Returns a list of all player moderations made by **you**.  This endpoint does not have pagination, and will return *all* results. Use query parameters to limit your query if needed.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -189,7 +189,7 @@ final api = VrchatDartGenerated().getPlayermoderationApi();
 final String type = type_example; // String | Must be one of PlayerModerationType, except unblock. Unblocking simply removes a block.
 final String targetUserId = targetUserId_example; // String | Must be valid UserID.
 
-try { 
+try {
     final response = api.getPlayerModerations(type, targetUserId);
     print(response);
 } catch on DioError (e) {
@@ -226,7 +226,7 @@ Moderate User
 
 Moderate a user, e.g. unmute them or show their avatar.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -241,7 +241,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getPlayermoderationApi();
 final ModerateUserRequest moderateUserRequest = ; // ModerateUserRequest | 
 
-try { 
+try {
     final response = api.moderateUser(moderateUserRequest);
     print(response);
 } catch on DioError (e) {
@@ -277,7 +277,7 @@ Unmoderate User
 
 Removes a player moderation previously added through `moderateUser`. E.g if you previously have shown their avatar, but now want to reset it to default.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -292,7 +292,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getPlayermoderationApi();
 final ModerateUserRequest moderateUserRequest = ; // ModerateUserRequest | 
 
-try { 
+try {
     final response = api.unmoderateUser(moderateUserRequest);
     print(response);
 } catch on DioError (e) {

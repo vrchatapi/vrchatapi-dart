@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **assetVersion** | **String** |  | [optional] 
 **authorId** | **String** |  | [optional] 
 **authorName** | **String** |  | [optional] 
-**capacity** | **int** |  | [optional] [default to 16]
+**capacity** | **int** |  | [optional] 
 **description** | **String** |  | [optional] 
 **imageUrl** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 

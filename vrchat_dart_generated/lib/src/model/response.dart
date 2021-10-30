@@ -64,14 +64,17 @@ class _$ResponseSerializer implements StructuredSerializer<Response> {
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'message':
-          result.message = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.message = valueDes;
           break;
         case r'status_code':
-          result.statusCode = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.statusCode = valueDes;
           break;
       }
     }

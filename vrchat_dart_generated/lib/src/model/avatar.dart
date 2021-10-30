@@ -204,82 +204,101 @@ class _$AvatarSerializer implements StructuredSerializer<Avatar> {
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'assetUrl':
-          result.assetUrl = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.assetUrl = valueDes;
           break;
         case r'assetUrlObject':
-          result.assetUrlObject = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(JsonObject)) as JsonObject;
+          result.assetUrlObject = valueDes;
           break;
         case r'authorId':
-          result.authorId = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.authorId = valueDes;
           break;
         case r'authorName':
-          result.authorName = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.authorName = valueDes;
           break;
         case r'created_at':
-          result.createdAt = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime;
+          result.createdAt = valueDes;
           break;
         case r'description':
-          result.description = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.description = valueDes;
           break;
         case r'featured':
-          result.featured = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.featured = valueDes;
           break;
         case r'id':
-          result.id = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.id = valueDes;
           break;
         case r'imageUrl':
-          result.imageUrl = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.imageUrl = valueDes;
           break;
         case r'name':
-          result.name = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.name = valueDes;
           break;
         case r'releaseStatus':
-          result.releaseStatus = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(ReleaseStatus)) as ReleaseStatus;
+          result.releaseStatus = valueDes;
           break;
         case r'tags':
-          result.tags.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>);
+              as BuiltList<String>;
+          result.tags.replace(valueDes);
           break;
         case r'thumbnailImageUrl':
-          result.thumbnailImageUrl = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.thumbnailImageUrl = valueDes;
           break;
         case r'unityPackageUrl':
-          result.unityPackageUrl = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.unityPackageUrl = valueDes;
           break;
         case r'unityPackageUrlObject':
-          result.unityPackageUrlObject.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(AvatarUnityPackageUrlObject))
-              as AvatarUnityPackageUrlObject);
+              as AvatarUnityPackageUrlObject;
+          result.unityPackageUrlObject.replace(valueDes);
           break;
         case r'unityPackages':
-          result.unityPackages.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType:
                       const FullType(BuiltSet, [FullType(UnityPackage)]))
-              as BuiltSet<UnityPackage>);
+              as BuiltSet<UnityPackage>;
+          result.unityPackages.replace(valueDes);
           break;
         case r'updated_at':
-          result.updatedAt = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime;
+          result.updatedAt = valueDes;
           break;
         case r'version':
-          result.version = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.version = valueDes;
           break;
       }
     }

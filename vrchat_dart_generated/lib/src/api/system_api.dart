@@ -19,7 +19,7 @@ class SystemApi {
 
   const SystemApi(this._dio, this._serializers);
 
-  /// Download Frontend CSS
+  /// Download CSS
   /// Fetches the CSS code to the frontend React website.
   ///
   /// Parameters:
@@ -310,7 +310,7 @@ class SystemApi {
     );
   }
 
-  /// Download Frontend JavaScript
+  /// Download JavaScript
   /// Fetches the JavaScript code to the frontend React website.
   ///
   /// Parameters:

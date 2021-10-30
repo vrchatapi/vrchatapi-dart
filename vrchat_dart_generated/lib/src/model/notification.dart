@@ -117,39 +117,48 @@ class _$NotificationSerializer implements StructuredSerializer<Notification> {
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'created_at':
-          result.createdAt = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime;
+          result.createdAt = valueDes;
           break;
         case r'details':
-          result.details = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.details = valueDes;
           break;
         case r'id':
-          result.id = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.id = valueDes;
           break;
         case r'message':
-          result.message = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.message = valueDes;
           break;
         case r'seen':
-          result.seen = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.seen = valueDes;
           break;
         case r'senderUserId':
-          result.senderUserId = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.senderUserId = valueDes;
           break;
         case r'senderUsername':
-          result.senderUsername = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.senderUsername = valueDes;
           break;
         case r'type':
-          result.type = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(NotificationType))
               as NotificationType;
+          result.type = valueDes;
           break;
       }
     }

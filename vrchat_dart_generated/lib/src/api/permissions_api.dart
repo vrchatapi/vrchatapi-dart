@@ -18,7 +18,7 @@ class PermissionsApi {
 
   const PermissionsApi(this._dio, this._serializers);
 
-  /// Get Assigned Permission
+  /// Get Assigned Permissions
   /// Returns a list of all permissions currently granted by the user. Permissions are assigned e.g. by subscribing to VRC+.
   ///
   /// Parameters:

@@ -9,22 +9,22 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCSS**](SystemApi.md#getcss) | **GET** /css/app.js | Download Frontend CSS
+[**getCSS**](SystemApi.md#getcss) | **GET** /css/app.js | Download CSS
 [**getConfig**](SystemApi.md#getconfig) | **GET** /config | Fetch API Config
 [**getCurrentOnlineUsers**](SystemApi.md#getcurrentonlineusers) | **GET** /visits | Current Online Users
 [**getHealth**](SystemApi.md#gethealth) | **GET** /health | Check API Health
-[**getJavaScript**](SystemApi.md#getjavascript) | **GET** /js/app.js | Download Frontend JavaScript
+[**getJavaScript**](SystemApi.md#getjavascript) | **GET** /js/app.js | Download JavaScript
 [**getSystemTime**](SystemApi.md#getsystemtime) | **GET** /time | Current System Time
 
 
 # **getCSS**
 > String getCSS(variant, branch)
 
-Download Frontend CSS
+Download CSS
 
 Fetches the CSS code to the frontend React website.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 
@@ -32,7 +32,7 @@ final api = VrchatDartGenerated().getSystemApi();
 final String variant = variant_example; // String | Specifies which `variant` of the site. Public is the end-user site, while `internal` is the staff-only site with special pages for moderation and management.
 final String branch = branch_example; // String | Specifies which git branch the site should load frontend source code from.
 
-try { 
+try {
     final response = api.getCSS(variant, branch);
     print(response);
 } catch on DioError (e) {
@@ -69,13 +69,13 @@ Fetch API Config
 
 API config contains configuration that the clients needs to work properly.  Currently the most important value here is `clientApiKey` which is used for all other API endpoints.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getSystemApi();
 
-try { 
+try {
     final response = api.getConfig();
     print(response);
 } catch on DioError (e) {
@@ -108,13 +108,13 @@ Current Online Users
 
 Returns in plain format the number of currently online users.  **NOTE:** The response type is not of JSON, but is an integer in plain ASCII format.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getSystemApi();
 
-try { 
+try {
     final response = api.getCurrentOnlineUsers();
     print(response);
 } catch on DioError (e) {
@@ -147,13 +147,13 @@ Check API Health
 
 ~~Gets the overall health status, the server name, and the current build version tag of the API.~~  **DEPRECATED:** VRChat has suddenly restricted this endpoint for unknown reasons, and now always return 401 Unauthorized.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getSystemApi();
 
-try { 
+try {
     final response = api.getHealth();
     print(response);
 } catch on DioError (e) {
@@ -182,11 +182,11 @@ No authorization required
 # **getJavaScript**
 > String getJavaScript(variant, branch)
 
-Download Frontend JavaScript
+Download JavaScript
 
 Fetches the JavaScript code to the frontend React website.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 
@@ -194,7 +194,7 @@ final api = VrchatDartGenerated().getSystemApi();
 final String variant = variant_example; // String | Specifies which `variant` of the site. Public is the end-user site, while `internal` is the staff-only site with special pages for moderation and management.
 final String branch = branch_example; // String | Specifies which git branch the site should load frontend source code from.
 
-try { 
+try {
     final response = api.getJavaScript(variant, branch);
     print(response);
 } catch on DioError (e) {
@@ -231,13 +231,13 @@ Current System Time
 
 Returns in plain format the current time of the API server.  **NOTE:** The response type is not of JSON, but is a string in plain ASCII format.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getSystemApi();
 
-try { 
+try {
     final response = api.getSystemTime();
     print(response);
 } catch on DioError (e) {

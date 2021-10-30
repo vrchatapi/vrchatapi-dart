@@ -67,14 +67,17 @@ class _$InstancePlatformsSerializer
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'android':
-          result.android = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.android = valueDes;
           break;
         case r'standalonewindows':
-          result.standalonewindows = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.standalonewindows = valueDes;
           break;
       }
     }

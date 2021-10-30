@@ -28,7 +28,7 @@ Create File
 
 Creates a new File object
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -43,7 +43,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getFilesApi();
 final CreateFileRequest createFileRequest = ; // CreateFileRequest | 
 
-try { 
+try {
     final response = api.createFile(createFileRequest);
     print(response);
 } catch on DioError (e) {
@@ -79,7 +79,7 @@ Create File Version
 
 Creates a new FileVersion. Once a Version has been created, proceed to the `/file/{fileId}/{versionId}/file/start` endpoint to start a file upload.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -95,7 +95,7 @@ final api = VrchatDartGenerated().getFilesApi();
 final String fileId = file_00000000-0000-0000-0000-000000000000; // String | 
 final CreateFileVersionRequest createFileVersionRequest = ; // CreateFileVersionRequest | 
 
-try { 
+try {
     final response = api.createFileVersion(fileId, createFileVersionRequest);
     print(response);
 } catch on DioError (e) {
@@ -132,7 +132,7 @@ Delete File
 
 Deletes a File object.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -147,7 +147,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getFilesApi();
 final String fileId = file_00000000-0000-0000-0000-000000000000; // String | 
 
-try { 
+try {
     final response = api.deleteFile(fileId);
     print(response);
 } catch on DioError (e) {
@@ -183,7 +183,7 @@ Delete File Version
 
 Delete a specific version of a file. You can only delete the latest version.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -199,7 +199,7 @@ final api = VrchatDartGenerated().getFilesApi();
 final String fileId = file_00000000-0000-0000-0000-000000000000; // String | 
 final int versionId = 1; // int | 
 
-try { 
+try {
     final response = api.deleteFileVersion(fileId, versionId);
     print(response);
 } catch on DioError (e) {
@@ -236,7 +236,7 @@ Download File Version
 
 Downloads the file with the provided version number.  **Version Note:** Version 0 is always when the file was created. The real data is usually always located in version 1 and up.  **Extension Note:** Files are not guaranteed to have a file extensions. UnityPackage files tends to have it, images through this endpoint do not. You are responsible for appending file extension from the `extension` field when neccesary.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -252,7 +252,7 @@ final api = VrchatDartGenerated().getFilesApi();
 final String fileId = file_00000000-0000-0000-0000-000000000000; // String | 
 final int versionId = 1; // int | 
 
-try { 
+try {
     api.downloadFileVersion(fileId, versionId);
 } catch on DioError (e) {
     print('Exception when calling FilesApi->downloadFileVersion: $e\n');
@@ -288,7 +288,7 @@ Finish FileData Upload
 
 Finish an upload of a FileData. This will mark it as \"complete\". After uploading the `file` for Avatars and Worlds you then have to upload a `signature` file.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -306,7 +306,7 @@ final int versionId = 1; // int |
 final String fileType = file; // String | 
 final FinishFileDataUploadRequest finishFileDataUploadRequest = {"etags":["xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"],"nextPartNumber":"0","maxParts":"0"}; // FinishFileDataUploadRequest | Please see documentation on ETag's: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag's should NOT be present when uploading a `signature`.
 
-try { 
+try {
     final response = api.finishFileDataUpload(fileId, versionId, fileType, finishFileDataUploadRequest);
     print(response);
 } catch on DioError (e) {
@@ -345,7 +345,7 @@ Show File
 
 Shows general information about the \"File\" object. Each File can have several \"Version\"'s, and each Version can have multiple real files or \"Data\" blobs.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -360,7 +360,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getFilesApi();
 final String fileId = file_00000000-0000-0000-0000-000000000000; // String | 
 
-try { 
+try {
     final response = api.getFile(fileId);
     print(response);
 } catch on DioError (e) {
@@ -396,7 +396,7 @@ Check FileData Upload Status
 
 Retrieves the upload status for file upload. Can currently only be accessed when `status` is `waiting`. Trying to access it on a file version already uploaded currently times out.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -413,7 +413,7 @@ final String fileId = file_00000000-0000-0000-0000-000000000000; // String |
 final int versionId = 1; // int | 
 final String fileType = file; // String | 
 
-try { 
+try {
     final response = api.getFileDataUploadStatus(fileId, versionId, fileType);
     print(response);
 } catch on DioError (e) {
@@ -451,7 +451,7 @@ List Files
 
 Returns a list of files
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -469,7 +469,7 @@ final String userId = userId_example; // String | UserID, will always generate a
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 
-try { 
+try {
     final response = api.getFiles(tag, userId, n, offset);
     print(response);
 } catch on DioError (e) {
@@ -508,7 +508,7 @@ Start FileData Upload
 
 Starts an upload of a specific FilePart. This endpoint will return an AWS URL which you can PUT data to. You need to call this and receive a new AWS API URL for each `partNumber`. Please see AWS's REST documentation on \"PUT Object to S3\" on how to upload. Once all parts has been uploaded, proceed to `/finish` endpoint.  **Note:** `nextPartNumber` seems like it is always ignored. Despite it returning 0, first partNumber is always 1.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -526,7 +526,7 @@ final int versionId = 1; // int |
 final String fileType = file; // String | 
 final int partNumber = 1; // int | 
 
-try { 
+try {
     final response = api.startFileDataUpload(fileId, versionId, fileType, partNumber);
     print(response);
 } catch on DioError (e) {

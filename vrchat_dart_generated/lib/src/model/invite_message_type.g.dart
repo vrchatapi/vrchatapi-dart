@@ -7,11 +7,21 @@ part of 'invite_message_type.dart';
 // **************************************************************************
 
 const InviteMessageType _$message = const InviteMessageType._('message');
+const InviteMessageType _$response = const InviteMessageType._('response');
+const InviteMessageType _$request = const InviteMessageType._('request');
+const InviteMessageType _$requestResponse =
+    const InviteMessageType._('requestResponse');
 
 InviteMessageType _$valueOf(String name) {
   switch (name) {
     case 'message':
       return _$message;
+    case 'response':
+      return _$response;
+    case 'request':
+      return _$request;
+    case 'requestResponse':
+      return _$requestResponse;
     default:
       throw new ArgumentError(name);
   }
@@ -20,11 +30,17 @@ InviteMessageType _$valueOf(String name) {
 final BuiltSet<InviteMessageType> _$values =
     new BuiltSet<InviteMessageType>(const <InviteMessageType>[
   _$message,
+  _$response,
+  _$request,
+  _$requestResponse,
 ]);
 
 class _$InviteMessageTypeMeta {
   const _$InviteMessageTypeMeta();
   InviteMessageType get message => _$message;
+  InviteMessageType get response => _$response;
+  InviteMessageType get request => _$request;
+  InviteMessageType get requestResponse => _$requestResponse;
   InviteMessageType valueOf(String name) => _$valueOf(name);
   BuiltSet<InviteMessageType> get values => _$values;
 }
@@ -42,9 +58,15 @@ class _$InviteMessageTypeSerializer
     implements PrimitiveSerializer<InviteMessageType> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'message': 'message',
+    'response': 'response',
+    'request': 'request',
+    'requestResponse': 'requestResponse',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'message': 'message',
+    'response': 'response',
+    'request': 'request',
+    'requestResponse': 'requestResponse',
   };
 
   @override

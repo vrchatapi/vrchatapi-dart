@@ -210,85 +210,105 @@ class _$LimitedWorldSerializer implements StructuredSerializer<LimitedWorld> {
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'authorId':
-          result.authorId = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.authorId = valueDes;
           break;
         case r'authorName':
-          result.authorName = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.authorName = valueDes;
           break;
         case r'capacity':
-          result.capacity = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.capacity = valueDes;
           break;
         case r'created_at':
-          result.createdAt = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime;
+          result.createdAt = valueDes;
           break;
         case r'favorites':
-          result.favorites = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.favorites = valueDes;
           break;
         case r'heat':
-          result.heat = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.heat = valueDes;
           break;
         case r'id':
-          result.id = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.id = valueDes;
           break;
         case r'imageUrl':
-          result.imageUrl = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.imageUrl = valueDes;
           break;
         case r'labsPublicationDate':
-          result.labsPublicationDate = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.labsPublicationDate = valueDes;
           break;
         case r'name':
-          result.name = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.name = valueDes;
           break;
         case r'occupants':
-          result.occupants = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.occupants = valueDes;
           break;
         case r'organization':
-          result.organization = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.organization = valueDes;
           break;
         case r'popularity':
-          result.popularity = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.popularity = valueDes;
           break;
         case r'publicationDate':
-          result.publicationDate = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.publicationDate = valueDes;
           break;
         case r'releaseStatus':
-          result.releaseStatus = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(ReleaseStatus)) as ReleaseStatus;
+          result.releaseStatus = valueDes;
           break;
         case r'tags':
-          result.tags.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>);
+              as BuiltList<String>;
+          result.tags.replace(valueDes);
           break;
         case r'thumbnailImageUrl':
-          result.thumbnailImageUrl = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.thumbnailImageUrl = valueDes;
           break;
         case r'unityPackages':
-          result.unityPackages.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(
                       BuiltList, [FullType(LimitedUnityPackage)]))
-              as BuiltList<LimitedUnityPackage>);
+              as BuiltList<LimitedUnityPackage>;
+          result.unityPackages.replace(valueDes);
           break;
         case r'updated_at':
-          result.updatedAt = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime;
+          result.updatedAt = valueDes;
           break;
       }
     }

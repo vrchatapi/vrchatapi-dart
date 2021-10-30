@@ -142,46 +142,57 @@ class _$UnityPackageSerializer implements StructuredSerializer<UnityPackage> {
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'assetUrl':
-          result.assetUrl = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.assetUrl = valueDes;
           break;
         case r'assetUrlObject':
-          result.assetUrlObject = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(JsonObject)) as JsonObject;
+          result.assetUrlObject = valueDes;
           break;
         case r'assetVersion':
-          result.assetVersion = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.assetVersion = valueDes;
           break;
         case r'created_at':
-          result.createdAt = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime;
+          result.createdAt = valueDes;
           break;
         case r'id':
-          result.id = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.id = valueDes;
           break;
         case r'platform':
-          result.platform = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.platform = valueDes;
           break;
         case r'pluginUrl':
-          result.pluginUrl = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.pluginUrl = valueDes;
           break;
         case r'pluginUrlObject':
-          result.pluginUrlObject = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(JsonObject)) as JsonObject;
+          result.pluginUrlObject = valueDes;
           break;
         case r'unitySortNumber':
-          result.unitySortNumber = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.unitySortNumber = valueDes;
           break;
         case r'unityVersion':
-          result.unityVersion = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.unityVersion = valueDes;
           break;
       }
     }

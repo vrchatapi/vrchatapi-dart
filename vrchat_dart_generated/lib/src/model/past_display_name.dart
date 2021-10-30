@@ -67,14 +67,17 @@ class _$PastDisplayNameSerializer
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'displayName':
-          result.displayName = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.displayName = valueDes;
           break;
         case r'updated_at':
-          result.updatedAt = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime;
+          result.updatedAt = valueDes;
           break;
       }
     }

@@ -237,7 +237,7 @@ class _$CurrentUserSerializer implements StructuredSerializer<CurrentUser> {
       result
         ..add(r'accountDeletionDate')
         ..add(serializers.serialize(object.accountDeletionDate,
-            specifiedType: const FullType(Date)));
+            specifiedType: const FullType.nullable(Date)));
     }
     if (object.activeFriends != null) {
       result
@@ -437,200 +437,248 @@ class _$CurrentUserSerializer implements StructuredSerializer<CurrentUser> {
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'acceptedTOSVersion':
-          result.acceptedTOSVersion = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.acceptedTOSVersion = valueDes;
           break;
         case r'accountDeletionDate':
-          result.accountDeletionDate = serializers.deserialize(value,
-              specifiedType: const FullType(Date)) as Date;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType.nullable(Date)) as Date?;
+          if (valueDes == null) continue;
+          result.accountDeletionDate = valueDes;
           break;
         case r'activeFriends':
-          result.activeFriends.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>);
+              as BuiltList<String>;
+          result.activeFriends.replace(valueDes);
           break;
         case r'allowAvatarCopying':
-          result.allowAvatarCopying = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.allowAvatarCopying = valueDes;
           break;
         case r'bio':
-          result.bio = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.bio = valueDes;
           break;
         case r'bioLinks':
-          result.bioLinks.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>);
+              as BuiltList<String>;
+          result.bioLinks.replace(valueDes);
           break;
         case r'currentAvatar':
-          result.currentAvatar = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.currentAvatar = valueDes;
           break;
         case r'currentAvatarAssetUrl':
-          result.currentAvatarAssetUrl = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.currentAvatarAssetUrl = valueDes;
           break;
         case r'currentAvatarImageUrl':
-          result.currentAvatarImageUrl = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.currentAvatarImageUrl = valueDes;
           break;
         case r'currentAvatarThumbnailImageUrl':
-          result.currentAvatarThumbnailImageUrl = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.currentAvatarThumbnailImageUrl = valueDes;
           break;
         case r'date_joined':
-          result.dateJoined = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(Date)) as Date;
+          result.dateJoined = valueDes;
           break;
         case r'developerType':
-          result.developerType = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(DeveloperType)) as DeveloperType;
+          result.developerType = valueDes;
           break;
         case r'displayName':
-          result.displayName = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.displayName = valueDes;
           break;
         case r'emailVerified':
-          result.emailVerified = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.emailVerified = valueDes;
           break;
         case r'fallbackAvatar':
-          result.fallbackAvatar = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.fallbackAvatar = valueDes;
           break;
         case r'friendGroupNames':
-          result.friendGroupNames.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>);
+              as BuiltList<String>;
+          result.friendGroupNames.replace(valueDes);
           break;
         case r'friendKey':
-          result.friendKey = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.friendKey = valueDes;
           break;
         case r'friends':
-          result.friends.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>);
+              as BuiltList<String>;
+          result.friends.replace(valueDes);
           break;
         case r'hasBirthday':
-          result.hasBirthday = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.hasBirthday = valueDes;
           break;
         case r'hasEmail':
-          result.hasEmail = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.hasEmail = valueDes;
           break;
         case r'hasLoggedInFromClient':
-          result.hasLoggedInFromClient = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.hasLoggedInFromClient = valueDes;
           break;
         case r'hasPendingEmail':
-          result.hasPendingEmail = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.hasPendingEmail = valueDes;
           break;
         case r'homeLocation':
-          result.homeLocation = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.homeLocation = valueDes;
           break;
         case r'id':
-          result.id = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.id = valueDes;
           break;
         case r'isFriend':
-          result.isFriend = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.isFriend = valueDes;
           break;
         case r'last_login':
-          result.lastLogin = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime;
+          result.lastLogin = valueDes;
           break;
         case r'last_platform':
-          result.lastPlatform = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.lastPlatform = valueDes;
           break;
         case r'obfuscatedEmail':
-          result.obfuscatedEmail = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.obfuscatedEmail = valueDes;
           break;
         case r'obfuscatedPendingEmail':
-          result.obfuscatedPendingEmail = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.obfuscatedPendingEmail = valueDes;
           break;
         case r'oculusId':
-          result.oculusId = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.oculusId = valueDes;
           break;
         case r'offlineFriends':
-          result.offlineFriends.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>);
+              as BuiltList<String>;
+          result.offlineFriends.replace(valueDes);
           break;
         case r'onlineFriends':
-          result.onlineFriends.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>);
+              as BuiltList<String>;
+          result.onlineFriends.replace(valueDes);
           break;
         case r'pastDisplayNames':
-          result.pastDisplayNames.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType:
                       const FullType(BuiltList, [FullType(PastDisplayName)]))
-              as BuiltList<PastDisplayName>);
+              as BuiltList<PastDisplayName>;
+          result.pastDisplayNames.replace(valueDes);
           break;
         case r'profilePicOverride':
-          result.profilePicOverride = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.profilePicOverride = valueDes;
           break;
         case r'state':
-          result.state = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(UserState)) as UserState;
+          result.state = valueDes;
           break;
         case r'status':
-          result.status = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(UserStatus)) as UserStatus;
+          result.status = valueDes;
           break;
         case r'statusDescription':
-          result.statusDescription = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.statusDescription = valueDes;
           break;
         case r'statusFirstTime':
-          result.statusFirstTime = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.statusFirstTime = valueDes;
           break;
         case r'statusHistory':
-          result.statusHistory.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>);
+              as BuiltList<String>;
+          result.statusHistory.replace(valueDes);
           break;
         case r'steamDetails':
-          result.steamDetails = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(JsonObject)) as JsonObject;
+          result.steamDetails = valueDes;
           break;
         case r'steamId':
-          result.steamId = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.steamId = valueDes;
           break;
         case r'tags':
-          result.tags.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>);
+              as BuiltList<String>;
+          result.tags.replace(valueDes);
           break;
         case r'twoFactorAuthEnabled':
-          result.twoFactorAuthEnabled = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.twoFactorAuthEnabled = valueDes;
           break;
         case r'unsubscribe':
-          result.unsubscribe = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.unsubscribe = valueDes;
           break;
         case r'userIcon':
-          result.userIcon = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.userIcon = valueDes;
           break;
         case r'username':
-          result.username = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.username = valueDes;
           break;
       }
     }

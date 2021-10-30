@@ -141,46 +141,57 @@ class _$APIEventConfigSerializer
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'distanceClose':
-          result.distanceClose = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.distanceClose = valueDes;
           break;
         case r'distanceFactor':
-          result.distanceFactor = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.distanceFactor = valueDes;
           break;
         case r'distanceFar':
-          result.distanceFar = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.distanceFar = valueDes;
           break;
         case r'groupDistance':
-          result.groupDistance = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.groupDistance = valueDes;
           break;
         case r'maximumBunchSize':
-          result.maximumBunchSize = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.maximumBunchSize = valueDes;
           break;
         case r'notVisibleFactor':
-          result.notVisibleFactor = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.notVisibleFactor = valueDes;
           break;
         case r'playerOrderBucketSize':
-          result.playerOrderBucketSize = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.playerOrderBucketSize = valueDes;
           break;
         case r'playerOrderFactor':
-          result.playerOrderFactor = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.playerOrderFactor = valueDes;
           break;
         case r'slowUpdateFactorThreshold':
-          result.slowUpdateFactorThreshold = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.slowUpdateFactorThreshold = valueDes;
           break;
         case r'viewSegmentLength':
-          result.viewSegmentLength = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.viewSegmentLength = valueDes;
           break;
       }
     }

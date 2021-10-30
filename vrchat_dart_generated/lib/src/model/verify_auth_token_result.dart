@@ -71,14 +71,17 @@ class _$VerifyAuthTokenResultSerializer
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'ok':
-          result.ok = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.ok = valueDes;
           break;
         case r'token':
-          result.token = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.token = valueDes;
           break;
       }
     }

@@ -9,18 +9,18 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAssignedPermissions**](PermissionsApi.md#getassignedpermissions) | **GET** /auth/permissions | Get Assigned Permission
+[**getAssignedPermissions**](PermissionsApi.md#getassignedpermissions) | **GET** /auth/permissions | Get Assigned Permissions
 [**getPermission**](PermissionsApi.md#getpermission) | **GET** /permissions/{permissionId} | Get Permission
 
 
 # **getAssignedPermissions**
 > BuiltList<Permission> getAssignedPermissions()
 
-Get Assigned Permission
+Get Assigned Permissions
 
 Returns a list of all permissions currently granted by the user. Permissions are assigned e.g. by subscribing to VRC+.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -34,7 +34,7 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getPermissionsApi();
 
-try { 
+try {
     final response = api.getAssignedPermissions();
     print(response);
 } catch on DioError (e) {
@@ -67,7 +67,7 @@ Get Permission
 
 Returns a single permission. This endpoint is pretty useless, as it returns the exact same information as `/auth/permissions`.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -82,7 +82,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getPermissionsApi();
 final String permissionId = permissionId_example; // String | 
 
-try { 
+try {
     final response = api.getPermission(permissionId);
     print(response);
 } catch on DioError (e) {

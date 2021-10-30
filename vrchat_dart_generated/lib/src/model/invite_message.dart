@@ -31,7 +31,7 @@ abstract class InviteMessage
 
   @BuiltValueField(wireName: r'messageType')
   InviteMessageType get messageType;
-  // enum messageTypeEnum {  message,  };
+  // enum messageTypeEnum {  message,  response,  request,  requestResponse,  };
 
   /// Changes to 60 when updated, although probably server-side configurable.
   @BuiltValueField(wireName: r'remainingCooldownMinutes')
@@ -111,35 +111,43 @@ class _$InviteMessageSerializer implements StructuredSerializer<InviteMessage> {
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'canBeUpdated':
-          result.canBeUpdated = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.canBeUpdated = valueDes;
           break;
         case r'id':
-          result.id = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.id = valueDes;
           break;
         case r'message':
-          result.message = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.message = valueDes;
           break;
         case r'messageType':
-          result.messageType = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(InviteMessageType))
               as InviteMessageType;
+          result.messageType = valueDes;
           break;
         case r'remainingCooldownMinutes':
-          result.remainingCooldownMinutes = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.remainingCooldownMinutes = valueDes;
           break;
         case r'slot':
-          result.slot = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.slot = valueDes;
           break;
         case r'updatedAt':
-          result.updatedAt = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime;
+          result.updatedAt = valueDes;
           break;
       }
     }

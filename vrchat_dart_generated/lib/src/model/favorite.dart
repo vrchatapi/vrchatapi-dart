@@ -82,23 +82,28 @@ class _$FavoriteSerializer implements StructuredSerializer<Favorite> {
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'favoriteId':
-          result.favoriteId = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.favoriteId = valueDes;
           break;
         case r'id':
-          result.id = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.id = valueDes;
           break;
         case r'tags':
-          result.tags.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>);
+              as BuiltList<String>;
+          result.tags.replace(valueDes);
           break;
         case r'type':
-          result.type = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(FavoriteType)) as FavoriteType;
+          result.type = valueDes;
           break;
       }
     }

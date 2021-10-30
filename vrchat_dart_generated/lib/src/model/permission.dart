@@ -11,14 +11,11 @@ part 'permission.g.dart';
 /// Permission
 ///
 /// Properties:
-/// * [data]
 /// * [id]
 /// * [name]
 /// * [ownerId]
+/// * [data]
 abstract class Permission implements Built<Permission, PermissionBuilder> {
-  @BuiltValueField(wireName: r'data')
-  JsonObject? get data;
-
   @BuiltValueField(wireName: r'id')
   String get id;
 
@@ -27,6 +24,9 @@ abstract class Permission implements Built<Permission, PermissionBuilder> {
 
   @BuiltValueField(wireName: r'ownerId')
   String get ownerId;
+
+  @BuiltValueField(wireName: r'data')
+  JsonObject? get data;
 
   Permission._();
 
@@ -50,12 +50,6 @@ class _$PermissionSerializer implements StructuredSerializer<Permission> {
   Iterable<Object?> serialize(Serializers serializers, Permission object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
-    if (object.data != null) {
-      result
-        ..add(r'data')
-        ..add(serializers.serialize(object.data,
-            specifiedType: const FullType(JsonObject)));
-    }
     result
       ..add(r'id')
       ..add(serializers.serialize(object.id,
@@ -68,6 +62,12 @@ class _$PermissionSerializer implements StructuredSerializer<Permission> {
       ..add(r'ownerId')
       ..add(serializers.serialize(object.ownerId,
           specifiedType: const FullType(String)));
+    if (object.data != null) {
+      result
+        ..add(r'data')
+        ..add(serializers.serialize(object.data,
+            specifiedType: const FullType(JsonObject)));
+    }
     return result;
   }
 
@@ -81,22 +81,27 @@ class _$PermissionSerializer implements StructuredSerializer<Permission> {
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
-        case r'data':
-          result.data = serializers.deserialize(value,
-              specifiedType: const FullType(JsonObject)) as JsonObject;
-          break;
         case r'id':
-          result.id = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.id = valueDes;
           break;
         case r'name':
-          result.name = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.name = valueDes;
           break;
         case r'ownerId':
-          result.ownerId = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.ownerId = valueDes;
+          break;
+        case r'data':
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(JsonObject)) as JsonObject;
+          result.data = valueDes;
           break;
       }
     }

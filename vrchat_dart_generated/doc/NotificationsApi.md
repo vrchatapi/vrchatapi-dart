@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**clearNotifications**](NotificationsApi.md#clearnotifications) | **PUT** /auth/user/notifications/clear | Clear All Notifications
 [**deleteNotification**](NotificationsApi.md#deletenotification) | **PUT** /auth/user/notifications/{notificationId}/hide | Delete Notification
 [**getNotifications**](NotificationsApi.md#getnotifications) | **GET** /auth/user/notifications | List Notifications
-[**markNotificationAsRead**](NotificationsApi.md#marknotificationasread) | **PUT** /auth/user/notifications/{notificationId}/see | Mark As Read
+[**markNotificationAsRead**](NotificationsApi.md#marknotificationasread) | **PUT** /auth/user/notifications/{notificationId}/see | Mark Notification As Read
 
 
 # **acceptFriendRequest**
@@ -23,7 +23,7 @@ Accept Friend Request
 
 Accept a friend request by notification `frq_` ID. Friend requests can be found using the NotificationsAPI `getNotifications` by filtering of type `friendRequest`.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -38,7 +38,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getNotificationsApi();
 final String notificationId = notificationId_example; // String | 
 
-try { 
+try {
     final response = api.acceptFriendRequest(notificationId);
     print(response);
 } catch on DioError (e) {
@@ -74,7 +74,7 @@ Clear All Notifications
 
 Clear **all** notifications.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -88,7 +88,7 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getNotificationsApi();
 
-try { 
+try {
     final response = api.clearNotifications();
     print(response);
 } catch on DioError (e) {
@@ -121,7 +121,7 @@ Delete Notification
 
 Delete a notification.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -136,7 +136,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getNotificationsApi();
 final String notificationId = notificationId_example; // String | 
 
-try { 
+try {
     final response = api.deleteNotification(notificationId);
     print(response);
 } catch on DioError (e) {
@@ -172,7 +172,7 @@ List Notifications
 
 Retrieve all of the current user's notifications.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -192,7 +192,7 @@ final String after = five_minutes_ago; // String | Only return notifications sen
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 
-try { 
+try {
     final response = api.getNotifications(type, sent, hidden, after, n, offset);
     print(response);
 } catch on DioError (e) {
@@ -229,11 +229,11 @@ Name | Type | Description  | Notes
 # **markNotificationAsRead**
 > Notification markNotificationAsRead(notificationId)
 
-Mark As Read
+Mark Notification As Read
 
 Mark a notification as seen.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -248,7 +248,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getNotificationsApi();
 final String notificationId = notificationId_example; // String | 
 
-try { 
+try {
     final response = api.markNotificationAsRead(notificationId);
     print(response);
 } catch on DioError (e) {

@@ -58,10 +58,12 @@ class _$InviteRequestSerializer implements StructuredSerializer<InviteRequest> {
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'instanceId':
-          result.instanceId = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.instanceId = valueDes;
           break;
       }
     }

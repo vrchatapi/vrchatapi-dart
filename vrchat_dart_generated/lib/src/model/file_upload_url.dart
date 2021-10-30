@@ -58,10 +58,12 @@ class _$FileUploadURLSerializer implements StructuredSerializer<FileUploadURL> {
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'url':
-          result.url = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.url = valueDes;
           break;
       }
     }

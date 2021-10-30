@@ -23,7 +23,7 @@ Delete Friend Request
 
 Deletes an outgoing pending friend request to another user. To delete an incoming friend request, use the `deleteNotification` endpoint instead.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -38,7 +38,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getFriendsApi();
 final String userId = userId_example; // String | 
 
-try { 
+try {
     final response = api.deleteFriendRequest(userId);
     print(response);
 } catch on DioError (e) {
@@ -74,7 +74,7 @@ Send Friend Request
 
 Send a friend request to another user.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -89,7 +89,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getFriendsApi();
 final String userId = userId_example; // String | 
 
-try { 
+try {
     final response = api.friend(userId);
     print(response);
 } catch on DioError (e) {
@@ -125,7 +125,7 @@ Check Friend Status
 
 Retrieve if the user is currently a friend with a given user, if they have an outgoing friend request, and if they have an incoming friend request. The proper way to receive and accept friend request is by checking if the user has an incoming `Notification` of type `friendRequest`, and then accepting that notification.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -140,7 +140,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getFriendsApi();
 final String userId = userId_example; // String | 
 
-try { 
+try {
     final response = api.getFriendStatus(userId);
     print(response);
 } catch on DioError (e) {
@@ -176,7 +176,7 @@ List Friends
 
 List information about friends.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -193,7 +193,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 final int n = 56; // int | The number of objects to return.
 final bool offline = true; // bool | Returns *only* offline users if true, returns only online and active users if false
 
-try { 
+try {
     final response = api.getFriends(offset, n, offline);
     print(response);
 } catch on DioError (e) {
@@ -231,7 +231,7 @@ Unfriend
 
 Unfriend a user by ID.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -246,7 +246,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getFriendsApi();
 final String userId = userId_example; // String | 
 
-try { 
+try {
     final response = api.unfriend(userId);
     print(response);
 } catch on DioError (e) {

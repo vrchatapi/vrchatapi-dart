@@ -1,3 +1,6 @@
+## 1.4.0
+Updated to openapi-generator 5.3.0
+
 ## 1.4.0-pre.1
 - Added missing streaming events
 - Added convenience methods to convert between user objects

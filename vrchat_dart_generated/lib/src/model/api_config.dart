@@ -792,335 +792,415 @@ class _$APIConfigSerializer implements StructuredSerializer<APIConfig> {
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'VoiceEnableDegradation':
-          result.voiceEnableDegradation = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.voiceEnableDegradation = valueDes;
           break;
         case r'VoiceEnableReceiverLimiting':
-          result.voiceEnableReceiverLimiting = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.voiceEnableReceiverLimiting = valueDes;
           break;
         case r'address':
-          result.address = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.address = valueDes;
           break;
         case r'announcements':
-          result.announcements.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType:
                       const FullType(BuiltSet, [FullType(PublicAnnouncement)]))
-              as BuiltSet<PublicAnnouncement>);
+              as BuiltSet<PublicAnnouncement>;
+          result.announcements.replace(valueDes);
           break;
         case r'apiKey':
-          result.apiKey = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.apiKey = valueDes;
           break;
         case r'appName':
-          result.appName = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.appName = valueDes;
           break;
         case r'buildVersionTag':
-          result.buildVersionTag = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.buildVersionTag = valueDes;
           break;
         case r'clientApiKey':
-          result.clientApiKey = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.clientApiKey = valueDes;
           break;
         case r'clientBPSCeiling':
-          result.clientBPSCeiling = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.clientBPSCeiling = valueDes;
           break;
         case r'clientDisconnectTimeout':
-          result.clientDisconnectTimeout = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.clientDisconnectTimeout = valueDes;
           break;
         case r'clientReservedPlayerBPS':
-          result.clientReservedPlayerBPS = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.clientReservedPlayerBPS = valueDes;
           break;
         case r'clientSentCountAllowance':
-          result.clientSentCountAllowance = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.clientSentCountAllowance = valueDes;
           break;
         case r'contactEmail':
-          result.contactEmail = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.contactEmail = valueDes;
           break;
         case r'copyrightEmail':
-          result.copyrightEmail = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.copyrightEmail = valueDes;
           break;
         case r'currentTOSVersion':
-          result.currentTOSVersion = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.currentTOSVersion = valueDes;
           break;
         case r'defaultAvatar':
-          result.defaultAvatar = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.defaultAvatar = valueDes;
           break;
         case r'deploymentGroup':
-          result.deploymentGroup = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(DeploymentGroup))
               as DeploymentGroup;
+          result.deploymentGroup = valueDes;
           break;
         case r'devAppVersionStandalone':
-          result.devAppVersionStandalone = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.devAppVersionStandalone = valueDes;
           break;
         case r'devDownloadLinkWindows':
-          result.devDownloadLinkWindows = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.devDownloadLinkWindows = valueDes;
           break;
         case r'devSdkUrl':
-          result.devSdkUrl = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.devSdkUrl = valueDes;
           break;
         case r'devSdkVersion':
-          result.devSdkVersion = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.devSdkVersion = valueDes;
           break;
         case r'devServerVersionStandalone':
-          result.devServerVersionStandalone = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.devServerVersionStandalone = valueDes;
           break;
         case r'dis-countdown':
-          result.disCountdown = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime;
+          result.disCountdown = valueDes;
           break;
         case r'disableAvatarCopying':
-          result.disableAvatarCopying = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.disableAvatarCopying = valueDes;
           break;
         case r'disableAvatarGating':
-          result.disableAvatarGating = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.disableAvatarGating = valueDes;
           break;
         case r'disableCommunityLabs':
-          result.disableCommunityLabs = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.disableCommunityLabs = valueDes;
           break;
         case r'disableCommunityLabsPromotion':
-          result.disableCommunityLabsPromotion = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.disableCommunityLabsPromotion = valueDes;
           break;
         case r'disableEmail':
-          result.disableEmail = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.disableEmail = valueDes;
           break;
         case r'disableEventStream':
-          result.disableEventStream = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.disableEventStream = valueDes;
           break;
         case r'disableFeedbackGating':
-          result.disableFeedbackGating = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.disableFeedbackGating = valueDes;
           break;
         case r'disableFrontendBuilds':
-          result.disableFrontendBuilds = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.disableFrontendBuilds = valueDes;
           break;
         case r'disableHello':
-          result.disableHello = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.disableHello = valueDes;
           break;
         case r'disableOculusSubs':
-          result.disableOculusSubs = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.disableOculusSubs = valueDes;
           break;
         case r'disableRegistration':
-          result.disableRegistration = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.disableRegistration = valueDes;
           break;
         case r'disableSteamNetworking':
-          result.disableSteamNetworking = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.disableSteamNetworking = valueDes;
           break;
         case r'disableTwoFactorAuth':
-          result.disableTwoFactorAuth = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.disableTwoFactorAuth = valueDes;
           break;
         case r'disableUdon':
-          result.disableUdon = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.disableUdon = valueDes;
           break;
         case r'disableUpgradeAccount':
-          result.disableUpgradeAccount = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.disableUpgradeAccount = valueDes;
           break;
         case r'downloadLinkWindows':
-          result.downloadLinkWindows = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.downloadLinkWindows = valueDes;
           break;
         case r'downloadUrls':
-          result.downloadUrls.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(DownloadURLList))
-              as DownloadURLList);
+              as DownloadURLList;
+          result.downloadUrls.replace(valueDes);
           break;
         case r'dynamicWorldRows':
-          result.dynamicWorldRows.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType:
                       const FullType(BuiltSet, [FullType(DynamicWorldRow)]))
-              as BuiltSet<DynamicWorldRow>);
+              as BuiltSet<DynamicWorldRow>;
+          result.dynamicWorldRows.replace(valueDes);
           break;
         case r'events':
-          result.events.replace(serializers.deserialize(value,
-              specifiedType: const FullType(APIEventConfig)) as APIEventConfig);
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(APIEventConfig)) as APIEventConfig;
+          result.events.replace(valueDes);
           break;
         case r'gearDemoRoomId':
-          result.gearDemoRoomId = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.gearDemoRoomId = valueDes;
           break;
         case r'homeWorldId':
-          result.homeWorldId = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.homeWorldId = valueDes;
           break;
         case r'homepageRedirectTarget':
-          result.homepageRedirectTarget = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.homepageRedirectTarget = valueDes;
           break;
         case r'hubWorldId':
-          result.hubWorldId = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.hubWorldId = valueDes;
           break;
         case r'jobsEmail':
-          result.jobsEmail = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.jobsEmail = valueDes;
           break;
         case r'messageOfTheDay':
-          result.messageOfTheDay = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.messageOfTheDay = valueDes;
           break;
         case r'moderationEmail':
-          result.moderationEmail = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.moderationEmail = valueDes;
           break;
         case r'moderationQueryPeriod':
-          result.moderationQueryPeriod = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.moderationQueryPeriod = valueDes;
           break;
         case r'notAllowedToSelectAvatarInPrivateWorldMessage':
-          result.notAllowedToSelectAvatarInPrivateWorldMessage = serializers
-                  .deserialize(value, specifiedType: const FullType(String))
-              as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          result.notAllowedToSelectAvatarInPrivateWorldMessage = valueDes;
           break;
         case r'plugin':
-          result.plugin = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.plugin = valueDes;
           break;
         case r'releaseAppVersionStandalone':
-          result.releaseAppVersionStandalone = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.releaseAppVersionStandalone = valueDes;
           break;
         case r'releaseSdkUrl':
-          result.releaseSdkUrl = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.releaseSdkUrl = valueDes;
           break;
         case r'releaseSdkVersion':
-          result.releaseSdkVersion = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.releaseSdkVersion = valueDes;
           break;
         case r'releaseServerVersionStandalone':
-          result.releaseServerVersionStandalone = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.releaseServerVersionStandalone = valueDes;
           break;
         case r'sdkDeveloperFaqUrl':
-          result.sdkDeveloperFaqUrl = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.sdkDeveloperFaqUrl = valueDes;
           break;
         case r'sdkDiscordUrl':
-          result.sdkDiscordUrl = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.sdkDiscordUrl = valueDes;
           break;
         case r'sdkNotAllowedToPublishMessage':
-          result.sdkNotAllowedToPublishMessage = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.sdkNotAllowedToPublishMessage = valueDes;
           break;
         case r'sdkUnityVersion':
-          result.sdkUnityVersion = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.sdkUnityVersion = valueDes;
           break;
         case r'serverName':
-          result.serverName = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.serverName = valueDes;
           break;
         case r'supportEmail':
-          result.supportEmail = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.supportEmail = valueDes;
           break;
         case r'timeOutWorldId':
-          result.timeOutWorldId = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.timeOutWorldId = valueDes;
           break;
         case r'tutorialWorldId':
-          result.tutorialWorldId = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.tutorialWorldId = valueDes;
           break;
         case r'updateRateMsMaximum':
-          result.updateRateMsMaximum = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.updateRateMsMaximum = valueDes;
           break;
         case r'updateRateMsMinimum':
-          result.updateRateMsMinimum = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.updateRateMsMinimum = valueDes;
           break;
         case r'updateRateMsNormal':
-          result.updateRateMsNormal = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.updateRateMsNormal = valueDes;
           break;
         case r'updateRateMsUdonManual':
-          result.updateRateMsUdonManual = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.updateRateMsUdonManual = valueDes;
           break;
         case r'uploadAnalysisPercent':
-          result.uploadAnalysisPercent = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.uploadAnalysisPercent = valueDes;
           break;
         case r'urlList':
-          result.urlList.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>);
+              as BuiltList<String>;
+          result.urlList.replace(valueDes);
           break;
         case r'useReliableUdpForVoice':
-          result.useReliableUdpForVoice = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.useReliableUdpForVoice = valueDes;
           break;
         case r'userUpdatePeriod':
-          result.userUpdatePeriod = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.userUpdatePeriod = valueDes;
           break;
         case r'userVerificationDelay':
-          result.userVerificationDelay = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.userVerificationDelay = valueDes;
           break;
         case r'userVerificationRetry':
-          result.userVerificationRetry = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.userVerificationRetry = valueDes;
           break;
         case r'userVerificationTimeout':
-          result.userVerificationTimeout = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.userVerificationTimeout = valueDes;
           break;
         case r'viveWindowsUrl':
-          result.viveWindowsUrl = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.viveWindowsUrl = valueDes;
           break;
         case r'whiteListedAssetUrls':
-          result.whiteListedAssetUrls.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>);
+              as BuiltList<String>;
+          result.whiteListedAssetUrls.replace(valueDes);
           break;
         case r'worldUpdatePeriod':
-          result.worldUpdatePeriod = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.worldUpdatePeriod = valueDes;
           break;
         case r'youtubedl-hash':
-          result.youtubedlHash = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.youtubedlHash = valueDes;
           break;
         case r'youtubedl-version':
-          result.youtubedlVersion = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.youtubedlVersion = valueDes;
           break;
       }
     }

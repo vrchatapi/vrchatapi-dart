@@ -67,14 +67,17 @@ class _$WorldMetadataSerializer implements StructuredSerializer<WorldMetadata> {
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'id':
-          result.id = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.id = valueDes;
           break;
         case r'metadata':
-          result.metadata = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(JsonObject)) as JsonObject;
+          result.metadata = valueDes;
           break;
       }
     }

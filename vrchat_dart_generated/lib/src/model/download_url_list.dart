@@ -78,18 +78,22 @@ class _$DownloadURLListSerializer
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'sdk2':
-          result.sdk2 = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.sdk2 = valueDes;
           break;
         case r'sdk3-avatars':
-          result.sdk3Avatars = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.sdk3Avatars = valueDes;
           break;
         case r'sdk3-worlds':
-          result.sdk3Worlds = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.sdk3Worlds = valueDes;
           break;
       }
     }

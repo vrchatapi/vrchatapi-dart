@@ -26,7 +26,7 @@ Create Avatar
 
 Create an avatar. It's possible to optionally specify a ID if you want a custom one. Attempting to create an Avatar with an already claimed ID will result in a DB error.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -41,7 +41,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getAvatarsApi();
 final CreateAvatarRequest createAvatarRequest = ; // CreateAvatarRequest | 
 
-try { 
+try {
     final response = api.createAvatar(createAvatarRequest);
     print(response);
 } catch on DioError (e) {
@@ -77,7 +77,7 @@ Delete Avatar
 
 Delete an avatar. Notice an avatar is never fully \"deleted\", only its ReleaseStatus is set to \"hidden\" and the linked Files are deleted. The AvatarID is permanently reserved.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -92,7 +92,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getAvatarsApi();
 final String avatarId = avatarId_example; // String | 
 
-try { 
+try {
     final response = api.deleteAvatar(avatarId);
     print(response);
 } catch on DioError (e) {
@@ -128,7 +128,7 @@ Get Avatar
 
 Get information about a specific Avatar.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -143,7 +143,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getAvatarsApi();
 final String avatarId = avatarId_example; // String | 
 
-try { 
+try {
     final response = api.getAvatar(avatarId);
     print(response);
 } catch on DioError (e) {
@@ -179,7 +179,7 @@ List Favorited Avatars
 
 Search and list favorited avatars by query filters.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -206,7 +206,7 @@ final String minUnityVersion = minUnityVersion_example; // String | The minimum 
 final String platform = platform_example; // String | The platform the asset supports.
 final String userId = userId_example; // String | Target user to see information on, admin-only.
 
-try { 
+try {
     final response = api.getFavoritedAvatars(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId);
     print(response);
 } catch on DioError (e) {
@@ -254,7 +254,7 @@ Search Avatars
 
 Search and list avatars by query filters. You can only search your own or featured avatars. It is not possible as a normal user to search other peoples avatars.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -281,7 +281,7 @@ final String maxUnityVersion = maxUnityVersion_example; // String | The maximum 
 final String minUnityVersion = minUnityVersion_example; // String | The minimum Unity version supported by the asset.
 final String platform = platform_example; // String | The platform the asset supports.
 
-try { 
+try {
     final response = api.searchAvatars(featured, sort, user, userId, n, order, offset, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform);
     print(response);
 } catch on DioError (e) {
@@ -329,7 +329,7 @@ Select Avatar
 
 Switches into that avatar.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -344,7 +344,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getAvatarsApi();
 final String avatarId = avatarId_example; // String | 
 
-try { 
+try {
     final response = api.selectAvatar(avatarId);
     print(response);
 } catch on DioError (e) {
@@ -380,7 +380,7 @@ Select Fallback Avatar
 
 Switches into that avatar as your fallback avatar.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -395,7 +395,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getAvatarsApi();
 final String avatarId = avatarId_example; // String | 
 
-try { 
+try {
     final response = api.selectFallbackAvatar(avatarId);
     print(response);
 } catch on DioError (e) {
@@ -431,7 +431,7 @@ Update Avatar
 
 Update information about a specific avatar.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -447,7 +447,7 @@ final api = VrchatDartGenerated().getAvatarsApi();
 final String avatarId = avatarId_example; // String | 
 final UpdateAvatarRequest updateAvatarRequest = ; // UpdateAvatarRequest | 
 
-try { 
+try {
     final response = api.updateAvatar(avatarId, updateAvatarRequest);
     print(response);
 } catch on DioError (e) {

@@ -107,34 +107,41 @@ class _$FileVersionUploadStatusSerializer
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'uploadId':
-          result.uploadId = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.uploadId = valueDes;
           break;
         case r'fileName':
-          result.fileName = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.fileName = valueDes;
           break;
         case r'nextPartNumber':
-          result.nextPartNumber = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(num)) as num;
+          result.nextPartNumber = valueDes;
           break;
         case r'maxParts':
-          result.maxParts = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(num)) as num;
+          result.maxParts = valueDes;
           break;
         case r'parts':
-          result.parts.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType:
                       const FullType(BuiltList, [FullType(JsonObject)]))
-              as BuiltList<JsonObject>);
+              as BuiltList<JsonObject>;
+          result.parts.replace(valueDes);
           break;
         case r'etags':
-          result.etags.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType:
                       const FullType(BuiltList, [FullType(JsonObject)]))
-              as BuiltList<JsonObject>);
+              as BuiltList<JsonObject>;
+          result.etags.replace(valueDes);
           break;
       }
     }

@@ -89,19 +89,23 @@ class _$FinishFileDataUploadRequestSerializer
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'etags':
-          result.etags.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(BuiltSet, [FullType(String)]))
-              as BuiltSet<String>);
+              as BuiltSet<String>;
+          result.etags.replace(valueDes);
           break;
         case r'nextPartNumber':
-          result.nextPartNumber = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.nextPartNumber = valueDes;
           break;
         case r'maxParts':
-          result.maxParts = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.maxParts = valueDes;
           break;
       }
     }

@@ -22,7 +22,7 @@ Get User by ID
 
 Get public user information about a specific user using their ID.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -37,7 +37,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getUsersApi();
 final String userId = userId_example; // String | 
 
-try { 
+try {
     final response = api.getUser(userId);
     print(response);
 } catch on DioError (e) {
@@ -73,7 +73,7 @@ Get User by Username
 
 Get public user information about a specific user using their name.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -88,7 +88,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getUsersApi();
 final String username = username_example; // String | 
 
-try { 
+try {
     final response = api.getUserByName(username);
     print(response);
 } catch on DioError (e) {
@@ -124,7 +124,7 @@ Search All Users
 
 Search and list any users by text query
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -142,7 +142,7 @@ final String developerType = developerType_example; // String | Active user by d
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 
-try { 
+try {
     final response = api.searchUsers(search, developerType, n, offset);
     print(response);
 } catch on DioError (e) {
@@ -181,7 +181,7 @@ Update User Info
 
 Update a users information such as the email and birthday.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -197,7 +197,7 @@ final api = VrchatDartGenerated().getUsersApi();
 final String userId = userId_example; // String | 
 final UpdateUserRequest updateUserRequest = ; // UpdateUserRequest | 
 
-try { 
+try {
     final response = api.updateUser(userId, updateUserRequest);
     print(response);
 } catch on DioError (e) {

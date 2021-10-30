@@ -209,7 +209,7 @@ class InviteApi {
   ///
   /// Parameters:
   /// * [userId]
-  /// * [inviteRequest] - Instance ID when inviting a user.
+  /// * [inviteRequest] - Slot number of the Invite Message to use when inviting a user.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -494,7 +494,7 @@ class InviteApi {
   }
 
   /// Respond Invite
-  /// Sends a world invite to a user.
+  /// Respond to an invite request by sending a world invite to the requesting user. &#x60;:notificationId&#x60; is the ID of the requesting notification.
   ///
   /// Parameters:
   /// * [notificationId]

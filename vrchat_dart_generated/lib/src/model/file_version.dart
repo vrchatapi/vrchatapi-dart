@@ -117,34 +117,42 @@ class _$FileVersionSerializer implements StructuredSerializer<FileVersion> {
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'created_at':
-          result.createdAt = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime;
+          result.createdAt = valueDes;
           break;
         case r'deleted':
-          result.deleted = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.deleted = valueDes;
           break;
         case r'delta':
-          result.delta.replace(serializers.deserialize(value,
-              specifiedType: const FullType(FileData)) as FileData);
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(FileData)) as FileData;
+          result.delta.replace(valueDes);
           break;
         case r'file':
-          result.file.replace(serializers.deserialize(value,
-              specifiedType: const FullType(FileData)) as FileData);
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(FileData)) as FileData;
+          result.file.replace(valueDes);
           break;
         case r'signature':
-          result.signature.replace(serializers.deserialize(value,
-              specifiedType: const FullType(FileData)) as FileData);
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(FileData)) as FileData;
+          result.signature.replace(valueDes);
           break;
         case r'status':
-          result.status = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(FileStatus)) as FileStatus;
+          result.status = valueDes;
           break;
         case r'version':
-          result.version = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
+          result.version = valueDes;
           break;
       }
     }

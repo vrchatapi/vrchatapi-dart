@@ -31,14 +31,14 @@ Create World
 
 Create a new world. This endpoint requires `assetUrl` to be a valid File object with `.vrcw` file extension, and `imageUrl` to be a valid File object with an image file extension.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getWorldsApi();
 final CreateWorldRequest createWorldRequest = ; // CreateWorldRequest | 
 
-try { 
+try {
     final response = api.createWorld(createWorldRequest);
     print(response);
 } catch on DioError (e) {
@@ -74,7 +74,7 @@ Delete World
 
 Delete a world. Notice a world is never fully \"deleted\", only its ReleaseStatus is set to \"hidden\" and the linked Files are deleted. The WorldID is permanently reserved.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -89,7 +89,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getWorldsApi();
 final String worldId = worldId_example; // String | 
 
-try { 
+try {
     api.deleteWorld(worldId);
 } catch on DioError (e) {
     print('Exception when calling WorldsApi->deleteWorld: $e\n');
@@ -124,7 +124,7 @@ List Active Worlds
 
 Search and list currently Active worlds by query filters.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -150,7 +150,7 @@ final String maxUnityVersion = maxUnityVersion_example; // String | The maximum 
 final String minUnityVersion = minUnityVersion_example; // String | The minimum Unity version supported by the asset.
 final String platform = platform_example; // String | The platform the asset supports.
 
-try { 
+try {
     final response = api.getActiveWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform);
     print(response);
 } catch on DioError (e) {
@@ -197,7 +197,7 @@ List Favorited Worlds
 
 Search and list favorited worlds by query filters.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -224,7 +224,7 @@ final String minUnityVersion = minUnityVersion_example; // String | The minimum 
 final String platform = platform_example; // String | The platform the asset supports.
 final String userId = userId_example; // String | Target user to see information on, admin-only.
 
-try { 
+try {
     final response = api.getFavoritedWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId);
     print(response);
 } catch on DioError (e) {
@@ -272,7 +272,7 @@ List Recent Worlds
 
 Search and list recently visited worlds by query filters.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -299,7 +299,7 @@ final String minUnityVersion = minUnityVersion_example; // String | The minimum 
 final String platform = platform_example; // String | The platform the asset supports.
 final String userId = userId_example; // String | Target user to see information on, admin-only.
 
-try { 
+try {
     final response = api.getRecentWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId);
     print(response);
 } catch on DioError (e) {
@@ -347,7 +347,7 @@ Get World by ID
 
 Get information about a specific World.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -358,7 +358,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getWorldsApi();
 final String worldId = worldId_example; // String | 
 
-try { 
+try {
     final response = api.getWorld(worldId);
     print(response);
 } catch on DioError (e) {
@@ -394,7 +394,7 @@ Get World Instance
 
 Returns a worlds instance.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -410,7 +410,7 @@ final api = VrchatDartGenerated().getWorldsApi();
 final String worldId = worldId_example; // String | 
 final String instanceId = instanceId_example; // String | 
 
-try { 
+try {
     final response = api.getWorldInstance(worldId, instanceId);
     print(response);
 } catch on DioError (e) {
@@ -447,7 +447,7 @@ Get World Metadata
 
 Return a worlds custom metadata. This is currently believed to be unused. Metadata can be set with `updateWorld` and can be any arbitrary object.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -462,7 +462,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getWorldsApi();
 final String worldId = worldId_example; // String | 
 
-try { 
+try {
     final response = api.getWorldMetadata(worldId);
     print(response);
 } catch on DioError (e) {
@@ -498,7 +498,7 @@ Get World Publish Status
 
 Returns a worlds publish status.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -513,7 +513,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getWorldsApi();
 final String worldId = worldId_example; // String | 
 
-try { 
+try {
     final response = api.getWorldPublishStatus(worldId);
     print(response);
 } catch on DioError (e) {
@@ -549,7 +549,7 @@ Publish World
 
 Publish a world. You can only publish one world per week.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -564,7 +564,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getWorldsApi();
 final String worldId = worldId_example; // String | 
 
-try { 
+try {
     api.publishWorld(worldId);
 } catch on DioError (e) {
     print('Exception when calling WorldsApi->publishWorld: $e\n');
@@ -599,7 +599,7 @@ Search All Worlds
 
 Search and list any worlds by query filters.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -627,7 +627,7 @@ final String maxUnityVersion = maxUnityVersion_example; // String | The maximum 
 final String minUnityVersion = minUnityVersion_example; // String | The minimum Unity version supported by the asset.
 final String platform = platform_example; // String | The platform the asset supports.
 
-try { 
+try {
     final response = api.searchWorlds(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform);
     print(response);
 } catch on DioError (e) {
@@ -676,7 +676,7 @@ Unpublish World
 
 Unpublish a world.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -691,7 +691,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getWorldsApi();
 final String worldId = worldId_example; // String | 
 
-try { 
+try {
     api.unpublishWorld(worldId);
 } catch on DioError (e) {
     print('Exception when calling WorldsApi->unpublishWorld: $e\n');
@@ -726,7 +726,7 @@ Update World
 
 Update information about a specific World.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -742,7 +742,7 @@ final api = VrchatDartGenerated().getWorldsApi();
 final String worldId = worldId_example; // String | 
 final UpdateWorldRequest updateWorldRequest = ; // UpdateWorldRequest | 
 
-try { 
+try {
     final response = api.updateWorld(worldId, updateWorldRequest);
     print(response);
 } catch on DioError (e) {

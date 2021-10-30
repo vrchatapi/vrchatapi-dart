@@ -57,10 +57,12 @@ class _$ErrorSerializer implements StructuredSerializer<Error> {
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'error':
-          result.error.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Response)) as Response);
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(Response)) as Response;
+          result.error.replace(valueDes);
           break;
       }
     }

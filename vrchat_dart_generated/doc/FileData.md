@@ -8,7 +8,7 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**category** | **String** |  | 
+**category** | **String** |  | [default to 'queued']
 **fileName** | **String** |  | 
 **md5** | **String** |  | 
 **sizeInBytes** | **int** |  | 

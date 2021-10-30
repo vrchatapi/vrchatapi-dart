@@ -146,44 +146,54 @@ class _$UpdateUserRequestSerializer
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'email':
-          result.email = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.email = valueDes;
           break;
         case r'birthday':
-          result.birthday = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(Date)) as Date;
+          result.birthday = valueDes;
           break;
         case r'acceptedTOSVersion':
-          result.acceptedTOSVersion = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(num)) as num;
+          result.acceptedTOSVersion = valueDes;
           break;
         case r'tags':
-          result.tags.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>);
+              as BuiltList<String>;
+          result.tags.replace(valueDes);
           break;
         case r'status':
-          result.status = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(UserStatus)) as UserStatus;
+          result.status = valueDes;
           break;
         case r'statusDescription':
-          result.statusDescription = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.statusDescription = valueDes;
           break;
         case r'bio':
-          result.bio = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.bio = valueDes;
           break;
         case r'bioLinks':
-          result.bioLinks.replace(serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
                   specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>);
+              as BuiltList<String>;
+          result.bioLinks.replace(valueDes);
           break;
         case r'userIcon':
-          result.userIcon = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          result.userIcon = valueDes;
           break;
       }
     }

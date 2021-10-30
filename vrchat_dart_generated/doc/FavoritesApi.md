@@ -26,7 +26,7 @@ Add Favorite
 
 Add a new favorite.  Friend groups are named `group_0` through `group_3`. Avatar and World groups are named `avatars1` to `avatars4` and `worlds1` to `worlds4`.  You cannot add people whom you are not friends with to your friends list. Destroying a friendship removes the person as favorite on both sides.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -41,7 +41,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getFavoritesApi();
 final AddFavoriteRequest addFavoriteRequest = {"type":"friend","favoriteId":"usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469","tags":["group_0"]}; // AddFavoriteRequest | 
 
-try { 
+try {
     final response = api.addFavorite(addFavoriteRequest);
     print(response);
 } catch on DioError (e) {
@@ -77,7 +77,7 @@ Clear Favorite Group
 
 Clear ALL contents of a specific favorite group.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -94,7 +94,7 @@ final String favoriteGroupType = favoriteGroupType_example; // String | The type
 final String favoriteGroupName = favoriteGroupName_example; // String | 
 final String userId = userId_example; // String | 
 
-try { 
+try {
     final response = api.clearFavoriteGroup(favoriteGroupType, favoriteGroupName, userId);
     print(response);
 } catch on DioError (e) {
@@ -132,7 +132,7 @@ Show Favorite
 
 Return information about a specific Favorite.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -147,7 +147,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getFavoritesApi();
 final String favoriteId = favoriteId_example; // String | 
 
-try { 
+try {
     final response = api.getFavorite(favoriteId);
     print(response);
 } catch on DioError (e) {
@@ -183,7 +183,7 @@ Show Favorite Group
 
 Fetch information about a specific favorite group.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -200,7 +200,7 @@ final String favoriteGroupType = favoriteGroupType_example; // String | The type
 final String favoriteGroupName = favoriteGroupName_example; // String | 
 final String userId = userId_example; // String | 
 
-try { 
+try {
     final response = api.getFavoriteGroup(favoriteGroupType, favoriteGroupName, userId);
     print(response);
 } catch on DioError (e) {
@@ -238,7 +238,7 @@ List Favorite Groups
 
 Return a list of favorite groups owned by a user. Returns the same information as `getFavoriteGroups`.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -255,7 +255,7 @@ final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final String ownerId = ownerId_example; // String | The owner of whoms favorite groups to return. Must be a UserID.
 
-try { 
+try {
     final response = api.getFavoriteGroups(n, offset, ownerId);
     print(response);
 } catch on DioError (e) {
@@ -293,7 +293,7 @@ List Favorites
 
 Returns a list of favorites.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -311,7 +311,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 final String type = type_example; // String | The type of favorites to return, FavoriteType.
 final String tag = tag_example; // String | Tags to include (comma-separated).
 
-try { 
+try {
     final response = api.getFavorites(n, offset, type, tag);
     print(response);
 } catch on DioError (e) {
@@ -350,7 +350,7 @@ Remove Favorite
 
 Remove a favorite from your favorites list.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -365,7 +365,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getFavoritesApi();
 final String favoriteId = favoriteId_example; // String | 
 
-try { 
+try {
     final response = api.removeFavorite(favoriteId);
     print(response);
 } catch on DioError (e) {
@@ -401,7 +401,7 @@ Update Favorite Group
 
 Update information about a specific favorite group.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -419,7 +419,7 @@ final String favoriteGroupName = favoriteGroupName_example; // String |
 final String userId = userId_example; // String | 
 final UpdateFavoriteGroupRequest updateFavoriteGroupRequest = ; // UpdateFavoriteGroupRequest | 
 
-try { 
+try {
     api.updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest);
 } catch on DioError (e) {
     print('Exception when calling FavoritesApi->updateFavoriteGroup: $e\n');

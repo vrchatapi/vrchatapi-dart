@@ -59,10 +59,12 @@ class _$Verify2FAResultSerializer
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'verified':
-          result.verified = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.verified = valueDes;
           break;
       }
     }

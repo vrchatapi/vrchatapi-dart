@@ -394,7 +394,7 @@ class NotificationsApi {
     );
   }
 
-  /// Mark As Read
+  /// Mark Notification As Read
   /// Mark a notification as seen.
   ///
   /// Parameters:

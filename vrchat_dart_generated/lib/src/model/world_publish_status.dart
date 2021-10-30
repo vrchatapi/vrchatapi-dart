@@ -60,10 +60,12 @@ class _$WorldPublishStatusSerializer
       final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
+
       switch (key) {
         case r'canPubilsh':
-          result.canPubilsh = serializers.deserialize(value,
+          final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
+          result.canPubilsh = valueDes;
           break;
       }
     }

@@ -25,7 +25,7 @@ Get Invite Messages
 
 Returns a single Invite Message. This returns the exact same information but less than `getInviteMessages`. Admin Credentials are required to view messages of other users!  Message type refers to a different collection of messages, used during different types of responses.  * `message` = Message during a normal invite * `response` = Message when replying to a message * `request` = Message when requesting an invite * `requestResponse` = Message when replying to a request for invite
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -42,7 +42,7 @@ final String userId = userId_example; // String |
 final String messageType = messageType_example; // String | 
 final int messageId = 56; // int | 
 
-try { 
+try {
     final response = api.getInviteMessage(userId, messageType, messageId);
     print(response);
 } catch on DioError (e) {
@@ -80,7 +80,7 @@ List Invite Messages
 
 Returns a list of all the users Invite Messages. Admin Credentials are required to view messages of other users!  Message type refers to a different collection of messages, used during different types of responses.  * `message` = Message during a normal invite * `response` = Message when replying to a message * `request` = Message when requesting an invite * `requestResponse` = Message when replying to a request for invite
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -96,7 +96,7 @@ final api = VrchatDartGenerated().getInviteApi();
 final String userId = userId_example; // String | 
 final String messageType = messageType_example; // String | 
 
-try { 
+try {
     final response = api.getInviteMessages(userId, messageType);
     print(response);
 } catch on DioError (e) {
@@ -133,7 +133,7 @@ Invite User
 
 Sends an invite to a user. Returns the Notification of type `invite` that was sent.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -147,9 +147,9 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getInviteApi();
 final String userId = userId_example; // String | 
-final InviteRequest inviteRequest = ; // InviteRequest | Instance ID when inviting a user.
+final InviteRequest inviteRequest = ; // InviteRequest | Slot number of the Invite Message to use when inviting a user.
 
-try { 
+try {
     final response = api.inviteUser(userId, inviteRequest);
     print(response);
 } catch on DioError (e) {
@@ -162,7 +162,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**|  | 
- **inviteRequest** | [**InviteRequest**](InviteRequest.md)| Instance ID when inviting a user. | [optional] 
+ **inviteRequest** | [**InviteRequest**](InviteRequest.md)| Slot number of the Invite Message to use when inviting a user. | [optional] 
 
 ### Return type
 
@@ -186,7 +186,7 @@ Request Invite
 
 Requests an invite from a user. Returns the Notification of type `requestInvite` that was sent.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -201,7 +201,7 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getInviteApi();
 final String userId = userId_example; // String | 
 
-try { 
+try {
     final response = api.requestInvite(userId);
     print(response);
 } catch on DioError (e) {
@@ -237,7 +237,7 @@ Reset Invite Message
 
 Resets a single Invite Message back to it's original message, and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Resetting a message respects the rate-limit, but resetting it does not set the rate-limit to 60 like when editing it. It is possible to edit it right after resetting it. Trying to edit a message before the cooldown timer expires results in a 429 Too Fast Error.  Message type refers to a different collection of messages, used during different types of responses.  * `message` = Message during a normal invite * `response` = Message when replying to a message * `request` = Message when requesting an invite * `requestResponse` = Message when replying to a request for invite
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -254,7 +254,7 @@ final String userId = userId_example; // String |
 final String messageType = messageType_example; // String | 
 final int messageId = 56; // int | 
 
-try { 
+try {
     final response = api.resetInviteMessage(userId, messageType, messageId);
     print(response);
 } catch on DioError (e) {
@@ -290,9 +290,9 @@ Name | Type | Description  | Notes
 
 Respond Invite
 
-Sends a world invite to a user.
+Respond to an invite request by sending a world invite to the requesting user. `:notificationId` is the ID of the requesting notification.
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -308,7 +308,7 @@ final api = VrchatDartGenerated().getInviteApi();
 final String notificationId = notificationId_example; // String | 
 final InviteResponse inviteResponse = ; // InviteResponse | Instance ID when inviting a user.
 
-try { 
+try {
     final response = api.respondInvite(notificationId, inviteResponse);
     print(response);
 } catch on DioError (e) {
@@ -345,7 +345,7 @@ Update Invite Message
 
 Updates a single Invite Message and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Updating a message automatically sets the cooldown timer to 60 minutes. Trying to edit a message before the cooldown timer expires results in a 429 Too Fast Error.  Message type refers to a different collection of messages, used during different types of responses.  * `message` = Message during a normal invite * `response` = Message when replying to a message * `request` = Message when requesting an invite * `requestResponse` = Message when replying to a request for invite
 
-### Example 
+### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
 // TODO Configure API key authorization: apiKeyCookie
@@ -362,7 +362,7 @@ final String userId = userId_example; // String |
 final String messageType = messageType_example; // String | 
 final int messageId = 56; // int | 
 
-try { 
+try {
     final response = api.updateInviteMessage(userId, messageType, messageId);
     print(response);
 } catch on DioError (e) {
