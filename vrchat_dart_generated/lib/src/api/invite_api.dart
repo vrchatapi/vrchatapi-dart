@@ -13,6 +13,7 @@ import 'package:vrchat_dart_generated/src/model/invite_message.dart';
 import 'package:vrchat_dart_generated/src/model/invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/invite_response.dart';
 import 'package:vrchat_dart_generated/src/model/notification.dart';
+import 'package:vrchat_dart_generated/src/model/update_invite_message_request.dart';
 
 class InviteApi {
   final Dio _dio;
@@ -21,13 +22,13 @@ class InviteApi {
 
   const InviteApi(this._dio, this._serializers);
 
-  /// Get Invite Messages
+  /// Get Invite Message
   /// Returns a single Invite Message. This returns the exact same information but less than &#x60;getInviteMessages&#x60;. Admin Credentials are required to view messages of other users!  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
   ///
   /// Parameters:
   /// * [userId]
   /// * [messageType]
-  /// * [messageId]
+  /// * [slot]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -40,7 +41,7 @@ class InviteApi {
   Future<Response<InviteMessage>> getInviteMessage({
     required String userId,
     required String messageType,
-    required int messageId,
+    required int slot,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -48,10 +49,10 @@ class InviteApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/message/{userId}/{messageType}/{messageId}'
+    final _path = r'/message/{userId}/{messageType}/{slot}'
         .replaceAll('{' r'userId' '}', userId.toString())
         .replaceAll('{' r'messageType' '}', messageType.toString())
-        .replaceAll('{' r'messageId' '}', messageId.toString());
+        .replaceAll('{' r'slot' '}', slot.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -401,12 +402,12 @@ class InviteApi {
   }
 
   /// Reset Invite Message
-  /// Resets a single Invite Message back to it&#39;s original message, and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Resetting a message respects the rate-limit, but resetting it does not set the rate-limit to 60 like when editing it. It is possible to edit it right after resetting it. Trying to edit a message before the cooldown timer expires results in a 429 Too Fast Error.  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
+  /// Resets a single Invite Message back to its original message, and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Resetting a message respects the rate-limit, so it is not possible to reset within the 60 minutes countdown. Resetting it does however not set the rate-limit to 60 like when editing it. It is possible to edit it right after resetting it. Trying to edit a message before the cooldown timer expires results in a 429 \&quot;Too Fast Error\&quot;.  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite  The DELETE endpoint does not have/require any request body.
   ///
   /// Parameters:
   /// * [userId]
   /// * [messageType]
-  /// * [messageId]
+  /// * [slot]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -419,7 +420,7 @@ class InviteApi {
   Future<Response<BuiltList<InviteMessage>>> resetInviteMessage({
     required String userId,
     required String messageType,
-    required int messageId,
+    required int slot,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -427,10 +428,10 @@ class InviteApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/message/{userId}/{messageType}/{messageId}'
+    final _path = r'/message/{userId}/{messageType}/{slot}'
         .replaceAll('{' r'userId' '}', userId.toString())
         .replaceAll('{' r'messageType' '}', messageType.toString())
-        .replaceAll('{' r'messageId' '}', messageId.toString());
+        .replaceAll('{' r'slot' '}', slot.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -603,12 +604,13 @@ class InviteApi {
   }
 
   /// Update Invite Message
-  /// Updates a single Invite Message and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Updating a message automatically sets the cooldown timer to 60 minutes. Trying to edit a message before the cooldown timer expires results in a 429 Too Fast Error.  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
+  /// Updates a single Invite Message and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Updating a message automatically sets the cooldown timer to 60 minutes. Trying to edit a message before the cooldown timer expires results in a 429 \&quot;Too Fast Error\&quot;.  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
   ///
   /// Parameters:
   /// * [userId]
   /// * [messageType]
-  /// * [messageId]
+  /// * [slot]
+  /// * [updateInviteMessageRequest] - Message of what to set the invite message to.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -621,7 +623,8 @@ class InviteApi {
   Future<Response<BuiltList<InviteMessage>>> updateInviteMessage({
     required String userId,
     required String messageType,
-    required int messageId,
+    required int slot,
+    UpdateInviteMessageRequest? updateInviteMessageRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -629,10 +632,10 @@ class InviteApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/message/{userId}/{messageType}/{messageId}'
+    final _path = r'/message/{userId}/{messageType}/{slot}'
         .replaceAll('{' r'userId' '}', userId.toString())
         .replaceAll('{' r'messageType' '}', messageType.toString())
-        .replaceAll('{' r'messageId' '}', messageId.toString());
+        .replaceAll('{' r'slot' '}', slot.toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -655,11 +658,32 @@ class InviteApi {
         ],
         ...?extra,
       },
+      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(UpdateInviteMessageRequest);
+      _bodyData = updateInviteMessageRequest == null
+          ? null
+          : _serializers.serialize(updateInviteMessageRequest,
+              specifiedType: _type);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
     final _response = await _dio.request<Object>(
       _path,
+      data: _bodyData,
       options: _options,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,

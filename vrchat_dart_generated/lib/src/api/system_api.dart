@@ -44,7 +44,7 @@ class SystemApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/css/app.js';
+    final _path = r'/css/app.css';
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -172,7 +172,7 @@ class SystemApi {
   }
 
   /// Current Online Users
-  /// Returns in plain format the number of currently online users.  **NOTE:** The response type is not of JSON, but is an integer in plain ASCII format.
+  /// Returns the current number of online users.  **NOTE:** The response type is not a JSON object, but a simple JSON integer.
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -392,7 +392,7 @@ class SystemApi {
   }
 
   /// Current System Time
-  /// Returns in plain format the current time of the API server.  **NOTE:** The response type is not of JSON, but is a string in plain ASCII format.
+  /// Returns the current time of the API server.  **NOTE:** The response type is not a JSON object, but a simple JSON string.
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation

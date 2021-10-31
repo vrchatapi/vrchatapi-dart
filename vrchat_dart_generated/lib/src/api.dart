@@ -11,9 +11,11 @@ import 'package:vrchat_dart_generated/src/auth/bearer_auth.dart';
 import 'package:vrchat_dart_generated/src/auth/oauth.dart';
 import 'package:vrchat_dart_generated/src/api/authentication_api.dart';
 import 'package:vrchat_dart_generated/src/api/avatars_api.dart';
+import 'package:vrchat_dart_generated/src/api/economy_api.dart';
 import 'package:vrchat_dart_generated/src/api/favorites_api.dart';
 import 'package:vrchat_dart_generated/src/api/files_api.dart';
 import 'package:vrchat_dart_generated/src/api/friends_api.dart';
+import 'package:vrchat_dart_generated/src/api/instances_api.dart';
 import 'package:vrchat_dart_generated/src/api/invite_api.dart';
 import 'package:vrchat_dart_generated/src/api/notifications_api.dart';
 import 'package:vrchat_dart_generated/src/api/permissions_api.dart';
@@ -99,6 +101,12 @@ class VrchatDartGenerated {
     return AvatarsApi(dio, serializers);
   }
 
+  /// Get EconomyApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  EconomyApi getEconomyApi() {
+    return EconomyApi(dio, serializers);
+  }
+
   /// Get FavoritesApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   FavoritesApi getFavoritesApi() {
@@ -115,6 +123,12 @@ class VrchatDartGenerated {
   /// by doing that all interceptors will not be executed
   FriendsApi getFriendsApi() {
     return FriendsApi(dio, serializers);
+  }
+
+  /// Get InstancesApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  InstancesApi getInstancesApi() {
+    return InstancesApi(dio, serializers);
   }
 
   /// Get InviteApi instance, base route and serializer can be overridden by a given but be careful,

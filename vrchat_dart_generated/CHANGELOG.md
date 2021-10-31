@@ -1,3 +1,6 @@
+## 1.5.2
+Updated to match spec
+
 ## 1.5.0
 Updated to openapi-generator 5.3.0
 

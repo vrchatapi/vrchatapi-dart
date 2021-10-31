@@ -1,3 +1,6 @@
+## 1.4.1
+Updated vrchat_dart_generated
+
 ## 1.4.0
 Updated to openapi-generator 5.3.0
 

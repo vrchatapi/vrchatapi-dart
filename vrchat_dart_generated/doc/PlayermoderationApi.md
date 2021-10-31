@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **clearAllPlayerModerations**
-> Error clearAllPlayerModerations()
+> Success clearAllPlayerModerations()
 
 Clear All Player Moderations
 
@@ -51,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Error**](Error.md)
+[**Success**](Success.md)
 
 ### Authorization
 

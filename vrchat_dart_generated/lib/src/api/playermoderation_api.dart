@@ -32,9 +32,9 @@ class PlayermoderationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Error] as data
+  /// Returns a [Future] containing a [Response] with a [Success] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Error>> clearAllPlayerModerations({
+  Future<Response<Success>> clearAllPlayerModerations({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -76,14 +76,14 @@ class PlayermoderationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Error _responseData;
+    Success _responseData;
 
     try {
-      const _responseType = FullType(Error);
+      const _responseType = FullType(Success);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as Error;
+      ) as Success;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -93,7 +93,7 @@ class PlayermoderationApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<Error>(
+    return Response<Success>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

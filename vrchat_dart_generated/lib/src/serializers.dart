@@ -46,6 +46,10 @@ import 'package:vrchat_dart_generated/src/model/invite_message.dart';
 import 'package:vrchat_dart_generated/src/model/invite_message_type.dart';
 import 'package:vrchat_dart_generated/src/model/invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/invite_response.dart';
+import 'package:vrchat_dart_generated/src/model/license.dart';
+import 'package:vrchat_dart_generated/src/model/license_action.dart';
+import 'package:vrchat_dart_generated/src/model/license_group.dart';
+import 'package:vrchat_dart_generated/src/model/license_type.dart';
 import 'package:vrchat_dart_generated/src/model/limited_unity_package.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user.dart';
 import 'package:vrchat_dart_generated/src/model/limited_world.dart';
@@ -60,17 +64,26 @@ import 'package:vrchat_dart_generated/src/model/player_moderation_type.dart';
 import 'package:vrchat_dart_generated/src/model/public_announcement.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
 import 'package:vrchat_dart_generated/src/model/response.dart';
+import 'package:vrchat_dart_generated/src/model/subscription.dart';
+import 'package:vrchat_dart_generated/src/model/subscription_period.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
+import 'package:vrchat_dart_generated/src/model/transaction.dart';
+import 'package:vrchat_dart_generated/src/model/transaction_agreement.dart';
+import 'package:vrchat_dart_generated/src/model/transaction_status.dart';
+import 'package:vrchat_dart_generated/src/model/transaction_steam_info.dart';
+import 'package:vrchat_dart_generated/src/model/transaction_steam_wallet_info.dart';
 import 'package:vrchat_dart_generated/src/model/two_factor_auth_code.dart';
 import 'package:vrchat_dart_generated/src/model/unity_package.dart';
 import 'package:vrchat_dart_generated/src/model/update_avatar_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_favorite_group_request.dart';
+import 'package:vrchat_dart_generated/src/model/update_invite_message_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_world_request.dart';
 import 'package:vrchat_dart_generated/src/model/user.dart';
 import 'package:vrchat_dart_generated/src/model/user_exists.dart';
 import 'package:vrchat_dart_generated/src/model/user_state.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
+import 'package:vrchat_dart_generated/src/model/user_subscription.dart';
 import 'package:vrchat_dart_generated/src/model/verify2_fa_result.dart';
 import 'package:vrchat_dart_generated/src/model/verify_auth_token_result.dart';
 import 'package:vrchat_dart_generated/src/model/world.dart';
@@ -114,6 +127,10 @@ part 'serializers.g.dart';
   InviteMessageType,
   InviteRequest,
   InviteResponse,
+  License,
+  LicenseAction,
+  LicenseGroup,
+  LicenseType,
   LimitedUnityPackage,
   LimitedUser,
   LimitedWorld,
@@ -128,17 +145,26 @@ part 'serializers.g.dart';
   PublicAnnouncement,
   ReleaseStatus,
   Response,
+  Subscription,
+  SubscriptionPeriod,
   Success,
+  Transaction,
+  TransactionAgreement,
+  TransactionStatus,
+  TransactionSteamInfo,
+  TransactionSteamWalletInfo,
   TwoFactorAuthCode,
   UnityPackage,
   UpdateAvatarRequest,
   UpdateFavoriteGroupRequest,
+  UpdateInviteMessageRequest,
   UpdateUserRequest,
   UpdateWorldRequest,
   User,
   UserExists,
   UserState,
   UserStatus,
+  UserSubscription,
   Verify2FAResult,
   VerifyAuthTokenResult,
   World,
@@ -149,6 +175,18 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Avatar)]),
         () => ListBuilder<Avatar>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Subscription)]),
+        () => ListBuilder<Subscription>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(UserSubscription)]),
+        () => ListBuilder<UserSubscription>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Transaction)]),
+        () => ListBuilder<Transaction>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(FavoriteGroup)]),
