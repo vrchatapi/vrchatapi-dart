@@ -280,23 +280,21 @@ packages:
       name: openapi_generator
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.2.1"
+    version: "3.3.0+1"
   openapi_generator_annotations:
     dependency: "direct main"
     description:
       name: openapi_generator_annotations
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.2.1"
+    version: "3.3.0"
   openapi_generator_cli:
-    dependency: "direct dev"
+    dependency: transitive
     description:
-      path: openapi-generator-cli
-      ref: "feature/update-bundled-jar"
-      resolved-ref: "2bee7b22124989777a74ffd4df3be115a347feb5"
-      url: "https://github.com/Rexios80/openapi-generator-dart"
-    source: git
-    version: "3.2.1"
+      name: openapi_generator_cli
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.3.0"
   package_config:
     dependency: transitive
     description:
