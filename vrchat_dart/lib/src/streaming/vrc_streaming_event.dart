@@ -1,4 +1,10 @@
-part of '../vrchat_dart.dart';
+import 'package:json_annotation/json_annotation.dart';
+import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
+
+import '../convenience/serializers.dart';
+import 'streamed_current_user.dart';
+
+part 'vrc_streaming_event.g.dart';
 
 /// Enum of all possible types of [VrcStreamingEvent]
 enum VrcStreamingEventType {
@@ -134,7 +140,7 @@ abstract class FriendEvent extends VrcStreamingEvent {
 /// Base class for [FriendEvent]s that contain a user object
 abstract class FriendEventWithUser extends FriendEvent {
   /// The [user] object of the user this event is about
-  @_UserSerializer()
+  @UserSerializer()
   final User user;
 
   /// Create a [FriendEventWithUser] with the given [userId] and [user]
@@ -163,7 +169,7 @@ class FriendOnlineEvent extends FriendEventWithUser {
   VrcStreamingEventType get type => VrcStreamingEventType.friendOnline;
 
   /// The [world] the user joined
-  @_NullableWorldSerializer()
+  @NullableWorldSerializer()
   final World? world;
 
   /// <worldId:locationId>
@@ -295,7 +301,7 @@ class FriendLocationEvent extends FriendEventWithUser {
   VrcStreamingEventType get type => VrcStreamingEventType.friendLocation;
 
   /// The [world] the user joined
-  @_NullableWorldSerializer()
+  @NullableWorldSerializer()
   final World? world;
 
   /// <worldId:locationId>
@@ -357,7 +363,7 @@ class UserLocationEvent extends UserEvent {
   VrcStreamingEventType get type => VrcStreamingEventType.userLocation;
 
   /// The [world] the user joined
-  @_WorldSerializer()
+  @WorldSerializer()
   final World world;
 
   /// <worldId:locationId>
@@ -390,7 +396,7 @@ class NotificationReceivedEvent extends NotificationEvent {
   VrcStreamingEventType get type => VrcStreamingEventType.notificationReceived;
 
   /// The [Notification] object
-  @_NotificationSerializer()
+  @NotificationSerializer()
   final Notification notification;
 
   /// Create a [NotificationReceivedEvent] with the given [notification]
@@ -433,7 +439,7 @@ class NotificationResponseEvent extends NotificationEvent {
   final String receiverId;
 
   /// The response [Notification] object
-  @_NotificationSerializer()
+  @NotificationSerializer()
   final Notification responseId;
 
   /// Create a [NotificationResponseEvent]

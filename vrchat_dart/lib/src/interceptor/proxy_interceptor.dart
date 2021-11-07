@@ -1,7 +1,7 @@
-part of '../vrchat_dart.dart';
+import 'package:dio/dio.dart';
 
 /// Proxy interceptor to bypass CORS restrictions in a web browser
-class ProxyInterceptor extends dio.Interceptor {
+class ProxyInterceptor extends Interceptor {
   /// The new [baseUrl] that is the proxy
   final String proxyUrl;
 
@@ -11,8 +11,8 @@ class ProxyInterceptor extends dio.Interceptor {
   /// Replace the [baseUrl] of all requests with the [proxyUrl]
   @override
   void onRequest(
-    dio.RequestOptions options,
-    dio.RequestInterceptorHandler handler,
+    RequestOptions options,
+    RequestInterceptorHandler handler,
   ) {
     options.baseUrl = 'https://$proxyUrl/api/1';
     handler.next(options);

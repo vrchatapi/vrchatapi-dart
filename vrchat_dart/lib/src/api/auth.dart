@@ -1,4 +1,8 @@
-part of '../vrchat_dart.dart';
+import 'dart:convert';
+
+import 'package:dio/dio.dart';
+import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
+import 'vrc_response.dart';
 
 /// Auth convenience methods
 class Auth {
@@ -31,7 +35,7 @@ class Auth {
       _currentUser = response.data;
 
       return AuthResponse();
-    } on dio.DioError catch (error) {
+    } on DioError catch (error) {
       final bodyJson = error.response?.data as Map<String, dynamic>?;
 
       if (bodyJson?['requiresTwoFactorAuth'] != null) {
@@ -53,7 +57,7 @@ class Auth {
 
       // Call the login function to set the [currentUser] and api key
       return login();
-    } on dio.DioError catch (error) {
+    } on DioError catch (error) {
       return VrcResponse(error: VrcError.fromDioError(error));
     }
   }
@@ -66,7 +70,7 @@ class Auth {
       final response = await _rawApi.getSystemApi().getConfig();
       _rawApi.setApiKey('vrcApiKey', response.data?.apiKey ?? '');
       return VrcResponse();
-    } on dio.DioError catch (error) {
+    } on DioError catch (error) {
       return VrcResponse(error: VrcError.fromDioError(error));
     }
   }
@@ -79,7 +83,7 @@ class Auth {
       await _rawApi.getAuthenticationApi().logout();
       _currentUser = null;
       return VrcResponse();
-    } on dio.DioError catch (error) {
+    } on DioError catch (error) {
       return VrcResponse(error: VrcError.fromDioError(error));
     }
   }

@@ -1,4 +1,4 @@
-part of '../vrchat_dart.dart';
+import 'package:dio/dio.dart';
 
 /// A response from the VRChat API
 class VrcResponse {
@@ -33,7 +33,7 @@ class VrcError {
   VrcError({required this.message, required this.statusCode});
 
   /// Construct a [VrcError] from json
-  VrcError.fromDioError(dio.DioError error) {
+  VrcError.fromDioError(DioError error) {
     final bodyJson = error.response?.data as Map<String, dynamic>?;
 
     message = bodyJson?['error']?['message'] ?? error.message;

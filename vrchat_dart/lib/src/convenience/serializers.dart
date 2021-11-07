@@ -1,11 +1,16 @@
-part of '../vrchat_dart.dart';
+import 'dart:convert';
+
+import 'package:json_annotation/json_annotation.dart';
+import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 /// These classes create [JsonConverter]s from the generated object serializers
 ///
 /// (Because rewriting them makes no sense)
 
-class _UserSerializer implements JsonConverter<User, dynamic> {
-  const _UserSerializer();
+/// Wrapper for [User.serializer]
+class UserSerializer implements JsonConverter<User, dynamic> {
+  /// Constructor
+  const UserSerializer();
 
   @override
   User fromJson(dynamic json) {
@@ -24,8 +29,10 @@ class _UserSerializer implements JsonConverter<User, dynamic> {
   }
 }
 
-class _LimitedUserSerializer implements JsonConverter<LimitedUser, dynamic> {
-  const _LimitedUserSerializer();
+/// Wrapper for [LimitedUser.serializer]
+class LimitedUserSerializer implements JsonConverter<LimitedUser, dynamic> {
+  /// Constructor
+  const LimitedUserSerializer();
 
   @override
   LimitedUser fromJson(dynamic json) {
@@ -44,8 +51,10 @@ class _LimitedUserSerializer implements JsonConverter<LimitedUser, dynamic> {
   }
 }
 
-class _NullableWorldSerializer implements JsonConverter<World?, dynamic> {
-  const _NullableWorldSerializer();
+/// Wrapper for [World.serializer] that can be null
+class NullableWorldSerializer implements JsonConverter<World?, dynamic> {
+  /// Constructor
+  const NullableWorldSerializer();
 
   @override
   World? fromJson(dynamic json) {
@@ -67,8 +76,10 @@ class _NullableWorldSerializer implements JsonConverter<World?, dynamic> {
   }
 }
 
-class _WorldSerializer implements JsonConverter<World, dynamic> {
-  const _WorldSerializer();
+/// Wrapper for [World.serializer]
+class WorldSerializer implements JsonConverter<World, dynamic> {
+  /// Constructor
+  const WorldSerializer();
 
   @override
   World fromJson(dynamic json) {
@@ -87,8 +98,10 @@ class _WorldSerializer implements JsonConverter<World, dynamic> {
   }
 }
 
-class _NotificationSerializer implements JsonConverter<Notification, dynamic> {
-  const _NotificationSerializer();
+/// Wrapper for [Notification.serializer]
+class NotificationSerializer implements JsonConverter<Notification, dynamic> {
+  /// Constructor
+  const NotificationSerializer();
 
   @override
   Notification fromJson(dynamic json) {
@@ -107,8 +120,10 @@ class _NotificationSerializer implements JsonConverter<Notification, dynamic> {
   }
 }
 
-class _UserStatusSerializer implements JsonConverter<UserStatus, dynamic> {
-  const _UserStatusSerializer();
+/// Wrapper for [UserStatus.serializer]
+class UserStatusSerializer implements JsonConverter<UserStatus, dynamic> {
+  /// Constructor
+  const UserStatusSerializer();
 
   @override
   UserStatus fromJson(dynamic json) {

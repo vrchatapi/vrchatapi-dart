@@ -1,3 +1,7 @@
+## 2.0.0
+Changed `part of` directives to `export` directives.
+Classes from vrchat_dart_generated can now be used in other projects without adding it to the pubspec.
+
 ## 1.4.1
 Updated vrchat_dart_generated
 

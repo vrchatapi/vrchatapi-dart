@@ -1,4 +1,9 @@
-part of '../vrchat_dart.dart';
+import 'dart:async';
+import 'dart:convert';
+
+import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
+import 'package:web_socket_channel/web_socket_channel.dart';
+import 'vrc_streaming_event.dart';
 
 /// Streaming for data updates from the VRChat websocket API
 class VrcStreaming {

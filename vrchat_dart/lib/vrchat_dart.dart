@@ -1,63 +1,17 @@
-import 'dart:async';
+library vrchat_dart;
 
-import 'package:json_annotation/json_annotation.dart';
-import 'package:vrchat_dart/vrc_api_native.dart'
-    if (dart.library.js) 'package:vrchat_dart/vrc_api_web.dart';
-import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
-import 'dart:convert';
-import 'package:dio/dio.dart' as dio;
-import 'package:web_socket_channel/web_socket_channel.dart';
-
-part 'vrchat_dart.g.dart';
-part 'vrc_api_base.dart';
+// base
+export 'src/vrchat_dart_base.dart';
+export 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // api
-part 'api/auth.dart';
-part 'api/vrc_response.dart';
-
-// streaming
-part 'streaming/vrc_streaming.dart';
-part 'streaming/vrc_streaming_event.dart';
-part 'streaming/streamed_current_user.dart';
-
-// interceptors
-part 'interceptor/proxy_interceptor.dart';
+export 'src/api/auth.dart';
+export 'src/api/vrc_response.dart';
 
 // convenience
-part 'convenience/serializers.dart';
-part 'convenience/user_extensions.dart';
+export 'src/convenience/user_extensions.dart';
 
-/// VrchatDart
-class VrchatDart {
-  /// Access to the VRChat API
-  // Ideally this wouldn't be a field, but to support both web and native
-  // I'm not sure there's another way
-  final VrcApi api;
-
-  /// Initialize the VRChat API
-  ///
-  /// In Flutter, pass a [cookiePath] to persist cookie data.
-  /// Cookies are handled automatically on web.
-  ///
-  /// Pass in a [userAgent] to identify your application to the API.
-  /// The VRChat team would like us to identify our applications.
-  ///
-  /// A [proxyUrl] is required for usage in a web browser
-  VrchatDart({
-    required String userAgent,
-    String? cookiePath,
-    String? proxyUrl,
-  }) : api = VrcApi(
-          options: dio.BaseOptions(
-            baseUrl: VrchatDartGenerated.basePath,
-            connectTimeout: 5000,
-            receiveTimeout: 3000,
-            headers: {'User-Agent': userAgent},
-          ),
-          interceptors: proxyUrl != null
-              ? <dio.Interceptor>[ProxyInterceptor(proxyUrl: proxyUrl)]
-              : <dio.Interceptor>[],
-          cookiePath: cookiePath,
-          proxyUrl: proxyUrl,
-        );
-}
+// streaming
+export 'src/streaming/streamed_current_user.dart';
+export 'src/streaming/vrc_streaming_event.dart';
+export 'src/streaming/vrc_streaming.dart';

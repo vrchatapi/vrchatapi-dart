@@ -1,4 +1,6 @@
-part of 'vrchat_dart.dart';
+import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
+import 'api/auth.dart';
+import 'streaming/vrc_streaming.dart';
 
 /// Shared code between the web and native implementations
 abstract class VrcApiBase {

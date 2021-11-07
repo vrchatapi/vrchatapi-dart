@@ -1,7 +1,7 @@
 import 'package:dio/adapter_browser.dart';
 import 'package:dio/browser_imp.dart';
 import 'package:dio/dio.dart';
-import 'package:vrchat_dart/vrchat_dart.dart';
+import 'package:vrchat_dart/src/vrc_api_base.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 /// Web implementation of the API

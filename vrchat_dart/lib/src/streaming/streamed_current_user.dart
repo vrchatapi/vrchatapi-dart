@@ -1,8 +1,11 @@
-part of '../vrchat_dart.dart';
+import 'package:json_annotation/json_annotation.dart';
+import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
+import '../convenience/serializers.dart';
 
-@JsonSerializable()
+part 'streamed_current_user.g.dart';
 
 /// A user object representing the signed in user streamed from the VRChat websocket connection
+@JsonSerializable()
 class StreamedCurrentUser {
   /// The user's bio
   final String bio;
@@ -32,7 +35,7 @@ class StreamedCurrentUser {
   final String profilePicOverride;
 
   /// The user's status
-  @_UserStatusSerializer()
+  @UserStatusSerializer()
   final UserStatus status;
 
   /// The user's status description

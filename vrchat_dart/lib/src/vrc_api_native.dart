@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 import 'package:cookie_jar/cookie_jar.dart';
-import 'package:vrchat_dart/vrchat_dart.dart';
+import 'package:vrchat_dart/src/vrc_api_base.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 /// Native implementation of the API
@@ -16,7 +16,7 @@ class VrcApi extends VrcApiBase {
           VrchatDartGenerated(
             dio: Dio(options),
             interceptors: interceptors +
-                <Interceptor>[
+                [
                   CookieManager(
                     PersistCookieJar(
                       storage: FileStorage(cookiePath),
