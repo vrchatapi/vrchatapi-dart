@@ -189,7 +189,7 @@ class WorldsApi {
   /// * [order]
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [search] - Filters by world name.
-  /// * [tag] - Tags to include (comma-separated).
+  /// * [tag] - Tags to include (comma-separated). Any of the tags needs to be present.
   /// * [notag] - Tags to exclude (comma-separated).
   /// * [releaseStatus] - Filter by ReleaseStatus.
   /// * [maxUnityVersion] - The maximum Unity version supported by the asset.
@@ -335,7 +335,7 @@ class WorldsApi {
   /// * [order]
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [search] - Filters by world name.
-  /// * [tag] - Tags to include (comma-separated).
+  /// * [tag] - Tags to include (comma-separated). Any of the tags needs to be present.
   /// * [notag] - Tags to exclude (comma-separated).
   /// * [releaseStatus] - Filter by ReleaseStatus.
   /// * [maxUnityVersion] - The maximum Unity version supported by the asset.
@@ -486,7 +486,7 @@ class WorldsApi {
   /// * [order]
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [search] - Filters by world name.
-  /// * [tag] - Tags to include (comma-separated).
+  /// * [tag] - Tags to include (comma-separated). Any of the tags needs to be present.
   /// * [notag] - Tags to exclude (comma-separated).
   /// * [releaseStatus] - Filter by ReleaseStatus.
   /// * [maxUnityVersion] - The maximum Unity version supported by the asset.
@@ -1046,7 +1046,7 @@ class WorldsApi {
   /// * [order]
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [search] - Filters by world name.
-  /// * [tag] - Tags to include (comma-separated).
+  /// * [tag] - Tags to include (comma-separated). Any of the tags needs to be present.
   /// * [notag] - Tags to exclude (comma-separated).
   /// * [releaseStatus] - Filter by ReleaseStatus.
   /// * [maxUnityVersion] - The maximum Unity version supported by the asset.

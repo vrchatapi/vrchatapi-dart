@@ -143,7 +143,7 @@ final int n = 56; // int | The number of objects to return.
 final String order = descending; // String | 
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final String search = search_example; // String | Filters by world name.
-final String tag = tag_example; // String | Tags to include (comma-separated).
+final String tag = tag_example; // String | Tags to include (comma-separated). Any of the tags needs to be present.
 final String notag = notag_example; // String | Tags to exclude (comma-separated).
 final String releaseStatus = releaseStatus_example; // String | Filter by ReleaseStatus.
 final String maxUnityVersion = maxUnityVersion_example; // String | The maximum Unity version supported by the asset.
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to 'descending']
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
  **search** | **String**| Filters by world name. | [optional] 
- **tag** | **String**| Tags to include (comma-separated). | [optional] 
+ **tag** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional] 
  **notag** | **String**| Tags to exclude (comma-separated). | [optional] 
  **releaseStatus** | **String**| Filter by ReleaseStatus. | [optional] [default to 'public']
  **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional] 
@@ -216,7 +216,7 @@ final int n = 56; // int | The number of objects to return.
 final String order = descending; // String | 
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final String search = search_example; // String | Filters by world name.
-final String tag = tag_example; // String | Tags to include (comma-separated).
+final String tag = tag_example; // String | Tags to include (comma-separated). Any of the tags needs to be present.
 final String notag = notag_example; // String | Tags to exclude (comma-separated).
 final String releaseStatus = releaseStatus_example; // String | Filter by ReleaseStatus.
 final String maxUnityVersion = maxUnityVersion_example; // String | The maximum Unity version supported by the asset.
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to 'descending']
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
  **search** | **String**| Filters by world name. | [optional] 
- **tag** | **String**| Tags to include (comma-separated). | [optional] 
+ **tag** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional] 
  **notag** | **String**| Tags to exclude (comma-separated). | [optional] 
  **releaseStatus** | **String**| Filter by ReleaseStatus. | [optional] [default to 'public']
  **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional] 
@@ -291,7 +291,7 @@ final int n = 56; // int | The number of objects to return.
 final String order = descending; // String | 
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final String search = search_example; // String | Filters by world name.
-final String tag = tag_example; // String | Tags to include (comma-separated).
+final String tag = tag_example; // String | Tags to include (comma-separated). Any of the tags needs to be present.
 final String notag = notag_example; // String | Tags to exclude (comma-separated).
 final String releaseStatus = releaseStatus_example; // String | Filter by ReleaseStatus.
 final String maxUnityVersion = maxUnityVersion_example; // String | The maximum Unity version supported by the asset.
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to 'descending']
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
  **search** | **String**| Filters by world name. | [optional] 
- **tag** | **String**| Tags to include (comma-separated). | [optional] 
+ **tag** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional] 
  **notag** | **String**| Tags to exclude (comma-separated). | [optional] 
  **releaseStatus** | **String**| Filter by ReleaseStatus. | [optional] [default to 'public']
  **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional] 
@@ -620,7 +620,7 @@ final int n = 56; // int | The number of objects to return.
 final String order = descending; // String | 
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final String search = search_example; // String | Filters by world name.
-final String tag = tag_example; // String | Tags to include (comma-separated).
+final String tag = tag_example; // String | Tags to include (comma-separated). Any of the tags needs to be present.
 final String notag = notag_example; // String | Tags to exclude (comma-separated).
 final String releaseStatus = releaseStatus_example; // String | Filter by ReleaseStatus.
 final String maxUnityVersion = maxUnityVersion_example; // String | The maximum Unity version supported by the asset.
@@ -647,7 +647,7 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to 'descending']
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
  **search** | **String**| Filters by world name. | [optional] 
- **tag** | **String**| Tags to include (comma-separated). | [optional] 
+ **tag** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional] 
  **notag** | **String**| Tags to exclude (comma-separated). | [optional] 
  **releaseStatus** | **String**| Filter by ReleaseStatus. | [optional] [default to 'public']
  **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional] 

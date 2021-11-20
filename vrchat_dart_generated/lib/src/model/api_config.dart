@@ -7,7 +7,7 @@ import 'package:vrchat_dart_generated/src/model/api_event_config.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:vrchat_dart_generated/src/model/deployment_group.dart';
 import 'package:vrchat_dart_generated/src/model/public_announcement.dart';
-import 'package:vrchat_dart_generated/src/model/dynamic_world_row.dart';
+import 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -257,7 +257,7 @@ abstract class APIConfig implements Built<APIConfig, APIConfigBuilder> {
 
   /// Array of DynamicWorldRow objects, used by the game to display the list of world rows
   @BuiltValueField(wireName: r'dynamicWorldRows')
-  BuiltSet<DynamicWorldRow> get dynamicWorldRows;
+  BuiltSet<DynamicContentRow> get dynamicWorldRows;
 
   @BuiltValueField(wireName: r'events')
   APIEventConfig get events;
@@ -621,7 +621,7 @@ class _$APIConfigSerializer implements StructuredSerializer<APIConfig> {
       ..add(r'dynamicWorldRows')
       ..add(serializers.serialize(object.dynamicWorldRows,
           specifiedType:
-              const FullType(BuiltSet, [FullType(DynamicWorldRow)])));
+              const FullType(BuiltSet, [FullType(DynamicContentRow)])));
     result
       ..add(r'events')
       ..add(serializers.serialize(object.events,
@@ -1001,8 +1001,8 @@ class _$APIConfigSerializer implements StructuredSerializer<APIConfig> {
         case r'dynamicWorldRows':
           final valueDes = serializers.deserialize(value,
                   specifiedType:
-                      const FullType(BuiltSet, [FullType(DynamicWorldRow)]))
-              as BuiltSet<DynamicWorldRow>;
+                      const FullType(BuiltSet, [FullType(DynamicContentRow)]))
+              as BuiltSet<DynamicContentRow>;
           result.dynamicWorldRows.replace(valueDes);
           break;
         case r'events':

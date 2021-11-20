@@ -88,7 +88,7 @@ class _$APIConfig extends APIConfig {
   @override
   final DownloadURLList downloadUrls;
   @override
-  final BuiltSet<DynamicWorldRow> dynamicWorldRows;
+  final BuiltSet<DynamicContentRow> dynamicWorldRows;
   @override
   final APIEventConfig events;
   @override
@@ -832,10 +832,10 @@ class APIConfigBuilder implements Builder<APIConfig, APIConfigBuilder> {
   set downloadUrls(DownloadURLListBuilder? downloadUrls) =>
       _$this._downloadUrls = downloadUrls;
 
-  SetBuilder<DynamicWorldRow>? _dynamicWorldRows;
-  SetBuilder<DynamicWorldRow> get dynamicWorldRows =>
-      _$this._dynamicWorldRows ??= new SetBuilder<DynamicWorldRow>();
-  set dynamicWorldRows(SetBuilder<DynamicWorldRow>? dynamicWorldRows) =>
+  SetBuilder<DynamicContentRow>? _dynamicWorldRows;
+  SetBuilder<DynamicContentRow> get dynamicWorldRows =>
+      _$this._dynamicWorldRows ??= new SetBuilder<DynamicContentRow>();
+  set dynamicWorldRows(SetBuilder<DynamicContentRow>? dynamicWorldRows) =>
       _$this._dynamicWorldRows = dynamicWorldRows;
 
   APIEventConfigBuilder? _events;

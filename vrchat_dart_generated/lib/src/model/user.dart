@@ -18,8 +18,8 @@ part 'user.g.dart';
 /// * [allowAvatarCopying]
 /// * [bio]
 /// * [bioLinks]
-/// * [currentAvatarImageUrl]
-/// * [currentAvatarThumbnailImageUrl]
+/// * [currentAvatarImageUrl] - When profilePicOverride is not empty, use it instead.
+/// * [currentAvatarThumbnailImageUrl] - When profilePicOverride is not empty, use it instead.
 /// * [dateJoined]
 /// * [developerType]
 /// * [displayName]
@@ -48,9 +48,11 @@ abstract class User implements Built<User, UserBuilder> {
   @BuiltValueField(wireName: r'bioLinks')
   BuiltList<String> get bioLinks;
 
+  /// When profilePicOverride is not empty, use it instead.
   @BuiltValueField(wireName: r'currentAvatarImageUrl')
   String get currentAvatarImageUrl;
 
+  /// When profilePicOverride is not empty, use it instead.
   @BuiltValueField(wireName: r'currentAvatarThumbnailImageUrl')
   String get currentAvatarThumbnailImageUrl;
 

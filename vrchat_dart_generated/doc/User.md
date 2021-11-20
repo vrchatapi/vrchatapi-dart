@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **allowAvatarCopying** | **bool** |  | 
 **bio** | **String** |  | 
 **bioLinks** | **BuiltList&lt;String&gt;** |  | 
-**currentAvatarImageUrl** | **String** |  | 
-**currentAvatarThumbnailImageUrl** | **String** |  | 
+**currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
+**currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
 **dateJoined** | [**Date**](Date.md) |  | 
 **developerType** | [**DeveloperType**](DeveloperType.md) |  | 
 **displayName** | **String** |  | 

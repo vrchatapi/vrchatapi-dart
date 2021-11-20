@@ -21,7 +21,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(DeploymentGroup.serializer)
       ..add(DeveloperType.serializer)
       ..add(DownloadURLList.serializer)
-      ..add(DynamicWorldRow.serializer)
+      ..add(DynamicContentRow.serializer)
       ..add(Error.serializer)
       ..add(Favorite.serializer)
       ..add(FavoriteGroup.serializer)
@@ -36,6 +36,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(FileVersionUploadStatus.serializer)
       ..add(FinishFileDataUploadRequest.serializer)
       ..add(FriendStatus.serializer)
+      ..add(InfoPush.serializer)
+      ..add(InfoPushData.serializer)
+      ..add(InfoPushDataArticle.serializer)
+      ..add(InfoPushDataArticleContent.serializer)
+      ..add(InfoPushDataClickable.serializer)
+      ..add(InfoPushDataClickableCommandEnum.serializer)
       ..add(Instance.serializer)
       ..add(InstancePlatforms.serializer)
       ..add(InviteMessage.serializer)
@@ -142,6 +148,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(JsonObject)]),
           () => new ListBuilder<JsonObject>())
       ..addBuilderFactory(
@@ -206,8 +218,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltSet, const [const FullType(PublicAnnouncement)]),
           () => new SetBuilder<PublicAnnouncement>())
       ..addBuilderFactory(
-          const FullType(BuiltSet, const [const FullType(DynamicWorldRow)]),
-          () => new SetBuilder<DynamicWorldRow>())
+          const FullType(BuiltSet, const [const FullType(DynamicContentRow)]),
+          () => new SetBuilder<DynamicContentRow>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

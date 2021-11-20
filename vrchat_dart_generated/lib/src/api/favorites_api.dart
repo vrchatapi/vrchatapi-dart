@@ -517,7 +517,7 @@ class FavoritesApi {
   /// * [n] - The number of objects to return.
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [type] - The type of favorites to return, FavoriteType.
-  /// * [tag] - Tags to include (comma-separated).
+  /// * [tag] - Tags to include (comma-separated). Any of the tags needs to be present.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request

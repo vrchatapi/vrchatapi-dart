@@ -309,7 +309,7 @@ final api = VrchatDartGenerated().getFavoritesApi();
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final String type = type_example; // String | The type of favorites to return, FavoriteType.
-final String tag = tag_example; // String | Tags to include (comma-separated).
+final String tag = tag_example; // String | Tags to include (comma-separated). Any of the tags needs to be present.
 
 try {
     final response = api.getFavorites(n, offset, type, tag);
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
  **type** | **String**| The type of favorites to return, FavoriteType. | [optional] 
- **tag** | **String**| Tags to include (comma-separated). | [optional] 
+ **tag** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional] 
 
 ### Return type
 

@@ -14,8 +14,8 @@ part 'limited_user.g.dart';
 ///
 /// Properties:
 /// * [bio]
-/// * [currentAvatarImageUrl]
-/// * [currentAvatarThumbnailImageUrl]
+/// * [currentAvatarImageUrl] - When profilePicOverride is not empty, use it instead.
+/// * [currentAvatarThumbnailImageUrl] - When profilePicOverride is not empty, use it instead.
 /// * [developerType]
 /// * [displayName]
 /// * [fallbackAvatar]
@@ -34,9 +34,11 @@ abstract class LimitedUser implements Built<LimitedUser, LimitedUserBuilder> {
   @BuiltValueField(wireName: r'bio')
   String? get bio;
 
+  /// When profilePicOverride is not empty, use it instead.
   @BuiltValueField(wireName: r'currentAvatarImageUrl')
   String get currentAvatarImageUrl;
 
+  /// When profilePicOverride is not empty, use it instead.
   @BuiltValueField(wireName: r'currentAvatarThumbnailImageUrl')
   String get currentAvatarThumbnailImageUrl;
 

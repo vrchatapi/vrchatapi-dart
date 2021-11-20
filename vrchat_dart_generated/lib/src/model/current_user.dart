@@ -25,8 +25,8 @@ part 'current_user.g.dart';
 /// * [bioLinks]
 /// * [currentAvatar]
 /// * [currentAvatarAssetUrl]
-/// * [currentAvatarImageUrl]
-/// * [currentAvatarThumbnailImageUrl]
+/// * [currentAvatarImageUrl] - When profilePicOverride is not empty, use it instead.
+/// * [currentAvatarThumbnailImageUrl] - When profilePicOverride is not empty, use it instead.
 /// * [dateJoined]
 /// * [developerType]
 /// * [displayName]
@@ -88,9 +88,11 @@ abstract class CurrentUser implements Built<CurrentUser, CurrentUserBuilder> {
   @BuiltValueField(wireName: r'currentAvatarAssetUrl')
   String get currentAvatarAssetUrl;
 
+  /// When profilePicOverride is not empty, use it instead.
   @BuiltValueField(wireName: r'currentAvatarImageUrl')
   String get currentAvatarImageUrl;
 
+  /// When profilePicOverride is not empty, use it instead.
   @BuiltValueField(wireName: r'currentAvatarThumbnailImageUrl')
   String get currentAvatarThumbnailImageUrl;
 

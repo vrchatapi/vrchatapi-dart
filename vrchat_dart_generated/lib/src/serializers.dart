@@ -26,7 +26,7 @@ import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/deployment_group.dart';
 import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/download_url_list.dart';
-import 'package:vrchat_dart_generated/src/model/dynamic_world_row.dart';
+import 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
 import 'package:vrchat_dart_generated/src/model/favorite.dart';
 import 'package:vrchat_dart_generated/src/model/favorite_group.dart';
@@ -40,6 +40,11 @@ import 'package:vrchat_dart_generated/src/model/file_version.dart';
 import 'package:vrchat_dart_generated/src/model/file_version_upload_status.dart';
 import 'package:vrchat_dart_generated/src/model/finish_file_data_upload_request.dart';
 import 'package:vrchat_dart_generated/src/model/friend_status.dart';
+import 'package:vrchat_dart_generated/src/model/info_push.dart';
+import 'package:vrchat_dart_generated/src/model/info_push_data.dart';
+import 'package:vrchat_dart_generated/src/model/info_push_data_article.dart';
+import 'package:vrchat_dart_generated/src/model/info_push_data_article_content.dart';
+import 'package:vrchat_dart_generated/src/model/info_push_data_clickable.dart';
 import 'package:vrchat_dart_generated/src/model/instance.dart';
 import 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
 import 'package:vrchat_dart_generated/src/model/invite_message.dart';
@@ -107,7 +112,7 @@ part 'serializers.g.dart';
   DeploymentGroup,
   DeveloperType,
   DownloadURLList,
-  DynamicWorldRow,
+  DynamicContentRow,
   Error,
   Favorite,
   FavoriteGroup,
@@ -121,6 +126,11 @@ part 'serializers.g.dart';
   FileVersionUploadStatus,
   FinishFileDataUploadRequest,
   FriendStatus,
+  InfoPush,
+  InfoPushData,
+  InfoPushDataArticle,
+  InfoPushDataArticleContent,
+  InfoPushDataClickable,
   Instance,
   InstancePlatforms,
   InviteMessage,
@@ -219,6 +229,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(PlayerModeration)]),
         () => ListBuilder<PlayerModeration>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(InfoPush)]),
+        () => ListBuilder<InfoPush>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(LimitedUser)]),
