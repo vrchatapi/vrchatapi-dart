@@ -1,3 +1,6 @@
+## 1.6.0
+Updated to match spec
+
 ## 1.5.3
 Updated to match spec
 

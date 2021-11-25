@@ -39,8 +39,8 @@ part 'current_user.g.dart';
 /// * [hasEmail]
 /// * [hasLoggedInFromClient]
 /// * [hasPendingEmail]
-/// * [homeLocation]
-/// * [id]
+/// * [homeLocation] - WorldID be \"offline\" on User profiles if you are not friends with that user.
+/// * [id] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
 /// * [isFriend]
 /// * [lastLogin]
 /// * [lastPlatform] - This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
@@ -134,9 +134,11 @@ abstract class CurrentUser implements Built<CurrentUser, CurrentUserBuilder> {
   @BuiltValueField(wireName: r'hasPendingEmail')
   bool get hasPendingEmail;
 
+  /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @BuiltValueField(wireName: r'homeLocation')
   String get homeLocation;
 
+  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @BuiltValueField(wireName: r'id')
   String get id;
 

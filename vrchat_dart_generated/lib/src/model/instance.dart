@@ -3,38 +3,39 @@
 //
 
 import 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
+import 'package:vrchat_dart_generated/src/model/instance_type.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:built_value/json_object.dart';
+import 'package:vrchat_dart_generated/src/model/region.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'instance.g.dart';
 
-/// Instance
+/// * `hidden` field is only present if InstanceType is `hidden` aka \"Friends+\", and is instance creator. * `friends` field is only present if InstanceType is `friends` aka \"Friends\", and is instance creator. * `private` field is only present if InstanceType is `private` aka \"Invite\" or \"Invite+\", and is instance creator.
 ///
 /// Properties:
 /// * [active]
 /// * [canRequestInvite]
 /// * [capacity]
-/// * [clientNumber]
+/// * [clientNumber] - Always returns \"unknown\".
 /// * [full]
-/// * [id]
+/// * [id] - InstanceID be \"offline\" on User profiles if you are not friends with that user.
 /// * [instanceId]
-/// * [location]
+/// * [location] - InstanceID be \"offline\" on User profiles if you are not friends with that user.
 /// * [nUsers]
 /// * [name]
-/// * [nonce]
-/// * [ownerId]
+/// * [ownerId] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
 /// * [permanent]
 /// * [photonRegion]
 /// * [platforms]
 /// * [region]
 /// * [shortName]
-/// * [tags]
+/// * [tags] - The tags array on Instances usually contain the language tags of the people in the instance.
 /// * [type]
-/// * [users] - Always empty on non-existing instances, and non-present on existing instances.
-/// * [world] - Only present on non-existing instances, and only contains a very small subject of World object. Use World API instead.
-/// * [worldId]
+/// * [worldId] - WorldID be \"offline\" on User profiles if you are not friends with that user.
+/// * [hidden] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
+/// * [friends] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
+/// * [private] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
 abstract class Instance implements Built<Instance, InstanceBuilder> {
   @BuiltValueField(wireName: r'active')
   bool get active;
@@ -45,18 +46,21 @@ abstract class Instance implements Built<Instance, InstanceBuilder> {
   @BuiltValueField(wireName: r'capacity')
   int get capacity;
 
+  /// Always returns \"unknown\".
   @BuiltValueField(wireName: r'clientNumber')
   String get clientNumber;
 
   @BuiltValueField(wireName: r'full')
   bool get full;
 
+  /// InstanceID be \"offline\" on User profiles if you are not friends with that user.
   @BuiltValueField(wireName: r'id')
   String get id;
 
   @BuiltValueField(wireName: r'instanceId')
   String get instanceId;
 
+  /// InstanceID be \"offline\" on User profiles if you are not friends with that user.
   @BuiltValueField(wireName: r'location')
   String get location;
 
@@ -66,9 +70,7 @@ abstract class Instance implements Built<Instance, InstanceBuilder> {
   @BuiltValueField(wireName: r'name')
   String get name;
 
-  @BuiltValueField(wireName: r'nonce')
-  String? get nonce;
-
+  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @BuiltValueField(wireName: r'ownerId')
   String? get ownerId;
 
@@ -76,33 +78,42 @@ abstract class Instance implements Built<Instance, InstanceBuilder> {
   bool get permanent;
 
   @BuiltValueField(wireName: r'photonRegion')
-  String get photonRegion;
+  Region get photonRegion;
+  // enum photonRegionEnum {  us,  use,  eu,  jp,  };
 
   @BuiltValueField(wireName: r'platforms')
   InstancePlatforms get platforms;
 
   @BuiltValueField(wireName: r'region')
-  String get region;
+  Region get region;
+  // enum regionEnum {  us,  use,  eu,  jp,  };
 
   @BuiltValueField(wireName: r'shortName')
   String get shortName;
 
+  /// The tags array on Instances usually contain the language tags of the people in the instance.
   @BuiltValueField(wireName: r'tags')
   BuiltList<String> get tags;
 
   @BuiltValueField(wireName: r'type')
-  String get type;
+  InstanceType get type;
+  // enum typeEnum {  public,  hidden,  friends,  private,  };
 
-  /// Always empty on non-existing instances, and non-present on existing instances.
-  @BuiltValueField(wireName: r'users')
-  BuiltList<JsonObject>? get users;
-
-  /// Only present on non-existing instances, and only contains a very small subject of World object. Use World API instead.
-  @BuiltValueField(wireName: r'world')
-  JsonObject? get world;
-
+  /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @BuiltValueField(wireName: r'worldId')
   String get worldId;
+
+  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
+  @BuiltValueField(wireName: r'hidden')
+  String? get hidden;
+
+  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
+  @BuiltValueField(wireName: r'friends')
+  String? get friends;
+
+  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
+  @BuiltValueField(wireName: r'private')
+  String? get private;
 
   Instance._();
 
@@ -170,12 +181,6 @@ class _$InstanceSerializer implements StructuredSerializer<Instance> {
       ..add(r'name')
       ..add(serializers.serialize(object.name,
           specifiedType: const FullType(String)));
-    if (object.nonce != null) {
-      result
-        ..add(r'nonce')
-        ..add(serializers.serialize(object.nonce,
-            specifiedType: const FullType(String)));
-    }
     if (object.ownerId != null) {
       result
         ..add(r'ownerId')
@@ -189,7 +194,7 @@ class _$InstanceSerializer implements StructuredSerializer<Instance> {
     result
       ..add(r'photonRegion')
       ..add(serializers.serialize(object.photonRegion,
-          specifiedType: const FullType(String)));
+          specifiedType: const FullType(Region)));
     result
       ..add(r'platforms')
       ..add(serializers.serialize(object.platforms,
@@ -197,7 +202,7 @@ class _$InstanceSerializer implements StructuredSerializer<Instance> {
     result
       ..add(r'region')
       ..add(serializers.serialize(object.region,
-          specifiedType: const FullType(String)));
+          specifiedType: const FullType(Region)));
     result
       ..add(r'shortName')
       ..add(serializers.serialize(object.shortName,
@@ -209,23 +214,29 @@ class _$InstanceSerializer implements StructuredSerializer<Instance> {
     result
       ..add(r'type')
       ..add(serializers.serialize(object.type,
-          specifiedType: const FullType(String)));
-    if (object.users != null) {
-      result
-        ..add(r'users')
-        ..add(serializers.serialize(object.users,
-            specifiedType: const FullType(BuiltList, [FullType(JsonObject)])));
-    }
-    if (object.world != null) {
-      result
-        ..add(r'world')
-        ..add(serializers.serialize(object.world,
-            specifiedType: const FullType(JsonObject)));
-    }
+          specifiedType: const FullType(InstanceType)));
     result
       ..add(r'worldId')
       ..add(serializers.serialize(object.worldId,
           specifiedType: const FullType(String)));
+    if (object.hidden != null) {
+      result
+        ..add(r'hidden')
+        ..add(serializers.serialize(object.hidden,
+            specifiedType: const FullType(String)));
+    }
+    if (object.friends != null) {
+      result
+        ..add(r'friends')
+        ..add(serializers.serialize(object.friends,
+            specifiedType: const FullType(String)));
+    }
+    if (object.private != null) {
+      result
+        ..add(r'private')
+        ..add(serializers.serialize(object.private,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -291,11 +302,6 @@ class _$InstanceSerializer implements StructuredSerializer<Instance> {
               specifiedType: const FullType(String)) as String;
           result.name = valueDes;
           break;
-        case r'nonce':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.nonce = valueDes;
-          break;
         case r'ownerId':
           final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
@@ -308,7 +314,7 @@ class _$InstanceSerializer implements StructuredSerializer<Instance> {
           break;
         case r'photonRegion':
           final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(Region)) as Region;
           result.photonRegion = valueDes;
           break;
         case r'platforms':
@@ -319,7 +325,7 @@ class _$InstanceSerializer implements StructuredSerializer<Instance> {
           break;
         case r'region':
           final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(Region)) as Region;
           result.region = valueDes;
           break;
         case r'shortName':
@@ -335,25 +341,28 @@ class _$InstanceSerializer implements StructuredSerializer<Instance> {
           break;
         case r'type':
           final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(InstanceType)) as InstanceType;
           result.type = valueDes;
-          break;
-        case r'users':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, [FullType(JsonObject)]))
-              as BuiltList<JsonObject>;
-          result.users.replace(valueDes);
-          break;
-        case r'world':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(JsonObject)) as JsonObject;
-          result.world = valueDes;
           break;
         case r'worldId':
           final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           result.worldId = valueDes;
+          break;
+        case r'hidden':
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          result.hidden = valueDes;
+          break;
+        case r'friends':
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          result.friends = valueDes;
+          break;
+        case r'private':
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          result.private = valueDes;
           break;
       }
     }

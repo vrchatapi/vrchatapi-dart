@@ -47,6 +47,7 @@ import 'package:vrchat_dart_generated/src/model/info_push_data_article_content.d
 import 'package:vrchat_dart_generated/src/model/info_push_data_clickable.dart';
 import 'package:vrchat_dart_generated/src/model/instance.dart';
 import 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
+import 'package:vrchat_dart_generated/src/model/instance_type.dart';
 import 'package:vrchat_dart_generated/src/model/invite_message.dart';
 import 'package:vrchat_dart_generated/src/model/invite_message_type.dart';
 import 'package:vrchat_dart_generated/src/model/invite_request.dart';
@@ -67,6 +68,7 @@ import 'package:vrchat_dart_generated/src/model/permission.dart';
 import 'package:vrchat_dart_generated/src/model/player_moderation.dart';
 import 'package:vrchat_dart_generated/src/model/player_moderation_type.dart';
 import 'package:vrchat_dart_generated/src/model/public_announcement.dart';
+import 'package:vrchat_dart_generated/src/model/region.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
 import 'package:vrchat_dart_generated/src/model/response.dart';
 import 'package:vrchat_dart_generated/src/model/subscription.dart';
@@ -133,6 +135,7 @@ part 'serializers.g.dart';
   InfoPushDataClickable,
   Instance,
   InstancePlatforms,
+  InstanceType,
   InviteMessage,
   InviteMessageType,
   InviteRequest,
@@ -153,6 +156,7 @@ part 'serializers.g.dart';
   PlayerModeration,
   PlayerModerationType,
   PublicAnnouncement,
+  Region,
   ReleaseStatus,
   Response,
   Subscription,

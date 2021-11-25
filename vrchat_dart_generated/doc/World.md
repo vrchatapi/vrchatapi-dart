@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assetUrl** | **String** |  | 
 **assetUrlObject** | [**JsonObject**](.md) |  | 
-**authorId** | **String** |  | 
+**authorId** | **String** | A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed. | 
 **authorName** | **String** |  | 
 **capacity** | **int** |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **favorites** | **int** |  | [optional] [default to 0]
 **featured** | **bool** |  | [default to false]
 **heat** | **int** |  | [default to 0]
-**id** | **String** |  | 
+**id** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | 
 **imageUrl** | **String** |  | 
 **instances** | [**BuiltList&lt;BuiltList&lt;JsonObject&gt;&gt;**](BuiltList.md) |  | [optional] 
 **labsPublicationDate** | **String** |  | 

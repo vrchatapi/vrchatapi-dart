@@ -13,13 +13,13 @@ part 'limited_world.g.dart';
 /// LimitedWorld
 ///
 /// Properties:
-/// * [authorId]
+/// * [authorId] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
 /// * [authorName]
 /// * [capacity]
 /// * [createdAt]
 /// * [favorites]
 /// * [heat]
-/// * [id]
+/// * [id] - WorldID be \"offline\" on User profiles if you are not friends with that user.
 /// * [imageUrl]
 /// * [labsPublicationDate]
 /// * [name]
@@ -34,6 +34,7 @@ part 'limited_world.g.dart';
 /// * [updatedAt]
 abstract class LimitedWorld
     implements Built<LimitedWorld, LimitedWorldBuilder> {
+  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @BuiltValueField(wireName: r'authorId')
   String get authorId;
 
@@ -52,6 +53,7 @@ abstract class LimitedWorld
   @BuiltValueField(wireName: r'heat')
   int get heat;
 
+  /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @BuiltValueField(wireName: r'id')
   String get id;
 

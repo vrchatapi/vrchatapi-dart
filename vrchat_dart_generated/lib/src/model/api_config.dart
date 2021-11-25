@@ -59,9 +59,9 @@ part 'api_config.g.dart';
 /// * [dynamicWorldRows] - Array of DynamicWorldRow objects, used by the game to display the list of world rows
 /// * [events]
 /// * [gearDemoRoomId] - Unknown
-/// * [homeWorldId]
+/// * [homeWorldId] - WorldID be \"offline\" on User profiles if you are not friends with that user.
 /// * [homepageRedirectTarget] - Redirect target if you try to open the base API domain in your browser
-/// * [hubWorldId]
+/// * [hubWorldId] - WorldID be \"offline\" on User profiles if you are not friends with that user.
 /// * [jobsEmail] - VRChat's job application email
 /// * [messageOfTheDay] - MOTD
 /// * [moderationEmail] - VRChat's moderation related email
@@ -78,8 +78,8 @@ part 'api_config.g.dart';
 /// * [sdkUnityVersion] - Unity version supported by the SDK
 /// * [serverName] - Server name of the API server currently responding
 /// * [supportEmail] - VRChat's support email
-/// * [timeOutWorldId]
-/// * [tutorialWorldId]
+/// * [timeOutWorldId] - WorldID be \"offline\" on User profiles if you are not friends with that user.
+/// * [tutorialWorldId] - WorldID be \"offline\" on User profiles if you are not friends with that user.
 /// * [updateRateMsMaximum] - Unknown
 /// * [updateRateMsMinimum] - Unknown
 /// * [updateRateMsNormal] - Unknown
@@ -266,6 +266,7 @@ abstract class APIConfig implements Built<APIConfig, APIConfigBuilder> {
   @BuiltValueField(wireName: r'gearDemoRoomId')
   String get gearDemoRoomId;
 
+  /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @BuiltValueField(wireName: r'homeWorldId')
   String get homeWorldId;
 
@@ -273,6 +274,7 @@ abstract class APIConfig implements Built<APIConfig, APIConfigBuilder> {
   @BuiltValueField(wireName: r'homepageRedirectTarget')
   String get homepageRedirectTarget;
 
+  /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @BuiltValueField(wireName: r'hubWorldId')
   String get hubWorldId;
 
@@ -340,9 +342,11 @@ abstract class APIConfig implements Built<APIConfig, APIConfigBuilder> {
   @BuiltValueField(wireName: r'supportEmail')
   String get supportEmail;
 
+  /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @BuiltValueField(wireName: r'timeOutWorldId')
   String get timeOutWorldId;
 
+  /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @BuiltValueField(wireName: r'tutorialWorldId')
   String get tutorialWorldId;
 

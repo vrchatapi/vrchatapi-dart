@@ -22,22 +22,22 @@ part 'user.g.dart';
 /// * [currentAvatarThumbnailImageUrl] - When profilePicOverride is not empty, use it instead.
 /// * [dateJoined]
 /// * [developerType]
-/// * [displayName]
+/// * [displayName] - A users visual display name. This is what shows up in-game, and can different from their `username`. Changing display name is restricted to a cooldown period.
 /// * [friendKey]
-/// * [id]
-/// * [instanceId]
-/// * [isFriend]
-/// * [lastLogin]
+/// * [id] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
+/// * [instanceId] - InstanceID be \"offline\" on User profiles if you are not friends with that user.
+/// * [isFriend] - Either their `friendKey`, or empty string if you are not friends. Unknown usage.
+/// * [lastLogin] - Either a date-time or empty string.
 /// * [lastPlatform] - This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
-/// * [location]
+/// * [location] - WorldID be \"offline\" on User profiles if you are not friends with that user.
 /// * [profilePicOverride]
 /// * [state]
 /// * [status]
 /// * [statusDescription]
 /// * [tags]
 /// * [userIcon]
-/// * [username]
-/// * [worldId]
+/// * [username] - A users unique name, used during login. This is different from `displayName` which is what shows up in-game. A users `username` can never be changed.
+/// * [worldId] - WorldID be \"offline\" on User profiles if you are not friends with that user.
 abstract class User implements Built<User, UserBuilder> {
   @BuiltValueField(wireName: r'allowAvatarCopying')
   bool get allowAvatarCopying;
@@ -63,21 +63,26 @@ abstract class User implements Built<User, UserBuilder> {
   DeveloperType get developerType;
   // enum developerTypeEnum {  none,  trusted,  internal,  moderator,  };
 
+  /// A users visual display name. This is what shows up in-game, and can different from their `username`. Changing display name is restricted to a cooldown period.
   @BuiltValueField(wireName: r'displayName')
   String get displayName;
 
   @BuiltValueField(wireName: r'friendKey')
   String get friendKey;
 
+  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @BuiltValueField(wireName: r'id')
   String get id;
 
+  /// InstanceID be \"offline\" on User profiles if you are not friends with that user.
   @BuiltValueField(wireName: r'instanceId')
   String? get instanceId;
 
+  /// Either their `friendKey`, or empty string if you are not friends. Unknown usage.
   @BuiltValueField(wireName: r'isFriend')
   bool get isFriend;
 
+  /// Either a date-time or empty string.
   @BuiltValueField(wireName: r'last_login')
   String get lastLogin;
 
@@ -85,6 +90,7 @@ abstract class User implements Built<User, UserBuilder> {
   @BuiltValueField(wireName: r'last_platform')
   String get lastPlatform;
 
+  /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @BuiltValueField(wireName: r'location')
   String? get location;
 
@@ -108,16 +114,18 @@ abstract class User implements Built<User, UserBuilder> {
   @BuiltValueField(wireName: r'userIcon')
   String get userIcon;
 
+  /// A users unique name, used during login. This is different from `displayName` which is what shows up in-game. A users `username` can never be changed.
   @BuiltValueField(wireName: r'username')
   String get username;
 
+  /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @BuiltValueField(wireName: r'worldId')
   String? get worldId;
 
   User._();
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UserBuilder b) => b;
+  static void _defaults(UserBuilder b) => b..allowAvatarCopying = true;
 
   factory User([void updates(UserBuilder b)]) = _$User;
 

@@ -28,29 +28,29 @@ class _$Instance extends Instance {
   @override
   final String name;
   @override
-  final String? nonce;
-  @override
   final String? ownerId;
   @override
   final bool permanent;
   @override
-  final String photonRegion;
+  final Region photonRegion;
   @override
   final InstancePlatforms platforms;
   @override
-  final String region;
+  final Region region;
   @override
   final String shortName;
   @override
   final BuiltList<String> tags;
   @override
-  final String type;
-  @override
-  final BuiltList<JsonObject>? users;
-  @override
-  final JsonObject? world;
+  final InstanceType type;
   @override
   final String worldId;
+  @override
+  final String? hidden;
+  @override
+  final String? friends;
+  @override
+  final String? private;
 
   factory _$Instance([void Function(InstanceBuilder)? updates]) =>
       (new InstanceBuilder()..update(updates)).build();
@@ -66,7 +66,6 @@ class _$Instance extends Instance {
       required this.location,
       required this.nUsers,
       required this.name,
-      this.nonce,
       this.ownerId,
       required this.permanent,
       required this.photonRegion,
@@ -75,9 +74,10 @@ class _$Instance extends Instance {
       required this.shortName,
       required this.tags,
       required this.type,
-      this.users,
-      this.world,
-      required this.worldId})
+      required this.worldId,
+      this.hidden,
+      this.friends,
+      this.private})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(active, 'Instance', 'active');
     BuiltValueNullFieldError.checkNotNull(
@@ -123,7 +123,6 @@ class _$Instance extends Instance {
         location == other.location &&
         nUsers == other.nUsers &&
         name == other.name &&
-        nonce == other.nonce &&
         ownerId == other.ownerId &&
         permanent == other.permanent &&
         photonRegion == other.photonRegion &&
@@ -132,9 +131,10 @@ class _$Instance extends Instance {
         shortName == other.shortName &&
         tags == other.tags &&
         type == other.type &&
-        users == other.users &&
-        world == other.world &&
-        worldId == other.worldId;
+        worldId == other.worldId &&
+        hidden == other.hidden &&
+        friends == other.friends &&
+        private == other.private;
   }
 
   @override
@@ -165,18 +165,18 @@ class _$Instance extends Instance {
                                                                 location.hashCode),
                                                             nUsers.hashCode),
                                                         name.hashCode),
-                                                    nonce.hashCode),
-                                                ownerId.hashCode),
-                                            permanent.hashCode),
-                                        photonRegion.hashCode),
-                                    platforms.hashCode),
-                                region.hashCode),
-                            shortName.hashCode),
-                        tags.hashCode),
-                    type.hashCode),
-                users.hashCode),
-            world.hashCode),
-        worldId.hashCode));
+                                                    ownerId.hashCode),
+                                                permanent.hashCode),
+                                            photonRegion.hashCode),
+                                        platforms.hashCode),
+                                    region.hashCode),
+                                shortName.hashCode),
+                            tags.hashCode),
+                        type.hashCode),
+                    worldId.hashCode),
+                hidden.hashCode),
+            friends.hashCode),
+        private.hashCode));
   }
 
   @override
@@ -192,7 +192,6 @@ class _$Instance extends Instance {
           ..add('location', location)
           ..add('nUsers', nUsers)
           ..add('name', name)
-          ..add('nonce', nonce)
           ..add('ownerId', ownerId)
           ..add('permanent', permanent)
           ..add('photonRegion', photonRegion)
@@ -201,9 +200,10 @@ class _$Instance extends Instance {
           ..add('shortName', shortName)
           ..add('tags', tags)
           ..add('type', type)
-          ..add('users', users)
-          ..add('world', world)
-          ..add('worldId', worldId))
+          ..add('worldId', worldId)
+          ..add('hidden', hidden)
+          ..add('friends', friends)
+          ..add('private', private))
         .toString();
   }
 }
@@ -252,10 +252,6 @@ class InstanceBuilder implements Builder<Instance, InstanceBuilder> {
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  String? _nonce;
-  String? get nonce => _$this._nonce;
-  set nonce(String? nonce) => _$this._nonce = nonce;
-
   String? _ownerId;
   String? get ownerId => _$this._ownerId;
   set ownerId(String? ownerId) => _$this._ownerId = ownerId;
@@ -264,9 +260,9 @@ class InstanceBuilder implements Builder<Instance, InstanceBuilder> {
   bool? get permanent => _$this._permanent;
   set permanent(bool? permanent) => _$this._permanent = permanent;
 
-  String? _photonRegion;
-  String? get photonRegion => _$this._photonRegion;
-  set photonRegion(String? photonRegion) => _$this._photonRegion = photonRegion;
+  Region? _photonRegion;
+  Region? get photonRegion => _$this._photonRegion;
+  set photonRegion(Region? photonRegion) => _$this._photonRegion = photonRegion;
 
   InstancePlatformsBuilder? _platforms;
   InstancePlatformsBuilder get platforms =>
@@ -274,9 +270,9 @@ class InstanceBuilder implements Builder<Instance, InstanceBuilder> {
   set platforms(InstancePlatformsBuilder? platforms) =>
       _$this._platforms = platforms;
 
-  String? _region;
-  String? get region => _$this._region;
-  set region(String? region) => _$this._region = region;
+  Region? _region;
+  Region? get region => _$this._region;
+  set region(Region? region) => _$this._region = region;
 
   String? _shortName;
   String? get shortName => _$this._shortName;
@@ -286,22 +282,25 @@ class InstanceBuilder implements Builder<Instance, InstanceBuilder> {
   ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
-  String? _type;
-  String? get type => _$this._type;
-  set type(String? type) => _$this._type = type;
-
-  ListBuilder<JsonObject>? _users;
-  ListBuilder<JsonObject> get users =>
-      _$this._users ??= new ListBuilder<JsonObject>();
-  set users(ListBuilder<JsonObject>? users) => _$this._users = users;
-
-  JsonObject? _world;
-  JsonObject? get world => _$this._world;
-  set world(JsonObject? world) => _$this._world = world;
+  InstanceType? _type;
+  InstanceType? get type => _$this._type;
+  set type(InstanceType? type) => _$this._type = type;
 
   String? _worldId;
   String? get worldId => _$this._worldId;
   set worldId(String? worldId) => _$this._worldId = worldId;
+
+  String? _hidden;
+  String? get hidden => _$this._hidden;
+  set hidden(String? hidden) => _$this._hidden = hidden;
+
+  String? _friends;
+  String? get friends => _$this._friends;
+  set friends(String? friends) => _$this._friends = friends;
+
+  String? _private;
+  String? get private => _$this._private;
+  set private(String? private) => _$this._private = private;
 
   InstanceBuilder() {
     Instance._defaults(this);
@@ -320,7 +319,6 @@ class InstanceBuilder implements Builder<Instance, InstanceBuilder> {
       _location = $v.location;
       _nUsers = $v.nUsers;
       _name = $v.name;
-      _nonce = $v.nonce;
       _ownerId = $v.ownerId;
       _permanent = $v.permanent;
       _photonRegion = $v.photonRegion;
@@ -329,9 +327,10 @@ class InstanceBuilder implements Builder<Instance, InstanceBuilder> {
       _shortName = $v.shortName;
       _tags = $v.tags.toBuilder();
       _type = $v.type;
-      _users = $v.users?.toBuilder();
-      _world = $v.world;
       _worldId = $v.worldId;
+      _hidden = $v.hidden;
+      _friends = $v.friends;
+      _private = $v.private;
       _$v = null;
     }
     return this;
@@ -373,7 +372,6 @@ class InstanceBuilder implements Builder<Instance, InstanceBuilder> {
                   nUsers, 'Instance', 'nUsers'),
               name: BuiltValueNullFieldError.checkNotNull(
                   name, 'Instance', 'name'),
-              nonce: nonce,
               ownerId: ownerId,
               permanent: BuiltValueNullFieldError.checkNotNull(permanent, 'Instance', 'permanent'),
               photonRegion: BuiltValueNullFieldError.checkNotNull(photonRegion, 'Instance', 'photonRegion'),
@@ -382,9 +380,10 @@ class InstanceBuilder implements Builder<Instance, InstanceBuilder> {
               shortName: BuiltValueNullFieldError.checkNotNull(shortName, 'Instance', 'shortName'),
               tags: tags.build(),
               type: BuiltValueNullFieldError.checkNotNull(type, 'Instance', 'type'),
-              users: _users?.build(),
-              world: world,
-              worldId: BuiltValueNullFieldError.checkNotNull(worldId, 'Instance', 'worldId'));
+              worldId: BuiltValueNullFieldError.checkNotNull(worldId, 'Instance', 'worldId'),
+              hidden: hidden,
+              friends: friends,
+              private: private);
     } catch (_) {
       late String _$failedField;
       try {
@@ -393,9 +392,6 @@ class InstanceBuilder implements Builder<Instance, InstanceBuilder> {
 
         _$failedField = 'tags';
         tags.build();
-
-        _$failedField = 'users';
-        _users?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'Instance', _$failedField, e.toString());

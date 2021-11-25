@@ -14,9 +14,9 @@ part 'player_moderation.g.dart';
 /// * [created]
 /// * [id]
 /// * [sourceDisplayName]
-/// * [sourceUserId]
+/// * [sourceUserId] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
 /// * [targetDisplayName]
-/// * [targetUserId]
+/// * [targetUserId] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
 /// * [type]
 abstract class PlayerModeration
     implements Built<PlayerModeration, PlayerModerationBuilder> {
@@ -29,12 +29,14 @@ abstract class PlayerModeration
   @BuiltValueField(wireName: r'sourceDisplayName')
   String get sourceDisplayName;
 
+  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @BuiltValueField(wireName: r'sourceUserId')
   String get sourceUserId;
 
   @BuiltValueField(wireName: r'targetDisplayName')
   String get targetDisplayName;
 
+  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @BuiltValueField(wireName: r'targetUserId')
   String get targetUserId;
 

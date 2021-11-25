@@ -11,10 +11,11 @@ part 'world_metadata.g.dart';
 /// WorldMetadata
 ///
 /// Properties:
-/// * [id]
+/// * [id] - WorldID be \"offline\" on User profiles if you are not friends with that user.
 /// * [metadata]
 abstract class WorldMetadata
     implements Built<WorldMetadata, WorldMetadataBuilder> {
+  /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @BuiltValueField(wireName: r'id')
   String get id;
 

@@ -56,7 +56,7 @@ packages:
       name: build_resolvers
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.4"
+    version: "2.0.5"
   build_runner:
     dependency: "direct dev"
     description:
@@ -154,7 +154,7 @@ packages:
       name: dio
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.3"
+    version: "4.0.4"
   dio_cookie_manager:
     dependency: "direct main"
     description:
@@ -420,7 +420,7 @@ packages:
       name: vrchat_dart_generated
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.5.2"
+    version: "1.6.0"
   watcher:
     dependency: transitive
     description:

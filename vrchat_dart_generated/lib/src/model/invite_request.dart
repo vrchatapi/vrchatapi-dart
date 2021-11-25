@@ -10,9 +10,10 @@ part 'invite_request.g.dart';
 /// InviteRequest
 ///
 /// Properties:
-/// * [instanceId]
+/// * [instanceId] - InstanceID be \"offline\" on User profiles if you are not friends with that user.
 abstract class InviteRequest
     implements Built<InviteRequest, InviteRequestBuilder> {
+  /// InstanceID be \"offline\" on User profiles if you are not friends with that user.
   @BuiltValueField(wireName: r'instanceId')
   String get instanceId;
 

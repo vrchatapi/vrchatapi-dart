@@ -42,6 +42,7 @@ doc/InfoPushDataArticleContent.md
 doc/InfoPushDataClickable.md
 doc/Instance.md
 doc/InstancePlatforms.md
+doc/InstanceType.md
 doc/InstancesApi.md
 doc/InviteApi.md
 doc/InviteMessage.md
@@ -67,6 +68,7 @@ doc/PlayerModeration.md
 doc/PlayerModerationType.md
 doc/PlayermoderationApi.md
 doc/PublicAnnouncement.md
+doc/Region.md
 doc/ReleaseStatus.md
 doc/Response.md
 doc/Subscription.md
@@ -155,6 +157,7 @@ lib/src/model/info_push_data_article_content.dart
 lib/src/model/info_push_data_clickable.dart
 lib/src/model/instance.dart
 lib/src/model/instance_platforms.dart
+lib/src/model/instance_type.dart
 lib/src/model/invite_message.dart
 lib/src/model/invite_message_type.dart
 lib/src/model/invite_request.dart
@@ -175,6 +178,7 @@ lib/src/model/permission.dart
 lib/src/model/player_moderation.dart
 lib/src/model/player_moderation_type.dart
 lib/src/model/public_announcement.dart
+lib/src/model/region.dart
 lib/src/model/release_status.dart
 lib/src/model/response.dart
 lib/src/model/subscription.dart
@@ -205,3 +209,5 @@ lib/src/model/world_publish_status.dart
 lib/src/serializers.dart
 lib/vrchat_dart_generated.dart
 pubspec.yaml
+test/instance_type_test.dart
+test/region_test.dart
