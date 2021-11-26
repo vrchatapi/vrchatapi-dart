@@ -209,5 +209,3 @@ lib/src/model/world_publish_status.dart
 lib/src/serializers.dart
 lib/vrchat_dart_generated.dart
 pubspec.yaml
-test/instance_type_test.dart
-test/region_test.dart

@@ -14,7 +14,7 @@ part 'world.g.dart';
 /// World
 ///
 /// Properties:
-/// * [assetUrl]
+/// * [assetUrl] - Empty if unauthenticated.
 /// * [assetUrlObject]
 /// * [authorId] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
 /// * [authorName]
@@ -42,11 +42,12 @@ part 'world.g.dart';
 /// * [tags]
 /// * [thumbnailImageUrl]
 /// * [unityPackageUrlObject]
-/// * [unityPackages]
+/// * [unityPackages] - Empty if unauthenticated.
 /// * [updatedAt]
 /// * [version]
 /// * [visits]
 abstract class World implements Built<World, WorldBuilder> {
+  /// Empty if unauthenticated.
   @BuiltValueField(wireName: r'assetUrl')
   String get assetUrl;
 
@@ -86,7 +87,7 @@ abstract class World implements Built<World, WorldBuilder> {
   String get imageUrl;
 
   @BuiltValueField(wireName: r'instances')
-  BuiltList<BuiltList<JsonObject>>? get instances;
+  BuiltList<BuiltList<JsonObject?>>? get instances;
 
   @BuiltValueField(wireName: r'labsPublicationDate')
   String get labsPublicationDate;
@@ -134,6 +135,7 @@ abstract class World implements Built<World, WorldBuilder> {
   @BuiltValueField(wireName: r'unityPackageUrlObject')
   JsonObject get unityPackageUrlObject;
 
+  /// Empty if unauthenticated.
   @BuiltValueField(wireName: r'unityPackages')
   BuiltList<UnityPackage> get unityPackages;
 
@@ -233,7 +235,7 @@ class _$WorldSerializer implements StructuredSerializer<World> {
         ..add(r'instances')
         ..add(serializers.serialize(object.instances,
             specifiedType: const FullType(BuiltList, [
-              FullType(BuiltList, [FullType(JsonObject)])
+              FullType(BuiltList, [FullType.nullable(JsonObject)])
             ])));
     }
     result
@@ -398,8 +400,8 @@ class _$WorldSerializer implements StructuredSerializer<World> {
         case r'instances':
           final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, [
-                FullType(BuiltList, [FullType(JsonObject)])
-              ])) as BuiltList<BuiltList<JsonObject>>;
+                FullType(BuiltList, [FullType.nullable(JsonObject)])
+              ])) as BuiltList<BuiltList<JsonObject?>>;
           result.instances.replace(valueDes);
           break;
         case r'labsPublicationDate':
