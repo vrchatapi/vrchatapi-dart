@@ -87,7 +87,7 @@ abstract class World implements Built<World, WorldBuilder> {
   String get imageUrl;
 
   @BuiltValueField(wireName: r'instances')
-  BuiltList<BuiltList<JsonObject?>>? get instances;
+  BuiltList<BuiltList<JsonObject>>? get instances;
 
   @BuiltValueField(wireName: r'labsPublicationDate')
   String get labsPublicationDate;
@@ -235,7 +235,7 @@ class _$WorldSerializer implements StructuredSerializer<World> {
         ..add(r'instances')
         ..add(serializers.serialize(object.instances,
             specifiedType: const FullType(BuiltList, [
-              FullType(BuiltList, [FullType.nullable(JsonObject)])
+              FullType(BuiltList, [FullType(JsonObject)])
             ])));
     }
     result
@@ -400,8 +400,8 @@ class _$WorldSerializer implements StructuredSerializer<World> {
         case r'instances':
           final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, [
-                FullType(BuiltList, [FullType.nullable(JsonObject)])
-              ])) as BuiltList<BuiltList<JsonObject?>>;
+                FullType(BuiltList, [FullType(JsonObject)])
+              ])) as BuiltList<BuiltList<JsonObject>>;
           result.instances.replace(valueDes);
           break;
         case r'labsPublicationDate':

@@ -95,10 +95,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(WorldPublishStatus.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [
-            const FullType(
-                BuiltList, const [const FullType.nullable(JsonObject)])
+            const FullType(BuiltList, const [const FullType(JsonObject)])
           ]),
-          () => new ListBuilder<BuiltList<JsonObject?>>())
+          () => new ListBuilder<BuiltList<JsonObject>>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

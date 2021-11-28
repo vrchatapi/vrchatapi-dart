@@ -32,7 +32,7 @@ class _$World extends World {
   @override
   final String imageUrl;
   @override
-  final BuiltList<BuiltList<JsonObject?>>? instances;
+  final BuiltList<BuiltList<JsonObject>>? instances;
   @override
   final String labsPublicationDate;
   @override
@@ -324,10 +324,10 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
   String? get imageUrl => _$this._imageUrl;
   set imageUrl(String? imageUrl) => _$this._imageUrl = imageUrl;
 
-  ListBuilder<BuiltList<JsonObject?>>? _instances;
-  ListBuilder<BuiltList<JsonObject?>> get instances =>
-      _$this._instances ??= new ListBuilder<BuiltList<JsonObject?>>();
-  set instances(ListBuilder<BuiltList<JsonObject?>>? instances) =>
+  ListBuilder<BuiltList<JsonObject>>? _instances;
+  ListBuilder<BuiltList<JsonObject>> get instances =>
+      _$this._instances ??= new ListBuilder<BuiltList<JsonObject>>();
+  set instances(ListBuilder<BuiltList<JsonObject>>? instances) =>
       _$this._instances = instances;
 
   String? _labsPublicationDate;

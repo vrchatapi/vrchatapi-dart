@@ -45,6 +45,11 @@ void main() async {
       await api.rawApi.getWorldsApi().searchWorlds(releaseStatus: 'public');
   print(worldsResponse.data!.first.name);
 
+  final getWorldResponse = await api.rawApi
+      .getWorldsApi()
+      .getWorld(worldId: worldsResponse.data!.first.id);
+  print(getWorldResponse.data!.name);
+
   // Listen for updates
   api.streaming.vrcEventStream.listen(handleVrcEvent);
   api.streaming.start();
