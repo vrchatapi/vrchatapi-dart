@@ -25,6 +25,10 @@ class Region extends EnumClass {
   @BuiltValueEnumConst(wireName: r'jp')
   static const Region jp = _$jp;
 
+  /// API/Photon region.
+  @BuiltValueEnumConst(wireName: r'unknown')
+  static const Region unknown = _$unknown;
+
   static Serializer<Region> get serializer => _$regionSerializer;
 
   const Region._(String name) : super(name);

@@ -79,14 +79,14 @@ abstract class Instance implements Built<Instance, InstanceBuilder> {
 
   @BuiltValueField(wireName: r'photonRegion')
   Region get photonRegion;
-  // enum photonRegionEnum {  us,  use,  eu,  jp,  };
+  // enum photonRegionEnum {  us,  use,  eu,  jp,  unknown,  };
 
   @BuiltValueField(wireName: r'platforms')
   InstancePlatforms get platforms;
 
   @BuiltValueField(wireName: r'region')
   Region get region;
-  // enum regionEnum {  us,  use,  eu,  jp,  };
+  // enum regionEnum {  us,  use,  eu,  jp,  unknown,  };
 
   @BuiltValueField(wireName: r'shortName')
   String get shortName;

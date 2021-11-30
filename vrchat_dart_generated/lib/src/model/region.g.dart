@@ -10,6 +10,7 @@ const Region _$us = const Region._('us');
 const Region _$use = const Region._('use');
 const Region _$eu = const Region._('eu');
 const Region _$jp = const Region._('jp');
+const Region _$unknown = const Region._('unknown');
 
 Region _$valueOf(String name) {
   switch (name) {
@@ -21,6 +22,8 @@ Region _$valueOf(String name) {
       return _$eu;
     case 'jp':
       return _$jp;
+    case 'unknown':
+      return _$unknown;
     default:
       throw new ArgumentError(name);
   }
@@ -31,6 +34,7 @@ final BuiltSet<Region> _$values = new BuiltSet<Region>(const <Region>[
   _$use,
   _$eu,
   _$jp,
+  _$unknown,
 ]);
 
 class _$RegionMeta {
@@ -39,6 +43,7 @@ class _$RegionMeta {
   Region get use => _$use;
   Region get eu => _$eu;
   Region get jp => _$jp;
+  Region get unknown => _$unknown;
   Region valueOf(String name) => _$valueOf(name);
   BuiltSet<Region> get values => _$values;
 }
@@ -56,12 +61,14 @@ class _$RegionSerializer implements PrimitiveSerializer<Region> {
     'use': 'use',
     'eu': 'eu',
     'jp': 'jp',
+    'unknown': 'unknown',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'us': 'us',
     'use': 'use',
     'eu': 'eu',
     'jp': 'jp',
+    'unknown': 'unknown',
   };
 
   @override
