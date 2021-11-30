@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
-import 'vrc_response.dart';
+import 'package:vrchat_dart/src/api/vrc_response.dart';
 
 /// Auth convenience methods
 class Auth {

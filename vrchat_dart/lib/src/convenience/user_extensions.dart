@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
-import 'serializers.dart';
+import 'package:vrchat_dart/src/convenience/serializers.dart';
 
 /// Convenience methods on [User]
 extension UserExtension on User {
