@@ -1,8 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
-
-import '../convenience/serializers.dart';
-import 'streamed_current_user.dart';
+import 'package:vrchat_dart/src/convenience/serializers.dart';
+import 'package:vrchat_dart/src/streaming/streamed_current_user.dart';
 
 part 'vrc_streaming_event.g.dart';
 
