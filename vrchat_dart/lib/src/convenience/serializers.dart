@@ -1,11 +1,13 @@
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:json_annotation/json_annotation.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
-/// These classes create [JsonConverter]s from the generated object serializers
-///
-/// (Because rewriting them makes no sense)
+// These classes create [JsonConverter]s from the generated object serializers
+//
+// (Because rewriting them makes no sense)
 
 /// Wrapper for [User.serializer]
 class UserSerializer implements JsonConverter<User, dynamic> {

@@ -1,6 +1,10 @@
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
+
+// Project imports:
 import 'package:vrchat_dart/src/convenience/serializers.dart';
 
 /// Convenience methods on [User]

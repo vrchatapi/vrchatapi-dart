@@ -1,4 +1,7 @@
-## 2.0.5
+## 2.1.0
+- Restructured for more convenient usage
+  - For example: `VrchatDart().api.auth` has been changed to `VrchatDart().auth`
+- Added a `websocketUrl` parameter
 - Updated vrchat_dart_generated
 
 ## 2.0.4

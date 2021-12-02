@@ -1,25 +1,28 @@
+// Package imports:
 import 'package:dio/adapter_browser.dart';
 import 'package:dio/browser_imp.dart';
 import 'package:dio/dio.dart';
-import 'package:vrchat_dart/src/vrc_api_base.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
-/// Web implementation of the API
+// Project imports:
+import 'package:vrchat_dart/src/api/vrc_api_base.dart';
+
+/// Web implementation of the VRChat API
 class VrcApi extends VrcApiBase {
   /// DO NOT INSTANTIATE
   VrcApi({
     required BaseOptions options,
-    required List<Interceptor> interceptors,
-    String? cookiePath,
-    String? proxyUrl,
+    required String? cookiePath,
+    required String? baseUrl,
+    required String? websocketUrl,
   }) : super(
-          VrchatDartGenerated(
+          rawApi: VrchatDartGenerated(
             // Enable cookies
             dio: DioForBrowser(options)
               ..httpClientAdapter =
                   (BrowserHttpClientAdapter()..withCredentials = true),
-            interceptors: interceptors,
           ),
-          proxyUrl,
+          baseUrl: baseUrl,
+          websocketUrl: websocketUrl,
         );
 }

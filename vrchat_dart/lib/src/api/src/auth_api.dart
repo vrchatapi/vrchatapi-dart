@@ -1,11 +1,15 @@
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:dio/dio.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
-import 'package:vrchat_dart/src/api/vrc_response.dart';
+
+// Project imports:
+import 'package:vrchat_dart/src/model/api/vrc_response.dart';
 
 /// Auth convenience methods
-class Auth {
+class AuthApi {
   final VrchatDartGenerated _rawApi;
 
   CurrentUser? _currentUser;
@@ -13,8 +17,8 @@ class Auth {
   /// The logged in user
   CurrentUser? get currentUser => _currentUser;
 
-  /// Construct an [Auth] object with the given [_rawApi]
-  Auth(this._rawApi);
+  /// Construct an [AuthApi] object with the given [_rawApi]
+  AuthApi(this._rawApi);
 
   /// Login to the VRChat API with a [username] and [password]
   ///

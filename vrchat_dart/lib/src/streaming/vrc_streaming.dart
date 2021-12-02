@@ -1,16 +1,18 @@
+// Dart imports:
 import 'dart:async';
 import 'dart:convert';
 
+// Package imports:
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
-import 'package:vrchat_dart/src/streaming/vrc_streaming_event.dart';
+
+// Project imports:
+import 'package:vrchat_dart/src/model/streaming/vrc_streaming_event.dart';
 
 /// Streaming for data updates from the VRChat websocket API
 class VrcStreaming {
-  static const _url = 'wss://pipeline.vrchat.cloud';
+  static const _defaultBaseUrl = 'wss://pipeline.vrchat.cloud';
 
-  final VrchatDartGenerated _rawApi;
-  final String? _proxyUrl;
   final _vrcEventStreamController =
       StreamController<VrcStreamingEvent>.broadcast();
 
@@ -18,11 +20,15 @@ class VrcStreaming {
   StreamView<VrcStreamingEvent> get vrcEventStream =>
       StreamView(_vrcEventStreamController.stream);
 
+  final VrchatDartGenerated _rawApi;
+  final String _baseUrl;
+
   bool _started = false;
   WebSocketChannel? _channel;
 
   /// Create a [VrcStreaming] instance
-  VrcStreaming(this._rawApi, this._proxyUrl);
+  VrcStreaming(this._rawApi, String? websocketUrl)
+      : _baseUrl = websocketUrl ?? _defaultBaseUrl;
 
   /// Start streaming. First login with the auth API to get an auth cookie.
   void start() async {
@@ -40,15 +46,8 @@ class VrcStreaming {
       return;
     }
 
-    final String baseUrl;
-    if (_proxyUrl != null) {
-      baseUrl = 'wss://$_proxyUrl/websocket/';
-    } else {
-      baseUrl = _url;
-    }
-
     _channel = WebSocketChannel.connect(
-      Uri.parse('$baseUrl?authToken=$authToken'),
+      Uri.parse('$_baseUrl?authToken=$authToken'),
     );
 
     _channel?.stream.listen(_handleWebsocketEvent);

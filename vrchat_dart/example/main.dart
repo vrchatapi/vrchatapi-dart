@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:vrchat_dart/vrchat_dart.dart';
 
 void main() async {
-  final api = VrchatDart(userAgent: 'vrchat_dart_example').api;
+  final api = VrchatDart(userAgent: 'vrchat_dart_example');
 
   final loginResponse = await api.auth.login(
     username: 'example',

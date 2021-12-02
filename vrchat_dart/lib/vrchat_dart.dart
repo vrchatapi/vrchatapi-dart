@@ -4,14 +4,13 @@ library vrchat_dart;
 export 'src/vrchat_dart_base.dart';
 export 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
-// api
-export 'src/api/auth.dart';
-export 'src/api/vrc_response.dart';
+// model
+export 'src/model/api/vrc_response.dart';
+export 'src/model/streaming/streamed_current_user.dart';
+export 'src/model/streaming/vrc_streaming_event.dart';
 
 // convenience
 export 'src/convenience/user_extensions.dart';
 
 // streaming
-export 'src/streaming/streamed_current_user.dart';
-export 'src/streaming/vrc_streaming_event.dart';
 export 'src/streaming/vrc_streaming.dart';

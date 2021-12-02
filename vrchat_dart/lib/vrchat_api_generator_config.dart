@@ -1,3 +1,4 @@
+// Package imports:
 import 'package:openapi_generator_annotations/openapi_generator_annotations.dart';
 
 @Openapi(
