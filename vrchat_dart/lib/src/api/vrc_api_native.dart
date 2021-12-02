@@ -13,7 +13,6 @@ class VrcApi extends VrcApiBase {
   VrcApi({
     required BaseOptions options,
     required String? cookiePath,
-    required String? baseUrl,
     required String? websocketUrl,
   }) : super(
           rawApi: VrchatDartGenerated(
@@ -26,7 +25,6 @@ class VrcApi extends VrcApiBase {
               ),
             ],
           ),
-          baseUrl: baseUrl,
           websocketUrl: websocketUrl,
         );
 }

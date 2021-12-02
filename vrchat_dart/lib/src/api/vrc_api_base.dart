@@ -23,7 +23,6 @@ abstract class VrcApiBase {
   /// Constructor
   VrcApiBase({
     required this.rawApi,
-    required String? baseUrl,
     required String? websocketUrl,
   })  : auth = AuthApi(rawApi),
         streaming = VrcStreaming(rawApi, websocketUrl);
@@ -32,13 +31,11 @@ abstract class VrcApiBase {
   factory VrcApiBase.forPlatform({
     required BaseOptions options,
     required String? cookiePath,
-    required String? baseUrl,
     required String? websocketUrl,
   }) {
     return VrcApi(
       options: options,
       cookiePath: cookiePath,
-      baseUrl: baseUrl,
       websocketUrl: websocketUrl,
     );
   }

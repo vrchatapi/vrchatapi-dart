@@ -44,7 +44,6 @@ class VrchatDart {
             headers: {'User-Agent': userAgent},
           ),
           cookiePath: cookiePath,
-          baseUrl: baseUrl,
           websocketUrl: websocketUrl,
         );
 }
