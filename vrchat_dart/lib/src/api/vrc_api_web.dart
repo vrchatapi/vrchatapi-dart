@@ -8,9 +8,9 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 import 'package:vrchat_dart/src/api/vrc_api_base.dart';
 
 /// Web implementation of the VRChat API
-class VrcApi extends VrcApiBase {
+class VrcApiImpl extends VrcApi {
   /// DO NOT INSTANTIATE
-  VrcApi({
+  VrcApiImpl({
     required BaseOptions options,
     required String? cookiePath,
     required String? websocketUrl,

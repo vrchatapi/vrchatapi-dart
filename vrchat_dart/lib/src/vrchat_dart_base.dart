@@ -9,7 +9,7 @@ import 'package:vrchat_dart/src/streaming/vrc_streaming.dart';
 
 /// VrchatDart
 class VrchatDart {
-  final VrcApiBase _api;
+  final VrcApi _api;
 
   /// Access to auth convenience methods
   AuthApi get auth => _api.auth;
@@ -36,7 +36,7 @@ class VrchatDart {
     String? cookiePath,
     String? baseUrl,
     String? websocketUrl,
-  }) : _api = VrcApiBase.forPlatform(
+  }) : _api = VrcApi.forPlatform(
           options: BaseOptions(
             baseUrl: baseUrl ?? VrchatDartGenerated.basePath,
             connectTimeout: 5000,

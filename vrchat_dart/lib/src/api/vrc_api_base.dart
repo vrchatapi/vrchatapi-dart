@@ -10,7 +10,7 @@ import 'package:vrchat_dart/src/api/vrc_api_native.dart'
     if (dart.library.js) 'package:vrchat_dart/src/api/vrc_api_web.dart';
 
 /// Shared code between the web and native implementations
-abstract class VrcApiBase {
+abstract class VrcApi {
   /// Access to auth convenience methods
   final AuthApi auth;
 
@@ -21,19 +21,19 @@ abstract class VrcApiBase {
   final VrcStreaming streaming;
 
   /// Constructor
-  VrcApiBase({
+  VrcApi({
     required this.rawApi,
     required String? websocketUrl,
   })  : auth = AuthApi(rawApi),
         streaming = VrcStreaming(rawApi, websocketUrl);
 
   /// Construct the proper implementation of [VrcApi]
-  factory VrcApiBase.forPlatform({
+  factory VrcApi.forPlatform({
     required BaseOptions options,
     required String? cookiePath,
     required String? websocketUrl,
   }) {
-    return VrcApi(
+    return VrcApiImpl(
       options: options,
       cookiePath: cookiePath,
       websocketUrl: websocketUrl,
