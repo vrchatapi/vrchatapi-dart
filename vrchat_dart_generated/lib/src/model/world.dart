@@ -272,7 +272,7 @@ class _$WorldSerializer implements StructuredSerializer<World> {
       result
         ..add(r'previewYoutubeId')
         ..add(serializers.serialize(object.previewYoutubeId,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType.nullable(String)));
     }
     if (object.privateOccupants != null) {
       result
@@ -441,7 +441,8 @@ class _$WorldSerializer implements StructuredSerializer<World> {
           break;
         case r'previewYoutubeId':
           final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType.nullable(String)) as String?;
+          if (valueDes == null) continue;
           result.previewYoutubeId = valueDes;
           break;
         case r'privateOccupants':

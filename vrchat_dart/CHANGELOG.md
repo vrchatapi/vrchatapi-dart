@@ -1,3 +1,6 @@
+## 2.1.1
+- Updated vrchat_dart_generated
+
 ## 2.1.0
 - Restructured for more convenient usage
   - For example: `VrchatDart().api.auth` has been changed to `VrchatDart().auth`
