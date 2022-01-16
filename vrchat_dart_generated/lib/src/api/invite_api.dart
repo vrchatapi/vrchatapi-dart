@@ -13,6 +13,7 @@ import 'package:vrchat_dart_generated/src/model/invite_message.dart';
 import 'package:vrchat_dart_generated/src/model/invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/invite_response.dart';
 import 'package:vrchat_dart_generated/src/model/notification.dart';
+import 'package:vrchat_dart_generated/src/model/request_invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_invite_message_request.dart';
 
 class InviteApi {
@@ -319,6 +320,7 @@ class InviteApi {
   ///
   /// Parameters:
   /// * [userId]
+  /// * [requestInviteRequest] - Slot number of the Request Message to use when request an invite.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -330,6 +332,7 @@ class InviteApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<Notification>> requestInvite({
     required String userId,
+    RequestInviteRequest? requestInviteRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -361,11 +364,31 @@ class InviteApi {
         ],
         ...?extra,
       },
+      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(RequestInviteRequest);
+      _bodyData = requestInviteRequest == null
+          ? null
+          : _serializers.serialize(requestInviteRequest, specifiedType: _type);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
     final _response = await _dio.request<Object>(
       _path,
+      data: _bodyData,
       options: _options,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
@@ -499,7 +522,7 @@ class InviteApi {
   ///
   /// Parameters:
   /// * [notificationId]
-  /// * [inviteResponse] - Instance ID when inviting a user.
+  /// * [inviteResponse] - Slot number of the Response Message to use when responding to a user.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request

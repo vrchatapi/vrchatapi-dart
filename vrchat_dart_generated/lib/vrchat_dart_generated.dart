@@ -82,6 +82,7 @@ export 'package:vrchat_dart_generated/src/model/player_moderation_type.dart';
 export 'package:vrchat_dart_generated/src/model/public_announcement.dart';
 export 'package:vrchat_dart_generated/src/model/region.dart';
 export 'package:vrchat_dart_generated/src/model/release_status.dart';
+export 'package:vrchat_dart_generated/src/model/request_invite_request.dart';
 export 'package:vrchat_dart_generated/src/model/response.dart';
 export 'package:vrchat_dart_generated/src/model/subscription.dart';
 export 'package:vrchat_dart_generated/src/model/subscription_period.dart';

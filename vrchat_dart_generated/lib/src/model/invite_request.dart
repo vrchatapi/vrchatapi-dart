@@ -11,11 +11,15 @@ part 'invite_request.g.dart';
 ///
 /// Properties:
 /// * [instanceId] - InstanceID be \"offline\" on User profiles if you are not friends with that user.
+/// * [messageSlot]
 abstract class InviteRequest
     implements Built<InviteRequest, InviteRequestBuilder> {
   /// InstanceID be \"offline\" on User profiles if you are not friends with that user.
   @BuiltValueField(wireName: r'instanceId')
   String get instanceId;
+
+  @BuiltValueField(wireName: r'messageSlot')
+  int? get messageSlot;
 
   InviteRequest._();
 
@@ -45,6 +49,12 @@ class _$InviteRequestSerializer implements StructuredSerializer<InviteRequest> {
       ..add(r'instanceId')
       ..add(serializers.serialize(object.instanceId,
           specifiedType: const FullType(String)));
+    if (object.messageSlot != null) {
+      result
+        ..add(r'messageSlot')
+        ..add(serializers.serialize(object.messageSlot,
+            specifiedType: const FullType(int)));
+    }
     return result;
   }
 
@@ -65,6 +75,11 @@ class _$InviteRequestSerializer implements StructuredSerializer<InviteRequest> {
           final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           result.instanceId = valueDes;
+          break;
+        case r'messageSlot':
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          result.messageSlot = valueDes;
           break;
       }
     }

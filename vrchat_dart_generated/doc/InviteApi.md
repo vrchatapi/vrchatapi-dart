@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **requestInvite**
-> Notification requestInvite(userId)
+> Notification requestInvite(userId, requestInviteRequest)
 
 Request Invite
 
@@ -200,9 +200,10 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getInviteApi();
 final String userId = userId_example; // String | 
+final RequestInviteRequest requestInviteRequest = ; // RequestInviteRequest | Slot number of the Request Message to use when request an invite.
 
 try {
-    final response = api.requestInvite(userId);
+    final response = api.requestInvite(userId, requestInviteRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling InviteApi->requestInvite: $e\n');
@@ -214,6 +215,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**|  | 
+ **requestInviteRequest** | [**RequestInviteRequest**](RequestInviteRequest.md)| Slot number of the Request Message to use when request an invite. | [optional] 
 
 ### Return type
 
@@ -225,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -306,7 +308,7 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getInviteApi();
 final String notificationId = notificationId_example; // String | 
-final InviteResponse inviteResponse = ; // InviteResponse | Instance ID when inviting a user.
+final InviteResponse inviteResponse = ; // InviteResponse | Slot number of the Response Message to use when responding to a user.
 
 try {
     final response = api.respondInvite(notificationId, inviteResponse);
@@ -321,7 +323,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **notificationId** | **String**|  | 
- **inviteResponse** | [**InviteResponse**](InviteResponse.md)| Instance ID when inviting a user. | [optional] 
+ **inviteResponse** | [**InviteResponse**](InviteResponse.md)| Slot number of the Response Message to use when responding to a user. | [optional] 
 
 ### Return type
 

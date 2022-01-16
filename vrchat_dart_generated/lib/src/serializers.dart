@@ -70,6 +70,7 @@ import 'package:vrchat_dart_generated/src/model/player_moderation_type.dart';
 import 'package:vrchat_dart_generated/src/model/public_announcement.dart';
 import 'package:vrchat_dart_generated/src/model/region.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
+import 'package:vrchat_dart_generated/src/model/request_invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/response.dart';
 import 'package:vrchat_dart_generated/src/model/subscription.dart';
 import 'package:vrchat_dart_generated/src/model/subscription_period.dart';
@@ -158,6 +159,7 @@ part 'serializers.g.dart';
   PublicAnnouncement,
   Region,
   ReleaseStatus,
+  RequestInviteRequest,
   Response,
   Subscription,
   SubscriptionPeriod,

@@ -9,11 +9,13 @@ part of 'invite_request.dart';
 class _$InviteRequest extends InviteRequest {
   @override
   final String instanceId;
+  @override
+  final int? messageSlot;
 
   factory _$InviteRequest([void Function(InviteRequestBuilder)? updates]) =>
       (new InviteRequestBuilder()..update(updates)).build();
 
-  _$InviteRequest._({required this.instanceId}) : super._() {
+  _$InviteRequest._({required this.instanceId, this.messageSlot}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         instanceId, 'InviteRequest', 'instanceId');
   }
@@ -28,18 +30,21 @@ class _$InviteRequest extends InviteRequest {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is InviteRequest && instanceId == other.instanceId;
+    return other is InviteRequest &&
+        instanceId == other.instanceId &&
+        messageSlot == other.messageSlot;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(0, instanceId.hashCode));
+    return $jf($jc($jc(0, instanceId.hashCode), messageSlot.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('InviteRequest')
-          ..add('instanceId', instanceId))
+          ..add('instanceId', instanceId)
+          ..add('messageSlot', messageSlot))
         .toString();
   }
 }
@@ -52,6 +57,10 @@ class InviteRequestBuilder
   String? get instanceId => _$this._instanceId;
   set instanceId(String? instanceId) => _$this._instanceId = instanceId;
 
+  int? _messageSlot;
+  int? get messageSlot => _$this._messageSlot;
+  set messageSlot(int? messageSlot) => _$this._messageSlot = messageSlot;
+
   InviteRequestBuilder() {
     InviteRequest._defaults(this);
   }
@@ -60,6 +69,7 @@ class InviteRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _instanceId = $v.instanceId;
+      _messageSlot = $v.messageSlot;
       _$v = null;
     }
     return this;
@@ -81,7 +91,8 @@ class InviteRequestBuilder
     final _$result = _$v ??
         new _$InviteRequest._(
             instanceId: BuiltValueNullFieldError.checkNotNull(
-                instanceId, 'InviteRequest', 'instanceId'));
+                instanceId, 'InviteRequest', 'instanceId'),
+            messageSlot: messageSlot);
     replace(_$result);
     return _$result;
   }
