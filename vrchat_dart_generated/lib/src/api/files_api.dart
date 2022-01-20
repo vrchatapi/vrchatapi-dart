@@ -905,7 +905,7 @@ class FilesApi {
     required String fileId,
     required int versionId,
     required String fileType,
-    required int partNumber,
+    int? partNumber,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -943,8 +943,9 @@ class FilesApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'partNumber':
-          encodeQueryParameter(_serializers, partNumber, const FullType(int)),
+      if (partNumber != null)
+        r'partNumber':
+            encodeQueryParameter(_serializers, partNumber, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(

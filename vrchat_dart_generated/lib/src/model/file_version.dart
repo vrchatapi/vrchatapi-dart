@@ -38,7 +38,7 @@ abstract class FileVersion implements Built<FileVersion, FileVersionBuilder> {
 
   @BuiltValueField(wireName: r'status')
   FileStatus get status;
-  // enum statusEnum {  waiting,  complete,  none,  };
+  // enum statusEnum {  waiting,  complete,  none,  queued,  };
 
   /// Incremental version counter, can only be increased.
   @BuiltValueField(wireName: r'version')

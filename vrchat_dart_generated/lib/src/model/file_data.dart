@@ -35,7 +35,7 @@ abstract class FileData implements Built<FileData, FileDataBuilder> {
 
   @BuiltValueField(wireName: r'status')
   FileStatus get status;
-  // enum statusEnum {  waiting,  complete,  none,  };
+  // enum statusEnum {  waiting,  complete,  none,  queued,  };
 
   @BuiltValueField(wireName: r'uploadId')
   String get uploadId;

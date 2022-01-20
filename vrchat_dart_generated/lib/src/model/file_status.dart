@@ -15,6 +15,8 @@ class FileStatus extends EnumClass {
   static const FileStatus complete = _$complete;
   @BuiltValueEnumConst(wireName: r'none')
   static const FileStatus none = _$none;
+  @BuiltValueEnumConst(wireName: r'queued')
+  static const FileStatus queued = _$queued;
 
   static Serializer<FileStatus> get serializer => _$fileStatusSerializer;
 

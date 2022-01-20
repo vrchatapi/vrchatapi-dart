@@ -211,4 +211,3 @@ lib/src/model/world_publish_status.dart
 lib/src/serializers.dart
 lib/vrchat_dart_generated.dart
 pubspec.yaml
-test/request_invite_request_test.dart

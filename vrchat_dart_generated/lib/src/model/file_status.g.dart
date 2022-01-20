@@ -9,6 +9,7 @@ part of 'file_status.dart';
 const FileStatus _$waiting = const FileStatus._('waiting');
 const FileStatus _$complete = const FileStatus._('complete');
 const FileStatus _$none = const FileStatus._('none');
+const FileStatus _$queued = const FileStatus._('queued');
 
 FileStatus _$valueOf(String name) {
   switch (name) {
@@ -18,6 +19,8 @@ FileStatus _$valueOf(String name) {
       return _$complete;
     case 'none':
       return _$none;
+    case 'queued':
+      return _$queued;
     default:
       throw new ArgumentError(name);
   }
@@ -28,6 +31,7 @@ final BuiltSet<FileStatus> _$values =
   _$waiting,
   _$complete,
   _$none,
+  _$queued,
 ]);
 
 class _$FileStatusMeta {
@@ -35,6 +39,7 @@ class _$FileStatusMeta {
   FileStatus get waiting => _$waiting;
   FileStatus get complete => _$complete;
   FileStatus get none => _$none;
+  FileStatus get queued => _$queued;
   FileStatus valueOf(String name) => _$valueOf(name);
   BuiltSet<FileStatus> get values => _$values;
 }
@@ -51,11 +56,13 @@ class _$FileStatusSerializer implements PrimitiveSerializer<FileStatus> {
     'waiting': 'waiting',
     'complete': 'complete',
     'none': 'none',
+    'queued': 'queued',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'waiting': 'waiting',
     'complete': 'complete',
     'none': 'none',
+    'queued': 'queued',
   };
 
   @override

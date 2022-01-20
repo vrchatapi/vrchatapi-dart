@@ -541,7 +541,7 @@ Name | Type | Description  | Notes
  **fileId** | **String**|  | 
  **versionId** | **int**|  | 
  **fileType** | **String**|  | 
- **partNumber** | **int**|  | 
+ **partNumber** | **int**|  | [optional] 
 
 ### Return type
 
