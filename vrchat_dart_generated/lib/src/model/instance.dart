@@ -19,9 +19,9 @@ part 'instance.g.dart';
 /// * [capacity]
 /// * [clientNumber] - Always returns \"unknown\".
 /// * [full]
-/// * [id] - InstanceID be \"offline\" on User profiles if you are not friends with that user.
+/// * [id] - InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
 /// * [instanceId]
-/// * [location] - InstanceID be \"offline\" on User profiles if you are not friends with that user.
+/// * [location] - InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
 /// * [nUsers]
 /// * [name]
 /// * [ownerId] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
@@ -53,14 +53,14 @@ abstract class Instance implements Built<Instance, InstanceBuilder> {
   @BuiltValueField(wireName: r'full')
   bool get full;
 
-  /// InstanceID be \"offline\" on User profiles if you are not friends with that user.
+  /// InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
   @BuiltValueField(wireName: r'id')
   String get id;
 
   @BuiltValueField(wireName: r'instanceId')
   String get instanceId;
 
-  /// InstanceID be \"offline\" on User profiles if you are not friends with that user.
+  /// InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
   @BuiltValueField(wireName: r'location')
   String get location;
 
