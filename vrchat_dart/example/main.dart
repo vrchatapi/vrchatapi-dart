@@ -24,10 +24,16 @@ void main() async {
     }
   }
 
-  if (api.auth.currentUser != null) {
-    print('logged in');
-    print(api.auth.currentUser?.username);
+  final currentUser = api.auth.currentUser;
+  if (currentUser == null) {
+    throw Exception('Login failed');
   }
+
+  print('Logged in as ${currentUser.username}');
+
+  // Convenience methods on CurrentUser
+  currentUser.toUser();
+  currentUser.toLimitedUser();
 
   // API key fetching is automatically handled on successful authentication
 

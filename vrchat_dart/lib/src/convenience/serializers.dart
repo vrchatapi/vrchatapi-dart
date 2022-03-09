@@ -9,6 +9,28 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 //
 // (Because rewriting them makes no sense)
 
+/// Wrapper for [CurrentUser.serializer]
+class CurrentUserSerializer implements JsonConverter<CurrentUser, dynamic> {
+  /// Constructor
+  const CurrentUserSerializer();
+
+  @override
+  CurrentUser fromJson(dynamic json) {
+    return standardSerializers.fromJson(
+      CurrentUser.serializer,
+      jsonEncode(json),
+    ) as CurrentUser;
+  }
+
+  @override
+  dynamic toJson(CurrentUser object) {
+    return standardSerializers.toJson(
+      CurrentUser.serializer,
+      object,
+    );
+  }
+}
+
 /// Wrapper for [User.serializer]
 class UserSerializer implements JsonConverter<User, dynamic> {
   /// Constructor

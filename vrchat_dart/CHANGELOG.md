@@ -1,3 +1,6 @@
+## 2.2.0
+- Added convenience methods on CurrentUser to convert to User and LimitedUser
+
 ## 2.1.5
 - Updated vrchat_dart_generated
 
