@@ -40,9 +40,11 @@ class AuthApi {
 
       return AuthResponse();
     } on DioError catch (error) {
-      final bodyJson = error.response?.data as Map<String, dynamic>?;
+      final data = error.response?.data;
 
-      if (bodyJson?['requiresTwoFactorAuth'] != null) {
+      if (data != null &&
+          data is Map<String, dynamic> &&
+          data['requiresTwoFactorAuth'] != null) {
         return AuthResponse(requiresTwoFactorAuth: true);
       } else {
         return AuthResponse(error: VrcError.fromDioError(error));

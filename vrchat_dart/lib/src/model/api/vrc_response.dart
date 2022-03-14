@@ -15,7 +15,7 @@ class AuthResponse extends VrcResponse {
   /// True if this account requires two factor auth
   final bool requiresTwoFactorAuth;
 
-  /// Create an [AuthResonse]
+  /// Create an [AuthResponse]
   AuthResponse({
     this.requiresTwoFactorAuth = false,
     VrcError? error,
@@ -25,21 +25,36 @@ class AuthResponse extends VrcResponse {
 /// An error returned from the VRChat API
 class VrcError {
   /// Error message returned from the API
-  late final String message;
+  final String message;
 
   /// Status code returned from the API
-  late final int statusCode;
+  final int statusCode;
 
   /// Create a custom [VrcError]
   VrcError({required this.message, required this.statusCode});
 
   /// Construct a [VrcError] from json
-  VrcError.fromDioError(DioError error) {
-    final bodyJson = error.response?.data as Map<String, dynamic>?;
+  factory VrcError.fromDioError(DioError error) {
+    final String message;
+    final int statusCode;
 
-    message = bodyJson?['error']?['message'] ?? error.message;
-    statusCode =
-        bodyJson?['error']?['status_code'] ?? error.response?.statusCode ?? 400;
+    final data = error.response?.data;
+    final statusCodeFallback = error.response?.statusCode ?? 400;
+    if (data != null) {
+      if (data is Map<String, dynamic>) {
+        message = data['error']?['message'] ?? error.message;
+        statusCode =
+            data['error']?['status_code'] ?? statusCodeFallback;
+      } else {
+        message = data.toString();
+        statusCode = statusCodeFallback;
+      }
+    } else {
+      message = error.message;
+      statusCode = statusCodeFallback;
+    }
+
+    return VrcError(message: message, statusCode: statusCode);
   }
 
   /// toString override
