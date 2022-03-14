@@ -43,8 +43,7 @@ class VrcError {
     if (data != null) {
       if (data is Map<String, dynamic>) {
         message = data['error']?['message'] ?? error.message;
-        statusCode =
-            data['error']?['status_code'] ?? statusCodeFallback;
+        statusCode = data['error']?['status_code'] ?? statusCodeFallback;
       } else {
         message = data.toString();
         statusCode = statusCodeFallback;

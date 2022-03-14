@@ -1,3 +1,6 @@
+## 2.2.1
+- Fixed crashes in auth when blocked by cloudflare
+
 ## 2.2.0
 - Added convenience methods on CurrentUser to convert to User and LimitedUser
 
