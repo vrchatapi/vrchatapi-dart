@@ -8,6 +8,7 @@ part of 'region.dart';
 
 const Region _$us = const Region._('us');
 const Region _$use = const Region._('use');
+const Region _$usw = const Region._('usw');
 const Region _$eu = const Region._('eu');
 const Region _$jp = const Region._('jp');
 const Region _$unknown = const Region._('unknown');
@@ -18,6 +19,8 @@ Region _$valueOf(String name) {
       return _$us;
     case 'use':
       return _$use;
+    case 'usw':
+      return _$usw;
     case 'eu':
       return _$eu;
     case 'jp':
@@ -32,6 +35,7 @@ Region _$valueOf(String name) {
 final BuiltSet<Region> _$values = new BuiltSet<Region>(const <Region>[
   _$us,
   _$use,
+  _$usw,
   _$eu,
   _$jp,
   _$unknown,
@@ -41,6 +45,7 @@ class _$RegionMeta {
   const _$RegionMeta();
   Region get us => _$us;
   Region get use => _$use;
+  Region get usw => _$usw;
   Region get eu => _$eu;
   Region get jp => _$jp;
   Region get unknown => _$unknown;
@@ -59,6 +64,7 @@ class _$RegionSerializer implements PrimitiveSerializer<Region> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'us': 'us',
     'use': 'use',
+    'usw': 'usw',
     'eu': 'eu',
     'jp': 'jp',
     'unknown': 'unknown',
@@ -66,6 +72,7 @@ class _$RegionSerializer implements PrimitiveSerializer<Region> {
   static const Map<Object, String> _fromWire = const <Object, String>{
     'us': 'us',
     'use': 'use',
+    'usw': 'usw',
     'eu': 'eu',
     'jp': 'jp',
     'unknown': 'unknown',

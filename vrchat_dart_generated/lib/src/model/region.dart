@@ -18,6 +18,10 @@ class Region extends EnumClass {
   static const Region use = _$use;
 
   /// API/Photon region.
+  @BuiltValueEnumConst(wireName: r'usw')
+  static const Region usw = _$usw;
+
+  /// API/Photon region.
   @BuiltValueEnumConst(wireName: r'eu')
   static const Region eu = _$eu;
 

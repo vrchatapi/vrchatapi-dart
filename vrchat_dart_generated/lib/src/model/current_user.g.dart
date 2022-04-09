@@ -94,6 +94,8 @@ class _$CurrentUser extends CurrentUser {
   @override
   final bool twoFactorAuthEnabled;
   @override
+  final DateTime twoFactorAuthEnabledDate;
+  @override
   final bool unsubscribe;
   @override
   final String userIcon;
@@ -147,6 +149,7 @@ class _$CurrentUser extends CurrentUser {
       required this.steamId,
       required this.tags,
       required this.twoFactorAuthEnabled,
+      required this.twoFactorAuthEnabledDate,
       required this.unsubscribe,
       required this.userIcon,
       required this.username})
@@ -217,6 +220,8 @@ class _$CurrentUser extends CurrentUser {
     BuiltValueNullFieldError.checkNotNull(
         twoFactorAuthEnabled, 'CurrentUser', 'twoFactorAuthEnabled');
     BuiltValueNullFieldError.checkNotNull(
+        twoFactorAuthEnabledDate, 'CurrentUser', 'twoFactorAuthEnabledDate');
+    BuiltValueNullFieldError.checkNotNull(
         unsubscribe, 'CurrentUser', 'unsubscribe');
     BuiltValueNullFieldError.checkNotNull(userIcon, 'CurrentUser', 'userIcon');
     BuiltValueNullFieldError.checkNotNull(username, 'CurrentUser', 'username');
@@ -277,6 +282,7 @@ class _$CurrentUser extends CurrentUser {
         steamId == other.steamId &&
         tags == other.tags &&
         twoFactorAuthEnabled == other.twoFactorAuthEnabled &&
+        twoFactorAuthEnabledDate == other.twoFactorAuthEnabledDate &&
         unsubscribe == other.unsubscribe &&
         userIcon == other.userIcon &&
         username == other.username;
@@ -302,23 +308,23 @@ class _$CurrentUser extends CurrentUser {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, acceptedTOSVersion.hashCode), accountDeletionDate.hashCode), activeFriends.hashCode), allowAvatarCopying.hashCode), bio.hashCode), bioLinks.hashCode), currentAvatar.hashCode), currentAvatarAssetUrl.hashCode), currentAvatarImageUrl.hashCode), currentAvatarThumbnailImageUrl.hashCode), dateJoined.hashCode), developerType.hashCode), displayName.hashCode), emailVerified.hashCode), fallbackAvatar.hashCode), friendGroupNames.hashCode), friendKey.hashCode), friends.hashCode), hasBirthday.hashCode), hasEmail.hashCode), hasLoggedInFromClient.hashCode), hasPendingEmail.hashCode), homeLocation.hashCode), id.hashCode), isFriend.hashCode), lastLogin.hashCode), lastPlatform.hashCode),
-                                                                                obfuscatedEmail.hashCode),
-                                                                            obfuscatedPendingEmail.hashCode),
-                                                                        oculusId.hashCode),
-                                                                    offlineFriends.hashCode),
-                                                                onlineFriends.hashCode),
-                                                            pastDisplayNames.hashCode),
-                                                        profilePicOverride.hashCode),
-                                                    state.hashCode),
-                                                status.hashCode),
-                                            statusDescription.hashCode),
-                                        statusFirstTime.hashCode),
-                                    statusHistory.hashCode),
-                                steamDetails.hashCode),
-                            steamId.hashCode),
-                        tags.hashCode),
-                    twoFactorAuthEnabled.hashCode),
+                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, acceptedTOSVersion.hashCode), accountDeletionDate.hashCode), activeFriends.hashCode), allowAvatarCopying.hashCode), bio.hashCode), bioLinks.hashCode), currentAvatar.hashCode), currentAvatarAssetUrl.hashCode), currentAvatarImageUrl.hashCode), currentAvatarThumbnailImageUrl.hashCode), dateJoined.hashCode), developerType.hashCode), displayName.hashCode), emailVerified.hashCode), fallbackAvatar.hashCode), friendGroupNames.hashCode), friendKey.hashCode), friends.hashCode), hasBirthday.hashCode), hasEmail.hashCode), hasLoggedInFromClient.hashCode), hasPendingEmail.hashCode), homeLocation.hashCode), id.hashCode), isFriend.hashCode), lastLogin.hashCode), lastPlatform.hashCode), obfuscatedEmail.hashCode),
+                                                                                obfuscatedPendingEmail.hashCode),
+                                                                            oculusId.hashCode),
+                                                                        offlineFriends.hashCode),
+                                                                    onlineFriends.hashCode),
+                                                                pastDisplayNames.hashCode),
+                                                            profilePicOverride.hashCode),
+                                                        state.hashCode),
+                                                    status.hashCode),
+                                                statusDescription.hashCode),
+                                            statusFirstTime.hashCode),
+                                        statusHistory.hashCode),
+                                    steamDetails.hashCode),
+                                steamId.hashCode),
+                            tags.hashCode),
+                        twoFactorAuthEnabled.hashCode),
+                    twoFactorAuthEnabledDate.hashCode),
                 unsubscribe.hashCode),
             userIcon.hashCode),
         username.hashCode));
@@ -371,6 +377,7 @@ class _$CurrentUser extends CurrentUser {
           ..add('steamId', steamId)
           ..add('tags', tags)
           ..add('twoFactorAuthEnabled', twoFactorAuthEnabled)
+          ..add('twoFactorAuthEnabledDate', twoFactorAuthEnabledDate)
           ..add('unsubscribe', unsubscribe)
           ..add('userIcon', userIcon)
           ..add('username', username))
@@ -587,6 +594,11 @@ class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
   set twoFactorAuthEnabled(bool? twoFactorAuthEnabled) =>
       _$this._twoFactorAuthEnabled = twoFactorAuthEnabled;
 
+  DateTime? _twoFactorAuthEnabledDate;
+  DateTime? get twoFactorAuthEnabledDate => _$this._twoFactorAuthEnabledDate;
+  set twoFactorAuthEnabledDate(DateTime? twoFactorAuthEnabledDate) =>
+      _$this._twoFactorAuthEnabledDate = twoFactorAuthEnabledDate;
+
   bool? _unsubscribe;
   bool? get unsubscribe => _$this._unsubscribe;
   set unsubscribe(bool? unsubscribe) => _$this._unsubscribe = unsubscribe;
@@ -649,6 +661,7 @@ class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
       _steamId = $v.steamId;
       _tags = $v.tags.toBuilder();
       _twoFactorAuthEnabled = $v.twoFactorAuthEnabled;
+      _twoFactorAuthEnabledDate = $v.twoFactorAuthEnabledDate;
       _unsubscribe = $v.unsubscribe;
       _userIcon = $v.userIcon;
       _username = $v.username;
@@ -727,6 +740,7 @@ class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
               steamId: BuiltValueNullFieldError.checkNotNull(steamId, 'CurrentUser', 'steamId'),
               tags: tags.build(),
               twoFactorAuthEnabled: BuiltValueNullFieldError.checkNotNull(twoFactorAuthEnabled, 'CurrentUser', 'twoFactorAuthEnabled'),
+              twoFactorAuthEnabledDate: BuiltValueNullFieldError.checkNotNull(twoFactorAuthEnabledDate, 'CurrentUser', 'twoFactorAuthEnabledDate'),
               unsubscribe: BuiltValueNullFieldError.checkNotNull(unsubscribe, 'CurrentUser', 'unsubscribe'),
               userIcon: BuiltValueNullFieldError.checkNotNull(userIcon, 'CurrentUser', 'userIcon'),
               username: BuiltValueNullFieldError.checkNotNull(username, 'CurrentUser', 'username'));

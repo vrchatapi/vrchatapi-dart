@@ -2,12 +2,14 @@ import 'dart:convert';
 
 import 'package:vrchat_dart/vrchat_dart.dart';
 
+import 'credentials.dart';
+
 void main() async {
   final api = VrchatDart(userAgent: 'vrchat_dart_example');
 
   final loginResponse = await api.auth.login(
-    username: 'example',
-    password: 'hunter2',
+    username: Credentials.username,
+    password: Credentials.password,
   );
 
   if (loginResponse.error != null) {
@@ -15,7 +17,7 @@ void main() async {
     print(loginResponse.error);
   } else if (loginResponse.requiresTwoFactorAuth) {
     print('requiresTwoFactorAuth');
-    final twoFactorResponse = await api.auth.verify2fa('123456');
+    final twoFactorResponse = await api.auth.verify2fa(Credentials.otp);
     if (twoFactorResponse.error == null) {
       print('2fa verification success');
     } else {

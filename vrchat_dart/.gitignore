@@ -76,3 +76,6 @@ build/
 
 # Cookie files
 .cookies/
+
+# Credentials
+credentials.dart
