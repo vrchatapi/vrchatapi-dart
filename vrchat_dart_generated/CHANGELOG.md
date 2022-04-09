@@ -1,3 +1,6 @@
+## 1.6.10
+- Updated to match spec
+
 ## 1.6.9+1
 - Fixed pana issues
 
