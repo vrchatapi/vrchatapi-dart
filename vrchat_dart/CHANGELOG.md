@@ -1,3 +1,6 @@
+## 2.2.2
+- Updated vrchat_dart_generated
+
 ## 2.2.1
 - Fixed crashes in auth when blocked by cloudflare
 
