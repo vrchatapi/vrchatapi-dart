@@ -1,5 +1,5 @@
 name: vrchat_dart_generated
-version: 1.6.10
+version: 1.7.0
 description: The generated API used by vrchat_dart. Generated from https://github.com/vrchatapi/specification.
 homepage: https://github.com/vrchatapi/vrchatapi-dart
 

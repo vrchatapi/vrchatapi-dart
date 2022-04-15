@@ -204,7 +204,7 @@ abstract class CurrentUser implements Built<CurrentUser, CurrentUserBuilder> {
   bool get twoFactorAuthEnabled;
 
   @BuiltValueField(wireName: r'twoFactorAuthEnabledDate')
-  DateTime get twoFactorAuthEnabledDate;
+  DateTime? get twoFactorAuthEnabledDate;
 
   @BuiltValueField(wireName: r'unsubscribe')
   bool get unsubscribe;
@@ -420,10 +420,12 @@ class _$CurrentUserSerializer implements StructuredSerializer<CurrentUser> {
       ..add(r'twoFactorAuthEnabled')
       ..add(serializers.serialize(object.twoFactorAuthEnabled,
           specifiedType: const FullType(bool)));
-    result
-      ..add(r'twoFactorAuthEnabledDate')
-      ..add(serializers.serialize(object.twoFactorAuthEnabledDate,
-          specifiedType: const FullType(DateTime)));
+    if (object.twoFactorAuthEnabledDate != null) {
+      result
+        ..add(r'twoFactorAuthEnabledDate')
+        ..add(serializers.serialize(object.twoFactorAuthEnabledDate,
+            specifiedType: const FullType(DateTime)));
+    }
     result
       ..add(r'unsubscribe')
       ..add(serializers.serialize(object.unsubscribe,

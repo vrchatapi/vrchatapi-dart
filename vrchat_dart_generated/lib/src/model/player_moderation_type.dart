@@ -21,6 +21,10 @@ class PlayerModerationType extends EnumClass {
   static const PlayerModerationType hideAvatar = _$hideAvatar;
   @BuiltValueEnumConst(wireName: r'showAvatar')
   static const PlayerModerationType showAvatar = _$showAvatar;
+  @BuiltValueEnumConst(wireName: r'interactOn')
+  static const PlayerModerationType interactOn = _$interactOn;
+  @BuiltValueEnumConst(wireName: r'interactOff')
+  static const PlayerModerationType interactOff = _$interactOff;
 
   static Serializer<PlayerModerationType> get serializer =>
       _$playerModerationTypeSerializer;

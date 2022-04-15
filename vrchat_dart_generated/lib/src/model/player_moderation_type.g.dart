@@ -14,6 +14,10 @@ const PlayerModerationType _$hideAvatar =
     const PlayerModerationType._('hideAvatar');
 const PlayerModerationType _$showAvatar =
     const PlayerModerationType._('showAvatar');
+const PlayerModerationType _$interactOn =
+    const PlayerModerationType._('interactOn');
+const PlayerModerationType _$interactOff =
+    const PlayerModerationType._('interactOff');
 
 PlayerModerationType _$valueOf(String name) {
   switch (name) {
@@ -29,6 +33,10 @@ PlayerModerationType _$valueOf(String name) {
       return _$hideAvatar;
     case 'showAvatar':
       return _$showAvatar;
+    case 'interactOn':
+      return _$interactOn;
+    case 'interactOff':
+      return _$interactOff;
     default:
       throw new ArgumentError(name);
   }
@@ -42,6 +50,8 @@ final BuiltSet<PlayerModerationType> _$values =
   _$unblock,
   _$hideAvatar,
   _$showAvatar,
+  _$interactOn,
+  _$interactOff,
 ]);
 
 class _$PlayerModerationTypeMeta {
@@ -52,6 +62,8 @@ class _$PlayerModerationTypeMeta {
   PlayerModerationType get unblock => _$unblock;
   PlayerModerationType get hideAvatar => _$hideAvatar;
   PlayerModerationType get showAvatar => _$showAvatar;
+  PlayerModerationType get interactOn => _$interactOn;
+  PlayerModerationType get interactOff => _$interactOff;
   PlayerModerationType valueOf(String name) => _$valueOf(name);
   BuiltSet<PlayerModerationType> get values => _$values;
 }
@@ -74,6 +86,8 @@ class _$PlayerModerationTypeSerializer
     'unblock': 'unblock',
     'hideAvatar': 'hideAvatar',
     'showAvatar': 'showAvatar',
+    'interactOn': 'interactOn',
+    'interactOff': 'interactOff',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'mute': 'mute',
@@ -82,6 +96,8 @@ class _$PlayerModerationTypeSerializer
     'unblock': 'unblock',
     'hideAvatar': 'hideAvatar',
     'showAvatar': 'showAvatar',
+    'interactOn': 'interactOn',
+    'interactOff': 'interactOff',
   };
 
   @override

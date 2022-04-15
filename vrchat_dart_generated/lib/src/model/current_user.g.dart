@@ -94,7 +94,7 @@ class _$CurrentUser extends CurrentUser {
   @override
   final bool twoFactorAuthEnabled;
   @override
-  final DateTime twoFactorAuthEnabledDate;
+  final DateTime? twoFactorAuthEnabledDate;
   @override
   final bool unsubscribe;
   @override
@@ -149,7 +149,7 @@ class _$CurrentUser extends CurrentUser {
       required this.steamId,
       required this.tags,
       required this.twoFactorAuthEnabled,
-      required this.twoFactorAuthEnabledDate,
+      this.twoFactorAuthEnabledDate,
       required this.unsubscribe,
       required this.userIcon,
       required this.username})
@@ -219,8 +219,6 @@ class _$CurrentUser extends CurrentUser {
     BuiltValueNullFieldError.checkNotNull(tags, 'CurrentUser', 'tags');
     BuiltValueNullFieldError.checkNotNull(
         twoFactorAuthEnabled, 'CurrentUser', 'twoFactorAuthEnabled');
-    BuiltValueNullFieldError.checkNotNull(
-        twoFactorAuthEnabledDate, 'CurrentUser', 'twoFactorAuthEnabledDate');
     BuiltValueNullFieldError.checkNotNull(
         unsubscribe, 'CurrentUser', 'unsubscribe');
     BuiltValueNullFieldError.checkNotNull(userIcon, 'CurrentUser', 'userIcon');
@@ -740,7 +738,7 @@ class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
               steamId: BuiltValueNullFieldError.checkNotNull(steamId, 'CurrentUser', 'steamId'),
               tags: tags.build(),
               twoFactorAuthEnabled: BuiltValueNullFieldError.checkNotNull(twoFactorAuthEnabled, 'CurrentUser', 'twoFactorAuthEnabled'),
-              twoFactorAuthEnabledDate: BuiltValueNullFieldError.checkNotNull(twoFactorAuthEnabledDate, 'CurrentUser', 'twoFactorAuthEnabledDate'),
+              twoFactorAuthEnabledDate: twoFactorAuthEnabledDate,
               unsubscribe: BuiltValueNullFieldError.checkNotNull(unsubscribe, 'CurrentUser', 'unsubscribe'),
               userIcon: BuiltValueNullFieldError.checkNotNull(userIcon, 'CurrentUser', 'userIcon'),
               username: BuiltValueNullFieldError.checkNotNull(username, 'CurrentUser', 'username'));

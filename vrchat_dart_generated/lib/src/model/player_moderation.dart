@@ -42,7 +42,7 @@ abstract class PlayerModeration
 
   @BuiltValueField(wireName: r'type')
   PlayerModerationType get type;
-  // enum typeEnum {  mute,  unmute,  block,  unblock,  hideAvatar,  showAvatar,  };
+  // enum typeEnum {  mute,  unmute,  block,  unblock,  hideAvatar,  showAvatar,  interactOn,  interactOff,  };
 
   PlayerModeration._();
 

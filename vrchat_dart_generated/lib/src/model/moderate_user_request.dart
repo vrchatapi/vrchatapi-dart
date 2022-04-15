@@ -21,7 +21,7 @@ abstract class ModerateUserRequest
 
   @BuiltValueField(wireName: r'type')
   PlayerModerationType get type;
-  // enum typeEnum {  mute,  unmute,  block,  unblock,  hideAvatar,  showAvatar,  };
+  // enum typeEnum {  mute,  unmute,  block,  unblock,  hideAvatar,  showAvatar,  interactOn,  interactOff,  };
 
   ModerateUserRequest._();
 
