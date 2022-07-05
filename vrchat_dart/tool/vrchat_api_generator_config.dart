@@ -1,4 +1,3 @@
-// Package imports:
 import 'package:openapi_generator_annotations/openapi_generator_annotations.dart';
 
 @Openapi(
@@ -13,7 +12,7 @@ import 'package:openapi_generator_annotations/openapi_generator_annotations.dart
     dateLibrary: DioDateLibrary.core,
   ),
   inputSpecFile: 'https://vrchatapi.github.io/specification/openapi.yaml',
-  generatorName: Generator.dioNext,
+  generatorName: Generator.dio,
   outputDirectory: '../vrchat_dart_generated',
 )
 
