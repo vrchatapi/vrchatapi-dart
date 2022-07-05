@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'subscription.g.dart';
 
-/// Subscription
+///
 ///
 /// Properties:
 /// * [id]

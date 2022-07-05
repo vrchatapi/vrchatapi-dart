@@ -16,7 +16,7 @@ part 'update_avatar_request.g.dart';
 /// * [id]
 /// * [name]
 /// * [description]
-/// * [tags]
+/// * [tags] -
 /// * [imageUrl]
 /// * [releaseStatus]
 /// * [version]
@@ -35,6 +35,7 @@ abstract class UpdateAvatarRequest
   @BuiltValueField(wireName: r'description')
   String? get description;
 
+  ///
   @BuiltValueField(wireName: r'tags')
   BuiltList<String>? get tags;
 

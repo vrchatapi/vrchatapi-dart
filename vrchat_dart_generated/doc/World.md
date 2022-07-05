@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **publicOccupants** | **int** |  | [optional] [default to 0]
 **publicationDate** | **String** |  | 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | 
-**tags** | **BuiltList&lt;String&gt;** |  | 
+**tags** | **BuiltList&lt;String&gt;** |   | 
 **thumbnailImageUrl** | **String** |  | 
 **unityPackageUrlObject** | [**JsonObject**](.md) |  | 
 **unityPackages** | [**BuiltList&lt;UnityPackage&gt;**](UnityPackage.md) | Empty if unauthenticated. | 

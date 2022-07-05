@@ -16,7 +16,7 @@ part 'update_user_request.g.dart';
 /// * [email]
 /// * [birthday]
 /// * [acceptedTOSVersion]
-/// * [tags]
+/// * [tags] -
 /// * [status]
 /// * [statusDescription]
 /// * [bio]
@@ -33,6 +33,7 @@ abstract class UpdateUserRequest
   @BuiltValueField(wireName: r'acceptedTOSVersion')
   num? get acceptedTOSVersion;
 
+  ///
   @BuiltValueField(wireName: r'tags')
   BuiltList<String>? get tags;
 

@@ -10,19 +10,19 @@ import 'package:built_value/serializer.dart';
 
 part 'info_push.g.dart';
 
-/// InfoPush
+///
 ///
 /// Properties:
 /// * [id]
 /// * [isEnabled]
 /// * [releaseStatus]
 /// * [priority]
-/// * [tags]
+/// * [tags] -
 /// * [data]
 /// * [hash] - Unknown usage, MD5
 /// * [createdAt]
 /// * [updatedAt]
-/// * [startDate]
+/// * [startDate] -
 /// * [endDate]
 abstract class InfoPush implements Built<InfoPush, InfoPushBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -38,6 +38,7 @@ abstract class InfoPush implements Built<InfoPush, InfoPushBuilder> {
   @BuiltValueField(wireName: r'priority')
   int get priority;
 
+  ///
   @BuiltValueField(wireName: r'tags')
   BuiltList<String> get tags;
 
@@ -54,6 +55,7 @@ abstract class InfoPush implements Built<InfoPush, InfoPushBuilder> {
   @BuiltValueField(wireName: r'updatedAt')
   DateTime get updatedAt;
 
+  ///
   @BuiltValueField(wireName: r'startDate')
   DateTime? get startDate;
 

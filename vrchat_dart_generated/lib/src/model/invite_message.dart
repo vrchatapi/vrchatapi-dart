@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'invite_message.g.dart';
 
-/// InviteMessage
+///
 ///
 /// Properties:
 /// * [canBeUpdated]

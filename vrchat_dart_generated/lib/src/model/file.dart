@@ -10,16 +10,16 @@ import 'package:built_value/serializer.dart';
 
 part 'file.g.dart';
 
-/// File
+///
 ///
 /// Properties:
 /// * [extension_]
 /// * [id]
 /// * [mimeType]
-/// * [name]
+/// * [name] -
 /// * [ownerId] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-/// * [tags]
-/// * [versions]
+/// * [tags] -
+/// * [versions] -
 abstract class File implements Built<File, FileBuilder> {
   @BuiltValueField(wireName: r'extension')
   String get extension_;
@@ -31,6 +31,7 @@ abstract class File implements Built<File, FileBuilder> {
   MIMEType get mimeType;
   // enum mimeTypeEnum {  image/jpeg,  image/jpg,  image/png,  image/webp,  image/gif,  image/bmp,  image/svg＋xml,  image/tiff,  application/x-avatar,  application/x-world,  application/gzip,  application/x-rsync-signature,  application/x-rsync-delta,  application/octet-stream,  };
 
+  ///
   @BuiltValueField(wireName: r'name')
   String get name;
 
@@ -38,9 +39,11 @@ abstract class File implements Built<File, FileBuilder> {
   @BuiltValueField(wireName: r'ownerId')
   String get ownerId;
 
+  ///
   @BuiltValueField(wireName: r'tags')
   BuiltList<String> get tags;
 
+  ///
   @BuiltValueField(wireName: r'versions')
   BuiltSet<FileVersion> get versions;
 

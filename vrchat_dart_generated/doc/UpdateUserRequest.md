@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **email** | **String** |  | [optional] 
 **birthday** | [**Date**](Date.md) |  | [optional] 
 **acceptedTOSVersion** | **num** |  | [optional] 
-**tags** | **BuiltList&lt;String&gt;** |  | [optional] 
+**tags** | **BuiltList&lt;String&gt;** |   | [optional] 
 **status** | [**UserStatus**](UserStatus.md) |  | [optional] 
 **statusDescription** | **String** |  | [optional] 
 **bio** | **String** |  | [optional] 

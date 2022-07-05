@@ -7,7 +7,7 @@ import 'package:built_value/serializer.dart';
 
 part 'transaction_agreement.g.dart';
 
-/// TransactionAgreement
+///
 ///
 /// Properties:
 /// * [agreementId]

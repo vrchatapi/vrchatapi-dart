@@ -9,12 +9,12 @@ import 'package:built_value/serializer.dart';
 
 part 'favorite.g.dart';
 
-/// Favorite
+///
 ///
 /// Properties:
 /// * [favoriteId] - MUST be either AvatarID, UserID or WorldID.
 /// * [id]
-/// * [tags]
+/// * [tags] -
 /// * [type]
 abstract class Favorite implements Built<Favorite, FavoriteBuilder> {
   /// MUST be either AvatarID, UserID or WorldID.
@@ -24,6 +24,7 @@ abstract class Favorite implements Built<Favorite, FavoriteBuilder> {
   @BuiltValueField(wireName: r'id')
   String get id;
 
+  ///
   @BuiltValueField(wireName: r'tags')
   BuiltList<String> get tags;
 

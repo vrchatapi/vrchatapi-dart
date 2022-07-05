@@ -49,7 +49,7 @@ part 'current_user.g.dart';
 /// * [oculusId]
 /// * [offlineFriends]
 /// * [onlineFriends]
-/// * [pastDisplayNames]
+/// * [pastDisplayNames] -
 /// * [profilePicOverride]
 /// * [state]
 /// * [status]
@@ -168,6 +168,7 @@ abstract class CurrentUser implements Built<CurrentUser, CurrentUserBuilder> {
   @BuiltValueField(wireName: r'onlineFriends')
   BuiltList<String>? get onlineFriends;
 
+  ///
   @BuiltValueField(wireName: r'pastDisplayNames')
   BuiltList<PastDisplayName> get pastDisplayNames;
 

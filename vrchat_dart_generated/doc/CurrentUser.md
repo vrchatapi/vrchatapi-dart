@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **oculusId** | **String** |  | 
 **offlineFriends** | **BuiltList&lt;String&gt;** |  | [optional] 
 **onlineFriends** | **BuiltList&lt;String&gt;** |  | [optional] 
-**pastDisplayNames** | [**BuiltList&lt;PastDisplayName&gt;**](PastDisplayName.md) |  | 
+**pastDisplayNames** | [**BuiltList&lt;PastDisplayName&gt;**](PastDisplayName.md) |   | 
 **profilePicOverride** | **String** |  | 
 **state** | [**UserState**](UserState.md) |  | 
 **status** | [**UserStatus**](UserStatus.md) |  | 

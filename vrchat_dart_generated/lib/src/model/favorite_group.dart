@@ -10,7 +10,7 @@ import 'package:built_value/serializer.dart';
 
 part 'favorite_group.g.dart';
 
-/// FavoriteGroup
+///
 ///
 /// Properties:
 /// * [displayName]
@@ -18,7 +18,7 @@ part 'favorite_group.g.dart';
 /// * [name]
 /// * [ownerDisplayName]
 /// * [ownerId] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-/// * [tags]
+/// * [tags] -
 /// * [type]
 /// * [visibility]
 abstract class FavoriteGroup
@@ -39,6 +39,7 @@ abstract class FavoriteGroup
   @BuiltValueField(wireName: r'ownerId')
   String get ownerId;
 
+  ///
   @BuiltValueField(wireName: r'tags')
   BuiltList<String> get tags;
 

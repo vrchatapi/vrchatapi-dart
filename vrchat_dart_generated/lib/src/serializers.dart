@@ -189,28 +189,20 @@ part 'serializers.g.dart';
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(InviteMessage)]),
+        () => ListBuilder<InviteMessage>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Avatar)]),
         () => ListBuilder<Avatar>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Notification)]),
+        () => ListBuilder<Notification>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Subscription)]),
         () => ListBuilder<Subscription>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(UserSubscription)]),
-        () => ListBuilder<UserSubscription>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Transaction)]),
-        () => ListBuilder<Transaction>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(FavoriteGroup)]),
-        () => ListBuilder<FavoriteGroup>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Favorite)]),
-        () => ListBuilder<Favorite>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(File)]),
@@ -221,32 +213,36 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<LimitedUser>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(InviteMessage)]),
-        () => ListBuilder<InviteMessage>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Notification)]),
-        () => ListBuilder<Notification>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Permission)]),
-        () => ListBuilder<Permission>(),
+        const FullType(BuiltList, [FullType(Favorite)]),
+        () => ListBuilder<Favorite>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(PlayerModeration)]),
         () => ListBuilder<PlayerModeration>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(LimitedWorld)]),
+        () => ListBuilder<LimitedWorld>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Transaction)]),
+        () => ListBuilder<Transaction>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(InfoPush)]),
         () => ListBuilder<InfoPush>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(LimitedUser)]),
-        () => ListBuilder<LimitedUser>(),
+        const FullType(BuiltList, [FullType(UserSubscription)]),
+        () => ListBuilder<UserSubscription>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(LimitedWorld)]),
-        () => ListBuilder<LimitedWorld>(),
+        const FullType(BuiltList, [FullType(Permission)]),
+        () => ListBuilder<Permission>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(FavoriteGroup)]),
+        () => ListBuilder<FavoriteGroup>(),
       )
       ..add(const DateSerializer())
       ..add(Iso8601DateTimeSerializer()))

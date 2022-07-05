@@ -10,7 +10,7 @@ import 'package:built_value/serializer.dart';
 
 part 'limited_user.g.dart';
 
-/// LimitedUser
+///
 ///
 /// Properties:
 /// * [bio]

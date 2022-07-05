@@ -7,12 +7,13 @@ import 'package:built_value/serializer.dart';
 
 part 'file_upload_url.g.dart';
 
-/// FileUploadURL
+///
 ///
 /// Properties:
-/// * [url]
+/// * [url] -
 abstract class FileUploadURL
     implements Built<FileUploadURL, FileUploadURLBuilder> {
+  ///
   @BuiltValueField(wireName: r'url')
   String get url;
 

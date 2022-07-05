@@ -11,7 +11,7 @@ import 'package:built_value/serializer.dart';
 
 part 'world.g.dart';
 
-/// World
+///
 ///
 /// Properties:
 /// * [assetUrl] - Empty if unauthenticated.
@@ -39,7 +39,7 @@ part 'world.g.dart';
 /// * [publicOccupants]
 /// * [publicationDate]
 /// * [releaseStatus]
-/// * [tags]
+/// * [tags] -
 /// * [thumbnailImageUrl]
 /// * [unityPackageUrlObject]
 /// * [unityPackages] - Empty if unauthenticated.
@@ -126,6 +126,7 @@ abstract class World implements Built<World, WorldBuilder> {
   ReleaseStatus get releaseStatus;
   // enum releaseStatusEnum {  public,  private,  hidden,  };
 
+  ///
   @BuiltValueField(wireName: r'tags')
   BuiltList<String> get tags;
 

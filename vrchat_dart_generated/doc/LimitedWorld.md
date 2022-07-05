@@ -23,9 +23,9 @@ Name | Type | Description | Notes
 **popularity** | **int** |  | [default to 0]
 **publicationDate** | **String** |  | 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | 
-**tags** | **BuiltList&lt;String&gt;** |  | 
+**tags** | **BuiltList&lt;String&gt;** |   | 
 **thumbnailImageUrl** | **String** |  | 
-**unityPackages** | [**BuiltList&lt;LimitedUnityPackage&gt;**](LimitedUnityPackage.md) |  | 
+**unityPackages** | [**BuiltList&lt;LimitedUnityPackage&gt;**](LimitedUnityPackage.md) |   | 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

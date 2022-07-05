@@ -16,7 +16,7 @@ part 'create_avatar_request.g.dart';
 /// * [id]
 /// * [name]
 /// * [description]
-/// * [tags]
+/// * [tags] -
 /// * [imageUrl]
 /// * [releaseStatus]
 /// * [version]
@@ -35,6 +35,7 @@ abstract class CreateAvatarRequest
   @BuiltValueField(wireName: r'description')
   String? get description;
 
+  ///
   @BuiltValueField(wireName: r'tags')
   BuiltList<String>? get tags;
 

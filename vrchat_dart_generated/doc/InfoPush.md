@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **isEnabled** | **bool** |  | [default to true]
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | 
 **priority** | **int** |  | 
-**tags** | **BuiltList&lt;String&gt;** |  | 
+**tags** | **BuiltList&lt;String&gt;** |   | 
 **data** | [**InfoPushData**](InfoPushData.md) |  | 
 **hash** | **String** | Unknown usage, MD5 | 
 **createdAt** | [**DateTime**](DateTime.md) |  | 

@@ -34,7 +34,7 @@ part 'user.g.dart';
 /// * [state]
 /// * [status]
 /// * [statusDescription]
-/// * [tags]
+/// * [tags] -
 /// * [userIcon]
 /// * [username] - A users unique name, used during login. This is different from `displayName` which is what shows up in-game. A users `username` can never be changed.
 /// * [worldId] - WorldID be \"offline\" on User profiles if you are not friends with that user.
@@ -108,6 +108,7 @@ abstract class User implements Built<User, UserBuilder> {
   @BuiltValueField(wireName: r'statusDescription')
   String get statusDescription;
 
+  ///
   @BuiltValueField(wireName: r'tags')
   BuiltList<String> get tags;
 

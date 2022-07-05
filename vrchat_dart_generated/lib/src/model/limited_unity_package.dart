@@ -7,7 +7,7 @@ import 'package:built_value/serializer.dart';
 
 part 'limited_unity_package.g.dart';
 
-/// LimitedUnityPackage
+///
 ///
 /// Properties:
 /// * [platform] - This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.

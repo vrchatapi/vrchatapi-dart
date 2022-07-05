@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'permission.g.dart';
 
-/// Permission
+///
 ///
 /// Properties:
 /// * [id]

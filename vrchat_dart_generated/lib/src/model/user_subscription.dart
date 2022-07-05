@@ -10,7 +10,7 @@ import 'package:built_value/serializer.dart';
 
 part 'user_subscription.g.dart';
 
-/// UserSubscription
+///
 ///
 /// Properties:
 /// * [id]

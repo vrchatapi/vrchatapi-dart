@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'finish_file_data_upload_request.g.dart';
 
-/// FinishFileDataUploadRequest
+///
 ///
 /// Properties:
 /// * [etags] - Array of ETags uploaded.

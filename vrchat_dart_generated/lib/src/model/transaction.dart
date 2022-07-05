@@ -11,7 +11,7 @@ import 'package:built_value/serializer.dart';
 
 part 'transaction.g.dart';
 
-/// Transaction
+///
 ///
 /// Properties:
 /// * [id]

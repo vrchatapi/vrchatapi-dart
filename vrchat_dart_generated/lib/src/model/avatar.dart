@@ -12,7 +12,7 @@ import 'package:built_value/serializer.dart';
 
 part 'avatar.g.dart';
 
-/// Avatar
+///
 ///
 /// Properties:
 /// * [assetUrl] - Not present from general serach `/avatars`, only on specific requests `/avatars/{avatarId}`.
@@ -26,7 +26,7 @@ part 'avatar.g.dart';
 /// * [imageUrl]
 /// * [name]
 /// * [releaseStatus]
-/// * [tags]
+/// * [tags] -
 /// * [thumbnailImageUrl]
 /// * [unityPackageUrl]
 /// * [unityPackageUrlObject]
@@ -71,6 +71,7 @@ abstract class Avatar implements Built<Avatar, AvatarBuilder> {
   ReleaseStatus get releaseStatus;
   // enum releaseStatusEnum {  public,  private,  hidden,  };
 
+  ///
   @BuiltValueField(wireName: r'tags')
   BuiltList<String> get tags;
 

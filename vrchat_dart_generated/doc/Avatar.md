@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **imageUrl** | **String** |  | 
 **name** | **String** |  | 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | 
-**tags** | **BuiltList&lt;String&gt;** |  | 
+**tags** | **BuiltList&lt;String&gt;** |   | 
 **thumbnailImageUrl** | **String** |  | 
 **unityPackageUrl** | **String** |  | 
 **unityPackageUrlObject** | [**AvatarUnityPackageUrlObject**](AvatarUnityPackageUrlObject.md) |  | 

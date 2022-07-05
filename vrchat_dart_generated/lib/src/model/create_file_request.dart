@@ -15,7 +15,7 @@ part 'create_file_request.g.dart';
 /// * [name]
 /// * [mimeType]
 /// * [extension_]
-/// * [tags]
+/// * [tags] -
 abstract class CreateFileRequest
     implements Built<CreateFileRequest, CreateFileRequestBuilder> {
   @BuiltValueField(wireName: r'name')
@@ -28,6 +28,7 @@ abstract class CreateFileRequest
   @BuiltValueField(wireName: r'extension')
   String get extension_;
 
+  ///
   @BuiltValueField(wireName: r'tags')
   BuiltList<String>? get tags;
 

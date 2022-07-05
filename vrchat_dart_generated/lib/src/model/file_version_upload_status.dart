@@ -9,7 +9,7 @@ import 'package:built_value/serializer.dart';
 
 part 'file_version_upload_status.g.dart';
 
-/// FileVersionUploadStatus
+///
 ///
 /// Properties:
 /// * [uploadId]

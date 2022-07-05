@@ -382,7 +382,7 @@ class PlayermoderationApi {
   /// Moderate a user, e.g. unmute them or show their avatar.  Please see the [Player Moderation docs](https://vrchatapi.github.io/docs/api/#tag--playermoderation) on what playerModerations are, and how they differ from staff moderations.
   ///
   /// Parameters:
-  /// * [moderateUserRequest]
+  /// * [moderateUserRequest] -
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request

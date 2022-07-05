@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **state** | [**UserState**](UserState.md) |  | 
 **status** | [**UserStatus**](UserStatus.md) |  | 
 **statusDescription** | **String** |  | 
-**tags** | **BuiltList&lt;String&gt;** |  | 
+**tags** | **BuiltList&lt;String&gt;** |   | 
 **userIcon** | **String** |  | 
 **username** | **String** | A users unique name, used during login. This is different from `displayName` which is what shows up in-game. A users `username` can never be changed. | 
 **worldId** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | [optional] 

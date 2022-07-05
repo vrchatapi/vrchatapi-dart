@@ -9,7 +9,7 @@ import 'package:built_value/serializer.dart';
 
 part 'license_group.g.dart';
 
-/// LicenseGroup
+///
 ///
 /// Properties:
 /// * [id]

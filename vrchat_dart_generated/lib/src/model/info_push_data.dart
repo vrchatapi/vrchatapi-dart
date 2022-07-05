@@ -10,7 +10,7 @@ import 'package:built_value/serializer.dart';
 
 part 'info_push_data.g.dart';
 
-/// InfoPushData
+///
 ///
 /// Properties:
 /// * [contentList]

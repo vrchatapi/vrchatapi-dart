@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'unity_package.g.dart';
 
-/// UnityPackage
+///
 ///
 /// Properties:
 /// * [assetUrl]

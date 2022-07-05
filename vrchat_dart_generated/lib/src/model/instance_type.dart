@@ -9,12 +9,19 @@ import 'package:built_value/serializer.dart';
 part 'instance_type.g.dart';
 
 class InstanceType extends EnumClass {
+  ///
   @BuiltValueEnumConst(wireName: r'public')
   static const InstanceType public = _$public;
+
+  ///
   @BuiltValueEnumConst(wireName: r'hidden')
   static const InstanceType hidden = _$hidden;
+
+  ///
   @BuiltValueEnumConst(wireName: r'friends')
   static const InstanceType friends = _$friends;
+
+  ///
   @BuiltValueEnumConst(wireName: r'private')
   static const InstanceType private = _$private;
 

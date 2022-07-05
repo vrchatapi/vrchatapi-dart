@@ -9,7 +9,7 @@ import 'package:built_value/serializer.dart';
 
 part 'file_data.g.dart';
 
-/// FileData
+///
 ///
 /// Properties:
 /// * [category]

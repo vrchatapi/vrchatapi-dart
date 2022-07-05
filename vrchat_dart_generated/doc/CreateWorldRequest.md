@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **platform** | **String** | This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`. | [optional] 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | [optional] 
-**tags** | **BuiltList&lt;String&gt;** |  | [optional] 
+**tags** | **BuiltList&lt;String&gt;** |   | [optional] 
 **unityPackageUrl** | **String** |  | [optional] 
 **unityVersion** | **String** |  | [optional] [default to '5.3.4p1']
 

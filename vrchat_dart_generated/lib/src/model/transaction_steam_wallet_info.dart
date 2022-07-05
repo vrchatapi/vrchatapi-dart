@@ -7,7 +7,7 @@ import 'package:built_value/serializer.dart';
 
 part 'transaction_steam_wallet_info.g.dart';
 
-/// TransactionSteamWalletInfo
+///
 ///
 /// Properties:
 /// * [state]

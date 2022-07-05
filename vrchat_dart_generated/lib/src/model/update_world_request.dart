@@ -22,7 +22,7 @@ part 'update_world_request.g.dart';
 /// * [name]
 /// * [platform] - This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
 /// * [releaseStatus]
-/// * [tags]
+/// * [tags] -
 /// * [unityPackageUrl]
 /// * [unityVersion]
 abstract class UpdateWorldRequest
@@ -60,6 +60,7 @@ abstract class UpdateWorldRequest
   ReleaseStatus? get releaseStatus;
   // enum releaseStatusEnum {  public,  private,  hidden,  };
 
+  ///
   @BuiltValueField(wireName: r'tags')
   BuiltList<String>? get tags;
 

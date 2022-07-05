@@ -9,12 +9,19 @@ import 'package:built_value/serializer.dart';
 part 'invite_message_type.g.dart';
 
 class InviteMessageType extends EnumClass {
+  ///
   @BuiltValueEnumConst(wireName: r'message')
   static const InviteMessageType message = _$message;
+
+  ///
   @BuiltValueEnumConst(wireName: r'response')
   static const InviteMessageType response = _$response;
+
+  ///
   @BuiltValueEnumConst(wireName: r'request')
   static const InviteMessageType request = _$request;
+
+  ///
   @BuiltValueEnumConst(wireName: r'requestResponse')
   static const InviteMessageType requestResponse = _$requestResponse;
 
