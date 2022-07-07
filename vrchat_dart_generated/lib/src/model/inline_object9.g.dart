@@ -15,7 +15,7 @@ class _$InlineObject9 extends InlineObject9 {
   final BuiltList<String>? tags;
 
   factory _$InlineObject9([void Function(InlineObject9Builder)? updates]) =>
-      (new InlineObject9Builder()..update(updates)).build();
+      (new InlineObject9Builder()..update(updates))._build();
 
   _$InlineObject9._({this.displayName, this.visibility, this.tags}) : super._();
 
@@ -43,7 +43,7 @@ class _$InlineObject9 extends InlineObject9 {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InlineObject9')
+    return (newBuiltValueToStringHelper(r'InlineObject9')
           ..add('displayName', displayName)
           ..add('visibility', visibility)
           ..add('tags', tags))
@@ -95,7 +95,9 @@ class InlineObject9Builder
   }
 
   @override
-  _$InlineObject9 build() {
+  InlineObject9 build() => _build();
+
+  _$InlineObject9 _build() {
     _$InlineObject9 _$result;
     try {
       _$result = _$v ??
@@ -110,7 +112,7 @@ class InlineObject9Builder
         _tags?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'InlineObject9', _$failedField, e.toString());
+            r'InlineObject9', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -119,4 +121,4 @@ class InlineObject9Builder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

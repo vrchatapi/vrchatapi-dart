@@ -44,7 +44,7 @@ class _$TransactionAgreement extends TransactionAgreement {
 
   factory _$TransactionAgreement(
           [void Function(TransactionAgreementBuilder)? updates]) =>
-      (new TransactionAgreementBuilder()..update(updates)).build();
+      (new TransactionAgreementBuilder()..update(updates))._build();
 
   _$TransactionAgreement._(
       {required this.agreementId,
@@ -66,39 +66,39 @@ class _$TransactionAgreement extends TransactionAgreement {
       required this.failedAttempts})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        agreementId, 'TransactionAgreement', 'agreementId');
+        agreementId, r'TransactionAgreement', 'agreementId');
     BuiltValueNullFieldError.checkNotNull(
-        itemId, 'TransactionAgreement', 'itemId');
+        itemId, r'TransactionAgreement', 'itemId');
     BuiltValueNullFieldError.checkNotNull(
-        status, 'TransactionAgreement', 'status');
+        status, r'TransactionAgreement', 'status');
     BuiltValueNullFieldError.checkNotNull(
-        period, 'TransactionAgreement', 'period');
+        period, r'TransactionAgreement', 'period');
     BuiltValueNullFieldError.checkNotNull(
-        frequency, 'TransactionAgreement', 'frequency');
+        frequency, r'TransactionAgreement', 'frequency');
     BuiltValueNullFieldError.checkNotNull(
-        billingType, 'TransactionAgreement', 'billingType');
+        billingType, r'TransactionAgreement', 'billingType');
     BuiltValueNullFieldError.checkNotNull(
-        startDate, 'TransactionAgreement', 'startDate');
+        startDate, r'TransactionAgreement', 'startDate');
     BuiltValueNullFieldError.checkNotNull(
-        endDate, 'TransactionAgreement', 'endDate');
+        endDate, r'TransactionAgreement', 'endDate');
     BuiltValueNullFieldError.checkNotNull(
-        recurringAmt, 'TransactionAgreement', 'recurringAmt');
+        recurringAmt, r'TransactionAgreement', 'recurringAmt');
     BuiltValueNullFieldError.checkNotNull(
-        currency, 'TransactionAgreement', 'currency');
+        currency, r'TransactionAgreement', 'currency');
     BuiltValueNullFieldError.checkNotNull(
-        timeCreated, 'TransactionAgreement', 'timeCreated');
+        timeCreated, r'TransactionAgreement', 'timeCreated');
     BuiltValueNullFieldError.checkNotNull(
-        nextPayment, 'TransactionAgreement', 'nextPayment');
+        nextPayment, r'TransactionAgreement', 'nextPayment');
     BuiltValueNullFieldError.checkNotNull(
-        lastPayment, 'TransactionAgreement', 'lastPayment');
+        lastPayment, r'TransactionAgreement', 'lastPayment');
     BuiltValueNullFieldError.checkNotNull(
-        lastAmount, 'TransactionAgreement', 'lastAmount');
+        lastAmount, r'TransactionAgreement', 'lastAmount');
     BuiltValueNullFieldError.checkNotNull(
-        lastAmountVat, 'TransactionAgreement', 'lastAmountVat');
+        lastAmountVat, r'TransactionAgreement', 'lastAmountVat');
     BuiltValueNullFieldError.checkNotNull(
-        outstanding, 'TransactionAgreement', 'outstanding');
+        outstanding, r'TransactionAgreement', 'outstanding');
     BuiltValueNullFieldError.checkNotNull(
-        failedAttempts, 'TransactionAgreement', 'failedAttempts');
+        failedAttempts, r'TransactionAgreement', 'failedAttempts');
   }
 
   @override
@@ -177,7 +177,7 @@ class _$TransactionAgreement extends TransactionAgreement {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('TransactionAgreement')
+    return (newBuiltValueToStringHelper(r'TransactionAgreement')
           ..add('agreementId', agreementId)
           ..add('itemId', itemId)
           ..add('status', status)
@@ -314,38 +314,40 @@ class TransactionAgreementBuilder
   }
 
   @override
-  _$TransactionAgreement build() {
+  TransactionAgreement build() => _build();
+
+  _$TransactionAgreement _build() {
     final _$result = _$v ??
         new _$TransactionAgreement._(
             agreementId: BuiltValueNullFieldError.checkNotNull(
-                agreementId, 'TransactionAgreement', 'agreementId'),
+                agreementId, r'TransactionAgreement', 'agreementId'),
             itemId: BuiltValueNullFieldError.checkNotNull(
-                itemId, 'TransactionAgreement', 'itemId'),
+                itemId, r'TransactionAgreement', 'itemId'),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, 'TransactionAgreement', 'status'),
+                status, r'TransactionAgreement', 'status'),
             period: BuiltValueNullFieldError.checkNotNull(
-                period, 'TransactionAgreement', 'period'),
+                period, r'TransactionAgreement', 'period'),
             frequency: BuiltValueNullFieldError.checkNotNull(
-                frequency, 'TransactionAgreement', 'frequency'),
+                frequency, r'TransactionAgreement', 'frequency'),
             billingType: BuiltValueNullFieldError.checkNotNull(
-                billingType, 'TransactionAgreement', 'billingType'),
+                billingType, r'TransactionAgreement', 'billingType'),
             startDate: BuiltValueNullFieldError.checkNotNull(
-                startDate, 'TransactionAgreement', 'startDate'),
+                startDate, r'TransactionAgreement', 'startDate'),
             endDate: BuiltValueNullFieldError.checkNotNull(
-                endDate, 'TransactionAgreement', 'endDate'),
+                endDate, r'TransactionAgreement', 'endDate'),
             recurringAmt: BuiltValueNullFieldError.checkNotNull(
-                recurringAmt, 'TransactionAgreement', 'recurringAmt'),
-            currency: BuiltValueNullFieldError.checkNotNull(currency, 'TransactionAgreement', 'currency'),
-            timeCreated: BuiltValueNullFieldError.checkNotNull(timeCreated, 'TransactionAgreement', 'timeCreated'),
-            nextPayment: BuiltValueNullFieldError.checkNotNull(nextPayment, 'TransactionAgreement', 'nextPayment'),
-            lastPayment: BuiltValueNullFieldError.checkNotNull(lastPayment, 'TransactionAgreement', 'lastPayment'),
-            lastAmount: BuiltValueNullFieldError.checkNotNull(lastAmount, 'TransactionAgreement', 'lastAmount'),
-            lastAmountVat: BuiltValueNullFieldError.checkNotNull(lastAmountVat, 'TransactionAgreement', 'lastAmountVat'),
-            outstanding: BuiltValueNullFieldError.checkNotNull(outstanding, 'TransactionAgreement', 'outstanding'),
-            failedAttempts: BuiltValueNullFieldError.checkNotNull(failedAttempts, 'TransactionAgreement', 'failedAttempts'));
+                recurringAmt, r'TransactionAgreement', 'recurringAmt'),
+            currency: BuiltValueNullFieldError.checkNotNull(currency, r'TransactionAgreement', 'currency'),
+            timeCreated: BuiltValueNullFieldError.checkNotNull(timeCreated, r'TransactionAgreement', 'timeCreated'),
+            nextPayment: BuiltValueNullFieldError.checkNotNull(nextPayment, r'TransactionAgreement', 'nextPayment'),
+            lastPayment: BuiltValueNullFieldError.checkNotNull(lastPayment, r'TransactionAgreement', 'lastPayment'),
+            lastAmount: BuiltValueNullFieldError.checkNotNull(lastAmount, r'TransactionAgreement', 'lastAmount'),
+            lastAmountVat: BuiltValueNullFieldError.checkNotNull(lastAmountVat, r'TransactionAgreement', 'lastAmountVat'),
+            outstanding: BuiltValueNullFieldError.checkNotNull(outstanding, r'TransactionAgreement', 'outstanding'),
+            failedAttempts: BuiltValueNullFieldError.checkNotNull(failedAttempts, r'TransactionAgreement', 'failedAttempts'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

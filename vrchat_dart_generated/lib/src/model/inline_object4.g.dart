@@ -17,7 +17,7 @@ class _$InlineObject4 extends InlineObject4 {
   final num? fileSizeInBytes;
 
   factory _$InlineObject4([void Function(InlineObject4Builder)? updates]) =>
-      (new InlineObject4Builder()..update(updates)).build();
+      (new InlineObject4Builder()..update(updates))._build();
 
   _$InlineObject4._(
       {required this.signatureMd5,
@@ -26,9 +26,9 @@ class _$InlineObject4 extends InlineObject4 {
       this.fileSizeInBytes})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        signatureMd5, 'InlineObject4', 'signatureMd5');
+        signatureMd5, r'InlineObject4', 'signatureMd5');
     BuiltValueNullFieldError.checkNotNull(
-        signatureSizeInBytes, 'InlineObject4', 'signatureSizeInBytes');
+        signatureSizeInBytes, r'InlineObject4', 'signatureSizeInBytes');
   }
 
   @override
@@ -58,7 +58,7 @@ class _$InlineObject4 extends InlineObject4 {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InlineObject4')
+    return (newBuiltValueToStringHelper(r'InlineObject4')
           ..add('signatureMd5', signatureMd5)
           ..add('signatureSizeInBytes', signatureSizeInBytes)
           ..add('fileMd5', fileMd5)
@@ -117,13 +117,15 @@ class InlineObject4Builder
   }
 
   @override
-  _$InlineObject4 build() {
+  InlineObject4 build() => _build();
+
+  _$InlineObject4 _build() {
     final _$result = _$v ??
         new _$InlineObject4._(
             signatureMd5: BuiltValueNullFieldError.checkNotNull(
-                signatureMd5, 'InlineObject4', 'signatureMd5'),
+                signatureMd5, r'InlineObject4', 'signatureMd5'),
             signatureSizeInBytes: BuiltValueNullFieldError.checkNotNull(
-                signatureSizeInBytes, 'InlineObject4', 'signatureSizeInBytes'),
+                signatureSizeInBytes, r'InlineObject4', 'signatureSizeInBytes'),
             fileMd5: fileMd5,
             fileSizeInBytes: fileSizeInBytes);
     replace(_$result);
@@ -131,4 +133,4 @@ class InlineObject4Builder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

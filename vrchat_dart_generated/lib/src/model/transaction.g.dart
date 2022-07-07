@@ -27,7 +27,7 @@ class _$Transaction extends Transaction {
   final String error;
 
   factory _$Transaction([void Function(TransactionBuilder)? updates]) =>
-      (new TransactionBuilder()..update(updates)).build();
+      (new TransactionBuilder()..update(updates))._build();
 
   _$Transaction._(
       {required this.id,
@@ -40,16 +40,16 @@ class _$Transaction extends Transaction {
       this.agreement,
       required this.error})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, 'Transaction', 'id');
-    BuiltValueNullFieldError.checkNotNull(status, 'Transaction', 'status');
+    BuiltValueNullFieldError.checkNotNull(id, r'Transaction', 'id');
+    BuiltValueNullFieldError.checkNotNull(status, r'Transaction', 'status');
     BuiltValueNullFieldError.checkNotNull(
-        subscription, 'Transaction', 'subscription');
-    BuiltValueNullFieldError.checkNotNull(sandbox, 'Transaction', 'sandbox');
+        subscription, r'Transaction', 'subscription');
+    BuiltValueNullFieldError.checkNotNull(sandbox, r'Transaction', 'sandbox');
     BuiltValueNullFieldError.checkNotNull(
-        createdAt, 'Transaction', 'createdAt');
+        createdAt, r'Transaction', 'createdAt');
     BuiltValueNullFieldError.checkNotNull(
-        updatedAt, 'Transaction', 'updatedAt');
-    BuiltValueNullFieldError.checkNotNull(error, 'Transaction', 'error');
+        updatedAt, r'Transaction', 'updatedAt');
+    BuiltValueNullFieldError.checkNotNull(error, r'Transaction', 'error');
   }
 
   @override
@@ -94,7 +94,7 @@ class _$Transaction extends Transaction {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Transaction')
+    return (newBuiltValueToStringHelper(r'Transaction')
           ..add('id', id)
           ..add('status', status)
           ..add('subscription', subscription)
@@ -185,26 +185,28 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
   }
 
   @override
-  _$Transaction build() {
+  Transaction build() => _build();
+
+  _$Transaction _build() {
     _$Transaction _$result;
     try {
       _$result = _$v ??
           new _$Transaction._(
               id: BuiltValueNullFieldError.checkNotNull(
-                  id, 'Transaction', 'id'),
+                  id, r'Transaction', 'id'),
               status: BuiltValueNullFieldError.checkNotNull(
-                  status, 'Transaction', 'status'),
+                  status, r'Transaction', 'status'),
               subscription: subscription.build(),
               sandbox: BuiltValueNullFieldError.checkNotNull(
-                  sandbox, 'Transaction', 'sandbox'),
+                  sandbox, r'Transaction', 'sandbox'),
               createdAt: BuiltValueNullFieldError.checkNotNull(
-                  createdAt, 'Transaction', 'createdAt'),
+                  createdAt, r'Transaction', 'createdAt'),
               updatedAt: BuiltValueNullFieldError.checkNotNull(
-                  updatedAt, 'Transaction', 'updatedAt'),
+                  updatedAt, r'Transaction', 'updatedAt'),
               steam: _steam?.build(),
               agreement: _agreement?.build(),
               error: BuiltValueNullFieldError.checkNotNull(
-                  error, 'Transaction', 'error'));
+                  error, r'Transaction', 'error'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -217,7 +219,7 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
         _agreement?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'Transaction', _$failedField, e.toString());
+            r'Transaction', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -226,4 +228,4 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

@@ -18,7 +18,7 @@ class _$TransactionSteamWalletInfo extends TransactionSteamWalletInfo {
 
   factory _$TransactionSteamWalletInfo(
           [void Function(TransactionSteamWalletInfoBuilder)? updates]) =>
-      (new TransactionSteamWalletInfoBuilder()..update(updates)).build();
+      (new TransactionSteamWalletInfoBuilder()..update(updates))._build();
 
   _$TransactionSteamWalletInfo._(
       {required this.state,
@@ -27,13 +27,13 @@ class _$TransactionSteamWalletInfo extends TransactionSteamWalletInfo {
       required this.status})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        state, 'TransactionSteamWalletInfo', 'state');
+        state, r'TransactionSteamWalletInfo', 'state');
     BuiltValueNullFieldError.checkNotNull(
-        country, 'TransactionSteamWalletInfo', 'country');
+        country, r'TransactionSteamWalletInfo', 'country');
     BuiltValueNullFieldError.checkNotNull(
-        currency, 'TransactionSteamWalletInfo', 'currency');
+        currency, r'TransactionSteamWalletInfo', 'currency');
     BuiltValueNullFieldError.checkNotNull(
-        status, 'TransactionSteamWalletInfo', 'status');
+        status, r'TransactionSteamWalletInfo', 'status');
   }
 
   @override
@@ -64,7 +64,7 @@ class _$TransactionSteamWalletInfo extends TransactionSteamWalletInfo {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('TransactionSteamWalletInfo')
+    return (newBuiltValueToStringHelper(r'TransactionSteamWalletInfo')
           ..add('state', state)
           ..add('country', country)
           ..add('currency', currency)
@@ -122,20 +122,22 @@ class TransactionSteamWalletInfoBuilder
   }
 
   @override
-  _$TransactionSteamWalletInfo build() {
+  TransactionSteamWalletInfo build() => _build();
+
+  _$TransactionSteamWalletInfo _build() {
     final _$result = _$v ??
         new _$TransactionSteamWalletInfo._(
             state: BuiltValueNullFieldError.checkNotNull(
-                state, 'TransactionSteamWalletInfo', 'state'),
+                state, r'TransactionSteamWalletInfo', 'state'),
             country: BuiltValueNullFieldError.checkNotNull(
-                country, 'TransactionSteamWalletInfo', 'country'),
+                country, r'TransactionSteamWalletInfo', 'country'),
             currency: BuiltValueNullFieldError.checkNotNull(
-                currency, 'TransactionSteamWalletInfo', 'currency'),
+                currency, r'TransactionSteamWalletInfo', 'currency'),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, 'TransactionSteamWalletInfo', 'status'));
+                status, r'TransactionSteamWalletInfo', 'status'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

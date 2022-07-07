@@ -25,7 +25,7 @@ class _$Notification extends Notification {
   final NotificationType type;
 
   factory _$Notification([void Function(NotificationBuilder)? updates]) =>
-      (new NotificationBuilder()..update(updates)).build();
+      (new NotificationBuilder()..update(updates))._build();
 
   _$Notification._(
       {required this.createdAt,
@@ -38,16 +38,16 @@ class _$Notification extends Notification {
       required this.type})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        createdAt, 'Notification', 'createdAt');
-    BuiltValueNullFieldError.checkNotNull(details, 'Notification', 'details');
-    BuiltValueNullFieldError.checkNotNull(id, 'Notification', 'id');
-    BuiltValueNullFieldError.checkNotNull(message, 'Notification', 'message');
-    BuiltValueNullFieldError.checkNotNull(seen, 'Notification', 'seen');
+        createdAt, r'Notification', 'createdAt');
+    BuiltValueNullFieldError.checkNotNull(details, r'Notification', 'details');
+    BuiltValueNullFieldError.checkNotNull(id, r'Notification', 'id');
+    BuiltValueNullFieldError.checkNotNull(message, r'Notification', 'message');
+    BuiltValueNullFieldError.checkNotNull(seen, r'Notification', 'seen');
     BuiltValueNullFieldError.checkNotNull(
-        senderUserId, 'Notification', 'senderUserId');
+        senderUserId, r'Notification', 'senderUserId');
     BuiltValueNullFieldError.checkNotNull(
-        senderUsername, 'Notification', 'senderUsername');
-    BuiltValueNullFieldError.checkNotNull(type, 'Notification', 'type');
+        senderUsername, r'Notification', 'senderUsername');
+    BuiltValueNullFieldError.checkNotNull(type, r'Notification', 'type');
   }
 
   @override
@@ -89,7 +89,7 @@ class _$Notification extends Notification {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Notification')
+    return (newBuiltValueToStringHelper(r'Notification')
           ..add('createdAt', createdAt)
           ..add('details', details)
           ..add('id', id)
@@ -171,27 +171,30 @@ class NotificationBuilder
   }
 
   @override
-  _$Notification build() {
+  Notification build() => _build();
+
+  _$Notification _build() {
     final _$result = _$v ??
         new _$Notification._(
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, 'Notification', 'createdAt'),
+                createdAt, r'Notification', 'createdAt'),
             details: BuiltValueNullFieldError.checkNotNull(
-                details, 'Notification', 'details'),
-            id: BuiltValueNullFieldError.checkNotNull(id, 'Notification', 'id'),
+                details, r'Notification', 'details'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'Notification', 'id'),
             message: BuiltValueNullFieldError.checkNotNull(
-                message, 'Notification', 'message'),
+                message, r'Notification', 'message'),
             seen: BuiltValueNullFieldError.checkNotNull(
-                seen, 'Notification', 'seen'),
+                seen, r'Notification', 'seen'),
             senderUserId: BuiltValueNullFieldError.checkNotNull(
-                senderUserId, 'Notification', 'senderUserId'),
+                senderUserId, r'Notification', 'senderUserId'),
             senderUsername: BuiltValueNullFieldError.checkNotNull(
-                senderUsername, 'Notification', 'senderUsername'),
+                senderUsername, r'Notification', 'senderUsername'),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, 'Notification', 'type'));
+                type, r'Notification', 'type'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

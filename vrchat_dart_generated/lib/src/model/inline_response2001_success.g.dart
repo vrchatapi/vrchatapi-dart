@@ -14,15 +14,15 @@ class _$InlineResponse2001Success extends InlineResponse2001Success {
 
   factory _$InlineResponse2001Success(
           [void Function(InlineResponse2001SuccessBuilder)? updates]) =>
-      (new InlineResponse2001SuccessBuilder()..update(updates)).build();
+      (new InlineResponse2001SuccessBuilder()..update(updates))._build();
 
   _$InlineResponse2001Success._(
       {required this.message, required this.statusCode})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        message, 'InlineResponse2001Success', 'message');
+        message, r'InlineResponse2001Success', 'message');
     BuiltValueNullFieldError.checkNotNull(
-        statusCode, 'InlineResponse2001Success', 'statusCode');
+        statusCode, r'InlineResponse2001Success', 'statusCode');
   }
 
   @override
@@ -49,7 +49,7 @@ class _$InlineResponse2001Success extends InlineResponse2001Success {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InlineResponse2001Success')
+    return (newBuiltValueToStringHelper(r'InlineResponse2001Success')
           ..add('message', message)
           ..add('statusCode', statusCode))
         .toString();
@@ -95,16 +95,18 @@ class InlineResponse2001SuccessBuilder
   }
 
   @override
-  _$InlineResponse2001Success build() {
+  InlineResponse2001Success build() => _build();
+
+  _$InlineResponse2001Success _build() {
     final _$result = _$v ??
         new _$InlineResponse2001Success._(
             message: BuiltValueNullFieldError.checkNotNull(
-                message, 'InlineResponse2001Success', 'message'),
+                message, r'InlineResponse2001Success', 'message'),
             statusCode: BuiltValueNullFieldError.checkNotNull(
-                statusCode, 'InlineResponse2001Success', 'statusCode'));
+                statusCode, r'InlineResponse2001Success', 'statusCode'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

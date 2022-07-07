@@ -23,7 +23,7 @@ class _$InviteMessage extends InviteMessage {
   final DateTime updatedAt;
 
   factory _$InviteMessage([void Function(InviteMessageBuilder)? updates]) =>
-      (new InviteMessageBuilder()..update(updates)).build();
+      (new InviteMessageBuilder()..update(updates))._build();
 
   _$InviteMessage._(
       {required this.canBeUpdated,
@@ -35,16 +35,16 @@ class _$InviteMessage extends InviteMessage {
       required this.updatedAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        canBeUpdated, 'InviteMessage', 'canBeUpdated');
-    BuiltValueNullFieldError.checkNotNull(id, 'InviteMessage', 'id');
-    BuiltValueNullFieldError.checkNotNull(message, 'InviteMessage', 'message');
+        canBeUpdated, r'InviteMessage', 'canBeUpdated');
+    BuiltValueNullFieldError.checkNotNull(id, r'InviteMessage', 'id');
+    BuiltValueNullFieldError.checkNotNull(message, r'InviteMessage', 'message');
     BuiltValueNullFieldError.checkNotNull(
-        messageType, 'InviteMessage', 'messageType');
+        messageType, r'InviteMessage', 'messageType');
     BuiltValueNullFieldError.checkNotNull(
-        remainingCooldownMinutes, 'InviteMessage', 'remainingCooldownMinutes');
-    BuiltValueNullFieldError.checkNotNull(slot, 'InviteMessage', 'slot');
+        remainingCooldownMinutes, r'InviteMessage', 'remainingCooldownMinutes');
+    BuiltValueNullFieldError.checkNotNull(slot, r'InviteMessage', 'slot');
     BuiltValueNullFieldError.checkNotNull(
-        updatedAt, 'InviteMessage', 'updatedAt');
+        updatedAt, r'InviteMessage', 'updatedAt');
   }
 
   @override
@@ -83,7 +83,7 @@ class _$InviteMessage extends InviteMessage {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InviteMessage')
+    return (newBuiltValueToStringHelper(r'InviteMessage')
           ..add('canBeUpdated', canBeUpdated)
           ..add('id', id)
           ..add('message', message)
@@ -160,28 +160,30 @@ class InviteMessageBuilder
   }
 
   @override
-  _$InviteMessage build() {
+  InviteMessage build() => _build();
+
+  _$InviteMessage _build() {
     final _$result = _$v ??
         new _$InviteMessage._(
             canBeUpdated: BuiltValueNullFieldError.checkNotNull(
-                canBeUpdated, 'InviteMessage', 'canBeUpdated'),
+                canBeUpdated, r'InviteMessage', 'canBeUpdated'),
             id: BuiltValueNullFieldError.checkNotNull(
-                id, 'InviteMessage', 'id'),
+                id, r'InviteMessage', 'id'),
             message: BuiltValueNullFieldError.checkNotNull(
-                message, 'InviteMessage', 'message'),
+                message, r'InviteMessage', 'message'),
             messageType: BuiltValueNullFieldError.checkNotNull(
-                messageType, 'InviteMessage', 'messageType'),
+                messageType, r'InviteMessage', 'messageType'),
             remainingCooldownMinutes: BuiltValueNullFieldError.checkNotNull(
                 remainingCooldownMinutes,
-                'InviteMessage',
+                r'InviteMessage',
                 'remainingCooldownMinutes'),
             slot: BuiltValueNullFieldError.checkNotNull(
-                slot, 'InviteMessage', 'slot'),
+                slot, r'InviteMessage', 'slot'),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, 'InviteMessage', 'updatedAt'));
+                updatedAt, r'InviteMessage', 'updatedAt'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

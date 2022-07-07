@@ -43,7 +43,7 @@ class _$LimitedUser extends LimitedUser {
   final String? friendKey;
 
   factory _$LimitedUser([void Function(LimitedUserBuilder)? updates]) =>
-      (new LimitedUserBuilder()..update(updates)).build();
+      (new LimitedUserBuilder()..update(updates))._build();
 
   _$LimitedUser._(
       {this.bio,
@@ -65,27 +65,27 @@ class _$LimitedUser extends LimitedUser {
       this.friendKey})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        currentAvatarImageUrl, 'LimitedUser', 'currentAvatarImageUrl');
+        currentAvatarImageUrl, r'LimitedUser', 'currentAvatarImageUrl');
     BuiltValueNullFieldError.checkNotNull(currentAvatarThumbnailImageUrl,
-        'LimitedUser', 'currentAvatarThumbnailImageUrl');
+        r'LimitedUser', 'currentAvatarThumbnailImageUrl');
     BuiltValueNullFieldError.checkNotNull(
-        developerType, 'LimitedUser', 'developerType');
+        developerType, r'LimitedUser', 'developerType');
     BuiltValueNullFieldError.checkNotNull(
-        displayName, 'LimitedUser', 'displayName');
+        displayName, r'LimitedUser', 'displayName');
     BuiltValueNullFieldError.checkNotNull(
-        fallbackAvatar, 'LimitedUser', 'fallbackAvatar');
-    BuiltValueNullFieldError.checkNotNull(id, 'LimitedUser', 'id');
-    BuiltValueNullFieldError.checkNotNull(isFriend, 'LimitedUser', 'isFriend');
+        fallbackAvatar, r'LimitedUser', 'fallbackAvatar');
+    BuiltValueNullFieldError.checkNotNull(id, r'LimitedUser', 'id');
+    BuiltValueNullFieldError.checkNotNull(isFriend, r'LimitedUser', 'isFriend');
     BuiltValueNullFieldError.checkNotNull(
-        lastPlatform, 'LimitedUser', 'lastPlatform');
+        lastPlatform, r'LimitedUser', 'lastPlatform');
     BuiltValueNullFieldError.checkNotNull(
-        profilePicOverride, 'LimitedUser', 'profilePicOverride');
-    BuiltValueNullFieldError.checkNotNull(status, 'LimitedUser', 'status');
+        profilePicOverride, r'LimitedUser', 'profilePicOverride');
+    BuiltValueNullFieldError.checkNotNull(status, r'LimitedUser', 'status');
     BuiltValueNullFieldError.checkNotNull(
-        statusDescription, 'LimitedUser', 'statusDescription');
-    BuiltValueNullFieldError.checkNotNull(tags, 'LimitedUser', 'tags');
-    BuiltValueNullFieldError.checkNotNull(userIcon, 'LimitedUser', 'userIcon');
-    BuiltValueNullFieldError.checkNotNull(username, 'LimitedUser', 'username');
+        statusDescription, r'LimitedUser', 'statusDescription');
+    BuiltValueNullFieldError.checkNotNull(tags, r'LimitedUser', 'tags');
+    BuiltValueNullFieldError.checkNotNull(userIcon, r'LimitedUser', 'userIcon');
+    BuiltValueNullFieldError.checkNotNull(username, r'LimitedUser', 'username');
   }
 
   @override
@@ -164,7 +164,7 @@ class _$LimitedUser extends LimitedUser {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('LimitedUser')
+    return (newBuiltValueToStringHelper(r'LimitedUser')
           ..add('bio', bio)
           ..add('currentAvatarImageUrl', currentAvatarImageUrl)
           ..add(
@@ -306,36 +306,37 @@ class LimitedUserBuilder implements Builder<LimitedUser, LimitedUserBuilder> {
   }
 
   @override
-  _$LimitedUser build() {
+  LimitedUser build() => _build();
+
+  _$LimitedUser _build() {
     _$LimitedUser _$result;
     try {
       _$result = _$v ??
           new _$LimitedUser._(
               bio: bio,
               currentAvatarImageUrl: BuiltValueNullFieldError.checkNotNull(
-                  currentAvatarImageUrl, 'LimitedUser', 'currentAvatarImageUrl'),
-              currentAvatarThumbnailImageUrl:
-                  BuiltValueNullFieldError.checkNotNull(
-                      currentAvatarThumbnailImageUrl,
-                      'LimitedUser',
-                      'currentAvatarThumbnailImageUrl'),
+                  currentAvatarImageUrl, r'LimitedUser', 'currentAvatarImageUrl'),
+              currentAvatarThumbnailImageUrl: BuiltValueNullFieldError.checkNotNull(
+                  currentAvatarThumbnailImageUrl,
+                  r'LimitedUser',
+                  'currentAvatarThumbnailImageUrl'),
               developerType: BuiltValueNullFieldError.checkNotNull(
-                  developerType, 'LimitedUser', 'developerType'),
+                  developerType, r'LimitedUser', 'developerType'),
               displayName: BuiltValueNullFieldError.checkNotNull(
-                  displayName, 'LimitedUser', 'displayName'),
+                  displayName, r'LimitedUser', 'displayName'),
               fallbackAvatar: BuiltValueNullFieldError.checkNotNull(
-                  fallbackAvatar, 'LimitedUser', 'fallbackAvatar'),
+                  fallbackAvatar, r'LimitedUser', 'fallbackAvatar'),
               id: BuiltValueNullFieldError.checkNotNull(
-                  id, 'LimitedUser', 'id'),
+                  id, r'LimitedUser', 'id'),
               isFriend:
-                  BuiltValueNullFieldError.checkNotNull(isFriend, 'LimitedUser', 'isFriend'),
-              lastPlatform: BuiltValueNullFieldError.checkNotNull(lastPlatform, 'LimitedUser', 'lastPlatform'),
-              profilePicOverride: BuiltValueNullFieldError.checkNotNull(profilePicOverride, 'LimitedUser', 'profilePicOverride'),
-              status: BuiltValueNullFieldError.checkNotNull(status, 'LimitedUser', 'status'),
-              statusDescription: BuiltValueNullFieldError.checkNotNull(statusDescription, 'LimitedUser', 'statusDescription'),
+                  BuiltValueNullFieldError.checkNotNull(isFriend, r'LimitedUser', 'isFriend'),
+              lastPlatform: BuiltValueNullFieldError.checkNotNull(lastPlatform, r'LimitedUser', 'lastPlatform'),
+              profilePicOverride: BuiltValueNullFieldError.checkNotNull(profilePicOverride, r'LimitedUser', 'profilePicOverride'),
+              status: BuiltValueNullFieldError.checkNotNull(status, r'LimitedUser', 'status'),
+              statusDescription: BuiltValueNullFieldError.checkNotNull(statusDescription, r'LimitedUser', 'statusDescription'),
               tags: tags.build(),
-              userIcon: BuiltValueNullFieldError.checkNotNull(userIcon, 'LimitedUser', 'userIcon'),
-              username: BuiltValueNullFieldError.checkNotNull(username, 'LimitedUser', 'username'),
+              userIcon: BuiltValueNullFieldError.checkNotNull(userIcon, r'LimitedUser', 'userIcon'),
+              username: BuiltValueNullFieldError.checkNotNull(username, r'LimitedUser', 'username'),
               location: location,
               friendKey: friendKey);
     } catch (_) {
@@ -345,7 +346,7 @@ class LimitedUserBuilder implements Builder<LimitedUser, LimitedUserBuilder> {
         tags.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'LimitedUser', _$failedField, e.toString());
+            r'LimitedUser', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -354,4 +355,4 @@ class LimitedUserBuilder implements Builder<LimitedUser, LimitedUserBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

@@ -26,7 +26,7 @@ class _$DynamicContentRow extends DynamicContentRow {
 
   factory _$DynamicContentRow(
           [void Function(DynamicContentRowBuilder)? updates]) =>
-      (new DynamicContentRowBuilder()..update(updates)).build();
+      (new DynamicContentRowBuilder()..update(updates))._build();
 
   _$DynamicContentRow._(
       {this.index,
@@ -38,15 +38,15 @@ class _$DynamicContentRow extends DynamicContentRow {
       this.tag,
       this.type})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(name, 'DynamicContentRow', 'name');
+    BuiltValueNullFieldError.checkNotNull(name, r'DynamicContentRow', 'name');
     BuiltValueNullFieldError.checkNotNull(
-        platform, 'DynamicContentRow', 'platform');
+        platform, r'DynamicContentRow', 'platform');
     BuiltValueNullFieldError.checkNotNull(
-        sortHeading, 'DynamicContentRow', 'sortHeading');
+        sortHeading, r'DynamicContentRow', 'sortHeading');
     BuiltValueNullFieldError.checkNotNull(
-        sortOrder, 'DynamicContentRow', 'sortOrder');
+        sortOrder, r'DynamicContentRow', 'sortOrder');
     BuiltValueNullFieldError.checkNotNull(
-        sortOwnership, 'DynamicContentRow', 'sortOwnership');
+        sortOwnership, r'DynamicContentRow', 'sortOwnership');
   }
 
   @override
@@ -89,7 +89,7 @@ class _$DynamicContentRow extends DynamicContentRow {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DynamicContentRow')
+    return (newBuiltValueToStringHelper(r'DynamicContentRow')
           ..add('index', index)
           ..add('name', name)
           ..add('platform', platform)
@@ -171,20 +171,22 @@ class DynamicContentRowBuilder
   }
 
   @override
-  _$DynamicContentRow build() {
+  DynamicContentRow build() => _build();
+
+  _$DynamicContentRow _build() {
     final _$result = _$v ??
         new _$DynamicContentRow._(
             index: index,
             name: BuiltValueNullFieldError.checkNotNull(
-                name, 'DynamicContentRow', 'name'),
+                name, r'DynamicContentRow', 'name'),
             platform: BuiltValueNullFieldError.checkNotNull(
-                platform, 'DynamicContentRow', 'platform'),
+                platform, r'DynamicContentRow', 'platform'),
             sortHeading: BuiltValueNullFieldError.checkNotNull(
-                sortHeading, 'DynamicContentRow', 'sortHeading'),
+                sortHeading, r'DynamicContentRow', 'sortHeading'),
             sortOrder: BuiltValueNullFieldError.checkNotNull(
-                sortOrder, 'DynamicContentRow', 'sortOrder'),
+                sortOrder, r'DynamicContentRow', 'sortOrder'),
             sortOwnership: BuiltValueNullFieldError.checkNotNull(
-                sortOwnership, 'DynamicContentRow', 'sortOwnership'),
+                sortOwnership, r'DynamicContentRow', 'sortOwnership'),
             tag: tag,
             type: type);
     replace(_$result);
@@ -192,4 +194,4 @@ class DynamicContentRowBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

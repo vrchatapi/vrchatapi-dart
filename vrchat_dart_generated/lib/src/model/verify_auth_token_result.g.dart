@@ -14,13 +14,13 @@ class _$VerifyAuthTokenResult extends VerifyAuthTokenResult {
 
   factory _$VerifyAuthTokenResult(
           [void Function(VerifyAuthTokenResultBuilder)? updates]) =>
-      (new VerifyAuthTokenResultBuilder()..update(updates)).build();
+      (new VerifyAuthTokenResultBuilder()..update(updates))._build();
 
   _$VerifyAuthTokenResult._({required this.ok, required this.token})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(ok, 'VerifyAuthTokenResult', 'ok');
+    BuiltValueNullFieldError.checkNotNull(ok, r'VerifyAuthTokenResult', 'ok');
     BuiltValueNullFieldError.checkNotNull(
-        token, 'VerifyAuthTokenResult', 'token');
+        token, r'VerifyAuthTokenResult', 'token');
   }
 
   @override
@@ -47,7 +47,7 @@ class _$VerifyAuthTokenResult extends VerifyAuthTokenResult {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('VerifyAuthTokenResult')
+    return (newBuiltValueToStringHelper(r'VerifyAuthTokenResult')
           ..add('ok', ok)
           ..add('token', token))
         .toString();
@@ -92,16 +92,18 @@ class VerifyAuthTokenResultBuilder
   }
 
   @override
-  _$VerifyAuthTokenResult build() {
+  VerifyAuthTokenResult build() => _build();
+
+  _$VerifyAuthTokenResult _build() {
     final _$result = _$v ??
         new _$VerifyAuthTokenResult._(
             ok: BuiltValueNullFieldError.checkNotNull(
-                ok, 'VerifyAuthTokenResult', 'ok'),
+                ok, r'VerifyAuthTokenResult', 'ok'),
             token: BuiltValueNullFieldError.checkNotNull(
-                token, 'VerifyAuthTokenResult', 'token'));
+                token, r'VerifyAuthTokenResult', 'token'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

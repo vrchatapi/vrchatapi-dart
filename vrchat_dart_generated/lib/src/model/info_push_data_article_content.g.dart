@@ -16,7 +16,7 @@ class _$InfoPushDataArticleContent extends InfoPushDataArticleContent {
 
   factory _$InfoPushDataArticleContent(
           [void Function(InfoPushDataArticleContentBuilder)? updates]) =>
-      (new InfoPushDataArticleContentBuilder()..update(updates)).build();
+      (new InfoPushDataArticleContentBuilder()..update(updates))._build();
 
   _$InfoPushDataArticleContent._({this.text, this.imageUrl, this.onPressed})
       : super._();
@@ -47,7 +47,7 @@ class _$InfoPushDataArticleContent extends InfoPushDataArticleContent {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InfoPushDataArticleContent')
+    return (newBuiltValueToStringHelper(r'InfoPushDataArticleContent')
           ..add('text', text)
           ..add('imageUrl', imageUrl)
           ..add('onPressed', onPressed))
@@ -101,7 +101,9 @@ class InfoPushDataArticleContentBuilder
   }
 
   @override
-  _$InfoPushDataArticleContent build() {
+  InfoPushDataArticleContent build() => _build();
+
+  _$InfoPushDataArticleContent _build() {
     _$InfoPushDataArticleContent _$result;
     try {
       _$result = _$v ??
@@ -114,7 +116,7 @@ class InfoPushDataArticleContentBuilder
         _onPressed?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'InfoPushDataArticleContent', _$failedField, e.toString());
+            r'InfoPushDataArticleContent', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -123,4 +125,4 @@ class InfoPushDataArticleContentBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

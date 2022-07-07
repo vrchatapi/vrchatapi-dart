@@ -103,7 +103,7 @@ class _$CurrentUser extends CurrentUser {
   final String username;
 
   factory _$CurrentUser([void Function(CurrentUserBuilder)? updates]) =>
-      (new CurrentUserBuilder()..update(updates)).build();
+      (new CurrentUserBuilder()..update(updates))._build();
 
   _$CurrentUser._(
       {required this.acceptedTOSVersion,
@@ -155,74 +155,74 @@ class _$CurrentUser extends CurrentUser {
       required this.username})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        acceptedTOSVersion, 'CurrentUser', 'acceptedTOSVersion');
+        acceptedTOSVersion, r'CurrentUser', 'acceptedTOSVersion');
     BuiltValueNullFieldError.checkNotNull(
-        allowAvatarCopying, 'CurrentUser', 'allowAvatarCopying');
-    BuiltValueNullFieldError.checkNotNull(bio, 'CurrentUser', 'bio');
-    BuiltValueNullFieldError.checkNotNull(bioLinks, 'CurrentUser', 'bioLinks');
+        allowAvatarCopying, r'CurrentUser', 'allowAvatarCopying');
+    BuiltValueNullFieldError.checkNotNull(bio, r'CurrentUser', 'bio');
+    BuiltValueNullFieldError.checkNotNull(bioLinks, r'CurrentUser', 'bioLinks');
     BuiltValueNullFieldError.checkNotNull(
-        currentAvatar, 'CurrentUser', 'currentAvatar');
+        currentAvatar, r'CurrentUser', 'currentAvatar');
     BuiltValueNullFieldError.checkNotNull(
-        currentAvatarAssetUrl, 'CurrentUser', 'currentAvatarAssetUrl');
+        currentAvatarAssetUrl, r'CurrentUser', 'currentAvatarAssetUrl');
     BuiltValueNullFieldError.checkNotNull(
-        currentAvatarImageUrl, 'CurrentUser', 'currentAvatarImageUrl');
+        currentAvatarImageUrl, r'CurrentUser', 'currentAvatarImageUrl');
     BuiltValueNullFieldError.checkNotNull(currentAvatarThumbnailImageUrl,
-        'CurrentUser', 'currentAvatarThumbnailImageUrl');
+        r'CurrentUser', 'currentAvatarThumbnailImageUrl');
     BuiltValueNullFieldError.checkNotNull(
-        dateJoined, 'CurrentUser', 'dateJoined');
+        dateJoined, r'CurrentUser', 'dateJoined');
     BuiltValueNullFieldError.checkNotNull(
-        developerType, 'CurrentUser', 'developerType');
+        developerType, r'CurrentUser', 'developerType');
     BuiltValueNullFieldError.checkNotNull(
-        displayName, 'CurrentUser', 'displayName');
+        displayName, r'CurrentUser', 'displayName');
     BuiltValueNullFieldError.checkNotNull(
-        emailVerified, 'CurrentUser', 'emailVerified');
+        emailVerified, r'CurrentUser', 'emailVerified');
     BuiltValueNullFieldError.checkNotNull(
-        friendGroupNames, 'CurrentUser', 'friendGroupNames');
+        friendGroupNames, r'CurrentUser', 'friendGroupNames');
     BuiltValueNullFieldError.checkNotNull(
-        friendKey, 'CurrentUser', 'friendKey');
-    BuiltValueNullFieldError.checkNotNull(friends, 'CurrentUser', 'friends');
+        friendKey, r'CurrentUser', 'friendKey');
+    BuiltValueNullFieldError.checkNotNull(friends, r'CurrentUser', 'friends');
     BuiltValueNullFieldError.checkNotNull(
-        hasBirthday, 'CurrentUser', 'hasBirthday');
-    BuiltValueNullFieldError.checkNotNull(hasEmail, 'CurrentUser', 'hasEmail');
+        hasBirthday, r'CurrentUser', 'hasBirthday');
+    BuiltValueNullFieldError.checkNotNull(hasEmail, r'CurrentUser', 'hasEmail');
     BuiltValueNullFieldError.checkNotNull(
-        hasLoggedInFromClient, 'CurrentUser', 'hasLoggedInFromClient');
+        hasLoggedInFromClient, r'CurrentUser', 'hasLoggedInFromClient');
     BuiltValueNullFieldError.checkNotNull(
-        hasPendingEmail, 'CurrentUser', 'hasPendingEmail');
+        hasPendingEmail, r'CurrentUser', 'hasPendingEmail');
     BuiltValueNullFieldError.checkNotNull(
-        homeLocation, 'CurrentUser', 'homeLocation');
-    BuiltValueNullFieldError.checkNotNull(id, 'CurrentUser', 'id');
-    BuiltValueNullFieldError.checkNotNull(isFriend, 'CurrentUser', 'isFriend');
+        homeLocation, r'CurrentUser', 'homeLocation');
+    BuiltValueNullFieldError.checkNotNull(id, r'CurrentUser', 'id');
+    BuiltValueNullFieldError.checkNotNull(isFriend, r'CurrentUser', 'isFriend');
     BuiltValueNullFieldError.checkNotNull(
-        lastLogin, 'CurrentUser', 'lastLogin');
+        lastLogin, r'CurrentUser', 'lastLogin');
     BuiltValueNullFieldError.checkNotNull(
-        lastPlatform, 'CurrentUser', 'lastPlatform');
+        lastPlatform, r'CurrentUser', 'lastPlatform');
     BuiltValueNullFieldError.checkNotNull(
-        obfuscatedEmail, 'CurrentUser', 'obfuscatedEmail');
+        obfuscatedEmail, r'CurrentUser', 'obfuscatedEmail');
     BuiltValueNullFieldError.checkNotNull(
-        obfuscatedPendingEmail, 'CurrentUser', 'obfuscatedPendingEmail');
-    BuiltValueNullFieldError.checkNotNull(oculusId, 'CurrentUser', 'oculusId');
+        obfuscatedPendingEmail, r'CurrentUser', 'obfuscatedPendingEmail');
+    BuiltValueNullFieldError.checkNotNull(oculusId, r'CurrentUser', 'oculusId');
     BuiltValueNullFieldError.checkNotNull(
-        pastDisplayNames, 'CurrentUser', 'pastDisplayNames');
+        pastDisplayNames, r'CurrentUser', 'pastDisplayNames');
     BuiltValueNullFieldError.checkNotNull(
-        profilePicOverride, 'CurrentUser', 'profilePicOverride');
-    BuiltValueNullFieldError.checkNotNull(state, 'CurrentUser', 'state');
-    BuiltValueNullFieldError.checkNotNull(status, 'CurrentUser', 'status');
+        profilePicOverride, r'CurrentUser', 'profilePicOverride');
+    BuiltValueNullFieldError.checkNotNull(state, r'CurrentUser', 'state');
+    BuiltValueNullFieldError.checkNotNull(status, r'CurrentUser', 'status');
     BuiltValueNullFieldError.checkNotNull(
-        statusDescription, 'CurrentUser', 'statusDescription');
+        statusDescription, r'CurrentUser', 'statusDescription');
     BuiltValueNullFieldError.checkNotNull(
-        statusFirstTime, 'CurrentUser', 'statusFirstTime');
+        statusFirstTime, r'CurrentUser', 'statusFirstTime');
     BuiltValueNullFieldError.checkNotNull(
-        statusHistory, 'CurrentUser', 'statusHistory');
+        statusHistory, r'CurrentUser', 'statusHistory');
     BuiltValueNullFieldError.checkNotNull(
-        steamDetails, 'CurrentUser', 'steamDetails');
-    BuiltValueNullFieldError.checkNotNull(steamId, 'CurrentUser', 'steamId');
-    BuiltValueNullFieldError.checkNotNull(tags, 'CurrentUser', 'tags');
+        steamDetails, r'CurrentUser', 'steamDetails');
+    BuiltValueNullFieldError.checkNotNull(steamId, r'CurrentUser', 'steamId');
+    BuiltValueNullFieldError.checkNotNull(tags, r'CurrentUser', 'tags');
     BuiltValueNullFieldError.checkNotNull(
-        twoFactorAuthEnabled, 'CurrentUser', 'twoFactorAuthEnabled');
+        twoFactorAuthEnabled, r'CurrentUser', 'twoFactorAuthEnabled');
     BuiltValueNullFieldError.checkNotNull(
-        unsubscribe, 'CurrentUser', 'unsubscribe');
-    BuiltValueNullFieldError.checkNotNull(userIcon, 'CurrentUser', 'userIcon');
-    BuiltValueNullFieldError.checkNotNull(username, 'CurrentUser', 'username');
+        unsubscribe, r'CurrentUser', 'unsubscribe');
+    BuiltValueNullFieldError.checkNotNull(userIcon, r'CurrentUser', 'userIcon');
+    BuiltValueNullFieldError.checkNotNull(username, r'CurrentUser', 'username');
   }
 
   @override
@@ -330,7 +330,7 @@ class _$CurrentUser extends CurrentUser {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('CurrentUser')
+    return (newBuiltValueToStringHelper(r'CurrentUser')
           ..add('acceptedTOSVersion', acceptedTOSVersion)
           ..add('accountDeletionDate', accountDeletionDate)
           ..add('activeFriends', activeFriends)
@@ -680,68 +680,70 @@ class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
   }
 
   @override
-  _$CurrentUser build() {
+  CurrentUser build() => _build();
+
+  _$CurrentUser _build() {
     _$CurrentUser _$result;
     try {
       _$result = _$v ??
           new _$CurrentUser._(
               acceptedTOSVersion: BuiltValueNullFieldError.checkNotNull(
-                  acceptedTOSVersion, 'CurrentUser', 'acceptedTOSVersion'),
+                  acceptedTOSVersion, r'CurrentUser', 'acceptedTOSVersion'),
               accountDeletionDate: accountDeletionDate,
               activeFriends: _activeFriends?.build(),
               allowAvatarCopying: BuiltValueNullFieldError.checkNotNull(
-                  allowAvatarCopying, 'CurrentUser', 'allowAvatarCopying'),
+                  allowAvatarCopying, r'CurrentUser', 'allowAvatarCopying'),
               bio: BuiltValueNullFieldError.checkNotNull(
-                  bio, 'CurrentUser', 'bio'),
+                  bio, r'CurrentUser', 'bio'),
               bioLinks: bioLinks.build(),
               currentAvatar: BuiltValueNullFieldError.checkNotNull(
-                  currentAvatar, 'CurrentUser', 'currentAvatar'),
+                  currentAvatar, r'CurrentUser', 'currentAvatar'),
               currentAvatarAssetUrl: BuiltValueNullFieldError.checkNotNull(
-                  currentAvatarAssetUrl, 'CurrentUser', 'currentAvatarAssetUrl'),
+                  currentAvatarAssetUrl, r'CurrentUser', 'currentAvatarAssetUrl'),
               currentAvatarImageUrl: BuiltValueNullFieldError.checkNotNull(
-                  currentAvatarImageUrl, 'CurrentUser', 'currentAvatarImageUrl'),
+                  currentAvatarImageUrl, r'CurrentUser', 'currentAvatarImageUrl'),
               currentAvatarThumbnailImageUrl:
                   BuiltValueNullFieldError.checkNotNull(
                       currentAvatarThumbnailImageUrl,
-                      'CurrentUser',
+                      r'CurrentUser',
                       'currentAvatarThumbnailImageUrl'),
-              dateJoined: BuiltValueNullFieldError.checkNotNull(dateJoined, 'CurrentUser', 'dateJoined'),
-              developerType: BuiltValueNullFieldError.checkNotNull(developerType, 'CurrentUser', 'developerType'),
-              displayName: BuiltValueNullFieldError.checkNotNull(displayName, 'CurrentUser', 'displayName'),
-              emailVerified: BuiltValueNullFieldError.checkNotNull(emailVerified, 'CurrentUser', 'emailVerified'),
+              dateJoined: BuiltValueNullFieldError.checkNotNull(dateJoined, r'CurrentUser', 'dateJoined'),
+              developerType: BuiltValueNullFieldError.checkNotNull(developerType, r'CurrentUser', 'developerType'),
+              displayName: BuiltValueNullFieldError.checkNotNull(displayName, r'CurrentUser', 'displayName'),
+              emailVerified: BuiltValueNullFieldError.checkNotNull(emailVerified, r'CurrentUser', 'emailVerified'),
               fallbackAvatar: fallbackAvatar,
               friendGroupNames: friendGroupNames.build(),
-              friendKey: BuiltValueNullFieldError.checkNotNull(friendKey, 'CurrentUser', 'friendKey'),
+              friendKey: BuiltValueNullFieldError.checkNotNull(friendKey, r'CurrentUser', 'friendKey'),
               friends: friends.build(),
-              hasBirthday: BuiltValueNullFieldError.checkNotNull(hasBirthday, 'CurrentUser', 'hasBirthday'),
-              hasEmail: BuiltValueNullFieldError.checkNotNull(hasEmail, 'CurrentUser', 'hasEmail'),
-              hasLoggedInFromClient: BuiltValueNullFieldError.checkNotNull(hasLoggedInFromClient, 'CurrentUser', 'hasLoggedInFromClient'),
-              hasPendingEmail: BuiltValueNullFieldError.checkNotNull(hasPendingEmail, 'CurrentUser', 'hasPendingEmail'),
-              homeLocation: BuiltValueNullFieldError.checkNotNull(homeLocation, 'CurrentUser', 'homeLocation'),
-              id: BuiltValueNullFieldError.checkNotNull(id, 'CurrentUser', 'id'),
-              isFriend: BuiltValueNullFieldError.checkNotNull(isFriend, 'CurrentUser', 'isFriend'),
-              lastLogin: BuiltValueNullFieldError.checkNotNull(lastLogin, 'CurrentUser', 'lastLogin'),
-              lastPlatform: BuiltValueNullFieldError.checkNotNull(lastPlatform, 'CurrentUser', 'lastPlatform'),
-              obfuscatedEmail: BuiltValueNullFieldError.checkNotNull(obfuscatedEmail, 'CurrentUser', 'obfuscatedEmail'),
-              obfuscatedPendingEmail: BuiltValueNullFieldError.checkNotNull(obfuscatedPendingEmail, 'CurrentUser', 'obfuscatedPendingEmail'),
-              oculusId: BuiltValueNullFieldError.checkNotNull(oculusId, 'CurrentUser', 'oculusId'),
+              hasBirthday: BuiltValueNullFieldError.checkNotNull(hasBirthday, r'CurrentUser', 'hasBirthday'),
+              hasEmail: BuiltValueNullFieldError.checkNotNull(hasEmail, r'CurrentUser', 'hasEmail'),
+              hasLoggedInFromClient: BuiltValueNullFieldError.checkNotNull(hasLoggedInFromClient, r'CurrentUser', 'hasLoggedInFromClient'),
+              hasPendingEmail: BuiltValueNullFieldError.checkNotNull(hasPendingEmail, r'CurrentUser', 'hasPendingEmail'),
+              homeLocation: BuiltValueNullFieldError.checkNotNull(homeLocation, r'CurrentUser', 'homeLocation'),
+              id: BuiltValueNullFieldError.checkNotNull(id, r'CurrentUser', 'id'),
+              isFriend: BuiltValueNullFieldError.checkNotNull(isFriend, r'CurrentUser', 'isFriend'),
+              lastLogin: BuiltValueNullFieldError.checkNotNull(lastLogin, r'CurrentUser', 'lastLogin'),
+              lastPlatform: BuiltValueNullFieldError.checkNotNull(lastPlatform, r'CurrentUser', 'lastPlatform'),
+              obfuscatedEmail: BuiltValueNullFieldError.checkNotNull(obfuscatedEmail, r'CurrentUser', 'obfuscatedEmail'),
+              obfuscatedPendingEmail: BuiltValueNullFieldError.checkNotNull(obfuscatedPendingEmail, r'CurrentUser', 'obfuscatedPendingEmail'),
+              oculusId: BuiltValueNullFieldError.checkNotNull(oculusId, r'CurrentUser', 'oculusId'),
               offlineFriends: _offlineFriends?.build(),
               onlineFriends: _onlineFriends?.build(),
               pastDisplayNames: pastDisplayNames.build(),
-              profilePicOverride: BuiltValueNullFieldError.checkNotNull(profilePicOverride, 'CurrentUser', 'profilePicOverride'),
-              state: BuiltValueNullFieldError.checkNotNull(state, 'CurrentUser', 'state'),
-              status: BuiltValueNullFieldError.checkNotNull(status, 'CurrentUser', 'status'),
-              statusDescription: BuiltValueNullFieldError.checkNotNull(statusDescription, 'CurrentUser', 'statusDescription'),
-              statusFirstTime: BuiltValueNullFieldError.checkNotNull(statusFirstTime, 'CurrentUser', 'statusFirstTime'),
+              profilePicOverride: BuiltValueNullFieldError.checkNotNull(profilePicOverride, r'CurrentUser', 'profilePicOverride'),
+              state: BuiltValueNullFieldError.checkNotNull(state, r'CurrentUser', 'state'),
+              status: BuiltValueNullFieldError.checkNotNull(status, r'CurrentUser', 'status'),
+              statusDescription: BuiltValueNullFieldError.checkNotNull(statusDescription, r'CurrentUser', 'statusDescription'),
+              statusFirstTime: BuiltValueNullFieldError.checkNotNull(statusFirstTime, r'CurrentUser', 'statusFirstTime'),
               statusHistory: statusHistory.build(),
-              steamDetails: BuiltValueNullFieldError.checkNotNull(steamDetails, 'CurrentUser', 'steamDetails'),
-              steamId: BuiltValueNullFieldError.checkNotNull(steamId, 'CurrentUser', 'steamId'),
+              steamDetails: BuiltValueNullFieldError.checkNotNull(steamDetails, r'CurrentUser', 'steamDetails'),
+              steamId: BuiltValueNullFieldError.checkNotNull(steamId, r'CurrentUser', 'steamId'),
               tags: tags.build(),
-              twoFactorAuthEnabled: BuiltValueNullFieldError.checkNotNull(twoFactorAuthEnabled, 'CurrentUser', 'twoFactorAuthEnabled'),
+              twoFactorAuthEnabled: BuiltValueNullFieldError.checkNotNull(twoFactorAuthEnabled, r'CurrentUser', 'twoFactorAuthEnabled'),
               twoFactorAuthEnabledDate: twoFactorAuthEnabledDate,
-              unsubscribe: BuiltValueNullFieldError.checkNotNull(unsubscribe, 'CurrentUser', 'unsubscribe'),
-              userIcon: BuiltValueNullFieldError.checkNotNull(userIcon, 'CurrentUser', 'userIcon'),
-              username: BuiltValueNullFieldError.checkNotNull(username, 'CurrentUser', 'username'));
+              unsubscribe: BuiltValueNullFieldError.checkNotNull(unsubscribe, r'CurrentUser', 'unsubscribe'),
+              userIcon: BuiltValueNullFieldError.checkNotNull(userIcon, r'CurrentUser', 'userIcon'),
+              username: BuiltValueNullFieldError.checkNotNull(username, r'CurrentUser', 'username'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -771,7 +773,7 @@ class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
         tags.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'CurrentUser', _$failedField, e.toString());
+            r'CurrentUser', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -780,4 +782,4 @@ class CurrentUserBuilder implements Builder<CurrentUser, CurrentUserBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

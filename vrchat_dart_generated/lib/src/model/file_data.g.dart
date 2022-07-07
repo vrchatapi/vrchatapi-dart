@@ -83,7 +83,7 @@ class _$FileData extends FileData {
   final String url;
 
   factory _$FileData([void Function(FileDataBuilder)? updates]) =>
-      (new FileDataBuilder()..update(updates)).build();
+      (new FileDataBuilder()..update(updates))._build();
 
   _$FileData._(
       {required this.category,
@@ -94,14 +94,14 @@ class _$FileData extends FileData {
       required this.uploadId,
       required this.url})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(category, 'FileData', 'category');
-    BuiltValueNullFieldError.checkNotNull(fileName, 'FileData', 'fileName');
-    BuiltValueNullFieldError.checkNotNull(md5, 'FileData', 'md5');
+    BuiltValueNullFieldError.checkNotNull(category, r'FileData', 'category');
+    BuiltValueNullFieldError.checkNotNull(fileName, r'FileData', 'fileName');
+    BuiltValueNullFieldError.checkNotNull(md5, r'FileData', 'md5');
     BuiltValueNullFieldError.checkNotNull(
-        sizeInBytes, 'FileData', 'sizeInBytes');
-    BuiltValueNullFieldError.checkNotNull(status, 'FileData', 'status');
-    BuiltValueNullFieldError.checkNotNull(uploadId, 'FileData', 'uploadId');
-    BuiltValueNullFieldError.checkNotNull(url, 'FileData', 'url');
+        sizeInBytes, r'FileData', 'sizeInBytes');
+    BuiltValueNullFieldError.checkNotNull(status, r'FileData', 'status');
+    BuiltValueNullFieldError.checkNotNull(uploadId, r'FileData', 'uploadId');
+    BuiltValueNullFieldError.checkNotNull(url, r'FileData', 'url');
   }
 
   @override
@@ -140,7 +140,7 @@ class _$FileData extends FileData {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('FileData')
+    return (newBuiltValueToStringHelper(r'FileData')
           ..add('category', category)
           ..add('fileName', fileName)
           ..add('md5', md5)
@@ -214,24 +214,27 @@ class FileDataBuilder implements Builder<FileData, FileDataBuilder> {
   }
 
   @override
-  _$FileData build() {
+  FileData build() => _build();
+
+  _$FileData _build() {
     final _$result = _$v ??
         new _$FileData._(
             category: BuiltValueNullFieldError.checkNotNull(
-                category, 'FileData', 'category'),
+                category, r'FileData', 'category'),
             fileName: BuiltValueNullFieldError.checkNotNull(
-                fileName, 'FileData', 'fileName'),
-            md5: BuiltValueNullFieldError.checkNotNull(md5, 'FileData', 'md5'),
+                fileName, r'FileData', 'fileName'),
+            md5: BuiltValueNullFieldError.checkNotNull(md5, r'FileData', 'md5'),
             sizeInBytes: BuiltValueNullFieldError.checkNotNull(
-                sizeInBytes, 'FileData', 'sizeInBytes'),
+                sizeInBytes, r'FileData', 'sizeInBytes'),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, 'FileData', 'status'),
+                status, r'FileData', 'status'),
             uploadId: BuiltValueNullFieldError.checkNotNull(
-                uploadId, 'FileData', 'uploadId'),
-            url: BuiltValueNullFieldError.checkNotNull(url, 'FileData', 'url'));
+                uploadId, r'FileData', 'uploadId'),
+            url:
+                BuiltValueNullFieldError.checkNotNull(url, r'FileData', 'url'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

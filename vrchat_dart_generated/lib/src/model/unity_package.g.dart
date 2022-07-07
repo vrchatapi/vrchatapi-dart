@@ -29,7 +29,7 @@ class _$UnityPackage extends UnityPackage {
   final String unityVersion;
 
   factory _$UnityPackage([void Function(UnityPackageBuilder)? updates]) =>
-      (new UnityPackageBuilder()..update(updates)).build();
+      (new UnityPackageBuilder()..update(updates))._build();
 
   _$UnityPackage._(
       {this.assetUrl,
@@ -44,11 +44,12 @@ class _$UnityPackage extends UnityPackage {
       required this.unityVersion})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        assetVersion, 'UnityPackage', 'assetVersion');
-    BuiltValueNullFieldError.checkNotNull(id, 'UnityPackage', 'id');
-    BuiltValueNullFieldError.checkNotNull(platform, 'UnityPackage', 'platform');
+        assetVersion, r'UnityPackage', 'assetVersion');
+    BuiltValueNullFieldError.checkNotNull(id, r'UnityPackage', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        unityVersion, 'UnityPackage', 'unityVersion');
+        platform, r'UnityPackage', 'platform');
+    BuiltValueNullFieldError.checkNotNull(
+        unityVersion, r'UnityPackage', 'unityVersion');
   }
 
   @override
@@ -98,7 +99,7 @@ class _$UnityPackage extends UnityPackage {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('UnityPackage')
+    return (newBuiltValueToStringHelper(r'UnityPackage')
           ..add('assetUrl', assetUrl)
           ..add('assetUrlObject', assetUrlObject)
           ..add('assetVersion', assetVersion)
@@ -194,25 +195,28 @@ class UnityPackageBuilder
   }
 
   @override
-  _$UnityPackage build() {
+  UnityPackage build() => _build();
+
+  _$UnityPackage _build() {
     final _$result = _$v ??
         new _$UnityPackage._(
             assetUrl: assetUrl,
             assetUrlObject: assetUrlObject,
             assetVersion: BuiltValueNullFieldError.checkNotNull(
-                assetVersion, 'UnityPackage', 'assetVersion'),
+                assetVersion, r'UnityPackage', 'assetVersion'),
             createdAt: createdAt,
-            id: BuiltValueNullFieldError.checkNotNull(id, 'UnityPackage', 'id'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'UnityPackage', 'id'),
             platform: BuiltValueNullFieldError.checkNotNull(
-                platform, 'UnityPackage', 'platform'),
+                platform, r'UnityPackage', 'platform'),
             pluginUrl: pluginUrl,
             pluginUrlObject: pluginUrlObject,
             unitySortNumber: unitySortNumber,
             unityVersion: BuiltValueNullFieldError.checkNotNull(
-                unityVersion, 'UnityPackage', 'unityVersion'));
+                unityVersion, r'UnityPackage', 'unityVersion'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

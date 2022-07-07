@@ -55,7 +55,7 @@ class _$User extends User {
   final String? worldId;
 
   factory _$User([void Function(UserBuilder)? updates]) =>
-      (new UserBuilder()..update(updates)).build();
+      (new UserBuilder()..update(updates))._build();
 
   _$User._(
       {required this.allowAvatarCopying,
@@ -83,31 +83,32 @@ class _$User extends User {
       this.worldId})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        allowAvatarCopying, 'User', 'allowAvatarCopying');
-    BuiltValueNullFieldError.checkNotNull(bio, 'User', 'bio');
-    BuiltValueNullFieldError.checkNotNull(bioLinks, 'User', 'bioLinks');
+        allowAvatarCopying, r'User', 'allowAvatarCopying');
+    BuiltValueNullFieldError.checkNotNull(bio, r'User', 'bio');
+    BuiltValueNullFieldError.checkNotNull(bioLinks, r'User', 'bioLinks');
     BuiltValueNullFieldError.checkNotNull(
-        currentAvatarImageUrl, 'User', 'currentAvatarImageUrl');
+        currentAvatarImageUrl, r'User', 'currentAvatarImageUrl');
     BuiltValueNullFieldError.checkNotNull(currentAvatarThumbnailImageUrl,
-        'User', 'currentAvatarThumbnailImageUrl');
-    BuiltValueNullFieldError.checkNotNull(dateJoined, 'User', 'dateJoined');
+        r'User', 'currentAvatarThumbnailImageUrl');
+    BuiltValueNullFieldError.checkNotNull(dateJoined, r'User', 'dateJoined');
     BuiltValueNullFieldError.checkNotNull(
-        developerType, 'User', 'developerType');
-    BuiltValueNullFieldError.checkNotNull(displayName, 'User', 'displayName');
-    BuiltValueNullFieldError.checkNotNull(friendKey, 'User', 'friendKey');
-    BuiltValueNullFieldError.checkNotNull(id, 'User', 'id');
-    BuiltValueNullFieldError.checkNotNull(isFriend, 'User', 'isFriend');
-    BuiltValueNullFieldError.checkNotNull(lastLogin, 'User', 'lastLogin');
-    BuiltValueNullFieldError.checkNotNull(lastPlatform, 'User', 'lastPlatform');
+        developerType, r'User', 'developerType');
+    BuiltValueNullFieldError.checkNotNull(displayName, r'User', 'displayName');
+    BuiltValueNullFieldError.checkNotNull(friendKey, r'User', 'friendKey');
+    BuiltValueNullFieldError.checkNotNull(id, r'User', 'id');
+    BuiltValueNullFieldError.checkNotNull(isFriend, r'User', 'isFriend');
+    BuiltValueNullFieldError.checkNotNull(lastLogin, r'User', 'lastLogin');
     BuiltValueNullFieldError.checkNotNull(
-        profilePicOverride, 'User', 'profilePicOverride');
-    BuiltValueNullFieldError.checkNotNull(state, 'User', 'state');
-    BuiltValueNullFieldError.checkNotNull(status, 'User', 'status');
+        lastPlatform, r'User', 'lastPlatform');
     BuiltValueNullFieldError.checkNotNull(
-        statusDescription, 'User', 'statusDescription');
-    BuiltValueNullFieldError.checkNotNull(tags, 'User', 'tags');
-    BuiltValueNullFieldError.checkNotNull(userIcon, 'User', 'userIcon');
-    BuiltValueNullFieldError.checkNotNull(username, 'User', 'username');
+        profilePicOverride, r'User', 'profilePicOverride');
+    BuiltValueNullFieldError.checkNotNull(state, r'User', 'state');
+    BuiltValueNullFieldError.checkNotNull(status, r'User', 'status');
+    BuiltValueNullFieldError.checkNotNull(
+        statusDescription, r'User', 'statusDescription');
+    BuiltValueNullFieldError.checkNotNull(tags, r'User', 'tags');
+    BuiltValueNullFieldError.checkNotNull(userIcon, r'User', 'userIcon');
+    BuiltValueNullFieldError.checkNotNull(username, r'User', 'username');
   }
 
   @override
@@ -191,7 +192,7 @@ class _$User extends User {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('User')
+    return (newBuiltValueToStringHelper(r'User')
           ..add('allowAvatarCopying', allowAvatarCopying)
           ..add('bio', bio)
           ..add('bioLinks', bioLinks)
@@ -370,43 +371,45 @@ class UserBuilder implements Builder<User, UserBuilder> {
   }
 
   @override
-  _$User build() {
+  User build() => _build();
+
+  _$User _build() {
     _$User _$result;
     try {
       _$result = _$v ??
           new _$User._(
               allowAvatarCopying: BuiltValueNullFieldError.checkNotNull(
-                  allowAvatarCopying, 'User', 'allowAvatarCopying'),
-              bio: BuiltValueNullFieldError.checkNotNull(bio, 'User', 'bio'),
+                  allowAvatarCopying, r'User', 'allowAvatarCopying'),
+              bio: BuiltValueNullFieldError.checkNotNull(bio, r'User', 'bio'),
               bioLinks: bioLinks.build(),
               currentAvatarImageUrl: BuiltValueNullFieldError.checkNotNull(
-                  currentAvatarImageUrl, 'User', 'currentAvatarImageUrl'),
+                  currentAvatarImageUrl, r'User', 'currentAvatarImageUrl'),
               currentAvatarThumbnailImageUrl:
                   BuiltValueNullFieldError.checkNotNull(
                       currentAvatarThumbnailImageUrl,
-                      'User',
+                      r'User',
                       'currentAvatarThumbnailImageUrl'),
               dateJoined: BuiltValueNullFieldError.checkNotNull(
-                  dateJoined, 'User', 'dateJoined'),
+                  dateJoined, r'User', 'dateJoined'),
               developerType: BuiltValueNullFieldError.checkNotNull(
-                  developerType, 'User', 'developerType'),
+                  developerType, r'User', 'developerType'),
               displayName: BuiltValueNullFieldError.checkNotNull(
-                  displayName, 'User', 'displayName'),
+                  displayName, r'User', 'displayName'),
               friendKey:
-                  BuiltValueNullFieldError.checkNotNull(friendKey, 'User', 'friendKey'),
-              id: BuiltValueNullFieldError.checkNotNull(id, 'User', 'id'),
+                  BuiltValueNullFieldError.checkNotNull(friendKey, r'User', 'friendKey'),
+              id: BuiltValueNullFieldError.checkNotNull(id, r'User', 'id'),
               instanceId: instanceId,
-              isFriend: BuiltValueNullFieldError.checkNotNull(isFriend, 'User', 'isFriend'),
-              lastLogin: BuiltValueNullFieldError.checkNotNull(lastLogin, 'User', 'lastLogin'),
-              lastPlatform: BuiltValueNullFieldError.checkNotNull(lastPlatform, 'User', 'lastPlatform'),
+              isFriend: BuiltValueNullFieldError.checkNotNull(isFriend, r'User', 'isFriend'),
+              lastLogin: BuiltValueNullFieldError.checkNotNull(lastLogin, r'User', 'lastLogin'),
+              lastPlatform: BuiltValueNullFieldError.checkNotNull(lastPlatform, r'User', 'lastPlatform'),
               location: location,
-              profilePicOverride: BuiltValueNullFieldError.checkNotNull(profilePicOverride, 'User', 'profilePicOverride'),
-              state: BuiltValueNullFieldError.checkNotNull(state, 'User', 'state'),
-              status: BuiltValueNullFieldError.checkNotNull(status, 'User', 'status'),
-              statusDescription: BuiltValueNullFieldError.checkNotNull(statusDescription, 'User', 'statusDescription'),
+              profilePicOverride: BuiltValueNullFieldError.checkNotNull(profilePicOverride, r'User', 'profilePicOverride'),
+              state: BuiltValueNullFieldError.checkNotNull(state, r'User', 'state'),
+              status: BuiltValueNullFieldError.checkNotNull(status, r'User', 'status'),
+              statusDescription: BuiltValueNullFieldError.checkNotNull(statusDescription, r'User', 'statusDescription'),
               tags: tags.build(),
-              userIcon: BuiltValueNullFieldError.checkNotNull(userIcon, 'User', 'userIcon'),
-              username: BuiltValueNullFieldError.checkNotNull(username, 'User', 'username'),
+              userIcon: BuiltValueNullFieldError.checkNotNull(userIcon, r'User', 'userIcon'),
+              username: BuiltValueNullFieldError.checkNotNull(username, r'User', 'username'),
               worldId: worldId);
     } catch (_) {
       late String _$failedField;
@@ -418,7 +421,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
         tags.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'User', _$failedField, e.toString());
+            r'User', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -427,4 +430,4 @@ class UserBuilder implements Builder<User, UserBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

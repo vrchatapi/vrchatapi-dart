@@ -13,10 +13,11 @@ class _$Response extends Response {
   final int statusCode;
 
   factory _$Response([void Function(ResponseBuilder)? updates]) =>
-      (new ResponseBuilder()..update(updates)).build();
+      (new ResponseBuilder()..update(updates))._build();
 
   _$Response._({this.message, required this.statusCode}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(statusCode, 'Response', 'statusCode');
+    BuiltValueNullFieldError.checkNotNull(
+        statusCode, r'Response', 'statusCode');
   }
 
   @override
@@ -41,7 +42,7 @@ class _$Response extends Response {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Response')
+    return (newBuiltValueToStringHelper(r'Response')
           ..add('message', message)
           ..add('statusCode', statusCode))
         .toString();
@@ -85,15 +86,17 @@ class ResponseBuilder implements Builder<Response, ResponseBuilder> {
   }
 
   @override
-  _$Response build() {
+  Response build() => _build();
+
+  _$Response _build() {
     final _$result = _$v ??
         new _$Response._(
             message: message,
             statusCode: BuiltValueNullFieldError.checkNotNull(
-                statusCode, 'Response', 'statusCode'));
+                statusCode, r'Response', 'statusCode'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

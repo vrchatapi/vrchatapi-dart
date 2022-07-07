@@ -29,7 +29,7 @@ class _$APIEventConfig extends APIEventConfig {
   final int viewSegmentLength;
 
   factory _$APIEventConfig([void Function(APIEventConfigBuilder)? updates]) =>
-      (new APIEventConfigBuilder()..update(updates)).build();
+      (new APIEventConfigBuilder()..update(updates))._build();
 
   _$APIEventConfig._(
       {required this.distanceClose,
@@ -44,25 +44,25 @@ class _$APIEventConfig extends APIEventConfig {
       required this.viewSegmentLength})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        distanceClose, 'APIEventConfig', 'distanceClose');
+        distanceClose, r'APIEventConfig', 'distanceClose');
     BuiltValueNullFieldError.checkNotNull(
-        distanceFactor, 'APIEventConfig', 'distanceFactor');
+        distanceFactor, r'APIEventConfig', 'distanceFactor');
     BuiltValueNullFieldError.checkNotNull(
-        distanceFar, 'APIEventConfig', 'distanceFar');
+        distanceFar, r'APIEventConfig', 'distanceFar');
     BuiltValueNullFieldError.checkNotNull(
-        groupDistance, 'APIEventConfig', 'groupDistance');
+        groupDistance, r'APIEventConfig', 'groupDistance');
     BuiltValueNullFieldError.checkNotNull(
-        maximumBunchSize, 'APIEventConfig', 'maximumBunchSize');
+        maximumBunchSize, r'APIEventConfig', 'maximumBunchSize');
     BuiltValueNullFieldError.checkNotNull(
-        notVisibleFactor, 'APIEventConfig', 'notVisibleFactor');
+        notVisibleFactor, r'APIEventConfig', 'notVisibleFactor');
     BuiltValueNullFieldError.checkNotNull(
-        playerOrderBucketSize, 'APIEventConfig', 'playerOrderBucketSize');
+        playerOrderBucketSize, r'APIEventConfig', 'playerOrderBucketSize');
     BuiltValueNullFieldError.checkNotNull(
-        playerOrderFactor, 'APIEventConfig', 'playerOrderFactor');
+        playerOrderFactor, r'APIEventConfig', 'playerOrderFactor');
     BuiltValueNullFieldError.checkNotNull(slowUpdateFactorThreshold,
-        'APIEventConfig', 'slowUpdateFactorThreshold');
+        r'APIEventConfig', 'slowUpdateFactorThreshold');
     BuiltValueNullFieldError.checkNotNull(
-        viewSegmentLength, 'APIEventConfig', 'viewSegmentLength');
+        viewSegmentLength, r'APIEventConfig', 'viewSegmentLength');
   }
 
   @override
@@ -113,7 +113,7 @@ class _$APIEventConfig extends APIEventConfig {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('APIEventConfig')
+    return (newBuiltValueToStringHelper(r'APIEventConfig')
           ..add('distanceClose', distanceClose)
           ..add('distanceFactor', distanceFactor)
           ..add('distanceFar', distanceFar)
@@ -215,30 +215,32 @@ class APIEventConfigBuilder
   }
 
   @override
-  _$APIEventConfig build() {
+  APIEventConfig build() => _build();
+
+  _$APIEventConfig _build() {
     final _$result = _$v ??
         new _$APIEventConfig._(
             distanceClose: BuiltValueNullFieldError.checkNotNull(
-                distanceClose, 'APIEventConfig', 'distanceClose'),
+                distanceClose, r'APIEventConfig', 'distanceClose'),
             distanceFactor: BuiltValueNullFieldError.checkNotNull(
-                distanceFactor, 'APIEventConfig', 'distanceFactor'),
+                distanceFactor, r'APIEventConfig', 'distanceFactor'),
             distanceFar: BuiltValueNullFieldError.checkNotNull(
-                distanceFar, 'APIEventConfig', 'distanceFar'),
+                distanceFar, r'APIEventConfig', 'distanceFar'),
             groupDistance: BuiltValueNullFieldError.checkNotNull(
-                groupDistance, 'APIEventConfig', 'groupDistance'),
+                groupDistance, r'APIEventConfig', 'groupDistance'),
             maximumBunchSize: BuiltValueNullFieldError.checkNotNull(
-                maximumBunchSize, 'APIEventConfig', 'maximumBunchSize'),
+                maximumBunchSize, r'APIEventConfig', 'maximumBunchSize'),
             notVisibleFactor: BuiltValueNullFieldError.checkNotNull(
-                notVisibleFactor, 'APIEventConfig', 'notVisibleFactor'),
+                notVisibleFactor, r'APIEventConfig', 'notVisibleFactor'),
             playerOrderBucketSize: BuiltValueNullFieldError.checkNotNull(
-                playerOrderBucketSize, 'APIEventConfig', 'playerOrderBucketSize'),
+                playerOrderBucketSize, r'APIEventConfig', 'playerOrderBucketSize'),
             playerOrderFactor: BuiltValueNullFieldError.checkNotNull(
-                playerOrderFactor, 'APIEventConfig', 'playerOrderFactor'),
-            slowUpdateFactorThreshold: BuiltValueNullFieldError.checkNotNull(slowUpdateFactorThreshold, 'APIEventConfig', 'slowUpdateFactorThreshold'),
-            viewSegmentLength: BuiltValueNullFieldError.checkNotNull(viewSegmentLength, 'APIEventConfig', 'viewSegmentLength'));
+                playerOrderFactor, r'APIEventConfig', 'playerOrderFactor'),
+            slowUpdateFactorThreshold: BuiltValueNullFieldError.checkNotNull(slowUpdateFactorThreshold, r'APIEventConfig', 'slowUpdateFactorThreshold'),
+            viewSegmentLength: BuiltValueNullFieldError.checkNotNull(viewSegmentLength, r'APIEventConfig', 'viewSegmentLength'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

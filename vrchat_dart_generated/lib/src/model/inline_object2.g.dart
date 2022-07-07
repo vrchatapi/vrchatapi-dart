@@ -27,7 +27,7 @@ class _$InlineObject2 extends InlineObject2 {
   final String? userIcon;
 
   factory _$InlineObject2([void Function(InlineObject2Builder)? updates]) =>
-      (new InlineObject2Builder()..update(updates)).build();
+      (new InlineObject2Builder()..update(updates))._build();
 
   _$InlineObject2._(
       {this.email,
@@ -83,7 +83,7 @@ class _$InlineObject2 extends InlineObject2 {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InlineObject2')
+    return (newBuiltValueToStringHelper(r'InlineObject2')
           ..add('email', email)
           ..add('birthday', birthday)
           ..add('acceptedTOSVersion', acceptedTOSVersion)
@@ -173,7 +173,9 @@ class InlineObject2Builder
   }
 
   @override
-  _$InlineObject2 build() {
+  InlineObject2 build() => _build();
+
+  _$InlineObject2 _build() {
     _$InlineObject2 _$result;
     try {
       _$result = _$v ??
@@ -197,7 +199,7 @@ class InlineObject2Builder
         _bioLinks?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'InlineObject2', _$failedField, e.toString());
+            r'InlineObject2', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -206,4 +208,4 @@ class InlineObject2Builder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

@@ -17,7 +17,7 @@ class _$LicenseGroup extends LicenseGroup {
   final BuiltList<License> licenses;
 
   factory _$LicenseGroup([void Function(LicenseGroupBuilder)? updates]) =>
-      (new LicenseGroupBuilder()..update(updates)).build();
+      (new LicenseGroupBuilder()..update(updates))._build();
 
   _$LicenseGroup._(
       {required this.id,
@@ -25,11 +25,12 @@ class _$LicenseGroup extends LicenseGroup {
       required this.description,
       required this.licenses})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, 'LicenseGroup', 'id');
-    BuiltValueNullFieldError.checkNotNull(name, 'LicenseGroup', 'name');
+    BuiltValueNullFieldError.checkNotNull(id, r'LicenseGroup', 'id');
+    BuiltValueNullFieldError.checkNotNull(name, r'LicenseGroup', 'name');
     BuiltValueNullFieldError.checkNotNull(
-        description, 'LicenseGroup', 'description');
-    BuiltValueNullFieldError.checkNotNull(licenses, 'LicenseGroup', 'licenses');
+        description, r'LicenseGroup', 'description');
+    BuiltValueNullFieldError.checkNotNull(
+        licenses, r'LicenseGroup', 'licenses');
   }
 
   @override
@@ -58,7 +59,7 @@ class _$LicenseGroup extends LicenseGroup {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('LicenseGroup')
+    return (newBuiltValueToStringHelper(r'LicenseGroup')
           ..add('id', id)
           ..add('name', name)
           ..add('description', description)
@@ -116,17 +117,19 @@ class LicenseGroupBuilder
   }
 
   @override
-  _$LicenseGroup build() {
+  LicenseGroup build() => _build();
+
+  _$LicenseGroup _build() {
     _$LicenseGroup _$result;
     try {
       _$result = _$v ??
           new _$LicenseGroup._(
               id: BuiltValueNullFieldError.checkNotNull(
-                  id, 'LicenseGroup', 'id'),
+                  id, r'LicenseGroup', 'id'),
               name: BuiltValueNullFieldError.checkNotNull(
-                  name, 'LicenseGroup', 'name'),
+                  name, r'LicenseGroup', 'name'),
               description: BuiltValueNullFieldError.checkNotNull(
-                  description, 'LicenseGroup', 'description'),
+                  description, r'LicenseGroup', 'description'),
               licenses: licenses.build());
     } catch (_) {
       late String _$failedField;
@@ -135,7 +138,7 @@ class LicenseGroupBuilder
         licenses.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'LicenseGroup', _$failedField, e.toString());
+            r'LicenseGroup', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -144,4 +147,4 @@ class LicenseGroupBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

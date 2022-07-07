@@ -15,18 +15,18 @@ class _$APIHealth extends APIHealth {
   final String buildVersionTag;
 
   factory _$APIHealth([void Function(APIHealthBuilder)? updates]) =>
-      (new APIHealthBuilder()..update(updates)).build();
+      (new APIHealthBuilder()..update(updates))._build();
 
   _$APIHealth._(
       {required this.ok,
       required this.serverName,
       required this.buildVersionTag})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(ok, 'APIHealth', 'ok');
+    BuiltValueNullFieldError.checkNotNull(ok, r'APIHealth', 'ok');
     BuiltValueNullFieldError.checkNotNull(
-        serverName, 'APIHealth', 'serverName');
+        serverName, r'APIHealth', 'serverName');
     BuiltValueNullFieldError.checkNotNull(
-        buildVersionTag, 'APIHealth', 'buildVersionTag');
+        buildVersionTag, r'APIHealth', 'buildVersionTag');
   }
 
   @override
@@ -53,7 +53,7 @@ class _$APIHealth extends APIHealth {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('APIHealth')
+    return (newBuiltValueToStringHelper(r'APIHealth')
           ..add('ok', ok)
           ..add('serverName', serverName)
           ..add('buildVersionTag', buildVersionTag))
@@ -104,17 +104,19 @@ class APIHealthBuilder implements Builder<APIHealth, APIHealthBuilder> {
   }
 
   @override
-  _$APIHealth build() {
+  APIHealth build() => _build();
+
+  _$APIHealth _build() {
     final _$result = _$v ??
         new _$APIHealth._(
-            ok: BuiltValueNullFieldError.checkNotNull(ok, 'APIHealth', 'ok'),
+            ok: BuiltValueNullFieldError.checkNotNull(ok, r'APIHealth', 'ok'),
             serverName: BuiltValueNullFieldError.checkNotNull(
-                serverName, 'APIHealth', 'serverName'),
+                serverName, r'APIHealth', 'serverName'),
             buildVersionTag: BuiltValueNullFieldError.checkNotNull(
-                buildVersionTag, 'APIHealth', 'buildVersionTag'));
+                buildVersionTag, r'APIHealth', 'buildVersionTag'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

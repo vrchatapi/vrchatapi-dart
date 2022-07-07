@@ -12,7 +12,7 @@ class _$InfoPushDataArticle extends InfoPushDataArticle {
 
   factory _$InfoPushDataArticle(
           [void Function(InfoPushDataArticleBuilder)? updates]) =>
-      (new InfoPushDataArticleBuilder()..update(updates)).build();
+      (new InfoPushDataArticleBuilder()..update(updates))._build();
 
   _$InfoPushDataArticle._({this.content}) : super._();
 
@@ -38,7 +38,7 @@ class _$InfoPushDataArticle extends InfoPushDataArticle {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InfoPushDataArticle')
+    return (newBuiltValueToStringHelper(r'InfoPushDataArticle')
           ..add('content', content))
         .toString();
   }
@@ -79,7 +79,9 @@ class InfoPushDataArticleBuilder
   }
 
   @override
-  _$InfoPushDataArticle build() {
+  InfoPushDataArticle build() => _build();
+
+  _$InfoPushDataArticle _build() {
     _$InfoPushDataArticle _$result;
     try {
       _$result = _$v ?? new _$InfoPushDataArticle._(content: _content?.build());
@@ -90,7 +92,7 @@ class InfoPushDataArticleBuilder
         _content?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'InfoPushDataArticle', _$failedField, e.toString());
+            r'InfoPushDataArticle', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -99,4 +101,4 @@ class InfoPushDataArticleBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

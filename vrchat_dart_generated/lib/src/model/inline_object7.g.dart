@@ -37,7 +37,7 @@ class _$InlineObject7 extends InlineObject7 {
   final String? unityVersion;
 
   factory _$InlineObject7([void Function(InlineObject7Builder)? updates]) =>
-      (new InlineObject7Builder()..update(updates)).build();
+      (new InlineObject7Builder()..update(updates))._build();
 
   _$InlineObject7._(
       {this.assetUrl,
@@ -117,7 +117,7 @@ class _$InlineObject7 extends InlineObject7 {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InlineObject7')
+    return (newBuiltValueToStringHelper(r'InlineObject7')
           ..add('assetUrl', assetUrl)
           ..add('assetVersion', assetVersion)
           ..add('authorId', authorId)
@@ -236,7 +236,9 @@ class InlineObject7Builder
   }
 
   @override
-  _$InlineObject7 build() {
+  InlineObject7 build() => _build();
+
+  _$InlineObject7 _build() {
     _$InlineObject7 _$result;
     try {
       _$result = _$v ??
@@ -262,7 +264,7 @@ class InlineObject7Builder
         _tags?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'InlineObject7', _$failedField, e.toString());
+            r'InlineObject7', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -271,4 +273,4 @@ class InlineObject7Builder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

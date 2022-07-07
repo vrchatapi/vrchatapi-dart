@@ -17,14 +17,14 @@ class _$Permission extends Permission {
   final JsonObject? data;
 
   factory _$Permission([void Function(PermissionBuilder)? updates]) =>
-      (new PermissionBuilder()..update(updates)).build();
+      (new PermissionBuilder()..update(updates))._build();
 
   _$Permission._(
       {required this.id, required this.name, required this.ownerId, this.data})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, 'Permission', 'id');
-    BuiltValueNullFieldError.checkNotNull(name, 'Permission', 'name');
-    BuiltValueNullFieldError.checkNotNull(ownerId, 'Permission', 'ownerId');
+    BuiltValueNullFieldError.checkNotNull(id, r'Permission', 'id');
+    BuiltValueNullFieldError.checkNotNull(name, r'Permission', 'name');
+    BuiltValueNullFieldError.checkNotNull(ownerId, r'Permission', 'ownerId');
   }
 
   @override
@@ -53,7 +53,7 @@ class _$Permission extends Permission {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Permission')
+    return (newBuiltValueToStringHelper(r'Permission')
           ..add('id', id)
           ..add('name', name)
           ..add('ownerId', ownerId)
@@ -109,18 +109,20 @@ class PermissionBuilder implements Builder<Permission, PermissionBuilder> {
   }
 
   @override
-  _$Permission build() {
+  Permission build() => _build();
+
+  _$Permission _build() {
     final _$result = _$v ??
         new _$Permission._(
-            id: BuiltValueNullFieldError.checkNotNull(id, 'Permission', 'id'),
+            id: BuiltValueNullFieldError.checkNotNull(id, r'Permission', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, 'Permission', 'name'),
+                name, r'Permission', 'name'),
             ownerId: BuiltValueNullFieldError.checkNotNull(
-                ownerId, 'Permission', 'ownerId'),
+                ownerId, r'Permission', 'ownerId'),
             data: data);
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

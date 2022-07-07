@@ -16,15 +16,15 @@ class _$FinishFileDataUploadRequest extends FinishFileDataUploadRequest {
 
   factory _$FinishFileDataUploadRequest(
           [void Function(FinishFileDataUploadRequestBuilder)? updates]) =>
-      (new FinishFileDataUploadRequestBuilder()..update(updates)).build();
+      (new FinishFileDataUploadRequestBuilder()..update(updates))._build();
 
   _$FinishFileDataUploadRequest._(
       {this.etags, required this.nextPartNumber, required this.maxParts})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        nextPartNumber, 'FinishFileDataUploadRequest', 'nextPartNumber');
+        nextPartNumber, r'FinishFileDataUploadRequest', 'nextPartNumber');
     BuiltValueNullFieldError.checkNotNull(
-        maxParts, 'FinishFileDataUploadRequest', 'maxParts');
+        maxParts, r'FinishFileDataUploadRequest', 'maxParts');
   }
 
   @override
@@ -53,7 +53,7 @@ class _$FinishFileDataUploadRequest extends FinishFileDataUploadRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('FinishFileDataUploadRequest')
+    return (newBuiltValueToStringHelper(r'FinishFileDataUploadRequest')
           ..add('etags', etags)
           ..add('nextPartNumber', nextPartNumber)
           ..add('maxParts', maxParts))
@@ -107,7 +107,9 @@ class FinishFileDataUploadRequestBuilder
   }
 
   @override
-  _$FinishFileDataUploadRequest build() {
+  FinishFileDataUploadRequest build() => _build();
+
+  _$FinishFileDataUploadRequest _build() {
     _$FinishFileDataUploadRequest _$result;
     try {
       _$result = _$v ??
@@ -115,10 +117,10 @@ class FinishFileDataUploadRequestBuilder
               etags: _etags?.build(),
               nextPartNumber: BuiltValueNullFieldError.checkNotNull(
                   nextPartNumber,
-                  'FinishFileDataUploadRequest',
+                  r'FinishFileDataUploadRequest',
                   'nextPartNumber'),
               maxParts: BuiltValueNullFieldError.checkNotNull(
-                  maxParts, 'FinishFileDataUploadRequest', 'maxParts'));
+                  maxParts, r'FinishFileDataUploadRequest', 'maxParts'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -126,7 +128,7 @@ class FinishFileDataUploadRequestBuilder
         _etags?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'FinishFileDataUploadRequest', _$failedField, e.toString());
+            r'FinishFileDataUploadRequest', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -135,4 +137,4 @@ class FinishFileDataUploadRequestBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

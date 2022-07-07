@@ -13,12 +13,12 @@ class _$WorldMetadata extends WorldMetadata {
   final JsonObject metadata;
 
   factory _$WorldMetadata([void Function(WorldMetadataBuilder)? updates]) =>
-      (new WorldMetadataBuilder()..update(updates)).build();
+      (new WorldMetadataBuilder()..update(updates))._build();
 
   _$WorldMetadata._({required this.id, required this.metadata}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, 'WorldMetadata', 'id');
+    BuiltValueNullFieldError.checkNotNull(id, r'WorldMetadata', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        metadata, 'WorldMetadata', 'metadata');
+        metadata, r'WorldMetadata', 'metadata');
   }
 
   @override
@@ -43,7 +43,7 @@ class _$WorldMetadata extends WorldMetadata {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('WorldMetadata')
+    return (newBuiltValueToStringHelper(r'WorldMetadata')
           ..add('id', id)
           ..add('metadata', metadata))
         .toString();
@@ -88,16 +88,18 @@ class WorldMetadataBuilder
   }
 
   @override
-  _$WorldMetadata build() {
+  WorldMetadata build() => _build();
+
+  _$WorldMetadata _build() {
     final _$result = _$v ??
         new _$WorldMetadata._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, 'WorldMetadata', 'id'),
+                id, r'WorldMetadata', 'id'),
             metadata: BuiltValueNullFieldError.checkNotNull(
-                metadata, 'WorldMetadata', 'metadata'));
+                metadata, r'WorldMetadata', 'metadata'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

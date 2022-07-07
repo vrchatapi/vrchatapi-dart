@@ -16,15 +16,15 @@ class _$AddFavoriteRequest extends AddFavoriteRequest {
 
   factory _$AddFavoriteRequest(
           [void Function(AddFavoriteRequestBuilder)? updates]) =>
-      (new AddFavoriteRequestBuilder()..update(updates)).build();
+      (new AddFavoriteRequestBuilder()..update(updates))._build();
 
   _$AddFavoriteRequest._(
       {required this.type, required this.favoriteId, required this.tags})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(type, 'AddFavoriteRequest', 'type');
+    BuiltValueNullFieldError.checkNotNull(type, r'AddFavoriteRequest', 'type');
     BuiltValueNullFieldError.checkNotNull(
-        favoriteId, 'AddFavoriteRequest', 'favoriteId');
-    BuiltValueNullFieldError.checkNotNull(tags, 'AddFavoriteRequest', 'tags');
+        favoriteId, r'AddFavoriteRequest', 'favoriteId');
+    BuiltValueNullFieldError.checkNotNull(tags, r'AddFavoriteRequest', 'tags');
   }
 
   @override
@@ -53,7 +53,7 @@ class _$AddFavoriteRequest extends AddFavoriteRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('AddFavoriteRequest')
+    return (newBuiltValueToStringHelper(r'AddFavoriteRequest')
           ..add('type', type)
           ..add('favoriteId', favoriteId)
           ..add('tags', tags))
@@ -104,15 +104,17 @@ class AddFavoriteRequestBuilder
   }
 
   @override
-  _$AddFavoriteRequest build() {
+  AddFavoriteRequest build() => _build();
+
+  _$AddFavoriteRequest _build() {
     _$AddFavoriteRequest _$result;
     try {
       _$result = _$v ??
           new _$AddFavoriteRequest._(
               type: BuiltValueNullFieldError.checkNotNull(
-                  type, 'AddFavoriteRequest', 'type'),
+                  type, r'AddFavoriteRequest', 'type'),
               favoriteId: BuiltValueNullFieldError.checkNotNull(
-                  favoriteId, 'AddFavoriteRequest', 'favoriteId'),
+                  favoriteId, r'AddFavoriteRequest', 'favoriteId'),
               tags: tags.build());
     } catch (_) {
       late String _$failedField;
@@ -121,7 +123,7 @@ class AddFavoriteRequestBuilder
         tags.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'AddFavoriteRequest', _$failedField, e.toString());
+            r'AddFavoriteRequest', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -130,4 +132,4 @@ class AddFavoriteRequestBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

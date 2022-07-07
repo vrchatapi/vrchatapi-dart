@@ -15,7 +15,7 @@ class _$FriendStatus extends FriendStatus {
   final bool outgoingRequest;
 
   factory _$FriendStatus([void Function(FriendStatusBuilder)? updates]) =>
-      (new FriendStatusBuilder()..update(updates)).build();
+      (new FriendStatusBuilder()..update(updates))._build();
 
   _$FriendStatus._(
       {required this.incomingRequest,
@@ -23,10 +23,11 @@ class _$FriendStatus extends FriendStatus {
       required this.outgoingRequest})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        incomingRequest, 'FriendStatus', 'incomingRequest');
-    BuiltValueNullFieldError.checkNotNull(isFriend, 'FriendStatus', 'isFriend');
+        incomingRequest, r'FriendStatus', 'incomingRequest');
     BuiltValueNullFieldError.checkNotNull(
-        outgoingRequest, 'FriendStatus', 'outgoingRequest');
+        isFriend, r'FriendStatus', 'isFriend');
+    BuiltValueNullFieldError.checkNotNull(
+        outgoingRequest, r'FriendStatus', 'outgoingRequest');
   }
 
   @override
@@ -53,7 +54,7 @@ class _$FriendStatus extends FriendStatus {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('FriendStatus')
+    return (newBuiltValueToStringHelper(r'FriendStatus')
           ..add('incomingRequest', incomingRequest)
           ..add('isFriend', isFriend)
           ..add('outgoingRequest', outgoingRequest))
@@ -106,18 +107,20 @@ class FriendStatusBuilder
   }
 
   @override
-  _$FriendStatus build() {
+  FriendStatus build() => _build();
+
+  _$FriendStatus _build() {
     final _$result = _$v ??
         new _$FriendStatus._(
             incomingRequest: BuiltValueNullFieldError.checkNotNull(
-                incomingRequest, 'FriendStatus', 'incomingRequest'),
+                incomingRequest, r'FriendStatus', 'incomingRequest'),
             isFriend: BuiltValueNullFieldError.checkNotNull(
-                isFriend, 'FriendStatus', 'isFriend'),
+                isFriend, r'FriendStatus', 'isFriend'),
             outgoingRequest: BuiltValueNullFieldError.checkNotNull(
-                outgoingRequest, 'FriendStatus', 'outgoingRequest'));
+                outgoingRequest, r'FriendStatus', 'outgoingRequest'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

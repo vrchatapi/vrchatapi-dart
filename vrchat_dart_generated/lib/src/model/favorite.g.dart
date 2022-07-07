@@ -17,7 +17,7 @@ class _$Favorite extends Favorite {
   final FavoriteType type;
 
   factory _$Favorite([void Function(FavoriteBuilder)? updates]) =>
-      (new FavoriteBuilder()..update(updates)).build();
+      (new FavoriteBuilder()..update(updates))._build();
 
   _$Favorite._(
       {required this.favoriteId,
@@ -25,10 +25,11 @@ class _$Favorite extends Favorite {
       required this.tags,
       required this.type})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(favoriteId, 'Favorite', 'favoriteId');
-    BuiltValueNullFieldError.checkNotNull(id, 'Favorite', 'id');
-    BuiltValueNullFieldError.checkNotNull(tags, 'Favorite', 'tags');
-    BuiltValueNullFieldError.checkNotNull(type, 'Favorite', 'type');
+    BuiltValueNullFieldError.checkNotNull(
+        favoriteId, r'Favorite', 'favoriteId');
+    BuiltValueNullFieldError.checkNotNull(id, r'Favorite', 'id');
+    BuiltValueNullFieldError.checkNotNull(tags, r'Favorite', 'tags');
+    BuiltValueNullFieldError.checkNotNull(type, r'Favorite', 'type');
   }
 
   @override
@@ -57,7 +58,7 @@ class _$Favorite extends Favorite {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Favorite')
+    return (newBuiltValueToStringHelper(r'Favorite')
           ..add('favoriteId', favoriteId)
           ..add('id', id)
           ..add('tags', tags)
@@ -113,17 +114,19 @@ class FavoriteBuilder implements Builder<Favorite, FavoriteBuilder> {
   }
 
   @override
-  _$Favorite build() {
+  Favorite build() => _build();
+
+  _$Favorite _build() {
     _$Favorite _$result;
     try {
       _$result = _$v ??
           new _$Favorite._(
               favoriteId: BuiltValueNullFieldError.checkNotNull(
-                  favoriteId, 'Favorite', 'favoriteId'),
-              id: BuiltValueNullFieldError.checkNotNull(id, 'Favorite', 'id'),
+                  favoriteId, r'Favorite', 'favoriteId'),
+              id: BuiltValueNullFieldError.checkNotNull(id, r'Favorite', 'id'),
               tags: tags.build(),
               type: BuiltValueNullFieldError.checkNotNull(
-                  type, 'Favorite', 'type'));
+                  type, r'Favorite', 'type'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -131,7 +134,7 @@ class FavoriteBuilder implements Builder<Favorite, FavoriteBuilder> {
         tags.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'Favorite', _$failedField, e.toString());
+            r'Favorite', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -140,4 +143,4 @@ class FavoriteBuilder implements Builder<Favorite, FavoriteBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

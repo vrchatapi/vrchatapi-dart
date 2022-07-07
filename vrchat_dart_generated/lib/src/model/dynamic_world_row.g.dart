@@ -23,7 +23,7 @@ class _$DynamicWorldRow extends DynamicWorldRow {
   final String? tag;
 
   factory _$DynamicWorldRow([void Function(DynamicWorldRowBuilder)? updates]) =>
-      (new DynamicWorldRowBuilder()..update(updates)).build();
+      (new DynamicWorldRowBuilder()..update(updates))._build();
 
   _$DynamicWorldRow._(
       {required this.index,
@@ -34,16 +34,16 @@ class _$DynamicWorldRow extends DynamicWorldRow {
       required this.sortOwnership,
       this.tag})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(index, 'DynamicWorldRow', 'index');
-    BuiltValueNullFieldError.checkNotNull(name, 'DynamicWorldRow', 'name');
+    BuiltValueNullFieldError.checkNotNull(index, r'DynamicWorldRow', 'index');
+    BuiltValueNullFieldError.checkNotNull(name, r'DynamicWorldRow', 'name');
     BuiltValueNullFieldError.checkNotNull(
-        platform, 'DynamicWorldRow', 'platform');
+        platform, r'DynamicWorldRow', 'platform');
     BuiltValueNullFieldError.checkNotNull(
-        sortHeading, 'DynamicWorldRow', 'sortHeading');
+        sortHeading, r'DynamicWorldRow', 'sortHeading');
     BuiltValueNullFieldError.checkNotNull(
-        sortOrder, 'DynamicWorldRow', 'sortOrder');
+        sortOrder, r'DynamicWorldRow', 'sortOrder');
     BuiltValueNullFieldError.checkNotNull(
-        sortOwnership, 'DynamicWorldRow', 'sortOwnership');
+        sortOwnership, r'DynamicWorldRow', 'sortOwnership');
   }
 
   @override
@@ -83,7 +83,7 @@ class _$DynamicWorldRow extends DynamicWorldRow {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DynamicWorldRow')
+    return (newBuiltValueToStringHelper(r'DynamicWorldRow')
           ..add('index', index)
           ..add('name', name)
           ..add('platform', platform)
@@ -159,25 +159,27 @@ class DynamicWorldRowBuilder
   }
 
   @override
-  _$DynamicWorldRow build() {
+  DynamicWorldRow build() => _build();
+
+  _$DynamicWorldRow _build() {
     final _$result = _$v ??
         new _$DynamicWorldRow._(
             index: BuiltValueNullFieldError.checkNotNull(
-                index, 'DynamicWorldRow', 'index'),
+                index, r'DynamicWorldRow', 'index'),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, 'DynamicWorldRow', 'name'),
+                name, r'DynamicWorldRow', 'name'),
             platform: BuiltValueNullFieldError.checkNotNull(
-                platform, 'DynamicWorldRow', 'platform'),
+                platform, r'DynamicWorldRow', 'platform'),
             sortHeading: BuiltValueNullFieldError.checkNotNull(
-                sortHeading, 'DynamicWorldRow', 'sortHeading'),
+                sortHeading, r'DynamicWorldRow', 'sortHeading'),
             sortOrder: BuiltValueNullFieldError.checkNotNull(
-                sortOrder, 'DynamicWorldRow', 'sortOrder'),
+                sortOrder, r'DynamicWorldRow', 'sortOrder'),
             sortOwnership: BuiltValueNullFieldError.checkNotNull(
-                sortOwnership, 'DynamicWorldRow', 'sortOwnership'),
+                sortOwnership, r'DynamicWorldRow', 'sortOwnership'),
             tag: tag);
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

@@ -21,7 +21,7 @@ class _$Subscription extends Subscription {
   final num tier;
 
   factory _$Subscription([void Function(SubscriptionBuilder)? updates]) =>
-      (new SubscriptionBuilder()..update(updates)).build();
+      (new SubscriptionBuilder()..update(updates))._build();
 
   _$Subscription._(
       {required this.id,
@@ -31,14 +31,14 @@ class _$Subscription extends Subscription {
       required this.period,
       required this.tier})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, 'Subscription', 'id');
+    BuiltValueNullFieldError.checkNotNull(id, r'Subscription', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        steamItemId, 'Subscription', 'steamItemId');
-    BuiltValueNullFieldError.checkNotNull(amount, 'Subscription', 'amount');
+        steamItemId, r'Subscription', 'steamItemId');
+    BuiltValueNullFieldError.checkNotNull(amount, r'Subscription', 'amount');
     BuiltValueNullFieldError.checkNotNull(
-        description, 'Subscription', 'description');
-    BuiltValueNullFieldError.checkNotNull(period, 'Subscription', 'period');
-    BuiltValueNullFieldError.checkNotNull(tier, 'Subscription', 'tier');
+        description, r'Subscription', 'description');
+    BuiltValueNullFieldError.checkNotNull(period, r'Subscription', 'period');
+    BuiltValueNullFieldError.checkNotNull(tier, r'Subscription', 'tier');
   }
 
   @override
@@ -74,7 +74,7 @@ class _$Subscription extends Subscription {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Subscription')
+    return (newBuiltValueToStringHelper(r'Subscription')
           ..add('id', id)
           ..add('steamItemId', steamItemId)
           ..add('amount', amount)
@@ -143,23 +143,26 @@ class SubscriptionBuilder
   }
 
   @override
-  _$Subscription build() {
+  Subscription build() => _build();
+
+  _$Subscription _build() {
     final _$result = _$v ??
         new _$Subscription._(
-            id: BuiltValueNullFieldError.checkNotNull(id, 'Subscription', 'id'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'Subscription', 'id'),
             steamItemId: BuiltValueNullFieldError.checkNotNull(
-                steamItemId, 'Subscription', 'steamItemId'),
+                steamItemId, r'Subscription', 'steamItemId'),
             amount: BuiltValueNullFieldError.checkNotNull(
-                amount, 'Subscription', 'amount'),
+                amount, r'Subscription', 'amount'),
             description: BuiltValueNullFieldError.checkNotNull(
-                description, 'Subscription', 'description'),
+                description, r'Subscription', 'description'),
             period: BuiltValueNullFieldError.checkNotNull(
-                period, 'Subscription', 'period'),
+                period, r'Subscription', 'period'),
             tier: BuiltValueNullFieldError.checkNotNull(
-                tier, 'Subscription', 'tier'));
+                tier, r'Subscription', 'tier'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

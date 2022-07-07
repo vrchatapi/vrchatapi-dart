@@ -15,15 +15,15 @@ class _$InlineObject5 extends InlineObject5 {
   final String maxParts;
 
   factory _$InlineObject5([void Function(InlineObject5Builder)? updates]) =>
-      (new InlineObject5Builder()..update(updates)).build();
+      (new InlineObject5Builder()..update(updates))._build();
 
   _$InlineObject5._(
       {this.etags, required this.nextPartNumber, required this.maxParts})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        nextPartNumber, 'InlineObject5', 'nextPartNumber');
+        nextPartNumber, r'InlineObject5', 'nextPartNumber');
     BuiltValueNullFieldError.checkNotNull(
-        maxParts, 'InlineObject5', 'maxParts');
+        maxParts, r'InlineObject5', 'maxParts');
   }
 
   @override
@@ -50,7 +50,7 @@ class _$InlineObject5 extends InlineObject5 {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InlineObject5')
+    return (newBuiltValueToStringHelper(r'InlineObject5')
           ..add('etags', etags)
           ..add('nextPartNumber', nextPartNumber)
           ..add('maxParts', maxParts))
@@ -102,16 +102,18 @@ class InlineObject5Builder
   }
 
   @override
-  _$InlineObject5 build() {
+  InlineObject5 build() => _build();
+
+  _$InlineObject5 _build() {
     _$InlineObject5 _$result;
     try {
       _$result = _$v ??
           new _$InlineObject5._(
               etags: _etags?.build(),
               nextPartNumber: BuiltValueNullFieldError.checkNotNull(
-                  nextPartNumber, 'InlineObject5', 'nextPartNumber'),
+                  nextPartNumber, r'InlineObject5', 'nextPartNumber'),
               maxParts: BuiltValueNullFieldError.checkNotNull(
-                  maxParts, 'InlineObject5', 'maxParts'));
+                  maxParts, r'InlineObject5', 'maxParts'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -119,7 +121,7 @@ class InlineObject5Builder
         _etags?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'InlineObject5', _$failedField, e.toString());
+            r'InlineObject5', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -128,4 +130,4 @@ class InlineObject5Builder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

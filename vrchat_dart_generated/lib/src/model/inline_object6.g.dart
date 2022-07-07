@@ -37,7 +37,7 @@ class _$InlineObject6 extends InlineObject6 {
   final String? unityVersion;
 
   factory _$InlineObject6([void Function(InlineObject6Builder)? updates]) =>
-      (new InlineObject6Builder()..update(updates)).build();
+      (new InlineObject6Builder()..update(updates))._build();
 
   _$InlineObject6._(
       {required this.assetUrl,
@@ -56,10 +56,10 @@ class _$InlineObject6 extends InlineObject6 {
       this.unityVersion})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        assetUrl, 'InlineObject6', 'assetUrl');
+        assetUrl, r'InlineObject6', 'assetUrl');
     BuiltValueNullFieldError.checkNotNull(
-        imageUrl, 'InlineObject6', 'imageUrl');
-    BuiltValueNullFieldError.checkNotNull(name, 'InlineObject6', 'name');
+        imageUrl, r'InlineObject6', 'imageUrl');
+    BuiltValueNullFieldError.checkNotNull(name, r'InlineObject6', 'name');
   }
 
   @override
@@ -123,7 +123,7 @@ class _$InlineObject6 extends InlineObject6 {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InlineObject6')
+    return (newBuiltValueToStringHelper(r'InlineObject6')
           ..add('assetUrl', assetUrl)
           ..add('assetVersion', assetVersion)
           ..add('authorId', authorId)
@@ -242,13 +242,15 @@ class InlineObject6Builder
   }
 
   @override
-  _$InlineObject6 build() {
+  InlineObject6 build() => _build();
+
+  _$InlineObject6 _build() {
     _$InlineObject6 _$result;
     try {
       _$result = _$v ??
           new _$InlineObject6._(
               assetUrl: BuiltValueNullFieldError.checkNotNull(
-                  assetUrl, 'InlineObject6', 'assetUrl'),
+                  assetUrl, r'InlineObject6', 'assetUrl'),
               assetVersion: assetVersion,
               authorId: authorId,
               authorName: authorName,
@@ -256,9 +258,9 @@ class InlineObject6Builder
               description: description,
               id: id,
               imageUrl: BuiltValueNullFieldError.checkNotNull(
-                  imageUrl, 'InlineObject6', 'imageUrl'),
+                  imageUrl, r'InlineObject6', 'imageUrl'),
               name: BuiltValueNullFieldError.checkNotNull(
-                  name, 'InlineObject6', 'name'),
+                  name, r'InlineObject6', 'name'),
               platform: platform,
               releaseStatus: releaseStatus,
               tags: _tags?.build(),
@@ -271,7 +273,7 @@ class InlineObject6Builder
         _tags?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'InlineObject6', _$failedField, e.toString());
+            r'InlineObject6', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -280,4 +282,4 @@ class InlineObject6Builder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

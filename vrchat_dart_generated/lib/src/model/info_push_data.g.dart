@@ -25,7 +25,7 @@ class _$InfoPushData extends InfoPushData {
   final InfoPushDataArticle? article;
 
   factory _$InfoPushData([void Function(InfoPushDataBuilder)? updates]) =>
-      (new InfoPushDataBuilder()..update(updates)).build();
+      (new InfoPushDataBuilder()..update(updates))._build();
 
   _$InfoPushData._(
       {this.contentList,
@@ -79,7 +79,7 @@ class _$InfoPushData extends InfoPushData {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InfoPushData')
+    return (newBuiltValueToStringHelper(r'InfoPushData')
           ..add('contentList', contentList)
           ..add('description', description)
           ..add('imageUrl', imageUrl)
@@ -165,7 +165,9 @@ class InfoPushDataBuilder
   }
 
   @override
-  _$InfoPushData build() {
+  InfoPushData build() => _build();
+
+  _$InfoPushData _build() {
     _$InfoPushData _$result;
     try {
       _$result = _$v ??
@@ -191,7 +193,7 @@ class InfoPushDataBuilder
         _article?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'InfoPushData', _$failedField, e.toString());
+            r'InfoPushData', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -200,4 +202,4 @@ class InfoPushDataBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

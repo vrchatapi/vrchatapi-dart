@@ -31,7 +31,7 @@ class _$InfoPush extends InfoPush {
   final DateTime? endDate;
 
   factory _$InfoPush([void Function(InfoPushBuilder)? updates]) =>
-      (new InfoPushBuilder()..update(updates)).build();
+      (new InfoPushBuilder()..update(updates))._build();
 
   _$InfoPush._(
       {required this.id,
@@ -46,16 +46,16 @@ class _$InfoPush extends InfoPush {
       this.startDate,
       this.endDate})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, 'InfoPush', 'id');
-    BuiltValueNullFieldError.checkNotNull(isEnabled, 'InfoPush', 'isEnabled');
+    BuiltValueNullFieldError.checkNotNull(id, r'InfoPush', 'id');
+    BuiltValueNullFieldError.checkNotNull(isEnabled, r'InfoPush', 'isEnabled');
     BuiltValueNullFieldError.checkNotNull(
-        releaseStatus, 'InfoPush', 'releaseStatus');
-    BuiltValueNullFieldError.checkNotNull(priority, 'InfoPush', 'priority');
-    BuiltValueNullFieldError.checkNotNull(tags, 'InfoPush', 'tags');
-    BuiltValueNullFieldError.checkNotNull(data, 'InfoPush', 'data');
-    BuiltValueNullFieldError.checkNotNull(hash, 'InfoPush', 'hash');
-    BuiltValueNullFieldError.checkNotNull(createdAt, 'InfoPush', 'createdAt');
-    BuiltValueNullFieldError.checkNotNull(updatedAt, 'InfoPush', 'updatedAt');
+        releaseStatus, r'InfoPush', 'releaseStatus');
+    BuiltValueNullFieldError.checkNotNull(priority, r'InfoPush', 'priority');
+    BuiltValueNullFieldError.checkNotNull(tags, r'InfoPush', 'tags');
+    BuiltValueNullFieldError.checkNotNull(data, r'InfoPush', 'data');
+    BuiltValueNullFieldError.checkNotNull(hash, r'InfoPush', 'hash');
+    BuiltValueNullFieldError.checkNotNull(createdAt, r'InfoPush', 'createdAt');
+    BuiltValueNullFieldError.checkNotNull(updatedAt, r'InfoPush', 'updatedAt');
   }
 
   @override
@@ -108,7 +108,7 @@ class _$InfoPush extends InfoPush {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InfoPush')
+    return (newBuiltValueToStringHelper(r'InfoPush')
           ..add('id', id)
           ..add('isEnabled', isEnabled)
           ..add('releaseStatus', releaseStatus)
@@ -207,26 +207,28 @@ class InfoPushBuilder implements Builder<InfoPush, InfoPushBuilder> {
   }
 
   @override
-  _$InfoPush build() {
+  InfoPush build() => _build();
+
+  _$InfoPush _build() {
     _$InfoPush _$result;
     try {
       _$result = _$v ??
           new _$InfoPush._(
-              id: BuiltValueNullFieldError.checkNotNull(id, 'InfoPush', 'id'),
+              id: BuiltValueNullFieldError.checkNotNull(id, r'InfoPush', 'id'),
               isEnabled: BuiltValueNullFieldError.checkNotNull(
-                  isEnabled, 'InfoPush', 'isEnabled'),
+                  isEnabled, r'InfoPush', 'isEnabled'),
               releaseStatus: BuiltValueNullFieldError.checkNotNull(
-                  releaseStatus, 'InfoPush', 'releaseStatus'),
+                  releaseStatus, r'InfoPush', 'releaseStatus'),
               priority: BuiltValueNullFieldError.checkNotNull(
-                  priority, 'InfoPush', 'priority'),
+                  priority, r'InfoPush', 'priority'),
               tags: tags.build(),
               data: data.build(),
               hash: BuiltValueNullFieldError.checkNotNull(
-                  hash, 'InfoPush', 'hash'),
+                  hash, r'InfoPush', 'hash'),
               createdAt: BuiltValueNullFieldError.checkNotNull(
-                  createdAt, 'InfoPush', 'createdAt'),
+                  createdAt, r'InfoPush', 'createdAt'),
               updatedAt: BuiltValueNullFieldError.checkNotNull(
-                  updatedAt, 'InfoPush', 'updatedAt'),
+                  updatedAt, r'InfoPush', 'updatedAt'),
               startDate: startDate,
               endDate: endDate);
     } catch (_) {
@@ -238,7 +240,7 @@ class InfoPushBuilder implements Builder<InfoPush, InfoPushBuilder> {
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'InfoPush', _$failedField, e.toString());
+            r'InfoPush', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -247,4 +249,4 @@ class InfoPushBuilder implements Builder<InfoPush, InfoPushBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

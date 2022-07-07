@@ -23,7 +23,7 @@ class _$File extends File {
   final BuiltSet<FileVersion> versions;
 
   factory _$File([void Function(FileBuilder)? updates]) =>
-      (new FileBuilder()..update(updates)).build();
+      (new FileBuilder()..update(updates))._build();
 
   _$File._(
       {required this.extension_,
@@ -34,13 +34,13 @@ class _$File extends File {
       required this.tags,
       required this.versions})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(extension_, 'File', 'extension_');
-    BuiltValueNullFieldError.checkNotNull(id, 'File', 'id');
-    BuiltValueNullFieldError.checkNotNull(mimeType, 'File', 'mimeType');
-    BuiltValueNullFieldError.checkNotNull(name, 'File', 'name');
-    BuiltValueNullFieldError.checkNotNull(ownerId, 'File', 'ownerId');
-    BuiltValueNullFieldError.checkNotNull(tags, 'File', 'tags');
-    BuiltValueNullFieldError.checkNotNull(versions, 'File', 'versions');
+    BuiltValueNullFieldError.checkNotNull(extension_, r'File', 'extension_');
+    BuiltValueNullFieldError.checkNotNull(id, r'File', 'id');
+    BuiltValueNullFieldError.checkNotNull(mimeType, r'File', 'mimeType');
+    BuiltValueNullFieldError.checkNotNull(name, r'File', 'name');
+    BuiltValueNullFieldError.checkNotNull(ownerId, r'File', 'ownerId');
+    BuiltValueNullFieldError.checkNotNull(tags, r'File', 'tags');
+    BuiltValueNullFieldError.checkNotNull(versions, r'File', 'versions');
   }
 
   @override
@@ -79,7 +79,7 @@ class _$File extends File {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('File')
+    return (newBuiltValueToStringHelper(r'File')
           ..add('extension_', extension_)
           ..add('id', id)
           ..add('mimeType', mimeType)
@@ -155,19 +155,22 @@ class FileBuilder implements Builder<File, FileBuilder> {
   }
 
   @override
-  _$File build() {
+  File build() => _build();
+
+  _$File _build() {
     _$File _$result;
     try {
       _$result = _$v ??
           new _$File._(
               extension_: BuiltValueNullFieldError.checkNotNull(
-                  extension_, 'File', 'extension_'),
-              id: BuiltValueNullFieldError.checkNotNull(id, 'File', 'id'),
+                  extension_, r'File', 'extension_'),
+              id: BuiltValueNullFieldError.checkNotNull(id, r'File', 'id'),
               mimeType: BuiltValueNullFieldError.checkNotNull(
-                  mimeType, 'File', 'mimeType'),
-              name: BuiltValueNullFieldError.checkNotNull(name, 'File', 'name'),
+                  mimeType, r'File', 'mimeType'),
+              name:
+                  BuiltValueNullFieldError.checkNotNull(name, r'File', 'name'),
               ownerId: BuiltValueNullFieldError.checkNotNull(
-                  ownerId, 'File', 'ownerId'),
+                  ownerId, r'File', 'ownerId'),
               tags: tags.build(),
               versions: versions.build());
     } catch (_) {
@@ -179,7 +182,7 @@ class FileBuilder implements Builder<File, FileBuilder> {
         versions.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'File', _$failedField, e.toString());
+            r'File', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -188,4 +191,4 @@ class FileBuilder implements Builder<File, FileBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

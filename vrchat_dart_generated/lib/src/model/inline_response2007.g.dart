@@ -12,11 +12,11 @@ class _$InlineResponse2007 extends InlineResponse2007 {
 
   factory _$InlineResponse2007(
           [void Function(InlineResponse2007Builder)? updates]) =>
-      (new InlineResponse2007Builder()..update(updates)).build();
+      (new InlineResponse2007Builder()..update(updates))._build();
 
   _$InlineResponse2007._({required this.canPubilsh}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        canPubilsh, 'InlineResponse2007', 'canPubilsh');
+        canPubilsh, r'InlineResponse2007', 'canPubilsh');
   }
 
   @override
@@ -41,7 +41,7 @@ class _$InlineResponse2007 extends InlineResponse2007 {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InlineResponse2007')
+    return (newBuiltValueToStringHelper(r'InlineResponse2007')
           ..add('canPubilsh', canPubilsh))
         .toString();
   }
@@ -80,14 +80,16 @@ class InlineResponse2007Builder
   }
 
   @override
-  _$InlineResponse2007 build() {
+  InlineResponse2007 build() => _build();
+
+  _$InlineResponse2007 _build() {
     final _$result = _$v ??
         new _$InlineResponse2007._(
             canPubilsh: BuiltValueNullFieldError.checkNotNull(
-                canPubilsh, 'InlineResponse2007', 'canPubilsh'));
+                canPubilsh, r'InlineResponse2007', 'canPubilsh'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

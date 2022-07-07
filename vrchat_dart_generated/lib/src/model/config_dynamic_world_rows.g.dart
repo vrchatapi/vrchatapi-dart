@@ -24,7 +24,7 @@ class _$ConfigDynamicWorldRows extends ConfigDynamicWorldRows {
 
   factory _$ConfigDynamicWorldRows(
           [void Function(ConfigDynamicWorldRowsBuilder)? updates]) =>
-      (new ConfigDynamicWorldRowsBuilder()..update(updates)).build();
+      (new ConfigDynamicWorldRowsBuilder()..update(updates))._build();
 
   _$ConfigDynamicWorldRows._(
       {required this.index,
@@ -36,17 +36,17 @@ class _$ConfigDynamicWorldRows extends ConfigDynamicWorldRows {
       this.tag})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        index, 'ConfigDynamicWorldRows', 'index');
+        index, r'ConfigDynamicWorldRows', 'index');
     BuiltValueNullFieldError.checkNotNull(
-        name, 'ConfigDynamicWorldRows', 'name');
+        name, r'ConfigDynamicWorldRows', 'name');
     BuiltValueNullFieldError.checkNotNull(
-        platform, 'ConfigDynamicWorldRows', 'platform');
+        platform, r'ConfigDynamicWorldRows', 'platform');
     BuiltValueNullFieldError.checkNotNull(
-        sortHeading, 'ConfigDynamicWorldRows', 'sortHeading');
+        sortHeading, r'ConfigDynamicWorldRows', 'sortHeading');
     BuiltValueNullFieldError.checkNotNull(
-        sortOrder, 'ConfigDynamicWorldRows', 'sortOrder');
+        sortOrder, r'ConfigDynamicWorldRows', 'sortOrder');
     BuiltValueNullFieldError.checkNotNull(
-        sortOwnership, 'ConfigDynamicWorldRows', 'sortOwnership');
+        sortOwnership, r'ConfigDynamicWorldRows', 'sortOwnership');
   }
 
   @override
@@ -87,7 +87,7 @@ class _$ConfigDynamicWorldRows extends ConfigDynamicWorldRows {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ConfigDynamicWorldRows')
+    return (newBuiltValueToStringHelper(r'ConfigDynamicWorldRows')
           ..add('index', index)
           ..add('name', name)
           ..add('platform', platform)
@@ -163,25 +163,27 @@ class ConfigDynamicWorldRowsBuilder
   }
 
   @override
-  _$ConfigDynamicWorldRows build() {
+  ConfigDynamicWorldRows build() => _build();
+
+  _$ConfigDynamicWorldRows _build() {
     final _$result = _$v ??
         new _$ConfigDynamicWorldRows._(
             index: BuiltValueNullFieldError.checkNotNull(
-                index, 'ConfigDynamicWorldRows', 'index'),
+                index, r'ConfigDynamicWorldRows', 'index'),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, 'ConfigDynamicWorldRows', 'name'),
+                name, r'ConfigDynamicWorldRows', 'name'),
             platform: BuiltValueNullFieldError.checkNotNull(
-                platform, 'ConfigDynamicWorldRows', 'platform'),
+                platform, r'ConfigDynamicWorldRows', 'platform'),
             sortHeading: BuiltValueNullFieldError.checkNotNull(
-                sortHeading, 'ConfigDynamicWorldRows', 'sortHeading'),
+                sortHeading, r'ConfigDynamicWorldRows', 'sortHeading'),
             sortOrder: BuiltValueNullFieldError.checkNotNull(
-                sortOrder, 'ConfigDynamicWorldRows', 'sortOrder'),
+                sortOrder, r'ConfigDynamicWorldRows', 'sortOrder'),
             sortOwnership: BuiltValueNullFieldError.checkNotNull(
-                sortOwnership, 'ConfigDynamicWorldRows', 'sortOwnership'),
+                sortOwnership, r'ConfigDynamicWorldRows', 'sortOwnership'),
             tag: tag);
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

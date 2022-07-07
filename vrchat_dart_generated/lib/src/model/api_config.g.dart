@@ -169,7 +169,7 @@ class _$APIConfig extends APIConfig {
   final String youtubedlVersion;
 
   factory _$APIConfig([void Function(APIConfigBuilder)? updates]) =>
-      (new APIConfigBuilder()..update(updates)).build();
+      (new APIConfigBuilder()..update(updates))._build();
 
   _$APIConfig._(
       {required this.voiceEnableDegradation,
@@ -254,159 +254,159 @@ class _$APIConfig extends APIConfig {
       required this.youtubedlVersion})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        voiceEnableDegradation, 'APIConfig', 'voiceEnableDegradation');
+        voiceEnableDegradation, r'APIConfig', 'voiceEnableDegradation');
     BuiltValueNullFieldError.checkNotNull(voiceEnableReceiverLimiting,
-        'APIConfig', 'voiceEnableReceiverLimiting');
-    BuiltValueNullFieldError.checkNotNull(address, 'APIConfig', 'address');
+        r'APIConfig', 'voiceEnableReceiverLimiting');
+    BuiltValueNullFieldError.checkNotNull(address, r'APIConfig', 'address');
     BuiltValueNullFieldError.checkNotNull(
-        announcements, 'APIConfig', 'announcements');
-    BuiltValueNullFieldError.checkNotNull(apiKey, 'APIConfig', 'apiKey');
-    BuiltValueNullFieldError.checkNotNull(appName, 'APIConfig', 'appName');
+        announcements, r'APIConfig', 'announcements');
+    BuiltValueNullFieldError.checkNotNull(apiKey, r'APIConfig', 'apiKey');
+    BuiltValueNullFieldError.checkNotNull(appName, r'APIConfig', 'appName');
     BuiltValueNullFieldError.checkNotNull(
-        buildVersionTag, 'APIConfig', 'buildVersionTag');
+        buildVersionTag, r'APIConfig', 'buildVersionTag');
     BuiltValueNullFieldError.checkNotNull(
-        clientApiKey, 'APIConfig', 'clientApiKey');
+        clientApiKey, r'APIConfig', 'clientApiKey');
     BuiltValueNullFieldError.checkNotNull(
-        clientBPSCeiling, 'APIConfig', 'clientBPSCeiling');
+        clientBPSCeiling, r'APIConfig', 'clientBPSCeiling');
     BuiltValueNullFieldError.checkNotNull(
-        clientDisconnectTimeout, 'APIConfig', 'clientDisconnectTimeout');
+        clientDisconnectTimeout, r'APIConfig', 'clientDisconnectTimeout');
     BuiltValueNullFieldError.checkNotNull(
-        clientReservedPlayerBPS, 'APIConfig', 'clientReservedPlayerBPS');
+        clientReservedPlayerBPS, r'APIConfig', 'clientReservedPlayerBPS');
     BuiltValueNullFieldError.checkNotNull(
-        clientSentCountAllowance, 'APIConfig', 'clientSentCountAllowance');
+        clientSentCountAllowance, r'APIConfig', 'clientSentCountAllowance');
     BuiltValueNullFieldError.checkNotNull(
-        contactEmail, 'APIConfig', 'contactEmail');
+        contactEmail, r'APIConfig', 'contactEmail');
     BuiltValueNullFieldError.checkNotNull(
-        copyrightEmail, 'APIConfig', 'copyrightEmail');
+        copyrightEmail, r'APIConfig', 'copyrightEmail');
     BuiltValueNullFieldError.checkNotNull(
-        currentTOSVersion, 'APIConfig', 'currentTOSVersion');
+        currentTOSVersion, r'APIConfig', 'currentTOSVersion');
     BuiltValueNullFieldError.checkNotNull(
-        defaultAvatar, 'APIConfig', 'defaultAvatar');
+        defaultAvatar, r'APIConfig', 'defaultAvatar');
     BuiltValueNullFieldError.checkNotNull(
-        deploymentGroup, 'APIConfig', 'deploymentGroup');
+        deploymentGroup, r'APIConfig', 'deploymentGroup');
     BuiltValueNullFieldError.checkNotNull(
-        devAppVersionStandalone, 'APIConfig', 'devAppVersionStandalone');
+        devAppVersionStandalone, r'APIConfig', 'devAppVersionStandalone');
     BuiltValueNullFieldError.checkNotNull(
-        devDownloadLinkWindows, 'APIConfig', 'devDownloadLinkWindows');
-    BuiltValueNullFieldError.checkNotNull(devSdkUrl, 'APIConfig', 'devSdkUrl');
+        devDownloadLinkWindows, r'APIConfig', 'devDownloadLinkWindows');
+    BuiltValueNullFieldError.checkNotNull(devSdkUrl, r'APIConfig', 'devSdkUrl');
     BuiltValueNullFieldError.checkNotNull(
-        devSdkVersion, 'APIConfig', 'devSdkVersion');
+        devSdkVersion, r'APIConfig', 'devSdkVersion');
     BuiltValueNullFieldError.checkNotNull(
-        devServerVersionStandalone, 'APIConfig', 'devServerVersionStandalone');
+        devServerVersionStandalone, r'APIConfig', 'devServerVersionStandalone');
     BuiltValueNullFieldError.checkNotNull(
-        disCountdown, 'APIConfig', 'disCountdown');
+        disCountdown, r'APIConfig', 'disCountdown');
     BuiltValueNullFieldError.checkNotNull(
-        disableAvatarCopying, 'APIConfig', 'disableAvatarCopying');
+        disableAvatarCopying, r'APIConfig', 'disableAvatarCopying');
     BuiltValueNullFieldError.checkNotNull(
-        disableAvatarGating, 'APIConfig', 'disableAvatarGating');
+        disableAvatarGating, r'APIConfig', 'disableAvatarGating');
     BuiltValueNullFieldError.checkNotNull(
-        disableCommunityLabs, 'APIConfig', 'disableCommunityLabs');
+        disableCommunityLabs, r'APIConfig', 'disableCommunityLabs');
     BuiltValueNullFieldError.checkNotNull(disableCommunityLabsPromotion,
-        'APIConfig', 'disableCommunityLabsPromotion');
+        r'APIConfig', 'disableCommunityLabsPromotion');
     BuiltValueNullFieldError.checkNotNull(
-        disableEmail, 'APIConfig', 'disableEmail');
+        disableEmail, r'APIConfig', 'disableEmail');
     BuiltValueNullFieldError.checkNotNull(
-        disableEventStream, 'APIConfig', 'disableEventStream');
+        disableEventStream, r'APIConfig', 'disableEventStream');
     BuiltValueNullFieldError.checkNotNull(
-        disableFeedbackGating, 'APIConfig', 'disableFeedbackGating');
+        disableFeedbackGating, r'APIConfig', 'disableFeedbackGating');
     BuiltValueNullFieldError.checkNotNull(
-        disableFrontendBuilds, 'APIConfig', 'disableFrontendBuilds');
+        disableFrontendBuilds, r'APIConfig', 'disableFrontendBuilds');
     BuiltValueNullFieldError.checkNotNull(
-        disableHello, 'APIConfig', 'disableHello');
+        disableHello, r'APIConfig', 'disableHello');
     BuiltValueNullFieldError.checkNotNull(
-        disableOculusSubs, 'APIConfig', 'disableOculusSubs');
+        disableOculusSubs, r'APIConfig', 'disableOculusSubs');
     BuiltValueNullFieldError.checkNotNull(
-        disableRegistration, 'APIConfig', 'disableRegistration');
+        disableRegistration, r'APIConfig', 'disableRegistration');
     BuiltValueNullFieldError.checkNotNull(
-        disableSteamNetworking, 'APIConfig', 'disableSteamNetworking');
+        disableSteamNetworking, r'APIConfig', 'disableSteamNetworking');
     BuiltValueNullFieldError.checkNotNull(
-        disableTwoFactorAuth, 'APIConfig', 'disableTwoFactorAuth');
+        disableTwoFactorAuth, r'APIConfig', 'disableTwoFactorAuth');
     BuiltValueNullFieldError.checkNotNull(
-        disableUdon, 'APIConfig', 'disableUdon');
+        disableUdon, r'APIConfig', 'disableUdon');
     BuiltValueNullFieldError.checkNotNull(
-        disableUpgradeAccount, 'APIConfig', 'disableUpgradeAccount');
+        disableUpgradeAccount, r'APIConfig', 'disableUpgradeAccount');
     BuiltValueNullFieldError.checkNotNull(
-        downloadLinkWindows, 'APIConfig', 'downloadLinkWindows');
+        downloadLinkWindows, r'APIConfig', 'downloadLinkWindows');
     BuiltValueNullFieldError.checkNotNull(
-        downloadUrls, 'APIConfig', 'downloadUrls');
+        downloadUrls, r'APIConfig', 'downloadUrls');
     BuiltValueNullFieldError.checkNotNull(
-        dynamicWorldRows, 'APIConfig', 'dynamicWorldRows');
-    BuiltValueNullFieldError.checkNotNull(events, 'APIConfig', 'events');
+        dynamicWorldRows, r'APIConfig', 'dynamicWorldRows');
+    BuiltValueNullFieldError.checkNotNull(events, r'APIConfig', 'events');
     BuiltValueNullFieldError.checkNotNull(
-        gearDemoRoomId, 'APIConfig', 'gearDemoRoomId');
+        gearDemoRoomId, r'APIConfig', 'gearDemoRoomId');
     BuiltValueNullFieldError.checkNotNull(
-        homeWorldId, 'APIConfig', 'homeWorldId');
+        homeWorldId, r'APIConfig', 'homeWorldId');
     BuiltValueNullFieldError.checkNotNull(
-        homepageRedirectTarget, 'APIConfig', 'homepageRedirectTarget');
+        homepageRedirectTarget, r'APIConfig', 'homepageRedirectTarget');
     BuiltValueNullFieldError.checkNotNull(
-        hubWorldId, 'APIConfig', 'hubWorldId');
-    BuiltValueNullFieldError.checkNotNull(jobsEmail, 'APIConfig', 'jobsEmail');
+        hubWorldId, r'APIConfig', 'hubWorldId');
+    BuiltValueNullFieldError.checkNotNull(jobsEmail, r'APIConfig', 'jobsEmail');
     BuiltValueNullFieldError.checkNotNull(
-        messageOfTheDay, 'APIConfig', 'messageOfTheDay');
+        messageOfTheDay, r'APIConfig', 'messageOfTheDay');
     BuiltValueNullFieldError.checkNotNull(
-        moderationEmail, 'APIConfig', 'moderationEmail');
+        moderationEmail, r'APIConfig', 'moderationEmail');
     BuiltValueNullFieldError.checkNotNull(
-        moderationQueryPeriod, 'APIConfig', 'moderationQueryPeriod');
+        moderationQueryPeriod, r'APIConfig', 'moderationQueryPeriod');
     BuiltValueNullFieldError.checkNotNull(
         notAllowedToSelectAvatarInPrivateWorldMessage,
-        'APIConfig',
+        r'APIConfig',
         'notAllowedToSelectAvatarInPrivateWorldMessage');
-    BuiltValueNullFieldError.checkNotNull(plugin, 'APIConfig', 'plugin');
+    BuiltValueNullFieldError.checkNotNull(plugin, r'APIConfig', 'plugin');
     BuiltValueNullFieldError.checkNotNull(releaseAppVersionStandalone,
-        'APIConfig', 'releaseAppVersionStandalone');
+        r'APIConfig', 'releaseAppVersionStandalone');
     BuiltValueNullFieldError.checkNotNull(
-        releaseSdkUrl, 'APIConfig', 'releaseSdkUrl');
+        releaseSdkUrl, r'APIConfig', 'releaseSdkUrl');
     BuiltValueNullFieldError.checkNotNull(
-        releaseSdkVersion, 'APIConfig', 'releaseSdkVersion');
+        releaseSdkVersion, r'APIConfig', 'releaseSdkVersion');
     BuiltValueNullFieldError.checkNotNull(releaseServerVersionStandalone,
-        'APIConfig', 'releaseServerVersionStandalone');
+        r'APIConfig', 'releaseServerVersionStandalone');
     BuiltValueNullFieldError.checkNotNull(
-        sdkDeveloperFaqUrl, 'APIConfig', 'sdkDeveloperFaqUrl');
+        sdkDeveloperFaqUrl, r'APIConfig', 'sdkDeveloperFaqUrl');
     BuiltValueNullFieldError.checkNotNull(
-        sdkDiscordUrl, 'APIConfig', 'sdkDiscordUrl');
+        sdkDiscordUrl, r'APIConfig', 'sdkDiscordUrl');
     BuiltValueNullFieldError.checkNotNull(sdkNotAllowedToPublishMessage,
-        'APIConfig', 'sdkNotAllowedToPublishMessage');
+        r'APIConfig', 'sdkNotAllowedToPublishMessage');
     BuiltValueNullFieldError.checkNotNull(
-        sdkUnityVersion, 'APIConfig', 'sdkUnityVersion');
+        sdkUnityVersion, r'APIConfig', 'sdkUnityVersion');
     BuiltValueNullFieldError.checkNotNull(
-        serverName, 'APIConfig', 'serverName');
+        serverName, r'APIConfig', 'serverName');
     BuiltValueNullFieldError.checkNotNull(
-        supportEmail, 'APIConfig', 'supportEmail');
+        supportEmail, r'APIConfig', 'supportEmail');
     BuiltValueNullFieldError.checkNotNull(
-        timeOutWorldId, 'APIConfig', 'timeOutWorldId');
+        timeOutWorldId, r'APIConfig', 'timeOutWorldId');
     BuiltValueNullFieldError.checkNotNull(
-        tutorialWorldId, 'APIConfig', 'tutorialWorldId');
+        tutorialWorldId, r'APIConfig', 'tutorialWorldId');
     BuiltValueNullFieldError.checkNotNull(
-        updateRateMsMaximum, 'APIConfig', 'updateRateMsMaximum');
+        updateRateMsMaximum, r'APIConfig', 'updateRateMsMaximum');
     BuiltValueNullFieldError.checkNotNull(
-        updateRateMsMinimum, 'APIConfig', 'updateRateMsMinimum');
+        updateRateMsMinimum, r'APIConfig', 'updateRateMsMinimum');
     BuiltValueNullFieldError.checkNotNull(
-        updateRateMsNormal, 'APIConfig', 'updateRateMsNormal');
+        updateRateMsNormal, r'APIConfig', 'updateRateMsNormal');
     BuiltValueNullFieldError.checkNotNull(
-        updateRateMsUdonManual, 'APIConfig', 'updateRateMsUdonManual');
+        updateRateMsUdonManual, r'APIConfig', 'updateRateMsUdonManual');
     BuiltValueNullFieldError.checkNotNull(
-        uploadAnalysisPercent, 'APIConfig', 'uploadAnalysisPercent');
-    BuiltValueNullFieldError.checkNotNull(urlList, 'APIConfig', 'urlList');
+        uploadAnalysisPercent, r'APIConfig', 'uploadAnalysisPercent');
+    BuiltValueNullFieldError.checkNotNull(urlList, r'APIConfig', 'urlList');
     BuiltValueNullFieldError.checkNotNull(
-        useReliableUdpForVoice, 'APIConfig', 'useReliableUdpForVoice');
+        useReliableUdpForVoice, r'APIConfig', 'useReliableUdpForVoice');
     BuiltValueNullFieldError.checkNotNull(
-        userUpdatePeriod, 'APIConfig', 'userUpdatePeriod');
+        userUpdatePeriod, r'APIConfig', 'userUpdatePeriod');
     BuiltValueNullFieldError.checkNotNull(
-        userVerificationDelay, 'APIConfig', 'userVerificationDelay');
+        userVerificationDelay, r'APIConfig', 'userVerificationDelay');
     BuiltValueNullFieldError.checkNotNull(
-        userVerificationRetry, 'APIConfig', 'userVerificationRetry');
+        userVerificationRetry, r'APIConfig', 'userVerificationRetry');
     BuiltValueNullFieldError.checkNotNull(
-        userVerificationTimeout, 'APIConfig', 'userVerificationTimeout');
+        userVerificationTimeout, r'APIConfig', 'userVerificationTimeout');
     BuiltValueNullFieldError.checkNotNull(
-        viveWindowsUrl, 'APIConfig', 'viveWindowsUrl');
+        viveWindowsUrl, r'APIConfig', 'viveWindowsUrl');
     BuiltValueNullFieldError.checkNotNull(
-        whiteListedAssetUrls, 'APIConfig', 'whiteListedAssetUrls');
+        whiteListedAssetUrls, r'APIConfig', 'whiteListedAssetUrls');
     BuiltValueNullFieldError.checkNotNull(
-        worldUpdatePeriod, 'APIConfig', 'worldUpdatePeriod');
+        worldUpdatePeriod, r'APIConfig', 'worldUpdatePeriod');
     BuiltValueNullFieldError.checkNotNull(
-        youtubedlHash, 'APIConfig', 'youtubedlHash');
+        youtubedlHash, r'APIConfig', 'youtubedlHash');
     BuiltValueNullFieldError.checkNotNull(
-        youtubedlVersion, 'APIConfig', 'youtubedlVersion');
+        youtubedlVersion, r'APIConfig', 'youtubedlVersion');
   }
 
   @override
@@ -548,7 +548,7 @@ class _$APIConfig extends APIConfig {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('APIConfig')
+    return (newBuiltValueToStringHelper(r'APIConfig')
           ..add('voiceEnableDegradation', voiceEnableDegradation)
           ..add('voiceEnableReceiverLimiting', voiceEnableReceiverLimiting)
           ..add('address', address)
@@ -1139,98 +1139,100 @@ class APIConfigBuilder implements Builder<APIConfig, APIConfigBuilder> {
   }
 
   @override
-  _$APIConfig build() {
+  APIConfig build() => _build();
+
+  _$APIConfig _build() {
     _$APIConfig _$result;
     try {
       _$result = _$v ??
           new _$APIConfig._(
               voiceEnableDegradation: BuiltValueNullFieldError.checkNotNull(
-                  voiceEnableDegradation, 'APIConfig', 'voiceEnableDegradation'),
+                  voiceEnableDegradation, r'APIConfig', 'voiceEnableDegradation'),
               voiceEnableReceiverLimiting: BuiltValueNullFieldError.checkNotNull(
-                  voiceEnableReceiverLimiting, 'APIConfig', 'voiceEnableReceiverLimiting'),
+                  voiceEnableReceiverLimiting, r'APIConfig', 'voiceEnableReceiverLimiting'),
               address: BuiltValueNullFieldError.checkNotNull(
-                  address, 'APIConfig', 'address'),
+                  address, r'APIConfig', 'address'),
               announcements: announcements.build(),
               apiKey: BuiltValueNullFieldError.checkNotNull(
-                  apiKey, 'APIConfig', 'apiKey'),
+                  apiKey, r'APIConfig', 'apiKey'),
               appName: BuiltValueNullFieldError.checkNotNull(
-                  appName, 'APIConfig', 'appName'),
+                  appName, r'APIConfig', 'appName'),
               buildVersionTag: BuiltValueNullFieldError.checkNotNull(
-                  buildVersionTag, 'APIConfig', 'buildVersionTag'),
+                  buildVersionTag, r'APIConfig', 'buildVersionTag'),
               clientApiKey: BuiltValueNullFieldError.checkNotNull(
-                  clientApiKey, 'APIConfig', 'clientApiKey'),
-              clientBPSCeiling: BuiltValueNullFieldError.checkNotNull(clientBPSCeiling, 'APIConfig', 'clientBPSCeiling'),
-              clientDisconnectTimeout: BuiltValueNullFieldError.checkNotNull(clientDisconnectTimeout, 'APIConfig', 'clientDisconnectTimeout'),
-              clientReservedPlayerBPS: BuiltValueNullFieldError.checkNotNull(clientReservedPlayerBPS, 'APIConfig', 'clientReservedPlayerBPS'),
-              clientSentCountAllowance: BuiltValueNullFieldError.checkNotNull(clientSentCountAllowance, 'APIConfig', 'clientSentCountAllowance'),
-              contactEmail: BuiltValueNullFieldError.checkNotNull(contactEmail, 'APIConfig', 'contactEmail'),
-              copyrightEmail: BuiltValueNullFieldError.checkNotNull(copyrightEmail, 'APIConfig', 'copyrightEmail'),
-              currentTOSVersion: BuiltValueNullFieldError.checkNotNull(currentTOSVersion, 'APIConfig', 'currentTOSVersion'),
-              defaultAvatar: BuiltValueNullFieldError.checkNotNull(defaultAvatar, 'APIConfig', 'defaultAvatar'),
-              deploymentGroup: BuiltValueNullFieldError.checkNotNull(deploymentGroup, 'APIConfig', 'deploymentGroup'),
-              devAppVersionStandalone: BuiltValueNullFieldError.checkNotNull(devAppVersionStandalone, 'APIConfig', 'devAppVersionStandalone'),
-              devDownloadLinkWindows: BuiltValueNullFieldError.checkNotNull(devDownloadLinkWindows, 'APIConfig', 'devDownloadLinkWindows'),
-              devSdkUrl: BuiltValueNullFieldError.checkNotNull(devSdkUrl, 'APIConfig', 'devSdkUrl'),
-              devSdkVersion: BuiltValueNullFieldError.checkNotNull(devSdkVersion, 'APIConfig', 'devSdkVersion'),
-              devServerVersionStandalone: BuiltValueNullFieldError.checkNotNull(devServerVersionStandalone, 'APIConfig', 'devServerVersionStandalone'),
-              disCountdown: BuiltValueNullFieldError.checkNotNull(disCountdown, 'APIConfig', 'disCountdown'),
-              disableAvatarCopying: BuiltValueNullFieldError.checkNotNull(disableAvatarCopying, 'APIConfig', 'disableAvatarCopying'),
-              disableAvatarGating: BuiltValueNullFieldError.checkNotNull(disableAvatarGating, 'APIConfig', 'disableAvatarGating'),
-              disableCommunityLabs: BuiltValueNullFieldError.checkNotNull(disableCommunityLabs, 'APIConfig', 'disableCommunityLabs'),
-              disableCommunityLabsPromotion: BuiltValueNullFieldError.checkNotNull(disableCommunityLabsPromotion, 'APIConfig', 'disableCommunityLabsPromotion'),
-              disableEmail: BuiltValueNullFieldError.checkNotNull(disableEmail, 'APIConfig', 'disableEmail'),
-              disableEventStream: BuiltValueNullFieldError.checkNotNull(disableEventStream, 'APIConfig', 'disableEventStream'),
-              disableFeedbackGating: BuiltValueNullFieldError.checkNotNull(disableFeedbackGating, 'APIConfig', 'disableFeedbackGating'),
-              disableFrontendBuilds: BuiltValueNullFieldError.checkNotNull(disableFrontendBuilds, 'APIConfig', 'disableFrontendBuilds'),
-              disableHello: BuiltValueNullFieldError.checkNotNull(disableHello, 'APIConfig', 'disableHello'),
-              disableOculusSubs: BuiltValueNullFieldError.checkNotNull(disableOculusSubs, 'APIConfig', 'disableOculusSubs'),
-              disableRegistration: BuiltValueNullFieldError.checkNotNull(disableRegistration, 'APIConfig', 'disableRegistration'),
-              disableSteamNetworking: BuiltValueNullFieldError.checkNotNull(disableSteamNetworking, 'APIConfig', 'disableSteamNetworking'),
-              disableTwoFactorAuth: BuiltValueNullFieldError.checkNotNull(disableTwoFactorAuth, 'APIConfig', 'disableTwoFactorAuth'),
-              disableUdon: BuiltValueNullFieldError.checkNotNull(disableUdon, 'APIConfig', 'disableUdon'),
-              disableUpgradeAccount: BuiltValueNullFieldError.checkNotNull(disableUpgradeAccount, 'APIConfig', 'disableUpgradeAccount'),
-              downloadLinkWindows: BuiltValueNullFieldError.checkNotNull(downloadLinkWindows, 'APIConfig', 'downloadLinkWindows'),
+                  clientApiKey, r'APIConfig', 'clientApiKey'),
+              clientBPSCeiling: BuiltValueNullFieldError.checkNotNull(clientBPSCeiling, r'APIConfig', 'clientBPSCeiling'),
+              clientDisconnectTimeout: BuiltValueNullFieldError.checkNotNull(clientDisconnectTimeout, r'APIConfig', 'clientDisconnectTimeout'),
+              clientReservedPlayerBPS: BuiltValueNullFieldError.checkNotNull(clientReservedPlayerBPS, r'APIConfig', 'clientReservedPlayerBPS'),
+              clientSentCountAllowance: BuiltValueNullFieldError.checkNotNull(clientSentCountAllowance, r'APIConfig', 'clientSentCountAllowance'),
+              contactEmail: BuiltValueNullFieldError.checkNotNull(contactEmail, r'APIConfig', 'contactEmail'),
+              copyrightEmail: BuiltValueNullFieldError.checkNotNull(copyrightEmail, r'APIConfig', 'copyrightEmail'),
+              currentTOSVersion: BuiltValueNullFieldError.checkNotNull(currentTOSVersion, r'APIConfig', 'currentTOSVersion'),
+              defaultAvatar: BuiltValueNullFieldError.checkNotNull(defaultAvatar, r'APIConfig', 'defaultAvatar'),
+              deploymentGroup: BuiltValueNullFieldError.checkNotNull(deploymentGroup, r'APIConfig', 'deploymentGroup'),
+              devAppVersionStandalone: BuiltValueNullFieldError.checkNotNull(devAppVersionStandalone, r'APIConfig', 'devAppVersionStandalone'),
+              devDownloadLinkWindows: BuiltValueNullFieldError.checkNotNull(devDownloadLinkWindows, r'APIConfig', 'devDownloadLinkWindows'),
+              devSdkUrl: BuiltValueNullFieldError.checkNotNull(devSdkUrl, r'APIConfig', 'devSdkUrl'),
+              devSdkVersion: BuiltValueNullFieldError.checkNotNull(devSdkVersion, r'APIConfig', 'devSdkVersion'),
+              devServerVersionStandalone: BuiltValueNullFieldError.checkNotNull(devServerVersionStandalone, r'APIConfig', 'devServerVersionStandalone'),
+              disCountdown: BuiltValueNullFieldError.checkNotNull(disCountdown, r'APIConfig', 'disCountdown'),
+              disableAvatarCopying: BuiltValueNullFieldError.checkNotNull(disableAvatarCopying, r'APIConfig', 'disableAvatarCopying'),
+              disableAvatarGating: BuiltValueNullFieldError.checkNotNull(disableAvatarGating, r'APIConfig', 'disableAvatarGating'),
+              disableCommunityLabs: BuiltValueNullFieldError.checkNotNull(disableCommunityLabs, r'APIConfig', 'disableCommunityLabs'),
+              disableCommunityLabsPromotion: BuiltValueNullFieldError.checkNotNull(disableCommunityLabsPromotion, r'APIConfig', 'disableCommunityLabsPromotion'),
+              disableEmail: BuiltValueNullFieldError.checkNotNull(disableEmail, r'APIConfig', 'disableEmail'),
+              disableEventStream: BuiltValueNullFieldError.checkNotNull(disableEventStream, r'APIConfig', 'disableEventStream'),
+              disableFeedbackGating: BuiltValueNullFieldError.checkNotNull(disableFeedbackGating, r'APIConfig', 'disableFeedbackGating'),
+              disableFrontendBuilds: BuiltValueNullFieldError.checkNotNull(disableFrontendBuilds, r'APIConfig', 'disableFrontendBuilds'),
+              disableHello: BuiltValueNullFieldError.checkNotNull(disableHello, r'APIConfig', 'disableHello'),
+              disableOculusSubs: BuiltValueNullFieldError.checkNotNull(disableOculusSubs, r'APIConfig', 'disableOculusSubs'),
+              disableRegistration: BuiltValueNullFieldError.checkNotNull(disableRegistration, r'APIConfig', 'disableRegistration'),
+              disableSteamNetworking: BuiltValueNullFieldError.checkNotNull(disableSteamNetworking, r'APIConfig', 'disableSteamNetworking'),
+              disableTwoFactorAuth: BuiltValueNullFieldError.checkNotNull(disableTwoFactorAuth, r'APIConfig', 'disableTwoFactorAuth'),
+              disableUdon: BuiltValueNullFieldError.checkNotNull(disableUdon, r'APIConfig', 'disableUdon'),
+              disableUpgradeAccount: BuiltValueNullFieldError.checkNotNull(disableUpgradeAccount, r'APIConfig', 'disableUpgradeAccount'),
+              downloadLinkWindows: BuiltValueNullFieldError.checkNotNull(downloadLinkWindows, r'APIConfig', 'downloadLinkWindows'),
               downloadUrls: downloadUrls.build(),
               dynamicWorldRows: dynamicWorldRows.build(),
               events: events.build(),
-              gearDemoRoomId: BuiltValueNullFieldError.checkNotNull(gearDemoRoomId, 'APIConfig', 'gearDemoRoomId'),
-              homeWorldId: BuiltValueNullFieldError.checkNotNull(homeWorldId, 'APIConfig', 'homeWorldId'),
-              homepageRedirectTarget: BuiltValueNullFieldError.checkNotNull(homepageRedirectTarget, 'APIConfig', 'homepageRedirectTarget'),
-              hubWorldId: BuiltValueNullFieldError.checkNotNull(hubWorldId, 'APIConfig', 'hubWorldId'),
-              jobsEmail: BuiltValueNullFieldError.checkNotNull(jobsEmail, 'APIConfig', 'jobsEmail'),
-              messageOfTheDay: BuiltValueNullFieldError.checkNotNull(messageOfTheDay, 'APIConfig', 'messageOfTheDay'),
-              moderationEmail: BuiltValueNullFieldError.checkNotNull(moderationEmail, 'APIConfig', 'moderationEmail'),
-              moderationQueryPeriod: BuiltValueNullFieldError.checkNotNull(moderationQueryPeriod, 'APIConfig', 'moderationQueryPeriod'),
-              notAllowedToSelectAvatarInPrivateWorldMessage: BuiltValueNullFieldError.checkNotNull(notAllowedToSelectAvatarInPrivateWorldMessage, 'APIConfig', 'notAllowedToSelectAvatarInPrivateWorldMessage'),
-              plugin: BuiltValueNullFieldError.checkNotNull(plugin, 'APIConfig', 'plugin'),
-              releaseAppVersionStandalone: BuiltValueNullFieldError.checkNotNull(releaseAppVersionStandalone, 'APIConfig', 'releaseAppVersionStandalone'),
-              releaseSdkUrl: BuiltValueNullFieldError.checkNotNull(releaseSdkUrl, 'APIConfig', 'releaseSdkUrl'),
-              releaseSdkVersion: BuiltValueNullFieldError.checkNotNull(releaseSdkVersion, 'APIConfig', 'releaseSdkVersion'),
-              releaseServerVersionStandalone: BuiltValueNullFieldError.checkNotNull(releaseServerVersionStandalone, 'APIConfig', 'releaseServerVersionStandalone'),
-              sdkDeveloperFaqUrl: BuiltValueNullFieldError.checkNotNull(sdkDeveloperFaqUrl, 'APIConfig', 'sdkDeveloperFaqUrl'),
-              sdkDiscordUrl: BuiltValueNullFieldError.checkNotNull(sdkDiscordUrl, 'APIConfig', 'sdkDiscordUrl'),
-              sdkNotAllowedToPublishMessage: BuiltValueNullFieldError.checkNotNull(sdkNotAllowedToPublishMessage, 'APIConfig', 'sdkNotAllowedToPublishMessage'),
-              sdkUnityVersion: BuiltValueNullFieldError.checkNotNull(sdkUnityVersion, 'APIConfig', 'sdkUnityVersion'),
-              serverName: BuiltValueNullFieldError.checkNotNull(serverName, 'APIConfig', 'serverName'),
-              supportEmail: BuiltValueNullFieldError.checkNotNull(supportEmail, 'APIConfig', 'supportEmail'),
-              timeOutWorldId: BuiltValueNullFieldError.checkNotNull(timeOutWorldId, 'APIConfig', 'timeOutWorldId'),
-              tutorialWorldId: BuiltValueNullFieldError.checkNotNull(tutorialWorldId, 'APIConfig', 'tutorialWorldId'),
-              updateRateMsMaximum: BuiltValueNullFieldError.checkNotNull(updateRateMsMaximum, 'APIConfig', 'updateRateMsMaximum'),
-              updateRateMsMinimum: BuiltValueNullFieldError.checkNotNull(updateRateMsMinimum, 'APIConfig', 'updateRateMsMinimum'),
-              updateRateMsNormal: BuiltValueNullFieldError.checkNotNull(updateRateMsNormal, 'APIConfig', 'updateRateMsNormal'),
-              updateRateMsUdonManual: BuiltValueNullFieldError.checkNotNull(updateRateMsUdonManual, 'APIConfig', 'updateRateMsUdonManual'),
-              uploadAnalysisPercent: BuiltValueNullFieldError.checkNotNull(uploadAnalysisPercent, 'APIConfig', 'uploadAnalysisPercent'),
+              gearDemoRoomId: BuiltValueNullFieldError.checkNotNull(gearDemoRoomId, r'APIConfig', 'gearDemoRoomId'),
+              homeWorldId: BuiltValueNullFieldError.checkNotNull(homeWorldId, r'APIConfig', 'homeWorldId'),
+              homepageRedirectTarget: BuiltValueNullFieldError.checkNotNull(homepageRedirectTarget, r'APIConfig', 'homepageRedirectTarget'),
+              hubWorldId: BuiltValueNullFieldError.checkNotNull(hubWorldId, r'APIConfig', 'hubWorldId'),
+              jobsEmail: BuiltValueNullFieldError.checkNotNull(jobsEmail, r'APIConfig', 'jobsEmail'),
+              messageOfTheDay: BuiltValueNullFieldError.checkNotNull(messageOfTheDay, r'APIConfig', 'messageOfTheDay'),
+              moderationEmail: BuiltValueNullFieldError.checkNotNull(moderationEmail, r'APIConfig', 'moderationEmail'),
+              moderationQueryPeriod: BuiltValueNullFieldError.checkNotNull(moderationQueryPeriod, r'APIConfig', 'moderationQueryPeriod'),
+              notAllowedToSelectAvatarInPrivateWorldMessage: BuiltValueNullFieldError.checkNotNull(notAllowedToSelectAvatarInPrivateWorldMessage, r'APIConfig', 'notAllowedToSelectAvatarInPrivateWorldMessage'),
+              plugin: BuiltValueNullFieldError.checkNotNull(plugin, r'APIConfig', 'plugin'),
+              releaseAppVersionStandalone: BuiltValueNullFieldError.checkNotNull(releaseAppVersionStandalone, r'APIConfig', 'releaseAppVersionStandalone'),
+              releaseSdkUrl: BuiltValueNullFieldError.checkNotNull(releaseSdkUrl, r'APIConfig', 'releaseSdkUrl'),
+              releaseSdkVersion: BuiltValueNullFieldError.checkNotNull(releaseSdkVersion, r'APIConfig', 'releaseSdkVersion'),
+              releaseServerVersionStandalone: BuiltValueNullFieldError.checkNotNull(releaseServerVersionStandalone, r'APIConfig', 'releaseServerVersionStandalone'),
+              sdkDeveloperFaqUrl: BuiltValueNullFieldError.checkNotNull(sdkDeveloperFaqUrl, r'APIConfig', 'sdkDeveloperFaqUrl'),
+              sdkDiscordUrl: BuiltValueNullFieldError.checkNotNull(sdkDiscordUrl, r'APIConfig', 'sdkDiscordUrl'),
+              sdkNotAllowedToPublishMessage: BuiltValueNullFieldError.checkNotNull(sdkNotAllowedToPublishMessage, r'APIConfig', 'sdkNotAllowedToPublishMessage'),
+              sdkUnityVersion: BuiltValueNullFieldError.checkNotNull(sdkUnityVersion, r'APIConfig', 'sdkUnityVersion'),
+              serverName: BuiltValueNullFieldError.checkNotNull(serverName, r'APIConfig', 'serverName'),
+              supportEmail: BuiltValueNullFieldError.checkNotNull(supportEmail, r'APIConfig', 'supportEmail'),
+              timeOutWorldId: BuiltValueNullFieldError.checkNotNull(timeOutWorldId, r'APIConfig', 'timeOutWorldId'),
+              tutorialWorldId: BuiltValueNullFieldError.checkNotNull(tutorialWorldId, r'APIConfig', 'tutorialWorldId'),
+              updateRateMsMaximum: BuiltValueNullFieldError.checkNotNull(updateRateMsMaximum, r'APIConfig', 'updateRateMsMaximum'),
+              updateRateMsMinimum: BuiltValueNullFieldError.checkNotNull(updateRateMsMinimum, r'APIConfig', 'updateRateMsMinimum'),
+              updateRateMsNormal: BuiltValueNullFieldError.checkNotNull(updateRateMsNormal, r'APIConfig', 'updateRateMsNormal'),
+              updateRateMsUdonManual: BuiltValueNullFieldError.checkNotNull(updateRateMsUdonManual, r'APIConfig', 'updateRateMsUdonManual'),
+              uploadAnalysisPercent: BuiltValueNullFieldError.checkNotNull(uploadAnalysisPercent, r'APIConfig', 'uploadAnalysisPercent'),
               urlList: urlList.build(),
-              useReliableUdpForVoice: BuiltValueNullFieldError.checkNotNull(useReliableUdpForVoice, 'APIConfig', 'useReliableUdpForVoice'),
-              userUpdatePeriod: BuiltValueNullFieldError.checkNotNull(userUpdatePeriod, 'APIConfig', 'userUpdatePeriod'),
-              userVerificationDelay: BuiltValueNullFieldError.checkNotNull(userVerificationDelay, 'APIConfig', 'userVerificationDelay'),
-              userVerificationRetry: BuiltValueNullFieldError.checkNotNull(userVerificationRetry, 'APIConfig', 'userVerificationRetry'),
-              userVerificationTimeout: BuiltValueNullFieldError.checkNotNull(userVerificationTimeout, 'APIConfig', 'userVerificationTimeout'),
-              viveWindowsUrl: BuiltValueNullFieldError.checkNotNull(viveWindowsUrl, 'APIConfig', 'viveWindowsUrl'),
+              useReliableUdpForVoice: BuiltValueNullFieldError.checkNotNull(useReliableUdpForVoice, r'APIConfig', 'useReliableUdpForVoice'),
+              userUpdatePeriod: BuiltValueNullFieldError.checkNotNull(userUpdatePeriod, r'APIConfig', 'userUpdatePeriod'),
+              userVerificationDelay: BuiltValueNullFieldError.checkNotNull(userVerificationDelay, r'APIConfig', 'userVerificationDelay'),
+              userVerificationRetry: BuiltValueNullFieldError.checkNotNull(userVerificationRetry, r'APIConfig', 'userVerificationRetry'),
+              userVerificationTimeout: BuiltValueNullFieldError.checkNotNull(userVerificationTimeout, r'APIConfig', 'userVerificationTimeout'),
+              viveWindowsUrl: BuiltValueNullFieldError.checkNotNull(viveWindowsUrl, r'APIConfig', 'viveWindowsUrl'),
               whiteListedAssetUrls: whiteListedAssetUrls.build(),
-              worldUpdatePeriod: BuiltValueNullFieldError.checkNotNull(worldUpdatePeriod, 'APIConfig', 'worldUpdatePeriod'),
-              youtubedlHash: BuiltValueNullFieldError.checkNotNull(youtubedlHash, 'APIConfig', 'youtubedlHash'),
-              youtubedlVersion: BuiltValueNullFieldError.checkNotNull(youtubedlVersion, 'APIConfig', 'youtubedlVersion'));
+              worldUpdatePeriod: BuiltValueNullFieldError.checkNotNull(worldUpdatePeriod, r'APIConfig', 'worldUpdatePeriod'),
+              youtubedlHash: BuiltValueNullFieldError.checkNotNull(youtubedlHash, r'APIConfig', 'youtubedlHash'),
+              youtubedlVersion: BuiltValueNullFieldError.checkNotNull(youtubedlVersion, r'APIConfig', 'youtubedlVersion'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -1251,7 +1253,7 @@ class APIConfigBuilder implements Builder<APIConfig, APIConfigBuilder> {
         whiteListedAssetUrls.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'APIConfig', _$failedField, e.toString());
+            r'APIConfig', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -1260,4 +1262,4 @@ class APIConfigBuilder implements Builder<APIConfig, APIConfigBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

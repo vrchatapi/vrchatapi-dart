@@ -47,7 +47,7 @@ class _$LimitedWorld extends LimitedWorld {
   final DateTime updatedAt;
 
   factory _$LimitedWorld([void Function(LimitedWorldBuilder)? updates]) =>
-      (new LimitedWorldBuilder()..update(updates)).build();
+      (new LimitedWorldBuilder()..update(updates))._build();
 
   _$LimitedWorld._(
       {required this.authorId,
@@ -70,37 +70,40 @@ class _$LimitedWorld extends LimitedWorld {
       required this.unityPackages,
       required this.updatedAt})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(authorId, 'LimitedWorld', 'authorId');
     BuiltValueNullFieldError.checkNotNull(
-        authorName, 'LimitedWorld', 'authorName');
-    BuiltValueNullFieldError.checkNotNull(capacity, 'LimitedWorld', 'capacity');
+        authorId, r'LimitedWorld', 'authorId');
     BuiltValueNullFieldError.checkNotNull(
-        createdAt, 'LimitedWorld', 'createdAt');
+        authorName, r'LimitedWorld', 'authorName');
     BuiltValueNullFieldError.checkNotNull(
-        favorites, 'LimitedWorld', 'favorites');
-    BuiltValueNullFieldError.checkNotNull(heat, 'LimitedWorld', 'heat');
-    BuiltValueNullFieldError.checkNotNull(id, 'LimitedWorld', 'id');
-    BuiltValueNullFieldError.checkNotNull(imageUrl, 'LimitedWorld', 'imageUrl');
+        capacity, r'LimitedWorld', 'capacity');
     BuiltValueNullFieldError.checkNotNull(
-        labsPublicationDate, 'LimitedWorld', 'labsPublicationDate');
-    BuiltValueNullFieldError.checkNotNull(name, 'LimitedWorld', 'name');
+        createdAt, r'LimitedWorld', 'createdAt');
     BuiltValueNullFieldError.checkNotNull(
-        occupants, 'LimitedWorld', 'occupants');
+        favorites, r'LimitedWorld', 'favorites');
+    BuiltValueNullFieldError.checkNotNull(heat, r'LimitedWorld', 'heat');
+    BuiltValueNullFieldError.checkNotNull(id, r'LimitedWorld', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        organization, 'LimitedWorld', 'organization');
+        imageUrl, r'LimitedWorld', 'imageUrl');
     BuiltValueNullFieldError.checkNotNull(
-        popularity, 'LimitedWorld', 'popularity');
+        labsPublicationDate, r'LimitedWorld', 'labsPublicationDate');
+    BuiltValueNullFieldError.checkNotNull(name, r'LimitedWorld', 'name');
     BuiltValueNullFieldError.checkNotNull(
-        publicationDate, 'LimitedWorld', 'publicationDate');
+        occupants, r'LimitedWorld', 'occupants');
     BuiltValueNullFieldError.checkNotNull(
-        releaseStatus, 'LimitedWorld', 'releaseStatus');
-    BuiltValueNullFieldError.checkNotNull(tags, 'LimitedWorld', 'tags');
+        organization, r'LimitedWorld', 'organization');
     BuiltValueNullFieldError.checkNotNull(
-        thumbnailImageUrl, 'LimitedWorld', 'thumbnailImageUrl');
+        popularity, r'LimitedWorld', 'popularity');
     BuiltValueNullFieldError.checkNotNull(
-        unityPackages, 'LimitedWorld', 'unityPackages');
+        publicationDate, r'LimitedWorld', 'publicationDate');
     BuiltValueNullFieldError.checkNotNull(
-        updatedAt, 'LimitedWorld', 'updatedAt');
+        releaseStatus, r'LimitedWorld', 'releaseStatus');
+    BuiltValueNullFieldError.checkNotNull(tags, r'LimitedWorld', 'tags');
+    BuiltValueNullFieldError.checkNotNull(
+        thumbnailImageUrl, r'LimitedWorld', 'thumbnailImageUrl');
+    BuiltValueNullFieldError.checkNotNull(
+        unityPackages, r'LimitedWorld', 'unityPackages');
+    BuiltValueNullFieldError.checkNotNull(
+        updatedAt, r'LimitedWorld', 'updatedAt');
   }
 
   @override
@@ -185,7 +188,7 @@ class _$LimitedWorld extends LimitedWorld {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('LimitedWorld')
+    return (newBuiltValueToStringHelper(r'LimitedWorld')
           ..add('authorId', authorId)
           ..add('authorName', authorName)
           ..add('capacity', capacity)
@@ -338,39 +341,41 @@ class LimitedWorldBuilder
   }
 
   @override
-  _$LimitedWorld build() {
+  LimitedWorld build() => _build();
+
+  _$LimitedWorld _build() {
     _$LimitedWorld _$result;
     try {
       _$result = _$v ??
           new _$LimitedWorld._(
               authorId: BuiltValueNullFieldError.checkNotNull(
-                  authorId, 'LimitedWorld', 'authorId'),
+                  authorId, r'LimitedWorld', 'authorId'),
               authorName: BuiltValueNullFieldError.checkNotNull(
-                  authorName, 'LimitedWorld', 'authorName'),
+                  authorName, r'LimitedWorld', 'authorName'),
               capacity: BuiltValueNullFieldError.checkNotNull(
-                  capacity, 'LimitedWorld', 'capacity'),
+                  capacity, r'LimitedWorld', 'capacity'),
               createdAt: BuiltValueNullFieldError.checkNotNull(
-                  createdAt, 'LimitedWorld', 'createdAt'),
+                  createdAt, r'LimitedWorld', 'createdAt'),
               favorites: BuiltValueNullFieldError.checkNotNull(
-                  favorites, 'LimitedWorld', 'favorites'),
+                  favorites, r'LimitedWorld', 'favorites'),
               heat: BuiltValueNullFieldError.checkNotNull(
-                  heat, 'LimitedWorld', 'heat'),
+                  heat, r'LimitedWorld', 'heat'),
               id: BuiltValueNullFieldError.checkNotNull(
-                  id, 'LimitedWorld', 'id'),
+                  id, r'LimitedWorld', 'id'),
               imageUrl: BuiltValueNullFieldError.checkNotNull(
-                  imageUrl, 'LimitedWorld', 'imageUrl'),
+                  imageUrl, r'LimitedWorld', 'imageUrl'),
               labsPublicationDate: BuiltValueNullFieldError.checkNotNull(
-                  labsPublicationDate, 'LimitedWorld', 'labsPublicationDate'),
-              name: BuiltValueNullFieldError.checkNotNull(name, 'LimitedWorld', 'name'),
-              occupants: BuiltValueNullFieldError.checkNotNull(occupants, 'LimitedWorld', 'occupants'),
-              organization: BuiltValueNullFieldError.checkNotNull(organization, 'LimitedWorld', 'organization'),
-              popularity: BuiltValueNullFieldError.checkNotNull(popularity, 'LimitedWorld', 'popularity'),
-              publicationDate: BuiltValueNullFieldError.checkNotNull(publicationDate, 'LimitedWorld', 'publicationDate'),
-              releaseStatus: BuiltValueNullFieldError.checkNotNull(releaseStatus, 'LimitedWorld', 'releaseStatus'),
+                  labsPublicationDate, r'LimitedWorld', 'labsPublicationDate'),
+              name: BuiltValueNullFieldError.checkNotNull(name, r'LimitedWorld', 'name'),
+              occupants: BuiltValueNullFieldError.checkNotNull(occupants, r'LimitedWorld', 'occupants'),
+              organization: BuiltValueNullFieldError.checkNotNull(organization, r'LimitedWorld', 'organization'),
+              popularity: BuiltValueNullFieldError.checkNotNull(popularity, r'LimitedWorld', 'popularity'),
+              publicationDate: BuiltValueNullFieldError.checkNotNull(publicationDate, r'LimitedWorld', 'publicationDate'),
+              releaseStatus: BuiltValueNullFieldError.checkNotNull(releaseStatus, r'LimitedWorld', 'releaseStatus'),
               tags: tags.build(),
-              thumbnailImageUrl: BuiltValueNullFieldError.checkNotNull(thumbnailImageUrl, 'LimitedWorld', 'thumbnailImageUrl'),
+              thumbnailImageUrl: BuiltValueNullFieldError.checkNotNull(thumbnailImageUrl, r'LimitedWorld', 'thumbnailImageUrl'),
               unityPackages: unityPackages.build(),
-              updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, 'LimitedWorld', 'updatedAt'));
+              updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'LimitedWorld', 'updatedAt'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -381,7 +386,7 @@ class LimitedWorldBuilder
         unityPackages.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'LimitedWorld', _$failedField, e.toString());
+            r'LimitedWorld', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -390,4 +395,4 @@ class LimitedWorldBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

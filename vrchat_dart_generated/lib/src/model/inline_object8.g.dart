@@ -15,15 +15,15 @@ class _$InlineObject8 extends InlineObject8 {
   final BuiltList<String> tags;
 
   factory _$InlineObject8([void Function(InlineObject8Builder)? updates]) =>
-      (new InlineObject8Builder()..update(updates)).build();
+      (new InlineObject8Builder()..update(updates))._build();
 
   _$InlineObject8._(
       {required this.type, required this.favoriteId, required this.tags})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(type, 'InlineObject8', 'type');
+    BuiltValueNullFieldError.checkNotNull(type, r'InlineObject8', 'type');
     BuiltValueNullFieldError.checkNotNull(
-        favoriteId, 'InlineObject8', 'favoriteId');
-    BuiltValueNullFieldError.checkNotNull(tags, 'InlineObject8', 'tags');
+        favoriteId, r'InlineObject8', 'favoriteId');
+    BuiltValueNullFieldError.checkNotNull(tags, r'InlineObject8', 'tags');
   }
 
   @override
@@ -50,7 +50,7 @@ class _$InlineObject8 extends InlineObject8 {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InlineObject8')
+    return (newBuiltValueToStringHelper(r'InlineObject8')
           ..add('type', type)
           ..add('favoriteId', favoriteId)
           ..add('tags', tags))
@@ -101,15 +101,17 @@ class InlineObject8Builder
   }
 
   @override
-  _$InlineObject8 build() {
+  InlineObject8 build() => _build();
+
+  _$InlineObject8 _build() {
     _$InlineObject8 _$result;
     try {
       _$result = _$v ??
           new _$InlineObject8._(
               type: BuiltValueNullFieldError.checkNotNull(
-                  type, 'InlineObject8', 'type'),
+                  type, r'InlineObject8', 'type'),
               favoriteId: BuiltValueNullFieldError.checkNotNull(
-                  favoriteId, 'InlineObject8', 'favoriteId'),
+                  favoriteId, r'InlineObject8', 'favoriteId'),
               tags: tags.build());
     } catch (_) {
       late String _$failedField;
@@ -118,7 +120,7 @@ class InlineObject8Builder
         tags.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'InlineObject8', _$failedField, e.toString());
+            r'InlineObject8', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -127,4 +129,4 @@ class InlineObject8Builder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

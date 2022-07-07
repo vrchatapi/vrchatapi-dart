@@ -40,7 +40,7 @@ class _$UserSubscription extends UserSubscription {
 
   factory _$UserSubscription(
           [void Function(UserSubscriptionBuilder)? updates]) =>
-      (new UserSubscriptionBuilder()..update(updates)).build();
+      (new UserSubscriptionBuilder()..update(updates))._build();
 
   _$UserSubscription._(
       {required this.id,
@@ -59,26 +59,31 @@ class _$UserSubscription extends UserSubscription {
       required this.licenseGroups,
       required this.isGift})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, 'UserSubscription', 'id');
+    BuiltValueNullFieldError.checkNotNull(id, r'UserSubscription', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        transactionId, 'UserSubscription', 'transactionId');
-    BuiltValueNullFieldError.checkNotNull(store, 'UserSubscription', 'store');
-    BuiltValueNullFieldError.checkNotNull(amount, 'UserSubscription', 'amount');
+        transactionId, r'UserSubscription', 'transactionId');
+    BuiltValueNullFieldError.checkNotNull(store, r'UserSubscription', 'store');
     BuiltValueNullFieldError.checkNotNull(
-        description, 'UserSubscription', 'description');
-    BuiltValueNullFieldError.checkNotNull(period, 'UserSubscription', 'period');
-    BuiltValueNullFieldError.checkNotNull(tier, 'UserSubscription', 'tier');
-    BuiltValueNullFieldError.checkNotNull(active, 'UserSubscription', 'active');
-    BuiltValueNullFieldError.checkNotNull(status, 'UserSubscription', 'status');
+        amount, r'UserSubscription', 'amount');
     BuiltValueNullFieldError.checkNotNull(
-        expires, 'UserSubscription', 'expires');
+        description, r'UserSubscription', 'description');
     BuiltValueNullFieldError.checkNotNull(
-        createdAt, 'UserSubscription', 'createdAt');
+        period, r'UserSubscription', 'period');
+    BuiltValueNullFieldError.checkNotNull(tier, r'UserSubscription', 'tier');
     BuiltValueNullFieldError.checkNotNull(
-        updatedAt, 'UserSubscription', 'updatedAt');
+        active, r'UserSubscription', 'active');
     BuiltValueNullFieldError.checkNotNull(
-        licenseGroups, 'UserSubscription', 'licenseGroups');
-    BuiltValueNullFieldError.checkNotNull(isGift, 'UserSubscription', 'isGift');
+        status, r'UserSubscription', 'status');
+    BuiltValueNullFieldError.checkNotNull(
+        expires, r'UserSubscription', 'expires');
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt, r'UserSubscription', 'createdAt');
+    BuiltValueNullFieldError.checkNotNull(
+        updatedAt, r'UserSubscription', 'updatedAt');
+    BuiltValueNullFieldError.checkNotNull(
+        licenseGroups, r'UserSubscription', 'licenseGroups');
+    BuiltValueNullFieldError.checkNotNull(
+        isGift, r'UserSubscription', 'isGift');
   }
 
   @override
@@ -146,7 +151,7 @@ class _$UserSubscription extends UserSubscription {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('UserSubscription')
+    return (newBuiltValueToStringHelper(r'UserSubscription')
           ..add('id', id)
           ..add('transactionId', transactionId)
           ..add('store', store)
@@ -272,35 +277,37 @@ class UserSubscriptionBuilder
   }
 
   @override
-  _$UserSubscription build() {
+  UserSubscription build() => _build();
+
+  _$UserSubscription _build() {
     _$UserSubscription _$result;
     try {
       _$result = _$v ??
           new _$UserSubscription._(
               id: BuiltValueNullFieldError.checkNotNull(
-                  id, 'UserSubscription', 'id'),
+                  id, r'UserSubscription', 'id'),
               transactionId: BuiltValueNullFieldError.checkNotNull(
-                  transactionId, 'UserSubscription', 'transactionId'),
+                  transactionId, r'UserSubscription', 'transactionId'),
               store: BuiltValueNullFieldError.checkNotNull(
-                  store, 'UserSubscription', 'store'),
+                  store, r'UserSubscription', 'store'),
               steamItemId: steamItemId,
               amount: BuiltValueNullFieldError.checkNotNull(
-                  amount, 'UserSubscription', 'amount'),
+                  amount, r'UserSubscription', 'amount'),
               description: BuiltValueNullFieldError.checkNotNull(
-                  description, 'UserSubscription', 'description'),
+                  description, r'UserSubscription', 'description'),
               period: BuiltValueNullFieldError.checkNotNull(
-                  period, 'UserSubscription', 'period'),
+                  period, r'UserSubscription', 'period'),
               tier: BuiltValueNullFieldError.checkNotNull(
-                  tier, 'UserSubscription', 'tier'),
+                  tier, r'UserSubscription', 'tier'),
               active: BuiltValueNullFieldError.checkNotNull(
-                  active, 'UserSubscription', 'active'),
+                  active, r'UserSubscription', 'active'),
               status:
-                  BuiltValueNullFieldError.checkNotNull(status, 'UserSubscription', 'status'),
-              expires: BuiltValueNullFieldError.checkNotNull(expires, 'UserSubscription', 'expires'),
-              createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, 'UserSubscription', 'createdAt'),
-              updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, 'UserSubscription', 'updatedAt'),
+                  BuiltValueNullFieldError.checkNotNull(status, r'UserSubscription', 'status'),
+              expires: BuiltValueNullFieldError.checkNotNull(expires, r'UserSubscription', 'expires'),
+              createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'UserSubscription', 'createdAt'),
+              updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'UserSubscription', 'updatedAt'),
               licenseGroups: licenseGroups.build(),
-              isGift: BuiltValueNullFieldError.checkNotNull(isGift, 'UserSubscription', 'isGift'));
+              isGift: BuiltValueNullFieldError.checkNotNull(isGift, r'UserSubscription', 'isGift'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -308,7 +315,7 @@ class UserSubscriptionBuilder
         licenseGroups.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'UserSubscription', _$failedField, e.toString());
+            r'UserSubscription', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -317,4 +324,4 @@ class UserSubscriptionBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

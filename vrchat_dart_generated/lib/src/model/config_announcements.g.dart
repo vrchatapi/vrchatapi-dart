@@ -14,12 +14,12 @@ class _$ConfigAnnouncements extends ConfigAnnouncements {
 
   factory _$ConfigAnnouncements(
           [void Function(ConfigAnnouncementsBuilder)? updates]) =>
-      (new ConfigAnnouncementsBuilder()..update(updates)).build();
+      (new ConfigAnnouncementsBuilder()..update(updates))._build();
 
   _$ConfigAnnouncements._({required this.name, required this.text})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(name, 'ConfigAnnouncements', 'name');
-    BuiltValueNullFieldError.checkNotNull(text, 'ConfigAnnouncements', 'text');
+    BuiltValueNullFieldError.checkNotNull(name, r'ConfigAnnouncements', 'name');
+    BuiltValueNullFieldError.checkNotNull(text, r'ConfigAnnouncements', 'text');
   }
 
   @override
@@ -46,7 +46,7 @@ class _$ConfigAnnouncements extends ConfigAnnouncements {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ConfigAnnouncements')
+    return (newBuiltValueToStringHelper(r'ConfigAnnouncements')
           ..add('name', name)
           ..add('text', text))
         .toString();
@@ -91,16 +91,18 @@ class ConfigAnnouncementsBuilder
   }
 
   @override
-  _$ConfigAnnouncements build() {
+  ConfigAnnouncements build() => _build();
+
+  _$ConfigAnnouncements _build() {
     final _$result = _$v ??
         new _$ConfigAnnouncements._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, 'ConfigAnnouncements', 'name'),
+                name, r'ConfigAnnouncements', 'name'),
             text: BuiltValueNullFieldError.checkNotNull(
-                text, 'ConfigAnnouncements', 'text'));
+                text, r'ConfigAnnouncements', 'text'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

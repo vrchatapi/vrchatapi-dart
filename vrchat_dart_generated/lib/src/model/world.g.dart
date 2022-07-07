@@ -73,7 +73,7 @@ class _$World extends World {
   final int visits;
 
   factory _$World([void Function(WorldBuilder)? updates]) =>
-      (new WorldBuilder()..update(updates)).build();
+      (new WorldBuilder()..update(updates))._build();
 
   _$World._(
       {required this.assetUrl,
@@ -109,41 +109,41 @@ class _$World extends World {
       required this.version,
       required this.visits})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(assetUrl, 'World', 'assetUrl');
+    BuiltValueNullFieldError.checkNotNull(assetUrl, r'World', 'assetUrl');
     BuiltValueNullFieldError.checkNotNull(
-        assetUrlObject, 'World', 'assetUrlObject');
-    BuiltValueNullFieldError.checkNotNull(authorId, 'World', 'authorId');
-    BuiltValueNullFieldError.checkNotNull(authorName, 'World', 'authorName');
-    BuiltValueNullFieldError.checkNotNull(capacity, 'World', 'capacity');
-    BuiltValueNullFieldError.checkNotNull(createdAt, 'World', 'createdAt');
-    BuiltValueNullFieldError.checkNotNull(description, 'World', 'description');
-    BuiltValueNullFieldError.checkNotNull(featured, 'World', 'featured');
-    BuiltValueNullFieldError.checkNotNull(heat, 'World', 'heat');
-    BuiltValueNullFieldError.checkNotNull(id, 'World', 'id');
-    BuiltValueNullFieldError.checkNotNull(imageUrl, 'World', 'imageUrl');
+        assetUrlObject, r'World', 'assetUrlObject');
+    BuiltValueNullFieldError.checkNotNull(authorId, r'World', 'authorId');
+    BuiltValueNullFieldError.checkNotNull(authorName, r'World', 'authorName');
+    BuiltValueNullFieldError.checkNotNull(capacity, r'World', 'capacity');
+    BuiltValueNullFieldError.checkNotNull(createdAt, r'World', 'createdAt');
+    BuiltValueNullFieldError.checkNotNull(description, r'World', 'description');
+    BuiltValueNullFieldError.checkNotNull(featured, r'World', 'featured');
+    BuiltValueNullFieldError.checkNotNull(heat, r'World', 'heat');
+    BuiltValueNullFieldError.checkNotNull(id, r'World', 'id');
+    BuiltValueNullFieldError.checkNotNull(imageUrl, r'World', 'imageUrl');
     BuiltValueNullFieldError.checkNotNull(
-        labsPublicationDate, 'World', 'labsPublicationDate');
-    BuiltValueNullFieldError.checkNotNull(name, 'World', 'name');
-    BuiltValueNullFieldError.checkNotNull(namespace, 'World', 'namespace');
+        labsPublicationDate, r'World', 'labsPublicationDate');
+    BuiltValueNullFieldError.checkNotNull(name, r'World', 'name');
+    BuiltValueNullFieldError.checkNotNull(namespace, r'World', 'namespace');
     BuiltValueNullFieldError.checkNotNull(
-        organization, 'World', 'organization');
+        organization, r'World', 'organization');
     BuiltValueNullFieldError.checkNotNull(
-        pluginUrlObject, 'World', 'pluginUrlObject');
-    BuiltValueNullFieldError.checkNotNull(popularity, 'World', 'popularity');
+        pluginUrlObject, r'World', 'pluginUrlObject');
+    BuiltValueNullFieldError.checkNotNull(popularity, r'World', 'popularity');
     BuiltValueNullFieldError.checkNotNull(
-        publicationDate, 'World', 'publicationDate');
+        publicationDate, r'World', 'publicationDate');
     BuiltValueNullFieldError.checkNotNull(
-        releaseStatus, 'World', 'releaseStatus');
-    BuiltValueNullFieldError.checkNotNull(tags, 'World', 'tags');
+        releaseStatus, r'World', 'releaseStatus');
+    BuiltValueNullFieldError.checkNotNull(tags, r'World', 'tags');
     BuiltValueNullFieldError.checkNotNull(
-        thumbnailImageUrl, 'World', 'thumbnailImageUrl');
+        thumbnailImageUrl, r'World', 'thumbnailImageUrl');
     BuiltValueNullFieldError.checkNotNull(
-        unityPackageUrlObject, 'World', 'unityPackageUrlObject');
+        unityPackageUrlObject, r'World', 'unityPackageUrlObject');
     BuiltValueNullFieldError.checkNotNull(
-        unityPackages, 'World', 'unityPackages');
-    BuiltValueNullFieldError.checkNotNull(updatedAt, 'World', 'updatedAt');
-    BuiltValueNullFieldError.checkNotNull(version, 'World', 'version');
-    BuiltValueNullFieldError.checkNotNull(visits, 'World', 'visits');
+        unityPackages, r'World', 'unityPackages');
+    BuiltValueNullFieldError.checkNotNull(updatedAt, r'World', 'updatedAt');
+    BuiltValueNullFieldError.checkNotNull(version, r'World', 'version');
+    BuiltValueNullFieldError.checkNotNull(visits, r'World', 'visits');
   }
 
   @override
@@ -235,7 +235,7 @@ class _$World extends World {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('World')
+    return (newBuiltValueToStringHelper(r'World')
           ..add('assetUrl', assetUrl)
           ..add('assetUrlObject', assetUrlObject)
           ..add('authorId', authorId)
@@ -473,54 +473,55 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
   }
 
   @override
-  _$World build() {
+  World build() => _build();
+
+  _$World _build() {
     _$World _$result;
     try {
       _$result = _$v ??
           new _$World._(
               assetUrl: BuiltValueNullFieldError.checkNotNull(
-                  assetUrl, 'World', 'assetUrl'),
+                  assetUrl, r'World', 'assetUrl'),
               assetUrlObject: BuiltValueNullFieldError.checkNotNull(
-                  assetUrlObject, 'World', 'assetUrlObject'),
+                  assetUrlObject, r'World', 'assetUrlObject'),
               authorId: BuiltValueNullFieldError.checkNotNull(
-                  authorId, 'World', 'authorId'),
+                  authorId, r'World', 'authorId'),
               authorName: BuiltValueNullFieldError.checkNotNull(
-                  authorName, 'World', 'authorName'),
+                  authorName, r'World', 'authorName'),
               capacity: BuiltValueNullFieldError.checkNotNull(
-                  capacity, 'World', 'capacity'),
+                  capacity, r'World', 'capacity'),
               createdAt: BuiltValueNullFieldError.checkNotNull(
-                  createdAt, 'World', 'createdAt'),
+                  createdAt, r'World', 'createdAt'),
               description: BuiltValueNullFieldError.checkNotNull(
-                  description, 'World', 'description'),
+                  description, r'World', 'description'),
               favorites: favorites,
               featured: BuiltValueNullFieldError.checkNotNull(
-                  featured, 'World', 'featured'),
+                  featured, r'World', 'featured'),
               heat:
-                  BuiltValueNullFieldError.checkNotNull(heat, 'World', 'heat'),
-              id: BuiltValueNullFieldError.checkNotNull(id, 'World', 'id'),
+                  BuiltValueNullFieldError.checkNotNull(heat, r'World', 'heat'),
+              id: BuiltValueNullFieldError.checkNotNull(id, r'World', 'id'),
               imageUrl: BuiltValueNullFieldError.checkNotNull(
-                  imageUrl, 'World', 'imageUrl'),
+                  imageUrl, r'World', 'imageUrl'),
               instances: _instances?.build(),
-              labsPublicationDate:
-                  BuiltValueNullFieldError.checkNotNull(labsPublicationDate, 'World', 'labsPublicationDate'),
-              name: BuiltValueNullFieldError.checkNotNull(name, 'World', 'name'),
-              namespace: BuiltValueNullFieldError.checkNotNull(namespace, 'World', 'namespace'),
+              labsPublicationDate: BuiltValueNullFieldError.checkNotNull(labsPublicationDate, r'World', 'labsPublicationDate'),
+              name: BuiltValueNullFieldError.checkNotNull(name, r'World', 'name'),
+              namespace: BuiltValueNullFieldError.checkNotNull(namespace, r'World', 'namespace'),
               occupants: occupants,
-              organization: BuiltValueNullFieldError.checkNotNull(organization, 'World', 'organization'),
-              pluginUrlObject: BuiltValueNullFieldError.checkNotNull(pluginUrlObject, 'World', 'pluginUrlObject'),
-              popularity: BuiltValueNullFieldError.checkNotNull(popularity, 'World', 'popularity'),
+              organization: BuiltValueNullFieldError.checkNotNull(organization, r'World', 'organization'),
+              pluginUrlObject: BuiltValueNullFieldError.checkNotNull(pluginUrlObject, r'World', 'pluginUrlObject'),
+              popularity: BuiltValueNullFieldError.checkNotNull(popularity, r'World', 'popularity'),
               previewYoutubeId: previewYoutubeId,
               privateOccupants: privateOccupants,
               publicOccupants: publicOccupants,
-              publicationDate: BuiltValueNullFieldError.checkNotNull(publicationDate, 'World', 'publicationDate'),
-              releaseStatus: BuiltValueNullFieldError.checkNotNull(releaseStatus, 'World', 'releaseStatus'),
+              publicationDate: BuiltValueNullFieldError.checkNotNull(publicationDate, r'World', 'publicationDate'),
+              releaseStatus: BuiltValueNullFieldError.checkNotNull(releaseStatus, r'World', 'releaseStatus'),
               tags: tags.build(),
-              thumbnailImageUrl: BuiltValueNullFieldError.checkNotNull(thumbnailImageUrl, 'World', 'thumbnailImageUrl'),
-              unityPackageUrlObject: BuiltValueNullFieldError.checkNotNull(unityPackageUrlObject, 'World', 'unityPackageUrlObject'),
+              thumbnailImageUrl: BuiltValueNullFieldError.checkNotNull(thumbnailImageUrl, r'World', 'thumbnailImageUrl'),
+              unityPackageUrlObject: BuiltValueNullFieldError.checkNotNull(unityPackageUrlObject, r'World', 'unityPackageUrlObject'),
               unityPackages: unityPackages.build(),
-              updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, 'World', 'updatedAt'),
-              version: BuiltValueNullFieldError.checkNotNull(version, 'World', 'version'),
-              visits: BuiltValueNullFieldError.checkNotNull(visits, 'World', 'visits'));
+              updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'World', 'updatedAt'),
+              version: BuiltValueNullFieldError.checkNotNull(version, r'World', 'version'),
+              visits: BuiltValueNullFieldError.checkNotNull(visits, r'World', 'visits'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -534,7 +535,7 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
         unityPackages.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'World', _$failedField, e.toString());
+            r'World', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -543,4 +544,4 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

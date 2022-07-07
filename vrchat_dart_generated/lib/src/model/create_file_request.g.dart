@@ -18,7 +18,7 @@ class _$CreateFileRequest extends CreateFileRequest {
 
   factory _$CreateFileRequest(
           [void Function(CreateFileRequestBuilder)? updates]) =>
-      (new CreateFileRequestBuilder()..update(updates)).build();
+      (new CreateFileRequestBuilder()..update(updates))._build();
 
   _$CreateFileRequest._(
       {required this.name,
@@ -26,11 +26,11 @@ class _$CreateFileRequest extends CreateFileRequest {
       required this.extension_,
       this.tags})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(name, 'CreateFileRequest', 'name');
+    BuiltValueNullFieldError.checkNotNull(name, r'CreateFileRequest', 'name');
     BuiltValueNullFieldError.checkNotNull(
-        mimeType, 'CreateFileRequest', 'mimeType');
+        mimeType, r'CreateFileRequest', 'mimeType');
     BuiltValueNullFieldError.checkNotNull(
-        extension_, 'CreateFileRequest', 'extension_');
+        extension_, r'CreateFileRequest', 'extension_');
   }
 
   @override
@@ -60,7 +60,7 @@ class _$CreateFileRequest extends CreateFileRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('CreateFileRequest')
+    return (newBuiltValueToStringHelper(r'CreateFileRequest')
           ..add('name', name)
           ..add('mimeType', mimeType)
           ..add('extension_', extension_)
@@ -117,17 +117,19 @@ class CreateFileRequestBuilder
   }
 
   @override
-  _$CreateFileRequest build() {
+  CreateFileRequest build() => _build();
+
+  _$CreateFileRequest _build() {
     _$CreateFileRequest _$result;
     try {
       _$result = _$v ??
           new _$CreateFileRequest._(
               name: BuiltValueNullFieldError.checkNotNull(
-                  name, 'CreateFileRequest', 'name'),
+                  name, r'CreateFileRequest', 'name'),
               mimeType: BuiltValueNullFieldError.checkNotNull(
-                  mimeType, 'CreateFileRequest', 'mimeType'),
+                  mimeType, r'CreateFileRequest', 'mimeType'),
               extension_: BuiltValueNullFieldError.checkNotNull(
-                  extension_, 'CreateFileRequest', 'extension_'),
+                  extension_, r'CreateFileRequest', 'extension_'),
               tags: _tags?.build());
     } catch (_) {
       late String _$failedField;
@@ -136,7 +138,7 @@ class CreateFileRequestBuilder
         _tags?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'CreateFileRequest', _$failedField, e.toString());
+            r'CreateFileRequest', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -145,4 +147,4 @@ class CreateFileRequestBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

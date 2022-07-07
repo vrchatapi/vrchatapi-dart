@@ -12,10 +12,10 @@ class _$InlineResponse400 extends InlineResponse400 {
 
   factory _$InlineResponse400(
           [void Function(InlineResponse400Builder)? updates]) =>
-      (new InlineResponse400Builder()..update(updates)).build();
+      (new InlineResponse400Builder()..update(updates))._build();
 
   _$InlineResponse400._({required this.error}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(error, 'InlineResponse400', 'error');
+    BuiltValueNullFieldError.checkNotNull(error, r'InlineResponse400', 'error');
   }
 
   @override
@@ -39,7 +39,7 @@ class _$InlineResponse400 extends InlineResponse400 {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InlineResponse400')
+    return (newBuiltValueToStringHelper(r'InlineResponse400')
           ..add('error', error))
         .toString();
   }
@@ -78,7 +78,9 @@ class InlineResponse400Builder
   }
 
   @override
-  _$InlineResponse400 build() {
+  InlineResponse400 build() => _build();
+
+  _$InlineResponse400 _build() {
     _$InlineResponse400 _$result;
     try {
       _$result = _$v ?? new _$InlineResponse400._(error: error.build());
@@ -89,7 +91,7 @@ class InlineResponse400Builder
         error.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'InlineResponse400', _$failedField, e.toString());
+            r'InlineResponse400', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -98,4 +100,4 @@ class InlineResponse400Builder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

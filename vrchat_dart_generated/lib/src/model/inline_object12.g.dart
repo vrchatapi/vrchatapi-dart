@@ -13,13 +13,13 @@ class _$InlineObject12 extends InlineObject12 {
   final PlayerModerationType type;
 
   factory _$InlineObject12([void Function(InlineObject12Builder)? updates]) =>
-      (new InlineObject12Builder()..update(updates)).build();
+      (new InlineObject12Builder()..update(updates))._build();
 
   _$InlineObject12._({required this.moderated, required this.type})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        moderated, 'InlineObject12', 'moderated');
-    BuiltValueNullFieldError.checkNotNull(type, 'InlineObject12', 'type');
+        moderated, r'InlineObject12', 'moderated');
+    BuiltValueNullFieldError.checkNotNull(type, r'InlineObject12', 'type');
   }
 
   @override
@@ -45,7 +45,7 @@ class _$InlineObject12 extends InlineObject12 {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InlineObject12')
+    return (newBuiltValueToStringHelper(r'InlineObject12')
           ..add('moderated', moderated)
           ..add('type', type))
         .toString();
@@ -90,16 +90,18 @@ class InlineObject12Builder
   }
 
   @override
-  _$InlineObject12 build() {
+  InlineObject12 build() => _build();
+
+  _$InlineObject12 _build() {
     final _$result = _$v ??
         new _$InlineObject12._(
             moderated: BuiltValueNullFieldError.checkNotNull(
-                moderated, 'InlineObject12', 'moderated'),
+                moderated, r'InlineObject12', 'moderated'),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, 'InlineObject12', 'type'));
+                type, r'InlineObject12', 'type'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

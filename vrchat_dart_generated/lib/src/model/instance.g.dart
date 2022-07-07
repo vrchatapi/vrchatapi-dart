@@ -53,7 +53,7 @@ class _$Instance extends Instance {
   final String? private;
 
   factory _$Instance([void Function(InstanceBuilder)? updates]) =>
-      (new InstanceBuilder()..update(updates)).build();
+      (new InstanceBuilder()..update(updates))._build();
 
   _$Instance._(
       {required this.active,
@@ -79,27 +79,28 @@ class _$Instance extends Instance {
       this.friends,
       this.private})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(active, 'Instance', 'active');
+    BuiltValueNullFieldError.checkNotNull(active, r'Instance', 'active');
     BuiltValueNullFieldError.checkNotNull(
-        canRequestInvite, 'Instance', 'canRequestInvite');
-    BuiltValueNullFieldError.checkNotNull(capacity, 'Instance', 'capacity');
+        canRequestInvite, r'Instance', 'canRequestInvite');
+    BuiltValueNullFieldError.checkNotNull(capacity, r'Instance', 'capacity');
     BuiltValueNullFieldError.checkNotNull(
-        clientNumber, 'Instance', 'clientNumber');
-    BuiltValueNullFieldError.checkNotNull(full, 'Instance', 'full');
-    BuiltValueNullFieldError.checkNotNull(id, 'Instance', 'id');
-    BuiltValueNullFieldError.checkNotNull(instanceId, 'Instance', 'instanceId');
-    BuiltValueNullFieldError.checkNotNull(location, 'Instance', 'location');
-    BuiltValueNullFieldError.checkNotNull(nUsers, 'Instance', 'nUsers');
-    BuiltValueNullFieldError.checkNotNull(name, 'Instance', 'name');
-    BuiltValueNullFieldError.checkNotNull(permanent, 'Instance', 'permanent');
+        clientNumber, r'Instance', 'clientNumber');
+    BuiltValueNullFieldError.checkNotNull(full, r'Instance', 'full');
+    BuiltValueNullFieldError.checkNotNull(id, r'Instance', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        photonRegion, 'Instance', 'photonRegion');
-    BuiltValueNullFieldError.checkNotNull(platforms, 'Instance', 'platforms');
-    BuiltValueNullFieldError.checkNotNull(region, 'Instance', 'region');
-    BuiltValueNullFieldError.checkNotNull(shortName, 'Instance', 'shortName');
-    BuiltValueNullFieldError.checkNotNull(tags, 'Instance', 'tags');
-    BuiltValueNullFieldError.checkNotNull(type, 'Instance', 'type');
-    BuiltValueNullFieldError.checkNotNull(worldId, 'Instance', 'worldId');
+        instanceId, r'Instance', 'instanceId');
+    BuiltValueNullFieldError.checkNotNull(location, r'Instance', 'location');
+    BuiltValueNullFieldError.checkNotNull(nUsers, r'Instance', 'nUsers');
+    BuiltValueNullFieldError.checkNotNull(name, r'Instance', 'name');
+    BuiltValueNullFieldError.checkNotNull(permanent, r'Instance', 'permanent');
+    BuiltValueNullFieldError.checkNotNull(
+        photonRegion, r'Instance', 'photonRegion');
+    BuiltValueNullFieldError.checkNotNull(platforms, r'Instance', 'platforms');
+    BuiltValueNullFieldError.checkNotNull(region, r'Instance', 'region');
+    BuiltValueNullFieldError.checkNotNull(shortName, r'Instance', 'shortName');
+    BuiltValueNullFieldError.checkNotNull(tags, r'Instance', 'tags');
+    BuiltValueNullFieldError.checkNotNull(type, r'Instance', 'type');
+    BuiltValueNullFieldError.checkNotNull(worldId, r'Instance', 'worldId');
   }
 
   @override
@@ -181,7 +182,7 @@ class _$Instance extends Instance {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Instance')
+    return (newBuiltValueToStringHelper(r'Instance')
           ..add('active', active)
           ..add('canRequestInvite', canRequestInvite)
           ..add('capacity', capacity)
@@ -348,39 +349,41 @@ class InstanceBuilder implements Builder<Instance, InstanceBuilder> {
   }
 
   @override
-  _$Instance build() {
+  Instance build() => _build();
+
+  _$Instance _build() {
     _$Instance _$result;
     try {
       _$result = _$v ??
           new _$Instance._(
               active: BuiltValueNullFieldError.checkNotNull(
-                  active, 'Instance', 'active'),
+                  active, r'Instance', 'active'),
               canRequestInvite: BuiltValueNullFieldError.checkNotNull(
-                  canRequestInvite, 'Instance', 'canRequestInvite'),
+                  canRequestInvite, r'Instance', 'canRequestInvite'),
               capacity: BuiltValueNullFieldError.checkNotNull(
-                  capacity, 'Instance', 'capacity'),
+                  capacity, r'Instance', 'capacity'),
               clientNumber: BuiltValueNullFieldError.checkNotNull(
-                  clientNumber, 'Instance', 'clientNumber'),
+                  clientNumber, r'Instance', 'clientNumber'),
               full: BuiltValueNullFieldError.checkNotNull(
-                  full, 'Instance', 'full'),
-              id: BuiltValueNullFieldError.checkNotNull(id, 'Instance', 'id'),
+                  full, r'Instance', 'full'),
+              id: BuiltValueNullFieldError.checkNotNull(id, r'Instance', 'id'),
               instanceId: BuiltValueNullFieldError.checkNotNull(
-                  instanceId, 'Instance', 'instanceId'),
+                  instanceId, r'Instance', 'instanceId'),
               location: BuiltValueNullFieldError.checkNotNull(
-                  location, 'Instance', 'location'),
+                  location, r'Instance', 'location'),
               nUsers: BuiltValueNullFieldError.checkNotNull(
-                  nUsers, 'Instance', 'nUsers'),
-              name: BuiltValueNullFieldError.checkNotNull(
-                  name, 'Instance', 'name'),
+                  nUsers, r'Instance', 'nUsers'),
+              name:
+                  BuiltValueNullFieldError.checkNotNull(name, r'Instance', 'name'),
               ownerId: ownerId,
-              permanent: BuiltValueNullFieldError.checkNotNull(permanent, 'Instance', 'permanent'),
-              photonRegion: BuiltValueNullFieldError.checkNotNull(photonRegion, 'Instance', 'photonRegion'),
+              permanent: BuiltValueNullFieldError.checkNotNull(permanent, r'Instance', 'permanent'),
+              photonRegion: BuiltValueNullFieldError.checkNotNull(photonRegion, r'Instance', 'photonRegion'),
               platforms: platforms.build(),
-              region: BuiltValueNullFieldError.checkNotNull(region, 'Instance', 'region'),
-              shortName: BuiltValueNullFieldError.checkNotNull(shortName, 'Instance', 'shortName'),
+              region: BuiltValueNullFieldError.checkNotNull(region, r'Instance', 'region'),
+              shortName: BuiltValueNullFieldError.checkNotNull(shortName, r'Instance', 'shortName'),
               tags: tags.build(),
-              type: BuiltValueNullFieldError.checkNotNull(type, 'Instance', 'type'),
-              worldId: BuiltValueNullFieldError.checkNotNull(worldId, 'Instance', 'worldId'),
+              type: BuiltValueNullFieldError.checkNotNull(type, r'Instance', 'type'),
+              worldId: BuiltValueNullFieldError.checkNotNull(worldId, r'Instance', 'worldId'),
               hidden: hidden,
               friends: friends,
               private: private);
@@ -394,7 +397,7 @@ class InstanceBuilder implements Builder<Instance, InstanceBuilder> {
         tags.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'Instance', _$failedField, e.toString());
+            r'Instance', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -403,4 +406,4 @@ class InstanceBuilder implements Builder<Instance, InstanceBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

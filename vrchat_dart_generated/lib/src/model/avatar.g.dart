@@ -45,7 +45,7 @@ class _$Avatar extends Avatar {
   final int version;
 
   factory _$Avatar([void Function(AvatarBuilder)? updates]) =>
-      (new AvatarBuilder()..update(updates)).build();
+      (new AvatarBuilder()..update(updates))._build();
 
   _$Avatar._(
       {this.assetUrl,
@@ -67,27 +67,28 @@ class _$Avatar extends Avatar {
       required this.updatedAt,
       required this.version})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(authorId, 'Avatar', 'authorId');
-    BuiltValueNullFieldError.checkNotNull(authorName, 'Avatar', 'authorName');
-    BuiltValueNullFieldError.checkNotNull(createdAt, 'Avatar', 'createdAt');
-    BuiltValueNullFieldError.checkNotNull(description, 'Avatar', 'description');
-    BuiltValueNullFieldError.checkNotNull(featured, 'Avatar', 'featured');
-    BuiltValueNullFieldError.checkNotNull(id, 'Avatar', 'id');
-    BuiltValueNullFieldError.checkNotNull(imageUrl, 'Avatar', 'imageUrl');
-    BuiltValueNullFieldError.checkNotNull(name, 'Avatar', 'name');
+    BuiltValueNullFieldError.checkNotNull(authorId, r'Avatar', 'authorId');
+    BuiltValueNullFieldError.checkNotNull(authorName, r'Avatar', 'authorName');
+    BuiltValueNullFieldError.checkNotNull(createdAt, r'Avatar', 'createdAt');
     BuiltValueNullFieldError.checkNotNull(
-        releaseStatus, 'Avatar', 'releaseStatus');
-    BuiltValueNullFieldError.checkNotNull(tags, 'Avatar', 'tags');
+        description, r'Avatar', 'description');
+    BuiltValueNullFieldError.checkNotNull(featured, r'Avatar', 'featured');
+    BuiltValueNullFieldError.checkNotNull(id, r'Avatar', 'id');
+    BuiltValueNullFieldError.checkNotNull(imageUrl, r'Avatar', 'imageUrl');
+    BuiltValueNullFieldError.checkNotNull(name, r'Avatar', 'name');
     BuiltValueNullFieldError.checkNotNull(
-        thumbnailImageUrl, 'Avatar', 'thumbnailImageUrl');
+        releaseStatus, r'Avatar', 'releaseStatus');
+    BuiltValueNullFieldError.checkNotNull(tags, r'Avatar', 'tags');
     BuiltValueNullFieldError.checkNotNull(
-        unityPackageUrl, 'Avatar', 'unityPackageUrl');
+        thumbnailImageUrl, r'Avatar', 'thumbnailImageUrl');
     BuiltValueNullFieldError.checkNotNull(
-        unityPackageUrlObject, 'Avatar', 'unityPackageUrlObject');
+        unityPackageUrl, r'Avatar', 'unityPackageUrl');
     BuiltValueNullFieldError.checkNotNull(
-        unityPackages, 'Avatar', 'unityPackages');
-    BuiltValueNullFieldError.checkNotNull(updatedAt, 'Avatar', 'updatedAt');
-    BuiltValueNullFieldError.checkNotNull(version, 'Avatar', 'version');
+        unityPackageUrlObject, r'Avatar', 'unityPackageUrlObject');
+    BuiltValueNullFieldError.checkNotNull(
+        unityPackages, r'Avatar', 'unityPackages');
+    BuiltValueNullFieldError.checkNotNull(updatedAt, r'Avatar', 'updatedAt');
+    BuiltValueNullFieldError.checkNotNull(version, r'Avatar', 'version');
   }
 
   @override
@@ -168,7 +169,7 @@ class _$Avatar extends Avatar {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Avatar')
+    return (newBuiltValueToStringHelper(r'Avatar')
           ..add('assetUrl', assetUrl)
           ..add('assetUrlObject', assetUrlObject)
           ..add('authorId', authorId)
@@ -318,7 +319,9 @@ class AvatarBuilder implements Builder<Avatar, AvatarBuilder> {
   }
 
   @override
-  _$Avatar build() {
+  Avatar build() => _build();
+
+  _$Avatar _build() {
     _$Avatar _$result;
     try {
       _$result = _$v ??
@@ -326,31 +329,31 @@ class AvatarBuilder implements Builder<Avatar, AvatarBuilder> {
               assetUrl: assetUrl,
               assetUrlObject: assetUrlObject,
               authorId: BuiltValueNullFieldError.checkNotNull(
-                  authorId, 'Avatar', 'authorId'),
+                  authorId, r'Avatar', 'authorId'),
               authorName: BuiltValueNullFieldError.checkNotNull(
-                  authorName, 'Avatar', 'authorName'),
+                  authorName, r'Avatar', 'authorName'),
               createdAt: BuiltValueNullFieldError.checkNotNull(
-                  createdAt, 'Avatar', 'createdAt'),
+                  createdAt, r'Avatar', 'createdAt'),
               description: BuiltValueNullFieldError.checkNotNull(
-                  description, 'Avatar', 'description'),
+                  description, r'Avatar', 'description'),
               featured: BuiltValueNullFieldError.checkNotNull(
-                  featured, 'Avatar', 'featured'),
-              id: BuiltValueNullFieldError.checkNotNull(id, 'Avatar', 'id'),
+                  featured, r'Avatar', 'featured'),
+              id: BuiltValueNullFieldError.checkNotNull(id, r'Avatar', 'id'),
               imageUrl: BuiltValueNullFieldError.checkNotNull(
-                  imageUrl, 'Avatar', 'imageUrl'),
-              name:
-                  BuiltValueNullFieldError.checkNotNull(name, 'Avatar', 'name'),
+                  imageUrl, r'Avatar', 'imageUrl'),
+              name: BuiltValueNullFieldError.checkNotNull(
+                  name, r'Avatar', 'name'),
               releaseStatus: BuiltValueNullFieldError.checkNotNull(
-                  releaseStatus, 'Avatar', 'releaseStatus'),
+                  releaseStatus, r'Avatar', 'releaseStatus'),
               tags: tags.build(),
               thumbnailImageUrl: BuiltValueNullFieldError.checkNotNull(
-                  thumbnailImageUrl, 'Avatar', 'thumbnailImageUrl'),
-              unityPackageUrl: BuiltValueNullFieldError.checkNotNull(
-                  unityPackageUrl, 'Avatar', 'unityPackageUrl'),
+                  thumbnailImageUrl, r'Avatar', 'thumbnailImageUrl'),
+              unityPackageUrl:
+                  BuiltValueNullFieldError.checkNotNull(unityPackageUrl, r'Avatar', 'unityPackageUrl'),
               unityPackageUrlObject: unityPackageUrlObject.build(),
               unityPackages: unityPackages.build(),
-              updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, 'Avatar', 'updatedAt'),
-              version: BuiltValueNullFieldError.checkNotNull(version, 'Avatar', 'version'));
+              updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'Avatar', 'updatedAt'),
+              version: BuiltValueNullFieldError.checkNotNull(version, r'Avatar', 'version'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -363,7 +366,7 @@ class AvatarBuilder implements Builder<Avatar, AvatarBuilder> {
         unityPackages.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'Avatar', _$failedField, e.toString());
+            r'Avatar', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -372,4 +375,4 @@ class AvatarBuilder implements Builder<Avatar, AvatarBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

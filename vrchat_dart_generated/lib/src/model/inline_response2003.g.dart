@@ -22,7 +22,7 @@ class _$InlineResponse2003 extends InlineResponse2003 {
 
   factory _$InlineResponse2003(
           [void Function(InlineResponse2003Builder)? updates]) =>
-      (new InlineResponse2003Builder()..update(updates)).build();
+      (new InlineResponse2003Builder()..update(updates))._build();
 
   _$InlineResponse2003._(
       {required this.uploadId,
@@ -33,15 +33,17 @@ class _$InlineResponse2003 extends InlineResponse2003 {
       required this.etags})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        uploadId, 'InlineResponse2003', 'uploadId');
+        uploadId, r'InlineResponse2003', 'uploadId');
     BuiltValueNullFieldError.checkNotNull(
-        fileName, 'InlineResponse2003', 'fileName');
+        fileName, r'InlineResponse2003', 'fileName');
     BuiltValueNullFieldError.checkNotNull(
-        nextPartNumber, 'InlineResponse2003', 'nextPartNumber');
+        nextPartNumber, r'InlineResponse2003', 'nextPartNumber');
     BuiltValueNullFieldError.checkNotNull(
-        maxParts, 'InlineResponse2003', 'maxParts');
-    BuiltValueNullFieldError.checkNotNull(parts, 'InlineResponse2003', 'parts');
-    BuiltValueNullFieldError.checkNotNull(etags, 'InlineResponse2003', 'etags');
+        maxParts, r'InlineResponse2003', 'maxParts');
+    BuiltValueNullFieldError.checkNotNull(
+        parts, r'InlineResponse2003', 'parts');
+    BuiltValueNullFieldError.checkNotNull(
+        etags, r'InlineResponse2003', 'etags');
   }
 
   @override
@@ -79,7 +81,7 @@ class _$InlineResponse2003 extends InlineResponse2003 {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InlineResponse2003')
+    return (newBuiltValueToStringHelper(r'InlineResponse2003')
           ..add('uploadId', uploadId)
           ..add('fileName', fileName)
           ..add('nextPartNumber', nextPartNumber)
@@ -151,19 +153,21 @@ class InlineResponse2003Builder
   }
 
   @override
-  _$InlineResponse2003 build() {
+  InlineResponse2003 build() => _build();
+
+  _$InlineResponse2003 _build() {
     _$InlineResponse2003 _$result;
     try {
       _$result = _$v ??
           new _$InlineResponse2003._(
               uploadId: BuiltValueNullFieldError.checkNotNull(
-                  uploadId, 'InlineResponse2003', 'uploadId'),
+                  uploadId, r'InlineResponse2003', 'uploadId'),
               fileName: BuiltValueNullFieldError.checkNotNull(
-                  fileName, 'InlineResponse2003', 'fileName'),
+                  fileName, r'InlineResponse2003', 'fileName'),
               nextPartNumber: BuiltValueNullFieldError.checkNotNull(
-                  nextPartNumber, 'InlineResponse2003', 'nextPartNumber'),
+                  nextPartNumber, r'InlineResponse2003', 'nextPartNumber'),
               maxParts: BuiltValueNullFieldError.checkNotNull(
-                  maxParts, 'InlineResponse2003', 'maxParts'),
+                  maxParts, r'InlineResponse2003', 'maxParts'),
               parts: parts.build(),
               etags: etags.build());
     } catch (_) {
@@ -175,7 +179,7 @@ class InlineResponse2003Builder
         etags.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'InlineResponse2003', _$failedField, e.toString());
+            r'InlineResponse2003', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -184,4 +188,4 @@ class InlineResponse2003Builder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

@@ -38,7 +38,7 @@ class _$CreateWorldRequest extends CreateWorldRequest {
 
   factory _$CreateWorldRequest(
           [void Function(CreateWorldRequestBuilder)? updates]) =>
-      (new CreateWorldRequestBuilder()..update(updates)).build();
+      (new CreateWorldRequestBuilder()..update(updates))._build();
 
   _$CreateWorldRequest._(
       {required this.assetUrl,
@@ -57,10 +57,10 @@ class _$CreateWorldRequest extends CreateWorldRequest {
       this.unityVersion})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        assetUrl, 'CreateWorldRequest', 'assetUrl');
+        assetUrl, r'CreateWorldRequest', 'assetUrl');
     BuiltValueNullFieldError.checkNotNull(
-        imageUrl, 'CreateWorldRequest', 'imageUrl');
-    BuiltValueNullFieldError.checkNotNull(name, 'CreateWorldRequest', 'name');
+        imageUrl, r'CreateWorldRequest', 'imageUrl');
+    BuiltValueNullFieldError.checkNotNull(name, r'CreateWorldRequest', 'name');
   }
 
   @override
@@ -126,7 +126,7 @@ class _$CreateWorldRequest extends CreateWorldRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('CreateWorldRequest')
+    return (newBuiltValueToStringHelper(r'CreateWorldRequest')
           ..add('assetUrl', assetUrl)
           ..add('assetVersion', assetVersion)
           ..add('authorId', authorId)
@@ -245,13 +245,15 @@ class CreateWorldRequestBuilder
   }
 
   @override
-  _$CreateWorldRequest build() {
+  CreateWorldRequest build() => _build();
+
+  _$CreateWorldRequest _build() {
     _$CreateWorldRequest _$result;
     try {
       _$result = _$v ??
           new _$CreateWorldRequest._(
               assetUrl: BuiltValueNullFieldError.checkNotNull(
-                  assetUrl, 'CreateWorldRequest', 'assetUrl'),
+                  assetUrl, r'CreateWorldRequest', 'assetUrl'),
               assetVersion: assetVersion,
               authorId: authorId,
               authorName: authorName,
@@ -259,9 +261,9 @@ class CreateWorldRequestBuilder
               description: description,
               id: id,
               imageUrl: BuiltValueNullFieldError.checkNotNull(
-                  imageUrl, 'CreateWorldRequest', 'imageUrl'),
+                  imageUrl, r'CreateWorldRequest', 'imageUrl'),
               name: BuiltValueNullFieldError.checkNotNull(
-                  name, 'CreateWorldRequest', 'name'),
+                  name, r'CreateWorldRequest', 'name'),
               platform: platform,
               releaseStatus: releaseStatus,
               tags: _tags?.build(),
@@ -274,7 +276,7 @@ class CreateWorldRequestBuilder
         _tags?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'CreateWorldRequest', _$failedField, e.toString());
+            r'CreateWorldRequest', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -283,4 +285,4 @@ class CreateWorldRequestBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

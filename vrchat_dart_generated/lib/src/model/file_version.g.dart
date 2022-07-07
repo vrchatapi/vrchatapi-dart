@@ -23,7 +23,7 @@ class _$FileVersion extends FileVersion {
   final int version;
 
   factory _$FileVersion([void Function(FileVersionBuilder)? updates]) =>
-      (new FileVersionBuilder()..update(updates)).build();
+      (new FileVersionBuilder()..update(updates))._build();
 
   _$FileVersion._(
       {required this.createdAt,
@@ -35,9 +35,9 @@ class _$FileVersion extends FileVersion {
       required this.version})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        createdAt, 'FileVersion', 'createdAt');
-    BuiltValueNullFieldError.checkNotNull(status, 'FileVersion', 'status');
-    BuiltValueNullFieldError.checkNotNull(version, 'FileVersion', 'version');
+        createdAt, r'FileVersion', 'createdAt');
+    BuiltValueNullFieldError.checkNotNull(status, r'FileVersion', 'status');
+    BuiltValueNullFieldError.checkNotNull(version, r'FileVersion', 'version');
   }
 
   @override
@@ -76,7 +76,7 @@ class _$FileVersion extends FileVersion {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('FileVersion')
+    return (newBuiltValueToStringHelper(r'FileVersion')
           ..add('createdAt', createdAt)
           ..add('deleted', deleted)
           ..add('delta', delta)
@@ -150,21 +150,23 @@ class FileVersionBuilder implements Builder<FileVersion, FileVersionBuilder> {
   }
 
   @override
-  _$FileVersion build() {
+  FileVersion build() => _build();
+
+  _$FileVersion _build() {
     _$FileVersion _$result;
     try {
       _$result = _$v ??
           new _$FileVersion._(
               createdAt: BuiltValueNullFieldError.checkNotNull(
-                  createdAt, 'FileVersion', 'createdAt'),
+                  createdAt, r'FileVersion', 'createdAt'),
               deleted: deleted,
               delta: _delta?.build(),
               file: _file?.build(),
               signature: _signature?.build(),
               status: BuiltValueNullFieldError.checkNotNull(
-                  status, 'FileVersion', 'status'),
+                  status, r'FileVersion', 'status'),
               version: BuiltValueNullFieldError.checkNotNull(
-                  version, 'FileVersion', 'version'));
+                  version, r'FileVersion', 'version'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -176,7 +178,7 @@ class FileVersionBuilder implements Builder<FileVersion, FileVersionBuilder> {
         _signature?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'FileVersion', _$failedField, e.toString());
+            r'FileVersion', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -185,4 +187,4 @@ class FileVersionBuilder implements Builder<FileVersion, FileVersionBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

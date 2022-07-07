@@ -14,11 +14,11 @@ class _$PublicAnnouncement extends PublicAnnouncement {
 
   factory _$PublicAnnouncement(
           [void Function(PublicAnnouncementBuilder)? updates]) =>
-      (new PublicAnnouncementBuilder()..update(updates)).build();
+      (new PublicAnnouncementBuilder()..update(updates))._build();
 
   _$PublicAnnouncement._({required this.name, required this.text}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(name, 'PublicAnnouncement', 'name');
-    BuiltValueNullFieldError.checkNotNull(text, 'PublicAnnouncement', 'text');
+    BuiltValueNullFieldError.checkNotNull(name, r'PublicAnnouncement', 'name');
+    BuiltValueNullFieldError.checkNotNull(text, r'PublicAnnouncement', 'text');
   }
 
   @override
@@ -45,7 +45,7 @@ class _$PublicAnnouncement extends PublicAnnouncement {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('PublicAnnouncement')
+    return (newBuiltValueToStringHelper(r'PublicAnnouncement')
           ..add('name', name)
           ..add('text', text))
         .toString();
@@ -90,16 +90,18 @@ class PublicAnnouncementBuilder
   }
 
   @override
-  _$PublicAnnouncement build() {
+  PublicAnnouncement build() => _build();
+
+  _$PublicAnnouncement _build() {
     final _$result = _$v ??
         new _$PublicAnnouncement._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, 'PublicAnnouncement', 'name'),
+                name, r'PublicAnnouncement', 'name'),
             text: BuiltValueNullFieldError.checkNotNull(
-                text, 'PublicAnnouncement', 'text'));
+                text, r'PublicAnnouncement', 'text'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

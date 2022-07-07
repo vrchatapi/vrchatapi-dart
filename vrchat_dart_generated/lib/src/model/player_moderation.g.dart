@@ -24,7 +24,7 @@ class _$PlayerModeration extends PlayerModeration {
 
   factory _$PlayerModeration(
           [void Function(PlayerModerationBuilder)? updates]) =>
-      (new PlayerModerationBuilder()..update(updates)).build();
+      (new PlayerModerationBuilder()..update(updates))._build();
 
   _$PlayerModeration._(
       {required this.created,
@@ -36,17 +36,17 @@ class _$PlayerModeration extends PlayerModeration {
       required this.type})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        created, 'PlayerModeration', 'created');
-    BuiltValueNullFieldError.checkNotNull(id, 'PlayerModeration', 'id');
+        created, r'PlayerModeration', 'created');
+    BuiltValueNullFieldError.checkNotNull(id, r'PlayerModeration', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        sourceDisplayName, 'PlayerModeration', 'sourceDisplayName');
+        sourceDisplayName, r'PlayerModeration', 'sourceDisplayName');
     BuiltValueNullFieldError.checkNotNull(
-        sourceUserId, 'PlayerModeration', 'sourceUserId');
+        sourceUserId, r'PlayerModeration', 'sourceUserId');
     BuiltValueNullFieldError.checkNotNull(
-        targetDisplayName, 'PlayerModeration', 'targetDisplayName');
+        targetDisplayName, r'PlayerModeration', 'targetDisplayName');
     BuiltValueNullFieldError.checkNotNull(
-        targetUserId, 'PlayerModeration', 'targetUserId');
-    BuiltValueNullFieldError.checkNotNull(type, 'PlayerModeration', 'type');
+        targetUserId, r'PlayerModeration', 'targetUserId');
+    BuiltValueNullFieldError.checkNotNull(type, r'PlayerModeration', 'type');
   }
 
   @override
@@ -86,7 +86,7 @@ class _$PlayerModeration extends PlayerModeration {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('PlayerModeration')
+    return (newBuiltValueToStringHelper(r'PlayerModeration')
           ..add('created', created)
           ..add('id', id)
           ..add('sourceDisplayName', sourceDisplayName)
@@ -163,26 +163,28 @@ class PlayerModerationBuilder
   }
 
   @override
-  _$PlayerModeration build() {
+  PlayerModeration build() => _build();
+
+  _$PlayerModeration _build() {
     final _$result = _$v ??
         new _$PlayerModeration._(
             created: BuiltValueNullFieldError.checkNotNull(
-                created, 'PlayerModeration', 'created'),
+                created, r'PlayerModeration', 'created'),
             id: BuiltValueNullFieldError.checkNotNull(
-                id, 'PlayerModeration', 'id'),
+                id, r'PlayerModeration', 'id'),
             sourceDisplayName: BuiltValueNullFieldError.checkNotNull(
-                sourceDisplayName, 'PlayerModeration', 'sourceDisplayName'),
+                sourceDisplayName, r'PlayerModeration', 'sourceDisplayName'),
             sourceUserId: BuiltValueNullFieldError.checkNotNull(
-                sourceUserId, 'PlayerModeration', 'sourceUserId'),
+                sourceUserId, r'PlayerModeration', 'sourceUserId'),
             targetDisplayName: BuiltValueNullFieldError.checkNotNull(
-                targetDisplayName, 'PlayerModeration', 'targetDisplayName'),
+                targetDisplayName, r'PlayerModeration', 'targetDisplayName'),
             targetUserId: BuiltValueNullFieldError.checkNotNull(
-                targetUserId, 'PlayerModeration', 'targetUserId'),
+                targetUserId, r'PlayerModeration', 'targetUserId'),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, 'PlayerModeration', 'type'));
+                type, r'PlayerModeration', 'type'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

@@ -15,16 +15,16 @@ class _$DownloadURLList extends DownloadURLList {
   final String sdk3Worlds;
 
   factory _$DownloadURLList([void Function(DownloadURLListBuilder)? updates]) =>
-      (new DownloadURLListBuilder()..update(updates)).build();
+      (new DownloadURLListBuilder()..update(updates))._build();
 
   _$DownloadURLList._(
       {required this.sdk2, required this.sdk3Avatars, required this.sdk3Worlds})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(sdk2, 'DownloadURLList', 'sdk2');
+    BuiltValueNullFieldError.checkNotNull(sdk2, r'DownloadURLList', 'sdk2');
     BuiltValueNullFieldError.checkNotNull(
-        sdk3Avatars, 'DownloadURLList', 'sdk3Avatars');
+        sdk3Avatars, r'DownloadURLList', 'sdk3Avatars');
     BuiltValueNullFieldError.checkNotNull(
-        sdk3Worlds, 'DownloadURLList', 'sdk3Worlds');
+        sdk3Worlds, r'DownloadURLList', 'sdk3Worlds');
   }
 
   @override
@@ -52,7 +52,7 @@ class _$DownloadURLList extends DownloadURLList {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DownloadURLList')
+    return (newBuiltValueToStringHelper(r'DownloadURLList')
           ..add('sdk2', sdk2)
           ..add('sdk3Avatars', sdk3Avatars)
           ..add('sdk3Worlds', sdk3Worlds))
@@ -103,18 +103,20 @@ class DownloadURLListBuilder
   }
 
   @override
-  _$DownloadURLList build() {
+  DownloadURLList build() => _build();
+
+  _$DownloadURLList _build() {
     final _$result = _$v ??
         new _$DownloadURLList._(
             sdk2: BuiltValueNullFieldError.checkNotNull(
-                sdk2, 'DownloadURLList', 'sdk2'),
+                sdk2, r'DownloadURLList', 'sdk2'),
             sdk3Avatars: BuiltValueNullFieldError.checkNotNull(
-                sdk3Avatars, 'DownloadURLList', 'sdk3Avatars'),
+                sdk3Avatars, r'DownloadURLList', 'sdk3Avatars'),
             sdk3Worlds: BuiltValueNullFieldError.checkNotNull(
-                sdk3Worlds, 'DownloadURLList', 'sdk3Worlds'));
+                sdk3Worlds, r'DownloadURLList', 'sdk3Worlds'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

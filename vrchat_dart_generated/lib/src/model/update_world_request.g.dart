@@ -36,7 +36,7 @@ class _$UpdateWorldRequest extends UpdateWorldRequest {
 
   factory _$UpdateWorldRequest(
           [void Function(UpdateWorldRequestBuilder)? updates]) =>
-      (new UpdateWorldRequestBuilder()..update(updates)).build();
+      (new UpdateWorldRequestBuilder()..update(updates))._build();
 
   _$UpdateWorldRequest._(
       {this.assetUrl,
@@ -112,7 +112,7 @@ class _$UpdateWorldRequest extends UpdateWorldRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('UpdateWorldRequest')
+    return (newBuiltValueToStringHelper(r'UpdateWorldRequest')
           ..add('assetUrl', assetUrl)
           ..add('assetVersion', assetVersion)
           ..add('authorId', authorId)
@@ -225,7 +225,9 @@ class UpdateWorldRequestBuilder
   }
 
   @override
-  _$UpdateWorldRequest build() {
+  UpdateWorldRequest build() => _build();
+
+  _$UpdateWorldRequest _build() {
     _$UpdateWorldRequest _$result;
     try {
       _$result = _$v ??
@@ -250,7 +252,7 @@ class UpdateWorldRequestBuilder
         _tags?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'UpdateWorldRequest', _$failedField, e.toString());
+            r'UpdateWorldRequest', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -259,4 +261,4 @@ class UpdateWorldRequestBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

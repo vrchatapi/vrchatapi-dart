@@ -14,13 +14,13 @@ class _$ModerateUserRequest extends ModerateUserRequest {
 
   factory _$ModerateUserRequest(
           [void Function(ModerateUserRequestBuilder)? updates]) =>
-      (new ModerateUserRequestBuilder()..update(updates)).build();
+      (new ModerateUserRequestBuilder()..update(updates))._build();
 
   _$ModerateUserRequest._({required this.moderated, required this.type})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        moderated, 'ModerateUserRequest', 'moderated');
-    BuiltValueNullFieldError.checkNotNull(type, 'ModerateUserRequest', 'type');
+        moderated, r'ModerateUserRequest', 'moderated');
+    BuiltValueNullFieldError.checkNotNull(type, r'ModerateUserRequest', 'type');
   }
 
   @override
@@ -47,7 +47,7 @@ class _$ModerateUserRequest extends ModerateUserRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ModerateUserRequest')
+    return (newBuiltValueToStringHelper(r'ModerateUserRequest')
           ..add('moderated', moderated)
           ..add('type', type))
         .toString();
@@ -92,16 +92,18 @@ class ModerateUserRequestBuilder
   }
 
   @override
-  _$ModerateUserRequest build() {
+  ModerateUserRequest build() => _build();
+
+  _$ModerateUserRequest _build() {
     final _$result = _$v ??
         new _$ModerateUserRequest._(
             moderated: BuiltValueNullFieldError.checkNotNull(
-                moderated, 'ModerateUserRequest', 'moderated'),
+                moderated, r'ModerateUserRequest', 'moderated'),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, 'ModerateUserRequest', 'type'));
+                type, r'ModerateUserRequest', 'type'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

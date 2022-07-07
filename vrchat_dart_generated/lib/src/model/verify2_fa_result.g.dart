@@ -11,11 +11,11 @@ class _$Verify2FAResult extends Verify2FAResult {
   final bool verified;
 
   factory _$Verify2FAResult([void Function(Verify2FAResultBuilder)? updates]) =>
-      (new Verify2FAResultBuilder()..update(updates)).build();
+      (new Verify2FAResultBuilder()..update(updates))._build();
 
   _$Verify2FAResult._({required this.verified}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        verified, 'Verify2FAResult', 'verified');
+        verified, r'Verify2FAResult', 'verified');
   }
 
   @override
@@ -39,7 +39,7 @@ class _$Verify2FAResult extends Verify2FAResult {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Verify2FAResult')
+    return (newBuiltValueToStringHelper(r'Verify2FAResult')
           ..add('verified', verified))
         .toString();
   }
@@ -78,14 +78,16 @@ class Verify2FAResultBuilder
   }
 
   @override
-  _$Verify2FAResult build() {
+  Verify2FAResult build() => _build();
+
+  _$Verify2FAResult _build() {
     final _$result = _$v ??
         new _$Verify2FAResult._(
             verified: BuiltValueNullFieldError.checkNotNull(
-                verified, 'Verify2FAResult', 'verified'));
+                verified, r'Verify2FAResult', 'verified'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas
