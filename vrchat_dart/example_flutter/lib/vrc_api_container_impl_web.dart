@@ -1,5 +1,5 @@
 import 'package:vrchat_dart/vrchat_dart.dart';
-import 'vrc_api_container_impl_base.dart';
+import 'package:vrchat_dart_example_flutter/vrc_api_container_impl_base.dart';
 
 /// Initialize VrchatDart on a web platform
 class VrcApiContainerImpl extends VrcApiContainerImplBase {
@@ -8,7 +8,8 @@ class VrcApiContainerImpl extends VrcApiContainerImplBase {
     return VrchatDart(
       userAgent: 'vrchat_dart_example',
       // See nginx.conf for an example nginx configuration
-      proxyUrl: 'your-proxy.com',
+      baseUrl: 'your-proxy.com',
+      websocketUrl: 'wss://your-proxy.com/websocket',
     );
   }
 }

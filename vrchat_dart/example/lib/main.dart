@@ -1,8 +1,7 @@
 import 'dart:convert';
 
 import 'package:vrchat_dart/vrchat_dart.dart';
-
-import 'credentials.dart';
+import 'package:vrchat_dart_example/credentials.dart';
 
 void main() async {
   final api = VrchatDart(userAgent: 'vrchat_dart_example');
