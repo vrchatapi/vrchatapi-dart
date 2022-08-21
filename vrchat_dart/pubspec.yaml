@@ -17,7 +17,7 @@ dependencies:
   collection: ^1.15.0
 
 dev_dependencies:
-  rexios_lints: ^2.0.1
+  rexios_lints: ^3.0.0
   build_runner: ^2.0.6
   # TODO: Use hosted versions
   openapi_generator:
