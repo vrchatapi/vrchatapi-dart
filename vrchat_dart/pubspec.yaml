@@ -19,27 +19,9 @@ dependencies:
 dev_dependencies:
   rexios_lints: ^3.0.0
   build_runner: ^2.0.6
-  # TODO: Use hosted versions
-  openapi_generator:
-    git:
-      url: https://github.com/Rexios80/openapi-generator-dart
-      path: openapi-generator
-      ref: e8b837e765103f74152829307cd689fe8f9ee419
-  openapi_generator_annotations:
-    git:
-      url: https://github.com/Rexios80/openapi-generator-dart
-      path: openapi-generator-annotations
-      ref: e8b837e765103f74152829307cd689fe8f9ee419
+  openapi_generator: ^4.0.0
+  openapi_generator_annotations: ^4.0.0
   json_serializable: ^6.0.1
 
   # dart run import_sorter:main
   import_sorter: ^4.6.0
-
-dependency_overrides:
-  # Override for the bundled version in openapi_generator
-  # TODO: Remove
-  openapi_generator_annotations:
-    git:
-      url: https://github.com/Rexios80/openapi-generator-dart
-      path: openapi-generator-annotations
-      ref: e8b837e765103f74152829307cd689fe8f9ee419
