@@ -1,3 +1,6 @@
+## 2.2.6
+- Updated vrchat_dart_generated
+
 ## 2.2.5
 - Updated vrchat_dart_generated
 
