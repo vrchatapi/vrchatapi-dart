@@ -12,6 +12,8 @@ extension CurrentUserExtension on CurrentUser {
   /// Convert a [CurrentUser] to a [User]
   User toUser() {
     final currentUserJson = jsonDecode(CurrentUserSerializer().toJson(this));
+    currentUserJson['friendRequestStatus'] = '';
+    currentUserJson['last_activity'] = '';
     return UserSerializer().fromJson(currentUserJson);
   }
 
@@ -27,8 +29,6 @@ extension UserExtension on User {
   /// Convert a [User] to a [LimitedUser]
   LimitedUser toLimitedUser() {
     final userJson = jsonDecode(UserSerializer().toJson(this));
-    // For some reason [User] does not have the fallbackAvatar field,
-    // but [LimitedUser] does
     userJson['fallbackAvatar'] = '';
     return LimitedUserSerializer().fromJson(userJson);
   }
