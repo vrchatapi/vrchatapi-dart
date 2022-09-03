@@ -9,7 +9,6 @@ import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:vrchat_dart_generated/src/model/invite_message.dart';
-import 'package:vrchat_dart_generated/src/model/invite_myself_to_request.dart';
 import 'package:vrchat_dart_generated/src/model/invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/invite_response.dart';
 import 'package:vrchat_dart_generated/src/model/notification.dart';
@@ -213,7 +212,6 @@ class InviteApi {
   /// Parameters:
   /// * [worldId]
   /// * [instanceId]
-  /// * [inviteMyselfToRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -226,7 +224,6 @@ class InviteApi {
   Future<Response<SentNotification>> inviteMyselfTo({
     required String worldId,
     required String instanceId,
-    InviteMyselfToRequest? inviteMyselfToRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -259,31 +256,11 @@ class InviteApi {
         ],
         ...?extra,
       },
-      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
-    dynamic _bodyData;
-
-    try {
-      const _type = FullType(InviteMyselfToRequest);
-      _bodyData = inviteMyselfToRequest == null
-          ? null
-          : _serializers.serialize(inviteMyselfToRequest, specifiedType: _type);
-    } catch (error, stackTrace) {
-      throw DioError(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioErrorType.other,
-        error: error,
-      )..stackTrace = stackTrace;
-    }
-
     final _response = await _dio.request<Object>(
       _path,
-      data: _bodyData,
       options: _options,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,

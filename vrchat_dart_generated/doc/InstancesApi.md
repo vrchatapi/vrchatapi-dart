@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getShortName**
-> String getShortName(worldId, instanceId)
+> InstanceShortNameResponse getShortName(worldId, instanceId)
 
 Get Instance Short Name
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**InstanceShortNameResponse**](InstanceShortNameResponse.md)
 
 ### Authorization
 

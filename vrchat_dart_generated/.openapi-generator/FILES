@@ -42,12 +42,12 @@ doc/InfoPushDataArticleContent.md
 doc/InfoPushDataClickable.md
 doc/Instance.md
 doc/InstancePlatforms.md
+doc/InstanceShortNameResponse.md
 doc/InstanceType.md
 doc/InstancesApi.md
 doc/InviteApi.md
 doc/InviteMessage.md
 doc/InviteMessageType.md
-doc/InviteMyselfToRequest.md
 doc/InviteRequest.md
 doc/InviteResponse.md
 doc/License.md
@@ -160,10 +160,10 @@ lib/src/model/info_push_data_article_content.dart
 lib/src/model/info_push_data_clickable.dart
 lib/src/model/instance.dart
 lib/src/model/instance_platforms.dart
+lib/src/model/instance_short_name_response.dart
 lib/src/model/instance_type.dart
 lib/src/model/invite_message.dart
 lib/src/model/invite_message_type.dart
-lib/src/model/invite_myself_to_request.dart
 lib/src/model/invite_request.dart
 lib/src/model/invite_response.dart
 lib/src/model/license.dart
@@ -215,5 +215,4 @@ lib/src/model/world_publish_status.dart
 lib/src/serializers.dart
 lib/vrchat_dart_generated.dart
 pubspec.yaml
-test/invite_myself_to_request_test.dart
-test/sent_notification_test.dart
+test/instance_short_name_response_test.dart

@@ -47,10 +47,10 @@ import 'package:vrchat_dart_generated/src/model/info_push_data_article_content.d
 import 'package:vrchat_dart_generated/src/model/info_push_data_clickable.dart';
 import 'package:vrchat_dart_generated/src/model/instance.dart';
 import 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
+import 'package:vrchat_dart_generated/src/model/instance_short_name_response.dart';
 import 'package:vrchat_dart_generated/src/model/instance_type.dart';
 import 'package:vrchat_dart_generated/src/model/invite_message.dart';
 import 'package:vrchat_dart_generated/src/model/invite_message_type.dart';
-import 'package:vrchat_dart_generated/src/model/invite_myself_to_request.dart';
 import 'package:vrchat_dart_generated/src/model/invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/invite_response.dart';
 import 'package:vrchat_dart_generated/src/model/license.dart';
@@ -138,10 +138,10 @@ part 'serializers.g.dart';
   InfoPushDataClickable,
   Instance,
   InstancePlatforms,
+  InstanceShortNameResponse,
   InstanceType,
   InviteMessage,
   InviteMessageType,
-  InviteMyselfToRequest,
   InviteRequest,
   InviteResponse,
   License,

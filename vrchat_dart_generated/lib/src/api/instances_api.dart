@@ -8,6 +8,7 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:vrchat_dart_generated/src/model/instance.dart';
+import 'package:vrchat_dart_generated/src/model/instance_short_name_response.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
 
 class InstancesApi {
@@ -207,9 +208,9 @@ class InstancesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [String] as data
+  /// Returns a [Future] containing a [Response] with a [InstanceShortNameResponse] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<String>> getShortName({
+  Future<Response<InstanceShortNameResponse>> getShortName({
     required String worldId,
     required String instanceId,
     CancelToken? cancelToken,
@@ -255,10 +256,14 @@ class InstancesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    String _responseData;
+    InstanceShortNameResponse _responseData;
 
     try {
-      _responseData = _response.data as String;
+      const _responseType = FullType(InstanceShortNameResponse);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as InstanceShortNameResponse;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -268,7 +273,7 @@ class InstancesApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<String>(
+    return Response<InstanceShortNameResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

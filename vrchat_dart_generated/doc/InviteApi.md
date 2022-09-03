@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **inviteMyselfTo**
-> SentNotification inviteMyselfTo(worldId, instanceId, inviteMyselfToRequest)
+> SentNotification inviteMyselfTo(worldId, instanceId)
 
 Invite Myself To Instance
 
@@ -149,10 +149,9 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getInviteApi();
 final String worldId = worldId_example; // String | 
 final String instanceId = instanceId_example; // String | 
-final InviteMyselfToRequest inviteMyselfToRequest = ; // InviteMyselfToRequest | 
 
 try {
-    final response = api.inviteMyselfTo(worldId, instanceId, inviteMyselfToRequest);
+    final response = api.inviteMyselfTo(worldId, instanceId);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling InviteApi->inviteMyselfTo: $e\n');
@@ -165,7 +164,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **worldId** | **String**|  | 
  **instanceId** | **String**|  | 
- **inviteMyselfToRequest** | [**InviteMyselfToRequest**](InviteMyselfToRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -177,7 +175,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

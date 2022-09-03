@@ -59,10 +59,10 @@ export 'package:vrchat_dart_generated/src/model/info_push_data_article_content.d
 export 'package:vrchat_dart_generated/src/model/info_push_data_clickable.dart';
 export 'package:vrchat_dart_generated/src/model/instance.dart';
 export 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
+export 'package:vrchat_dart_generated/src/model/instance_short_name_response.dart';
 export 'package:vrchat_dart_generated/src/model/instance_type.dart';
 export 'package:vrchat_dart_generated/src/model/invite_message.dart';
 export 'package:vrchat_dart_generated/src/model/invite_message_type.dart';
-export 'package:vrchat_dart_generated/src/model/invite_myself_to_request.dart';
 export 'package:vrchat_dart_generated/src/model/invite_request.dart';
 export 'package:vrchat_dart_generated/src/model/invite_response.dart';
 export 'package:vrchat_dart_generated/src/model/license.dart';
