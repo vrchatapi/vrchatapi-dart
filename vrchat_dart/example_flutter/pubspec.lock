@@ -269,7 +269,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "2.2.5"
+    version: "2.2.6"
   vrchat_dart_generated:
     dependency: "direct overridden"
     description:
