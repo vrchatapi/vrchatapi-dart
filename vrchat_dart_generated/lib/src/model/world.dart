@@ -15,7 +15,6 @@ part 'world.g.dart';
 ///
 /// Properties:
 /// * [assetUrl] - Empty if unauthenticated.
-/// * [assetUrlObject]
 /// * [authorId] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
 /// * [authorName]
 /// * [capacity]
@@ -32,7 +31,6 @@ part 'world.g.dart';
 /// * [namespace]
 /// * [occupants]
 /// * [organization]
-/// * [pluginUrlObject]
 /// * [popularity]
 /// * [previewYoutubeId]
 /// * [privateOccupants]
@@ -41,7 +39,6 @@ part 'world.g.dart';
 /// * [releaseStatus]
 /// * [tags] -
 /// * [thumbnailImageUrl]
-/// * [unityPackageUrlObject]
 /// * [unityPackages] - Empty if unauthenticated.
 /// * [updatedAt]
 /// * [version]
@@ -50,9 +47,6 @@ abstract class World implements Built<World, WorldBuilder> {
   /// Empty if unauthenticated.
   @BuiltValueField(wireName: r'assetUrl')
   String get assetUrl;
-
-  @BuiltValueField(wireName: r'assetUrlObject')
-  JsonObject get assetUrlObject;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @BuiltValueField(wireName: r'authorId')
@@ -104,9 +98,6 @@ abstract class World implements Built<World, WorldBuilder> {
   @BuiltValueField(wireName: r'organization')
   String get organization;
 
-  @BuiltValueField(wireName: r'pluginUrlObject')
-  JsonObject get pluginUrlObject;
-
   @BuiltValueField(wireName: r'popularity')
   int get popularity;
 
@@ -132,9 +123,6 @@ abstract class World implements Built<World, WorldBuilder> {
 
   @BuiltValueField(wireName: r'thumbnailImageUrl')
   String get thumbnailImageUrl;
-
-  @BuiltValueField(wireName: r'unityPackageUrlObject')
-  JsonObject get unityPackageUrlObject;
 
   /// Empty if unauthenticated.
   @BuiltValueField(wireName: r'unityPackages')
@@ -185,10 +173,6 @@ class _$WorldSerializer implements StructuredSerializer<World> {
       ..add(r'assetUrl')
       ..add(serializers.serialize(object.assetUrl,
           specifiedType: const FullType(String)));
-    result
-      ..add(r'assetUrlObject')
-      ..add(serializers.serialize(object.assetUrlObject,
-          specifiedType: const FullType(JsonObject)));
     result
       ..add(r'authorId')
       ..add(serializers.serialize(object.authorId,
@@ -262,10 +246,6 @@ class _$WorldSerializer implements StructuredSerializer<World> {
       ..add(serializers.serialize(object.organization,
           specifiedType: const FullType(String)));
     result
-      ..add(r'pluginUrlObject')
-      ..add(serializers.serialize(object.pluginUrlObject,
-          specifiedType: const FullType(JsonObject)));
-    result
       ..add(r'popularity')
       ..add(serializers.serialize(object.popularity,
           specifiedType: const FullType(int)));
@@ -304,10 +284,6 @@ class _$WorldSerializer implements StructuredSerializer<World> {
       ..add(serializers.serialize(object.thumbnailImageUrl,
           specifiedType: const FullType(String)));
     result
-      ..add(r'unityPackageUrlObject')
-      ..add(serializers.serialize(object.unityPackageUrlObject,
-          specifiedType: const FullType(JsonObject)));
-    result
       ..add(r'unityPackages')
       ..add(serializers.serialize(object.unityPackages,
           specifiedType: const FullType(BuiltList, [FullType(UnityPackage)])));
@@ -342,11 +318,6 @@ class _$WorldSerializer implements StructuredSerializer<World> {
           final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           result.assetUrl = valueDes;
-          break;
-        case r'assetUrlObject':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(JsonObject)) as JsonObject;
-          result.assetUrlObject = valueDes;
           break;
         case r'authorId':
           final valueDes = serializers.deserialize(value,
@@ -430,11 +401,6 @@ class _$WorldSerializer implements StructuredSerializer<World> {
               specifiedType: const FullType(String)) as String;
           result.organization = valueDes;
           break;
-        case r'pluginUrlObject':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(JsonObject)) as JsonObject;
-          result.pluginUrlObject = valueDes;
-          break;
         case r'popularity':
           final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
@@ -476,11 +442,6 @@ class _$WorldSerializer implements StructuredSerializer<World> {
           final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           result.thumbnailImageUrl = valueDes;
-          break;
-        case r'unityPackageUrlObject':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(JsonObject)) as JsonObject;
-          result.unityPackageUrlObject = valueDes;
           break;
         case r'unityPackages':
           final valueDes = serializers.deserialize(value,

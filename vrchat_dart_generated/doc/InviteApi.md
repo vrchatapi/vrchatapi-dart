@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getInviteMessage**](InviteApi.md#getinvitemessage) | **GET** /message/{userId}/{messageType}/{slot} | Get Invite Message
 [**getInviteMessages**](InviteApi.md#getinvitemessages) | **GET** /message/{userId}/{messageType} | List Invite Messages
+[**inviteMyselfTo**](InviteApi.md#invitemyselfto) | **POST** /invite/myself/to/{worldId}:{instanceId} | Invite Myself To Instance
 [**inviteUser**](InviteApi.md#inviteuser) | **POST** /invite/{userId} | Invite User
 [**requestInvite**](InviteApi.md#requestinvite) | **POST** /requestInvite/{userId} | Request Invite
 [**resetInviteMessage**](InviteApi.md#resetinvitemessage) | **DELETE** /message/{userId}/{messageType}/{slot} | Reset Invite Message
@@ -126,8 +127,63 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **inviteMyselfTo**
+> SentNotification inviteMyselfTo(worldId, instanceId, inviteMyselfToRequest)
+
+Invite Myself To Instance
+
+Sends self an invite to an instance
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: apiKeyCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getInviteApi();
+final String worldId = worldId_example; // String | 
+final String instanceId = instanceId_example; // String | 
+final InviteMyselfToRequest inviteMyselfToRequest = ; // InviteMyselfToRequest | 
+
+try {
+    final response = api.inviteMyselfTo(worldId, instanceId, inviteMyselfToRequest);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling InviteApi->inviteMyselfTo: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **worldId** | **String**|  | 
+ **instanceId** | **String**|  | 
+ **inviteMyselfToRequest** | [**InviteMyselfToRequest**](InviteMyselfToRequest.md)|  | [optional] 
+
+### Return type
+
+[**SentNotification**](SentNotification.md)
+
+### Authorization
+
+[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **inviteUser**
-> Notification inviteUser(userId, inviteRequest)
+> SentNotification inviteUser(userId, inviteRequest)
 
 Invite User
 
@@ -166,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Notification**](Notification.md)
+[**SentNotification**](SentNotification.md)
 
 ### Authorization
 

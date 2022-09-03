@@ -50,6 +50,7 @@ import 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
 import 'package:vrchat_dart_generated/src/model/instance_type.dart';
 import 'package:vrchat_dart_generated/src/model/invite_message.dart';
 import 'package:vrchat_dart_generated/src/model/invite_message_type.dart';
+import 'package:vrchat_dart_generated/src/model/invite_myself_to_request.dart';
 import 'package:vrchat_dart_generated/src/model/invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/invite_response.dart';
 import 'package:vrchat_dart_generated/src/model/license.dart';
@@ -72,6 +73,7 @@ import 'package:vrchat_dart_generated/src/model/region.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
 import 'package:vrchat_dart_generated/src/model/request_invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/response.dart';
+import 'package:vrchat_dart_generated/src/model/sent_notification.dart';
 import 'package:vrchat_dart_generated/src/model/subscription.dart';
 import 'package:vrchat_dart_generated/src/model/subscription_period.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
@@ -139,6 +141,7 @@ part 'serializers.g.dart';
   InstanceType,
   InviteMessage,
   InviteMessageType,
+  InviteMyselfToRequest,
   InviteRequest,
   InviteResponse,
   License,
@@ -161,6 +164,7 @@ part 'serializers.g.dart';
   ReleaseStatus,
   RequestInviteRequest,
   Response,
+  SentNotification,
   Subscription,
   SubscriptionPeriod,
   Success,
