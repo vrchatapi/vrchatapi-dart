@@ -17,7 +17,7 @@ dependencies:
   collection: ^1.15.0
 
 dev_dependencies:
-  rexios_lints: ^3.0.0
+  rexios_lints: ^4.0.0
   build_runner: ^2.0.6
   openapi_generator: ^4.0.0
   openapi_generator_annotations: ^4.0.0
