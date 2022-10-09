@@ -11,8 +11,8 @@ import 'package:openapi_generator_annotations/openapi_generator_annotations.dart
     pubVersion: '1.7.4',
     dateLibrary: DioDateLibrary.core,
   ),
-  inputSpecFile: 'https://vrchatapi.github.io/specification/openapi.yaml',
-  // inputSpecFile: '../../specification/dist/openapi.yaml',
+  // inputSpecFile: 'https://vrchatapi.github.io/specification/openapi.yaml',
+  inputSpecFile: '../../specification/dist/openapi.yaml',
   generatorName: Generator.dio,
   outputDirectory: '../vrchat_dart_generated',
 )
