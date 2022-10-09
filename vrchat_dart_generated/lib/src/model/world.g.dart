@@ -8,8 +8,6 @@ part of 'world.dart';
 
 class _$World extends World {
   @override
-  final String assetUrl;
-  @override
   final String authorId;
   @override
   final String authorName;
@@ -30,7 +28,7 @@ class _$World extends World {
   @override
   final String imageUrl;
   @override
-  final BuiltList<BuiltList<JsonObject?>>? instances;
+  final BuiltList<BuiltList<JsonObject>>? instances;
   @override
   final String labsPublicationDate;
   @override
@@ -70,8 +68,7 @@ class _$World extends World {
       (new WorldBuilder()..update(updates))._build();
 
   _$World._(
-      {required this.assetUrl,
-      required this.authorId,
+      {required this.authorId,
       required this.authorName,
       required this.capacity,
       required this.createdAt,
@@ -100,7 +97,6 @@ class _$World extends World {
       required this.version,
       required this.visits})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(assetUrl, r'World', 'assetUrl');
     BuiltValueNullFieldError.checkNotNull(authorId, r'World', 'authorId');
     BuiltValueNullFieldError.checkNotNull(authorName, r'World', 'authorName');
     BuiltValueNullFieldError.checkNotNull(capacity, r'World', 'capacity');
@@ -142,7 +138,6 @@ class _$World extends World {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is World &&
-        assetUrl == other.assetUrl &&
         authorId == other.authorId &&
         authorName == other.authorName &&
         capacity == other.capacity &&
@@ -193,7 +188,7 @@ class _$World extends World {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, assetUrl.hashCode), authorId.hashCode), authorName.hashCode), capacity.hashCode), createdAt.hashCode), description.hashCode), favorites.hashCode), featured.hashCode), heat.hashCode), id.hashCode),
+                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, authorId.hashCode), authorName.hashCode), capacity.hashCode), createdAt.hashCode), description.hashCode), favorites.hashCode), featured.hashCode), heat.hashCode), id.hashCode),
                                                                                 imageUrl.hashCode),
                                                                             instances.hashCode),
                                                                         labsPublicationDate.hashCode),
@@ -218,7 +213,6 @@ class _$World extends World {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'World')
-          ..add('assetUrl', assetUrl)
           ..add('authorId', authorId)
           ..add('authorName', authorName)
           ..add('capacity', capacity)
@@ -253,10 +247,6 @@ class _$World extends World {
 
 class WorldBuilder implements Builder<World, WorldBuilder> {
   _$World? _$v;
-
-  String? _assetUrl;
-  String? get assetUrl => _$this._assetUrl;
-  set assetUrl(String? assetUrl) => _$this._assetUrl = assetUrl;
 
   String? _authorId;
   String? get authorId => _$this._authorId;
@@ -298,10 +288,10 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
   String? get imageUrl => _$this._imageUrl;
   set imageUrl(String? imageUrl) => _$this._imageUrl = imageUrl;
 
-  ListBuilder<BuiltList<JsonObject?>>? _instances;
-  ListBuilder<BuiltList<JsonObject?>> get instances =>
-      _$this._instances ??= new ListBuilder<BuiltList<JsonObject?>>();
-  set instances(ListBuilder<BuiltList<JsonObject?>>? instances) =>
+  ListBuilder<BuiltList<JsonObject>>? _instances;
+  ListBuilder<BuiltList<JsonObject>> get instances =>
+      _$this._instances ??= new ListBuilder<BuiltList<JsonObject>>();
+  set instances(ListBuilder<BuiltList<JsonObject>>? instances) =>
       _$this._instances = instances;
 
   String? _labsPublicationDate;
@@ -388,7 +378,6 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
   WorldBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _assetUrl = $v.assetUrl;
       _authorId = $v.authorId;
       _authorName = $v.authorName;
       _capacity = $v.capacity;
@@ -441,8 +430,6 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
     try {
       _$result = _$v ??
           new _$World._(
-              assetUrl: BuiltValueNullFieldError.checkNotNull(
-                  assetUrl, r'World', 'assetUrl'),
               authorId: BuiltValueNullFieldError.checkNotNull(
                   authorId, r'World', 'authorId'),
               authorName: BuiltValueNullFieldError.checkNotNull(
@@ -466,7 +453,8 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
                   labsPublicationDate, r'World', 'labsPublicationDate'),
               name:
                   BuiltValueNullFieldError.checkNotNull(name, r'World', 'name'),
-              namespace: BuiltValueNullFieldError.checkNotNull(namespace, r'World', 'namespace'),
+              namespace:
+                  BuiltValueNullFieldError.checkNotNull(namespace, r'World', 'namespace'),
               occupants: occupants,
               organization: BuiltValueNullFieldError.checkNotNull(organization, r'World', 'organization'),
               popularity: BuiltValueNullFieldError.checkNotNull(popularity, r'World', 'popularity'),

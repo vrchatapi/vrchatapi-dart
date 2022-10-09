@@ -14,7 +14,6 @@ part 'world.g.dart';
 ///
 ///
 /// Properties:
-/// * [assetUrl] - Empty if unauthenticated.
 /// * [authorId] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
 /// * [authorName]
 /// * [capacity]
@@ -44,10 +43,6 @@ part 'world.g.dart';
 /// * [version]
 /// * [visits]
 abstract class World implements Built<World, WorldBuilder> {
-  /// Empty if unauthenticated.
-  @BuiltValueField(wireName: r'assetUrl')
-  String get assetUrl;
-
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @BuiltValueField(wireName: r'authorId')
   String get authorId;
@@ -81,7 +76,7 @@ abstract class World implements Built<World, WorldBuilder> {
   String get imageUrl;
 
   @BuiltValueField(wireName: r'instances')
-  BuiltList<BuiltList<JsonObject?>>? get instances;
+  BuiltList<BuiltList<JsonObject>>? get instances;
 
   @BuiltValueField(wireName: r'labsPublicationDate')
   String get labsPublicationDate;
@@ -170,10 +165,6 @@ class _$WorldSerializer implements StructuredSerializer<World> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     result
-      ..add(r'assetUrl')
-      ..add(serializers.serialize(object.assetUrl,
-          specifiedType: const FullType(String)));
-    result
       ..add(r'authorId')
       ..add(serializers.serialize(object.authorId,
           specifiedType: const FullType(String)));
@@ -220,7 +211,7 @@ class _$WorldSerializer implements StructuredSerializer<World> {
         ..add(r'instances')
         ..add(serializers.serialize(object.instances,
             specifiedType: const FullType(BuiltList, [
-              FullType(BuiltList, [FullType.nullable(JsonObject)])
+              FullType(BuiltList, [FullType(JsonObject)])
             ])));
     }
     result
@@ -314,11 +305,6 @@ class _$WorldSerializer implements StructuredSerializer<World> {
       final Object? value = iterator.current;
 
       switch (key) {
-        case r'assetUrl':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.assetUrl = valueDes;
-          break;
         case r'authorId':
           final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
@@ -372,8 +358,8 @@ class _$WorldSerializer implements StructuredSerializer<World> {
         case r'instances':
           final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, [
-                FullType(BuiltList, [FullType.nullable(JsonObject)])
-              ])) as BuiltList<BuiltList<JsonObject?>>;
+                FullType(BuiltList, [FullType(JsonObject)])
+              ])) as BuiltList<BuiltList<JsonObject>>;
           result.instances.replace(valueDes);
           break;
         case r'labsPublicationDate':
