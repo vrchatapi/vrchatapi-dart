@@ -38,7 +38,9 @@ class _$Instance extends Instance {
   @override
   final Region region;
   @override
-  final String shortName;
+  final String secureName;
+  @override
+  final String? shortName;
   @override
   final BuiltList<String> tags;
   @override
@@ -71,7 +73,8 @@ class _$Instance extends Instance {
       required this.photonRegion,
       required this.platforms,
       required this.region,
-      required this.shortName,
+      required this.secureName,
+      this.shortName,
       required this.tags,
       required this.type,
       required this.worldId,
@@ -97,7 +100,8 @@ class _$Instance extends Instance {
         photonRegion, r'Instance', 'photonRegion');
     BuiltValueNullFieldError.checkNotNull(platforms, r'Instance', 'platforms');
     BuiltValueNullFieldError.checkNotNull(region, r'Instance', 'region');
-    BuiltValueNullFieldError.checkNotNull(shortName, r'Instance', 'shortName');
+    BuiltValueNullFieldError.checkNotNull(
+        secureName, r'Instance', 'secureName');
     BuiltValueNullFieldError.checkNotNull(tags, r'Instance', 'tags');
     BuiltValueNullFieldError.checkNotNull(type, r'Instance', 'type');
     BuiltValueNullFieldError.checkNotNull(worldId, r'Instance', 'worldId');
@@ -129,6 +133,7 @@ class _$Instance extends Instance {
         photonRegion == other.photonRegion &&
         platforms == other.platforms &&
         region == other.region &&
+        secureName == other.secureName &&
         shortName == other.shortName &&
         tags == other.tags &&
         type == other.type &&
@@ -158,19 +163,19 @@ class _$Instance extends Instance {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc(0, active.hashCode), canRequestInvite.hashCode), capacity.hashCode),
-                                                                                clientNumber.hashCode),
-                                                                            full.hashCode),
-                                                                        id.hashCode),
-                                                                    instanceId.hashCode),
-                                                                location.hashCode),
-                                                            nUsers.hashCode),
-                                                        name.hashCode),
-                                                    ownerId.hashCode),
-                                                permanent.hashCode),
-                                            photonRegion.hashCode),
-                                        platforms.hashCode),
-                                    region.hashCode),
+                                                                            $jc($jc($jc($jc($jc(0, active.hashCode), canRequestInvite.hashCode), capacity.hashCode), clientNumber.hashCode),
+                                                                                full.hashCode),
+                                                                            id.hashCode),
+                                                                        instanceId.hashCode),
+                                                                    location.hashCode),
+                                                                nUsers.hashCode),
+                                                            name.hashCode),
+                                                        ownerId.hashCode),
+                                                    permanent.hashCode),
+                                                photonRegion.hashCode),
+                                            platforms.hashCode),
+                                        region.hashCode),
+                                    secureName.hashCode),
                                 shortName.hashCode),
                             tags.hashCode),
                         type.hashCode),
@@ -198,6 +203,7 @@ class _$Instance extends Instance {
           ..add('photonRegion', photonRegion)
           ..add('platforms', platforms)
           ..add('region', region)
+          ..add('secureName', secureName)
           ..add('shortName', shortName)
           ..add('tags', tags)
           ..add('type', type)
@@ -275,6 +281,10 @@ class InstanceBuilder implements Builder<Instance, InstanceBuilder> {
   Region? get region => _$this._region;
   set region(Region? region) => _$this._region = region;
 
+  String? _secureName;
+  String? get secureName => _$this._secureName;
+  set secureName(String? secureName) => _$this._secureName = secureName;
+
   String? _shortName;
   String? get shortName => _$this._shortName;
   set shortName(String? shortName) => _$this._shortName = shortName;
@@ -325,6 +335,7 @@ class InstanceBuilder implements Builder<Instance, InstanceBuilder> {
       _photonRegion = $v.photonRegion;
       _platforms = $v.platforms.toBuilder();
       _region = $v.region;
+      _secureName = $v.secureName;
       _shortName = $v.shortName;
       _tags = $v.tags.toBuilder();
       _type = $v.type;
@@ -380,7 +391,8 @@ class InstanceBuilder implements Builder<Instance, InstanceBuilder> {
               photonRegion: BuiltValueNullFieldError.checkNotNull(photonRegion, r'Instance', 'photonRegion'),
               platforms: platforms.build(),
               region: BuiltValueNullFieldError.checkNotNull(region, r'Instance', 'region'),
-              shortName: BuiltValueNullFieldError.checkNotNull(shortName, r'Instance', 'shortName'),
+              secureName: BuiltValueNullFieldError.checkNotNull(secureName, r'Instance', 'secureName'),
+              shortName: shortName,
               tags: tags.build(),
               type: BuiltValueNullFieldError.checkNotNull(type, r'Instance', 'type'),
               worldId: BuiltValueNullFieldError.checkNotNull(worldId, r'Instance', 'worldId'),

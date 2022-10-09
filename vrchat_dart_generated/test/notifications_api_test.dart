@@ -37,12 +37,12 @@ void main() {
     //
     // Retrieve all of the current user's notifications.
     //
-    //Future<BuiltList<Notification>> getNotifications({ String type, bool sent, String after }) async
+    //Future<BuiltList<Notification>> getNotifications({ String type, bool sent, bool hidden, String after, int n, int offset }) async
     test('test getNotifications', () async {
       // TODO
     });
 
-    // Mark As Read
+    // Mark Notification As Read
     //
     // Mark a notification as seen.
     //

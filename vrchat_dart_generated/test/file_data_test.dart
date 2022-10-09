@@ -7,13 +7,13 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(FileData, () {
-    // String fileName
-    test('to test the property `fileName`', () async {
+    // String category (default value: 'queued')
+    test('to test the property `category`', () async {
       // TODO
     });
 
-    // String url
-    test('to test the property `url`', () async {
+    // String fileName
+    test('to test the property `fileName`', () async {
       // TODO
     });
 
@@ -22,7 +22,7 @@ void main() {
       // TODO
     });
 
-    // num sizeInBytes
+    // int sizeInBytes
     test('to test the property `sizeInBytes`', () async {
       // TODO
     });
@@ -32,13 +32,13 @@ void main() {
       // TODO
     });
 
-    // String category
-    test('to test the property `category`', () async {
+    // String uploadId (default value: '')
+    test('to test the property `uploadId`', () async {
       // TODO
     });
 
-    // String uploadId (default value: '')
-    test('to test the property `uploadId`', () async {
+    // String url
+    test('to test the property `url`', () async {
       // TODO
     });
   });

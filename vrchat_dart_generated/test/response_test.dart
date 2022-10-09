@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    // num statusCode
+    // int statusCode
     test('to test the property `statusCode`', () async {
       // TODO
     });

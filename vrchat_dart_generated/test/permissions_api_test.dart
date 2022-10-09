@@ -6,7 +6,7 @@ void main() {
   final instance = VrchatDartGenerated().getPermissionsApi();
 
   group(PermissionsApi, () {
-    // Get Assigned Permission
+    // Get Assigned Permissions
     //
     // Returns a list of all permissions currently granted by the user. Permissions are assigned e.g. by subscribing to VRC+.
     //

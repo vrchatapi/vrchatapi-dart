@@ -10,7 +10,7 @@ void main() {
     //
     // Creates a new File object
     //
-    //Future<File> createFile({ InlineObject3 inlineObject3 }) async
+    //Future<File> createFile({ CreateFileRequest createFileRequest }) async
     test('test createFile', () async {
       // TODO
     });
@@ -19,7 +19,7 @@ void main() {
     //
     // Creates a new FileVersion. Once a Version has been created, proceed to the `/file/{fileId}/{versionId}/file/start` endpoint to start a file upload.
     //
-    //Future<File> createFileVersion(String fileId) async
+    //Future<File> createFileVersion(String fileId, { CreateFileVersionRequest createFileVersionRequest }) async
     test('test createFileVersion', () async {
       // TODO
     });
@@ -55,7 +55,7 @@ void main() {
     //
     // Finish an upload of a FileData. This will mark it as \"complete\". After uploading the `file` for Avatars and Worlds you then have to upload a `signature` file.
     //
-    //Future<File> finishFileDataUpload(String fileId, int versionId, String fileType, { InlineObject4 inlineObject4 }) async
+    //Future<File> finishFileDataUpload(String fileId, int versionId, String fileType, { FinishFileDataUploadRequest finishFileDataUploadRequest }) async
     test('test finishFileDataUpload', () async {
       // TODO
     });
@@ -73,7 +73,7 @@ void main() {
     //
     // Retrieves the upload status for file upload. Can currently only be accessed when `status` is `waiting`. Trying to access it on a file version already uploaded currently times out.
     //
-    //Future<InlineResponse2005> getFileDataUploadStatus(String fileId, int versionId, String fileType) async
+    //Future<FileVersionUploadStatus> getFileDataUploadStatus(String fileId, int versionId, String fileType) async
     test('test getFileDataUploadStatus', () async {
       // TODO
     });
@@ -91,7 +91,7 @@ void main() {
     //
     // Starts an upload of a specific FilePart. This endpoint will return an AWS URL which you can PUT data to. You need to call this and receive a new AWS API URL for each `partNumber`. Please see AWS's REST documentation on \"PUT Object to S3\" on how to upload. Once all parts has been uploaded, proceed to `/finish` endpoint.  **Note:** `nextPartNumber` seems like it is always ignored. Despite it returning 0, first partNumber is always 1.
     //
-    //Future<InlineResponse2006> startFileDataUpload(String fileId, int versionId, String fileType, int partNumber) async
+    //Future<FileUploadURL> startFileDataUpload(String fileId, int versionId, String fileType, { int partNumber }) async
     test('test startFileDataUpload', () async {
       // TODO
     });

@@ -19,6 +19,7 @@ void main() {
       // TODO
     });
 
+    // A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
     // String authorId
     test('to test the property `authorId`', () async {
       // TODO
@@ -64,6 +65,7 @@ void main() {
       // TODO
     });
 
+    //
     // BuiltList<String> tags
     test('to test the property `tags`', () async {
       // TODO
@@ -71,11 +73,6 @@ void main() {
 
     // String thumbnailImageUrl
     test('to test the property `thumbnailImageUrl`', () async {
-      // TODO
-    });
-
-    // BuiltSet<UnityPackage> unityPackages
-    test('to test the property `unityPackages`', () async {
       // TODO
     });
 
@@ -89,12 +86,17 @@ void main() {
       // TODO
     });
 
+    // BuiltSet<UnityPackage> unityPackages
+    test('to test the property `unityPackages`', () async {
+      // TODO
+    });
+
     // DateTime updatedAt
     test('to test the property `updatedAt`', () async {
       // TODO
     });
 
-    // num version (default value: 0)
+    // int version (default value: 0)
     test('to test the property `version`', () async {
       // TODO
     });

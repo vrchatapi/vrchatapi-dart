@@ -26,17 +26,23 @@ class _$User extends User {
   @override
   final String friendKey;
   @override
+  final String friendRequestStatus;
+  @override
   final String id;
   @override
   final String? instanceId;
   @override
   final bool isFriend;
   @override
+  final String lastActivity;
+  @override
   final String lastLogin;
   @override
   final String lastPlatform;
   @override
   final String? location;
+  @override
+  final String? note;
   @override
   final String profilePicOverride;
   @override
@@ -47,6 +53,12 @@ class _$User extends User {
   final String statusDescription;
   @override
   final BuiltList<String> tags;
+  @override
+  final String? travelingToInstance;
+  @override
+  final String? travelingToLocation;
+  @override
+  final String? travelingToWorld;
   @override
   final String userIcon;
   @override
@@ -67,17 +79,23 @@ class _$User extends User {
       required this.developerType,
       required this.displayName,
       required this.friendKey,
+      required this.friendRequestStatus,
       required this.id,
       this.instanceId,
       required this.isFriend,
+      required this.lastActivity,
       required this.lastLogin,
       required this.lastPlatform,
       this.location,
+      this.note,
       required this.profilePicOverride,
       required this.state,
       required this.status,
       required this.statusDescription,
       required this.tags,
+      this.travelingToInstance,
+      this.travelingToLocation,
+      this.travelingToWorld,
       required this.userIcon,
       required this.username,
       this.worldId})
@@ -95,8 +113,12 @@ class _$User extends User {
         developerType, r'User', 'developerType');
     BuiltValueNullFieldError.checkNotNull(displayName, r'User', 'displayName');
     BuiltValueNullFieldError.checkNotNull(friendKey, r'User', 'friendKey');
+    BuiltValueNullFieldError.checkNotNull(
+        friendRequestStatus, r'User', 'friendRequestStatus');
     BuiltValueNullFieldError.checkNotNull(id, r'User', 'id');
     BuiltValueNullFieldError.checkNotNull(isFriend, r'User', 'isFriend');
+    BuiltValueNullFieldError.checkNotNull(
+        lastActivity, r'User', 'lastActivity');
     BuiltValueNullFieldError.checkNotNull(lastLogin, r'User', 'lastLogin');
     BuiltValueNullFieldError.checkNotNull(
         lastPlatform, r'User', 'lastPlatform');
@@ -132,17 +154,23 @@ class _$User extends User {
         developerType == other.developerType &&
         displayName == other.displayName &&
         friendKey == other.friendKey &&
+        friendRequestStatus == other.friendRequestStatus &&
         id == other.id &&
         instanceId == other.instanceId &&
         isFriend == other.isFriend &&
+        lastActivity == other.lastActivity &&
         lastLogin == other.lastLogin &&
         lastPlatform == other.lastPlatform &&
         location == other.location &&
+        note == other.note &&
         profilePicOverride == other.profilePicOverride &&
         state == other.state &&
         status == other.status &&
         statusDescription == other.statusDescription &&
         tags == other.tags &&
+        travelingToInstance == other.travelingToInstance &&
+        travelingToLocation == other.travelingToLocation &&
+        travelingToWorld == other.travelingToWorld &&
         userIcon == other.userIcon &&
         username == other.username &&
         worldId == other.worldId;
@@ -168,23 +196,23 @@ class _$User extends User {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc(0, allowAvatarCopying.hashCode), bio.hashCode), bioLinks.hashCode), currentAvatarImageUrl.hashCode),
-                                                                                currentAvatarThumbnailImageUrl.hashCode),
-                                                                            dateJoined.hashCode),
-                                                                        developerType.hashCode),
-                                                                    displayName.hashCode),
-                                                                friendKey.hashCode),
-                                                            id.hashCode),
-                                                        instanceId.hashCode),
-                                                    isFriend.hashCode),
-                                                lastLogin.hashCode),
-                                            lastPlatform.hashCode),
-                                        location.hashCode),
-                                    profilePicOverride.hashCode),
-                                state.hashCode),
-                            status.hashCode),
-                        statusDescription.hashCode),
-                    tags.hashCode),
+                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, allowAvatarCopying.hashCode), bio.hashCode), bioLinks.hashCode), currentAvatarImageUrl.hashCode), currentAvatarThumbnailImageUrl.hashCode), dateJoined.hashCode), developerType.hashCode), displayName.hashCode), friendKey.hashCode), friendRequestStatus.hashCode),
+                                                                                id.hashCode),
+                                                                            instanceId.hashCode),
+                                                                        isFriend.hashCode),
+                                                                    lastActivity.hashCode),
+                                                                lastLogin.hashCode),
+                                                            lastPlatform.hashCode),
+                                                        location.hashCode),
+                                                    note.hashCode),
+                                                profilePicOverride.hashCode),
+                                            state.hashCode),
+                                        status.hashCode),
+                                    statusDescription.hashCode),
+                                tags.hashCode),
+                            travelingToInstance.hashCode),
+                        travelingToLocation.hashCode),
+                    travelingToWorld.hashCode),
                 userIcon.hashCode),
             username.hashCode),
         worldId.hashCode));
@@ -203,17 +231,23 @@ class _$User extends User {
           ..add('developerType', developerType)
           ..add('displayName', displayName)
           ..add('friendKey', friendKey)
+          ..add('friendRequestStatus', friendRequestStatus)
           ..add('id', id)
           ..add('instanceId', instanceId)
           ..add('isFriend', isFriend)
+          ..add('lastActivity', lastActivity)
           ..add('lastLogin', lastLogin)
           ..add('lastPlatform', lastPlatform)
           ..add('location', location)
+          ..add('note', note)
           ..add('profilePicOverride', profilePicOverride)
           ..add('state', state)
           ..add('status', status)
           ..add('statusDescription', statusDescription)
           ..add('tags', tags)
+          ..add('travelingToInstance', travelingToInstance)
+          ..add('travelingToLocation', travelingToLocation)
+          ..add('travelingToWorld', travelingToWorld)
           ..add('userIcon', userIcon)
           ..add('username', username)
           ..add('worldId', worldId))
@@ -266,6 +300,11 @@ class UserBuilder implements Builder<User, UserBuilder> {
   String? get friendKey => _$this._friendKey;
   set friendKey(String? friendKey) => _$this._friendKey = friendKey;
 
+  String? _friendRequestStatus;
+  String? get friendRequestStatus => _$this._friendRequestStatus;
+  set friendRequestStatus(String? friendRequestStatus) =>
+      _$this._friendRequestStatus = friendRequestStatus;
+
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
@@ -278,6 +317,10 @@ class UserBuilder implements Builder<User, UserBuilder> {
   bool? get isFriend => _$this._isFriend;
   set isFriend(bool? isFriend) => _$this._isFriend = isFriend;
 
+  String? _lastActivity;
+  String? get lastActivity => _$this._lastActivity;
+  set lastActivity(String? lastActivity) => _$this._lastActivity = lastActivity;
+
   String? _lastLogin;
   String? get lastLogin => _$this._lastLogin;
   set lastLogin(String? lastLogin) => _$this._lastLogin = lastLogin;
@@ -289,6 +332,10 @@ class UserBuilder implements Builder<User, UserBuilder> {
   String? _location;
   String? get location => _$this._location;
   set location(String? location) => _$this._location = location;
+
+  String? _note;
+  String? get note => _$this._note;
+  set note(String? note) => _$this._note = note;
 
   String? _profilePicOverride;
   String? get profilePicOverride => _$this._profilePicOverride;
@@ -311,6 +358,21 @@ class UserBuilder implements Builder<User, UserBuilder> {
   ListBuilder<String>? _tags;
   ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
+
+  String? _travelingToInstance;
+  String? get travelingToInstance => _$this._travelingToInstance;
+  set travelingToInstance(String? travelingToInstance) =>
+      _$this._travelingToInstance = travelingToInstance;
+
+  String? _travelingToLocation;
+  String? get travelingToLocation => _$this._travelingToLocation;
+  set travelingToLocation(String? travelingToLocation) =>
+      _$this._travelingToLocation = travelingToLocation;
+
+  String? _travelingToWorld;
+  String? get travelingToWorld => _$this._travelingToWorld;
+  set travelingToWorld(String? travelingToWorld) =>
+      _$this._travelingToWorld = travelingToWorld;
 
   String? _userIcon;
   String? get userIcon => _$this._userIcon;
@@ -340,17 +402,23 @@ class UserBuilder implements Builder<User, UserBuilder> {
       _developerType = $v.developerType;
       _displayName = $v.displayName;
       _friendKey = $v.friendKey;
+      _friendRequestStatus = $v.friendRequestStatus;
       _id = $v.id;
       _instanceId = $v.instanceId;
       _isFriend = $v.isFriend;
+      _lastActivity = $v.lastActivity;
       _lastLogin = $v.lastLogin;
       _lastPlatform = $v.lastPlatform;
       _location = $v.location;
+      _note = $v.note;
       _profilePicOverride = $v.profilePicOverride;
       _state = $v.state;
       _status = $v.status;
       _statusDescription = $v.statusDescription;
       _tags = $v.tags.toBuilder();
+      _travelingToInstance = $v.travelingToInstance;
+      _travelingToLocation = $v.travelingToLocation;
+      _travelingToWorld = $v.travelingToWorld;
       _userIcon = $v.userIcon;
       _username = $v.username;
       _worldId = $v.worldId;
@@ -397,17 +465,23 @@ class UserBuilder implements Builder<User, UserBuilder> {
                   displayName, r'User', 'displayName'),
               friendKey:
                   BuiltValueNullFieldError.checkNotNull(friendKey, r'User', 'friendKey'),
+              friendRequestStatus: BuiltValueNullFieldError.checkNotNull(friendRequestStatus, r'User', 'friendRequestStatus'),
               id: BuiltValueNullFieldError.checkNotNull(id, r'User', 'id'),
               instanceId: instanceId,
               isFriend: BuiltValueNullFieldError.checkNotNull(isFriend, r'User', 'isFriend'),
+              lastActivity: BuiltValueNullFieldError.checkNotNull(lastActivity, r'User', 'lastActivity'),
               lastLogin: BuiltValueNullFieldError.checkNotNull(lastLogin, r'User', 'lastLogin'),
               lastPlatform: BuiltValueNullFieldError.checkNotNull(lastPlatform, r'User', 'lastPlatform'),
               location: location,
+              note: note,
               profilePicOverride: BuiltValueNullFieldError.checkNotNull(profilePicOverride, r'User', 'profilePicOverride'),
               state: BuiltValueNullFieldError.checkNotNull(state, r'User', 'state'),
               status: BuiltValueNullFieldError.checkNotNull(status, r'User', 'status'),
               statusDescription: BuiltValueNullFieldError.checkNotNull(statusDescription, r'User', 'statusDescription'),
               tags: tags.build(),
+              travelingToInstance: travelingToInstance,
+              travelingToLocation: travelingToLocation,
+              travelingToWorld: travelingToWorld,
               userIcon: BuiltValueNullFieldError.checkNotNull(userIcon, r'User', 'userIcon'),
               username: BuiltValueNullFieldError.checkNotNull(username, r'User', 'username'),
               worldId: worldId);

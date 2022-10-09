@@ -28,7 +28,7 @@ void main() {
     //
     // Retrieve if the user is currently a friend with a given user, if they have an outgoing friend request, and if they have an incoming friend request. The proper way to receive and accept friend request is by checking if the user has an incoming `Notification` of type `friendRequest`, and then accepting that notification.
     //
-    //Future<InlineResponse2004> getFriendStatus(String userId) async
+    //Future<FriendStatus> getFriendStatus(String userId) async
     test('test getFriendStatus', () async {
       // TODO
     });
@@ -37,7 +37,7 @@ void main() {
     //
     // List information about friends.
     //
-    //Future<BuiltList<LimitedUser>> getFriends({ int offset, int n }) async
+    //Future<BuiltList<LimitedUser>> getFriends({ int offset, int n, bool offline }) async
     test('test getFriends', () async {
       // TODO
     });

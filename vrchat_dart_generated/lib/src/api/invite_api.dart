@@ -13,6 +13,7 @@ import 'package:vrchat_dart_generated/src/model/invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/invite_response.dart';
 import 'package:vrchat_dart_generated/src/model/notification.dart';
 import 'package:vrchat_dart_generated/src/model/request_invite_request.dart';
+import 'package:vrchat_dart_generated/src/model/sent_notification.dart';
 import 'package:vrchat_dart_generated/src/model/update_invite_message_request.dart';
 
 class InviteApi {
@@ -205,6 +206,96 @@ class InviteApi {
     );
   }
 
+  /// Invite Myself To Instance
+  /// Sends self an invite to an instance
+  ///
+  /// Parameters:
+  /// * [worldId]
+  /// * [instanceId]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [SentNotification] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<SentNotification>> inviteMyselfTo({
+    required String worldId,
+    required String instanceId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/invite/myself/to/{worldId}:{instanceId}'
+        .replaceAll('{' r'worldId' '}', worldId.toString())
+        .replaceAll('{' r'instanceId' '}', instanceId.toString());
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
+            'where': '',
+          },
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    SentNotification _responseData;
+
+    try {
+      const _responseType = FullType(SentNotification);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as SentNotification;
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<SentNotification>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// Invite User
   /// Sends an invite to a user. Returns the Notification of type &#x60;invite&#x60; that was sent.
   ///
@@ -218,9 +309,9 @@ class InviteApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Notification] as data
+  /// Returns a [Future] containing a [Response] with a [SentNotification] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Notification>> inviteUser({
+  Future<Response<SentNotification>> inviteUser({
     required String userId,
     InviteRequest? inviteRequest,
     CancelToken? cancelToken,
@@ -285,14 +376,14 @@ class InviteApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Notification _responseData;
+    SentNotification _responseData;
 
     try {
-      const _responseType = FullType(Notification);
+      const _responseType = FullType(SentNotification);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as Notification;
+      ) as SentNotification;
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -302,7 +393,7 @@ class InviteApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<Notification>(
+    return Response<SentNotification>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

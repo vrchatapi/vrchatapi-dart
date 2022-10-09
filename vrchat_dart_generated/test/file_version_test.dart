@@ -7,24 +7,14 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(FileVersion, () {
-    // Incremental version counter, can only be increased.
-    // num version (default value: 0)
-    test('to test the property `version`', () async {
-      // TODO
-    });
-
-    // FileStatus status
-    test('to test the property `status`', () async {
-      // TODO
-    });
-
     // DateTime createdAt
     test('to test the property `createdAt`', () async {
       // TODO
     });
 
-    // FileData file
-    test('to test the property `file`', () async {
+    // Usually only present if `true`
+    // bool deleted (default value: true)
+    test('to test the property `deleted`', () async {
       // TODO
     });
 
@@ -33,14 +23,24 @@ void main() {
       // TODO
     });
 
+    // FileData file
+    test('to test the property `file`', () async {
+      // TODO
+    });
+
     // FileData signature
     test('to test the property `signature`', () async {
       // TODO
     });
 
-    // Usually only present if `true`
-    // bool deleted (default value: true)
-    test('to test the property `deleted`', () async {
+    // FileStatus status
+    test('to test the property `status`', () async {
+      // TODO
+    });
+
+    // Incremental version counter, can only be increased.
+    // int version (default value: 0)
+    test('to test the property `version`', () async {
       // TODO
     });
   });

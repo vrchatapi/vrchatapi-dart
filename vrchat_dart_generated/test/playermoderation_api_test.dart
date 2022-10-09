@@ -10,7 +10,7 @@ void main() {
     //
     // ⚠️ **This will delete every single player moderation you've ever made.**
     //
-    //Future<Error> clearAllPlayerModerations() async
+    //Future<Success> clearAllPlayerModerations() async
     test('test clearAllPlayerModerations', () async {
       // TODO
     });
@@ -19,7 +19,7 @@ void main() {
     //
     // Deletes a specific player moderation based on it's `pmod_` ID. The website uses `unmoderateUser` instead. You can delete the same player moderation multiple times successfully.
     //
-    //Future<Error> deletePlayerModeration(String playerModerationId) async
+    //Future<Success> deletePlayerModeration(String playerModerationId) async
     test('test deletePlayerModeration', () async {
       // TODO
     });
@@ -44,18 +44,18 @@ void main() {
 
     // Moderate User
     //
-    // Moderate a user, e.g. unmute them or show their avatar.
+    // Moderate a user, e.g. unmute them or show their avatar.  Please see the [Player Moderation docs](https://vrchatapi.github.io/docs/api/#tag--playermoderation) on what playerModerations are, and how they differ from staff moderations.
     //
-    //Future<PlayerModeration> moderateUser({ InlineObject11 inlineObject11 }) async
+    //Future<PlayerModeration> moderateUser({ ModerateUserRequest moderateUserRequest }) async
     test('test moderateUser', () async {
       // TODO
     });
 
     // Unmoderate User
     //
-    // Removes a player moderation previously added through `moderateUser`. E.g if you previuosly have shown their avatar, but now want to reset it to default.
+    // Removes a player moderation previously added through `moderateUser`. E.g if you previously have shown their avatar, but now want to reset it to default.
     //
-    //Future<Error> unmoderateUser({ InlineObject12 inlineObject12 }) async
+    //Future<Success> unmoderateUser({ ModerateUserRequest moderateUserRequest }) async
     test('test unmoderateUser', () async {
       // TODO
     });

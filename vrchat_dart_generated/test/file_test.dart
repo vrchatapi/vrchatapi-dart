@@ -7,8 +7,18 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(File, () {
+    // String extension_
+    test('to test the property `extension_`', () async {
+      // TODO
+    });
+
     // String id
     test('to test the property `id`', () async {
+      // TODO
+    });
+
+    // MIMEType mimeType
+    test('to test the property `mimeType`', () async {
       // TODO
     });
 
@@ -18,26 +28,19 @@ void main() {
       // TODO
     });
 
+    // A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
     // String ownerId
     test('to test the property `ownerId`', () async {
       // TODO
     });
 
-    // MIMEType mimeType
-    test('to test the property `mimeType`', () async {
-      // TODO
-    });
-
-    // String extension_
-    test('to test the property `extension_`', () async {
-      // TODO
-    });
-
+    //
     // BuiltList<String> tags
     test('to test the property `tags`', () async {
       // TODO
     });
 
+    //
     // BuiltSet<FileVersion> versions
     test('to test the property `versions`', () async {
       // TODO

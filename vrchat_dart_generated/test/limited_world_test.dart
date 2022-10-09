@@ -7,6 +7,7 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(LimitedWorld, () {
+    // A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
     // String authorId
     test('to test the property `authorId`', () async {
       // TODO
@@ -17,26 +18,27 @@ void main() {
       // TODO
     });
 
-    // num capacity
+    // int capacity
     test('to test the property `capacity`', () async {
       // TODO
     });
 
-    // Date createdAt
+    // DateTime createdAt
     test('to test the property `createdAt`', () async {
       // TODO
     });
 
-    // num favorites
+    // int favorites (default value: 0)
     test('to test the property `favorites`', () async {
       // TODO
     });
 
-    // num heat
+    // int heat (default value: 0)
     test('to test the property `heat`', () async {
       // TODO
     });
 
+    // WorldID be \"offline\" on User profiles if you are not friends with that user.
     // String id
     test('to test the property `id`', () async {
       // TODO
@@ -47,7 +49,7 @@ void main() {
       // TODO
     });
 
-    // Date labsPublicationDate
+    // String labsPublicationDate
     test('to test the property `labsPublicationDate`', () async {
       // TODO
     });
@@ -57,32 +59,33 @@ void main() {
       // TODO
     });
 
-    // num occupants
+    // int occupants (default value: 0)
     test('to test the property `occupants`', () async {
       // TODO
     });
 
-    // String organization
+    // String organization (default value: 'vrchat')
     test('to test the property `organization`', () async {
       // TODO
     });
 
-    // num popularity
+    // int popularity (default value: 0)
     test('to test the property `popularity`', () async {
       // TODO
     });
 
-    // Date publicationDate
+    // String publicationDate
     test('to test the property `publicationDate`', () async {
       // TODO
     });
 
-    // JsonObject releaseStatus
+    // ReleaseStatus releaseStatus
     test('to test the property `releaseStatus`', () async {
       // TODO
     });
 
-    // BuiltList<JsonObject> tags
+    //
+    // BuiltList<String> tags
     test('to test the property `tags`', () async {
       // TODO
     });
@@ -92,12 +95,13 @@ void main() {
       // TODO
     });
 
-    // BuiltList<String> unityPackages
+    //
+    // BuiltList<LimitedUnityPackage> unityPackages
     test('to test the property `unityPackages`', () async {
       // TODO
     });
 
-    // Date updatedAt
+    // DateTime updatedAt
     test('to test the property `updatedAt`', () async {
       // TODO
     });

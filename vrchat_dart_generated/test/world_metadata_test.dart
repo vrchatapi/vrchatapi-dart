@@ -7,6 +7,7 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(WorldMetadata, () {
+    // WorldID be \"offline\" on User profiles if you are not friends with that user.
     // String id
     test('to test the property `id`', () async {
       // TODO

@@ -27,6 +27,7 @@ void main() {
       // TODO
     });
 
+    //
     // BuiltList<String> tags
     test('to test the property `tags`', () async {
       // TODO
@@ -53,6 +54,7 @@ void main() {
       // TODO
     });
 
+    //
     // DateTime startDate
     test('to test the property `startDate`', () async {
       // TODO

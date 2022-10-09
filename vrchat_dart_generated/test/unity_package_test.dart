@@ -7,11 +7,6 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(UnityPackage, () {
-    // String id
-    test('to test the property `id`', () async {
-      // TODO
-    });
-
     // String assetUrl
     test('to test the property `assetUrl`', () async {
       // TODO
@@ -19,6 +14,27 @@ void main() {
 
     // JsonObject assetUrlObject
     test('to test the property `assetUrlObject`', () async {
+      // TODO
+    });
+
+    // int assetVersion
+    test('to test the property `assetVersion`', () async {
+      // TODO
+    });
+
+    // DateTime createdAt
+    test('to test the property `createdAt`', () async {
+      // TODO
+    });
+
+    // String id
+    test('to test the property `id`', () async {
+      // TODO
+    });
+
+    // This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
+    // String platform
+    test('to test the property `platform`', () async {
       // TODO
     });
 
@@ -32,28 +48,13 @@ void main() {
       // TODO
     });
 
-    // String unityVersion
-    test('to test the property `unityVersion`', () async {
-      // TODO
-    });
-
-    // num unitySortNumber
+    // int unitySortNumber
     test('to test the property `unitySortNumber`', () async {
       // TODO
     });
 
-    // num assetVersion
-    test('to test the property `assetVersion`', () async {
-      // TODO
-    });
-
-    // Platform platform
-    test('to test the property `platform`', () async {
-      // TODO
-    });
-
-    // DateTime createdAt
-    test('to test the property `createdAt`', () async {
+    // String unityVersion (default value: '5.3.4p1')
+    test('to test the property `unityVersion`', () async {
       // TODO
     });
   });

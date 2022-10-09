@@ -10,7 +10,7 @@ void main() {
     //
     // Create an avatar. It's possible to optionally specify a ID if you want a custom one. Attempting to create an Avatar with an already claimed ID will result in a DB error.
     //
-    //Future<Avatar> createAvatar({ InlineObject9 inlineObject9 }) async
+    //Future<Avatar> createAvatar({ CreateAvatarRequest createAvatarRequest }) async
     test('test createAvatar', () async {
       // TODO
     });
@@ -37,7 +37,7 @@ void main() {
     //
     // Search and list favorited avatars by query filters.
     //
-    //Future getFavoritedAvatars({ String featured, String sort, int n, String order, int offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId }) async
+    //Future<BuiltList<Avatar>> getFavoritedAvatars({ bool featured, String sort, int n, String order, int offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId }) async
     test('test getFavoritedAvatars', () async {
       // TODO
     });
@@ -46,7 +46,7 @@ void main() {
     //
     // Search and list avatars by query filters. You can only search your own or featured avatars. It is not possible as a normal user to search other peoples avatars.
     //
-    //Future<BuiltList<Avatar>> searchAvatars({ String featured, String sort, String user, String userId, int n, String order, int offset, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform }) async
+    //Future<BuiltList<Avatar>> searchAvatars({ bool featured, String sort, String user, String userId, int n, String order, int offset, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform }) async
     test('test searchAvatars', () async {
       // TODO
     });
@@ -60,11 +60,20 @@ void main() {
       // TODO
     });
 
+    // Select Fallback Avatar
+    //
+    // Switches into that avatar as your fallback avatar.
+    //
+    //Future<CurrentUser> selectFallbackAvatar(String avatarId) async
+    test('test selectFallbackAvatar', () async {
+      // TODO
+    });
+
     // Update Avatar
     //
     // Update information about a specific avatar.
     //
-    //Future<Avatar> updateAvatar(String avatarId, { InlineObject10 inlineObject10 }) async
+    //Future<Avatar> updateAvatar(String avatarId, { UpdateAvatarRequest updateAvatarRequest }) async
     test('test updateAvatar', () async {
       // TODO
     });

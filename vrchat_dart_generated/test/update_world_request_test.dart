@@ -17,6 +17,7 @@ void main() {
       // TODO
     });
 
+    // A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
     // String authorId
     test('to test the property `authorId`', () async {
       // TODO
@@ -27,7 +28,7 @@ void main() {
       // TODO
     });
 
-    // int capacity (default value: 16)
+    // int capacity
     test('to test the property `capacity`', () async {
       // TODO
     });
@@ -58,6 +59,7 @@ void main() {
       // TODO
     });
 
+    //
     // BuiltList<String> tags
     test('to test the property `tags`', () async {
       // TODO

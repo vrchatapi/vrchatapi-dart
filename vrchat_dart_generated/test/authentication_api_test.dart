@@ -6,18 +6,27 @@ void main() {
   final instance = VrchatDartGenerated().getAuthenticationApi();
 
   group(AuthenticationApi, () {
+    // Check User Exists
+    //
+    // Checks if a user by a given `username`, `displayName` or `email` exist. This is used during registration to check if a username has already been taken, during change of displayName to check if a displayName is available, and during change of email to check if the email is already used. In the later two cases the `excludeUserId` is used to exclude oneself, otherwise the result would always be true.  It is **REQUIRED** to include **AT LEAST** `username`, `displayName` **or** `email` query parameter. Although they can be combined - in addition with `excludeUserId` (generally to exclude yourself) - to further fine-tune the search.
+    //
+    //Future<UserExists> checkUserExists({ String email, String displayName, String userId, String excludeUserId }) async
+    test('test checkUserExists', () async {
+      // TODO
+    });
+
     // Delete User
     //
     // Deletes the account with given ID. Normal users only have permission to delete their own account. Account deletion is 14 days from this request, and will be cancelled if you do an authenticated request with the account afterwards.  **VRC+ NOTE:** Despite the 14-days cooldown, any VRC+ subscription will be cancelled **immediately**.  **METHOD NOTE:** Despite this being a Delete action, the method type required is PUT.
     //
-    //Future<CurrentUser> deleteUserById(String userId) async
-    test('test deleteUserById', () async {
+    //Future<CurrentUser> deleteUser(String userId) async
+    test('test deleteUser', () async {
       // TODO
     });
 
     // Login and/or Get Current User Info
     //
-    // Login and/or Get user data from your VRChat account.  If `Authorization` header is present then a new login session will be generated, and a new `auth` cookie is returned.  **WARNING: Session Limit:** Each authentication with login credentials counts as a separate session, out of which you have a limited amount. Make sure to save and reuse the `auth` cookie whenever you can, and avoid sending the Authorization header unless strictly neccesary. While the exact number of simultaneous open sessions is secret, expect to **very fast** run into the rate-limit and be temporarily blocked from making new sessions until the old ones expire.
+    // This endpoint does the following two operations:   1) Checks if you are already logged in by looking for a valid `auth` cookie. If you are have a valid auth cookie then no additional auth-related actions are taken. If you are **not** logged in then it will log you in with the `Authorization` header and set the `auth` cookie. The `auth` cookie will only be sent once.   2) If logged in, this function will also return the CurrentUser object containing detailed information about the currently logged in user.  **WARNING: Session Limit:** Each authentication with login credentials counts as a separate session, out of which you have a limited amount. Make sure to save and reuse the `auth` cookie if you are often restarting the program. The provided API libraries automatically save cookies during runtime, but does not persist during restart. While it can be fine to use username/password during development, expect in production to very fast run into the rate-limit and be temporarily blocked from making new sessions until older ones expire. The exact number of simultaneous sessions is unknown/undisclosed.
     //
     //Future<CurrentUser> getCurrentUser() async
     test('test getCurrentUser', () async {
@@ -26,9 +35,9 @@ void main() {
 
     // Logout
     //
-    // Invalidates the auth cookie.
+    // Invalidates the login session.
     //
-    //Future<InlineResponse2001> logout() async
+    //Future<Success> logout() async
     test('test logout', () async {
       // TODO
     });
@@ -37,7 +46,7 @@ void main() {
     //
     // Finishes the login sequence with a normal 2FA-generated code for accounts with 2FA-protection enabled.
     //
-    //Future<InlineResponse2002> verify2FA({ InlineObject inlineObject }) async
+    //Future<Verify2FAResult> verify2FA({ TwoFactorAuthCode twoFactorAuthCode }) async
     test('test verify2FA', () async {
       // TODO
     });
@@ -46,7 +55,7 @@ void main() {
     //
     // Verify whether the currently provided Auth Token is valid.
     //
-    //Future<InlineResponse200> verifyAuthToken() async
+    //Future<VerifyAuthTokenResult> verifyAuthToken() async
     test('test verifyAuthToken', () async {
       // TODO
     });
@@ -55,7 +64,7 @@ void main() {
     //
     // Finishes the login sequence with an OTP (One Time Password) recovery code for accounts with 2FA-protection enabled.
     //
-    //Future<InlineResponse2002> verifyRecoveryCode({ InlineObject1 inlineObject1 }) async
+    //Future<Verify2FAResult> verifyRecoveryCode({ TwoFactorAuthCode twoFactorAuthCode }) async
     test('test verifyRecoveryCode', () async {
       // TODO
     });

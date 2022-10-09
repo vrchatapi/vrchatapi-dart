@@ -17,11 +17,12 @@ void main() {
       // TODO
     });
 
-    // num capacity
+    // int capacity
     test('to test the property `capacity`', () async {
       // TODO
     });
 
+    // Always returns \"unknown\".
     // String clientNumber
     test('to test the property `clientNumber`', () async {
       // TODO
@@ -32,6 +33,7 @@ void main() {
       // TODO
     });
 
+    // InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
     // String id
     test('to test the property `id`', () async {
       // TODO
@@ -42,12 +44,13 @@ void main() {
       // TODO
     });
 
+    // InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
     // String location
     test('to test the property `location`', () async {
       // TODO
     });
 
-    // num nUsers
+    // int nUsers
     test('to test the property `nUsers`', () async {
       // TODO
     });
@@ -57,11 +60,7 @@ void main() {
       // TODO
     });
 
-    // String nonce
-    test('to test the property `nonce`', () async {
-      // TODO
-    });
-
+    // A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
     // String ownerId
     test('to test the property `ownerId`', () async {
       // TODO
@@ -72,7 +71,7 @@ void main() {
       // TODO
     });
 
-    // String photonRegion
+    // Region photonRegion
     test('to test the property `photonRegion`', () async {
       // TODO
     });
@@ -82,8 +81,13 @@ void main() {
       // TODO
     });
 
-    // String region
+    // Region region
     test('to test the property `region`', () async {
+      // TODO
+    });
+
+    // String secureName
+    test('to test the property `secureName`', () async {
       // TODO
     });
 
@@ -92,30 +96,38 @@ void main() {
       // TODO
     });
 
+    // The tags array on Instances usually contain the language tags of the people in the instance.
     // BuiltList<String> tags
     test('to test the property `tags`', () async {
       // TODO
     });
 
-    // String type
+    // InstanceType type
     test('to test the property `type`', () async {
       // TODO
     });
 
-    // Always empty on non-existing instances, and non-present on existing instances.
-    // BuiltList<JsonObject> users
-    test('to test the property `users`', () async {
-      // TODO
-    });
-
-    // Only present on non-existing instances, and only contains a very small subject of World object. Use World API instead.
-    // JsonObject world
-    test('to test the property `world`', () async {
-      // TODO
-    });
-
+    // WorldID be \"offline\" on User profiles if you are not friends with that user.
     // String worldId
     test('to test the property `worldId`', () async {
+      // TODO
+    });
+
+    // A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
+    // String hidden
+    test('to test the property `hidden`', () async {
+      // TODO
+    });
+
+    // A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
+    // String friends
+    test('to test the property `friends`', () async {
+      // TODO
+    });
+
+    // A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
+    // String private
+    test('to test the property `private`', () async {
       // TODO
     });
   });

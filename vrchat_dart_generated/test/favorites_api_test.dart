@@ -8,9 +8,9 @@ void main() {
   group(FavoritesApi, () {
     // Add Favorite
     //
-    // Add a new favorite.  Friend groups are named `group_0` through `group_3`. Avatar and World groups are named `avatars1` to `avatar4` and `worlds1` to `worlds4`.  You cannot add people whom you are not friends with to your friends list. Destroying a friendship removes the person as favorite on both sides.
+    // Add a new favorite.  Friend groups are named `group_0` through `group_3`. Avatar and World groups are named `avatars1` to `avatars4` and `worlds1` to `worlds4`.  You cannot add people whom you are not friends with to your friends list. Destroying a friendship removes the person as favorite on both sides.
     //
-    //Future<Favorite> addFavorite({ InlineObject7 inlineObject7 }) async
+    //Future<Favorite> addFavorite({ AddFavoriteRequest addFavoriteRequest }) async
     test('test addFavorite', () async {
       // TODO
     });
@@ -19,7 +19,7 @@ void main() {
     //
     // Clear ALL contents of a specific favorite group.
     //
-    //Future<Error> clearFavoriteGroup(String favoriteGroupType, String favoriteGroupName, String userId) async
+    //Future<Success> clearFavoriteGroup(String favoriteGroupType, String favoriteGroupName, String userId) async
     test('test clearFavoriteGroup', () async {
       // TODO
     });
@@ -64,7 +64,7 @@ void main() {
     //
     // Remove a favorite from your favorites list.
     //
-    //Future<Error> removeFavorite(String favoriteId) async
+    //Future<Success> removeFavorite(String favoriteId) async
     test('test removeFavorite', () async {
       // TODO
     });
@@ -73,7 +73,7 @@ void main() {
     //
     // Update information about a specific favorite group.
     //
-    //Future updateFavoriteGroup(String favoriteGroupType, String favoriteGroupName, String userId, { InlineObject8 inlineObject8 }) async
+    //Future updateFavoriteGroup(String favoriteGroupType, String favoriteGroupName, String userId, { UpdateFavoriteGroupRequest updateFavoriteGroupRequest }) async
     test('test updateFavoriteGroup', () async {
       // TODO
     });

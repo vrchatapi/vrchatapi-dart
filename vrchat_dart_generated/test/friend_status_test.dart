@@ -7,6 +7,11 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(FriendStatus, () {
+    // bool incomingRequest (default value: false)
+    test('to test the property `incomingRequest`', () async {
+      // TODO
+    });
+
     // bool isFriend (default value: false)
     test('to test the property `isFriend`', () async {
       // TODO
@@ -14,11 +19,6 @@ void main() {
 
     // bool outgoingRequest (default value: false)
     test('to test the property `outgoingRequest`', () async {
-      // TODO
-    });
-
-    // bool incomingRequest (default value: false)
-    test('to test the property `incomingRequest`', () async {
       // TODO
     });
   });

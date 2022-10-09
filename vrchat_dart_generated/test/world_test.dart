@@ -7,16 +7,13 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(World, () {
+    // Empty if unauthenticated.
     // String assetUrl
     test('to test the property `assetUrl`', () async {
       // TODO
     });
 
-    // JsonObject assetUrlObject
-    test('to test the property `assetUrlObject`', () async {
-      // TODO
-    });
-
+    // A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
     // String authorId
     test('to test the property `authorId`', () async {
       // TODO
@@ -27,7 +24,7 @@ void main() {
       // TODO
     });
 
-    // num capacity
+    // int capacity
     test('to test the property `capacity`', () async {
       // TODO
     });
@@ -42,7 +39,7 @@ void main() {
       // TODO
     });
 
-    // num favorites (default value: 0)
+    // int favorites (default value: 0)
     test('to test the property `favorites`', () async {
       // TODO
     });
@@ -52,11 +49,12 @@ void main() {
       // TODO
     });
 
-    // num heat (default value: 0)
+    // int heat (default value: 0)
     test('to test the property `heat`', () async {
       // TODO
     });
 
+    // WorldID be \"offline\" on User profiles if you are not friends with that user.
     // String id
     test('to test the property `id`', () async {
       // TODO
@@ -67,7 +65,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<JsonObject> instances
+    // BuiltList<BuiltList<JsonObject>> instances
     test('to test the property `instances`', () async {
       // TODO
     });
@@ -87,7 +85,7 @@ void main() {
       // TODO
     });
 
-    // num occupants (default value: 0)
+    // int occupants (default value: 0)
     test('to test the property `occupants`', () async {
       // TODO
     });
@@ -97,12 +95,7 @@ void main() {
       // TODO
     });
 
-    // JsonObject pluginUrlObject
-    test('to test the property `pluginUrlObject`', () async {
-      // TODO
-    });
-
-    // num popularity (default value: 0)
+    // int popularity (default value: 0)
     test('to test the property `popularity`', () async {
       // TODO
     });
@@ -112,17 +105,17 @@ void main() {
       // TODO
     });
 
-    // num privateOccupants (default value: 0)
+    // int privateOccupants (default value: 0)
     test('to test the property `privateOccupants`', () async {
       // TODO
     });
 
-    // num publicOccupants (default value: 0)
+    // int publicOccupants (default value: 0)
     test('to test the property `publicOccupants`', () async {
       // TODO
     });
 
-    // DateTime publicationDate
+    // String publicationDate
     test('to test the property `publicationDate`', () async {
       // TODO
     });
@@ -132,6 +125,7 @@ void main() {
       // TODO
     });
 
+    //
     // BuiltList<String> tags
     test('to test the property `tags`', () async {
       // TODO
@@ -142,12 +136,8 @@ void main() {
       // TODO
     });
 
-    // JsonObject unityPackageUrlObject
-    test('to test the property `unityPackageUrlObject`', () async {
-      // TODO
-    });
-
-    // BuiltSet<UnityPackage> unityPackages
+    // Empty if unauthenticated.
+    // BuiltList<UnityPackage> unityPackages
     test('to test the property `unityPackages`', () async {
       // TODO
     });
@@ -157,12 +147,12 @@ void main() {
       // TODO
     });
 
-    // num version (default value: 0)
+    // int version (default value: 0)
     test('to test the property `version`', () async {
       // TODO
     });
 
-    // num visits (default value: 0)
+    // int visits (default value: 0)
     test('to test the property `visits`', () async {
       // TODO
     });

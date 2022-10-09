@@ -245,7 +245,7 @@ void main() {
     });
 
     // Array of DynamicWorldRow objects, used by the game to display the list of world rows
-    // BuiltSet<DynamicWorldRow> dynamicWorldRows
+    // BuiltSet<DynamicContentRow> dynamicWorldRows
     test('to test the property `dynamicWorldRows`', () async {
       // TODO
     });
@@ -261,6 +261,7 @@ void main() {
       // TODO
     });
 
+    // WorldID be \"offline\" on User profiles if you are not friends with that user.
     // String homeWorldId
     test('to test the property `homeWorldId`', () async {
       // TODO
@@ -272,6 +273,7 @@ void main() {
       // TODO
     });
 
+    // WorldID be \"offline\" on User profiles if you are not friends with that user.
     // String hubWorldId
     test('to test the property `hubWorldId`', () async {
       // TODO
@@ -374,11 +376,13 @@ void main() {
       // TODO
     });
 
+    // WorldID be \"offline\" on User profiles if you are not friends with that user.
     // String timeOutWorldId
     test('to test the property `timeOutWorldId`', () async {
       // TODO
     });
 
+    // WorldID be \"offline\" on User profiles if you are not friends with that user.
     // String tutorialWorldId
     test('to test the property `tutorialWorldId`', () async {
       // TODO
@@ -469,14 +473,14 @@ void main() {
     });
 
     // Currently used youtube-dl.exe hash in SHA-256-delimited format
-    // String youtubedlHash
-    test('to test the property `youtubedlHash`', () async {
+    // String playerUrlResolverHash
+    test('to test the property `playerUrlResolverHash`', () async {
       // TODO
     });
 
     // Currently used youtube-dl.exe version
-    // String youtubedlVersion
-    test('to test the property `youtubedlVersion`', () async {
+    // String playerUrlResolverVersion
+    test('to test the property `playerUrlResolverVersion`', () async {
       // TODO
     });
   });

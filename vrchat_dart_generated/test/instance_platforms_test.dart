@@ -7,12 +7,12 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(InstancePlatforms, () {
-    // num android
+    // int android
     test('to test the property `android`', () async {
       // TODO
     });
 
-    // num standalonewindows
+    // int standalonewindows
     test('to test the property `standalonewindows`', () async {
       // TODO
     });

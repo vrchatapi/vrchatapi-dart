@@ -7,13 +7,13 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(InviteMessage, () {
-    // String id
-    test('to test the property `id`', () async {
+    // bool canBeUpdated (default value: true)
+    test('to test the property `canBeUpdated`', () async {
       // TODO
     });
 
-    // int slot
-    test('to test the property `slot`', () async {
+    // String id
+    test('to test the property `id`', () async {
       // TODO
     });
 
@@ -27,19 +27,19 @@ void main() {
       // TODO
     });
 
-    // DateTime updatedAt
-    test('to test the property `updatedAt`', () async {
-      // TODO
-    });
-
     // Changes to 60 when updated, although probably server-side configurable.
     // int remainingCooldownMinutes (default value: 0)
     test('to test the property `remainingCooldownMinutes`', () async {
       // TODO
     });
 
-    // bool canBeUpdated (default value: true)
-    test('to test the property `canBeUpdated`', () async {
+    // int slot
+    test('to test the property `slot`', () async {
+      // TODO
+    });
+
+    // DateTime updatedAt
+    test('to test the property `updatedAt`', () async {
       // TODO
     });
   });
