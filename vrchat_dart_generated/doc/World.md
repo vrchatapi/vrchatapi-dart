@@ -8,7 +8,6 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**assetUrlObject** | [**JsonObject**](.md) |  | 
 **authorId** | **String** | A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed. | 
 **authorName** | **String** |  | 
 **capacity** | **int** |  | 
@@ -25,7 +24,6 @@ Name | Type | Description | Notes
 **namespace** | **String** |  | 
 **occupants** | **int** |  | [optional] [default to 0]
 **organization** | **String** |  | [default to 'vrchat']
-**pluginUrlObject** | [**JsonObject**](.md) |  | 
 **popularity** | **int** |  | [default to 0]
 **previewYoutubeId** | **String** |  | [optional] 
 **privateOccupants** | **int** |  | [optional] [default to 0]
@@ -34,7 +32,6 @@ Name | Type | Description | Notes
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | 
 **tags** | **BuiltList&lt;String&gt;** |   | 
 **thumbnailImageUrl** | **String** |  | 
-**unityPackageUrlObject** | [**JsonObject**](.md) |  | 
 **unityPackages** | [**BuiltList&lt;UnityPackage&gt;**](UnityPackage.md) | Empty if unauthenticated. | 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
 **version** | **int** |  | [default to 0]
