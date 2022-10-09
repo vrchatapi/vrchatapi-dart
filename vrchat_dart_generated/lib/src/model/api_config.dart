@@ -94,8 +94,8 @@ part 'api_config.g.dart';
 /// * [viveWindowsUrl] - Download link for game on the Steam website.
 /// * [whiteListedAssetUrls] - List of allowed URLs that are allowed to host avatar assets
 /// * [worldUpdatePeriod] - Unknown
-/// * [youtubedlHash] - Currently used youtube-dl.exe hash in SHA-256-delimited format
-/// * [youtubedlVersion] - Currently used youtube-dl.exe version
+/// * [playerUrlResolverHash] - Currently used youtube-dl.exe hash in SHA-256-delimited format
+/// * [playerUrlResolverVersion] - Currently used youtube-dl.exe version
 abstract class APIConfig implements Built<APIConfig, APIConfigBuilder> {
   /// Unknown, probably voice optimization testing
   @BuiltValueField(wireName: r'VoiceEnableDegradation')
@@ -407,12 +407,12 @@ abstract class APIConfig implements Built<APIConfig, APIConfigBuilder> {
   int get worldUpdatePeriod;
 
   /// Currently used youtube-dl.exe hash in SHA-256-delimited format
-  @BuiltValueField(wireName: r'youtubedl-hash')
-  String get youtubedlHash;
+  @BuiltValueField(wireName: r'player-url-resolver-hash')
+  String get playerUrlResolverHash;
 
   /// Currently used youtube-dl.exe version
-  @BuiltValueField(wireName: r'youtubedl-version')
-  String get youtubedlVersion;
+  @BuiltValueField(wireName: r'player-url-resolver-version')
+  String get playerUrlResolverVersion;
 
   APIConfig._();
 
@@ -776,12 +776,12 @@ class _$APIConfigSerializer implements StructuredSerializer<APIConfig> {
       ..add(serializers.serialize(object.worldUpdatePeriod,
           specifiedType: const FullType(int)));
     result
-      ..add(r'youtubedl-hash')
-      ..add(serializers.serialize(object.youtubedlHash,
+      ..add(r'player-url-resolver-hash')
+      ..add(serializers.serialize(object.playerUrlResolverHash,
           specifiedType: const FullType(String)));
     result
-      ..add(r'youtubedl-version')
-      ..add(serializers.serialize(object.youtubedlVersion,
+      ..add(r'player-url-resolver-version')
+      ..add(serializers.serialize(object.playerUrlResolverVersion,
           specifiedType: const FullType(String)));
     return result;
   }
@@ -1196,15 +1196,15 @@ class _$APIConfigSerializer implements StructuredSerializer<APIConfig> {
               specifiedType: const FullType(int)) as int;
           result.worldUpdatePeriod = valueDes;
           break;
-        case r'youtubedl-hash':
+        case r'player-url-resolver-hash':
           final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
-          result.youtubedlHash = valueDes;
+          result.playerUrlResolverHash = valueDes;
           break;
-        case r'youtubedl-version':
+        case r'player-url-resolver-version':
           final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
-          result.youtubedlVersion = valueDes;
+          result.playerUrlResolverVersion = valueDes;
           break;
       }
     }

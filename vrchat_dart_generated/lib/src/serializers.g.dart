@@ -44,6 +44,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(InfoPushDataClickableCommandEnum.serializer)
       ..add(Instance.serializer)
       ..add(InstancePlatforms.serializer)
+      ..add(InstanceShortNameResponse.serializer)
       ..add(InstanceType.serializer)
       ..add(InviteMessage.serializer)
       ..add(InviteMessageType.serializer)
@@ -69,6 +70,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ReleaseStatus.serializer)
       ..add(RequestInviteRequest.serializer)
       ..add(Response.serializer)
+      ..add(SentNotification.serializer)
       ..add(Subscription.serializer)
       ..add(SubscriptionPeriod.serializer)
       ..add(Success.serializer)
@@ -96,9 +98,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(WorldPublishStatus.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [
-            const FullType(BuiltList, const [const FullType(JsonObject)])
+            const FullType(
+                BuiltList, const [const FullType.nullable(JsonObject)])
           ]),
-          () => new ListBuilder<BuiltList<JsonObject>>())
+          () => new ListBuilder<BuiltList<JsonObject?>>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

@@ -15,11 +15,20 @@ void main() {
       // TODO
     });
 
+    // Get Instance By Short Name
+    //
+    // Returns an instance. Please read [Instances Tutorial](https://vrchatapi.github.io/tutorials/instances/) for more information on Instances.
+    //
+    //Future<Instance> getInstanceByShortName(String shortName) async
+    test('test getInstanceByShortName', () async {
+      // TODO
+    });
+
     // Get Instance Short Name
     //
     // Returns an instance short name.
     //
-    //Future<String> getShortName(String worldId, String instanceId) async
+    //Future<InstanceShortNameResponse> getShortName(String worldId, String instanceId) async
     test('test getShortName', () async {
       // TODO
     });

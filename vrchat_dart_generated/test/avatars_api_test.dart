@@ -37,7 +37,7 @@ void main() {
     //
     // Search and list favorited avatars by query filters.
     //
-    //Future<BuiltList<Avatar>> getFavoritedAvatars({ String featured, String sort, int n, String order, int offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId }) async
+    //Future<BuiltList<Avatar>> getFavoritedAvatars({ bool featured, String sort, int n, String order, int offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId }) async
     test('test getFavoritedAvatars', () async {
       // TODO
     });
@@ -46,7 +46,7 @@ void main() {
     //
     // Search and list avatars by query filters. You can only search your own or featured avatars. It is not possible as a normal user to search other peoples avatars.
     //
-    //Future<BuiltList<Avatar>> searchAvatars({ String featured, String sort, String user, String userId, int n, String order, int offset, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform }) async
+    //Future<BuiltList<Avatar>> searchAvatars({ bool featured, String sort, String user, String userId, int n, String order, int offset, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform }) async
     test('test searchAvatars', () async {
       // TODO
     });

@@ -425,7 +425,7 @@ class _$CurrentUserSerializer implements StructuredSerializer<CurrentUser> {
       result
         ..add(r'twoFactorAuthEnabledDate')
         ..add(serializers.serialize(object.twoFactorAuthEnabledDate,
-            specifiedType: const FullType(DateTime)));
+            specifiedType: const FullType.nullable(DateTime)));
     }
     result
       ..add(r'unsubscribe')
@@ -682,7 +682,8 @@ class _$CurrentUserSerializer implements StructuredSerializer<CurrentUser> {
           break;
         case r'twoFactorAuthEnabledDate':
           final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
+              specifiedType: const FullType.nullable(DateTime)) as DateTime?;
+          if (valueDes == null) continue;
           result.twoFactorAuthEnabledDate = valueDes;
           break;
         case r'unsubscribe':

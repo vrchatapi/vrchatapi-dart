@@ -28,7 +28,7 @@ void main() {
     //
     // Search and list currently Active worlds by query filters.
     //
-    //Future<BuiltList<LimitedWorld>> getActiveWorlds({ String featured, String sort, int n, String order, int offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform }) async
+    //Future<BuiltList<LimitedWorld>> getActiveWorlds({ bool featured, String sort, int n, String order, int offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform }) async
     test('test getActiveWorlds', () async {
       // TODO
     });
@@ -37,7 +37,7 @@ void main() {
     //
     // Search and list favorited worlds by query filters.
     //
-    //Future<BuiltList<LimitedWorld>> getFavoritedWorlds({ String featured, String sort, int n, String order, int offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId }) async
+    //Future<BuiltList<LimitedWorld>> getFavoritedWorlds({ bool featured, String sort, int n, String order, int offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId }) async
     test('test getFavoritedWorlds', () async {
       // TODO
     });
@@ -46,7 +46,7 @@ void main() {
     //
     // Search and list recently visited worlds by query filters.
     //
-    //Future<BuiltList<LimitedWorld>> getRecentWorlds({ String featured, String sort, int n, String order, int offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId }) async
+    //Future<BuiltList<LimitedWorld>> getRecentWorlds({ bool featured, String sort, int n, String order, int offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform, String userId }) async
     test('test getRecentWorlds', () async {
       // TODO
     });
@@ -100,7 +100,7 @@ void main() {
     //
     // Search and list any worlds by query filters.
     //
-    //Future<BuiltList<LimitedWorld>> searchWorlds({ String featured, String sort, String user, String userId, int n, String order, int offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform }) async
+    //Future<BuiltList<LimitedWorld>> searchWorlds({ bool featured, String sort, String user, String userId, int n, String order, int offset, String search, String tag, String notag, String releaseStatus, String maxUnityVersion, String minUnityVersion, String platform }) async
     test('test searchWorlds', () async {
       // TODO
     });
