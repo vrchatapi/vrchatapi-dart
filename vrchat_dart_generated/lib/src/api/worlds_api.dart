@@ -204,7 +204,7 @@ class WorldsApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<LimitedWorld>] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<LimitedWorld>>> getActiveWorlds({
-    bool? featured,
+    String? featured,
     String? sort = 'popularity',
     int? n = 60,
     String? order = 'descending',
@@ -251,8 +251,8 @@ class WorldsApi {
 
     final _queryParameters = <String, dynamic>{
       if (featured != null)
-        r'featured':
-            encodeQueryParameter(_serializers, featured, const FullType(bool)),
+        r'featured': encodeQueryParameter(
+            _serializers, featured, const FullType(String)),
       if (sort != null)
         r'sort':
             encodeQueryParameter(_serializers, sort, const FullType(String)),
@@ -351,7 +351,7 @@ class WorldsApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<LimitedWorld>] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<LimitedWorld>>> getFavoritedWorlds({
-    bool? featured,
+    String? featured,
     String? sort = 'popularity',
     int? n = 60,
     String? order = 'descending',
@@ -399,8 +399,8 @@ class WorldsApi {
 
     final _queryParameters = <String, dynamic>{
       if (featured != null)
-        r'featured':
-            encodeQueryParameter(_serializers, featured, const FullType(bool)),
+        r'featured': encodeQueryParameter(
+            _serializers, featured, const FullType(String)),
       if (sort != null)
         r'sort':
             encodeQueryParameter(_serializers, sort, const FullType(String)),
@@ -502,7 +502,7 @@ class WorldsApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<LimitedWorld>] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<LimitedWorld>>> getRecentWorlds({
-    bool? featured,
+    String? featured,
     String? sort = 'popularity',
     int? n = 60,
     String? order = 'descending',
@@ -550,8 +550,8 @@ class WorldsApi {
 
     final _queryParameters = <String, dynamic>{
       if (featured != null)
-        r'featured':
-            encodeQueryParameter(_serializers, featured, const FullType(bool)),
+        r'featured': encodeQueryParameter(
+            _serializers, featured, const FullType(String)),
       if (sort != null)
         r'sort':
             encodeQueryParameter(_serializers, sort, const FullType(String)),
@@ -1061,7 +1061,7 @@ class WorldsApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<LimitedWorld>] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<LimitedWorld>>> searchWorlds({
-    bool? featured,
+    String? featured,
     String? sort = 'popularity',
     String? user,
     String? userId,
@@ -1110,8 +1110,8 @@ class WorldsApi {
 
     final _queryParameters = <String, dynamic>{
       if (featured != null)
-        r'featured':
-            encodeQueryParameter(_serializers, featured, const FullType(bool)),
+        r'featured': encodeQueryParameter(
+            _serializers, featured, const FullType(String)),
       if (sort != null)
         r'sort':
             encodeQueryParameter(_serializers, sort, const FullType(String)),

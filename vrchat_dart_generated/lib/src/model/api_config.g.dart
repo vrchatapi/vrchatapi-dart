@@ -164,9 +164,9 @@ class _$APIConfig extends APIConfig {
   @override
   final int worldUpdatePeriod;
   @override
-  final String playerUrlResolverHash;
+  final String youtubedlHash;
   @override
-  final String playerUrlResolverVersion;
+  final String youtubedlVersion;
 
   factory _$APIConfig([void Function(APIConfigBuilder)? updates]) =>
       (new APIConfigBuilder()..update(updates))._build();
@@ -250,8 +250,8 @@ class _$APIConfig extends APIConfig {
       required this.viveWindowsUrl,
       required this.whiteListedAssetUrls,
       required this.worldUpdatePeriod,
-      required this.playerUrlResolverHash,
-      required this.playerUrlResolverVersion})
+      required this.youtubedlHash,
+      required this.youtubedlVersion})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         voiceEnableDegradation, r'APIConfig', 'voiceEnableDegradation');
@@ -404,9 +404,9 @@ class _$APIConfig extends APIConfig {
     BuiltValueNullFieldError.checkNotNull(
         worldUpdatePeriod, r'APIConfig', 'worldUpdatePeriod');
     BuiltValueNullFieldError.checkNotNull(
-        playerUrlResolverHash, r'APIConfig', 'playerUrlResolverHash');
+        youtubedlHash, r'APIConfig', 'youtubedlHash');
     BuiltValueNullFieldError.checkNotNull(
-        playerUrlResolverVersion, r'APIConfig', 'playerUrlResolverVersion');
+        youtubedlVersion, r'APIConfig', 'youtubedlVersion');
   }
 
   @override
@@ -500,8 +500,8 @@ class _$APIConfig extends APIConfig {
         viveWindowsUrl == other.viveWindowsUrl &&
         whiteListedAssetUrls == other.whiteListedAssetUrls &&
         worldUpdatePeriod == other.worldUpdatePeriod &&
-        playerUrlResolverHash == other.playerUrlResolverHash &&
-        playerUrlResolverVersion == other.playerUrlResolverVersion;
+        youtubedlHash == other.youtubedlHash &&
+        youtubedlVersion == other.youtubedlVersion;
   }
 
   @override
@@ -542,8 +542,8 @@ class _$APIConfig extends APIConfig {
                         viveWindowsUrl.hashCode),
                     whiteListedAssetUrls.hashCode),
                 worldUpdatePeriod.hashCode),
-            playerUrlResolverHash.hashCode),
-        playerUrlResolverVersion.hashCode));
+            youtubedlHash.hashCode),
+        youtubedlVersion.hashCode));
   }
 
   @override
@@ -629,8 +629,8 @@ class _$APIConfig extends APIConfig {
           ..add('viveWindowsUrl', viveWindowsUrl)
           ..add('whiteListedAssetUrls', whiteListedAssetUrls)
           ..add('worldUpdatePeriod', worldUpdatePeriod)
-          ..add('playerUrlResolverHash', playerUrlResolverHash)
-          ..add('playerUrlResolverVersion', playerUrlResolverVersion))
+          ..add('youtubedlHash', youtubedlHash)
+          ..add('youtubedlVersion', youtubedlVersion))
         .toString();
   }
 }
@@ -1024,15 +1024,15 @@ class APIConfigBuilder implements Builder<APIConfig, APIConfigBuilder> {
   set worldUpdatePeriod(int? worldUpdatePeriod) =>
       _$this._worldUpdatePeriod = worldUpdatePeriod;
 
-  String? _playerUrlResolverHash;
-  String? get playerUrlResolverHash => _$this._playerUrlResolverHash;
-  set playerUrlResolverHash(String? playerUrlResolverHash) =>
-      _$this._playerUrlResolverHash = playerUrlResolverHash;
+  String? _youtubedlHash;
+  String? get youtubedlHash => _$this._youtubedlHash;
+  set youtubedlHash(String? youtubedlHash) =>
+      _$this._youtubedlHash = youtubedlHash;
 
-  String? _playerUrlResolverVersion;
-  String? get playerUrlResolverVersion => _$this._playerUrlResolverVersion;
-  set playerUrlResolverVersion(String? playerUrlResolverVersion) =>
-      _$this._playerUrlResolverVersion = playerUrlResolverVersion;
+  String? _youtubedlVersion;
+  String? get youtubedlVersion => _$this._youtubedlVersion;
+  set youtubedlVersion(String? youtubedlVersion) =>
+      _$this._youtubedlVersion = youtubedlVersion;
 
   APIConfigBuilder() {
     APIConfig._defaults(this);
@@ -1120,8 +1120,8 @@ class APIConfigBuilder implements Builder<APIConfig, APIConfigBuilder> {
       _viveWindowsUrl = $v.viveWindowsUrl;
       _whiteListedAssetUrls = $v.whiteListedAssetUrls.toBuilder();
       _worldUpdatePeriod = $v.worldUpdatePeriod;
-      _playerUrlResolverHash = $v.playerUrlResolverHash;
-      _playerUrlResolverVersion = $v.playerUrlResolverVersion;
+      _youtubedlHash = $v.youtubedlHash;
+      _youtubedlVersion = $v.youtubedlVersion;
       _$v = null;
     }
     return this;
@@ -1231,8 +1231,8 @@ class APIConfigBuilder implements Builder<APIConfig, APIConfigBuilder> {
               viveWindowsUrl: BuiltValueNullFieldError.checkNotNull(viveWindowsUrl, r'APIConfig', 'viveWindowsUrl'),
               whiteListedAssetUrls: whiteListedAssetUrls.build(),
               worldUpdatePeriod: BuiltValueNullFieldError.checkNotNull(worldUpdatePeriod, r'APIConfig', 'worldUpdatePeriod'),
-              playerUrlResolverHash: BuiltValueNullFieldError.checkNotNull(playerUrlResolverHash, r'APIConfig', 'playerUrlResolverHash'),
-              playerUrlResolverVersion: BuiltValueNullFieldError.checkNotNull(playerUrlResolverVersion, r'APIConfig', 'playerUrlResolverVersion'));
+              youtubedlHash: BuiltValueNullFieldError.checkNotNull(youtubedlHash, r'APIConfig', 'youtubedlHash'),
+              youtubedlVersion: BuiltValueNullFieldError.checkNotNull(youtubedlVersion, r'APIConfig', 'youtubedlVersion'));
     } catch (_) {
       late String _$failedField;
       try {

@@ -42,7 +42,6 @@ doc/InfoPushDataArticleContent.md
 doc/InfoPushDataClickable.md
 doc/Instance.md
 doc/InstancePlatforms.md
-doc/InstanceShortNameResponse.md
 doc/InstanceType.md
 doc/InstancesApi.md
 doc/InviteApi.md
@@ -73,7 +72,6 @@ doc/Region.md
 doc/ReleaseStatus.md
 doc/RequestInviteRequest.md
 doc/Response.md
-doc/SentNotification.md
 doc/Subscription.md
 doc/SubscriptionPeriod.md
 doc/Success.md
@@ -160,7 +158,6 @@ lib/src/model/info_push_data_article_content.dart
 lib/src/model/info_push_data_clickable.dart
 lib/src/model/instance.dart
 lib/src/model/instance_platforms.dart
-lib/src/model/instance_short_name_response.dart
 lib/src/model/instance_type.dart
 lib/src/model/invite_message.dart
 lib/src/model/invite_message_type.dart
@@ -186,7 +183,6 @@ lib/src/model/region.dart
 lib/src/model/release_status.dart
 lib/src/model/request_invite_request.dart
 lib/src/model/response.dart
-lib/src/model/sent_notification.dart
 lib/src/model/subscription.dart
 lib/src/model/subscription_period.dart
 lib/src/model/success.dart

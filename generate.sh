@@ -8,5 +8,6 @@ flutter pub get
 
 flutter pub run build_runner build --delete-conflicting-outputs
 
-cd ..
-flutter format vrchat_dart_generated
+cd ../vrchat_dart_generated
+dart fix --apply
+flutter format .

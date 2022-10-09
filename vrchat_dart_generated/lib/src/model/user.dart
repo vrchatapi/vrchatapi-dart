@@ -24,23 +24,17 @@ part 'user.g.dart';
 /// * [developerType]
 /// * [displayName] - A users visual display name. This is what shows up in-game, and can different from their `username`. Changing display name is restricted to a cooldown period.
 /// * [friendKey]
-/// * [friendRequestStatus]
 /// * [id] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
 /// * [instanceId] - InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
 /// * [isFriend] - Either their `friendKey`, or empty string if you are not friends. Unknown usage.
-/// * [lastActivity] - Either a date-time or empty string.
 /// * [lastLogin] - Either a date-time or empty string.
 /// * [lastPlatform] - This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
 /// * [location] - WorldID be \"offline\" on User profiles if you are not friends with that user.
-/// * [note]
 /// * [profilePicOverride]
 /// * [state]
 /// * [status]
 /// * [statusDescription]
 /// * [tags] -
-/// * [travelingToInstance]
-/// * [travelingToLocation]
-/// * [travelingToWorld]
 /// * [userIcon]
 /// * [username] - A users unique name, used during login. This is different from `displayName` which is what shows up in-game. A users `username` can never be changed.
 /// * [worldId] - WorldID be \"offline\" on User profiles if you are not friends with that user.
@@ -76,9 +70,6 @@ abstract class User implements Built<User, UserBuilder> {
   @BuiltValueField(wireName: r'friendKey')
   String get friendKey;
 
-  @BuiltValueField(wireName: r'friendRequestStatus')
-  String get friendRequestStatus;
-
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @BuiltValueField(wireName: r'id')
   String get id;
@@ -92,10 +83,6 @@ abstract class User implements Built<User, UserBuilder> {
   bool get isFriend;
 
   /// Either a date-time or empty string.
-  @BuiltValueField(wireName: r'last_activity')
-  String get lastActivity;
-
-  /// Either a date-time or empty string.
   @BuiltValueField(wireName: r'last_login')
   String get lastLogin;
 
@@ -106,9 +93,6 @@ abstract class User implements Built<User, UserBuilder> {
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @BuiltValueField(wireName: r'location')
   String? get location;
-
-  @BuiltValueField(wireName: r'note')
-  String? get note;
 
   @BuiltValueField(wireName: r'profilePicOverride')
   String get profilePicOverride;
@@ -127,15 +111,6 @@ abstract class User implements Built<User, UserBuilder> {
   ///
   @BuiltValueField(wireName: r'tags')
   BuiltList<String> get tags;
-
-  @BuiltValueField(wireName: r'travelingToInstance')
-  String? get travelingToInstance;
-
-  @BuiltValueField(wireName: r'travelingToLocation')
-  String? get travelingToLocation;
-
-  @BuiltValueField(wireName: r'travelingToWorld')
-  String? get travelingToWorld;
 
   @BuiltValueField(wireName: r'userIcon')
   String get userIcon;
@@ -207,10 +182,6 @@ class _$UserSerializer implements StructuredSerializer<User> {
       ..add(serializers.serialize(object.friendKey,
           specifiedType: const FullType(String)));
     result
-      ..add(r'friendRequestStatus')
-      ..add(serializers.serialize(object.friendRequestStatus,
-          specifiedType: const FullType(String)));
-    result
       ..add(r'id')
       ..add(serializers.serialize(object.id,
           specifiedType: const FullType(String)));
@@ -225,10 +196,6 @@ class _$UserSerializer implements StructuredSerializer<User> {
       ..add(serializers.serialize(object.isFriend,
           specifiedType: const FullType(bool)));
     result
-      ..add(r'last_activity')
-      ..add(serializers.serialize(object.lastActivity,
-          specifiedType: const FullType(String)));
-    result
       ..add(r'last_login')
       ..add(serializers.serialize(object.lastLogin,
           specifiedType: const FullType(String)));
@@ -240,12 +207,6 @@ class _$UserSerializer implements StructuredSerializer<User> {
       result
         ..add(r'location')
         ..add(serializers.serialize(object.location,
-            specifiedType: const FullType(String)));
-    }
-    if (object.note != null) {
-      result
-        ..add(r'note')
-        ..add(serializers.serialize(object.note,
             specifiedType: const FullType(String)));
     }
     result
@@ -268,24 +229,6 @@ class _$UserSerializer implements StructuredSerializer<User> {
       ..add(r'tags')
       ..add(serializers.serialize(object.tags,
           specifiedType: const FullType(BuiltList, [FullType(String)])));
-    if (object.travelingToInstance != null) {
-      result
-        ..add(r'travelingToInstance')
-        ..add(serializers.serialize(object.travelingToInstance,
-            specifiedType: const FullType(String)));
-    }
-    if (object.travelingToLocation != null) {
-      result
-        ..add(r'travelingToLocation')
-        ..add(serializers.serialize(object.travelingToLocation,
-            specifiedType: const FullType(String)));
-    }
-    if (object.travelingToWorld != null) {
-      result
-        ..add(r'travelingToWorld')
-        ..add(serializers.serialize(object.travelingToWorld,
-            specifiedType: const FullType(String)));
-    }
     result
       ..add(r'userIcon')
       ..add(serializers.serialize(object.userIcon,
@@ -361,11 +304,6 @@ class _$UserSerializer implements StructuredSerializer<User> {
               specifiedType: const FullType(String)) as String;
           result.friendKey = valueDes;
           break;
-        case r'friendRequestStatus':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.friendRequestStatus = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
@@ -381,11 +319,6 @@ class _$UserSerializer implements StructuredSerializer<User> {
               specifiedType: const FullType(bool)) as bool;
           result.isFriend = valueDes;
           break;
-        case r'last_activity':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.lastActivity = valueDes;
-          break;
         case r'last_login':
           final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
@@ -400,11 +333,6 @@ class _$UserSerializer implements StructuredSerializer<User> {
           final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           result.location = valueDes;
-          break;
-        case r'note':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.note = valueDes;
           break;
         case r'profilePicOverride':
           final valueDes = serializers.deserialize(value,
@@ -431,21 +359,6 @@ class _$UserSerializer implements StructuredSerializer<User> {
                   specifiedType: const FullType(BuiltList, [FullType(String)]))
               as BuiltList<String>;
           result.tags.replace(valueDes);
-          break;
-        case r'travelingToInstance':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.travelingToInstance = valueDes;
-          break;
-        case r'travelingToLocation':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.travelingToLocation = valueDes;
-          break;
-        case r'travelingToWorld':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.travelingToWorld = valueDes;
           break;
         case r'userIcon':
           final valueDes = serializers.deserialize(value,

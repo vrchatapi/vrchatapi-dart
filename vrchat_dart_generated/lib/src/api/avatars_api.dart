@@ -328,7 +328,7 @@ class AvatarsApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<Avatar>] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<Avatar>>> getFavoritedAvatars({
-    bool? featured,
+    String? featured,
     String? sort = 'popularity',
     int? n = 60,
     String? order = 'descending',
@@ -376,8 +376,8 @@ class AvatarsApi {
 
     final _queryParameters = <String, dynamic>{
       if (featured != null)
-        r'featured':
-            encodeQueryParameter(_serializers, featured, const FullType(bool)),
+        r'featured': encodeQueryParameter(
+            _serializers, featured, const FullType(String)),
       if (sort != null)
         r'sort':
             encodeQueryParameter(_serializers, sort, const FullType(String)),
@@ -479,7 +479,7 @@ class AvatarsApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<Avatar>] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<Avatar>>> searchAvatars({
-    bool? featured,
+    String? featured,
     String? sort = 'popularity',
     String? user,
     String? userId,
@@ -527,8 +527,8 @@ class AvatarsApi {
 
     final _queryParameters = <String, dynamic>{
       if (featured != null)
-        r'featured':
-            encodeQueryParameter(_serializers, featured, const FullType(bool)),
+        r'featured': encodeQueryParameter(
+            _serializers, featured, const FullType(String)),
       if (sort != null)
         r'sort':
             encodeQueryParameter(_serializers, sort, const FullType(String)),

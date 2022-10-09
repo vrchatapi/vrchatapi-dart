@@ -29,7 +29,6 @@ part 'instance.g.dart';
 /// * [photonRegion]
 /// * [platforms]
 /// * [region]
-/// * [secureName]
 /// * [shortName]
 /// * [tags] - The tags array on Instances usually contain the language tags of the people in the instance.
 /// * [type]
@@ -89,11 +88,8 @@ abstract class Instance implements Built<Instance, InstanceBuilder> {
   Region get region;
   // enum regionEnum {  us,  use,  usw,  eu,  jp,  unknown,  };
 
-  @BuiltValueField(wireName: r'secureName')
-  String get secureName;
-
   @BuiltValueField(wireName: r'shortName')
-  String? get shortName;
+  String get shortName;
 
   /// The tags array on Instances usually contain the language tags of the people in the instance.
   @BuiltValueField(wireName: r'tags')
@@ -208,15 +204,9 @@ class _$InstanceSerializer implements StructuredSerializer<Instance> {
       ..add(serializers.serialize(object.region,
           specifiedType: const FullType(Region)));
     result
-      ..add(r'secureName')
-      ..add(serializers.serialize(object.secureName,
+      ..add(r'shortName')
+      ..add(serializers.serialize(object.shortName,
           specifiedType: const FullType(String)));
-    if (object.shortName != null) {
-      result
-        ..add(r'shortName')
-        ..add(serializers.serialize(object.shortName,
-            specifiedType: const FullType(String)));
-    }
     result
       ..add(r'tags')
       ..add(serializers.serialize(object.tags,
@@ -337,11 +327,6 @@ class _$InstanceSerializer implements StructuredSerializer<Instance> {
           final valueDes = serializers.deserialize(value,
               specifiedType: const FullType(Region)) as Region;
           result.region = valueDes;
-          break;
-        case r'secureName':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.secureName = valueDes;
           break;
         case r'shortName':
           final valueDes = serializers.deserialize(value,
