@@ -24,20 +24,11 @@ void main() {
       // TODO
     });
 
-    // Invite Myself To Instance
-    //
-    // Sends self an invite to an instance
-    //
-    //Future<SentNotification> inviteMyselfTo(String worldId, String instanceId) async
-    test('test inviteMyselfTo', () async {
-      // TODO
-    });
-
     // Invite User
     //
     // Sends an invite to a user. Returns the Notification of type `invite` that was sent.
     //
-    //Future<SentNotification> inviteUser(String userId, { InviteRequest inviteRequest }) async
+    //Future<Notification> inviteUser(String userId, { InviteRequest inviteRequest }) async
     test('test inviteUser', () async {
       // TODO
     });

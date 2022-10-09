@@ -8,7 +8,7 @@ part of 'world.dart';
 
 class _$World extends World {
   @override
-  final String assetUrl;
+  final JsonObject assetUrlObject;
   @override
   final String authorId;
   @override
@@ -30,7 +30,7 @@ class _$World extends World {
   @override
   final String imageUrl;
   @override
-  final BuiltList<BuiltList<JsonObject?>>? instances;
+  final BuiltList<BuiltList<JsonObject>>? instances;
   @override
   final String labsPublicationDate;
   @override
@@ -41,6 +41,8 @@ class _$World extends World {
   final int? occupants;
   @override
   final String organization;
+  @override
+  final JsonObject pluginUrlObject;
   @override
   final int popularity;
   @override
@@ -58,6 +60,8 @@ class _$World extends World {
   @override
   final String thumbnailImageUrl;
   @override
+  final JsonObject unityPackageUrlObject;
+  @override
   final BuiltList<UnityPackage> unityPackages;
   @override
   final DateTime updatedAt;
@@ -70,7 +74,7 @@ class _$World extends World {
       (new WorldBuilder()..update(updates))._build();
 
   _$World._(
-      {required this.assetUrl,
+      {required this.assetUrlObject,
       required this.authorId,
       required this.authorName,
       required this.capacity,
@@ -87,6 +91,7 @@ class _$World extends World {
       required this.namespace,
       this.occupants,
       required this.organization,
+      required this.pluginUrlObject,
       required this.popularity,
       this.previewYoutubeId,
       this.privateOccupants,
@@ -95,12 +100,14 @@ class _$World extends World {
       required this.releaseStatus,
       required this.tags,
       required this.thumbnailImageUrl,
+      required this.unityPackageUrlObject,
       required this.unityPackages,
       required this.updatedAt,
       required this.version,
       required this.visits})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(assetUrl, r'World', 'assetUrl');
+    BuiltValueNullFieldError.checkNotNull(
+        assetUrlObject, r'World', 'assetUrlObject');
     BuiltValueNullFieldError.checkNotNull(authorId, r'World', 'authorId');
     BuiltValueNullFieldError.checkNotNull(authorName, r'World', 'authorName');
     BuiltValueNullFieldError.checkNotNull(capacity, r'World', 'capacity');
@@ -116,6 +123,8 @@ class _$World extends World {
     BuiltValueNullFieldError.checkNotNull(namespace, r'World', 'namespace');
     BuiltValueNullFieldError.checkNotNull(
         organization, r'World', 'organization');
+    BuiltValueNullFieldError.checkNotNull(
+        pluginUrlObject, r'World', 'pluginUrlObject');
     BuiltValueNullFieldError.checkNotNull(popularity, r'World', 'popularity');
     BuiltValueNullFieldError.checkNotNull(
         publicationDate, r'World', 'publicationDate');
@@ -124,6 +133,8 @@ class _$World extends World {
     BuiltValueNullFieldError.checkNotNull(tags, r'World', 'tags');
     BuiltValueNullFieldError.checkNotNull(
         thumbnailImageUrl, r'World', 'thumbnailImageUrl');
+    BuiltValueNullFieldError.checkNotNull(
+        unityPackageUrlObject, r'World', 'unityPackageUrlObject');
     BuiltValueNullFieldError.checkNotNull(
         unityPackages, r'World', 'unityPackages');
     BuiltValueNullFieldError.checkNotNull(updatedAt, r'World', 'updatedAt');
@@ -142,7 +153,7 @@ class _$World extends World {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is World &&
-        assetUrl == other.assetUrl &&
+        assetUrlObject == other.assetUrlObject &&
         authorId == other.authorId &&
         authorName == other.authorName &&
         capacity == other.capacity &&
@@ -159,6 +170,7 @@ class _$World extends World {
         namespace == other.namespace &&
         occupants == other.occupants &&
         organization == other.organization &&
+        pluginUrlObject == other.pluginUrlObject &&
         popularity == other.popularity &&
         previewYoutubeId == other.previewYoutubeId &&
         privateOccupants == other.privateOccupants &&
@@ -167,6 +179,7 @@ class _$World extends World {
         releaseStatus == other.releaseStatus &&
         tags == other.tags &&
         thumbnailImageUrl == other.thumbnailImageUrl &&
+        unityPackageUrlObject == other.unityPackageUrlObject &&
         unityPackages == other.unityPackages &&
         updatedAt == other.updatedAt &&
         version == other.version &&
@@ -193,22 +206,22 @@ class _$World extends World {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, assetUrl.hashCode), authorId.hashCode), authorName.hashCode), capacity.hashCode), createdAt.hashCode), description.hashCode), favorites.hashCode), featured.hashCode), heat.hashCode), id.hashCode),
-                                                                                imageUrl.hashCode),
-                                                                            instances.hashCode),
-                                                                        labsPublicationDate.hashCode),
-                                                                    name.hashCode),
-                                                                namespace.hashCode),
-                                                            occupants.hashCode),
-                                                        organization.hashCode),
-                                                    popularity.hashCode),
-                                                previewYoutubeId.hashCode),
-                                            privateOccupants.hashCode),
-                                        publicOccupants.hashCode),
-                                    publicationDate.hashCode),
-                                releaseStatus.hashCode),
-                            tags.hashCode),
-                        thumbnailImageUrl.hashCode),
+                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, assetUrlObject.hashCode), authorId.hashCode), authorName.hashCode), capacity.hashCode), createdAt.hashCode), description.hashCode), favorites.hashCode), featured.hashCode), heat.hashCode), id.hashCode), imageUrl.hashCode), instances.hashCode),
+                                                                                labsPublicationDate.hashCode),
+                                                                            name.hashCode),
+                                                                        namespace.hashCode),
+                                                                    occupants.hashCode),
+                                                                organization.hashCode),
+                                                            pluginUrlObject.hashCode),
+                                                        popularity.hashCode),
+                                                    previewYoutubeId.hashCode),
+                                                privateOccupants.hashCode),
+                                            publicOccupants.hashCode),
+                                        publicationDate.hashCode),
+                                    releaseStatus.hashCode),
+                                tags.hashCode),
+                            thumbnailImageUrl.hashCode),
+                        unityPackageUrlObject.hashCode),
                     unityPackages.hashCode),
                 updatedAt.hashCode),
             version.hashCode),
@@ -218,7 +231,7 @@ class _$World extends World {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'World')
-          ..add('assetUrl', assetUrl)
+          ..add('assetUrlObject', assetUrlObject)
           ..add('authorId', authorId)
           ..add('authorName', authorName)
           ..add('capacity', capacity)
@@ -235,6 +248,7 @@ class _$World extends World {
           ..add('namespace', namespace)
           ..add('occupants', occupants)
           ..add('organization', organization)
+          ..add('pluginUrlObject', pluginUrlObject)
           ..add('popularity', popularity)
           ..add('previewYoutubeId', previewYoutubeId)
           ..add('privateOccupants', privateOccupants)
@@ -243,6 +257,7 @@ class _$World extends World {
           ..add('releaseStatus', releaseStatus)
           ..add('tags', tags)
           ..add('thumbnailImageUrl', thumbnailImageUrl)
+          ..add('unityPackageUrlObject', unityPackageUrlObject)
           ..add('unityPackages', unityPackages)
           ..add('updatedAt', updatedAt)
           ..add('version', version)
@@ -254,9 +269,10 @@ class _$World extends World {
 class WorldBuilder implements Builder<World, WorldBuilder> {
   _$World? _$v;
 
-  String? _assetUrl;
-  String? get assetUrl => _$this._assetUrl;
-  set assetUrl(String? assetUrl) => _$this._assetUrl = assetUrl;
+  JsonObject? _assetUrlObject;
+  JsonObject? get assetUrlObject => _$this._assetUrlObject;
+  set assetUrlObject(JsonObject? assetUrlObject) =>
+      _$this._assetUrlObject = assetUrlObject;
 
   String? _authorId;
   String? get authorId => _$this._authorId;
@@ -298,10 +314,10 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
   String? get imageUrl => _$this._imageUrl;
   set imageUrl(String? imageUrl) => _$this._imageUrl = imageUrl;
 
-  ListBuilder<BuiltList<JsonObject?>>? _instances;
-  ListBuilder<BuiltList<JsonObject?>> get instances =>
-      _$this._instances ??= new ListBuilder<BuiltList<JsonObject?>>();
-  set instances(ListBuilder<BuiltList<JsonObject?>>? instances) =>
+  ListBuilder<BuiltList<JsonObject>>? _instances;
+  ListBuilder<BuiltList<JsonObject>> get instances =>
+      _$this._instances ??= new ListBuilder<BuiltList<JsonObject>>();
+  set instances(ListBuilder<BuiltList<JsonObject>>? instances) =>
       _$this._instances = instances;
 
   String? _labsPublicationDate;
@@ -324,6 +340,11 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
   String? _organization;
   String? get organization => _$this._organization;
   set organization(String? organization) => _$this._organization = organization;
+
+  JsonObject? _pluginUrlObject;
+  JsonObject? get pluginUrlObject => _$this._pluginUrlObject;
+  set pluginUrlObject(JsonObject? pluginUrlObject) =>
+      _$this._pluginUrlObject = pluginUrlObject;
 
   int? _popularity;
   int? get popularity => _$this._popularity;
@@ -363,6 +384,11 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
   set thumbnailImageUrl(String? thumbnailImageUrl) =>
       _$this._thumbnailImageUrl = thumbnailImageUrl;
 
+  JsonObject? _unityPackageUrlObject;
+  JsonObject? get unityPackageUrlObject => _$this._unityPackageUrlObject;
+  set unityPackageUrlObject(JsonObject? unityPackageUrlObject) =>
+      _$this._unityPackageUrlObject = unityPackageUrlObject;
+
   ListBuilder<UnityPackage>? _unityPackages;
   ListBuilder<UnityPackage> get unityPackages =>
       _$this._unityPackages ??= new ListBuilder<UnityPackage>();
@@ -388,7 +414,7 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
   WorldBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _assetUrl = $v.assetUrl;
+      _assetUrlObject = $v.assetUrlObject;
       _authorId = $v.authorId;
       _authorName = $v.authorName;
       _capacity = $v.capacity;
@@ -405,6 +431,7 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
       _namespace = $v.namespace;
       _occupants = $v.occupants;
       _organization = $v.organization;
+      _pluginUrlObject = $v.pluginUrlObject;
       _popularity = $v.popularity;
       _previewYoutubeId = $v.previewYoutubeId;
       _privateOccupants = $v.privateOccupants;
@@ -413,6 +440,7 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
       _releaseStatus = $v.releaseStatus;
       _tags = $v.tags.toBuilder();
       _thumbnailImageUrl = $v.thumbnailImageUrl;
+      _unityPackageUrlObject = $v.unityPackageUrlObject;
       _unityPackages = $v.unityPackages.toBuilder();
       _updatedAt = $v.updatedAt;
       _version = $v.version;
@@ -441,8 +469,8 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
     try {
       _$result = _$v ??
           new _$World._(
-              assetUrl: BuiltValueNullFieldError.checkNotNull(
-                  assetUrl, r'World', 'assetUrl'),
+              assetUrlObject: BuiltValueNullFieldError.checkNotNull(
+                  assetUrlObject, r'World', 'assetUrlObject'),
               authorId: BuiltValueNullFieldError.checkNotNull(
                   authorId, r'World', 'authorId'),
               authorName: BuiltValueNullFieldError.checkNotNull(
@@ -462,13 +490,13 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
               imageUrl: BuiltValueNullFieldError.checkNotNull(
                   imageUrl, r'World', 'imageUrl'),
               instances: _instances?.build(),
-              labsPublicationDate: BuiltValueNullFieldError.checkNotNull(
-                  labsPublicationDate, r'World', 'labsPublicationDate'),
-              name:
-                  BuiltValueNullFieldError.checkNotNull(name, r'World', 'name'),
+              labsPublicationDate:
+                  BuiltValueNullFieldError.checkNotNull(labsPublicationDate, r'World', 'labsPublicationDate'),
+              name: BuiltValueNullFieldError.checkNotNull(name, r'World', 'name'),
               namespace: BuiltValueNullFieldError.checkNotNull(namespace, r'World', 'namespace'),
               occupants: occupants,
               organization: BuiltValueNullFieldError.checkNotNull(organization, r'World', 'organization'),
+              pluginUrlObject: BuiltValueNullFieldError.checkNotNull(pluginUrlObject, r'World', 'pluginUrlObject'),
               popularity: BuiltValueNullFieldError.checkNotNull(popularity, r'World', 'popularity'),
               previewYoutubeId: previewYoutubeId,
               privateOccupants: privateOccupants,
@@ -477,6 +505,7 @@ class WorldBuilder implements Builder<World, WorldBuilder> {
               releaseStatus: BuiltValueNullFieldError.checkNotNull(releaseStatus, r'World', 'releaseStatus'),
               tags: tags.build(),
               thumbnailImageUrl: BuiltValueNullFieldError.checkNotNull(thumbnailImageUrl, r'World', 'thumbnailImageUrl'),
+              unityPackageUrlObject: BuiltValueNullFieldError.checkNotNull(unityPackageUrlObject, r'World', 'unityPackageUrlObject'),
               unityPackages: unityPackages.build(),
               updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'World', 'updatedAt'),
               version: BuiltValueNullFieldError.checkNotNull(version, r'World', 'version'),

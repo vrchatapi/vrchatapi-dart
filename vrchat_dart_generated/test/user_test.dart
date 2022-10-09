@@ -55,11 +55,6 @@ void main() {
       // TODO
     });
 
-    // String friendRequestStatus
-    test('to test the property `friendRequestStatus`', () async {
-      // TODO
-    });
-
     // A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
     // String id
     test('to test the property `id`', () async {
@@ -79,12 +74,6 @@ void main() {
     });
 
     // Either a date-time or empty string.
-    // String lastActivity
-    test('to test the property `lastActivity`', () async {
-      // TODO
-    });
-
-    // Either a date-time or empty string.
     // String lastLogin
     test('to test the property `lastLogin`', () async {
       // TODO
@@ -99,11 +88,6 @@ void main() {
     // WorldID be \"offline\" on User profiles if you are not friends with that user.
     // String location
     test('to test the property `location`', () async {
-      // TODO
-    });
-
-    // String note
-    test('to test the property `note`', () async {
       // TODO
     });
 
@@ -130,21 +114,6 @@ void main() {
     //
     // BuiltList<String> tags
     test('to test the property `tags`', () async {
-      // TODO
-    });
-
-    // String travelingToInstance
-    test('to test the property `travelingToInstance`', () async {
-      // TODO
-    });
-
-    // String travelingToLocation
-    test('to test the property `travelingToLocation`', () async {
-      // TODO
-    });
-
-    // String travelingToWorld
-    test('to test the property `travelingToWorld`', () async {
       // TODO
     });
 

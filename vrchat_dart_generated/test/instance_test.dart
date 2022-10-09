@@ -86,11 +86,6 @@ void main() {
       // TODO
     });
 
-    // String secureName
-    test('to test the property `secureName`', () async {
-      // TODO
-    });
-
     // String shortName
     test('to test the property `shortName`', () async {
       // TODO

@@ -473,14 +473,14 @@ void main() {
     });
 
     // Currently used youtube-dl.exe hash in SHA-256-delimited format
-    // String playerUrlResolverHash
-    test('to test the property `playerUrlResolverHash`', () async {
+    // String youtubedlHash
+    test('to test the property `youtubedlHash`', () async {
       // TODO
     });
 
     // Currently used youtube-dl.exe version
-    // String playerUrlResolverVersion
-    test('to test the property `playerUrlResolverVersion`', () async {
+    // String youtubedlVersion
+    test('to test the property `youtubedlVersion`', () async {
       // TODO
     });
   });

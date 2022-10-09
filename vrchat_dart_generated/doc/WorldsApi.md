@@ -137,7 +137,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
-final bool featured = true; // bool | Filters on featured results.
+final String featured = featured_example; // String | Filters on featured results.
 final String sort = popularity; // String | 
 final int n = 56; // int | The number of objects to return.
 final String order = descending; // String | 
@@ -162,7 +162,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **featured** | **bool**| Filters on featured results. | [optional] 
+ **featured** | **String**| Filters on featured results. | [optional] 
  **sort** | **String**|  | [optional] [default to 'popularity']
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **order** | **String**|  | [optional] [default to 'descending']
@@ -210,7 +210,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
-final bool featured = true; // bool | Filters on featured results.
+final String featured = featured_example; // String | Filters on featured results.
 final String sort = popularity; // String | 
 final int n = 56; // int | The number of objects to return.
 final String order = descending; // String | 
@@ -236,7 +236,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **featured** | **bool**| Filters on featured results. | [optional] 
+ **featured** | **String**| Filters on featured results. | [optional] 
  **sort** | **String**|  | [optional] [default to 'popularity']
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **order** | **String**|  | [optional] [default to 'descending']
@@ -285,7 +285,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
-final bool featured = true; // bool | Filters on featured results.
+final String featured = featured_example; // String | Filters on featured results.
 final String sort = popularity; // String | 
 final int n = 56; // int | The number of objects to return.
 final String order = descending; // String | 
@@ -311,7 +311,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **featured** | **bool**| Filters on featured results. | [optional] 
+ **featured** | **String**| Filters on featured results. | [optional] 
  **sort** | **String**|  | [optional] [default to 'popularity']
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **order** | **String**|  | [optional] [default to 'descending']
@@ -612,7 +612,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
-final bool featured = true; // bool | Filters on featured results.
+final String featured = featured_example; // String | Filters on featured results.
 final String sort = popularity; // String | 
 final String user = user_example; // String | Set to `me` for searching own worlds.
 final String userId = userId_example; // String | Filter by UserID.
@@ -639,7 +639,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **featured** | **bool**| Filters on featured results. | [optional] 
+ **featured** | **String**| Filters on featured results. | [optional] 
  **sort** | **String**|  | [optional] [default to 'popularity']
  **user** | **String**| Set to `me` for searching own worlds. | [optional] 
  **userId** | **String**| Filter by UserID. | [optional] 

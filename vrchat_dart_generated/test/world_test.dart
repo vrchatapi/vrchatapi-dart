@@ -7,9 +7,8 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(World, () {
-    // Empty if unauthenticated.
-    // String assetUrl
-    test('to test the property `assetUrl`', () async {
+    // JsonObject assetUrlObject
+    test('to test the property `assetUrlObject`', () async {
       // TODO
     });
 
@@ -95,6 +94,11 @@ void main() {
       // TODO
     });
 
+    // JsonObject pluginUrlObject
+    test('to test the property `pluginUrlObject`', () async {
+      // TODO
+    });
+
     // int popularity (default value: 0)
     test('to test the property `popularity`', () async {
       // TODO
@@ -133,6 +137,11 @@ void main() {
 
     // String thumbnailImageUrl
     test('to test the property `thumbnailImageUrl`', () async {
+      // TODO
+    });
+
+    // JsonObject unityPackageUrlObject
+    test('to test the property `unityPackageUrlObject`', () async {
       // TODO
     });
 
