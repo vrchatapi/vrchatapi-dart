@@ -51,7 +51,7 @@ Name | Type | Description | Notes
 **steamId** | **String** |  | 
 **tags** | **BuiltList&lt;String&gt;** |  | 
 **twoFactorAuthEnabled** | **bool** |  | 
-**twoFactorAuthEnabledDate** | [**DateTime**](DateTime.md) |  | 
+**twoFactorAuthEnabledDate** | [**DateTime**](DateTime.md) |  | [optional] 
 **unsubscribe** | **bool** |  | 
 **userIcon** | **String** |  | 
 **username** | **String** |  | 
