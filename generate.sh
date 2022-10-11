@@ -15,3 +15,5 @@ flutter pub run build_runner build --delete-conflicting-outputs
 cd ../vrchat_dart_generated
 dart fix --apply
 flutter format .
+
+dart run vrchat_dart/tool/patch.dart
