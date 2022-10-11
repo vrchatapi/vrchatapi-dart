@@ -16,4 +16,5 @@ cd ../vrchat_dart_generated
 dart fix --apply
 flutter format .
 
+cd ..
 dart run vrchat_dart/tool/patch.dart
