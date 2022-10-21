@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for APIConfig
 void main() {
-  final instance = APIConfigBuilder();
-  // TODO add properties to the builder and call build()
+  final APIConfig? instance = /* APIConfig(...) */ null;
+  // TODO add properties to the entity
 
   group(APIConfig, () {
     // Unknown, probably voice optimization testing
@@ -26,7 +26,7 @@ void main() {
     });
 
     // Public Announcements
-    // BuiltSet<PublicAnnouncement> announcements
+    // Set<PublicAnnouncement> announcements
     test('to test the property `announcements`', () async {
       // TODO
     });
@@ -245,7 +245,7 @@ void main() {
     });
 
     // Array of DynamicWorldRow objects, used by the game to display the list of world rows
-    // BuiltSet<DynamicContentRow> dynamicWorldRows
+    // Set<DynamicContentRow> dynamicWorldRows
     test('to test the property `dynamicWorldRows`', () async {
       // TODO
     });
@@ -419,7 +419,7 @@ void main() {
     });
 
     // List of allowed URLs that bypass the \"Allow untrusted URL's\" setting in-game
-    // BuiltList<String> urlList
+    // List<String> urlList
     test('to test the property `urlList`', () async {
       // TODO
     });
@@ -461,7 +461,7 @@ void main() {
     });
 
     // List of allowed URLs that are allowed to host avatar assets
-    // BuiltList<String> whiteListedAssetUrls
+    // List<String> whiteListedAssetUrls
     test('to test the property `whiteListedAssetUrls`', () async {
       // TODO
     });

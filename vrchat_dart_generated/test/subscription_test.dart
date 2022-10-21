@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for Subscription
 void main() {
-  final instance = SubscriptionBuilder();
-  // TODO add properties to the builder and call build()
+  final Subscription? instance = /* Subscription(...) */ null;
+  // TODO add properties to the entity
 
   group(Subscription, () {
     // String id

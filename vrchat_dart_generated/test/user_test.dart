@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for User
 void main() {
-  final instance = UserBuilder();
-  // TODO add properties to the builder and call build()
+  final User? instance = /* User(...) */ null;
+  // TODO add properties to the entity
 
   group(User, () {
     // bool allowAvatarCopying (default value: true)
@@ -17,7 +17,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<String> bioLinks
+    // List<String> bioLinks
     test('to test the property `bioLinks`', () async {
       // TODO
     });
@@ -34,7 +34,7 @@ void main() {
       // TODO
     });
 
-    // Date dateJoined
+    // DateTime dateJoined
     test('to test the property `dateJoined`', () async {
       // TODO
     });
@@ -128,7 +128,7 @@ void main() {
     });
 
     //
-    // BuiltList<String> tags
+    // List<String> tags
     test('to test the property `tags`', () async {
       // TODO
     });

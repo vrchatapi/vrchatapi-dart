@@ -2,203 +2,95 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_collection/built_collection.dart';
+// ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'update_avatar_request.g.dart';
 
-/// UpdateAvatarRequest
-///
-/// Properties:
-/// * [assetUrl]
-/// * [id]
-/// * [name]
-/// * [description]
-/// * [tags] -
-/// * [imageUrl]
-/// * [releaseStatus]
-/// * [version]
-/// * [unityPackageUrl]
-abstract class UpdateAvatarRequest
-    implements Built<UpdateAvatarRequest, UpdateAvatarRequestBuilder> {
-  @BuiltValueField(wireName: r'assetUrl')
-  String? get assetUrl;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class UpdateAvatarRequest {
+  /// Returns a new [UpdateAvatarRequest] instance.
+  UpdateAvatarRequest({
+    this.assetUrl,
+    this.id,
+    this.name,
+    this.description,
+    this.tags,
+    this.imageUrl,
+    this.releaseStatus,
+    this.version = 1,
+    this.unityPackageUrl,
+  });
 
-  @BuiltValueField(wireName: r'id')
-  String? get id;
+  @JsonKey(name: r'assetUrl', required: false, includeIfNull: false)
+  final String? assetUrl;
 
-  @BuiltValueField(wireName: r'name')
-  String? get name;
+  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  final String? id;
 
-  @BuiltValueField(wireName: r'description')
-  String? get description;
+  @JsonKey(name: r'name', required: false, includeIfNull: false)
+  final String? name;
+
+  @JsonKey(name: r'description', required: false, includeIfNull: false)
+  final String? description;
 
   ///
-  @BuiltValueField(wireName: r'tags')
-  BuiltList<String>? get tags;
+  @JsonKey(name: r'tags', required: false, includeIfNull: false)
+  final List<String>? tags;
 
-  @BuiltValueField(wireName: r'imageUrl')
-  String? get imageUrl;
+  @JsonKey(name: r'imageUrl', required: false, includeIfNull: false)
+  final String? imageUrl;
 
-  @BuiltValueField(wireName: r'releaseStatus')
-  ReleaseStatus? get releaseStatus;
-  // enum releaseStatusEnum {  public,  private,  hidden,  };
+  @JsonKey(name: r'releaseStatus', required: false, includeIfNull: false)
+  final ReleaseStatus? releaseStatus;
 
-  @BuiltValueField(wireName: r'version')
-  num? get version;
+  // minimum: 0
+  @JsonKey(
+      defaultValue: 1, name: r'version', required: false, includeIfNull: false)
+  final num? version;
 
-  @BuiltValueField(wireName: r'unityPackageUrl')
-  String? get unityPackageUrl;
-
-  UpdateAvatarRequest._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UpdateAvatarRequestBuilder b) => b..version = 1;
-
-  factory UpdateAvatarRequest([void updates(UpdateAvatarRequestBuilder b)]) =
-      _$UpdateAvatarRequest;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<UpdateAvatarRequest> get serializer =>
-      _$UpdateAvatarRequestSerializer();
-}
-
-class _$UpdateAvatarRequestSerializer
-    implements StructuredSerializer<UpdateAvatarRequest> {
-  @override
-  final Iterable<Type> types = const [
-    UpdateAvatarRequest,
-    _$UpdateAvatarRequest
-  ];
+  @JsonKey(name: r'unityPackageUrl', required: false, includeIfNull: false)
+  final String? unityPackageUrl;
 
   @override
-  final String wireName = r'UpdateAvatarRequest';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is UpdateAvatarRequest &&
+          other.assetUrl == assetUrl &&
+          other.id == id &&
+          other.name == name &&
+          other.description == description &&
+          other.tags == tags &&
+          other.imageUrl == imageUrl &&
+          other.releaseStatus == releaseStatus &&
+          other.version == version &&
+          other.unityPackageUrl == unityPackageUrl;
 
   @override
-  Iterable<Object?> serialize(
-      Serializers serializers, UpdateAvatarRequest object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    if (object.assetUrl != null) {
-      result
-        ..add(r'assetUrl')
-        ..add(serializers.serialize(object.assetUrl,
-            specifiedType: const FullType(String)));
-    }
-    if (object.id != null) {
-      result
-        ..add(r'id')
-        ..add(serializers.serialize(object.id,
-            specifiedType: const FullType(String)));
-    }
-    if (object.name != null) {
-      result
-        ..add(r'name')
-        ..add(serializers.serialize(object.name,
-            specifiedType: const FullType(String)));
-    }
-    if (object.description != null) {
-      result
-        ..add(r'description')
-        ..add(serializers.serialize(object.description,
-            specifiedType: const FullType(String)));
-    }
-    if (object.tags != null) {
-      result
-        ..add(r'tags')
-        ..add(serializers.serialize(object.tags,
-            specifiedType: const FullType(BuiltList, [FullType(String)])));
-    }
-    if (object.imageUrl != null) {
-      result
-        ..add(r'imageUrl')
-        ..add(serializers.serialize(object.imageUrl,
-            specifiedType: const FullType(String)));
-    }
-    if (object.releaseStatus != null) {
-      result
-        ..add(r'releaseStatus')
-        ..add(serializers.serialize(object.releaseStatus,
-            specifiedType: const FullType(ReleaseStatus)));
-    }
-    if (object.version != null) {
-      result
-        ..add(r'version')
-        ..add(serializers.serialize(object.version,
-            specifiedType: const FullType(num)));
-    }
-    if (object.unityPackageUrl != null) {
-      result
-        ..add(r'unityPackageUrl')
-        ..add(serializers.serialize(object.unityPackageUrl,
-            specifiedType: const FullType(String)));
-    }
-    return result;
-  }
+  int get hashCode =>
+      assetUrl.hashCode +
+      id.hashCode +
+      name.hashCode +
+      description.hashCode +
+      tags.hashCode +
+      imageUrl.hashCode +
+      releaseStatus.hashCode +
+      version.hashCode +
+      unityPackageUrl.hashCode;
+
+  factory UpdateAvatarRequest.fromJson(Map<String, dynamic> json) =>
+      _$UpdateAvatarRequestFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UpdateAvatarRequestToJson(this);
 
   @override
-  UpdateAvatarRequest deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = UpdateAvatarRequestBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'assetUrl':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.assetUrl = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.id = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.name = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.description = valueDes;
-          break;
-        case r'tags':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>;
-          result.tags.replace(valueDes);
-          break;
-        case r'imageUrl':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.imageUrl = valueDes;
-          break;
-        case r'releaseStatus':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(ReleaseStatus)) as ReleaseStatus;
-          result.releaseStatus = valueDes;
-          break;
-        case r'version':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
-          result.version = valueDes;
-          break;
-        case r'unityPackageUrl':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.unityPackageUrl = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

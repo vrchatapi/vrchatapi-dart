@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for PlayerModeration
 void main() {
-  final instance = PlayerModerationBuilder();
-  // TODO add properties to the builder and call build()
+  final PlayerModeration? instance = /* PlayerModeration(...) */ null;
+  // TODO add properties to the entity
 
   group(PlayerModeration, () {
     // DateTime created

@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:vrchat_dart_generated/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/create_file_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_file_version_request.dart';
 import 'package:vrchat_dart_generated/src/model/file.dart';
@@ -20,9 +20,7 @@ import 'package:vrchat_dart_generated/src/model/success.dart';
 class FilesApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const FilesApi(this._dio, this._serializers);
+  const FilesApi(this._dio);
 
   /// Create File
   /// Creates a new File object
@@ -77,10 +75,7 @@ class FilesApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateFileRequest);
-      _bodyData = createFileRequest == null
-          ? null
-          : _serializers.serialize(createFileRequest, specifiedType: _type);
+      _bodyData = jsonEncode(createFileRequest);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -104,11 +99,8 @@ class FilesApi {
     File _responseData;
 
     try {
-      const _responseType = FullType(File);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as File;
+      _responseData =
+          deserialize<File, File>(_response.data!, 'File', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -186,11 +178,7 @@ class FilesApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateFileVersionRequest);
-      _bodyData = createFileVersionRequest == null
-          ? null
-          : _serializers.serialize(createFileVersionRequest,
-              specifiedType: _type);
+      _bodyData = jsonEncode(createFileVersionRequest);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -214,11 +202,8 @@ class FilesApi {
     File _responseData;
 
     try {
-      const _responseType = FullType(File);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as File;
+      _responseData =
+          deserialize<File, File>(_response.data!, 'File', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -301,11 +286,8 @@ class FilesApi {
     Success _responseData;
 
     try {
-      const _responseType = FullType(Success);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Success;
+      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -391,11 +373,8 @@ class FilesApi {
     File _responseData;
 
     try {
-      const _responseType = FullType(File);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as File;
+      _responseData =
+          deserialize<File, File>(_response.data!, 'File', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -543,11 +522,7 @@ class FilesApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(FinishFileDataUploadRequest);
-      _bodyData = finishFileDataUploadRequest == null
-          ? null
-          : _serializers.serialize(finishFileDataUploadRequest,
-              specifiedType: _type);
+      _bodyData = jsonEncode(finishFileDataUploadRequest);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -571,11 +546,8 @@ class FilesApi {
     File _responseData;
 
     try {
-      const _responseType = FullType(File);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as File;
+      _responseData =
+          deserialize<File, File>(_response.data!, 'File', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -658,11 +630,8 @@ class FilesApi {
     File _responseData;
 
     try {
-      const _responseType = FullType(File);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as File;
+      _responseData =
+          deserialize<File, File>(_response.data!, 'File', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -751,11 +720,10 @@ class FilesApi {
     FileVersionUploadStatus _responseData;
 
     try {
-      const _responseType = FullType(FileVersionUploadStatus);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as FileVersionUploadStatus;
+      _responseData =
+          deserialize<FileVersionUploadStatus, FileVersionUploadStatus>(
+              _response.data!, 'FileVersionUploadStatus',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -792,9 +760,9 @@ class FilesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<File>] as data
+  /// Returns a [Future] containing a [Response] with a [List<File>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<File>>> getFiles({
+  Future<Response<List<File>>> getFiles({
     String? tag,
     String? userId,
     int? n = 60,
@@ -833,16 +801,10 @@ class FilesApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (tag != null)
-        r'tag': encodeQueryParameter(_serializers, tag, const FullType(String)),
-      if (userId != null)
-        r'userId':
-            encodeQueryParameter(_serializers, userId, const FullType(String)),
-      if (n != null)
-        r'n': encodeQueryParameter(_serializers, n, const FullType(int)),
-      if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
+      if (tag != null) r'tag': tag,
+      if (userId != null) r'userId': userId,
+      if (n != null) r'n': n,
+      if (offset != null) r'offset': offset,
     };
 
     final _response = await _dio.request<Object>(
@@ -854,14 +816,12 @@ class FilesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<File> _responseData;
+    List<File> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(File)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<File>;
+      _responseData = deserialize<List<File>, File>(
+          _response.data!, 'List<File>',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -871,7 +831,7 @@ class FilesApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<File>>(
+    return Response<List<File>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -942,9 +902,7 @@ class FilesApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (partNumber != null)
-        r'partNumber':
-            encodeQueryParameter(_serializers, partNumber, const FullType(int)),
+      if (partNumber != null) r'partNumber': partNumber,
     };
 
     final _response = await _dio.request<Object>(
@@ -959,11 +917,9 @@ class FilesApi {
     FileUploadURL _responseData;
 
     try {
-      const _responseType = FullType(FileUploadURL);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as FileUploadURL;
+      _responseData = deserialize<FileUploadURL, FileUploadURL>(
+          _response.data!, 'FileUploadURL',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

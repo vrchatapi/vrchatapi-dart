@@ -2,119 +2,66 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+// ignore_for_file: unused_element
+import 'package:json_annotation/json_annotation.dart';
 
 part 'transaction_steam_wallet_info.g.dart';
 
-///
-///
-/// Properties:
-/// * [state]
-/// * [country]
-/// * [currency]
-/// * [status]
-abstract class TransactionSteamWalletInfo
-    implements
-        Built<TransactionSteamWalletInfo, TransactionSteamWalletInfoBuilder> {
-  @BuiltValueField(wireName: r'state')
-  String get state;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class TransactionSteamWalletInfo {
+  /// Returns a new [TransactionSteamWalletInfo] instance.
+  TransactionSteamWalletInfo({
+    required this.state,
+    this.country = 'US',
+    this.currency = 'USD',
+    required this.status,
+  });
 
-  @BuiltValueField(wireName: r'country')
-  String get country;
+  @JsonKey(name: r'state', required: true, includeIfNull: false)
+  final String state;
 
-  @BuiltValueField(wireName: r'currency')
-  String get currency;
+  @JsonKey(
+      defaultValue: 'US',
+      name: r'country',
+      required: true,
+      includeIfNull: false)
+  final String country;
 
-  @BuiltValueField(wireName: r'status')
-  String get status;
+  @JsonKey(
+      defaultValue: 'USD',
+      name: r'currency',
+      required: true,
+      includeIfNull: false)
+  final String currency;
 
-  TransactionSteamWalletInfo._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TransactionSteamWalletInfoBuilder b) => b
-    ..country = 'US'
-    ..currency = 'USD';
-
-  factory TransactionSteamWalletInfo(
-          [void updates(TransactionSteamWalletInfoBuilder b)]) =
-      _$TransactionSteamWalletInfo;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<TransactionSteamWalletInfo> get serializer =>
-      _$TransactionSteamWalletInfoSerializer();
-}
-
-class _$TransactionSteamWalletInfoSerializer
-    implements StructuredSerializer<TransactionSteamWalletInfo> {
-  @override
-  final Iterable<Type> types = const [
-    TransactionSteamWalletInfo,
-    _$TransactionSteamWalletInfo
-  ];
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
+  final String status;
 
   @override
-  final String wireName = r'TransactionSteamWalletInfo';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is TransactionSteamWalletInfo &&
+          other.state == state &&
+          other.country == country &&
+          other.currency == currency &&
+          other.status == status;
 
   @override
-  Iterable<Object?> serialize(
-      Serializers serializers, TransactionSteamWalletInfo object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'state')
-      ..add(serializers.serialize(object.state,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'country')
-      ..add(serializers.serialize(object.country,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'currency')
-      ..add(serializers.serialize(object.currency,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'status')
-      ..add(serializers.serialize(object.status,
-          specifiedType: const FullType(String)));
-    return result;
-  }
+  int get hashCode =>
+      state.hashCode + country.hashCode + currency.hashCode + status.hashCode;
+
+  factory TransactionSteamWalletInfo.fromJson(Map<String, dynamic> json) =>
+      _$TransactionSteamWalletInfoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TransactionSteamWalletInfoToJson(this);
 
   @override
-  TransactionSteamWalletInfo deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = TransactionSteamWalletInfoBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'state':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.state = valueDes;
-          break;
-        case r'country':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.country = valueDes;
-          break;
-        case r'currency':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.currency = valueDes;
-          break;
-        case r'status':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.status = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

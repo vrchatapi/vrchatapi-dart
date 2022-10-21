@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for WorldMetadata
 void main() {
-  final instance = WorldMetadataBuilder();
-  // TODO add properties to the builder and call build()
+  final WorldMetadata? instance = /* WorldMetadata(...) */ null;
+  // TODO add properties to the entity
 
   group(WorldMetadata, () {
     // WorldID be \"offline\" on User profiles if you are not friends with that user.
@@ -13,7 +13,7 @@ void main() {
       // TODO
     });
 
-    // JsonObject metadata
+    // Object metadata
     test('to test the property `metadata`', () async {
       // TODO
     });

@@ -445,7 +445,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFiles**
-> BuiltList<File> getFiles(tag, userId, n, offset)
+> List<File> getFiles(tag, userId, n, offset)
 
 List Files
 
@@ -488,7 +488,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;File&gt;**](File.md)
+[**List&lt;File&gt;**](File.md)
 
 ### Authorization
 

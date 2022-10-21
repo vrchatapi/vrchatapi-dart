@@ -2,155 +2,82 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/player_moderation_type.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'player_moderation.g.dart';
 
-/// PlayerModeration
-///
-/// Properties:
-/// * [created]
-/// * [id]
-/// * [sourceDisplayName]
-/// * [sourceUserId] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-/// * [targetDisplayName]
-/// * [targetUserId] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-/// * [type]
-abstract class PlayerModeration
-    implements Built<PlayerModeration, PlayerModerationBuilder> {
-  @BuiltValueField(wireName: r'created')
-  DateTime get created;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class PlayerModeration {
+  /// Returns a new [PlayerModeration] instance.
+  PlayerModeration({
+    required this.created,
+    required this.id,
+    required this.sourceDisplayName,
+    required this.sourceUserId,
+    required this.targetDisplayName,
+    required this.targetUserId,
+    required this.type,
+  });
 
-  @BuiltValueField(wireName: r'id')
-  String get id;
+  @JsonKey(name: r'created', required: true, includeIfNull: false)
+  final DateTime created;
 
-  @BuiltValueField(wireName: r'sourceDisplayName')
-  String get sourceDisplayName;
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
+
+  @JsonKey(name: r'sourceDisplayName', required: true, includeIfNull: false)
+  final String sourceDisplayName;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @BuiltValueField(wireName: r'sourceUserId')
-  String get sourceUserId;
+  @JsonKey(name: r'sourceUserId', required: true, includeIfNull: false)
+  final String sourceUserId;
 
-  @BuiltValueField(wireName: r'targetDisplayName')
-  String get targetDisplayName;
+  @JsonKey(name: r'targetDisplayName', required: true, includeIfNull: false)
+  final String targetDisplayName;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @BuiltValueField(wireName: r'targetUserId')
-  String get targetUserId;
+  @JsonKey(name: r'targetUserId', required: true, includeIfNull: false)
+  final String targetUserId;
 
-  @BuiltValueField(wireName: r'type')
-  PlayerModerationType get type;
-  // enum typeEnum {  mute,  unmute,  block,  unblock,  hideAvatar,  showAvatar,  interactOn,  interactOff,  };
-
-  PlayerModeration._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(PlayerModerationBuilder b) => b;
-
-  factory PlayerModeration([void updates(PlayerModerationBuilder b)]) =
-      _$PlayerModeration;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<PlayerModeration> get serializer =>
-      _$PlayerModerationSerializer();
-}
-
-class _$PlayerModerationSerializer
-    implements StructuredSerializer<PlayerModeration> {
-  @override
-  final Iterable<Type> types = const [PlayerModeration, _$PlayerModeration];
+  @JsonKey(name: r'type', required: true, includeIfNull: false)
+  final PlayerModerationType type;
 
   @override
-  final String wireName = r'PlayerModeration';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is PlayerModeration &&
+          other.created == created &&
+          other.id == id &&
+          other.sourceDisplayName == sourceDisplayName &&
+          other.sourceUserId == sourceUserId &&
+          other.targetDisplayName == targetDisplayName &&
+          other.targetUserId == targetUserId &&
+          other.type == type;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, PlayerModeration object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'created')
-      ..add(serializers.serialize(object.created,
-          specifiedType: const FullType(DateTime)));
-    result
-      ..add(r'id')
-      ..add(serializers.serialize(object.id,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'sourceDisplayName')
-      ..add(serializers.serialize(object.sourceDisplayName,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'sourceUserId')
-      ..add(serializers.serialize(object.sourceUserId,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'targetDisplayName')
-      ..add(serializers.serialize(object.targetDisplayName,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'targetUserId')
-      ..add(serializers.serialize(object.targetUserId,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'type')
-      ..add(serializers.serialize(object.type,
-          specifiedType: const FullType(PlayerModerationType)));
-    return result;
-  }
+  int get hashCode =>
+      created.hashCode +
+      id.hashCode +
+      sourceDisplayName.hashCode +
+      sourceUserId.hashCode +
+      targetDisplayName.hashCode +
+      targetUserId.hashCode +
+      type.hashCode;
+
+  factory PlayerModeration.fromJson(Map<String, dynamic> json) =>
+      _$PlayerModerationFromJson(json);
+
+  Map<String, dynamic> toJson() => _$PlayerModerationToJson(this);
 
   @override
-  PlayerModeration deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = PlayerModerationBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'created':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
-          result.created = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.id = valueDes;
-          break;
-        case r'sourceDisplayName':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.sourceDisplayName = valueDes;
-          break;
-        case r'sourceUserId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.sourceUserId = valueDes;
-          break;
-        case r'targetDisplayName':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.targetDisplayName = valueDes;
-          break;
-        case r'targetUserId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.targetUserId = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(PlayerModerationType))
-              as PlayerModerationType;
-          result.type = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

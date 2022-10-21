@@ -2,155 +2,92 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/invite_message_type.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'invite_message.g.dart';
 
-///
-///
-/// Properties:
-/// * [canBeUpdated]
-/// * [id]
-/// * [message]
-/// * [messageType]
-/// * [remainingCooldownMinutes] - Changes to 60 when updated, although probably server-side configurable.
-/// * [slot]
-/// * [updatedAt]
-abstract class InviteMessage
-    implements Built<InviteMessage, InviteMessageBuilder> {
-  @BuiltValueField(wireName: r'canBeUpdated')
-  bool get canBeUpdated;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class InviteMessage {
+  /// Returns a new [InviteMessage] instance.
+  InviteMessage({
+    this.canBeUpdated = true,
+    required this.id,
+    required this.message,
+    required this.messageType,
+    this.remainingCooldownMinutes = 0,
+    required this.slot,
+    required this.updatedAt,
+  });
 
-  @BuiltValueField(wireName: r'id')
-  String get id;
+  @JsonKey(
+      defaultValue: true,
+      name: r'canBeUpdated',
+      required: true,
+      includeIfNull: false)
+  final bool canBeUpdated;
 
-  @BuiltValueField(wireName: r'message')
-  String get message;
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
 
-  @BuiltValueField(wireName: r'messageType')
-  InviteMessageType get messageType;
-  // enum messageTypeEnum {  message,  response,  request,  requestResponse,  };
+  @JsonKey(name: r'message', required: true, includeIfNull: false)
+  final String message;
+
+  @JsonKey(name: r'messageType', required: true, includeIfNull: false)
+  final InviteMessageType messageType;
 
   /// Changes to 60 when updated, although probably server-side configurable.
-  @BuiltValueField(wireName: r'remainingCooldownMinutes')
-  int get remainingCooldownMinutes;
+  // minimum: 0
+  @JsonKey(
+      defaultValue: 0,
+      name: r'remainingCooldownMinutes',
+      required: true,
+      includeIfNull: false)
+  final int remainingCooldownMinutes;
 
-  @BuiltValueField(wireName: r'slot')
-  int get slot;
+  // minimum: 0
+  // maximum: 11
+  @JsonKey(name: r'slot', required: true, includeIfNull: false)
+  final int slot;
 
-  @BuiltValueField(wireName: r'updatedAt')
-  DateTime get updatedAt;
-
-  InviteMessage._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(InviteMessageBuilder b) => b
-    ..canBeUpdated = true
-    ..remainingCooldownMinutes = 0;
-
-  factory InviteMessage([void updates(InviteMessageBuilder b)]) =
-      _$InviteMessage;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<InviteMessage> get serializer =>
-      _$InviteMessageSerializer();
-}
-
-class _$InviteMessageSerializer implements StructuredSerializer<InviteMessage> {
-  @override
-  final Iterable<Type> types = const [InviteMessage, _$InviteMessage];
+  @JsonKey(name: r'updatedAt', required: true, includeIfNull: false)
+  final DateTime updatedAt;
 
   @override
-  final String wireName = r'InviteMessage';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is InviteMessage &&
+          other.canBeUpdated == canBeUpdated &&
+          other.id == id &&
+          other.message == message &&
+          other.messageType == messageType &&
+          other.remainingCooldownMinutes == remainingCooldownMinutes &&
+          other.slot == slot &&
+          other.updatedAt == updatedAt;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, InviteMessage object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'canBeUpdated')
-      ..add(serializers.serialize(object.canBeUpdated,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'id')
-      ..add(serializers.serialize(object.id,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'message')
-      ..add(serializers.serialize(object.message,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'messageType')
-      ..add(serializers.serialize(object.messageType,
-          specifiedType: const FullType(InviteMessageType)));
-    result
-      ..add(r'remainingCooldownMinutes')
-      ..add(serializers.serialize(object.remainingCooldownMinutes,
-          specifiedType: const FullType(int)));
-    result
-      ..add(r'slot')
-      ..add(serializers.serialize(object.slot,
-          specifiedType: const FullType(int)));
-    result
-      ..add(r'updatedAt')
-      ..add(serializers.serialize(object.updatedAt,
-          specifiedType: const FullType(DateTime)));
-    return result;
-  }
+  int get hashCode =>
+      canBeUpdated.hashCode +
+      id.hashCode +
+      message.hashCode +
+      messageType.hashCode +
+      remainingCooldownMinutes.hashCode +
+      slot.hashCode +
+      updatedAt.hashCode;
+
+  factory InviteMessage.fromJson(Map<String, dynamic> json) =>
+      _$InviteMessageFromJson(json);
+
+  Map<String, dynamic> toJson() => _$InviteMessageToJson(this);
 
   @override
-  InviteMessage deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = InviteMessageBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'canBeUpdated':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.canBeUpdated = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.id = valueDes;
-          break;
-        case r'message':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.message = valueDes;
-          break;
-        case r'messageType':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(InviteMessageType))
-              as InviteMessageType;
-          result.messageType = valueDes;
-          break;
-        case r'remainingCooldownMinutes':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.remainingCooldownMinutes = valueDes;
-          break;
-        case r'slot':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.slot = valueDes;
-          break;
-        case r'updatedAt':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
-          result.updatedAt = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

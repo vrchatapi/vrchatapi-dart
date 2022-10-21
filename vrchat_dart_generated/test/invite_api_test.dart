@@ -19,7 +19,7 @@ void main() {
     //
     // Returns a list of all the users Invite Messages. Admin Credentials are required to view messages of other users!  Message type refers to a different collection of messages, used during different types of responses.  * `message` = Message during a normal invite * `response` = Message when replying to a message * `request` = Message when requesting an invite * `requestResponse` = Message when replying to a request for invite
     //
-    //Future<BuiltList<InviteMessage>> getInviteMessages(String userId, String messageType) async
+    //Future<List<InviteMessage>> getInviteMessages(String userId, String messageType) async
     test('test getInviteMessages', () async {
       // TODO
     });
@@ -55,7 +55,7 @@ void main() {
     //
     // Resets a single Invite Message back to its original message, and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Resetting a message respects the rate-limit, so it is not possible to reset within the 60 minutes countdown. Resetting it does however not set the rate-limit to 60 like when editing it. It is possible to edit it right after resetting it. Trying to edit a message before the cooldown timer expires results in a 429 \"Too Fast Error\".  Message type refers to a different collection of messages, used during different types of responses.  * `message` = Message during a normal invite * `response` = Message when replying to a message * `request` = Message when requesting an invite * `requestResponse` = Message when replying to a request for invite  The DELETE endpoint does not have/require any request body.
     //
-    //Future<BuiltList<InviteMessage>> resetInviteMessage(String userId, String messageType, int slot) async
+    //Future<List<InviteMessage>> resetInviteMessage(String userId, String messageType, int slot) async
     test('test resetInviteMessage', () async {
       // TODO
     });
@@ -73,7 +73,7 @@ void main() {
     //
     // Updates a single Invite Message and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Updating a message automatically sets the cooldown timer to 60 minutes. Trying to edit a message before the cooldown timer expires results in a 429 \"Too Fast Error\".  Message type refers to a different collection of messages, used during different types of responses.  * `message` = Message during a normal invite * `response` = Message when replying to a message * `request` = Message when requesting an invite * `requestResponse` = Message when replying to a request for invite
     //
-    //Future<BuiltList<InviteMessage>> updateInviteMessage(String userId, String messageType, int slot, { UpdateInviteMessageRequest updateInviteMessageRequest }) async
+    //Future<List<InviteMessage>> updateInviteMessage(String userId, String messageType, int slot, { UpdateInviteMessageRequest updateInviteMessageRequest }) async
     test('test updateInviteMessage', () async {
       // TODO
     });

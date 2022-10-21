@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for World
 void main() {
-  final instance = WorldBuilder();
-  // TODO add properties to the builder and call build()
+  final World? instance = /* World(...) */ null;
+  // TODO add properties to the entity
 
   group(World, () {
     // A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
@@ -59,7 +59,8 @@ void main() {
       // TODO
     });
 
-    // BuiltList<BuiltList<JsonObject>> instances
+    // Will always be an empty list when unauthenticated.
+    // List<List<Object>> instances
     test('to test the property `instances`', () async {
       // TODO
     });
@@ -79,6 +80,7 @@ void main() {
       // TODO
     });
 
+    // Will always be `0` when unauthenticated.
     // int occupants (default value: 0)
     test('to test the property `occupants`', () async {
       // TODO
@@ -99,11 +101,13 @@ void main() {
       // TODO
     });
 
+    // Will always be `0` when unauthenticated.
     // int privateOccupants (default value: 0)
     test('to test the property `privateOccupants`', () async {
       // TODO
     });
 
+    // Will always be `0` when unauthenticated.
     // int publicOccupants (default value: 0)
     test('to test the property `publicOccupants`', () async {
       // TODO
@@ -120,7 +124,7 @@ void main() {
     });
 
     //
-    // BuiltList<String> tags
+    // List<String> tags
     test('to test the property `tags`', () async {
       // TODO
     });
@@ -131,7 +135,7 @@ void main() {
     });
 
     // Empty if unauthenticated.
-    // BuiltList<UnityPackage> unityPackages
+    // List<UnityPackage> unityPackages
     test('to test the property `unityPackages`', () async {
       // TODO
     });

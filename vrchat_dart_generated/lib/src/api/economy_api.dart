@@ -4,10 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:vrchat_dart_generated/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
 import 'package:vrchat_dart_generated/src/model/license_group.dart';
 import 'package:vrchat_dart_generated/src/model/subscription.dart';
 import 'package:vrchat_dart_generated/src/model/transaction.dart';
@@ -16,9 +17,7 @@ import 'package:vrchat_dart_generated/src/model/user_subscription.dart';
 class EconomyApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const EconomyApi(this._dio, this._serializers);
+  const EconomyApi(this._dio);
 
   /// Get Current Subscriptions
   /// Get a list of all current user subscriptions.
@@ -31,9 +30,9 @@ class EconomyApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<UserSubscription>] as data
+  /// Returns a [Future] containing a [Response] with a [List<UserSubscription>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<UserSubscription>>> getCurrentSubscriptions({
+  Future<Response<List<UserSubscription>>> getCurrentSubscriptions({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -75,14 +74,12 @@ class EconomyApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<UserSubscription> _responseData;
+    List<UserSubscription> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(UserSubscription)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<UserSubscription>;
+      _responseData = deserialize<List<UserSubscription>, UserSubscription>(
+          _response.data!, 'List<UserSubscription>',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -92,7 +89,7 @@ class EconomyApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<UserSubscription>>(
+    return Response<List<UserSubscription>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -165,11 +162,9 @@ class EconomyApi {
     LicenseGroup _responseData;
 
     try {
-      const _responseType = FullType(LicenseGroup);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as LicenseGroup;
+      _responseData = deserialize<LicenseGroup, LicenseGroup>(
+          _response.data!, 'LicenseGroup',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -253,11 +248,9 @@ class EconomyApi {
     Transaction _responseData;
 
     try {
-      const _responseType = FullType(Transaction);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Transaction;
+      _responseData = deserialize<Transaction, Transaction>(
+          _response.data!, 'Transaction',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -290,9 +283,9 @@ class EconomyApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Transaction>] as data
+  /// Returns a [Future] containing a [Response] with a [List<Transaction>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<Transaction>>> getSteamTransactions({
+  Future<Response<List<Transaction>>> getSteamTransactions({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -334,14 +327,12 @@ class EconomyApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Transaction> _responseData;
+    List<Transaction> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(Transaction)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<Transaction>;
+      _responseData = deserialize<List<Transaction>, Transaction>(
+          _response.data!, 'List<Transaction>',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -351,7 +342,7 @@ class EconomyApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<Transaction>>(
+    return Response<List<Transaction>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -374,9 +365,9 @@ class EconomyApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Subscription>] as data
+  /// Returns a [Future] containing a [Response] with a [List<Subscription>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<Subscription>>> getSubscriptions({
+  Future<Response<List<Subscription>>> getSubscriptions({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -418,14 +409,12 @@ class EconomyApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Subscription> _responseData;
+    List<Subscription> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(Subscription)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<Subscription>;
+      _responseData = deserialize<List<Subscription>, Subscription>(
+          _response.data!, 'List<Subscription>',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -435,7 +424,7 @@ class EconomyApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<Subscription>>(
+    return Response<List<Subscription>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

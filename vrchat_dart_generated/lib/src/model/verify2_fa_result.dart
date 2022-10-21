@@ -2,72 +2,41 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+// ignore_for_file: unused_element
+import 'package:json_annotation/json_annotation.dart';
 
 part 'verify2_fa_result.g.dart';
 
-/// Verify2FAResult
-///
-/// Properties:
-/// * [verified]
-abstract class Verify2FAResult
-    implements Built<Verify2FAResult, Verify2FAResultBuilder> {
-  @BuiltValueField(wireName: r'verified')
-  bool get verified;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class Verify2FAResult {
+  /// Returns a new [Verify2FAResult] instance.
+  Verify2FAResult({
+    required this.verified,
+  });
 
-  Verify2FAResult._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(Verify2FAResultBuilder b) => b;
-
-  factory Verify2FAResult([void updates(Verify2FAResultBuilder b)]) =
-      _$Verify2FAResult;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<Verify2FAResult> get serializer =>
-      _$Verify2FAResultSerializer();
-}
-
-class _$Verify2FAResultSerializer
-    implements StructuredSerializer<Verify2FAResult> {
-  @override
-  final Iterable<Type> types = const [Verify2FAResult, _$Verify2FAResult];
+  @JsonKey(name: r'verified', required: true, includeIfNull: false)
+  final bool verified;
 
   @override
-  final String wireName = r'Verify2FAResult';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Verify2FAResult && other.verified == verified;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Verify2FAResult object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'verified')
-      ..add(serializers.serialize(object.verified,
-          specifiedType: const FullType(bool)));
-    return result;
-  }
+  int get hashCode => verified.hashCode;
+
+  factory Verify2FAResult.fromJson(Map<String, dynamic> json) =>
+      _$Verify2FAResultFromJson(json);
+
+  Map<String, dynamic> toJson() => _$Verify2FAResultToJson(this);
 
   @override
-  Verify2FAResult deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = Verify2FAResultBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'verified':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.verified = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

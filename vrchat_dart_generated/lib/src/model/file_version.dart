@@ -2,160 +2,89 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/file_data.dart';
 import 'package:vrchat_dart_generated/src/model/file_status.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'file_version.g.dart';
 
-///
-///
-/// Properties:
-/// * [createdAt]
-/// * [deleted] - Usually only present if `true`
-/// * [delta]
-/// * [file]
-/// * [signature]
-/// * [status]
-/// * [version] - Incremental version counter, can only be increased.
-abstract class FileVersion implements Built<FileVersion, FileVersionBuilder> {
-  @BuiltValueField(wireName: r'created_at')
-  DateTime get createdAt;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class FileVersion {
+  /// Returns a new [FileVersion] instance.
+  FileVersion({
+    required this.createdAt,
+    this.deleted = true,
+    this.delta,
+    this.file,
+    this.signature,
+    required this.status,
+    this.version = 0,
+  });
+
+  @JsonKey(name: r'created_at', required: true, includeIfNull: false)
+  final DateTime createdAt;
 
   /// Usually only present if `true`
-  @BuiltValueField(wireName: r'deleted')
-  bool? get deleted;
+  @JsonKey(
+      defaultValue: true,
+      name: r'deleted',
+      required: false,
+      includeIfNull: false)
+  final bool? deleted;
 
-  @BuiltValueField(wireName: r'delta')
-  FileData? get delta;
+  @JsonKey(name: r'delta', required: false, includeIfNull: false)
+  final FileData? delta;
 
-  @BuiltValueField(wireName: r'file')
-  FileData? get file;
+  @JsonKey(name: r'file', required: false, includeIfNull: false)
+  final FileData? file;
 
-  @BuiltValueField(wireName: r'signature')
-  FileData? get signature;
+  @JsonKey(name: r'signature', required: false, includeIfNull: false)
+  final FileData? signature;
 
-  @BuiltValueField(wireName: r'status')
-  FileStatus get status;
-  // enum statusEnum {  waiting,  complete,  none,  queued,  };
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
+  final FileStatus status;
 
   /// Incremental version counter, can only be increased.
-  @BuiltValueField(wireName: r'version')
-  int get version;
-
-  FileVersion._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(FileVersionBuilder b) => b
-    ..deleted = true
-    ..version = 0;
-
-  factory FileVersion([void updates(FileVersionBuilder b)]) = _$FileVersion;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<FileVersion> get serializer => _$FileVersionSerializer();
-}
-
-class _$FileVersionSerializer implements StructuredSerializer<FileVersion> {
-  @override
-  final Iterable<Type> types = const [FileVersion, _$FileVersion];
+  // minimum: 0
+  @JsonKey(
+      defaultValue: 0, name: r'version', required: true, includeIfNull: false)
+  final int version;
 
   @override
-  final String wireName = r'FileVersion';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is FileVersion &&
+          other.createdAt == createdAt &&
+          other.deleted == deleted &&
+          other.delta == delta &&
+          other.file == file &&
+          other.signature == signature &&
+          other.status == status &&
+          other.version == version;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, FileVersion object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'created_at')
-      ..add(serializers.serialize(object.createdAt,
-          specifiedType: const FullType(DateTime)));
-    if (object.deleted != null) {
-      result
-        ..add(r'deleted')
-        ..add(serializers.serialize(object.deleted,
-            specifiedType: const FullType(bool)));
-    }
-    if (object.delta != null) {
-      result
-        ..add(r'delta')
-        ..add(serializers.serialize(object.delta,
-            specifiedType: const FullType(FileData)));
-    }
-    if (object.file != null) {
-      result
-        ..add(r'file')
-        ..add(serializers.serialize(object.file,
-            specifiedType: const FullType(FileData)));
-    }
-    if (object.signature != null) {
-      result
-        ..add(r'signature')
-        ..add(serializers.serialize(object.signature,
-            specifiedType: const FullType(FileData)));
-    }
-    result
-      ..add(r'status')
-      ..add(serializers.serialize(object.status,
-          specifiedType: const FullType(FileStatus)));
-    result
-      ..add(r'version')
-      ..add(serializers.serialize(object.version,
-          specifiedType: const FullType(int)));
-    return result;
-  }
+  int get hashCode =>
+      createdAt.hashCode +
+      deleted.hashCode +
+      delta.hashCode +
+      file.hashCode +
+      signature.hashCode +
+      status.hashCode +
+      version.hashCode;
+
+  factory FileVersion.fromJson(Map<String, dynamic> json) =>
+      _$FileVersionFromJson(json);
+
+  Map<String, dynamic> toJson() => _$FileVersionToJson(this);
 
   @override
-  FileVersion deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = FileVersionBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'created_at':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
-          result.createdAt = valueDes;
-          break;
-        case r'deleted':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.deleted = valueDes;
-          break;
-        case r'delta':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(FileData)) as FileData;
-          result.delta.replace(valueDes);
-          break;
-        case r'file':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(FileData)) as FileData;
-          result.file.replace(valueDes);
-          break;
-        case r'signature':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(FileData)) as FileData;
-          result.signature.replace(valueDes);
-          break;
-        case r'status':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(FileStatus)) as FileStatus;
-          result.status = valueDes;
-          break;
-        case r'version':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.version = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

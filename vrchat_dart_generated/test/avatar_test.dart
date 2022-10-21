@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for Avatar
 void main() {
-  final instance = AvatarBuilder();
-  // TODO add properties to the builder and call build()
+  final Avatar? instance = /* Avatar(...) */ null;
+  // TODO add properties to the entity
 
   group(Avatar, () {
     // Not present from general serach `/avatars`, only on specific requests `/avatars/{avatarId}`.
@@ -14,7 +14,7 @@ void main() {
     });
 
     // Not present from general serach `/avatars`, only on specific requests `/avatars/{avatarId}`. **Deprecation:** `Object` has unknown usage/fields, and is always empty. Use normal `Url` field instead.
-    // JsonObject assetUrlObject
+    // Object assetUrlObject
     test('to test the property `assetUrlObject`', () async {
       // TODO
     });
@@ -66,7 +66,7 @@ void main() {
     });
 
     //
-    // BuiltList<String> tags
+    // List<String> tags
     test('to test the property `tags`', () async {
       // TODO
     });
@@ -86,7 +86,7 @@ void main() {
       // TODO
     });
 
-    // BuiltSet<UnityPackage> unityPackages
+    // Set<UnityPackage> unityPackages
     test('to test the property `unityPackages`', () async {
       // TODO
     });

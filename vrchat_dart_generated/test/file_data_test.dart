@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for FileData
 void main() {
-  final instance = FileDataBuilder();
-  // TODO add properties to the builder and call build()
+  final FileData? instance = /* FileData(...) */ null;
+  // TODO add properties to the entity
 
   group(FileData, () {
     // String category (default value: 'queued')

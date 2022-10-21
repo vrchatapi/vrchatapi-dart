@@ -2,113 +2,64 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+// ignore_for_file: unused_element
+import 'package:json_annotation/json_annotation.dart';
 
 part 'finish_file_data_upload_request.g.dart';
 
-///
-///
-/// Properties:
-/// * [etags] - Array of ETags uploaded.
-/// * [nextPartNumber] - Always a zero in string form, despite how many parts uploaded.
-/// * [maxParts] - Always a zero in string form, despite how many parts uploaded.
-abstract class FinishFileDataUploadRequest
-    implements
-        Built<FinishFileDataUploadRequest, FinishFileDataUploadRequestBuilder> {
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class FinishFileDataUploadRequest {
+  /// Returns a new [FinishFileDataUploadRequest] instance.
+  FinishFileDataUploadRequest({
+    this.etags,
+    this.nextPartNumber = '0',
+    this.maxParts = '0',
+  });
+
   /// Array of ETags uploaded.
-  @BuiltValueField(wireName: r'etags')
-  BuiltSet<String>? get etags;
+  @JsonKey(name: r'etags', required: false, includeIfNull: false)
+  final Set<String>? etags;
 
   /// Always a zero in string form, despite how many parts uploaded.
-  @BuiltValueField(wireName: r'nextPartNumber')
-  String get nextPartNumber;
+  @JsonKey(
+      defaultValue: '0',
+      name: r'nextPartNumber',
+      required: true,
+      includeIfNull: false)
+  final String nextPartNumber;
 
   /// Always a zero in string form, despite how many parts uploaded.
-  @BuiltValueField(wireName: r'maxParts')
-  String get maxParts;
-
-  FinishFileDataUploadRequest._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(FinishFileDataUploadRequestBuilder b) => b
-    ..nextPartNumber = '0'
-    ..maxParts = '0';
-
-  factory FinishFileDataUploadRequest(
-          [void updates(FinishFileDataUploadRequestBuilder b)]) =
-      _$FinishFileDataUploadRequest;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<FinishFileDataUploadRequest> get serializer =>
-      _$FinishFileDataUploadRequestSerializer();
-}
-
-class _$FinishFileDataUploadRequestSerializer
-    implements StructuredSerializer<FinishFileDataUploadRequest> {
-  @override
-  final Iterable<Type> types = const [
-    FinishFileDataUploadRequest,
-    _$FinishFileDataUploadRequest
-  ];
+  @JsonKey(
+      defaultValue: '0',
+      name: r'maxParts',
+      required: true,
+      includeIfNull: false)
+  final String maxParts;
 
   @override
-  final String wireName = r'FinishFileDataUploadRequest';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is FinishFileDataUploadRequest &&
+          other.etags == etags &&
+          other.nextPartNumber == nextPartNumber &&
+          other.maxParts == maxParts;
 
   @override
-  Iterable<Object?> serialize(
-      Serializers serializers, FinishFileDataUploadRequest object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    if (object.etags != null) {
-      result
-        ..add(r'etags')
-        ..add(serializers.serialize(object.etags,
-            specifiedType: const FullType(BuiltSet, [FullType(String)])));
-    }
-    result
-      ..add(r'nextPartNumber')
-      ..add(serializers.serialize(object.nextPartNumber,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'maxParts')
-      ..add(serializers.serialize(object.maxParts,
-          specifiedType: const FullType(String)));
-    return result;
-  }
+  int get hashCode =>
+      etags.hashCode + nextPartNumber.hashCode + maxParts.hashCode;
+
+  factory FinishFileDataUploadRequest.fromJson(Map<String, dynamic> json) =>
+      _$FinishFileDataUploadRequestFromJson(json);
+
+  Map<String, dynamic> toJson() => _$FinishFileDataUploadRequestToJson(this);
 
   @override
-  FinishFileDataUploadRequest deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = FinishFileDataUploadRequestBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'etags':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltSet, [FullType(String)]))
-              as BuiltSet<String>;
-          result.etags.replace(valueDes);
-          break;
-        case r'nextPartNumber':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.nextPartNumber = valueDes;
-          break;
-        case r'maxParts':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.maxParts = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

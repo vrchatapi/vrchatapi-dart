@@ -118,7 +118,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getActiveWorlds**
-> BuiltList<LimitedWorld> getActiveWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform)
+> List<LimitedWorld> getActiveWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform)
 
 List Active Worlds
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;LimitedWorld&gt;**](LimitedWorld.md)
+[**List&lt;LimitedWorld&gt;**](LimitedWorld.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFavoritedWorlds**
-> BuiltList<LimitedWorld> getFavoritedWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId)
+> List<LimitedWorld> getFavoritedWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId)
 
 List Favorited Worlds
 
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;LimitedWorld&gt;**](LimitedWorld.md)
+[**List&lt;LimitedWorld&gt;**](LimitedWorld.md)
 
 ### Authorization
 
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getRecentWorlds**
-> BuiltList<LimitedWorld> getRecentWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId)
+> List<LimitedWorld> getRecentWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId)
 
 List Recent Worlds
 
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;LimitedWorld&gt;**](LimitedWorld.md)
+[**List&lt;LimitedWorld&gt;**](LimitedWorld.md)
 
 ### Authorization
 
@@ -345,7 +345,7 @@ Name | Type | Description  | Notes
 
 Get World by ID
 
-Get information about a specific World.
+Get information about a specific World. Works unauthenticated but when so will always return `0` for certain fields.
 
 ### Example
 ```dart
@@ -593,7 +593,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **searchWorlds**
-> BuiltList<LimitedWorld> searchWorlds(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform)
+> List<LimitedWorld> searchWorlds(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform)
 
 Search All Worlds
 
@@ -656,7 +656,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;LimitedWorld&gt;**](LimitedWorld.md)
+[**List&lt;LimitedWorld&gt;**](LimitedWorld.md)
 
 ### Authorization
 

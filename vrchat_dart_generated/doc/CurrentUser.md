@@ -9,23 +9,23 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **acceptedTOSVersion** | **int** |  | 
-**accountDeletionDate** | [**Date**](Date.md) |  | [optional] 
-**activeFriends** | **BuiltList&lt;String&gt;** |  | [optional] 
+**accountDeletionDate** | [**DateTime**](DateTime.md) |  | [optional] 
+**activeFriends** | **List&lt;String&gt;** |  | [optional] 
 **allowAvatarCopying** | **bool** |  | 
 **bio** | **String** |  | 
-**bioLinks** | **BuiltList&lt;String&gt;** |  | 
+**bioLinks** | **List&lt;String&gt;** |  | 
 **currentAvatar** | **String** |  | 
 **currentAvatarAssetUrl** | **String** |  | 
 **currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
 **currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
-**dateJoined** | [**Date**](Date.md) |  | 
+**dateJoined** | [**DateTime**](DateTime.md) |  | 
 **developerType** | [**DeveloperType**](DeveloperType.md) |  | 
 **displayName** | **String** |  | 
 **emailVerified** | **bool** |  | 
 **fallbackAvatar** | **String** |  | [optional] 
-**friendGroupNames** | **BuiltList&lt;String&gt;** | Always empty array. | 
+**friendGroupNames** | **List&lt;String&gt;** | Always empty array. | 
 **friendKey** | **String** |  | 
-**friends** | **BuiltList&lt;String&gt;** |  | 
+**friends** | **List&lt;String&gt;** |  | 
 **hasBirthday** | **bool** |  | 
 **hasEmail** | **bool** |  | 
 **hasLoggedInFromClient** | **bool** |  | 
@@ -38,18 +38,18 @@ Name | Type | Description | Notes
 **obfuscatedEmail** | **String** |  | 
 **obfuscatedPendingEmail** | **String** |  | 
 **oculusId** | **String** |  | 
-**offlineFriends** | **BuiltList&lt;String&gt;** |  | [optional] 
-**onlineFriends** | **BuiltList&lt;String&gt;** |  | [optional] 
-**pastDisplayNames** | [**BuiltList&lt;PastDisplayName&gt;**](PastDisplayName.md) |   | 
+**offlineFriends** | **List&lt;String&gt;** |  | [optional] 
+**onlineFriends** | **List&lt;String&gt;** |  | [optional] 
+**pastDisplayNames** | [**List&lt;PastDisplayName&gt;**](PastDisplayName.md) |   | 
 **profilePicOverride** | **String** |  | 
 **state** | [**UserState**](UserState.md) |  | 
 **status** | [**UserStatus**](UserStatus.md) |  | 
 **statusDescription** | **String** |  | 
 **statusFirstTime** | **bool** |  | 
-**statusHistory** | **BuiltList&lt;String&gt;** |  | 
-**steamDetails** | [**JsonObject**](.md) |  | 
+**statusHistory** | **List&lt;String&gt;** |  | 
+**steamDetails** | **Object** |  | 
 **steamId** | **String** |  | 
-**tags** | **BuiltList&lt;String&gt;** |  | 
+**tags** | **List&lt;String&gt;** |  | 
 **twoFactorAuthEnabled** | **bool** |  | 
 **twoFactorAuthEnabledDate** | [**DateTime**](DateTime.md) |  | [optional] 
 **unsubscribe** | **bool** |  | 

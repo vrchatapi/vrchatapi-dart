@@ -3,100 +3,36 @@
 part of 'response.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$Response extends Response {
-  @override
-  final String? message;
-  @override
-  final int statusCode;
+Response _$ResponseFromJson(Map<String, dynamic> json) => $checkedCreate(
+      'Response',
+      json,
+      ($checkedConvert) {
+        $checkKeys(
+          json,
+          requiredKeys: const ['status_code'],
+        );
+        final val = Response(
+          message: $checkedConvert('message', (v) => v as String?),
+          statusCode: $checkedConvert('status_code', (v) => v as int),
+        );
+        return val;
+      },
+      fieldKeyMap: const {'statusCode': 'status_code'},
+    );
 
-  factory _$Response([void Function(ResponseBuilder)? updates]) =>
-      (new ResponseBuilder()..update(updates))._build();
+Map<String, dynamic> _$ResponseToJson(Response instance) {
+  final val = <String, dynamic>{};
 
-  _$Response._({this.message, required this.statusCode}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        statusCode, r'Response', 'statusCode');
-  }
-
-  @override
-  Response rebuild(void Function(ResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  ResponseBuilder toBuilder() => new ResponseBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Response &&
-        message == other.message &&
-        statusCode == other.statusCode;
-  }
-
-  @override
-  int get hashCode {
-    return $jf($jc($jc(0, message.hashCode), statusCode.hashCode));
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'Response')
-          ..add('message', message)
-          ..add('statusCode', statusCode))
-        .toString();
-  }
-}
-
-class ResponseBuilder implements Builder<Response, ResponseBuilder> {
-  _$Response? _$v;
-
-  String? _message;
-  String? get message => _$this._message;
-  set message(String? message) => _$this._message = message;
-
-  int? _statusCode;
-  int? get statusCode => _$this._statusCode;
-  set statusCode(int? statusCode) => _$this._statusCode = statusCode;
-
-  ResponseBuilder() {
-    Response._defaults(this);
-  }
-
-  ResponseBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _message = $v.message;
-      _statusCode = $v.statusCode;
-      _$v = null;
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
     }
-    return this;
   }
 
-  @override
-  void replace(Response other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$Response;
-  }
-
-  @override
-  void update(void Function(ResponseBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Response build() => _build();
-
-  _$Response _build() {
-    final _$result = _$v ??
-        new _$Response._(
-            message: message,
-            statusCode: BuiltValueNullFieldError.checkNotNull(
-                statusCode, r'Response', 'statusCode'));
-    replace(_$result);
-    return _$result;
-  }
+  writeNotNull('message', instance.message);
+  val['status_code'] = instance.statusCode;
+  return val;
 }
-
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

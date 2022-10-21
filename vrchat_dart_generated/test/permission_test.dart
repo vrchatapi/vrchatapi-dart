@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for Permission
 void main() {
-  final instance = PermissionBuilder();
-  // TODO add properties to the builder and call build()
+  final Permission? instance = /* Permission(...) */ null;
+  // TODO add properties to the entity
 
   group(Permission, () {
     // String id
@@ -23,7 +23,7 @@ void main() {
       // TODO
     });
 
-    // JsonObject data
+    // Object data
     test('to test the property `data`', () async {
       // TODO
     });

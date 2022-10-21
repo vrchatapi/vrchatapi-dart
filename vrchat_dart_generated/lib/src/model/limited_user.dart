@@ -2,292 +2,150 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_collection/built_collection.dart';
+// ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'limited_user.g.dart';
 
-///
-///
-/// Properties:
-/// * [bio]
-/// * [currentAvatarImageUrl] - When profilePicOverride is not empty, use it instead.
-/// * [currentAvatarThumbnailImageUrl] - When profilePicOverride is not empty, use it instead.
-/// * [developerType]
-/// * [displayName]
-/// * [fallbackAvatar]
-/// * [id] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-/// * [isFriend]
-/// * [lastPlatform] - This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
-/// * [profilePicOverride]
-/// * [status]
-/// * [statusDescription]
-/// * [tags] - <- Always empty.
-/// * [userIcon]
-/// * [username]
-/// * [location]
-/// * [friendKey]
-abstract class LimitedUser implements Built<LimitedUser, LimitedUserBuilder> {
-  @BuiltValueField(wireName: r'bio')
-  String? get bio;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class LimitedUser {
+  /// Returns a new [LimitedUser] instance.
+  LimitedUser({
+    this.bio,
+    required this.currentAvatarImageUrl,
+    required this.currentAvatarThumbnailImageUrl,
+    required this.developerType,
+    required this.displayName,
+    required this.fallbackAvatar,
+    required this.id,
+    required this.isFriend,
+    required this.lastPlatform,
+    required this.profilePicOverride,
+    required this.status,
+    required this.statusDescription,
+    required this.tags,
+    required this.userIcon,
+    required this.username,
+    this.location,
+    this.friendKey,
+  });
+
+  @JsonKey(name: r'bio', required: false, includeIfNull: false)
+  final String? bio;
 
   /// When profilePicOverride is not empty, use it instead.
-  @BuiltValueField(wireName: r'currentAvatarImageUrl')
-  String get currentAvatarImageUrl;
+  @JsonKey(name: r'currentAvatarImageUrl', required: true, includeIfNull: false)
+  final String currentAvatarImageUrl;
 
   /// When profilePicOverride is not empty, use it instead.
-  @BuiltValueField(wireName: r'currentAvatarThumbnailImageUrl')
-  String get currentAvatarThumbnailImageUrl;
+  @JsonKey(
+      name: r'currentAvatarThumbnailImageUrl',
+      required: true,
+      includeIfNull: false)
+  final String currentAvatarThumbnailImageUrl;
 
-  @BuiltValueField(wireName: r'developerType')
-  DeveloperType get developerType;
-  // enum developerTypeEnum {  none,  trusted,  internal,  moderator,  };
+  @JsonKey(name: r'developerType', required: true, includeIfNull: false)
+  final DeveloperType developerType;
 
-  @BuiltValueField(wireName: r'displayName')
-  String get displayName;
+  @JsonKey(name: r'displayName', required: true, includeIfNull: false)
+  final String displayName;
 
-  @BuiltValueField(wireName: r'fallbackAvatar')
-  String get fallbackAvatar;
+  @JsonKey(name: r'fallbackAvatar', required: true, includeIfNull: false)
+  final String fallbackAvatar;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @BuiltValueField(wireName: r'id')
-  String get id;
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
 
-  @BuiltValueField(wireName: r'isFriend')
-  bool get isFriend;
+  @JsonKey(name: r'isFriend', required: true, includeIfNull: false)
+  final bool isFriend;
 
   /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
-  @BuiltValueField(wireName: r'last_platform')
-  String get lastPlatform;
+  @JsonKey(name: r'last_platform', required: true, includeIfNull: false)
+  final String lastPlatform;
 
-  @BuiltValueField(wireName: r'profilePicOverride')
-  String get profilePicOverride;
+  @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
+  final String profilePicOverride;
 
-  @BuiltValueField(wireName: r'status')
-  UserStatus get status;
-  // enum statusEnum {  active,  join me,  ask me,  busy,  offline,  };
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
+  final UserStatus status;
 
-  @BuiltValueField(wireName: r'statusDescription')
-  String get statusDescription;
+  @JsonKey(name: r'statusDescription', required: true, includeIfNull: false)
+  final String statusDescription;
 
   /// <- Always empty.
-  @BuiltValueField(wireName: r'tags')
-  BuiltList<String> get tags;
+  @JsonKey(name: r'tags', required: true, includeIfNull: false)
+  final List<String> tags;
 
-  @BuiltValueField(wireName: r'userIcon')
-  String get userIcon;
+  @JsonKey(name: r'userIcon', required: true, includeIfNull: false)
+  final String userIcon;
 
-  @BuiltValueField(wireName: r'username')
-  String get username;
+  @JsonKey(name: r'username', required: true, includeIfNull: false)
+  final String username;
 
-  @BuiltValueField(wireName: r'location')
-  String? get location;
+  @JsonKey(name: r'location', required: false, includeIfNull: false)
+  final String? location;
 
-  @BuiltValueField(wireName: r'friendKey')
-  String? get friendKey;
-
-  LimitedUser._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(LimitedUserBuilder b) => b;
-
-  factory LimitedUser([void updates(LimitedUserBuilder b)]) = _$LimitedUser;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<LimitedUser> get serializer => _$LimitedUserSerializer();
-}
-
-class _$LimitedUserSerializer implements StructuredSerializer<LimitedUser> {
-  @override
-  final Iterable<Type> types = const [LimitedUser, _$LimitedUser];
+  @JsonKey(name: r'friendKey', required: false, includeIfNull: false)
+  final String? friendKey;
 
   @override
-  final String wireName = r'LimitedUser';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is LimitedUser &&
+          other.bio == bio &&
+          other.currentAvatarImageUrl == currentAvatarImageUrl &&
+          other.currentAvatarThumbnailImageUrl ==
+              currentAvatarThumbnailImageUrl &&
+          other.developerType == developerType &&
+          other.displayName == displayName &&
+          other.fallbackAvatar == fallbackAvatar &&
+          other.id == id &&
+          other.isFriend == isFriend &&
+          other.lastPlatform == lastPlatform &&
+          other.profilePicOverride == profilePicOverride &&
+          other.status == status &&
+          other.statusDescription == statusDescription &&
+          other.tags == tags &&
+          other.userIcon == userIcon &&
+          other.username == username &&
+          other.location == location &&
+          other.friendKey == friendKey;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, LimitedUser object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    if (object.bio != null) {
-      result
-        ..add(r'bio')
-        ..add(serializers.serialize(object.bio,
-            specifiedType: const FullType(String)));
-    }
-    result
-      ..add(r'currentAvatarImageUrl')
-      ..add(serializers.serialize(object.currentAvatarImageUrl,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'currentAvatarThumbnailImageUrl')
-      ..add(serializers.serialize(object.currentAvatarThumbnailImageUrl,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'developerType')
-      ..add(serializers.serialize(object.developerType,
-          specifiedType: const FullType(DeveloperType)));
-    result
-      ..add(r'displayName')
-      ..add(serializers.serialize(object.displayName,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'fallbackAvatar')
-      ..add(serializers.serialize(object.fallbackAvatar,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'id')
-      ..add(serializers.serialize(object.id,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'isFriend')
-      ..add(serializers.serialize(object.isFriend,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'last_platform')
-      ..add(serializers.serialize(object.lastPlatform,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'profilePicOverride')
-      ..add(serializers.serialize(object.profilePicOverride,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'status')
-      ..add(serializers.serialize(object.status,
-          specifiedType: const FullType(UserStatus)));
-    result
-      ..add(r'statusDescription')
-      ..add(serializers.serialize(object.statusDescription,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'tags')
-      ..add(serializers.serialize(object.tags,
-          specifiedType: const FullType(BuiltList, [FullType(String)])));
-    result
-      ..add(r'userIcon')
-      ..add(serializers.serialize(object.userIcon,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'username')
-      ..add(serializers.serialize(object.username,
-          specifiedType: const FullType(String)));
-    if (object.location != null) {
-      result
-        ..add(r'location')
-        ..add(serializers.serialize(object.location,
-            specifiedType: const FullType(String)));
-    }
-    if (object.friendKey != null) {
-      result
-        ..add(r'friendKey')
-        ..add(serializers.serialize(object.friendKey,
-            specifiedType: const FullType(String)));
-    }
-    return result;
-  }
+  int get hashCode =>
+      bio.hashCode +
+      currentAvatarImageUrl.hashCode +
+      currentAvatarThumbnailImageUrl.hashCode +
+      developerType.hashCode +
+      displayName.hashCode +
+      fallbackAvatar.hashCode +
+      id.hashCode +
+      isFriend.hashCode +
+      lastPlatform.hashCode +
+      profilePicOverride.hashCode +
+      status.hashCode +
+      statusDescription.hashCode +
+      tags.hashCode +
+      userIcon.hashCode +
+      username.hashCode +
+      location.hashCode +
+      friendKey.hashCode;
+
+  factory LimitedUser.fromJson(Map<String, dynamic> json) =>
+      _$LimitedUserFromJson(json);
+
+  Map<String, dynamic> toJson() => _$LimitedUserToJson(this);
 
   @override
-  LimitedUser deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = LimitedUserBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'bio':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.bio = valueDes;
-          break;
-        case r'currentAvatarImageUrl':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.currentAvatarImageUrl = valueDes;
-          break;
-        case r'currentAvatarThumbnailImageUrl':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.currentAvatarThumbnailImageUrl = valueDes;
-          break;
-        case r'developerType':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(DeveloperType)) as DeveloperType;
-          result.developerType = valueDes;
-          break;
-        case r'displayName':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.displayName = valueDes;
-          break;
-        case r'fallbackAvatar':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.fallbackAvatar = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.id = valueDes;
-          break;
-        case r'isFriend':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.isFriend = valueDes;
-          break;
-        case r'last_platform':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.lastPlatform = valueDes;
-          break;
-        case r'profilePicOverride':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.profilePicOverride = valueDes;
-          break;
-        case r'status':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(UserStatus)) as UserStatus;
-          result.status = valueDes;
-          break;
-        case r'statusDescription':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.statusDescription = valueDes;
-          break;
-        case r'tags':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>;
-          result.tags.replace(valueDes);
-          break;
-        case r'userIcon':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.userIcon = valueDes;
-          break;
-        case r'username':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.username = valueDes;
-          break;
-        case r'location':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.location = valueDes;
-          break;
-        case r'friendKey':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.friendKey = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

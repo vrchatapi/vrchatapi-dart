@@ -82,7 +82,7 @@ void main() {
     //
     // Returns a list of files
     //
-    //Future<BuiltList<File>> getFiles({ String tag, String userId, int n, int offset }) async
+    //Future<List<File>> getFiles({ String tag, String userId, int n, int offset }) async
     test('test getFiles', () async {
       // TODO
     });

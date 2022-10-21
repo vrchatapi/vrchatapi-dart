@@ -4,7 +4,9 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:vrchat_dart_generated/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:vrchat_dart_generated/src/model/instance.dart';
@@ -14,9 +16,7 @@ import 'package:vrchat_dart_generated/src/model/success.dart';
 class InstancesApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const InstancesApi(this._dio, this._serializers);
+  const InstancesApi(this._dio);
 
   /// Get Instance
   /// Returns an instance. Please read [Instances Tutorial](https://vrchatapi.github.io/tutorials/instances/) for more information on Instances.  If an invalid instanceId is provided, this endpoint will simply return \&quot;null\&quot;!
@@ -82,11 +82,9 @@ class InstancesApi {
     Instance _responseData;
 
     try {
-      const _responseType = FullType(Instance);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Instance;
+      _responseData = deserialize<Instance, Instance>(
+          _response.data!, 'Instance',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -169,11 +167,9 @@ class InstancesApi {
     Instance _responseData;
 
     try {
-      const _responseType = FullType(Instance);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Instance;
+      _responseData = deserialize<Instance, Instance>(
+          _response.data!, 'Instance',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -259,11 +255,10 @@ class InstancesApi {
     InstanceShortNameResponse _responseData;
 
     try {
-      const _responseType = FullType(InstanceShortNameResponse);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as InstanceShortNameResponse;
+      _responseData =
+          deserialize<InstanceShortNameResponse, InstanceShortNameResponse>(
+              _response.data!, 'InstanceShortNameResponse',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -349,11 +344,8 @@ class InstancesApi {
     Success _responseData;
 
     try {
-      const _responseType = FullType(Success);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Success;
+      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

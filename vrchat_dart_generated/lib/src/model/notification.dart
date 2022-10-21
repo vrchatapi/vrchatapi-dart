@@ -2,168 +2,94 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/notification_type.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'notification.g.dart';
 
-///
-///
-/// Properties:
-/// * [createdAt]
-/// * [details] - **NOTICE:** This is not a JSON object, this is a json **encoded** object, meaning you have to json-de-encode to get the NotificationDetail object depending on the NotificationType.
-/// * [id]
-/// * [message] -
-/// * [seen]
-/// * [senderUserId] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-/// * [senderUsername]
-/// * [type]
-abstract class Notification
-    implements Built<Notification, NotificationBuilder> {
-  @BuiltValueField(wireName: r'created_at')
-  DateTime get createdAt;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class Notification {
+  /// Returns a new [Notification] instance.
+  Notification({
+    required this.createdAt,
+    this.details = '{}',
+    required this.id,
+    required this.message,
+    this.seen = false,
+    required this.senderUserId,
+    required this.senderUsername,
+    required this.type,
+  });
+
+  @JsonKey(name: r'created_at', required: true, includeIfNull: false)
+  final DateTime createdAt;
 
   /// **NOTICE:** This is not a JSON object, this is a json **encoded** object, meaning you have to json-de-encode to get the NotificationDetail object depending on the NotificationType.
-  @BuiltValueField(wireName: r'details')
-  String get details;
+  @JsonKey(
+      defaultValue: '{}',
+      name: r'details',
+      required: true,
+      includeIfNull: false)
+  final String details;
 
-  @BuiltValueField(wireName: r'id')
-  String get id;
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
 
   ///
-  @BuiltValueField(wireName: r'message')
-  String get message;
+  @JsonKey(name: r'message', required: true, includeIfNull: false)
+  final String message;
 
-  @BuiltValueField(wireName: r'seen')
-  bool get seen;
+  @JsonKey(
+      defaultValue: false, name: r'seen', required: true, includeIfNull: false)
+  final bool seen;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @BuiltValueField(wireName: r'senderUserId')
-  String get senderUserId;
+  @JsonKey(name: r'senderUserId', required: true, includeIfNull: false)
+  final String senderUserId;
 
-  @BuiltValueField(wireName: r'senderUsername')
-  String get senderUsername;
+  @JsonKey(name: r'senderUsername', required: true, includeIfNull: false)
+  final String senderUsername;
 
-  @BuiltValueField(wireName: r'type')
-  NotificationType get type;
-  // enum typeEnum {  friendRequest,  invite,  inviteResponse,  requestInvite,  requestInviteResponse,  votetokick,  };
-
-  Notification._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(NotificationBuilder b) => b
-    ..details = '{}'
-    ..seen = false;
-
-  factory Notification([void updates(NotificationBuilder b)]) = _$Notification;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<Notification> get serializer => _$NotificationSerializer();
-}
-
-class _$NotificationSerializer implements StructuredSerializer<Notification> {
-  @override
-  final Iterable<Type> types = const [Notification, _$Notification];
+  @JsonKey(name: r'type', required: true, includeIfNull: false)
+  final NotificationType type;
 
   @override
-  final String wireName = r'Notification';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Notification &&
+          other.createdAt == createdAt &&
+          other.details == details &&
+          other.id == id &&
+          other.message == message &&
+          other.seen == seen &&
+          other.senderUserId == senderUserId &&
+          other.senderUsername == senderUsername &&
+          other.type == type;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Notification object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'created_at')
-      ..add(serializers.serialize(object.createdAt,
-          specifiedType: const FullType(DateTime)));
-    result
-      ..add(r'details')
-      ..add(serializers.serialize(object.details,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'id')
-      ..add(serializers.serialize(object.id,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'message')
-      ..add(serializers.serialize(object.message,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'seen')
-      ..add(serializers.serialize(object.seen,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'senderUserId')
-      ..add(serializers.serialize(object.senderUserId,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'senderUsername')
-      ..add(serializers.serialize(object.senderUsername,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'type')
-      ..add(serializers.serialize(object.type,
-          specifiedType: const FullType(NotificationType)));
-    return result;
-  }
+  int get hashCode =>
+      createdAt.hashCode +
+      details.hashCode +
+      id.hashCode +
+      message.hashCode +
+      seen.hashCode +
+      senderUserId.hashCode +
+      senderUsername.hashCode +
+      type.hashCode;
+
+  factory Notification.fromJson(Map<String, dynamic> json) =>
+      _$NotificationFromJson(json);
+
+  Map<String, dynamic> toJson() => _$NotificationToJson(this);
 
   @override
-  Notification deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = NotificationBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'created_at':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
-          result.createdAt = valueDes;
-          break;
-        case r'details':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.details = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.id = valueDes;
-          break;
-        case r'message':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.message = valueDes;
-          break;
-        case r'seen':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.seen = valueDes;
-          break;
-        case r'senderUserId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.senderUserId = valueDes;
-          break;
-        case r'senderUsername':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.senderUsername = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(NotificationType))
-              as NotificationType;
-          result.type = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

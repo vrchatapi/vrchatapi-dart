@@ -2,87 +2,50 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+// ignore_for_file: unused_element
+import 'package:json_annotation/json_annotation.dart';
 
 part 'invite_request.g.dart';
 
-/// InviteRequest
-///
-/// Properties:
-/// * [instanceId] - InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
-/// * [messageSlot]
-abstract class InviteRequest
-    implements Built<InviteRequest, InviteRequestBuilder> {
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class InviteRequest {
+  /// Returns a new [InviteRequest] instance.
+  InviteRequest({
+    required this.instanceId,
+    this.messageSlot,
+  });
+
   /// InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
-  @BuiltValueField(wireName: r'instanceId')
-  String get instanceId;
+  @JsonKey(name: r'instanceId', required: true, includeIfNull: false)
+  final String instanceId;
 
-  @BuiltValueField(wireName: r'messageSlot')
-  int? get messageSlot;
-
-  InviteRequest._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(InviteRequestBuilder b) => b;
-
-  factory InviteRequest([void updates(InviteRequestBuilder b)]) =
-      _$InviteRequest;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<InviteRequest> get serializer =>
-      _$InviteRequestSerializer();
-}
-
-class _$InviteRequestSerializer implements StructuredSerializer<InviteRequest> {
-  @override
-  final Iterable<Type> types = const [InviteRequest, _$InviteRequest];
+  // minimum: 0
+  // maximum: 11
+  @JsonKey(name: r'messageSlot', required: false, includeIfNull: false)
+  final int? messageSlot;
 
   @override
-  final String wireName = r'InviteRequest';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is InviteRequest &&
+          other.instanceId == instanceId &&
+          other.messageSlot == messageSlot;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, InviteRequest object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'instanceId')
-      ..add(serializers.serialize(object.instanceId,
-          specifiedType: const FullType(String)));
-    if (object.messageSlot != null) {
-      result
-        ..add(r'messageSlot')
-        ..add(serializers.serialize(object.messageSlot,
-            specifiedType: const FullType(int)));
-    }
-    return result;
-  }
+  int get hashCode => instanceId.hashCode + messageSlot.hashCode;
+
+  factory InviteRequest.fromJson(Map<String, dynamic> json) =>
+      _$InviteRequestFromJson(json);
+
+  Map<String, dynamic> toJson() => _$InviteRequestToJson(this);
 
   @override
-  InviteRequest deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = InviteRequestBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'instanceId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.instanceId = valueDes;
-          break;
-        case r'messageSlot':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.messageSlot = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:vrchat_dart_generated/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/friend_status.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user.dart';
 import 'package:vrchat_dart_generated/src/model/notification.dart';
@@ -17,9 +17,7 @@ import 'package:vrchat_dart_generated/src/model/success.dart';
 class FriendsApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const FriendsApi(this._dio, this._serializers);
+  const FriendsApi(this._dio);
 
   /// Delete Friend Request
   /// Deletes an outgoing pending friend request to another user. To delete an incoming friend request, use the &#x60;deleteNotification&#x60; endpoint instead.
@@ -82,11 +80,8 @@ class FriendsApi {
     Success _responseData;
 
     try {
-      const _responseType = FullType(Success);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Success;
+      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -169,11 +164,9 @@ class FriendsApi {
     Notification _responseData;
 
     try {
-      const _responseType = FullType(Notification);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Notification;
+      _responseData = deserialize<Notification, Notification>(
+          _response.data!, 'Notification',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -256,11 +249,9 @@ class FriendsApi {
     FriendStatus _responseData;
 
     try {
-      const _responseType = FullType(FriendStatus);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as FriendStatus;
+      _responseData = deserialize<FriendStatus, FriendStatus>(
+          _response.data!, 'FriendStatus',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -296,9 +287,9 @@ class FriendsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<LimitedUser>] as data
+  /// Returns a [Future] containing a [Response] with a [List<LimitedUser>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<LimitedUser>>> getFriends({
+  Future<Response<List<LimitedUser>>> getFriends({
     int? offset,
     int? n = 60,
     bool? offline,
@@ -336,14 +327,9 @@ class FriendsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
-      if (n != null)
-        r'n': encodeQueryParameter(_serializers, n, const FullType(int)),
-      if (offline != null)
-        r'offline':
-            encodeQueryParameter(_serializers, offline, const FullType(bool)),
+      if (offset != null) r'offset': offset,
+      if (n != null) r'n': n,
+      if (offline != null) r'offline': offline,
     };
 
     final _response = await _dio.request<Object>(
@@ -355,14 +341,12 @@ class FriendsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<LimitedUser> _responseData;
+    List<LimitedUser> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(LimitedUser)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<LimitedUser>;
+      _responseData = deserialize<List<LimitedUser>, LimitedUser>(
+          _response.data!, 'List<LimitedUser>',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -372,7 +356,7 @@ class FriendsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<LimitedUser>>(
+    return Response<List<LimitedUser>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -445,11 +429,8 @@ class FriendsApi {
     Success _responseData;
 
     try {
-      const _responseType = FullType(Success);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Success;
+      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

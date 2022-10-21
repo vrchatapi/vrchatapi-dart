@@ -10,7 +10,7 @@ void main() {
     //
     // Returns a list of all permissions currently granted by the user. Permissions are assigned e.g. by subscribing to VRC+.
     //
-    //Future<BuiltList<Permission>> getAssignedPermissions() async
+    //Future<List<Permission>> getAssignedPermissions() async
     test('test getAssignedPermissions', () async {
       // TODO
     });

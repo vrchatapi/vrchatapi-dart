@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for WorldPublishStatus
 void main() {
-  final instance = WorldPublishStatusBuilder();
-  // TODO add properties to the builder and call build()
+  final WorldPublishStatus? instance = /* WorldPublishStatus(...) */ null;
+  // TODO add properties to the entity
 
   group(WorldPublishStatus, () {
     // bool canPubilsh (default value: true)

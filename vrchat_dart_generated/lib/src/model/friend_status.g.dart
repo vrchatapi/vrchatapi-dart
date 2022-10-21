@@ -3,124 +3,36 @@
 part of 'friend_status.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$FriendStatus extends FriendStatus {
-  @override
-  final bool incomingRequest;
-  @override
-  final bool isFriend;
-  @override
-  final bool outgoingRequest;
+FriendStatus _$FriendStatusFromJson(Map<String, dynamic> json) =>
+    $checkedCreate(
+      'FriendStatus',
+      json,
+      ($checkedConvert) {
+        $checkKeys(
+          json,
+          requiredKeys: const [
+            'incomingRequest',
+            'isFriend',
+            'outgoingRequest'
+          ],
+        );
+        final val = FriendStatus(
+          incomingRequest:
+              $checkedConvert('incomingRequest', (v) => v as bool? ?? false),
+          isFriend: $checkedConvert('isFriend', (v) => v as bool? ?? false),
+          outgoingRequest:
+              $checkedConvert('outgoingRequest', (v) => v as bool? ?? false),
+        );
+        return val;
+      },
+    );
 
-  factory _$FriendStatus([void Function(FriendStatusBuilder)? updates]) =>
-      (new FriendStatusBuilder()..update(updates))._build();
-
-  _$FriendStatus._(
-      {required this.incomingRequest,
-      required this.isFriend,
-      required this.outgoingRequest})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        incomingRequest, r'FriendStatus', 'incomingRequest');
-    BuiltValueNullFieldError.checkNotNull(
-        isFriend, r'FriendStatus', 'isFriend');
-    BuiltValueNullFieldError.checkNotNull(
-        outgoingRequest, r'FriendStatus', 'outgoingRequest');
-  }
-
-  @override
-  FriendStatus rebuild(void Function(FriendStatusBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  FriendStatusBuilder toBuilder() => new FriendStatusBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is FriendStatus &&
-        incomingRequest == other.incomingRequest &&
-        isFriend == other.isFriend &&
-        outgoingRequest == other.outgoingRequest;
-  }
-
-  @override
-  int get hashCode {
-    return $jf($jc($jc($jc(0, incomingRequest.hashCode), isFriend.hashCode),
-        outgoingRequest.hashCode));
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'FriendStatus')
-          ..add('incomingRequest', incomingRequest)
-          ..add('isFriend', isFriend)
-          ..add('outgoingRequest', outgoingRequest))
-        .toString();
-  }
-}
-
-class FriendStatusBuilder
-    implements Builder<FriendStatus, FriendStatusBuilder> {
-  _$FriendStatus? _$v;
-
-  bool? _incomingRequest;
-  bool? get incomingRequest => _$this._incomingRequest;
-  set incomingRequest(bool? incomingRequest) =>
-      _$this._incomingRequest = incomingRequest;
-
-  bool? _isFriend;
-  bool? get isFriend => _$this._isFriend;
-  set isFriend(bool? isFriend) => _$this._isFriend = isFriend;
-
-  bool? _outgoingRequest;
-  bool? get outgoingRequest => _$this._outgoingRequest;
-  set outgoingRequest(bool? outgoingRequest) =>
-      _$this._outgoingRequest = outgoingRequest;
-
-  FriendStatusBuilder() {
-    FriendStatus._defaults(this);
-  }
-
-  FriendStatusBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _incomingRequest = $v.incomingRequest;
-      _isFriend = $v.isFriend;
-      _outgoingRequest = $v.outgoingRequest;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(FriendStatus other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$FriendStatus;
-  }
-
-  @override
-  void update(void Function(FriendStatusBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  FriendStatus build() => _build();
-
-  _$FriendStatus _build() {
-    final _$result = _$v ??
-        new _$FriendStatus._(
-            incomingRequest: BuiltValueNullFieldError.checkNotNull(
-                incomingRequest, r'FriendStatus', 'incomingRequest'),
-            isFriend: BuiltValueNullFieldError.checkNotNull(
-                isFriend, r'FriendStatus', 'isFriend'),
-            outgoingRequest: BuiltValueNullFieldError.checkNotNull(
-                outgoingRequest, r'FriendStatus', 'outgoingRequest'));
-    replace(_$result);
-    return _$result;
-  }
-}
-
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas
+Map<String, dynamic> _$FriendStatusToJson(FriendStatus instance) =>
+    <String, dynamic>{
+      'incomingRequest': instance.incomingRequest,
+      'isFriend': instance.isFriend,
+      'outgoingRequest': instance.outgoingRequest,
+    };

@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **expires** | [**DateTime**](DateTime.md) |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
-**licenseGroups** | **BuiltList&lt;String&gt;** |  | 
+**licenseGroups** | **List&lt;String&gt;** |  | 
 **isGift** | **bool** |  | [default to false]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

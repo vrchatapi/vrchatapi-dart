@@ -2,200 +2,104 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+// ignore_for_file: unused_element
+import 'package:json_annotation/json_annotation.dart';
 
 part 'unity_package.g.dart';
 
-///
-///
-/// Properties:
-/// * [assetUrl]
-/// * [assetUrlObject]
-/// * [assetVersion]
-/// * [createdAt]
-/// * [id]
-/// * [platform] - This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
-/// * [pluginUrl]
-/// * [pluginUrlObject]
-/// * [unitySortNumber]
-/// * [unityVersion]
-abstract class UnityPackage
-    implements Built<UnityPackage, UnityPackageBuilder> {
-  @BuiltValueField(wireName: r'assetUrl')
-  String? get assetUrl;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class UnityPackage {
+  /// Returns a new [UnityPackage] instance.
+  UnityPackage({
+    this.assetUrl,
+    this.assetUrlObject,
+    required this.assetVersion,
+    this.createdAt,
+    required this.id,
+    required this.platform,
+    this.pluginUrl,
+    this.pluginUrlObject,
+    this.unitySortNumber,
+    this.unityVersion = '5.3.4p1',
+  });
 
-  @BuiltValueField(wireName: r'assetUrlObject')
-  JsonObject? get assetUrlObject;
+  @JsonKey(name: r'assetUrl', required: false, includeIfNull: false)
+  final String? assetUrl;
 
-  @BuiltValueField(wireName: r'assetVersion')
-  int get assetVersion;
+  @JsonKey(name: r'assetUrlObject', required: false, includeIfNull: false)
+  final Object? assetUrlObject;
 
-  @BuiltValueField(wireName: r'created_at')
-  DateTime? get createdAt;
+  // minimum: 0
+  @JsonKey(name: r'assetVersion', required: true, includeIfNull: false)
+  final int assetVersion;
 
-  @BuiltValueField(wireName: r'id')
-  String get id;
+  @JsonKey(name: r'created_at', required: false, includeIfNull: false)
+  final DateTime? createdAt;
+
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
 
   /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
-  @BuiltValueField(wireName: r'platform')
-  String get platform;
+  @JsonKey(name: r'platform', required: true, includeIfNull: false)
+  final String platform;
 
-  @BuiltValueField(wireName: r'pluginUrl')
-  String? get pluginUrl;
+  @JsonKey(name: r'pluginUrl', required: false, includeIfNull: false)
+  final String? pluginUrl;
 
-  @BuiltValueField(wireName: r'pluginUrlObject')
-  JsonObject? get pluginUrlObject;
+  @JsonKey(name: r'pluginUrlObject', required: false, includeIfNull: false)
+  final Object? pluginUrlObject;
 
-  @BuiltValueField(wireName: r'unitySortNumber')
-  int? get unitySortNumber;
+  // minimum: 0
+  @JsonKey(name: r'unitySortNumber', required: false, includeIfNull: false)
+  final int? unitySortNumber;
 
-  @BuiltValueField(wireName: r'unityVersion')
-  String get unityVersion;
-
-  UnityPackage._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UnityPackageBuilder b) => b..unityVersion = '5.3.4p1';
-
-  factory UnityPackage([void updates(UnityPackageBuilder b)]) = _$UnityPackage;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<UnityPackage> get serializer => _$UnityPackageSerializer();
-}
-
-class _$UnityPackageSerializer implements StructuredSerializer<UnityPackage> {
-  @override
-  final Iterable<Type> types = const [UnityPackage, _$UnityPackage];
+  @JsonKey(
+      defaultValue: '5.3.4p1',
+      name: r'unityVersion',
+      required: true,
+      includeIfNull: false)
+  final String unityVersion;
 
   @override
-  final String wireName = r'UnityPackage';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is UnityPackage &&
+          other.assetUrl == assetUrl &&
+          other.assetUrlObject == assetUrlObject &&
+          other.assetVersion == assetVersion &&
+          other.createdAt == createdAt &&
+          other.id == id &&
+          other.platform == platform &&
+          other.pluginUrl == pluginUrl &&
+          other.pluginUrlObject == pluginUrlObject &&
+          other.unitySortNumber == unitySortNumber &&
+          other.unityVersion == unityVersion;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, UnityPackage object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    if (object.assetUrl != null) {
-      result
-        ..add(r'assetUrl')
-        ..add(serializers.serialize(object.assetUrl,
-            specifiedType: const FullType(String)));
-    }
-    if (object.assetUrlObject != null) {
-      result
-        ..add(r'assetUrlObject')
-        ..add(serializers.serialize(object.assetUrlObject,
-            specifiedType: const FullType(JsonObject)));
-    }
-    result
-      ..add(r'assetVersion')
-      ..add(serializers.serialize(object.assetVersion,
-          specifiedType: const FullType(int)));
-    if (object.createdAt != null) {
-      result
-        ..add(r'created_at')
-        ..add(serializers.serialize(object.createdAt,
-            specifiedType: const FullType(DateTime)));
-    }
-    result
-      ..add(r'id')
-      ..add(serializers.serialize(object.id,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'platform')
-      ..add(serializers.serialize(object.platform,
-          specifiedType: const FullType(String)));
-    if (object.pluginUrl != null) {
-      result
-        ..add(r'pluginUrl')
-        ..add(serializers.serialize(object.pluginUrl,
-            specifiedType: const FullType(String)));
-    }
-    if (object.pluginUrlObject != null) {
-      result
-        ..add(r'pluginUrlObject')
-        ..add(serializers.serialize(object.pluginUrlObject,
-            specifiedType: const FullType(JsonObject)));
-    }
-    if (object.unitySortNumber != null) {
-      result
-        ..add(r'unitySortNumber')
-        ..add(serializers.serialize(object.unitySortNumber,
-            specifiedType: const FullType(int)));
-    }
-    result
-      ..add(r'unityVersion')
-      ..add(serializers.serialize(object.unityVersion,
-          specifiedType: const FullType(String)));
-    return result;
-  }
+  int get hashCode =>
+      assetUrl.hashCode +
+      assetUrlObject.hashCode +
+      assetVersion.hashCode +
+      createdAt.hashCode +
+      id.hashCode +
+      platform.hashCode +
+      pluginUrl.hashCode +
+      pluginUrlObject.hashCode +
+      unitySortNumber.hashCode +
+      unityVersion.hashCode;
+
+  factory UnityPackage.fromJson(Map<String, dynamic> json) =>
+      _$UnityPackageFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UnityPackageToJson(this);
 
   @override
-  UnityPackage deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = UnityPackageBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'assetUrl':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.assetUrl = valueDes;
-          break;
-        case r'assetUrlObject':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(JsonObject)) as JsonObject;
-          result.assetUrlObject = valueDes;
-          break;
-        case r'assetVersion':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.assetVersion = valueDes;
-          break;
-        case r'created_at':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
-          result.createdAt = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.id = valueDes;
-          break;
-        case r'platform':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.platform = valueDes;
-          break;
-        case r'pluginUrl':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.pluginUrl = valueDes;
-          break;
-        case r'pluginUrlObject':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(JsonObject)) as JsonObject;
-          result.pluginUrlObject = valueDes;
-          break;
-        case r'unitySortNumber':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.unitySortNumber = valueDes;
-          break;
-        case r'unityVersion':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.unityVersion = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

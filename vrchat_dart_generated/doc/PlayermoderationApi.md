@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPlayerModerations**
-> BuiltList<PlayerModeration> getPlayerModerations(type, targetUserId)
+> List<PlayerModeration> getPlayerModerations(type, targetUserId)
 
 Search Player Moderations
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;PlayerModeration&gt;**](PlayerModeration.md)
+[**List&lt;PlayerModeration&gt;**](PlayerModeration.md)
 
 ### Authorization
 

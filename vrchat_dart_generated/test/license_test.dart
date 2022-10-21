@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for License
 void main() {
-  final instance = LicenseBuilder();
-  // TODO add properties to the builder and call build()
+  final License? instance = /* License(...) */ null;
+  // TODO add properties to the entity
 
   group(License, () {
     // Either a AvatarID, LicenseGroupID, PermissionID or ProductID. This depends on the `forType` field.

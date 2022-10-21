@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for LimitedUser
 void main() {
-  final instance = LimitedUserBuilder();
-  // TODO add properties to the builder and call build()
+  final LimitedUser? instance = /* LimitedUser(...) */ null;
+  // TODO add properties to the entity
 
   group(LimitedUser, () {
     // String bio
@@ -72,7 +72,7 @@ void main() {
     });
 
     // <- Always empty.
-    // BuiltList<String> tags
+    // List<String> tags
     test('to test the property `tags`', () async {
       // TODO
     });

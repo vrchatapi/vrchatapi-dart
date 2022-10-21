@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for Instance
 void main() {
-  final instance = InstanceBuilder();
-  // TODO add properties to the builder and call build()
+  final Instance? instance = /* Instance(...) */ null;
+  // TODO add properties to the entity
 
   group(Instance, () {
     // bool active (default value: true)
@@ -97,7 +97,7 @@ void main() {
     });
 
     // The tags array on Instances usually contain the language tags of the people in the instance.
-    // BuiltList<String> tags
+    // List<String> tags
     test('to test the property `tags`', () async {
       // TODO
     });

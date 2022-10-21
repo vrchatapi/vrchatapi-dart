@@ -2,70 +2,40 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/response.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'error.g.dart';
 
-/// Error
-///
-/// Properties:
-/// * [error]
-abstract class Error implements Built<Error, ErrorBuilder> {
-  @BuiltValueField(wireName: r'error')
-  Response? get error;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class Error {
+  /// Returns a new [Error] instance.
+  Error({
+    this.error,
+  });
 
-  Error._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ErrorBuilder b) => b;
-
-  factory Error([void updates(ErrorBuilder b)]) = _$Error;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<Error> get serializer => _$ErrorSerializer();
-}
-
-class _$ErrorSerializer implements StructuredSerializer<Error> {
-  @override
-  final Iterable<Type> types = const [Error, _$Error];
+  @JsonKey(name: r'error', required: false, includeIfNull: false)
+  final Response? error;
 
   @override
-  final String wireName = r'Error';
+  bool operator ==(Object other) =>
+      identical(this, other) || other is Error && other.error == error;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Error object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    if (object.error != null) {
-      result
-        ..add(r'error')
-        ..add(serializers.serialize(object.error,
-            specifiedType: const FullType(Response)));
-    }
-    return result;
-  }
+  int get hashCode => error.hashCode;
+
+  factory Error.fromJson(Map<String, dynamic> json) => _$ErrorFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ErrorToJson(this);
 
   @override
-  Error deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = ErrorBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'error':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(Response)) as Response;
-          result.error.replace(valueDes);
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

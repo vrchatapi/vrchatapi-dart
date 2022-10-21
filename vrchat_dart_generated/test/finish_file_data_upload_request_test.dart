@@ -3,12 +3,13 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for FinishFileDataUploadRequest
 void main() {
-  final instance = FinishFileDataUploadRequestBuilder();
-  // TODO add properties to the builder and call build()
+  final FinishFileDataUploadRequest?
+      instance = /* FinishFileDataUploadRequest(...) */ null;
+  // TODO add properties to the entity
 
   group(FinishFileDataUploadRequest, () {
     // Array of ETags uploaded.
-    // BuiltSet<String> etags
+    // Set<String> etags
     test('to test the property `etags`', () async {
       // TODO
     });

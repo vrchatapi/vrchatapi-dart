@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for AddFavoriteRequest
 void main() {
-  final instance = AddFavoriteRequestBuilder();
-  // TODO add properties to the builder and call build()
+  final AddFavoriteRequest? instance = /* AddFavoriteRequest(...) */ null;
+  // TODO add properties to the entity
 
   group(AddFavoriteRequest, () {
     // FavoriteType type
@@ -19,7 +19,7 @@ void main() {
     });
 
     // Tags indicate which group this favorite belongs to. Adding multiple groups makes it show up in all. Removing it from one in that case removes it from all.
-    // BuiltList<String> tags
+    // List<String> tags
     test('to test the property `tags`', () async {
       // TODO
     });

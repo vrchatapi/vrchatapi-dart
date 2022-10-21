@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for InfoPush
 void main() {
-  final instance = InfoPushBuilder();
-  // TODO add properties to the builder and call build()
+  final InfoPush? instance = /* InfoPush(...) */ null;
+  // TODO add properties to the entity
 
   group(InfoPush, () {
     // String id
@@ -28,7 +28,7 @@ void main() {
     });
 
     //
-    // BuiltList<String> tags
+    // List<String> tags
     test('to test the property `tags`', () async {
       // TODO
     });

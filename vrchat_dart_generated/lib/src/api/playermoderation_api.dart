@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:vrchat_dart_generated/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/moderate_user_request.dart';
 import 'package:vrchat_dart_generated/src/model/player_moderation.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
@@ -16,9 +16,7 @@ import 'package:vrchat_dart_generated/src/model/success.dart';
 class PlayermoderationApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const PlayermoderationApi(this._dio, this._serializers);
+  const PlayermoderationApi(this._dio);
 
   /// Clear All Player Moderations
   /// ⚠️ **This will delete every single player moderation you&#39;ve ever made.**
@@ -78,11 +76,8 @@ class PlayermoderationApi {
     Success _responseData;
 
     try {
-      const _responseType = FullType(Success);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Success;
+      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -166,11 +161,8 @@ class PlayermoderationApi {
     Success _responseData;
 
     try {
-      const _responseType = FullType(Success);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Success;
+      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -254,11 +246,9 @@ class PlayermoderationApi {
     PlayerModeration _responseData;
 
     try {
-      const _responseType = FullType(PlayerModeration);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as PlayerModeration;
+      _responseData = deserialize<PlayerModeration, PlayerModeration>(
+          _response.data!, 'PlayerModeration',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -293,9 +283,9 @@ class PlayermoderationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<PlayerModeration>] as data
+  /// Returns a [Future] containing a [Response] with a [List<PlayerModeration>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<PlayerModeration>>> getPlayerModerations({
+  Future<Response<List<PlayerModeration>>> getPlayerModerations({
     String? type,
     String? targetUserId,
     CancelToken? cancelToken,
@@ -332,12 +322,8 @@ class PlayermoderationApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (type != null)
-        r'type':
-            encodeQueryParameter(_serializers, type, const FullType(String)),
-      if (targetUserId != null)
-        r'targetUserId': encodeQueryParameter(
-            _serializers, targetUserId, const FullType(String)),
+      if (type != null) r'type': type,
+      if (targetUserId != null) r'targetUserId': targetUserId,
     };
 
     final _response = await _dio.request<Object>(
@@ -349,14 +335,12 @@ class PlayermoderationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<PlayerModeration> _responseData;
+    List<PlayerModeration> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(PlayerModeration)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<PlayerModeration>;
+      _responseData = deserialize<List<PlayerModeration>, PlayerModeration>(
+          _response.data!, 'List<PlayerModeration>',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -366,7 +350,7 @@ class PlayermoderationApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<PlayerModeration>>(
+    return Response<List<PlayerModeration>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -431,10 +415,7 @@ class PlayermoderationApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ModerateUserRequest);
-      _bodyData = moderateUserRequest == null
-          ? null
-          : _serializers.serialize(moderateUserRequest, specifiedType: _type);
+      _bodyData = jsonEncode(moderateUserRequest);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -458,11 +439,9 @@ class PlayermoderationApi {
     PlayerModeration _responseData;
 
     try {
-      const _responseType = FullType(PlayerModeration);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as PlayerModeration;
+      _responseData = deserialize<PlayerModeration, PlayerModeration>(
+          _response.data!, 'PlayerModeration',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -537,10 +516,7 @@ class PlayermoderationApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ModerateUserRequest);
-      _bodyData = moderateUserRequest == null
-          ? null
-          : _serializers.serialize(moderateUserRequest, specifiedType: _type);
+      _bodyData = jsonEncode(moderateUserRequest);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -564,11 +540,8 @@ class PlayermoderationApi {
     Success _responseData;
 
     try {
-      const _responseType = FullType(Success);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Success;
+      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

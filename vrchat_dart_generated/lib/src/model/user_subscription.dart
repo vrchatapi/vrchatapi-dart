@@ -2,267 +2,135 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/subscription_period.dart';
 import 'package:vrchat_dart_generated/src/model/transaction_status.dart';
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'user_subscription.g.dart';
 
-///
-///
-/// Properties:
-/// * [id]
-/// * [transactionId]
-/// * [store] - Which \"Store\" it came from. Right now only Stores are \"Steam\" and \"Admin\".
-/// * [steamItemId]
-/// * [amount]
-/// * [description]
-/// * [period]
-/// * [tier]
-/// * [active]
-/// * [status]
-/// * [expires]
-/// * [createdAt]
-/// * [updatedAt]
-/// * [licenseGroups]
-/// * [isGift]
-abstract class UserSubscription
-    implements Built<UserSubscription, UserSubscriptionBuilder> {
-  @BuiltValueField(wireName: r'id')
-  String get id;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class UserSubscription {
+  /// Returns a new [UserSubscription] instance.
+  UserSubscription({
+    required this.id,
+    required this.transactionId,
+    required this.store,
+    this.steamItemId,
+    required this.amount,
+    required this.description,
+    required this.period,
+    required this.tier,
+    this.active = true,
+    required this.status,
+    required this.expires,
+    required this.createdAt,
+    required this.updatedAt,
+    required this.licenseGroups,
+    this.isGift = false,
+  });
 
-  @BuiltValueField(wireName: r'transactionId')
-  String get transactionId;
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
+
+  @JsonKey(name: r'transactionId', required: true, includeIfNull: false)
+  final String transactionId;
 
   /// Which \"Store\" it came from. Right now only Stores are \"Steam\" and \"Admin\".
-  @BuiltValueField(wireName: r'store')
-  String get store;
+  @JsonKey(name: r'store', required: true, includeIfNull: false)
+  final String store;
 
-  @BuiltValueField(wireName: r'steamItemId')
-  String? get steamItemId;
+  @JsonKey(name: r'steamItemId', required: false, includeIfNull: false)
+  final String? steamItemId;
 
-  @BuiltValueField(wireName: r'amount')
-  num get amount;
+  @JsonKey(name: r'amount', required: true, includeIfNull: false)
+  final num amount;
 
-  @BuiltValueField(wireName: r'description')
-  String get description;
+  @JsonKey(name: r'description', required: true, includeIfNull: false)
+  final String description;
 
-  @BuiltValueField(wireName: r'period')
-  SubscriptionPeriod get period;
-  // enum periodEnum {  hour,  day,  week,  month,  year,  };
+  @JsonKey(name: r'period', required: true, includeIfNull: false)
+  final SubscriptionPeriod period;
 
-  @BuiltValueField(wireName: r'tier')
-  num get tier;
+  @JsonKey(name: r'tier', required: true, includeIfNull: false)
+  final num tier;
 
-  @BuiltValueField(wireName: r'active')
-  bool get active;
+  @JsonKey(
+      defaultValue: true, name: r'active', required: true, includeIfNull: false)
+  final bool active;
 
-  @BuiltValueField(wireName: r'status')
-  TransactionStatus get status;
-  // enum statusEnum {  active,  failed,  expired,  chargeback,  };
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
+  final TransactionStatus status;
 
-  @BuiltValueField(wireName: r'expires')
-  DateTime get expires;
+  @JsonKey(name: r'expires', required: true, includeIfNull: false)
+  final DateTime expires;
 
-  @BuiltValueField(wireName: r'created_at')
-  DateTime get createdAt;
+  @JsonKey(name: r'created_at', required: true, includeIfNull: false)
+  final DateTime createdAt;
 
-  @BuiltValueField(wireName: r'updated_at')
-  DateTime get updatedAt;
+  @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
+  final DateTime updatedAt;
 
-  @BuiltValueField(wireName: r'licenseGroups')
-  BuiltList<String> get licenseGroups;
+  @JsonKey(name: r'licenseGroups', required: true, includeIfNull: false)
+  final List<String> licenseGroups;
 
-  @BuiltValueField(wireName: r'isGift')
-  bool get isGift;
-
-  UserSubscription._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UserSubscriptionBuilder b) => b
-    ..active = true
-    ..isGift = false;
-
-  factory UserSubscription([void updates(UserSubscriptionBuilder b)]) =
-      _$UserSubscription;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<UserSubscription> get serializer =>
-      _$UserSubscriptionSerializer();
-}
-
-class _$UserSubscriptionSerializer
-    implements StructuredSerializer<UserSubscription> {
-  @override
-  final Iterable<Type> types = const [UserSubscription, _$UserSubscription];
+  @JsonKey(
+      defaultValue: false,
+      name: r'isGift',
+      required: true,
+      includeIfNull: false)
+  final bool isGift;
 
   @override
-  final String wireName = r'UserSubscription';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is UserSubscription &&
+          other.id == id &&
+          other.transactionId == transactionId &&
+          other.store == store &&
+          other.steamItemId == steamItemId &&
+          other.amount == amount &&
+          other.description == description &&
+          other.period == period &&
+          other.tier == tier &&
+          other.active == active &&
+          other.status == status &&
+          other.expires == expires &&
+          other.createdAt == createdAt &&
+          other.updatedAt == updatedAt &&
+          other.licenseGroups == licenseGroups &&
+          other.isGift == isGift;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, UserSubscription object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'id')
-      ..add(serializers.serialize(object.id,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'transactionId')
-      ..add(serializers.serialize(object.transactionId,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'store')
-      ..add(serializers.serialize(object.store,
-          specifiedType: const FullType(String)));
-    if (object.steamItemId != null) {
-      result
-        ..add(r'steamItemId')
-        ..add(serializers.serialize(object.steamItemId,
-            specifiedType: const FullType(String)));
-    }
-    result
-      ..add(r'amount')
-      ..add(serializers.serialize(object.amount,
-          specifiedType: const FullType(num)));
-    result
-      ..add(r'description')
-      ..add(serializers.serialize(object.description,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'period')
-      ..add(serializers.serialize(object.period,
-          specifiedType: const FullType(SubscriptionPeriod)));
-    result
-      ..add(r'tier')
-      ..add(serializers.serialize(object.tier,
-          specifiedType: const FullType(num)));
-    result
-      ..add(r'active')
-      ..add(serializers.serialize(object.active,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'status')
-      ..add(serializers.serialize(object.status,
-          specifiedType: const FullType(TransactionStatus)));
-    result
-      ..add(r'expires')
-      ..add(serializers.serialize(object.expires,
-          specifiedType: const FullType(DateTime)));
-    result
-      ..add(r'created_at')
-      ..add(serializers.serialize(object.createdAt,
-          specifiedType: const FullType(DateTime)));
-    result
-      ..add(r'updated_at')
-      ..add(serializers.serialize(object.updatedAt,
-          specifiedType: const FullType(DateTime)));
-    result
-      ..add(r'licenseGroups')
-      ..add(serializers.serialize(object.licenseGroups,
-          specifiedType: const FullType(BuiltList, [FullType(String)])));
-    result
-      ..add(r'isGift')
-      ..add(serializers.serialize(object.isGift,
-          specifiedType: const FullType(bool)));
-    return result;
-  }
+  int get hashCode =>
+      id.hashCode +
+      transactionId.hashCode +
+      store.hashCode +
+      steamItemId.hashCode +
+      amount.hashCode +
+      description.hashCode +
+      period.hashCode +
+      tier.hashCode +
+      active.hashCode +
+      status.hashCode +
+      expires.hashCode +
+      createdAt.hashCode +
+      updatedAt.hashCode +
+      licenseGroups.hashCode +
+      isGift.hashCode;
+
+  factory UserSubscription.fromJson(Map<String, dynamic> json) =>
+      _$UserSubscriptionFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UserSubscriptionToJson(this);
 
   @override
-  UserSubscription deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = UserSubscriptionBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'id':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.id = valueDes;
-          break;
-        case r'transactionId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.transactionId = valueDes;
-          break;
-        case r'store':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.store = valueDes;
-          break;
-        case r'steamItemId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.steamItemId = valueDes;
-          break;
-        case r'amount':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
-          result.amount = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.description = valueDes;
-          break;
-        case r'period':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(SubscriptionPeriod))
-              as SubscriptionPeriod;
-          result.period = valueDes;
-          break;
-        case r'tier':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
-          result.tier = valueDes;
-          break;
-        case r'active':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.active = valueDes;
-          break;
-        case r'status':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(TransactionStatus))
-              as TransactionStatus;
-          result.status = valueDes;
-          break;
-        case r'expires':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
-          result.expires = valueDes;
-          break;
-        case r'created_at':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
-          result.createdAt = valueDes;
-          break;
-        case r'updated_at':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
-          result.updatedAt = valueDes;
-          break;
-        case r'licenseGroups':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>;
-          result.licenseGroups.replace(valueDes);
-          break;
-        case r'isGift':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.isGift = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

@@ -18,21 +18,21 @@ Name | Type | Description | Notes
 **heat** | **int** |  | [default to 0]
 **id** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | 
 **imageUrl** | **String** |  | 
-**instances** | [**BuiltList&lt;BuiltList&lt;JsonObject&gt;&gt;**](BuiltList.md) |  | [optional] 
+**instances** | [**List&lt;List&lt;Object&gt;&gt;**](List.md) | Will always be an empty list when unauthenticated. | [optional] 
 **labsPublicationDate** | **String** |  | 
 **name** | **String** |  | 
 **namespace** | **String** |  | 
-**occupants** | **int** |  | [optional] [default to 0]
+**occupants** | **int** | Will always be `0` when unauthenticated. | [optional] [default to 0]
 **organization** | **String** |  | [default to 'vrchat']
 **popularity** | **int** |  | [default to 0]
 **previewYoutubeId** | **String** |  | [optional] 
-**privateOccupants** | **int** |  | [optional] [default to 0]
-**publicOccupants** | **int** |  | [optional] [default to 0]
+**privateOccupants** | **int** | Will always be `0` when unauthenticated. | [optional] [default to 0]
+**publicOccupants** | **int** | Will always be `0` when unauthenticated. | [optional] [default to 0]
 **publicationDate** | **String** |  | 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | 
-**tags** | **BuiltList&lt;String&gt;** |   | 
+**tags** | **List&lt;String&gt;** |   | 
 **thumbnailImageUrl** | **String** |  | 
-**unityPackages** | [**BuiltList&lt;UnityPackage&gt;**](UnityPackage.md) | Empty if unauthenticated. | 
+**unityPackages** | [**List&lt;UnityPackage&gt;**](UnityPackage.md) | Empty if unauthenticated. | 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
 **version** | **int** |  | [default to 0]
 **visits** | **int** |  | [default to 0]

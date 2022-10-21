@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for InviteRequest
 void main() {
-  final instance = InviteRequestBuilder();
-  // TODO add properties to the builder and call build()
+  final InviteRequest? instance = /* InviteRequest(...) */ null;
+  // TODO add properties to the entity
 
   group(InviteRequest, () {
     // InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.

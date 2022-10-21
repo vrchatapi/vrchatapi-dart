@@ -2,183 +2,99 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/transaction_status.dart';
 import 'package:vrchat_dart_generated/src/model/transaction_steam_info.dart';
 import 'package:vrchat_dart_generated/src/model/transaction_agreement.dart';
 import 'package:vrchat_dart_generated/src/model/subscription.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'transaction.g.dart';
 
-///
-///
-/// Properties:
-/// * [id]
-/// * [status]
-/// * [subscription]
-/// * [sandbox]
-/// * [createdAt]
-/// * [updatedAt]
-/// * [steam]
-/// * [agreement]
-/// * [error]
-abstract class Transaction implements Built<Transaction, TransactionBuilder> {
-  @BuiltValueField(wireName: r'id')
-  String get id;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class Transaction {
+  /// Returns a new [Transaction] instance.
+  Transaction({
+    required this.id,
+    required this.status,
+    required this.subscription,
+    this.sandbox = false,
+    required this.createdAt,
+    required this.updatedAt,
+    this.steam,
+    this.agreement,
+    required this.error,
+  });
 
-  @BuiltValueField(wireName: r'status')
-  TransactionStatus get status;
-  // enum statusEnum {  active,  failed,  expired,  chargeback,  };
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
 
-  @BuiltValueField(wireName: r'subscription')
-  Subscription get subscription;
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
+  final TransactionStatus status;
 
-  @BuiltValueField(wireName: r'sandbox')
-  bool get sandbox;
+  @JsonKey(name: r'subscription', required: true, includeIfNull: false)
+  final Subscription subscription;
 
-  @BuiltValueField(wireName: r'created_at')
-  DateTime get createdAt;
+  @JsonKey(
+      defaultValue: false,
+      name: r'sandbox',
+      required: true,
+      includeIfNull: false)
+  final bool sandbox;
 
-  @BuiltValueField(wireName: r'updated_at')
-  DateTime get updatedAt;
+  @JsonKey(name: r'created_at', required: true, includeIfNull: false)
+  final DateTime createdAt;
 
-  @BuiltValueField(wireName: r'steam')
-  TransactionSteamInfo? get steam;
+  @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
+  final DateTime updatedAt;
 
-  @BuiltValueField(wireName: r'agreement')
-  TransactionAgreement? get agreement;
+  @JsonKey(name: r'steam', required: false, includeIfNull: false)
+  final TransactionSteamInfo? steam;
 
-  @BuiltValueField(wireName: r'error')
-  String get error;
+  @JsonKey(name: r'agreement', required: false, includeIfNull: false)
+  final TransactionAgreement? agreement;
 
-  Transaction._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TransactionBuilder b) => b..sandbox = false;
-
-  factory Transaction([void updates(TransactionBuilder b)]) = _$Transaction;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<Transaction> get serializer => _$TransactionSerializer();
-}
-
-class _$TransactionSerializer implements StructuredSerializer<Transaction> {
-  @override
-  final Iterable<Type> types = const [Transaction, _$Transaction];
+  @JsonKey(name: r'error', required: true, includeIfNull: false)
+  final String error;
 
   @override
-  final String wireName = r'Transaction';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Transaction &&
+          other.id == id &&
+          other.status == status &&
+          other.subscription == subscription &&
+          other.sandbox == sandbox &&
+          other.createdAt == createdAt &&
+          other.updatedAt == updatedAt &&
+          other.steam == steam &&
+          other.agreement == agreement &&
+          other.error == error;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Transaction object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'id')
-      ..add(serializers.serialize(object.id,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'status')
-      ..add(serializers.serialize(object.status,
-          specifiedType: const FullType(TransactionStatus)));
-    result
-      ..add(r'subscription')
-      ..add(serializers.serialize(object.subscription,
-          specifiedType: const FullType(Subscription)));
-    result
-      ..add(r'sandbox')
-      ..add(serializers.serialize(object.sandbox,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'created_at')
-      ..add(serializers.serialize(object.createdAt,
-          specifiedType: const FullType(DateTime)));
-    result
-      ..add(r'updated_at')
-      ..add(serializers.serialize(object.updatedAt,
-          specifiedType: const FullType(DateTime)));
-    if (object.steam != null) {
-      result
-        ..add(r'steam')
-        ..add(serializers.serialize(object.steam,
-            specifiedType: const FullType(TransactionSteamInfo)));
-    }
-    if (object.agreement != null) {
-      result
-        ..add(r'agreement')
-        ..add(serializers.serialize(object.agreement,
-            specifiedType: const FullType(TransactionAgreement)));
-    }
-    result
-      ..add(r'error')
-      ..add(serializers.serialize(object.error,
-          specifiedType: const FullType(String)));
-    return result;
-  }
+  int get hashCode =>
+      id.hashCode +
+      status.hashCode +
+      subscription.hashCode +
+      sandbox.hashCode +
+      createdAt.hashCode +
+      updatedAt.hashCode +
+      steam.hashCode +
+      agreement.hashCode +
+      error.hashCode;
+
+  factory Transaction.fromJson(Map<String, dynamic> json) =>
+      _$TransactionFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TransactionToJson(this);
 
   @override
-  Transaction deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = TransactionBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'id':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.id = valueDes;
-          break;
-        case r'status':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(TransactionStatus))
-              as TransactionStatus;
-          result.status = valueDes;
-          break;
-        case r'subscription':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(Subscription)) as Subscription;
-          result.subscription.replace(valueDes);
-          break;
-        case r'sandbox':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.sandbox = valueDes;
-          break;
-        case r'created_at':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
-          result.createdAt = valueDes;
-          break;
-        case r'updated_at':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
-          result.updatedAt = valueDes;
-          break;
-        case r'steam':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(TransactionSteamInfo))
-              as TransactionSteamInfo;
-          result.steam.replace(valueDes);
-          break;
-        case r'agreement':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(TransactionAgreement))
-              as TransactionAgreement;
-          result.agreement.replace(valueDes);
-          break;
-        case r'error':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.error = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

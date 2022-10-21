@@ -1,6 +1,7 @@
 .gitignore
 README.md
 analysis_options.yaml
+build.yaml
 doc/APIConfig.md
 doc/APIEventConfig.md
 doc/APIHealth.md
@@ -117,13 +118,12 @@ lib/src/api/playermoderation_api.dart
 lib/src/api/system_api.dart
 lib/src/api/users_api.dart
 lib/src/api/worlds_api.dart
-lib/src/api_util.dart
 lib/src/auth/api_key_auth.dart
 lib/src/auth/auth.dart
 lib/src/auth/basic_auth.dart
 lib/src/auth/bearer_auth.dart
 lib/src/auth/oauth.dart
-lib/src/date_serializer.dart
+lib/src/deserialize.dart
 lib/src/model/add_favorite_request.dart
 lib/src/model/api_config.dart
 lib/src/model/api_event_config.dart
@@ -135,7 +135,6 @@ lib/src/model/create_file_request.dart
 lib/src/model/create_file_version_request.dart
 lib/src/model/create_world_request.dart
 lib/src/model/current_user.dart
-lib/src/model/date.dart
 lib/src/model/deployment_group.dart
 lib/src/model/developer_type.dart
 lib/src/model/download_url_list.dart
@@ -212,7 +211,6 @@ lib/src/model/verify_auth_token_result.dart
 lib/src/model/world.dart
 lib/src/model/world_metadata.dart
 lib/src/model/world_publish_status.dart
-lib/src/serializers.dart
 lib/vrchat_dart_generated.dart
 pubspec.yaml
 test/add_favorite_request_test.dart

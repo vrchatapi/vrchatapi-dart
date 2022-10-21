@@ -2,149 +2,76 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/json_object.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+// ignore_for_file: unused_element
+import 'package:json_annotation/json_annotation.dart';
 
 part 'file_version_upload_status.g.dart';
 
-///
-///
-/// Properties:
-/// * [uploadId]
-/// * [fileName]
-/// * [nextPartNumber]
-/// * [maxParts]
-/// * [parts]
-/// * [etags] - Unknown
-abstract class FileVersionUploadStatus
-    implements Built<FileVersionUploadStatus, FileVersionUploadStatusBuilder> {
-  @BuiltValueField(wireName: r'uploadId')
-  String get uploadId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class FileVersionUploadStatus {
+  /// Returns a new [FileVersionUploadStatus] instance.
+  FileVersionUploadStatus({
+    required this.uploadId,
+    required this.fileName,
+    required this.nextPartNumber,
+    required this.maxParts,
+    required this.parts,
+    required this.etags,
+  });
 
-  @BuiltValueField(wireName: r'fileName')
-  String get fileName;
+  @JsonKey(name: r'uploadId', required: true, includeIfNull: false)
+  final String uploadId;
 
-  @BuiltValueField(wireName: r'nextPartNumber')
-  num get nextPartNumber;
+  @JsonKey(name: r'fileName', required: true, includeIfNull: false)
+  final String fileName;
 
-  @BuiltValueField(wireName: r'maxParts')
-  num get maxParts;
+  // minimum: 0
+  @JsonKey(name: r'nextPartNumber', required: true, includeIfNull: false)
+  final num nextPartNumber;
 
-  @BuiltValueField(wireName: r'parts')
-  BuiltList<JsonObject> get parts;
+  // minimum: 1
+  @JsonKey(name: r'maxParts', required: true, includeIfNull: false)
+  final num maxParts;
+
+  @JsonKey(name: r'parts', required: true, includeIfNull: false)
+  final List<Object> parts;
 
   /// Unknown
-  @BuiltValueField(wireName: r'etags')
-  BuiltList<JsonObject> get etags;
-
-  FileVersionUploadStatus._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(FileVersionUploadStatusBuilder b) => b;
-
-  factory FileVersionUploadStatus(
-          [void updates(FileVersionUploadStatusBuilder b)]) =
-      _$FileVersionUploadStatus;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<FileVersionUploadStatus> get serializer =>
-      _$FileVersionUploadStatusSerializer();
-}
-
-class _$FileVersionUploadStatusSerializer
-    implements StructuredSerializer<FileVersionUploadStatus> {
-  @override
-  final Iterable<Type> types = const [
-    FileVersionUploadStatus,
-    _$FileVersionUploadStatus
-  ];
+  @JsonKey(name: r'etags', required: true, includeIfNull: false)
+  final List<Object> etags;
 
   @override
-  final String wireName = r'FileVersionUploadStatus';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is FileVersionUploadStatus &&
+          other.uploadId == uploadId &&
+          other.fileName == fileName &&
+          other.nextPartNumber == nextPartNumber &&
+          other.maxParts == maxParts &&
+          other.parts == parts &&
+          other.etags == etags;
 
   @override
-  Iterable<Object?> serialize(
-      Serializers serializers, FileVersionUploadStatus object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'uploadId')
-      ..add(serializers.serialize(object.uploadId,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'fileName')
-      ..add(serializers.serialize(object.fileName,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'nextPartNumber')
-      ..add(serializers.serialize(object.nextPartNumber,
-          specifiedType: const FullType(num)));
-    result
-      ..add(r'maxParts')
-      ..add(serializers.serialize(object.maxParts,
-          specifiedType: const FullType(num)));
-    result
-      ..add(r'parts')
-      ..add(serializers.serialize(object.parts,
-          specifiedType: const FullType(BuiltList, [FullType(JsonObject)])));
-    result
-      ..add(r'etags')
-      ..add(serializers.serialize(object.etags,
-          specifiedType: const FullType(BuiltList, [FullType(JsonObject)])));
-    return result;
-  }
+  int get hashCode =>
+      uploadId.hashCode +
+      fileName.hashCode +
+      nextPartNumber.hashCode +
+      maxParts.hashCode +
+      parts.hashCode +
+      etags.hashCode;
+
+  factory FileVersionUploadStatus.fromJson(Map<String, dynamic> json) =>
+      _$FileVersionUploadStatusFromJson(json);
+
+  Map<String, dynamic> toJson() => _$FileVersionUploadStatusToJson(this);
 
   @override
-  FileVersionUploadStatus deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = FileVersionUploadStatusBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'uploadId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.uploadId = valueDes;
-          break;
-        case r'fileName':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.fileName = valueDes;
-          break;
-        case r'nextPartNumber':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
-          result.nextPartNumber = valueDes;
-          break;
-        case r'maxParts':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
-          result.maxParts = valueDes;
-          break;
-        case r'parts':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, [FullType(JsonObject)]))
-              as BuiltList<JsonObject>;
-          result.parts.replace(valueDes);
-          break;
-        case r'etags':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, [FullType(JsonObject)]))
-              as BuiltList<JsonObject>;
-          result.etags.replace(valueDes);
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

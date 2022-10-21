@@ -2,93 +2,47 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+// ignore_for_file: unused_element
+import 'package:json_annotation/json_annotation.dart';
 
 part 'instance_short_name_response.g.dart';
 
-/// InstanceShortNameResponse
-///
-/// Properties:
-/// * [secureName]
-/// * [shortName]
-abstract class InstanceShortNameResponse
-    implements
-        Built<InstanceShortNameResponse, InstanceShortNameResponseBuilder> {
-  @BuiltValueField(wireName: r'secureName')
-  String get secureName;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class InstanceShortNameResponse {
+  /// Returns a new [InstanceShortNameResponse] instance.
+  InstanceShortNameResponse({
+    required this.secureName,
+    this.shortName,
+  });
 
-  @BuiltValueField(wireName: r'shortName')
-  String? get shortName;
+  @JsonKey(name: r'secureName', required: true, includeIfNull: false)
+  final String secureName;
 
-  InstanceShortNameResponse._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(InstanceShortNameResponseBuilder b) => b;
-
-  factory InstanceShortNameResponse(
-          [void updates(InstanceShortNameResponseBuilder b)]) =
-      _$InstanceShortNameResponse;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<InstanceShortNameResponse> get serializer =>
-      _$InstanceShortNameResponseSerializer();
-}
-
-class _$InstanceShortNameResponseSerializer
-    implements StructuredSerializer<InstanceShortNameResponse> {
-  @override
-  final Iterable<Type> types = const [
-    InstanceShortNameResponse,
-    _$InstanceShortNameResponse
-  ];
+  @JsonKey(name: r'shortName', required: false, includeIfNull: false)
+  final String? shortName;
 
   @override
-  final String wireName = r'InstanceShortNameResponse';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is InstanceShortNameResponse &&
+          other.secureName == secureName &&
+          other.shortName == shortName;
 
   @override
-  Iterable<Object?> serialize(
-      Serializers serializers, InstanceShortNameResponse object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'secureName')
-      ..add(serializers.serialize(object.secureName,
-          specifiedType: const FullType(String)));
-    if (object.shortName != null) {
-      result
-        ..add(r'shortName')
-        ..add(serializers.serialize(object.shortName,
-            specifiedType: const FullType(String)));
-    }
-    return result;
-  }
+  int get hashCode => secureName.hashCode + shortName.hashCode;
+
+  factory InstanceShortNameResponse.fromJson(Map<String, dynamic> json) =>
+      _$InstanceShortNameResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$InstanceShortNameResponseToJson(this);
 
   @override
-  InstanceShortNameResponse deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = InstanceShortNameResponseBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'secureName':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.secureName = valueDes;
-          break;
-        case r'shortName':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.shortName = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

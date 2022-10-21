@@ -2,88 +2,47 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+// ignore_for_file: unused_element
+import 'package:json_annotation/json_annotation.dart';
 
 part 'public_announcement.g.dart';
 
-/// Public Announcement
-///
-/// Properties:
-/// * [name] - Announcement name
-/// * [text] - Announcement text
-abstract class PublicAnnouncement
-    implements Built<PublicAnnouncement, PublicAnnouncementBuilder> {
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class PublicAnnouncement {
+  /// Returns a new [PublicAnnouncement] instance.
+  PublicAnnouncement({
+    required this.name,
+    required this.text,
+  });
+
   /// Announcement name
-  @BuiltValueField(wireName: r'name')
-  String get name;
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
+  final String name;
 
   /// Announcement text
-  @BuiltValueField(wireName: r'text')
-  String get text;
-
-  PublicAnnouncement._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(PublicAnnouncementBuilder b) => b;
-
-  factory PublicAnnouncement([void updates(PublicAnnouncementBuilder b)]) =
-      _$PublicAnnouncement;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<PublicAnnouncement> get serializer =>
-      _$PublicAnnouncementSerializer();
-}
-
-class _$PublicAnnouncementSerializer
-    implements StructuredSerializer<PublicAnnouncement> {
-  @override
-  final Iterable<Type> types = const [PublicAnnouncement, _$PublicAnnouncement];
+  @JsonKey(name: r'text', required: true, includeIfNull: false)
+  final String text;
 
   @override
-  final String wireName = r'PublicAnnouncement';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is PublicAnnouncement && other.name == name && other.text == text;
 
   @override
-  Iterable<Object?> serialize(
-      Serializers serializers, PublicAnnouncement object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'name')
-      ..add(serializers.serialize(object.name,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'text')
-      ..add(serializers.serialize(object.text,
-          specifiedType: const FullType(String)));
-    return result;
-  }
+  int get hashCode => name.hashCode + text.hashCode;
+
+  factory PublicAnnouncement.fromJson(Map<String, dynamic> json) =>
+      _$PublicAnnouncementFromJson(json);
+
+  Map<String, dynamic> toJson() => _$PublicAnnouncementToJson(this);
 
   @override
-  PublicAnnouncement deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = PublicAnnouncementBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'name':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.name = valueDes;
-          break;
-        case r'text':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.text = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

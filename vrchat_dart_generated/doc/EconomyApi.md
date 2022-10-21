@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **getCurrentSubscriptions**
-> BuiltList<UserSubscription> getCurrentSubscriptions()
+> List<UserSubscription> getCurrentSubscriptions()
 
 Get Current Subscriptions
 
@@ -50,7 +50,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;UserSubscription&gt;**](UserSubscription.md)
+[**List&lt;UserSubscription&gt;**](UserSubscription.md)
 
 ### Authorization
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSteamTransactions**
-> BuiltList<Transaction> getSteamTransactions()
+> List<Transaction> getSteamTransactions()
 
 List Steam Transactions
 
@@ -199,7 +199,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;Transaction&gt;**](Transaction.md)
+[**List&lt;Transaction&gt;**](Transaction.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSubscriptions**
-> BuiltList<Subscription> getSubscriptions()
+> List<Subscription> getSubscriptions()
 
 List Subscriptions
 
@@ -246,7 +246,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;Subscription&gt;**](Subscription.md)
+[**List&lt;Subscription&gt;**](Subscription.md)
 
 ### Authorization
 

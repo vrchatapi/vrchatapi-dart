@@ -2,468 +2,234 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:vrchat_dart_generated/src/model/date.dart';
-import 'package:built_collection/built_collection.dart';
+// ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
 import 'package:vrchat_dart_generated/src/model/user_state.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'user.g.dart';
 
-/// User
-///
-/// Properties:
-/// * [allowAvatarCopying]
-/// * [bio]
-/// * [bioLinks]
-/// * [currentAvatarImageUrl] - When profilePicOverride is not empty, use it instead.
-/// * [currentAvatarThumbnailImageUrl] - When profilePicOverride is not empty, use it instead.
-/// * [dateJoined]
-/// * [developerType]
-/// * [displayName] - A users visual display name. This is what shows up in-game, and can different from their `username`. Changing display name is restricted to a cooldown period.
-/// * [friendKey]
-/// * [friendRequestStatus]
-/// * [id] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-/// * [instanceId] - InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
-/// * [isFriend] - Either their `friendKey`, or empty string if you are not friends. Unknown usage.
-/// * [lastActivity] - Either a date-time or empty string.
-/// * [lastLogin] - Either a date-time or empty string.
-/// * [lastPlatform] - This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
-/// * [location] - WorldID be \"offline\" on User profiles if you are not friends with that user.
-/// * [note]
-/// * [profilePicOverride]
-/// * [state]
-/// * [status]
-/// * [statusDescription]
-/// * [tags] -
-/// * [travelingToInstance]
-/// * [travelingToLocation]
-/// * [travelingToWorld]
-/// * [userIcon]
-/// * [username] - A users unique name, used during login. This is different from `displayName` which is what shows up in-game. A users `username` can never be changed.
-/// * [worldId] - WorldID be \"offline\" on User profiles if you are not friends with that user.
-abstract class User implements Built<User, UserBuilder> {
-  @BuiltValueField(wireName: r'allowAvatarCopying')
-  bool get allowAvatarCopying;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class User {
+  /// Returns a new [User] instance.
+  User({
+    this.allowAvatarCopying = true,
+    required this.bio,
+    required this.bioLinks,
+    required this.currentAvatarImageUrl,
+    required this.currentAvatarThumbnailImageUrl,
+    required this.dateJoined,
+    required this.developerType,
+    required this.displayName,
+    required this.friendKey,
+    required this.friendRequestStatus,
+    required this.id,
+    this.instanceId,
+    required this.isFriend,
+    required this.lastActivity,
+    required this.lastLogin,
+    required this.lastPlatform,
+    this.location,
+    this.note,
+    required this.profilePicOverride,
+    required this.state,
+    required this.status,
+    required this.statusDescription,
+    required this.tags,
+    this.travelingToInstance,
+    this.travelingToLocation,
+    this.travelingToWorld,
+    required this.userIcon,
+    required this.username,
+    this.worldId,
+  });
 
-  @BuiltValueField(wireName: r'bio')
-  String get bio;
+  @JsonKey(
+      defaultValue: true,
+      name: r'allowAvatarCopying',
+      required: true,
+      includeIfNull: false)
+  final bool allowAvatarCopying;
 
-  @BuiltValueField(wireName: r'bioLinks')
-  BuiltList<String> get bioLinks;
+  @JsonKey(name: r'bio', required: true, includeIfNull: false)
+  final String bio;
+
+  @JsonKey(name: r'bioLinks', required: true, includeIfNull: false)
+  final List<String> bioLinks;
 
   /// When profilePicOverride is not empty, use it instead.
-  @BuiltValueField(wireName: r'currentAvatarImageUrl')
-  String get currentAvatarImageUrl;
+  @JsonKey(name: r'currentAvatarImageUrl', required: true, includeIfNull: false)
+  final String currentAvatarImageUrl;
 
   /// When profilePicOverride is not empty, use it instead.
-  @BuiltValueField(wireName: r'currentAvatarThumbnailImageUrl')
-  String get currentAvatarThumbnailImageUrl;
+  @JsonKey(
+      name: r'currentAvatarThumbnailImageUrl',
+      required: true,
+      includeIfNull: false)
+  final String currentAvatarThumbnailImageUrl;
 
-  @BuiltValueField(wireName: r'date_joined')
-  Date get dateJoined;
+  @JsonKey(name: r'date_joined', required: true, includeIfNull: false)
+  final DateTime dateJoined;
 
-  @BuiltValueField(wireName: r'developerType')
-  DeveloperType get developerType;
-  // enum developerTypeEnum {  none,  trusted,  internal,  moderator,  };
+  @JsonKey(name: r'developerType', required: true, includeIfNull: false)
+  final DeveloperType developerType;
 
   /// A users visual display name. This is what shows up in-game, and can different from their `username`. Changing display name is restricted to a cooldown period.
-  @BuiltValueField(wireName: r'displayName')
-  String get displayName;
+  @JsonKey(name: r'displayName', required: true, includeIfNull: false)
+  final String displayName;
 
-  @BuiltValueField(wireName: r'friendKey')
-  String get friendKey;
+  @JsonKey(name: r'friendKey', required: true, includeIfNull: false)
+  final String friendKey;
 
-  @BuiltValueField(wireName: r'friendRequestStatus')
-  String get friendRequestStatus;
+  @JsonKey(name: r'friendRequestStatus', required: true, includeIfNull: false)
+  final String friendRequestStatus;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @BuiltValueField(wireName: r'id')
-  String get id;
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
 
   /// InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
-  @BuiltValueField(wireName: r'instanceId')
-  String? get instanceId;
+  @JsonKey(name: r'instanceId', required: false, includeIfNull: false)
+  final String? instanceId;
 
   /// Either their `friendKey`, or empty string if you are not friends. Unknown usage.
-  @BuiltValueField(wireName: r'isFriend')
-  bool get isFriend;
+  @JsonKey(name: r'isFriend', required: true, includeIfNull: false)
+  final bool isFriend;
 
   /// Either a date-time or empty string.
-  @BuiltValueField(wireName: r'last_activity')
-  String get lastActivity;
+  @JsonKey(name: r'last_activity', required: true, includeIfNull: false)
+  final String lastActivity;
 
   /// Either a date-time or empty string.
-  @BuiltValueField(wireName: r'last_login')
-  String get lastLogin;
+  @JsonKey(name: r'last_login', required: true, includeIfNull: false)
+  final String lastLogin;
 
   /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
-  @BuiltValueField(wireName: r'last_platform')
-  String get lastPlatform;
+  @JsonKey(name: r'last_platform', required: true, includeIfNull: false)
+  final String lastPlatform;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
-  @BuiltValueField(wireName: r'location')
-  String? get location;
+  @JsonKey(name: r'location', required: false, includeIfNull: false)
+  final String? location;
 
-  @BuiltValueField(wireName: r'note')
-  String? get note;
+  @JsonKey(name: r'note', required: false, includeIfNull: false)
+  final String? note;
 
-  @BuiltValueField(wireName: r'profilePicOverride')
-  String get profilePicOverride;
+  @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
+  final String profilePicOverride;
 
-  @BuiltValueField(wireName: r'state')
-  UserState get state;
-  // enum stateEnum {  offline,  active,  online,  };
+  @JsonKey(name: r'state', required: true, includeIfNull: false)
+  final UserState state;
 
-  @BuiltValueField(wireName: r'status')
-  UserStatus get status;
-  // enum statusEnum {  active,  join me,  ask me,  busy,  offline,  };
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
+  final UserStatus status;
 
-  @BuiltValueField(wireName: r'statusDescription')
-  String get statusDescription;
+  @JsonKey(name: r'statusDescription', required: true, includeIfNull: false)
+  final String statusDescription;
 
   ///
-  @BuiltValueField(wireName: r'tags')
-  BuiltList<String> get tags;
+  @JsonKey(name: r'tags', required: true, includeIfNull: false)
+  final List<String> tags;
 
-  @BuiltValueField(wireName: r'travelingToInstance')
-  String? get travelingToInstance;
+  @JsonKey(name: r'travelingToInstance', required: false, includeIfNull: false)
+  final String? travelingToInstance;
 
-  @BuiltValueField(wireName: r'travelingToLocation')
-  String? get travelingToLocation;
+  @JsonKey(name: r'travelingToLocation', required: false, includeIfNull: false)
+  final String? travelingToLocation;
 
-  @BuiltValueField(wireName: r'travelingToWorld')
-  String? get travelingToWorld;
+  @JsonKey(name: r'travelingToWorld', required: false, includeIfNull: false)
+  final String? travelingToWorld;
 
-  @BuiltValueField(wireName: r'userIcon')
-  String get userIcon;
+  @JsonKey(name: r'userIcon', required: true, includeIfNull: false)
+  final String userIcon;
 
   /// A users unique name, used during login. This is different from `displayName` which is what shows up in-game. A users `username` can never be changed.
-  @BuiltValueField(wireName: r'username')
-  String get username;
+  @JsonKey(name: r'username', required: true, includeIfNull: false)
+  final String username;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
-  @BuiltValueField(wireName: r'worldId')
-  String? get worldId;
-
-  User._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UserBuilder b) => b..allowAvatarCopying = true;
-
-  factory User([void updates(UserBuilder b)]) = _$User;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<User> get serializer => _$UserSerializer();
-}
-
-class _$UserSerializer implements StructuredSerializer<User> {
-  @override
-  final Iterable<Type> types = const [User, _$User];
+  @JsonKey(name: r'worldId', required: false, includeIfNull: false)
+  final String? worldId;
 
   @override
-  final String wireName = r'User';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is User &&
+          other.allowAvatarCopying == allowAvatarCopying &&
+          other.bio == bio &&
+          other.bioLinks == bioLinks &&
+          other.currentAvatarImageUrl == currentAvatarImageUrl &&
+          other.currentAvatarThumbnailImageUrl ==
+              currentAvatarThumbnailImageUrl &&
+          other.dateJoined == dateJoined &&
+          other.developerType == developerType &&
+          other.displayName == displayName &&
+          other.friendKey == friendKey &&
+          other.friendRequestStatus == friendRequestStatus &&
+          other.id == id &&
+          other.instanceId == instanceId &&
+          other.isFriend == isFriend &&
+          other.lastActivity == lastActivity &&
+          other.lastLogin == lastLogin &&
+          other.lastPlatform == lastPlatform &&
+          other.location == location &&
+          other.note == note &&
+          other.profilePicOverride == profilePicOverride &&
+          other.state == state &&
+          other.status == status &&
+          other.statusDescription == statusDescription &&
+          other.tags == tags &&
+          other.travelingToInstance == travelingToInstance &&
+          other.travelingToLocation == travelingToLocation &&
+          other.travelingToWorld == travelingToWorld &&
+          other.userIcon == userIcon &&
+          other.username == username &&
+          other.worldId == worldId;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, User object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'allowAvatarCopying')
-      ..add(serializers.serialize(object.allowAvatarCopying,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'bio')
-      ..add(serializers.serialize(object.bio,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'bioLinks')
-      ..add(serializers.serialize(object.bioLinks,
-          specifiedType: const FullType(BuiltList, [FullType(String)])));
-    result
-      ..add(r'currentAvatarImageUrl')
-      ..add(serializers.serialize(object.currentAvatarImageUrl,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'currentAvatarThumbnailImageUrl')
-      ..add(serializers.serialize(object.currentAvatarThumbnailImageUrl,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'date_joined')
-      ..add(serializers.serialize(object.dateJoined,
-          specifiedType: const FullType(Date)));
-    result
-      ..add(r'developerType')
-      ..add(serializers.serialize(object.developerType,
-          specifiedType: const FullType(DeveloperType)));
-    result
-      ..add(r'displayName')
-      ..add(serializers.serialize(object.displayName,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'friendKey')
-      ..add(serializers.serialize(object.friendKey,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'friendRequestStatus')
-      ..add(serializers.serialize(object.friendRequestStatus,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'id')
-      ..add(serializers.serialize(object.id,
-          specifiedType: const FullType(String)));
-    if (object.instanceId != null) {
-      result
-        ..add(r'instanceId')
-        ..add(serializers.serialize(object.instanceId,
-            specifiedType: const FullType(String)));
-    }
-    result
-      ..add(r'isFriend')
-      ..add(serializers.serialize(object.isFriend,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'last_activity')
-      ..add(serializers.serialize(object.lastActivity,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'last_login')
-      ..add(serializers.serialize(object.lastLogin,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'last_platform')
-      ..add(serializers.serialize(object.lastPlatform,
-          specifiedType: const FullType(String)));
-    if (object.location != null) {
-      result
-        ..add(r'location')
-        ..add(serializers.serialize(object.location,
-            specifiedType: const FullType(String)));
-    }
-    if (object.note != null) {
-      result
-        ..add(r'note')
-        ..add(serializers.serialize(object.note,
-            specifiedType: const FullType(String)));
-    }
-    result
-      ..add(r'profilePicOverride')
-      ..add(serializers.serialize(object.profilePicOverride,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'state')
-      ..add(serializers.serialize(object.state,
-          specifiedType: const FullType(UserState)));
-    result
-      ..add(r'status')
-      ..add(serializers.serialize(object.status,
-          specifiedType: const FullType(UserStatus)));
-    result
-      ..add(r'statusDescription')
-      ..add(serializers.serialize(object.statusDescription,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'tags')
-      ..add(serializers.serialize(object.tags,
-          specifiedType: const FullType(BuiltList, [FullType(String)])));
-    if (object.travelingToInstance != null) {
-      result
-        ..add(r'travelingToInstance')
-        ..add(serializers.serialize(object.travelingToInstance,
-            specifiedType: const FullType(String)));
-    }
-    if (object.travelingToLocation != null) {
-      result
-        ..add(r'travelingToLocation')
-        ..add(serializers.serialize(object.travelingToLocation,
-            specifiedType: const FullType(String)));
-    }
-    if (object.travelingToWorld != null) {
-      result
-        ..add(r'travelingToWorld')
-        ..add(serializers.serialize(object.travelingToWorld,
-            specifiedType: const FullType(String)));
-    }
-    result
-      ..add(r'userIcon')
-      ..add(serializers.serialize(object.userIcon,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'username')
-      ..add(serializers.serialize(object.username,
-          specifiedType: const FullType(String)));
-    if (object.worldId != null) {
-      result
-        ..add(r'worldId')
-        ..add(serializers.serialize(object.worldId,
-            specifiedType: const FullType(String)));
-    }
-    return result;
-  }
+  int get hashCode =>
+      allowAvatarCopying.hashCode +
+      bio.hashCode +
+      bioLinks.hashCode +
+      currentAvatarImageUrl.hashCode +
+      currentAvatarThumbnailImageUrl.hashCode +
+      dateJoined.hashCode +
+      developerType.hashCode +
+      displayName.hashCode +
+      friendKey.hashCode +
+      friendRequestStatus.hashCode +
+      id.hashCode +
+      instanceId.hashCode +
+      isFriend.hashCode +
+      lastActivity.hashCode +
+      lastLogin.hashCode +
+      lastPlatform.hashCode +
+      location.hashCode +
+      note.hashCode +
+      profilePicOverride.hashCode +
+      state.hashCode +
+      status.hashCode +
+      statusDescription.hashCode +
+      tags.hashCode +
+      travelingToInstance.hashCode +
+      travelingToLocation.hashCode +
+      travelingToWorld.hashCode +
+      userIcon.hashCode +
+      username.hashCode +
+      worldId.hashCode;
+
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UserToJson(this);
 
   @override
-  User deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = UserBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'allowAvatarCopying':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.allowAvatarCopying = valueDes;
-          break;
-        case r'bio':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.bio = valueDes;
-          break;
-        case r'bioLinks':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>;
-          result.bioLinks.replace(valueDes);
-          break;
-        case r'currentAvatarImageUrl':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.currentAvatarImageUrl = valueDes;
-          break;
-        case r'currentAvatarThumbnailImageUrl':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.currentAvatarThumbnailImageUrl = valueDes;
-          break;
-        case r'date_joined':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(Date)) as Date;
-          result.dateJoined = valueDes;
-          break;
-        case r'developerType':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(DeveloperType)) as DeveloperType;
-          result.developerType = valueDes;
-          break;
-        case r'displayName':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.displayName = valueDes;
-          break;
-        case r'friendKey':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.friendKey = valueDes;
-          break;
-        case r'friendRequestStatus':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.friendRequestStatus = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.id = valueDes;
-          break;
-        case r'instanceId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.instanceId = valueDes;
-          break;
-        case r'isFriend':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.isFriend = valueDes;
-          break;
-        case r'last_activity':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.lastActivity = valueDes;
-          break;
-        case r'last_login':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.lastLogin = valueDes;
-          break;
-        case r'last_platform':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.lastPlatform = valueDes;
-          break;
-        case r'location':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.location = valueDes;
-          break;
-        case r'note':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.note = valueDes;
-          break;
-        case r'profilePicOverride':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.profilePicOverride = valueDes;
-          break;
-        case r'state':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(UserState)) as UserState;
-          result.state = valueDes;
-          break;
-        case r'status':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(UserStatus)) as UserStatus;
-          result.status = valueDes;
-          break;
-        case r'statusDescription':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.statusDescription = valueDes;
-          break;
-        case r'tags':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>;
-          result.tags.replace(valueDes);
-          break;
-        case r'travelingToInstance':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.travelingToInstance = valueDes;
-          break;
-        case r'travelingToLocation':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.travelingToLocation = valueDes;
-          break;
-        case r'travelingToWorld':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.travelingToWorld = valueDes;
-          break;
-        case r'userIcon':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.userIcon = valueDes;
-          break;
-        case r'username':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.username = valueDes;
-          break;
-        case r'worldId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.worldId = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

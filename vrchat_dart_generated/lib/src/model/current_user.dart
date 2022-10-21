@@ -2,707 +2,343 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:vrchat_dart_generated/src/model/date.dart';
-import 'package:built_collection/built_collection.dart';
+// ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
 import 'package:vrchat_dart_generated/src/model/past_display_name.dart';
-import 'package:built_value/json_object.dart';
 import 'package:vrchat_dart_generated/src/model/user_state.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'current_user.g.dart';
 
-/// CurrentUser
-///
-/// Properties:
-/// * [acceptedTOSVersion]
-/// * [accountDeletionDate]
-/// * [activeFriends]
-/// * [allowAvatarCopying]
-/// * [bio]
-/// * [bioLinks]
-/// * [currentAvatar]
-/// * [currentAvatarAssetUrl]
-/// * [currentAvatarImageUrl] - When profilePicOverride is not empty, use it instead.
-/// * [currentAvatarThumbnailImageUrl] - When profilePicOverride is not empty, use it instead.
-/// * [dateJoined]
-/// * [developerType]
-/// * [displayName]
-/// * [emailVerified]
-/// * [fallbackAvatar]
-/// * [friendGroupNames] - Always empty array.
-/// * [friendKey]
-/// * [friends]
-/// * [hasBirthday]
-/// * [hasEmail]
-/// * [hasLoggedInFromClient]
-/// * [hasPendingEmail]
-/// * [homeLocation] - WorldID be \"offline\" on User profiles if you are not friends with that user.
-/// * [id] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-/// * [isFriend]
-/// * [lastLogin]
-/// * [lastPlatform] - This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
-/// * [obfuscatedEmail]
-/// * [obfuscatedPendingEmail]
-/// * [oculusId]
-/// * [offlineFriends]
-/// * [onlineFriends]
-/// * [pastDisplayNames] -
-/// * [profilePicOverride]
-/// * [state]
-/// * [status]
-/// * [statusDescription]
-/// * [statusFirstTime]
-/// * [statusHistory]
-/// * [steamDetails]
-/// * [steamId]
-/// * [tags]
-/// * [twoFactorAuthEnabled]
-/// * [twoFactorAuthEnabledDate]
-/// * [unsubscribe]
-/// * [userIcon]
-/// * [username]
-abstract class CurrentUser implements Built<CurrentUser, CurrentUserBuilder> {
-  @BuiltValueField(wireName: r'acceptedTOSVersion')
-  int get acceptedTOSVersion;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class CurrentUser {
+  /// Returns a new [CurrentUser] instance.
+  CurrentUser({
+    required this.acceptedTOSVersion,
+    this.accountDeletionDate,
+    this.activeFriends,
+    required this.allowAvatarCopying,
+    required this.bio,
+    required this.bioLinks,
+    required this.currentAvatar,
+    required this.currentAvatarAssetUrl,
+    required this.currentAvatarImageUrl,
+    required this.currentAvatarThumbnailImageUrl,
+    required this.dateJoined,
+    required this.developerType,
+    required this.displayName,
+    required this.emailVerified,
+    this.fallbackAvatar,
+    required this.friendGroupNames,
+    required this.friendKey,
+    required this.friends,
+    required this.hasBirthday,
+    required this.hasEmail,
+    required this.hasLoggedInFromClient,
+    required this.hasPendingEmail,
+    required this.homeLocation,
+    required this.id,
+    this.isFriend = false,
+    required this.lastLogin,
+    required this.lastPlatform,
+    required this.obfuscatedEmail,
+    required this.obfuscatedPendingEmail,
+    required this.oculusId,
+    this.offlineFriends,
+    this.onlineFriends,
+    required this.pastDisplayNames,
+    required this.profilePicOverride,
+    required this.state,
+    required this.status,
+    required this.statusDescription,
+    required this.statusFirstTime,
+    required this.statusHistory,
+    required this.steamDetails,
+    required this.steamId,
+    required this.tags,
+    required this.twoFactorAuthEnabled,
+    this.twoFactorAuthEnabledDate,
+    required this.unsubscribe,
+    required this.userIcon,
+    required this.username,
+  });
 
-  @BuiltValueField(wireName: r'accountDeletionDate')
-  Date? get accountDeletionDate;
+  // minimum: 0
+  @JsonKey(name: r'acceptedTOSVersion', required: true, includeIfNull: false)
+  final int acceptedTOSVersion;
 
-  @BuiltValueField(wireName: r'activeFriends')
-  BuiltList<String>? get activeFriends;
+  @JsonKey(name: r'accountDeletionDate', required: false, includeIfNull: false)
+  final DateTime? accountDeletionDate;
 
-  @BuiltValueField(wireName: r'allowAvatarCopying')
-  bool get allowAvatarCopying;
+  @JsonKey(name: r'activeFriends', required: false, includeIfNull: false)
+  final List<String>? activeFriends;
 
-  @BuiltValueField(wireName: r'bio')
-  String get bio;
+  @JsonKey(name: r'allowAvatarCopying', required: true, includeIfNull: false)
+  final bool allowAvatarCopying;
 
-  @BuiltValueField(wireName: r'bioLinks')
-  BuiltList<String> get bioLinks;
+  @JsonKey(name: r'bio', required: true, includeIfNull: false)
+  final String bio;
 
-  @BuiltValueField(wireName: r'currentAvatar')
-  String get currentAvatar;
+  @JsonKey(name: r'bioLinks', required: true, includeIfNull: false)
+  final List<String> bioLinks;
 
-  @BuiltValueField(wireName: r'currentAvatarAssetUrl')
-  String get currentAvatarAssetUrl;
+  @JsonKey(name: r'currentAvatar', required: true, includeIfNull: false)
+  final String currentAvatar;
+
+  @JsonKey(name: r'currentAvatarAssetUrl', required: true, includeIfNull: false)
+  final String currentAvatarAssetUrl;
 
   /// When profilePicOverride is not empty, use it instead.
-  @BuiltValueField(wireName: r'currentAvatarImageUrl')
-  String get currentAvatarImageUrl;
+  @JsonKey(name: r'currentAvatarImageUrl', required: true, includeIfNull: false)
+  final String currentAvatarImageUrl;
 
   /// When profilePicOverride is not empty, use it instead.
-  @BuiltValueField(wireName: r'currentAvatarThumbnailImageUrl')
-  String get currentAvatarThumbnailImageUrl;
+  @JsonKey(
+      name: r'currentAvatarThumbnailImageUrl',
+      required: true,
+      includeIfNull: false)
+  final String currentAvatarThumbnailImageUrl;
 
-  @BuiltValueField(wireName: r'date_joined')
-  Date get dateJoined;
+  @JsonKey(name: r'date_joined', required: true, includeIfNull: false)
+  final DateTime dateJoined;
 
-  @BuiltValueField(wireName: r'developerType')
-  DeveloperType get developerType;
-  // enum developerTypeEnum {  none,  trusted,  internal,  moderator,  };
+  @JsonKey(name: r'developerType', required: true, includeIfNull: false)
+  final DeveloperType developerType;
 
-  @BuiltValueField(wireName: r'displayName')
-  String get displayName;
+  @JsonKey(name: r'displayName', required: true, includeIfNull: false)
+  final String displayName;
 
-  @BuiltValueField(wireName: r'emailVerified')
-  bool get emailVerified;
+  @JsonKey(name: r'emailVerified', required: true, includeIfNull: false)
+  final bool emailVerified;
 
-  @BuiltValueField(wireName: r'fallbackAvatar')
-  String? get fallbackAvatar;
+  @JsonKey(name: r'fallbackAvatar', required: false, includeIfNull: false)
+  final String? fallbackAvatar;
 
   /// Always empty array.
-  @BuiltValueField(wireName: r'friendGroupNames')
-  BuiltList<String> get friendGroupNames;
+  @JsonKey(name: r'friendGroupNames', required: true, includeIfNull: false)
+  final List<String> friendGroupNames;
 
-  @BuiltValueField(wireName: r'friendKey')
-  String get friendKey;
+  @JsonKey(name: r'friendKey', required: true, includeIfNull: false)
+  final String friendKey;
 
-  @BuiltValueField(wireName: r'friends')
-  BuiltList<String> get friends;
+  @JsonKey(name: r'friends', required: true, includeIfNull: false)
+  final List<String> friends;
 
-  @BuiltValueField(wireName: r'hasBirthday')
-  bool get hasBirthday;
+  @JsonKey(name: r'hasBirthday', required: true, includeIfNull: false)
+  final bool hasBirthday;
 
-  @BuiltValueField(wireName: r'hasEmail')
-  bool get hasEmail;
+  @JsonKey(name: r'hasEmail', required: true, includeIfNull: false)
+  final bool hasEmail;
 
-  @BuiltValueField(wireName: r'hasLoggedInFromClient')
-  bool get hasLoggedInFromClient;
+  @JsonKey(name: r'hasLoggedInFromClient', required: true, includeIfNull: false)
+  final bool hasLoggedInFromClient;
 
-  @BuiltValueField(wireName: r'hasPendingEmail')
-  bool get hasPendingEmail;
+  @JsonKey(name: r'hasPendingEmail', required: true, includeIfNull: false)
+  final bool hasPendingEmail;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
-  @BuiltValueField(wireName: r'homeLocation')
-  String get homeLocation;
+  @JsonKey(name: r'homeLocation', required: true, includeIfNull: false)
+  final String homeLocation;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @BuiltValueField(wireName: r'id')
-  String get id;
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
 
-  @BuiltValueField(wireName: r'isFriend')
-  bool get isFriend;
+  @JsonKey(
+      defaultValue: false,
+      name: r'isFriend',
+      required: true,
+      includeIfNull: false)
+  final bool isFriend;
 
-  @BuiltValueField(wireName: r'last_login')
-  DateTime get lastLogin;
+  @JsonKey(name: r'last_login', required: true, includeIfNull: false)
+  final DateTime lastLogin;
 
   /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
-  @BuiltValueField(wireName: r'last_platform')
-  String get lastPlatform;
+  @JsonKey(name: r'last_platform', required: true, includeIfNull: false)
+  final String lastPlatform;
 
-  @BuiltValueField(wireName: r'obfuscatedEmail')
-  String get obfuscatedEmail;
+  @JsonKey(name: r'obfuscatedEmail', required: true, includeIfNull: false)
+  final String obfuscatedEmail;
 
-  @BuiltValueField(wireName: r'obfuscatedPendingEmail')
-  String get obfuscatedPendingEmail;
+  @JsonKey(
+      name: r'obfuscatedPendingEmail', required: true, includeIfNull: false)
+  final String obfuscatedPendingEmail;
 
-  @BuiltValueField(wireName: r'oculusId')
-  String get oculusId;
+  @JsonKey(name: r'oculusId', required: true, includeIfNull: false)
+  final String oculusId;
 
-  @BuiltValueField(wireName: r'offlineFriends')
-  BuiltList<String>? get offlineFriends;
+  @JsonKey(name: r'offlineFriends', required: false, includeIfNull: false)
+  final List<String>? offlineFriends;
 
-  @BuiltValueField(wireName: r'onlineFriends')
-  BuiltList<String>? get onlineFriends;
+  @JsonKey(name: r'onlineFriends', required: false, includeIfNull: false)
+  final List<String>? onlineFriends;
 
   ///
-  @BuiltValueField(wireName: r'pastDisplayNames')
-  BuiltList<PastDisplayName> get pastDisplayNames;
+  @JsonKey(name: r'pastDisplayNames', required: true, includeIfNull: false)
+  final List<PastDisplayName> pastDisplayNames;
 
-  @BuiltValueField(wireName: r'profilePicOverride')
-  String get profilePicOverride;
+  @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
+  final String profilePicOverride;
 
-  @BuiltValueField(wireName: r'state')
-  UserState get state;
-  // enum stateEnum {  offline,  active,  online,  };
+  @JsonKey(name: r'state', required: true, includeIfNull: false)
+  final UserState state;
 
-  @BuiltValueField(wireName: r'status')
-  UserStatus get status;
-  // enum statusEnum {  active,  join me,  ask me,  busy,  offline,  };
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
+  final UserStatus status;
 
-  @BuiltValueField(wireName: r'statusDescription')
-  String get statusDescription;
+  @JsonKey(name: r'statusDescription', required: true, includeIfNull: false)
+  final String statusDescription;
 
-  @BuiltValueField(wireName: r'statusFirstTime')
-  bool get statusFirstTime;
+  @JsonKey(name: r'statusFirstTime', required: true, includeIfNull: false)
+  final bool statusFirstTime;
 
-  @BuiltValueField(wireName: r'statusHistory')
-  BuiltList<String> get statusHistory;
+  @JsonKey(name: r'statusHistory', required: true, includeIfNull: false)
+  final List<String> statusHistory;
 
-  @BuiltValueField(wireName: r'steamDetails')
-  JsonObject get steamDetails;
+  @JsonKey(name: r'steamDetails', required: true, includeIfNull: false)
+  final Object steamDetails;
 
-  @BuiltValueField(wireName: r'steamId')
-  String get steamId;
+  @JsonKey(name: r'steamId', required: true, includeIfNull: false)
+  final String steamId;
 
-  @BuiltValueField(wireName: r'tags')
-  BuiltList<String> get tags;
+  @JsonKey(name: r'tags', required: true, includeIfNull: false)
+  final List<String> tags;
 
-  @BuiltValueField(wireName: r'twoFactorAuthEnabled')
-  bool get twoFactorAuthEnabled;
+  @JsonKey(name: r'twoFactorAuthEnabled', required: true, includeIfNull: false)
+  final bool twoFactorAuthEnabled;
 
-  @BuiltValueField(wireName: r'twoFactorAuthEnabledDate')
-  DateTime? get twoFactorAuthEnabledDate;
+  @JsonKey(
+      name: r'twoFactorAuthEnabledDate', required: false, includeIfNull: false)
+  final DateTime? twoFactorAuthEnabledDate;
 
-  @BuiltValueField(wireName: r'unsubscribe')
-  bool get unsubscribe;
+  @JsonKey(name: r'unsubscribe', required: true, includeIfNull: false)
+  final bool unsubscribe;
 
-  @BuiltValueField(wireName: r'userIcon')
-  String get userIcon;
+  @JsonKey(name: r'userIcon', required: true, includeIfNull: false)
+  final String userIcon;
 
-  @BuiltValueField(wireName: r'username')
-  String get username;
-
-  CurrentUser._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CurrentUserBuilder b) => b..isFriend = false;
-
-  factory CurrentUser([void updates(CurrentUserBuilder b)]) = _$CurrentUser;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<CurrentUser> get serializer => _$CurrentUserSerializer();
-}
-
-class _$CurrentUserSerializer implements StructuredSerializer<CurrentUser> {
-  @override
-  final Iterable<Type> types = const [CurrentUser, _$CurrentUser];
+  @JsonKey(name: r'username', required: true, includeIfNull: false)
+  final String username;
 
   @override
-  final String wireName = r'CurrentUser';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is CurrentUser &&
+          other.acceptedTOSVersion == acceptedTOSVersion &&
+          other.accountDeletionDate == accountDeletionDate &&
+          other.activeFriends == activeFriends &&
+          other.allowAvatarCopying == allowAvatarCopying &&
+          other.bio == bio &&
+          other.bioLinks == bioLinks &&
+          other.currentAvatar == currentAvatar &&
+          other.currentAvatarAssetUrl == currentAvatarAssetUrl &&
+          other.currentAvatarImageUrl == currentAvatarImageUrl &&
+          other.currentAvatarThumbnailImageUrl ==
+              currentAvatarThumbnailImageUrl &&
+          other.dateJoined == dateJoined &&
+          other.developerType == developerType &&
+          other.displayName == displayName &&
+          other.emailVerified == emailVerified &&
+          other.fallbackAvatar == fallbackAvatar &&
+          other.friendGroupNames == friendGroupNames &&
+          other.friendKey == friendKey &&
+          other.friends == friends &&
+          other.hasBirthday == hasBirthday &&
+          other.hasEmail == hasEmail &&
+          other.hasLoggedInFromClient == hasLoggedInFromClient &&
+          other.hasPendingEmail == hasPendingEmail &&
+          other.homeLocation == homeLocation &&
+          other.id == id &&
+          other.isFriend == isFriend &&
+          other.lastLogin == lastLogin &&
+          other.lastPlatform == lastPlatform &&
+          other.obfuscatedEmail == obfuscatedEmail &&
+          other.obfuscatedPendingEmail == obfuscatedPendingEmail &&
+          other.oculusId == oculusId &&
+          other.offlineFriends == offlineFriends &&
+          other.onlineFriends == onlineFriends &&
+          other.pastDisplayNames == pastDisplayNames &&
+          other.profilePicOverride == profilePicOverride &&
+          other.state == state &&
+          other.status == status &&
+          other.statusDescription == statusDescription &&
+          other.statusFirstTime == statusFirstTime &&
+          other.statusHistory == statusHistory &&
+          other.steamDetails == steamDetails &&
+          other.steamId == steamId &&
+          other.tags == tags &&
+          other.twoFactorAuthEnabled == twoFactorAuthEnabled &&
+          other.twoFactorAuthEnabledDate == twoFactorAuthEnabledDate &&
+          other.unsubscribe == unsubscribe &&
+          other.userIcon == userIcon &&
+          other.username == username;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, CurrentUser object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'acceptedTOSVersion')
-      ..add(serializers.serialize(object.acceptedTOSVersion,
-          specifiedType: const FullType(int)));
-    if (object.accountDeletionDate != null) {
-      result
-        ..add(r'accountDeletionDate')
-        ..add(serializers.serialize(object.accountDeletionDate,
-            specifiedType: const FullType.nullable(Date)));
-    }
-    if (object.activeFriends != null) {
-      result
-        ..add(r'activeFriends')
-        ..add(serializers.serialize(object.activeFriends,
-            specifiedType: const FullType(BuiltList, [FullType(String)])));
-    }
-    result
-      ..add(r'allowAvatarCopying')
-      ..add(serializers.serialize(object.allowAvatarCopying,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'bio')
-      ..add(serializers.serialize(object.bio,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'bioLinks')
-      ..add(serializers.serialize(object.bioLinks,
-          specifiedType: const FullType(BuiltList, [FullType(String)])));
-    result
-      ..add(r'currentAvatar')
-      ..add(serializers.serialize(object.currentAvatar,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'currentAvatarAssetUrl')
-      ..add(serializers.serialize(object.currentAvatarAssetUrl,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'currentAvatarImageUrl')
-      ..add(serializers.serialize(object.currentAvatarImageUrl,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'currentAvatarThumbnailImageUrl')
-      ..add(serializers.serialize(object.currentAvatarThumbnailImageUrl,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'date_joined')
-      ..add(serializers.serialize(object.dateJoined,
-          specifiedType: const FullType(Date)));
-    result
-      ..add(r'developerType')
-      ..add(serializers.serialize(object.developerType,
-          specifiedType: const FullType(DeveloperType)));
-    result
-      ..add(r'displayName')
-      ..add(serializers.serialize(object.displayName,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'emailVerified')
-      ..add(serializers.serialize(object.emailVerified,
-          specifiedType: const FullType(bool)));
-    if (object.fallbackAvatar != null) {
-      result
-        ..add(r'fallbackAvatar')
-        ..add(serializers.serialize(object.fallbackAvatar,
-            specifiedType: const FullType(String)));
-    }
-    result
-      ..add(r'friendGroupNames')
-      ..add(serializers.serialize(object.friendGroupNames,
-          specifiedType: const FullType(BuiltList, [FullType(String)])));
-    result
-      ..add(r'friendKey')
-      ..add(serializers.serialize(object.friendKey,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'friends')
-      ..add(serializers.serialize(object.friends,
-          specifiedType: const FullType(BuiltList, [FullType(String)])));
-    result
-      ..add(r'hasBirthday')
-      ..add(serializers.serialize(object.hasBirthday,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'hasEmail')
-      ..add(serializers.serialize(object.hasEmail,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'hasLoggedInFromClient')
-      ..add(serializers.serialize(object.hasLoggedInFromClient,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'hasPendingEmail')
-      ..add(serializers.serialize(object.hasPendingEmail,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'homeLocation')
-      ..add(serializers.serialize(object.homeLocation,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'id')
-      ..add(serializers.serialize(object.id,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'isFriend')
-      ..add(serializers.serialize(object.isFriend,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'last_login')
-      ..add(serializers.serialize(object.lastLogin,
-          specifiedType: const FullType(DateTime)));
-    result
-      ..add(r'last_platform')
-      ..add(serializers.serialize(object.lastPlatform,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'obfuscatedEmail')
-      ..add(serializers.serialize(object.obfuscatedEmail,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'obfuscatedPendingEmail')
-      ..add(serializers.serialize(object.obfuscatedPendingEmail,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'oculusId')
-      ..add(serializers.serialize(object.oculusId,
-          specifiedType: const FullType(String)));
-    if (object.offlineFriends != null) {
-      result
-        ..add(r'offlineFriends')
-        ..add(serializers.serialize(object.offlineFriends,
-            specifiedType: const FullType(BuiltList, [FullType(String)])));
-    }
-    if (object.onlineFriends != null) {
-      result
-        ..add(r'onlineFriends')
-        ..add(serializers.serialize(object.onlineFriends,
-            specifiedType: const FullType(BuiltList, [FullType(String)])));
-    }
-    result
-      ..add(r'pastDisplayNames')
-      ..add(serializers.serialize(object.pastDisplayNames,
-          specifiedType:
-              const FullType(BuiltList, [FullType(PastDisplayName)])));
-    result
-      ..add(r'profilePicOverride')
-      ..add(serializers.serialize(object.profilePicOverride,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'state')
-      ..add(serializers.serialize(object.state,
-          specifiedType: const FullType(UserState)));
-    result
-      ..add(r'status')
-      ..add(serializers.serialize(object.status,
-          specifiedType: const FullType(UserStatus)));
-    result
-      ..add(r'statusDescription')
-      ..add(serializers.serialize(object.statusDescription,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'statusFirstTime')
-      ..add(serializers.serialize(object.statusFirstTime,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'statusHistory')
-      ..add(serializers.serialize(object.statusHistory,
-          specifiedType: const FullType(BuiltList, [FullType(String)])));
-    result
-      ..add(r'steamDetails')
-      ..add(serializers.serialize(object.steamDetails,
-          specifiedType: const FullType(JsonObject)));
-    result
-      ..add(r'steamId')
-      ..add(serializers.serialize(object.steamId,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'tags')
-      ..add(serializers.serialize(object.tags,
-          specifiedType: const FullType(BuiltList, [FullType(String)])));
-    result
-      ..add(r'twoFactorAuthEnabled')
-      ..add(serializers.serialize(object.twoFactorAuthEnabled,
-          specifiedType: const FullType(bool)));
-    if (object.twoFactorAuthEnabledDate != null) {
-      result
-        ..add(r'twoFactorAuthEnabledDate')
-        ..add(serializers.serialize(object.twoFactorAuthEnabledDate,
-            specifiedType: const FullType.nullable(DateTime)));
-    }
-    result
-      ..add(r'unsubscribe')
-      ..add(serializers.serialize(object.unsubscribe,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'userIcon')
-      ..add(serializers.serialize(object.userIcon,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'username')
-      ..add(serializers.serialize(object.username,
-          specifiedType: const FullType(String)));
-    return result;
-  }
+  int get hashCode =>
+      acceptedTOSVersion.hashCode +
+      (accountDeletionDate == null ? 0 : accountDeletionDate.hashCode) +
+      activeFriends.hashCode +
+      allowAvatarCopying.hashCode +
+      bio.hashCode +
+      bioLinks.hashCode +
+      currentAvatar.hashCode +
+      currentAvatarAssetUrl.hashCode +
+      currentAvatarImageUrl.hashCode +
+      currentAvatarThumbnailImageUrl.hashCode +
+      dateJoined.hashCode +
+      developerType.hashCode +
+      displayName.hashCode +
+      emailVerified.hashCode +
+      fallbackAvatar.hashCode +
+      friendGroupNames.hashCode +
+      friendKey.hashCode +
+      friends.hashCode +
+      hasBirthday.hashCode +
+      hasEmail.hashCode +
+      hasLoggedInFromClient.hashCode +
+      hasPendingEmail.hashCode +
+      homeLocation.hashCode +
+      id.hashCode +
+      isFriend.hashCode +
+      lastLogin.hashCode +
+      lastPlatform.hashCode +
+      obfuscatedEmail.hashCode +
+      obfuscatedPendingEmail.hashCode +
+      oculusId.hashCode +
+      offlineFriends.hashCode +
+      onlineFriends.hashCode +
+      pastDisplayNames.hashCode +
+      profilePicOverride.hashCode +
+      state.hashCode +
+      status.hashCode +
+      statusDescription.hashCode +
+      statusFirstTime.hashCode +
+      statusHistory.hashCode +
+      steamDetails.hashCode +
+      steamId.hashCode +
+      tags.hashCode +
+      twoFactorAuthEnabled.hashCode +
+      (twoFactorAuthEnabledDate == null
+          ? 0
+          : twoFactorAuthEnabledDate.hashCode) +
+      unsubscribe.hashCode +
+      userIcon.hashCode +
+      username.hashCode;
+
+  factory CurrentUser.fromJson(Map<String, dynamic> json) =>
+      _$CurrentUserFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CurrentUserToJson(this);
 
   @override
-  CurrentUser deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = CurrentUserBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'acceptedTOSVersion':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.acceptedTOSVersion = valueDes;
-          break;
-        case r'accountDeletionDate':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType.nullable(Date)) as Date?;
-          if (valueDes == null) continue;
-          result.accountDeletionDate = valueDes;
-          break;
-        case r'activeFriends':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>;
-          result.activeFriends.replace(valueDes);
-          break;
-        case r'allowAvatarCopying':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.allowAvatarCopying = valueDes;
-          break;
-        case r'bio':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.bio = valueDes;
-          break;
-        case r'bioLinks':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>;
-          result.bioLinks.replace(valueDes);
-          break;
-        case r'currentAvatar':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.currentAvatar = valueDes;
-          break;
-        case r'currentAvatarAssetUrl':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.currentAvatarAssetUrl = valueDes;
-          break;
-        case r'currentAvatarImageUrl':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.currentAvatarImageUrl = valueDes;
-          break;
-        case r'currentAvatarThumbnailImageUrl':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.currentAvatarThumbnailImageUrl = valueDes;
-          break;
-        case r'date_joined':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(Date)) as Date;
-          result.dateJoined = valueDes;
-          break;
-        case r'developerType':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(DeveloperType)) as DeveloperType;
-          result.developerType = valueDes;
-          break;
-        case r'displayName':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.displayName = valueDes;
-          break;
-        case r'emailVerified':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.emailVerified = valueDes;
-          break;
-        case r'fallbackAvatar':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.fallbackAvatar = valueDes;
-          break;
-        case r'friendGroupNames':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>;
-          result.friendGroupNames.replace(valueDes);
-          break;
-        case r'friendKey':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.friendKey = valueDes;
-          break;
-        case r'friends':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>;
-          result.friends.replace(valueDes);
-          break;
-        case r'hasBirthday':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.hasBirthday = valueDes;
-          break;
-        case r'hasEmail':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.hasEmail = valueDes;
-          break;
-        case r'hasLoggedInFromClient':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.hasLoggedInFromClient = valueDes;
-          break;
-        case r'hasPendingEmail':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.hasPendingEmail = valueDes;
-          break;
-        case r'homeLocation':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.homeLocation = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.id = valueDes;
-          break;
-        case r'isFriend':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.isFriend = valueDes;
-          break;
-        case r'last_login':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
-          result.lastLogin = valueDes;
-          break;
-        case r'last_platform':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.lastPlatform = valueDes;
-          break;
-        case r'obfuscatedEmail':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.obfuscatedEmail = valueDes;
-          break;
-        case r'obfuscatedPendingEmail':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.obfuscatedPendingEmail = valueDes;
-          break;
-        case r'oculusId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.oculusId = valueDes;
-          break;
-        case r'offlineFriends':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>;
-          result.offlineFriends.replace(valueDes);
-          break;
-        case r'onlineFriends':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>;
-          result.onlineFriends.replace(valueDes);
-          break;
-        case r'pastDisplayNames':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, [FullType(PastDisplayName)]))
-              as BuiltList<PastDisplayName>;
-          result.pastDisplayNames.replace(valueDes);
-          break;
-        case r'profilePicOverride':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.profilePicOverride = valueDes;
-          break;
-        case r'state':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(UserState)) as UserState;
-          result.state = valueDes;
-          break;
-        case r'status':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(UserStatus)) as UserStatus;
-          result.status = valueDes;
-          break;
-        case r'statusDescription':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.statusDescription = valueDes;
-          break;
-        case r'statusFirstTime':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.statusFirstTime = valueDes;
-          break;
-        case r'statusHistory':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>;
-          result.statusHistory.replace(valueDes);
-          break;
-        case r'steamDetails':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(JsonObject)) as JsonObject;
-          result.steamDetails = valueDes;
-          break;
-        case r'steamId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.steamId = valueDes;
-          break;
-        case r'tags':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>;
-          result.tags.replace(valueDes);
-          break;
-        case r'twoFactorAuthEnabled':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.twoFactorAuthEnabled = valueDes;
-          break;
-        case r'twoFactorAuthEnabledDate':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType.nullable(DateTime)) as DateTime?;
-          if (valueDes == null) continue;
-          result.twoFactorAuthEnabledDate = valueDes;
-          break;
-        case r'unsubscribe':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.unsubscribe = valueDes;
-          break;
-        case r'userIcon':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.userIcon = valueDes;
-          break;
-        case r'username':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.username = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

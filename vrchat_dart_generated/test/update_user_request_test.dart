@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for UpdateUserRequest
 void main() {
-  final instance = UpdateUserRequestBuilder();
-  // TODO add properties to the builder and call build()
+  final UpdateUserRequest? instance = /* UpdateUserRequest(...) */ null;
+  // TODO add properties to the entity
 
   group(UpdateUserRequest, () {
     // String email
@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    // Date birthday
+    // DateTime birthday
     test('to test the property `birthday`', () async {
       // TODO
     });
@@ -23,7 +23,7 @@ void main() {
     });
 
     //
-    // BuiltList<String> tags
+    // List<String> tags
     test('to test the property `tags`', () async {
       // TODO
     });
@@ -43,7 +43,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<String> bioLinks
+    // List<String> bioLinks
     test('to test the property `bioLinks`', () async {
       // TODO
     });

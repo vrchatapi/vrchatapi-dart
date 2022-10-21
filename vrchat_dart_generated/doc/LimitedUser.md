@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **profilePicOverride** | **String** |  | 
 **status** | [**UserStatus**](UserStatus.md) |  | 
 **statusDescription** | **String** |  | 
-**tags** | **BuiltList&lt;String&gt;** | <- Always empty. | 
+**tags** | **List&lt;String&gt;** | <- Always empty. | 
 **userIcon** | **String** |  | 
 **username** | **String** |  | 
 **location** | **String** |  | [optional] 

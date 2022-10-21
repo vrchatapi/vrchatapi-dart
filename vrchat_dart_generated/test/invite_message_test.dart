@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for InviteMessage
 void main() {
-  final instance = InviteMessageBuilder();
-  // TODO add properties to the builder and call build()
+  final InviteMessage? instance = /* InviteMessage(...) */ null;
+  // TODO add properties to the entity
 
   group(InviteMessage, () {
     // bool canBeUpdated (default value: true)

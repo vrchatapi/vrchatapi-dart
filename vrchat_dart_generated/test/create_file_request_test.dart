@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for CreateFileRequest
 void main() {
-  final instance = CreateFileRequestBuilder();
-  // TODO add properties to the builder and call build()
+  final CreateFileRequest? instance = /* CreateFileRequest(...) */ null;
+  // TODO add properties to the entity
 
   group(CreateFileRequest, () {
     // String name
@@ -23,7 +23,7 @@ void main() {
     });
 
     //
-    // BuiltList<String> tags
+    // List<String> tags
     test('to test the property `tags`', () async {
       // TODO
     });

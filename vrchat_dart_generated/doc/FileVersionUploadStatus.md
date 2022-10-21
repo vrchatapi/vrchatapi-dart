@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **fileName** | **String** |  | 
 **nextPartNumber** | **num** |  | 
 **maxParts** | **num** |  | 
-**parts** | [**BuiltList&lt;JsonObject&gt;**](JsonObject.md) |  | 
-**etags** | [**BuiltList&lt;JsonObject&gt;**](JsonObject.md) | Unknown | 
+**parts** | **List&lt;Object&gt;** |  | 
+**etags** | **List&lt;Object&gt;** | Unknown | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -2,98 +2,65 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+// ignore_for_file: unused_element
+import 'package:json_annotation/json_annotation.dart';
 
 part 'friend_status.g.dart';
 
-/// FriendStatus
-///
-/// Properties:
-/// * [incomingRequest]
-/// * [isFriend]
-/// * [outgoingRequest]
-abstract class FriendStatus
-    implements Built<FriendStatus, FriendStatusBuilder> {
-  @BuiltValueField(wireName: r'incomingRequest')
-  bool get incomingRequest;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class FriendStatus {
+  /// Returns a new [FriendStatus] instance.
+  FriendStatus({
+    this.incomingRequest = false,
+    this.isFriend = false,
+    this.outgoingRequest = false,
+  });
 
-  @BuiltValueField(wireName: r'isFriend')
-  bool get isFriend;
+  @JsonKey(
+      defaultValue: false,
+      name: r'incomingRequest',
+      required: true,
+      includeIfNull: false)
+  final bool incomingRequest;
 
-  @BuiltValueField(wireName: r'outgoingRequest')
-  bool get outgoingRequest;
+  @JsonKey(
+      defaultValue: false,
+      name: r'isFriend',
+      required: true,
+      includeIfNull: false)
+  final bool isFriend;
 
-  FriendStatus._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(FriendStatusBuilder b) => b
-    ..incomingRequest = false
-    ..isFriend = false
-    ..outgoingRequest = false;
-
-  factory FriendStatus([void updates(FriendStatusBuilder b)]) = _$FriendStatus;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<FriendStatus> get serializer => _$FriendStatusSerializer();
-}
-
-class _$FriendStatusSerializer implements StructuredSerializer<FriendStatus> {
-  @override
-  final Iterable<Type> types = const [FriendStatus, _$FriendStatus];
-
-  @override
-  final String wireName = r'FriendStatus';
+  @JsonKey(
+      defaultValue: false,
+      name: r'outgoingRequest',
+      required: true,
+      includeIfNull: false)
+  final bool outgoingRequest;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, FriendStatus object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'incomingRequest')
-      ..add(serializers.serialize(object.incomingRequest,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'isFriend')
-      ..add(serializers.serialize(object.isFriend,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'outgoingRequest')
-      ..add(serializers.serialize(object.outgoingRequest,
-          specifiedType: const FullType(bool)));
-    return result;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is FriendStatus &&
+          other.incomingRequest == incomingRequest &&
+          other.isFriend == isFriend &&
+          other.outgoingRequest == outgoingRequest;
 
   @override
-  FriendStatus deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = FriendStatusBuilder();
+  int get hashCode =>
+      incomingRequest.hashCode + isFriend.hashCode + outgoingRequest.hashCode;
 
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
+  factory FriendStatus.fromJson(Map<String, dynamic> json) =>
+      _$FriendStatusFromJson(json);
 
-      switch (key) {
-        case r'incomingRequest':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.incomingRequest = valueDes;
-          break;
-        case r'isFriend':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.isFriend = valueDes;
-          break;
-        case r'outgoingRequest':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.outgoingRequest = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  Map<String, dynamic> toJson() => _$FriendStatusToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
 }

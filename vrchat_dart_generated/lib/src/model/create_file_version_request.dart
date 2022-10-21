@@ -2,121 +2,61 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+// ignore_for_file: unused_element
+import 'package:json_annotation/json_annotation.dart';
 
 part 'create_file_version_request.g.dart';
 
-/// CreateFileVersionRequest
-///
-/// Properties:
-/// * [signatureMd5]
-/// * [signatureSizeInBytes]
-/// * [fileMd5]
-/// * [fileSizeInBytes]
-abstract class CreateFileVersionRequest
-    implements
-        Built<CreateFileVersionRequest, CreateFileVersionRequestBuilder> {
-  @BuiltValueField(wireName: r'signatureMd5')
-  String get signatureMd5;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class CreateFileVersionRequest {
+  /// Returns a new [CreateFileVersionRequest] instance.
+  CreateFileVersionRequest({
+    required this.signatureMd5,
+    required this.signatureSizeInBytes,
+    this.fileMd5,
+    this.fileSizeInBytes,
+  });
 
-  @BuiltValueField(wireName: r'signatureSizeInBytes')
-  num get signatureSizeInBytes;
+  @JsonKey(name: r'signatureMd5', required: true, includeIfNull: false)
+  final String signatureMd5;
 
-  @BuiltValueField(wireName: r'fileMd5')
-  String? get fileMd5;
+  @JsonKey(name: r'signatureSizeInBytes', required: true, includeIfNull: false)
+  final num signatureSizeInBytes;
 
-  @BuiltValueField(wireName: r'fileSizeInBytes')
-  num? get fileSizeInBytes;
+  @JsonKey(name: r'fileMd5', required: false, includeIfNull: false)
+  final String? fileMd5;
 
-  CreateFileVersionRequest._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CreateFileVersionRequestBuilder b) => b;
-
-  factory CreateFileVersionRequest(
-          [void updates(CreateFileVersionRequestBuilder b)]) =
-      _$CreateFileVersionRequest;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<CreateFileVersionRequest> get serializer =>
-      _$CreateFileVersionRequestSerializer();
-}
-
-class _$CreateFileVersionRequestSerializer
-    implements StructuredSerializer<CreateFileVersionRequest> {
-  @override
-  final Iterable<Type> types = const [
-    CreateFileVersionRequest,
-    _$CreateFileVersionRequest
-  ];
+  @JsonKey(name: r'fileSizeInBytes', required: false, includeIfNull: false)
+  final num? fileSizeInBytes;
 
   @override
-  final String wireName = r'CreateFileVersionRequest';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is CreateFileVersionRequest &&
+          other.signatureMd5 == signatureMd5 &&
+          other.signatureSizeInBytes == signatureSizeInBytes &&
+          other.fileMd5 == fileMd5 &&
+          other.fileSizeInBytes == fileSizeInBytes;
 
   @override
-  Iterable<Object?> serialize(
-      Serializers serializers, CreateFileVersionRequest object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'signatureMd5')
-      ..add(serializers.serialize(object.signatureMd5,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'signatureSizeInBytes')
-      ..add(serializers.serialize(object.signatureSizeInBytes,
-          specifiedType: const FullType(num)));
-    if (object.fileMd5 != null) {
-      result
-        ..add(r'fileMd5')
-        ..add(serializers.serialize(object.fileMd5,
-            specifiedType: const FullType(String)));
-    }
-    if (object.fileSizeInBytes != null) {
-      result
-        ..add(r'fileSizeInBytes')
-        ..add(serializers.serialize(object.fileSizeInBytes,
-            specifiedType: const FullType(num)));
-    }
-    return result;
-  }
+  int get hashCode =>
+      signatureMd5.hashCode +
+      signatureSizeInBytes.hashCode +
+      fileMd5.hashCode +
+      fileSizeInBytes.hashCode;
+
+  factory CreateFileVersionRequest.fromJson(Map<String, dynamic> json) =>
+      _$CreateFileVersionRequestFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CreateFileVersionRequestToJson(this);
 
   @override
-  CreateFileVersionRequest deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = CreateFileVersionRequestBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'signatureMd5':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.signatureMd5 = valueDes;
-          break;
-        case r'signatureSizeInBytes':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
-          result.signatureSizeInBytes = valueDes;
-          break;
-        case r'fileMd5':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.fileMd5 = valueDes;
-          break;
-        case r'fileSizeInBytes':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
-          result.fileSizeInBytes = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

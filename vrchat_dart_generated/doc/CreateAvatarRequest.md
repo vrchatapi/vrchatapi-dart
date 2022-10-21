@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **name** | **String** |  | 
 **description** | **String** |  | [optional] 
-**tags** | **BuiltList&lt;String&gt;** |   | [optional] 
+**tags** | **List&lt;String&gt;** |   | [optional] 
 **imageUrl** | **String** |  | 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | [optional] 
 **version** | **num** |  | [optional] [default to 1]

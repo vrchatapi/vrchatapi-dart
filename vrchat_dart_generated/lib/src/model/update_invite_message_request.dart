@@ -2,78 +2,41 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+// ignore_for_file: unused_element
+import 'package:json_annotation/json_annotation.dart';
 
 part 'update_invite_message_request.g.dart';
 
-/// UpdateInviteMessageRequest
-///
-/// Properties:
-/// * [message]
-abstract class UpdateInviteMessageRequest
-    implements
-        Built<UpdateInviteMessageRequest, UpdateInviteMessageRequestBuilder> {
-  @BuiltValueField(wireName: r'message')
-  String get message;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class UpdateInviteMessageRequest {
+  /// Returns a new [UpdateInviteMessageRequest] instance.
+  UpdateInviteMessageRequest({
+    required this.message,
+  });
 
-  UpdateInviteMessageRequest._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UpdateInviteMessageRequestBuilder b) => b;
-
-  factory UpdateInviteMessageRequest(
-          [void updates(UpdateInviteMessageRequestBuilder b)]) =
-      _$UpdateInviteMessageRequest;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<UpdateInviteMessageRequest> get serializer =>
-      _$UpdateInviteMessageRequestSerializer();
-}
-
-class _$UpdateInviteMessageRequestSerializer
-    implements StructuredSerializer<UpdateInviteMessageRequest> {
-  @override
-  final Iterable<Type> types = const [
-    UpdateInviteMessageRequest,
-    _$UpdateInviteMessageRequest
-  ];
+  @JsonKey(name: r'message', required: true, includeIfNull: false)
+  final String message;
 
   @override
-  final String wireName = r'UpdateInviteMessageRequest';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is UpdateInviteMessageRequest && other.message == message;
 
   @override
-  Iterable<Object?> serialize(
-      Serializers serializers, UpdateInviteMessageRequest object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'message')
-      ..add(serializers.serialize(object.message,
-          specifiedType: const FullType(String)));
-    return result;
-  }
+  int get hashCode => message.hashCode;
+
+  factory UpdateInviteMessageRequest.fromJson(Map<String, dynamic> json) =>
+      _$UpdateInviteMessageRequestFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UpdateInviteMessageRequestToJson(this);
 
   @override
-  UpdateInviteMessageRequest deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = UpdateInviteMessageRequestBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'message':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.message = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

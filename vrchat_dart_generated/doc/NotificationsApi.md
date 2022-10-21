@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getNotifications**
-> BuiltList<Notification> getNotifications(type, sent, hidden, after, n, offset)
+> List<Notification> getNotifications(type, sent, hidden, after, n, offset)
 
 List Notifications
 
@@ -185,7 +185,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getNotificationsApi();
-final String type = all; // String | Only send notifications of this type (can use `all` for all).
+final String type = all; // String | Only send notifications of this type (can use `all` for all). This parameter no longer does anything, and is deprecated.
 final bool sent = true; // bool | Return notifications sent by the user. Must be false or omitted.
 final bool hidden = true; // bool | Whether to return hidden or non-hidden notifications. True only allowed on type `friendRequest`.
 final String after = five_minutes_ago; // String | Only return notifications sent after this Date. Ignored if type is `friendRequest`.
@@ -204,7 +204,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **String**| Only send notifications of this type (can use `all` for all). | [optional] 
+ **type** | **String**| Only send notifications of this type (can use `all` for all). This parameter no longer does anything, and is deprecated. | [optional] 
  **sent** | **bool**| Return notifications sent by the user. Must be false or omitted. | [optional] 
  **hidden** | **bool**| Whether to return hidden or non-hidden notifications. True only allowed on type `friendRequest`. | [optional] 
  **after** | **String**| Only return notifications sent after this Date. Ignored if type is `friendRequest`. | [optional] 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;Notification&gt;**](Notification.md)
+[**List&lt;Notification&gt;**](Notification.md)
 
 ### Authorization
 

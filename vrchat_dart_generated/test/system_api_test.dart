@@ -46,7 +46,7 @@ void main() {
     //
     // IPS (Info Push System) is a system for VRChat to push out dynamic information to the client. This is primarily used by the Quick-Menu info banners, but can also be used to e.g. alert you to update your game to the latest version.  `include` is used to query what Information Pushes should be included in the response. If include is missing or empty, then no notices will normally be returned. This is an \"any of\" search.  `require` is used to limit what Information Pushes should be included in the response. This is usually used in combination with `include`, and is an \"all of\" search.
     //
-    //Future<BuiltList<InfoPush>> getInfoPush({ String require, String include }) async
+    //Future<List<InfoPush>> getInfoPush({ String require, String include }) async
     test('test getInfoPush', () async {
       // TODO
     });

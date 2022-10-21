@@ -2,89 +2,45 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+// ignore_for_file: unused_element
+import 'package:json_annotation/json_annotation.dart';
 
 part 'verify_auth_token_result.g.dart';
 
-/// VerifyAuthTokenResult
-///
-/// Properties:
-/// * [ok]
-/// * [token]
-abstract class VerifyAuthTokenResult
-    implements Built<VerifyAuthTokenResult, VerifyAuthTokenResultBuilder> {
-  @BuiltValueField(wireName: r'ok')
-  bool get ok;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class VerifyAuthTokenResult {
+  /// Returns a new [VerifyAuthTokenResult] instance.
+  VerifyAuthTokenResult({
+    required this.ok,
+    required this.token,
+  });
 
-  @BuiltValueField(wireName: r'token')
-  String get token;
+  @JsonKey(name: r'ok', required: true, includeIfNull: false)
+  final bool ok;
 
-  VerifyAuthTokenResult._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(VerifyAuthTokenResultBuilder b) => b;
-
-  factory VerifyAuthTokenResult(
-      [void updates(VerifyAuthTokenResultBuilder b)]) = _$VerifyAuthTokenResult;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<VerifyAuthTokenResult> get serializer =>
-      _$VerifyAuthTokenResultSerializer();
-}
-
-class _$VerifyAuthTokenResultSerializer
-    implements StructuredSerializer<VerifyAuthTokenResult> {
-  @override
-  final Iterable<Type> types = const [
-    VerifyAuthTokenResult,
-    _$VerifyAuthTokenResult
-  ];
+  @JsonKey(name: r'token', required: true, includeIfNull: false)
+  final String token;
 
   @override
-  final String wireName = r'VerifyAuthTokenResult';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is VerifyAuthTokenResult && other.ok == ok && other.token == token;
 
   @override
-  Iterable<Object?> serialize(
-      Serializers serializers, VerifyAuthTokenResult object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'ok')
-      ..add(serializers.serialize(object.ok,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'token')
-      ..add(serializers.serialize(object.token,
-          specifiedType: const FullType(String)));
-    return result;
-  }
+  int get hashCode => ok.hashCode + token.hashCode;
+
+  factory VerifyAuthTokenResult.fromJson(Map<String, dynamic> json) =>
+      _$VerifyAuthTokenResultFromJson(json);
+
+  Map<String, dynamic> toJson() => _$VerifyAuthTokenResultToJson(this);
 
   @override
-  VerifyAuthTokenResult deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = VerifyAuthTokenResultBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'ok':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.ok = valueDes;
-          break;
-        case r'token':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.token = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

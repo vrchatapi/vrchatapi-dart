@@ -10,7 +10,7 @@ void main() {
     //
     // Get a list of all current user subscriptions.
     //
-    //Future<BuiltList<UserSubscription>> getCurrentSubscriptions() async
+    //Future<List<UserSubscription>> getCurrentSubscriptions() async
     test('test getCurrentSubscriptions', () async {
       // TODO
     });
@@ -37,7 +37,7 @@ void main() {
     //
     // Get all own Steam transactions.
     //
-    //Future<BuiltList<Transaction>> getSteamTransactions() async
+    //Future<List<Transaction>> getSteamTransactions() async
     test('test getSteamTransactions', () async {
       // TODO
     });
@@ -46,7 +46,7 @@ void main() {
     //
     // List all existing Subscriptions. For example, \"vrchatplus-monthly\" and \"vrchatplus-yearly\".
     //
-    //Future<BuiltList<Subscription>> getSubscriptions() async
+    //Future<List<Subscription>> getSubscriptions() async
     test('test getSubscriptions', () async {
       // TODO
     });

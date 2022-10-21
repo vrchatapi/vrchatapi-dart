@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for APIEventConfig
 void main() {
-  final instance = APIEventConfigBuilder();
-  // TODO add properties to the builder and call build()
+  final APIEventConfig? instance = /* APIEventConfig(...) */ null;
+  // TODO add properties to the entity
 
   group(APIEventConfig, () {
     // Unknown

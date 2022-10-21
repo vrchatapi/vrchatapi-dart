@@ -4,10 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:vrchat_dart_generated/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
 import 'package:vrchat_dart_generated/src/model/two_factor_auth_code.dart';
@@ -18,9 +19,7 @@ import 'package:vrchat_dart_generated/src/model/verify_auth_token_result.dart';
 class AuthenticationApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const AuthenticationApi(this._dio, this._serializers);
+  const AuthenticationApi(this._dio);
 
   /// Check User Exists
   /// Checks if a user by a given &#x60;username&#x60;, &#x60;displayName&#x60; or &#x60;email&#x60; exist. This is used during registration to check if a username has already been taken, during change of displayName to check if a displayName is available, and during change of email to check if the email is already used. In the later two cases the &#x60;excludeUserId&#x60; is used to exclude oneself, otherwise the result would always be true.  It is **REQUIRED** to include **AT LEAST** &#x60;username&#x60;, &#x60;displayName&#x60; **or** &#x60;email&#x60; query parameter. Although they can be combined - in addition with &#x60;excludeUserId&#x60; (generally to exclude yourself) - to further fine-tune the search.
@@ -72,18 +71,10 @@ class AuthenticationApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (email != null)
-        r'email':
-            encodeQueryParameter(_serializers, email, const FullType(String)),
-      if (displayName != null)
-        r'displayName': encodeQueryParameter(
-            _serializers, displayName, const FullType(String)),
-      if (userId != null)
-        r'userId':
-            encodeQueryParameter(_serializers, userId, const FullType(String)),
-      if (excludeUserId != null)
-        r'excludeUserId': encodeQueryParameter(
-            _serializers, excludeUserId, const FullType(String)),
+      if (email != null) r'email': email,
+      if (displayName != null) r'displayName': displayName,
+      if (userId != null) r'userId': userId,
+      if (excludeUserId != null) r'excludeUserId': excludeUserId,
     };
 
     final _response = await _dio.request<Object>(
@@ -98,11 +89,9 @@ class AuthenticationApi {
     UserExists _responseData;
 
     try {
-      const _responseType = FullType(UserExists);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as UserExists;
+      _responseData = deserialize<UserExists, UserExists>(
+          _response.data!, 'UserExists',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -185,11 +174,9 @@ class AuthenticationApi {
     CurrentUser _responseData;
 
     try {
-      const _responseType = FullType(CurrentUser);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as CurrentUser;
+      _responseData = deserialize<CurrentUser, CurrentUser>(
+          _response.data!, 'CurrentUser',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -274,11 +261,9 @@ class AuthenticationApi {
     CurrentUser _responseData;
 
     try {
-      const _responseType = FullType(CurrentUser);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as CurrentUser;
+      _responseData = deserialize<CurrentUser, CurrentUser>(
+          _response.data!, 'CurrentUser',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -352,11 +337,8 @@ class AuthenticationApi {
     Success _responseData;
 
     try {
-      const _responseType = FullType(Success);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Success;
+      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -425,10 +407,7 @@ class AuthenticationApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(TwoFactorAuthCode);
-      _bodyData = twoFactorAuthCode == null
-          ? null
-          : _serializers.serialize(twoFactorAuthCode, specifiedType: _type);
+      _bodyData = jsonEncode(twoFactorAuthCode);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -452,11 +431,9 @@ class AuthenticationApi {
     Verify2FAResult _responseData;
 
     try {
-      const _responseType = FullType(Verify2FAResult);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Verify2FAResult;
+      _responseData = deserialize<Verify2FAResult, Verify2FAResult>(
+          _response.data!, 'Verify2FAResult',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -530,11 +507,9 @@ class AuthenticationApi {
     VerifyAuthTokenResult _responseData;
 
     try {
-      const _responseType = FullType(VerifyAuthTokenResult);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as VerifyAuthTokenResult;
+      _responseData = deserialize<VerifyAuthTokenResult, VerifyAuthTokenResult>(
+          _response.data!, 'VerifyAuthTokenResult',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -603,10 +578,7 @@ class AuthenticationApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(TwoFactorAuthCode);
-      _bodyData = twoFactorAuthCode == null
-          ? null
-          : _serializers.serialize(twoFactorAuthCode, specifiedType: _type);
+      _bodyData = jsonEncode(twoFactorAuthCode);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -630,11 +602,9 @@ class AuthenticationApi {
     Verify2FAResult _responseData;
 
     try {
-      const _responseType = FullType(Verify2FAResult);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Verify2FAResult;
+      _responseData = deserialize<Verify2FAResult, Verify2FAResult>(
+          _response.data!, 'Verify2FAResult',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

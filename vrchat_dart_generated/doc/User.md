@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allowAvatarCopying** | **bool** |  | [default to true]
 **bio** | **String** |  | 
-**bioLinks** | **BuiltList&lt;String&gt;** |  | 
+**bioLinks** | **List&lt;String&gt;** |  | 
 **currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
 **currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
-**dateJoined** | [**Date**](Date.md) |  | 
+**dateJoined** | [**DateTime**](DateTime.md) |  | 
 **developerType** | [**DeveloperType**](DeveloperType.md) |  | 
 **displayName** | **String** | A users visual display name. This is what shows up in-game, and can different from their `username`. Changing display name is restricted to a cooldown period. | 
 **friendKey** | **String** |  | 
@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **state** | [**UserState**](UserState.md) |  | 
 **status** | [**UserStatus**](UserStatus.md) |  | 
 **statusDescription** | **String** |  | 
-**tags** | **BuiltList&lt;String&gt;** |   | 
+**tags** | **List&lt;String&gt;** |   | 
 **travelingToInstance** | **String** |  | [optional] 
 **travelingToLocation** | **String** |  | [optional] 
 **travelingToWorld** | **String** |  | [optional] 

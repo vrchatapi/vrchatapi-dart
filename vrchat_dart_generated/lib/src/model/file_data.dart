@@ -2,172 +2,95 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/file_status.dart';
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'file_data.g.dart';
 
-///
-///
-/// Properties:
-/// * [category]
-/// * [fileName]
-/// * [md5]
-/// * [sizeInBytes]
-/// * [status]
-/// * [uploadId]
-/// * [url]
-abstract class FileData implements Built<FileData, FileDataBuilder> {
-  @BuiltValueField(wireName: r'category')
-  FileDataCategoryEnum get category;
-  // enum categoryEnum {  multipart,  queued,  simple,  };
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class FileData {
+  /// Returns a new [FileData] instance.
+  FileData({
+    this.category = const FileDataCategoryEnum._('queued'),
+    required this.fileName,
+    required this.md5,
+    required this.sizeInBytes,
+    required this.status,
+    this.uploadId = '',
+    required this.url,
+  });
 
-  @BuiltValueField(wireName: r'fileName')
-  String get fileName;
+  @JsonKey(
+      defaultValue: 'queued',
+      name: r'category',
+      required: true,
+      includeIfNull: false)
+  final FileDataCategoryEnum category;
 
-  @BuiltValueField(wireName: r'md5')
-  String get md5;
+  @JsonKey(name: r'fileName', required: true, includeIfNull: false)
+  final String fileName;
 
-  @BuiltValueField(wireName: r'sizeInBytes')
-  int get sizeInBytes;
+  @JsonKey(name: r'md5', required: true, includeIfNull: false)
+  final String md5;
 
-  @BuiltValueField(wireName: r'status')
-  FileStatus get status;
-  // enum statusEnum {  waiting,  complete,  none,  queued,  };
+  // minimum: 0
+  @JsonKey(name: r'sizeInBytes', required: true, includeIfNull: false)
+  final int sizeInBytes;
 
-  @BuiltValueField(wireName: r'uploadId')
-  String get uploadId;
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
+  final FileStatus status;
 
-  @BuiltValueField(wireName: r'url')
-  String get url;
+  @JsonKey(
+      defaultValue: '', name: r'uploadId', required: true, includeIfNull: false)
+  final String uploadId;
 
-  FileData._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(FileDataBuilder b) => b
-    ..category = const FileDataCategoryEnum._('queued')
-    ..uploadId = '';
-
-  factory FileData([void updates(FileDataBuilder b)]) = _$FileData;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<FileData> get serializer => _$FileDataSerializer();
-}
-
-class _$FileDataSerializer implements StructuredSerializer<FileData> {
-  @override
-  final Iterable<Type> types = const [FileData, _$FileData];
+  @JsonKey(name: r'url', required: true, includeIfNull: false)
+  final String url;
 
   @override
-  final String wireName = r'FileData';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is FileData &&
+          other.category == category &&
+          other.fileName == fileName &&
+          other.md5 == md5 &&
+          other.sizeInBytes == sizeInBytes &&
+          other.status == status &&
+          other.uploadId == uploadId &&
+          other.url == url;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, FileData object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'category')
-      ..add(serializers.serialize(object.category,
-          specifiedType: const FullType(FileDataCategoryEnum)));
-    result
-      ..add(r'fileName')
-      ..add(serializers.serialize(object.fileName,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'md5')
-      ..add(serializers.serialize(object.md5,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'sizeInBytes')
-      ..add(serializers.serialize(object.sizeInBytes,
-          specifiedType: const FullType(int)));
-    result
-      ..add(r'status')
-      ..add(serializers.serialize(object.status,
-          specifiedType: const FullType(FileStatus)));
-    result
-      ..add(r'uploadId')
-      ..add(serializers.serialize(object.uploadId,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'url')
-      ..add(serializers.serialize(object.url,
-          specifiedType: const FullType(String)));
-    return result;
-  }
+  int get hashCode =>
+      category.hashCode +
+      fileName.hashCode +
+      md5.hashCode +
+      sizeInBytes.hashCode +
+      status.hashCode +
+      uploadId.hashCode +
+      url.hashCode;
+
+  factory FileData.fromJson(Map<String, dynamic> json) =>
+      _$FileDataFromJson(json);
+
+  Map<String, dynamic> toJson() => _$FileDataToJson(this);
 
   @override
-  FileData deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = FileDataBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'category':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(FileDataCategoryEnum))
-              as FileDataCategoryEnum;
-          result.category = valueDes;
-          break;
-        case r'fileName':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.fileName = valueDes;
-          break;
-        case r'md5':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.md5 = valueDes;
-          break;
-        case r'sizeInBytes':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.sizeInBytes = valueDes;
-          break;
-        case r'status':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(FileStatus)) as FileStatus;
-          result.status = valueDes;
-          break;
-        case r'uploadId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.uploadId = valueDes;
-          break;
-        case r'url':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.url = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }
 
-class FileDataCategoryEnum extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'multipart')
-  static const FileDataCategoryEnum multipart =
-      _$fileDataCategoryEnum_multipart;
-  @BuiltValueEnumConst(wireName: r'queued')
-  static const FileDataCategoryEnum queued = _$fileDataCategoryEnum_queued;
-  @BuiltValueEnumConst(wireName: r'simple')
-  static const FileDataCategoryEnum simple = _$fileDataCategoryEnum_simple;
-
-  static Serializer<FileDataCategoryEnum> get serializer =>
-      _$fileDataCategoryEnumSerializer;
-
-  const FileDataCategoryEnum._(String name) : super(name);
-
-  static BuiltSet<FileDataCategoryEnum> get values =>
-      _$fileDataCategoryEnumValues;
-  static FileDataCategoryEnum valueOf(String name) =>
-      _$fileDataCategoryEnumValueOf(name);
+enum FileDataCategoryEnum {
+  @JsonValue(r'multipart')
+  multipart,
+  @JsonValue(r'queued')
+  queued,
+  @JsonValue(r'simple')
+  simple,
 }

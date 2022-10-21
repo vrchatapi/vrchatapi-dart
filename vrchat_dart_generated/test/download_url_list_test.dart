@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for DownloadURLList
 void main() {
-  final instance = DownloadURLListBuilder();
-  // TODO add properties to the builder and call build()
+  final DownloadURLList? instance = /* DownloadURLList(...) */ null;
+  // TODO add properties to the entity
 
   group(DownloadURLList, () {
     // Download link for legacy SDK2

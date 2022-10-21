@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for SentNotification
 void main() {
-  final instance = SentNotificationBuilder();
-  // TODO add properties to the builder and call build()
+  final SentNotification? instance = /* SentNotification(...) */ null;
+  // TODO add properties to the entity
 
   group(SentNotification, () {
     // DateTime createdAt

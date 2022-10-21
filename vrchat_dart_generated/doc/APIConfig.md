@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **voiceEnableDegradation** | **bool** | Unknown, probably voice optimization testing | [default to false]
 **voiceEnableReceiverLimiting** | **bool** | Unknown, probably voice optimization testing | [default to true]
 **address** | **String** | VRChat's office address | 
-**announcements** | [**BuiltSet&lt;PublicAnnouncement&gt;**](PublicAnnouncement.md) | Public Announcements | 
+**announcements** | [**Set&lt;PublicAnnouncement&gt;**](PublicAnnouncement.md) | Public Announcements | 
 **apiKey** | **String** | apiKey to be used for all other requests | 
 **appName** | **String** | Game name | [default to 'VrChat']
 **buildVersionTag** | **String** | Build tag of the API server | 
@@ -48,7 +48,7 @@ Name | Type | Description | Notes
 **disableUpgradeAccount** | **bool** | Toggles if account upgrading \"linking with Steam/Oculus\" should be disabled. | [default to false]
 **downloadLinkWindows** | **String** | Download link for game on the Oculus Rift website. | 
 **downloadUrls** | [**DownloadURLList**](DownloadURLList.md) |  | 
-**dynamicWorldRows** | [**BuiltSet&lt;DynamicContentRow&gt;**](DynamicContentRow.md) | Array of DynamicWorldRow objects, used by the game to display the list of world rows | 
+**dynamicWorldRows** | [**Set&lt;DynamicContentRow&gt;**](DynamicContentRow.md) | Array of DynamicWorldRow objects, used by the game to display the list of world rows | 
 **events** | [**APIEventConfig**](APIEventConfig.md) |  | 
 **gearDemoRoomId** | **String** | Unknown | 
 **homeWorldId** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | 
@@ -77,14 +77,14 @@ Name | Type | Description | Notes
 **updateRateMsNormal** | **int** | Unknown | 
 **updateRateMsUdonManual** | **int** | Unknown | 
 **uploadAnalysisPercent** | **int** | Unknown | 
-**urlList** | **BuiltList&lt;String&gt;** | List of allowed URLs that bypass the \"Allow untrusted URL's\" setting in-game | 
+**urlList** | **List&lt;String&gt;** | List of allowed URLs that bypass the \"Allow untrusted URL's\" setting in-game | 
 **useReliableUdpForVoice** | **bool** | Unknown | [default to false]
 **userUpdatePeriod** | **int** | Unknown | 
 **userVerificationDelay** | **int** | Unknown | 
 **userVerificationRetry** | **int** | Unknown | 
 **userVerificationTimeout** | **int** | Unknown | 
 **viveWindowsUrl** | **String** | Download link for game on the Steam website. | 
-**whiteListedAssetUrls** | **BuiltList&lt;String&gt;** | List of allowed URLs that are allowed to host avatar assets | 
+**whiteListedAssetUrls** | **List&lt;String&gt;** | List of allowed URLs that are allowed to host avatar assets | 
 **worldUpdatePeriod** | **int** | Unknown | 
 **playerUrlResolverHash** | **String** | Currently used youtube-dl.exe hash in SHA-256-delimited format | 
 **playerUrlResolverVersion** | **String** | Currently used youtube-dl.exe version | 

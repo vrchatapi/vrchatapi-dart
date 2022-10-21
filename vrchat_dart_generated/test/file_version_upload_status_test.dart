@@ -3,8 +3,9 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for FileVersionUploadStatus
 void main() {
-  final instance = FileVersionUploadStatusBuilder();
-  // TODO add properties to the builder and call build()
+  final FileVersionUploadStatus?
+      instance = /* FileVersionUploadStatus(...) */ null;
+  // TODO add properties to the entity
 
   group(FileVersionUploadStatus, () {
     // String uploadId
@@ -27,13 +28,13 @@ void main() {
       // TODO
     });
 
-    // BuiltList<JsonObject> parts
+    // List<Object> parts
     test('to test the property `parts`', () async {
       // TODO
     });
 
     // Unknown
-    // BuiltList<JsonObject> etags
+    // List<Object> etags
     test('to test the property `etags`', () async {
       // TODO
     });

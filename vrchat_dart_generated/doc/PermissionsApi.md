@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **getAssignedPermissions**
-> BuiltList<Permission> getAssignedPermissions()
+> List<Permission> getAssignedPermissions()
 
 Get Assigned Permissions
 
@@ -47,7 +47,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;Permission&gt;**](Permission.md)
+[**List&lt;Permission&gt;**](Permission.md)
 
 ### Authorization
 

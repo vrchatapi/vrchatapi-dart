@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for InfoPushData
 void main() {
-  final instance = InfoPushDataBuilder();
-  // TODO add properties to the builder and call build()
+  final InfoPushData? instance = /* InfoPushData(...) */ null;
+  // TODO add properties to the entity
 
   group(InfoPushData, () {
     // DynamicContentRow contentList

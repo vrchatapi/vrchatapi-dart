@@ -3,492 +3,138 @@
 part of 'world.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$World extends World {
-  @override
-  final String authorId;
-  @override
-  final String authorName;
-  @override
-  final int capacity;
-  @override
-  final DateTime createdAt;
-  @override
-  final String description;
-  @override
-  final int? favorites;
-  @override
-  final bool featured;
-  @override
-  final int heat;
-  @override
-  final String id;
-  @override
-  final String imageUrl;
-  @override
-  final BuiltList<BuiltList<JsonObject>>? instances;
-  @override
-  final String labsPublicationDate;
-  @override
-  final String name;
-  @override
-  final String namespace;
-  @override
-  final int? occupants;
-  @override
-  final String organization;
-  @override
-  final int popularity;
-  @override
-  final String? previewYoutubeId;
-  @override
-  final int? privateOccupants;
-  @override
-  final int? publicOccupants;
-  @override
-  final String publicationDate;
-  @override
-  final ReleaseStatus releaseStatus;
-  @override
-  final BuiltList<String> tags;
-  @override
-  final String thumbnailImageUrl;
-  @override
-  final BuiltList<UnityPackage> unityPackages;
-  @override
-  final DateTime updatedAt;
-  @override
-  final int version;
-  @override
-  final int visits;
+World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
+      'World',
+      json,
+      ($checkedConvert) {
+        $checkKeys(
+          json,
+          requiredKeys: const [
+            'authorId',
+            'authorName',
+            'capacity',
+            'created_at',
+            'description',
+            'featured',
+            'heat',
+            'id',
+            'imageUrl',
+            'labsPublicationDate',
+            'name',
+            'namespace',
+            'organization',
+            'popularity',
+            'publicationDate',
+            'releaseStatus',
+            'tags',
+            'thumbnailImageUrl',
+            'unityPackages',
+            'updated_at',
+            'version',
+            'visits'
+          ],
+        );
+        final val = World(
+          authorId: $checkedConvert('authorId', (v) => v as String),
+          authorName: $checkedConvert('authorName', (v) => v as String),
+          capacity: $checkedConvert('capacity', (v) => v as int),
+          createdAt:
+              $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
+          description: $checkedConvert('description', (v) => v as String),
+          favorites: $checkedConvert('favorites', (v) => v as int? ?? 0),
+          featured: $checkedConvert('featured', (v) => v as bool? ?? false),
+          heat: $checkedConvert('heat', (v) => v as int? ?? 0),
+          id: $checkedConvert('id', (v) => v as String),
+          imageUrl: $checkedConvert('imageUrl', (v) => v as String),
+          instances: $checkedConvert(
+              'instances',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) =>
+                      (e as List<dynamic>).map((e) => e as Object).toList())
+                  .toList()),
+          labsPublicationDate:
+              $checkedConvert('labsPublicationDate', (v) => v as String),
+          name: $checkedConvert('name', (v) => v as String),
+          namespace: $checkedConvert('namespace', (v) => v as String),
+          occupants: $checkedConvert('occupants', (v) => v as int? ?? 0),
+          organization:
+              $checkedConvert('organization', (v) => v as String? ?? 'vrchat'),
+          popularity: $checkedConvert('popularity', (v) => v as int? ?? 0),
+          previewYoutubeId:
+              $checkedConvert('previewYoutubeId', (v) => v as String?),
+          privateOccupants:
+              $checkedConvert('privateOccupants', (v) => v as int? ?? 0),
+          publicOccupants:
+              $checkedConvert('publicOccupants', (v) => v as int? ?? 0),
+          publicationDate:
+              $checkedConvert('publicationDate', (v) => v as String),
+          releaseStatus: $checkedConvert(
+              'releaseStatus', (v) => $enumDecode(_$ReleaseStatusEnumMap, v)),
+          tags: $checkedConvert('tags',
+              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+          thumbnailImageUrl:
+              $checkedConvert('thumbnailImageUrl', (v) => v as String),
+          unityPackages: $checkedConvert(
+              'unityPackages',
+              (v) => (v as List<dynamic>)
+                  .map((e) => UnityPackage.fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          updatedAt:
+              $checkedConvert('updated_at', (v) => DateTime.parse(v as String)),
+          version: $checkedConvert('version', (v) => v as int? ?? 0),
+          visits: $checkedConvert('visits', (v) => v as int? ?? 0),
+        );
+        return val;
+      },
+      fieldKeyMap: const {'createdAt': 'created_at', 'updatedAt': 'updated_at'},
+    );
 
-  factory _$World([void Function(WorldBuilder)? updates]) =>
-      (new WorldBuilder()..update(updates))._build();
+Map<String, dynamic> _$WorldToJson(World instance) {
+  final val = <String, dynamic>{
+    'authorId': instance.authorId,
+    'authorName': instance.authorName,
+    'capacity': instance.capacity,
+    'created_at': instance.createdAt.toIso8601String(),
+    'description': instance.description,
+  };
 
-  _$World._(
-      {required this.authorId,
-      required this.authorName,
-      required this.capacity,
-      required this.createdAt,
-      required this.description,
-      this.favorites,
-      required this.featured,
-      required this.heat,
-      required this.id,
-      required this.imageUrl,
-      this.instances,
-      required this.labsPublicationDate,
-      required this.name,
-      required this.namespace,
-      this.occupants,
-      required this.organization,
-      required this.popularity,
-      this.previewYoutubeId,
-      this.privateOccupants,
-      this.publicOccupants,
-      required this.publicationDate,
-      required this.releaseStatus,
-      required this.tags,
-      required this.thumbnailImageUrl,
-      required this.unityPackages,
-      required this.updatedAt,
-      required this.version,
-      required this.visits})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(authorId, r'World', 'authorId');
-    BuiltValueNullFieldError.checkNotNull(authorName, r'World', 'authorName');
-    BuiltValueNullFieldError.checkNotNull(capacity, r'World', 'capacity');
-    BuiltValueNullFieldError.checkNotNull(createdAt, r'World', 'createdAt');
-    BuiltValueNullFieldError.checkNotNull(description, r'World', 'description');
-    BuiltValueNullFieldError.checkNotNull(featured, r'World', 'featured');
-    BuiltValueNullFieldError.checkNotNull(heat, r'World', 'heat');
-    BuiltValueNullFieldError.checkNotNull(id, r'World', 'id');
-    BuiltValueNullFieldError.checkNotNull(imageUrl, r'World', 'imageUrl');
-    BuiltValueNullFieldError.checkNotNull(
-        labsPublicationDate, r'World', 'labsPublicationDate');
-    BuiltValueNullFieldError.checkNotNull(name, r'World', 'name');
-    BuiltValueNullFieldError.checkNotNull(namespace, r'World', 'namespace');
-    BuiltValueNullFieldError.checkNotNull(
-        organization, r'World', 'organization');
-    BuiltValueNullFieldError.checkNotNull(popularity, r'World', 'popularity');
-    BuiltValueNullFieldError.checkNotNull(
-        publicationDate, r'World', 'publicationDate');
-    BuiltValueNullFieldError.checkNotNull(
-        releaseStatus, r'World', 'releaseStatus');
-    BuiltValueNullFieldError.checkNotNull(tags, r'World', 'tags');
-    BuiltValueNullFieldError.checkNotNull(
-        thumbnailImageUrl, r'World', 'thumbnailImageUrl');
-    BuiltValueNullFieldError.checkNotNull(
-        unityPackages, r'World', 'unityPackages');
-    BuiltValueNullFieldError.checkNotNull(updatedAt, r'World', 'updatedAt');
-    BuiltValueNullFieldError.checkNotNull(version, r'World', 'version');
-    BuiltValueNullFieldError.checkNotNull(visits, r'World', 'visits');
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
   }
 
-  @override
-  World rebuild(void Function(WorldBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  WorldBuilder toBuilder() => new WorldBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is World &&
-        authorId == other.authorId &&
-        authorName == other.authorName &&
-        capacity == other.capacity &&
-        createdAt == other.createdAt &&
-        description == other.description &&
-        favorites == other.favorites &&
-        featured == other.featured &&
-        heat == other.heat &&
-        id == other.id &&
-        imageUrl == other.imageUrl &&
-        instances == other.instances &&
-        labsPublicationDate == other.labsPublicationDate &&
-        name == other.name &&
-        namespace == other.namespace &&
-        occupants == other.occupants &&
-        organization == other.organization &&
-        popularity == other.popularity &&
-        previewYoutubeId == other.previewYoutubeId &&
-        privateOccupants == other.privateOccupants &&
-        publicOccupants == other.publicOccupants &&
-        publicationDate == other.publicationDate &&
-        releaseStatus == other.releaseStatus &&
-        tags == other.tags &&
-        thumbnailImageUrl == other.thumbnailImageUrl &&
-        unityPackages == other.unityPackages &&
-        updatedAt == other.updatedAt &&
-        version == other.version &&
-        visits == other.visits;
-  }
-
-  @override
-  int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc(
-                        $jc(
-                            $jc(
-                                $jc(
-                                    $jc(
-                                        $jc(
-                                            $jc(
-                                                $jc(
-                                                    $jc(
-                                                        $jc(
-                                                            $jc(
-                                                                $jc(
-                                                                    $jc(
-                                                                        $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, authorId.hashCode), authorName.hashCode), capacity.hashCode), createdAt.hashCode), description.hashCode), favorites.hashCode), featured.hashCode), heat.hashCode), id.hashCode),
-                                                                                imageUrl.hashCode),
-                                                                            instances.hashCode),
-                                                                        labsPublicationDate.hashCode),
-                                                                    name.hashCode),
-                                                                namespace.hashCode),
-                                                            occupants.hashCode),
-                                                        organization.hashCode),
-                                                    popularity.hashCode),
-                                                previewYoutubeId.hashCode),
-                                            privateOccupants.hashCode),
-                                        publicOccupants.hashCode),
-                                    publicationDate.hashCode),
-                                releaseStatus.hashCode),
-                            tags.hashCode),
-                        thumbnailImageUrl.hashCode),
-                    unityPackages.hashCode),
-                updatedAt.hashCode),
-            version.hashCode),
-        visits.hashCode));
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'World')
-          ..add('authorId', authorId)
-          ..add('authorName', authorName)
-          ..add('capacity', capacity)
-          ..add('createdAt', createdAt)
-          ..add('description', description)
-          ..add('favorites', favorites)
-          ..add('featured', featured)
-          ..add('heat', heat)
-          ..add('id', id)
-          ..add('imageUrl', imageUrl)
-          ..add('instances', instances)
-          ..add('labsPublicationDate', labsPublicationDate)
-          ..add('name', name)
-          ..add('namespace', namespace)
-          ..add('occupants', occupants)
-          ..add('organization', organization)
-          ..add('popularity', popularity)
-          ..add('previewYoutubeId', previewYoutubeId)
-          ..add('privateOccupants', privateOccupants)
-          ..add('publicOccupants', publicOccupants)
-          ..add('publicationDate', publicationDate)
-          ..add('releaseStatus', releaseStatus)
-          ..add('tags', tags)
-          ..add('thumbnailImageUrl', thumbnailImageUrl)
-          ..add('unityPackages', unityPackages)
-          ..add('updatedAt', updatedAt)
-          ..add('version', version)
-          ..add('visits', visits))
-        .toString();
-  }
+  writeNotNull('favorites', instance.favorites);
+  val['featured'] = instance.featured;
+  val['heat'] = instance.heat;
+  val['id'] = instance.id;
+  val['imageUrl'] = instance.imageUrl;
+  writeNotNull('instances', instance.instances);
+  val['labsPublicationDate'] = instance.labsPublicationDate;
+  val['name'] = instance.name;
+  val['namespace'] = instance.namespace;
+  writeNotNull('occupants', instance.occupants);
+  val['organization'] = instance.organization;
+  val['popularity'] = instance.popularity;
+  writeNotNull('previewYoutubeId', instance.previewYoutubeId);
+  writeNotNull('privateOccupants', instance.privateOccupants);
+  writeNotNull('publicOccupants', instance.publicOccupants);
+  val['publicationDate'] = instance.publicationDate;
+  val['releaseStatus'] = _$ReleaseStatusEnumMap[instance.releaseStatus]!;
+  val['tags'] = instance.tags;
+  val['thumbnailImageUrl'] = instance.thumbnailImageUrl;
+  val['unityPackages'] = instance.unityPackages.map((e) => e.toJson()).toList();
+  val['updated_at'] = instance.updatedAt.toIso8601String();
+  val['version'] = instance.version;
+  val['visits'] = instance.visits;
+  return val;
 }
 
-class WorldBuilder implements Builder<World, WorldBuilder> {
-  _$World? _$v;
-
-  String? _authorId;
-  String? get authorId => _$this._authorId;
-  set authorId(String? authorId) => _$this._authorId = authorId;
-
-  String? _authorName;
-  String? get authorName => _$this._authorName;
-  set authorName(String? authorName) => _$this._authorName = authorName;
-
-  int? _capacity;
-  int? get capacity => _$this._capacity;
-  set capacity(int? capacity) => _$this._capacity = capacity;
-
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
-  int? _favorites;
-  int? get favorites => _$this._favorites;
-  set favorites(int? favorites) => _$this._favorites = favorites;
-
-  bool? _featured;
-  bool? get featured => _$this._featured;
-  set featured(bool? featured) => _$this._featured = featured;
-
-  int? _heat;
-  int? get heat => _$this._heat;
-  set heat(int? heat) => _$this._heat = heat;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  String? _imageUrl;
-  String? get imageUrl => _$this._imageUrl;
-  set imageUrl(String? imageUrl) => _$this._imageUrl = imageUrl;
-
-  ListBuilder<BuiltList<JsonObject>>? _instances;
-  ListBuilder<BuiltList<JsonObject>> get instances =>
-      _$this._instances ??= new ListBuilder<BuiltList<JsonObject>>();
-  set instances(ListBuilder<BuiltList<JsonObject>>? instances) =>
-      _$this._instances = instances;
-
-  String? _labsPublicationDate;
-  String? get labsPublicationDate => _$this._labsPublicationDate;
-  set labsPublicationDate(String? labsPublicationDate) =>
-      _$this._labsPublicationDate = labsPublicationDate;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  String? _namespace;
-  String? get namespace => _$this._namespace;
-  set namespace(String? namespace) => _$this._namespace = namespace;
-
-  int? _occupants;
-  int? get occupants => _$this._occupants;
-  set occupants(int? occupants) => _$this._occupants = occupants;
-
-  String? _organization;
-  String? get organization => _$this._organization;
-  set organization(String? organization) => _$this._organization = organization;
-
-  int? _popularity;
-  int? get popularity => _$this._popularity;
-  set popularity(int? popularity) => _$this._popularity = popularity;
-
-  String? _previewYoutubeId;
-  String? get previewYoutubeId => _$this._previewYoutubeId;
-  set previewYoutubeId(String? previewYoutubeId) =>
-      _$this._previewYoutubeId = previewYoutubeId;
-
-  int? _privateOccupants;
-  int? get privateOccupants => _$this._privateOccupants;
-  set privateOccupants(int? privateOccupants) =>
-      _$this._privateOccupants = privateOccupants;
-
-  int? _publicOccupants;
-  int? get publicOccupants => _$this._publicOccupants;
-  set publicOccupants(int? publicOccupants) =>
-      _$this._publicOccupants = publicOccupants;
-
-  String? _publicationDate;
-  String? get publicationDate => _$this._publicationDate;
-  set publicationDate(String? publicationDate) =>
-      _$this._publicationDate = publicationDate;
-
-  ReleaseStatus? _releaseStatus;
-  ReleaseStatus? get releaseStatus => _$this._releaseStatus;
-  set releaseStatus(ReleaseStatus? releaseStatus) =>
-      _$this._releaseStatus = releaseStatus;
-
-  ListBuilder<String>? _tags;
-  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
-  set tags(ListBuilder<String>? tags) => _$this._tags = tags;
-
-  String? _thumbnailImageUrl;
-  String? get thumbnailImageUrl => _$this._thumbnailImageUrl;
-  set thumbnailImageUrl(String? thumbnailImageUrl) =>
-      _$this._thumbnailImageUrl = thumbnailImageUrl;
-
-  ListBuilder<UnityPackage>? _unityPackages;
-  ListBuilder<UnityPackage> get unityPackages =>
-      _$this._unityPackages ??= new ListBuilder<UnityPackage>();
-  set unityPackages(ListBuilder<UnityPackage>? unityPackages) =>
-      _$this._unityPackages = unityPackages;
-
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
-
-  int? _version;
-  int? get version => _$this._version;
-  set version(int? version) => _$this._version = version;
-
-  int? _visits;
-  int? get visits => _$this._visits;
-  set visits(int? visits) => _$this._visits = visits;
-
-  WorldBuilder() {
-    World._defaults(this);
-  }
-
-  WorldBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _authorId = $v.authorId;
-      _authorName = $v.authorName;
-      _capacity = $v.capacity;
-      _createdAt = $v.createdAt;
-      _description = $v.description;
-      _favorites = $v.favorites;
-      _featured = $v.featured;
-      _heat = $v.heat;
-      _id = $v.id;
-      _imageUrl = $v.imageUrl;
-      _instances = $v.instances?.toBuilder();
-      _labsPublicationDate = $v.labsPublicationDate;
-      _name = $v.name;
-      _namespace = $v.namespace;
-      _occupants = $v.occupants;
-      _organization = $v.organization;
-      _popularity = $v.popularity;
-      _previewYoutubeId = $v.previewYoutubeId;
-      _privateOccupants = $v.privateOccupants;
-      _publicOccupants = $v.publicOccupants;
-      _publicationDate = $v.publicationDate;
-      _releaseStatus = $v.releaseStatus;
-      _tags = $v.tags.toBuilder();
-      _thumbnailImageUrl = $v.thumbnailImageUrl;
-      _unityPackages = $v.unityPackages.toBuilder();
-      _updatedAt = $v.updatedAt;
-      _version = $v.version;
-      _visits = $v.visits;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(World other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$World;
-  }
-
-  @override
-  void update(void Function(WorldBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  World build() => _build();
-
-  _$World _build() {
-    _$World _$result;
-    try {
-      _$result = _$v ??
-          new _$World._(
-              authorId: BuiltValueNullFieldError.checkNotNull(
-                  authorId, r'World', 'authorId'),
-              authorName: BuiltValueNullFieldError.checkNotNull(
-                  authorName, r'World', 'authorName'),
-              capacity: BuiltValueNullFieldError.checkNotNull(
-                  capacity, r'World', 'capacity'),
-              createdAt: BuiltValueNullFieldError.checkNotNull(
-                  createdAt, r'World', 'createdAt'),
-              description: BuiltValueNullFieldError.checkNotNull(
-                  description, r'World', 'description'),
-              favorites: favorites,
-              featured: BuiltValueNullFieldError.checkNotNull(
-                  featured, r'World', 'featured'),
-              heat:
-                  BuiltValueNullFieldError.checkNotNull(heat, r'World', 'heat'),
-              id: BuiltValueNullFieldError.checkNotNull(id, r'World', 'id'),
-              imageUrl: BuiltValueNullFieldError.checkNotNull(
-                  imageUrl, r'World', 'imageUrl'),
-              instances: _instances?.build(),
-              labsPublicationDate: BuiltValueNullFieldError.checkNotNull(
-                  labsPublicationDate, r'World', 'labsPublicationDate'),
-              name:
-                  BuiltValueNullFieldError.checkNotNull(name, r'World', 'name'),
-              namespace:
-                  BuiltValueNullFieldError.checkNotNull(namespace, r'World', 'namespace'),
-              occupants: occupants,
-              organization: BuiltValueNullFieldError.checkNotNull(organization, r'World', 'organization'),
-              popularity: BuiltValueNullFieldError.checkNotNull(popularity, r'World', 'popularity'),
-              previewYoutubeId: previewYoutubeId,
-              privateOccupants: privateOccupants,
-              publicOccupants: publicOccupants,
-              publicationDate: BuiltValueNullFieldError.checkNotNull(publicationDate, r'World', 'publicationDate'),
-              releaseStatus: BuiltValueNullFieldError.checkNotNull(releaseStatus, r'World', 'releaseStatus'),
-              tags: tags.build(),
-              thumbnailImageUrl: BuiltValueNullFieldError.checkNotNull(thumbnailImageUrl, r'World', 'thumbnailImageUrl'),
-              unityPackages: unityPackages.build(),
-              updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'World', 'updatedAt'),
-              version: BuiltValueNullFieldError.checkNotNull(version, r'World', 'version'),
-              visits: BuiltValueNullFieldError.checkNotNull(visits, r'World', 'visits'));
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'instances';
-        _instances?.build();
-
-        _$failedField = 'tags';
-        tags.build();
-
-        _$failedField = 'unityPackages';
-        unityPackages.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'World', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas
+const _$ReleaseStatusEnumMap = {
+  ReleaseStatus.public: 'public',
+  ReleaseStatus.private: 'private',
+  ReleaseStatus.hidden: 'hidden',
+};

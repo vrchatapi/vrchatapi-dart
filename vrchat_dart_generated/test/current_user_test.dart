@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for CurrentUser
 void main() {
-  final instance = CurrentUserBuilder();
-  // TODO add properties to the builder and call build()
+  final CurrentUser? instance = /* CurrentUser(...) */ null;
+  // TODO add properties to the entity
 
   group(CurrentUser, () {
     // int acceptedTOSVersion
@@ -12,12 +12,12 @@ void main() {
       // TODO
     });
 
-    // Date accountDeletionDate
+    // DateTime accountDeletionDate
     test('to test the property `accountDeletionDate`', () async {
       // TODO
     });
 
-    // BuiltList<String> activeFriends
+    // List<String> activeFriends
     test('to test the property `activeFriends`', () async {
       // TODO
     });
@@ -32,7 +32,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<String> bioLinks
+    // List<String> bioLinks
     test('to test the property `bioLinks`', () async {
       // TODO
     });
@@ -59,7 +59,7 @@ void main() {
       // TODO
     });
 
-    // Date dateJoined
+    // DateTime dateJoined
     test('to test the property `dateJoined`', () async {
       // TODO
     });
@@ -85,7 +85,7 @@ void main() {
     });
 
     // Always empty array.
-    // BuiltList<String> friendGroupNames
+    // List<String> friendGroupNames
     test('to test the property `friendGroupNames`', () async {
       // TODO
     });
@@ -95,7 +95,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<String> friends
+    // List<String> friends
     test('to test the property `friends`', () async {
       // TODO
     });
@@ -163,18 +163,18 @@ void main() {
       // TODO
     });
 
-    // BuiltList<String> offlineFriends
+    // List<String> offlineFriends
     test('to test the property `offlineFriends`', () async {
       // TODO
     });
 
-    // BuiltList<String> onlineFriends
+    // List<String> onlineFriends
     test('to test the property `onlineFriends`', () async {
       // TODO
     });
 
     //
-    // BuiltList<PastDisplayName> pastDisplayNames
+    // List<PastDisplayName> pastDisplayNames
     test('to test the property `pastDisplayNames`', () async {
       // TODO
     });
@@ -204,12 +204,12 @@ void main() {
       // TODO
     });
 
-    // BuiltList<String> statusHistory
+    // List<String> statusHistory
     test('to test the property `statusHistory`', () async {
       // TODO
     });
 
-    // JsonObject steamDetails
+    // Object steamDetails
     test('to test the property `steamDetails`', () async {
       // TODO
     });
@@ -219,7 +219,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<String> tags
+    // List<String> tags
     test('to test the property `tags`', () async {
       // TODO
     });

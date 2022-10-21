@@ -28,7 +28,7 @@ void main() {
     //
     // Search and list any users by text query
     //
-    //Future<BuiltList<LimitedUser>> searchUsers({ String search, String developerType, int n, int offset }) async
+    //Future<List<LimitedUser>> searchUsers({ String search, String developerType, int n, int offset }) async
     test('test searchUsers', () async {
       // TODO
     });

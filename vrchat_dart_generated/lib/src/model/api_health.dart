@@ -2,93 +2,53 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+// ignore_for_file: unused_element
+import 'package:json_annotation/json_annotation.dart';
 
 part 'api_health.g.dart';
 
-/// APIHealth
-///
-/// Properties:
-/// * [ok]
-/// * [serverName]
-/// * [buildVersionTag]
-abstract class APIHealth implements Built<APIHealth, APIHealthBuilder> {
-  @BuiltValueField(wireName: r'ok')
-  bool get ok;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class APIHealth {
+  /// Returns a new [APIHealth] instance.
+  APIHealth({
+    required this.ok,
+    required this.serverName,
+    required this.buildVersionTag,
+  });
 
-  @BuiltValueField(wireName: r'serverName')
-  String get serverName;
+  @JsonKey(name: r'ok', required: true, includeIfNull: false)
+  final bool ok;
 
-  @BuiltValueField(wireName: r'buildVersionTag')
-  String get buildVersionTag;
+  @JsonKey(name: r'serverName', required: true, includeIfNull: false)
+  final String serverName;
 
-  APIHealth._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(APIHealthBuilder b) => b;
-
-  factory APIHealth([void updates(APIHealthBuilder b)]) = _$APIHealth;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<APIHealth> get serializer => _$APIHealthSerializer();
-}
-
-class _$APIHealthSerializer implements StructuredSerializer<APIHealth> {
-  @override
-  final Iterable<Type> types = const [APIHealth, _$APIHealth];
+  @JsonKey(name: r'buildVersionTag', required: true, includeIfNull: false)
+  final String buildVersionTag;
 
   @override
-  final String wireName = r'APIHealth';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is APIHealth &&
+          other.ok == ok &&
+          other.serverName == serverName &&
+          other.buildVersionTag == buildVersionTag;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, APIHealth object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'ok')
-      ..add(serializers.serialize(object.ok,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'serverName')
-      ..add(serializers.serialize(object.serverName,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'buildVersionTag')
-      ..add(serializers.serialize(object.buildVersionTag,
-          specifiedType: const FullType(String)));
-    return result;
-  }
+  int get hashCode =>
+      ok.hashCode + serverName.hashCode + buildVersionTag.hashCode;
+
+  factory APIHealth.fromJson(Map<String, dynamic> json) =>
+      _$APIHealthFromJson(json);
+
+  Map<String, dynamic> toJson() => _$APIHealthToJson(this);
 
   @override
-  APIHealth deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = APIHealthBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'ok':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.ok = valueDes;
-          break;
-        case r'serverName':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.serverName = valueDes;
-          break;
-        case r'buildVersionTag':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.buildVersionTag = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

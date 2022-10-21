@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for FavoriteGroup
 void main() {
-  final instance = FavoriteGroupBuilder();
-  // TODO add properties to the builder and call build()
+  final FavoriteGroup? instance = /* FavoriteGroup(...) */ null;
+  // TODO add properties to the entity
 
   group(FavoriteGroup, () {
     // String displayName
@@ -34,7 +34,7 @@ void main() {
     });
 
     //
-    // BuiltList<String> tags
+    // List<String> tags
     test('to test the property `tags`', () async {
       // TODO
     });

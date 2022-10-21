@@ -46,7 +46,7 @@ void main() {
     //
     // Return a list of favorite groups owned by a user. Returns the same information as `getFavoriteGroups`.
     //
-    //Future<BuiltList<FavoriteGroup>> getFavoriteGroups({ int n, int offset, String ownerId }) async
+    //Future<List<FavoriteGroup>> getFavoriteGroups({ int n, int offset, String ownerId }) async
     test('test getFavoriteGroups', () async {
       // TODO
     });
@@ -55,7 +55,7 @@ void main() {
     //
     // Returns a list of favorites.
     //
-    //Future<BuiltList<Favorite>> getFavorites({ int n, int offset, String type, String tag }) async
+    //Future<List<Favorite>> getFavorites({ int n, int offset, String type, String tag }) async
     test('test getFavorites', () async {
       // TODO
     });

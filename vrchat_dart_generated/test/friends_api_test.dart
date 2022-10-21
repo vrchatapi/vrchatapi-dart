@@ -37,7 +37,7 @@ void main() {
     //
     // List information about friends.
     //
-    //Future<BuiltList<LimitedUser>> getFriends({ int offset, int n, bool offline }) async
+    //Future<List<LimitedUser>> getFriends({ int offset, int n, bool offline }) async
     test('test getFriends', () async {
       // TODO
     });

@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for APIHealth
 void main() {
-  final instance = APIHealthBuilder();
-  // TODO add properties to the builder and call build()
+  final APIHealth? instance = /* APIHealth(...) */ null;
+  // TODO add properties to the entity
 
   group(APIHealth, () {
     // bool ok

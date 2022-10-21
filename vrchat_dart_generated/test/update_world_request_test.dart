@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for UpdateWorldRequest
 void main() {
-  final instance = UpdateWorldRequestBuilder();
-  // TODO add properties to the builder and call build()
+  final UpdateWorldRequest? instance = /* UpdateWorldRequest(...) */ null;
+  // TODO add properties to the entity
 
   group(UpdateWorldRequest, () {
     // String assetUrl
@@ -60,7 +60,7 @@ void main() {
     });
 
     //
-    // BuiltList<String> tags
+    // List<String> tags
     test('to test the property `tags`', () async {
       // TODO
     });

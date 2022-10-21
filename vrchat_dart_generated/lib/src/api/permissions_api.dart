@@ -4,18 +4,17 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:vrchat_dart_generated/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
 import 'package:vrchat_dart_generated/src/model/permission.dart';
 
 class PermissionsApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const PermissionsApi(this._dio, this._serializers);
+  const PermissionsApi(this._dio);
 
   /// Get Assigned Permissions
   /// Returns a list of all permissions currently granted by the user. Permissions are assigned e.g. by subscribing to VRC+.
@@ -28,9 +27,9 @@ class PermissionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Permission>] as data
+  /// Returns a [Future] containing a [Response] with a [List<Permission>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<Permission>>> getAssignedPermissions({
+  Future<Response<List<Permission>>> getAssignedPermissions({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -72,14 +71,12 @@ class PermissionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Permission> _responseData;
+    List<Permission> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(Permission)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<Permission>;
+      _responseData = deserialize<List<Permission>, Permission>(
+          _response.data!, 'List<Permission>',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -89,7 +86,7 @@ class PermissionsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<Permission>>(
+    return Response<List<Permission>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -162,11 +159,9 @@ class PermissionsApi {
     Permission _responseData;
 
     try {
-      const _responseType = FullType(Permission);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Permission;
+      _responseData = deserialize<Permission, Permission>(
+          _response.data!, 'Permission',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

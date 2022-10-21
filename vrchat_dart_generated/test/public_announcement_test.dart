@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for PublicAnnouncement
 void main() {
-  final instance = PublicAnnouncementBuilder();
-  // TODO add properties to the builder and call build()
+  final PublicAnnouncement? instance = /* PublicAnnouncement(...) */ null;
+  // TODO add properties to the entity
 
   group(PublicAnnouncement, () {
     // Announcement name

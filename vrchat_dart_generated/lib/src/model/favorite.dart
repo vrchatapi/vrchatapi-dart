@@ -2,112 +2,61 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_collection/built_collection.dart';
+// ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/favorite_type.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'favorite.g.dart';
 
-///
-///
-/// Properties:
-/// * [favoriteId] - MUST be either AvatarID, UserID or WorldID.
-/// * [id]
-/// * [tags] -
-/// * [type]
-abstract class Favorite implements Built<Favorite, FavoriteBuilder> {
-  /// MUST be either AvatarID, UserID or WorldID.
-  @BuiltValueField(wireName: r'favoriteId')
-  String get favoriteId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class Favorite {
+  /// Returns a new [Favorite] instance.
+  Favorite({
+    required this.favoriteId,
+    required this.id,
+    required this.tags,
+    required this.type,
+  });
 
-  @BuiltValueField(wireName: r'id')
-  String get id;
+  /// MUST be either AvatarID, UserID or WorldID.
+  @JsonKey(name: r'favoriteId', required: true, includeIfNull: false)
+  final String favoriteId;
+
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
 
   ///
-  @BuiltValueField(wireName: r'tags')
-  BuiltList<String> get tags;
+  @JsonKey(name: r'tags', required: true, includeIfNull: false)
+  final List<String> tags;
 
-  @BuiltValueField(wireName: r'type')
-  FavoriteType get type;
-  // enum typeEnum {  world,  friend,  avatar,  };
-
-  Favorite._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(FavoriteBuilder b) => b;
-
-  factory Favorite([void updates(FavoriteBuilder b)]) = _$Favorite;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<Favorite> get serializer => _$FavoriteSerializer();
-}
-
-class _$FavoriteSerializer implements StructuredSerializer<Favorite> {
-  @override
-  final Iterable<Type> types = const [Favorite, _$Favorite];
+  @JsonKey(name: r'type', required: true, includeIfNull: false)
+  final FavoriteType type;
 
   @override
-  final String wireName = r'Favorite';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Favorite &&
+          other.favoriteId == favoriteId &&
+          other.id == id &&
+          other.tags == tags &&
+          other.type == type;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Favorite object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'favoriteId')
-      ..add(serializers.serialize(object.favoriteId,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'id')
-      ..add(serializers.serialize(object.id,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'tags')
-      ..add(serializers.serialize(object.tags,
-          specifiedType: const FullType(BuiltList, [FullType(String)])));
-    result
-      ..add(r'type')
-      ..add(serializers.serialize(object.type,
-          specifiedType: const FullType(FavoriteType)));
-    return result;
-  }
+  int get hashCode =>
+      favoriteId.hashCode + id.hashCode + tags.hashCode + type.hashCode;
+
+  factory Favorite.fromJson(Map<String, dynamic> json) =>
+      _$FavoriteFromJson(json);
+
+  Map<String, dynamic> toJson() => _$FavoriteToJson(this);
 
   @override
-  Favorite deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = FavoriteBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'favoriteId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.favoriteId = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.id = valueDes;
-          break;
-        case r'tags':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>;
-          result.tags.replace(valueDes);
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(FavoriteType)) as FavoriteType;
-          result.type = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

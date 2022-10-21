@@ -4,20 +4,18 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:vrchat_dart_generated/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/notification.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
 
 class NotificationsApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const NotificationsApi(this._dio, this._serializers);
+  const NotificationsApi(this._dio);
 
   /// Accept Friend Request
   /// Accept a friend request by notification &#x60;frq_&#x60; ID. Friend requests can be found using the NotificationsAPI &#x60;getNotifications&#x60; by filtering of type &#x60;friendRequest&#x60;.
@@ -80,11 +78,8 @@ class NotificationsApi {
     Success _responseData;
 
     try {
-      const _responseType = FullType(Success);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Success;
+      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -164,11 +159,8 @@ class NotificationsApi {
     Success _responseData;
 
     try {
-      const _responseType = FullType(Success);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Success;
+      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -251,11 +243,9 @@ class NotificationsApi {
     Notification _responseData;
 
     try {
-      const _responseType = FullType(Notification);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Notification;
+      _responseData = deserialize<Notification, Notification>(
+          _response.data!, 'Notification',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -281,7 +271,7 @@ class NotificationsApi {
   /// Retrieve all of the current user&#39;s notifications.
   ///
   /// Parameters:
-  /// * [type] - Only send notifications of this type (can use `all` for all).
+  /// * [type] - Only send notifications of this type (can use `all` for all). This parameter no longer does anything, and is deprecated.
   /// * [sent] - Return notifications sent by the user. Must be false or omitted.
   /// * [hidden] - Whether to return hidden or non-hidden notifications. True only allowed on type `friendRequest`.
   /// * [after] - Only return notifications sent after this Date. Ignored if type is `friendRequest`.
@@ -294,9 +284,9 @@ class NotificationsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Notification>] as data
+  /// Returns a [Future] containing a [Response] with a [List<Notification>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<Notification>>> getNotifications({
+  Future<Response<List<Notification>>> getNotifications({
     String? type,
     bool? sent,
     bool? hidden,
@@ -337,22 +327,12 @@ class NotificationsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (type != null)
-        r'type':
-            encodeQueryParameter(_serializers, type, const FullType(String)),
-      if (sent != null)
-        r'sent': encodeQueryParameter(_serializers, sent, const FullType(bool)),
-      if (hidden != null)
-        r'hidden':
-            encodeQueryParameter(_serializers, hidden, const FullType(bool)),
-      if (after != null)
-        r'after':
-            encodeQueryParameter(_serializers, after, const FullType(String)),
-      if (n != null)
-        r'n': encodeQueryParameter(_serializers, n, const FullType(int)),
-      if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
+      if (type != null) r'type': type,
+      if (sent != null) r'sent': sent,
+      if (hidden != null) r'hidden': hidden,
+      if (after != null) r'after': after,
+      if (n != null) r'n': n,
+      if (offset != null) r'offset': offset,
     };
 
     final _response = await _dio.request<Object>(
@@ -364,14 +344,12 @@ class NotificationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Notification> _responseData;
+    List<Notification> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(Notification)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<Notification>;
+      _responseData = deserialize<List<Notification>, Notification>(
+          _response.data!, 'List<Notification>',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -381,7 +359,7 @@ class NotificationsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<Notification>>(
+    return Response<List<Notification>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -454,11 +432,9 @@ class NotificationsApi {
     Notification _responseData;
 
     try {
-      const _responseType = FullType(Notification);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Notification;
+      _responseData = deserialize<Notification, Notification>(
+          _response.data!, 'Notification',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

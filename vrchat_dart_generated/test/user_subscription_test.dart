@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for UserSubscription
 void main() {
-  final instance = UserSubscriptionBuilder();
-  // TODO add properties to the builder and call build()
+  final UserSubscription? instance = /* UserSubscription(...) */ null;
+  // TODO add properties to the entity
 
   group(UserSubscription, () {
     // String id
@@ -73,7 +73,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<String> licenseGroups
+    // List<String> licenseGroups
     test('to test the property `licenseGroups`', () async {
       // TODO
     });

@@ -2,82 +2,48 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+// ignore_for_file: unused_element
+import 'package:json_annotation/json_annotation.dart';
 
 part 'response.g.dart';
 
-/// Response
-///
-/// Properties:
-/// * [message]
-/// * [statusCode]
-abstract class Response implements Built<Response, ResponseBuilder> {
-  @BuiltValueField(wireName: r'message')
-  String? get message;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class Response {
+  /// Returns a new [Response] instance.
+  Response({
+    this.message,
+    required this.statusCode,
+  });
 
-  @BuiltValueField(wireName: r'status_code')
-  int get statusCode;
+  @JsonKey(name: r'message', required: false, includeIfNull: false)
+  final String? message;
 
-  Response._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ResponseBuilder b) => b;
-
-  factory Response([void updates(ResponseBuilder b)]) = _$Response;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<Response> get serializer => _$ResponseSerializer();
-}
-
-class _$ResponseSerializer implements StructuredSerializer<Response> {
-  @override
-  final Iterable<Type> types = const [Response, _$Response];
+  // minimum: 100
+  @JsonKey(name: r'status_code', required: true, includeIfNull: false)
+  final int statusCode;
 
   @override
-  final String wireName = r'Response';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Response &&
+          other.message == message &&
+          other.statusCode == statusCode;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Response object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    if (object.message != null) {
-      result
-        ..add(r'message')
-        ..add(serializers.serialize(object.message,
-            specifiedType: const FullType(String)));
-    }
-    result
-      ..add(r'status_code')
-      ..add(serializers.serialize(object.statusCode,
-          specifiedType: const FullType(int)));
-    return result;
-  }
+  int get hashCode => message.hashCode + statusCode.hashCode;
+
+  factory Response.fromJson(Map<String, dynamic> json) =>
+      _$ResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ResponseToJson(this);
 
   @override
-  Response deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = ResponseBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'message':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.message = valueDes;
-          break;
-        case r'status_code':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.statusCode = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

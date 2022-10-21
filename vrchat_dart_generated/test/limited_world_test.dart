@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for LimitedWorld
 void main() {
-  final instance = LimitedWorldBuilder();
-  // TODO add properties to the builder and call build()
+  final LimitedWorld? instance = /* LimitedWorld(...) */ null;
+  // TODO add properties to the entity
 
   group(LimitedWorld, () {
     // A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
@@ -85,7 +85,7 @@ void main() {
     });
 
     //
-    // BuiltList<String> tags
+    // List<String> tags
     test('to test the property `tags`', () async {
       // TODO
     });
@@ -96,7 +96,7 @@ void main() {
     });
 
     //
-    // BuiltList<LimitedUnityPackage> unityPackages
+    // List<LimitedUnityPackage> unityPackages
     test('to test the property `unityPackages`', () async {
       // TODO
     });

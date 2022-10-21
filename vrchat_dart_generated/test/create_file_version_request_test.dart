@@ -3,8 +3,9 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for CreateFileVersionRequest
 void main() {
-  final instance = CreateFileVersionRequestBuilder();
-  // TODO add properties to the builder and call build()
+  final CreateFileVersionRequest?
+      instance = /* CreateFileVersionRequest(...) */ null;
+  // TODO add properties to the entity
 
   group(CreateFileVersionRequest, () {
     // String signatureMd5

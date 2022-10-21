@@ -2,44 +2,24 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+// ignore_for_file: unused_element
+import 'package:json_annotation/json_annotation.dart';
 
-part 'player_moderation_type.g.dart';
-
-class PlayerModerationType extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'mute')
-  static const PlayerModerationType mute = _$mute;
-  @BuiltValueEnumConst(wireName: r'unmute')
-  static const PlayerModerationType unmute = _$unmute;
-  @BuiltValueEnumConst(wireName: r'block')
-  static const PlayerModerationType block = _$block;
-  @BuiltValueEnumConst(wireName: r'unblock')
-  static const PlayerModerationType unblock = _$unblock;
-  @BuiltValueEnumConst(wireName: r'hideAvatar')
-  static const PlayerModerationType hideAvatar = _$hideAvatar;
-  @BuiltValueEnumConst(wireName: r'showAvatar')
-  static const PlayerModerationType showAvatar = _$showAvatar;
-  @BuiltValueEnumConst(wireName: r'interactOn')
-  static const PlayerModerationType interactOn = _$interactOn;
-  @BuiltValueEnumConst(wireName: r'interactOff')
-  static const PlayerModerationType interactOff = _$interactOff;
-
-  static Serializer<PlayerModerationType> get serializer =>
-      _$playerModerationTypeSerializer;
-
-  const PlayerModerationType._(String name) : super(name);
-
-  static BuiltSet<PlayerModerationType> get values => _$values;
-  static PlayerModerationType valueOf(String name) => _$valueOf(name);
+enum PlayerModerationType {
+  @JsonValue(r'mute')
+  mute,
+  @JsonValue(r'unmute')
+  unmute,
+  @JsonValue(r'block')
+  block,
+  @JsonValue(r'unblock')
+  unblock,
+  @JsonValue(r'hideAvatar')
+  hideAvatar,
+  @JsonValue(r'showAvatar')
+  showAvatar,
+  @JsonValue(r'interactOn')
+  interactOn,
+  @JsonValue(r'interactOff')
+  interactOff,
 }
-
-/// Optionally, enum_class can generate a mixin to go with your enum for use
-/// with Angular. It exposes your enum constants as getters. So, if you mix it
-/// in to your Dart component class, the values become available to the
-/// corresponding Angular template.
-///
-/// Trigger mixin generation by writing a line like this one next to your enum.
-abstract class PlayerModerationTypeMixin = Object
-    with _$PlayerModerationTypeMixin;

@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for FileVersion
 void main() {
-  final instance = FileVersionBuilder();
-  // TODO add properties to the builder and call build()
+  final FileVersion? instance = /* FileVersion(...) */ null;
+  // TODO add properties to the entity
 
   group(FileVersion, () {
     // DateTime createdAt

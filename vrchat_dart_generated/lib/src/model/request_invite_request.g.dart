@@ -3,88 +3,32 @@
 part of 'request_invite_request.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$RequestInviteRequest extends RequestInviteRequest {
-  @override
-  final int? messageSlot;
+RequestInviteRequest _$RequestInviteRequestFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      'RequestInviteRequest',
+      json,
+      ($checkedConvert) {
+        final val = RequestInviteRequest(
+          messageSlot: $checkedConvert('messageSlot', (v) => v as int?),
+        );
+        return val;
+      },
+    );
 
-  factory _$RequestInviteRequest(
-          [void Function(RequestInviteRequestBuilder)? updates]) =>
-      (new RequestInviteRequestBuilder()..update(updates))._build();
+Map<String, dynamic> _$RequestInviteRequestToJson(
+    RequestInviteRequest instance) {
+  final val = <String, dynamic>{};
 
-  _$RequestInviteRequest._({this.messageSlot}) : super._();
-
-  @override
-  RequestInviteRequest rebuild(
-          void Function(RequestInviteRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  RequestInviteRequestBuilder toBuilder() =>
-      new RequestInviteRequestBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is RequestInviteRequest && messageSlot == other.messageSlot;
-  }
-
-  @override
-  int get hashCode {
-    return $jf($jc(0, messageSlot.hashCode));
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'RequestInviteRequest')
-          ..add('messageSlot', messageSlot))
-        .toString();
-  }
-}
-
-class RequestInviteRequestBuilder
-    implements Builder<RequestInviteRequest, RequestInviteRequestBuilder> {
-  _$RequestInviteRequest? _$v;
-
-  int? _messageSlot;
-  int? get messageSlot => _$this._messageSlot;
-  set messageSlot(int? messageSlot) => _$this._messageSlot = messageSlot;
-
-  RequestInviteRequestBuilder() {
-    RequestInviteRequest._defaults(this);
-  }
-
-  RequestInviteRequestBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _messageSlot = $v.messageSlot;
-      _$v = null;
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
     }
-    return this;
   }
 
-  @override
-  void replace(RequestInviteRequest other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$RequestInviteRequest;
-  }
-
-  @override
-  void update(void Function(RequestInviteRequestBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  RequestInviteRequest build() => _build();
-
-  _$RequestInviteRequest _build() {
-    final _$result =
-        _$v ?? new _$RequestInviteRequest._(messageSlot: messageSlot);
-    replace(_$result);
-    return _$result;
-  }
+  writeNotNull('messageSlot', instance.messageSlot);
+  return val;
 }
-
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for TransactionAgreement
 void main() {
-  final instance = TransactionAgreementBuilder();
-  // TODO add properties to the builder and call build()
+  final TransactionAgreement? instance = /* TransactionAgreement(...) */ null;
+  // TODO add properties to the entity
 
   group(TransactionAgreement, () {
     // String agreementId

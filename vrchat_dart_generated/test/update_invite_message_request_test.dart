@@ -3,8 +3,9 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for UpdateInviteMessageRequest
 void main() {
-  final instance = UpdateInviteMessageRequestBuilder();
-  // TODO add properties to the builder and call build()
+  final UpdateInviteMessageRequest?
+      instance = /* UpdateInviteMessageRequest(...) */ null;
+  // TODO add properties to the entity
 
   group(UpdateInviteMessageRequest, () {
     // String message

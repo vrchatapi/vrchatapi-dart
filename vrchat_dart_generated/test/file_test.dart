@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for File
 void main() {
-  final instance = FileBuilder();
-  // TODO add properties to the builder and call build()
+  final File? instance = /* File(...) */ null;
+  // TODO add properties to the entity
 
   group(File, () {
     // String extension_
@@ -35,13 +35,13 @@ void main() {
     });
 
     //
-    // BuiltList<String> tags
+    // List<String> tags
     test('to test the property `tags`', () async {
       // TODO
     });
 
     //
-    // BuiltSet<FileVersion> versions
+    // Set<FileVersion> versions
     test('to test the property `versions`', () async {
       // TODO
     });

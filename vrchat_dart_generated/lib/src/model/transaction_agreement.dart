@@ -2,285 +2,140 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+// ignore_for_file: unused_element
+import 'package:json_annotation/json_annotation.dart';
 
 part 'transaction_agreement.g.dart';
 
-///
-///
-/// Properties:
-/// * [agreementId]
-/// * [itemId]
-/// * [status] - This is NOT TransactionStatus, but whatever Steam return.
-/// * [period]
-/// * [frequency]
-/// * [billingType]
-/// * [startDate]
-/// * [endDate]
-/// * [recurringAmt]
-/// * [currency]
-/// * [timeCreated]
-/// * [nextPayment]
-/// * [lastPayment]
-/// * [lastAmount]
-/// * [lastAmountVat]
-/// * [outstanding]
-/// * [failedAttempts]
-abstract class TransactionAgreement
-    implements Built<TransactionAgreement, TransactionAgreementBuilder> {
-  @BuiltValueField(wireName: r'agreementId')
-  String get agreementId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class TransactionAgreement {
+  /// Returns a new [TransactionAgreement] instance.
+  TransactionAgreement({
+    required this.agreementId,
+    required this.itemId,
+    required this.status,
+    required this.period,
+    required this.frequency,
+    required this.billingType,
+    required this.startDate,
+    required this.endDate,
+    required this.recurringAmt,
+    required this.currency,
+    required this.timeCreated,
+    required this.nextPayment,
+    required this.lastPayment,
+    required this.lastAmount,
+    required this.lastAmountVat,
+    required this.outstanding,
+    required this.failedAttempts,
+  });
 
-  @BuiltValueField(wireName: r'itemId')
-  num get itemId;
+  @JsonKey(name: r'agreementId', required: true, includeIfNull: false)
+  final String agreementId;
+
+  @JsonKey(name: r'itemId', required: true, includeIfNull: false)
+  final num itemId;
 
   /// This is NOT TransactionStatus, but whatever Steam return.
-  @BuiltValueField(wireName: r'status')
-  String get status;
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
+  final String status;
 
-  @BuiltValueField(wireName: r'period')
-  String get period;
+  @JsonKey(name: r'period', required: true, includeIfNull: false)
+  final String period;
 
-  @BuiltValueField(wireName: r'frequency')
-  num get frequency;
+  @JsonKey(name: r'frequency', required: true, includeIfNull: false)
+  final num frequency;
 
-  @BuiltValueField(wireName: r'billingType')
-  String get billingType;
+  @JsonKey(name: r'billingType', required: true, includeIfNull: false)
+  final String billingType;
 
-  @BuiltValueField(wireName: r'startDate')
-  String get startDate;
+  @JsonKey(name: r'startDate', required: true, includeIfNull: false)
+  final String startDate;
 
-  @BuiltValueField(wireName: r'endDate')
-  String get endDate;
+  @JsonKey(name: r'endDate', required: true, includeIfNull: false)
+  final String endDate;
 
-  @BuiltValueField(wireName: r'recurringAmt')
-  num get recurringAmt;
+  @JsonKey(name: r'recurringAmt', required: true, includeIfNull: false)
+  final num recurringAmt;
 
-  @BuiltValueField(wireName: r'currency')
-  String get currency;
+  @JsonKey(name: r'currency', required: true, includeIfNull: false)
+  final String currency;
 
-  @BuiltValueField(wireName: r'timeCreated')
-  String get timeCreated;
+  @JsonKey(name: r'timeCreated', required: true, includeIfNull: false)
+  final String timeCreated;
 
-  @BuiltValueField(wireName: r'nextPayment')
-  String get nextPayment;
+  @JsonKey(name: r'nextPayment', required: true, includeIfNull: false)
+  final String nextPayment;
 
-  @BuiltValueField(wireName: r'lastPayment')
-  String get lastPayment;
+  @JsonKey(name: r'lastPayment', required: true, includeIfNull: false)
+  final String lastPayment;
 
-  @BuiltValueField(wireName: r'lastAmount')
-  num get lastAmount;
+  @JsonKey(name: r'lastAmount', required: true, includeIfNull: false)
+  final num lastAmount;
 
-  @BuiltValueField(wireName: r'lastAmountVat')
-  num get lastAmountVat;
+  @JsonKey(name: r'lastAmountVat', required: true, includeIfNull: false)
+  final num lastAmountVat;
 
-  @BuiltValueField(wireName: r'outstanding')
-  num get outstanding;
+  @JsonKey(name: r'outstanding', required: true, includeIfNull: false)
+  final num outstanding;
 
-  @BuiltValueField(wireName: r'failedAttempts')
-  num get failedAttempts;
-
-  TransactionAgreement._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TransactionAgreementBuilder b) => b;
-
-  factory TransactionAgreement([void updates(TransactionAgreementBuilder b)]) =
-      _$TransactionAgreement;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<TransactionAgreement> get serializer =>
-      _$TransactionAgreementSerializer();
-}
-
-class _$TransactionAgreementSerializer
-    implements StructuredSerializer<TransactionAgreement> {
-  @override
-  final Iterable<Type> types = const [
-    TransactionAgreement,
-    _$TransactionAgreement
-  ];
+  @JsonKey(name: r'failedAttempts', required: true, includeIfNull: false)
+  final num failedAttempts;
 
   @override
-  final String wireName = r'TransactionAgreement';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is TransactionAgreement &&
+          other.agreementId == agreementId &&
+          other.itemId == itemId &&
+          other.status == status &&
+          other.period == period &&
+          other.frequency == frequency &&
+          other.billingType == billingType &&
+          other.startDate == startDate &&
+          other.endDate == endDate &&
+          other.recurringAmt == recurringAmt &&
+          other.currency == currency &&
+          other.timeCreated == timeCreated &&
+          other.nextPayment == nextPayment &&
+          other.lastPayment == lastPayment &&
+          other.lastAmount == lastAmount &&
+          other.lastAmountVat == lastAmountVat &&
+          other.outstanding == outstanding &&
+          other.failedAttempts == failedAttempts;
 
   @override
-  Iterable<Object?> serialize(
-      Serializers serializers, TransactionAgreement object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'agreementId')
-      ..add(serializers.serialize(object.agreementId,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'itemId')
-      ..add(serializers.serialize(object.itemId,
-          specifiedType: const FullType(num)));
-    result
-      ..add(r'status')
-      ..add(serializers.serialize(object.status,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'period')
-      ..add(serializers.serialize(object.period,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'frequency')
-      ..add(serializers.serialize(object.frequency,
-          specifiedType: const FullType(num)));
-    result
-      ..add(r'billingType')
-      ..add(serializers.serialize(object.billingType,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'startDate')
-      ..add(serializers.serialize(object.startDate,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'endDate')
-      ..add(serializers.serialize(object.endDate,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'recurringAmt')
-      ..add(serializers.serialize(object.recurringAmt,
-          specifiedType: const FullType(num)));
-    result
-      ..add(r'currency')
-      ..add(serializers.serialize(object.currency,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'timeCreated')
-      ..add(serializers.serialize(object.timeCreated,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'nextPayment')
-      ..add(serializers.serialize(object.nextPayment,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'lastPayment')
-      ..add(serializers.serialize(object.lastPayment,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'lastAmount')
-      ..add(serializers.serialize(object.lastAmount,
-          specifiedType: const FullType(num)));
-    result
-      ..add(r'lastAmountVat')
-      ..add(serializers.serialize(object.lastAmountVat,
-          specifiedType: const FullType(num)));
-    result
-      ..add(r'outstanding')
-      ..add(serializers.serialize(object.outstanding,
-          specifiedType: const FullType(num)));
-    result
-      ..add(r'failedAttempts')
-      ..add(serializers.serialize(object.failedAttempts,
-          specifiedType: const FullType(num)));
-    return result;
-  }
+  int get hashCode =>
+      agreementId.hashCode +
+      itemId.hashCode +
+      status.hashCode +
+      period.hashCode +
+      frequency.hashCode +
+      billingType.hashCode +
+      startDate.hashCode +
+      endDate.hashCode +
+      recurringAmt.hashCode +
+      currency.hashCode +
+      timeCreated.hashCode +
+      nextPayment.hashCode +
+      lastPayment.hashCode +
+      lastAmount.hashCode +
+      lastAmountVat.hashCode +
+      outstanding.hashCode +
+      failedAttempts.hashCode;
+
+  factory TransactionAgreement.fromJson(Map<String, dynamic> json) =>
+      _$TransactionAgreementFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TransactionAgreementToJson(this);
 
   @override
-  TransactionAgreement deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = TransactionAgreementBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'agreementId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.agreementId = valueDes;
-          break;
-        case r'itemId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
-          result.itemId = valueDes;
-          break;
-        case r'status':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.status = valueDes;
-          break;
-        case r'period':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.period = valueDes;
-          break;
-        case r'frequency':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
-          result.frequency = valueDes;
-          break;
-        case r'billingType':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.billingType = valueDes;
-          break;
-        case r'startDate':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.startDate = valueDes;
-          break;
-        case r'endDate':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.endDate = valueDes;
-          break;
-        case r'recurringAmt':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
-          result.recurringAmt = valueDes;
-          break;
-        case r'currency':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.currency = valueDes;
-          break;
-        case r'timeCreated':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.timeCreated = valueDes;
-          break;
-        case r'nextPayment':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.nextPayment = valueDes;
-          break;
-        case r'lastPayment':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.lastPayment = valueDes;
-          break;
-        case r'lastAmount':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
-          result.lastAmount = valueDes;
-          break;
-        case r'lastAmountVat':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
-          result.lastAmountVat = valueDes;
-          break;
-        case r'outstanding':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
-          result.outstanding = valueDes;
-          break;
-        case r'failedAttempts':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(num)) as num;
-          result.failedAttempts = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

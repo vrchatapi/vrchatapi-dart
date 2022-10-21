@@ -2,80 +2,42 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+// ignore_for_file: unused_element
+import 'package:json_annotation/json_annotation.dart';
 
 part 'avatar_unity_package_url_object.g.dart';
 
-/// **Deprecation:** `Object` has unknown usage/fields, and is always empty. Use normal `Url` field instead.
-///
-/// Properties:
-/// * [unityPackageUrl]
-abstract class AvatarUnityPackageUrlObject
-    implements
-        Built<AvatarUnityPackageUrlObject, AvatarUnityPackageUrlObjectBuilder> {
-  @BuiltValueField(wireName: r'unityPackageUrl')
-  String? get unityPackageUrl;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class AvatarUnityPackageUrlObject {
+  /// Returns a new [AvatarUnityPackageUrlObject] instance.
+  AvatarUnityPackageUrlObject({
+    this.unityPackageUrl,
+  });
 
-  AvatarUnityPackageUrlObject._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AvatarUnityPackageUrlObjectBuilder b) => b;
-
-  factory AvatarUnityPackageUrlObject(
-          [void updates(AvatarUnityPackageUrlObjectBuilder b)]) =
-      _$AvatarUnityPackageUrlObject;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<AvatarUnityPackageUrlObject> get serializer =>
-      _$AvatarUnityPackageUrlObjectSerializer();
-}
-
-class _$AvatarUnityPackageUrlObjectSerializer
-    implements StructuredSerializer<AvatarUnityPackageUrlObject> {
-  @override
-  final Iterable<Type> types = const [
-    AvatarUnityPackageUrlObject,
-    _$AvatarUnityPackageUrlObject
-  ];
+  @JsonKey(name: r'unityPackageUrl', required: false, includeIfNull: false)
+  final String? unityPackageUrl;
 
   @override
-  final String wireName = r'AvatarUnityPackageUrlObject';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is AvatarUnityPackageUrlObject &&
+          other.unityPackageUrl == unityPackageUrl;
 
   @override
-  Iterable<Object?> serialize(
-      Serializers serializers, AvatarUnityPackageUrlObject object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    if (object.unityPackageUrl != null) {
-      result
-        ..add(r'unityPackageUrl')
-        ..add(serializers.serialize(object.unityPackageUrl,
-            specifiedType: const FullType(String)));
-    }
-    return result;
-  }
+  int get hashCode => unityPackageUrl.hashCode;
+
+  factory AvatarUnityPackageUrlObject.fromJson(Map<String, dynamic> json) =>
+      _$AvatarUnityPackageUrlObjectFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AvatarUnityPackageUrlObjectToJson(this);
 
   @override
-  AvatarUnityPackageUrlObject deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = AvatarUnityPackageUrlObjectBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'unityPackageUrl':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.unityPackageUrl = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

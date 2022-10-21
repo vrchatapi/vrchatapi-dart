@@ -3,8 +3,9 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for TransactionSteamWalletInfo
 void main() {
-  final instance = TransactionSteamWalletInfoBuilder();
-  // TODO add properties to the builder and call build()
+  final TransactionSteamWalletInfo?
+      instance = /* TransactionSteamWalletInfo(...) */ null;
+  // TODO add properties to the entity
 
   group(TransactionSteamWalletInfo, () {
     // String state

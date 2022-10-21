@@ -3,8 +3,9 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for InfoPushDataArticleContent
 void main() {
-  final instance = InfoPushDataArticleContentBuilder();
-  // TODO add properties to the builder and call build()
+  final InfoPushDataArticleContent?
+      instance = /* InfoPushDataArticleContent(...) */ null;
+  // TODO add properties to the entity
 
   group(InfoPushDataArticleContent, () {
     // String text

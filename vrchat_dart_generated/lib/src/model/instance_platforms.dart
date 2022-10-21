@@ -2,85 +2,49 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+// ignore_for_file: unused_element
+import 'package:json_annotation/json_annotation.dart';
 
 part 'instance_platforms.g.dart';
 
-/// InstancePlatforms
-///
-/// Properties:
-/// * [android]
-/// * [standalonewindows]
-abstract class InstancePlatforms
-    implements Built<InstancePlatforms, InstancePlatformsBuilder> {
-  @BuiltValueField(wireName: r'android')
-  int get android;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class InstancePlatforms {
+  /// Returns a new [InstancePlatforms] instance.
+  InstancePlatforms({
+    required this.android,
+    required this.standalonewindows,
+  });
 
-  @BuiltValueField(wireName: r'standalonewindows')
-  int get standalonewindows;
+  // minimum: 0
+  @JsonKey(name: r'android', required: true, includeIfNull: false)
+  final int android;
 
-  InstancePlatforms._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(InstancePlatformsBuilder b) => b;
-
-  factory InstancePlatforms([void updates(InstancePlatformsBuilder b)]) =
-      _$InstancePlatforms;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<InstancePlatforms> get serializer =>
-      _$InstancePlatformsSerializer();
-}
-
-class _$InstancePlatformsSerializer
-    implements StructuredSerializer<InstancePlatforms> {
-  @override
-  final Iterable<Type> types = const [InstancePlatforms, _$InstancePlatforms];
+  // minimum: 0
+  @JsonKey(name: r'standalonewindows', required: true, includeIfNull: false)
+  final int standalonewindows;
 
   @override
-  final String wireName = r'InstancePlatforms';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is InstancePlatforms &&
+          other.android == android &&
+          other.standalonewindows == standalonewindows;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, InstancePlatforms object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'android')
-      ..add(serializers.serialize(object.android,
-          specifiedType: const FullType(int)));
-    result
-      ..add(r'standalonewindows')
-      ..add(serializers.serialize(object.standalonewindows,
-          specifiedType: const FullType(int)));
-    return result;
-  }
+  int get hashCode => android.hashCode + standalonewindows.hashCode;
+
+  factory InstancePlatforms.fromJson(Map<String, dynamic> json) =>
+      _$InstancePlatformsFromJson(json);
+
+  Map<String, dynamic> toJson() => _$InstancePlatformsToJson(this);
 
   @override
-  InstancePlatforms deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = InstancePlatformsBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'android':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.android = valueDes;
-          break;
-        case r'standalonewindows':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.standalonewindows = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

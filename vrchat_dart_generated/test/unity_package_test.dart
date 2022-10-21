@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for UnityPackage
 void main() {
-  final instance = UnityPackageBuilder();
-  // TODO add properties to the builder and call build()
+  final UnityPackage? instance = /* UnityPackage(...) */ null;
+  // TODO add properties to the entity
 
   group(UnityPackage, () {
     // String assetUrl
@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    // JsonObject assetUrlObject
+    // Object assetUrlObject
     test('to test the property `assetUrlObject`', () async {
       // TODO
     });
@@ -43,7 +43,7 @@ void main() {
       // TODO
     });
 
-    // JsonObject pluginUrlObject
+    // Object pluginUrlObject
     test('to test the property `pluginUrlObject`', () async {
       // TODO
     });

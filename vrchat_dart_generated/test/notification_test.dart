@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for Notification
 void main() {
-  final instance = NotificationBuilder();
-  // TODO add properties to the builder and call build()
+  final Notification? instance = /* Notification(...) */ null;
+  // TODO add properties to the entity
 
   group(Notification, () {
     // DateTime createdAt

@@ -181,7 +181,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getInfoPush**
-> BuiltList<InfoPush> getInfoPush(require, include)
+> List<InfoPush> getInfoPush(require, include)
 
 Show Information Notices
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;InfoPush&gt;**](InfoPush.md)
+[**List&lt;InfoPush&gt;**](InfoPush.md)
 
 ### Authorization
 

@@ -4,10 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:vrchat_dart_generated/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
 import 'package:vrchat_dart_generated/src/model/invite_message.dart';
 import 'package:vrchat_dart_generated/src/model/invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/invite_response.dart';
@@ -19,9 +20,7 @@ import 'package:vrchat_dart_generated/src/model/update_invite_message_request.da
 class InviteApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const InviteApi(this._dio, this._serializers);
+  const InviteApi(this._dio);
 
   /// Get Invite Message
   /// Returns a single Invite Message. This returns the exact same information but less than &#x60;getInviteMessages&#x60;. Admin Credentials are required to view messages of other users!  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
@@ -90,11 +89,9 @@ class InviteApi {
     InviteMessage _responseData;
 
     try {
-      const _responseType = FullType(InviteMessage);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as InviteMessage;
+      _responseData = deserialize<InviteMessage, InviteMessage>(
+          _response.data!, 'InviteMessage',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -129,9 +126,9 @@ class InviteApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<InviteMessage>] as data
+  /// Returns a [Future] containing a [Response] with a [List<InviteMessage>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<InviteMessage>>> getInviteMessages({
+  Future<Response<List<InviteMessage>>> getInviteMessages({
     required String userId,
     required String messageType,
     CancelToken? cancelToken,
@@ -177,14 +174,12 @@ class InviteApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<InviteMessage> _responseData;
+    List<InviteMessage> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(InviteMessage)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<InviteMessage>;
+      _responseData = deserialize<List<InviteMessage>, InviteMessage>(
+          _response.data!, 'List<InviteMessage>',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -194,7 +189,7 @@ class InviteApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<InviteMessage>>(
+    return Response<List<InviteMessage>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -270,11 +265,9 @@ class InviteApi {
     SentNotification _responseData;
 
     try {
-      const _responseType = FullType(SentNotification);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as SentNotification;
+      _responseData = deserialize<SentNotification, SentNotification>(
+          _response.data!, 'SentNotification',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -352,10 +345,7 @@ class InviteApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InviteRequest);
-      _bodyData = inviteRequest == null
-          ? null
-          : _serializers.serialize(inviteRequest, specifiedType: _type);
+      _bodyData = jsonEncode(inviteRequest);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -379,11 +369,9 @@ class InviteApi {
     SentNotification _responseData;
 
     try {
-      const _responseType = FullType(SentNotification);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as SentNotification;
+      _responseData = deserialize<SentNotification, SentNotification>(
+          _response.data!, 'SentNotification',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -461,10 +449,7 @@ class InviteApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(RequestInviteRequest);
-      _bodyData = requestInviteRequest == null
-          ? null
-          : _serializers.serialize(requestInviteRequest, specifiedType: _type);
+      _bodyData = jsonEncode(requestInviteRequest);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -488,11 +473,9 @@ class InviteApi {
     Notification _responseData;
 
     try {
-      const _responseType = FullType(Notification);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Notification;
+      _responseData = deserialize<Notification, Notification>(
+          _response.data!, 'Notification',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -528,9 +511,9 @@ class InviteApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<InviteMessage>] as data
+  /// Returns a [Future] containing a [Response] with a [List<InviteMessage>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<InviteMessage>>> resetInviteMessage({
+  Future<Response<List<InviteMessage>>> resetInviteMessage({
     required String userId,
     required String messageType,
     required int slot,
@@ -578,14 +561,12 @@ class InviteApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<InviteMessage> _responseData;
+    List<InviteMessage> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(InviteMessage)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<InviteMessage>;
+      _responseData = deserialize<List<InviteMessage>, InviteMessage>(
+          _response.data!, 'List<InviteMessage>',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -595,7 +576,7 @@ class InviteApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<InviteMessage>>(
+    return Response<List<InviteMessage>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -663,10 +644,7 @@ class InviteApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(InviteResponse);
-      _bodyData = inviteResponse == null
-          ? null
-          : _serializers.serialize(inviteResponse, specifiedType: _type);
+      _bodyData = jsonEncode(inviteResponse);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -690,11 +668,9 @@ class InviteApi {
     Notification _responseData;
 
     try {
-      const _responseType = FullType(Notification);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Notification;
+      _responseData = deserialize<Notification, Notification>(
+          _response.data!, 'Notification',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -731,9 +707,9 @@ class InviteApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<InviteMessage>] as data
+  /// Returns a [Future] containing a [Response] with a [List<InviteMessage>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<InviteMessage>>> updateInviteMessage({
+  Future<Response<List<InviteMessage>>> updateInviteMessage({
     required String userId,
     required String messageType,
     required int slot,
@@ -778,11 +754,7 @@ class InviteApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UpdateInviteMessageRequest);
-      _bodyData = updateInviteMessageRequest == null
-          ? null
-          : _serializers.serialize(updateInviteMessageRequest,
-              specifiedType: _type);
+      _bodyData = jsonEncode(updateInviteMessageRequest);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -803,14 +775,12 @@ class InviteApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<InviteMessage> _responseData;
+    List<InviteMessage> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(InviteMessage)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<InviteMessage>;
+      _responseData = deserialize<List<InviteMessage>, InviteMessage>(
+          _response.data!, 'List<InviteMessage>',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -820,7 +790,7 @@ class InviteApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<InviteMessage>>(
+    return Response<List<InviteMessage>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:vrchat_dart_generated/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/add_favorite_request.dart';
 import 'package:vrchat_dart_generated/src/model/favorite.dart';
 import 'package:vrchat_dart_generated/src/model/favorite_group.dart';
@@ -18,9 +18,7 @@ import 'package:vrchat_dart_generated/src/model/update_favorite_group_request.da
 class FavoritesApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const FavoritesApi(this._dio, this._serializers);
+  const FavoritesApi(this._dio);
 
   /// Add Favorite
   /// Add a new favorite.  Friend groups are named &#x60;group_0&#x60; through &#x60;group_3&#x60;. Avatar and World groups are named &#x60;avatars1&#x60; to &#x60;avatars4&#x60; and &#x60;worlds1&#x60; to &#x60;worlds4&#x60;.  You cannot add people whom you are not friends with to your friends list. Destroying a friendship removes the person as favorite on both sides.
@@ -75,10 +73,7 @@ class FavoritesApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(AddFavoriteRequest);
-      _bodyData = addFavoriteRequest == null
-          ? null
-          : _serializers.serialize(addFavoriteRequest, specifiedType: _type);
+      _bodyData = jsonEncode(addFavoriteRequest);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -102,11 +97,9 @@ class FavoritesApi {
     Favorite _responseData;
 
     try {
-      const _responseType = FullType(Favorite);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Favorite;
+      _responseData = deserialize<Favorite, Favorite>(
+          _response.data!, 'Favorite',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -198,11 +191,8 @@ class FavoritesApi {
     Success _responseData;
 
     try {
-      const _responseType = FullType(Success);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Success;
+      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -285,11 +275,9 @@ class FavoritesApi {
     Favorite _responseData;
 
     try {
-      const _responseType = FullType(Favorite);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Favorite;
+      _responseData = deserialize<Favorite, Favorite>(
+          _response.data!, 'Favorite',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -381,11 +369,9 @@ class FavoritesApi {
     FavoriteGroup _responseData;
 
     try {
-      const _responseType = FullType(FavoriteGroup);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as FavoriteGroup;
+      _responseData = deserialize<FavoriteGroup, FavoriteGroup>(
+          _response.data!, 'FavoriteGroup',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -421,9 +407,9 @@ class FavoritesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<FavoriteGroup>] as data
+  /// Returns a [Future] containing a [Response] with a [List<FavoriteGroup>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<FavoriteGroup>>> getFavoriteGroups({
+  Future<Response<List<FavoriteGroup>>> getFavoriteGroups({
     int? n = 60,
     int? offset,
     String? ownerId,
@@ -461,14 +447,9 @@ class FavoritesApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (n != null)
-        r'n': encodeQueryParameter(_serializers, n, const FullType(int)),
-      if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
-      if (ownerId != null)
-        r'ownerId':
-            encodeQueryParameter(_serializers, ownerId, const FullType(String)),
+      if (n != null) r'n': n,
+      if (offset != null) r'offset': offset,
+      if (ownerId != null) r'ownerId': ownerId,
     };
 
     final _response = await _dio.request<Object>(
@@ -480,14 +461,12 @@ class FavoritesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<FavoriteGroup> _responseData;
+    List<FavoriteGroup> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(FavoriteGroup)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<FavoriteGroup>;
+      _responseData = deserialize<List<FavoriteGroup>, FavoriteGroup>(
+          _response.data!, 'List<FavoriteGroup>',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -497,7 +476,7 @@ class FavoritesApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<FavoriteGroup>>(
+    return Response<List<FavoriteGroup>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -524,9 +503,9 @@ class FavoritesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Favorite>] as data
+  /// Returns a [Future] containing a [Response] with a [List<Favorite>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<Favorite>>> getFavorites({
+  Future<Response<List<Favorite>>> getFavorites({
     int? n = 60,
     int? offset,
     String? type,
@@ -565,16 +544,10 @@ class FavoritesApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (n != null)
-        r'n': encodeQueryParameter(_serializers, n, const FullType(int)),
-      if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
-      if (type != null)
-        r'type':
-            encodeQueryParameter(_serializers, type, const FullType(String)),
-      if (tag != null)
-        r'tag': encodeQueryParameter(_serializers, tag, const FullType(String)),
+      if (n != null) r'n': n,
+      if (offset != null) r'offset': offset,
+      if (type != null) r'type': type,
+      if (tag != null) r'tag': tag,
     };
 
     final _response = await _dio.request<Object>(
@@ -586,14 +559,12 @@ class FavoritesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Favorite> _responseData;
+    List<Favorite> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(Favorite)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<Favorite>;
+      _responseData = deserialize<List<Favorite>, Favorite>(
+          _response.data!, 'List<Favorite>',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -603,7 +574,7 @@ class FavoritesApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<Favorite>>(
+    return Response<List<Favorite>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -676,11 +647,8 @@ class FavoritesApi {
     Success _responseData;
 
     try {
-      const _responseType = FullType(Success);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Success;
+      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -767,11 +735,7 @@ class FavoritesApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UpdateFavoriteGroupRequest);
-      _bodyData = updateFavoriteGroupRequest == null
-          ? null
-          : _serializers.serialize(updateFavoriteGroupRequest,
-              specifiedType: _type);
+      _bodyData = jsonEncode(updateFavoriteGroupRequest);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(

@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:vrchat_dart_generated/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/api_config.dart';
 import 'package:vrchat_dart_generated/src/model/api_health.dart';
 import 'package:vrchat_dart_generated/src/model/info_push.dart';
@@ -16,9 +16,7 @@ import 'package:vrchat_dart_generated/src/model/info_push.dart';
 class SystemApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const SystemApi(this._dio, this._serializers);
+  const SystemApi(this._dio);
 
   /// Download CSS
   /// Fetches the CSS code to the frontend React website.
@@ -59,12 +57,8 @@ class SystemApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (variant != null)
-        r'variant':
-            encodeQueryParameter(_serializers, variant, const FullType(String)),
-      if (branch != null)
-        r'branch':
-            encodeQueryParameter(_serializers, branch, const FullType(String)),
+      if (variant != null) r'variant': variant,
+      if (branch != null) r'branch': branch,
     };
 
     final _response = await _dio.request<Object>(
@@ -79,7 +73,8 @@ class SystemApi {
     String _responseData;
 
     try {
-      _responseData = _response.data as String;
+      _responseData = deserialize<String, String>(_response.data!, 'String',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -146,11 +141,9 @@ class SystemApi {
     APIConfig _responseData;
 
     try {
-      const _responseType = FullType(APIConfig);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as APIConfig;
+      _responseData = deserialize<APIConfig, APIConfig>(
+          _response.data!, 'APIConfig',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -217,7 +210,8 @@ class SystemApi {
     int _responseData;
 
     try {
-      _responseData = _response.data as int;
+      _responseData =
+          deserialize<int, int>(_response.data!, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -285,11 +279,9 @@ class SystemApi {
     APIHealth _responseData;
 
     try {
-      const _responseType = FullType(APIHealth);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as APIHealth;
+      _responseData = deserialize<APIHealth, APIHealth>(
+          _response.data!, 'APIHealth',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -324,9 +316,9 @@ class SystemApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<InfoPush>] as data
+  /// Returns a [Future] containing a [Response] with a [List<InfoPush>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<InfoPush>>> getInfoPush({
+  Future<Response<List<InfoPush>>> getInfoPush({
     String? require,
     String? include,
     CancelToken? cancelToken,
@@ -350,12 +342,8 @@ class SystemApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (require != null)
-        r'require':
-            encodeQueryParameter(_serializers, require, const FullType(String)),
-      if (include != null)
-        r'include':
-            encodeQueryParameter(_serializers, include, const FullType(String)),
+      if (require != null) r'require': require,
+      if (include != null) r'include': include,
     };
 
     final _response = await _dio.request<Object>(
@@ -367,14 +355,12 @@ class SystemApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<InfoPush> _responseData;
+    List<InfoPush> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(InfoPush)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<InfoPush>;
+      _responseData = deserialize<List<InfoPush>, InfoPush>(
+          _response.data!, 'List<InfoPush>',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -384,7 +370,7 @@ class SystemApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<InfoPush>>(
+    return Response<List<InfoPush>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -435,12 +421,8 @@ class SystemApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (variant != null)
-        r'variant':
-            encodeQueryParameter(_serializers, variant, const FullType(String)),
-      if (branch != null)
-        r'branch':
-            encodeQueryParameter(_serializers, branch, const FullType(String)),
+      if (variant != null) r'variant': variant,
+      if (branch != null) r'branch': branch,
     };
 
     final _response = await _dio.request<Object>(
@@ -455,7 +437,8 @@ class SystemApi {
     String _responseData;
 
     try {
-      _responseData = _response.data as String;
+      _responseData = deserialize<String, String>(_response.data!, 'String',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -522,11 +505,9 @@ class SystemApi {
     DateTime _responseData;
 
     try {
-      const _responseType = FullType(DateTime);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as DateTime;
+      _responseData = deserialize<DateTime, DateTime>(
+          _response.data!, 'DateTime',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for Verify2FAResult
 void main() {
-  final instance = Verify2FAResultBuilder();
-  // TODO add properties to the builder and call build()
+  final Verify2FAResult? instance = /* Verify2FAResult(...) */ null;
+  // TODO add properties to the entity
 
   group(Verify2FAResult, () {
     // bool verified

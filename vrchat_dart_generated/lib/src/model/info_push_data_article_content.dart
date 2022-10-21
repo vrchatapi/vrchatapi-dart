@@ -2,112 +2,53 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/info_push_data_clickable.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'info_push_data_article_content.g.dart';
 
-/// InfoPushDataArticleContent
-///
-/// Properties:
-/// * [text]
-/// * [imageUrl]
-/// * [onPressed]
-abstract class InfoPushDataArticleContent
-    implements
-        Built<InfoPushDataArticleContent, InfoPushDataArticleContentBuilder> {
-  @BuiltValueField(wireName: r'text')
-  String? get text;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class InfoPushDataArticleContent {
+  /// Returns a new [InfoPushDataArticleContent] instance.
+  InfoPushDataArticleContent({
+    this.text,
+    this.imageUrl,
+    this.onPressed,
+  });
 
-  @BuiltValueField(wireName: r'imageUrl')
-  String? get imageUrl;
+  @JsonKey(name: r'text', required: false, includeIfNull: false)
+  final String? text;
 
-  @BuiltValueField(wireName: r'onPressed')
-  InfoPushDataClickable? get onPressed;
+  @JsonKey(name: r'imageUrl', required: false, includeIfNull: false)
+  final String? imageUrl;
 
-  InfoPushDataArticleContent._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(InfoPushDataArticleContentBuilder b) => b;
-
-  factory InfoPushDataArticleContent(
-          [void updates(InfoPushDataArticleContentBuilder b)]) =
-      _$InfoPushDataArticleContent;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<InfoPushDataArticleContent> get serializer =>
-      _$InfoPushDataArticleContentSerializer();
-}
-
-class _$InfoPushDataArticleContentSerializer
-    implements StructuredSerializer<InfoPushDataArticleContent> {
-  @override
-  final Iterable<Type> types = const [
-    InfoPushDataArticleContent,
-    _$InfoPushDataArticleContent
-  ];
+  @JsonKey(name: r'onPressed', required: false, includeIfNull: false)
+  final InfoPushDataClickable? onPressed;
 
   @override
-  final String wireName = r'InfoPushDataArticleContent';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is InfoPushDataArticleContent &&
+          other.text == text &&
+          other.imageUrl == imageUrl &&
+          other.onPressed == onPressed;
 
   @override
-  Iterable<Object?> serialize(
-      Serializers serializers, InfoPushDataArticleContent object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    if (object.text != null) {
-      result
-        ..add(r'text')
-        ..add(serializers.serialize(object.text,
-            specifiedType: const FullType(String)));
-    }
-    if (object.imageUrl != null) {
-      result
-        ..add(r'imageUrl')
-        ..add(serializers.serialize(object.imageUrl,
-            specifiedType: const FullType(String)));
-    }
-    if (object.onPressed != null) {
-      result
-        ..add(r'onPressed')
-        ..add(serializers.serialize(object.onPressed,
-            specifiedType: const FullType(InfoPushDataClickable)));
-    }
-    return result;
-  }
+  int get hashCode => text.hashCode + imageUrl.hashCode + onPressed.hashCode;
+
+  factory InfoPushDataArticleContent.fromJson(Map<String, dynamic> json) =>
+      _$InfoPushDataArticleContentFromJson(json);
+
+  Map<String, dynamic> toJson() => _$InfoPushDataArticleContentToJson(this);
 
   @override
-  InfoPushDataArticleContent deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = InfoPushDataArticleContentBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'text':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.text = valueDes;
-          break;
-        case r'imageUrl':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.imageUrl = valueDes;
-          break;
-        case r'onPressed':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(InfoPushDataClickable))
-              as InfoPushDataClickable;
-          result.onPressed.replace(valueDes);
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

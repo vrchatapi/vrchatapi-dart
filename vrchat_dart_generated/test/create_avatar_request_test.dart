@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for CreateAvatarRequest
 void main() {
-  final instance = CreateAvatarRequestBuilder();
-  // TODO add properties to the builder and call build()
+  final CreateAvatarRequest? instance = /* CreateAvatarRequest(...) */ null;
+  // TODO add properties to the entity
 
   group(CreateAvatarRequest, () {
     // String assetUrl
@@ -28,7 +28,7 @@ void main() {
     });
 
     //
-    // BuiltList<String> tags
+    // List<String> tags
     test('to test the property `tags`', () async {
       // TODO
     });

@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for Response
 void main() {
-  final instance = ResponseBuilder();
-  // TODO add properties to the builder and call build()
+  final Response? instance = /* Response(...) */ null;
+  // TODO add properties to the entity
 
   group(Response, () {
     // String message

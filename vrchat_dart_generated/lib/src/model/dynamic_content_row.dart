@@ -2,172 +2,89 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+// ignore_for_file: unused_element
+import 'package:json_annotation/json_annotation.dart';
 
 part 'dynamic_content_row.g.dart';
 
-/// DynamicContentRow
-///
-/// Properties:
-/// * [index]
-/// * [name]
-/// * [platform] - Usually \"ThisPlatformSupported\", but can also be other values such as \"all\" or platform specific identifiers.
-/// * [sortHeading]
-/// * [sortOrder]
-/// * [sortOwnership]
-/// * [tag] - Tag to filter content for this row.
-/// * [type] - Type is not present if it is a world.
-abstract class DynamicContentRow
-    implements Built<DynamicContentRow, DynamicContentRowBuilder> {
-  @BuiltValueField(wireName: r'index')
-  int? get index;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class DynamicContentRow {
+  /// Returns a new [DynamicContentRow] instance.
+  DynamicContentRow({
+    this.index,
+    required this.name,
+    required this.platform,
+    required this.sortHeading,
+    required this.sortOrder,
+    required this.sortOwnership,
+    this.tag,
+    this.type,
+  });
 
-  @BuiltValueField(wireName: r'name')
-  String get name;
+  // minimum: 0
+  @JsonKey(name: r'index', required: false, includeIfNull: false)
+  final int? index;
+
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
+  final String name;
 
   /// Usually \"ThisPlatformSupported\", but can also be other values such as \"all\" or platform specific identifiers.
-  @BuiltValueField(wireName: r'platform')
-  String get platform;
+  @JsonKey(name: r'platform', required: true, includeIfNull: false)
+  final String platform;
 
-  @BuiltValueField(wireName: r'sortHeading')
-  String get sortHeading;
+  @JsonKey(name: r'sortHeading', required: true, includeIfNull: false)
+  final String sortHeading;
 
-  @BuiltValueField(wireName: r'sortOrder')
-  String get sortOrder;
+  @JsonKey(name: r'sortOrder', required: true, includeIfNull: false)
+  final String sortOrder;
 
-  @BuiltValueField(wireName: r'sortOwnership')
-  String get sortOwnership;
+  @JsonKey(name: r'sortOwnership', required: true, includeIfNull: false)
+  final String sortOwnership;
 
   /// Tag to filter content for this row.
-  @BuiltValueField(wireName: r'tag')
-  String? get tag;
+  @JsonKey(name: r'tag', required: false, includeIfNull: false)
+  final String? tag;
 
   /// Type is not present if it is a world.
-  @BuiltValueField(wireName: r'type')
-  String? get type;
-
-  DynamicContentRow._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(DynamicContentRowBuilder b) => b;
-
-  factory DynamicContentRow([void updates(DynamicContentRowBuilder b)]) =
-      _$DynamicContentRow;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<DynamicContentRow> get serializer =>
-      _$DynamicContentRowSerializer();
-}
-
-class _$DynamicContentRowSerializer
-    implements StructuredSerializer<DynamicContentRow> {
-  @override
-  final Iterable<Type> types = const [DynamicContentRow, _$DynamicContentRow];
+  @JsonKey(name: r'type', required: false, includeIfNull: false)
+  final String? type;
 
   @override
-  final String wireName = r'DynamicContentRow';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is DynamicContentRow &&
+          other.index == index &&
+          other.name == name &&
+          other.platform == platform &&
+          other.sortHeading == sortHeading &&
+          other.sortOrder == sortOrder &&
+          other.sortOwnership == sortOwnership &&
+          other.tag == tag &&
+          other.type == type;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, DynamicContentRow object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    if (object.index != null) {
-      result
-        ..add(r'index')
-        ..add(serializers.serialize(object.index,
-            specifiedType: const FullType(int)));
-    }
-    result
-      ..add(r'name')
-      ..add(serializers.serialize(object.name,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'platform')
-      ..add(serializers.serialize(object.platform,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'sortHeading')
-      ..add(serializers.serialize(object.sortHeading,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'sortOrder')
-      ..add(serializers.serialize(object.sortOrder,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'sortOwnership')
-      ..add(serializers.serialize(object.sortOwnership,
-          specifiedType: const FullType(String)));
-    if (object.tag != null) {
-      result
-        ..add(r'tag')
-        ..add(serializers.serialize(object.tag,
-            specifiedType: const FullType(String)));
-    }
-    if (object.type != null) {
-      result
-        ..add(r'type')
-        ..add(serializers.serialize(object.type,
-            specifiedType: const FullType(String)));
-    }
-    return result;
-  }
+  int get hashCode =>
+      index.hashCode +
+      name.hashCode +
+      platform.hashCode +
+      sortHeading.hashCode +
+      sortOrder.hashCode +
+      sortOwnership.hashCode +
+      tag.hashCode +
+      type.hashCode;
+
+  factory DynamicContentRow.fromJson(Map<String, dynamic> json) =>
+      _$DynamicContentRowFromJson(json);
+
+  Map<String, dynamic> toJson() => _$DynamicContentRowToJson(this);
 
   @override
-  DynamicContentRow deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = DynamicContentRowBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'index':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.index = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.name = valueDes;
-          break;
-        case r'platform':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.platform = valueDes;
-          break;
-        case r'sortHeading':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.sortHeading = valueDes;
-          break;
-        case r'sortOrder':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.sortOrder = valueDes;
-          break;
-        case r'sortOwnership':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.sortOwnership = valueDes;
-          break;
-        case r'tag':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.tag = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.type = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

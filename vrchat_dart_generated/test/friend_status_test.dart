@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for FriendStatus
 void main() {
-  final instance = FriendStatusBuilder();
-  // TODO add properties to the builder and call build()
+  final FriendStatus? instance = /* FriendStatus(...) */ null;
+  // TODO add properties to the entity
 
   group(FriendStatus, () {
     // bool incomingRequest (default value: false)

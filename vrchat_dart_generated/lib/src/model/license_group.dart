@@ -2,111 +2,59 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_collection/built_collection.dart';
+// ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/license.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'license_group.g.dart';
 
-///
-///
-/// Properties:
-/// * [id]
-/// * [name]
-/// * [description]
-/// * [licenses]
-abstract class LicenseGroup
-    implements Built<LicenseGroup, LicenseGroupBuilder> {
-  @BuiltValueField(wireName: r'id')
-  String get id;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class LicenseGroup {
+  /// Returns a new [LicenseGroup] instance.
+  LicenseGroup({
+    required this.id,
+    required this.name,
+    required this.description,
+    required this.licenses,
+  });
 
-  @BuiltValueField(wireName: r'name')
-  String get name;
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
 
-  @BuiltValueField(wireName: r'description')
-  String get description;
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
+  final String name;
 
-  @BuiltValueField(wireName: r'licenses')
-  BuiltList<License> get licenses;
+  @JsonKey(name: r'description', required: true, includeIfNull: false)
+  final String description;
 
-  LicenseGroup._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(LicenseGroupBuilder b) => b;
-
-  factory LicenseGroup([void updates(LicenseGroupBuilder b)]) = _$LicenseGroup;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<LicenseGroup> get serializer => _$LicenseGroupSerializer();
-}
-
-class _$LicenseGroupSerializer implements StructuredSerializer<LicenseGroup> {
-  @override
-  final Iterable<Type> types = const [LicenseGroup, _$LicenseGroup];
+  @JsonKey(name: r'licenses', required: true, includeIfNull: false)
+  final List<License> licenses;
 
   @override
-  final String wireName = r'LicenseGroup';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is LicenseGroup &&
+          other.id == id &&
+          other.name == name &&
+          other.description == description &&
+          other.licenses == licenses;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, LicenseGroup object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'id')
-      ..add(serializers.serialize(object.id,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'name')
-      ..add(serializers.serialize(object.name,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'description')
-      ..add(serializers.serialize(object.description,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'licenses')
-      ..add(serializers.serialize(object.licenses,
-          specifiedType: const FullType(BuiltList, [FullType(License)])));
-    return result;
-  }
+  int get hashCode =>
+      id.hashCode + name.hashCode + description.hashCode + licenses.hashCode;
+
+  factory LicenseGroup.fromJson(Map<String, dynamic> json) =>
+      _$LicenseGroupFromJson(json);
+
+  Map<String, dynamic> toJson() => _$LicenseGroupToJson(this);
 
   @override
-  LicenseGroup deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = LicenseGroupBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'id':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.id = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.name = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.description = valueDes;
-          break;
-        case r'licenses':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(License)]))
-              as BuiltList<License>;
-          result.licenses.replace(valueDes);
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

@@ -3,229 +3,78 @@
 part of 'transaction.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$Transaction extends Transaction {
-  @override
-  final String id;
-  @override
-  final TransactionStatus status;
-  @override
-  final Subscription subscription;
-  @override
-  final bool sandbox;
-  @override
-  final DateTime createdAt;
-  @override
-  final DateTime updatedAt;
-  @override
-  final TransactionSteamInfo? steam;
-  @override
-  final TransactionAgreement? agreement;
-  @override
-  final String error;
+Transaction _$TransactionFromJson(Map<String, dynamic> json) => $checkedCreate(
+      'Transaction',
+      json,
+      ($checkedConvert) {
+        $checkKeys(
+          json,
+          requiredKeys: const [
+            'id',
+            'status',
+            'subscription',
+            'sandbox',
+            'created_at',
+            'updated_at',
+            'error'
+          ],
+        );
+        final val = Transaction(
+          id: $checkedConvert('id', (v) => v as String),
+          status: $checkedConvert(
+              'status', (v) => $enumDecode(_$TransactionStatusEnumMap, v)),
+          subscription: $checkedConvert('subscription',
+              (v) => Subscription.fromJson(v as Map<String, dynamic>)),
+          sandbox: $checkedConvert('sandbox', (v) => v as bool? ?? false),
+          createdAt:
+              $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
+          updatedAt:
+              $checkedConvert('updated_at', (v) => DateTime.parse(v as String)),
+          steam: $checkedConvert(
+              'steam',
+              (v) => v == null
+                  ? null
+                  : TransactionSteamInfo.fromJson(v as Map<String, dynamic>)),
+          agreement: $checkedConvert(
+              'agreement',
+              (v) => v == null
+                  ? null
+                  : TransactionAgreement.fromJson(v as Map<String, dynamic>)),
+          error: $checkedConvert('error', (v) => v as String),
+        );
+        return val;
+      },
+      fieldKeyMap: const {'createdAt': 'created_at', 'updatedAt': 'updated_at'},
+    );
 
-  factory _$Transaction([void Function(TransactionBuilder)? updates]) =>
-      (new TransactionBuilder()..update(updates))._build();
+Map<String, dynamic> _$TransactionToJson(Transaction instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'status': _$TransactionStatusEnumMap[instance.status]!,
+    'subscription': instance.subscription.toJson(),
+    'sandbox': instance.sandbox,
+    'created_at': instance.createdAt.toIso8601String(),
+    'updated_at': instance.updatedAt.toIso8601String(),
+  };
 
-  _$Transaction._(
-      {required this.id,
-      required this.status,
-      required this.subscription,
-      required this.sandbox,
-      required this.createdAt,
-      required this.updatedAt,
-      this.steam,
-      this.agreement,
-      required this.error})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, r'Transaction', 'id');
-    BuiltValueNullFieldError.checkNotNull(status, r'Transaction', 'status');
-    BuiltValueNullFieldError.checkNotNull(
-        subscription, r'Transaction', 'subscription');
-    BuiltValueNullFieldError.checkNotNull(sandbox, r'Transaction', 'sandbox');
-    BuiltValueNullFieldError.checkNotNull(
-        createdAt, r'Transaction', 'createdAt');
-    BuiltValueNullFieldError.checkNotNull(
-        updatedAt, r'Transaction', 'updatedAt');
-    BuiltValueNullFieldError.checkNotNull(error, r'Transaction', 'error');
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
   }
 
-  @override
-  Transaction rebuild(void Function(TransactionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  TransactionBuilder toBuilder() => new TransactionBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Transaction &&
-        id == other.id &&
-        status == other.status &&
-        subscription == other.subscription &&
-        sandbox == other.sandbox &&
-        createdAt == other.createdAt &&
-        updatedAt == other.updatedAt &&
-        steam == other.steam &&
-        agreement == other.agreement &&
-        error == other.error;
-  }
-
-  @override
-  int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc(
-                        $jc(
-                            $jc($jc($jc(0, id.hashCode), status.hashCode),
-                                subscription.hashCode),
-                            sandbox.hashCode),
-                        createdAt.hashCode),
-                    updatedAt.hashCode),
-                steam.hashCode),
-            agreement.hashCode),
-        error.hashCode));
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'Transaction')
-          ..add('id', id)
-          ..add('status', status)
-          ..add('subscription', subscription)
-          ..add('sandbox', sandbox)
-          ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt)
-          ..add('steam', steam)
-          ..add('agreement', agreement)
-          ..add('error', error))
-        .toString();
-  }
+  writeNotNull('steam', instance.steam?.toJson());
+  writeNotNull('agreement', instance.agreement?.toJson());
+  val['error'] = instance.error;
+  return val;
 }
 
-class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
-  _$Transaction? _$v;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  TransactionStatus? _status;
-  TransactionStatus? get status => _$this._status;
-  set status(TransactionStatus? status) => _$this._status = status;
-
-  SubscriptionBuilder? _subscription;
-  SubscriptionBuilder get subscription =>
-      _$this._subscription ??= new SubscriptionBuilder();
-  set subscription(SubscriptionBuilder? subscription) =>
-      _$this._subscription = subscription;
-
-  bool? _sandbox;
-  bool? get sandbox => _$this._sandbox;
-  set sandbox(bool? sandbox) => _$this._sandbox = sandbox;
-
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
-
-  TransactionSteamInfoBuilder? _steam;
-  TransactionSteamInfoBuilder get steam =>
-      _$this._steam ??= new TransactionSteamInfoBuilder();
-  set steam(TransactionSteamInfoBuilder? steam) => _$this._steam = steam;
-
-  TransactionAgreementBuilder? _agreement;
-  TransactionAgreementBuilder get agreement =>
-      _$this._agreement ??= new TransactionAgreementBuilder();
-  set agreement(TransactionAgreementBuilder? agreement) =>
-      _$this._agreement = agreement;
-
-  String? _error;
-  String? get error => _$this._error;
-  set error(String? error) => _$this._error = error;
-
-  TransactionBuilder() {
-    Transaction._defaults(this);
-  }
-
-  TransactionBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _id = $v.id;
-      _status = $v.status;
-      _subscription = $v.subscription.toBuilder();
-      _sandbox = $v.sandbox;
-      _createdAt = $v.createdAt;
-      _updatedAt = $v.updatedAt;
-      _steam = $v.steam?.toBuilder();
-      _agreement = $v.agreement?.toBuilder();
-      _error = $v.error;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(Transaction other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$Transaction;
-  }
-
-  @override
-  void update(void Function(TransactionBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Transaction build() => _build();
-
-  _$Transaction _build() {
-    _$Transaction _$result;
-    try {
-      _$result = _$v ??
-          new _$Transaction._(
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'Transaction', 'id'),
-              status: BuiltValueNullFieldError.checkNotNull(
-                  status, r'Transaction', 'status'),
-              subscription: subscription.build(),
-              sandbox: BuiltValueNullFieldError.checkNotNull(
-                  sandbox, r'Transaction', 'sandbox'),
-              createdAt: BuiltValueNullFieldError.checkNotNull(
-                  createdAt, r'Transaction', 'createdAt'),
-              updatedAt: BuiltValueNullFieldError.checkNotNull(
-                  updatedAt, r'Transaction', 'updatedAt'),
-              steam: _steam?.build(),
-              agreement: _agreement?.build(),
-              error: BuiltValueNullFieldError.checkNotNull(
-                  error, r'Transaction', 'error'));
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'subscription';
-        subscription.build();
-
-        _$failedField = 'steam';
-        _steam?.build();
-        _$failedField = 'agreement';
-        _agreement?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'Transaction', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas
+const _$TransactionStatusEnumMap = {
+  TransactionStatus.active: 'active',
+  TransactionStatus.failed: 'failed',
+  TransactionStatus.expired: 'expired',
+  TransactionStatus.chargeback: 'chargeback',
+};

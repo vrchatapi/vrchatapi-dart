@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:vrchat_dart_generated/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/create_world_request.dart';
 import 'package:vrchat_dart_generated/src/model/instance.dart';
 import 'package:vrchat_dart_generated/src/model/limited_world.dart';
@@ -20,9 +20,7 @@ import 'package:vrchat_dart_generated/src/model/world_publish_status.dart';
 class WorldsApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const WorldsApi(this._dio, this._serializers);
+  const WorldsApi(this._dio);
 
   /// Create World
   /// Create a new world. This endpoint requires &#x60;assetUrl&#x60; to be a valid File object with &#x60;.vrcw&#x60; file extension, and &#x60;imageUrl&#x60; to be a valid File object with an image file extension.
@@ -64,10 +62,7 @@ class WorldsApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateWorldRequest);
-      _bodyData = createWorldRequest == null
-          ? null
-          : _serializers.serialize(createWorldRequest, specifiedType: _type);
+      _bodyData = jsonEncode(createWorldRequest);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -91,11 +86,8 @@ class WorldsApi {
     World _responseData;
 
     try {
-      const _responseType = FullType(World);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as World;
+      _responseData =
+          deserialize<World, World>(_response.data!, 'World', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -201,9 +193,9 @@ class WorldsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<LimitedWorld>] as data
+  /// Returns a [Future] containing a [Response] with a [List<LimitedWorld>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<LimitedWorld>>> getActiveWorlds({
+  Future<Response<List<LimitedWorld>>> getActiveWorlds({
     bool? featured,
     String? sort = 'popularity',
     int? n = 60,
@@ -250,40 +242,18 @@ class WorldsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (featured != null)
-        r'featured':
-            encodeQueryParameter(_serializers, featured, const FullType(bool)),
-      if (sort != null)
-        r'sort':
-            encodeQueryParameter(_serializers, sort, const FullType(String)),
-      if (n != null)
-        r'n': encodeQueryParameter(_serializers, n, const FullType(int)),
-      if (order != null)
-        r'order':
-            encodeQueryParameter(_serializers, order, const FullType(String)),
-      if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
-      if (search != null)
-        r'search':
-            encodeQueryParameter(_serializers, search, const FullType(String)),
-      if (tag != null)
-        r'tag': encodeQueryParameter(_serializers, tag, const FullType(String)),
-      if (notag != null)
-        r'notag':
-            encodeQueryParameter(_serializers, notag, const FullType(String)),
-      if (releaseStatus != null)
-        r'releaseStatus': encodeQueryParameter(
-            _serializers, releaseStatus, const FullType(String)),
-      if (maxUnityVersion != null)
-        r'maxUnityVersion': encodeQueryParameter(
-            _serializers, maxUnityVersion, const FullType(String)),
-      if (minUnityVersion != null)
-        r'minUnityVersion': encodeQueryParameter(
-            _serializers, minUnityVersion, const FullType(String)),
-      if (platform != null)
-        r'platform': encodeQueryParameter(
-            _serializers, platform, const FullType(String)),
+      if (featured != null) r'featured': featured,
+      if (sort != null) r'sort': sort,
+      if (n != null) r'n': n,
+      if (order != null) r'order': order,
+      if (offset != null) r'offset': offset,
+      if (search != null) r'search': search,
+      if (tag != null) r'tag': tag,
+      if (notag != null) r'notag': notag,
+      if (releaseStatus != null) r'releaseStatus': releaseStatus,
+      if (maxUnityVersion != null) r'maxUnityVersion': maxUnityVersion,
+      if (minUnityVersion != null) r'minUnityVersion': minUnityVersion,
+      if (platform != null) r'platform': platform,
     };
 
     final _response = await _dio.request<Object>(
@@ -295,14 +265,12 @@ class WorldsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<LimitedWorld> _responseData;
+    List<LimitedWorld> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(LimitedWorld)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<LimitedWorld>;
+      _responseData = deserialize<List<LimitedWorld>, LimitedWorld>(
+          _response.data!, 'List<LimitedWorld>',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -312,7 +280,7 @@ class WorldsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<LimitedWorld>>(
+    return Response<List<LimitedWorld>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -348,9 +316,9 @@ class WorldsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<LimitedWorld>] as data
+  /// Returns a [Future] containing a [Response] with a [List<LimitedWorld>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<LimitedWorld>>> getFavoritedWorlds({
+  Future<Response<List<LimitedWorld>>> getFavoritedWorlds({
     bool? featured,
     String? sort = 'popularity',
     int? n = 60,
@@ -398,43 +366,19 @@ class WorldsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (featured != null)
-        r'featured':
-            encodeQueryParameter(_serializers, featured, const FullType(bool)),
-      if (sort != null)
-        r'sort':
-            encodeQueryParameter(_serializers, sort, const FullType(String)),
-      if (n != null)
-        r'n': encodeQueryParameter(_serializers, n, const FullType(int)),
-      if (order != null)
-        r'order':
-            encodeQueryParameter(_serializers, order, const FullType(String)),
-      if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
-      if (search != null)
-        r'search':
-            encodeQueryParameter(_serializers, search, const FullType(String)),
-      if (tag != null)
-        r'tag': encodeQueryParameter(_serializers, tag, const FullType(String)),
-      if (notag != null)
-        r'notag':
-            encodeQueryParameter(_serializers, notag, const FullType(String)),
-      if (releaseStatus != null)
-        r'releaseStatus': encodeQueryParameter(
-            _serializers, releaseStatus, const FullType(String)),
-      if (maxUnityVersion != null)
-        r'maxUnityVersion': encodeQueryParameter(
-            _serializers, maxUnityVersion, const FullType(String)),
-      if (minUnityVersion != null)
-        r'minUnityVersion': encodeQueryParameter(
-            _serializers, minUnityVersion, const FullType(String)),
-      if (platform != null)
-        r'platform': encodeQueryParameter(
-            _serializers, platform, const FullType(String)),
-      if (userId != null)
-        r'userId':
-            encodeQueryParameter(_serializers, userId, const FullType(String)),
+      if (featured != null) r'featured': featured,
+      if (sort != null) r'sort': sort,
+      if (n != null) r'n': n,
+      if (order != null) r'order': order,
+      if (offset != null) r'offset': offset,
+      if (search != null) r'search': search,
+      if (tag != null) r'tag': tag,
+      if (notag != null) r'notag': notag,
+      if (releaseStatus != null) r'releaseStatus': releaseStatus,
+      if (maxUnityVersion != null) r'maxUnityVersion': maxUnityVersion,
+      if (minUnityVersion != null) r'minUnityVersion': minUnityVersion,
+      if (platform != null) r'platform': platform,
+      if (userId != null) r'userId': userId,
     };
 
     final _response = await _dio.request<Object>(
@@ -446,14 +390,12 @@ class WorldsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<LimitedWorld> _responseData;
+    List<LimitedWorld> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(LimitedWorld)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<LimitedWorld>;
+      _responseData = deserialize<List<LimitedWorld>, LimitedWorld>(
+          _response.data!, 'List<LimitedWorld>',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -463,7 +405,7 @@ class WorldsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<LimitedWorld>>(
+    return Response<List<LimitedWorld>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -499,9 +441,9 @@ class WorldsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<LimitedWorld>] as data
+  /// Returns a [Future] containing a [Response] with a [List<LimitedWorld>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<LimitedWorld>>> getRecentWorlds({
+  Future<Response<List<LimitedWorld>>> getRecentWorlds({
     bool? featured,
     String? sort = 'popularity',
     int? n = 60,
@@ -549,43 +491,19 @@ class WorldsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (featured != null)
-        r'featured':
-            encodeQueryParameter(_serializers, featured, const FullType(bool)),
-      if (sort != null)
-        r'sort':
-            encodeQueryParameter(_serializers, sort, const FullType(String)),
-      if (n != null)
-        r'n': encodeQueryParameter(_serializers, n, const FullType(int)),
-      if (order != null)
-        r'order':
-            encodeQueryParameter(_serializers, order, const FullType(String)),
-      if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
-      if (search != null)
-        r'search':
-            encodeQueryParameter(_serializers, search, const FullType(String)),
-      if (tag != null)
-        r'tag': encodeQueryParameter(_serializers, tag, const FullType(String)),
-      if (notag != null)
-        r'notag':
-            encodeQueryParameter(_serializers, notag, const FullType(String)),
-      if (releaseStatus != null)
-        r'releaseStatus': encodeQueryParameter(
-            _serializers, releaseStatus, const FullType(String)),
-      if (maxUnityVersion != null)
-        r'maxUnityVersion': encodeQueryParameter(
-            _serializers, maxUnityVersion, const FullType(String)),
-      if (minUnityVersion != null)
-        r'minUnityVersion': encodeQueryParameter(
-            _serializers, minUnityVersion, const FullType(String)),
-      if (platform != null)
-        r'platform': encodeQueryParameter(
-            _serializers, platform, const FullType(String)),
-      if (userId != null)
-        r'userId':
-            encodeQueryParameter(_serializers, userId, const FullType(String)),
+      if (featured != null) r'featured': featured,
+      if (sort != null) r'sort': sort,
+      if (n != null) r'n': n,
+      if (order != null) r'order': order,
+      if (offset != null) r'offset': offset,
+      if (search != null) r'search': search,
+      if (tag != null) r'tag': tag,
+      if (notag != null) r'notag': notag,
+      if (releaseStatus != null) r'releaseStatus': releaseStatus,
+      if (maxUnityVersion != null) r'maxUnityVersion': maxUnityVersion,
+      if (minUnityVersion != null) r'minUnityVersion': minUnityVersion,
+      if (platform != null) r'platform': platform,
+      if (userId != null) r'userId': userId,
     };
 
     final _response = await _dio.request<Object>(
@@ -597,14 +515,12 @@ class WorldsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<LimitedWorld> _responseData;
+    List<LimitedWorld> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(LimitedWorld)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<LimitedWorld>;
+      _responseData = deserialize<List<LimitedWorld>, LimitedWorld>(
+          _response.data!, 'List<LimitedWorld>',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -614,7 +530,7 @@ class WorldsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<LimitedWorld>>(
+    return Response<List<LimitedWorld>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -627,7 +543,7 @@ class WorldsApi {
   }
 
   /// Get World by ID
-  /// Get information about a specific World.
+  /// Get information about a specific World. Works unauthenticated but when so will always return &#x60;0&#x60; for certain fields.
   ///
   /// Parameters:
   /// * [worldId]
@@ -681,11 +597,8 @@ class WorldsApi {
     World _responseData;
 
     try {
-      const _responseType = FullType(World);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as World;
+      _responseData =
+          deserialize<World, World>(_response.data!, 'World', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -771,11 +684,9 @@ class WorldsApi {
     Instance _responseData;
 
     try {
-      const _responseType = FullType(Instance);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Instance;
+      _responseData = deserialize<Instance, Instance>(
+          _response.data!, 'Instance',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -859,11 +770,9 @@ class WorldsApi {
     WorldMetadata _responseData;
 
     try {
-      const _responseType = FullType(WorldMetadata);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as WorldMetadata;
+      _responseData = deserialize<WorldMetadata, WorldMetadata>(
+          _response.data!, 'WorldMetadata',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -946,11 +855,9 @@ class WorldsApi {
     WorldPublishStatus _responseData;
 
     try {
-      const _responseType = FullType(WorldPublishStatus);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as WorldPublishStatus;
+      _responseData = deserialize<WorldPublishStatus, WorldPublishStatus>(
+          _response.data!, 'WorldPublishStatus',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1058,9 +965,9 @@ class WorldsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<LimitedWorld>] as data
+  /// Returns a [Future] containing a [Response] with a [List<LimitedWorld>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<LimitedWorld>>> searchWorlds({
+  Future<Response<List<LimitedWorld>>> searchWorlds({
     bool? featured,
     String? sort = 'popularity',
     String? user,
@@ -1109,46 +1016,20 @@ class WorldsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (featured != null)
-        r'featured':
-            encodeQueryParameter(_serializers, featured, const FullType(bool)),
-      if (sort != null)
-        r'sort':
-            encodeQueryParameter(_serializers, sort, const FullType(String)),
-      if (user != null)
-        r'user':
-            encodeQueryParameter(_serializers, user, const FullType(String)),
-      if (userId != null)
-        r'userId':
-            encodeQueryParameter(_serializers, userId, const FullType(String)),
-      if (n != null)
-        r'n': encodeQueryParameter(_serializers, n, const FullType(int)),
-      if (order != null)
-        r'order':
-            encodeQueryParameter(_serializers, order, const FullType(String)),
-      if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
-      if (search != null)
-        r'search':
-            encodeQueryParameter(_serializers, search, const FullType(String)),
-      if (tag != null)
-        r'tag': encodeQueryParameter(_serializers, tag, const FullType(String)),
-      if (notag != null)
-        r'notag':
-            encodeQueryParameter(_serializers, notag, const FullType(String)),
-      if (releaseStatus != null)
-        r'releaseStatus': encodeQueryParameter(
-            _serializers, releaseStatus, const FullType(String)),
-      if (maxUnityVersion != null)
-        r'maxUnityVersion': encodeQueryParameter(
-            _serializers, maxUnityVersion, const FullType(String)),
-      if (minUnityVersion != null)
-        r'minUnityVersion': encodeQueryParameter(
-            _serializers, minUnityVersion, const FullType(String)),
-      if (platform != null)
-        r'platform': encodeQueryParameter(
-            _serializers, platform, const FullType(String)),
+      if (featured != null) r'featured': featured,
+      if (sort != null) r'sort': sort,
+      if (user != null) r'user': user,
+      if (userId != null) r'userId': userId,
+      if (n != null) r'n': n,
+      if (order != null) r'order': order,
+      if (offset != null) r'offset': offset,
+      if (search != null) r'search': search,
+      if (tag != null) r'tag': tag,
+      if (notag != null) r'notag': notag,
+      if (releaseStatus != null) r'releaseStatus': releaseStatus,
+      if (maxUnityVersion != null) r'maxUnityVersion': maxUnityVersion,
+      if (minUnityVersion != null) r'minUnityVersion': minUnityVersion,
+      if (platform != null) r'platform': platform,
     };
 
     final _response = await _dio.request<Object>(
@@ -1160,14 +1041,12 @@ class WorldsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<LimitedWorld> _responseData;
+    List<LimitedWorld> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(LimitedWorld)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<LimitedWorld>;
+      _responseData = deserialize<List<LimitedWorld>, LimitedWorld>(
+          _response.data!, 'List<LimitedWorld>',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1177,7 +1056,7 @@ class WorldsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<LimitedWorld>>(
+    return Response<List<LimitedWorld>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1306,10 +1185,7 @@ class WorldsApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UpdateWorldRequest);
-      _bodyData = updateWorldRequest == null
-          ? null
-          : _serializers.serialize(updateWorldRequest, specifiedType: _type);
+      _bodyData = jsonEncode(updateWorldRequest);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -1333,11 +1209,8 @@ class WorldsApi {
     World _responseData;
 
     try {
-      const _responseType = FullType(World);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as World;
+      _responseData =
+          deserialize<World, World>(_response.data!, 'World', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

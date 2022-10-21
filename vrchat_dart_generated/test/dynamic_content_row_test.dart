@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for DynamicContentRow
 void main() {
-  final instance = DynamicContentRowBuilder();
-  // TODO add properties to the builder and call build()
+  final DynamicContentRow? instance = /* DynamicContentRow(...) */ null;
+  // TODO add properties to the entity
 
   group(DynamicContentRow, () {
     // int index

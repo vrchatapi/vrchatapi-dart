@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:vrchat_dart_generated/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:vrchat_dart_generated/src/api_util.dart';
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_request.dart';
@@ -17,9 +17,7 @@ import 'package:vrchat_dart_generated/src/model/user.dart';
 class UsersApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const UsersApi(this._dio, this._serializers);
+  const UsersApi(this._dio);
 
   /// Get User by ID
   /// Get public user information about a specific user using their ID.
@@ -82,11 +80,8 @@ class UsersApi {
     User _responseData;
 
     try {
-      const _responseType = FullType(User);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as User;
+      _responseData =
+          deserialize<User, User>(_response.data!, 'User', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -169,11 +164,8 @@ class UsersApi {
     User _responseData;
 
     try {
-      const _responseType = FullType(User);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as User;
+      _responseData =
+          deserialize<User, User>(_response.data!, 'User', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -210,9 +202,9 @@ class UsersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<LimitedUser>] as data
+  /// Returns a [Future] containing a [Response] with a [List<LimitedUser>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<LimitedUser>>> searchUsers({
+  Future<Response<List<LimitedUser>>> searchUsers({
     String? search,
     String? developerType,
     int? n = 60,
@@ -251,17 +243,10 @@ class UsersApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (search != null)
-        r'search':
-            encodeQueryParameter(_serializers, search, const FullType(String)),
-      if (developerType != null)
-        r'developerType': encodeQueryParameter(
-            _serializers, developerType, const FullType(String)),
-      if (n != null)
-        r'n': encodeQueryParameter(_serializers, n, const FullType(int)),
-      if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
+      if (search != null) r'search': search,
+      if (developerType != null) r'developerType': developerType,
+      if (n != null) r'n': n,
+      if (offset != null) r'offset': offset,
     };
 
     final _response = await _dio.request<Object>(
@@ -273,14 +258,12 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<LimitedUser> _responseData;
+    List<LimitedUser> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(LimitedUser)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<LimitedUser>;
+      _responseData = deserialize<List<LimitedUser>, LimitedUser>(
+          _response.data!, 'List<LimitedUser>',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -290,7 +273,7 @@ class UsersApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<LimitedUser>>(
+    return Response<List<LimitedUser>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -358,10 +341,7 @@ class UsersApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UpdateUserRequest);
-      _bodyData = updateUserRequest == null
-          ? null
-          : _serializers.serialize(updateUserRequest, specifiedType: _type);
+      _bodyData = jsonEncode(updateUserRequest);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _options.compose(
@@ -385,11 +365,9 @@ class UsersApi {
     CurrentUser _responseData;
 
     try {
-      const _responseType = FullType(CurrentUser);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as CurrentUser;
+      _responseData = deserialize<CurrentUser, CurrentUser>(
+          _response.data!, 'CurrentUser',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for Favorite
 void main() {
-  final instance = FavoriteBuilder();
-  // TODO add properties to the builder and call build()
+  final Favorite? instance = /* Favorite(...) */ null;
+  // TODO add properties to the entity
 
   group(Favorite, () {
     // MUST be either AvatarID, UserID or WorldID.
@@ -19,7 +19,7 @@ void main() {
     });
 
     //
-    // BuiltList<String> tags
+    // List<String> tags
     test('to test the property `tags`', () async {
       // TODO
     });

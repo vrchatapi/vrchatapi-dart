@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getInviteMessages**
-> BuiltList<InviteMessage> getInviteMessages(userId, messageType)
+> List<InviteMessage> getInviteMessages(userId, messageType)
 
 List Invite Messages
 
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;InviteMessage&gt;**](InviteMessage.md)
+[**List&lt;InviteMessage&gt;**](InviteMessage.md)
 
 ### Authorization
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **resetInviteMessage**
-> BuiltList<InviteMessage> resetInviteMessage(userId, messageType, slot)
+> List<InviteMessage> resetInviteMessage(userId, messageType, slot)
 
 Reset Invite Message
 
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;InviteMessage&gt;**](InviteMessage.md)
+[**List&lt;InviteMessage&gt;**](InviteMessage.md)
 
 ### Authorization
 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateInviteMessage**
-> BuiltList<InviteMessage> updateInviteMessage(userId, messageType, slot, updateInviteMessageRequest)
+> List<InviteMessage> updateInviteMessage(userId, messageType, slot, updateInviteMessageRequest)
 
 Update Invite Message
 
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;InviteMessage&gt;**](InviteMessage.md)
+[**List&lt;InviteMessage&gt;**](InviteMessage.md)
 
 ### Authorization
 

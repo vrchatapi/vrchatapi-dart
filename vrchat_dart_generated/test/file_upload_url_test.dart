@@ -3,8 +3,8 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for FileUploadURL
 void main() {
-  final instance = FileUploadURLBuilder();
-  // TODO add properties to the builder and call build()
+  final FileUploadURL? instance = /* FileUploadURL(...) */ null;
+  // TODO add properties to the entity
 
   group(FileUploadURL, () {
     //

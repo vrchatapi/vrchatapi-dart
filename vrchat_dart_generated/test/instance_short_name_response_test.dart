@@ -3,8 +3,9 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // tests for InstanceShortNameResponse
 void main() {
-  final instance = InstanceShortNameResponseBuilder();
-  // TODO add properties to the builder and call build()
+  final InstanceShortNameResponse?
+      instance = /* InstanceShortNameResponse(...) */ null;
+  // TODO add properties to the entity
 
   group(InstanceShortNameResponse, () {
     // String secureName

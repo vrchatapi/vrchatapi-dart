@@ -2,457 +2,254 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_collection/built_collection.dart';
+// ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
 import 'package:vrchat_dart_generated/src/model/unity_package.dart';
-import 'package:built_value/json_object.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'world.g.dart';
 
-///
-///
-/// Properties:
-/// * [authorId] - A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-/// * [authorName]
-/// * [capacity]
-/// * [createdAt]
-/// * [description]
-/// * [favorites]
-/// * [featured]
-/// * [heat]
-/// * [id] - WorldID be \"offline\" on User profiles if you are not friends with that user.
-/// * [imageUrl]
-/// * [instances]
-/// * [labsPublicationDate]
-/// * [name]
-/// * [namespace]
-/// * [occupants]
-/// * [organization]
-/// * [popularity]
-/// * [previewYoutubeId]
-/// * [privateOccupants]
-/// * [publicOccupants]
-/// * [publicationDate]
-/// * [releaseStatus]
-/// * [tags] -
-/// * [thumbnailImageUrl]
-/// * [unityPackages] - Empty if unauthenticated.
-/// * [updatedAt]
-/// * [version]
-/// * [visits]
-abstract class World implements Built<World, WorldBuilder> {
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class World {
+  /// Returns a new [World] instance.
+  World({
+    required this.authorId,
+    required this.authorName,
+    required this.capacity,
+    required this.createdAt,
+    required this.description,
+    this.favorites = 0,
+    this.featured = false,
+    this.heat = 0,
+    required this.id,
+    required this.imageUrl,
+    this.instances,
+    required this.labsPublicationDate,
+    required this.name,
+    required this.namespace,
+    this.occupants = 0,
+    this.organization = 'vrchat',
+    this.popularity = 0,
+    this.previewYoutubeId,
+    this.privateOccupants = 0,
+    this.publicOccupants = 0,
+    required this.publicationDate,
+    required this.releaseStatus,
+    required this.tags,
+    required this.thumbnailImageUrl,
+    required this.unityPackages,
+    required this.updatedAt,
+    this.version = 0,
+    this.visits = 0,
+  });
+
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @BuiltValueField(wireName: r'authorId')
-  String get authorId;
+  @JsonKey(name: r'authorId', required: true, includeIfNull: false)
+  final String authorId;
 
-  @BuiltValueField(wireName: r'authorName')
-  String get authorName;
+  @JsonKey(name: r'authorName', required: true, includeIfNull: false)
+  final String authorName;
 
-  @BuiltValueField(wireName: r'capacity')
-  int get capacity;
+  // minimum: 0
+  // maximum: 40
+  @JsonKey(name: r'capacity', required: true, includeIfNull: false)
+  final int capacity;
 
-  @BuiltValueField(wireName: r'created_at')
-  DateTime get createdAt;
+  @JsonKey(name: r'created_at', required: true, includeIfNull: false)
+  final DateTime createdAt;
 
-  @BuiltValueField(wireName: r'description')
-  String get description;
+  @JsonKey(name: r'description', required: true, includeIfNull: false)
+  final String description;
 
-  @BuiltValueField(wireName: r'favorites')
-  int? get favorites;
+  // minimum: 0
+  @JsonKey(
+      defaultValue: 0,
+      name: r'favorites',
+      required: false,
+      includeIfNull: false)
+  final int? favorites;
 
-  @BuiltValueField(wireName: r'featured')
-  bool get featured;
+  @JsonKey(
+      defaultValue: false,
+      name: r'featured',
+      required: true,
+      includeIfNull: false)
+  final bool featured;
 
-  @BuiltValueField(wireName: r'heat')
-  int get heat;
+  // minimum: 0
+  @JsonKey(defaultValue: 0, name: r'heat', required: true, includeIfNull: false)
+  final int heat;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
-  @BuiltValueField(wireName: r'id')
-  String get id;
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
 
-  @BuiltValueField(wireName: r'imageUrl')
-  String get imageUrl;
+  @JsonKey(name: r'imageUrl', required: true, includeIfNull: false)
+  final String imageUrl;
 
-  @BuiltValueField(wireName: r'instances')
-  BuiltList<BuiltList<JsonObject>>? get instances;
+  /// Will always be an empty list when unauthenticated.
+  @JsonKey(name: r'instances', required: false, includeIfNull: false)
+  final List<List<Object>>? instances;
 
-  @BuiltValueField(wireName: r'labsPublicationDate')
-  String get labsPublicationDate;
+  @JsonKey(name: r'labsPublicationDate', required: true, includeIfNull: false)
+  final String labsPublicationDate;
 
-  @BuiltValueField(wireName: r'name')
-  String get name;
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
+  final String name;
 
-  @BuiltValueField(wireName: r'namespace')
-  String get namespace;
+  @JsonKey(name: r'namespace', required: true, includeIfNull: false)
+  final String namespace;
 
-  @BuiltValueField(wireName: r'occupants')
-  int? get occupants;
+  /// Will always be `0` when unauthenticated.
+  // minimum: 0
+  @JsonKey(
+      defaultValue: 0,
+      name: r'occupants',
+      required: false,
+      includeIfNull: false)
+  final int? occupants;
 
-  @BuiltValueField(wireName: r'organization')
-  String get organization;
+  @JsonKey(
+      defaultValue: 'vrchat',
+      name: r'organization',
+      required: true,
+      includeIfNull: false)
+  final String organization;
 
-  @BuiltValueField(wireName: r'popularity')
-  int get popularity;
+  // minimum: 0
+  @JsonKey(
+      defaultValue: 0,
+      name: r'popularity',
+      required: true,
+      includeIfNull: false)
+  final int popularity;
 
-  @BuiltValueField(wireName: r'previewYoutubeId')
-  String? get previewYoutubeId;
+  @JsonKey(name: r'previewYoutubeId', required: false, includeIfNull: false)
+  final String? previewYoutubeId;
 
-  @BuiltValueField(wireName: r'privateOccupants')
-  int? get privateOccupants;
+  /// Will always be `0` when unauthenticated.
+  // minimum: 0
+  @JsonKey(
+      defaultValue: 0,
+      name: r'privateOccupants',
+      required: false,
+      includeIfNull: false)
+  final int? privateOccupants;
 
-  @BuiltValueField(wireName: r'publicOccupants')
-  int? get publicOccupants;
+  /// Will always be `0` when unauthenticated.
+  // minimum: 0
+  @JsonKey(
+      defaultValue: 0,
+      name: r'publicOccupants',
+      required: false,
+      includeIfNull: false)
+  final int? publicOccupants;
 
-  @BuiltValueField(wireName: r'publicationDate')
-  String get publicationDate;
+  @JsonKey(name: r'publicationDate', required: true, includeIfNull: false)
+  final String publicationDate;
 
-  @BuiltValueField(wireName: r'releaseStatus')
-  ReleaseStatus get releaseStatus;
-  // enum releaseStatusEnum {  public,  private,  hidden,  };
+  @JsonKey(name: r'releaseStatus', required: true, includeIfNull: false)
+  final ReleaseStatus releaseStatus;
 
   ///
-  @BuiltValueField(wireName: r'tags')
-  BuiltList<String> get tags;
+  @JsonKey(name: r'tags', required: true, includeIfNull: false)
+  final List<String> tags;
 
-  @BuiltValueField(wireName: r'thumbnailImageUrl')
-  String get thumbnailImageUrl;
+  @JsonKey(name: r'thumbnailImageUrl', required: true, includeIfNull: false)
+  final String thumbnailImageUrl;
 
   /// Empty if unauthenticated.
-  @BuiltValueField(wireName: r'unityPackages')
-  BuiltList<UnityPackage> get unityPackages;
+  @JsonKey(name: r'unityPackages', required: true, includeIfNull: false)
+  final List<UnityPackage> unityPackages;
 
-  @BuiltValueField(wireName: r'updated_at')
-  DateTime get updatedAt;
+  @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
+  final DateTime updatedAt;
 
-  @BuiltValueField(wireName: r'version')
-  int get version;
+  // minimum: 0
+  @JsonKey(
+      defaultValue: 0, name: r'version', required: true, includeIfNull: false)
+  final int version;
 
-  @BuiltValueField(wireName: r'visits')
-  int get visits;
-
-  World._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(WorldBuilder b) => b
-    ..favorites = 0
-    ..featured = false
-    ..heat = 0
-    ..occupants = 0
-    ..organization = 'vrchat'
-    ..popularity = 0
-    ..privateOccupants = 0
-    ..publicOccupants = 0
-    ..version = 0
-    ..visits = 0;
-
-  factory World([void updates(WorldBuilder b)]) = _$World;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<World> get serializer => _$WorldSerializer();
-}
-
-class _$WorldSerializer implements StructuredSerializer<World> {
-  @override
-  final Iterable<Type> types = const [World, _$World];
+  // minimum: 0
+  @JsonKey(
+      defaultValue: 0, name: r'visits', required: true, includeIfNull: false)
+  final int visits;
 
   @override
-  final String wireName = r'World';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is World &&
+          other.authorId == authorId &&
+          other.authorName == authorName &&
+          other.capacity == capacity &&
+          other.createdAt == createdAt &&
+          other.description == description &&
+          other.favorites == favorites &&
+          other.featured == featured &&
+          other.heat == heat &&
+          other.id == id &&
+          other.imageUrl == imageUrl &&
+          other.instances == instances &&
+          other.labsPublicationDate == labsPublicationDate &&
+          other.name == name &&
+          other.namespace == namespace &&
+          other.occupants == occupants &&
+          other.organization == organization &&
+          other.popularity == popularity &&
+          other.previewYoutubeId == previewYoutubeId &&
+          other.privateOccupants == privateOccupants &&
+          other.publicOccupants == publicOccupants &&
+          other.publicationDate == publicationDate &&
+          other.releaseStatus == releaseStatus &&
+          other.tags == tags &&
+          other.thumbnailImageUrl == thumbnailImageUrl &&
+          other.unityPackages == unityPackages &&
+          other.updatedAt == updatedAt &&
+          other.version == version &&
+          other.visits == visits;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, World object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'authorId')
-      ..add(serializers.serialize(object.authorId,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'authorName')
-      ..add(serializers.serialize(object.authorName,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'capacity')
-      ..add(serializers.serialize(object.capacity,
-          specifiedType: const FullType(int)));
-    result
-      ..add(r'created_at')
-      ..add(serializers.serialize(object.createdAt,
-          specifiedType: const FullType(DateTime)));
-    result
-      ..add(r'description')
-      ..add(serializers.serialize(object.description,
-          specifiedType: const FullType(String)));
-    if (object.favorites != null) {
-      result
-        ..add(r'favorites')
-        ..add(serializers.serialize(object.favorites,
-            specifiedType: const FullType(int)));
-    }
-    result
-      ..add(r'featured')
-      ..add(serializers.serialize(object.featured,
-          specifiedType: const FullType(bool)));
-    result
-      ..add(r'heat')
-      ..add(serializers.serialize(object.heat,
-          specifiedType: const FullType(int)));
-    result
-      ..add(r'id')
-      ..add(serializers.serialize(object.id,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'imageUrl')
-      ..add(serializers.serialize(object.imageUrl,
-          specifiedType: const FullType(String)));
-    if (object.instances != null) {
-      result
-        ..add(r'instances')
-        ..add(serializers.serialize(object.instances,
-            specifiedType: const FullType(BuiltList, [
-              FullType(BuiltList, [FullType(JsonObject)])
-            ])));
-    }
-    result
-      ..add(r'labsPublicationDate')
-      ..add(serializers.serialize(object.labsPublicationDate,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'name')
-      ..add(serializers.serialize(object.name,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'namespace')
-      ..add(serializers.serialize(object.namespace,
-          specifiedType: const FullType(String)));
-    if (object.occupants != null) {
-      result
-        ..add(r'occupants')
-        ..add(serializers.serialize(object.occupants,
-            specifiedType: const FullType(int)));
-    }
-    result
-      ..add(r'organization')
-      ..add(serializers.serialize(object.organization,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'popularity')
-      ..add(serializers.serialize(object.popularity,
-          specifiedType: const FullType(int)));
-    if (object.previewYoutubeId != null) {
-      result
-        ..add(r'previewYoutubeId')
-        ..add(serializers.serialize(object.previewYoutubeId,
-            specifiedType: const FullType.nullable(String)));
-    }
-    if (object.privateOccupants != null) {
-      result
-        ..add(r'privateOccupants')
-        ..add(serializers.serialize(object.privateOccupants,
-            specifiedType: const FullType(int)));
-    }
-    if (object.publicOccupants != null) {
-      result
-        ..add(r'publicOccupants')
-        ..add(serializers.serialize(object.publicOccupants,
-            specifiedType: const FullType(int)));
-    }
-    result
-      ..add(r'publicationDate')
-      ..add(serializers.serialize(object.publicationDate,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'releaseStatus')
-      ..add(serializers.serialize(object.releaseStatus,
-          specifiedType: const FullType(ReleaseStatus)));
-    result
-      ..add(r'tags')
-      ..add(serializers.serialize(object.tags,
-          specifiedType: const FullType(BuiltList, [FullType(String)])));
-    result
-      ..add(r'thumbnailImageUrl')
-      ..add(serializers.serialize(object.thumbnailImageUrl,
-          specifiedType: const FullType(String)));
-    result
-      ..add(r'unityPackages')
-      ..add(serializers.serialize(object.unityPackages,
-          specifiedType: const FullType(BuiltList, [FullType(UnityPackage)])));
-    result
-      ..add(r'updated_at')
-      ..add(serializers.serialize(object.updatedAt,
-          specifiedType: const FullType(DateTime)));
-    result
-      ..add(r'version')
-      ..add(serializers.serialize(object.version,
-          specifiedType: const FullType(int)));
-    result
-      ..add(r'visits')
-      ..add(serializers.serialize(object.visits,
-          specifiedType: const FullType(int)));
-    return result;
-  }
+  int get hashCode =>
+      authorId.hashCode +
+      authorName.hashCode +
+      capacity.hashCode +
+      createdAt.hashCode +
+      description.hashCode +
+      favorites.hashCode +
+      featured.hashCode +
+      heat.hashCode +
+      id.hashCode +
+      imageUrl.hashCode +
+      instances.hashCode +
+      labsPublicationDate.hashCode +
+      name.hashCode +
+      namespace.hashCode +
+      occupants.hashCode +
+      organization.hashCode +
+      popularity.hashCode +
+      (previewYoutubeId == null ? 0 : previewYoutubeId.hashCode) +
+      privateOccupants.hashCode +
+      publicOccupants.hashCode +
+      publicationDate.hashCode +
+      releaseStatus.hashCode +
+      tags.hashCode +
+      thumbnailImageUrl.hashCode +
+      unityPackages.hashCode +
+      updatedAt.hashCode +
+      version.hashCode +
+      visits.hashCode;
+
+  factory World.fromJson(Map<String, dynamic> json) => _$WorldFromJson(json);
+
+  Map<String, dynamic> toJson() => _$WorldToJson(this);
 
   @override
-  World deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = WorldBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'authorId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.authorId = valueDes;
-          break;
-        case r'authorName':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.authorName = valueDes;
-          break;
-        case r'capacity':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.capacity = valueDes;
-          break;
-        case r'created_at':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
-          result.createdAt = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.description = valueDes;
-          break;
-        case r'favorites':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.favorites = valueDes;
-          break;
-        case r'featured':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          result.featured = valueDes;
-          break;
-        case r'heat':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.heat = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.id = valueDes;
-          break;
-        case r'imageUrl':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.imageUrl = valueDes;
-          break;
-        case r'instances':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, [
-                FullType(BuiltList, [FullType(JsonObject)])
-              ])) as BuiltList<BuiltList<JsonObject>>;
-          result.instances.replace(valueDes);
-          break;
-        case r'labsPublicationDate':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.labsPublicationDate = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.name = valueDes;
-          break;
-        case r'namespace':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.namespace = valueDes;
-          break;
-        case r'occupants':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.occupants = valueDes;
-          break;
-        case r'organization':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.organization = valueDes;
-          break;
-        case r'popularity':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.popularity = valueDes;
-          break;
-        case r'previewYoutubeId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType.nullable(String)) as String?;
-          if (valueDes == null) continue;
-          result.previewYoutubeId = valueDes;
-          break;
-        case r'privateOccupants':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.privateOccupants = valueDes;
-          break;
-        case r'publicOccupants':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.publicOccupants = valueDes;
-          break;
-        case r'publicationDate':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.publicationDate = valueDes;
-          break;
-        case r'releaseStatus':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(ReleaseStatus)) as ReleaseStatus;
-          result.releaseStatus = valueDes;
-          break;
-        case r'tags':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(String)]))
-              as BuiltList<String>;
-          result.tags.replace(valueDes);
-          break;
-        case r'thumbnailImageUrl':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          result.thumbnailImageUrl = valueDes;
-          break;
-        case r'unityPackages':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, [FullType(UnityPackage)]))
-              as BuiltList<UnityPackage>;
-          result.unityPackages.replace(valueDes);
-          break;
-        case r'updated_at':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
-          result.updatedAt = valueDes;
-          break;
-        case r'version':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.version = valueDes;
-          break;
-        case r'visits':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.visits = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

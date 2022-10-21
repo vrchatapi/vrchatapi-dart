@@ -2,70 +2,41 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/response.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'success.g.dart';
 
-/// Success
-///
-/// Properties:
-/// * [success]
-abstract class Success implements Built<Success, SuccessBuilder> {
-  @BuiltValueField(wireName: r'success')
-  Response? get success;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class Success {
+  /// Returns a new [Success] instance.
+  Success({
+    this.success,
+  });
 
-  Success._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(SuccessBuilder b) => b;
-
-  factory Success([void updates(SuccessBuilder b)]) = _$Success;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<Success> get serializer => _$SuccessSerializer();
-}
-
-class _$SuccessSerializer implements StructuredSerializer<Success> {
-  @override
-  final Iterable<Type> types = const [Success, _$Success];
+  @JsonKey(name: r'success', required: false, includeIfNull: false)
+  final Response? success;
 
   @override
-  final String wireName = r'Success';
+  bool operator ==(Object other) =>
+      identical(this, other) || other is Success && other.success == success;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Success object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    if (object.success != null) {
-      result
-        ..add(r'success')
-        ..add(serializers.serialize(object.success,
-            specifiedType: const FullType(Response)));
-    }
-    return result;
-  }
+  int get hashCode => success.hashCode;
+
+  factory Success.fromJson(Map<String, dynamic> json) =>
+      _$SuccessFromJson(json);
+
+  Map<String, dynamic> toJson() => _$SuccessToJson(this);
 
   @override
-  Success deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = SuccessBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'success':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(Response)) as Response;
-          result.success.replace(valueDes);
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

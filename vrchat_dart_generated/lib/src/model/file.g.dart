@@ -3,192 +3,68 @@
 part of 'file.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$File extends File {
-  @override
-  final String extension_;
-  @override
-  final String id;
-  @override
-  final MIMEType mimeType;
-  @override
-  final String name;
-  @override
-  final String ownerId;
-  @override
-  final BuiltList<String> tags;
-  @override
-  final BuiltSet<FileVersion> versions;
+File _$FileFromJson(Map<String, dynamic> json) => $checkedCreate(
+      'File',
+      json,
+      ($checkedConvert) {
+        $checkKeys(
+          json,
+          requiredKeys: const [
+            'extension',
+            'id',
+            'mimeType',
+            'name',
+            'ownerId',
+            'tags',
+            'versions'
+          ],
+        );
+        final val = File(
+          extension_: $checkedConvert('extension', (v) => v as String),
+          id: $checkedConvert('id', (v) => v as String),
+          mimeType: $checkedConvert(
+              'mimeType', (v) => $enumDecode(_$MIMETypeEnumMap, v)),
+          name: $checkedConvert('name', (v) => v as String),
+          ownerId: $checkedConvert('ownerId', (v) => v as String),
+          tags: $checkedConvert('tags',
+              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+          versions: $checkedConvert(
+              'versions',
+              (v) => (v as List<dynamic>)
+                  .map((e) => FileVersion.fromJson(e as Map<String, dynamic>))
+                  .toSet()),
+        );
+        return val;
+      },
+      fieldKeyMap: const {'extension_': 'extension'},
+    );
 
-  factory _$File([void Function(FileBuilder)? updates]) =>
-      (new FileBuilder()..update(updates))._build();
+Map<String, dynamic> _$FileToJson(File instance) => <String, dynamic>{
+      'extension': instance.extension_,
+      'id': instance.id,
+      'mimeType': _$MIMETypeEnumMap[instance.mimeType]!,
+      'name': instance.name,
+      'ownerId': instance.ownerId,
+      'tags': instance.tags,
+      'versions': instance.versions.map((e) => e.toJson()).toList(),
+    };
 
-  _$File._(
-      {required this.extension_,
-      required this.id,
-      required this.mimeType,
-      required this.name,
-      required this.ownerId,
-      required this.tags,
-      required this.versions})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(extension_, r'File', 'extension_');
-    BuiltValueNullFieldError.checkNotNull(id, r'File', 'id');
-    BuiltValueNullFieldError.checkNotNull(mimeType, r'File', 'mimeType');
-    BuiltValueNullFieldError.checkNotNull(name, r'File', 'name');
-    BuiltValueNullFieldError.checkNotNull(ownerId, r'File', 'ownerId');
-    BuiltValueNullFieldError.checkNotNull(tags, r'File', 'tags');
-    BuiltValueNullFieldError.checkNotNull(versions, r'File', 'versions');
-  }
-
-  @override
-  File rebuild(void Function(FileBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  FileBuilder toBuilder() => new FileBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is File &&
-        extension_ == other.extension_ &&
-        id == other.id &&
-        mimeType == other.mimeType &&
-        name == other.name &&
-        ownerId == other.ownerId &&
-        tags == other.tags &&
-        versions == other.versions;
-  }
-
-  @override
-  int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, extension_.hashCode), id.hashCode),
-                        mimeType.hashCode),
-                    name.hashCode),
-                ownerId.hashCode),
-            tags.hashCode),
-        versions.hashCode));
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'File')
-          ..add('extension_', extension_)
-          ..add('id', id)
-          ..add('mimeType', mimeType)
-          ..add('name', name)
-          ..add('ownerId', ownerId)
-          ..add('tags', tags)
-          ..add('versions', versions))
-        .toString();
-  }
-}
-
-class FileBuilder implements Builder<File, FileBuilder> {
-  _$File? _$v;
-
-  String? _extension_;
-  String? get extension_ => _$this._extension_;
-  set extension_(String? extension_) => _$this._extension_ = extension_;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  MIMEType? _mimeType;
-  MIMEType? get mimeType => _$this._mimeType;
-  set mimeType(MIMEType? mimeType) => _$this._mimeType = mimeType;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  String? _ownerId;
-  String? get ownerId => _$this._ownerId;
-  set ownerId(String? ownerId) => _$this._ownerId = ownerId;
-
-  ListBuilder<String>? _tags;
-  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
-  set tags(ListBuilder<String>? tags) => _$this._tags = tags;
-
-  SetBuilder<FileVersion>? _versions;
-  SetBuilder<FileVersion> get versions =>
-      _$this._versions ??= new SetBuilder<FileVersion>();
-  set versions(SetBuilder<FileVersion>? versions) =>
-      _$this._versions = versions;
-
-  FileBuilder() {
-    File._defaults(this);
-  }
-
-  FileBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _extension_ = $v.extension_;
-      _id = $v.id;
-      _mimeType = $v.mimeType;
-      _name = $v.name;
-      _ownerId = $v.ownerId;
-      _tags = $v.tags.toBuilder();
-      _versions = $v.versions.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(File other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$File;
-  }
-
-  @override
-  void update(void Function(FileBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  File build() => _build();
-
-  _$File _build() {
-    _$File _$result;
-    try {
-      _$result = _$v ??
-          new _$File._(
-              extension_: BuiltValueNullFieldError.checkNotNull(
-                  extension_, r'File', 'extension_'),
-              id: BuiltValueNullFieldError.checkNotNull(id, r'File', 'id'),
-              mimeType: BuiltValueNullFieldError.checkNotNull(
-                  mimeType, r'File', 'mimeType'),
-              name:
-                  BuiltValueNullFieldError.checkNotNull(name, r'File', 'name'),
-              ownerId: BuiltValueNullFieldError.checkNotNull(
-                  ownerId, r'File', 'ownerId'),
-              tags: tags.build(),
-              versions: versions.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'tags';
-        tags.build();
-        _$failedField = 'versions';
-        versions.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'File', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas
+const _$MIMETypeEnumMap = {
+  MIMEType.imageSlashJpeg: 'image/jpeg',
+  MIMEType.imageSlashJpg: 'image/jpg',
+  MIMEType.imageSlashPng: 'image/png',
+  MIMEType.imageSlashWebp: 'image/webp',
+  MIMEType.imageSlashGif: 'image/gif',
+  MIMEType.imageSlashBmp: 'image/bmp',
+  MIMEType.imageSlashSvgxml: 'image/svg＋xml',
+  MIMEType.imageSlashTiff: 'image/tiff',
+  MIMEType.applicationSlashXAvatar: 'application/x-avatar',
+  MIMEType.applicationSlashXWorld: 'application/x-world',
+  MIMEType.applicationSlashGzip: 'application/gzip',
+  MIMEType.applicationSlashXRsyncSignature: 'application/x-rsync-signature',
+  MIMEType.applicationSlashXRsyncDelta: 'application/x-rsync-delta',
+  MIMEType.applicationSlashOctetStream: 'application/octet-stream',
+};

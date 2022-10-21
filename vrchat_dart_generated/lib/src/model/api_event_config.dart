@@ -2,199 +2,108 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+// ignore_for_file: unused_element
+import 'package:json_annotation/json_annotation.dart';
 
 part 'api_event_config.g.dart';
 
-/// APIEventConfig
-///
-/// Properties:
-/// * [distanceClose] - Unknown
-/// * [distanceFactor] - Unknown
-/// * [distanceFar] - Unknown
-/// * [groupDistance] - Unknown
-/// * [maximumBunchSize] - Unknown
-/// * [notVisibleFactor] - Unknown
-/// * [playerOrderBucketSize] - Unknown
-/// * [playerOrderFactor] - Unknown
-/// * [slowUpdateFactorThreshold] - Unknown
-/// * [viewSegmentLength] - Unknown
-abstract class APIEventConfig
-    implements Built<APIEventConfig, APIEventConfigBuilder> {
-  /// Unknown
-  @BuiltValueField(wireName: r'distanceClose')
-  int get distanceClose;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class APIEventConfig {
+  /// Returns a new [APIEventConfig] instance.
+  APIEventConfig({
+    required this.distanceClose,
+    required this.distanceFactor,
+    required this.distanceFar,
+    required this.groupDistance,
+    required this.maximumBunchSize,
+    required this.notVisibleFactor,
+    required this.playerOrderBucketSize,
+    required this.playerOrderFactor,
+    required this.slowUpdateFactorThreshold,
+    required this.viewSegmentLength,
+  });
 
   /// Unknown
-  @BuiltValueField(wireName: r'distanceFactor')
-  int get distanceFactor;
+  @JsonKey(name: r'distanceClose', required: true, includeIfNull: false)
+  final int distanceClose;
 
   /// Unknown
-  @BuiltValueField(wireName: r'distanceFar')
-  int get distanceFar;
+  @JsonKey(name: r'distanceFactor', required: true, includeIfNull: false)
+  final int distanceFactor;
 
   /// Unknown
-  @BuiltValueField(wireName: r'groupDistance')
-  int get groupDistance;
+  @JsonKey(name: r'distanceFar', required: true, includeIfNull: false)
+  final int distanceFar;
 
   /// Unknown
-  @BuiltValueField(wireName: r'maximumBunchSize')
-  int get maximumBunchSize;
+  @JsonKey(name: r'groupDistance', required: true, includeIfNull: false)
+  final int groupDistance;
 
   /// Unknown
-  @BuiltValueField(wireName: r'notVisibleFactor')
-  int get notVisibleFactor;
+  @JsonKey(name: r'maximumBunchSize', required: true, includeIfNull: false)
+  final int maximumBunchSize;
 
   /// Unknown
-  @BuiltValueField(wireName: r'playerOrderBucketSize')
-  int get playerOrderBucketSize;
+  @JsonKey(name: r'notVisibleFactor', required: true, includeIfNull: false)
+  final int notVisibleFactor;
 
   /// Unknown
-  @BuiltValueField(wireName: r'playerOrderFactor')
-  int get playerOrderFactor;
+  @JsonKey(name: r'playerOrderBucketSize', required: true, includeIfNull: false)
+  final int playerOrderBucketSize;
 
   /// Unknown
-  @BuiltValueField(wireName: r'slowUpdateFactorThreshold')
-  int get slowUpdateFactorThreshold;
+  @JsonKey(name: r'playerOrderFactor', required: true, includeIfNull: false)
+  final int playerOrderFactor;
 
   /// Unknown
-  @BuiltValueField(wireName: r'viewSegmentLength')
-  int get viewSegmentLength;
+  @JsonKey(
+      name: r'slowUpdateFactorThreshold', required: true, includeIfNull: false)
+  final int slowUpdateFactorThreshold;
 
-  APIEventConfig._();
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(APIEventConfigBuilder b) => b;
-
-  factory APIEventConfig([void updates(APIEventConfigBuilder b)]) =
-      _$APIEventConfig;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<APIEventConfig> get serializer =>
-      _$APIEventConfigSerializer();
-}
-
-class _$APIEventConfigSerializer
-    implements StructuredSerializer<APIEventConfig> {
-  @override
-  final Iterable<Type> types = const [APIEventConfig, _$APIEventConfig];
+  /// Unknown
+  @JsonKey(name: r'viewSegmentLength', required: true, includeIfNull: false)
+  final int viewSegmentLength;
 
   @override
-  final String wireName = r'APIEventConfig';
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is APIEventConfig &&
+          other.distanceClose == distanceClose &&
+          other.distanceFactor == distanceFactor &&
+          other.distanceFar == distanceFar &&
+          other.groupDistance == groupDistance &&
+          other.maximumBunchSize == maximumBunchSize &&
+          other.notVisibleFactor == notVisibleFactor &&
+          other.playerOrderBucketSize == playerOrderBucketSize &&
+          other.playerOrderFactor == playerOrderFactor &&
+          other.slowUpdateFactorThreshold == slowUpdateFactorThreshold &&
+          other.viewSegmentLength == viewSegmentLength;
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, APIEventConfig object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    result
-      ..add(r'distanceClose')
-      ..add(serializers.serialize(object.distanceClose,
-          specifiedType: const FullType(int)));
-    result
-      ..add(r'distanceFactor')
-      ..add(serializers.serialize(object.distanceFactor,
-          specifiedType: const FullType(int)));
-    result
-      ..add(r'distanceFar')
-      ..add(serializers.serialize(object.distanceFar,
-          specifiedType: const FullType(int)));
-    result
-      ..add(r'groupDistance')
-      ..add(serializers.serialize(object.groupDistance,
-          specifiedType: const FullType(int)));
-    result
-      ..add(r'maximumBunchSize')
-      ..add(serializers.serialize(object.maximumBunchSize,
-          specifiedType: const FullType(int)));
-    result
-      ..add(r'notVisibleFactor')
-      ..add(serializers.serialize(object.notVisibleFactor,
-          specifiedType: const FullType(int)));
-    result
-      ..add(r'playerOrderBucketSize')
-      ..add(serializers.serialize(object.playerOrderBucketSize,
-          specifiedType: const FullType(int)));
-    result
-      ..add(r'playerOrderFactor')
-      ..add(serializers.serialize(object.playerOrderFactor,
-          specifiedType: const FullType(int)));
-    result
-      ..add(r'slowUpdateFactorThreshold')
-      ..add(serializers.serialize(object.slowUpdateFactorThreshold,
-          specifiedType: const FullType(int)));
-    result
-      ..add(r'viewSegmentLength')
-      ..add(serializers.serialize(object.viewSegmentLength,
-          specifiedType: const FullType(int)));
-    return result;
-  }
+  int get hashCode =>
+      distanceClose.hashCode +
+      distanceFactor.hashCode +
+      distanceFar.hashCode +
+      groupDistance.hashCode +
+      maximumBunchSize.hashCode +
+      notVisibleFactor.hashCode +
+      playerOrderBucketSize.hashCode +
+      playerOrderFactor.hashCode +
+      slowUpdateFactorThreshold.hashCode +
+      viewSegmentLength.hashCode;
+
+  factory APIEventConfig.fromJson(Map<String, dynamic> json) =>
+      _$APIEventConfigFromJson(json);
+
+  Map<String, dynamic> toJson() => _$APIEventConfigToJson(this);
 
   @override
-  APIEventConfig deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = APIEventConfigBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-
-      switch (key) {
-        case r'distanceClose':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.distanceClose = valueDes;
-          break;
-        case r'distanceFactor':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.distanceFactor = valueDes;
-          break;
-        case r'distanceFar':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.distanceFar = valueDes;
-          break;
-        case r'groupDistance':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.groupDistance = valueDes;
-          break;
-        case r'maximumBunchSize':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.maximumBunchSize = valueDes;
-          break;
-        case r'notVisibleFactor':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.notVisibleFactor = valueDes;
-          break;
-        case r'playerOrderBucketSize':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.playerOrderBucketSize = valueDes;
-          break;
-        case r'playerOrderFactor':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.playerOrderFactor = valueDes;
-          break;
-        case r'slowUpdateFactorThreshold':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.slowUpdateFactorThreshold = valueDes;
-          break;
-        case r'viewSegmentLength':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          result.viewSegmentLength = valueDes;
-          break;
-      }
-    }
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

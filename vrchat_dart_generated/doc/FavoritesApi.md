@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFavoriteGroups**
-> BuiltList<FavoriteGroup> getFavoriteGroups(n, offset, ownerId)
+> List<FavoriteGroup> getFavoriteGroups(n, offset, ownerId)
 
 List Favorite Groups
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;FavoriteGroup&gt;**](FavoriteGroup.md)
+[**List&lt;FavoriteGroup&gt;**](FavoriteGroup.md)
 
 ### Authorization
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFavorites**
-> BuiltList<Favorite> getFavorites(n, offset, type, tag)
+> List<Favorite> getFavorites(n, offset, type, tag)
 
 List Favorites
 
@@ -330,7 +330,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;Favorite&gt;**](Favorite.md)
+[**List&lt;Favorite&gt;**](Favorite.md)
 
 ### Authorization
 

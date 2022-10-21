@@ -37,7 +37,7 @@ void main() {
     //
     // Returns a list of all player moderations made by **you**.  This endpoint does not have pagination, and will return *all* results. Use query parameters to limit your query if needed.
     //
-    //Future<BuiltList<PlayerModeration>> getPlayerModerations({ String type, String targetUserId }) async
+    //Future<List<PlayerModeration>> getPlayerModerations({ String type, String targetUserId }) async
     test('test getPlayerModerations', () async {
       // TODO
     });
