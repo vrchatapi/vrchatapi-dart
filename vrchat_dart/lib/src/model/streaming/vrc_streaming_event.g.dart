@@ -11,8 +11,10 @@ part of 'vrc_streaming_event.dart';
 FriendOnlineEvent _$FriendOnlineEventFromJson(Map<String, dynamic> json) =>
     FriendOnlineEvent(
       userId: json['userId'] as String,
-      user: const UserSerializer().fromJson(json['user']),
-      world: const NullableWorldSerializer().fromJson(json['world']),
+      user: User.fromJson(json['user'] as Map<String, dynamic>),
+      world: json['world'] == null
+          ? null
+          : World.fromJson(json['world'] as Map<String, dynamic>),
       location: json['location'] as String?,
       instance: json['instance'] as String?,
       canRequestInvite: json['canRequestInvite'] as bool,
@@ -21,8 +23,8 @@ FriendOnlineEvent _$FriendOnlineEventFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$FriendOnlineEventToJson(FriendOnlineEvent instance) =>
     <String, dynamic>{
       'userId': instance.userId,
-      'user': const UserSerializer().toJson(instance.user),
-      'world': const NullableWorldSerializer().toJson(instance.world),
+      'user': instance.user,
+      'world': instance.world,
       'location': instance.location,
       'instance': instance.instance,
       'canRequestInvite': instance.canRequestInvite,
@@ -41,25 +43,25 @@ Map<String, dynamic> _$FriendOfflineEventToJson(FriendOfflineEvent instance) =>
 FriendActiveEvent _$FriendActiveEventFromJson(Map<String, dynamic> json) =>
     FriendActiveEvent(
       userId: json['userId'] as String,
-      user: const UserSerializer().fromJson(json['user']),
+      user: User.fromJson(json['user'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$FriendActiveEventToJson(FriendActiveEvent instance) =>
     <String, dynamic>{
       'userId': instance.userId,
-      'user': const UserSerializer().toJson(instance.user),
+      'user': instance.user,
     };
 
 FriendAddEvent _$FriendAddEventFromJson(Map<String, dynamic> json) =>
     FriendAddEvent(
       userId: json['userId'] as String,
-      user: const UserSerializer().fromJson(json['user']),
+      user: User.fromJson(json['user'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$FriendAddEventToJson(FriendAddEvent instance) =>
     <String, dynamic>{
       'userId': instance.userId,
-      'user': const UserSerializer().toJson(instance.user),
+      'user': instance.user,
     };
 
 FriendDeleteEvent _$FriendDeleteEventFromJson(Map<String, dynamic> json) =>
@@ -75,20 +77,22 @@ Map<String, dynamic> _$FriendDeleteEventToJson(FriendDeleteEvent instance) =>
 FriendUpdateEvent _$FriendUpdateEventFromJson(Map<String, dynamic> json) =>
     FriendUpdateEvent(
       userId: json['userId'] as String,
-      user: const UserSerializer().fromJson(json['user']),
+      user: User.fromJson(json['user'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$FriendUpdateEventToJson(FriendUpdateEvent instance) =>
     <String, dynamic>{
       'userId': instance.userId,
-      'user': const UserSerializer().toJson(instance.user),
+      'user': instance.user,
     };
 
 FriendLocationEvent _$FriendLocationEventFromJson(Map<String, dynamic> json) =>
     FriendLocationEvent(
       userId: json['userId'] as String,
-      user: const UserSerializer().fromJson(json['user']),
-      world: const NullableWorldSerializer().fromJson(json['world']),
+      user: User.fromJson(json['user'] as Map<String, dynamic>),
+      world: json['world'] == null
+          ? null
+          : World.fromJson(json['world'] as Map<String, dynamic>),
       location: json['location'] as String?,
       instance: json['instance'] as String?,
       canRequestInvite: json['canRequestInvite'] as bool,
@@ -98,8 +102,8 @@ Map<String, dynamic> _$FriendLocationEventToJson(
         FriendLocationEvent instance) =>
     <String, dynamic>{
       'userId': instance.userId,
-      'user': const UserSerializer().toJson(instance.user),
-      'world': const NullableWorldSerializer().toJson(instance.world),
+      'user': instance.user,
+      'world': instance.world,
       'location': instance.location,
       'instance': instance.instance,
       'canRequestInvite': instance.canRequestInvite,
@@ -120,7 +124,7 @@ Map<String, dynamic> _$UserUpdateEventToJson(UserUpdateEvent instance) =>
 UserLocationEvent _$UserLocationEventFromJson(Map<String, dynamic> json) =>
     UserLocationEvent(
       userId: json['userId'] as String,
-      world: const WorldSerializer().fromJson(json['world']),
+      world: World.fromJson(json['world'] as Map<String, dynamic>),
       location: json['location'] as String,
       instance: json['instance'] as String,
     );
@@ -128,7 +132,7 @@ UserLocationEvent _$UserLocationEventFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$UserLocationEventToJson(UserLocationEvent instance) =>
     <String, dynamic>{
       'userId': instance.userId,
-      'world': const WorldSerializer().toJson(instance.world),
+      'world': instance.world,
       'location': instance.location,
       'instance': instance.instance,
     };
@@ -137,14 +141,13 @@ NotificationReceivedEvent _$NotificationReceivedEventFromJson(
         Map<String, dynamic> json) =>
     NotificationReceivedEvent(
       notification:
-          const NotificationSerializer().fromJson(json['notification']),
+          Notification.fromJson(json['notification'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$NotificationReceivedEventToJson(
         NotificationReceivedEvent instance) =>
     <String, dynamic>{
-      'notification':
-          const NotificationSerializer().toJson(instance.notification),
+      'notification': instance.notification,
     };
 
 NotificationResponseEvent _$NotificationResponseEventFromJson(
@@ -152,7 +155,8 @@ NotificationResponseEvent _$NotificationResponseEventFromJson(
     NotificationResponseEvent(
       notificationId: json['notificationId'] as String,
       receiverId: json['receiverId'] as String,
-      responseId: const NotificationSerializer().fromJson(json['responseId']),
+      responseId:
+          Notification.fromJson(json['responseId'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$NotificationResponseEventToJson(
@@ -160,7 +164,7 @@ Map<String, dynamic> _$NotificationResponseEventToJson(
     <String, dynamic>{
       'notificationId': instance.notificationId,
       'receiverId': instance.receiverId,
-      'responseId': const NotificationSerializer().toJson(instance.responseId),
+      'responseId': instance.responseId,
     };
 
 NotificationHideEvent _$NotificationHideEventFromJson(

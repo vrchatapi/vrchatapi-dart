@@ -55,11 +55,9 @@ class AuthApi {
   /// Verify a 2fa code
   Future<VrcResponse> verify2fa(String code) async {
     try {
-      await _rawApi.getAuthenticationApi().verify2FA(
-            twoFactorAuthCode: TwoFactorAuthCode(
-              (builder) => builder.code = code,
-            ),
-          );
+      await _rawApi
+          .getAuthenticationApi()
+          .verify2FA(twoFactorAuthCode: TwoFactorAuthCode(code: code));
 
       // Call the login function to set the [currentUser] and api key
       return login();

@@ -20,7 +20,7 @@ StreamedCurrentUser _$StreamedCurrentUserFromJson(Map<String, dynamic> json) =>
       fallbackAvatar: json['fallbackAvatar'] as String,
       id: json['id'] as String,
       profilePicOverride: json['profilePicOverride'] as String,
-      status: const UserStatusSerializer().fromJson(json['status']),
+      status: $enumDecode(_$UserStatusEnumMap, json['status']),
       statusDescription: json['statusDescription'] as String,
       tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
       userIcon: json['userIcon'] as String,
@@ -39,9 +39,17 @@ Map<String, dynamic> _$StreamedCurrentUserToJson(
       'fallbackAvatar': instance.fallbackAvatar,
       'id': instance.id,
       'profilePicOverride': instance.profilePicOverride,
-      'status': const UserStatusSerializer().toJson(instance.status),
+      'status': _$UserStatusEnumMap[instance.status]!,
       'statusDescription': instance.statusDescription,
       'tags': instance.tags,
       'userIcon': instance.userIcon,
       'username': instance.username,
     };
+
+const _$UserStatusEnumMap = {
+  UserStatus.active: 'active',
+  UserStatus.joinMe: 'join me',
+  UserStatus.askMe: 'ask me',
+  UserStatus.busy: 'busy',
+  UserStatus.offline: 'offline',
+};

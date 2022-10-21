@@ -1,9 +1,6 @@
-// Package imports:
 import 'package:json_annotation/json_annotation.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
-// Project imports:
-import 'package:vrchat_dart/src/convenience/serializers.dart';
 import 'package:vrchat_dart/src/model/streaming/streamed_current_user.dart';
 
 part 'vrc_streaming_event.g.dart';
@@ -142,7 +139,6 @@ abstract class FriendEvent extends VrcStreamingEvent {
 /// Base class for [FriendEvent]s that contain a user object
 abstract class FriendEventWithUser extends FriendEvent {
   /// The [user] object of the user this event is about
-  @UserSerializer()
   final User user;
 
   /// Create a [FriendEventWithUser] with the given [userId] and [user]
@@ -171,7 +167,6 @@ class FriendOnlineEvent extends FriendEventWithUser {
   VrcStreamingEventType get type => VrcStreamingEventType.friendOnline;
 
   /// The [world] the user joined
-  @NullableWorldSerializer()
   final World? world;
 
   /// <worldId:locationId>
@@ -303,7 +298,6 @@ class FriendLocationEvent extends FriendEventWithUser {
   VrcStreamingEventType get type => VrcStreamingEventType.friendLocation;
 
   /// The [world] the user joined
-  @NullableWorldSerializer()
   final World? world;
 
   /// <worldId:locationId>
@@ -365,7 +359,6 @@ class UserLocationEvent extends UserEvent {
   VrcStreamingEventType get type => VrcStreamingEventType.userLocation;
 
   /// The [world] the user joined
-  @WorldSerializer()
   final World world;
 
   /// <worldId:locationId>
@@ -398,7 +391,6 @@ class NotificationReceivedEvent extends NotificationEvent {
   VrcStreamingEventType get type => VrcStreamingEventType.notificationReceived;
 
   /// The [Notification] object
-  @NotificationSerializer()
   final Notification notification;
 
   /// Create a [NotificationReceivedEvent] with the given [notification]
@@ -441,7 +433,6 @@ class NotificationResponseEvent extends NotificationEvent {
   final String receiverId;
 
   /// The response [Notification] object
-  @NotificationSerializer()
   final Notification responseId;
 
   /// Create a [NotificationResponseEvent]

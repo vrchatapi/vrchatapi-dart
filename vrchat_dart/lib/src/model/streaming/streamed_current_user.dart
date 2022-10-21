@@ -1,9 +1,5 @@
-// Package imports:
 import 'package:json_annotation/json_annotation.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
-
-// Project imports:
-import 'package:vrchat_dart/src/convenience/serializers.dart';
 
 part 'streamed_current_user.g.dart';
 
@@ -38,7 +34,6 @@ class StreamedCurrentUser {
   final String profilePicOverride;
 
   /// The user's status
-  @UserStatusSerializer()
   final UserStatus status;
 
   /// The user's status description

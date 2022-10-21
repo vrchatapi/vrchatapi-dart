@@ -396,9 +396,9 @@ packages:
   vrchat_dart_generated:
     dependency: "direct main"
     description:
-      name: vrchat_dart_generated
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "../vrchat_dart_generated"
+      relative: true
+    source: path
     version: "1.7.6"
   watcher:
     dependency: transitive
