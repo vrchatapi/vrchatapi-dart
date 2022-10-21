@@ -12,9 +12,9 @@ cd ..
 
 openapi-generator generate -g dart-dio -c generator-config.yaml
 
-# cd vrchat_dart
-# dart run tool/patch_output.dart
-# cd ..
+cd vrchat_dart
+dart run tool/patch_output.dart
+cd ..
 
 cd vrchat_dart_generated
 # We probably won't ever use these, and telling the generator to not generate them is broken
