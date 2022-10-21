@@ -1,6 +1,5 @@
 .gitignore
 README.md
-analysis_options.yaml
 build.yaml
 doc/APIConfig.md
 doc/APIEventConfig.md

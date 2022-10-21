@@ -17,6 +17,10 @@ openapi-generator generate -g dart-dio -c generator-config.yaml
 # cd ..
 
 cd vrchat_dart_generated
+# We probably won't ever use these, and telling the generator to not generate them is broken
+echo "Removing tests"
+rm -rf test
+
 dart pub get
 dart run build_runner build --delete-conflicting-outputs
 dart fix --apply
