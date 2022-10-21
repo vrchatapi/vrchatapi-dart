@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 /// Convenience methods on [CurrentUser]
