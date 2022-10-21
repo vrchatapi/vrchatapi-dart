@@ -67,22 +67,14 @@ class World {
   final String description;
 
   // minimum: 0
-  @JsonKey(
-      defaultValue: 0,
-      name: r'favorites',
-      required: false,
-      includeIfNull: false)
+  @JsonKey(name: r'favorites', required: false, includeIfNull: false)
   final int? favorites;
 
-  @JsonKey(
-      defaultValue: false,
-      name: r'featured',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'featured', required: true, includeIfNull: false)
   final bool featured;
 
   // minimum: 0
-  @JsonKey(defaultValue: 0, name: r'heat', required: true, includeIfNull: false)
+  @JsonKey(name: r'heat', required: true, includeIfNull: false)
   final int heat;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
@@ -107,26 +99,14 @@ class World {
 
   /// Will always be `0` when unauthenticated.
   // minimum: 0
-  @JsonKey(
-      defaultValue: 0,
-      name: r'occupants',
-      required: false,
-      includeIfNull: false)
+  @JsonKey(name: r'occupants', required: false, includeIfNull: false)
   final int? occupants;
 
-  @JsonKey(
-      defaultValue: 'vrchat',
-      name: r'organization',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'organization', required: true, includeIfNull: false)
   final String organization;
 
   // minimum: 0
-  @JsonKey(
-      defaultValue: 0,
-      name: r'popularity',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'popularity', required: true, includeIfNull: false)
   final int popularity;
 
   @JsonKey(name: r'previewYoutubeId', required: false, includeIfNull: false)
@@ -134,20 +114,12 @@ class World {
 
   /// Will always be `0` when unauthenticated.
   // minimum: 0
-  @JsonKey(
-      defaultValue: 0,
-      name: r'privateOccupants',
-      required: false,
-      includeIfNull: false)
+  @JsonKey(name: r'privateOccupants', required: false, includeIfNull: false)
   final int? privateOccupants;
 
   /// Will always be `0` when unauthenticated.
   // minimum: 0
-  @JsonKey(
-      defaultValue: 0,
-      name: r'publicOccupants',
-      required: false,
-      includeIfNull: false)
+  @JsonKey(name: r'publicOccupants', required: false, includeIfNull: false)
   final int? publicOccupants;
 
   @JsonKey(name: r'publicationDate', required: true, includeIfNull: false)
@@ -171,13 +143,11 @@ class World {
   final DateTime updatedAt;
 
   // minimum: 0
-  @JsonKey(
-      defaultValue: 0, name: r'version', required: true, includeIfNull: false)
+  @JsonKey(name: r'version', required: true, includeIfNull: false)
   final int version;
 
   // minimum: 0
-  @JsonKey(
-      defaultValue: 0, name: r'visits', required: true, includeIfNull: false)
+  @JsonKey(name: r'visits', required: true, includeIfNull: false)
   final int visits;
 
   @override

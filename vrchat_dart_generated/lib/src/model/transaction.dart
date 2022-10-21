@@ -40,11 +40,7 @@ class Transaction {
   @JsonKey(name: r'subscription', required: true, includeIfNull: false)
   final Subscription subscription;
 
-  @JsonKey(
-      defaultValue: false,
-      name: r'sandbox',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'sandbox', required: true, includeIfNull: false)
   final bool sandbox;
 
   @JsonKey(name: r'created_at', required: true, includeIfNull: false)

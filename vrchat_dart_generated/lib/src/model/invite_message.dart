@@ -26,11 +26,7 @@ class InviteMessage {
     required this.updatedAt,
   });
 
-  @JsonKey(
-      defaultValue: true,
-      name: r'canBeUpdated',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'canBeUpdated', required: true, includeIfNull: false)
   final bool canBeUpdated;
 
   @JsonKey(name: r'id', required: true, includeIfNull: false)
@@ -45,10 +41,7 @@ class InviteMessage {
   /// Changes to 60 when updated, although probably server-side configurable.
   // minimum: 0
   @JsonKey(
-      defaultValue: 0,
-      name: r'remainingCooldownMinutes',
-      required: true,
-      includeIfNull: false)
+      name: r'remainingCooldownMinutes', required: true, includeIfNull: false)
   final int remainingCooldownMinutes;
 
   // minimum: 0

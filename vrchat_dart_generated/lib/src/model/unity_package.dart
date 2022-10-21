@@ -58,11 +58,7 @@ class UnityPackage {
   @JsonKey(name: r'unitySortNumber', required: false, includeIfNull: false)
   final int? unitySortNumber;
 
-  @JsonKey(
-      defaultValue: '5.3.4p1',
-      name: r'unityVersion',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'unityVersion', required: true, includeIfNull: false)
   final String unityVersion;
 
   @override

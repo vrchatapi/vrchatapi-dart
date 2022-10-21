@@ -34,11 +34,7 @@ class InfoPush {
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(
-      defaultValue: true,
-      name: r'isEnabled',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'isEnabled', required: true, includeIfNull: false)
   final bool isEnabled;
 
   @JsonKey(name: r'releaseStatus', required: true, includeIfNull: false)

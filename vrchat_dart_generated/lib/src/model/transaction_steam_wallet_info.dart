@@ -25,18 +25,10 @@ class TransactionSteamWalletInfo {
   @JsonKey(name: r'state', required: true, includeIfNull: false)
   final String state;
 
-  @JsonKey(
-      defaultValue: 'US',
-      name: r'country',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'country', required: true, includeIfNull: false)
   final String country;
 
-  @JsonKey(
-      defaultValue: 'USD',
-      name: r'currency',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'currency', required: true, includeIfNull: false)
   final String currency;
 
   @JsonKey(name: r'status', required: true, includeIfNull: false)

@@ -150,11 +150,7 @@ class CurrentUser {
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(
-      defaultValue: false,
-      name: r'isFriend',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'isFriend', required: true, includeIfNull: false)
   final bool isFriend;
 
   @JsonKey(name: r'last_login', required: true, includeIfNull: false)

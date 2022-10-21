@@ -17,7 +17,7 @@ part 'file_data.g.dart';
 class FileData {
   /// Returns a new [FileData] instance.
   FileData({
-    this.category = const FileDataCategoryEnum._('queued'),
+    this.category = FileDataCategoryEnum.queued,
     required this.fileName,
     required this.md5,
     required this.sizeInBytes,
@@ -26,11 +26,7 @@ class FileData {
     required this.url,
   });
 
-  @JsonKey(
-      defaultValue: 'queued',
-      name: r'category',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'category', required: true, includeIfNull: false)
   final FileDataCategoryEnum category;
 
   @JsonKey(name: r'fileName', required: true, includeIfNull: false)
@@ -46,8 +42,7 @@ class FileData {
   @JsonKey(name: r'status', required: true, includeIfNull: false)
   final FileStatus status;
 
-  @JsonKey(
-      defaultValue: '', name: r'uploadId', required: true, includeIfNull: false)
+  @JsonKey(name: r'uploadId', required: true, includeIfNull: false)
   final String uploadId;
 
   @JsonKey(name: r'url', required: true, includeIfNull: false)

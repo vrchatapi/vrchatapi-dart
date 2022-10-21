@@ -31,11 +31,7 @@ class FileVersion {
   final DateTime createdAt;
 
   /// Usually only present if `true`
-  @JsonKey(
-      defaultValue: true,
-      name: r'deleted',
-      required: false,
-      includeIfNull: false)
+  @JsonKey(name: r'deleted', required: false, includeIfNull: false)
   final bool? deleted;
 
   @JsonKey(name: r'delta', required: false, includeIfNull: false)
@@ -52,8 +48,7 @@ class FileVersion {
 
   /// Incremental version counter, can only be increased.
   // minimum: 0
-  @JsonKey(
-      defaultValue: 0, name: r'version', required: true, includeIfNull: false)
+  @JsonKey(name: r'version', required: true, includeIfNull: false)
   final int version;
 
   @override

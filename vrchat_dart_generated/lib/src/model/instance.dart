@@ -44,15 +44,10 @@ class Instance {
     this.private,
   });
 
-  @JsonKey(
-      defaultValue: true, name: r'active', required: true, includeIfNull: false)
+  @JsonKey(name: r'active', required: true, includeIfNull: false)
   final bool active;
 
-  @JsonKey(
-      defaultValue: true,
-      name: r'canRequestInvite',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'canRequestInvite', required: true, includeIfNull: false)
   final bool canRequestInvite;
 
   // minimum: 0
@@ -63,8 +58,7 @@ class Instance {
   @JsonKey(name: r'clientNumber', required: true, includeIfNull: false)
   final String clientNumber;
 
-  @JsonKey(
-      defaultValue: false, name: r'full', required: true, includeIfNull: false)
+  @JsonKey(name: r'full', required: true, includeIfNull: false)
   final bool full;
 
   /// InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
@@ -89,11 +83,7 @@ class Instance {
   @JsonKey(name: r'ownerId', required: false, includeIfNull: false)
   final String? ownerId;
 
-  @JsonKey(
-      defaultValue: false,
-      name: r'permanent',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'permanent', required: true, includeIfNull: false)
   final bool permanent;
 
   @JsonKey(name: r'photonRegion', required: true, includeIfNull: false)

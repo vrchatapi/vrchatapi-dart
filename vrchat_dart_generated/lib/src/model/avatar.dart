@@ -60,11 +60,7 @@ class Avatar {
   @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
 
-  @JsonKey(
-      defaultValue: false,
-      name: r'featured',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'featured', required: true, includeIfNull: false)
   final bool featured;
 
   @JsonKey(name: r'id', required: true, includeIfNull: false)
@@ -99,8 +95,7 @@ class Avatar {
   final DateTime updatedAt;
 
   // minimum: 0
-  @JsonKey(
-      defaultValue: 0, name: r'version', required: true, includeIfNull: false)
+  @JsonKey(name: r'version', required: true, includeIfNull: false)
   final int version;
 
   @override

@@ -60,8 +60,7 @@ class UserSubscription {
   @JsonKey(name: r'tier', required: true, includeIfNull: false)
   final num tier;
 
-  @JsonKey(
-      defaultValue: true, name: r'active', required: true, includeIfNull: false)
+  @JsonKey(name: r'active', required: true, includeIfNull: false)
   final bool active;
 
   @JsonKey(name: r'status', required: true, includeIfNull: false)
@@ -79,11 +78,7 @@ class UserSubscription {
   @JsonKey(name: r'licenseGroups', required: true, includeIfNull: false)
   final List<String> licenseGroups;
 
-  @JsonKey(
-      defaultValue: false,
-      name: r'isGift',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'isGift', required: true, includeIfNull: false)
   final bool isGift;
 
   @override

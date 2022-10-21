@@ -55,12 +55,11 @@ class LimitedWorld {
   final DateTime createdAt;
 
   // minimum: 0
-  @JsonKey(
-      defaultValue: 0, name: r'favorites', required: true, includeIfNull: false)
+  @JsonKey(name: r'favorites', required: true, includeIfNull: false)
   final int favorites;
 
   // minimum: 0
-  @JsonKey(defaultValue: 0, name: r'heat', required: true, includeIfNull: false)
+  @JsonKey(name: r'heat', required: true, includeIfNull: false)
   final int heat;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
@@ -77,23 +76,14 @@ class LimitedWorld {
   final String name;
 
   // minimum: 0
-  @JsonKey(
-      defaultValue: 0, name: r'occupants', required: true, includeIfNull: false)
+  @JsonKey(name: r'occupants', required: true, includeIfNull: false)
   final int occupants;
 
-  @JsonKey(
-      defaultValue: 'vrchat',
-      name: r'organization',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'organization', required: true, includeIfNull: false)
   final String organization;
 
   // minimum: 0
-  @JsonKey(
-      defaultValue: 0,
-      name: r'popularity',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'popularity', required: true, includeIfNull: false)
   final int popularity;
 
   @JsonKey(name: r'publicationDate', required: true, includeIfNull: false)

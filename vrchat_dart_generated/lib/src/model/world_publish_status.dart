@@ -19,11 +19,7 @@ class WorldPublishStatus {
     this.canPubilsh = true,
   });
 
-  @JsonKey(
-      defaultValue: true,
-      name: r'canPubilsh',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'canPubilsh', required: true, includeIfNull: false)
   final bool canPubilsh;
 
   @override

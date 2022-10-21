@@ -27,7 +27,7 @@ FileData _$FileDataFromJson(Map<String, dynamic> json) => $checkedCreate(
               'category',
               (v) =>
                   $enumDecodeNullable(_$FileDataCategoryEnumEnumMap, v) ??
-                  'queued'),
+                  FileDataCategoryEnum.queued),
           fileName: $checkedConvert('fileName', (v) => v as String),
           md5: $checkedConvert('md5', (v) => v as String),
           sizeInBytes: $checkedConvert('sizeInBytes', (v) => v as int),

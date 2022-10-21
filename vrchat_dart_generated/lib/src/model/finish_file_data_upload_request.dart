@@ -26,19 +26,11 @@ class FinishFileDataUploadRequest {
   final Set<String>? etags;
 
   /// Always a zero in string form, despite how many parts uploaded.
-  @JsonKey(
-      defaultValue: '0',
-      name: r'nextPartNumber',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'nextPartNumber', required: true, includeIfNull: false)
   final String nextPartNumber;
 
   /// Always a zero in string form, despite how many parts uploaded.
-  @JsonKey(
-      defaultValue: '0',
-      name: r'maxParts',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'maxParts', required: true, includeIfNull: false)
   final String maxParts;
 
   @override

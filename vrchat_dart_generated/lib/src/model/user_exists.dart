@@ -20,11 +20,7 @@ class UserExists {
   });
 
   /// Status if a user exist with that username or userId.
-  @JsonKey(
-      defaultValue: false,
-      name: r'userExists',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'userExists', required: true, includeIfNull: false)
   final bool userExists;
 
   @override

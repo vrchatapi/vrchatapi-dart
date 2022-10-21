@@ -50,11 +50,7 @@ class User {
     this.worldId,
   });
 
-  @JsonKey(
-      defaultValue: true,
-      name: r'allowAvatarCopying',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'allowAvatarCopying', required: true, includeIfNull: false)
   final bool allowAvatarCopying;
 
   @JsonKey(name: r'bio', required: true, includeIfNull: false)

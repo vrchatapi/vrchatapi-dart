@@ -73,11 +73,7 @@ class UpdateWorldRequest {
   @JsonKey(name: r'unityPackageUrl', required: false, includeIfNull: false)
   final String? unityPackageUrl;
 
-  @JsonKey(
-      defaultValue: '5.3.4p1',
-      name: r'unityVersion',
-      required: false,
-      includeIfNull: false)
+  @JsonKey(name: r'unityVersion', required: false, includeIfNull: false)
   final String? unityVersion;
 
   @override

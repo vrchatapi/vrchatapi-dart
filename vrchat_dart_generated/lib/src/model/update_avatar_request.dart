@@ -51,8 +51,7 @@ class UpdateAvatarRequest {
   final ReleaseStatus? releaseStatus;
 
   // minimum: 0
-  @JsonKey(
-      defaultValue: 1, name: r'version', required: false, includeIfNull: false)
+  @JsonKey(name: r'version', required: false, includeIfNull: false)
   final num? version;
 
   @JsonKey(name: r'unityPackageUrl', required: false, includeIfNull: false)

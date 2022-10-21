@@ -31,11 +31,7 @@ class SentNotification {
   final DateTime createdAt;
 
   /// **NOTICE:** This is not a JSON object, this is a json **encoded** object, meaning you have to json-de-encode to get the NotificationDetail object depending on the NotificationType.
-  @JsonKey(
-      defaultValue: '{}',
-      name: r'details',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'details', required: true, includeIfNull: false)
   final String details;
 
   @JsonKey(name: r'id', required: true, includeIfNull: false)

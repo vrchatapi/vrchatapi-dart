@@ -105,15 +105,11 @@ class APIConfig {
 
   /// Unknown, probably voice optimization testing
   @JsonKey(
-      defaultValue: false,
-      name: r'VoiceEnableDegradation',
-      required: true,
-      includeIfNull: false)
+      name: r'VoiceEnableDegradation', required: true, includeIfNull: false)
   final bool voiceEnableDegradation;
 
   /// Unknown, probably voice optimization testing
   @JsonKey(
-      defaultValue: true,
       name: r'VoiceEnableReceiverLimiting',
       required: true,
       includeIfNull: false)
@@ -132,11 +128,7 @@ class APIConfig {
   final String apiKey;
 
   /// Game name
-  @JsonKey(
-      defaultValue: 'VrChat',
-      name: r'appName',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'appName', required: true, includeIfNull: false)
   final String appName;
 
   /// Build tag of the API server
@@ -148,35 +140,22 @@ class APIConfig {
   final String clientApiKey;
 
   /// Unknown
-  @JsonKey(
-      defaultValue: 18432,
-      name: r'clientBPSCeiling',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'clientBPSCeiling', required: true, includeIfNull: false)
   final int clientBPSCeiling;
 
   /// Unknown
   @JsonKey(
-      defaultValue: 30000,
-      name: r'clientDisconnectTimeout',
-      required: true,
-      includeIfNull: false)
+      name: r'clientDisconnectTimeout', required: true, includeIfNull: false)
   final int clientDisconnectTimeout;
 
   /// Unknown
   @JsonKey(
-      defaultValue: 7168,
-      name: r'clientReservedPlayerBPS',
-      required: true,
-      includeIfNull: false)
+      name: r'clientReservedPlayerBPS', required: true, includeIfNull: false)
   final int clientReservedPlayerBPS;
 
   /// Unknown
   @JsonKey(
-      defaultValue: 15,
-      name: r'clientSentCountAllowance',
-      required: true,
-      includeIfNull: false)
+      name: r'clientSentCountAllowance', required: true, includeIfNull: false)
   final int clientSentCountAllowance;
 
   /// VRChat's contact email
@@ -226,123 +205,67 @@ class APIConfig {
   final DateTime disCountdown;
 
   /// Toggles if copying avatars should be disabled
-  @JsonKey(
-      defaultValue: false,
-      name: r'disableAvatarCopying',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'disableAvatarCopying', required: true, includeIfNull: false)
   final bool disableAvatarCopying;
 
   /// Toggles if avatar gating should be disabled. Avatar gating restricts uploading of avatars to people with the `system_avatar_access` Tag or `admin_avatar_access` Tag
-  @JsonKey(
-      defaultValue: false,
-      name: r'disableAvatarGating',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'disableAvatarGating', required: true, includeIfNull: false)
   final bool disableAvatarGating;
 
   /// Toggles if the Community Labs should be disabled
-  @JsonKey(
-      defaultValue: false,
-      name: r'disableCommunityLabs',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'disableCommunityLabs', required: true, includeIfNull: false)
   final bool disableCommunityLabs;
 
   /// Toggles if promotion out of Community Labs should be disabled
   @JsonKey(
-      defaultValue: false,
       name: r'disableCommunityLabsPromotion',
       required: true,
       includeIfNull: false)
   final bool disableCommunityLabsPromotion;
 
   /// Unknown
-  @JsonKey(
-      defaultValue: false,
-      name: r'disableEmail',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'disableEmail', required: true, includeIfNull: false)
   final bool disableEmail;
 
   /// Toggles if Analytics should be disabled.
-  @JsonKey(
-      defaultValue: false,
-      name: r'disableEventStream',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'disableEventStream', required: true, includeIfNull: false)
   final bool disableEventStream;
 
   /// Toggles if feedback gating should be disabled. Feedback gating restricts submission of feedback (reporting a World or User) to people with the `system_feedback_access` Tag.
-  @JsonKey(
-      defaultValue: false,
-      name: r'disableFeedbackGating',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'disableFeedbackGating', required: true, includeIfNull: false)
   final bool disableFeedbackGating;
 
   /// Unknown, probably toggles compilation of frontend web builds? So internal flag?
-  @JsonKey(
-      defaultValue: false,
-      name: r'disableFrontendBuilds',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'disableFrontendBuilds', required: true, includeIfNull: false)
   final bool disableFrontendBuilds;
 
   /// Unknown
-  @JsonKey(
-      defaultValue: false,
-      name: r'disableHello',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'disableHello', required: true, includeIfNull: false)
   final bool disableHello;
 
   /// Toggles if signing up for Subscriptions in Oculus is disabled or not.
-  @JsonKey(
-      defaultValue: false,
-      name: r'disableOculusSubs',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'disableOculusSubs', required: true, includeIfNull: false)
   final bool disableOculusSubs;
 
   /// Toggles if new user account registration should be disabled.
-  @JsonKey(
-      defaultValue: false,
-      name: r'disableRegistration',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'disableRegistration', required: true, includeIfNull: false)
   final bool disableRegistration;
 
   /// Toggles if Steam Networking should be disabled. VRChat these days uses Photon Unity Networking (PUN) instead.
   @JsonKey(
-      defaultValue: true,
-      name: r'disableSteamNetworking',
-      required: true,
-      includeIfNull: false)
+      name: r'disableSteamNetworking', required: true, includeIfNull: false)
   final bool disableSteamNetworking;
 
   /// Toggles if 2FA should be disabled.
-  @JsonKey(
-      defaultValue: false,
-      name: r'disableTwoFactorAuth',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'disableTwoFactorAuth', required: true, includeIfNull: false)
   final bool disableTwoFactorAuth;
 
   /// Toggles if Udon should be universally disabled in-game.
-  @JsonKey(
-      defaultValue: false,
-      name: r'disableUdon',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'disableUdon', required: true, includeIfNull: false)
   final bool disableUdon;
 
   /// Toggles if account upgrading \"linking with Steam/Oculus\" should be disabled.
-  @JsonKey(
-      defaultValue: false,
-      name: r'disableUpgradeAccount',
-      required: true,
-      includeIfNull: false)
+  @JsonKey(name: r'disableUpgradeAccount', required: true, includeIfNull: false)
   final bool disableUpgradeAccount;
 
   /// Download link for game on the Oculus Rift website.
@@ -369,10 +292,7 @@ class APIConfig {
 
   /// Redirect target if you try to open the base API domain in your browser
   @JsonKey(
-      defaultValue: 'https://hello.vrchat.com',
-      name: r'homepageRedirectTarget',
-      required: true,
-      includeIfNull: false)
+      name: r'homepageRedirectTarget', required: true, includeIfNull: false)
   final String homepageRedirectTarget;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
@@ -490,10 +410,7 @@ class APIConfig {
 
   /// Unknown
   @JsonKey(
-      defaultValue: false,
-      name: r'useReliableUdpForVoice',
-      required: true,
-      includeIfNull: false)
+      name: r'useReliableUdpForVoice', required: true, includeIfNull: false)
   final bool useReliableUdpForVoice;
 
   /// Unknown
