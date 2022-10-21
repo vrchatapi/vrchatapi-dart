@@ -1,3 +1,6 @@
+## NEXT
+- Use `json_serializable` serializer instead of `built_value` serializer
+
 ## 1.7.6
 - Updated to match spec
 

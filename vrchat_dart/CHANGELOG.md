@@ -1,3 +1,6 @@
+## NEXT
+- Use `json_serializable` serializer instead of `built_value` serializer
+
 ## 2.2.8
 - Updated vrchat_dart_generated
 
