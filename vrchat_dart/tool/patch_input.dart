@@ -15,9 +15,6 @@ void main() async {
 Future<void> patchSpec() async {
   final data = await getSpec();
 
-  data['components']['schemas']['World']['properties']['instances']['items']
-      ['items']['type'] = 'object';
-
   final outString = jsonEncode(data);
   final output = File('build/spec.json');
   output.createSync(recursive: true);
