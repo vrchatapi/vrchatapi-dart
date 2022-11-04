@@ -20,7 +20,6 @@ Notification _$NotificationFromJson(Map<String, dynamic> json) =>
             'message',
             'seen',
             'senderUserId',
-            'senderUsername',
             'type'
           ],
         );
@@ -32,7 +31,8 @@ Notification _$NotificationFromJson(Map<String, dynamic> json) =>
           message: $checkedConvert('message', (v) => v as String),
           seen: $checkedConvert('seen', (v) => v as bool? ?? false),
           senderUserId: $checkedConvert('senderUserId', (v) => v as String),
-          senderUsername: $checkedConvert('senderUsername', (v) => v as String),
+          senderUsername:
+              $checkedConvert('senderUsername', (v) => v as String?),
           type: $checkedConvert(
               'type', (v) => $enumDecode(_$NotificationTypeEnumMap, v)),
         );
@@ -41,17 +41,26 @@ Notification _$NotificationFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {'createdAt': 'created_at'},
     );
 
-Map<String, dynamic> _$NotificationToJson(Notification instance) =>
-    <String, dynamic>{
-      'created_at': instance.createdAt.toIso8601String(),
-      'details': instance.details,
-      'id': instance.id,
-      'message': instance.message,
-      'seen': instance.seen,
-      'senderUserId': instance.senderUserId,
-      'senderUsername': instance.senderUsername,
-      'type': _$NotificationTypeEnumMap[instance.type]!,
-    };
+Map<String, dynamic> _$NotificationToJson(Notification instance) {
+  final val = <String, dynamic>{
+    'created_at': instance.createdAt.toIso8601String(),
+    'details': instance.details,
+    'id': instance.id,
+    'message': instance.message,
+    'seen': instance.seen,
+    'senderUserId': instance.senderUserId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('senderUsername', instance.senderUsername);
+  val['type'] = _$NotificationTypeEnumMap[instance.type]!;
+  return val;
+}
 
 const _$NotificationTypeEnumMap = {
   NotificationType.friendRequest: 'friendRequest',

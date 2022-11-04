@@ -46,7 +46,7 @@ class User {
     this.travelingToLocation,
     this.travelingToWorld,
     required this.userIcon,
-    required this.username,
+    this.username,
     this.worldId,
   });
 
@@ -145,9 +145,9 @@ class User {
   @JsonKey(name: r'userIcon', required: true, includeIfNull: false)
   final String userIcon;
 
-  /// A users unique name, used during login. This is different from `displayName` which is what shows up in-game. A users `username` can never be changed.
-  @JsonKey(name: r'username', required: true, includeIfNull: false)
-  final String username;
+  /// -| A users unique name, used during login. This is different from `displayName` which is what shows up in-game. A users `username` can never be changed.' **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
+  @JsonKey(name: r'username', required: false, includeIfNull: false)
+  final String? username;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @JsonKey(name: r'worldId', required: false, includeIfNull: false)

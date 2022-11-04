@@ -52,8 +52,7 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
             'tags',
             'twoFactorAuthEnabled',
             'unsubscribe',
-            'userIcon',
-            'username'
+            'userIcon'
           ],
         );
         final val = CurrentUser(
@@ -135,7 +134,7 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => v == null ? null : DateTime.parse(v as String)),
           unsubscribe: $checkedConvert('unsubscribe', (v) => v as bool),
           userIcon: $checkedConvert('userIcon', (v) => v as String),
-          username: $checkedConvert('username', (v) => v as String),
+          username: $checkedConvert('username', (v) => v as String?),
         );
         return val;
       },
@@ -206,7 +205,7 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
       instance.twoFactorAuthEnabledDate?.toIso8601String());
   val['unsubscribe'] = instance.unsubscribe;
   val['userIcon'] = instance.userIcon;
-  val['username'] = instance.username;
+  writeNotNull('username', instance.username);
   return val;
 }
 

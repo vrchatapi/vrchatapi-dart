@@ -33,8 +33,7 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
             'status',
             'statusDescription',
             'tags',
-            'userIcon',
-            'username'
+            'userIcon'
           ],
         );
         final val = User(
@@ -80,7 +79,7 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
           travelingToWorld:
               $checkedConvert('travelingToWorld', (v) => v as String?),
           userIcon: $checkedConvert('userIcon', (v) => v as String),
-          username: $checkedConvert('username', (v) => v as String),
+          username: $checkedConvert('username', (v) => v as String?),
           worldId: $checkedConvert('worldId', (v) => v as String?),
         );
         return val;
@@ -130,7 +129,7 @@ Map<String, dynamic> _$UserToJson(User instance) {
   writeNotNull('travelingToLocation', instance.travelingToLocation);
   writeNotNull('travelingToWorld', instance.travelingToWorld);
   val['userIcon'] = instance.userIcon;
-  val['username'] = instance.username;
+  writeNotNull('username', instance.username);
   writeNotNull('worldId', instance.worldId);
   return val;
 }

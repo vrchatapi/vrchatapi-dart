@@ -9,7 +9,6 @@ void main() async {
 Future<void> patchModel() async {
   final modelFiles = Directory('../vrchat_dart_generated/lib/src/model')
       .listSync()
-      .where((e) => !e.path.contains('.g.dart'))
       .cast<File>();
 
   for (final file in modelFiles) {

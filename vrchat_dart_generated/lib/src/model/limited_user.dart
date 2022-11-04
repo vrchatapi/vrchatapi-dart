@@ -32,7 +32,7 @@ class LimitedUser {
     required this.statusDescription,
     required this.tags,
     required this.userIcon,
-    required this.username,
+    this.username,
     this.location,
     this.friendKey,
   });
@@ -87,8 +87,9 @@ class LimitedUser {
   @JsonKey(name: r'userIcon', required: true, includeIfNull: false)
   final String userIcon;
 
-  @JsonKey(name: r'username', required: true, includeIfNull: false)
-  final String username;
+  /// -| **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
+  @JsonKey(name: r'username', required: false, includeIfNull: false)
+  final String? username;
 
   @JsonKey(name: r'location', required: false, includeIfNull: false)
   final String? location;

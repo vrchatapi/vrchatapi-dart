@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:vrchat_dart/vrchat_dart.dart';
 import 'package:vrchat_dart_example/credentials.dart';
 
+const tupperUid = 'usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469';
+
 void main() async {
   final api = VrchatDart(userAgent: 'vrchat_dart_example');
 
@@ -40,7 +42,7 @@ void main() async {
 
   final friendsResponse = await api.rawApi.getFriendsApi().getFriends();
   final tupper =
-      (await api.rawApi.getUsersApi().getUserByName(username: 'Tupper')).data!;
+      (await api.rawApi.getUsersApi().getUser(userId: tupperUid)).data!;
 
   // Convenience method to help with storing user objects from different endpoints together
   final limitedTupper = tupper.toLimitedUser();

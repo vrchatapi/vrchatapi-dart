@@ -54,7 +54,7 @@ Name | Type | Description | Notes
 **twoFactorAuthEnabledDate** | [**DateTime**](DateTime.md) |  | [optional] 
 **unsubscribe** | **bool** |  | 
 **userIcon** | **String** |  | 
-**username** | **String** |  | 
+**username** | **String** | -| **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429). | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

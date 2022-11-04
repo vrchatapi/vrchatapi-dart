@@ -23,7 +23,7 @@ class SentNotification {
     required this.message,
     required this.recieverUserId,
     required this.senderUserId,
-    required this.senderUsername,
+    this.senderUsername,
     required this.type,
   });
 
@@ -49,8 +49,9 @@ class SentNotification {
   @JsonKey(name: r'senderUserId', required: true, includeIfNull: false)
   final String senderUserId;
 
-  @JsonKey(name: r'senderUsername', required: true, includeIfNull: false)
-  final String senderUsername;
+  /// -| **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
+  @JsonKey(name: r'senderUsername', required: false, includeIfNull: false)
+  final String? senderUsername;
 
   @JsonKey(name: r'type', required: true, includeIfNull: false)
   final NotificationType type;

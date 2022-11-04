@@ -25,8 +25,7 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
             'status',
             'statusDescription',
             'tags',
-            'userIcon',
-            'username'
+            'userIcon'
           ],
         );
         final val = LimitedUser(
@@ -51,7 +50,7 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
           tags: $checkedConvert('tags',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           userIcon: $checkedConvert('userIcon', (v) => v as String),
-          username: $checkedConvert('username', (v) => v as String),
+          username: $checkedConvert('username', (v) => v as String?),
           location: $checkedConvert('location', (v) => v as String?),
           friendKey: $checkedConvert('friendKey', (v) => v as String?),
         );
@@ -84,7 +83,7 @@ Map<String, dynamic> _$LimitedUserToJson(LimitedUser instance) {
   val['statusDescription'] = instance.statusDescription;
   val['tags'] = instance.tags;
   val['userIcon'] = instance.userIcon;
-  val['username'] = instance.username;
+  writeNotNull('username', instance.username);
   writeNotNull('location', instance.location);
   writeNotNull('friendKey', instance.friendKey);
   return val;

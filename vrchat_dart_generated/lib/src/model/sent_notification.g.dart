@@ -20,7 +20,6 @@ SentNotification _$SentNotificationFromJson(Map<String, dynamic> json) =>
             'message',
             'recieverUserId',
             'senderUserId',
-            'senderUsername',
             'type'
           ],
         );
@@ -32,7 +31,8 @@ SentNotification _$SentNotificationFromJson(Map<String, dynamic> json) =>
           message: $checkedConvert('message', (v) => v as String),
           recieverUserId: $checkedConvert('recieverUserId', (v) => v as String),
           senderUserId: $checkedConvert('senderUserId', (v) => v as String),
-          senderUsername: $checkedConvert('senderUsername', (v) => v as String),
+          senderUsername:
+              $checkedConvert('senderUsername', (v) => v as String?),
           type: $checkedConvert(
               'type', (v) => $enumDecode(_$NotificationTypeEnumMap, v)),
         );
@@ -41,17 +41,26 @@ SentNotification _$SentNotificationFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {'createdAt': 'created_at'},
     );
 
-Map<String, dynamic> _$SentNotificationToJson(SentNotification instance) =>
-    <String, dynamic>{
-      'created_at': instance.createdAt.toIso8601String(),
-      'details': instance.details,
-      'id': instance.id,
-      'message': instance.message,
-      'recieverUserId': instance.recieverUserId,
-      'senderUserId': instance.senderUserId,
-      'senderUsername': instance.senderUsername,
-      'type': _$NotificationTypeEnumMap[instance.type]!,
-    };
+Map<String, dynamic> _$SentNotificationToJson(SentNotification instance) {
+  final val = <String, dynamic>{
+    'created_at': instance.createdAt.toIso8601String(),
+    'details': instance.details,
+    'id': instance.id,
+    'message': instance.message,
+    'recieverUserId': instance.recieverUserId,
+    'senderUserId': instance.senderUserId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('senderUsername', instance.senderUsername);
+  val['type'] = _$NotificationTypeEnumMap[instance.type]!;
+  return val;
+}
 
 const _$NotificationTypeEnumMap = {
   NotificationType.friendRequest: 'friendRequest',
