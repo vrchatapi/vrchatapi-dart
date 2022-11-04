@@ -154,14 +154,14 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "2.2.8"
+    version: "2.3.0"
   vrchat_dart_generated:
     dependency: "direct overridden"
     description:
       path: "../../vrchat_dart_generated"
       relative: true
     source: path
-    version: "1.7.6"
+    version: "1.8.0+1"
   web_socket_channel:
     dependency: transitive
     description:
