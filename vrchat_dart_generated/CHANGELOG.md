@@ -1,5 +1,9 @@
-## NEXT
+## 1.8.0+1
+- Updated changelog
+
+## 1.8.0
 - Use `json_serializable` serializer instead of `built_value` serializer
+- Updated to match spec
 
 ## 1.7.6
 - Updated to match spec
