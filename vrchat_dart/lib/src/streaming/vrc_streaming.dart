@@ -112,9 +112,9 @@ class VrcStreaming {
         event = UserLocationEvent.fromJson(jsonDecode(json['content']));
         break;
       case VrcStreamingEventType.notificationReceived:
-        event = NotificationReceivedEvent.fromJson(
-          {'notification': jsonDecode(json['content'])},
-        );
+        final content = jsonDecode(json['content']);
+        content['details'] = jsonEncode(content['details']);
+        event = NotificationReceivedEvent.fromJson({'notification': content});
         break;
       case VrcStreamingEventType.notificationSeen:
         event = NotificationSeenEvent(notificationId: json['content']);
