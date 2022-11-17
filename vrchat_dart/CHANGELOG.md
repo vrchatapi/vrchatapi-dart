@@ -1,3 +1,6 @@
+## 2.4.0
+- Fixes issues with deserializing streaming events
+
 ## 2.3.0
 - Use `json_serializable` serializer instead of `built_value` serializer
 
