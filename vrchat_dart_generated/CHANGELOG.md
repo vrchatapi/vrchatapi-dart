@@ -1,3 +1,6 @@
+## 1.9.0
+- Updated to match spec
+
 ## 1.8.0+1
 - Updated changelog
 

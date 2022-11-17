@@ -14,10 +14,6 @@ enum PlayerModerationType {
   block,
   @JsonValue(r'unblock')
   unblock,
-  @JsonValue(r'hideAvatar')
-  hideAvatar,
-  @JsonValue(r'showAvatar')
-  showAvatar,
   @JsonValue(r'interactOn')
   interactOn,
   @JsonValue(r'interactOff')

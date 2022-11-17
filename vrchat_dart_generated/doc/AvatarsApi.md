@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**deleteAvatar**](AvatarsApi.md#deleteavatar) | **DELETE** /avatars/{avatarId} | Delete Avatar
 [**getAvatar**](AvatarsApi.md#getavatar) | **GET** /avatars/{avatarId} | Get Avatar
 [**getFavoritedAvatars**](AvatarsApi.md#getfavoritedavatars) | **GET** /avatars/favorites | List Favorited Avatars
+[**getOwnAvatar**](AvatarsApi.md#getownavatar) | **GET** /users/{userId}/avatar | Get Own Avatar
 [**searchAvatars**](AvatarsApi.md#searchavatars) | **GET** /avatars | Search Avatars
 [**selectAvatar**](AvatarsApi.md#selectavatar) | **PUT** /avatars/{avatarId}/select | Select Avatar
 [**selectFallbackAvatar**](AvatarsApi.md#selectfallbackavatar) | **PUT** /avatars/{avatarId}/selectFallback | Select Fallback Avatar
@@ -235,6 +236,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List&lt;Avatar&gt;**](Avatar.md)
+
+### Authorization
+
+[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getOwnAvatar**
+> Avatar getOwnAvatar(userId)
+
+Get Own Avatar
+
+Get the current avatar for the user. This will return an error for any other user than the one logged in.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: apiKeyCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAvatarsApi();
+final String userId = userId_example; // String | 
+
+try {
+    final response = api.getOwnAvatar(userId);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AvatarsApi->getOwnAvatar: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**|  | 
+
+### Return type
+
+[**Avatar**](Avatar.md)
 
 ### Authorization
 

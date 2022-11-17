@@ -56,8 +56,6 @@ const _$PlayerModerationTypeEnumMap = {
   PlayerModerationType.unmute: 'unmute',
   PlayerModerationType.block: 'block',
   PlayerModerationType.unblock: 'unblock',
-  PlayerModerationType.hideAvatar: 'hideAvatar',
-  PlayerModerationType.showAvatar: 'showAvatar',
   PlayerModerationType.interactOn: 'interactOn',
   PlayerModerationType.interactOff: 'interactOff',
 };
