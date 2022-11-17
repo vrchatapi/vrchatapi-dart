@@ -153,8 +153,7 @@ NotificationResponseEvent _$NotificationResponseEventFromJson(
     NotificationResponseEvent(
       notificationId: json['notificationId'] as String,
       receiverId: json['receiverId'] as String,
-      responseId:
-          Notification.fromJson(json['responseId'] as Map<String, dynamic>),
+      responseId: json['responseId'] as String,
     );
 
 Map<String, dynamic> _$NotificationResponseEventToJson(

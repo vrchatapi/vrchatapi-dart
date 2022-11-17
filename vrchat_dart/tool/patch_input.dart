@@ -13,7 +13,7 @@ void main() async {
 }
 
 Future<void> patchSpec() async {
-  final data = await getSpec();
+  final data = await getSpec(local: true);
 
   final outString = jsonEncode(data);
   final output = File('build/spec.json');

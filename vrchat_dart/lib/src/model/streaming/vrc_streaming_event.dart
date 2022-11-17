@@ -435,8 +435,8 @@ class NotificationResponseEvent extends NotificationEvent {
   /// The id of the [User] receiving this event
   final String receiverId;
 
-  /// The response [Notification] object
-  final Notification responseId;
+  /// The response notification id
+  final String responseId;
 
   /// Create a [NotificationResponseEvent]
   NotificationResponseEvent({

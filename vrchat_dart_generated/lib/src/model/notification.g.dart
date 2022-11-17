@@ -18,7 +18,6 @@ Notification _$NotificationFromJson(Map<String, dynamic> json) =>
             'details',
             'id',
             'message',
-            'seen',
             'senderUserId',
             'type'
           ],
@@ -30,6 +29,8 @@ Notification _$NotificationFromJson(Map<String, dynamic> json) =>
           id: $checkedConvert('id', (v) => v as String),
           message: $checkedConvert('message', (v) => v as String),
           seen: $checkedConvert('seen', (v) => v as bool? ?? false),
+          receiverUserId:
+              $checkedConvert('receiverUserId', (v) => v as String?),
           senderUserId: $checkedConvert('senderUserId', (v) => v as String),
           senderUsername:
               $checkedConvert('senderUsername', (v) => v as String?),
@@ -47,8 +48,6 @@ Map<String, dynamic> _$NotificationToJson(Notification instance) {
     'details': instance.details,
     'id': instance.id,
     'message': instance.message,
-    'seen': instance.seen,
-    'senderUserId': instance.senderUserId,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -57,6 +56,9 @@ Map<String, dynamic> _$NotificationToJson(Notification instance) {
     }
   }
 
+  writeNotNull('seen', instance.seen);
+  writeNotNull('receiverUserId', instance.receiverUserId);
+  val['senderUserId'] = instance.senderUserId;
   writeNotNull('senderUsername', instance.senderUsername);
   val['type'] = _$NotificationTypeEnumMap[instance.type]!;
   return val;

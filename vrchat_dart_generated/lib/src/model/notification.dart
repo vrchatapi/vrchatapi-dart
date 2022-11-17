@@ -22,6 +22,7 @@ class Notification {
     required this.id,
     required this.message,
     this.seen = false,
+    this.receiverUserId,
     required this.senderUserId,
     this.senderUsername,
     required this.type,
@@ -41,8 +42,12 @@ class Notification {
   @JsonKey(name: r'message', required: true, includeIfNull: false)
   final String message;
 
-  @JsonKey(name: r'seen', required: true, includeIfNull: false)
-  final bool seen;
+  @JsonKey(name: r'seen', required: false, includeIfNull: false)
+  final bool? seen;
+
+  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
+  @JsonKey(name: r'receiverUserId', required: false, includeIfNull: false)
+  final String? receiverUserId;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(name: r'senderUserId', required: true, includeIfNull: false)
@@ -64,6 +69,7 @@ class Notification {
           other.id == id &&
           other.message == message &&
           other.seen == seen &&
+          other.receiverUserId == receiverUserId &&
           other.senderUserId == senderUserId &&
           other.senderUsername == senderUsername &&
           other.type == type;
@@ -75,6 +81,7 @@ class Notification {
       id.hashCode +
       message.hashCode +
       seen.hashCode +
+      receiverUserId.hashCode +
       senderUserId.hashCode +
       senderUsername.hashCode +
       type.hashCode;
