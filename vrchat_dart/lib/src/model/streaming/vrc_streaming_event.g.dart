@@ -12,9 +12,8 @@ FriendOnlineEvent _$FriendOnlineEventFromJson(Map<String, dynamic> json) =>
     FriendOnlineEvent(
       userId: json['userId'] as String,
       user: User.fromJson(json['user'] as Map<String, dynamic>),
-      world: json['world'] == null
-          ? null
-          : World.fromJson(json['world'] as Map<String, dynamic>),
+      world: const StreamedWorldConverter()
+          .fromJson(json['world'] as Map<String, dynamic>?),
       location: json['location'] as String?,
       instance: json['instance'] as String?,
       canRequestInvite: json['canRequestInvite'] as bool,
@@ -24,7 +23,7 @@ Map<String, dynamic> _$FriendOnlineEventToJson(FriendOnlineEvent instance) =>
     <String, dynamic>{
       'userId': instance.userId,
       'user': instance.user,
-      'world': instance.world,
+      'world': const StreamedWorldConverter().toJson(instance.world),
       'location': instance.location,
       'instance': instance.instance,
       'canRequestInvite': instance.canRequestInvite,
@@ -90,9 +89,8 @@ FriendLocationEvent _$FriendLocationEventFromJson(Map<String, dynamic> json) =>
     FriendLocationEvent(
       userId: json['userId'] as String,
       user: User.fromJson(json['user'] as Map<String, dynamic>),
-      world: json['world'] == null
-          ? null
-          : World.fromJson(json['world'] as Map<String, dynamic>),
+      world: const StreamedWorldConverter()
+          .fromJson(json['world'] as Map<String, dynamic>?),
       location: json['location'] as String?,
       instance: json['instance'] as String?,
       canRequestInvite: json['canRequestInvite'] as bool,
@@ -103,7 +101,7 @@ Map<String, dynamic> _$FriendLocationEventToJson(
     <String, dynamic>{
       'userId': instance.userId,
       'user': instance.user,
-      'world': instance.world,
+      'world': const StreamedWorldConverter().toJson(instance.world),
       'location': instance.location,
       'instance': instance.instance,
       'canRequestInvite': instance.canRequestInvite,

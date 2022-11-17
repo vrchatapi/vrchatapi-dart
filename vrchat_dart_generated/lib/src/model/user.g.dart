@@ -22,7 +22,6 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
             'developerType',
             'displayName',
             'friendKey',
-            'friendRequestStatus',
             'id',
             'isFriend',
             'last_activity',
@@ -53,7 +52,7 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
           displayName: $checkedConvert('displayName', (v) => v as String),
           friendKey: $checkedConvert('friendKey', (v) => v as String),
           friendRequestStatus:
-              $checkedConvert('friendRequestStatus', (v) => v as String),
+              $checkedConvert('friendRequestStatus', (v) => v as String?),
           id: $checkedConvert('id', (v) => v as String),
           instanceId: $checkedConvert('instanceId', (v) => v as String?),
           isFriend: $checkedConvert('isFriend', (v) => v as bool),
@@ -103,8 +102,6 @@ Map<String, dynamic> _$UserToJson(User instance) {
     'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
     'displayName': instance.displayName,
     'friendKey': instance.friendKey,
-    'friendRequestStatus': instance.friendRequestStatus,
-    'id': instance.id,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -113,6 +110,8 @@ Map<String, dynamic> _$UserToJson(User instance) {
     }
   }
 
+  writeNotNull('friendRequestStatus', instance.friendRequestStatus);
+  val['id'] = instance.id;
   writeNotNull('instanceId', instance.instanceId);
   val['isFriend'] = instance.isFriend;
   val['last_activity'] = instance.lastActivity;

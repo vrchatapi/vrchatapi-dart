@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:vrchat_dart/src/model/streaming/serializers.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 import 'package:vrchat_dart/src/model/streaming/streamed_current_user.dart';
@@ -167,6 +168,7 @@ class FriendOnlineEvent extends FriendEventWithUser {
   VrcStreamingEventType get type => VrcStreamingEventType.friendOnline;
 
   /// The [world] the user joined
+  @StreamedWorldConverter()
   final World? world;
 
   /// <worldId:locationId>
@@ -178,7 +180,7 @@ class FriendOnlineEvent extends FriendEventWithUser {
   /// If the current user can request invite on this friend
   final bool canRequestInvite;
 
-  /// Create a [FriendLocationEvent]
+  /// Create a [FriendOnlineEvent]
   FriendOnlineEvent({
     required String userId,
     required User user,
@@ -298,6 +300,7 @@ class FriendLocationEvent extends FriendEventWithUser {
   VrcStreamingEventType get type => VrcStreamingEventType.friendLocation;
 
   /// The [world] the user joined
+  @StreamedWorldConverter()
   final World? world;
 
   /// <worldId:locationId>
