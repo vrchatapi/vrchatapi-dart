@@ -83,7 +83,7 @@ class User {
   @JsonKey(name: r'friendKey', required: true, includeIfNull: false)
   final String friendKey;
 
-  @JsonKey(name: r'friendRequestStatus', includeIfNull: false)
+  @JsonKey(name: r'friendRequestStatus', required: false, includeIfNull: false)
   final String? friendRequestStatus;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
