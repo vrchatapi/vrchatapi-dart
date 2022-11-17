@@ -1,3 +1,7 @@
+## 1.9.1+1
+- Updated to match spec
+- Unreleased changes to fix issues with the notification object
+
 ## 1.9.0
 - Updated to match spec
 
