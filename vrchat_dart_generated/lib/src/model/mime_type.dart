@@ -33,5 +33,8 @@ enum MIMEType {
   @JsonValue(r'application/x-rsync-delta')
   applicationSlashXRsyncDelta,
   @JsonValue(r'application/octet-stream')
-  applicationSlashOctetStream,
+  applicationSlashOctetStream;
+
+  @override
+  String toString() => this.name;
 }

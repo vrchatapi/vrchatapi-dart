@@ -9,5 +9,8 @@ enum LicenseAction {
   @JsonValue(r'wear')
   wear,
   @JsonValue(r'have')
-  have,
+  have;
+
+  @override
+  String toString() => this.name;
 }

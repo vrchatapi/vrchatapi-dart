@@ -9,5 +9,8 @@ enum OrderOption {
   @JsonValue(r'ascending')
   ascending,
   @JsonValue(r'descending')
-  descending,
+  descending;
+
+  @override
+  String toString() => this.name;
 }

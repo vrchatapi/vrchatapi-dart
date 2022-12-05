@@ -28,7 +28,7 @@ Future<void> patchModel() async {
         .replaceAllMapped(
           RegExp(r'enum (.*) {((.|\n)*),\n}'),
           (match) =>
-              'enum ${match.group(1)} {${match.group(2)};\n$_enumToString}',
+              'enum ${match.group(1)} {${match.group(2)};\n\n$_enumToString}',
         );
 
     file.writeAsStringSync(content);

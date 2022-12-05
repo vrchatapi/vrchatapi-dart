@@ -9,5 +9,8 @@ enum GroupPrivacy {
   @JsonValue(r'default')
   default_,
   @JsonValue(r'private')
-  private,
+  private;
+
+  @override
+  String toString() => this.name;
 }

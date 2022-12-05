@@ -11,5 +11,8 @@ enum FavoriteType {
   @JsonValue(r'friend')
   friend,
   @JsonValue(r'avatar')
-  avatar,
+  avatar;
+
+  @override
+  String toString() => this.name;
 }

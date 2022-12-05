@@ -13,5 +13,8 @@ enum GroupRoleTemplate {
   @JsonValue(r'managedInvite')
   managedInvite,
   @JsonValue(r'managedRequest')
-  managedRequest,
+  managedRequest;
+
+  @override
+  String toString() => this.name;
 }

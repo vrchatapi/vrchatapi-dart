@@ -11,5 +11,8 @@ enum GroupUserVisibility {
   @JsonValue(r'hidden')
   hidden,
   @JsonValue(r'friends')
-  friends,
+  friends;
+
+  @override
+  String toString() => this.name;
 }

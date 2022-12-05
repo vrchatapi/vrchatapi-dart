@@ -11,5 +11,8 @@ enum FavoriteGroupVisibility {
   @JsonValue(r'friends')
   friends,
   @JsonValue(r'public')
-  public,
+  public;
+
+  @override
+  String toString() => this.name;
 }

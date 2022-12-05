@@ -21,5 +21,8 @@ enum InviteMessageType {
 
   ///
   @JsonValue(r'requestResponse')
-  requestResponse,
+  requestResponse;
+
+  @override
+  String toString() => this.name;
 }

@@ -15,5 +15,8 @@ enum SubscriptionPeriod {
   @JsonValue(r'month')
   month,
   @JsonValue(r'year')
-  year,
+  year;
+
+  @override
+  String toString() => this.name;
 }

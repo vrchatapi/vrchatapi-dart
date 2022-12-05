@@ -13,5 +13,8 @@ enum FileStatus {
   @JsonValue(r'none')
   none,
   @JsonValue(r'queued')
-  queued,
+  queued;
+
+  @override
+  String toString() => this.name;
 }

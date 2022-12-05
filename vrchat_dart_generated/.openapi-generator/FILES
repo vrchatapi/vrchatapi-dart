@@ -275,7 +275,6 @@ lib/src/model/world.dart
 lib/src/model/world_metadata.dart
 lib/src/model/world_publish_status.dart
 lib/vrchat_dart_generated.dart
-pubspec.yaml
 test/add_favorite_request_test.dart
 test/add_group_gallery_image_request_test.dart
 test/api_config_announcement_test.dart

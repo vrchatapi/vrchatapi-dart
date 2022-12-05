@@ -13,5 +13,8 @@ enum GroupMemberStatus {
   @JsonValue(r'requested')
   requested,
   @JsonValue(r'invited')
-  invited,
+  invited;
+
+  @override
+  String toString() => this.name;
 }

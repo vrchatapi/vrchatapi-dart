@@ -41,5 +41,8 @@ enum SortOption {
   @JsonValue(r'magic')
   magic,
   @JsonValue(r'name')
-  name,
+  name;
+
+  @override
+  String toString() => this.name;
 }

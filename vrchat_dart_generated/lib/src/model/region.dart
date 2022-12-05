@@ -29,5 +29,8 @@ enum Region {
 
   /// API/Photon region.
   @JsonValue(r'unknown')
-  unknown,
+  unknown;
+
+  @override
+  String toString() => this.name;
 }

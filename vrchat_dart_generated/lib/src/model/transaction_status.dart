@@ -13,5 +13,8 @@ enum TransactionStatus {
   @JsonValue(r'expired')
   expired,
   @JsonValue(r'chargeback')
-  chargeback,
+  chargeback;
+
+  @override
+  String toString() => this.name;
 }

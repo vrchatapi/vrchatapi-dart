@@ -11,5 +11,8 @@ enum ReleaseStatus {
   @JsonValue(r'private')
   private,
   @JsonValue(r'hidden')
-  hidden,
+  hidden;
+
+  @override
+  String toString() => this.name;
 }

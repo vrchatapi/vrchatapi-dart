@@ -17,5 +17,8 @@ enum NotificationType {
   @JsonValue(r'requestInviteResponse')
   requestInviteResponse,
   @JsonValue(r'votetokick')
-  votetokick,
+  votetokick;
+
+  @override
+  String toString() => this.name;
 }

@@ -17,5 +17,8 @@ enum PlayerModerationType {
   @JsonValue(r'interactOn')
   interactOn,
   @JsonValue(r'interactOff')
-  interactOff,
+  interactOff;
+
+  @override
+  String toString() => this.name;
 }

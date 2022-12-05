@@ -13,5 +13,8 @@ enum LicenseType {
   @JsonValue(r'permission')
   permission,
   @JsonValue(r'product')
-  product,
+  product;
+
+  @override
+  String toString() => this.name;
 }

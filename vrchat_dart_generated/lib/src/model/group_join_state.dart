@@ -13,5 +13,8 @@ enum GroupJoinState {
   @JsonValue(r'request')
   request,
   @JsonValue(r'open')
-  open,
+  open;
+
+  @override
+  String toString() => this.name;
 }

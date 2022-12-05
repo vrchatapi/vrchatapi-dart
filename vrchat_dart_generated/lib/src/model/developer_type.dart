@@ -21,5 +21,8 @@ enum DeveloperType {
 
   /// \"none\" User is a normal user \"trusted\" Unknown \"internal\" Is a VRChat Developer \"moderator\" Is a VRChat Moderator  Staff can hide their developerType at will.
   @JsonValue(r'moderator')
-  moderator,
+  moderator;
+
+  @override
+  String toString() => this.name;
 }

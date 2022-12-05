@@ -87,5 +87,8 @@ enum FileDataCategoryEnum {
   @JsonValue(r'queued')
   queued,
   @JsonValue(r'simple')
-  simple,
+  simple;
+
+  @override
+  String toString() => this.name;
 }

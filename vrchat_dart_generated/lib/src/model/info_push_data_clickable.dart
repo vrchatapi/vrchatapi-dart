@@ -56,5 +56,8 @@ enum InfoPushDataClickableCommandEnum {
   @JsonValue(r'OpenSafetyMenu')
   openSafetyMenu,
   @JsonValue(r'CannedWorldSearch')
-  cannedWorldSearch,
+  cannedWorldSearch;
+
+  @override
+  String toString() => this.name;
 }

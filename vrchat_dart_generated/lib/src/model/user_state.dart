@@ -17,5 +17,8 @@ enum UserState {
 
   /// * \"online\" User is online in VRChat * \"active\" User is online, but not in VRChat * \"offline\" User is offline  Always offline when returned through `getCurrentUser` (/auth/user).
   @JsonValue(r'online')
-  online,
+  online;
+
+  @override
+  String toString() => this.name;
 }
