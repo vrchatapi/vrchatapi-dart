@@ -12,6 +12,9 @@ import 'package:dio/dio.dart';
 import 'package:vrchat_dart_generated/src/model/create_world_request.dart';
 import 'package:vrchat_dart_generated/src/model/instance.dart';
 import 'package:vrchat_dart_generated/src/model/limited_world.dart';
+import 'package:vrchat_dart_generated/src/model/order_option.dart';
+import 'package:vrchat_dart_generated/src/model/release_status.dart';
+import 'package:vrchat_dart_generated/src/model/sort_option.dart';
 import 'package:vrchat_dart_generated/src/model/update_world_request.dart';
 import 'package:vrchat_dart_generated/src/model/world.dart';
 import 'package:vrchat_dart_generated/src/model/world_metadata.dart';
@@ -113,7 +116,7 @@ class WorldsApi {
   /// Delete a world. Notice a world is never fully \&quot;deleted\&quot;, only its ReleaseStatus is set to \&quot;hidden\&quot; and the linked Files are deleted. The WorldID is permanently reserved.
   ///
   /// Parameters:
-  /// * [worldId]
+  /// * [worldId] - Must be a valid world ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -175,9 +178,9 @@ class WorldsApi {
   ///
   /// Parameters:
   /// * [featured] - Filters on featured results.
-  /// * [sort]
+  /// * [sort] - The sort order of the results.
   /// * [n] - The number of objects to return.
-  /// * [order]
+  /// * [order] - Result ordering
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [search] - Filters by world name.
   /// * [tag] - Tags to include (comma-separated). Any of the tags needs to be present.
@@ -197,14 +200,14 @@ class WorldsApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<List<LimitedWorld>>> getActiveWorlds({
     bool? featured,
-    String? sort = 'popularity',
+    SortOption? sort,
     int? n = 60,
-    String? order = 'descending',
+    OrderOption? order,
     int? offset,
     String? search,
     String? tag,
     String? notag,
-    String? releaseStatus = 'public',
+    ReleaseStatus? releaseStatus,
     String? maxUnityVersion,
     String? minUnityVersion,
     String? platform,
@@ -297,9 +300,9 @@ class WorldsApi {
   ///
   /// Parameters:
   /// * [featured] - Filters on featured results.
-  /// * [sort]
+  /// * [sort] - The sort order of the results.
   /// * [n] - The number of objects to return.
-  /// * [order]
+  /// * [order] - Result ordering
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [search] - Filters by world name.
   /// * [tag] - Tags to include (comma-separated). Any of the tags needs to be present.
@@ -320,14 +323,14 @@ class WorldsApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<List<LimitedWorld>>> getFavoritedWorlds({
     bool? featured,
-    String? sort = 'popularity',
+    SortOption? sort,
     int? n = 60,
-    String? order = 'descending',
+    OrderOption? order,
     int? offset,
     String? search,
     String? tag,
     String? notag,
-    String? releaseStatus = 'public',
+    ReleaseStatus? releaseStatus,
     String? maxUnityVersion,
     String? minUnityVersion,
     String? platform,
@@ -422,9 +425,9 @@ class WorldsApi {
   ///
   /// Parameters:
   /// * [featured] - Filters on featured results.
-  /// * [sort]
+  /// * [sort] - The sort order of the results.
   /// * [n] - The number of objects to return.
-  /// * [order]
+  /// * [order] - Result ordering
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [search] - Filters by world name.
   /// * [tag] - Tags to include (comma-separated). Any of the tags needs to be present.
@@ -445,14 +448,14 @@ class WorldsApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<List<LimitedWorld>>> getRecentWorlds({
     bool? featured,
-    String? sort = 'popularity',
+    SortOption? sort,
     int? n = 60,
-    String? order = 'descending',
+    OrderOption? order,
     int? offset,
     String? search,
     String? tag,
     String? notag,
-    String? releaseStatus = 'public',
+    ReleaseStatus? releaseStatus,
     String? maxUnityVersion,
     String? minUnityVersion,
     String? platform,
@@ -546,7 +549,7 @@ class WorldsApi {
   /// Get information about a specific World. Works unauthenticated but when so will always return &#x60;0&#x60; for certain fields.
   ///
   /// Parameters:
-  /// * [worldId]
+  /// * [worldId] - Must be a valid world ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -624,8 +627,8 @@ class WorldsApi {
   /// Returns a worlds instance.
   ///
   /// Parameters:
-  /// * [worldId]
-  /// * [instanceId]
+  /// * [worldId] - Must be a valid world ID.
+  /// * [instanceId] - Must be a valid instance ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -712,7 +715,7 @@ class WorldsApi {
   /// Return a worlds custom metadata. This is currently believed to be unused. Metadata can be set with &#x60;updateWorld&#x60; and can be any arbitrary object.
   ///
   /// Parameters:
-  /// * [worldId]
+  /// * [worldId] - Must be a valid world ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -798,7 +801,7 @@ class WorldsApi {
   /// Returns a worlds publish status.
   ///
   /// Parameters:
-  /// * [worldId]
+  /// * [worldId] - Must be a valid world ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -883,7 +886,7 @@ class WorldsApi {
   /// Publish a world. You can only publish one world per week.
   ///
   /// Parameters:
-  /// * [worldId]
+  /// * [worldId] - Must be a valid world ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -945,11 +948,11 @@ class WorldsApi {
   ///
   /// Parameters:
   /// * [featured] - Filters on featured results.
-  /// * [sort]
+  /// * [sort] - The sort order of the results.
   /// * [user] - Set to `me` for searching own worlds.
   /// * [userId] - Filter by UserID.
   /// * [n] - The number of objects to return.
-  /// * [order]
+  /// * [order] - Result ordering
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [search] - Filters by world name.
   /// * [tag] - Tags to include (comma-separated). Any of the tags needs to be present.
@@ -969,16 +972,16 @@ class WorldsApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<List<LimitedWorld>>> searchWorlds({
     bool? featured,
-    String? sort = 'popularity',
+    SortOption? sort,
     String? user,
     String? userId,
     int? n = 60,
-    String? order = 'descending',
+    OrderOption? order,
     int? offset,
     String? search,
     String? tag,
     String? notag,
-    String? releaseStatus = 'public',
+    ReleaseStatus? releaseStatus,
     String? maxUnityVersion,
     String? minUnityVersion,
     String? platform,
@@ -1072,7 +1075,7 @@ class WorldsApi {
   /// Unpublish a world.
   ///
   /// Parameters:
-  /// * [worldId]
+  /// * [worldId] - Must be a valid world ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1133,7 +1136,7 @@ class WorldsApi {
   /// Update information about a specific World.
   ///
   /// Parameters:
-  /// * [worldId]
+  /// * [worldId] - Must be a valid world ID.
   /// * [updateWorldRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request

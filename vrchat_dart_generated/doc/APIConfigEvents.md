@@ -1,4 +1,4 @@
-# vrchat_dart_generated.model.APIEventConfig
+# vrchat_dart_generated.model.APIConfigEvents
 
 ## Load the model package
 ```dart

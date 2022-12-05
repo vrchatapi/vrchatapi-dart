@@ -80,7 +80,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getPermissionsApi();
-final String permissionId = permissionId_example; // String | 
+final String permissionId = permissionId_example; // String | Must be a valid permission ID.
 
 try {
     final response = api.getPermission(permissionId);
@@ -94,7 +94,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **permissionId** | **String**|  | 
+ **permissionId** | **String**| Must be a valid permission ID. | 
 
 ### Return type
 

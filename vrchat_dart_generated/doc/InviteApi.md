@@ -39,9 +39,9 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getInviteApi();
-final String userId = userId_example; // String | 
-final String messageType = messageType_example; // String | 
-final int slot = 56; // int | 
+final String userId = userId_example; // String | Must be a valid user ID.
+final InviteMessageType messageType = ; // InviteMessageType | The type of message to fetch, must be a valid InviteMessageType.
+final int slot = 56; // int | The message slot to fetch of a given message type.
 
 try {
     final response = api.getInviteMessage(userId, messageType, slot);
@@ -55,9 +55,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **String**|  | 
- **messageType** | **String**|  | 
- **slot** | **int**|  | 
+ **userId** | **String**| Must be a valid user ID. | 
+ **messageType** | [**InviteMessageType**](.md)| The type of message to fetch, must be a valid InviteMessageType. | 
+ **slot** | **int**| The message slot to fetch of a given message type. | 
 
 ### Return type
 
@@ -94,8 +94,8 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getInviteApi();
-final String userId = userId_example; // String | 
-final String messageType = messageType_example; // String | 
+final String userId = userId_example; // String | Must be a valid user ID.
+final InviteMessageType messageType = ; // InviteMessageType | The type of message to fetch, must be a valid InviteMessageType.
 
 try {
     final response = api.getInviteMessages(userId, messageType);
@@ -109,8 +109,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **String**|  | 
- **messageType** | **String**|  | 
+ **userId** | **String**| Must be a valid user ID. | 
+ **messageType** | [**InviteMessageType**](.md)| The type of message to fetch, must be a valid InviteMessageType. | 
 
 ### Return type
 
@@ -147,8 +147,8 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getInviteApi();
-final String worldId = worldId_example; // String | 
-final String instanceId = instanceId_example; // String | 
+final String worldId = worldId_example; // String | Must be a valid world ID.
+final String instanceId = instanceId_example; // String | Must be a valid instance ID.
 
 try {
     final response = api.inviteMyselfTo(worldId, instanceId);
@@ -162,8 +162,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **worldId** | **String**|  | 
- **instanceId** | **String**|  | 
+ **worldId** | **String**| Must be a valid world ID. | 
+ **instanceId** | **String**| Must be a valid instance ID. | 
 
 ### Return type
 
@@ -200,7 +200,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getInviteApi();
-final String userId = userId_example; // String | 
+final String userId = userId_example; // String | Must be a valid user ID.
 final InviteRequest inviteRequest = ; // InviteRequest | Slot number of the Invite Message to use when inviting a user.
 
 try {
@@ -215,7 +215,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **String**|  | 
+ **userId** | **String**| Must be a valid user ID. | 
  **inviteRequest** | [**InviteRequest**](InviteRequest.md)| Slot number of the Invite Message to use when inviting a user. | [optional] 
 
 ### Return type
@@ -253,7 +253,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getInviteApi();
-final String userId = userId_example; // String | 
+final String userId = userId_example; // String | Must be a valid user ID.
 final RequestInviteRequest requestInviteRequest = ; // RequestInviteRequest | Slot number of the Request Message to use when request an invite.
 
 try {
@@ -268,7 +268,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **String**|  | 
+ **userId** | **String**| Must be a valid user ID. | 
  **requestInviteRequest** | [**RequestInviteRequest**](RequestInviteRequest.md)| Slot number of the Request Message to use when request an invite. | [optional] 
 
 ### Return type
@@ -306,9 +306,9 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getInviteApi();
-final String userId = userId_example; // String | 
-final String messageType = messageType_example; // String | 
-final int slot = 56; // int | 
+final String userId = userId_example; // String | Must be a valid user ID.
+final InviteMessageType messageType = ; // InviteMessageType | The type of message to fetch, must be a valid InviteMessageType.
+final int slot = 56; // int | The message slot to fetch of a given message type.
 
 try {
     final response = api.resetInviteMessage(userId, messageType, slot);
@@ -322,9 +322,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **String**|  | 
- **messageType** | **String**|  | 
- **slot** | **int**|  | 
+ **userId** | **String**| Must be a valid user ID. | 
+ **messageType** | [**InviteMessageType**](.md)| The type of message to fetch, must be a valid InviteMessageType. | 
+ **slot** | **int**| The message slot to fetch of a given message type. | 
 
 ### Return type
 
@@ -361,7 +361,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getInviteApi();
-final String notificationId = notificationId_example; // String | 
+final String notificationId = notificationId_example; // String | Must be a valid notification ID.
 final InviteResponse inviteResponse = ; // InviteResponse | Slot number of the Response Message to use when responding to a user.
 
 try {
@@ -376,7 +376,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notificationId** | **String**|  | 
+ **notificationId** | **String**| Must be a valid notification ID. | 
  **inviteResponse** | [**InviteResponse**](InviteResponse.md)| Slot number of the Response Message to use when responding to a user. | [optional] 
 
 ### Return type
@@ -414,9 +414,9 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getInviteApi();
-final String userId = userId_example; // String | 
-final String messageType = messageType_example; // String | 
-final int slot = 56; // int | 
+final String userId = userId_example; // String | Must be a valid user ID.
+final InviteMessageType messageType = ; // InviteMessageType | The type of message to fetch, must be a valid InviteMessageType.
+final int slot = 56; // int | The message slot to fetch of a given message type.
 final UpdateInviteMessageRequest updateInviteMessageRequest = ; // UpdateInviteMessageRequest | Message of what to set the invite message to.
 
 try {
@@ -431,9 +431,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **String**|  | 
- **messageType** | **String**|  | 
- **slot** | **int**|  | 
+ **userId** | **String**| Must be a valid user ID. | 
+ **messageType** | [**InviteMessageType**](.md)| The type of message to fetch, must be a valid InviteMessageType. | 
+ **slot** | **int**| The message slot to fetch of a given message type. | 
  **updateInviteMessageRequest** | [**UpdateInviteMessageRequest**](UpdateInviteMessageRequest.md)| Message of what to set the invite message to. | [optional] 
 
 ### Return type

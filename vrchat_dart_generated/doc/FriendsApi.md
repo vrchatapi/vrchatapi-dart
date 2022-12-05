@@ -36,7 +36,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFriendsApi();
-final String userId = userId_example; // String | 
+final String userId = userId_example; // String | Must be a valid user ID.
 
 try {
     final response = api.deleteFriendRequest(userId);
@@ -50,7 +50,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **String**|  | 
+ **userId** | **String**| Must be a valid user ID. | 
 
 ### Return type
 
@@ -87,7 +87,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFriendsApi();
-final String userId = userId_example; // String | 
+final String userId = userId_example; // String | Must be a valid user ID.
 
 try {
     final response = api.friend(userId);
@@ -101,7 +101,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **String**|  | 
+ **userId** | **String**| Must be a valid user ID. | 
 
 ### Return type
 
@@ -138,7 +138,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFriendsApi();
-final String userId = userId_example; // String | 
+final String userId = userId_example; // String | Must be a valid user ID.
 
 try {
     final response = api.getFriendStatus(userId);
@@ -152,7 +152,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **String**|  | 
+ **userId** | **String**| Must be a valid user ID. | 
 
 ### Return type
 
@@ -244,7 +244,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFriendsApi();
-final String userId = userId_example; // String | 
+final String userId = userId_example; // String | Must be a valid user ID.
 
 try {
     final response = api.unfriend(userId);
@@ -258,7 +258,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **String**|  | 
+ **userId** | **String**| Must be a valid user ID. | 
 
 ### Return type
 

@@ -5,7 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:json_annotation/json_annotation.dart';
 
-part 'download_url_list.g.dart';
+part 'api_config_download_url_list.g.dart';
 
 @JsonSerializable(
   checked: true,
@@ -13,9 +13,9 @@ part 'download_url_list.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class DownloadURLList {
-  /// Returns a new [DownloadURLList] instance.
-  DownloadURLList({
+class APIConfigDownloadURLList {
+  /// Returns a new [APIConfigDownloadURLList] instance.
+  APIConfigDownloadURLList({
     required this.sdk2,
     required this.sdk3Avatars,
     required this.sdk3Worlds,
@@ -36,7 +36,7 @@ class DownloadURLList {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is DownloadURLList &&
+      other is APIConfigDownloadURLList &&
           other.sdk2 == sdk2 &&
           other.sdk3Avatars == sdk3Avatars &&
           other.sdk3Worlds == sdk3Worlds;
@@ -45,10 +45,10 @@ class DownloadURLList {
   int get hashCode =>
       sdk2.hashCode + sdk3Avatars.hashCode + sdk3Worlds.hashCode;
 
-  factory DownloadURLList.fromJson(Map<String, dynamic> json) =>
-      _$DownloadURLListFromJson(json);
+  factory APIConfigDownloadURLList.fromJson(Map<String, dynamic> json) =>
+      _$APIConfigDownloadURLListFromJson(json);
 
-  Map<String, dynamic> toJson() => _$DownloadURLListToJson(this);
+  Map<String, dynamic> toJson() => _$APIConfigDownloadURLListToJson(this);
 
   @override
   String toString() {

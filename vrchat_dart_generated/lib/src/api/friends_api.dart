@@ -23,7 +23,7 @@ class FriendsApi {
   /// Deletes an outgoing pending friend request to another user. To delete an incoming friend request, use the &#x60;deleteNotification&#x60; endpoint instead.
   ///
   /// Parameters:
-  /// * [userId]
+  /// * [userId] - Must be a valid user ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -107,7 +107,7 @@ class FriendsApi {
   /// Send a friend request to another user.
   ///
   /// Parameters:
-  /// * [userId]
+  /// * [userId] - Must be a valid user ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -192,7 +192,7 @@ class FriendsApi {
   /// Retrieve if the user is currently a friend with a given user, if they have an outgoing friend request, and if they have an incoming friend request. The proper way to receive and accept friend request is by checking if the user has an incoming &#x60;Notification&#x60; of type &#x60;friendRequest&#x60;, and then accepting that notification.
   ///
   /// Parameters:
-  /// * [userId]
+  /// * [userId] - Must be a valid user ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -372,7 +372,7 @@ class FriendsApi {
   /// Unfriend a user by ID.
   ///
   /// Parameters:
-  /// * [userId]
+  /// * [userId] - Must be a valid user ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request

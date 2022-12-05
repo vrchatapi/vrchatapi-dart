@@ -102,7 +102,7 @@ class PermissionsApi {
   /// Returns a single permission. This endpoint is pretty useless, as it returns the exact same information as &#x60;/auth/permissions&#x60;.
   ///
   /// Parameters:
-  /// * [permissionId]
+  /// * [permissionId] - Must be a valid permission ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request

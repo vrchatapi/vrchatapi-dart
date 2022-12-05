@@ -103,7 +103,7 @@ class PlayermoderationApi {
   /// Deletes a specific player moderation based on it&#39;s &#x60;pmod_&#x60; ID. The website uses &#x60;unmoderateUser&#x60; instead. You can delete the same player moderation multiple times successfully.
   ///
   /// Parameters:
-  /// * [playerModerationId]
+  /// * [playerModerationId] - Must be a valid `pmod_` ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -188,7 +188,7 @@ class PlayermoderationApi {
   /// Returns a single Player Moderation. This returns the exact same amount of information as the more generalised &#x60;getPlayerModerations&#x60;.
   ///
   /// Parameters:
-  /// * [playerModerationId]
+  /// * [playerModerationId] - Must be a valid `pmod_` ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request

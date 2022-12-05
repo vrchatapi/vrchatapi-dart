@@ -1,21 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'download_url_list.dart';
+part of 'api_config_download_url_list.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-DownloadURLList _$DownloadURLListFromJson(Map<String, dynamic> json) =>
+APIConfigDownloadURLList _$APIConfigDownloadURLListFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      'DownloadURLList',
+      'APIConfigDownloadURLList',
       json,
       ($checkedConvert) {
         $checkKeys(
           json,
           requiredKeys: const ['sdk2', 'sdk3-avatars', 'sdk3-worlds'],
         );
-        final val = DownloadURLList(
+        final val = APIConfigDownloadURLList(
           sdk2: $checkedConvert('sdk2', (v) => v as String),
           sdk3Avatars: $checkedConvert('sdk3-avatars', (v) => v as String),
           sdk3Worlds: $checkedConvert('sdk3-worlds', (v) => v as String),
@@ -28,7 +29,8 @@ DownloadURLList _$DownloadURLListFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$DownloadURLListToJson(DownloadURLList instance) =>
+Map<String, dynamic> _$APIConfigDownloadURLListToJson(
+        APIConfigDownloadURLList instance) =>
     <String, dynamic>{
       'sdk2': instance.sdk2,
       'sdk3-avatars': instance.sdk3Avatars,

@@ -126,7 +126,7 @@ class FilesApi {
   /// Creates a new FileVersion. Once a Version has been created, proceed to the &#x60;/file/{fileId}/{versionId}/file/start&#x60; endpoint to start a file upload.
   ///
   /// Parameters:
-  /// * [fileId]
+  /// * [fileId] - Must be a valid file ID.
   /// * [createFileVersionRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -229,7 +229,7 @@ class FilesApi {
   /// Deletes a File object.
   ///
   /// Parameters:
-  /// * [fileId]
+  /// * [fileId] - Must be a valid file ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -313,8 +313,8 @@ class FilesApi {
   /// Delete a specific version of a file. You can only delete the latest version.
   ///
   /// Parameters:
-  /// * [fileId]
-  /// * [versionId]
+  /// * [fileId] - Must be a valid file ID.
+  /// * [versionId] - Version ID of the asset.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -400,8 +400,8 @@ class FilesApi {
   /// Downloads the file with the provided version number.  **Version Note:** Version 0 is always when the file was created. The real data is usually always located in version 1 and up.  **Extension Note:** Files are not guaranteed to have a file extensions. UnityPackage files tends to have it, images through this endpoint do not. You are responsible for appending file extension from the &#x60;extension&#x60; field when neccesary.
   ///
   /// Parameters:
-  /// * [fileId]
-  /// * [versionId]
+  /// * [fileId] - Must be a valid file ID.
+  /// * [versionId] - Version ID of the asset.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -464,9 +464,9 @@ class FilesApi {
   /// Finish an upload of a FileData. This will mark it as \&quot;complete\&quot;. After uploading the &#x60;file&#x60; for Avatars and Worlds you then have to upload a &#x60;signature&#x60; file.
   ///
   /// Parameters:
-  /// * [fileId]
-  /// * [versionId]
-  /// * [fileType]
+  /// * [fileId] - Must be a valid file ID.
+  /// * [versionId] - Version ID of the asset.
+  /// * [fileType] - Type of file.
   /// * [finishFileDataUploadRequest] - Please see documentation on ETag's: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag's should NOT be present when uploading a `signature`.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -573,7 +573,7 @@ class FilesApi {
   /// Shows general information about the \&quot;File\&quot; object. Each File can have several \&quot;Version\&quot;&#39;s, and each Version can have multiple real files or \&quot;Data\&quot; blobs.
   ///
   /// Parameters:
-  /// * [fileId]
+  /// * [fileId] - Must be a valid file ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -657,9 +657,9 @@ class FilesApi {
   /// Retrieves the upload status for file upload. Can currently only be accessed when &#x60;status&#x60; is &#x60;waiting&#x60;. Trying to access it on a file version already uploaded currently times out.
   ///
   /// Parameters:
-  /// * [fileId]
-  /// * [versionId]
-  /// * [fileType]
+  /// * [fileId] - Must be a valid file ID.
+  /// * [versionId] - Version ID of the asset.
+  /// * [fileType] - Type of file.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -847,10 +847,10 @@ class FilesApi {
   /// Starts an upload of a specific FilePart. This endpoint will return an AWS URL which you can PUT data to. You need to call this and receive a new AWS API URL for each &#x60;partNumber&#x60;. Please see AWS&#39;s REST documentation on \&quot;PUT Object to S3\&quot; on how to upload. Once all parts has been uploaded, proceed to &#x60;/finish&#x60; endpoint.  **Note:** &#x60;nextPartNumber&#x60; seems like it is always ignored. Despite it returning 0, first partNumber is always 1.
   ///
   /// Parameters:
-  /// * [fileId]
-  /// * [versionId]
-  /// * [fileType]
-  /// * [partNumber]
+  /// * [fileId] - Must be a valid file ID.
+  /// * [versionId] - Version ID of the asset.
+  /// * [fileType] - Type of file.
+  /// * [partNumber] - The part number to start uploading. If not provided, the first part will be started.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request

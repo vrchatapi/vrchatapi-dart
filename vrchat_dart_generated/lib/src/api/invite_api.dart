@@ -10,6 +10,7 @@ import 'package:vrchat_dart_generated/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:vrchat_dart_generated/src/model/invite_message.dart';
+import 'package:vrchat_dart_generated/src/model/invite_message_type.dart';
 import 'package:vrchat_dart_generated/src/model/invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/invite_response.dart';
 import 'package:vrchat_dart_generated/src/model/notification.dart';
@@ -26,9 +27,9 @@ class InviteApi {
   /// Returns a single Invite Message. This returns the exact same information but less than &#x60;getInviteMessages&#x60;. Admin Credentials are required to view messages of other users!  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
   ///
   /// Parameters:
-  /// * [userId]
-  /// * [messageType]
-  /// * [slot]
+  /// * [userId] - Must be a valid user ID.
+  /// * [messageType] - The type of message to fetch, must be a valid InviteMessageType.
+  /// * [slot] - The message slot to fetch of a given message type.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -40,7 +41,7 @@ class InviteApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<InviteMessage>> getInviteMessage({
     required String userId,
-    required String messageType,
+    required InviteMessageType messageType,
     required int slot,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -117,8 +118,8 @@ class InviteApi {
   /// Returns a list of all the users Invite Messages. Admin Credentials are required to view messages of other users!  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
   ///
   /// Parameters:
-  /// * [userId]
-  /// * [messageType]
+  /// * [userId] - Must be a valid user ID.
+  /// * [messageType] - The type of message to fetch, must be a valid InviteMessageType.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -130,7 +131,7 @@ class InviteApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<List<InviteMessage>>> getInviteMessages({
     required String userId,
-    required String messageType,
+    required InviteMessageType messageType,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -205,8 +206,8 @@ class InviteApi {
   /// Sends self an invite to an instance
   ///
   /// Parameters:
-  /// * [worldId]
-  /// * [instanceId]
+  /// * [worldId] - Must be a valid world ID.
+  /// * [instanceId] - Must be a valid instance ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -293,7 +294,7 @@ class InviteApi {
   /// Sends an invite to a user. Returns the Notification of type &#x60;invite&#x60; that was sent.
   ///
   /// Parameters:
-  /// * [userId]
+  /// * [userId] - Must be a valid user ID.
   /// * [inviteRequest] - Slot number of the Invite Message to use when inviting a user.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -397,7 +398,7 @@ class InviteApi {
   /// Requests an invite from a user. Returns the Notification of type &#x60;requestInvite&#x60; that was sent.
   ///
   /// Parameters:
-  /// * [userId]
+  /// * [userId] - Must be a valid user ID.
   /// * [requestInviteRequest] - Slot number of the Request Message to use when request an invite.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -501,9 +502,9 @@ class InviteApi {
   /// Resets a single Invite Message back to its original message, and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Resetting a message respects the rate-limit, so it is not possible to reset within the 60 minutes countdown. Resetting it does however not set the rate-limit to 60 like when editing it. It is possible to edit it right after resetting it. Trying to edit a message before the cooldown timer expires results in a 429 \&quot;Too Fast Error\&quot;.  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite  The DELETE endpoint does not have/require any request body.
   ///
   /// Parameters:
-  /// * [userId]
-  /// * [messageType]
-  /// * [slot]
+  /// * [userId] - Must be a valid user ID.
+  /// * [messageType] - The type of message to fetch, must be a valid InviteMessageType.
+  /// * [slot] - The message slot to fetch of a given message type.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -515,7 +516,7 @@ class InviteApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<List<InviteMessage>>> resetInviteMessage({
     required String userId,
-    required String messageType,
+    required InviteMessageType messageType,
     required int slot,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -592,7 +593,7 @@ class InviteApi {
   /// Respond to an invite request by sending a world invite to the requesting user. &#x60;:notificationId&#x60; is the ID of the requesting notification.
   ///
   /// Parameters:
-  /// * [notificationId]
+  /// * [notificationId] - Must be a valid notification ID.
   /// * [inviteResponse] - Slot number of the Response Message to use when responding to a user.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -696,9 +697,9 @@ class InviteApi {
   /// Updates a single Invite Message and then returns a list of all of them. Admin Credentials are required to update messages of other users!  Updating a message automatically sets the cooldown timer to 60 minutes. Trying to edit a message before the cooldown timer expires results in a 429 \&quot;Too Fast Error\&quot;.  Message type refers to a different collection of messages, used during different types of responses.  * &#x60;message&#x60; &#x3D; Message during a normal invite * &#x60;response&#x60; &#x3D; Message when replying to a message * &#x60;request&#x60; &#x3D; Message when requesting an invite * &#x60;requestResponse&#x60; &#x3D; Message when replying to a request for invite
   ///
   /// Parameters:
-  /// * [userId]
-  /// * [messageType]
-  /// * [slot]
+  /// * [userId] - Must be a valid user ID.
+  /// * [messageType] - The type of message to fetch, must be a valid InviteMessageType.
+  /// * [slot] - The message slot to fetch of a given message type.
   /// * [updateInviteMessageRequest] - Message of what to set the invite message to.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -711,7 +712,7 @@ class InviteApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<List<InviteMessage>>> updateInviteMessage({
     required String userId,
-    required String messageType,
+    required InviteMessageType messageType,
     required int slot,
     UpdateInviteMessageRequest? updateInviteMessageRequest,
     CancelToken? cancelToken,

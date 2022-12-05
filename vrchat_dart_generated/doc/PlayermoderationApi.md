@@ -84,7 +84,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getPlayermoderationApi();
-final String playerModerationId = playerModerationId_example; // String | 
+final String playerModerationId = playerModerationId_example; // String | Must be a valid `pmod_` ID.
 
 try {
     final response = api.deletePlayerModeration(playerModerationId);
@@ -98,7 +98,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **playerModerationId** | **String**|  | 
+ **playerModerationId** | **String**| Must be a valid `pmod_` ID. | 
 
 ### Return type
 
@@ -135,7 +135,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getPlayermoderationApi();
-final String playerModerationId = playerModerationId_example; // String | 
+final String playerModerationId = playerModerationId_example; // String | Must be a valid `pmod_` ID.
 
 try {
     final response = api.getPlayerModeration(playerModerationId);
@@ -149,7 +149,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **playerModerationId** | **String**|  | 
+ **playerModerationId** | **String**| Must be a valid `pmod_` ID. | 
 
 ### Return type
 

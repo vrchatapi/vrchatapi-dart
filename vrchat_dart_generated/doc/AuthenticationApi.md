@@ -91,7 +91,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getAuthenticationApi();
-final String userId = userId_example; // String | 
+final String userId = userId_example; // String | Must be a valid user ID.
 
 try {
     final response = api.deleteUser(userId);
@@ -105,7 +105,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **String**|  | 
+ **userId** | **String**| Must be a valid user ID. | 
 
 ### Return type
 

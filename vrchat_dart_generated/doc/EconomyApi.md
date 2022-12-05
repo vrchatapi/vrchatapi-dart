@@ -83,7 +83,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getEconomyApi();
-final String licenseGroupId = licenseGroupId_example; // String | 
+final String licenseGroupId = licenseGroupId_example; // String | Must be a valid license group ID.
 
 try {
     final response = api.getLicenseGroup(licenseGroupId);
@@ -97,7 +97,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **licenseGroupId** | **String**|  | 
+ **licenseGroupId** | **String**| Must be a valid license group ID. | 
 
 ### Return type
 
@@ -134,7 +134,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getEconomyApi();
-final String transactionId = transactionId_example; // String | 
+final String transactionId = transactionId_example; // String | Must be a valid transaction ID.
 
 try {
     final response = api.getSteamTransaction(transactionId);
@@ -148,7 +148,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transactionId** | **String**|  | 
+ **transactionId** | **String**| Must be a valid transaction ID. | 
 
 ### Return type
 

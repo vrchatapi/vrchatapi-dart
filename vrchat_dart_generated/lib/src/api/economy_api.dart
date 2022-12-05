@@ -105,7 +105,7 @@ class EconomyApi {
   /// Get a single License Group by given ID.
   ///
   /// Parameters:
-  /// * [licenseGroupId]
+  /// * [licenseGroupId] - Must be a valid license group ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -190,7 +190,7 @@ class EconomyApi {
   /// Get a single Steam transactions by ID. This returns the exact same information as &#x60;getSteamTransactions&#x60;, so no point in using this endpoint.
   ///
   /// Parameters:
-  /// * [transactionId]
+  /// * [transactionId] - Must be a valid transaction ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request

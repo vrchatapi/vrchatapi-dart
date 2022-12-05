@@ -31,7 +31,7 @@ class Notification {
   @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
 
-  /// **NOTICE:** This is not a JSON object when returned from the REST API, but it is when received from the Websocket API. When returned from the REST API, this is a json **encoded** object, meaning you have to json-de-encode to get the NotificationDetail object depending on the NotificationType.
+  /// **NOTICE:** This is not a JSON object when received from the REST API, but it is when received from the Websocket API. When received from the REST API, this is a json **encoded** object, meaning you have to json-de-encode to get the NotificationDetail object depending on the NotificationType.
   @JsonKey(name: r'details', required: true, includeIfNull: false)
   final String details;
 

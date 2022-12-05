@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_event_config.dart';
+part of 'api_config_events.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-APIEventConfig _$APIEventConfigFromJson(Map<String, dynamic> json) =>
+APIConfigEvents _$APIConfigEventsFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      'APIEventConfig',
+      'APIConfigEvents',
       json,
       ($checkedConvert) {
         $checkKeys(
@@ -26,7 +26,7 @@ APIEventConfig _$APIEventConfigFromJson(Map<String, dynamic> json) =>
             'viewSegmentLength'
           ],
         );
-        final val = APIEventConfig(
+        final val = APIConfigEvents(
           distanceClose: $checkedConvert('distanceClose', (v) => v as int),
           distanceFactor: $checkedConvert('distanceFactor', (v) => v as int),
           distanceFar: $checkedConvert('distanceFar', (v) => v as int),
@@ -48,7 +48,7 @@ APIEventConfig _$APIEventConfigFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$APIEventConfigToJson(APIEventConfig instance) =>
+Map<String, dynamic> _$APIConfigEventsToJson(APIConfigEvents instance) =>
     <String, dynamic>{
       'distanceClose': instance.distanceClose,
       'distanceFactor': instance.distanceFactor,

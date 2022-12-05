@@ -5,7 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:json_annotation/json_annotation.dart';
 
-part 'public_announcement.g.dart';
+part 'api_config_announcement.g.dart';
 
 @JsonSerializable(
   checked: true,
@@ -13,9 +13,9 @@ part 'public_announcement.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class PublicAnnouncement {
-  /// Returns a new [PublicAnnouncement] instance.
-  PublicAnnouncement({
+class APIConfigAnnouncement {
+  /// Returns a new [APIConfigAnnouncement] instance.
+  APIConfigAnnouncement({
     required this.name,
     required this.text,
   });
@@ -31,15 +31,17 @@ class PublicAnnouncement {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is PublicAnnouncement && other.name == name && other.text == text;
+      other is APIConfigAnnouncement &&
+          other.name == name &&
+          other.text == text;
 
   @override
   int get hashCode => name.hashCode + text.hashCode;
 
-  factory PublicAnnouncement.fromJson(Map<String, dynamic> json) =>
-      _$PublicAnnouncementFromJson(json);
+  factory APIConfigAnnouncement.fromJson(Map<String, dynamic> json) =>
+      _$APIConfigAnnouncementFromJson(json);
 
-  Map<String, dynamic> toJson() => _$PublicAnnouncementToJson(this);
+  Map<String, dynamic> toJson() => _$APIConfigAnnouncementToJson(this);
 
   @override
   String toString() {

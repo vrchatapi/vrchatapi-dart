@@ -35,8 +35,8 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getInstancesApi();
-final String worldId = worldId_example; // String | 
-final String instanceId = instanceId_example; // String | 
+final String worldId = worldId_example; // String | Must be a valid world ID.
+final String instanceId = instanceId_example; // String | Must be a valid instance ID.
 
 try {
     final response = api.getInstance(worldId, instanceId);
@@ -50,8 +50,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **worldId** | **String**|  | 
- **instanceId** | **String**|  | 
+ **worldId** | **String**| Must be a valid world ID. | 
+ **instanceId** | **String**| Must be a valid instance ID. | 
 
 ### Return type
 
@@ -88,7 +88,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getInstancesApi();
-final String shortName = shortName_example; // String | 
+final String shortName = shortName_example; // String | Must be a valid instance short name.
 
 try {
     final response = api.getInstanceByShortName(shortName);
@@ -102,7 +102,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shortName** | **String**|  | 
+ **shortName** | **String**| Must be a valid instance short name. | 
 
 ### Return type
 
@@ -139,8 +139,8 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getInstancesApi();
-final String worldId = worldId_example; // String | 
-final String instanceId = instanceId_example; // String | 
+final String worldId = worldId_example; // String | Must be a valid world ID.
+final String instanceId = instanceId_example; // String | Must be a valid instance ID.
 
 try {
     final response = api.getShortName(worldId, instanceId);
@@ -154,8 +154,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **worldId** | **String**|  | 
- **instanceId** | **String**|  | 
+ **worldId** | **String**| Must be a valid world ID. | 
+ **instanceId** | **String**| Must be a valid instance ID. | 
 
 ### Return type
 
@@ -192,8 +192,8 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getInstancesApi();
-final String worldId = worldId_example; // String | 
-final String instanceId = instanceId_example; // String | 
+final String worldId = worldId_example; // String | Must be a valid world ID.
+final String instanceId = instanceId_example; // String | Must be a valid instance ID.
 
 try {
     final response = api.sendSelfInvite(worldId, instanceId);
@@ -207,8 +207,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **worldId** | **String**|  | 
- **instanceId** | **String**|  | 
+ **worldId** | **String**| Must be a valid world ID. | 
+ **instanceId** | **String**| Must be a valid instance ID. | 
 
 ### Return type
 

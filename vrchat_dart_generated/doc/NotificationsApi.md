@@ -36,7 +36,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getNotificationsApi();
-final String notificationId = notificationId_example; // String | 
+final String notificationId = notificationId_example; // String | Must be a valid notification ID.
 
 try {
     final response = api.acceptFriendRequest(notificationId);
@@ -50,7 +50,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notificationId** | **String**|  | 
+ **notificationId** | **String**| Must be a valid notification ID. | 
 
 ### Return type
 
@@ -134,7 +134,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getNotificationsApi();
-final String notificationId = notificationId_example; // String | 
+final String notificationId = notificationId_example; // String | Must be a valid notification ID.
 
 try {
     final response = api.deleteNotification(notificationId);
@@ -148,7 +148,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notificationId** | **String**|  | 
+ **notificationId** | **String**| Must be a valid notification ID. | 
 
 ### Return type
 
@@ -246,7 +246,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getNotificationsApi();
-final String notificationId = notificationId_example; // String | 
+final String notificationId = notificationId_example; // String | Must be a valid notification ID.
 
 try {
     final response = api.markNotificationAsRead(notificationId);
@@ -260,7 +260,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notificationId** | **String**|  | 
+ **notificationId** | **String**| Must be a valid notification ID. | 
 
 ### Return type
 

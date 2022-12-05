@@ -87,7 +87,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
-final String worldId = worldId_example; // String | 
+final String worldId = worldId_example; // String | Must be a valid world ID.
 
 try {
     api.deleteWorld(worldId);
@@ -100,7 +100,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **worldId** | **String**|  | 
+ **worldId** | **String**| Must be a valid world ID. | 
 
 ### Return type
 
@@ -138,14 +138,14 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getWorldsApi();
 final bool featured = true; // bool | Filters on featured results.
-final String sort = popularity; // String | 
+final SortOption sort = ; // SortOption | The sort order of the results.
 final int n = 56; // int | The number of objects to return.
-final String order = descending; // String | 
+final OrderOption order = ; // OrderOption | Result ordering
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final String search = search_example; // String | Filters by world name.
 final String tag = tag_example; // String | Tags to include (comma-separated). Any of the tags needs to be present.
 final String notag = notag_example; // String | Tags to exclude (comma-separated).
-final String releaseStatus = releaseStatus_example; // String | Filter by ReleaseStatus.
+final ReleaseStatus releaseStatus = ; // ReleaseStatus | Filter by ReleaseStatus.
 final String maxUnityVersion = maxUnityVersion_example; // String | The maximum Unity version supported by the asset.
 final String minUnityVersion = minUnityVersion_example; // String | The minimum Unity version supported by the asset.
 final String platform = platform_example; // String | The platform the asset supports.
@@ -163,14 +163,14 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **featured** | **bool**| Filters on featured results. | [optional] 
- **sort** | **String**|  | [optional] [default to 'popularity']
+ **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
- **order** | **String**|  | [optional] [default to 'descending']
+ **order** | [**OrderOption**](.md)| Result ordering | [optional] 
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
  **search** | **String**| Filters by world name. | [optional] 
  **tag** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional] 
  **notag** | **String**| Tags to exclude (comma-separated). | [optional] 
- **releaseStatus** | **String**| Filter by ReleaseStatus. | [optional] [default to 'public']
+ **releaseStatus** | [**ReleaseStatus**](.md)| Filter by ReleaseStatus. | [optional] 
  **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional] 
  **minUnityVersion** | **String**| The minimum Unity version supported by the asset. | [optional] 
  **platform** | **String**| The platform the asset supports. | [optional] 
@@ -211,14 +211,14 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getWorldsApi();
 final bool featured = true; // bool | Filters on featured results.
-final String sort = popularity; // String | 
+final SortOption sort = ; // SortOption | The sort order of the results.
 final int n = 56; // int | The number of objects to return.
-final String order = descending; // String | 
+final OrderOption order = ; // OrderOption | Result ordering
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final String search = search_example; // String | Filters by world name.
 final String tag = tag_example; // String | Tags to include (comma-separated). Any of the tags needs to be present.
 final String notag = notag_example; // String | Tags to exclude (comma-separated).
-final String releaseStatus = releaseStatus_example; // String | Filter by ReleaseStatus.
+final ReleaseStatus releaseStatus = ; // ReleaseStatus | Filter by ReleaseStatus.
 final String maxUnityVersion = maxUnityVersion_example; // String | The maximum Unity version supported by the asset.
 final String minUnityVersion = minUnityVersion_example; // String | The minimum Unity version supported by the asset.
 final String platform = platform_example; // String | The platform the asset supports.
@@ -237,14 +237,14 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **featured** | **bool**| Filters on featured results. | [optional] 
- **sort** | **String**|  | [optional] [default to 'popularity']
+ **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
- **order** | **String**|  | [optional] [default to 'descending']
+ **order** | [**OrderOption**](.md)| Result ordering | [optional] 
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
  **search** | **String**| Filters by world name. | [optional] 
  **tag** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional] 
  **notag** | **String**| Tags to exclude (comma-separated). | [optional] 
- **releaseStatus** | **String**| Filter by ReleaseStatus. | [optional] [default to 'public']
+ **releaseStatus** | [**ReleaseStatus**](.md)| Filter by ReleaseStatus. | [optional] 
  **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional] 
  **minUnityVersion** | **String**| The minimum Unity version supported by the asset. | [optional] 
  **platform** | **String**| The platform the asset supports. | [optional] 
@@ -286,14 +286,14 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getWorldsApi();
 final bool featured = true; // bool | Filters on featured results.
-final String sort = popularity; // String | 
+final SortOption sort = ; // SortOption | The sort order of the results.
 final int n = 56; // int | The number of objects to return.
-final String order = descending; // String | 
+final OrderOption order = ; // OrderOption | Result ordering
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final String search = search_example; // String | Filters by world name.
 final String tag = tag_example; // String | Tags to include (comma-separated). Any of the tags needs to be present.
 final String notag = notag_example; // String | Tags to exclude (comma-separated).
-final String releaseStatus = releaseStatus_example; // String | Filter by ReleaseStatus.
+final ReleaseStatus releaseStatus = ; // ReleaseStatus | Filter by ReleaseStatus.
 final String maxUnityVersion = maxUnityVersion_example; // String | The maximum Unity version supported by the asset.
 final String minUnityVersion = minUnityVersion_example; // String | The minimum Unity version supported by the asset.
 final String platform = platform_example; // String | The platform the asset supports.
@@ -312,14 +312,14 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **featured** | **bool**| Filters on featured results. | [optional] 
- **sort** | **String**|  | [optional] [default to 'popularity']
+ **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
- **order** | **String**|  | [optional] [default to 'descending']
+ **order** | [**OrderOption**](.md)| Result ordering | [optional] 
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
  **search** | **String**| Filters by world name. | [optional] 
  **tag** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional] 
  **notag** | **String**| Tags to exclude (comma-separated). | [optional] 
- **releaseStatus** | **String**| Filter by ReleaseStatus. | [optional] [default to 'public']
+ **releaseStatus** | [**ReleaseStatus**](.md)| Filter by ReleaseStatus. | [optional] 
  **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional] 
  **minUnityVersion** | **String**| The minimum Unity version supported by the asset. | [optional] 
  **platform** | **String**| The platform the asset supports. | [optional] 
@@ -356,7 +356,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
-final String worldId = worldId_example; // String | 
+final String worldId = worldId_example; // String | Must be a valid world ID.
 
 try {
     final response = api.getWorld(worldId);
@@ -370,7 +370,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **worldId** | **String**|  | 
+ **worldId** | **String**| Must be a valid world ID. | 
 
 ### Return type
 
@@ -407,8 +407,8 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
-final String worldId = worldId_example; // String | 
-final String instanceId = instanceId_example; // String | 
+final String worldId = worldId_example; // String | Must be a valid world ID.
+final String instanceId = instanceId_example; // String | Must be a valid instance ID.
 
 try {
     final response = api.getWorldInstance(worldId, instanceId);
@@ -422,8 +422,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **worldId** | **String**|  | 
- **instanceId** | **String**|  | 
+ **worldId** | **String**| Must be a valid world ID. | 
+ **instanceId** | **String**| Must be a valid instance ID. | 
 
 ### Return type
 
@@ -460,7 +460,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
-final String worldId = worldId_example; // String | 
+final String worldId = worldId_example; // String | Must be a valid world ID.
 
 try {
     final response = api.getWorldMetadata(worldId);
@@ -474,7 +474,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **worldId** | **String**|  | 
+ **worldId** | **String**| Must be a valid world ID. | 
 
 ### Return type
 
@@ -511,7 +511,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
-final String worldId = worldId_example; // String | 
+final String worldId = worldId_example; // String | Must be a valid world ID.
 
 try {
     final response = api.getWorldPublishStatus(worldId);
@@ -525,7 +525,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **worldId** | **String**|  | 
+ **worldId** | **String**| Must be a valid world ID. | 
 
 ### Return type
 
@@ -562,7 +562,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
-final String worldId = worldId_example; // String | 
+final String worldId = worldId_example; // String | Must be a valid world ID.
 
 try {
     api.publishWorld(worldId);
@@ -575,7 +575,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **worldId** | **String**|  | 
+ **worldId** | **String**| Must be a valid world ID. | 
 
 ### Return type
 
@@ -613,16 +613,16 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getWorldsApi();
 final bool featured = true; // bool | Filters on featured results.
-final String sort = popularity; // String | 
+final SortOption sort = ; // SortOption | The sort order of the results.
 final String user = user_example; // String | Set to `me` for searching own worlds.
 final String userId = userId_example; // String | Filter by UserID.
 final int n = 56; // int | The number of objects to return.
-final String order = descending; // String | 
+final OrderOption order = ; // OrderOption | Result ordering
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final String search = search_example; // String | Filters by world name.
 final String tag = tag_example; // String | Tags to include (comma-separated). Any of the tags needs to be present.
 final String notag = notag_example; // String | Tags to exclude (comma-separated).
-final String releaseStatus = releaseStatus_example; // String | Filter by ReleaseStatus.
+final ReleaseStatus releaseStatus = ; // ReleaseStatus | Filter by ReleaseStatus.
 final String maxUnityVersion = maxUnityVersion_example; // String | The maximum Unity version supported by the asset.
 final String minUnityVersion = minUnityVersion_example; // String | The minimum Unity version supported by the asset.
 final String platform = platform_example; // String | The platform the asset supports.
@@ -640,16 +640,16 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **featured** | **bool**| Filters on featured results. | [optional] 
- **sort** | **String**|  | [optional] [default to 'popularity']
+ **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] 
  **user** | **String**| Set to `me` for searching own worlds. | [optional] 
  **userId** | **String**| Filter by UserID. | [optional] 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
- **order** | **String**|  | [optional] [default to 'descending']
+ **order** | [**OrderOption**](.md)| Result ordering | [optional] 
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
  **search** | **String**| Filters by world name. | [optional] 
  **tag** | **String**| Tags to include (comma-separated). Any of the tags needs to be present. | [optional] 
  **notag** | **String**| Tags to exclude (comma-separated). | [optional] 
- **releaseStatus** | **String**| Filter by ReleaseStatus. | [optional] [default to 'public']
+ **releaseStatus** | [**ReleaseStatus**](.md)| Filter by ReleaseStatus. | [optional] 
  **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional] 
  **minUnityVersion** | **String**| The minimum Unity version supported by the asset. | [optional] 
  **platform** | **String**| The platform the asset supports. | [optional] 
@@ -689,7 +689,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
-final String worldId = worldId_example; // String | 
+final String worldId = worldId_example; // String | Must be a valid world ID.
 
 try {
     api.unpublishWorld(worldId);
@@ -702,7 +702,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **worldId** | **String**|  | 
+ **worldId** | **String**| Must be a valid world ID. | 
 
 ### Return type
 
@@ -739,7 +739,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
-final String worldId = worldId_example; // String | 
+final String worldId = worldId_example; // String | Must be a valid world ID.
 final UpdateWorldRequest updateWorldRequest = ; // UpdateWorldRequest | 
 
 try {
@@ -754,7 +754,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **worldId** | **String**|  | 
+ **worldId** | **String**| Must be a valid world ID. | 
  **updateWorldRequest** | [**UpdateWorldRequest**](UpdateWorldRequest.md)|  | [optional] 
 
 ### Return type

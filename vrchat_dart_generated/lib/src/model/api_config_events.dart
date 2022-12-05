@@ -5,7 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:json_annotation/json_annotation.dart';
 
-part 'api_event_config.g.dart';
+part 'api_config_events.g.dart';
 
 @JsonSerializable(
   checked: true,
@@ -13,9 +13,9 @@ part 'api_event_config.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class APIEventConfig {
-  /// Returns a new [APIEventConfig] instance.
-  APIEventConfig({
+class APIConfigEvents {
+  /// Returns a new [APIConfigEvents] instance.
+  APIConfigEvents({
     required this.distanceClose,
     required this.distanceFactor,
     required this.distanceFar,
@@ -72,7 +72,7 @@ class APIEventConfig {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is APIEventConfig &&
+      other is APIConfigEvents &&
           other.distanceClose == distanceClose &&
           other.distanceFactor == distanceFactor &&
           other.distanceFar == distanceFar &&
@@ -97,10 +97,10 @@ class APIEventConfig {
       slowUpdateFactorThreshold.hashCode +
       viewSegmentLength.hashCode;
 
-  factory APIEventConfig.fromJson(Map<String, dynamic> json) =>
-      _$APIEventConfigFromJson(json);
+  factory APIConfigEvents.fromJson(Map<String, dynamic> json) =>
+      _$APIConfigEventsFromJson(json);
 
-  Map<String, dynamic> toJson() => _$APIEventConfigToJson(this);
+  Map<String, dynamic> toJson() => _$APIConfigEventsToJson(this);
 
   @override
   String toString() {

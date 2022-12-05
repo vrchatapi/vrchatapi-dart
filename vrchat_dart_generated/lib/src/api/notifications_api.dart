@@ -21,7 +21,7 @@ class NotificationsApi {
   /// Accept a friend request by notification &#x60;frq_&#x60; ID. Friend requests can be found using the NotificationsAPI &#x60;getNotifications&#x60; by filtering of type &#x60;friendRequest&#x60;.
   ///
   /// Parameters:
-  /// * [notificationId]
+  /// * [notificationId] - Must be a valid notification ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -186,7 +186,7 @@ class NotificationsApi {
   /// Delete a notification.
   ///
   /// Parameters:
-  /// * [notificationId]
+  /// * [notificationId] - Must be a valid notification ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -375,7 +375,7 @@ class NotificationsApi {
   /// Mark a notification as seen.
   ///
   /// Parameters:
-  /// * [notificationId]
+  /// * [notificationId] - Must be a valid notification ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request

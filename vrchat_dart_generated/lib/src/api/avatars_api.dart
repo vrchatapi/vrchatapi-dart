@@ -12,6 +12,9 @@ import 'package:dio/dio.dart';
 import 'package:vrchat_dart_generated/src/model/avatar.dart';
 import 'package:vrchat_dart_generated/src/model/create_avatar_request.dart';
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
+import 'package:vrchat_dart_generated/src/model/order_option.dart';
+import 'package:vrchat_dart_generated/src/model/release_status.dart';
+import 'package:vrchat_dart_generated/src/model/sort_option.dart';
 import 'package:vrchat_dart_generated/src/model/update_avatar_request.dart';
 
 class AvatarsApi {
@@ -123,7 +126,7 @@ class AvatarsApi {
   /// Delete an avatar. Notice an avatar is never fully \&quot;deleted\&quot;, only its ReleaseStatus is set to \&quot;hidden\&quot; and the linked Files are deleted. The AvatarID is permanently reserved.
   ///
   /// Parameters:
-  /// * [avatarId]
+  /// * [avatarId] - Must be a valid avatar ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -207,7 +210,7 @@ class AvatarsApi {
   /// Get information about a specific Avatar.
   ///
   /// Parameters:
-  /// * [avatarId]
+  /// * [avatarId] - Must be a valid avatar ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -292,9 +295,9 @@ class AvatarsApi {
   ///
   /// Parameters:
   /// * [featured] - Filters on featured results.
-  /// * [sort]
+  /// * [sort] - The sort order of the results.
   /// * [n] - The number of objects to return.
-  /// * [order]
+  /// * [order] - Result ordering
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [search] - Filters by world name.
   /// * [tag] - Tags to include (comma-separated). Any of the tags needs to be present.
@@ -315,14 +318,14 @@ class AvatarsApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<List<Avatar>>> getFavoritedAvatars({
     bool? featured,
-    String? sort = 'popularity',
+    SortOption? sort,
     int? n = 60,
-    String? order = 'descending',
+    OrderOption? order,
     int? offset,
     String? search,
     String? tag,
     String? notag,
-    String? releaseStatus = 'public',
+    ReleaseStatus? releaseStatus,
     String? maxUnityVersion,
     String? minUnityVersion,
     String? platform,
@@ -416,7 +419,7 @@ class AvatarsApi {
   /// Get the current avatar for the user. This will return an error for any other user than the one logged in.
   ///
   /// Parameters:
-  /// * [userId]
+  /// * [userId] - Must be a valid user ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -501,11 +504,11 @@ class AvatarsApi {
   ///
   /// Parameters:
   /// * [featured] - Filters on featured results.
-  /// * [sort]
+  /// * [sort] - The sort order of the results.
   /// * [user] - Set to `me` for searching own avatars.
   /// * [userId] - Filter by UserID.
   /// * [n] - The number of objects to return.
-  /// * [order]
+  /// * [order] - Result ordering
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [tag] - Tags to include (comma-separated). Any of the tags needs to be present.
   /// * [notag] - Tags to exclude (comma-separated).
@@ -524,15 +527,15 @@ class AvatarsApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<List<Avatar>>> searchAvatars({
     bool? featured,
-    String? sort = 'popularity',
+    SortOption? sort,
     String? user,
     String? userId,
     int? n = 60,
-    String? order = 'descending',
+    OrderOption? order,
     int? offset,
     String? tag,
     String? notag,
-    String? releaseStatus = 'public',
+    ReleaseStatus? releaseStatus,
     String? maxUnityVersion,
     String? minUnityVersion,
     String? platform,
@@ -625,7 +628,7 @@ class AvatarsApi {
   /// Switches into that avatar.
   ///
   /// Parameters:
-  /// * [avatarId]
+  /// * [avatarId] - Must be a valid avatar ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -710,7 +713,7 @@ class AvatarsApi {
   /// Switches into that avatar as your fallback avatar.
   ///
   /// Parameters:
-  /// * [avatarId]
+  /// * [avatarId] - Must be a valid avatar ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -795,7 +798,7 @@ class AvatarsApi {
   /// Update information about a specific avatar.
   ///
   /// Parameters:
-  /// * [avatarId]
+  /// * [avatarId] - Must be a valid avatar ID.
   /// * [updateAvatarRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request

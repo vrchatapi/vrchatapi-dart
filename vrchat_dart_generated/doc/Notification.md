@@ -9,7 +9,7 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createdAt** | [**DateTime**](DateTime.md) |  | 
-**details** | **String** | **NOTICE:** This is not a JSON object when returned from the REST API, but it is when received from the Websocket API. When returned from the REST API, this is a json **encoded** object, meaning you have to json-de-encode to get the NotificationDetail object depending on the NotificationType. | [default to '{}']
+**details** | **String** | **NOTICE:** This is not a JSON object when received from the REST API, but it is when received from the Websocket API. When received from the REST API, this is a json **encoded** object, meaning you have to json-de-encode to get the NotificationDetail object depending on the NotificationType. | [default to '{}']
 **id** | **String** |  | 
 **message** | **String** |  | 
 **seen** | **bool** | Not included in notification objects received from the Websocket API | [optional] [default to false]

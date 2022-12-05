@@ -3,11 +3,11 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:vrchat_dart_generated/src/model/download_url_list.dart';
-import 'package:vrchat_dart_generated/src/model/api_event_config.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_events.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_download_url_list.dart';
 import 'package:vrchat_dart_generated/src/model/deployment_group.dart';
-import 'package:vrchat_dart_generated/src/model/public_announcement.dart';
 import 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_announcement.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'api_config.g.dart';
@@ -121,7 +121,7 @@ class APIConfig {
 
   /// Public Announcements
   @JsonKey(name: r'announcements', required: true, includeIfNull: false)
-  final Set<PublicAnnouncement> announcements;
+  final Set<APIConfigAnnouncement> announcements;
 
   /// apiKey to be used for all other requests
   @JsonKey(name: r'apiKey', required: true, includeIfNull: false)
@@ -273,14 +273,14 @@ class APIConfig {
   final String downloadLinkWindows;
 
   @JsonKey(name: r'downloadUrls', required: true, includeIfNull: false)
-  final DownloadURLList downloadUrls;
+  final APIConfigDownloadURLList downloadUrls;
 
   /// Array of DynamicWorldRow objects, used by the game to display the list of world rows
   @JsonKey(name: r'dynamicWorldRows', required: true, includeIfNull: false)
   final Set<DynamicContentRow> dynamicWorldRows;
 
   @JsonKey(name: r'events', required: true, includeIfNull: false)
-  final APIEventConfig events;
+  final APIConfigEvents events;
 
   /// Unknown
   @JsonKey(name: r'gearDemoRoomId', required: true, includeIfNull: false)

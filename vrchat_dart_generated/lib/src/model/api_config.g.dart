@@ -105,7 +105,7 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               'announcements',
               (v) => (v as List<dynamic>)
                   .map((e) =>
-                      PublicAnnouncement.fromJson(e as Map<String, dynamic>))
+                      APIConfigAnnouncement.fromJson(e as Map<String, dynamic>))
                   .toSet()),
           apiKey: $checkedConvert('apiKey', (v) => v as String),
           appName: $checkedConvert('appName', (v) => v as String? ?? 'VrChat'),
@@ -169,8 +169,10 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               'disableUpgradeAccount', (v) => v as bool? ?? false),
           downloadLinkWindows:
               $checkedConvert('downloadLinkWindows', (v) => v as String),
-          downloadUrls: $checkedConvert('downloadUrls',
-              (v) => DownloadURLList.fromJson(v as Map<String, dynamic>)),
+          downloadUrls: $checkedConvert(
+              'downloadUrls',
+              (v) =>
+                  APIConfigDownloadURLList.fromJson(v as Map<String, dynamic>)),
           dynamicWorldRows: $checkedConvert(
               'dynamicWorldRows',
               (v) => (v as List<dynamic>)
@@ -178,7 +180,7 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
                       DynamicContentRow.fromJson(e as Map<String, dynamic>))
                   .toSet()),
           events: $checkedConvert('events',
-              (v) => APIEventConfig.fromJson(v as Map<String, dynamic>)),
+              (v) => APIConfigEvents.fromJson(v as Map<String, dynamic>)),
           gearDemoRoomId: $checkedConvert('gearDemoRoomId', (v) => v as String),
           homeWorldId: $checkedConvert('homeWorldId', (v) => v as String),
           homepageRedirectTarget: $checkedConvert('homepageRedirectTarget',

@@ -126,8 +126,8 @@ class FavoritesApi {
   ///
   /// Parameters:
   /// * [favoriteGroupType] - The type of group to fetch, must be a valid FavoriteType.
-  /// * [favoriteGroupName]
-  /// * [userId]
+  /// * [favoriteGroupName] - The name of the group to fetch, must be a name of a FavoriteGroup.
+  /// * [userId] - Must be a valid user ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -218,7 +218,7 @@ class FavoritesApi {
   /// Return information about a specific Favorite.
   ///
   /// Parameters:
-  /// * [favoriteId]
+  /// * [favoriteId] - Must be a valid favorite ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -304,8 +304,8 @@ class FavoritesApi {
   ///
   /// Parameters:
   /// * [favoriteGroupType] - The type of group to fetch, must be a valid FavoriteType.
-  /// * [favoriteGroupName]
-  /// * [userId]
+  /// * [favoriteGroupName] - The name of the group to fetch, must be a name of a FavoriteGroup.
+  /// * [userId] - Must be a valid user ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -590,7 +590,7 @@ class FavoritesApi {
   /// Remove a favorite from your favorites list.
   ///
   /// Parameters:
-  /// * [favoriteId]
+  /// * [favoriteId] - Must be a valid favorite ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -675,8 +675,8 @@ class FavoritesApi {
   ///
   /// Parameters:
   /// * [favoriteGroupType] - The type of group to fetch, must be a valid FavoriteType.
-  /// * [favoriteGroupName]
-  /// * [userId]
+  /// * [favoriteGroupName] - The name of the group to fetch, must be a name of a FavoriteGroup.
+  /// * [userId] - Must be a valid user ID.
   /// * [updateFavoriteGroupRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request

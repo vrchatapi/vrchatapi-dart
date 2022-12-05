@@ -50,8 +50,9 @@ void main() async {
 
   print(friendsAndTupper.first.username);
 
-  final worldsResponse =
-      await api.rawApi.getWorldsApi().searchWorlds(releaseStatus: 'public');
+  final worldsResponse = await api.rawApi
+      .getWorldsApi()
+      .searchWorlds(releaseStatus: ReleaseStatus.public);
   print(worldsResponse.data!.first.name);
 
   final getWorldResponse = await api.rawApi

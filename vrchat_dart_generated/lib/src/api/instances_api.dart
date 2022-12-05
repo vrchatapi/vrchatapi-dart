@@ -22,8 +22,8 @@ class InstancesApi {
   /// Returns an instance. Please read [Instances Tutorial](https://vrchatapi.github.io/tutorials/instances/) for more information on Instances.  If an invalid instanceId is provided, this endpoint will simply return \&quot;null\&quot;!
   ///
   /// Parameters:
-  /// * [worldId]
-  /// * [instanceId]
+  /// * [worldId] - Must be a valid world ID.
+  /// * [instanceId] - Must be a valid instance ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -110,7 +110,7 @@ class InstancesApi {
   /// Returns an instance. Please read [Instances Tutorial](https://vrchatapi.github.io/tutorials/instances/) for more information on Instances.
   ///
   /// Parameters:
-  /// * [shortName]
+  /// * [shortName] - Must be a valid instance short name.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -195,8 +195,8 @@ class InstancesApi {
   /// Returns an instance short name.
   ///
   /// Parameters:
-  /// * [worldId]
-  /// * [instanceId]
+  /// * [worldId] - Must be a valid world ID.
+  /// * [instanceId] - Must be a valid instance ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -284,8 +284,8 @@ class InstancesApi {
   /// Sends an invite to the instance to yourself.
   ///
   /// Parameters:
-  /// * [worldId]
-  /// * [instanceId]
+  /// * [worldId] - Must be a valid world ID.
+  /// * [instanceId] - Must be a valid instance ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
