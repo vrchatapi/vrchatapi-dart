@@ -276,7 +276,7 @@ packages:
       path: "../../vrchat_dart_generated"
       relative: true
     source: path
-    version: "1.9.1+1"
+    version: "1.10.0"
   web_socket_channel:
     dependency: transitive
     description:
