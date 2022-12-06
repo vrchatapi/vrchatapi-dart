@@ -4,5 +4,5 @@ additionalProperties:
   pubName: vrchat_dart_generated
   pubDescription: The generated API used by vrchat_dart. Generated from https://github.com/vrchatapi/specification.
   pubHomepage: https://github.com/vrchatapi/vrchatapi-dart
-  pubVersion: 1.10.0
+  pubVersion: 1.10.1
   serializationLibrary: json_serializable

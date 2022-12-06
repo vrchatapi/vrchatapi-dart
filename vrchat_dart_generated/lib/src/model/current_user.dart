@@ -6,6 +6,7 @@
 import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
 import 'package:vrchat_dart_generated/src/model/past_display_name.dart';
+import 'package:vrchat_dart_generated/src/model/account_deletion_log.dart';
 import 'package:vrchat_dart_generated/src/model/user_state.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -22,6 +23,7 @@ class CurrentUser {
   CurrentUser({
     required this.acceptedTOSVersion,
     this.accountDeletionDate,
+    this.accountDeletionLog,
     this.activeFriends,
     required this.allowAvatarCopying,
     required this.bio,
@@ -76,6 +78,11 @@ class CurrentUser {
   @JsonKey(name: r'accountDeletionDate', required: false, includeIfNull: false)
   final DateTime? accountDeletionDate;
 
+  ///
+  @JsonKey(name: r'accountDeletionLog', required: false, includeIfNull: false)
+  final List<AccountDeletionLog>? accountDeletionLog;
+
+  ///
   @JsonKey(name: r'activeFriends', required: false, includeIfNull: false)
   final List<String>? activeFriends;
 
@@ -85,6 +92,7 @@ class CurrentUser {
   @JsonKey(name: r'bio', required: true, includeIfNull: false)
   final String bio;
 
+  ///
   @JsonKey(name: r'bioLinks', required: true, includeIfNull: false)
   final List<String> bioLinks;
 
@@ -230,6 +238,7 @@ class CurrentUser {
       other is CurrentUser &&
           other.acceptedTOSVersion == acceptedTOSVersion &&
           other.accountDeletionDate == accountDeletionDate &&
+          other.accountDeletionLog == accountDeletionLog &&
           other.activeFriends == activeFriends &&
           other.allowAvatarCopying == allowAvatarCopying &&
           other.bio == bio &&
@@ -281,6 +290,7 @@ class CurrentUser {
   int get hashCode =>
       acceptedTOSVersion.hashCode +
       (accountDeletionDate == null ? 0 : accountDeletionDate.hashCode) +
+      accountDeletionLog.hashCode +
       activeFriends.hashCode +
       allowAvatarCopying.hashCode +
       bio.hashCode +

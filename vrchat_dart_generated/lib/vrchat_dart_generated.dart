@@ -28,6 +28,7 @@ export 'package:vrchat_dart_generated/src/model/api_config_announcement.dart';
 export 'package:vrchat_dart_generated/src/model/api_config_download_url_list.dart';
 export 'package:vrchat_dart_generated/src/model/api_config_events.dart';
 export 'package:vrchat_dart_generated/src/model/api_health.dart';
+export 'package:vrchat_dart_generated/src/model/account_deletion_log.dart';
 export 'package:vrchat_dart_generated/src/model/add_favorite_request.dart';
 export 'package:vrchat_dart_generated/src/model/add_group_gallery_image_request.dart';
 export 'package:vrchat_dart_generated/src/model/avatar.dart';

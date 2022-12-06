@@ -3,6 +3,7 @@ import 'package:vrchat_dart_generated/src/model/api_config_announcement.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_download_url_list.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_events.dart';
 import 'package:vrchat_dart_generated/src/model/api_health.dart';
+import 'package:vrchat_dart_generated/src/model/account_deletion_log.dart';
 import 'package:vrchat_dart_generated/src/model/add_favorite_request.dart';
 import 'package:vrchat_dart_generated/src/model/add_group_gallery_image_request.dart';
 import 'package:vrchat_dart_generated/src/model/avatar.dart';
@@ -124,6 +125,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'APIHealth':
       return APIHealth.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'AccountDeletionLog':
+      return AccountDeletionLog.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'AddFavoriteRequest':
       return AddFavoriteRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;

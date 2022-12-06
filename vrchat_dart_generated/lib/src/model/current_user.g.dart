@@ -60,6 +60,12 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('acceptedTOSVersion', (v) => v as int),
           accountDeletionDate: $checkedConvert('accountDeletionDate',
               (v) => v == null ? null : DateTime.parse(v as String)),
+          accountDeletionLog: $checkedConvert(
+              'accountDeletionLog',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) =>
+                      AccountDeletionLog.fromJson(e as Map<String, dynamic>))
+                  .toList()),
           activeFriends: $checkedConvert('activeFriends',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           allowAvatarCopying:
@@ -158,6 +164,8 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
 
   writeNotNull(
       'accountDeletionDate', instance.accountDeletionDate?.toIso8601String());
+  writeNotNull('accountDeletionLog',
+      instance.accountDeletionLog?.map((e) => e.toJson()).toList());
   writeNotNull('activeFriends', instance.activeFriends);
   val['allowAvatarCopying'] = instance.allowAvatarCopying;
   val['bio'] = instance.bio;
