@@ -48,7 +48,7 @@ void main() async {
   final limitedTupper = tupper.toLimitedUser();
   final friendsAndTupper = [limitedTupper, ...friendsResponse.data!];
 
-  print(friendsAndTupper.first.username);
+  print(friendsAndTupper.first.displayName);
 
   final worldsResponse = await api.rawApi
       .getWorldsApi()
