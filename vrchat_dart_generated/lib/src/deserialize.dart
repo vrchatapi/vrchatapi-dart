@@ -74,6 +74,7 @@ import 'package:vrchat_dart_generated/src/model/transaction_agreement.dart';
 import 'package:vrchat_dart_generated/src/model/transaction_steam_info.dart';
 import 'package:vrchat_dart_generated/src/model/transaction_steam_wallet_info.dart';
 import 'package:vrchat_dart_generated/src/model/two_factor_auth_code.dart';
+import 'package:vrchat_dart_generated/src/model/two_factor_email_code.dart';
 import 'package:vrchat_dart_generated/src/model/unity_package.dart';
 import 'package:vrchat_dart_generated/src/model/update_avatar_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_favorite_group_request.dart';
@@ -87,6 +88,7 @@ import 'package:vrchat_dart_generated/src/model/update_world_request.dart';
 import 'package:vrchat_dart_generated/src/model/user.dart';
 import 'package:vrchat_dart_generated/src/model/user_exists.dart';
 import 'package:vrchat_dart_generated/src/model/user_subscription.dart';
+import 'package:vrchat_dart_generated/src/model/verify2_fa_email_code_result.dart';
 import 'package:vrchat_dart_generated/src/model/verify2_fa_result.dart';
 import 'package:vrchat_dart_generated/src/model/verify_auth_token_result.dart';
 import 'package:vrchat_dart_generated/src/model/world.dart';
@@ -359,6 +361,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'TwoFactorAuthCode':
       return TwoFactorAuthCode.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'TwoFactorEmailCode':
+      return TwoFactorEmailCode.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'UnityPackage':
       return UnityPackage.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'UpdateAvatarRequest':
@@ -398,6 +403,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
 
     case 'UserSubscription':
       return UserSubscription.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'Verify2FAEmailCodeResult':
+      return Verify2FAEmailCodeResult.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'Verify2FAResult':
       return Verify2FAResult.fromJson(value as Map<String, dynamic>)

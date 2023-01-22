@@ -10,10 +10,11 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**checkUserExists**](AuthenticationApi.md#checkuserexists) | **GET** /auth/exists | Check User Exists
-[**deleteUser**](AuthenticationApi.md#deleteuser) | **PUT** /user/{userId}/delete | Delete User
+[**deleteUser**](AuthenticationApi.md#deleteuser) | **PUT** /users/{userId}/delete | Delete User
 [**getCurrentUser**](AuthenticationApi.md#getcurrentuser) | **GET** /auth/user | Login and/or Get Current User Info
 [**logout**](AuthenticationApi.md#logout) | **PUT** /logout | Logout
 [**verify2FA**](AuthenticationApi.md#verify2fa) | **POST** /auth/twofactorauth/totp/verify | Verify 2FA code
+[**verify2FAEmailCode**](AuthenticationApi.md#verify2faemailcode) | **POST** /auth/twofactorauth/emailotp/verify | Verify 2FA email code
 [**verifyAuthToken**](AuthenticationApi.md#verifyauthtoken) | **GET** /auth | Verify Auth Token
 [**verifyRecoveryCode**](AuthenticationApi.md#verifyrecoverycode) | **POST** /auth/twofactorauth/otp/verify | Verify 2FA code with Recovery code
 
@@ -250,6 +251,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Verify2FAResult**](Verify2FAResult.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **verify2FAEmailCode**
+> Verify2FAEmailCodeResult verify2FAEmailCode(twoFactorEmailCode)
+
+Verify 2FA email code
+
+Finishes the login sequence with an 2FA email code.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+final TwoFactorEmailCode twoFactorEmailCode = ; // TwoFactorEmailCode | 
+
+try {
+    final response = api.verify2FAEmailCode(twoFactorEmailCode);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AuthenticationApi->verify2FAEmailCode: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **twoFactorEmailCode** | [**TwoFactorEmailCode**](TwoFactorEmailCode.md)|  | [optional] 
+
+### Return type
+
+[**Verify2FAEmailCodeResult**](Verify2FAEmailCodeResult.md)
 
 ### Authorization
 

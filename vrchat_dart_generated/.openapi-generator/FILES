@@ -113,6 +113,7 @@ doc/TransactionStatus.md
 doc/TransactionSteamInfo.md
 doc/TransactionSteamWalletInfo.md
 doc/TwoFactorAuthCode.md
+doc/TwoFactorEmailCode.md
 doc/UnityPackage.md
 doc/UpdateAvatarRequest.md
 doc/UpdateFavoriteGroupRequest.md
@@ -129,6 +130,7 @@ doc/UserState.md
 doc/UserStatus.md
 doc/UserSubscription.md
 doc/UsersApi.md
+doc/Verify2FAEmailCodeResult.md
 doc/Verify2FAResult.md
 doc/VerifyAuthTokenResult.md
 doc/World.md
@@ -256,6 +258,7 @@ lib/src/model/transaction_status.dart
 lib/src/model/transaction_steam_info.dart
 lib/src/model/transaction_steam_wallet_info.dart
 lib/src/model/two_factor_auth_code.dart
+lib/src/model/two_factor_email_code.dart
 lib/src/model/unity_package.dart
 lib/src/model/update_avatar_request.dart
 lib/src/model/update_favorite_group_request.dart
@@ -271,6 +274,7 @@ lib/src/model/user_exists.dart
 lib/src/model/user_state.dart
 lib/src/model/user_status.dart
 lib/src/model/user_subscription.dart
+lib/src/model/verify2_fa_email_code_result.dart
 lib/src/model/verify2_fa_result.dart
 lib/src/model/verify_auth_token_result.dart
 lib/src/model/world.dart
@@ -389,6 +393,7 @@ test/transaction_steam_info_test.dart
 test/transaction_steam_wallet_info_test.dart
 test/transaction_test.dart
 test/two_factor_auth_code_test.dart
+test/two_factor_email_code_test.dart
 test/unity_package_test.dart
 test/update_avatar_request_test.dart
 test/update_favorite_group_request_test.dart
@@ -405,6 +410,7 @@ test/user_status_test.dart
 test/user_subscription_test.dart
 test/user_test.dart
 test/users_api_test.dart
+test/verify2_fa_email_code_result_test.dart
 test/verify2_fa_result_test.dart
 test/verify_auth_token_result_test.dart
 test/world_metadata_test.dart

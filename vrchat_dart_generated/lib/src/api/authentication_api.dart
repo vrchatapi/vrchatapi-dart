@@ -12,7 +12,9 @@ import 'package:dio/dio.dart';
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
 import 'package:vrchat_dart_generated/src/model/two_factor_auth_code.dart';
+import 'package:vrchat_dart_generated/src/model/two_factor_email_code.dart';
 import 'package:vrchat_dart_generated/src/model/user_exists.dart';
+import 'package:vrchat_dart_generated/src/model/verify2_fa_email_code_result.dart';
 import 'package:vrchat_dart_generated/src/model/verify2_fa_result.dart';
 import 'package:vrchat_dart_generated/src/model/verify_auth_token_result.dart';
 
@@ -136,7 +138,7 @@ class AuthenticationApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/user/{userId}/delete'
+    final _path = r'/users/{userId}/delete'
         .replaceAll('{' r'userId' '}', userId.toString());
     final _options = Options(
       method: r'PUT',
@@ -444,6 +446,102 @@ class AuthenticationApi {
     }
 
     return Response<Verify2FAResult>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Verify 2FA email code
+  /// Finishes the login sequence with an 2FA email code.
+  ///
+  /// Parameters:
+  /// * [twoFactorEmailCode]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [Verify2FAEmailCodeResult] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<Verify2FAEmailCodeResult>> verify2FAEmailCode({
+    TwoFactorEmailCode? twoFactorEmailCode,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/auth/twofactorauth/emailotp/verify';
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      _bodyData = jsonEncode(twoFactorEmailCode);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    Verify2FAEmailCodeResult _responseData;
+
+    try {
+      _responseData =
+          deserialize<Verify2FAEmailCodeResult, Verify2FAEmailCodeResult>(
+              _response.data!, 'Verify2FAEmailCodeResult',
+              growable: true);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<Verify2FAEmailCodeResult>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
