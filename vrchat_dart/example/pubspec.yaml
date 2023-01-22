@@ -9,7 +9,7 @@ dependencies:
     path: ../
 
 dev_dependencies:
-  rexios_lints: ^4.0.0
+  rexios_lints: ^5.0.0
 
 dependency_overrides:
   vrchat_dart_generated:
