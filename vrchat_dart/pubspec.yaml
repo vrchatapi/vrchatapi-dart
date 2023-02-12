@@ -15,8 +15,7 @@ dependencies:
   json_annotation: ^4.7.0
   built_value: ^8.1.1
   collection: ^1.15.0
-  dio_response_validator:
-    path: ../../dio_response_validator
+  dio_response_validator: ^0.2.1
 
 dev_dependencies:
   rexios_lints: ^5.0.0

@@ -172,10 +172,11 @@ packages:
   dio_response_validator:
     dependency: "direct main"
     description:
-      path: "../../dio_response_validator"
-      relative: true
-    source: path
-    version: "0.2.0"
+      name: dio_response_validator
+      sha256: "3e86d0a665d1a46a9ca358c5dec03a3ea332381448f663d560e545d2c0beb623"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.1"
   file:
     dependency: transitive
     description:
