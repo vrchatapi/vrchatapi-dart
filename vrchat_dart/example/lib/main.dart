@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:otp/otp.dart';
 import 'package:vrchat_dart/vrchat_dart.dart';
 import 'package:vrchat_dart_example/credentials.dart';
 
@@ -18,7 +19,13 @@ void main() async {
     print(loginResponse.error);
   } else if (loginResponse.requiresTwoFactorAuth) {
     print('requiresTwoFactorAuth');
-    final twoFactorResponse = await api.auth.verify2fa(Credentials.otp);
+    final code = OTP.generateTOTPCodeString(
+      Credentials.otpSecret,
+      DateTime.now().millisecondsSinceEpoch,
+      algorithm: Algorithm.SHA1,
+      isGoogle: true,
+    );
+    final twoFactorResponse = await api.auth.verify2fa(code);
     if (twoFactorResponse.error == null) {
       print('2fa verification success');
     } else {

@@ -9,6 +9,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.10.0"
+  base32:
+    dependency: transitive
+    description:
+      name: base32
+      sha256: ddad4ebfedf93d4500818ed8e61443b734ffe7cf8a45c668c9b34ef6adde02e2
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.3"
   built_collection:
     dependency: transitive
     description:
@@ -105,6 +113,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.1"
+  logging:
+    dependency: transitive
+    description:
+      name: logging
+      sha256: "04094f2eb032cbb06c6f6e8d3607edcfcb0455e2bb6cbc010cb01171dcb64e6d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.1"
   meta:
     dependency: transitive
     description:
@@ -113,6 +129,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.0"
+  otp:
+    dependency: "direct main"
+    description:
+      name: otp
+      sha256: "337fddb07d10df56dc57f3f8a3e1a7e7abe7463cd85e4efc567c4d2bc94d4ed6"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.3"
   path:
     dependency: transitive
     description:
