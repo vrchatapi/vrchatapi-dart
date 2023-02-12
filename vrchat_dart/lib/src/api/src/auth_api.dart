@@ -77,8 +77,7 @@ class AuthApi {
   ///
   /// A successful [login] call will set an API key cookie for you.
   Future<ValidatedResponse<APIConfig, APIConfig>> fetchApiKey() async {
-    final response =
-        await _rawApi.getSystemApi().getConfig().validateVrc();
+    final response = await _rawApi.getSystemApi().getConfig().validateVrc();
     final failure = response.failure;
     if (failure != null) return failure;
 

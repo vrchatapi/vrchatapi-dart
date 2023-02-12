@@ -1,4 +1,4 @@
-## NEXT (3.0.0)
+## 3.0.0
 - Use `dio_response_validator` to validate responses
 - Adds `validateVrc` extension to allow for validation of all API calls
 
