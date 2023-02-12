@@ -57,13 +57,9 @@ void main() async {
       .getFriends()
       .validateVrc(); // Call [validateVrc] to handle errors
 
-  final error = friendsResponse.failure?.error;
+  final error = friendsResponse.failure?.vrcError;
   if (error != null) {
     print(error);
-    // [validateVrc] transforms errors into [VrcError]s
-    if (error is VrcError) {
-      print('Status code: ${error.statusCode}');
-    }
   }
 
   final tupper =

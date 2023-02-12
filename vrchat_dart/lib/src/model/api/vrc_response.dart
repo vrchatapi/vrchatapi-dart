@@ -60,3 +60,9 @@ extension VrcResponseValidator<T> on Future<Response<T>> {
   Future<ValidatedResponse<T, T>> validateVrc() =>
       validate(transformDioError: VrcError.fromDioError);
 }
+
+/// Extension on [ValidatedResponse] to get the [VrcError] if it exists
+extension VrcInvalidResponse on InvalidResponse {
+  /// Get the error as a [VrcError] if it is one
+  VrcError? get vrcError => error is VrcError ? error as VrcError : null;
+}
