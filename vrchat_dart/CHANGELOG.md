@@ -1,3 +1,7 @@
+## NEXT (3.0.0)
+- Use `dio_response_validator` to validate responses
+- Adds `validateVrc` extension to allow for validation of all API calls
+
 ## 2.4.0
 - Fixes issues with deserializing streaming events
 
