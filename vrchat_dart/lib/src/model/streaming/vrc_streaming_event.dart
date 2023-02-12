@@ -143,8 +143,7 @@ abstract class FriendEventWithUser extends FriendEvent {
   final User user;
 
   /// Create a [FriendEventWithUser] with the given [userId] and [user]
-  FriendEventWithUser({required String userId, required this.user})
-      : super(userId: userId);
+  FriendEventWithUser({required super.userId, required this.user});
 }
 
 /// Base class for [UserEvent]s
@@ -182,13 +181,13 @@ class FriendOnlineEvent extends FriendEventWithUser {
 
   /// Create a [FriendOnlineEvent]
   FriendOnlineEvent({
-    required String userId,
-    required User user,
+    required super.userId,
+    required super.user,
     required this.world,
     required this.location,
     required this.instance,
     required this.canRequestInvite,
-  }) : super(userId: userId, user: user);
+  });
 
   /// Create a [FriendOnlineEvent] from json
   factory FriendOnlineEvent.fromJson(Map<String, dynamic> json) =>
@@ -206,7 +205,7 @@ class FriendOfflineEvent extends FriendEvent {
   VrcStreamingEventType get type => VrcStreamingEventType.friendOffline;
 
   /// Create a [FriendOnlineEvent] with the given [userId]
-  FriendOfflineEvent({required String userId}) : super(userId: userId);
+  FriendOfflineEvent({required super.userId});
 
   /// Create a [FriendOfflineEvent] from json
   factory FriendOfflineEvent.fromJson(Map<String, dynamic> json) =>
@@ -224,8 +223,7 @@ class FriendActiveEvent extends FriendEventWithUser {
   VrcStreamingEventType get type => VrcStreamingEventType.friendActive;
 
   /// Create a [FriendActiveEvent] with the given [userId] and [user]
-  FriendActiveEvent({required String userId, required User user})
-      : super(userId: userId, user: user);
+  FriendActiveEvent({required super.userId, required super.user});
 
   /// Create a [FriendActiveEvent] from json
   factory FriendActiveEvent.fromJson(Map<String, dynamic> json) =>
@@ -243,8 +241,7 @@ class FriendAddEvent extends FriendEventWithUser {
   VrcStreamingEventType get type => VrcStreamingEventType.friendAdd;
 
   /// Create a [FriendAddEvent] with the given [userId] and [user]
-  FriendAddEvent({required String userId, required User user})
-      : super(userId: userId, user: user);
+  FriendAddEvent({required super.userId, required super.user});
 
   /// Create a [FriendAddEvent] from json
   factory FriendAddEvent.fromJson(Map<String, dynamic> json) =>
@@ -262,7 +259,7 @@ class FriendDeleteEvent extends FriendEvent {
   VrcStreamingEventType get type => VrcStreamingEventType.friendDelete;
 
   /// Create a [FriendDeleteEvent] with the given [userId]
-  FriendDeleteEvent({required String userId}) : super(userId: userId);
+  FriendDeleteEvent({required super.userId});
 
   /// Create a [FriendDeleteEvent] from json
   factory FriendDeleteEvent.fromJson(Map<String, dynamic> json) =>
@@ -280,8 +277,7 @@ class FriendUpdateEvent extends FriendEventWithUser {
   VrcStreamingEventType get type => VrcStreamingEventType.friendUpdate;
 
   /// Create a [FriendUpdateEvent] with the given [userId] and [user]
-  FriendUpdateEvent({required String userId, required User user})
-      : super(userId: userId, user: user);
+  FriendUpdateEvent({required super.userId, required super.user});
 
   /// Create a [FriendUpdateEvent] from json
   factory FriendUpdateEvent.fromJson(Map<String, dynamic> json) =>
@@ -314,13 +310,13 @@ class FriendLocationEvent extends FriendEventWithUser {
 
   /// Create a [FriendLocationEvent]
   FriendLocationEvent({
-    required String userId,
-    required User user,
+    required super.userId,
+    required super.user,
     required this.world,
     required this.location,
     required this.instance,
     required this.canRequestInvite,
-  }) : super(userId: userId, user: user);
+  });
 
   /// Create a [FriendLocationEvent] from json
   factory FriendLocationEvent.fromJson(Map<String, dynamic> json) =>
@@ -344,8 +340,7 @@ class UserUpdateEvent extends UserEvent {
   final StreamedCurrentUser user;
 
   /// Create a [UserUpdateEvent] with the given [userId] and [user]
-  UserUpdateEvent({required String userId, required this.user})
-      : super(userId: userId);
+  UserUpdateEvent({required super.userId, required this.user});
 
   /// Create a [UserUpdateEvent] from json
   factory UserUpdateEvent.fromJson(Map<String, dynamic> json) =>
@@ -372,11 +367,11 @@ class UserLocationEvent extends UserEvent {
 
   /// Create a [UserLocationEvent]
   UserLocationEvent({
-    required String userId,
+    required super.userId,
     required this.world,
     required this.location,
     required this.instance,
-  }) : super(userId: userId);
+  });
 
   /// Create a [UserLocationEvent] from json
   factory UserLocationEvent.fromJson(Map<String, dynamic> json) =>

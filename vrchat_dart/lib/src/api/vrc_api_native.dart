@@ -13,7 +13,7 @@ class VrcApiImpl extends VrcApi {
   VrcApiImpl({
     required BaseOptions options,
     required String? cookiePath,
-    required String? websocketUrl,
+    required super.websocketUrl,
   }) : super(
           rawApi: VrchatDartGenerated(
             dio: Dio(options),
@@ -25,6 +25,5 @@ class VrcApiImpl extends VrcApi {
               ),
             ],
           ),
-          websocketUrl: websocketUrl,
         );
 }
