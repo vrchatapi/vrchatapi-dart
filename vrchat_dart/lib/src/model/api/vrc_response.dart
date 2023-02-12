@@ -1,25 +1,16 @@
 // Package imports:
 import 'package:dio/dio.dart';
-
-/// A response from the VRChat API
-class VrcResponse {
-  /// The error returned from the API if any
-  final VrcError? error;
-
-  /// Create a [VrcResponse] with the given [error]
-  VrcResponse({this.error});
-}
+import 'package:dio_response_validator/dio_response_validator.dart';
 
 /// A response from the auth API
-class AuthResponse extends VrcResponse {
+class AuthResponse {
   /// True if this account requires two factor auth
   final bool requiresTwoFactorAuth;
 
   /// Create an [AuthResponse]
   AuthResponse({
     this.requiresTwoFactorAuth = false,
-    VrcError? error,
-  }) : super(error: error);
+  });
 }
 
 /// An error returned from the VRChat API
@@ -61,4 +52,11 @@ class VrcError {
   String toString() {
     return '$statusCode: $message';
   }
+}
+
+/// Extension on [Dio] [Response] futures for validation
+extension VrcResponseValidator<T> on Future<Response<T>> {
+  /// Validate a VRC response, and transform the error to a [VrcError]
+  Future<ValidatedResponse<T, T>> validateVrc() =>
+      validate(transformDioError: VrcError.fromDioError);
 }

@@ -14,10 +14,10 @@ void main() async {
     password: Credentials.password,
   );
 
-  if (loginResponse.error != null) {
+  if (loginResponse.failure != null) {
     print('authError');
-    print(loginResponse.error);
-  } else if (loginResponse.requiresTwoFactorAuth) {
+    print(loginResponse.failure);
+  } else if (loginResponse.success!.data.requiresTwoFactorAuth) {
     print('requiresTwoFactorAuth');
 
     // VRChat is forcing 2FA these days. If you don't have 2FA enabled on your
@@ -31,11 +31,11 @@ void main() async {
       isGoogle: true,
     );
     final twoFactorResponse = await api.auth.verify2fa(code);
-    if (twoFactorResponse.error == null) {
+    if (twoFactorResponse.failure == null) {
       print('2fa verification success');
     } else {
       print('2fa verification failure');
-      print(twoFactorResponse.error);
+      print(twoFactorResponse.failure);
     }
   }
 
@@ -52,13 +52,26 @@ void main() async {
 
   // API key fetching is automatically handled on successful authentication
 
-  final friendsResponse = await api.rawApi.getFriendsApi().getFriends();
+  final friendsResponse = await api.rawApi
+      .getFriendsApi()
+      .getFriends()
+      .validateVrc(); // Call [validateVrc] to handle errors
+
+  final error = friendsResponse.failure?.error;
+  if (error != null) {
+    print(error);
+    // [validateVrc] transforms errors into [VrcError]s
+    if (error is VrcError) {
+      print('Status code: ${error.statusCode}');
+    }
+  }
+
   final tupper =
       (await api.rawApi.getUsersApi().getUser(userId: tupperUid)).data!;
 
   // Convenience method to help with storing user objects from different endpoints together
   final limitedTupper = tupper.toLimitedUser();
-  final friendsAndTupper = [limitedTupper, ...friendsResponse.data!];
+  final friendsAndTupper = [limitedTupper, ...friendsResponse.success!.data];
 
   print(friendsAndTupper.first.displayName);
 
