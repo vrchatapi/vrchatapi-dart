@@ -19,6 +19,11 @@ void main() async {
     print(loginResponse.error);
   } else if (loginResponse.requiresTwoFactorAuth) {
     print('requiresTwoFactorAuth');
+
+    // VRChat is forcing 2FA these days. If you don't have 2FA enabled on your
+    // account, you will be required to 2FA over email which is not ideal for
+    // scripts. To get around this, enable 2FA on your account and generate
+    // codes in your script.
     final code = OTP.generateTOTPCodeString(
       Credentials.otpSecret,
       DateTime.now().millisecondsSinceEpoch,
