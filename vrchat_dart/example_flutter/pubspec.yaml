@@ -12,6 +12,7 @@ dependencies:
     path: ../
 
   path_provider: ^2.0.11
+  package_info_plus: ^3.0.3
 
 dev_dependencies:
   rexios_lints: ^5.0.0

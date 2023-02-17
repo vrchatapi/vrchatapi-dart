@@ -1,3 +1,4 @@
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:vrchat_dart/vrchat_dart.dart';
 import 'package:vrchat_dart_example_flutter/vrc_api_container_impl_base.dart';
 
@@ -5,10 +6,11 @@ import 'package:vrchat_dart_example_flutter/vrc_api_container_impl_base.dart';
 class VrcApiContainerImpl extends VrcApiContainerImplBase {
   @override
   Future<VrchatDart> create() async {
+    final packageInfo = await PackageInfo.fromPlatform();
     return VrchatDart(
-      userAgent: const VrchatUserAgent(
+      userAgent: VrchatUserAgent(
         applicationName: 'vrchat_dart_example',
-        version: '0.0.0',
+        version: packageInfo.version,
         contactInfo: 'TODO',
       ),
       // See nginx.conf for an example nginx configuration
