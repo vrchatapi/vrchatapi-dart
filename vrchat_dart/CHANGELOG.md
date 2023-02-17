@@ -1,3 +1,7 @@
+## 3.1.0
+- Enforce the new user agent structure required by the VRChat guidelines
+- NOTE: THIS IS A BREAKING CHANGE. This has purposely been released as a minor version to increase the chances of compliance and reduce the chance of moderation actions.
+
 ## 3.0.0
 - Use `dio_response_validator` to validate responses
 - Adds `validateVrc` extension to allow for validation of all API calls

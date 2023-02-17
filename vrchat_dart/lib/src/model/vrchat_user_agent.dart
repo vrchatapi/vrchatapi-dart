@@ -16,7 +16,7 @@ class VrchatUserAgent {
   final String contactInfo;
 
   /// Constructor
-  VrchatUserAgent({
+  const VrchatUserAgent({
     required this.applicationName,
     required this.version,
     required this.contactInfo,

@@ -10,7 +10,7 @@ class VrcApiContainerImpl extends VrcApiContainerImplBase {
     final appDocPath = appDocDir.path;
 
     return VrchatDart(
-      userAgent: VrchatUserAgent(
+      userAgent: const VrchatUserAgent(
         applicationName: 'vrchat_dart_example',
         version: '0.0.0',
         contactInfo: 'TODO',

@@ -6,7 +6,7 @@ class VrcApiContainerImpl extends VrcApiContainerImplBase {
   @override
   Future<VrchatDart> create() async {
     return VrchatDart(
-      userAgent: VrchatUserAgent(
+      userAgent: const VrchatUserAgent(
         applicationName: 'vrchat_dart_example',
         version: '0.0.0',
         contactInfo: 'TODO',
