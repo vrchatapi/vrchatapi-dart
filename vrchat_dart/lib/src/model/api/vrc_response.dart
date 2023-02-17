@@ -1,4 +1,3 @@
-// Package imports:
 import 'package:dio/dio.dart';
 import 'package:dio_response_validator/dio_response_validator.dart';
 

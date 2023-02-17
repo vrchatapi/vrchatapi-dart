@@ -7,7 +7,13 @@ import 'package:vrchat_dart_example/credentials.dart';
 const tupperUid = 'usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469';
 
 void main() async {
-  final api = VrchatDart(userAgent: 'vrchat_dart_example');
+  final api = VrchatDart(
+    userAgent: VrchatUserAgent(
+      applicationName: 'vrchat_dart_example',
+      version: '0.0.0',
+      contactInfo: Credentials.contactInfo,
+    ),
+  );
 
   final loginResponse = await api.auth.login(
     username: Credentials.username,

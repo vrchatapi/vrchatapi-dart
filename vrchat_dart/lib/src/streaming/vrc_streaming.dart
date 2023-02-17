@@ -1,13 +1,10 @@
-// Dart imports:
 import 'dart:async';
 import 'dart:convert';
-
-// Package imports:
+import 'package:vrchat_dart/src/model/vrchat_user_agent.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
-
-// Project imports:
 import 'package:vrchat_dart/src/model/streaming/vrc_streaming_event.dart';
+import 'package:vrchat_dart/src/streaming/connect/connect.dart';
 
 /// Streaming for data updates from the VRChat websocket API
 class VrcStreaming {
@@ -20,6 +17,7 @@ class VrcStreaming {
   StreamView<VrcStreamingEvent> get vrcEventStream =>
       StreamView(_vrcEventStreamController.stream);
 
+  final VrchatUserAgent _userAgent;
   final VrchatDartGenerated _rawApi;
   final String _baseUrl;
 
@@ -27,7 +25,7 @@ class VrcStreaming {
   WebSocketChannel? _channel;
 
   /// Create a [VrcStreaming] instance
-  VrcStreaming(this._rawApi, String? websocketUrl)
+  VrcStreaming(this._userAgent, this._rawApi, String? websocketUrl)
       : _baseUrl = websocketUrl ?? _defaultBaseUrl;
 
   /// Start streaming. First login with the auth API to get an auth cookie.
@@ -46,8 +44,9 @@ class VrcStreaming {
       return;
     }
 
-    _channel = WebSocketChannel.connect(
+    _channel = connect(
       Uri.parse('$_baseUrl?authToken=$authToken'),
+      headers: {'User-Agent': _userAgent.toString()},
     );
 
     _channel?.stream.listen(_handleWebsocketEvent);

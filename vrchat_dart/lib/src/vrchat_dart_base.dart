@@ -1,8 +1,6 @@
-// Package imports:
 import 'package:dio/dio.dart';
+import 'package:vrchat_dart/src/model/vrchat_user_agent.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
-
-// Project imports:
 import 'package:vrchat_dart/src/api/src/auth_api.dart';
 import 'package:vrchat_dart/src/api/vrc_api_base.dart';
 import 'package:vrchat_dart/src/streaming/vrc_streaming.dart';
@@ -23,7 +21,12 @@ class VrchatDart {
   /// Initialize the VRChat API
   ///
   /// Pass in a [userAgent] to identify your application to the API.
-  /// The VRChat team would like us to identify our applications.
+  /// The VRChat guidelines state that we must specify a valid user agent or
+  /// face moderation.
+  ///
+  /// ******************************************************
+  /// USER AGENT CANNOT BE SET ON WEB! USE AT YOUR OWN RISK!
+  /// ******************************************************
   ///
   /// In Flutter, pass a [cookiePath] to persist cookie data.
   /// Cookies are handled automatically on web.
@@ -32,16 +35,17 @@ class VrchatDart {
   ///
   /// Pass in a [websocketUrl] to override the default websocket URL.
   VrchatDart({
-    required String userAgent,
+    required VrchatUserAgent userAgent,
     String? cookiePath,
     String? baseUrl,
     String? websocketUrl,
   }) : _api = VrcApi.forPlatform(
+          userAgent: userAgent,
           options: BaseOptions(
             baseUrl: baseUrl ?? VrchatDartGenerated.basePath,
             connectTimeout: 5000,
             receiveTimeout: 3000,
-            headers: {'User-Agent': userAgent},
+            headers: {'User-Agent': userAgent.toString()},
           ),
           cookiePath: cookiePath,
           websocketUrl: websocketUrl,

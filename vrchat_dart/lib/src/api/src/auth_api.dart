@@ -1,11 +1,6 @@
-// Dart imports:
 import 'dart:convert';
-
-// Package imports:
 import 'package:dio_response_validator/dio_response_validator.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
-
-// Project imports:
 import 'package:vrchat_dart/src/model/api/vrc_response.dart';
 
 /// Auth convenience methods
