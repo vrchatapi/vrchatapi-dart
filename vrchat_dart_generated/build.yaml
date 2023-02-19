@@ -1,6 +1,10 @@
 targets:
   $default:
     builders:
+      source_gen|combining_builder:
+        options:
+          ignore_for_file:
+            - deprecated_member_use_from_same_package
       json_serializable:
         options:
           # Options configure how source code is generated for every

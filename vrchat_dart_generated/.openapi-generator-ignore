@@ -23,4 +23,5 @@
 #!docs/README.md
 
 analysis_options.yaml
+build.yaml
 pubspec.yaml

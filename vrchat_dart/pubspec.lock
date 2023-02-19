@@ -321,6 +321,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.0"
+  parselyzer:
+    dependency: "direct dev"
+    description:
+      path: "../../parselyzer"
+      relative: true
+    source: path
+    version: "0.1.0"
   path:
     dependency: transitive
     description:
