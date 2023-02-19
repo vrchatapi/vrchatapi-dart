@@ -324,9 +324,10 @@ packages:
   parselyzer:
     dependency: "direct dev"
     description:
-      path: "../../parselyzer"
-      relative: true
-    source: path
+      name: parselyzer
+      sha256: "9cdd1eea74f02d347a0fa951f875e35633c7721193d9b7fd87d07c89eedb2642"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.1.0"
   path:
     dependency: transitive
