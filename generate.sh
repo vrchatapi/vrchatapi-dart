@@ -7,7 +7,8 @@ if [ -d "vrchat_dart_generated" ]; then
 fi
 
 cd vrchat_dart
-dart run tool/patch_input.dart
+# Run `./generate.sh local` to use a local copy of the spec
+dart run tool/patch_input.dart "$@"
 cd ..
 
 openapi-generator generate -g dart-dio -c generator-config.yaml
