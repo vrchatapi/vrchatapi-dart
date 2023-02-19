@@ -86,6 +86,8 @@ class Avatar {
   final String unityPackageUrl;
 
   @JsonKey(name: r'unityPackageUrlObject', required: true, includeIfNull: false)
+
+// ignore: deprecated_member_use_from_same_package
   final AvatarUnityPackageUrlObject unityPackageUrlObject;
 
   @JsonKey(name: r'unityPackages', required: true, includeIfNull: false)

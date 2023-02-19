@@ -1,6 +1,5 @@
 .gitignore
 README.md
-build.yaml
 doc/APIConfig.md
 doc/APIConfigAnnouncement.md
 doc/APIConfigDownloadURLList.md

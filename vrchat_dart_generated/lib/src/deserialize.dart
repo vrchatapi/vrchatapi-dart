@@ -117,6 +117,7 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'APIConfig':
       return APIConfig.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'APIConfigAnnouncement':
+// ignore: deprecated_member_use_from_same_package
       return APIConfigAnnouncement.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'APIConfigDownloadURLList':
@@ -139,6 +140,7 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'Avatar':
       return Avatar.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AvatarUnityPackageUrlObject':
+// ignore: deprecated_member_use_from_same_package
       return AvatarUnityPackageUrlObject.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'BanGroupMemberRequest':

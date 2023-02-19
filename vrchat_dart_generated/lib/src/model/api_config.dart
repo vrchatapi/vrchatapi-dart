@@ -121,6 +121,8 @@ class APIConfig {
 
   /// Public Announcements
   @JsonKey(name: r'announcements', required: true, includeIfNull: false)
+
+// ignore: deprecated_member_use_from_same_package
   final Set<APIConfigAnnouncement> announcements;
 
   /// apiKey to be used for all other requests
