@@ -1427,11 +1427,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **joinGroup**
-> Group joinGroup(groupId)
+> GroupMember joinGroup(groupId)
 
 Join Group
 
-Join a Group by ID and returns the joined Group.
+Join a Group by ID and returns the member object.
 
 ### Example
 ```dart
@@ -1464,7 +1464,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Group**](Group.md)
+[**GroupMember**](GroupMember.md)
 
 ### Authorization
 

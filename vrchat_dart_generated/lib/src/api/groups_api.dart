@@ -2419,7 +2419,7 @@ class GroupsApi {
   }
 
   /// Join Group
-  /// Join a Group by ID and returns the joined Group.
+  /// Join a Group by ID and returns the member object.
   ///
   /// Parameters:
   /// * [groupId] - Must be a valid group ID.
@@ -2430,9 +2430,9 @@ class GroupsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Group] as data
+  /// Returns a [Future] containing a [Response] with a [GroupMember] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Group>> joinGroup({
+  Future<Response<GroupMember>> joinGroup({
     required String groupId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -2476,11 +2476,12 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Group _responseData;
+    GroupMember _responseData;
 
     try {
-      _responseData =
-          deserialize<Group, Group>(_response.data!, 'Group', growable: true);
+      _responseData = deserialize<GroupMember, GroupMember>(
+          _response.data!, 'GroupMember',
+          growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2491,7 +2492,7 @@ class GroupsApi {
       );
     }
 
-    return Response<Group>(
+    return Response<GroupMember>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
