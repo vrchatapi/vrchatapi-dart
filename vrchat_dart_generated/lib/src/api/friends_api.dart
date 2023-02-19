@@ -53,14 +53,14 @@ class FriendsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -86,9 +86,10 @@ class FriendsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<Success>(
@@ -137,14 +138,14 @@ class FriendsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -171,9 +172,10 @@ class FriendsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<Notification>(
@@ -222,14 +224,14 @@ class FriendsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -256,9 +258,10 @@ class FriendsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<FriendStatus>(
@@ -310,14 +313,14 @@ class FriendsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -351,9 +354,10 @@ class FriendsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<LimitedUser>>(
@@ -402,14 +406,14 @@ class FriendsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -435,9 +439,10 @@ class FriendsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<Success>(

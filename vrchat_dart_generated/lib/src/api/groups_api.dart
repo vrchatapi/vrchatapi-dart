@@ -76,14 +76,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -103,9 +103,10 @@ class GroupsApi {
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -127,9 +128,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<GroupGalleryImage>(
@@ -184,14 +186,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -218,9 +220,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<String>>(
@@ -271,14 +274,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -298,9 +301,10 @@ class GroupsApi {
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -322,9 +326,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<GroupMember>(
@@ -373,14 +378,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -433,14 +438,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -460,9 +465,10 @@ class GroupsApi {
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -483,9 +489,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<Group>(
@@ -536,14 +543,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -563,9 +570,10 @@ class GroupsApi {
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -587,9 +595,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<GroupAnnouncement>(
@@ -640,14 +649,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -667,9 +676,10 @@ class GroupsApi {
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -691,9 +701,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<GroupGallery>(
@@ -744,14 +755,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -771,9 +782,10 @@ class GroupsApi {
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -824,14 +836,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -851,9 +863,10 @@ class GroupsApi {
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -875,9 +888,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<GroupRole>(
@@ -926,14 +940,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -959,9 +973,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<Success>(
@@ -1010,14 +1025,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -1043,9 +1058,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<Success>(
@@ -1097,14 +1113,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -1130,9 +1146,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<Success>(
@@ -1189,14 +1206,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -1222,9 +1239,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<Success>(
@@ -1276,14 +1294,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -1340,14 +1358,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -1374,9 +1392,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<GroupRole>>(
@@ -1427,14 +1446,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -1465,9 +1484,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<Group>(
@@ -1516,14 +1536,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -1550,9 +1570,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<GroupAnnouncement>(
@@ -1609,14 +1630,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -1652,9 +1673,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<PaginatedGroupAuditLogEntryList>(
@@ -1707,14 +1729,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -1747,9 +1769,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<GroupMember>>(
@@ -1807,14 +1830,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -1848,9 +1871,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<GroupGalleryImage>>(
@@ -1899,14 +1923,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -1933,9 +1957,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<GroupMember>>(
@@ -1987,14 +2012,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -2021,9 +2046,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<GroupLimitedMember>(
@@ -2076,14 +2102,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -2116,9 +2142,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<GroupMember>>(
@@ -2167,14 +2194,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -2201,9 +2228,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<GroupPermission>>(
@@ -2252,14 +2280,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -2286,9 +2314,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<GroupMember>>(
@@ -2337,14 +2366,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -2371,9 +2400,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<GroupRole>>(
@@ -2422,14 +2452,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -2455,9 +2485,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<Group>(
@@ -2509,14 +2540,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -2570,14 +2601,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -2637,14 +2668,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -2671,9 +2702,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<String>>(
@@ -2727,14 +2759,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -2754,9 +2786,10 @@ class GroupsApi {
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -2808,14 +2841,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -2842,9 +2875,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<GroupMember>(
@@ -2895,14 +2929,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -2922,9 +2956,10 @@ class GroupsApi {
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -2945,9 +2980,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<Group>(
@@ -3001,14 +3037,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -3028,9 +3064,10 @@ class GroupsApi {
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -3052,9 +3089,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<GroupGallery>(
@@ -3108,14 +3146,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -3135,9 +3173,10 @@ class GroupsApi {
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -3159,9 +3198,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<GroupLimitedMember>(
@@ -3215,14 +3255,14 @@ class GroupsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -3242,9 +3282,10 @@ class GroupsApi {
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -3266,9 +3307,10 @@ class GroupsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<GroupRole>>(

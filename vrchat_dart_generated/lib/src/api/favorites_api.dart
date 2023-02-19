@@ -53,14 +53,14 @@ class FavoritesApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -80,9 +80,10 @@ class FavoritesApi {
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -104,9 +105,10 @@ class FavoritesApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<Favorite>(
@@ -164,14 +166,14 @@ class FavoritesApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -197,9 +199,10 @@ class FavoritesApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<Success>(
@@ -248,14 +251,14 @@ class FavoritesApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -282,9 +285,10 @@ class FavoritesApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<Favorite>(
@@ -342,14 +346,14 @@ class FavoritesApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -376,9 +380,10 @@ class FavoritesApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<FavoriteGroup>(
@@ -430,14 +435,14 @@ class FavoritesApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -471,9 +476,10 @@ class FavoritesApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<FavoriteGroup>>(
@@ -527,14 +533,14 @@ class FavoritesApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -569,9 +575,10 @@ class FavoritesApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<Favorite>>(
@@ -620,14 +627,14 @@ class FavoritesApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -653,9 +660,10 @@ class FavoritesApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<Success>(
@@ -715,14 +723,14 @@ class FavoritesApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -742,9 +750,10 @@ class FavoritesApi {
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(

@@ -72,9 +72,10 @@ class WorldsApi {
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -95,9 +96,10 @@ class WorldsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<World>(
@@ -146,14 +148,14 @@ class WorldsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -228,14 +230,14 @@ class WorldsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -278,9 +280,10 @@ class WorldsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<LimitedWorld>>(
@@ -352,14 +355,14 @@ class WorldsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -403,9 +406,10 @@ class WorldsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<LimitedWorld>>(
@@ -477,14 +481,14 @@ class WorldsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -528,9 +532,10 @@ class WorldsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<LimitedWorld>>(
@@ -606,9 +611,10 @@ class WorldsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<World>(
@@ -660,14 +666,14 @@ class WorldsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -694,9 +700,10 @@ class WorldsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<Instance>(
@@ -746,14 +753,14 @@ class WorldsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -780,9 +787,10 @@ class WorldsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<WorldMetadata>(
@@ -831,14 +839,14 @@ class WorldsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -865,9 +873,10 @@ class WorldsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<WorldPublishStatus>(
@@ -916,14 +925,14 @@ class WorldsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -1002,14 +1011,14 @@ class WorldsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -1054,9 +1063,10 @@ class WorldsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<LimitedWorld>>(
@@ -1105,14 +1115,14 @@ class WorldsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -1168,14 +1178,14 @@ class WorldsApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -1195,9 +1205,10 @@ class WorldsApi {
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -1218,9 +1229,10 @@ class WorldsApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<World>(

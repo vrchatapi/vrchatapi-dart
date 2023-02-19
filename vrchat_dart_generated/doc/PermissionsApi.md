@@ -23,14 +23,14 @@ Returns a list of all permissions currently granted by the user. Permissions are
 ### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 // TODO Configure API key authorization: authCookie
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: apiKeyCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getPermissionsApi();
 
@@ -51,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
+[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
 
 ### HTTP request headers
 
@@ -70,14 +70,14 @@ Returns a single permission. This endpoint is pretty useless, as it returns the 
 ### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 // TODO Configure API key authorization: authCookie
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: apiKeyCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getPermissionsApi();
 final String permissionId = permissionId_example; // String | Must be a valid permission ID.
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyCookie](../README.md#apiKeyCookie), [authCookie](../README.md#authCookie)
+[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
 
 ### HTTP request headers
 

@@ -54,14 +54,14 @@ class UsersApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -87,9 +87,10 @@ class UsersApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<User>(
@@ -139,14 +140,14 @@ class UsersApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -172,9 +173,10 @@ class UsersApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<User>(
@@ -223,14 +225,14 @@ class UsersApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -257,9 +259,10 @@ class UsersApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<Group>>(
@@ -308,14 +311,14 @@ class UsersApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -342,9 +345,10 @@ class UsersApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<Group>>(
@@ -398,14 +402,14 @@ class UsersApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -440,9 +444,10 @@ class UsersApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<LimitedUser>>(
@@ -493,14 +498,14 @@ class UsersApi {
         'secure': <Map<String, String>>[
           {
             'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
             'where': '',
           },
           {
             'type': 'apiKey',
-            'name': 'authCookie',
-            'keyName': 'auth',
+            'name': 'apiKeyCookie',
+            'keyName': 'apiKey',
             'where': '',
           },
         ],
@@ -520,9 +525,10 @@ class UsersApi {
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -544,9 +550,10 @@ class UsersApi {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<CurrentUser>(

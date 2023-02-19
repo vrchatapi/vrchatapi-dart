@@ -89,8 +89,9 @@ For more information, please visit [https://github.com/VRChatAPI](https://github
 
 ## Requirements
 
-* Dart 2.12.0 or later OR Flutter 1.26.0 or later
-* Dio 4.0.0+
+* Dart 2.15.0+ or Flutter 2.8.0+
+* Dio 5.0.0+ (https://pub.dev/packages/dio)
+* JSON Serializable 6.1.5+ (https://pub.dev/packages/json_serializable)
 
 ## Installation & Usage
 
@@ -98,7 +99,7 @@ For more information, please visit [https://github.com/VRChatAPI](https://github
 To use the package from [pub.dev](https://pub.dev), please include the following in pubspec.yaml
 ```yaml
 dependencies:
-  vrchat_dart_generated: 1.11.0
+  vrchat_dart_generated: 1.11.1
 ```
 
 ### Github
@@ -410,27 +411,27 @@ Class | Method | HTTP request | Description
 ## Documentation For Authorization
 
 
-## apiKeyCookie
-
-- **Type**: API key
-- **API key parameter name**: apiKey
-- **Location**: 
-
 ## apiKeyQuery
 
 - **Type**: API key
 - **API key parameter name**: apiKey
 - **Location**: URL query string
 
-## authCookie
+## apiKeyCookie
 
 - **Type**: API key
-- **API key parameter name**: auth
+- **API key parameter name**: apiKey
 - **Location**: 
 
 ## authHeader
 
 - **Type**: HTTP basic authentication
+
+## authCookie
+
+- **Type**: API key
+- **API key parameter name**: auth
+- **Location**: 
 
 ## twoFactorAuthCookie
 

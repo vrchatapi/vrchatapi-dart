@@ -7,6 +7,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'avatar_unity_package_url_object.g.dart';
 
+@Deprecated('AvatarUnityPackageUrlObject has been deprecated')
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -19,6 +20,7 @@ class AvatarUnityPackageUrlObject {
     this.unityPackageUrl,
   });
 
+  @Deprecated('unityPackageUrl has been deprecated')
   @JsonKey(name: r'unityPackageUrl', required: false, includeIfNull: false)
   final String? unityPackageUrl;
 
