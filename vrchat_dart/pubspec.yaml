@@ -7,10 +7,11 @@ environment:
   sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
-  vrchat_dart_generated: ^1.8.0
+  vrchat_dart_generated:
+    path: ../vrchat_dart_generated
   dio_cookie_manager: ^2.0.0
   cookie_jar: ^3.0.1
-  dio: ^4.0.0
+  dio: ^5.0.0
   web_socket_channel: ^2.1.0
   json_annotation: ^4.7.0
   built_value: ^8.1.1

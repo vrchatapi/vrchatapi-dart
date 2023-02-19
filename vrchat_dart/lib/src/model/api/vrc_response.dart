@@ -39,7 +39,7 @@ class VrcError {
         statusCode = statusCodeFallback;
       }
     } else {
-      message = error.message;
+      message = error.message ?? '';
       statusCode = statusCodeFallback;
     }
 

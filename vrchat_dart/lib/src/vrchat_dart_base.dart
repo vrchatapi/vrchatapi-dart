@@ -43,8 +43,8 @@ class VrchatDart {
           userAgent: userAgent,
           options: BaseOptions(
             baseUrl: baseUrl ?? VrchatDartGenerated.basePath,
-            connectTimeout: 5000,
-            receiveTimeout: 3000,
+            connectTimeout: const Duration(seconds: 5),
+            receiveTimeout: const Duration(seconds: 3),
             headers: {'User-Agent': userAgent.toString()},
           ),
           cookiePath: cookiePath,
