@@ -468,9 +468,10 @@ packages:
   vrchat_dart_generated:
     dependency: "direct main"
     description:
-      path: "../vrchat_dart_generated"
-      relative: true
-    source: path
+      name: vrchat_dart_generated
+      sha256: b01b6fe7413d249d23cd91ccf67f5f479da99fc22e57b740261d8f515676105f
+      url: "https://pub.dev"
+    source: hosted
     version: "1.11.1"
   watcher:
     dependency: transitive

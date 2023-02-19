@@ -1,3 +1,7 @@
+## 3.2.0
+- Updates `vrchat_dart_generated`
+- Upgrades dio to `^5.0.0`
+
 ## 3.1.0
 - Enforce the new user agent structure required by the VRChat guidelines
 - NOTE: THIS IS A BREAKING CHANGE. This has purposely been released as a minor version to increase the chances of compliance and reduce the chance of moderation actions.
