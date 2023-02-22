@@ -23,11 +23,12 @@ class AuthApi {
     String? username,
     String? password,
   }) async {
+    final encodedUsername = Uri.encodeComponent('$username');
+    final encodedPassword = Uri.encodeComponent('$password');
+    final authorization =
+        base64.encode(utf8.encode('$encodedUsername:$encodedPassword'));
     final response = await _rawApi.getAuthenticationApi().getCurrentUser(
-      headers: {
-        'Authorization':
-            'Basic ${base64.encode(utf8.encode('$username:$password'))}'
-      },
+      headers: {'Authorization': 'Basic $authorization'},
     ).validateVrc();
 
     final failure = response.failure;
