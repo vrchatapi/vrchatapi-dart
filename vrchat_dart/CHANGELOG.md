@@ -1,3 +1,6 @@
+## 3.2.2
+- Fixes basic auth encoding
+
 ## 3.2.1
 - Fixes an issue with deserialization of `VrcError`s
 
