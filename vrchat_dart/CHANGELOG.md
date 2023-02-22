@@ -1,3 +1,6 @@
+## 3.2.1
+- Fixes an issue with deserialization of `VrcError`s
+
 ## 3.2.0
 - Updates `vrchat_dart_generated`
 - Upgrades dio to `^5.0.0`
