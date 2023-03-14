@@ -484,10 +484,11 @@ packages:
   web_socket_channel:
     dependency: "direct main"
     description:
-      name: web_socket_channel
-      sha256: ca49c0bc209c687b887f30527fb6a9d80040b072cc2990f34b9bec3e7663101b
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: eb1e3769d1d918b7df32705372022ad6a123745e
+      resolved-ref: eb1e3769d1d918b7df32705372022ad6a123745e
+      url: "https://github.com/Rexios80/web_socket_channel.git"
+    source: git
     version: "2.3.0"
   yaml:
     dependency: "direct dev"

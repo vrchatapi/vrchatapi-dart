@@ -1,3 +1,6 @@
+## 3.3.0-pre.1
+- Adds a temporary workaround for websocket user agent issues
+
 ## 3.2.2
 - Fixes basic auth encoding
 

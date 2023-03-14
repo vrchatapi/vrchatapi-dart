@@ -18,6 +18,15 @@ As stated, this documentation was not created with the help of the official VRCh
 
 ## Getting Started
 
+IMPORTANT: Due to the strict enforcement of user agents, you must add the following dependency override until [this PR](https://github.com/dart-lang/web_socket_channel/pull/259) is released
+```yaml
+dependency_overrides:
+  web_socket_channel:
+    git:
+      url: https://github.com/Rexios80/web_socket_channel.git
+      ref: eb1e3769d1d918b7df32705372022ad6a123745e
+```
+
 See the [example](https://github.com/vrchatapi/vrchatapi-dart/blob/master/vrchat_dart/example/main.dart) for getting started in Dart.
 
 See [example_flutter](https://github.com/vrchatapi/vrchatapi-dart/tree/master/vrchat_dart/example_flutter) for help getting started in Flutter.

@@ -46,7 +46,7 @@ class VrcStreaming {
 
     _channel = connect(
       Uri.parse('$_baseUrl?authToken=$authToken'),
-      headers: {'User-Agent': _userAgent.toString()},
+      userAgent: _userAgent.toString(),
     );
 
     _channel?.stream.listen(_handleWebsocketEvent);
