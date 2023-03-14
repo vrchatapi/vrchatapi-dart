@@ -7,6 +7,9 @@ import 'package:vrchat_dart/src/streaming/vrc_streaming.dart';
 
 /// VrchatDart
 class VrchatDart {
+  /// The user agent
+  VrchatUserAgent userAgent;
+
   final VrcApi _api;
 
   /// Access to auth convenience methods
@@ -35,7 +38,7 @@ class VrchatDart {
   ///
   /// Pass in a [websocketUrl] to override the default websocket URL.
   VrchatDart({
-    required VrchatUserAgent userAgent,
+    required this.userAgent,
     String? cookiePath,
     String? baseUrl,
     String? websocketUrl,

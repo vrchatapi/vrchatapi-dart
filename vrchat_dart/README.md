@@ -21,6 +21,7 @@ As stated, this documentation was not created with the help of the official VRCh
 IMPORTANT: Due to the strict enforcement of user agents, you must add the following dependency override until [this PR](https://github.com/dart-lang/web_socket_channel/pull/259) is released
 ```yaml
 dependency_overrides:
+  # TODO: REMOVE
   web_socket_channel:
     git:
       url: https://github.com/Rexios80/web_socket_channel.git
