@@ -25,7 +25,7 @@ void main() async {
     print(loginResponse.failure);
     throw Exception('Login failed');
   }
-  
+
   final authResponse = loginResponse.success!.data;
   if (authResponse.requiresTwoFactorAuth) {
     print('requiresTwoFactorAuth');
