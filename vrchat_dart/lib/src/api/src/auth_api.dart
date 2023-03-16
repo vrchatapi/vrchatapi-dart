@@ -35,16 +35,23 @@ class AuthApi {
     if (failure != null) {
       final response = failure.response;
 
-      if (response != null &&
-          response.data is Map<String, dynamic> &&
-          response.data['requiresTwoFactorAuth'] != null) {
+      if (response == null) return failure.cast();
+
+      final data = response.data;
+      if (data is! Map<String, dynamic>) return failure.cast();
+
+      final twoFactorAuthTypes = (data['requiresTwoFactorAuth'] as List?)
+          ?.cast<String>()
+          .map(TwoFactorAuthType.values.byName)
+          .toList();
+      if (twoFactorAuthTypes != null) {
         return ValidatedResponse.success(
-          AuthResponse(requiresTwoFactorAuth: true),
+          AuthResponse(twoFactorAuthTypes: twoFactorAuthTypes),
           response,
         );
-      } else {
-        return failure.cast();
       }
+
+      return failure.cast();
     }
 
     final success = response.success!;

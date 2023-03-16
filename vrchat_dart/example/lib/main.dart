@@ -23,8 +23,16 @@ void main() async {
   if (loginResponse.failure != null) {
     print('authError');
     print(loginResponse.failure);
-  } else if (loginResponse.success!.data.requiresTwoFactorAuth) {
+    throw Exception('Login failed');
+  }
+  
+  final authResponse = loginResponse.success!.data;
+  if (authResponse.requiresTwoFactorAuth) {
     print('requiresTwoFactorAuth');
+
+    if (!authResponse.twoFactorAuthTypes.contains(TwoFactorAuthType.totp)) {
+      throw Exception('Cannot automatically handle 2FA');
+    }
 
     // VRChat is forcing 2FA these days. If you don't have 2FA enabled on your
     // account, you will be required to 2FA over email which is not ideal for

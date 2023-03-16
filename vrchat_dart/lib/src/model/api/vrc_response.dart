@@ -6,10 +6,25 @@ class AuthResponse {
   /// True if this account requires two factor auth
   final bool requiresTwoFactorAuth;
 
+  /// The currently available options for two factor auth
+  final List<TwoFactorAuthType> twoFactorAuthTypes;
+
   /// Create an [AuthResponse]
   AuthResponse({
-    this.requiresTwoFactorAuth = false,
-  });
+    this.twoFactorAuthTypes = const [],
+  }) : requiresTwoFactorAuth = twoFactorAuthTypes.isNotEmpty;
+}
+
+/// Types of two factor auth for VRChat
+enum TwoFactorAuthType {
+  /// One time password (probably a backup code)
+  otp,
+
+  /// Timed one time password from an authenticator app
+  totp,
+
+  /// Two factor auth via an email
+  emailOtp,
 }
 
 /// An error returned from the VRChat API

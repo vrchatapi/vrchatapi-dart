@@ -1,3 +1,6 @@
+## 3.3.0-pre.2
+- Adds `twoFactorAuthTypes` to `AuthResponse`
+
 ## 3.3.0-pre.1
 - Adds a temporary workaround for websocket user agent issues
 - Exposes the user agent for easy sharing with other network clients
