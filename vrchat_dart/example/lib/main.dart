@@ -2,6 +2,9 @@ import 'dart:convert';
 
 import 'package:otp/otp.dart';
 import 'package:vrchat_dart/vrchat_dart.dart';
+
+/// Create the file `lib/credentials.dart` with the fields required to make
+/// this file happy
 import 'package:vrchat_dart_example/credentials.dart';
 
 const tupperUid = 'usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469';
