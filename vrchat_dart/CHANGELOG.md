@@ -1,3 +1,6 @@
+## NEXT
+- Dependency upgrades
+
 ## 3.3.0-pre.2
 - Adds `twoFactorAuthTypes` to `AuthResponse`
 
