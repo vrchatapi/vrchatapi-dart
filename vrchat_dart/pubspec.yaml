@@ -8,8 +8,8 @@ environment:
 
 dependencies:
   vrchat_dart_generated: ^1.11.1
-  dio_cookie_manager: ^2.0.0
-  cookie_jar: ^3.0.1
+  dio_cookie_manager: ^3.0.0
+  cookie_jar: ^4.0.1
   dio: ^5.0.0
   web_socket_channel: ^2.1.0
   json_annotation: ^4.7.0
