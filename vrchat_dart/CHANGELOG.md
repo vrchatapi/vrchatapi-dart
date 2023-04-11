@@ -1,5 +1,6 @@
-## NEXT
-- Dependency upgrades
+## 3.3.0
+- Updates `web_socket_channel` to fix user agent issue
+- Other dependency upgrades
 
 ## 3.3.0-pre.2
 - Adds `twoFactorAuthTypes` to `AuthResponse`
