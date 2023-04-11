@@ -16,8 +16,3 @@ dev_dependencies:
 dependency_overrides:
   vrchat_dart_generated:
     path: ../../vrchat_dart_generated
-  # TODO: REMOVE
-  web_socket_channel:
-    git:
-      url: https://github.com/Rexios80/web_socket_channel.git
-      ref: eb1e3769d1d918b7df32705372022ad6a123745e

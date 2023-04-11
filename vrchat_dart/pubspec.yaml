@@ -11,7 +11,7 @@ dependencies:
   dio_cookie_manager: ^3.0.0
   cookie_jar: ^4.0.1
   dio: ^5.0.0
-  web_socket_channel: ^2.1.0
+  web_socket_channel: ^2.4.0
   json_annotation: ^4.7.0
   built_value: ^8.1.1
   collection: ^1.15.0
@@ -23,10 +23,3 @@ dev_dependencies:
   json_serializable: ^6.0.1
   yaml: ^3.1.1
   parselyzer: ^0.1.0
-
-dependency_overrides:
-  # TODO: REMOVE
-  web_socket_channel:
-    git:
-      url: https://github.com/Rexios80/web_socket_channel.git
-      ref: eb1e3769d1d918b7df32705372022ad6a123745e
