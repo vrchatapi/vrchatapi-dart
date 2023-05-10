@@ -176,9 +176,7 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'CurrentUser':
       return CurrentUser.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'DeploymentGroup':
-
     case 'DeveloperType':
-
     case 'DynamicContentRow':
       return DynamicContentRow.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -190,15 +188,12 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return FavoriteGroup.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'FavoriteGroupVisibility':
-
     case 'FavoriteType':
-
     case 'File':
       return File.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'FileData':
       return FileData.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'FileStatus':
-
     case 'FileUploadURL':
       return FileUploadURL.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -226,7 +221,6 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return GroupGalleryImage.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'GroupJoinState':
-
     case 'GroupLimitedMember':
       return GroupLimitedMember.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -236,7 +230,6 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return GroupMemberLimitedUser.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'GroupMemberStatus':
-
     case 'GroupMyMember':
       return GroupMyMember.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -244,13 +237,10 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return GroupPermission.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'GroupPrivacy':
-
     case 'GroupRole':
       return GroupRole.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'GroupRoleTemplate':
-
     case 'GroupUserVisibility':
-
     case 'InfoPush':
       return InfoPush.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'InfoPushData':
@@ -273,12 +263,10 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return InstanceShortNameResponse.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'InstanceType':
-
     case 'InviteMessage':
       return InviteMessage.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'InviteMessageType':
-
     case 'InviteRequest':
       return InviteRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -288,11 +276,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'License':
       return License.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'LicenseAction':
-
     case 'LicenseGroup':
       return LicenseGroup.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'LicenseType':
-
     case 'LimitedUnityPackage':
       return LimitedUnityPackage.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -301,16 +287,13 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'LimitedWorld':
       return LimitedWorld.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'MIMEType':
-
     case 'ModerateUserRequest':
       return ModerateUserRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'Notification':
       return Notification.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'NotificationType':
-
     case 'OrderOption':
-
     case 'PaginatedGroupAuditLogEntryList':
       return PaginatedGroupAuditLogEntryList.fromJson(
           value as Map<String, dynamic>) as ReturnType;
@@ -323,11 +306,8 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return PlayerModeration.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'PlayerModerationType':
-
     case 'Region':
-
     case 'ReleaseStatus':
-
     case 'RequestInviteRequest':
       return RequestInviteRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -340,11 +320,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return SentNotification.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'SortOption':
-
     case 'Subscription':
       return Subscription.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'SubscriptionPeriod':
-
     case 'Success':
       return Success.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Transaction':
@@ -353,7 +331,6 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return TransactionAgreement.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'TransactionStatus':
-
     case 'TransactionSteamInfo':
       return TransactionSteamInfo.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -400,9 +377,7 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'UserExists':
       return UserExists.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'UserState':
-
     case 'UserStatus':
-
     case 'UserSubscription':
       return UserSubscription.fromJson(value as Map<String, dynamic>)
           as ReturnType;
