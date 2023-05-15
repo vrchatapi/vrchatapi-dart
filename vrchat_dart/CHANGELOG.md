@@ -1,3 +1,7 @@
+## NEXT
+- Removes unused dependencies
+- Use `fixer` package to simplify output patching
+
 ## 3.3.0
 - Updates `web_socket_channel` to fix user agent issue
 - Other dependency upgrades
