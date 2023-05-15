@@ -26,7 +26,7 @@ Future<void> patchModel() async {
     var content = file.readAsStringSync();
 
     content = content
-        .replaceAll(RegExp('    defaultValue: .*,'), '')
+        .replaceAll(RegExp('defaultValue: .+?,'), '')
         .replaceAllMapped(
           RegExp(r"const (.*)Enum\._\('(.*)'\)"),
           (match) => '${match.group(1)}Enum.${match.group(2)}',

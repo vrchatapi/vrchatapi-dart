@@ -121,7 +121,6 @@ class APIConfig {
 
   /// Public Announcements
   @JsonKey(name: r'announcements', required: true, includeIfNull: false)
-
 // ignore: deprecated_member_use_from_same_package
   final Set<APIConfigAnnouncement> announcements;
 
@@ -544,6 +543,7 @@ class APIConfig {
           other.releaseSdkVersion == releaseSdkVersion &&
 // ignore: deprecated_member_use_from_same_package
           other.releaseServerVersionStandalone ==
+// ignore: deprecated_member_use_from_same_package
               releaseServerVersionStandalone &&
           other.sdkDeveloperFaqUrl == sdkDeveloperFaqUrl &&
           other.sdkDiscordUrl == sdkDiscordUrl &&

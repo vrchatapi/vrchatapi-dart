@@ -61,7 +61,7 @@ void main() async {
     throw Exception('Login failed');
   }
 
-  print('Logged in as ${currentUser.username}');
+  print('Logged in as ${currentUser.displayName}');
 
   // Convenience methods on CurrentUser
   currentUser.toUser();

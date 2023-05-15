@@ -13,6 +13,8 @@ cd ..
 
 openapi-generator generate -g dart-dio -c generator-config.yaml
 
+# Format before patching since extra line breaks can break the patches
+dart format .
 cd vrchat_dart
 dart run tool/patch_output.dart
 cd ..

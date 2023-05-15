@@ -47,11 +47,8 @@ class FinishFileDataUploadRequest {
 
   @override
   int get hashCode =>
-      etags.hashCode +
 // ignore: deprecated_member_use_from_same_package
-      nextPartNumber.hashCode +
-// ignore: deprecated_member_use_from_same_package
-      maxParts.hashCode;
+      etags.hashCode + nextPartNumber.hashCode + maxParts.hashCode;
 
   factory FinishFileDataUploadRequest.fromJson(Map<String, dynamic> json) =>
       _$FinishFileDataUploadRequestFromJson(json);
