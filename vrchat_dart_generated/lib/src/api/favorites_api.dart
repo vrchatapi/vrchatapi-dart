@@ -95,12 +95,14 @@ class FavoritesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Favorite _responseData;
+    Favorite? _responseData;
 
     try {
-      _responseData = deserialize<Favorite, Favorite>(
-          _response.data!, 'Favorite',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Favorite, Favorite>(rawData, 'Favorite',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -190,11 +192,13 @@ class FavoritesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Success _responseData;
+    Success? _responseData;
 
     try {
-      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -275,12 +279,14 @@ class FavoritesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Favorite _responseData;
+    Favorite? _responseData;
 
     try {
-      _responseData = deserialize<Favorite, Favorite>(
-          _response.data!, 'Favorite',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Favorite, Favorite>(rawData, 'Favorite',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -370,12 +376,14 @@ class FavoritesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    FavoriteGroup _responseData;
+    FavoriteGroup? _responseData;
 
     try {
-      _responseData = deserialize<FavoriteGroup, FavoriteGroup>(
-          _response.data!, 'FavoriteGroup',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<FavoriteGroup, FavoriteGroup>(rawData, 'FavoriteGroup',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -466,12 +474,15 @@ class FavoritesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<FavoriteGroup> _responseData;
+    List<FavoriteGroup>? _responseData;
 
     try {
-      _responseData = deserialize<List<FavoriteGroup>, FavoriteGroup>(
-          _response.data!, 'List<FavoriteGroup>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<FavoriteGroup>, FavoriteGroup>(
+              rawData, 'List<FavoriteGroup>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -565,12 +576,14 @@ class FavoritesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<Favorite> _responseData;
+    List<Favorite>? _responseData;
 
     try {
-      _responseData = deserialize<List<Favorite>, Favorite>(
-          _response.data!, 'List<Favorite>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<Favorite>, Favorite>(rawData, 'List<Favorite>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -651,11 +664,13 @@ class FavoritesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Success _responseData;
+    Success? _responseData;
 
     try {
-      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

@@ -87,11 +87,13 @@ class WorldsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    World _responseData;
+    World? _responseData;
 
     try {
-      _responseData =
-          deserialize<World, World>(_response.data!, 'World', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<World, World>(rawData, 'World', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -270,12 +272,15 @@ class WorldsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<LimitedWorld> _responseData;
+    List<LimitedWorld>? _responseData;
 
     try {
-      _responseData = deserialize<List<LimitedWorld>, LimitedWorld>(
-          _response.data!, 'List<LimitedWorld>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<LimitedWorld>, LimitedWorld>(
+              rawData, 'List<LimitedWorld>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -396,12 +401,15 @@ class WorldsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<LimitedWorld> _responseData;
+    List<LimitedWorld>? _responseData;
 
     try {
-      _responseData = deserialize<List<LimitedWorld>, LimitedWorld>(
-          _response.data!, 'List<LimitedWorld>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<LimitedWorld>, LimitedWorld>(
+              rawData, 'List<LimitedWorld>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -522,12 +530,15 @@ class WorldsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<LimitedWorld> _responseData;
+    List<LimitedWorld>? _responseData;
 
     try {
-      _responseData = deserialize<List<LimitedWorld>, LimitedWorld>(
-          _response.data!, 'List<LimitedWorld>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<LimitedWorld>, LimitedWorld>(
+              rawData, 'List<LimitedWorld>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -602,11 +613,13 @@ class WorldsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    World _responseData;
+    World? _responseData;
 
     try {
-      _responseData =
-          deserialize<World, World>(_response.data!, 'World', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<World, World>(rawData, 'World', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -690,12 +703,14 @@ class WorldsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Instance _responseData;
+    Instance? _responseData;
 
     try {
-      _responseData = deserialize<Instance, Instance>(
-          _response.data!, 'Instance',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Instance, Instance>(rawData, 'Instance',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -777,12 +792,14 @@ class WorldsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    WorldMetadata _responseData;
+    WorldMetadata? _responseData;
 
     try {
-      _responseData = deserialize<WorldMetadata, WorldMetadata>(
-          _response.data!, 'WorldMetadata',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<WorldMetadata, WorldMetadata>(rawData, 'WorldMetadata',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -863,12 +880,15 @@ class WorldsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    WorldPublishStatus _responseData;
+    WorldPublishStatus? _responseData;
 
     try {
-      _responseData = deserialize<WorldPublishStatus, WorldPublishStatus>(
-          _response.data!, 'WorldPublishStatus',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<WorldPublishStatus, WorldPublishStatus>(
+              rawData, 'WorldPublishStatus',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1053,12 +1073,15 @@ class WorldsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<LimitedWorld> _responseData;
+    List<LimitedWorld>? _responseData;
 
     try {
-      _responseData = deserialize<List<LimitedWorld>, LimitedWorld>(
-          _response.data!, 'List<LimitedWorld>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<LimitedWorld>, LimitedWorld>(
+              rawData, 'List<LimitedWorld>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1220,11 +1243,13 @@ class WorldsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    World _responseData;
+    World? _responseData;
 
     try {
-      _responseData =
-          deserialize<World, World>(_response.data!, 'World', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<World, World>(rawData, 'World', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

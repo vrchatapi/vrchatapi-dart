@@ -77,11 +77,13 @@ class FriendsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Success _responseData;
+    Success? _responseData;
 
     try {
-      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -162,12 +164,14 @@ class FriendsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Notification _responseData;
+    Notification? _responseData;
 
     try {
-      _responseData = deserialize<Notification, Notification>(
-          _response.data!, 'Notification',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Notification, Notification>(rawData, 'Notification',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -248,12 +252,14 @@ class FriendsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    FriendStatus _responseData;
+    FriendStatus? _responseData;
 
     try {
-      _responseData = deserialize<FriendStatus, FriendStatus>(
-          _response.data!, 'FriendStatus',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<FriendStatus, FriendStatus>(rawData, 'FriendStatus',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -344,12 +350,15 @@ class FriendsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<LimitedUser> _responseData;
+    List<LimitedUser>? _responseData;
 
     try {
-      _responseData = deserialize<List<LimitedUser>, LimitedUser>(
-          _response.data!, 'List<LimitedUser>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<LimitedUser>, LimitedUser>(
+              rawData, 'List<LimitedUser>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -430,11 +439,13 @@ class FriendsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Success _responseData;
+    Success? _responseData;
 
     try {
-      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

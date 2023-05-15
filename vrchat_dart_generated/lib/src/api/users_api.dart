@@ -78,11 +78,13 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    User _responseData;
+    User? _responseData;
 
     try {
-      _responseData =
-          deserialize<User, User>(_response.data!, 'User', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<User, User>(rawData, 'User', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -164,11 +166,13 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    User _responseData;
+    User? _responseData;
 
     try {
-      _responseData =
-          deserialize<User, User>(_response.data!, 'User', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<User, User>(rawData, 'User', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -249,12 +253,14 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<Group> _responseData;
+    List<Group>? _responseData;
 
     try {
-      _responseData = deserialize<List<Group>, Group>(
-          _response.data!, 'List<Group>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<Group>, Group>(rawData, 'List<Group>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -335,12 +341,14 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<Group> _responseData;
+    List<Group>? _responseData;
 
     try {
-      _responseData = deserialize<List<Group>, Group>(
-          _response.data!, 'List<Group>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<Group>, Group>(rawData, 'List<Group>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -434,12 +442,15 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<LimitedUser> _responseData;
+    List<LimitedUser>? _responseData;
 
     try {
-      _responseData = deserialize<List<LimitedUser>, LimitedUser>(
-          _response.data!, 'List<LimitedUser>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<LimitedUser>, LimitedUser>(
+              rawData, 'List<LimitedUser>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -540,12 +551,14 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    CurrentUser _responseData;
+    CurrentUser? _responseData;
 
     try {
-      _responseData = deserialize<CurrentUser, CurrentUser>(
-          _response.data!, 'CurrentUser',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<CurrentUser, CurrentUser>(rawData, 'CurrentUser',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

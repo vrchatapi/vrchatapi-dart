@@ -88,12 +88,14 @@ class AuthenticationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    UserExists _responseData;
+    UserExists? _responseData;
 
     try {
-      _responseData = deserialize<UserExists, UserExists>(
-          _response.data!, 'UserExists',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<UserExists, UserExists>(rawData, 'UserExists',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -174,12 +176,14 @@ class AuthenticationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    CurrentUser _responseData;
+    CurrentUser? _responseData;
 
     try {
-      _responseData = deserialize<CurrentUser, CurrentUser>(
-          _response.data!, 'CurrentUser',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<CurrentUser, CurrentUser>(rawData, 'CurrentUser',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -262,12 +266,14 @@ class AuthenticationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    CurrentUser _responseData;
+    CurrentUser? _responseData;
 
     try {
-      _responseData = deserialize<CurrentUser, CurrentUser>(
-          _response.data!, 'CurrentUser',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<CurrentUser, CurrentUser>(rawData, 'CurrentUser',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -339,11 +345,13 @@ class AuthenticationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Success _responseData;
+    Success? _responseData;
 
     try {
-      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -435,12 +443,15 @@ class AuthenticationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Verify2FAResult _responseData;
+    Verify2FAResult? _responseData;
 
     try {
-      _responseData = deserialize<Verify2FAResult, Verify2FAResult>(
-          _response.data!, 'Verify2FAResult',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Verify2FAResult, Verify2FAResult>(
+              rawData, 'Verify2FAResult',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -532,12 +543,14 @@ class AuthenticationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Verify2FAEmailCodeResult _responseData;
+    Verify2FAEmailCodeResult? _responseData;
 
     try {
-      _responseData =
-          deserialize<Verify2FAEmailCodeResult, Verify2FAEmailCodeResult>(
-              _response.data!, 'Verify2FAEmailCodeResult',
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Verify2FAEmailCodeResult, Verify2FAEmailCodeResult>(
+              rawData, 'Verify2FAEmailCodeResult',
               growable: true);
     } catch (error, stackTrace) {
       throw DioError(
@@ -610,12 +623,15 @@ class AuthenticationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    VerifyAuthTokenResult _responseData;
+    VerifyAuthTokenResult? _responseData;
 
     try {
-      _responseData = deserialize<VerifyAuthTokenResult, VerifyAuthTokenResult>(
-          _response.data!, 'VerifyAuthTokenResult',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<VerifyAuthTokenResult, VerifyAuthTokenResult>(
+              rawData, 'VerifyAuthTokenResult',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -707,12 +723,15 @@ class AuthenticationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Verify2FAResult _responseData;
+    Verify2FAResult? _responseData;
 
     try {
-      _responseData = deserialize<Verify2FAResult, Verify2FAResult>(
-          _response.data!, 'Verify2FAResult',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Verify2FAResult, Verify2FAResult>(
+              rawData, 'Verify2FAResult',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

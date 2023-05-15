@@ -411,29 +411,30 @@ Class | Method | HTTP request | Description
 ## Documentation For Authorization
 
 
-## apiKeyQuery
+Authentication schemes defined for the API:
+### apiKeyQuery
 
 - **Type**: API key
 - **API key parameter name**: apiKey
 - **Location**: URL query string
 
-## apiKeyCookie
+### apiKeyCookie
 
 - **Type**: API key
 - **API key parameter name**: apiKey
 - **Location**: 
 
-## authHeader
+### authHeader
 
 - **Type**: HTTP basic authentication
 
-## authCookie
+### authCookie
 
 - **Type**: API key
 - **API key parameter name**: auth
 - **Location**: 
 
-## twoFactorAuthCookie
+### twoFactorAuthCookie
 
 - **Type**: API key
 - **API key parameter name**: twoFactorAuth

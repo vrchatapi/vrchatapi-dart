@@ -97,11 +97,13 @@ class FilesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    File _responseData;
+    File? _responseData;
 
     try {
-      _responseData =
-          deserialize<File, File>(_response.data!, 'File', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<File, File>(rawData, 'File', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -202,11 +204,13 @@ class FilesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    File _responseData;
+    File? _responseData;
 
     try {
-      _responseData =
-          deserialize<File, File>(_response.data!, 'File', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<File, File>(rawData, 'File', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -287,11 +291,13 @@ class FilesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Success _responseData;
+    Success? _responseData;
 
     try {
-      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -375,11 +381,13 @@ class FilesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    File _responseData;
+    File? _responseData;
 
     try {
-      _responseData =
-          deserialize<File, File>(_response.data!, 'File', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<File, File>(rawData, 'File', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -550,11 +558,13 @@ class FilesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    File _responseData;
+    File? _responseData;
 
     try {
-      _responseData =
-          deserialize<File, File>(_response.data!, 'File', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<File, File>(rawData, 'File', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -635,11 +645,13 @@ class FilesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    File _responseData;
+    File? _responseData;
 
     try {
-      _responseData =
-          deserialize<File, File>(_response.data!, 'File', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<File, File>(rawData, 'File', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -726,12 +738,14 @@ class FilesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    FileVersionUploadStatus _responseData;
+    FileVersionUploadStatus? _responseData;
 
     try {
-      _responseData =
-          deserialize<FileVersionUploadStatus, FileVersionUploadStatus>(
-              _response.data!, 'FileVersionUploadStatus',
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<FileVersionUploadStatus, FileVersionUploadStatus>(
+              rawData, 'FileVersionUploadStatus',
               growable: true);
     } catch (error, stackTrace) {
       throw DioError(
@@ -774,7 +788,7 @@ class FilesApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<List<File>>> getFiles({
     String? tag,
-    String? userId,
+    @Deprecated('userId is deprecated') String? userId,
     int? n = 60,
     int? offset,
     CancelToken? cancelToken,
@@ -826,12 +840,14 @@ class FilesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<File> _responseData;
+    List<File>? _responseData;
 
     try {
-      _responseData = deserialize<List<File>, File>(
-          _response.data!, 'List<File>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<File>, File>(rawData, 'List<File>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -875,7 +891,7 @@ class FilesApi {
     required String fileId,
     required int versionId,
     required String fileType,
-    int? partNumber,
+    @Deprecated('partNumber is deprecated') int? partNumber,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -925,12 +941,14 @@ class FilesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    FileUploadURL _responseData;
+    FileUploadURL? _responseData;
 
     try {
-      _responseData = deserialize<FileUploadURL, FileUploadURL>(
-          _response.data!, 'FileUploadURL',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<FileUploadURL, FileUploadURL>(rawData, 'FileUploadURL',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

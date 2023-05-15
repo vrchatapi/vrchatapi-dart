@@ -87,12 +87,14 @@ class InviteApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    InviteMessage _responseData;
+    InviteMessage? _responseData;
 
     try {
-      _responseData = deserialize<InviteMessage, InviteMessage>(
-          _response.data!, 'InviteMessage',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<InviteMessage, InviteMessage>(rawData, 'InviteMessage',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -176,12 +178,15 @@ class InviteApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<InviteMessage> _responseData;
+    List<InviteMessage>? _responseData;
 
     try {
-      _responseData = deserialize<List<InviteMessage>, InviteMessage>(
-          _response.data!, 'List<InviteMessage>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<InviteMessage>, InviteMessage>(
+              rawData, 'List<InviteMessage>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -265,12 +270,15 @@ class InviteApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    SentNotification _responseData;
+    SentNotification? _responseData;
 
     try {
-      _responseData = deserialize<SentNotification, SentNotification>(
-          _response.data!, 'SentNotification',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<SentNotification, SentNotification>(
+              rawData, 'SentNotification',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -371,12 +379,15 @@ class InviteApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    SentNotification _responseData;
+    SentNotification? _responseData;
 
     try {
-      _responseData = deserialize<SentNotification, SentNotification>(
-          _response.data!, 'SentNotification',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<SentNotification, SentNotification>(
+              rawData, 'SentNotification',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -477,12 +488,14 @@ class InviteApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Notification _responseData;
+    Notification? _responseData;
 
     try {
-      _responseData = deserialize<Notification, Notification>(
-          _response.data!, 'Notification',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Notification, Notification>(rawData, 'Notification',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -569,12 +582,15 @@ class InviteApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<InviteMessage> _responseData;
+    List<InviteMessage>? _responseData;
 
     try {
-      _responseData = deserialize<List<InviteMessage>, InviteMessage>(
-          _response.data!, 'List<InviteMessage>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<InviteMessage>, InviteMessage>(
+              rawData, 'List<InviteMessage>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -675,12 +691,14 @@ class InviteApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Notification _responseData;
+    Notification? _responseData;
 
     try {
-      _responseData = deserialize<Notification, Notification>(
-          _response.data!, 'Notification',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Notification, Notification>(rawData, 'Notification',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -787,12 +805,15 @@ class InviteApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<InviteMessage> _responseData;
+    List<InviteMessage>? _responseData;
 
     try {
-      _responseData = deserialize<List<InviteMessage>, InviteMessage>(
-          _response.data!, 'List<InviteMessage>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<InviteMessage>, InviteMessage>(
+              rawData, 'List<InviteMessage>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

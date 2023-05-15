@@ -70,11 +70,13 @@ class SystemApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    String _responseData;
+    String? _responseData;
 
     try {
-      _responseData = deserialize<String, String>(_response.data!, 'String',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -139,12 +141,14 @@ class SystemApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    APIConfig _responseData;
+    APIConfig? _responseData;
 
     try {
-      _responseData = deserialize<APIConfig, APIConfig>(
-          _response.data!, 'APIConfig',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<APIConfig, APIConfig>(rawData, 'APIConfig',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -209,11 +213,13 @@ class SystemApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    int _responseData;
+    int? _responseData;
 
     try {
-      _responseData =
-          deserialize<int, int>(_response.data!, 'int', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -279,12 +285,14 @@ class SystemApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    APIHealth _responseData;
+    APIHealth? _responseData;
 
     try {
-      _responseData = deserialize<APIHealth, APIHealth>(
-          _response.data!, 'APIHealth',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<APIHealth, APIHealth>(rawData, 'APIHealth',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -359,12 +367,14 @@ class SystemApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<InfoPush> _responseData;
+    List<InfoPush>? _responseData;
 
     try {
-      _responseData = deserialize<List<InfoPush>, InfoPush>(
-          _response.data!, 'List<InfoPush>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<InfoPush>, InfoPush>(rawData, 'List<InfoPush>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -439,11 +449,13 @@ class SystemApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    String _responseData;
+    String? _responseData;
 
     try {
-      _responseData = deserialize<String, String>(_response.data!, 'String',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -508,12 +520,14 @@ class SystemApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    DateTime _responseData;
+    DateTime? _responseData;
 
     try {
-      _responseData = deserialize<DateTime, DateTime>(
-          _response.data!, 'DateTime',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<DateTime, DateTime>(rawData, 'DateTime',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

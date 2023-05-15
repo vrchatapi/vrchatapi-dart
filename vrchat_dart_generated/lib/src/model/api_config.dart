@@ -130,6 +130,7 @@ class APIConfig {
   final String apiKey;
 
   /// Game name
+  @Deprecated('appName has been deprecated')
   @JsonKey(name: r'appName', required: true, includeIfNull: false)
   final String appName;
 
@@ -180,24 +181,29 @@ class APIConfig {
   final DeploymentGroup deploymentGroup;
 
   /// Version number for game development build
+  @Deprecated('devAppVersionStandalone has been deprecated')
   @JsonKey(
       name: r'devAppVersionStandalone', required: true, includeIfNull: false)
   final String devAppVersionStandalone;
 
   /// Developer Download link
+  @Deprecated('devDownloadLinkWindows has been deprecated')
   @JsonKey(
       name: r'devDownloadLinkWindows', required: true, includeIfNull: false)
   final String devDownloadLinkWindows;
 
   /// Link to download the development SDK, use downloadUrls instead
+  @Deprecated('devSdkUrl has been deprecated')
   @JsonKey(name: r'devSdkUrl', required: true, includeIfNull: false)
   final String devSdkUrl;
 
   /// Version of the development SDK
+  @Deprecated('devSdkVersion has been deprecated')
   @JsonKey(name: r'devSdkVersion', required: true, includeIfNull: false)
   final String devSdkVersion;
 
   /// Version number for server development build
+  @Deprecated('devServerVersionStandalone has been deprecated')
   @JsonKey(
       name: r'devServerVersionStandalone', required: true, includeIfNull: false)
   final String devServerVersionStandalone;
@@ -259,6 +265,7 @@ class APIConfig {
   final bool disableSteamNetworking;
 
   /// Toggles if 2FA should be disabled.
+  @Deprecated('disableTwoFactorAuth has been deprecated')
   @JsonKey(name: r'disableTwoFactorAuth', required: true, includeIfNull: false)
   final bool disableTwoFactorAuth;
 
@@ -285,6 +292,7 @@ class APIConfig {
   final APIConfigEvents events;
 
   /// Unknown
+  @Deprecated('gearDemoRoomId has been deprecated')
   @JsonKey(name: r'gearDemoRoomId', required: true, includeIfNull: false)
   final String gearDemoRoomId;
 
@@ -306,6 +314,7 @@ class APIConfig {
   final String jobsEmail;
 
   /// MOTD
+  @Deprecated('messageOfTheDay has been deprecated')
   @JsonKey(name: r'messageOfTheDay', required: true, includeIfNull: false)
   final String messageOfTheDay;
 
@@ -329,6 +338,7 @@ class APIConfig {
   final String plugin;
 
   /// Version number for game release build
+  @Deprecated('releaseAppVersionStandalone has been deprecated')
   @JsonKey(
       name: r'releaseAppVersionStandalone',
       required: true,
@@ -336,14 +346,17 @@ class APIConfig {
   final String releaseAppVersionStandalone;
 
   /// Link to download the release SDK
+  @Deprecated('releaseSdkUrl has been deprecated')
   @JsonKey(name: r'releaseSdkUrl', required: true, includeIfNull: false)
   final String releaseSdkUrl;
 
   /// Version of the release SDK
+  @Deprecated('releaseSdkVersion has been deprecated')
   @JsonKey(name: r'releaseSdkVersion', required: true, includeIfNull: false)
   final String releaseSdkVersion;
 
   /// Version number for server release build
+  @Deprecated('releaseServerVersionStandalone has been deprecated')
   @JsonKey(
       name: r'releaseServerVersionStandalone',
       required: true,
@@ -465,6 +478,7 @@ class APIConfig {
           other.address == address &&
           other.announcements == announcements &&
           other.apiKey == apiKey &&
+// ignore: deprecated_member_use_from_same_package
           other.appName == appName &&
           other.buildVersionTag == buildVersionTag &&
           other.clientApiKey == clientApiKey &&
@@ -477,10 +491,15 @@ class APIConfig {
           other.currentTOSVersion == currentTOSVersion &&
           other.defaultAvatar == defaultAvatar &&
           other.deploymentGroup == deploymentGroup &&
+// ignore: deprecated_member_use_from_same_package
           other.devAppVersionStandalone == devAppVersionStandalone &&
+// ignore: deprecated_member_use_from_same_package
           other.devDownloadLinkWindows == devDownloadLinkWindows &&
+// ignore: deprecated_member_use_from_same_package
           other.devSdkUrl == devSdkUrl &&
+// ignore: deprecated_member_use_from_same_package
           other.devSdkVersion == devSdkVersion &&
+// ignore: deprecated_member_use_from_same_package
           other.devServerVersionStandalone == devServerVersionStandalone &&
           other.disCountdown == disCountdown &&
           other.disableAvatarCopying == disableAvatarCopying &&
@@ -496,6 +515,7 @@ class APIConfig {
           other.disableOculusSubs == disableOculusSubs &&
           other.disableRegistration == disableRegistration &&
           other.disableSteamNetworking == disableSteamNetworking &&
+// ignore: deprecated_member_use_from_same_package
           other.disableTwoFactorAuth == disableTwoFactorAuth &&
           other.disableUdon == disableUdon &&
           other.disableUpgradeAccount == disableUpgradeAccount &&
@@ -503,20 +523,26 @@ class APIConfig {
           other.downloadUrls == downloadUrls &&
           other.dynamicWorldRows == dynamicWorldRows &&
           other.events == events &&
+// ignore: deprecated_member_use_from_same_package
           other.gearDemoRoomId == gearDemoRoomId &&
           other.homeWorldId == homeWorldId &&
           other.homepageRedirectTarget == homepageRedirectTarget &&
           other.hubWorldId == hubWorldId &&
           other.jobsEmail == jobsEmail &&
+// ignore: deprecated_member_use_from_same_package
           other.messageOfTheDay == messageOfTheDay &&
           other.moderationEmail == moderationEmail &&
           other.moderationQueryPeriod == moderationQueryPeriod &&
           other.notAllowedToSelectAvatarInPrivateWorldMessage ==
               notAllowedToSelectAvatarInPrivateWorldMessage &&
           other.plugin == plugin &&
+// ignore: deprecated_member_use_from_same_package
           other.releaseAppVersionStandalone == releaseAppVersionStandalone &&
+// ignore: deprecated_member_use_from_same_package
           other.releaseSdkUrl == releaseSdkUrl &&
+// ignore: deprecated_member_use_from_same_package
           other.releaseSdkVersion == releaseSdkVersion &&
+// ignore: deprecated_member_use_from_same_package
           other.releaseServerVersionStandalone ==
               releaseServerVersionStandalone &&
           other.sdkDeveloperFaqUrl == sdkDeveloperFaqUrl &&
@@ -552,6 +578,7 @@ class APIConfig {
       address.hashCode +
       announcements.hashCode +
       apiKey.hashCode +
+// ignore: deprecated_member_use_from_same_package
       appName.hashCode +
       buildVersionTag.hashCode +
       clientApiKey.hashCode +
@@ -564,10 +591,15 @@ class APIConfig {
       currentTOSVersion.hashCode +
       defaultAvatar.hashCode +
       deploymentGroup.hashCode +
+// ignore: deprecated_member_use_from_same_package
       devAppVersionStandalone.hashCode +
+// ignore: deprecated_member_use_from_same_package
       devDownloadLinkWindows.hashCode +
+// ignore: deprecated_member_use_from_same_package
       devSdkUrl.hashCode +
+// ignore: deprecated_member_use_from_same_package
       devSdkVersion.hashCode +
+// ignore: deprecated_member_use_from_same_package
       devServerVersionStandalone.hashCode +
       disCountdown.hashCode +
       disableAvatarCopying.hashCode +
@@ -582,6 +614,7 @@ class APIConfig {
       disableOculusSubs.hashCode +
       disableRegistration.hashCode +
       disableSteamNetworking.hashCode +
+// ignore: deprecated_member_use_from_same_package
       disableTwoFactorAuth.hashCode +
       disableUdon.hashCode +
       disableUpgradeAccount.hashCode +
@@ -589,19 +622,25 @@ class APIConfig {
       downloadUrls.hashCode +
       dynamicWorldRows.hashCode +
       events.hashCode +
+// ignore: deprecated_member_use_from_same_package
       gearDemoRoomId.hashCode +
       homeWorldId.hashCode +
       homepageRedirectTarget.hashCode +
       hubWorldId.hashCode +
       jobsEmail.hashCode +
+// ignore: deprecated_member_use_from_same_package
       messageOfTheDay.hashCode +
       moderationEmail.hashCode +
       moderationQueryPeriod.hashCode +
       notAllowedToSelectAvatarInPrivateWorldMessage.hashCode +
       plugin.hashCode +
+// ignore: deprecated_member_use_from_same_package
       releaseAppVersionStandalone.hashCode +
+// ignore: deprecated_member_use_from_same_package
       releaseSdkUrl.hashCode +
+// ignore: deprecated_member_use_from_same_package
       releaseSdkVersion.hashCode +
+// ignore: deprecated_member_use_from_same_package
       releaseServerVersionStandalone.hashCode +
       sdkDeveloperFaqUrl.hashCode +
       sdkDiscordUrl.hashCode +

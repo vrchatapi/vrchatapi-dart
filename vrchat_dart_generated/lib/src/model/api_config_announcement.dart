@@ -22,12 +22,10 @@ class APIConfigAnnouncement {
   });
 
   /// Announcement name
-  @Deprecated('name has been deprecated')
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
   /// Announcement text
-  @Deprecated('text has been deprecated')
   @JsonKey(name: r'text', required: true, includeIfNull: false)
   final String text;
 

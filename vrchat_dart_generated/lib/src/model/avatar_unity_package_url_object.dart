@@ -20,7 +20,6 @@ class AvatarUnityPackageUrlObject {
     this.unityPackageUrl,
   });
 
-  @Deprecated('unityPackageUrl has been deprecated')
   @JsonKey(name: r'unityPackageUrl', required: false, includeIfNull: false)
   final String? unityPackageUrl;
 

@@ -118,12 +118,15 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GroupGalleryImage _responseData;
+    GroupGalleryImage? _responseData;
 
     try {
-      _responseData = deserialize<GroupGalleryImage, GroupGalleryImage>(
-          _response.data!, 'GroupGalleryImage',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<GroupGalleryImage, GroupGalleryImage>(
+              rawData, 'GroupGalleryImage',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -210,12 +213,14 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<String> _responseData;
+    List<String>? _responseData;
 
     try {
-      _responseData = deserialize<List<String>, String>(
-          _response.data!, 'List<String>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<String>, String>(rawData, 'List<String>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -316,12 +321,14 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GroupMember _responseData;
+    GroupMember? _responseData;
 
     try {
-      _responseData = deserialize<GroupMember, GroupMember>(
-          _response.data!, 'GroupMember',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<GroupMember, GroupMember>(rawData, 'GroupMember',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -480,11 +487,13 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Group _responseData;
+    Group? _responseData;
 
     try {
-      _responseData =
-          deserialize<Group, Group>(_response.data!, 'Group', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Group, Group>(rawData, 'Group', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -585,12 +594,15 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GroupAnnouncement _responseData;
+    GroupAnnouncement? _responseData;
 
     try {
-      _responseData = deserialize<GroupAnnouncement, GroupAnnouncement>(
-          _response.data!, 'GroupAnnouncement',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<GroupAnnouncement, GroupAnnouncement>(
+              rawData, 'GroupAnnouncement',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -691,12 +703,14 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GroupGallery _responseData;
+    GroupGallery? _responseData;
 
     try {
-      _responseData = deserialize<GroupGallery, GroupGallery>(
-          _response.data!, 'GroupGallery',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<GroupGallery, GroupGallery>(rawData, 'GroupGallery',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -878,12 +892,14 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GroupRole _responseData;
+    GroupRole? _responseData;
 
     try {
-      _responseData = deserialize<GroupRole, GroupRole>(
-          _response.data!, 'GroupRole',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<GroupRole, GroupRole>(rawData, 'GroupRole',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -964,11 +980,13 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Success _responseData;
+    Success? _responseData;
 
     try {
-      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1049,11 +1067,13 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Success _responseData;
+    Success? _responseData;
 
     try {
-      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1137,11 +1157,13 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Success _responseData;
+    Success? _responseData;
 
     try {
-      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1230,11 +1252,13 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Success _responseData;
+    Success? _responseData;
 
     try {
-      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1382,12 +1406,14 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<GroupRole> _responseData;
+    List<GroupRole>? _responseData;
 
     try {
-      _responseData = deserialize<List<GroupRole>, GroupRole>(
-          _response.data!, 'List<GroupRole>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<GroupRole>, GroupRole>(rawData, 'List<GroupRole>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1475,11 +1501,13 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Group _responseData;
+    Group? _responseData;
 
     try {
-      _responseData =
-          deserialize<Group, Group>(_response.data!, 'Group', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Group, Group>(rawData, 'Group', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1560,12 +1588,15 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GroupAnnouncement _responseData;
+    GroupAnnouncement? _responseData;
 
     try {
-      _responseData = deserialize<GroupAnnouncement, GroupAnnouncement>(
-          _response.data!, 'GroupAnnouncement',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<GroupAnnouncement, GroupAnnouncement>(
+              rawData, 'GroupAnnouncement',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1662,13 +1693,16 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    PaginatedGroupAuditLogEntryList _responseData;
+    PaginatedGroupAuditLogEntryList? _responseData;
 
     try {
-      _responseData = deserialize<PaginatedGroupAuditLogEntryList,
-              PaginatedGroupAuditLogEntryList>(
-          _response.data!, 'PaginatedGroupAuditLogEntryList',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<PaginatedGroupAuditLogEntryList,
+                  PaginatedGroupAuditLogEntryList>(
+              rawData, 'PaginatedGroupAuditLogEntryList',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1759,12 +1793,15 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<GroupMember> _responseData;
+    List<GroupMember>? _responseData;
 
     try {
-      _responseData = deserialize<List<GroupMember>, GroupMember>(
-          _response.data!, 'List<GroupMember>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<GroupMember>, GroupMember>(
+              rawData, 'List<GroupMember>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1861,12 +1898,15 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<GroupGalleryImage> _responseData;
+    List<GroupGalleryImage>? _responseData;
 
     try {
-      _responseData = deserialize<List<GroupGalleryImage>, GroupGalleryImage>(
-          _response.data!, 'List<GroupGalleryImage>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<GroupGalleryImage>, GroupGalleryImage>(
+              rawData, 'List<GroupGalleryImage>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1947,12 +1987,15 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<GroupMember> _responseData;
+    List<GroupMember>? _responseData;
 
     try {
-      _responseData = deserialize<List<GroupMember>, GroupMember>(
-          _response.data!, 'List<GroupMember>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<GroupMember>, GroupMember>(
+              rawData, 'List<GroupMember>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2036,12 +2079,15 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GroupLimitedMember _responseData;
+    GroupLimitedMember? _responseData;
 
     try {
-      _responseData = deserialize<GroupLimitedMember, GroupLimitedMember>(
-          _response.data!, 'GroupLimitedMember',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<GroupLimitedMember, GroupLimitedMember>(
+              rawData, 'GroupLimitedMember',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2132,12 +2178,15 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<GroupMember> _responseData;
+    List<GroupMember>? _responseData;
 
     try {
-      _responseData = deserialize<List<GroupMember>, GroupMember>(
-          _response.data!, 'List<GroupMember>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<GroupMember>, GroupMember>(
+              rawData, 'List<GroupMember>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2218,12 +2267,15 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<GroupPermission> _responseData;
+    List<GroupPermission>? _responseData;
 
     try {
-      _responseData = deserialize<List<GroupPermission>, GroupPermission>(
-          _response.data!, 'List<GroupPermission>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<GroupPermission>, GroupPermission>(
+              rawData, 'List<GroupPermission>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2304,12 +2356,15 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<GroupMember> _responseData;
+    List<GroupMember>? _responseData;
 
     try {
-      _responseData = deserialize<List<GroupMember>, GroupMember>(
-          _response.data!, 'List<GroupMember>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<GroupMember>, GroupMember>(
+              rawData, 'List<GroupMember>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2390,12 +2445,14 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<GroupRole> _responseData;
+    List<GroupRole>? _responseData;
 
     try {
-      _responseData = deserialize<List<GroupRole>, GroupRole>(
-          _response.data!, 'List<GroupRole>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<GroupRole>, GroupRole>(rawData, 'List<GroupRole>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2476,12 +2533,14 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GroupMember _responseData;
+    GroupMember? _responseData;
 
     try {
-      _responseData = deserialize<GroupMember, GroupMember>(
-          _response.data!, 'GroupMember',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<GroupMember, GroupMember>(rawData, 'GroupMember',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2693,12 +2752,14 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<String> _responseData;
+    List<String>? _responseData;
 
     try {
-      _responseData = deserialize<List<String>, String>(
-          _response.data!, 'List<String>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<String>, String>(rawData, 'List<String>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2866,12 +2927,14 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GroupMember _responseData;
+    GroupMember? _responseData;
 
     try {
-      _responseData = deserialize<GroupMember, GroupMember>(
-          _response.data!, 'GroupMember',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<GroupMember, GroupMember>(rawData, 'GroupMember',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2972,11 +3035,13 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Group _responseData;
+    Group? _responseData;
 
     try {
-      _responseData =
-          deserialize<Group, Group>(_response.data!, 'Group', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Group, Group>(rawData, 'Group', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -3080,12 +3145,14 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GroupGallery _responseData;
+    GroupGallery? _responseData;
 
     try {
-      _responseData = deserialize<GroupGallery, GroupGallery>(
-          _response.data!, 'GroupGallery',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<GroupGallery, GroupGallery>(rawData, 'GroupGallery',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -3189,12 +3256,15 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GroupLimitedMember _responseData;
+    GroupLimitedMember? _responseData;
 
     try {
-      _responseData = deserialize<GroupLimitedMember, GroupLimitedMember>(
-          _response.data!, 'GroupLimitedMember',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<GroupLimitedMember, GroupLimitedMember>(
+              rawData, 'GroupLimitedMember',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -3298,12 +3368,14 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<GroupRole> _responseData;
+    List<GroupRole>? _responseData;
 
     try {
-      _responseData = deserialize<List<GroupRole>, GroupRole>(
-          _response.data!, 'List<GroupRole>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<GroupRole>, GroupRole>(rawData, 'List<GroupRole>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

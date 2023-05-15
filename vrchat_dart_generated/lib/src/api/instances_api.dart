@@ -79,12 +79,14 @@ class InstancesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Instance _responseData;
+    Instance? _responseData;
 
     try {
-      _responseData = deserialize<Instance, Instance>(
-          _response.data!, 'Instance',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Instance, Instance>(rawData, 'Instance',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -165,12 +167,14 @@ class InstancesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Instance _responseData;
+    Instance? _responseData;
 
     try {
-      _responseData = deserialize<Instance, Instance>(
-          _response.data!, 'Instance',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Instance, Instance>(rawData, 'Instance',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -254,12 +258,14 @@ class InstancesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    InstanceShortNameResponse _responseData;
+    InstanceShortNameResponse? _responseData;
 
     try {
-      _responseData =
-          deserialize<InstanceShortNameResponse, InstanceShortNameResponse>(
-              _response.data!, 'InstanceShortNameResponse',
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<InstanceShortNameResponse, InstanceShortNameResponse>(
+              rawData, 'InstanceShortNameResponse',
               growable: true);
     } catch (error, stackTrace) {
       throw DioError(
@@ -344,11 +350,13 @@ class InstancesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Success _responseData;
+    Success? _responseData;
 
     try {
-      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

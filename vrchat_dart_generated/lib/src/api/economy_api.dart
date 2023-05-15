@@ -74,12 +74,15 @@ class EconomyApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<UserSubscription> _responseData;
+    List<UserSubscription>? _responseData;
 
     try {
-      _responseData = deserialize<List<UserSubscription>, UserSubscription>(
-          _response.data!, 'List<UserSubscription>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<UserSubscription>, UserSubscription>(
+              rawData, 'List<UserSubscription>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -160,12 +163,14 @@ class EconomyApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    LicenseGroup _responseData;
+    LicenseGroup? _responseData;
 
     try {
-      _responseData = deserialize<LicenseGroup, LicenseGroup>(
-          _response.data!, 'LicenseGroup',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<LicenseGroup, LicenseGroup>(rawData, 'LicenseGroup',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -247,12 +252,14 @@ class EconomyApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Transaction _responseData;
+    Transaction? _responseData;
 
     try {
-      _responseData = deserialize<Transaction, Transaction>(
-          _response.data!, 'Transaction',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Transaction, Transaction>(rawData, 'Transaction',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -330,12 +337,15 @@ class EconomyApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<Transaction> _responseData;
+    List<Transaction>? _responseData;
 
     try {
-      _responseData = deserialize<List<Transaction>, Transaction>(
-          _response.data!, 'List<Transaction>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<Transaction>, Transaction>(
+              rawData, 'List<Transaction>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -413,12 +423,15 @@ class EconomyApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<Subscription> _responseData;
+    List<Subscription>? _responseData;
 
     try {
-      _responseData = deserialize<List<Subscription>, Subscription>(
-          _response.data!, 'List<Subscription>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<Subscription>, Subscription>(
+              rawData, 'List<Subscription>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

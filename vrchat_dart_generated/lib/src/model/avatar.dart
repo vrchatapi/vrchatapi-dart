@@ -85,9 +85,8 @@ class Avatar {
   @JsonKey(name: r'unityPackageUrl', required: true, includeIfNull: false)
   final String unityPackageUrl;
 
+  @Deprecated('unityPackageUrlObject has been deprecated')
   @JsonKey(name: r'unityPackageUrlObject', required: true, includeIfNull: false)
-
-// ignore: deprecated_member_use_from_same_package
   final AvatarUnityPackageUrlObject unityPackageUrlObject;
 
   @JsonKey(name: r'unityPackages', required: true, includeIfNull: false)
@@ -118,6 +117,7 @@ class Avatar {
           other.tags == tags &&
           other.thumbnailImageUrl == thumbnailImageUrl &&
           other.unityPackageUrl == unityPackageUrl &&
+// ignore: deprecated_member_use_from_same_package
           other.unityPackageUrlObject == unityPackageUrlObject &&
           other.unityPackages == unityPackages &&
           other.updatedAt == updatedAt &&
@@ -139,6 +139,7 @@ class Avatar {
       tags.hashCode +
       thumbnailImageUrl.hashCode +
       unityPackageUrl.hashCode +
+// ignore: deprecated_member_use_from_same_package
       unityPackageUrlObject.hashCode +
       unityPackages.hashCode +
       updatedAt.hashCode +

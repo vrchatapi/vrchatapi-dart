@@ -22,6 +22,7 @@ class APIConfigDownloadURLList {
   });
 
   /// Download link for legacy SDK2
+  @Deprecated('sdk2 has been deprecated')
   @JsonKey(name: r'sdk2', required: true, includeIfNull: false)
   final String sdk2;
 
@@ -37,12 +38,14 @@ class APIConfigDownloadURLList {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is APIConfigDownloadURLList &&
+// ignore: deprecated_member_use_from_same_package
           other.sdk2 == sdk2 &&
           other.sdk3Avatars == sdk3Avatars &&
           other.sdk3Worlds == sdk3Worlds;
 
   @override
   int get hashCode =>
+// ignore: deprecated_member_use_from_same_package
       sdk2.hashCode + sdk3Avatars.hashCode + sdk3Worlds.hashCode;
 
   factory APIConfigDownloadURLList.fromJson(Map<String, dynamic> json) =>

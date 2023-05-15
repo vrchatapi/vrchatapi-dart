@@ -88,6 +88,7 @@ class LimitedUser {
   final String userIcon;
 
   /// -| **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
+  @Deprecated('username has been deprecated')
   @JsonKey(name: r'username', required: false, includeIfNull: false)
   final String? username;
 
@@ -116,6 +117,7 @@ class LimitedUser {
           other.statusDescription == statusDescription &&
           other.tags == tags &&
           other.userIcon == userIcon &&
+// ignore: deprecated_member_use_from_same_package
           other.username == username &&
           other.location == location &&
           other.friendKey == friendKey;
@@ -136,6 +138,7 @@ class LimitedUser {
       statusDescription.hashCode +
       tags.hashCode +
       userIcon.hashCode +
+// ignore: deprecated_member_use_from_same_package
       username.hashCode +
       location.hashCode +
       friendKey.hashCode;

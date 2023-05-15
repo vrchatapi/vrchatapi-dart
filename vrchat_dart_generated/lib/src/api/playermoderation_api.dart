@@ -73,11 +73,13 @@ class PlayermoderationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Success _responseData;
+    Success? _responseData;
 
     try {
-      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -159,11 +161,13 @@ class PlayermoderationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Success _responseData;
+    Success? _responseData;
 
     try {
-      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -245,12 +249,15 @@ class PlayermoderationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    PlayerModeration _responseData;
+    PlayerModeration? _responseData;
 
     try {
-      _responseData = deserialize<PlayerModeration, PlayerModeration>(
-          _response.data!, 'PlayerModeration',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<PlayerModeration, PlayerModeration>(
+              rawData, 'PlayerModeration',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -338,12 +345,15 @@ class PlayermoderationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<PlayerModeration> _responseData;
+    List<PlayerModeration>? _responseData;
 
     try {
-      _responseData = deserialize<List<PlayerModeration>, PlayerModeration>(
-          _response.data!, 'List<PlayerModeration>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<PlayerModeration>, PlayerModeration>(
+              rawData, 'List<PlayerModeration>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -441,12 +451,15 @@ class PlayermoderationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    PlayerModeration _responseData;
+    PlayerModeration? _responseData;
 
     try {
-      _responseData = deserialize<PlayerModeration, PlayerModeration>(
-          _response.data!, 'PlayerModeration',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<PlayerModeration, PlayerModeration>(
+              rawData, 'PlayerModeration',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -544,11 +557,13 @@ class PlayermoderationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Success _responseData;
+    Success? _responseData;
 
     try {
-      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

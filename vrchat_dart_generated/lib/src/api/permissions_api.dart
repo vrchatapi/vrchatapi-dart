@@ -71,12 +71,15 @@ class PermissionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<Permission> _responseData;
+    List<Permission>? _responseData;
 
     try {
-      _responseData = deserialize<List<Permission>, Permission>(
-          _response.data!, 'List<Permission>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<Permission>, Permission>(
+              rawData, 'List<Permission>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -157,12 +160,14 @@ class PermissionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Permission _responseData;
+    Permission? _responseData;
 
     try {
-      _responseData = deserialize<Permission, Permission>(
-          _response.data!, 'Permission',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Permission, Permission>(rawData, 'Permission',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

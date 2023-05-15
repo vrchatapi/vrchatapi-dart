@@ -97,11 +97,13 @@ class AvatarsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Avatar _responseData;
+    Avatar? _responseData;
 
     try {
-      _responseData = deserialize<Avatar, Avatar>(_response.data!, 'Avatar',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Avatar, Avatar>(rawData, 'Avatar', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -182,11 +184,13 @@ class AvatarsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Avatar _responseData;
+    Avatar? _responseData;
 
     try {
-      _responseData = deserialize<Avatar, Avatar>(_response.data!, 'Avatar',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Avatar, Avatar>(rawData, 'Avatar', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -267,11 +271,13 @@ class AvatarsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Avatar _responseData;
+    Avatar? _responseData;
 
     try {
-      _responseData = deserialize<Avatar, Avatar>(_response.data!, 'Avatar',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Avatar, Avatar>(rawData, 'Avatar', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -392,12 +398,14 @@ class AvatarsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<Avatar> _responseData;
+    List<Avatar>? _responseData;
 
     try {
-      _responseData = deserialize<List<Avatar>, Avatar>(
-          _response.data!, 'List<Avatar>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<Avatar>, Avatar>(rawData, 'List<Avatar>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -478,11 +486,13 @@ class AvatarsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Avatar _responseData;
+    Avatar? _responseData;
 
     try {
-      _responseData = deserialize<Avatar, Avatar>(_response.data!, 'Avatar',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Avatar, Avatar>(rawData, 'Avatar', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -603,12 +613,14 @@ class AvatarsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<Avatar> _responseData;
+    List<Avatar>? _responseData;
 
     try {
-      _responseData = deserialize<List<Avatar>, Avatar>(
-          _response.data!, 'List<Avatar>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<Avatar>, Avatar>(rawData, 'List<Avatar>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -689,12 +701,14 @@ class AvatarsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    CurrentUser _responseData;
+    CurrentUser? _responseData;
 
     try {
-      _responseData = deserialize<CurrentUser, CurrentUser>(
-          _response.data!, 'CurrentUser',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<CurrentUser, CurrentUser>(rawData, 'CurrentUser',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -775,12 +789,14 @@ class AvatarsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    CurrentUser _responseData;
+    CurrentUser? _responseData;
 
     try {
-      _responseData = deserialize<CurrentUser, CurrentUser>(
-          _response.data!, 'CurrentUser',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<CurrentUser, CurrentUser>(rawData, 'CurrentUser',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -881,11 +897,13 @@ class AvatarsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Avatar _responseData;
+    Avatar? _responseData;
 
     try {
-      _responseData = deserialize<Avatar, Avatar>(_response.data!, 'Avatar',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Avatar, Avatar>(rawData, 'Avatar', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

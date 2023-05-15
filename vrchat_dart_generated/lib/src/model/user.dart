@@ -146,6 +146,7 @@ class User {
   final String userIcon;
 
   /// -| A users unique name, used during login. This is different from `displayName` which is what shows up in-game. A users `username` can never be changed.' **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
+  @Deprecated('username has been deprecated')
   @JsonKey(name: r'username', required: false, includeIfNull: false)
   final String? username;
 
@@ -185,6 +186,7 @@ class User {
           other.travelingToLocation == travelingToLocation &&
           other.travelingToWorld == travelingToWorld &&
           other.userIcon == userIcon &&
+// ignore: deprecated_member_use_from_same_package
           other.username == username &&
           other.worldId == worldId;
 
@@ -217,6 +219,7 @@ class User {
       travelingToLocation.hashCode +
       travelingToWorld.hashCode +
       userIcon.hashCode +
+// ignore: deprecated_member_use_from_same_package
       username.hashCode +
       worldId.hashCode;
 

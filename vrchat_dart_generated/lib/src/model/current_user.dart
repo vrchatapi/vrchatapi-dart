@@ -129,6 +129,7 @@ class CurrentUser {
   final String? fallbackAvatar;
 
   /// Always empty array.
+  @Deprecated('friendGroupNames has been deprecated')
   @JsonKey(name: r'friendGroupNames', required: true, includeIfNull: false)
   final List<String> friendGroupNames;
 
@@ -229,6 +230,7 @@ class CurrentUser {
   final String userIcon;
 
   /// -| **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
+  @Deprecated('username has been deprecated')
   @JsonKey(name: r'username', required: false, includeIfNull: false)
   final String? username;
 
@@ -253,6 +255,7 @@ class CurrentUser {
           other.displayName == displayName &&
           other.emailVerified == emailVerified &&
           other.fallbackAvatar == fallbackAvatar &&
+// ignore: deprecated_member_use_from_same_package
           other.friendGroupNames == friendGroupNames &&
           other.friendKey == friendKey &&
           other.friends == friends &&
@@ -284,6 +287,7 @@ class CurrentUser {
           other.twoFactorAuthEnabledDate == twoFactorAuthEnabledDate &&
           other.unsubscribe == unsubscribe &&
           other.userIcon == userIcon &&
+// ignore: deprecated_member_use_from_same_package
           other.username == username;
 
   @override
@@ -304,6 +308,7 @@ class CurrentUser {
       displayName.hashCode +
       emailVerified.hashCode +
       fallbackAvatar.hashCode +
+// ignore: deprecated_member_use_from_same_package
       friendGroupNames.hashCode +
       friendKey.hashCode +
       friends.hashCode +
@@ -337,6 +342,7 @@ class CurrentUser {
           : twoFactorAuthEnabledDate.hashCode) +
       unsubscribe.hashCode +
       userIcon.hashCode +
+// ignore: deprecated_member_use_from_same_package
       username.hashCode;
 
   factory CurrentUser.fromJson(Map<String, dynamic> json) =>

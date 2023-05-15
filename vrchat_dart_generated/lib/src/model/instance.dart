@@ -55,6 +55,7 @@ class Instance {
   final int capacity;
 
   /// Always returns \"unknown\".
+  @Deprecated('clientNumber has been deprecated')
   @JsonKey(name: r'clientNumber', required: true, includeIfNull: false)
   final String clientNumber;
 
@@ -131,6 +132,7 @@ class Instance {
           other.active == active &&
           other.canRequestInvite == canRequestInvite &&
           other.capacity == capacity &&
+// ignore: deprecated_member_use_from_same_package
           other.clientNumber == clientNumber &&
           other.full == full &&
           other.id == id &&
@@ -157,6 +159,7 @@ class Instance {
       active.hashCode +
       canRequestInvite.hashCode +
       capacity.hashCode +
+// ignore: deprecated_member_use_from_same_package
       clientNumber.hashCode +
       full.hashCode +
       id.hashCode +

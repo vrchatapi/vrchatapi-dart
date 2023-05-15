@@ -75,11 +75,13 @@ class NotificationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Success _responseData;
+    Success? _responseData;
 
     try {
-      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -157,11 +159,13 @@ class NotificationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Success _responseData;
+    Success? _responseData;
 
     try {
-      _responseData = deserialize<Success, Success>(_response.data!, 'Success',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -242,12 +246,14 @@ class NotificationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Notification _responseData;
+    Notification? _responseData;
 
     try {
-      _responseData = deserialize<Notification, Notification>(
-          _response.data!, 'Notification',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Notification, Notification>(rawData, 'Notification',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -290,8 +296,8 @@ class NotificationsApi {
   /// Returns a [Future] containing a [Response] with a [List<Notification>] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<List<Notification>>> getNotifications({
-    String? type,
-    bool? sent,
+    @Deprecated('type is deprecated') String? type,
+    @Deprecated('sent is deprecated') bool? sent,
     bool? hidden,
     String? after,
     int? n = 60,
@@ -347,12 +353,15 @@ class NotificationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<Notification> _responseData;
+    List<Notification>? _responseData;
 
     try {
-      _responseData = deserialize<List<Notification>, Notification>(
-          _response.data!, 'List<Notification>',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<Notification>, Notification>(
+              rawData, 'List<Notification>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -433,12 +442,14 @@ class NotificationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Notification _responseData;
+    Notification? _responseData;
 
     try {
-      _responseData = deserialize<Notification, Notification>(
-          _response.data!, 'Notification',
-          growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Notification, Notification>(rawData, 'Notification',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

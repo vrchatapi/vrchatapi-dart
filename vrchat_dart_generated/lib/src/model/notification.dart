@@ -55,6 +55,7 @@ class Notification {
   final String senderUserId;
 
   /// -| **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
+  @Deprecated('senderUsername has been deprecated')
   @JsonKey(name: r'senderUsername', required: false, includeIfNull: false)
   final String? senderUsername;
 
@@ -72,6 +73,7 @@ class Notification {
           other.seen == seen &&
           other.receiverUserId == receiverUserId &&
           other.senderUserId == senderUserId &&
+// ignore: deprecated_member_use_from_same_package
           other.senderUsername == senderUsername &&
           other.type == type;
 
@@ -84,6 +86,7 @@ class Notification {
       seen.hashCode +
       receiverUserId.hashCode +
       senderUserId.hashCode +
+// ignore: deprecated_member_use_from_same_package
       senderUsername.hashCode +
       type.hashCode;
 
