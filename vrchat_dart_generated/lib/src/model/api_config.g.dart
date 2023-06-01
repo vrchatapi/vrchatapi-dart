@@ -19,7 +19,6 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             'VoiceEnableReceiverLimiting',
             'address',
             'announcements',
-            'apiKey',
             'appName',
             'buildVersionTag',
             'clientApiKey',
@@ -109,7 +108,6 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
                   .map((e) =>
                       APIConfigAnnouncement.fromJson(e as Map<String, dynamic>))
                   .toSet()),
-          apiKey: $checkedConvert('apiKey', (v) => v as String),
           appName: $checkedConvert('appName', (v) => v as String? ?? 'VrChat'),
           buildVersionTag:
               $checkedConvert('buildVersionTag', (v) => v as String),
@@ -266,7 +264,6 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
       'VoiceEnableReceiverLimiting': instance.voiceEnableReceiverLimiting,
       'address': instance.address,
       'announcements': instance.announcements.map((e) => e.toJson()).toList(),
-      'apiKey': instance.apiKey,
       'appName': instance.appName,
       'buildVersionTag': instance.buildVersionTag,
       'clientApiKey': instance.clientApiKey,

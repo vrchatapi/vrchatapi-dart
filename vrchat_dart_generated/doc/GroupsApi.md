@@ -61,10 +61,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -93,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -116,10 +112,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -148,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -171,10 +163,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -201,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -224,10 +212,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -251,7 +235,7 @@ void (empty response body)
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -274,10 +258,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final CreateGroupRequest createGroupRequest = ; // CreateGroupRequest | 
@@ -302,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -325,10 +305,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -355,7 +331,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -378,10 +354,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -408,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -431,10 +403,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -460,7 +428,7 @@ void (empty response body)
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -483,10 +451,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -513,7 +477,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -536,10 +500,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -564,7 +524,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -587,10 +547,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -615,7 +571,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -638,10 +594,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -668,7 +620,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -691,10 +643,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -723,7 +671,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -746,10 +694,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -775,7 +719,7 @@ void (empty response body)
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -798,10 +742,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -828,7 +768,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -851,10 +791,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -881,7 +817,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -904,10 +840,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -932,7 +864,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -955,10 +887,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -991,7 +919,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -1014,10 +942,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -1046,7 +970,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -1069,10 +993,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -1105,7 +1025,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -1128,10 +1048,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -1156,7 +1072,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -1179,10 +1095,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -1209,7 +1121,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -1232,10 +1144,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -1264,7 +1172,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -1287,10 +1195,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -1315,7 +1219,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -1338,10 +1242,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -1366,7 +1266,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -1389,10 +1289,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -1417,7 +1313,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -1440,10 +1336,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -1468,7 +1360,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -1491,10 +1383,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -1520,7 +1408,7 @@ void (empty response body)
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -1543,10 +1431,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -1570,7 +1454,7 @@ void (empty response body)
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -1593,10 +1477,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -1625,7 +1505,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -1648,10 +1528,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -1679,7 +1555,7 @@ void (empty response body)
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -1702,10 +1578,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -1732,7 +1604,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -1755,10 +1627,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -1785,7 +1653,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -1808,10 +1676,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -1840,7 +1704,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -1863,10 +1727,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -1895,7 +1755,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -1918,10 +1778,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
@@ -1950,7 +1806,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 

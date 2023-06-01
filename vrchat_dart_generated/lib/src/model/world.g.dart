@@ -139,4 +139,5 @@ const _$ReleaseStatusEnumMap = {
   ReleaseStatus.public: 'public',
   ReleaseStatus.private: 'private',
   ReleaseStatus.hidden: 'hidden',
+  ReleaseStatus.all: 'all',
 };

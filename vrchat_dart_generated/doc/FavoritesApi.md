@@ -33,10 +33,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFavoritesApi();
 final AddFavoriteRequest addFavoriteRequest = {"type":"friend","favoriteId":"usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469","tags":["group_0"]}; // AddFavoriteRequest | 
@@ -61,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -84,10 +80,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFavoritesApi();
 final String favoriteGroupType = favoriteGroupType_example; // String | The type of group to fetch, must be a valid FavoriteType.
@@ -116,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -139,10 +131,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFavoritesApi();
 final String favoriteId = favoriteId_example; // String | Must be a valid favorite ID.
@@ -167,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -190,10 +178,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFavoritesApi();
 final String favoriteGroupType = favoriteGroupType_example; // String | The type of group to fetch, must be a valid FavoriteType.
@@ -222,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -245,10 +229,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFavoritesApi();
 final int n = 56; // int | The number of objects to return.
@@ -277,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -300,10 +280,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFavoritesApi();
 final int n = 56; // int | The number of objects to return.
@@ -334,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -357,10 +333,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFavoritesApi();
 final String favoriteId = favoriteId_example; // String | Must be a valid favorite ID.
@@ -385,7 +357,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -408,10 +380,6 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: apiKeyCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKeyCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFavoritesApi();
 final String favoriteGroupType = favoriteGroupType_example; // String | The type of group to fetch, must be a valid FavoriteType.
@@ -441,7 +409,7 @@ void (empty response body)
 
 ### Authorization
 
-[authCookie](../README.md#authCookie), [apiKeyCookie](../README.md#apiKeyCookie)
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 

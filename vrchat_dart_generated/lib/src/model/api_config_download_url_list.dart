@@ -19,6 +19,8 @@ class APIConfigDownloadURLList {
     required this.sdk2,
     required this.sdk3Avatars,
     required this.sdk3Worlds,
+    required this.vcc,
+    required this.bootstrap,
   });
 
   /// Download link for legacy SDK2
@@ -34,6 +36,14 @@ class APIConfigDownloadURLList {
   @JsonKey(name: r'sdk3-worlds', required: true, includeIfNull: false)
   final String sdk3Worlds;
 
+  /// Download link for the Creator Companion
+  @JsonKey(name: r'vcc', required: true, includeIfNull: false)
+  final String vcc;
+
+  /// Download link for ???
+  @JsonKey(name: r'bootstrap', required: true, includeIfNull: false)
+  final String bootstrap;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -41,12 +51,18 @@ class APIConfigDownloadURLList {
 // ignore: deprecated_member_use_from_same_package
           other.sdk2 == sdk2 &&
           other.sdk3Avatars == sdk3Avatars &&
-          other.sdk3Worlds == sdk3Worlds;
+          other.sdk3Worlds == sdk3Worlds &&
+          other.vcc == vcc &&
+          other.bootstrap == bootstrap;
 
   @override
   int get hashCode =>
 // ignore: deprecated_member_use_from_same_package
-      sdk2.hashCode + sdk3Avatars.hashCode + sdk3Worlds.hashCode;
+      sdk2.hashCode +
+      sdk3Avatars.hashCode +
+      sdk3Worlds.hashCode +
+      vcc.hashCode +
+      bootstrap.hashCode;
 
   factory APIConfigDownloadURLList.fromJson(Map<String, dynamic> json) =>
       _$APIConfigDownloadURLListFromJson(json);

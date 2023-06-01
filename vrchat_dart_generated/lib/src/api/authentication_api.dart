@@ -59,14 +59,7 @@ class AuthenticationApi {
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
-            'where': '',
-          },
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       validateStatus: validateStatus,
@@ -154,12 +147,6 @@ class AuthenticationApi {
             'type': 'apiKey',
             'name': 'authCookie',
             'keyName': 'auth',
-            'where': '',
-          },
-          {
-            'type': 'apiKey',
-            'name': 'apiKeyCookie',
-            'keyName': 'apiKey',
             'where': '',
           },
         ],

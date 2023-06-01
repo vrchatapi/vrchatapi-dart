@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **voiceEnableReceiverLimiting** | **bool** | Unknown, probably voice optimization testing | [default to true]
 **address** | **String** | VRChat's office address | 
 **announcements** | [**Set&lt;APIConfigAnnouncement&gt;**](APIConfigAnnouncement.md) | Public Announcements | 
-**apiKey** | **String** | apiKey to be used for all other requests | 
 **appName** | **String** | Game name | [default to 'VrChat']
 **buildVersionTag** | **String** | Build tag of the API server | 
 **clientApiKey** | **String** | apiKey to be used for all other requests | 

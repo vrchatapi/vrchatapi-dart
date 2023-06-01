@@ -25,7 +25,6 @@ class APIConfig {
     this.voiceEnableReceiverLimiting = true,
     required this.address,
     required this.announcements,
-    required this.apiKey,
     this.appName = 'VrChat',
     required this.buildVersionTag,
     required this.clientApiKey,
@@ -123,10 +122,6 @@ class APIConfig {
   @JsonKey(name: r'announcements', required: true, includeIfNull: false)
 // ignore: deprecated_member_use_from_same_package
   final Set<APIConfigAnnouncement> announcements;
-
-  /// apiKey to be used for all other requests
-  @JsonKey(name: r'apiKey', required: true, includeIfNull: false)
-  final String apiKey;
 
   /// Game name
   @Deprecated('appName has been deprecated')
@@ -476,7 +471,6 @@ class APIConfig {
           other.voiceEnableReceiverLimiting == voiceEnableReceiverLimiting &&
           other.address == address &&
           other.announcements == announcements &&
-          other.apiKey == apiKey &&
 // ignore: deprecated_member_use_from_same_package
           other.appName == appName &&
           other.buildVersionTag == buildVersionTag &&
@@ -577,7 +571,6 @@ class APIConfig {
       voiceEnableReceiverLimiting.hashCode +
       address.hashCode +
       announcements.hashCode +
-      apiKey.hashCode +
 // ignore: deprecated_member_use_from_same_package
       appName.hashCode +
       buildVersionTag.hashCode +

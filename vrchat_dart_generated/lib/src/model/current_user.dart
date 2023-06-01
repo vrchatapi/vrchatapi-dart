@@ -294,7 +294,7 @@ class CurrentUser {
   int get hashCode =>
       acceptedTOSVersion.hashCode +
       (accountDeletionDate == null ? 0 : accountDeletionDate.hashCode) +
-      accountDeletionLog.hashCode +
+      (accountDeletionLog == null ? 0 : accountDeletionLog.hashCode) +
       activeFriends.hashCode +
       allowAvatarCopying.hashCode +
       bio.hashCode +
