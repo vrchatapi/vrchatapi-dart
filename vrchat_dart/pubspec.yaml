@@ -1,13 +1,13 @@
 name: vrchat_dart
 description: This is a Dart client that interacts with the unofficial VRChat API
 homepage: https://github.com/vrchatapi/vrchatapi-dart
-version: 3.3.0
+version: 3.4.0
 
 environment:
   sdk: ">=2.17.0 <4.0.0"
 
 dependencies:
-  vrchat_dart_generated: ^1.11.1
+  vrchat_dart_generated: ^1.12.0
   dio_cookie_manager: ^3.0.0
   cookie_jar: ^4.0.1
   dio: ^5.0.0

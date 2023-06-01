@@ -1,6 +1,7 @@
-## NEXT
+## 3.4.0
 - Removes unused dependencies
 - Use `fixer` package to simplify output patching
+- Updates `vrchat_dart_generated`
 
 ## 3.3.0
 - Updates `web_socket_channel` to fix user agent issue
