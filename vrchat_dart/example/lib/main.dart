@@ -67,8 +67,6 @@ void main() async {
   currentUser.toUser();
   currentUser.toLimitedUser();
 
-  // API key fetching is automatically handled on successful authentication
-
   final friendsResponse = await api.rawApi
       .getFriendsApi()
       .getFriends()

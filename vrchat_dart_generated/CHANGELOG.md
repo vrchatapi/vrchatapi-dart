@@ -1,5 +1,6 @@
-## NEXT
+## 1.12.0
 - Regenerated with openapi-generator 6.6.0
+- Updated to match spec
 
 ## 1.11.1+1
 - Fix formatting
