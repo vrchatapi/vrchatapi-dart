@@ -1,3 +1,6 @@
+## 3.4.1
+- Removes deprecated use of `DioError`
+
 ## 3.4.0
 - Removes unused dependencies
 - Use `fixer` package to simplify output patching

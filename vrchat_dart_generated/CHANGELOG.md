@@ -1,3 +1,6 @@
+## 1.12.0+1
+- Removes deprecated use of `DioError`
+
 ## 1.12.0
 - Regenerated with openapi-generator 6.6.0
 - Updated to match spec
