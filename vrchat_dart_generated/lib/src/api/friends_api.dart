@@ -32,7 +32,7 @@ class FriendsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Success] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<Success>> deleteFriendRequest({
     required String userId,
     CancelToken? cancelToken,
@@ -79,10 +79,10 @@ class FriendsApi {
           ? null
           : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -113,7 +113,7 @@ class FriendsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Notification] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<Notification>> friend({
     required String userId,
     CancelToken? cancelToken,
@@ -161,10 +161,10 @@ class FriendsApi {
           : deserialize<Notification, Notification>(rawData, 'Notification',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -195,7 +195,7 @@ class FriendsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [FriendStatus] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<FriendStatus>> getFriendStatus({
     required String userId,
     CancelToken? cancelToken,
@@ -243,10 +243,10 @@ class FriendsApi {
           : deserialize<FriendStatus, FriendStatus>(rawData, 'FriendStatus',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -279,7 +279,7 @@ class FriendsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [List<LimitedUser>] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<List<LimitedUser>>> getFriends({
     int? offset,
     int? n = 60,
@@ -336,10 +336,10 @@ class FriendsApi {
               rawData, 'List<LimitedUser>',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -370,7 +370,7 @@ class FriendsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Success] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<Success>> unfriend({
     required String userId,
     CancelToken? cancelToken,
@@ -417,10 +417,10 @@ class FriendsApi {
           ? null
           : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

@@ -30,7 +30,7 @@ class PlayermoderationApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Success] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<Success>> clearAllPlayerModerations({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -75,10 +75,10 @@ class PlayermoderationApi {
           ? null
           : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -109,7 +109,7 @@ class PlayermoderationApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Success] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<Success>> deletePlayerModeration({
     required String playerModerationId,
     CancelToken? cancelToken,
@@ -157,10 +157,10 @@ class PlayermoderationApi {
           ? null
           : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -191,7 +191,7 @@ class PlayermoderationApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [PlayerModeration] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<PlayerModeration>> getPlayerModeration({
     required String playerModerationId,
     CancelToken? cancelToken,
@@ -241,10 +241,10 @@ class PlayermoderationApi {
               rawData, 'PlayerModeration',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -276,7 +276,7 @@ class PlayermoderationApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [List<PlayerModeration>] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<List<PlayerModeration>>> getPlayerModerations({
     String? type,
     String? targetUserId,
@@ -331,10 +331,10 @@ class PlayermoderationApi {
               rawData, 'List<PlayerModeration>',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -365,7 +365,7 @@ class PlayermoderationApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [PlayerModeration] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<PlayerModeration>> moderateUser({
     ModerateUserRequest? moderateUserRequest,
     CancelToken? cancelToken,
@@ -401,12 +401,12 @@ class PlayermoderationApi {
     try {
       _bodyData = jsonEncode(moderateUserRequest);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -431,10 +431,10 @@ class PlayermoderationApi {
               rawData, 'PlayerModeration',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -465,7 +465,7 @@ class PlayermoderationApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Success] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<Success>> unmoderateUser({
     ModerateUserRequest? moderateUserRequest,
     CancelToken? cancelToken,
@@ -501,12 +501,12 @@ class PlayermoderationApi {
     try {
       _bodyData = jsonEncode(moderateUserRequest);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -529,10 +529,10 @@ class PlayermoderationApi {
           ? null
           : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

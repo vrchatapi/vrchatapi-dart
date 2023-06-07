@@ -31,7 +31,7 @@ class EconomyApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [List<UserSubscription>] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<List<UserSubscription>>> getCurrentSubscriptions({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -78,10 +78,10 @@ class EconomyApi {
               rawData, 'List<UserSubscription>',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -112,7 +112,7 @@ class EconomyApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [LicenseGroup] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<LicenseGroup>> getLicenseGroup({
     required String licenseGroupId,
     CancelToken? cancelToken,
@@ -160,10 +160,10 @@ class EconomyApi {
           : deserialize<LicenseGroup, LicenseGroup>(rawData, 'LicenseGroup',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -194,7 +194,7 @@ class EconomyApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Transaction] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   @Deprecated('This operation has been deprecated')
   Future<Response<Transaction>> getSteamTransaction({
     required String transactionId,
@@ -243,10 +243,10 @@ class EconomyApi {
           : deserialize<Transaction, Transaction>(rawData, 'Transaction',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -276,7 +276,7 @@ class EconomyApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [List<Transaction>] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<List<Transaction>>> getSteamTransactions({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -323,10 +323,10 @@ class EconomyApi {
               rawData, 'List<Transaction>',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -356,7 +356,7 @@ class EconomyApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [List<Subscription>] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<List<Subscription>>> getSubscriptions({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -403,10 +403,10 @@ class EconomyApi {
               rawData, 'List<Subscription>',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

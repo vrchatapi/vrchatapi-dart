@@ -39,7 +39,7 @@ class AuthenticationApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [UserExists] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<UserExists>> checkUserExists({
     String? email,
     String? displayName,
@@ -90,10 +90,10 @@ class AuthenticationApi {
           : deserialize<UserExists, UserExists>(rawData, 'UserExists',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -124,7 +124,7 @@ class AuthenticationApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [CurrentUser] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<CurrentUser>> deleteUser({
     required String userId,
     CancelToken? cancelToken,
@@ -172,10 +172,10 @@ class AuthenticationApi {
           : deserialize<CurrentUser, CurrentUser>(rawData, 'CurrentUser',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -205,7 +205,7 @@ class AuthenticationApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [CurrentUser] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<CurrentUser>> getCurrentUser({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -262,10 +262,10 @@ class AuthenticationApi {
           : deserialize<CurrentUser, CurrentUser>(rawData, 'CurrentUser',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -295,7 +295,7 @@ class AuthenticationApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Success] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<Success>> logout({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -340,10 +340,10 @@ class AuthenticationApi {
           ? null
           : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -374,7 +374,7 @@ class AuthenticationApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Verify2FAResult] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<Verify2FAResult>> verify2FA({
     TwoFactorAuthCode? twoFactorAuthCode,
     CancelToken? cancelToken,
@@ -410,12 +410,12 @@ class AuthenticationApi {
     try {
       _bodyData = jsonEncode(twoFactorAuthCode);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -440,10 +440,10 @@ class AuthenticationApi {
               rawData, 'Verify2FAResult',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -474,7 +474,7 @@ class AuthenticationApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Verify2FAEmailCodeResult] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<Verify2FAEmailCodeResult>> verify2FAEmailCode({
     TwoFactorEmailCode? twoFactorEmailCode,
     CancelToken? cancelToken,
@@ -510,12 +510,12 @@ class AuthenticationApi {
     try {
       _bodyData = jsonEncode(twoFactorEmailCode);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -540,10 +540,10 @@ class AuthenticationApi {
               rawData, 'Verify2FAEmailCodeResult',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -573,7 +573,7 @@ class AuthenticationApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [VerifyAuthTokenResult] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<VerifyAuthTokenResult>> verifyAuthToken({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -620,10 +620,10 @@ class AuthenticationApi {
               rawData, 'VerifyAuthTokenResult',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -654,7 +654,7 @@ class AuthenticationApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Verify2FAResult] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<Verify2FAResult>> verifyRecoveryCode({
     TwoFactorAuthCode? twoFactorAuthCode,
     CancelToken? cancelToken,
@@ -690,12 +690,12 @@ class AuthenticationApi {
     try {
       _bodyData = jsonEncode(twoFactorAuthCode);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -720,10 +720,10 @@ class AuthenticationApi {
               rawData, 'Verify2FAResult',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

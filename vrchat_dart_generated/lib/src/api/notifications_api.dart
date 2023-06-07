@@ -30,7 +30,7 @@ class NotificationsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Success] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<Success>> acceptFriendRequest({
     required String notificationId,
     CancelToken? cancelToken,
@@ -77,10 +77,10 @@ class NotificationsApi {
           ? null
           : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -110,7 +110,7 @@ class NotificationsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Success] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<Success>> clearNotifications({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -155,10 +155,10 @@ class NotificationsApi {
           ? null
           : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -189,7 +189,7 @@ class NotificationsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Notification] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<Notification>> deleteNotification({
     required String notificationId,
     CancelToken? cancelToken,
@@ -237,10 +237,10 @@ class NotificationsApi {
           : deserialize<Notification, Notification>(rawData, 'Notification',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -276,7 +276,7 @@ class NotificationsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [List<Notification>] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<List<Notification>>> getNotifications({
     @Deprecated('type is deprecated') String? type,
     @Deprecated('sent is deprecated') bool? sent,
@@ -339,10 +339,10 @@ class NotificationsApi {
               rawData, 'List<Notification>',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -373,7 +373,7 @@ class NotificationsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Notification] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<Notification>> markNotificationAsRead({
     required String notificationId,
     CancelToken? cancelToken,
@@ -421,10 +421,10 @@ class NotificationsApi {
           : deserialize<Notification, Notification>(rawData, 'Notification',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

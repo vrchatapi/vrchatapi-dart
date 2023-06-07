@@ -33,7 +33,7 @@ class UsersApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [User] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<User>> getUser({
     required String userId,
     CancelToken? cancelToken,
@@ -80,10 +80,10 @@ class UsersApi {
           ? null
           : deserialize<User, User>(rawData, 'User', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -114,7 +114,7 @@ class UsersApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [User] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   @Deprecated('This operation has been deprecated')
   Future<Response<User>> getUserByName({
     required String username,
@@ -162,10 +162,10 @@ class UsersApi {
           ? null
           : deserialize<User, User>(rawData, 'User', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -196,7 +196,7 @@ class UsersApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [List<Group>] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<List<Group>>> getUserGroupRequests({
     required String userId,
     CancelToken? cancelToken,
@@ -244,10 +244,10 @@ class UsersApi {
           : deserialize<List<Group>, Group>(rawData, 'List<Group>',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -278,7 +278,7 @@ class UsersApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [List<Group>] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<List<Group>>> getUserGroups({
     required String userId,
     CancelToken? cancelToken,
@@ -326,10 +326,10 @@ class UsersApi {
           : deserialize<List<Group>, Group>(rawData, 'List<Group>',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -363,7 +363,7 @@ class UsersApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [List<LimitedUser>] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<List<LimitedUser>>> searchUsers({
     String? search,
     String? developerType,
@@ -422,10 +422,10 @@ class UsersApi {
               rawData, 'List<LimitedUser>',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -457,7 +457,7 @@ class UsersApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [CurrentUser] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<CurrentUser>> updateUser({
     required String userId,
     UpdateUserRequest? updateUserRequest,
@@ -495,12 +495,12 @@ class UsersApi {
     try {
       _bodyData = jsonEncode(updateUserRequest);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -524,10 +524,10 @@ class UsersApi {
           : deserialize<CurrentUser, CurrentUser>(rawData, 'CurrentUser',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

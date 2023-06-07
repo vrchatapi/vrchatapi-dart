@@ -35,7 +35,7 @@ class AvatarsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Avatar] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<Avatar>> createAvatar({
     CreateAvatarRequest? createAvatarRequest,
     CancelToken? cancelToken,
@@ -71,12 +71,12 @@ class AvatarsApi {
     try {
       _bodyData = jsonEncode(createAvatarRequest);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -99,10 +99,10 @@ class AvatarsApi {
           ? null
           : deserialize<Avatar, Avatar>(rawData, 'Avatar', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -133,7 +133,7 @@ class AvatarsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Avatar] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<Avatar>> deleteAvatar({
     required String avatarId,
     CancelToken? cancelToken,
@@ -180,10 +180,10 @@ class AvatarsApi {
           ? null
           : deserialize<Avatar, Avatar>(rawData, 'Avatar', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -214,7 +214,7 @@ class AvatarsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Avatar] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<Avatar>> getAvatar({
     required String avatarId,
     CancelToken? cancelToken,
@@ -261,10 +261,10 @@ class AvatarsApi {
           ? null
           : deserialize<Avatar, Avatar>(rawData, 'Avatar', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -307,7 +307,7 @@ class AvatarsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [List<Avatar>] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<List<Avatar>>> getFavoritedAvatars({
     bool? featured,
     SortOption? sort,
@@ -383,10 +383,10 @@ class AvatarsApi {
           : deserialize<List<Avatar>, Avatar>(rawData, 'List<Avatar>',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -417,7 +417,7 @@ class AvatarsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Avatar] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<Avatar>> getOwnAvatar({
     required String userId,
     CancelToken? cancelToken,
@@ -464,10 +464,10 @@ class AvatarsApi {
           ? null
           : deserialize<Avatar, Avatar>(rawData, 'Avatar', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -510,7 +510,7 @@ class AvatarsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [List<Avatar>] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<List<Avatar>>> searchAvatars({
     bool? featured,
     SortOption? sort,
@@ -586,10 +586,10 @@ class AvatarsApi {
           : deserialize<List<Avatar>, Avatar>(rawData, 'List<Avatar>',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -620,7 +620,7 @@ class AvatarsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [CurrentUser] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<CurrentUser>> selectAvatar({
     required String avatarId,
     CancelToken? cancelToken,
@@ -668,10 +668,10 @@ class AvatarsApi {
           : deserialize<CurrentUser, CurrentUser>(rawData, 'CurrentUser',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -702,7 +702,7 @@ class AvatarsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [CurrentUser] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<CurrentUser>> selectFallbackAvatar({
     required String avatarId,
     CancelToken? cancelToken,
@@ -750,10 +750,10 @@ class AvatarsApi {
           : deserialize<CurrentUser, CurrentUser>(rawData, 'CurrentUser',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -785,7 +785,7 @@ class AvatarsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Avatar] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<Avatar>> updateAvatar({
     required String avatarId,
     UpdateAvatarRequest? updateAvatarRequest,
@@ -823,12 +823,12 @@ class AvatarsApi {
     try {
       _bodyData = jsonEncode(updateAvatarRequest);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -851,10 +851,10 @@ class AvatarsApi {
           ? null
           : deserialize<Avatar, Avatar>(rawData, 'Avatar', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

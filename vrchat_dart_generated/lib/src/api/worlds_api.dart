@@ -38,7 +38,7 @@ class WorldsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [World] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<World>> createWorld({
     CreateWorldRequest? createWorldRequest,
     CancelToken? cancelToken,
@@ -67,12 +67,12 @@ class WorldsApi {
     try {
       _bodyData = jsonEncode(createWorldRequest);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -95,10 +95,10 @@ class WorldsApi {
           ? null
           : deserialize<World, World>(rawData, 'World', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -129,7 +129,7 @@ class WorldsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> deleteWorld({
     required String worldId,
     CancelToken? cancelToken,
@@ -195,7 +195,7 @@ class WorldsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [List<LimitedWorld>] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<List<LimitedWorld>>> getActiveWorlds({
     bool? featured,
     SortOption? sort,
@@ -270,10 +270,10 @@ class WorldsApi {
               rawData, 'List<LimitedWorld>',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -316,7 +316,7 @@ class WorldsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [List<LimitedWorld>] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<List<LimitedWorld>>> getFavoritedWorlds({
     bool? featured,
     SortOption? sort,
@@ -393,10 +393,10 @@ class WorldsApi {
               rawData, 'List<LimitedWorld>',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -439,7 +439,7 @@ class WorldsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [List<LimitedWorld>] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<List<LimitedWorld>>> getRecentWorlds({
     bool? featured,
     SortOption? sort,
@@ -516,10 +516,10 @@ class WorldsApi {
               rawData, 'List<LimitedWorld>',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -550,7 +550,7 @@ class WorldsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [World] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<World>> getWorld({
     required String worldId,
     CancelToken? cancelToken,
@@ -590,10 +590,10 @@ class WorldsApi {
           ? null
           : deserialize<World, World>(rawData, 'World', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -625,7 +625,7 @@ class WorldsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [Instance] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<Instance>> getWorldInstance({
     required String worldId,
     required String instanceId,
@@ -675,10 +675,10 @@ class WorldsApi {
           : deserialize<Instance, Instance>(rawData, 'Instance',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -709,7 +709,7 @@ class WorldsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [WorldMetadata] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   @Deprecated('This operation has been deprecated')
   Future<Response<WorldMetadata>> getWorldMetadata({
     required String worldId,
@@ -758,10 +758,10 @@ class WorldsApi {
           : deserialize<WorldMetadata, WorldMetadata>(rawData, 'WorldMetadata',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -792,7 +792,7 @@ class WorldsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [WorldPublishStatus] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<WorldPublishStatus>> getWorldPublishStatus({
     required String worldId,
     CancelToken? cancelToken,
@@ -841,10 +841,10 @@ class WorldsApi {
               rawData, 'WorldPublishStatus',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -875,7 +875,7 @@ class WorldsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> publishWorld({
     required String worldId,
     CancelToken? cancelToken,
@@ -943,7 +943,7 @@ class WorldsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [List<LimitedWorld>] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<List<LimitedWorld>>> searchWorlds({
     bool? featured,
     SortOption? sort,
@@ -1022,10 +1022,10 @@ class WorldsApi {
               rawData, 'List<LimitedWorld>',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -1056,7 +1056,7 @@ class WorldsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> unpublishWorld({
     required String worldId,
     CancelToken? cancelToken,
@@ -1112,7 +1112,7 @@ class WorldsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [World] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<World>> updateWorld({
     required String worldId,
     UpdateWorldRequest? updateWorldRequest,
@@ -1150,12 +1150,12 @@ class WorldsApi {
     try {
       _bodyData = jsonEncode(updateWorldRequest);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -1178,10 +1178,10 @@ class WorldsApi {
           ? null
           : deserialize<World, World>(rawData, 'World', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

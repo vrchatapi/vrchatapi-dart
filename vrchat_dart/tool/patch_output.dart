@@ -4,11 +4,15 @@ import 'package:fixer/fixer.dart';
 
 void main() async {
   print('Patching lib/src/model...');
-  await patchModel();
+  patchModel();
   print('Model patched!');
 
+  print('Patching lib/src/api...');
+  patchApi();
+  print('Api patched!');
+
   print('Patching analysis issues...');
-  await patchAnalysisIssues();
+  patchAnalysisIssues();
   print('Analysis issues patched!');
 }
 
@@ -17,10 +21,10 @@ final _enumToString = r'''
   String toString() => this.name;
 ''';
 
-Future<void> patchModel() async {
+void patchModel() {
   final modelFiles = Directory('../vrchat_dart_generated/lib/src/model')
       .listSync()
-      .cast<File>();
+      .whereType<File>();
 
   for (final file in modelFiles) {
     var content = file.readAsStringSync();
@@ -41,7 +45,21 @@ Future<void> patchModel() async {
   }
 }
 
-Future<void> patchAnalysisIssues() async {
+void patchApi() {
+  final apiFiles = Directory('../vrchat_dart_generated/lib/src/api')
+      .listSync()
+      .whereType<File>();
+
+  for (final file in apiFiles) {
+    var content = file.readAsStringSync();
+    // TODO: Remove when generator is updated
+    // https://github.com/OpenAPITools/openapi-generator/pull/15783
+    content = content.replaceAll('DioError', 'DioException');
+    file.writeAsStringSync(content);
+  }
+}
+
+void patchAnalysisIssues() {
   fix(
     {
       'deprecated_member_use_from_same_package': (_, line) =>

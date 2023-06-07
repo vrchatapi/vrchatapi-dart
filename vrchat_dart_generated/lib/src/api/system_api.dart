@@ -32,7 +32,7 @@ class SystemApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [String] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<String>> getCSS({
     String? variant = 'public',
     String? branch = 'main',
@@ -78,10 +78,10 @@ class SystemApi {
           ? null
           : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -111,7 +111,7 @@ class SystemApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [APIConfig] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<APIConfig>> getConfig({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -150,10 +150,10 @@ class SystemApi {
           : deserialize<APIConfig, APIConfig>(rawData, 'APIConfig',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -183,7 +183,7 @@ class SystemApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [int] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> getCurrentOnlineUsers({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -221,10 +221,10 @@ class SystemApi {
           ? null
           : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -254,7 +254,7 @@ class SystemApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [APIHealth] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   @Deprecated('This operation has been deprecated')
   Future<Response<APIHealth>> getHealth({
     CancelToken? cancelToken,
@@ -294,10 +294,10 @@ class SystemApi {
           : deserialize<APIHealth, APIHealth>(rawData, 'APIHealth',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -329,7 +329,7 @@ class SystemApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [List<InfoPush>] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<List<InfoPush>>> getInfoPush({
     String? require,
     String? include,
@@ -376,10 +376,10 @@ class SystemApi {
           : deserialize<List<InfoPush>, InfoPush>(rawData, 'List<InfoPush>',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -411,7 +411,7 @@ class SystemApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [String] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<String>> getJavaScript({
     String? variant = 'public',
     String? branch = 'main',
@@ -457,10 +457,10 @@ class SystemApi {
           ? null
           : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -490,7 +490,7 @@ class SystemApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [DateTime] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<DateTime>> getSystemTime({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -529,10 +529,10 @@ class SystemApi {
           : deserialize<DateTime, DateTime>(rawData, 'DateTime',
               growable: true);
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

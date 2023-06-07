@@ -39,7 +39,7 @@ class VrcError {
   VrcError({required this.message, required this.statusCode});
 
   /// Construct a [VrcError] from json
-  factory VrcError.fromDioError(DioError error) {
+  factory VrcError.fromDioError(DioException error) {
     final String message;
     final int statusCode;
 
