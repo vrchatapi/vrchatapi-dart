@@ -39,7 +39,7 @@ final String excludeUserId = excludeUserId_example; // String | Exclude by UserI
 try {
     final response = api.checkUserExists(email, displayName, userId, excludeUserId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AuthenticationApi->checkUserExists: $e\n');
 }
 ```
@@ -89,7 +89,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.deleteUser(userId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AuthenticationApi->deleteUser: $e\n');
 }
 ```
@@ -142,7 +142,7 @@ final api = VrchatDartGenerated().getAuthenticationApi();
 try {
     final response = api.getCurrentUser();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AuthenticationApi->getCurrentUser: $e\n');
 }
 ```
@@ -185,7 +185,7 @@ final api = VrchatDartGenerated().getAuthenticationApi();
 try {
     final response = api.logout();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AuthenticationApi->logout: $e\n');
 }
 ```
@@ -229,7 +229,7 @@ final TwoFactorAuthCode twoFactorAuthCode = ; // TwoFactorAuthCode |
 try {
     final response = api.verify2FA(twoFactorAuthCode);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AuthenticationApi->verify2FA: $e\n');
 }
 ```
@@ -276,7 +276,7 @@ final TwoFactorEmailCode twoFactorEmailCode = ; // TwoFactorEmailCode |
 try {
     final response = api.verify2FAEmailCode(twoFactorEmailCode);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AuthenticationApi->verify2FAEmailCode: $e\n');
 }
 ```
@@ -322,7 +322,7 @@ final api = VrchatDartGenerated().getAuthenticationApi();
 try {
     final response = api.verifyAuthToken();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AuthenticationApi->verifyAuthToken: $e\n');
 }
 ```
@@ -366,7 +366,7 @@ final TwoFactorAuthCode twoFactorAuthCode = ; // TwoFactorAuthCode |
 try {
     final response = api.verifyRecoveryCode(twoFactorAuthCode);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AuthenticationApi->verifyRecoveryCode: $e\n');
 }
 ```

@@ -36,7 +36,7 @@ final api = VrchatDartGenerated().getEconomyApi();
 try {
     final response = api.getCurrentSubscriptions();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling EconomyApi->getCurrentSubscriptions: $e\n');
 }
 ```
@@ -80,7 +80,7 @@ final String licenseGroupId = licenseGroupId_example; // String | Must be a vali
 try {
     final response = api.getLicenseGroup(licenseGroupId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling EconomyApi->getLicenseGroup: $e\n');
 }
 ```
@@ -127,7 +127,7 @@ final String transactionId = transactionId_example; // String | Must be a valid 
 try {
     final response = api.getSteamTransaction(transactionId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling EconomyApi->getSteamTransaction: $e\n');
 }
 ```
@@ -173,7 +173,7 @@ final api = VrchatDartGenerated().getEconomyApi();
 try {
     final response = api.getSteamTransactions();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling EconomyApi->getSteamTransactions: $e\n');
 }
 ```
@@ -216,7 +216,7 @@ final api = VrchatDartGenerated().getEconomyApi();
 try {
     final response = api.getSubscriptions();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling EconomyApi->getSubscriptions: $e\n');
 }
 ```

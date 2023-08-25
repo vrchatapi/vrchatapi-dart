@@ -33,7 +33,7 @@ final api = VrchatDartGenerated().getPermissionsApi();
 try {
     final response = api.getAssignedPermissions();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling PermissionsApi->getAssignedPermissions: $e\n');
 }
 ```
@@ -77,7 +77,7 @@ final String permissionId = permissionId_example; // String | Must be a valid pe
 try {
     final response = api.getPermission(permissionId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling PermissionsApi->getPermission: $e\n');
 }
 ```

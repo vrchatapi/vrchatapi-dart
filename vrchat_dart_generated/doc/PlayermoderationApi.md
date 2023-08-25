@@ -37,7 +37,7 @@ final api = VrchatDartGenerated().getPlayermoderationApi();
 try {
     final response = api.clearAllPlayerModerations();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling PlayermoderationApi->clearAllPlayerModerations: $e\n');
 }
 ```
@@ -81,7 +81,7 @@ final String playerModerationId = playerModerationId_example; // String | Must b
 try {
     final response = api.deletePlayerModeration(playerModerationId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling PlayermoderationApi->deletePlayerModeration: $e\n');
 }
 ```
@@ -128,7 +128,7 @@ final String playerModerationId = playerModerationId_example; // String | Must b
 try {
     final response = api.getPlayerModeration(playerModerationId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling PlayermoderationApi->getPlayerModeration: $e\n');
 }
 ```
@@ -176,7 +176,7 @@ final String targetUserId = targetUserId_example; // String | Must be valid User
 try {
     final response = api.getPlayerModerations(type, targetUserId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling PlayermoderationApi->getPlayerModerations: $e\n');
 }
 ```
@@ -224,7 +224,7 @@ final ModerateUserRequest moderateUserRequest = ; // ModerateUserRequest |
 try {
     final response = api.moderateUser(moderateUserRequest);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling PlayermoderationApi->moderateUser: $e\n');
 }
 ```
@@ -271,7 +271,7 @@ final ModerateUserRequest moderateUserRequest = ; // ModerateUserRequest |
 try {
     final response = api.unmoderateUser(moderateUserRequest);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling PlayermoderationApi->unmoderateUser: $e\n');
 }
 ```

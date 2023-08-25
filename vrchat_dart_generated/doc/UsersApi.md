@@ -38,7 +38,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getUser(userId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling UsersApi->getUser: $e\n');
 }
 ```
@@ -85,7 +85,7 @@ final String username = username_example; // String | Username of the user
 try {
     final response = api.getUserByName(username);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling UsersApi->getUserByName: $e\n');
 }
 ```
@@ -132,7 +132,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getUserGroupRequests(userId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling UsersApi->getUserGroupRequests: $e\n');
 }
 ```
@@ -179,7 +179,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getUserGroups(userId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling UsersApi->getUserGroups: $e\n');
 }
 ```
@@ -229,7 +229,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.searchUsers(search, developerType, n, offset);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling UsersApi->searchUsers: $e\n');
 }
 ```
@@ -280,7 +280,7 @@ final UpdateUserRequest updateUserRequest = ; // UpdateUserRequest |
 try {
     final response = api.updateUser(userId, updateUserRequest);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling UsersApi->updateUser: $e\n');
 }
 ```

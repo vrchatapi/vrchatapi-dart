@@ -44,6 +44,7 @@ export 'package:vrchat_dart_generated/src/model/create_group_request.dart';
 export 'package:vrchat_dart_generated/src/model/create_group_role_request.dart';
 export 'package:vrchat_dart_generated/src/model/create_world_request.dart';
 export 'package:vrchat_dart_generated/src/model/current_user.dart';
+export 'package:vrchat_dart_generated/src/model/current_user_presence.dart';
 export 'package:vrchat_dart_generated/src/model/deployment_group.dart';
 export 'package:vrchat_dart_generated/src/model/developer_type.dart';
 export 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';

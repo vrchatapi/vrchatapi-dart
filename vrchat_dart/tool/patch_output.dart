@@ -51,10 +51,7 @@ void patchApi() {
       .whereType<File>();
 
   for (final file in apiFiles) {
-    var content = file.readAsStringSync();
-    // TODO: Remove when generator is updated
-    // https://github.com/OpenAPITools/openapi-generator/pull/15783
-    content = content.replaceAll('DioError', 'DioException');
+    final content = file.readAsStringSync();
     file.writeAsStringSync(content);
   }
 }

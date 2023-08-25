@@ -137,7 +137,7 @@ final String excludeUserId = excludeUserId_example; // String | Exclude by UserI
 try {
     final response = await api.checkUserExists(email, displayName, userId, excludeUserId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print("Exception when calling AuthenticationApi->checkUserExists: $e\n");
 }
 
@@ -306,6 +306,7 @@ Class | Method | HTTP request | Description
  - [CreateGroupRoleRequest](doc/CreateGroupRoleRequest.md)
  - [CreateWorldRequest](doc/CreateWorldRequest.md)
  - [CurrentUser](doc/CurrentUser.md)
+ - [CurrentUserPresence](doc/CurrentUserPresence.md)
  - [DeploymentGroup](doc/DeploymentGroup.md)
  - [DeveloperType](doc/DeveloperType.md)
  - [DynamicContentRow](doc/DynamicContentRow.md)

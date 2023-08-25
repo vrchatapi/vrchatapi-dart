@@ -60,6 +60,8 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         final val = CurrentUser(
           acceptedTOSVersion:
               $checkedConvert('acceptedTOSVersion', (v) => v as int),
+          acceptedPrivacyVersion:
+              $checkedConvert('acceptedPrivacyVersion', (v) => v as int?),
           accountDeletionDate: $checkedConvert('accountDeletionDate',
               (v) => v == null ? null : DateTime.parse(v as String)),
           accountDeletionLog: $checkedConvert(
@@ -103,6 +105,8 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
           homeLocation: $checkedConvert('homeLocation', (v) => v as String),
           id: $checkedConvert('id', (v) => v as String),
           isFriend: $checkedConvert('isFriend', (v) => v as bool? ?? false),
+          lastActivity: $checkedConvert('last_activity',
+              (v) => v == null ? null : DateTime.parse(v as String)),
           lastLogin:
               $checkedConvert('last_login', (v) => DateTime.parse(v as String)),
           lastPlatform: $checkedConvert('last_platform', (v) => v as String),
@@ -121,6 +125,11 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
                   .map((e) =>
                       PastDisplayName.fromJson(e as Map<String, dynamic>))
                   .toList()),
+          presence: $checkedConvert(
+              'presence',
+              (v) => v == null
+                  ? null
+                  : CurrentUserPresence.fromJson(v as Map<String, dynamic>)),
           profilePicOverride:
               $checkedConvert('profilePicOverride', (v) => v as String),
           state: $checkedConvert(
@@ -141,6 +150,8 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
           twoFactorAuthEnabledDate: $checkedConvert('twoFactorAuthEnabledDate',
               (v) => v == null ? null : DateTime.parse(v as String)),
           unsubscribe: $checkedConvert('unsubscribe', (v) => v as bool),
+          updatedAt: $checkedConvert('updated_at',
+              (v) => v == null ? null : DateTime.parse(v as String)),
           userIcon: $checkedConvert('userIcon', (v) => v as String),
           username: $checkedConvert('username', (v) => v as String?),
         );
@@ -148,8 +159,10 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
       fieldKeyMap: const {
         'dateJoined': 'date_joined',
+        'lastActivity': 'last_activity',
         'lastLogin': 'last_login',
-        'lastPlatform': 'last_platform'
+        'lastPlatform': 'last_platform',
+        'updatedAt': 'updated_at'
       },
     );
 
@@ -164,6 +177,7 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
     }
   }
 
+  writeNotNull('acceptedPrivacyVersion', instance.acceptedPrivacyVersion);
   writeNotNull(
       'accountDeletionDate', instance.accountDeletionDate?.toIso8601String());
   writeNotNull('accountDeletionLog',
@@ -192,6 +206,7 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
   val['homeLocation'] = instance.homeLocation;
   val['id'] = instance.id;
   val['isFriend'] = instance.isFriend;
+  writeNotNull('last_activity', instance.lastActivity?.toIso8601String());
   val['last_login'] = instance.lastLogin.toIso8601String();
   val['last_platform'] = instance.lastPlatform;
   val['obfuscatedEmail'] = instance.obfuscatedEmail;
@@ -201,6 +216,7 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
   writeNotNull('onlineFriends', instance.onlineFriends);
   val['pastDisplayNames'] =
       instance.pastDisplayNames.map((e) => e.toJson()).toList();
+  writeNotNull('presence', instance.presence?.toJson());
   val['profilePicOverride'] = instance.profilePicOverride;
   val['state'] = _$UserStateEnumMap[instance.state]!;
   val['status'] = _$UserStatusEnumMap[instance.status]!;
@@ -214,6 +230,7 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
   writeNotNull('twoFactorAuthEnabledDate',
       instance.twoFactorAuthEnabledDate?.toIso8601String());
   val['unsubscribe'] = instance.unsubscribe;
+  writeNotNull('updated_at', instance.updatedAt?.toIso8601String());
   val['userIcon'] = instance.userIcon;
   writeNotNull('username', instance.username);
   return val;

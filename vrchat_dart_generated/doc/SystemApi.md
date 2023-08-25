@@ -36,7 +36,7 @@ final String branch = branch_example; // String | Specifies which git branch the
 try {
     final response = api.getCSS(variant, branch);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling SystemApi->getCSS: $e\n');
 }
 ```
@@ -79,7 +79,7 @@ final api = VrchatDartGenerated().getSystemApi();
 try {
     final response = api.getConfig();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling SystemApi->getConfig: $e\n');
 }
 ```
@@ -118,7 +118,7 @@ final api = VrchatDartGenerated().getSystemApi();
 try {
     final response = api.getCurrentOnlineUsers();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling SystemApi->getCurrentOnlineUsers: $e\n');
 }
 ```
@@ -157,7 +157,7 @@ final api = VrchatDartGenerated().getSystemApi();
 try {
     final response = api.getHealth();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling SystemApi->getHealth: $e\n');
 }
 ```
@@ -198,7 +198,7 @@ final String include = include_example; // String | Tags to include (comma-separ
 try {
     final response = api.getInfoPush(require, include);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling SystemApi->getInfoPush: $e\n');
 }
 ```
@@ -243,7 +243,7 @@ final String branch = branch_example; // String | Specifies which git branch the
 try {
     final response = api.getJavaScript(variant, branch);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling SystemApi->getJavaScript: $e\n');
 }
 ```
@@ -286,7 +286,7 @@ final api = VrchatDartGenerated().getSystemApi();
 try {
     final response = api.getSystemTime();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling SystemApi->getSystemTime: $e\n');
 }
 ```

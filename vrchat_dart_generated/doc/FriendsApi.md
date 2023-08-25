@@ -37,7 +37,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.deleteFriendRequest(userId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling FriendsApi->deleteFriendRequest: $e\n');
 }
 ```
@@ -84,7 +84,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.friend(userId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling FriendsApi->friend: $e\n');
 }
 ```
@@ -131,7 +131,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getFriendStatus(userId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling FriendsApi->getFriendStatus: $e\n');
 }
 ```
@@ -180,7 +180,7 @@ final bool offline = true; // bool | Returns *only* offline users if true, retur
 try {
     final response = api.getFriends(offset, n, offline);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling FriendsApi->getFriends: $e\n');
 }
 ```
@@ -229,7 +229,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.unfriend(userId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling FriendsApi->unfriend: $e\n');
 }
 ```

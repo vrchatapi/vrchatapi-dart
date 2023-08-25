@@ -23,6 +23,7 @@ doc/CreateGroupRequest.md
 doc/CreateGroupRoleRequest.md
 doc/CreateWorldRequest.md
 doc/CurrentUser.md
+doc/CurrentUserPresence.md
 doc/DeploymentGroup.md
 doc/DeveloperType.md
 doc/DynamicContentRow.md
@@ -179,6 +180,7 @@ lib/src/model/create_group_request.dart
 lib/src/model/create_group_role_request.dart
 lib/src/model/create_world_request.dart
 lib/src/model/current_user.dart
+lib/src/model/current_user_presence.dart
 lib/src/model/deployment_group.dart
 lib/src/model/developer_type.dart
 lib/src/model/dynamic_content_row.dart
@@ -302,6 +304,7 @@ test/create_group_invite_request_test.dart
 test/create_group_request_test.dart
 test/create_group_role_request_test.dart
 test/create_world_request_test.dart
+test/current_user_presence_test.dart
 test/current_user_test.dart
 test/deployment_group_test.dart
 test/developer_type_test.dart

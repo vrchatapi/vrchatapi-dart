@@ -37,7 +37,7 @@ final String instanceId = instanceId_example; // String | Must be a valid instan
 try {
     final response = api.getInstance(worldId, instanceId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling InstancesApi->getInstance: $e\n');
 }
 ```
@@ -85,7 +85,7 @@ final String shortName = shortName_example; // String | Must be a valid instance
 try {
     final response = api.getInstanceByShortName(shortName);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling InstancesApi->getInstanceByShortName: $e\n');
 }
 ```
@@ -133,7 +133,7 @@ final String instanceId = instanceId_example; // String | Must be a valid instan
 try {
     final response = api.getShortName(worldId, instanceId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling InstancesApi->getShortName: $e\n');
 }
 ```
@@ -182,7 +182,7 @@ final String instanceId = instanceId_example; // String | Must be a valid instan
 try {
     final response = api.sendSelfInvite(worldId, instanceId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling InstancesApi->sendSelfInvite: $e\n');
 }
 ```

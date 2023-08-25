@@ -42,7 +42,7 @@ final CreateFileRequest createFileRequest = ; // CreateFileRequest |
 try {
     final response = api.createFile(createFileRequest);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling FilesApi->createFile: $e\n');
 }
 ```
@@ -90,7 +90,7 @@ final CreateFileVersionRequest createFileVersionRequest = ; // CreateFileVersion
 try {
     final response = api.createFileVersion(fileId, createFileVersionRequest);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling FilesApi->createFileVersion: $e\n');
 }
 ```
@@ -138,7 +138,7 @@ final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.deleteFile(fileId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling FilesApi->deleteFile: $e\n');
 }
 ```
@@ -186,7 +186,7 @@ final int versionId = 1; // int | Version ID of the asset.
 try {
     final response = api.deleteFileVersion(fileId, versionId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling FilesApi->deleteFileVersion: $e\n');
 }
 ```
@@ -234,7 +234,7 @@ final int versionId = 1; // int | Version ID of the asset.
 
 try {
     api.downloadFileVersion(fileId, versionId);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling FilesApi->downloadFileVersion: $e\n');
 }
 ```
@@ -285,7 +285,7 @@ final FinishFileDataUploadRequest finishFileDataUploadRequest = {"etags":["xxxxx
 try {
     final response = api.finishFileDataUpload(fileId, versionId, fileType, finishFileDataUploadRequest);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling FilesApi->finishFileDataUpload: $e\n');
 }
 ```
@@ -335,7 +335,7 @@ final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.getFile(fileId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling FilesApi->getFile: $e\n');
 }
 ```
@@ -384,7 +384,7 @@ final String fileType = file; // String | Type of file.
 try {
     final response = api.getFileDataUploadStatus(fileId, versionId, fileType);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling FilesApi->getFileDataUploadStatus: $e\n');
 }
 ```
@@ -436,7 +436,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getFiles(tag, userId, n, offset);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling FilesApi->getFiles: $e\n');
 }
 ```
@@ -489,7 +489,7 @@ final int partNumber = 1; // int | The part number to start uploading. If not pr
 try {
     final response = api.startFileDataUpload(fileId, versionId, fileType, partNumber);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling FilesApi->startFileDataUpload: $e\n');
 }
 ```

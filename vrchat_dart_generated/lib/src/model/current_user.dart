@@ -6,6 +6,7 @@
 import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
 import 'package:vrchat_dart_generated/src/model/past_display_name.dart';
+import 'package:vrchat_dart_generated/src/model/current_user_presence.dart';
 import 'package:vrchat_dart_generated/src/model/account_deletion_log.dart';
 import 'package:vrchat_dart_generated/src/model/user_state.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -22,6 +23,7 @@ class CurrentUser {
   /// Returns a new [CurrentUser] instance.
   CurrentUser({
     required this.acceptedTOSVersion,
+    this.acceptedPrivacyVersion,
     this.accountDeletionDate,
     this.accountDeletionLog,
     this.activeFriends,
@@ -47,6 +49,7 @@ class CurrentUser {
     required this.homeLocation,
     required this.id,
     this.isFriend = false,
+    this.lastActivity,
     required this.lastLogin,
     required this.lastPlatform,
     required this.obfuscatedEmail,
@@ -55,6 +58,7 @@ class CurrentUser {
     this.offlineFriends,
     this.onlineFriends,
     required this.pastDisplayNames,
+    this.presence,
     required this.profilePicOverride,
     required this.state,
     required this.status,
@@ -67,6 +71,7 @@ class CurrentUser {
     required this.twoFactorAuthEnabled,
     this.twoFactorAuthEnabledDate,
     required this.unsubscribe,
+    this.updatedAt,
     required this.userIcon,
     this.username,
   });
@@ -74,6 +79,11 @@ class CurrentUser {
   // minimum: 0
   @JsonKey(name: r'acceptedTOSVersion', required: true, includeIfNull: false)
   final int acceptedTOSVersion;
+
+  // minimum: 0
+  @JsonKey(
+      name: r'acceptedPrivacyVersion', required: false, includeIfNull: false)
+  final int? acceptedPrivacyVersion;
 
   @JsonKey(name: r'accountDeletionDate', required: false, includeIfNull: false)
   final DateTime? accountDeletionDate;
@@ -162,6 +172,9 @@ class CurrentUser {
   @JsonKey(name: r'isFriend', required: true, includeIfNull: false)
   final bool isFriend;
 
+  @JsonKey(name: r'last_activity', required: false, includeIfNull: false)
+  final DateTime? lastActivity;
+
   @JsonKey(name: r'last_login', required: true, includeIfNull: false)
   final DateTime lastLogin;
 
@@ -188,6 +201,9 @@ class CurrentUser {
   ///
   @JsonKey(name: r'pastDisplayNames', required: true, includeIfNull: false)
   final List<PastDisplayName> pastDisplayNames;
+
+  @JsonKey(name: r'presence', required: false, includeIfNull: false)
+  final CurrentUserPresence? presence;
 
   @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
   final String profilePicOverride;
@@ -226,6 +242,9 @@ class CurrentUser {
   @JsonKey(name: r'unsubscribe', required: true, includeIfNull: false)
   final bool unsubscribe;
 
+  @JsonKey(name: r'updated_at', required: false, includeIfNull: false)
+  final DateTime? updatedAt;
+
   @JsonKey(name: r'userIcon', required: true, includeIfNull: false)
   final String userIcon;
 
@@ -239,6 +258,7 @@ class CurrentUser {
       identical(this, other) ||
       other is CurrentUser &&
           other.acceptedTOSVersion == acceptedTOSVersion &&
+          other.acceptedPrivacyVersion == acceptedPrivacyVersion &&
           other.accountDeletionDate == accountDeletionDate &&
           other.accountDeletionLog == accountDeletionLog &&
           other.activeFriends == activeFriends &&
@@ -266,6 +286,7 @@ class CurrentUser {
           other.homeLocation == homeLocation &&
           other.id == id &&
           other.isFriend == isFriend &&
+          other.lastActivity == lastActivity &&
           other.lastLogin == lastLogin &&
           other.lastPlatform == lastPlatform &&
           other.obfuscatedEmail == obfuscatedEmail &&
@@ -274,6 +295,7 @@ class CurrentUser {
           other.offlineFriends == offlineFriends &&
           other.onlineFriends == onlineFriends &&
           other.pastDisplayNames == pastDisplayNames &&
+          other.presence == presence &&
           other.profilePicOverride == profilePicOverride &&
           other.state == state &&
           other.status == status &&
@@ -286,6 +308,7 @@ class CurrentUser {
           other.twoFactorAuthEnabled == twoFactorAuthEnabled &&
           other.twoFactorAuthEnabledDate == twoFactorAuthEnabledDate &&
           other.unsubscribe == unsubscribe &&
+          other.updatedAt == updatedAt &&
           other.userIcon == userIcon &&
 // ignore: deprecated_member_use_from_same_package
           other.username == username;
@@ -293,6 +316,7 @@ class CurrentUser {
   @override
   int get hashCode =>
       acceptedTOSVersion.hashCode +
+      acceptedPrivacyVersion.hashCode +
       (accountDeletionDate == null ? 0 : accountDeletionDate.hashCode) +
       (accountDeletionLog == null ? 0 : accountDeletionLog.hashCode) +
       activeFriends.hashCode +
@@ -319,6 +343,7 @@ class CurrentUser {
       homeLocation.hashCode +
       id.hashCode +
       isFriend.hashCode +
+      lastActivity.hashCode +
       lastLogin.hashCode +
       lastPlatform.hashCode +
       obfuscatedEmail.hashCode +
@@ -327,6 +352,7 @@ class CurrentUser {
       offlineFriends.hashCode +
       onlineFriends.hashCode +
       pastDisplayNames.hashCode +
+      presence.hashCode +
       profilePicOverride.hashCode +
       state.hashCode +
       status.hashCode +
@@ -341,6 +367,7 @@ class CurrentUser {
           ? 0
           : twoFactorAuthEnabledDate.hashCode) +
       unsubscribe.hashCode +
+      updatedAt.hashCode +
       userIcon.hashCode +
 // ignore: deprecated_member_use_from_same_package
       username.hashCode;

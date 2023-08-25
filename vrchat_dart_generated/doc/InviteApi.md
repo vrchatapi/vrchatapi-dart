@@ -42,7 +42,7 @@ final int slot = 56; // int | The message slot to fetch of a given message type.
 try {
     final response = api.getInviteMessage(userId, messageType, slot);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling InviteApi->getInviteMessage: $e\n');
 }
 ```
@@ -92,7 +92,7 @@ final InviteMessageType messageType = ; // InviteMessageType | The type of messa
 try {
     final response = api.getInviteMessages(userId, messageType);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling InviteApi->getInviteMessages: $e\n');
 }
 ```
@@ -141,7 +141,7 @@ final String instanceId = instanceId_example; // String | Must be a valid instan
 try {
     final response = api.inviteMyselfTo(worldId, instanceId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling InviteApi->inviteMyselfTo: $e\n');
 }
 ```
@@ -190,7 +190,7 @@ final InviteRequest inviteRequest = ; // InviteRequest | Slot number of the Invi
 try {
     final response = api.inviteUser(userId, inviteRequest);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling InviteApi->inviteUser: $e\n');
 }
 ```
@@ -239,7 +239,7 @@ final RequestInviteRequest requestInviteRequest = ; // RequestInviteRequest | Sl
 try {
     final response = api.requestInvite(userId, requestInviteRequest);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling InviteApi->requestInvite: $e\n');
 }
 ```
@@ -289,7 +289,7 @@ final int slot = 56; // int | The message slot to fetch of a given message type.
 try {
     final response = api.resetInviteMessage(userId, messageType, slot);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling InviteApi->resetInviteMessage: $e\n');
 }
 ```
@@ -339,7 +339,7 @@ final InviteResponse inviteResponse = ; // InviteResponse | Slot number of the R
 try {
     final response = api.respondInvite(notificationId, inviteResponse);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling InviteApi->respondInvite: $e\n');
 }
 ```
@@ -390,7 +390,7 @@ final UpdateInviteMessageRequest updateInviteMessageRequest = ; // UpdateInviteM
 try {
     final response = api.updateInviteMessage(userId, messageType, slot, updateInviteMessageRequest);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling InviteApi->updateInviteMessage: $e\n');
 }
 ```
