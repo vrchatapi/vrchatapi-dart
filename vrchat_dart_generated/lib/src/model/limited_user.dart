@@ -23,7 +23,7 @@ class LimitedUser {
     required this.currentAvatarThumbnailImageUrl,
     required this.developerType,
     required this.displayName,
-    required this.fallbackAvatar,
+    this.fallbackAvatar,
     required this.id,
     required this.isFriend,
     required this.lastPlatform,
@@ -57,8 +57,8 @@ class LimitedUser {
   @JsonKey(name: r'displayName', required: true, includeIfNull: false)
   final String displayName;
 
-  @JsonKey(name: r'fallbackAvatar', required: true, includeIfNull: false)
-  final String fallbackAvatar;
+  @JsonKey(name: r'fallbackAvatar', required: false, includeIfNull: false)
+  final String? fallbackAvatar;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(name: r'id', required: true, includeIfNull: false)

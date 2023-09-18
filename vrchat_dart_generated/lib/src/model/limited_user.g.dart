@@ -19,7 +19,6 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
             'currentAvatarThumbnailImageUrl',
             'developerType',
             'displayName',
-            'fallbackAvatar',
             'id',
             'isFriend',
             'last_platform',
@@ -39,7 +38,8 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
           developerType: $checkedConvert(
               'developerType', (v) => $enumDecode(_$DeveloperTypeEnumMap, v)),
           displayName: $checkedConvert('displayName', (v) => v as String),
-          fallbackAvatar: $checkedConvert('fallbackAvatar', (v) => v as String),
+          fallbackAvatar:
+              $checkedConvert('fallbackAvatar', (v) => v as String?),
           id: $checkedConvert('id', (v) => v as String),
           isFriend: $checkedConvert('isFriend', (v) => v as bool),
           lastPlatform: $checkedConvert('last_platform', (v) => v as String),
@@ -76,7 +76,7 @@ Map<String, dynamic> _$LimitedUserToJson(LimitedUser instance) {
       instance.currentAvatarThumbnailImageUrl;
   val['developerType'] = _$DeveloperTypeEnumMap[instance.developerType]!;
   val['displayName'] = instance.displayName;
-  val['fallbackAvatar'] = instance.fallbackAvatar;
+  writeNotNull('fallbackAvatar', instance.fallbackAvatar);
   val['id'] = instance.id;
   val['isFriend'] = instance.isFriend;
   val['last_platform'] = instance.lastPlatform;

@@ -18,6 +18,7 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
             'authorId',
             'authorName',
             'capacity',
+            'recommendedCapacity',
             'created_at',
             'description',
             'featured',
@@ -43,6 +44,8 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
           authorId: $checkedConvert('authorId', (v) => v as String),
           authorName: $checkedConvert('authorName', (v) => v as String),
           capacity: $checkedConvert('capacity', (v) => v as int),
+          recommendedCapacity:
+              $checkedConvert('recommendedCapacity', (v) => v as int),
           createdAt:
               $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
           description: $checkedConvert('description', (v) => v as String),
@@ -99,6 +102,7 @@ Map<String, dynamic> _$WorldToJson(World instance) {
     'authorId': instance.authorId,
     'authorName': instance.authorName,
     'capacity': instance.capacity,
+    'recommendedCapacity': instance.recommendedCapacity,
     'created_at': instance.createdAt.toIso8601String(),
     'description': instance.description,
   };

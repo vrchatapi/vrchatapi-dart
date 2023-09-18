@@ -21,6 +21,7 @@ class World {
     required this.authorId,
     required this.authorName,
     required this.capacity,
+    required this.recommendedCapacity,
     required this.createdAt,
     required this.description,
     this.favorites = 0,
@@ -55,10 +56,11 @@ class World {
   @JsonKey(name: r'authorName', required: true, includeIfNull: false)
   final String authorName;
 
-  // minimum: 0
-  // maximum: 40
   @JsonKey(name: r'capacity', required: true, includeIfNull: false)
   final int capacity;
+
+  @JsonKey(name: r'recommendedCapacity', required: true, includeIfNull: false)
+  final int recommendedCapacity;
 
   @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
@@ -157,6 +159,7 @@ class World {
           other.authorId == authorId &&
           other.authorName == authorName &&
           other.capacity == capacity &&
+          other.recommendedCapacity == recommendedCapacity &&
           other.createdAt == createdAt &&
           other.description == description &&
           other.favorites == favorites &&
@@ -188,6 +191,7 @@ class World {
       authorId.hashCode +
       authorName.hashCode +
       capacity.hashCode +
+      recommendedCapacity.hashCode +
       createdAt.hashCode +
       description.hashCode +
       favorites.hashCode +
