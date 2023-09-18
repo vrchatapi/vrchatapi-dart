@@ -25,7 +25,7 @@ Future<Map<String, dynamic>> getSpec({bool local = false}) async {
   final YamlMap yaml;
   if (local) {
     print('Using local spec file');
-    final file = File('../../specification/dist/openapi.yaml');
+    final file = File('../../vrchatapi-specification/dist/openapi.yaml');
     final data = await file.readAsString();
     yaml = loadYaml(data);
   } else {
