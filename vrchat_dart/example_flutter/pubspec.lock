@@ -309,7 +309,7 @@ packages:
       path: "../../vrchat_dart_generated"
       relative: true
     source: path
-    version: "1.12.0+1"
+    version: "1.13.0"
   web:
     dependency: transitive
     description:

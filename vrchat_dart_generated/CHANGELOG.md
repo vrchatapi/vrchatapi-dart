@@ -1,3 +1,6 @@
+## 1.13.0
+- Updated to match spec
+
 ## 1.12.0+1
 - Removes deprecated use of `DioError`
 
