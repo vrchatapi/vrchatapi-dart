@@ -21,7 +21,11 @@ enum InstanceType {
 
   ///
   @JsonValue(r'private')
-  private;
+  private,
+
+  ///
+  @JsonValue(r'group')
+  group;
 
   @override
   String toString() => this.name;

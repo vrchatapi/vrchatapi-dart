@@ -121,4 +121,5 @@ const _$InstanceTypeEnumMap = {
   InstanceType.hidden: 'hidden',
   InstanceType.friends: 'friends',
   InstanceType.private: 'private',
+  InstanceType.group: 'group',
 };
