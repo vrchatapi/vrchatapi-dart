@@ -1,3 +1,6 @@
+## 3.5.0
+- Pass through `DioException`s if VRChat response contains a success status code
+
 ## 3.4.1
 - Removes deprecated use of `DioError`
 
