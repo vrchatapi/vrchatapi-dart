@@ -39,23 +39,28 @@ class VrcError {
   VrcError({required this.message, required this.statusCode});
 
   /// Construct a [VrcError] from json
-  factory VrcError.fromDioError(DioException error) {
+  static VrcError? fromDioError(DioException error) {
     final String message;
     final int statusCode;
 
-    final data = error.response?.data;
-    final statusCodeFallback = error.response?.statusCode ?? 400;
+    final response = error.response;
+    if (response == null) return null;
+
+    final responseStatusCode = response.statusCode ?? 400;
+    if (200 <= responseStatusCode && responseStatusCode < 300) return null;
+
+    final data = response.data;
     if (data != null) {
       if (data is Map<String, dynamic>) {
         message = data['error']?['message'] as String? ?? error.message ?? '';
-        statusCode = data['error']?['status_code'] ?? statusCodeFallback;
+        statusCode = data['error']?['status_code'] ?? responseStatusCode;
       } else {
         message = data.toString();
-        statusCode = statusCodeFallback;
+        statusCode = responseStatusCode;
       }
     } else {
       message = error.message ?? '';
-      statusCode = statusCodeFallback;
+      statusCode = responseStatusCode;
     }
 
     return VrcError(message: message, statusCode: statusCode);
@@ -72,7 +77,7 @@ class VrcError {
 extension VrcResponseValidator<T> on Future<Response<T>> {
   /// Validate a VRC response, and transform the error to a [VrcError]
   Future<ValidatedResponse<T, T>> validateVrc() =>
-      validate(transformDioError: VrcError.fromDioError);
+      validate(transformDioError: (e) => VrcError.fromDioError(e) ?? e);
 }
 
 /// Extension on [ValidatedResponse] to get the [VrcError] if it exists
