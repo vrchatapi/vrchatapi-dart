@@ -34,7 +34,6 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
             'releaseStatus',
             'tags',
             'thumbnailImageUrl',
-            'unityPackages',
             'updated_at',
             'version',
             'visits'
@@ -84,8 +83,8 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('thumbnailImageUrl', (v) => v as String),
           unityPackages: $checkedConvert(
               'unityPackages',
-              (v) => (v as List<dynamic>)
-                  .map((e) => UnityPackage.fromJson(e as Map<String, dynamic>))
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => UnityPackage.fromJson(e as Map<String, dynamic>))
                   .toList()),
           updatedAt:
               $checkedConvert('updated_at', (v) => DateTime.parse(v as String)),
@@ -132,7 +131,8 @@ Map<String, dynamic> _$WorldToJson(World instance) {
   val['releaseStatus'] = _$ReleaseStatusEnumMap[instance.releaseStatus]!;
   val['tags'] = instance.tags;
   val['thumbnailImageUrl'] = instance.thumbnailImageUrl;
-  val['unityPackages'] = instance.unityPackages.map((e) => e.toJson()).toList();
+  writeNotNull(
+      'unityPackages', instance.unityPackages?.map((e) => e.toJson()).toList());
   val['updated_at'] = instance.updatedAt.toIso8601String();
   val['version'] = instance.version;
   val['visits'] = instance.visits;

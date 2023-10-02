@@ -43,7 +43,7 @@ class World {
     required this.releaseStatus,
     required this.tags,
     required this.thumbnailImageUrl,
-    required this.unityPackages,
+    this.unityPackages,
     required this.updatedAt,
     this.version = 0,
     this.visits = 0,
@@ -138,8 +138,8 @@ class World {
   final String thumbnailImageUrl;
 
   /// Empty if unauthenticated.
-  @JsonKey(name: r'unityPackages', required: true, includeIfNull: false)
-  final List<UnityPackage> unityPackages;
+  @JsonKey(name: r'unityPackages', required: false, includeIfNull: false)
+  final List<UnityPackage>? unityPackages;
 
   @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
   final DateTime updatedAt;
