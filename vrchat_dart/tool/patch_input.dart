@@ -12,7 +12,7 @@ void main(List<String> arguments) async {
   print('OpenAPI spec patched!');
 }
 
-Future<void> patchSpec({bool local = false}) async {
+Future<void> patchSpec({required bool local}) async {
   final data = await getSpec(local: local);
 
   final outString = jsonEncode(data);
@@ -21,7 +21,7 @@ Future<void> patchSpec({bool local = false}) async {
   output.writeAsStringSync(outString);
 }
 
-Future<Map<String, dynamic>> getSpec({bool local = false}) async {
+Future<Map<String, dynamic>> getSpec({required bool local}) async {
   final YamlMap yaml;
   if (local) {
     print('Using local spec file');
