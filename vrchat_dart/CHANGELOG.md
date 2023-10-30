@@ -1,3 +1,6 @@
+## 3.5.1
+- Make `VrchatDart.userAgent` final
+
 ## 3.5.0
 - Pass through `DioException`s if VRChat response contains a success status code
 

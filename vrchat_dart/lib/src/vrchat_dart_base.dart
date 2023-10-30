@@ -8,7 +8,7 @@ import 'package:vrchat_dart/src/streaming/vrc_streaming.dart';
 /// VrchatDart
 class VrchatDart {
   /// The user agent
-  VrchatUserAgent userAgent;
+  final VrchatUserAgent userAgent;
 
   final VrcApi _api;
 
