@@ -7,14 +7,18 @@ import 'package:json_annotation/json_annotation.dart';
 
 enum ReleaseStatus {
   @JsonValue(r'public')
-  public,
+  public(r'public'),
   @JsonValue(r'private')
-  private,
+  private(r'private'),
   @JsonValue(r'hidden')
-  hidden,
+  hidden(r'hidden'),
   @JsonValue(r'all')
-  all;
+  all(r'all');
+
+  const ReleaseStatus(this.value);
+
+  final String value;
 
   @override
-  String toString() => this.name;
+  String toString() => value;
 }

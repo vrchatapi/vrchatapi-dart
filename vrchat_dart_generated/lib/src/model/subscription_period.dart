@@ -7,16 +7,20 @@ import 'package:json_annotation/json_annotation.dart';
 
 enum SubscriptionPeriod {
   @JsonValue(r'hour')
-  hour,
+  hour(r'hour'),
   @JsonValue(r'day')
-  day,
+  day(r'day'),
   @JsonValue(r'week')
-  week,
+  week(r'week'),
   @JsonValue(r'month')
-  month,
+  month(r'month'),
   @JsonValue(r'year')
-  year;
+  year(r'year');
+
+  const SubscriptionPeriod(this.value);
+
+  final String value;
 
   @override
-  String toString() => this.name;
+  String toString() => value;
 }

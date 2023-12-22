@@ -7,10 +7,14 @@ import 'package:json_annotation/json_annotation.dart';
 
 enum GroupPrivacy {
   @JsonValue(r'default')
-  default_,
+  default_(r'default'),
   @JsonValue(r'private')
-  private;
+  private(r'private');
+
+  const GroupPrivacy(this.value);
+
+  final String value;
 
   @override
-  String toString() => this.name;
+  String toString() => value;
 }

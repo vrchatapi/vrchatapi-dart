@@ -9,20 +9,24 @@ import 'package:json_annotation/json_annotation.dart';
 enum InviteMessageType {
   ///
   @JsonValue(r'message')
-  message,
+  message(r'message'),
 
   ///
   @JsonValue(r'response')
-  response,
+  response(r'response'),
 
   ///
   @JsonValue(r'request')
-  request,
+  request(r'request'),
 
   ///
   @JsonValue(r'requestResponse')
-  requestResponse;
+  requestResponse(r'requestResponse');
+
+  const InviteMessageType(this.value);
+
+  final String value;
 
   @override
-  String toString() => this.name;
+  String toString() => value;
 }

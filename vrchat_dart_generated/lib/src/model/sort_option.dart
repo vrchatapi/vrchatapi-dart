@@ -7,42 +7,46 @@ import 'package:json_annotation/json_annotation.dart';
 
 enum SortOption {
   @JsonValue(r'popularity')
-  popularity,
+  popularity(r'popularity'),
   @JsonValue(r'heat')
-  heat,
+  heat(r'heat'),
   @JsonValue(r'trust')
-  trust,
+  trust(r'trust'),
   @JsonValue(r'shuffle')
-  shuffle,
+  shuffle(r'shuffle'),
   @JsonValue(r'random')
-  random,
+  random(r'random'),
   @JsonValue(r'favorites')
-  favorites,
+  favorites(r'favorites'),
   @JsonValue(r'reportScore')
-  reportScore,
+  reportScore(r'reportScore'),
   @JsonValue(r'reportCount')
-  reportCount,
+  reportCount(r'reportCount'),
   @JsonValue(r'publicationDate')
-  publicationDate,
+  publicationDate(r'publicationDate'),
   @JsonValue(r'labsPublicationDate')
-  labsPublicationDate,
+  labsPublicationDate(r'labsPublicationDate'),
   @JsonValue(r'created')
-  created,
+  created(r'created'),
   @JsonValue(r'_created_at')
-  createdAt,
+  createdAt(r'_created_at'),
   @JsonValue(r'updated')
-  updated,
+  updated(r'updated'),
   @JsonValue(r'_updated_at')
-  updatedAt,
+  updatedAt(r'_updated_at'),
   @JsonValue(r'order')
-  order,
+  order(r'order'),
   @JsonValue(r'relevance')
-  relevance,
+  relevance(r'relevance'),
   @JsonValue(r'magic')
-  magic,
+  magic(r'magic'),
   @JsonValue(r'name')
-  name;
+  name(r'name');
+
+  const SortOption(this.value);
+
+  final String value;
 
   @override
-  String toString() => this.name;
+  String toString() => value;
 }

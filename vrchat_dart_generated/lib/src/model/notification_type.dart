@@ -7,18 +7,22 @@ import 'package:json_annotation/json_annotation.dart';
 
 enum NotificationType {
   @JsonValue(r'friendRequest')
-  friendRequest,
+  friendRequest(r'friendRequest'),
   @JsonValue(r'invite')
-  invite,
+  invite(r'invite'),
   @JsonValue(r'inviteResponse')
-  inviteResponse,
+  inviteResponse(r'inviteResponse'),
   @JsonValue(r'requestInvite')
-  requestInvite,
+  requestInvite(r'requestInvite'),
   @JsonValue(r'requestInviteResponse')
-  requestInviteResponse,
+  requestInviteResponse(r'requestInviteResponse'),
   @JsonValue(r'votetokick')
-  votetokick;
+  votetokick(r'votetokick');
+
+  const NotificationType(this.value);
+
+  final String value;
 
   @override
-  String toString() => this.name;
+  String toString() => value;
 }

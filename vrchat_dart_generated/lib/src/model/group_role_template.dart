@@ -7,14 +7,18 @@ import 'package:json_annotation/json_annotation.dart';
 
 enum GroupRoleTemplate {
   @JsonValue(r'default')
-  default_,
+  default_(r'default'),
   @JsonValue(r'managedFree')
-  managedFree,
+  managedFree(r'managedFree'),
   @JsonValue(r'managedInvite')
-  managedInvite,
+  managedInvite(r'managedInvite'),
   @JsonValue(r'managedRequest')
-  managedRequest;
+  managedRequest(r'managedRequest');
+
+  const GroupRoleTemplate(this.value);
+
+  final String value;
 
   @override
-  String toString() => this.name;
+  String toString() => value;
 }

@@ -7,18 +7,22 @@ import 'package:json_annotation/json_annotation.dart';
 
 enum PlayerModerationType {
   @JsonValue(r'mute')
-  mute,
+  mute(r'mute'),
   @JsonValue(r'unmute')
-  unmute,
+  unmute(r'unmute'),
   @JsonValue(r'block')
-  block,
+  block(r'block'),
   @JsonValue(r'unblock')
-  unblock,
+  unblock(r'unblock'),
   @JsonValue(r'interactOn')
-  interactOn,
+  interactOn(r'interactOn'),
   @JsonValue(r'interactOff')
-  interactOff;
+  interactOff(r'interactOff');
+
+  const PlayerModerationType(this.value);
+
+  final String value;
 
   @override
-  String toString() => this.name;
+  String toString() => value;
 }

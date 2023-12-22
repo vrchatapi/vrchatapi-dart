@@ -7,14 +7,18 @@ import 'package:json_annotation/json_annotation.dart';
 
 enum FileStatus {
   @JsonValue(r'waiting')
-  waiting,
+  waiting(r'waiting'),
   @JsonValue(r'complete')
-  complete,
+  complete(r'complete'),
   @JsonValue(r'none')
-  none,
+  none(r'none'),
   @JsonValue(r'queued')
-  queued;
+  queued(r'queued');
+
+  const FileStatus(this.value);
+
+  final String value;
 
   @override
-  String toString() => this.name;
+  String toString() => value;
 }

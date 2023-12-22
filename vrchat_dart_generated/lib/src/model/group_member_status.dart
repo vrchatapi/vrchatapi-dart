@@ -7,14 +7,18 @@ import 'package:json_annotation/json_annotation.dart';
 
 enum GroupMemberStatus {
   @JsonValue(r'inactive')
-  inactive,
+  inactive(r'inactive'),
   @JsonValue(r'member')
-  member,
+  member(r'member'),
   @JsonValue(r'requested')
-  requested,
+  requested(r'requested'),
   @JsonValue(r'invited')
-  invited;
+  invited(r'invited');
+
+  const GroupMemberStatus(this.value);
+
+  final String value;
 
   @override
-  String toString() => this.name;
+  String toString() => value;
 }

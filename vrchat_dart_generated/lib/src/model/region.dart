@@ -9,28 +9,32 @@ import 'package:json_annotation/json_annotation.dart';
 enum Region {
   /// API/Photon region.
   @JsonValue(r'us')
-  us,
+  us(r'us'),
 
   /// API/Photon region.
   @JsonValue(r'use')
-  use,
+  use(r'use'),
 
   /// API/Photon region.
   @JsonValue(r'usw')
-  usw,
+  usw(r'usw'),
 
   /// API/Photon region.
   @JsonValue(r'eu')
-  eu,
+  eu(r'eu'),
 
   /// API/Photon region.
   @JsonValue(r'jp')
-  jp,
+  jp(r'jp'),
 
   /// API/Photon region.
   @JsonValue(r'unknown')
-  unknown;
+  unknown(r'unknown');
+
+  const Region(this.value);
+
+  final String value;
 
   @override
-  String toString() => this.name;
+  String toString() => value;
 }

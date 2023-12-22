@@ -7,12 +7,16 @@ import 'package:json_annotation/json_annotation.dart';
 
 enum FavoriteGroupVisibility {
   @JsonValue(r'private')
-  private,
+  private(r'private'),
   @JsonValue(r'friends')
-  friends,
+  friends(r'friends'),
   @JsonValue(r'public')
-  public;
+  public(r'public');
+
+  const FavoriteGroupVisibility(this.value);
+
+  final String value;
 
   @override
-  String toString() => this.name;
+  String toString() => value;
 }

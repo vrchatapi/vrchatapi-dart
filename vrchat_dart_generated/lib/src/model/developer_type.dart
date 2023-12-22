@@ -9,20 +9,24 @@ import 'package:json_annotation/json_annotation.dart';
 enum DeveloperType {
   /// \"none\" User is a normal user \"trusted\" Unknown \"internal\" Is a VRChat Developer \"moderator\" Is a VRChat Moderator  Staff can hide their developerType at will.
   @JsonValue(r'none')
-  none,
+  none(r'none'),
 
   /// \"none\" User is a normal user \"trusted\" Unknown \"internal\" Is a VRChat Developer \"moderator\" Is a VRChat Moderator  Staff can hide their developerType at will.
   @JsonValue(r'trusted')
-  trusted,
+  trusted(r'trusted'),
 
   /// \"none\" User is a normal user \"trusted\" Unknown \"internal\" Is a VRChat Developer \"moderator\" Is a VRChat Moderator  Staff can hide their developerType at will.
   @JsonValue(r'internal')
-  internal,
+  internal(r'internal'),
 
   /// \"none\" User is a normal user \"trusted\" Unknown \"internal\" Is a VRChat Developer \"moderator\" Is a VRChat Moderator  Staff can hide their developerType at will.
   @JsonValue(r'moderator')
-  moderator;
+  moderator(r'moderator');
+
+  const DeveloperType(this.value);
+
+  final String value;
 
   @override
-  String toString() => this.name;
+  String toString() => value;
 }

@@ -7,34 +7,38 @@ import 'package:json_annotation/json_annotation.dart';
 
 enum MIMEType {
   @JsonValue(r'image/jpeg')
-  imageSlashJpeg,
+  imageSlashJpeg(r'image/jpeg'),
   @JsonValue(r'image/jpg')
-  imageSlashJpg,
+  imageSlashJpg(r'image/jpg'),
   @JsonValue(r'image/png')
-  imageSlashPng,
+  imageSlashPng(r'image/png'),
   @JsonValue(r'image/webp')
-  imageSlashWebp,
+  imageSlashWebp(r'image/webp'),
   @JsonValue(r'image/gif')
-  imageSlashGif,
+  imageSlashGif(r'image/gif'),
   @JsonValue(r'image/bmp')
-  imageSlashBmp,
+  imageSlashBmp(r'image/bmp'),
   @JsonValue(r'image/svg＋xml')
-  imageSlashSvgxml,
+  imageSlashSvgxml(r'image/svg＋xml'),
   @JsonValue(r'image/tiff')
-  imageSlashTiff,
+  imageSlashTiff(r'image/tiff'),
   @JsonValue(r'application/x-avatar')
-  applicationSlashXAvatar,
+  applicationSlashXAvatar(r'application/x-avatar'),
   @JsonValue(r'application/x-world')
-  applicationSlashXWorld,
+  applicationSlashXWorld(r'application/x-world'),
   @JsonValue(r'application/gzip')
-  applicationSlashGzip,
+  applicationSlashGzip(r'application/gzip'),
   @JsonValue(r'application/x-rsync-signature')
-  applicationSlashXRsyncSignature,
+  applicationSlashXRsyncSignature(r'application/x-rsync-signature'),
   @JsonValue(r'application/x-rsync-delta')
-  applicationSlashXRsyncDelta,
+  applicationSlashXRsyncDelta(r'application/x-rsync-delta'),
   @JsonValue(r'application/octet-stream')
-  applicationSlashOctetStream;
+  applicationSlashOctetStream(r'application/octet-stream');
+
+  const MIMEType(this.value);
+
+  final String value;
 
   @override
-  String toString() => this.name;
+  String toString() => value;
 }

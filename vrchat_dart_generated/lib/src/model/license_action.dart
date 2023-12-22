@@ -7,10 +7,14 @@ import 'package:json_annotation/json_annotation.dart';
 
 enum LicenseAction {
   @JsonValue(r'wear')
-  wear,
+  wear(r'wear'),
   @JsonValue(r'have')
-  have;
+  have(r'have');
+
+  const LicenseAction(this.value);
+
+  final String value;
 
   @override
-  String toString() => this.name;
+  String toString() => value;
 }

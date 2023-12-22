@@ -7,14 +7,18 @@ import 'package:json_annotation/json_annotation.dart';
 
 enum LicenseType {
   @JsonValue(r'avatar')
-  avatar,
+  avatar(r'avatar'),
   @JsonValue(r'licenseGroup')
-  licenseGroup,
+  licenseGroup(r'licenseGroup'),
   @JsonValue(r'permission')
-  permission,
+  permission(r'permission'),
   @JsonValue(r'product')
-  product;
+  product(r'product');
+
+  const LicenseType(this.value);
+
+  final String value;
 
   @override
-  String toString() => this.name;
+  String toString() => value;
 }

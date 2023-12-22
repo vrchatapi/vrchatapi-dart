@@ -7,14 +7,18 @@ import 'package:json_annotation/json_annotation.dart';
 
 enum GroupJoinState {
   @JsonValue(r'closed')
-  closed,
+  closed(r'closed'),
   @JsonValue(r'invite')
-  invite,
+  invite(r'invite'),
   @JsonValue(r'request')
-  request,
+  request(r'request'),
   @JsonValue(r'open')
-  open;
+  open(r'open');
+
+  const GroupJoinState(this.value);
+
+  final String value;
 
   @override
-  String toString() => this.name;
+  String toString() => value;
 }

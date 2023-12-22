@@ -7,12 +7,16 @@ import 'package:json_annotation/json_annotation.dart';
 
 enum FavoriteType {
   @JsonValue(r'world')
-  world,
+  world(r'world'),
   @JsonValue(r'friend')
-  friend,
+  friend(r'friend'),
   @JsonValue(r'avatar')
-  avatar;
+  avatar(r'avatar');
+
+  const FavoriteType(this.value);
+
+  final String value;
 
   @override
-  String toString() => this.name;
+  String toString() => value;
 }
