@@ -84,6 +84,8 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('currentAvatarImageUrl', (v) => v as String),
           currentAvatarThumbnailImageUrl: $checkedConvert(
               'currentAvatarThumbnailImageUrl', (v) => v as String),
+          currentAvatarTags: $checkedConvert('currentAvatarTags',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           dateJoined: $checkedConvert(
               'date_joined', (v) => DateTime.parse(v as String)),
           developerType: $checkedConvert(
@@ -98,6 +100,11 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
           friends: $checkedConvert('friends',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           hasBirthday: $checkedConvert('hasBirthday', (v) => v as bool),
+          hideContentFilterSettings:
+              $checkedConvert('hideContentFilterSettings', (v) => v as bool?),
+          userLanguage: $checkedConvert('userLanguage', (v) => v as String?),
+          userLanguageCode:
+              $checkedConvert('userLanguageCode', (v) => v as String?),
           hasEmail: $checkedConvert('hasEmail', (v) => v as bool),
           hasLoggedInFromClient:
               $checkedConvert('hasLoggedInFromClient', (v) => v as bool),
@@ -115,6 +122,9 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
           obfuscatedPendingEmail:
               $checkedConvert('obfuscatedPendingEmail', (v) => v as String),
           oculusId: $checkedConvert('oculusId', (v) => v as String),
+          googleId: $checkedConvert('googleId', (v) => v as String?),
+          picoId: $checkedConvert('picoId', (v) => v as String?),
+          viveId: $checkedConvert('viveId', (v) => v as String?),
           offlineFriends: $checkedConvert('offlineFriends',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           onlineFriends: $checkedConvert('onlineFriends',
@@ -191,6 +201,7 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
   val['currentAvatarImageUrl'] = instance.currentAvatarImageUrl;
   val['currentAvatarThumbnailImageUrl'] =
       instance.currentAvatarThumbnailImageUrl;
+  writeNotNull('currentAvatarTags', instance.currentAvatarTags);
   val['date_joined'] = instance.dateJoined.toIso8601String();
   val['developerType'] = _$DeveloperTypeEnumMap[instance.developerType]!;
   val['displayName'] = instance.displayName;
@@ -200,6 +211,9 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
   val['friendKey'] = instance.friendKey;
   val['friends'] = instance.friends;
   val['hasBirthday'] = instance.hasBirthday;
+  writeNotNull('hideContentFilterSettings', instance.hideContentFilterSettings);
+  writeNotNull('userLanguage', instance.userLanguage);
+  writeNotNull('userLanguageCode', instance.userLanguageCode);
   val['hasEmail'] = instance.hasEmail;
   val['hasLoggedInFromClient'] = instance.hasLoggedInFromClient;
   val['hasPendingEmail'] = instance.hasPendingEmail;
@@ -212,6 +226,9 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
   val['obfuscatedEmail'] = instance.obfuscatedEmail;
   val['obfuscatedPendingEmail'] = instance.obfuscatedPendingEmail;
   val['oculusId'] = instance.oculusId;
+  writeNotNull('googleId', instance.googleId);
+  writeNotNull('picoId', instance.picoId);
+  writeNotNull('viveId', instance.viveId);
   writeNotNull('offlineFriends', instance.offlineFriends);
   writeNotNull('onlineFriends', instance.onlineFriends);
   val['pastDisplayNames'] =

@@ -16,25 +16,27 @@ UnityPackage _$UnityPackageFromJson(Map<String, dynamic> json) =>
         $checkKeys(
           json,
           requiredKeys: const [
-            'assetVersion',
             'id',
+            'assetVersion',
             'platform',
             'unityVersion'
           ],
         );
         final val = UnityPackage(
+          id: $checkedConvert('id', (v) => v as String),
           assetUrl: $checkedConvert('assetUrl', (v) => v as String?),
           assetUrlObject: $checkedConvert('assetUrlObject', (v) => v),
           assetVersion: $checkedConvert('assetVersion', (v) => v as int),
           createdAt: $checkedConvert('created_at',
               (v) => v == null ? null : DateTime.parse(v as String)),
-          id: $checkedConvert('id', (v) => v as String),
           platform: $checkedConvert('platform', (v) => v as String),
           pluginUrl: $checkedConvert('pluginUrl', (v) => v as String?),
           pluginUrlObject: $checkedConvert('pluginUrlObject', (v) => v),
           unitySortNumber: $checkedConvert('unitySortNumber', (v) => v as int?),
           unityVersion:
               $checkedConvert('unityVersion', (v) => v as String? ?? '5.3.4p1'),
+          impostorUrl: $checkedConvert('impostorUrl', (v) => v as String?),
+          scanStatus: $checkedConvert('scanStatus', (v) => v as String?),
         );
         return val;
       },
@@ -42,7 +44,9 @@ UnityPackage _$UnityPackageFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$UnityPackageToJson(UnityPackage instance) {
-  final val = <String, dynamic>{};
+  final val = <String, dynamic>{
+    'id': instance.id,
+  };
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -54,11 +58,12 @@ Map<String, dynamic> _$UnityPackageToJson(UnityPackage instance) {
   writeNotNull('assetUrlObject', instance.assetUrlObject);
   val['assetVersion'] = instance.assetVersion;
   writeNotNull('created_at', instance.createdAt?.toIso8601String());
-  val['id'] = instance.id;
   val['platform'] = instance.platform;
   writeNotNull('pluginUrl', instance.pluginUrl);
   writeNotNull('pluginUrlObject', instance.pluginUrlObject);
   writeNotNull('unitySortNumber', instance.unitySortNumber);
   val['unityVersion'] = instance.unityVersion;
+  writeNotNull('impostorUrl', instance.impostorUrl);
+  writeNotNull('scanStatus', instance.scanStatus);
   return val;
 }

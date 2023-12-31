@@ -34,6 +34,7 @@ class CurrentUser {
     required this.currentAvatarAssetUrl,
     required this.currentAvatarImageUrl,
     required this.currentAvatarThumbnailImageUrl,
+    this.currentAvatarTags,
     required this.dateJoined,
     required this.developerType,
     required this.displayName,
@@ -43,6 +44,9 @@ class CurrentUser {
     required this.friendKey,
     required this.friends,
     required this.hasBirthday,
+    this.hideContentFilterSettings,
+    this.userLanguage,
+    this.userLanguageCode,
     required this.hasEmail,
     required this.hasLoggedInFromClient,
     required this.hasPendingEmail,
@@ -55,6 +59,9 @@ class CurrentUser {
     required this.obfuscatedEmail,
     required this.obfuscatedPendingEmail,
     required this.oculusId,
+    this.googleId,
+    this.picoId,
+    this.viveId,
     this.offlineFriends,
     this.onlineFriends,
     required this.pastDisplayNames,
@@ -123,6 +130,9 @@ class CurrentUser {
       includeIfNull: false)
   final String currentAvatarThumbnailImageUrl;
 
+  @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
+  final List<String>? currentAvatarTags;
+
   @JsonKey(name: r'date_joined', required: true, includeIfNull: false)
   final DateTime dateJoined;
 
@@ -151,6 +161,16 @@ class CurrentUser {
 
   @JsonKey(name: r'hasBirthday', required: true, includeIfNull: false)
   final bool hasBirthday;
+
+  @JsonKey(
+      name: r'hideContentFilterSettings', required: false, includeIfNull: false)
+  final bool? hideContentFilterSettings;
+
+  @JsonKey(name: r'userLanguage', required: false, includeIfNull: false)
+  final String? userLanguage;
+
+  @JsonKey(name: r'userLanguageCode', required: false, includeIfNull: false)
+  final String? userLanguageCode;
 
   @JsonKey(name: r'hasEmail', required: true, includeIfNull: false)
   final bool hasEmail;
@@ -191,6 +211,15 @@ class CurrentUser {
 
   @JsonKey(name: r'oculusId', required: true, includeIfNull: false)
   final String oculusId;
+
+  @JsonKey(name: r'googleId', required: false, includeIfNull: false)
+  final String? googleId;
+
+  @JsonKey(name: r'picoId', required: false, includeIfNull: false)
+  final String? picoId;
+
+  @JsonKey(name: r'viveId', required: false, includeIfNull: false)
+  final String? viveId;
 
   @JsonKey(name: r'offlineFriends', required: false, includeIfNull: false)
   final List<String>? offlineFriends;
@@ -270,6 +299,7 @@ class CurrentUser {
           other.currentAvatarImageUrl == currentAvatarImageUrl &&
           other.currentAvatarThumbnailImageUrl ==
               currentAvatarThumbnailImageUrl &&
+          other.currentAvatarTags == currentAvatarTags &&
           other.dateJoined == dateJoined &&
           other.developerType == developerType &&
           other.displayName == displayName &&
@@ -280,6 +310,9 @@ class CurrentUser {
           other.friendKey == friendKey &&
           other.friends == friends &&
           other.hasBirthday == hasBirthday &&
+          other.hideContentFilterSettings == hideContentFilterSettings &&
+          other.userLanguage == userLanguage &&
+          other.userLanguageCode == userLanguageCode &&
           other.hasEmail == hasEmail &&
           other.hasLoggedInFromClient == hasLoggedInFromClient &&
           other.hasPendingEmail == hasPendingEmail &&
@@ -292,6 +325,9 @@ class CurrentUser {
           other.obfuscatedEmail == obfuscatedEmail &&
           other.obfuscatedPendingEmail == obfuscatedPendingEmail &&
           other.oculusId == oculusId &&
+          other.googleId == googleId &&
+          other.picoId == picoId &&
+          other.viveId == viveId &&
           other.offlineFriends == offlineFriends &&
           other.onlineFriends == onlineFriends &&
           other.pastDisplayNames == pastDisplayNames &&
@@ -327,6 +363,7 @@ class CurrentUser {
       currentAvatarAssetUrl.hashCode +
       currentAvatarImageUrl.hashCode +
       currentAvatarThumbnailImageUrl.hashCode +
+      currentAvatarTags.hashCode +
       dateJoined.hashCode +
       developerType.hashCode +
       displayName.hashCode +
@@ -337,6 +374,9 @@ class CurrentUser {
       friendKey.hashCode +
       friends.hashCode +
       hasBirthday.hashCode +
+      hideContentFilterSettings.hashCode +
+      (userLanguage == null ? 0 : userLanguage.hashCode) +
+      (userLanguageCode == null ? 0 : userLanguageCode.hashCode) +
       hasEmail.hashCode +
       hasLoggedInFromClient.hashCode +
       hasPendingEmail.hashCode +
@@ -349,6 +389,9 @@ class CurrentUser {
       obfuscatedEmail.hashCode +
       obfuscatedPendingEmail.hashCode +
       oculusId.hashCode +
+      googleId.hashCode +
+      picoId.hashCode +
+      viveId.hashCode +
       offlineFriends.hashCode +
       onlineFriends.hashCode +
       pastDisplayNames.hashCode +

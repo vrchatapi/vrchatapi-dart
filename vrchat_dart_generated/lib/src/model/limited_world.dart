@@ -21,6 +21,7 @@ class LimitedWorld {
     required this.authorId,
     required this.authorName,
     required this.capacity,
+    this.recommendedCapacity,
     required this.createdAt,
     this.favorites = 0,
     this.heat = 0,
@@ -37,6 +38,7 @@ class LimitedWorld {
     required this.thumbnailImageUrl,
     required this.unityPackages,
     required this.updatedAt,
+    this.udonProducts,
   });
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
@@ -46,10 +48,11 @@ class LimitedWorld {
   @JsonKey(name: r'authorName', required: true, includeIfNull: false)
   final String authorName;
 
-  // minimum: 0
-  // maximum: 40
   @JsonKey(name: r'capacity', required: true, includeIfNull: false)
   final int capacity;
+
+  @JsonKey(name: r'recommendedCapacity', required: false, includeIfNull: false)
+  final int? recommendedCapacity;
 
   @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
@@ -106,6 +109,9 @@ class LimitedWorld {
   @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
   final DateTime updatedAt;
 
+  @JsonKey(name: r'udonProducts', required: false, includeIfNull: false)
+  final List<String>? udonProducts;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -113,6 +119,7 @@ class LimitedWorld {
           other.authorId == authorId &&
           other.authorName == authorName &&
           other.capacity == capacity &&
+          other.recommendedCapacity == recommendedCapacity &&
           other.createdAt == createdAt &&
           other.favorites == favorites &&
           other.heat == heat &&
@@ -128,13 +135,15 @@ class LimitedWorld {
           other.tags == tags &&
           other.thumbnailImageUrl == thumbnailImageUrl &&
           other.unityPackages == unityPackages &&
-          other.updatedAt == updatedAt;
+          other.updatedAt == updatedAt &&
+          other.udonProducts == udonProducts;
 
   @override
   int get hashCode =>
       authorId.hashCode +
       authorName.hashCode +
       capacity.hashCode +
+      recommendedCapacity.hashCode +
       createdAt.hashCode +
       favorites.hashCode +
       heat.hashCode +
@@ -150,7 +159,8 @@ class LimitedWorld {
       tags.hashCode +
       thumbnailImageUrl.hashCode +
       unityPackages.hashCode +
-      updatedAt.hashCode;
+      updatedAt.hashCode +
+      udonProducts.hashCode;
 
   factory LimitedWorld.fromJson(Map<String, dynamic> json) =>
       _$LimitedWorldFromJson(json);

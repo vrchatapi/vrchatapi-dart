@@ -90,6 +90,8 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('updated_at', (v) => DateTime.parse(v as String)),
           version: $checkedConvert('version', (v) => v as int? ?? 0),
           visits: $checkedConvert('visits', (v) => v as int? ?? 0),
+          udonProducts: $checkedConvert('udonProducts',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
         );
         return val;
       },
@@ -136,6 +138,7 @@ Map<String, dynamic> _$WorldToJson(World instance) {
   val['updated_at'] = instance.updatedAt.toIso8601String();
   val['version'] = instance.version;
   val['visits'] = instance.visits;
+  writeNotNull('udonProducts', instance.udonProducts);
   return val;
 }
 

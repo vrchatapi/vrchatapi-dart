@@ -47,6 +47,7 @@ class World {
     required this.updatedAt,
     this.version = 0,
     this.visits = 0,
+    this.udonProducts,
   });
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
@@ -152,6 +153,9 @@ class World {
   @JsonKey(name: r'visits', required: true, includeIfNull: false)
   final int visits;
 
+  @JsonKey(name: r'udonProducts', required: false, includeIfNull: false)
+  final List<String>? udonProducts;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -184,7 +188,8 @@ class World {
           other.unityPackages == unityPackages &&
           other.updatedAt == updatedAt &&
           other.version == version &&
-          other.visits == visits;
+          other.visits == visits &&
+          other.udonProducts == udonProducts;
 
   @override
   int get hashCode =>
@@ -216,7 +221,8 @@ class World {
       unityPackages.hashCode +
       updatedAt.hashCode +
       version.hashCode +
-      visits.hashCode;
+      visits.hashCode +
+      udonProducts.hashCode;
 
   factory World.fromJson(Map<String, dynamic> json) => _$WorldFromJson(json);
 

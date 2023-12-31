@@ -16,17 +16,22 @@ part 'unity_package.g.dart';
 class UnityPackage {
   /// Returns a new [UnityPackage] instance.
   UnityPackage({
+    required this.id,
     this.assetUrl,
     this.assetUrlObject,
     required this.assetVersion,
     this.createdAt,
-    required this.id,
     required this.platform,
     this.pluginUrl,
     this.pluginUrlObject,
     this.unitySortNumber,
     this.unityVersion = '5.3.4p1',
+    this.impostorUrl,
+    this.scanStatus,
   });
+
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
 
   @JsonKey(name: r'assetUrl', required: false, includeIfNull: false)
   final String? assetUrl;
@@ -40,9 +45,6 @@ class UnityPackage {
 
   @JsonKey(name: r'created_at', required: false, includeIfNull: false)
   final DateTime? createdAt;
-
-  @JsonKey(name: r'id', required: true, includeIfNull: false)
-  final String id;
 
   /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
   @JsonKey(name: r'platform', required: true, includeIfNull: false)
@@ -61,33 +63,43 @@ class UnityPackage {
   @JsonKey(name: r'unityVersion', required: true, includeIfNull: false)
   final String unityVersion;
 
+  @JsonKey(name: r'impostorUrl', required: false, includeIfNull: false)
+  final String? impostorUrl;
+
+  @JsonKey(name: r'scanStatus', required: false, includeIfNull: false)
+  final String? scanStatus;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is UnityPackage &&
+          other.id == id &&
           other.assetUrl == assetUrl &&
           other.assetUrlObject == assetUrlObject &&
           other.assetVersion == assetVersion &&
           other.createdAt == createdAt &&
-          other.id == id &&
           other.platform == platform &&
           other.pluginUrl == pluginUrl &&
           other.pluginUrlObject == pluginUrlObject &&
           other.unitySortNumber == unitySortNumber &&
-          other.unityVersion == unityVersion;
+          other.unityVersion == unityVersion &&
+          other.impostorUrl == impostorUrl &&
+          other.scanStatus == scanStatus;
 
   @override
   int get hashCode =>
-      assetUrl.hashCode +
+      id.hashCode +
+      (assetUrl == null ? 0 : assetUrl.hashCode) +
       assetUrlObject.hashCode +
       assetVersion.hashCode +
       createdAt.hashCode +
-      id.hashCode +
       platform.hashCode +
       pluginUrl.hashCode +
       pluginUrlObject.hashCode +
       unitySortNumber.hashCode +
-      unityVersion.hashCode;
+      unityVersion.hashCode +
+      (impostorUrl == null ? 0 : impostorUrl.hashCode) +
+      scanStatus.hashCode;
 
   factory UnityPackage.fromJson(Map<String, dynamic> json) =>
       _$UnityPackageFromJson(json);

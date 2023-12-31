@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **currentAvatarAssetUrl** | **String** |  | 
 **currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
 **currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
+**currentAvatarTags** | **List&lt;String&gt;** |  | [optional] 
 **dateJoined** | [**DateTime**](DateTime.md) |  | 
 **developerType** | [**DeveloperType**](DeveloperType.md) |  | 
 **displayName** | **String** |  | 
@@ -29,6 +30,9 @@ Name | Type | Description | Notes
 **friendKey** | **String** |  | 
 **friends** | **List&lt;String&gt;** |  | 
 **hasBirthday** | **bool** |  | 
+**hideContentFilterSettings** | **bool** |  | [optional] 
+**userLanguage** | **String** |  | [optional] 
+**userLanguageCode** | **String** |  | [optional] 
 **hasEmail** | **bool** |  | 
 **hasLoggedInFromClient** | **bool** |  | 
 **hasPendingEmail** | **bool** |  | 
@@ -41,6 +45,9 @@ Name | Type | Description | Notes
 **obfuscatedEmail** | **String** |  | 
 **obfuscatedPendingEmail** | **String** |  | 
 **oculusId** | **String** |  | 
+**googleId** | **String** |  | [optional] 
+**picoId** | **String** |  | [optional] 
+**viveId** | **String** |  | [optional] 
 **offlineFriends** | **List&lt;String&gt;** |  | [optional] 
 **onlineFriends** | **List&lt;String&gt;** |  | [optional] 
 **pastDisplayNames** | [**List&lt;PastDisplayName&gt;**](PastDisplayName.md) |   | 
