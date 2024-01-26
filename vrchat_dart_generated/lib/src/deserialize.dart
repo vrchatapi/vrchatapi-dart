@@ -55,6 +55,7 @@ import 'package:vrchat_dart_generated/src/model/invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/invite_response.dart';
 import 'package:vrchat_dart_generated/src/model/license.dart';
 import 'package:vrchat_dart_generated/src/model/license_group.dart';
+import 'package:vrchat_dart_generated/src/model/limited_group.dart';
 import 'package:vrchat_dart_generated/src/model/limited_unity_package.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user.dart';
 import 'package:vrchat_dart_generated/src/model/limited_world.dart';
@@ -283,6 +284,8 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'LicenseGroup':
       return LicenseGroup.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'LicenseType':
+    case 'LimitedGroup':
+      return LimitedGroup.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'LimitedUnityPackage':
       return LimitedUnityPackage.fromJson(value as Map<String, dynamic>)
           as ReturnType;

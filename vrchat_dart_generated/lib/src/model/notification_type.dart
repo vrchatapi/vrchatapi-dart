@@ -12,6 +12,8 @@ enum NotificationType {
   invite(r'invite'),
   @JsonValue(r'inviteResponse')
   inviteResponse(r'inviteResponse'),
+  @JsonValue(r'message')
+  message(r'message'),
   @JsonValue(r'requestInvite')
   requestInvite(r'requestInvite'),
   @JsonValue(r'requestInviteResponse')

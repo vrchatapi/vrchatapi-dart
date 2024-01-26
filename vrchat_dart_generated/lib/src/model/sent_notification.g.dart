@@ -68,6 +68,7 @@ const _$NotificationTypeEnumMap = {
   NotificationType.friendRequest: 'friendRequest',
   NotificationType.invite: 'invite',
   NotificationType.inviteResponse: 'inviteResponse',
+  NotificationType.message: 'message',
   NotificationType.requestInvite: 'requestInvite',
   NotificationType.requestInviteResponse: 'requestInviteResponse',
   NotificationType.votetokick: 'votetokick',

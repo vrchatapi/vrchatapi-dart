@@ -40,6 +40,7 @@ Method | HTTP request | Description
 [**leaveGroup**](GroupsApi.md#leavegroup) | **POST** /groups/{groupId}/leave | Leave Group
 [**removeGroupMemberRole**](GroupsApi.md#removegroupmemberrole) | **DELETE** /groups/{groupId}/members/{userId}/roles/{groupRoleId} | Remove Role from GroupMember
 [**respondGroupJoinRequest**](GroupsApi.md#respondgroupjoinrequest) | **PUT** /groups/{groupId}/requests/{userId} | Respond Group Join request
+[**searchGroups**](GroupsApi.md#searchgroups) | **GET** /groups | Search Group
 [**unbanGroupMember**](GroupsApi.md#unbangroupmember) | **DELETE** /groups/{groupId}/bans/{userId} | Unban Group Member
 [**updateGroup**](GroupsApi.md#updategroup) | **PUT** /groups/{groupId} | Update Group
 [**updateGroupGallery**](GroupsApi.md#updategroupgallery) | **PUT** /groups/{groupId}/galleries/{groupGalleryId} | Update Group Gallery
@@ -1560,6 +1561,53 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **searchGroups**
+> List<LimitedGroup> searchGroups(query, offset, n)
+
+Search Group
+
+Searches Groups by name or shortCode
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+
+final api = VrchatDartGenerated().getGroupsApi();
+final String query = query_example; // String | Query to search for, can be either Group Name or Group shortCode
+final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
+final int n = 56; // int | The number of objects to return.
+
+try {
+    final response = api.searchGroups(query, offset, n);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling GroupsApi->searchGroups: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | **String**| Query to search for, can be either Group Name or Group shortCode | [optional] 
+ **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
+ **n** | **int**| The number of objects to return. | [optional] [default to 60]
+
+### Return type
+
+[**List&lt;LimitedGroup&gt;**](LimitedGroup.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

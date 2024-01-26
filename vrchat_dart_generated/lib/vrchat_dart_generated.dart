@@ -94,6 +94,7 @@ export 'package:vrchat_dart_generated/src/model/license.dart';
 export 'package:vrchat_dart_generated/src/model/license_action.dart';
 export 'package:vrchat_dart_generated/src/model/license_group.dart';
 export 'package:vrchat_dart_generated/src/model/license_type.dart';
+export 'package:vrchat_dart_generated/src/model/limited_group.dart';
 export 'package:vrchat_dart_generated/src/model/limited_unity_package.dart';
 export 'package:vrchat_dart_generated/src/model/limited_user.dart';
 export 'package:vrchat_dart_generated/src/model/limited_world.dart';

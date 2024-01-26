@@ -15,26 +15,22 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         $checkKeys(
           json,
           requiredKeys: const [
-            'currentAvatarImageUrl',
-            'currentAvatarThumbnailImageUrl',
             'developerType',
             'displayName',
             'id',
             'isFriend',
             'last_platform',
-            'profilePicOverride',
             'status',
             'statusDescription',
-            'tags',
-            'userIcon'
+            'tags'
           ],
         );
         final val = LimitedUser(
           bio: $checkedConvert('bio', (v) => v as String?),
           currentAvatarImageUrl:
-              $checkedConvert('currentAvatarImageUrl', (v) => v as String),
+              $checkedConvert('currentAvatarImageUrl', (v) => v as String?),
           currentAvatarThumbnailImageUrl: $checkedConvert(
-              'currentAvatarThumbnailImageUrl', (v) => v as String),
+              'currentAvatarThumbnailImageUrl', (v) => v as String?),
           developerType: $checkedConvert(
               'developerType', (v) => $enumDecode(_$DeveloperTypeEnumMap, v)),
           displayName: $checkedConvert('displayName', (v) => v as String),
@@ -44,14 +40,14 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
           isFriend: $checkedConvert('isFriend', (v) => v as bool),
           lastPlatform: $checkedConvert('last_platform', (v) => v as String),
           profilePicOverride:
-              $checkedConvert('profilePicOverride', (v) => v as String),
+              $checkedConvert('profilePicOverride', (v) => v as String?),
           status: $checkedConvert(
               'status', (v) => $enumDecode(_$UserStatusEnumMap, v)),
           statusDescription:
               $checkedConvert('statusDescription', (v) => v as String),
           tags: $checkedConvert('tags',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
-          userIcon: $checkedConvert('userIcon', (v) => v as String),
+          userIcon: $checkedConvert('userIcon', (v) => v as String?),
           username: $checkedConvert('username', (v) => v as String?),
           location: $checkedConvert('location', (v) => v as String?),
           friendKey: $checkedConvert('friendKey', (v) => v as String?),
@@ -71,20 +67,20 @@ Map<String, dynamic> _$LimitedUserToJson(LimitedUser instance) {
   }
 
   writeNotNull('bio', instance.bio);
-  val['currentAvatarImageUrl'] = instance.currentAvatarImageUrl;
-  val['currentAvatarThumbnailImageUrl'] =
-      instance.currentAvatarThumbnailImageUrl;
+  writeNotNull('currentAvatarImageUrl', instance.currentAvatarImageUrl);
+  writeNotNull('currentAvatarThumbnailImageUrl',
+      instance.currentAvatarThumbnailImageUrl);
   val['developerType'] = _$DeveloperTypeEnumMap[instance.developerType]!;
   val['displayName'] = instance.displayName;
   writeNotNull('fallbackAvatar', instance.fallbackAvatar);
   val['id'] = instance.id;
   val['isFriend'] = instance.isFriend;
   val['last_platform'] = instance.lastPlatform;
-  val['profilePicOverride'] = instance.profilePicOverride;
+  writeNotNull('profilePicOverride', instance.profilePicOverride);
   val['status'] = _$UserStatusEnumMap[instance.status]!;
   val['statusDescription'] = instance.statusDescription;
   val['tags'] = instance.tags;
-  val['userIcon'] = instance.userIcon;
+  writeNotNull('userIcon', instance.userIcon);
   writeNotNull('username', instance.username);
   writeNotNull('location', instance.location);
   writeNotNull('friendKey', instance.friendKey);

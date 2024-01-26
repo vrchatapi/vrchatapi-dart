@@ -24,6 +24,7 @@ import 'package:vrchat_dart_generated/src/model/group_limited_member.dart';
 import 'package:vrchat_dart_generated/src/model/group_member.dart';
 import 'package:vrchat_dart_generated/src/model/group_permission.dart';
 import 'package:vrchat_dart_generated/src/model/group_role.dart';
+import 'package:vrchat_dart_generated/src/model/limited_group.dart';
 import 'package:vrchat_dart_generated/src/model/paginated_group_audit_log_entry_list.dart';
 import 'package:vrchat_dart_generated/src/model/respond_group_join_request.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
@@ -2678,6 +2679,92 @@ class GroupsApi {
     );
 
     return _response;
+  }
+
+  /// Search Group
+  /// Searches Groups by name or shortCode
+  ///
+  /// Parameters:
+  /// * [query] - Query to search for, can be either Group Name or Group shortCode
+  /// * [offset] - A zero-based offset from the default object sorting from where search results start.
+  /// * [n] - The number of objects to return.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [List<LimitedGroup>] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<List<LimitedGroup>>> searchGroups({
+    String? query,
+    int? offset,
+    int? n = 60,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/groups';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (query != null) r'query': query,
+      if (offset != null) r'offset': offset,
+      if (n != null) r'n': n,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    List<LimitedGroup>? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<LimitedGroup>, LimitedGroup>(
+              rawData, 'List<LimitedGroup>',
+              growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<List<LimitedGroup>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Unban Group Member

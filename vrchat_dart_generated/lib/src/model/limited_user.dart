@@ -19,19 +19,19 @@ class LimitedUser {
   /// Returns a new [LimitedUser] instance.
   LimitedUser({
     this.bio,
-    required this.currentAvatarImageUrl,
-    required this.currentAvatarThumbnailImageUrl,
+    this.currentAvatarImageUrl,
+    this.currentAvatarThumbnailImageUrl,
     required this.developerType,
     required this.displayName,
     this.fallbackAvatar,
     required this.id,
     required this.isFriend,
     required this.lastPlatform,
-    required this.profilePicOverride,
+    this.profilePicOverride,
     required this.status,
     required this.statusDescription,
     required this.tags,
-    required this.userIcon,
+    this.userIcon,
     this.username,
     this.location,
     this.friendKey,
@@ -41,15 +41,16 @@ class LimitedUser {
   final String? bio;
 
   /// When profilePicOverride is not empty, use it instead.
-  @JsonKey(name: r'currentAvatarImageUrl', required: true, includeIfNull: false)
-  final String currentAvatarImageUrl;
+  @JsonKey(
+      name: r'currentAvatarImageUrl', required: false, includeIfNull: false)
+  final String? currentAvatarImageUrl;
 
   /// When profilePicOverride is not empty, use it instead.
   @JsonKey(
       name: r'currentAvatarThumbnailImageUrl',
-      required: true,
+      required: false,
       includeIfNull: false)
-  final String currentAvatarThumbnailImageUrl;
+  final String? currentAvatarThumbnailImageUrl;
 
   @JsonKey(name: r'developerType', required: true, includeIfNull: false)
   final DeveloperType developerType;
@@ -71,8 +72,8 @@ class LimitedUser {
   @JsonKey(name: r'last_platform', required: true, includeIfNull: false)
   final String lastPlatform;
 
-  @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
-  final String profilePicOverride;
+  @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
+  final String? profilePicOverride;
 
   @JsonKey(name: r'status', required: true, includeIfNull: false)
   final UserStatus status;
@@ -84,8 +85,8 @@ class LimitedUser {
   @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 
-  @JsonKey(name: r'userIcon', required: true, includeIfNull: false)
-  final String userIcon;
+  @JsonKey(name: r'userIcon', required: false, includeIfNull: false)
+  final String? userIcon;
 
   /// -| **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
   @Deprecated('username has been deprecated')

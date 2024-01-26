@@ -80,6 +80,7 @@ doc/License.md
 doc/LicenseAction.md
 doc/LicenseGroup.md
 doc/LicenseType.md
+doc/LimitedGroup.md
 doc/LimitedUnityPackage.md
 doc/LimitedUser.md
 doc/LimitedWorld.md
@@ -230,6 +231,7 @@ lib/src/model/license.dart
 lib/src/model/license_action.dart
 lib/src/model/license_group.dart
 lib/src/model/license_type.dart
+lib/src/model/limited_group.dart
 lib/src/model/limited_unity_package.dart
 lib/src/model/limited_user.dart
 lib/src/model/limited_world.dart
@@ -362,6 +364,7 @@ test/license_action_test.dart
 test/license_group_test.dart
 test/license_test.dart
 test/license_type_test.dart
+test/limited_group_test.dart
 test/limited_unity_package_test.dart
 test/limited_user_test.dart
 test/limited_world_test.dart
