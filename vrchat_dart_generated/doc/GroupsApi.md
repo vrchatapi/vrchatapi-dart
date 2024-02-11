@@ -1132,7 +1132,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getGroupMembers**
-> List<GroupMember> getGroupMembers(groupId, n, offset)
+> List<GroupMember> getGroupMembers(groupId, n, offset, sort)
 
 List Group Members
 
@@ -1150,9 +1150,10 @@ final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
+final GroupSearchSort sort = ; // GroupSearchSort | The sort order of Group Member results
 
 try {
-    final response = api.getGroupMembers(groupId, n, offset);
+    final response = api.getGroupMembers(groupId, n, offset, sort);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling GroupsApi->getGroupMembers: $e\n');
@@ -1166,6 +1167,7 @@ Name | Type | Description  | Notes
  **groupId** | **String**| Must be a valid group ID. | 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
+ **sort** | [**GroupSearchSort**](.md)| The sort order of Group Member results | [optional] 
 
 ### Return type
 

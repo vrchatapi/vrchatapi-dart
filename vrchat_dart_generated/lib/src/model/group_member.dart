@@ -23,6 +23,7 @@ class GroupMember {
     this.isRepresenting = false,
     this.user,
     this.roleIds,
+    this.mRoleIds,
     this.joinedAt,
     this.membershipStatus,
     this.visibility,
@@ -30,6 +31,8 @@ class GroupMember {
     this.createdAt,
     this.bannedAt,
     this.managerNotes,
+    this.lastPostReadAt,
+    this.hasJoinedFromPurchase,
   });
 
   @JsonKey(name: r'id', required: false, includeIfNull: false)
@@ -51,6 +54,9 @@ class GroupMember {
 
   @JsonKey(name: r'roleIds', required: false, includeIfNull: false)
   final List<String>? roleIds;
+
+  @JsonKey(name: r'mRoleIds', required: false, includeIfNull: false)
+  final List<String>? mRoleIds;
 
   @JsonKey(name: r'joinedAt', required: false, includeIfNull: false)
   final DateTime? joinedAt;
@@ -79,6 +85,13 @@ class GroupMember {
   @JsonKey(name: r'managerNotes', required: false, includeIfNull: false)
   final String? managerNotes;
 
+  @JsonKey(name: r'lastPostReadAt', required: false, includeIfNull: false)
+  final DateTime? lastPostReadAt;
+
+  @JsonKey(
+      name: r'hasJoinedFromPurchase', required: false, includeIfNull: false)
+  final bool? hasJoinedFromPurchase;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -89,13 +102,16 @@ class GroupMember {
           other.isRepresenting == isRepresenting &&
           other.user == user &&
           other.roleIds == roleIds &&
+          other.mRoleIds == mRoleIds &&
           other.joinedAt == joinedAt &&
           other.membershipStatus == membershipStatus &&
           other.visibility == visibility &&
           other.isSubscribedToAnnouncements == isSubscribedToAnnouncements &&
           other.createdAt == createdAt &&
           other.bannedAt == bannedAt &&
-          other.managerNotes == managerNotes;
+          other.managerNotes == managerNotes &&
+          other.lastPostReadAt == lastPostReadAt &&
+          other.hasJoinedFromPurchase == hasJoinedFromPurchase;
 
   @override
   int get hashCode =>
@@ -105,13 +121,16 @@ class GroupMember {
       isRepresenting.hashCode +
       user.hashCode +
       roleIds.hashCode +
+      mRoleIds.hashCode +
       joinedAt.hashCode +
       membershipStatus.hashCode +
       visibility.hashCode +
       isSubscribedToAnnouncements.hashCode +
       (createdAt == null ? 0 : createdAt.hashCode) +
       (bannedAt == null ? 0 : bannedAt.hashCode) +
-      (managerNotes == null ? 0 : managerNotes.hashCode);
+      (managerNotes == null ? 0 : managerNotes.hashCode) +
+      lastPostReadAt.hashCode +
+      hasJoinedFromPurchase.hashCode;
 
   factory GroupMember.fromJson(Map<String, dynamic> json) =>
       _$GroupMemberFromJson(json);

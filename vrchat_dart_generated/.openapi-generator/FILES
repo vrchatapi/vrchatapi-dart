@@ -59,6 +59,7 @@ doc/GroupPermission.md
 doc/GroupPrivacy.md
 doc/GroupRole.md
 doc/GroupRoleTemplate.md
+doc/GroupSearchSort.md
 doc/GroupUserVisibility.md
 doc/GroupsApi.md
 doc/InfoPush.md
@@ -213,6 +214,7 @@ lib/src/model/group_permission.dart
 lib/src/model/group_privacy.dart
 lib/src/model/group_role.dart
 lib/src/model/group_role_template.dart
+lib/src/model/group_search_sort.dart
 lib/src/model/group_user_visibility.dart
 lib/src/model/info_push.dart
 lib/src/model/info_push_data.dart
@@ -342,6 +344,7 @@ test/group_permission_test.dart
 test/group_privacy_test.dart
 test/group_role_template_test.dart
 test/group_role_test.dart
+test/group_search_sort_test.dart
 test/group_test.dart
 test/group_user_visibility_test.dart
 test/groups_api_test.dart

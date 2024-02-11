@@ -20,6 +20,9 @@ class GroupMemberLimitedUser {
     this.displayName,
     this.thumbnailUrl,
     this.iconUrl,
+    this.profilePicOverride,
+    this.currentAvatarThumbnailImageUrl,
+    this.currentAvatarTags,
   });
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
@@ -35,6 +38,18 @@ class GroupMemberLimitedUser {
   @JsonKey(name: r'iconUrl', required: false, includeIfNull: false)
   final String? iconUrl;
 
+  @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
+  final String? profilePicOverride;
+
+  @JsonKey(
+      name: r'currentAvatarThumbnailImageUrl',
+      required: false,
+      includeIfNull: false)
+  final String? currentAvatarThumbnailImageUrl;
+
+  @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
+  final List<String>? currentAvatarTags;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -42,14 +57,21 @@ class GroupMemberLimitedUser {
           other.id == id &&
           other.displayName == displayName &&
           other.thumbnailUrl == thumbnailUrl &&
-          other.iconUrl == iconUrl;
+          other.iconUrl == iconUrl &&
+          other.profilePicOverride == profilePicOverride &&
+          other.currentAvatarThumbnailImageUrl ==
+              currentAvatarThumbnailImageUrl &&
+          other.currentAvatarTags == currentAvatarTags;
 
   @override
   int get hashCode =>
       id.hashCode +
       displayName.hashCode +
       thumbnailUrl.hashCode +
-      iconUrl.hashCode;
+      iconUrl.hashCode +
+      profilePicOverride.hashCode +
+      currentAvatarThumbnailImageUrl.hashCode +
+      currentAvatarTags.hashCode;
 
   factory GroupMemberLimitedUser.fromJson(Map<String, dynamic> json) =>
       _$GroupMemberLimitedUserFromJson(json);

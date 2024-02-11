@@ -24,6 +24,7 @@ import 'package:vrchat_dart_generated/src/model/group_limited_member.dart';
 import 'package:vrchat_dart_generated/src/model/group_member.dart';
 import 'package:vrchat_dart_generated/src/model/group_permission.dart';
 import 'package:vrchat_dart_generated/src/model/group_role.dart';
+import 'package:vrchat_dart_generated/src/model/group_search_sort.dart';
 import 'package:vrchat_dart_generated/src/model/limited_group.dart';
 import 'package:vrchat_dart_generated/src/model/paginated_group_audit_log_entry_list.dart';
 import 'package:vrchat_dart_generated/src/model/respond_group_join_request.dart';
@@ -1986,6 +1987,7 @@ class GroupsApi {
   /// * [groupId] - Must be a valid group ID.
   /// * [n] - The number of objects to return.
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
+  /// * [sort] - The sort order of Group Member results
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1999,6 +2001,7 @@ class GroupsApi {
     required String groupId,
     int? n = 60,
     int? offset,
+    GroupSearchSort? sort,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -2030,6 +2033,7 @@ class GroupsApi {
     final _queryParameters = <String, dynamic>{
       if (n != null) r'n': n,
       if (offset != null) r'offset': offset,
+      if (sort != null) r'sort': sort,
     };
 
     final _response = await _dio.request<Object>(

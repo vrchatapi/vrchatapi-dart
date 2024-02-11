@@ -245,6 +245,7 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'GroupRole':
       return GroupRole.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'GroupRoleTemplate':
+    case 'GroupSearchSort':
     case 'GroupUserVisibility':
     case 'InfoPush':
       return InfoPush.fromJson(value as Map<String, dynamic>) as ReturnType;

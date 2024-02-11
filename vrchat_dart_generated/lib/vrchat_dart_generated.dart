@@ -76,6 +76,7 @@ export 'package:vrchat_dart_generated/src/model/group_permission.dart';
 export 'package:vrchat_dart_generated/src/model/group_privacy.dart';
 export 'package:vrchat_dart_generated/src/model/group_role.dart';
 export 'package:vrchat_dart_generated/src/model/group_role_template.dart';
+export 'package:vrchat_dart_generated/src/model/group_search_sort.dart';
 export 'package:vrchat_dart_generated/src/model/group_user_visibility.dart';
 export 'package:vrchat_dart_generated/src/model/info_push.dart';
 export 'package:vrchat_dart_generated/src/model/info_push_data.dart';

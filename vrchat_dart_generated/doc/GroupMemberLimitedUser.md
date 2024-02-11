@@ -12,6 +12,9 @@ Name | Type | Description | Notes
 **displayName** | **String** |  | [optional] 
 **thumbnailUrl** | **String** |  | [optional] 
 **iconUrl** | **String** |  | [optional] 
+**profilePicOverride** | **String** |  | [optional] 
+**currentAvatarThumbnailImageUrl** | **String** |  | [optional] 
+**currentAvatarTags** | **List&lt;String&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

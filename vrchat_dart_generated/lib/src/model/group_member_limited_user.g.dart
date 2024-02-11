@@ -19,6 +19,12 @@ GroupMemberLimitedUser _$GroupMemberLimitedUserFromJson(
           displayName: $checkedConvert('displayName', (v) => v as String?),
           thumbnailUrl: $checkedConvert('thumbnailUrl', (v) => v as String?),
           iconUrl: $checkedConvert('iconUrl', (v) => v as String?),
+          profilePicOverride:
+              $checkedConvert('profilePicOverride', (v) => v as String?),
+          currentAvatarThumbnailImageUrl: $checkedConvert(
+              'currentAvatarThumbnailImageUrl', (v) => v as String?),
+          currentAvatarTags: $checkedConvert('currentAvatarTags',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
         );
         return val;
       },
@@ -38,5 +44,9 @@ Map<String, dynamic> _$GroupMemberLimitedUserToJson(
   writeNotNull('displayName', instance.displayName);
   writeNotNull('thumbnailUrl', instance.thumbnailUrl);
   writeNotNull('iconUrl', instance.iconUrl);
+  writeNotNull('profilePicOverride', instance.profilePicOverride);
+  writeNotNull('currentAvatarThumbnailImageUrl',
+      instance.currentAvatarThumbnailImageUrl);
+  writeNotNull('currentAvatarTags', instance.currentAvatarTags);
   return val;
 }
