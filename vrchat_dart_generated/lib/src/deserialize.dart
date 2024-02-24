@@ -65,6 +65,7 @@ import 'package:vrchat_dart_generated/src/model/paginated_group_audit_log_entry_
 import 'package:vrchat_dart_generated/src/model/past_display_name.dart';
 import 'package:vrchat_dart_generated/src/model/permission.dart';
 import 'package:vrchat_dart_generated/src/model/player_moderation.dart';
+import 'package:vrchat_dart_generated/src/model/represented_group.dart';
 import 'package:vrchat_dart_generated/src/model/request_invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/respond_group_join_request.dart';
 import 'package:vrchat_dart_generated/src/model/response.dart';
@@ -316,6 +317,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'PlayerModerationType':
     case 'Region':
     case 'ReleaseStatus':
+    case 'RepresentedGroup':
+      return RepresentedGroup.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'RequestInviteRequest':
       return RequestInviteRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;

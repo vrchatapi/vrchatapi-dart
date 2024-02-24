@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**getUserByName**](UsersApi.md#getuserbyname) | **GET** /users/{username}/name | Get User by Username
 [**getUserGroupRequests**](UsersApi.md#getusergrouprequests) | **GET** /users/{userId}/groups/requested | Get User Group Requests
 [**getUserGroups**](UsersApi.md#getusergroups) | **GET** /users/{userId}/groups | Get User Groups
+[**getUserRepresentedGroup**](UsersApi.md#getuserrepresentedgroup) | **GET** /users/{userId}/groups/represented | Get user&#39;s current represented group
 [**searchUsers**](UsersApi.md#searchusers) | **GET** /users | Search All Users
 [**updateUser**](UsersApi.md#updateuser) | **PUT** /users/{userId} | Update User Info
 
@@ -193,6 +194,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List&lt;Group&gt;**](Group.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getUserRepresentedGroup**
+> RepresentedGroup getUserRepresentedGroup(userId)
+
+Get user's current represented group
+
+Returns the current group that the user is currently representing
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getUsersApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+
+try {
+    final response = api.getUserRepresentedGroup(userId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UsersApi->getUserRepresentedGroup: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+
+### Return type
+
+[**RepresentedGroup**](RepresentedGroup.md)
 
 ### Authorization
 

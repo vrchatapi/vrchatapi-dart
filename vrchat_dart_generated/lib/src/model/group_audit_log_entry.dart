@@ -20,7 +20,7 @@ class GroupAuditLogEntry {
     this.createdAt,
     this.groupId,
     this.actorId,
-    this.actorDisplayname,
+    this.actorDisplayName,
     this.targetId,
     this.eventType = 'group.update',
     this.description,
@@ -40,8 +40,8 @@ class GroupAuditLogEntry {
   @JsonKey(name: r'actorId', required: false, includeIfNull: false)
   final String? actorId;
 
-  @JsonKey(name: r'actorDisplayname', required: false, includeIfNull: false)
-  final String? actorDisplayname;
+  @JsonKey(name: r'actorDisplayName', required: false, includeIfNull: false)
+  final String? actorDisplayName;
 
   /// Typically GroupID or GroupRoleID, but could be other types of IDs.
   @JsonKey(name: r'targetId', required: false, includeIfNull: false)
@@ -67,7 +67,7 @@ class GroupAuditLogEntry {
           other.createdAt == createdAt &&
           other.groupId == groupId &&
           other.actorId == actorId &&
-          other.actorDisplayname == actorDisplayname &&
+          other.actorDisplayName == actorDisplayName &&
           other.targetId == targetId &&
           other.eventType == eventType &&
           other.description == description &&
@@ -79,7 +79,7 @@ class GroupAuditLogEntry {
       createdAt.hashCode +
       groupId.hashCode +
       actorId.hashCode +
-      actorDisplayname.hashCode +
+      actorDisplayName.hashCode +
       targetId.hashCode +
       eventType.hashCode +
       description.hashCode +

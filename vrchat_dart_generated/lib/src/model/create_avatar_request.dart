@@ -26,6 +26,7 @@ class CreateAvatarRequest {
     this.releaseStatus,
     this.version = 1,
     this.unityPackageUrl,
+    this.unityVersion = '5.3.4p1',
   });
 
   @JsonKey(name: r'assetUrl', required: false, includeIfNull: false)
@@ -57,6 +58,9 @@ class CreateAvatarRequest {
   @JsonKey(name: r'unityPackageUrl', required: false, includeIfNull: false)
   final String? unityPackageUrl;
 
+  @JsonKey(name: r'unityVersion', required: false, includeIfNull: false)
+  final String? unityVersion;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -69,7 +73,8 @@ class CreateAvatarRequest {
           other.imageUrl == imageUrl &&
           other.releaseStatus == releaseStatus &&
           other.version == version &&
-          other.unityPackageUrl == unityPackageUrl;
+          other.unityPackageUrl == unityPackageUrl &&
+          other.unityVersion == unityVersion;
 
   @override
   int get hashCode =>
@@ -81,7 +86,8 @@ class CreateAvatarRequest {
       imageUrl.hashCode +
       releaseStatus.hashCode +
       version.hashCode +
-      unityPackageUrl.hashCode;
+      unityPackageUrl.hashCode +
+      unityVersion.hashCode;
 
   factory CreateAvatarRequest.fromJson(Map<String, dynamic> json) =>
       _$CreateAvatarRequestFromJson(json);

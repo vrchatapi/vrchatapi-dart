@@ -100,6 +100,7 @@ doc/PlayerModerationType.md
 doc/PlayermoderationApi.md
 doc/Region.md
 doc/ReleaseStatus.md
+doc/RepresentedGroup.md
 doc/RequestInviteRequest.md
 doc/RespondGroupJoinRequest.md
 doc/Response.md
@@ -249,6 +250,7 @@ lib/src/model/player_moderation.dart
 lib/src/model/player_moderation_type.dart
 lib/src/model/region.dart
 lib/src/model/release_status.dart
+lib/src/model/represented_group.dart
 lib/src/model/request_invite_request.dart
 lib/src/model/respond_group_join_request.dart
 lib/src/model/response.dart
@@ -386,6 +388,7 @@ test/player_moderation_type_test.dart
 test/playermoderation_api_test.dart
 test/region_test.dart
 test/release_status_test.dart
+test/represented_group_test.dart
 test/request_invite_request_test.dart
 test/respond_group_join_request_test.dart
 test/response_test.dart

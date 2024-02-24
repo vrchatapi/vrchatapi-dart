@@ -19,8 +19,8 @@ GroupAuditLogEntry _$GroupAuditLogEntryFromJson(Map<String, dynamic> json) =>
               (v) => v == null ? null : DateTime.parse(v as String)),
           groupId: $checkedConvert('groupId', (v) => v as String?),
           actorId: $checkedConvert('actorId', (v) => v as String?),
-          actorDisplayname:
-              $checkedConvert('actorDisplayname', (v) => v as String?),
+          actorDisplayName:
+              $checkedConvert('actorDisplayName', (v) => v as String?),
           targetId: $checkedConvert('targetId', (v) => v as String?),
           eventType: $checkedConvert(
               'eventType', (v) => v as String? ?? 'group.update'),
@@ -45,7 +45,7 @@ Map<String, dynamic> _$GroupAuditLogEntryToJson(GroupAuditLogEntry instance) {
   writeNotNull('created_at', instance.createdAt?.toIso8601String());
   writeNotNull('groupId', instance.groupId);
   writeNotNull('actorId', instance.actorId);
-  writeNotNull('actorDisplayname', instance.actorDisplayname);
+  writeNotNull('actorDisplayName', instance.actorDisplayName);
   writeNotNull('targetId', instance.targetId);
   writeNotNull('eventType', instance.eventType);
   writeNotNull('description', instance.description);

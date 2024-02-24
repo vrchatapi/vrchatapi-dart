@@ -26,6 +26,8 @@ UpdateAvatarRequest _$UpdateAvatarRequestFromJson(Map<String, dynamic> json) =>
           version: $checkedConvert('version', (v) => v as num? ?? 1),
           unityPackageUrl:
               $checkedConvert('unityPackageUrl', (v) => v as String?),
+          unityVersion:
+              $checkedConvert('unityVersion', (v) => v as String? ?? '5.3.4p1'),
         );
         return val;
       },
@@ -49,6 +51,7 @@ Map<String, dynamic> _$UpdateAvatarRequestToJson(UpdateAvatarRequest instance) {
   writeNotNull('releaseStatus', _$ReleaseStatusEnumMap[instance.releaseStatus]);
   writeNotNull('version', instance.version);
   writeNotNull('unityPackageUrl', instance.unityPackageUrl);
+  writeNotNull('unityVersion', instance.unityVersion);
   return val;
 }
 
