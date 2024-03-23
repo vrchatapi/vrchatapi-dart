@@ -226,6 +226,7 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'GroupGalleryImage':
       return GroupGalleryImage.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'GroupJoinRequestAction':
     case 'GroupJoinState':
     case 'GroupLimitedMember':
       return GroupLimitedMember.fromJson(value as Map<String, dynamic>)

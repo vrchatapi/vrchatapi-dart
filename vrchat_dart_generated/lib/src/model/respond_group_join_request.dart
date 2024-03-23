@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/group_join_request_action.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'respond_group_join_request.g.dart';
@@ -16,11 +17,11 @@ part 'respond_group_join_request.g.dart';
 class RespondGroupJoinRequest {
   /// Returns a new [RespondGroupJoinRequest] instance.
   RespondGroupJoinRequest({
-    this.action,
+    required this.action,
   });
 
-  @JsonKey(name: r'action', required: false, includeIfNull: false)
-  final String? action;
+  @JsonKey(name: r'action', required: true, includeIfNull: false)
+  final GroupJoinRequestAction action;
 
   @override
   bool operator ==(Object other) =>

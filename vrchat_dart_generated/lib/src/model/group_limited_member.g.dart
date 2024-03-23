@@ -25,8 +25,8 @@ GroupLimitedMember _$GroupLimitedMemberFromJson(Map<String, dynamic> json) =>
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           joinedAt: $checkedConvert('joinedAt',
               (v) => v == null ? null : DateTime.parse(v as String)),
-          membershipStatus:
-              $checkedConvert('membershipStatus', (v) => v as String?),
+          membershipStatus: $checkedConvert('membershipStatus',
+              (v) => $enumDecodeNullable(_$GroupMemberStatusEnumMap, v)),
           visibility: $checkedConvert('visibility', (v) => v as String?),
           isSubscribedToAnnouncements: $checkedConvert(
               'isSubscribedToAnnouncements', (v) => v as bool? ?? false),
@@ -60,7 +60,8 @@ Map<String, dynamic> _$GroupLimitedMemberToJson(GroupLimitedMember instance) {
   writeNotNull('roleIds', instance.roleIds);
   writeNotNull('mRoleIds', instance.mRoleIds);
   writeNotNull('joinedAt', instance.joinedAt?.toIso8601String());
-  writeNotNull('membershipStatus', instance.membershipStatus);
+  writeNotNull('membershipStatus',
+      _$GroupMemberStatusEnumMap[instance.membershipStatus]);
   writeNotNull('visibility', instance.visibility);
   writeNotNull(
       'isSubscribedToAnnouncements', instance.isSubscribedToAnnouncements);
@@ -71,3 +72,10 @@ Map<String, dynamic> _$GroupLimitedMemberToJson(GroupLimitedMember instance) {
   writeNotNull('hasJoinedFromPurchase', instance.hasJoinedFromPurchase);
   return val;
 }
+
+const _$GroupMemberStatusEnumMap = {
+  GroupMemberStatus.inactive: 'inactive',
+  GroupMemberStatus.member: 'member',
+  GroupMemberStatus.requested: 'requested',
+  GroupMemberStatus.invited: 'invited',
+};

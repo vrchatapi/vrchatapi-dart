@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/group_member_limited_user.dart';
+import 'package:vrchat_dart_generated/src/model/group_member_status.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'group_member.g.dart';
@@ -62,7 +63,7 @@ class GroupMember {
   final DateTime? joinedAt;
 
   @JsonKey(name: r'membershipStatus', required: false, includeIfNull: false)
-  final String? membershipStatus;
+  final GroupMemberStatus? membershipStatus;
 
   @JsonKey(name: r'visibility', required: false, includeIfNull: false)
   final String? visibility;
@@ -122,14 +123,14 @@ class GroupMember {
       user.hashCode +
       roleIds.hashCode +
       mRoleIds.hashCode +
-      joinedAt.hashCode +
+      (joinedAt == null ? 0 : joinedAt.hashCode) +
       membershipStatus.hashCode +
       visibility.hashCode +
       isSubscribedToAnnouncements.hashCode +
       (createdAt == null ? 0 : createdAt.hashCode) +
       (bannedAt == null ? 0 : bannedAt.hashCode) +
       (managerNotes == null ? 0 : managerNotes.hashCode) +
-      lastPostReadAt.hashCode +
+      (lastPostReadAt == null ? 0 : lastPostReadAt.hashCode) +
       hasJoinedFromPurchase.hashCode;
 
   factory GroupMember.fromJson(Map<String, dynamic> json) =>

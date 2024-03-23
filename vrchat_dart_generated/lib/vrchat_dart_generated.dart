@@ -66,6 +66,7 @@ export 'package:vrchat_dart_generated/src/model/group_announcement.dart';
 export 'package:vrchat_dart_generated/src/model/group_audit_log_entry.dart';
 export 'package:vrchat_dart_generated/src/model/group_gallery.dart';
 export 'package:vrchat_dart_generated/src/model/group_gallery_image.dart';
+export 'package:vrchat_dart_generated/src/model/group_join_request_action.dart';
 export 'package:vrchat_dart_generated/src/model/group_join_state.dart';
 export 'package:vrchat_dart_generated/src/model/group_limited_member.dart';
 export 'package:vrchat_dart_generated/src/model/group_member.dart';

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **roleIds** | **List&lt;String&gt;** |  | [optional] 
 **mRoleIds** | **List&lt;String&gt;** |  | [optional] 
 **joinedAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**membershipStatus** | **String** |  | [optional] 
+**membershipStatus** | [**GroupMemberStatus**](GroupMemberStatus.md) |  | [optional] 
 **visibility** | **String** |  | [optional] 
 **isSubscribedToAnnouncements** | **bool** |  | [optional] [default to false]
 **createdAt** | [**DateTime**](DateTime.md) | Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user. | [optional] 

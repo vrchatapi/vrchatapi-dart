@@ -14,23 +14,25 @@ RespondGroupJoinRequest _$RespondGroupJoinRequestFromJson(
       'RespondGroupJoinRequest',
       json,
       ($checkedConvert) {
+        $checkKeys(
+          json,
+          requiredKeys: const ['action'],
+        );
         final val = RespondGroupJoinRequest(
-          action: $checkedConvert('action', (v) => v as String?),
+          action: $checkedConvert(
+              'action', (v) => $enumDecode(_$GroupJoinRequestActionEnumMap, v)),
         );
         return val;
       },
     );
 
 Map<String, dynamic> _$RespondGroupJoinRequestToJson(
-    RespondGroupJoinRequest instance) {
-  final val = <String, dynamic>{};
+        RespondGroupJoinRequest instance) =>
+    <String, dynamic>{
+      'action': _$GroupJoinRequestActionEnumMap[instance.action]!,
+    };
 
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('action', instance.action);
-  return val;
-}
+const _$GroupJoinRequestActionEnumMap = {
+  GroupJoinRequestAction.accept: 'accept',
+  GroupJoinRequestAction.reject: 'reject',
+};

@@ -1816,6 +1816,8 @@ class GroupsApi {
   ///
   /// Parameters:
   /// * [groupId] - Must be a valid group ID.
+  /// * [n] - The number of objects to return.
+  /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1827,6 +1829,8 @@ class GroupsApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<GroupMember>>> getGroupInvites({
     required String groupId,
+    int? n = 60,
+    int? offset,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1855,9 +1859,15 @@ class GroupsApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (n != null) r'n': n,
+      if (offset != null) r'offset': offset,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -2164,6 +2174,8 @@ class GroupsApi {
   ///
   /// Parameters:
   /// * [groupId] - Must be a valid group ID.
+  /// * [n] - The number of objects to return.
+  /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -2175,6 +2187,8 @@ class GroupsApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<GroupMember>>> getGroupRequests({
     required String groupId,
+    int? n = 60,
+    int? offset,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -2203,9 +2217,15 @@ class GroupsApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (n != null) r'n': n,
+      if (offset != null) r'offset': offset,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,

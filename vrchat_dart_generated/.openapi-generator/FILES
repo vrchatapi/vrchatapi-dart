@@ -49,6 +49,7 @@ doc/GroupAnnouncement.md
 doc/GroupAuditLogEntry.md
 doc/GroupGallery.md
 doc/GroupGalleryImage.md
+doc/GroupJoinRequestAction.md
 doc/GroupJoinState.md
 doc/GroupLimitedMember.md
 doc/GroupMember.md
@@ -205,6 +206,7 @@ lib/src/model/group_announcement.dart
 lib/src/model/group_audit_log_entry.dart
 lib/src/model/group_gallery.dart
 lib/src/model/group_gallery_image.dart
+lib/src/model/group_join_request_action.dart
 lib/src/model/group_join_state.dart
 lib/src/model/group_limited_member.dart
 lib/src/model/group_member.dart
@@ -336,6 +338,7 @@ test/group_announcement_test.dart
 test/group_audit_log_entry_test.dart
 test/group_gallery_image_test.dart
 test/group_gallery_test.dart
+test/group_join_request_action_test.dart
 test/group_join_state_test.dart
 test/group_limited_member_test.dart
 test/group_member_limited_user_test.dart

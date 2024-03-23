@@ -1036,7 +1036,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getGroupInvites**
-> List<GroupMember> getGroupInvites(groupId)
+> List<GroupMember> getGroupInvites(groupId, n, offset)
 
 Get Group Invites Sent
 
@@ -1052,9 +1052,11 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final int n = 56; // int | The number of objects to return.
+final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 
 try {
-    final response = api.getGroupInvites(groupId);
+    final response = api.getGroupInvites(groupId, n, offset);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling GroupsApi->getGroupInvites: $e\n');
@@ -1066,6 +1068,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupId** | **String**| Must be a valid group ID. | 
+ **n** | **int**| The number of objects to return. | [optional] [default to 60]
+ **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
 
 ### Return type
 
@@ -1232,7 +1236,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getGroupRequests**
-> List<GroupMember> getGroupRequests(groupId)
+> List<GroupMember> getGroupRequests(groupId, n, offset)
 
 Get Group Join Requests
 
@@ -1248,9 +1252,11 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final int n = 56; // int | The number of objects to return.
+final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 
 try {
-    final response = api.getGroupRequests(groupId);
+    final response = api.getGroupRequests(groupId, n, offset);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling GroupsApi->getGroupRequests: $e\n');
@@ -1262,6 +1268,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupId** | **String**| Must be a valid group ID. | 
+ **n** | **int**| The number of objects to return. | [optional] [default to 60]
+ **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
 
 ### Return type
 
