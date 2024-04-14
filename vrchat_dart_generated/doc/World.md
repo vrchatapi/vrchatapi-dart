@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **instances** | [**List&lt;List&lt;Object&gt;&gt;**](List.md) | Will always be an empty list when unauthenticated. | [optional] 
 **labsPublicationDate** | **String** |  | 
 **name** | **String** |  | 
-**namespace** | **String** |  | 
+**namespace** | **String** |  | [optional] 
 **occupants** | **int** | Will always be `0` when unauthenticated. | [optional] [default to 0]
 **organization** | **String** |  | [default to 'vrchat']
 **popularity** | **int** |  | [default to 0]

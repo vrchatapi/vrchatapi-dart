@@ -78,4 +78,5 @@ const _$GroupMemberStatusEnumMap = {
   GroupMemberStatus.member: 'member',
   GroupMemberStatus.requested: 'requested',
   GroupMemberStatus.invited: 'invited',
+  GroupMemberStatus.banned: 'banned',
 };

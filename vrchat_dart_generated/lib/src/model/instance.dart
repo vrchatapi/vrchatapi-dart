@@ -5,6 +5,8 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
 import 'package:vrchat_dart_generated/src/model/instance_type.dart';
+import 'package:vrchat_dart_generated/src/model/limited_user.dart';
+import 'package:vrchat_dart_generated/src/model/world.dart';
 import 'package:vrchat_dart_generated/src/model/region.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -42,6 +44,14 @@ class Instance {
     this.hidden,
     this.friends,
     this.private,
+    required this.queueEnabled,
+    required this.queueSize,
+    required this.recommendedCapacity,
+    required this.roleRestricted,
+    required this.strict,
+    required this.userCount,
+    required this.world,
+    this.users,
   });
 
   @JsonKey(name: r'active', required: true, includeIfNull: false)
@@ -125,6 +135,34 @@ class Instance {
   @JsonKey(name: r'private', required: false, includeIfNull: false)
   final String? private;
 
+  @JsonKey(name: r'queueEnabled', required: true, includeIfNull: false)
+  final bool queueEnabled;
+
+  // minimum: 0
+  @JsonKey(name: r'queueSize', required: true, includeIfNull: false)
+  final int queueSize;
+
+  // minimum: 0
+  @JsonKey(name: r'recommendedCapacity', required: true, includeIfNull: false)
+  final int recommendedCapacity;
+
+  @JsonKey(name: r'roleRestricted', required: true, includeIfNull: false)
+  final bool roleRestricted;
+
+  @JsonKey(name: r'strict', required: true, includeIfNull: false)
+  final bool strict;
+
+  // minimum: 0
+  @JsonKey(name: r'userCount', required: true, includeIfNull: false)
+  final int userCount;
+
+  @JsonKey(name: r'world', required: true, includeIfNull: false)
+  final World world;
+
+  /// The users field is present on instances created by the requesting user.
+  @JsonKey(name: r'users', required: false, includeIfNull: false)
+  final List<LimitedUser>? users;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -152,7 +190,15 @@ class Instance {
           other.worldId == worldId &&
           other.hidden == hidden &&
           other.friends == friends &&
-          other.private == private;
+          other.private == private &&
+          other.queueEnabled == queueEnabled &&
+          other.queueSize == queueSize &&
+          other.recommendedCapacity == recommendedCapacity &&
+          other.roleRestricted == roleRestricted &&
+          other.strict == strict &&
+          other.userCount == userCount &&
+          other.world == world &&
+          other.users == users;
 
   @override
   int get hashCode =>
@@ -179,7 +225,15 @@ class Instance {
       worldId.hashCode +
       hidden.hashCode +
       friends.hashCode +
-      private.hashCode;
+      private.hashCode +
+      queueEnabled.hashCode +
+      queueSize.hashCode +
+      recommendedCapacity.hashCode +
+      roleRestricted.hashCode +
+      strict.hashCode +
+      userCount.hashCode +
+      world.hashCode +
+      users.hashCode;
 
   factory Instance.fromJson(Map<String, dynamic> json) =>
       _$InstanceFromJson(json);

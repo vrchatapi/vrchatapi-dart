@@ -13,7 +13,9 @@ enum GroupMemberStatus {
   @JsonValue(r'requested')
   requested(r'requested'),
   @JsonValue(r'invited')
-  invited(r'invited');
+  invited(r'invited'),
+  @JsonValue(r'banned')
+  banned(r'banned');
 
   const GroupMemberStatus(this.value);
 

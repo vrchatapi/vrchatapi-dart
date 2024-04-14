@@ -70,7 +70,9 @@ class GroupMemberLimitedUser {
       thumbnailUrl.hashCode +
       iconUrl.hashCode +
       profilePicOverride.hashCode +
-      currentAvatarThumbnailImageUrl.hashCode +
+      (currentAvatarThumbnailImageUrl == null
+          ? 0
+          : currentAvatarThumbnailImageUrl.hashCode) +
       currentAvatarTags.hashCode;
 
   factory GroupMemberLimitedUser.fromJson(Map<String, dynamic> json) =>

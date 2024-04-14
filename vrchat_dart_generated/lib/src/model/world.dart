@@ -32,7 +32,7 @@ class World {
     this.instances,
     required this.labsPublicationDate,
     required this.name,
-    required this.namespace,
+    this.namespace,
     this.occupants = 0,
     this.organization = 'vrchat',
     this.popularity = 0,
@@ -97,8 +97,8 @@ class World {
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
-  @JsonKey(name: r'namespace', required: true, includeIfNull: false)
-  final String namespace;
+  @JsonKey(name: r'namespace', required: false, includeIfNull: false)
+  final String? namespace;
 
   /// Will always be `0` when unauthenticated.
   // minimum: 0

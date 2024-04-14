@@ -367,7 +367,7 @@ class PlayermoderationApi {
   /// Returns a [Future] containing a [Response] with a [PlayerModeration] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<PlayerModeration>> moderateUser({
-    ModerateUserRequest? moderateUserRequest,
+    required ModerateUserRequest moderateUserRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -467,7 +467,7 @@ class PlayermoderationApi {
   /// Returns a [Future] containing a [Response] with a [Success] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<Success>> unmoderateUser({
-    ModerateUserRequest? moderateUserRequest,
+    required ModerateUserRequest moderateUserRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

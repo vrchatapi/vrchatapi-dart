@@ -233,7 +233,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **moderateUserRequest** | [**ModerateUserRequest**](ModerateUserRequest.md)|  | [optional] 
+ **moderateUserRequest** | [**ModerateUserRequest**](ModerateUserRequest.md)|  | 
 
 ### Return type
 
@@ -280,7 +280,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **moderateUserRequest** | [**ModerateUserRequest**](ModerateUserRequest.md)|  | [optional] 
+ **moderateUserRequest** | [**ModerateUserRequest**](ModerateUserRequest.md)|  | 
 
 ### Return type
 

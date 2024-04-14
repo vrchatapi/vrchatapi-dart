@@ -27,7 +27,6 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
             'imageUrl',
             'labsPublicationDate',
             'name',
-            'namespace',
             'organization',
             'popularity',
             'publicationDate',
@@ -62,7 +61,7 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
           labsPublicationDate:
               $checkedConvert('labsPublicationDate', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String),
-          namespace: $checkedConvert('namespace', (v) => v as String),
+          namespace: $checkedConvert('namespace', (v) => v as String?),
           occupants: $checkedConvert('occupants', (v) => v as int? ?? 0),
           organization:
               $checkedConvert('organization', (v) => v as String? ?? 'vrchat'),
@@ -122,7 +121,7 @@ Map<String, dynamic> _$WorldToJson(World instance) {
   writeNotNull('instances', instance.instances);
   val['labsPublicationDate'] = instance.labsPublicationDate;
   val['name'] = instance.name;
-  val['namespace'] = instance.namespace;
+  writeNotNull('namespace', instance.namespace);
   writeNotNull('occupants', instance.occupants);
   val['organization'] = instance.organization;
   val['popularity'] = instance.popularity;

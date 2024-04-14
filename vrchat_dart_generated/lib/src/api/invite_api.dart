@@ -300,7 +300,7 @@ class InviteApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<SentNotification>> inviteUser({
     required String userId,
-    InviteRequest? inviteRequest,
+    required InviteRequest inviteRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -594,7 +594,7 @@ class InviteApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<Notification>> respondInvite({
     required String notificationId,
-    InviteResponse? inviteResponse,
+    required InviteResponse inviteResponse,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

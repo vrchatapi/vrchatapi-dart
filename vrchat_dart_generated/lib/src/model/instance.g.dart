@@ -32,7 +32,14 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
             'secureName',
             'tags',
             'type',
-            'worldId'
+            'worldId',
+            'queueEnabled',
+            'queueSize',
+            'recommendedCapacity',
+            'roleRestricted',
+            'strict',
+            'userCount',
+            'world'
           ],
         );
         final val = Instance(
@@ -65,6 +72,20 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
           hidden: $checkedConvert('hidden', (v) => v as String?),
           friends: $checkedConvert('friends', (v) => v as String?),
           private: $checkedConvert('private', (v) => v as String?),
+          queueEnabled: $checkedConvert('queueEnabled', (v) => v as bool),
+          queueSize: $checkedConvert('queueSize', (v) => v as int),
+          recommendedCapacity:
+              $checkedConvert('recommendedCapacity', (v) => v as int),
+          roleRestricted: $checkedConvert('roleRestricted', (v) => v as bool),
+          strict: $checkedConvert('strict', (v) => v as bool),
+          userCount: $checkedConvert('userCount', (v) => v as int),
+          world: $checkedConvert(
+              'world', (v) => World.fromJson(v as Map<String, dynamic>)),
+          users: $checkedConvert(
+              'users',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => LimitedUser.fromJson(e as Map<String, dynamic>))
+                  .toList()),
         );
         return val;
       },
@@ -104,6 +125,14 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) {
   writeNotNull('hidden', instance.hidden);
   writeNotNull('friends', instance.friends);
   writeNotNull('private', instance.private);
+  val['queueEnabled'] = instance.queueEnabled;
+  val['queueSize'] = instance.queueSize;
+  val['recommendedCapacity'] = instance.recommendedCapacity;
+  val['roleRestricted'] = instance.roleRestricted;
+  val['strict'] = instance.strict;
+  val['userCount'] = instance.userCount;
+  val['world'] = instance.world.toJson();
+  writeNotNull('users', instance.users?.map((e) => e.toJson()).toList());
   return val;
 }
 

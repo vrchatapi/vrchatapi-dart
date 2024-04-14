@@ -238,7 +238,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **twoFactorAuthCode** | [**TwoFactorAuthCode**](TwoFactorAuthCode.md)|  | [optional] 
+ **twoFactorAuthCode** | [**TwoFactorAuthCode**](TwoFactorAuthCode.md)|  | 
 
 ### Return type
 
@@ -285,7 +285,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **twoFactorEmailCode** | [**TwoFactorEmailCode**](TwoFactorEmailCode.md)|  | [optional] 
+ **twoFactorEmailCode** | [**TwoFactorEmailCode**](TwoFactorEmailCode.md)|  | 
 
 ### Return type
 
@@ -375,7 +375,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **twoFactorAuthCode** | [**TwoFactorAuthCode**](TwoFactorAuthCode.md)|  | [optional] 
+ **twoFactorAuthCode** | [**TwoFactorAuthCode**](TwoFactorAuthCode.md)|  | 
 
 ### Return type
 

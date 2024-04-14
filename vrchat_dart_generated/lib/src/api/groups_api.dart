@@ -58,7 +58,7 @@ class GroupsApi {
   Future<Response<GroupGalleryImage>> addGroupGalleryImage({
     required String groupId,
     required String groupGalleryId,
-    AddGroupGalleryImageRequest? addGroupGalleryImageRequest,
+    required AddGroupGalleryImageRequest addGroupGalleryImageRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -250,7 +250,7 @@ class GroupsApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<GroupMember>> banGroupMember({
     required String groupId,
-    BanGroupMemberRequest? banGroupMemberRequest,
+    required BanGroupMemberRequest banGroupMemberRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -405,7 +405,7 @@ class GroupsApi {
   /// Returns a [Future] containing a [Response] with a [Group] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<Group>> createGroup({
-    CreateGroupRequest? createGroupRequest,
+    required CreateGroupRequest createGroupRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -505,7 +505,7 @@ class GroupsApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<GroupAnnouncement>> createGroupAnnouncement({
     required String groupId,
-    CreateGroupAnnouncementRequest? createGroupAnnouncementRequest,
+    required CreateGroupAnnouncementRequest createGroupAnnouncementRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -608,7 +608,7 @@ class GroupsApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<GroupGallery>> createGroupGallery({
     required String groupId,
-    CreateGroupGalleryRequest? createGroupGalleryRequest,
+    required CreateGroupGalleryRequest createGroupGalleryRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -710,7 +710,7 @@ class GroupsApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> createGroupInvite({
     required String groupId,
-    CreateGroupInviteRequest? createGroupInviteRequest,
+    required CreateGroupInviteRequest createGroupInviteRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -785,7 +785,7 @@ class GroupsApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<GroupRole>> createGroupRole({
     required String groupId,
-    CreateGroupRoleRequest? createGroupRoleRequest,
+    required CreateGroupRoleRequest createGroupRoleRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -2646,7 +2646,7 @@ class GroupsApi {
   Future<Response<void>> respondGroupJoinRequest({
     required String groupId,
     required String userId,
-    RespondGroupJoinRequest? respondGroupJoinRequest,
+    required RespondGroupJoinRequest respondGroupJoinRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

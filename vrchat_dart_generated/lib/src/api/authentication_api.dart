@@ -376,7 +376,7 @@ class AuthenticationApi {
   /// Returns a [Future] containing a [Response] with a [Verify2FAResult] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<Verify2FAResult>> verify2FA({
-    TwoFactorAuthCode? twoFactorAuthCode,
+    required TwoFactorAuthCode twoFactorAuthCode,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -476,7 +476,7 @@ class AuthenticationApi {
   /// Returns a [Future] containing a [Response] with a [Verify2FAEmailCodeResult] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<Verify2FAEmailCodeResult>> verify2FAEmailCode({
-    TwoFactorEmailCode? twoFactorEmailCode,
+    required TwoFactorEmailCode twoFactorEmailCode,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -656,7 +656,7 @@ class AuthenticationApi {
   /// Returns a [Future] containing a [Response] with a [Verify2FAResult] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<Verify2FAResult>> verifyRecoveryCode({
-    TwoFactorAuthCode? twoFactorAuthCode,
+    required TwoFactorAuthCode twoFactorAuthCode,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
