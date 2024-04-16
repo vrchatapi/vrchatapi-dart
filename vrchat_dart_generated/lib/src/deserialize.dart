@@ -215,6 +215,7 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return FriendStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Group':
       return Group.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'GroupAccessType':
     case 'GroupAnnouncement':
       return GroupAnnouncement.fromJson(value as Map<String, dynamic>)
           as ReturnType;

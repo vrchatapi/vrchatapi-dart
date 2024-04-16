@@ -9,11 +9,63 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**closeInstance**](InstancesApi.md#closeinstance) | **DELETE** /instances/{worldId}:{instanceId} | Close Instance
 [**getInstance**](InstancesApi.md#getinstance) | **GET** /instances/{worldId}:{instanceId} | Get Instance
 [**getInstanceByShortName**](InstancesApi.md#getinstancebyshortname) | **GET** /instances/s/{shortName} | Get Instance By Short Name
 [**getShortName**](InstancesApi.md#getshortname) | **GET** /instances/{worldId}:{instanceId}/shortName | Get Instance Short Name
 [**sendSelfInvite**](InstancesApi.md#sendselfinvite) | **POST** /instances/{worldId}:{instanceId}/invite | Send Self Invite
 
+
+# **closeInstance**
+> Instance closeInstance(worldId, instanceId, hardClose)
+
+Close Instance
+
+Close an instance.  You can only close an instance if the ownerId is yourself or if the instance owner is a group and you have the `group-instance-moderate` permission.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getInstancesApi();
+final String worldId = worldId_example; // String | Must be a valid world ID.
+final String instanceId = instanceId_example; // String | Must be a valid instance ID.
+final bool hardClose = true; // bool | Whether to hard close the instance. Defaults to false.
+
+try {
+    final response = api.closeInstance(worldId, instanceId, hardClose);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InstancesApi->closeInstance: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **worldId** | **String**| Must be a valid world ID. | 
+ **instanceId** | **String**| Must be a valid instance ID. | 
+ **hardClose** | **bool**| Whether to hard close the instance. Defaults to false. | [optional] 
+
+### Return type
+
+[**Instance**](Instance.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getInstance**
 > Instance getInstance(worldId, instanceId)

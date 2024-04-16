@@ -45,6 +45,7 @@ doc/FinishFileDataUploadRequest.md
 doc/FriendStatus.md
 doc/FriendsApi.md
 doc/Group.md
+doc/GroupAccessType.md
 doc/GroupAnnouncement.md
 doc/GroupAuditLogEntry.md
 doc/GroupGallery.md
@@ -202,6 +203,7 @@ lib/src/model/file_version_upload_status.dart
 lib/src/model/finish_file_data_upload_request.dart
 lib/src/model/friend_status.dart
 lib/src/model/group.dart
+lib/src/model/group_access_type.dart
 lib/src/model/group_announcement.dart
 lib/src/model/group_audit_log_entry.dart
 lib/src/model/group_gallery.dart
@@ -334,6 +336,7 @@ test/files_api_test.dart
 test/finish_file_data_upload_request_test.dart
 test/friend_status_test.dart
 test/friends_api_test.dart
+test/group_access_type_test.dart
 test/group_announcement_test.dart
 test/group_audit_log_entry_test.dart
 test/group_gallery_image_test.dart

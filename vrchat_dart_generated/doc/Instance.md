@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **location** | **String** | InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance. | 
 **nUsers** | **int** |  | 
 **name** | **String** |  | 
-**ownerId** | **String** | A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed. | [optional] 
+**ownerId** | **String** | A groupId if the instance type is \"group\", null if instance type is public, or a userId otherwise | [optional] 
 **permanent** | **bool** |  | [default to false]
 **photonRegion** | [**Region**](Region.md) |  | 
 **platforms** | [**InstancePlatforms**](InstancePlatforms.md) |  | 
@@ -34,11 +34,16 @@ Name | Type | Description | Notes
 **queueEnabled** | **bool** |  | 
 **queueSize** | **int** |  | 
 **recommendedCapacity** | **int** |  | 
-**roleRestricted** | **bool** |  | 
+**roleRestricted** | **bool** |  | [optional] 
 **strict** | **bool** |  | 
 **userCount** | **int** |  | 
 **world** | [**World**](World.md) |  | 
 **users** | [**List&lt;LimitedUser&gt;**](LimitedUser.md) | The users field is present on instances created by the requesting user. | [optional] 
+**groupAccessType** | [**GroupAccessType**](GroupAccessType.md) |  | [optional] 
+**hasCapacityForYou** | **bool** |  | [optional] 
+**nonce** | **String** |  | [optional] 
+**closedAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**hardClose** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

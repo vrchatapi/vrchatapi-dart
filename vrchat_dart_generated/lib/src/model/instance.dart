@@ -6,6 +6,7 @@
 import 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
 import 'package:vrchat_dart_generated/src/model/instance_type.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user.dart';
+import 'package:vrchat_dart_generated/src/model/group_access_type.dart';
 import 'package:vrchat_dart_generated/src/model/world.dart';
 import 'package:vrchat_dart_generated/src/model/region.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -47,11 +48,16 @@ class Instance {
     required this.queueEnabled,
     required this.queueSize,
     required this.recommendedCapacity,
-    required this.roleRestricted,
+    this.roleRestricted,
     required this.strict,
     required this.userCount,
     required this.world,
     this.users,
+    this.groupAccessType,
+    this.hasCapacityForYou,
+    this.nonce,
+    this.closedAt,
+    this.hardClose,
   });
 
   @JsonKey(name: r'active', required: true, includeIfNull: false)
@@ -90,7 +96,7 @@ class Instance {
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
-  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
+  /// A groupId if the instance type is \"group\", null if instance type is public, or a userId otherwise
   @JsonKey(name: r'ownerId', required: false, includeIfNull: false)
   final String? ownerId;
 
@@ -146,8 +152,8 @@ class Instance {
   @JsonKey(name: r'recommendedCapacity', required: true, includeIfNull: false)
   final int recommendedCapacity;
 
-  @JsonKey(name: r'roleRestricted', required: true, includeIfNull: false)
-  final bool roleRestricted;
+  @JsonKey(name: r'roleRestricted', required: false, includeIfNull: false)
+  final bool? roleRestricted;
 
   @JsonKey(name: r'strict', required: true, includeIfNull: false)
   final bool strict;
@@ -162,6 +168,21 @@ class Instance {
   /// The users field is present on instances created by the requesting user.
   @JsonKey(name: r'users', required: false, includeIfNull: false)
   final List<LimitedUser>? users;
+
+  @JsonKey(name: r'groupAccessType', required: false, includeIfNull: false)
+  final GroupAccessType? groupAccessType;
+
+  @JsonKey(name: r'hasCapacityForYou', required: false, includeIfNull: false)
+  final bool? hasCapacityForYou;
+
+  @JsonKey(name: r'nonce', required: false, includeIfNull: false)
+  final String? nonce;
+
+  @JsonKey(name: r'closedAt', required: false, includeIfNull: false)
+  final DateTime? closedAt;
+
+  @JsonKey(name: r'hardClose', required: false, includeIfNull: false)
+  final bool? hardClose;
 
   @override
   bool operator ==(Object other) =>
@@ -198,7 +219,12 @@ class Instance {
           other.strict == strict &&
           other.userCount == userCount &&
           other.world == world &&
-          other.users == users;
+          other.users == users &&
+          other.groupAccessType == groupAccessType &&
+          other.hasCapacityForYou == hasCapacityForYou &&
+          other.nonce == nonce &&
+          other.closedAt == closedAt &&
+          other.hardClose == hardClose;
 
   @override
   int get hashCode =>
@@ -213,13 +239,13 @@ class Instance {
       location.hashCode +
       nUsers.hashCode +
       name.hashCode +
-      ownerId.hashCode +
+      (ownerId == null ? 0 : ownerId.hashCode) +
       permanent.hashCode +
       photonRegion.hashCode +
       platforms.hashCode +
       region.hashCode +
       secureName.hashCode +
-      shortName.hashCode +
+      (shortName == null ? 0 : shortName.hashCode) +
       tags.hashCode +
       type.hashCode +
       worldId.hashCode +
@@ -233,7 +259,12 @@ class Instance {
       strict.hashCode +
       userCount.hashCode +
       world.hashCode +
-      users.hashCode;
+      users.hashCode +
+      groupAccessType.hashCode +
+      hasCapacityForYou.hashCode +
+      nonce.hashCode +
+      (closedAt == null ? 0 : closedAt.hashCode) +
+      (hardClose == null ? 0 : hardClose.hashCode);
 
   factory Instance.fromJson(Map<String, dynamic> json) =>
       _$InstanceFromJson(json);

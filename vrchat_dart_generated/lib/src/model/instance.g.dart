@@ -36,7 +36,6 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
             'queueEnabled',
             'queueSize',
             'recommendedCapacity',
-            'roleRestricted',
             'strict',
             'userCount',
             'world'
@@ -76,7 +75,7 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
           queueSize: $checkedConvert('queueSize', (v) => v as int),
           recommendedCapacity:
               $checkedConvert('recommendedCapacity', (v) => v as int),
-          roleRestricted: $checkedConvert('roleRestricted', (v) => v as bool),
+          roleRestricted: $checkedConvert('roleRestricted', (v) => v as bool?),
           strict: $checkedConvert('strict', (v) => v as bool),
           userCount: $checkedConvert('userCount', (v) => v as int),
           world: $checkedConvert(
@@ -86,6 +85,14 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => (v as List<dynamic>?)
                   ?.map((e) => LimitedUser.fromJson(e as Map<String, dynamic>))
                   .toList()),
+          groupAccessType: $checkedConvert('groupAccessType',
+              (v) => $enumDecodeNullable(_$GroupAccessTypeEnumMap, v)),
+          hasCapacityForYou:
+              $checkedConvert('hasCapacityForYou', (v) => v as bool?),
+          nonce: $checkedConvert('nonce', (v) => v as String?),
+          closedAt: $checkedConvert('closedAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          hardClose: $checkedConvert('hardClose', (v) => v as bool?),
         );
         return val;
       },
@@ -128,11 +135,17 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) {
   val['queueEnabled'] = instance.queueEnabled;
   val['queueSize'] = instance.queueSize;
   val['recommendedCapacity'] = instance.recommendedCapacity;
-  val['roleRestricted'] = instance.roleRestricted;
+  writeNotNull('roleRestricted', instance.roleRestricted);
   val['strict'] = instance.strict;
   val['userCount'] = instance.userCount;
   val['world'] = instance.world.toJson();
   writeNotNull('users', instance.users?.map((e) => e.toJson()).toList());
+  writeNotNull(
+      'groupAccessType', _$GroupAccessTypeEnumMap[instance.groupAccessType]);
+  writeNotNull('hasCapacityForYou', instance.hasCapacityForYou);
+  writeNotNull('nonce', instance.nonce);
+  writeNotNull('closedAt', instance.closedAt?.toIso8601String());
+  writeNotNull('hardClose', instance.hardClose);
   return val;
 }
 
@@ -151,4 +164,10 @@ const _$InstanceTypeEnumMap = {
   InstanceType.friends: 'friends',
   InstanceType.private: 'private',
   InstanceType.group: 'group',
+};
+
+const _$GroupAccessTypeEnumMap = {
+  GroupAccessType.public: 'public',
+  GroupAccessType.plus: 'plus',
+  GroupAccessType.member: 'member',
 };
