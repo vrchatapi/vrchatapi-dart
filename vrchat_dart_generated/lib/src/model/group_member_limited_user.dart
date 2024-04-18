@@ -67,7 +67,7 @@ class GroupMemberLimitedUser {
   int get hashCode =>
       id.hashCode +
       displayName.hashCode +
-      thumbnailUrl.hashCode +
+      (thumbnailUrl == null ? 0 : thumbnailUrl.hashCode) +
       iconUrl.hashCode +
       profilePicOverride.hashCode +
       (currentAvatarThumbnailImageUrl == null
