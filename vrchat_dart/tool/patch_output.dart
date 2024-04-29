@@ -1,8 +1,15 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:fixer/fixer.dart';
 
 void main() async {
+  final spec = jsonDecode(File('build/spec.json').readAsStringSync());
+
+  print('Patching pubspec...');
+  patchPubspec(spec);
+  print('Pubspec patched!');
+
   print('Patching lib/src/model...');
   patchModel();
   print('Model patched!');
@@ -14,6 +21,17 @@ void main() async {
   print('Patching analysis issues...');
   patchAnalysisIssues();
   print('Analysis issues patched!');
+}
+
+void patchPubspec(Map<String, dynamic> spec) {
+  final version = spec['info']['version'] as String;
+  final pubspec = File('../vrchat_dart_generated/pubspec.yaml');
+  final content = pubspec.readAsStringSync();
+  final newContent = content.replaceFirst(
+    RegExp(r'^version: .+?$', multiLine: true),
+    'version: $version',
+  );
+  pubspec.writeAsStringSync(newContent);
 }
 
 final _enumToString = r'''
