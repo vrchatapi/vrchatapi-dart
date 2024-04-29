@@ -11,6 +11,7 @@ import 'package:dio/dio.dart';
 
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/group.dart';
+import 'package:vrchat_dart_generated/src/model/limited_group.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user.dart';
 import 'package:vrchat_dart_generated/src/model/represented_group.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_request.dart';
@@ -278,9 +279,9 @@ class UsersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<Group>] as data
+  /// Returns a [Future] containing a [Response] with a [List<LimitedGroup>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<Group>>> getUserGroups({
+  Future<Response<List<LimitedGroup>>> getUserGroups({
     required String userId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -318,13 +319,14 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<Group>? _responseData;
+    List<LimitedGroup>? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Group>, Group>(rawData, 'List<Group>',
+          : deserialize<List<LimitedGroup>, LimitedGroup>(
+              rawData, 'List<LimitedGroup>',
               growable: true);
     } catch (error, stackTrace) {
       throw DioException(
@@ -336,7 +338,7 @@ class UsersApi {
       );
     }
 
-    return Response<List<Group>>(
+    return Response<List<LimitedGroup>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

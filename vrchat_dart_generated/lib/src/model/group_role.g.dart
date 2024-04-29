@@ -27,7 +27,7 @@ GroupRole _$GroupRoleFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('requiresTwoFactor', (v) => v as bool? ?? false),
           requiresPurchase:
               $checkedConvert('requiresPurchase', (v) => v as bool? ?? false),
-          order: $checkedConvert('order', (v) => v as int?),
+          order: $checkedConvert('order', (v) => (v as num?)?.toInt()),
           createdAt: $checkedConvert('createdAt',
               (v) => v == null ? null : DateTime.parse(v as String)),
           updatedAt: $checkedConvert('updatedAt',

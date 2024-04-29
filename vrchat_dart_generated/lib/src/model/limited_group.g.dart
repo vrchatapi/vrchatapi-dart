@@ -25,7 +25,8 @@ LimitedGroup _$LimitedGroupFromJson(Map<String, dynamic> json) =>
           rules: $checkedConvert('rules', (v) => v as String?),
           iconId: $checkedConvert('iconId', (v) => v as String?),
           bannerId: $checkedConvert('bannerId', (v) => v as String?),
-          memberCount: $checkedConvert('memberCount', (v) => v as int?),
+          memberCount:
+              $checkedConvert('memberCount', (v) => (v as num?)?.toInt()),
           tags: $checkedConvert('tags',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           createdAt: $checkedConvert('createdAt',

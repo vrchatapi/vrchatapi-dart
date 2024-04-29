@@ -19,10 +19,11 @@ CreateWorldRequest _$CreateWorldRequestFromJson(Map<String, dynamic> json) =>
         );
         final val = CreateWorldRequest(
           assetUrl: $checkedConvert('assetUrl', (v) => v as String),
-          assetVersion: $checkedConvert('assetVersion', (v) => v as int?),
+          assetVersion:
+              $checkedConvert('assetVersion', (v) => (v as num?)?.toInt()),
           authorId: $checkedConvert('authorId', (v) => v as String?),
           authorName: $checkedConvert('authorName', (v) => v as String?),
-          capacity: $checkedConvert('capacity', (v) => v as int?),
+          capacity: $checkedConvert('capacity', (v) => (v as num?)?.toInt()),
           description: $checkedConvert('description', (v) => v as String?),
           id: $checkedConvert('id', (v) => v as String?),
           imageUrl: $checkedConvert('imageUrl', (v) => v as String),

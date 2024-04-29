@@ -30,7 +30,8 @@ Group _$GroupFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           iconId: $checkedConvert('iconId', (v) => v as String?),
           bannerId: $checkedConvert('bannerId', (v) => v as String?),
-          memberCount: $checkedConvert('memberCount', (v) => v as int?),
+          memberCount:
+              $checkedConvert('memberCount', (v) => (v as num?)?.toInt()),
           memberCountSyncedAt: $checkedConvert('memberCountSyncedAt',
               (v) => v == null ? null : DateTime.parse(v as String)),
           isVerified: $checkedConvert('isVerified', (v) => v as bool? ?? false),
@@ -46,7 +47,7 @@ Group _$GroupFromJson(Map<String, dynamic> json) => $checkedCreate(
           createdAt: $checkedConvert('createdAt',
               (v) => v == null ? null : DateTime.parse(v as String)),
           onlineMemberCount:
-              $checkedConvert('onlineMemberCount', (v) => v as int?),
+              $checkedConvert('onlineMemberCount', (v) => (v as num?)?.toInt()),
           membershipStatus: $checkedConvert('membershipStatus',
               (v) => $enumDecodeNullable(_$GroupMemberStatusEnumMap, v)),
           myMember: $checkedConvert(

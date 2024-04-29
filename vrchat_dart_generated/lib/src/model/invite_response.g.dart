@@ -18,7 +18,8 @@ InviteResponse _$InviteResponseFromJson(Map<String, dynamic> json) =>
           requiredKeys: const ['responseSlot'],
         );
         final val = InviteResponse(
-          responseSlot: $checkedConvert('responseSlot', (v) => v as int),
+          responseSlot:
+              $checkedConvert('responseSlot', (v) => (v as num).toInt()),
         );
         return val;
       },

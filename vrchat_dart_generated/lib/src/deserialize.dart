@@ -15,8 +15,10 @@ import 'package:vrchat_dart_generated/src/model/create_file_version_request.dart
 import 'package:vrchat_dart_generated/src/model/create_group_announcement_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_group_gallery_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_group_invite_request.dart';
+import 'package:vrchat_dart_generated/src/model/create_group_post_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_group_role_request.dart';
+import 'package:vrchat_dart_generated/src/model/create_instance_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_world_request.dart';
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/current_user_presence.dart';
@@ -36,11 +38,13 @@ import 'package:vrchat_dart_generated/src/model/group_announcement.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry.dart';
 import 'package:vrchat_dart_generated/src/model/group_gallery.dart';
 import 'package:vrchat_dart_generated/src/model/group_gallery_image.dart';
+import 'package:vrchat_dart_generated/src/model/group_instance.dart';
 import 'package:vrchat_dart_generated/src/model/group_limited_member.dart';
 import 'package:vrchat_dart_generated/src/model/group_member.dart';
 import 'package:vrchat_dart_generated/src/model/group_member_limited_user.dart';
 import 'package:vrchat_dart_generated/src/model/group_my_member.dart';
 import 'package:vrchat_dart_generated/src/model/group_permission.dart';
+import 'package:vrchat_dart_generated/src/model/group_post.dart';
 import 'package:vrchat_dart_generated/src/model/group_role.dart';
 import 'package:vrchat_dart_generated/src/model/info_push.dart';
 import 'package:vrchat_dart_generated/src/model/info_push_data.dart';
@@ -61,6 +65,11 @@ import 'package:vrchat_dart_generated/src/model/limited_user.dart';
 import 'package:vrchat_dart_generated/src/model/limited_world.dart';
 import 'package:vrchat_dart_generated/src/model/moderate_user_request.dart';
 import 'package:vrchat_dart_generated/src/model/notification.dart';
+import 'package:vrchat_dart_generated/src/model/notification_detail_invite.dart';
+import 'package:vrchat_dart_generated/src/model/notification_detail_invite_response.dart';
+import 'package:vrchat_dart_generated/src/model/notification_detail_request_invite.dart';
+import 'package:vrchat_dart_generated/src/model/notification_detail_request_invite_response.dart';
+import 'package:vrchat_dart_generated/src/model/notification_detail_vote_to_kick.dart';
 import 'package:vrchat_dart_generated/src/model/paginated_group_audit_log_entry_list.dart';
 import 'package:vrchat_dart_generated/src/model/past_display_name.dart';
 import 'package:vrchat_dart_generated/src/model/permission.dart';
@@ -167,11 +176,17 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'CreateGroupInviteRequest':
       return CreateGroupInviteRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'CreateGroupPostRequest':
+      return CreateGroupPostRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'CreateGroupRequest':
       return CreateGroupRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'CreateGroupRoleRequest':
       return CreateGroupRoleRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'CreateInstanceRequest':
+      return CreateInstanceRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'CreateWorldRequest':
       return CreateWorldRequest.fromJson(value as Map<String, dynamic>)
@@ -227,6 +242,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'GroupGalleryImage':
       return GroupGalleryImage.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'GroupInstance':
+      return GroupInstance.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'GroupJoinRequestAction':
     case 'GroupJoinState':
     case 'GroupLimitedMember':
@@ -244,6 +262,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'GroupPermission':
       return GroupPermission.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'GroupPost':
+      return GroupPost.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'GroupPostVisibility':
     case 'GroupPrivacy':
     case 'GroupRole':
       return GroupRole.fromJson(value as Map<String, dynamic>) as ReturnType;
@@ -303,6 +324,21 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'Notification':
       return Notification.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'NotificationDetailInvite':
+      return NotificationDetailInvite.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'NotificationDetailInviteResponse':
+      return NotificationDetailInviteResponse.fromJson(
+          value as Map<String, dynamic>) as ReturnType;
+    case 'NotificationDetailRequestInvite':
+      return NotificationDetailRequestInvite.fromJson(
+          value as Map<String, dynamic>) as ReturnType;
+    case 'NotificationDetailRequestInviteResponse':
+      return NotificationDetailRequestInviteResponse.fromJson(
+          value as Map<String, dynamic>) as ReturnType;
+    case 'NotificationDetailVoteToKick':
+      return NotificationDetailVoteToKick.fromJson(
+          value as Map<String, dynamic>) as ReturnType;
     case 'NotificationType':
     case 'OrderOption':
     case 'PaginatedGroupAuditLogEntryList':

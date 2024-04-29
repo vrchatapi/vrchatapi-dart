@@ -19,7 +19,8 @@ InviteRequest _$InviteRequestFromJson(Map<String, dynamic> json) =>
         );
         final val = InviteRequest(
           instanceId: $checkedConvert('instanceId', (v) => v as String),
-          messageSlot: $checkedConvert('messageSlot', (v) => v as int?),
+          messageSlot:
+              $checkedConvert('messageSlot', (v) => (v as num?)?.toInt()),
         );
         return val;
       },

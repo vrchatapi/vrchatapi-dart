@@ -59,9 +59,9 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         );
         final val = CurrentUser(
           acceptedTOSVersion:
-              $checkedConvert('acceptedTOSVersion', (v) => v as int),
-          acceptedPrivacyVersion:
-              $checkedConvert('acceptedPrivacyVersion', (v) => v as int?),
+              $checkedConvert('acceptedTOSVersion', (v) => (v as num).toInt()),
+          acceptedPrivacyVersion: $checkedConvert(
+              'acceptedPrivacyVersion', (v) => (v as num?)?.toInt()),
           accountDeletionDate: $checkedConvert('accountDeletionDate',
               (v) => v == null ? null : DateTime.parse(v as String)),
           accountDeletionLog: $checkedConvert(

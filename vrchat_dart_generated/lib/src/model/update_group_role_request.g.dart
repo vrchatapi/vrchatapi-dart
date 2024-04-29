@@ -21,7 +21,7 @@ UpdateGroupRoleRequest _$UpdateGroupRoleRequestFromJson(
               $checkedConvert('isSelfAssignable', (v) => v as bool? ?? false),
           permissions: $checkedConvert('permissions',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
-          order: $checkedConvert('order', (v) => v as int?),
+          order: $checkedConvert('order', (v) => (v as num?)?.toInt()),
         );
         return val;
       },

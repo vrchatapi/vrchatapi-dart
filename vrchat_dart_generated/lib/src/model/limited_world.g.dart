@@ -40,22 +40,25 @@ LimitedWorld _$LimitedWorldFromJson(Map<String, dynamic> json) =>
         final val = LimitedWorld(
           authorId: $checkedConvert('authorId', (v) => v as String),
           authorName: $checkedConvert('authorName', (v) => v as String),
-          capacity: $checkedConvert('capacity', (v) => v as int),
-          recommendedCapacity:
-              $checkedConvert('recommendedCapacity', (v) => v as int?),
+          capacity: $checkedConvert('capacity', (v) => (v as num).toInt()),
+          recommendedCapacity: $checkedConvert(
+              'recommendedCapacity', (v) => (v as num?)?.toInt()),
           createdAt:
               $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
-          favorites: $checkedConvert('favorites', (v) => v as int? ?? 0),
-          heat: $checkedConvert('heat', (v) => v as int? ?? 0),
+          favorites:
+              $checkedConvert('favorites', (v) => (v as num?)?.toInt() ?? 0),
+          heat: $checkedConvert('heat', (v) => (v as num?)?.toInt() ?? 0),
           id: $checkedConvert('id', (v) => v as String),
           imageUrl: $checkedConvert('imageUrl', (v) => v as String),
           labsPublicationDate:
               $checkedConvert('labsPublicationDate', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String),
-          occupants: $checkedConvert('occupants', (v) => v as int? ?? 0),
+          occupants:
+              $checkedConvert('occupants', (v) => (v as num?)?.toInt() ?? 0),
           organization:
               $checkedConvert('organization', (v) => v as String? ?? 'vrchat'),
-          popularity: $checkedConvert('popularity', (v) => v as int? ?? 0),
+          popularity:
+              $checkedConvert('popularity', (v) => (v as num?)?.toInt() ?? 0),
           publicationDate:
               $checkedConvert('publicationDate', (v) => v as String),
           releaseStatus: $checkedConvert(

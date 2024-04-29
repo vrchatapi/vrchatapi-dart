@@ -18,9 +18,9 @@ InstancePlatforms _$InstancePlatformsFromJson(Map<String, dynamic> json) =>
           requiredKeys: const ['android', 'standalonewindows'],
         );
         final val = InstancePlatforms(
-          android: $checkedConvert('android', (v) => v as int),
+          android: $checkedConvert('android', (v) => (v as num).toInt()),
           standalonewindows:
-              $checkedConvert('standalonewindows', (v) => v as int),
+              $checkedConvert('standalonewindows', (v) => (v as num).toInt()),
         );
         return val;
       },

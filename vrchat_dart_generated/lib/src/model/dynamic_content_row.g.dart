@@ -24,7 +24,7 @@ DynamicContentRow _$DynamicContentRowFromJson(Map<String, dynamic> json) =>
           ],
         );
         final val = DynamicContentRow(
-          index: $checkedConvert('index', (v) => v as int?),
+          index: $checkedConvert('index', (v) => (v as num?)?.toInt()),
           name: $checkedConvert('name', (v) => v as String),
           platform: $checkedConvert('platform', (v) => v as String),
           sortHeading: $checkedConvert('sortHeading', (v) => v as String),

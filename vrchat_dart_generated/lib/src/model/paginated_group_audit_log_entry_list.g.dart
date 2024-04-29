@@ -21,7 +21,8 @@ PaginatedGroupAuditLogEntryList _$PaginatedGroupAuditLogEntryListFromJson(
                   ?.map((e) =>
                       GroupAuditLogEntry.fromJson(e as Map<String, dynamic>))
                   .toList()),
-          totalCount: $checkedConvert('totalCount', (v) => v as int?),
+          totalCount:
+              $checkedConvert('totalCount', (v) => (v as num?)?.toInt()),
           hasNext: $checkedConvert('hasNext', (v) => v as bool?),
         );
         return val;

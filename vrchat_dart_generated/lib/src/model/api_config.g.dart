@@ -112,18 +112,18 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
           buildVersionTag:
               $checkedConvert('buildVersionTag', (v) => v as String),
           clientApiKey: $checkedConvert('clientApiKey', (v) => v as String),
-          clientBPSCeiling:
-              $checkedConvert('clientBPSCeiling', (v) => v as int? ?? 18432),
+          clientBPSCeiling: $checkedConvert(
+              'clientBPSCeiling', (v) => (v as num?)?.toInt() ?? 18432),
           clientDisconnectTimeout: $checkedConvert(
-              'clientDisconnectTimeout', (v) => v as int? ?? 30000),
+              'clientDisconnectTimeout', (v) => (v as num?)?.toInt() ?? 30000),
           clientReservedPlayerBPS: $checkedConvert(
-              'clientReservedPlayerBPS', (v) => v as int? ?? 7168),
+              'clientReservedPlayerBPS', (v) => (v as num?)?.toInt() ?? 7168),
           clientSentCountAllowance: $checkedConvert(
-              'clientSentCountAllowance', (v) => v as int? ?? 15),
+              'clientSentCountAllowance', (v) => (v as num?)?.toInt() ?? 15),
           contactEmail: $checkedConvert('contactEmail', (v) => v as String),
           copyrightEmail: $checkedConvert('copyrightEmail', (v) => v as String),
           currentTOSVersion:
-              $checkedConvert('currentTOSVersion', (v) => v as int),
+              $checkedConvert('currentTOSVersion', (v) => (v as num).toInt()),
           defaultAvatar: $checkedConvert('defaultAvatar', (v) => v as String),
           deploymentGroup: $checkedConvert('deploymentGroup',
               (v) => $enumDecode(_$DeploymentGroupEnumMap, v)),
@@ -191,8 +191,8 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('messageOfTheDay', (v) => v as String),
           moderationEmail:
               $checkedConvert('moderationEmail', (v) => v as String),
-          moderationQueryPeriod:
-              $checkedConvert('moderationQueryPeriod', (v) => v as int),
+          moderationQueryPeriod: $checkedConvert(
+              'moderationQueryPeriod', (v) => (v as num).toInt()),
           notAllowedToSelectAvatarInPrivateWorldMessage: $checkedConvert(
               'notAllowedToSelectAvatarInPrivateWorldMessage',
               (v) => v as String),
@@ -217,32 +217,32 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
           tutorialWorldId:
               $checkedConvert('tutorialWorldId', (v) => v as String),
           updateRateMsMaximum:
-              $checkedConvert('updateRateMsMaximum', (v) => v as int),
+              $checkedConvert('updateRateMsMaximum', (v) => (v as num).toInt()),
           updateRateMsMinimum:
-              $checkedConvert('updateRateMsMinimum', (v) => v as int),
+              $checkedConvert('updateRateMsMinimum', (v) => (v as num).toInt()),
           updateRateMsNormal:
-              $checkedConvert('updateRateMsNormal', (v) => v as int),
-          updateRateMsUdonManual:
-              $checkedConvert('updateRateMsUdonManual', (v) => v as int),
-          uploadAnalysisPercent:
-              $checkedConvert('uploadAnalysisPercent', (v) => v as int),
+              $checkedConvert('updateRateMsNormal', (v) => (v as num).toInt()),
+          updateRateMsUdonManual: $checkedConvert(
+              'updateRateMsUdonManual', (v) => (v as num).toInt()),
+          uploadAnalysisPercent: $checkedConvert(
+              'uploadAnalysisPercent', (v) => (v as num).toInt()),
           urlList: $checkedConvert('urlList',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           useReliableUdpForVoice: $checkedConvert(
               'useReliableUdpForVoice', (v) => v as bool? ?? false),
           userUpdatePeriod:
-              $checkedConvert('userUpdatePeriod', (v) => v as int),
-          userVerificationDelay:
-              $checkedConvert('userVerificationDelay', (v) => v as int),
-          userVerificationRetry:
-              $checkedConvert('userVerificationRetry', (v) => v as int),
-          userVerificationTimeout:
-              $checkedConvert('userVerificationTimeout', (v) => v as int),
+              $checkedConvert('userUpdatePeriod', (v) => (v as num).toInt()),
+          userVerificationDelay: $checkedConvert(
+              'userVerificationDelay', (v) => (v as num).toInt()),
+          userVerificationRetry: $checkedConvert(
+              'userVerificationRetry', (v) => (v as num).toInt()),
+          userVerificationTimeout: $checkedConvert(
+              'userVerificationTimeout', (v) => (v as num).toInt()),
           viveWindowsUrl: $checkedConvert('viveWindowsUrl', (v) => v as String),
           whiteListedAssetUrls: $checkedConvert('whiteListedAssetUrls',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           worldUpdatePeriod:
-              $checkedConvert('worldUpdatePeriod', (v) => v as int),
+              $checkedConvert('worldUpdatePeriod', (v) => (v as num).toInt()),
           playerUrlResolverHash:
               $checkedConvert('player-url-resolver-hash', (v) => v as String),
           playerUrlResolverVersion: $checkedConvert(

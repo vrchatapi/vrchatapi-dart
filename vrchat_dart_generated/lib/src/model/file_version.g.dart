@@ -37,7 +37,7 @@ FileVersion _$FileVersionFromJson(Map<String, dynamic> json) => $checkedCreate(
                   : FileData.fromJson(v as Map<String, dynamic>)),
           status: $checkedConvert(
               'status', (v) => $enumDecode(_$FileStatusEnumMap, v)),
-          version: $checkedConvert('version', (v) => v as int? ?? 0),
+          version: $checkedConvert('version', (v) => (v as num?)?.toInt() ?? 0),
         );
         return val;
       },

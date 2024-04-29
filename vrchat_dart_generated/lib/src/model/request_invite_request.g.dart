@@ -15,7 +15,8 @@ RequestInviteRequest _$RequestInviteRequestFromJson(
       json,
       ($checkedConvert) {
         final val = RequestInviteRequest(
-          messageSlot: $checkedConvert('messageSlot', (v) => v as int?),
+          messageSlot:
+              $checkedConvert('messageSlot', (v) => (v as num?)?.toInt()),
         );
         return val;
       },

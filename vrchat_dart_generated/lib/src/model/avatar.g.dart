@@ -64,7 +64,7 @@ Avatar _$AvatarFromJson(Map<String, dynamic> json) => $checkedCreate(
                   .toSet()),
           updatedAt:
               $checkedConvert('updated_at', (v) => DateTime.parse(v as String)),
-          version: $checkedConvert('version', (v) => v as int? ?? 0),
+          version: $checkedConvert('version', (v) => (v as num?)?.toInt() ?? 0),
         );
         return val;
       },

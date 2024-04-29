@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserGroups**
-> List<Group> getUserGroups(userId)
+> List<LimitedGroup> getUserGroups(userId)
 
 Get User Groups
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;Group&gt;**](Group.md)
+[**List&lt;LimitedGroup&gt;**](LimitedGroup.md)
 
 ### Authorization
 

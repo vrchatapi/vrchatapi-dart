@@ -19,8 +19,10 @@ doc/CreateFileVersionRequest.md
 doc/CreateGroupAnnouncementRequest.md
 doc/CreateGroupGalleryRequest.md
 doc/CreateGroupInviteRequest.md
+doc/CreateGroupPostRequest.md
 doc/CreateGroupRequest.md
 doc/CreateGroupRoleRequest.md
+doc/CreateInstanceRequest.md
 doc/CreateWorldRequest.md
 doc/CurrentUser.md
 doc/CurrentUserPresence.md
@@ -50,6 +52,7 @@ doc/GroupAnnouncement.md
 doc/GroupAuditLogEntry.md
 doc/GroupGallery.md
 doc/GroupGalleryImage.md
+doc/GroupInstance.md
 doc/GroupJoinRequestAction.md
 doc/GroupJoinState.md
 doc/GroupLimitedMember.md
@@ -58,6 +61,8 @@ doc/GroupMemberLimitedUser.md
 doc/GroupMemberStatus.md
 doc/GroupMyMember.md
 doc/GroupPermission.md
+doc/GroupPost.md
+doc/GroupPostVisibility.md
 doc/GroupPrivacy.md
 doc/GroupRole.md
 doc/GroupRoleTemplate.md
@@ -90,6 +95,11 @@ doc/LimitedWorld.md
 doc/MIMEType.md
 doc/ModerateUserRequest.md
 doc/Notification.md
+doc/NotificationDetailInvite.md
+doc/NotificationDetailInviteResponse.md
+doc/NotificationDetailRequestInvite.md
+doc/NotificationDetailRequestInviteResponse.md
+doc/NotificationDetailVoteToKick.md
 doc/NotificationType.md
 doc/NotificationsApi.md
 doc/OrderOption.md
@@ -181,8 +191,10 @@ lib/src/model/create_file_version_request.dart
 lib/src/model/create_group_announcement_request.dart
 lib/src/model/create_group_gallery_request.dart
 lib/src/model/create_group_invite_request.dart
+lib/src/model/create_group_post_request.dart
 lib/src/model/create_group_request.dart
 lib/src/model/create_group_role_request.dart
+lib/src/model/create_instance_request.dart
 lib/src/model/create_world_request.dart
 lib/src/model/current_user.dart
 lib/src/model/current_user_presence.dart
@@ -208,6 +220,7 @@ lib/src/model/group_announcement.dart
 lib/src/model/group_audit_log_entry.dart
 lib/src/model/group_gallery.dart
 lib/src/model/group_gallery_image.dart
+lib/src/model/group_instance.dart
 lib/src/model/group_join_request_action.dart
 lib/src/model/group_join_state.dart
 lib/src/model/group_limited_member.dart
@@ -216,6 +229,8 @@ lib/src/model/group_member_limited_user.dart
 lib/src/model/group_member_status.dart
 lib/src/model/group_my_member.dart
 lib/src/model/group_permission.dart
+lib/src/model/group_post.dart
+lib/src/model/group_post_visibility.dart
 lib/src/model/group_privacy.dart
 lib/src/model/group_role.dart
 lib/src/model/group_role_template.dart
@@ -245,6 +260,11 @@ lib/src/model/limited_world.dart
 lib/src/model/mime_type.dart
 lib/src/model/moderate_user_request.dart
 lib/src/model/notification.dart
+lib/src/model/notification_detail_invite.dart
+lib/src/model/notification_detail_invite_response.dart
+lib/src/model/notification_detail_request_invite.dart
+lib/src/model/notification_detail_request_invite_response.dart
+lib/src/model/notification_detail_vote_to_kick.dart
 lib/src/model/notification_type.dart
 lib/src/model/order_option.dart
 lib/src/model/paginated_group_audit_log_entry_list.dart
@@ -311,8 +331,10 @@ test/create_file_version_request_test.dart
 test/create_group_announcement_request_test.dart
 test/create_group_gallery_request_test.dart
 test/create_group_invite_request_test.dart
+test/create_group_post_request_test.dart
 test/create_group_request_test.dart
 test/create_group_role_request_test.dart
+test/create_instance_request_test.dart
 test/create_world_request_test.dart
 test/current_user_presence_test.dart
 test/current_user_test.dart
@@ -341,6 +363,7 @@ test/group_announcement_test.dart
 test/group_audit_log_entry_test.dart
 test/group_gallery_image_test.dart
 test/group_gallery_test.dart
+test/group_instance_test.dart
 test/group_join_request_action_test.dart
 test/group_join_state_test.dart
 test/group_limited_member_test.dart
@@ -349,6 +372,8 @@ test/group_member_status_test.dart
 test/group_member_test.dart
 test/group_my_member_test.dart
 test/group_permission_test.dart
+test/group_post_test.dart
+test/group_post_visibility_test.dart
 test/group_privacy_test.dart
 test/group_role_template_test.dart
 test/group_role_test.dart
@@ -381,6 +406,11 @@ test/limited_user_test.dart
 test/limited_world_test.dart
 test/mime_type_test.dart
 test/moderate_user_request_test.dart
+test/notification_detail_invite_response_test.dart
+test/notification_detail_invite_test.dart
+test/notification_detail_request_invite_response_test.dart
+test/notification_detail_request_invite_test.dart
+test/notification_detail_vote_to_kick_test.dart
 test/notification_test.dart
 test/notification_type_test.dart
 test/notifications_api_test.dart

@@ -33,8 +33,8 @@ InviteMessage _$InviteMessageFromJson(Map<String, dynamic> json) =>
           messageType: $checkedConvert(
               'messageType', (v) => $enumDecode(_$InviteMessageTypeEnumMap, v)),
           remainingCooldownMinutes: $checkedConvert(
-              'remainingCooldownMinutes', (v) => v as int? ?? 0),
-          slot: $checkedConvert('slot', (v) => v as int),
+              'remainingCooldownMinutes', (v) => (v as num?)?.toInt() ?? 0),
+          slot: $checkedConvert('slot', (v) => (v as num).toInt()),
           updatedAt:
               $checkedConvert('updatedAt', (v) => DateTime.parse(v as String)),
         );

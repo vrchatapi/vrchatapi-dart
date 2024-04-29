@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addGroupGalleryImage**](GroupsApi.md#addgroupgalleryimage) | **POST** /groups/{groupId}/galleries/{groupGalleryId}/images | Add Group Gallery Image
 [**addGroupMemberRole**](GroupsApi.md#addgroupmemberrole) | **PUT** /groups/{groupId}/members/{userId}/roles/{groupRoleId} | Add Role to GroupMember
+[**addGroupPost**](GroupsApi.md#addgrouppost) | **POST** /groups/{groupId}/posts | Create a post in a Group
 [**banGroupMember**](GroupsApi.md#bangroupmember) | **POST** /groups/{groupId}/bans | Ban Group Member
 [**cancelGroupRequest**](GroupsApi.md#cancelgrouprequest) | **DELETE** /groups/{groupId}/requests | Cancel Group Join Request
 [**createGroup**](GroupsApi.md#creategroup) | **POST** /groups | Create Group
@@ -23,16 +24,19 @@ Method | HTTP request | Description
 [**deleteGroupGallery**](GroupsApi.md#deletegroupgallery) | **DELETE** /groups/{groupId}/galleries/{groupGalleryId} | Delete Group Gallery
 [**deleteGroupGalleryImage**](GroupsApi.md#deletegroupgalleryimage) | **DELETE** /groups/{groupId}/galleries/{groupGalleryId}/images/{groupGalleryImageId} | Delete Group Gallery Image
 [**deleteGroupInvite**](GroupsApi.md#deletegroupinvite) | **DELETE** /groups/{groupId}/invites/{userId} | Delete User Invite
+[**deleteGroupPost**](GroupsApi.md#deletegrouppost) | **DELETE** /groups/{groupId}/posts/{notificationId} | Delete a Group post
 [**deleteGroupRole**](GroupsApi.md#deletegrouprole) | **DELETE** /groups/{groupId}/roles/{groupRoleId} | Delete Group Role
 [**getGroup**](GroupsApi.md#getgroup) | **GET** /groups/{groupId} | Get Group by ID
 [**getGroupAnnouncements**](GroupsApi.md#getgroupannouncements) | **GET** /groups/{groupId}/announcement | Get Group Announcement
 [**getGroupAuditLogs**](GroupsApi.md#getgroupauditlogs) | **GET** /groups/{groupId}/auditLogs | Get Group Audit Logs
 [**getGroupBans**](GroupsApi.md#getgroupbans) | **GET** /groups/{groupId}/bans | Get Group Bans
 [**getGroupGalleryImages**](GroupsApi.md#getgroupgalleryimages) | **GET** /groups/{groupId}/galleries/{groupGalleryId} | Get Group Gallery Images
+[**getGroupInstances**](GroupsApi.md#getgroupinstances) | **GET** /groups/{groupId}/instances | Get Group Instances
 [**getGroupInvites**](GroupsApi.md#getgroupinvites) | **GET** /groups/{groupId}/invites | Get Group Invites Sent
 [**getGroupMember**](GroupsApi.md#getgroupmember) | **GET** /groups/{groupId}/members/{userId} | Get Group Member
 [**getGroupMembers**](GroupsApi.md#getgroupmembers) | **GET** /groups/{groupId}/members | List Group Members
 [**getGroupPermissions**](GroupsApi.md#getgrouppermissions) | **GET** /groups/{groupId}/permissions | List Group Permissions
+[**getGroupPost**](GroupsApi.md#getgrouppost) | **GET** /groups/{groupId}/posts | Get posts from a Group
 [**getGroupRequests**](GroupsApi.md#getgrouprequests) | **GET** /groups/{groupId}/requests | Get Group Join Requests
 [**getGroupRoles**](GroupsApi.md#getgrouproles) | **GET** /groups/{groupId}/roles | Get Group Roles
 [**joinGroup**](GroupsApi.md#joingroup) | **POST** /groups/{groupId}/join | Join Group
@@ -45,6 +49,7 @@ Method | HTTP request | Description
 [**updateGroup**](GroupsApi.md#updategroup) | **PUT** /groups/{groupId} | Update Group
 [**updateGroupGallery**](GroupsApi.md#updategroupgallery) | **PUT** /groups/{groupId}/galleries/{groupGalleryId} | Update Group Gallery
 [**updateGroupMember**](GroupsApi.md#updategroupmember) | **PUT** /groups/{groupId}/members/{userId} | Update Group Member
+[**updateGroupPost**](GroupsApi.md#updategrouppost) | **PUT** /groups/{groupId}/posts/{notificationId} | Edits a Group post
 [**updateGroupRole**](GroupsApi.md#updategrouprole) | **PUT** /groups/{groupId}/roles/{groupRoleId} | Update Group Role
 
 
@@ -146,6 +151,55 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **addGroupPost**
+> GroupPost addGroupPost(groupId, createGroupPostRequest)
+
+Create a post in a Group
+
+Create a post in a Group.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getGroupsApi();
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final CreateGroupPostRequest createGroupPostRequest = ; // CreateGroupPostRequest | 
+
+try {
+    final response = api.addGroupPost(groupId, createGroupPostRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling GroupsApi->addGroupPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **String**| Must be a valid group ID. | 
+ **createGroupPostRequest** | [**CreateGroupPostRequest**](CreateGroupPostRequest.md)|  | 
+
+### Return type
+
+[**GroupPost**](GroupPost.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -729,6 +783,55 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **deleteGroupPost**
+> Success deleteGroupPost(groupId, notificationId)
+
+Delete a Group post
+
+Delete a Group post
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getGroupsApi();
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final String notificationId = notificationId_example; // String | Must be a valid notification ID.
+
+try {
+    final response = api.deleteGroupPost(groupId, notificationId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling GroupsApi->deleteGroupPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **String**| Must be a valid group ID. | 
+ **notificationId** | **String**| Must be a valid notification ID. | 
+
+### Return type
+
+[**Success**](Success.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **deleteGroupRole**
 > List<GroupRole> deleteGroupRole(groupId, groupRoleId)
 
@@ -1035,6 +1138,53 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getGroupInstances**
+> List<GroupInstance> getGroupInstances(groupId)
+
+Get Group Instances
+
+Returns a list of group instances
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getGroupsApi();
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+
+try {
+    final response = api.getGroupInstances(groupId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling GroupsApi->getGroupInstances: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **String**| Must be a valid group ID. | 
+
+### Return type
+
+[**List&lt;GroupInstance&gt;**](GroupInstance.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getGroupInvites**
 > List<GroupMember> getGroupInvites(groupId, n, offset)
 
@@ -1223,6 +1373,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List&lt;GroupPermission&gt;**](GroupPermission.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getGroupPost**
+> GroupPost getGroupPost(groupId, n, offset, publicOnly)
+
+Get posts from a Group
+
+Get posts from a Group
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getGroupsApi();
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final int n = 56; // int | The number of objects to return.
+final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
+final bool publicOnly = true; // bool | See public posts only.
+
+try {
+    final response = api.getGroupPost(groupId, n, offset, publicOnly);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling GroupsApi->getGroupPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **String**| Must be a valid group ID. | 
+ **n** | **int**| The number of objects to return. | [optional] [default to 60]
+ **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
+ **publicOnly** | **bool**| See public posts only. | [optional] 
+
+### Return type
+
+[**GroupPost**](GroupPost.md)
 
 ### Authorization
 
@@ -1810,6 +2013,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GroupLimitedMember**](GroupLimitedMember.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateGroupPost**
+> GroupPost updateGroupPost(groupId, notificationId, createGroupPostRequest)
+
+Edits a Group post
+
+Edits a Group post
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getGroupsApi();
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final String notificationId = notificationId_example; // String | Must be a valid notification ID.
+final CreateGroupPostRequest createGroupPostRequest = ; // CreateGroupPostRequest | 
+
+try {
+    final response = api.updateGroupPost(groupId, notificationId, createGroupPostRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling GroupsApi->updateGroupPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **String**| Must be a valid group ID. | 
+ **notificationId** | **String**| Must be a valid notification ID. | 
+ **createGroupPostRequest** | [**CreateGroupPostRequest**](CreateGroupPostRequest.md)|  | 
+
+### Return type
+
+[**GroupPost**](GroupPost.md)
 
 ### Authorization
 

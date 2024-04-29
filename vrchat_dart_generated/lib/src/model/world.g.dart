@@ -41,15 +41,16 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
         final val = World(
           authorId: $checkedConvert('authorId', (v) => v as String),
           authorName: $checkedConvert('authorName', (v) => v as String),
-          capacity: $checkedConvert('capacity', (v) => v as int),
+          capacity: $checkedConvert('capacity', (v) => (v as num).toInt()),
           recommendedCapacity:
-              $checkedConvert('recommendedCapacity', (v) => v as int),
+              $checkedConvert('recommendedCapacity', (v) => (v as num).toInt()),
           createdAt:
               $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
           description: $checkedConvert('description', (v) => v as String),
-          favorites: $checkedConvert('favorites', (v) => v as int? ?? 0),
+          favorites:
+              $checkedConvert('favorites', (v) => (v as num?)?.toInt() ?? 0),
           featured: $checkedConvert('featured', (v) => v as bool? ?? false),
-          heat: $checkedConvert('heat', (v) => v as int? ?? 0),
+          heat: $checkedConvert('heat', (v) => (v as num?)?.toInt() ?? 0),
           id: $checkedConvert('id', (v) => v as String),
           imageUrl: $checkedConvert('imageUrl', (v) => v as String),
           instances: $checkedConvert(
@@ -62,16 +63,18 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('labsPublicationDate', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String),
           namespace: $checkedConvert('namespace', (v) => v as String?),
-          occupants: $checkedConvert('occupants', (v) => v as int? ?? 0),
+          occupants:
+              $checkedConvert('occupants', (v) => (v as num?)?.toInt() ?? 0),
           organization:
               $checkedConvert('organization', (v) => v as String? ?? 'vrchat'),
-          popularity: $checkedConvert('popularity', (v) => v as int? ?? 0),
+          popularity:
+              $checkedConvert('popularity', (v) => (v as num?)?.toInt() ?? 0),
           previewYoutubeId:
               $checkedConvert('previewYoutubeId', (v) => v as String?),
-          privateOccupants:
-              $checkedConvert('privateOccupants', (v) => v as int? ?? 0),
-          publicOccupants:
-              $checkedConvert('publicOccupants', (v) => v as int? ?? 0),
+          privateOccupants: $checkedConvert(
+              'privateOccupants', (v) => (v as num?)?.toInt() ?? 0),
+          publicOccupants: $checkedConvert(
+              'publicOccupants', (v) => (v as num?)?.toInt() ?? 0),
           publicationDate:
               $checkedConvert('publicationDate', (v) => v as String),
           releaseStatus: $checkedConvert(
@@ -87,8 +90,8 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
                   .toList()),
           updatedAt:
               $checkedConvert('updated_at', (v) => DateTime.parse(v as String)),
-          version: $checkedConvert('version', (v) => v as int? ?? 0),
-          visits: $checkedConvert('visits', (v) => v as int? ?? 0),
+          version: $checkedConvert('version', (v) => (v as num?)?.toInt() ?? 0),
+          visits: $checkedConvert('visits', (v) => (v as num?)?.toInt() ?? 0),
           udonProducts: $checkedConvert('udonProducts',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
         );

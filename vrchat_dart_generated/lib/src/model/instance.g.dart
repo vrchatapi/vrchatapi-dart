@@ -45,13 +45,13 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
           active: $checkedConvert('active', (v) => v as bool? ?? true),
           canRequestInvite:
               $checkedConvert('canRequestInvite', (v) => v as bool? ?? true),
-          capacity: $checkedConvert('capacity', (v) => v as int),
+          capacity: $checkedConvert('capacity', (v) => (v as num).toInt()),
           clientNumber: $checkedConvert('clientNumber', (v) => v as String),
           full: $checkedConvert('full', (v) => v as bool? ?? false),
           id: $checkedConvert('id', (v) => v as String),
           instanceId: $checkedConvert('instanceId', (v) => v as String),
           location: $checkedConvert('location', (v) => v as String),
-          nUsers: $checkedConvert('n_users', (v) => v as int),
+          nUsers: $checkedConvert('n_users', (v) => (v as num).toInt()),
           name: $checkedConvert('name', (v) => v as String),
           ownerId: $checkedConvert('ownerId', (v) => v as String?),
           permanent: $checkedConvert('permanent', (v) => v as bool? ?? false),
@@ -72,12 +72,12 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
           friends: $checkedConvert('friends', (v) => v as String?),
           private: $checkedConvert('private', (v) => v as String?),
           queueEnabled: $checkedConvert('queueEnabled', (v) => v as bool),
-          queueSize: $checkedConvert('queueSize', (v) => v as int),
+          queueSize: $checkedConvert('queueSize', (v) => (v as num).toInt()),
           recommendedCapacity:
-              $checkedConvert('recommendedCapacity', (v) => v as int),
+              $checkedConvert('recommendedCapacity', (v) => (v as num).toInt()),
           roleRestricted: $checkedConvert('roleRestricted', (v) => v as bool?),
           strict: $checkedConvert('strict', (v) => v as bool),
-          userCount: $checkedConvert('userCount', (v) => v as int),
+          userCount: $checkedConvert('userCount', (v) => (v as num).toInt()),
           world: $checkedConvert(
               'world', (v) => World.fromJson(v as Map<String, dynamic>)),
           users: $checkedConvert(

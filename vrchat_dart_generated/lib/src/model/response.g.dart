@@ -18,7 +18,7 @@ Response _$ResponseFromJson(Map<String, dynamic> json) => $checkedCreate(
         );
         final val = Response(
           message: $checkedConvert('message', (v) => v as String?),
-          statusCode: $checkedConvert('status_code', (v) => v as int),
+          statusCode: $checkedConvert('status_code', (v) => (v as num).toInt()),
         );
         return val;
       },

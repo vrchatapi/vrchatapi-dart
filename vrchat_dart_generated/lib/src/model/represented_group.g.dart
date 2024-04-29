@@ -25,7 +25,8 @@ RepresentedGroup _$RepresentedGroupFromJson(Map<String, dynamic> json) =>
           privacy: $checkedConvert(
               'privacy', (v) => $enumDecodeNullable(_$GroupPrivacyEnumMap, v)),
           ownerId: $checkedConvert('ownerId', (v) => v as String?),
-          memberCount: $checkedConvert('memberCount', (v) => v as int?),
+          memberCount:
+              $checkedConvert('memberCount', (v) => (v as num?)?.toInt()),
           groupId: $checkedConvert('groupId', (v) => v as String?),
           memberVisibility: $checkedConvert('memberVisibility',
               (v) => $enumDecodeNullable(_$GroupUserVisibilityEnumMap, v)),

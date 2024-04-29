@@ -31,7 +31,7 @@ InfoPush _$InfoPushFromJson(Map<String, dynamic> json) => $checkedCreate(
           isEnabled: $checkedConvert('isEnabled', (v) => v as bool? ?? true),
           releaseStatus: $checkedConvert(
               'releaseStatus', (v) => $enumDecode(_$ReleaseStatusEnumMap, v)),
-          priority: $checkedConvert('priority', (v) => v as int),
+          priority: $checkedConvert('priority', (v) => (v as num).toInt()),
           tags: $checkedConvert('tags',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           data: $checkedConvert(

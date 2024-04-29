@@ -32,7 +32,8 @@ FileData _$FileDataFromJson(Map<String, dynamic> json) => $checkedCreate(
                   FileDataCategoryEnum.queued),
           fileName: $checkedConvert('fileName', (v) => v as String),
           md5: $checkedConvert('md5', (v) => v as String),
-          sizeInBytes: $checkedConvert('sizeInBytes', (v) => v as int),
+          sizeInBytes:
+              $checkedConvert('sizeInBytes', (v) => (v as num).toInt()),
           status: $checkedConvert(
               'status', (v) => $enumDecode(_$FileStatusEnumMap, v)),
           uploadId: $checkedConvert('uploadId', (v) => v as String? ?? ''),

@@ -26,13 +26,15 @@ UnityPackage _$UnityPackageFromJson(Map<String, dynamic> json) =>
           id: $checkedConvert('id', (v) => v as String),
           assetUrl: $checkedConvert('assetUrl', (v) => v as String?),
           assetUrlObject: $checkedConvert('assetUrlObject', (v) => v),
-          assetVersion: $checkedConvert('assetVersion', (v) => v as int),
+          assetVersion:
+              $checkedConvert('assetVersion', (v) => (v as num).toInt()),
           createdAt: $checkedConvert('created_at',
               (v) => v == null ? null : DateTime.parse(v as String)),
           platform: $checkedConvert('platform', (v) => v as String),
           pluginUrl: $checkedConvert('pluginUrl', (v) => v as String?),
           pluginUrlObject: $checkedConvert('pluginUrlObject', (v) => v),
-          unitySortNumber: $checkedConvert('unitySortNumber', (v) => v as int?),
+          unitySortNumber:
+              $checkedConvert('unitySortNumber', (v) => (v as num?)?.toInt()),
           unityVersion:
               $checkedConvert('unityVersion', (v) => v as String? ?? '5.3.4p1'),
           impostorUrl: $checkedConvert('impostorUrl', (v) => v as String?),

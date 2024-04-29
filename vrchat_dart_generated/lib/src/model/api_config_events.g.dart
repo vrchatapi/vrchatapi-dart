@@ -29,22 +29,26 @@ APIConfigEvents _$APIConfigEventsFromJson(Map<String, dynamic> json) =>
           ],
         );
         final val = APIConfigEvents(
-          distanceClose: $checkedConvert('distanceClose', (v) => v as int),
-          distanceFactor: $checkedConvert('distanceFactor', (v) => v as int),
-          distanceFar: $checkedConvert('distanceFar', (v) => v as int),
-          groupDistance: $checkedConvert('groupDistance', (v) => v as int),
+          distanceClose:
+              $checkedConvert('distanceClose', (v) => (v as num).toInt()),
+          distanceFactor:
+              $checkedConvert('distanceFactor', (v) => (v as num).toInt()),
+          distanceFar:
+              $checkedConvert('distanceFar', (v) => (v as num).toInt()),
+          groupDistance:
+              $checkedConvert('groupDistance', (v) => (v as num).toInt()),
           maximumBunchSize:
-              $checkedConvert('maximumBunchSize', (v) => v as int),
+              $checkedConvert('maximumBunchSize', (v) => (v as num).toInt()),
           notVisibleFactor:
-              $checkedConvert('notVisibleFactor', (v) => v as int),
-          playerOrderBucketSize:
-              $checkedConvert('playerOrderBucketSize', (v) => v as int),
+              $checkedConvert('notVisibleFactor', (v) => (v as num).toInt()),
+          playerOrderBucketSize: $checkedConvert(
+              'playerOrderBucketSize', (v) => (v as num).toInt()),
           playerOrderFactor:
-              $checkedConvert('playerOrderFactor', (v) => v as int),
-          slowUpdateFactorThreshold:
-              $checkedConvert('slowUpdateFactorThreshold', (v) => v as int),
+              $checkedConvert('playerOrderFactor', (v) => (v as num).toInt()),
+          slowUpdateFactorThreshold: $checkedConvert(
+              'slowUpdateFactorThreshold', (v) => (v as num).toInt()),
           viewSegmentLength:
-              $checkedConvert('viewSegmentLength', (v) => v as int),
+              $checkedConvert('viewSegmentLength', (v) => (v as num).toInt()),
         );
         return val;
       },
