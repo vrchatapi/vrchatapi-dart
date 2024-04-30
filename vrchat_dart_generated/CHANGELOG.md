@@ -1,3 +1,6 @@
+## 1.17.2
+- Updated to match spec
+
 ## 1.17.0
 - Updated to match spec
 

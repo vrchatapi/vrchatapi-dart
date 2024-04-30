@@ -5,10 +5,15 @@ import 'package:fixer/fixer.dart';
 
 void main() async {
   final spec = jsonDecode(File('build/spec.json').readAsStringSync());
+  final version = spec['info']['version'] as String;
 
   print('Patching pubspec...');
-  patchPubspec(spec);
+  patchPubspec(version);
   print('Pubspec patched!');
+
+  print('Patching changelog...');
+  patchChangelog(version);
+  print('Changelog patched!');
 
   print('Patching lib/src/model...');
   patchModel();
@@ -23,8 +28,7 @@ void main() async {
   print('Analysis issues patched!');
 }
 
-void patchPubspec(Map<String, dynamic> spec) {
-  final version = spec['info']['version'] as String;
+void patchPubspec(String version) {
   final pubspec = File('../vrchat_dart_generated/pubspec.yaml');
   final content = pubspec.readAsStringSync();
   final newContent = content.replaceFirst(
@@ -32,6 +36,21 @@ void patchPubspec(Map<String, dynamic> spec) {
     'version: $version',
   );
   pubspec.writeAsStringSync(newContent);
+}
+
+void patchChangelog(String version) {
+  final changelog = File('../vrchat_dart_generated/CHANGELOG.md');
+  final content = changelog.readAsStringSync();
+
+  /// Don't add duplicate version to changelog
+  if (content.contains('## $version')) return;
+
+  final newContent = '''
+## $version
+- Updated to match spec
+
+$content''';
+  changelog.writeAsStringSync(newContent);
 }
 
 final _enumToString = r'''
