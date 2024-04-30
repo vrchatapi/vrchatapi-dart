@@ -20,12 +20,13 @@ class InstancesApi {
   const InstancesApi(this._dio);
 
   /// Close Instance
-  /// Close an instance.  You can only close an instance if the ownerId is yourself or if the instance owner is a group and you have the &#x60;group-instance-moderate&#x60; permission.
+  /// Close an instance or update the closedAt time when it will be closed.  You can only close an instance if the ownerId is yourself or if the instance owner is a group and you have the &#x60;group-instance-moderate&#x60; permission.
   ///
   /// Parameters:
   /// * [worldId] - Must be a valid world ID.
   /// * [instanceId] - Must be a valid instance ID.
   /// * [hardClose] - Whether to hard close the instance. Defaults to false.
+  /// * [closedAt] - The time after which users won't be allowed to join the instances. If omitted, the instance will be closed immediately.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -39,6 +40,7 @@ class InstancesApi {
     required String worldId,
     required String instanceId,
     bool? hardClose,
+    DateTime? closedAt,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -70,6 +72,7 @@ class InstancesApi {
 
     final _queryParameters = <String, dynamic>{
       if (hardClose != null) r'hardClose': hardClose,
+      if (closedAt != null) r'closedAt': closedAt,
     };
 
     final _response = await _dio.request<Object>(

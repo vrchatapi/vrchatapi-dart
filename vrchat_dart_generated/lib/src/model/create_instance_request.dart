@@ -26,6 +26,7 @@ class CreateInstanceRequest {
     this.roleIds,
     this.groupAccessType,
     this.queueEnabled = false,
+    this.closedAt,
   });
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
@@ -52,6 +53,10 @@ class CreateInstanceRequest {
   @JsonKey(name: r'queueEnabled', required: false, includeIfNull: false)
   final bool? queueEnabled;
 
+  /// The time after which users won't be allowed to join the instance
+  @JsonKey(name: r'closedAt', required: false, includeIfNull: false)
+  final DateTime? closedAt;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -62,7 +67,8 @@ class CreateInstanceRequest {
           other.ownerId == ownerId &&
           other.roleIds == roleIds &&
           other.groupAccessType == groupAccessType &&
-          other.queueEnabled == queueEnabled;
+          other.queueEnabled == queueEnabled &&
+          other.closedAt == closedAt;
 
   @override
   int get hashCode =>
@@ -72,7 +78,8 @@ class CreateInstanceRequest {
       (ownerId == null ? 0 : ownerId.hashCode) +
       roleIds.hashCode +
       groupAccessType.hashCode +
-      queueEnabled.hashCode;
+      queueEnabled.hashCode +
+      closedAt.hashCode;
 
   factory CreateInstanceRequest.fromJson(Map<String, dynamic> json) =>
       _$CreateInstanceRequestFromJson(json);

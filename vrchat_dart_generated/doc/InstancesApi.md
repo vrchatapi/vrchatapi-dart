@@ -18,11 +18,11 @@ Method | HTTP request | Description
 
 
 # **closeInstance**
-> Instance closeInstance(worldId, instanceId, hardClose)
+> Instance closeInstance(worldId, instanceId, hardClose, closedAt)
 
 Close Instance
 
-Close an instance.  You can only close an instance if the ownerId is yourself or if the instance owner is a group and you have the `group-instance-moderate` permission.
+Close an instance or update the closedAt time when it will be closed.  You can only close an instance if the ownerId is yourself or if the instance owner is a group and you have the `group-instance-moderate` permission.
 
 ### Example
 ```dart
@@ -36,9 +36,10 @@ final api = VrchatDartGenerated().getInstancesApi();
 final String worldId = worldId_example; // String | Must be a valid world ID.
 final String instanceId = instanceId_example; // String | Must be a valid instance ID.
 final bool hardClose = true; // bool | Whether to hard close the instance. Defaults to false.
+final DateTime closedAt = 2013-10-20T19:20:30+01:00; // DateTime | The time after which users won't be allowed to join the instances. If omitted, the instance will be closed immediately.
 
 try {
-    final response = api.closeInstance(worldId, instanceId, hardClose);
+    final response = api.closeInstance(worldId, instanceId, hardClose, closedAt);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling InstancesApi->closeInstance: $e\n');
@@ -52,6 +53,7 @@ Name | Type | Description  | Notes
  **worldId** | **String**| Must be a valid world ID. | 
  **instanceId** | **String**| Must be a valid instance ID. | 
  **hardClose** | **bool**| Whether to hard close the instance. Defaults to false. | [optional] 
+ **closedAt** | **DateTime**| The time after which users won't be allowed to join the instances. If omitted, the instance will be closed immediately. | [optional] 
 
 ### Return type
 

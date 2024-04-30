@@ -31,6 +31,8 @@ CreateInstanceRequest _$CreateInstanceRequestFromJson(
               (v) => $enumDecodeNullable(_$GroupAccessTypeEnumMap, v)),
           queueEnabled:
               $checkedConvert('queueEnabled', (v) => v as bool? ?? false),
+          closedAt: $checkedConvert('closedAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
         );
         return val;
       },
@@ -55,6 +57,7 @@ Map<String, dynamic> _$CreateInstanceRequestToJson(
   writeNotNull(
       'groupAccessType', _$GroupAccessTypeEnumMap[instance.groupAccessType]);
   writeNotNull('queueEnabled', instance.queueEnabled);
+  writeNotNull('closedAt', instance.closedAt?.toIso8601String());
   return val;
 }
 
