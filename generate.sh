@@ -11,6 +11,8 @@ cd vrchat_dart
 dart run tool/patch_input.dart "$@"
 cd ..
 
+# Ensure openapi-generator is installed and up to date
+brew install openapi-generator
 openapi-generator generate -g dart-dio -c generator-config.yaml
 
 # Format before patching since extra line breaks can break the patches
