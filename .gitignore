@@ -76,3 +76,6 @@ build/
 
 # Cookie files
 .cookies/
+
+# Since this is a repo of packages, do not commit lock files
+pubspec.lock
