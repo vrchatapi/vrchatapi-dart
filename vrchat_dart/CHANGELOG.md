@@ -1,3 +1,6 @@
+## 3.5.2
+- Dependency upgrades
+
 ## 3.5.1
 - Make `VrchatDart.userAgent` final
 
