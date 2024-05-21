@@ -16,10 +16,12 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
           json,
           requiredKeys: const [
             'allowAvatarCopying',
+            'badges',
             'bio',
             'bioLinks',
             'currentAvatarImageUrl',
             'currentAvatarThumbnailImageUrl',
+            'currentAvatarTags',
             'date_joined',
             'developerType',
             'displayName',
@@ -30,6 +32,7 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
             'last_login',
             'last_platform',
             'profilePicOverride',
+            'pronouns',
             'state',
             'status',
             'statusDescription',
@@ -40,6 +43,11 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
         final val = User(
           allowAvatarCopying:
               $checkedConvert('allowAvatarCopying', (v) => v as bool? ?? true),
+          badges: $checkedConvert(
+              'badges',
+              (v) => (v as List<dynamic>)
+                  .map((e) => Badge.fromJson(e as Map<String, dynamic>))
+                  .toList()),
           bio: $checkedConvert('bio', (v) => v as String),
           bioLinks: $checkedConvert('bioLinks',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
@@ -47,6 +55,8 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('currentAvatarImageUrl', (v) => v as String),
           currentAvatarThumbnailImageUrl: $checkedConvert(
               'currentAvatarThumbnailImageUrl', (v) => v as String),
+          currentAvatarTags: $checkedConvert('currentAvatarTags',
+              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           dateJoined: $checkedConvert(
               'date_joined', (v) => DateTime.parse(v as String)),
           developerType: $checkedConvert(
@@ -65,6 +75,7 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
           note: $checkedConvert('note', (v) => v as String?),
           profilePicOverride:
               $checkedConvert('profilePicOverride', (v) => v as String),
+          pronouns: $checkedConvert('pronouns', (v) => v as String),
           state: $checkedConvert(
               'state', (v) => $enumDecode(_$UserStateEnumMap, v)),
           status: $checkedConvert(
@@ -96,10 +107,12 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
 Map<String, dynamic> _$UserToJson(User instance) {
   final val = <String, dynamic>{
     'allowAvatarCopying': instance.allowAvatarCopying,
+    'badges': instance.badges.map((e) => e.toJson()).toList(),
     'bio': instance.bio,
     'bioLinks': instance.bioLinks,
     'currentAvatarImageUrl': instance.currentAvatarImageUrl,
     'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
+    'currentAvatarTags': instance.currentAvatarTags,
     'date_joined': instance.dateJoined.toIso8601String(),
     'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
     'displayName': instance.displayName,
@@ -122,6 +135,7 @@ Map<String, dynamic> _$UserToJson(User instance) {
   writeNotNull('location', instance.location);
   writeNotNull('note', instance.note);
   val['profilePicOverride'] = instance.profilePicOverride;
+  val['pronouns'] = instance.pronouns;
   val['state'] = _$UserStateEnumMap[instance.state]!;
   val['status'] = _$UserStatusEnumMap[instance.status]!;
   val['statusDescription'] = instance.statusDescription;

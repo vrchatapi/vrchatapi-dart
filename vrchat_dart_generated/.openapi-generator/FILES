@@ -12,6 +12,7 @@ doc/AuthenticationApi.md
 doc/Avatar.md
 doc/AvatarUnityPackageUrlObject.md
 doc/AvatarsApi.md
+doc/Badge.md
 doc/BanGroupMemberRequest.md
 doc/CreateAvatarRequest.md
 doc/CreateFileRequest.md
@@ -184,6 +185,7 @@ lib/src/model/api_config_events.dart
 lib/src/model/api_health.dart
 lib/src/model/avatar.dart
 lib/src/model/avatar_unity_package_url_object.dart
+lib/src/model/badge.dart
 lib/src/model/ban_group_member_request.dart
 lib/src/model/create_avatar_request.dart
 lib/src/model/create_file_request.dart
@@ -324,6 +326,7 @@ test/authentication_api_test.dart
 test/avatar_test.dart
 test/avatar_unity_package_url_object_test.dart
 test/avatars_api_test.dart
+test/badge_test.dart
 test/ban_group_member_request_test.dart
 test/create_avatar_request_test.dart
 test/create_file_request_test.dart

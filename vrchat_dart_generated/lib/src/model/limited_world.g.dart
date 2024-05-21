@@ -47,6 +47,7 @@ LimitedWorld _$LimitedWorldFromJson(Map<String, dynamic> json) =>
               $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
           favorites:
               $checkedConvert('favorites', (v) => (v as num?)?.toInt() ?? 0),
+          visits: $checkedConvert('visits', (v) => (v as num?)?.toInt() ?? 0),
           heat: $checkedConvert('heat', (v) => (v as num?)?.toInt() ?? 0),
           id: $checkedConvert('id', (v) => v as String),
           imageUrl: $checkedConvert('imageUrl', (v) => v as String),
@@ -59,6 +60,8 @@ LimitedWorld _$LimitedWorldFromJson(Map<String, dynamic> json) =>
               $checkedConvert('organization', (v) => v as String? ?? 'vrchat'),
           popularity:
               $checkedConvert('popularity', (v) => (v as num?)?.toInt() ?? 0),
+          previewYoutubeId:
+              $checkedConvert('previewYoutubeId', (v) => v as String?),
           publicationDate:
               $checkedConvert('publicationDate', (v) => v as String),
           releaseStatus: $checkedConvert(
@@ -99,6 +102,7 @@ Map<String, dynamic> _$LimitedWorldToJson(LimitedWorld instance) {
   writeNotNull('recommendedCapacity', instance.recommendedCapacity);
   val['created_at'] = instance.createdAt.toIso8601String();
   val['favorites'] = instance.favorites;
+  writeNotNull('visits', instance.visits);
   val['heat'] = instance.heat;
   val['id'] = instance.id;
   val['imageUrl'] = instance.imageUrl;
@@ -107,6 +111,7 @@ Map<String, dynamic> _$LimitedWorldToJson(LimitedWorld instance) {
   val['occupants'] = instance.occupants;
   val['organization'] = instance.organization;
   val['popularity'] = instance.popularity;
+  writeNotNull('previewYoutubeId', instance.previewYoutubeId);
   val['publicationDate'] = instance.publicationDate;
   val['releaseStatus'] = _$ReleaseStatusEnumMap[instance.releaseStatus]!;
   val['tags'] = instance.tags;

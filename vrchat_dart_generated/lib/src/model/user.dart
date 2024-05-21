@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
+import 'package:vrchat_dart_generated/src/model/badge.dart';
 import 'package:vrchat_dart_generated/src/model/user_state.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -20,10 +21,12 @@ class User {
   /// Returns a new [User] instance.
   User({
     this.allowAvatarCopying = true,
+    required this.badges,
     required this.bio,
     required this.bioLinks,
     required this.currentAvatarImageUrl,
     required this.currentAvatarThumbnailImageUrl,
+    required this.currentAvatarTags,
     required this.dateJoined,
     required this.developerType,
     required this.displayName,
@@ -38,6 +41,7 @@ class User {
     this.location,
     this.note,
     required this.profilePicOverride,
+    required this.pronouns,
     required this.state,
     required this.status,
     required this.statusDescription,
@@ -52,6 +56,10 @@ class User {
 
   @JsonKey(name: r'allowAvatarCopying', required: true, includeIfNull: false)
   final bool allowAvatarCopying;
+
+  ///
+  @JsonKey(name: r'badges', required: true, includeIfNull: false)
+  final List<Badge> badges;
 
   @JsonKey(name: r'bio', required: true, includeIfNull: false)
   final String bio;
@@ -69,6 +77,9 @@ class User {
       required: true,
       includeIfNull: false)
   final String currentAvatarThumbnailImageUrl;
+
+  @JsonKey(name: r'currentAvatarTags', required: true, includeIfNull: false)
+  final List<String> currentAvatarTags;
 
   @JsonKey(name: r'date_joined', required: true, includeIfNull: false)
   final DateTime dateJoined;
@@ -120,6 +131,9 @@ class User {
   @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
   final String profilePicOverride;
 
+  @JsonKey(name: r'pronouns', required: true, includeIfNull: false)
+  final String pronouns;
+
   @JsonKey(name: r'state', required: true, includeIfNull: false)
   final UserState state;
 
@@ -159,11 +173,13 @@ class User {
       identical(this, other) ||
       other is User &&
           other.allowAvatarCopying == allowAvatarCopying &&
+          other.badges == badges &&
           other.bio == bio &&
           other.bioLinks == bioLinks &&
           other.currentAvatarImageUrl == currentAvatarImageUrl &&
           other.currentAvatarThumbnailImageUrl ==
               currentAvatarThumbnailImageUrl &&
+          other.currentAvatarTags == currentAvatarTags &&
           other.dateJoined == dateJoined &&
           other.developerType == developerType &&
           other.displayName == displayName &&
@@ -178,6 +194,7 @@ class User {
           other.location == location &&
           other.note == note &&
           other.profilePicOverride == profilePicOverride &&
+          other.pronouns == pronouns &&
           other.state == state &&
           other.status == status &&
           other.statusDescription == statusDescription &&
@@ -193,10 +210,12 @@ class User {
   @override
   int get hashCode =>
       allowAvatarCopying.hashCode +
+      badges.hashCode +
       bio.hashCode +
       bioLinks.hashCode +
       currentAvatarImageUrl.hashCode +
       currentAvatarThumbnailImageUrl.hashCode +
+      currentAvatarTags.hashCode +
       dateJoined.hashCode +
       developerType.hashCode +
       displayName.hashCode +
@@ -211,6 +230,7 @@ class User {
       location.hashCode +
       note.hashCode +
       profilePicOverride.hashCode +
+      pronouns.hashCode +
       state.hashCode +
       status.hashCode +
       statusDescription.hashCode +

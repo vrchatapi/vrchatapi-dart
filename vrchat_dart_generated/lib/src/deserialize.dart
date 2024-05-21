@@ -8,6 +8,7 @@ import 'package:vrchat_dart_generated/src/model/add_favorite_request.dart';
 import 'package:vrchat_dart_generated/src/model/add_group_gallery_image_request.dart';
 import 'package:vrchat_dart_generated/src/model/avatar.dart';
 import 'package:vrchat_dart_generated/src/model/avatar_unity_package_url_object.dart';
+import 'package:vrchat_dart_generated/src/model/badge.dart';
 import 'package:vrchat_dart_generated/src/model/ban_group_member_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_avatar_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_file_request.dart';
@@ -155,6 +156,8 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
 // ignore: deprecated_member_use_from_same_package
       return AvatarUnityPackageUrlObject.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'Badge':
+      return Badge.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'BanGroupMemberRequest':
       return BanGroupMemberRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;

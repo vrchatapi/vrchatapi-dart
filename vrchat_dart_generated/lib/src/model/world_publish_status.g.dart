@@ -15,10 +15,10 @@ WorldPublishStatus _$WorldPublishStatusFromJson(Map<String, dynamic> json) =>
       ($checkedConvert) {
         $checkKeys(
           json,
-          requiredKeys: const ['canPubilsh'],
+          requiredKeys: const ['canPublish'],
         );
         final val = WorldPublishStatus(
-          canPubilsh: $checkedConvert('canPubilsh', (v) => v as bool? ?? true),
+          canPublish: $checkedConvert('canPublish', (v) => v as bool? ?? true),
         );
         return val;
       },
@@ -26,5 +26,5 @@ WorldPublishStatus _$WorldPublishStatusFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$WorldPublishStatusToJson(WorldPublishStatus instance) =>
     <String, dynamic>{
-      'canPubilsh': instance.canPubilsh,
+      'canPublish': instance.canPublish,
     };

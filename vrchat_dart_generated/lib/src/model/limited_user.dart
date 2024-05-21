@@ -28,6 +28,7 @@ class LimitedUser {
     required this.isFriend,
     required this.lastPlatform,
     this.profilePicOverride,
+    this.pronouns,
     required this.status,
     required this.statusDescription,
     required this.tags,
@@ -75,6 +76,9 @@ class LimitedUser {
   @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
   final String? profilePicOverride;
 
+  @JsonKey(name: r'pronouns', required: false, includeIfNull: false)
+  final String? pronouns;
+
   @JsonKey(name: r'status', required: true, includeIfNull: false)
   final UserStatus status;
 
@@ -114,6 +118,7 @@ class LimitedUser {
           other.isFriend == isFriend &&
           other.lastPlatform == lastPlatform &&
           other.profilePicOverride == profilePicOverride &&
+          other.pronouns == pronouns &&
           other.status == status &&
           other.statusDescription == statusDescription &&
           other.tags == tags &&
@@ -135,6 +140,7 @@ class LimitedUser {
       isFriend.hashCode +
       lastPlatform.hashCode +
       profilePicOverride.hashCode +
+      pronouns.hashCode +
       status.hashCode +
       statusDescription.hashCode +
       tags.hashCode +

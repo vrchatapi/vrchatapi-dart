@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **isFriend** | **bool** |  | 
 **lastPlatform** | **String** | This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`. | 
 **profilePicOverride** | **String** |  | [optional] 
+**pronouns** | **String** |  | [optional] 
 **status** | [**UserStatus**](UserStatus.md) |  | 
 **statusDescription** | **String** |  | 
 **tags** | **List&lt;String&gt;** | <- Always empty. | 

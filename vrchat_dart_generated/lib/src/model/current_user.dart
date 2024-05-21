@@ -8,6 +8,7 @@ import 'package:vrchat_dart_generated/src/model/user_status.dart';
 import 'package:vrchat_dart_generated/src/model/past_display_name.dart';
 import 'package:vrchat_dart_generated/src/model/current_user_presence.dart';
 import 'package:vrchat_dart_generated/src/model/account_deletion_log.dart';
+import 'package:vrchat_dart_generated/src/model/badge.dart';
 import 'package:vrchat_dart_generated/src/model/user_state.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -28,13 +29,14 @@ class CurrentUser {
     this.accountDeletionLog,
     this.activeFriends,
     required this.allowAvatarCopying,
+    required this.badges,
     required this.bio,
     required this.bioLinks,
     required this.currentAvatar,
     required this.currentAvatarAssetUrl,
     required this.currentAvatarImageUrl,
     required this.currentAvatarThumbnailImageUrl,
-    this.currentAvatarTags,
+    required this.currentAvatarTags,
     required this.dateJoined,
     required this.developerType,
     required this.displayName,
@@ -55,11 +57,13 @@ class CurrentUser {
     this.isFriend = false,
     this.lastActivity,
     required this.lastLogin,
+    required this.lastMobile,
     required this.lastPlatform,
     required this.obfuscatedEmail,
     required this.obfuscatedPendingEmail,
     required this.oculusId,
     this.googleId,
+    this.googleDetails,
     this.picoId,
     this.viveId,
     this.offlineFriends,
@@ -67,6 +71,7 @@ class CurrentUser {
     required this.pastDisplayNames,
     this.presence,
     required this.profilePicOverride,
+    required this.pronouns,
     required this.state,
     required this.status,
     required this.statusDescription,
@@ -106,6 +111,10 @@ class CurrentUser {
   @JsonKey(name: r'allowAvatarCopying', required: true, includeIfNull: false)
   final bool allowAvatarCopying;
 
+  ///
+  @JsonKey(name: r'badges', required: true, includeIfNull: false)
+  final List<Badge> badges;
+
   @JsonKey(name: r'bio', required: true, includeIfNull: false)
   final String bio;
 
@@ -130,8 +139,8 @@ class CurrentUser {
       includeIfNull: false)
   final String currentAvatarThumbnailImageUrl;
 
-  @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
-  final List<String>? currentAvatarTags;
+  @JsonKey(name: r'currentAvatarTags', required: true, includeIfNull: false)
+  final List<String> currentAvatarTags;
 
   @JsonKey(name: r'date_joined', required: true, includeIfNull: false)
   final DateTime dateJoined;
@@ -198,6 +207,9 @@ class CurrentUser {
   @JsonKey(name: r'last_login', required: true, includeIfNull: false)
   final DateTime lastLogin;
 
+  @JsonKey(name: r'last_mobile', required: true, includeIfNull: true)
+  final DateTime? lastMobile;
+
   /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
   @JsonKey(name: r'last_platform', required: true, includeIfNull: false)
   final String lastPlatform;
@@ -214,6 +226,9 @@ class CurrentUser {
 
   @JsonKey(name: r'googleId', required: false, includeIfNull: false)
   final String? googleId;
+
+  @JsonKey(name: r'googleDetails', required: false, includeIfNull: false)
+  final Object? googleDetails;
 
   @JsonKey(name: r'picoId', required: false, includeIfNull: false)
   final String? picoId;
@@ -236,6 +251,9 @@ class CurrentUser {
 
   @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
   final String profilePicOverride;
+
+  @JsonKey(name: r'pronouns', required: true, includeIfNull: false)
+  final String pronouns;
 
   @JsonKey(name: r'state', required: true, includeIfNull: false)
   final UserState state;
@@ -292,6 +310,7 @@ class CurrentUser {
           other.accountDeletionLog == accountDeletionLog &&
           other.activeFriends == activeFriends &&
           other.allowAvatarCopying == allowAvatarCopying &&
+          other.badges == badges &&
           other.bio == bio &&
           other.bioLinks == bioLinks &&
           other.currentAvatar == currentAvatar &&
@@ -321,11 +340,13 @@ class CurrentUser {
           other.isFriend == isFriend &&
           other.lastActivity == lastActivity &&
           other.lastLogin == lastLogin &&
+          other.lastMobile == lastMobile &&
           other.lastPlatform == lastPlatform &&
           other.obfuscatedEmail == obfuscatedEmail &&
           other.obfuscatedPendingEmail == obfuscatedPendingEmail &&
           other.oculusId == oculusId &&
           other.googleId == googleId &&
+          other.googleDetails == googleDetails &&
           other.picoId == picoId &&
           other.viveId == viveId &&
           other.offlineFriends == offlineFriends &&
@@ -333,6 +354,7 @@ class CurrentUser {
           other.pastDisplayNames == pastDisplayNames &&
           other.presence == presence &&
           other.profilePicOverride == profilePicOverride &&
+          other.pronouns == pronouns &&
           other.state == state &&
           other.status == status &&
           other.statusDescription == statusDescription &&
@@ -357,6 +379,7 @@ class CurrentUser {
       (accountDeletionLog == null ? 0 : accountDeletionLog.hashCode) +
       activeFriends.hashCode +
       allowAvatarCopying.hashCode +
+      badges.hashCode +
       bio.hashCode +
       bioLinks.hashCode +
       currentAvatar.hashCode +
@@ -385,11 +408,13 @@ class CurrentUser {
       isFriend.hashCode +
       lastActivity.hashCode +
       lastLogin.hashCode +
+      (lastMobile == null ? 0 : lastMobile.hashCode) +
       lastPlatform.hashCode +
       obfuscatedEmail.hashCode +
       obfuscatedPendingEmail.hashCode +
       oculusId.hashCode +
       googleId.hashCode +
+      googleDetails.hashCode +
       picoId.hashCode +
       viveId.hashCode +
       offlineFriends.hashCode +
@@ -397,6 +422,7 @@ class CurrentUser {
       pastDisplayNames.hashCode +
       presence.hashCode +
       profilePicOverride.hashCode +
+      pronouns.hashCode +
       state.hashCode +
       status.hashCode +
       statusDescription.hashCode +

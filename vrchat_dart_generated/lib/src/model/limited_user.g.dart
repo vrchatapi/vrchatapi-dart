@@ -41,6 +41,7 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
           lastPlatform: $checkedConvert('last_platform', (v) => v as String),
           profilePicOverride:
               $checkedConvert('profilePicOverride', (v) => v as String?),
+          pronouns: $checkedConvert('pronouns', (v) => v as String?),
           status: $checkedConvert(
               'status', (v) => $enumDecode(_$UserStatusEnumMap, v)),
           statusDescription:
@@ -77,6 +78,7 @@ Map<String, dynamic> _$LimitedUserToJson(LimitedUser instance) {
   val['isFriend'] = instance.isFriend;
   val['last_platform'] = instance.lastPlatform;
   writeNotNull('profilePicOverride', instance.profilePicOverride);
+  writeNotNull('pronouns', instance.pronouns);
   val['status'] = _$UserStatusEnumMap[instance.status]!;
   val['statusDescription'] = instance.statusDescription;
   val['tags'] = instance.tags;

@@ -26,6 +26,9 @@ Transaction _$TransactionFromJson(Map<String, dynamic> json) => $checkedCreate(
         );
         final val = Transaction(
           id: $checkedConvert('id', (v) => v as String),
+          userId: $checkedConvert('userId', (v) => v as String?),
+          userDisplayName:
+              $checkedConvert('userDisplayName', (v) => v as String?),
           status: $checkedConvert(
               'status', (v) => $enumDecode(_$TransactionStatusEnumMap, v)),
           subscription: $checkedConvert('subscription',
@@ -46,6 +49,8 @@ Transaction _$TransactionFromJson(Map<String, dynamic> json) => $checkedCreate(
                   ? null
                   : TransactionAgreement.fromJson(v as Map<String, dynamic>)),
           error: $checkedConvert('error', (v) => v as String),
+          isGift: $checkedConvert('isGift', (v) => v as bool? ?? false),
+          isTokens: $checkedConvert('isTokens', (v) => v as bool? ?? false),
         );
         return val;
       },
@@ -55,11 +60,6 @@ Transaction _$TransactionFromJson(Map<String, dynamic> json) => $checkedCreate(
 Map<String, dynamic> _$TransactionToJson(Transaction instance) {
   final val = <String, dynamic>{
     'id': instance.id,
-    'status': _$TransactionStatusEnumMap[instance.status]!,
-    'subscription': instance.subscription.toJson(),
-    'sandbox': instance.sandbox,
-    'created_at': instance.createdAt.toIso8601String(),
-    'updated_at': instance.updatedAt.toIso8601String(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -68,9 +68,18 @@ Map<String, dynamic> _$TransactionToJson(Transaction instance) {
     }
   }
 
+  writeNotNull('userId', instance.userId);
+  writeNotNull('userDisplayName', instance.userDisplayName);
+  val['status'] = _$TransactionStatusEnumMap[instance.status]!;
+  val['subscription'] = instance.subscription.toJson();
+  val['sandbox'] = instance.sandbox;
+  val['created_at'] = instance.createdAt.toIso8601String();
+  val['updated_at'] = instance.updatedAt.toIso8601String();
   writeNotNull('steam', instance.steam?.toJson());
   writeNotNull('agreement', instance.agreement?.toJson());
   val['error'] = instance.error;
+  writeNotNull('isGift', instance.isGift);
+  writeNotNull('isTokens', instance.isTokens);
   return val;
 }
 

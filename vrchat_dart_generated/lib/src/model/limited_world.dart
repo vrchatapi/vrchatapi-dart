@@ -24,6 +24,7 @@ class LimitedWorld {
     this.recommendedCapacity,
     required this.createdAt,
     this.favorites = 0,
+    this.visits = 0,
     this.heat = 0,
     required this.id,
     required this.imageUrl,
@@ -32,6 +33,7 @@ class LimitedWorld {
     this.occupants = 0,
     this.organization = 'vrchat',
     this.popularity = 0,
+    this.previewYoutubeId,
     required this.publicationDate,
     required this.releaseStatus,
     required this.tags,
@@ -62,6 +64,10 @@ class LimitedWorld {
   final int favorites;
 
   // minimum: 0
+  @JsonKey(name: r'visits', required: false, includeIfNull: false)
+  final int? visits;
+
+  // minimum: 0
   @JsonKey(name: r'heat', required: true, includeIfNull: false)
   final int heat;
 
@@ -88,6 +94,9 @@ class LimitedWorld {
   // minimum: 0
   @JsonKey(name: r'popularity', required: true, includeIfNull: false)
   final int popularity;
+
+  @JsonKey(name: r'previewYoutubeId', required: false, includeIfNull: false)
+  final String? previewYoutubeId;
 
   @JsonKey(name: r'publicationDate', required: true, includeIfNull: false)
   final String publicationDate;
@@ -122,6 +131,7 @@ class LimitedWorld {
           other.recommendedCapacity == recommendedCapacity &&
           other.createdAt == createdAt &&
           other.favorites == favorites &&
+          other.visits == visits &&
           other.heat == heat &&
           other.id == id &&
           other.imageUrl == imageUrl &&
@@ -130,6 +140,7 @@ class LimitedWorld {
           other.occupants == occupants &&
           other.organization == organization &&
           other.popularity == popularity &&
+          other.previewYoutubeId == previewYoutubeId &&
           other.publicationDate == publicationDate &&
           other.releaseStatus == releaseStatus &&
           other.tags == tags &&
@@ -146,6 +157,7 @@ class LimitedWorld {
       recommendedCapacity.hashCode +
       createdAt.hashCode +
       favorites.hashCode +
+      visits.hashCode +
       heat.hashCode +
       id.hashCode +
       imageUrl.hashCode +
@@ -154,6 +166,7 @@ class LimitedWorld {
       occupants.hashCode +
       organization.hashCode +
       popularity.hashCode +
+      (previewYoutubeId == null ? 0 : previewYoutubeId.hashCode) +
       publicationDate.hashCode +
       releaseStatus.hashCode +
       tags.hashCode +

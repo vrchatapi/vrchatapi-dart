@@ -9,10 +9,12 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allowAvatarCopying** | **bool** |  | [default to true]
+**badges** | [**List&lt;Badge&gt;**](Badge.md) |   | 
 **bio** | **String** |  | 
 **bioLinks** | **List&lt;String&gt;** |  | 
 **currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
 **currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
+**currentAvatarTags** | **List&lt;String&gt;** |  | 
 **dateJoined** | [**DateTime**](DateTime.md) |  | 
 **developerType** | [**DeveloperType**](DeveloperType.md) |  | 
 **displayName** | **String** | A users visual display name. This is what shows up in-game, and can different from their `username`. Changing display name is restricted to a cooldown period. | 
@@ -27,6 +29,7 @@ Name | Type | Description | Notes
 **location** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | [optional] 
 **note** | **String** |  | [optional] 
 **profilePicOverride** | **String** |  | 
+**pronouns** | **String** |  | 
 **state** | [**UserState**](UserState.md) |  | 
 **status** | [**UserStatus**](UserStatus.md) |  | 
 **statusDescription** | **String** |  | 

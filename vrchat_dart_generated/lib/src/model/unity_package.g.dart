@@ -39,6 +39,7 @@ UnityPackage _$UnityPackageFromJson(Map<String, dynamic> json) =>
               $checkedConvert('unityVersion', (v) => v as String? ?? '5.3.4p1'),
           impostorUrl: $checkedConvert('impostorUrl', (v) => v as String?),
           scanStatus: $checkedConvert('scanStatus', (v) => v as String?),
+          variant: $checkedConvert('variant', (v) => v as String?),
         );
         return val;
       },
@@ -67,5 +68,6 @@ Map<String, dynamic> _$UnityPackageToJson(UnityPackage instance) {
   val['unityVersion'] = instance.unityVersion;
   writeNotNull('impostorUrl', instance.impostorUrl);
   writeNotNull('scanStatus', instance.scanStatus);
+  writeNotNull('variant', instance.variant);
   return val;
 }

@@ -28,6 +28,7 @@ class UnityPackage {
     this.unityVersion = '5.3.4p1',
     this.impostorUrl,
     this.scanStatus,
+    this.variant,
   });
 
   @JsonKey(name: r'id', required: true, includeIfNull: false)
@@ -69,6 +70,9 @@ class UnityPackage {
   @JsonKey(name: r'scanStatus', required: false, includeIfNull: false)
   final String? scanStatus;
 
+  @JsonKey(name: r'variant', required: false, includeIfNull: false)
+  final String? variant;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -84,7 +88,8 @@ class UnityPackage {
           other.unitySortNumber == unitySortNumber &&
           other.unityVersion == unityVersion &&
           other.impostorUrl == impostorUrl &&
-          other.scanStatus == scanStatus;
+          other.scanStatus == scanStatus &&
+          other.variant == variant;
 
   @override
   int get hashCode =>
@@ -99,7 +104,8 @@ class UnityPackage {
       unitySortNumber.hashCode +
       unityVersion.hashCode +
       (impostorUrl == null ? 0 : impostorUrl.hashCode) +
-      scanStatus.hashCode;
+      scanStatus.hashCode +
+      variant.hashCode;
 
   factory UnityPackage.fromJson(Map<String, dynamic> json) =>
       _$UnityPackageFromJson(json);

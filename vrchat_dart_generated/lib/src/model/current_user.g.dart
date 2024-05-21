@@ -17,12 +17,14 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
           requiredKeys: const [
             'acceptedTOSVersion',
             'allowAvatarCopying',
+            'badges',
             'bio',
             'bioLinks',
             'currentAvatar',
             'currentAvatarAssetUrl',
             'currentAvatarImageUrl',
             'currentAvatarThumbnailImageUrl',
+            'currentAvatarTags',
             'date_joined',
             'developerType',
             'displayName',
@@ -38,12 +40,14 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
             'id',
             'isFriend',
             'last_login',
+            'last_mobile',
             'last_platform',
             'obfuscatedEmail',
             'obfuscatedPendingEmail',
             'oculusId',
             'pastDisplayNames',
             'profilePicOverride',
+            'pronouns',
             'state',
             'status',
             'statusDescription',
@@ -74,6 +78,11 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           allowAvatarCopying:
               $checkedConvert('allowAvatarCopying', (v) => v as bool),
+          badges: $checkedConvert(
+              'badges',
+              (v) => (v as List<dynamic>)
+                  .map((e) => Badge.fromJson(e as Map<String, dynamic>))
+                  .toList()),
           bio: $checkedConvert('bio', (v) => v as String),
           bioLinks: $checkedConvert('bioLinks',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
@@ -85,7 +94,7 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
           currentAvatarThumbnailImageUrl: $checkedConvert(
               'currentAvatarThumbnailImageUrl', (v) => v as String),
           currentAvatarTags: $checkedConvert('currentAvatarTags',
-              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           dateJoined: $checkedConvert(
               'date_joined', (v) => DateTime.parse(v as String)),
           developerType: $checkedConvert(
@@ -116,6 +125,8 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => v == null ? null : DateTime.parse(v as String)),
           lastLogin:
               $checkedConvert('last_login', (v) => DateTime.parse(v as String)),
+          lastMobile: $checkedConvert('last_mobile',
+              (v) => v == null ? null : DateTime.parse(v as String)),
           lastPlatform: $checkedConvert('last_platform', (v) => v as String),
           obfuscatedEmail:
               $checkedConvert('obfuscatedEmail', (v) => v as String),
@@ -123,6 +134,7 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('obfuscatedPendingEmail', (v) => v as String),
           oculusId: $checkedConvert('oculusId', (v) => v as String),
           googleId: $checkedConvert('googleId', (v) => v as String?),
+          googleDetails: $checkedConvert('googleDetails', (v) => v),
           picoId: $checkedConvert('picoId', (v) => v as String?),
           viveId: $checkedConvert('viveId', (v) => v as String?),
           offlineFriends: $checkedConvert('offlineFriends',
@@ -142,6 +154,7 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
                   : CurrentUserPresence.fromJson(v as Map<String, dynamic>)),
           profilePicOverride:
               $checkedConvert('profilePicOverride', (v) => v as String),
+          pronouns: $checkedConvert('pronouns', (v) => v as String),
           state: $checkedConvert(
               'state', (v) => $enumDecode(_$UserStateEnumMap, v)),
           status: $checkedConvert(
@@ -171,6 +184,7 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'dateJoined': 'date_joined',
         'lastActivity': 'last_activity',
         'lastLogin': 'last_login',
+        'lastMobile': 'last_mobile',
         'lastPlatform': 'last_platform',
         'updatedAt': 'updated_at'
       },
@@ -194,6 +208,7 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
       instance.accountDeletionLog?.map((e) => e.toJson()).toList());
   writeNotNull('activeFriends', instance.activeFriends);
   val['allowAvatarCopying'] = instance.allowAvatarCopying;
+  val['badges'] = instance.badges.map((e) => e.toJson()).toList();
   val['bio'] = instance.bio;
   val['bioLinks'] = instance.bioLinks;
   val['currentAvatar'] = instance.currentAvatar;
@@ -201,7 +216,7 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
   val['currentAvatarImageUrl'] = instance.currentAvatarImageUrl;
   val['currentAvatarThumbnailImageUrl'] =
       instance.currentAvatarThumbnailImageUrl;
-  writeNotNull('currentAvatarTags', instance.currentAvatarTags);
+  val['currentAvatarTags'] = instance.currentAvatarTags;
   val['date_joined'] = instance.dateJoined.toIso8601String();
   val['developerType'] = _$DeveloperTypeEnumMap[instance.developerType]!;
   val['displayName'] = instance.displayName;
@@ -222,11 +237,13 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
   val['isFriend'] = instance.isFriend;
   writeNotNull('last_activity', instance.lastActivity?.toIso8601String());
   val['last_login'] = instance.lastLogin.toIso8601String();
+  val['last_mobile'] = instance.lastMobile?.toIso8601String();
   val['last_platform'] = instance.lastPlatform;
   val['obfuscatedEmail'] = instance.obfuscatedEmail;
   val['obfuscatedPendingEmail'] = instance.obfuscatedPendingEmail;
   val['oculusId'] = instance.oculusId;
   writeNotNull('googleId', instance.googleId);
+  writeNotNull('googleDetails', instance.googleDetails);
   writeNotNull('picoId', instance.picoId);
   writeNotNull('viveId', instance.viveId);
   writeNotNull('offlineFriends', instance.offlineFriends);
@@ -235,6 +252,7 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
       instance.pastDisplayNames.map((e) => e.toJson()).toList();
   writeNotNull('presence', instance.presence?.toJson());
   val['profilePicOverride'] = instance.profilePicOverride;
+  val['pronouns'] = instance.pronouns;
   val['state'] = _$UserStateEnumMap[instance.state]!;
   val['status'] = _$UserStatusEnumMap[instance.status]!;
   val['statusDescription'] = instance.statusDescription;

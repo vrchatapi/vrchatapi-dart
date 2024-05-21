@@ -19,6 +19,10 @@ class Subscription {
   Subscription({
     required this.id,
     required this.steamItemId,
+    this.oculusSku,
+    this.googleProductId,
+    this.googlePlanId,
+    this.picoSku,
     required this.amount,
     required this.description,
     required this.period,
@@ -30,6 +34,18 @@ class Subscription {
 
   @JsonKey(name: r'steamItemId', required: true, includeIfNull: false)
   final String steamItemId;
+
+  @JsonKey(name: r'oculusSku', required: false, includeIfNull: false)
+  final String? oculusSku;
+
+  @JsonKey(name: r'googleProductId', required: false, includeIfNull: false)
+  final String? googleProductId;
+
+  @JsonKey(name: r'googlePlanId', required: false, includeIfNull: false)
+  final String? googlePlanId;
+
+  @JsonKey(name: r'picoSku', required: false, includeIfNull: false)
+  final String? picoSku;
 
   @JsonKey(name: r'amount', required: true, includeIfNull: false)
   final num amount;
@@ -49,6 +65,10 @@ class Subscription {
       other is Subscription &&
           other.id == id &&
           other.steamItemId == steamItemId &&
+          other.oculusSku == oculusSku &&
+          other.googleProductId == googleProductId &&
+          other.googlePlanId == googlePlanId &&
+          other.picoSku == picoSku &&
           other.amount == amount &&
           other.description == description &&
           other.period == period &&
@@ -58,6 +78,10 @@ class Subscription {
   int get hashCode =>
       id.hashCode +
       steamItemId.hashCode +
+      oculusSku.hashCode +
+      googleProductId.hashCode +
+      googlePlanId.hashCode +
+      picoSku.hashCode +
       amount.hashCode +
       description.hashCode +
       period.hashCode +

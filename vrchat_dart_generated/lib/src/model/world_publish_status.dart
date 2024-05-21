@@ -16,19 +16,19 @@ part 'world_publish_status.g.dart';
 class WorldPublishStatus {
   /// Returns a new [WorldPublishStatus] instance.
   WorldPublishStatus({
-    this.canPubilsh = true,
+    this.canPublish = true,
   });
 
-  @JsonKey(name: r'canPubilsh', required: true, includeIfNull: false)
-  final bool canPubilsh;
+  @JsonKey(name: r'canPublish', required: true, includeIfNull: false)
+  final bool canPublish;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is WorldPublishStatus && other.canPubilsh == canPubilsh;
+      other is WorldPublishStatus && other.canPublish == canPublish;
 
   @override
-  int get hashCode => canPubilsh.hashCode;
+  int get hashCode => canPublish.hashCode;
 
   factory WorldPublishStatus.fromJson(Map<String, dynamic> json) =>
       _$WorldPublishStatusFromJson(json);
