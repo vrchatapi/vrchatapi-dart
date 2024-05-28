@@ -17,7 +17,6 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
           requiredKeys: const [
             'acceptedTOSVersion',
             'allowAvatarCopying',
-            'badges',
             'bio',
             'bioLinks',
             'currentAvatar',
@@ -80,8 +79,8 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('allowAvatarCopying', (v) => v as bool),
           badges: $checkedConvert(
               'badges',
-              (v) => (v as List<dynamic>)
-                  .map((e) => Badge.fromJson(e as Map<String, dynamic>))
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => Badge.fromJson(e as Map<String, dynamic>))
                   .toList()),
           bio: $checkedConvert('bio', (v) => v as String),
           bioLinks: $checkedConvert('bioLinks',
@@ -208,7 +207,7 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
       instance.accountDeletionLog?.map((e) => e.toJson()).toList());
   writeNotNull('activeFriends', instance.activeFriends);
   val['allowAvatarCopying'] = instance.allowAvatarCopying;
-  val['badges'] = instance.badges.map((e) => e.toJson()).toList();
+  writeNotNull('badges', instance.badges?.map((e) => e.toJson()).toList());
   val['bio'] = instance.bio;
   val['bioLinks'] = instance.bioLinks;
   val['currentAvatar'] = instance.currentAvatar;

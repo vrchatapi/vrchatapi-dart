@@ -16,8 +16,8 @@ enum GroupAccessType {
   plus(r'plus'),
 
   /// Group access type when the instance type is \"group\"
-  @JsonValue(r'member')
-  member(r'member');
+  @JsonValue(r'members')
+  members(r'members');
 
   const GroupAccessType(this.value);
 

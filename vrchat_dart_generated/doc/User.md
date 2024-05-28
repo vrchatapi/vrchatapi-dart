@@ -9,7 +9,7 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allowAvatarCopying** | **bool** |  | [default to true]
-**badges** | [**List&lt;Badge&gt;**](Badge.md) |   | 
+**badges** | [**List&lt;Badge&gt;**](Badge.md) |   | [optional] 
 **bio** | **String** |  | 
 **bioLinks** | **List&lt;String&gt;** |  | 
 **currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 

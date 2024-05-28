@@ -24,7 +24,7 @@ import 'package:vrchat_dart_generated/src/api/users_api.dart';
 import 'package:vrchat_dart_generated/src/api/worlds_api.dart';
 
 class VrchatDartGenerated {
-  static const String basePath = r'https://api.vrchat.cloud/api/1';
+  static const String basePath = r'https://vrchat.com/api/1';
 
   final Dio dio;
   VrchatDartGenerated({

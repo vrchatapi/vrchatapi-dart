@@ -93,6 +93,7 @@ export 'package:vrchat_dart_generated/src/model/info_push_data_article_content.d
 export 'package:vrchat_dart_generated/src/model/info_push_data_clickable.dart';
 export 'package:vrchat_dart_generated/src/model/instance.dart';
 export 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
+export 'package:vrchat_dart_generated/src/model/instance_region.dart';
 export 'package:vrchat_dart_generated/src/model/instance_short_name_response.dart';
 export 'package:vrchat_dart_generated/src/model/instance_type.dart';
 export 'package:vrchat_dart_generated/src/model/invite_message.dart';
@@ -106,6 +107,7 @@ export 'package:vrchat_dart_generated/src/model/license_type.dart';
 export 'package:vrchat_dart_generated/src/model/limited_group.dart';
 export 'package:vrchat_dart_generated/src/model/limited_unity_package.dart';
 export 'package:vrchat_dart_generated/src/model/limited_user.dart';
+export 'package:vrchat_dart_generated/src/model/limited_user_groups.dart';
 export 'package:vrchat_dart_generated/src/model/limited_world.dart';
 export 'package:vrchat_dart_generated/src/model/mime_type.dart';
 export 'package:vrchat_dart_generated/src/model/moderate_user_request.dart';

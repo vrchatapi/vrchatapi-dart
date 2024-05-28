@@ -18,18 +18,25 @@ class RespondGroupJoinRequest {
   /// Returns a new [RespondGroupJoinRequest] instance.
   RespondGroupJoinRequest({
     required this.action,
+    this.block,
   });
 
   @JsonKey(name: r'action', required: true, includeIfNull: false)
   final GroupJoinRequestAction action;
 
+  /// Whether to block the user from requesting again
+  @JsonKey(name: r'block', required: false, includeIfNull: false)
+  final bool? block;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is RespondGroupJoinRequest && other.action == action;
+      other is RespondGroupJoinRequest &&
+          other.action == action &&
+          other.block == block;
 
   @override
-  int get hashCode => action.hashCode;
+  int get hashCode => action.hashCode + block.hashCode;
 
   factory RespondGroupJoinRequest.fromJson(Map<String, dynamic> json) =>
       _$RespondGroupJoinRequestFromJson(json);

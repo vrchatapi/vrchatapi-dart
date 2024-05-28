@@ -25,6 +25,7 @@ class UpdateUserRequest {
     this.statusDescription,
     this.bio,
     this.bioLinks,
+    this.pronouns,
     this.userIcon,
   });
 
@@ -53,6 +54,9 @@ class UpdateUserRequest {
   @JsonKey(name: r'bioLinks', required: false, includeIfNull: false)
   final List<String>? bioLinks;
 
+  @JsonKey(name: r'pronouns', required: false, includeIfNull: false)
+  final String? pronouns;
+
   /// MUST be a valid VRChat /file/ url.
   @JsonKey(name: r'userIcon', required: false, includeIfNull: false)
   final String? userIcon;
@@ -69,6 +73,7 @@ class UpdateUserRequest {
           other.statusDescription == statusDescription &&
           other.bio == bio &&
           other.bioLinks == bioLinks &&
+          other.pronouns == pronouns &&
           other.userIcon == userIcon;
 
   @override
@@ -81,6 +86,7 @@ class UpdateUserRequest {
       statusDescription.hashCode +
       bio.hashCode +
       bioLinks.hashCode +
+      pronouns.hashCode +
       userIcon.hashCode;
 
   factory UpdateUserRequest.fromJson(Map<String, dynamic> json) =>

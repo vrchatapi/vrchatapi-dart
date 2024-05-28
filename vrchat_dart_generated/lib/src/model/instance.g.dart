@@ -59,8 +59,8 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
               'photonRegion', (v) => $enumDecode(_$RegionEnumMap, v)),
           platforms: $checkedConvert('platforms',
               (v) => InstancePlatforms.fromJson(v as Map<String, dynamic>)),
-          region:
-              $checkedConvert('region', (v) => $enumDecode(_$RegionEnumMap, v)),
+          region: $checkedConvert(
+              'region', (v) => $enumDecode(_$InstanceRegionEnumMap, v)),
           secureName: $checkedConvert('secureName', (v) => v as String),
           shortName: $checkedConvert('shortName', (v) => v as String?),
           tags: $checkedConvert('tags',
@@ -123,7 +123,7 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) {
   val['permanent'] = instance.permanent;
   val['photonRegion'] = _$RegionEnumMap[instance.photonRegion]!;
   val['platforms'] = instance.platforms.toJson();
-  val['region'] = _$RegionEnumMap[instance.region]!;
+  val['region'] = _$InstanceRegionEnumMap[instance.region]!;
   val['secureName'] = instance.secureName;
   writeNotNull('shortName', instance.shortName);
   val['tags'] = instance.tags;
@@ -158,6 +158,13 @@ const _$RegionEnumMap = {
   Region.unknown: 'unknown',
 };
 
+const _$InstanceRegionEnumMap = {
+  InstanceRegion.us: 'us',
+  InstanceRegion.use: 'use',
+  InstanceRegion.eu: 'eu',
+  InstanceRegion.jp: 'jp',
+};
+
 const _$InstanceTypeEnumMap = {
   InstanceType.public: 'public',
   InstanceType.hidden: 'hidden',
@@ -169,5 +176,5 @@ const _$InstanceTypeEnumMap = {
 const _$GroupAccessTypeEnumMap = {
   GroupAccessType.public: 'public',
   GroupAccessType.plus: 'plus',
-  GroupAccessType.member: 'member',
+  GroupAccessType.members: 'members',
 };

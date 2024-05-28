@@ -27,10 +27,14 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         );
         final val = LimitedUser(
           bio: $checkedConvert('bio', (v) => v as String?),
+          bioLinks: $checkedConvert('bioLinks',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           currentAvatarImageUrl:
               $checkedConvert('currentAvatarImageUrl', (v) => v as String?),
           currentAvatarThumbnailImageUrl: $checkedConvert(
               'currentAvatarThumbnailImageUrl', (v) => v as String?),
+          currentAvatarTags: $checkedConvert('currentAvatarTags',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           developerType: $checkedConvert(
               'developerType', (v) => $enumDecode(_$DeveloperTypeEnumMap, v)),
           displayName: $checkedConvert('displayName', (v) => v as String),
@@ -68,9 +72,11 @@ Map<String, dynamic> _$LimitedUserToJson(LimitedUser instance) {
   }
 
   writeNotNull('bio', instance.bio);
+  writeNotNull('bioLinks', instance.bioLinks);
   writeNotNull('currentAvatarImageUrl', instance.currentAvatarImageUrl);
   writeNotNull('currentAvatarThumbnailImageUrl',
       instance.currentAvatarThumbnailImageUrl);
+  writeNotNull('currentAvatarTags', instance.currentAvatarTags);
   val['developerType'] = _$DeveloperTypeEnumMap[instance.developerType]!;
   val['displayName'] = instance.displayName;
   writeNotNull('fallbackAvatar', instance.fallbackAvatar);

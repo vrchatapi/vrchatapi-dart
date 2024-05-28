@@ -21,16 +21,27 @@ RespondGroupJoinRequest _$RespondGroupJoinRequestFromJson(
         final val = RespondGroupJoinRequest(
           action: $checkedConvert(
               'action', (v) => $enumDecode(_$GroupJoinRequestActionEnumMap, v)),
+          block: $checkedConvert('block', (v) => v as bool?),
         );
         return val;
       },
     );
 
 Map<String, dynamic> _$RespondGroupJoinRequestToJson(
-        RespondGroupJoinRequest instance) =>
-    <String, dynamic>{
-      'action': _$GroupJoinRequestActionEnumMap[instance.action]!,
-    };
+    RespondGroupJoinRequest instance) {
+  final val = <String, dynamic>{
+    'action': _$GroupJoinRequestActionEnumMap[instance.action]!,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('block', instance.block);
+  return val;
+}
 
 const _$GroupJoinRequestActionEnumMap = {
   GroupJoinRequestAction.accept: 'accept',

@@ -16,7 +16,6 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
           json,
           requiredKeys: const [
             'allowAvatarCopying',
-            'badges',
             'bio',
             'bioLinks',
             'currentAvatarImageUrl',
@@ -45,8 +44,8 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('allowAvatarCopying', (v) => v as bool? ?? true),
           badges: $checkedConvert(
               'badges',
-              (v) => (v as List<dynamic>)
-                  .map((e) => Badge.fromJson(e as Map<String, dynamic>))
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => Badge.fromJson(e as Map<String, dynamic>))
                   .toList()),
           bio: $checkedConvert('bio', (v) => v as String),
           bioLinks: $checkedConvert('bioLinks',
@@ -107,16 +106,6 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
 Map<String, dynamic> _$UserToJson(User instance) {
   final val = <String, dynamic>{
     'allowAvatarCopying': instance.allowAvatarCopying,
-    'badges': instance.badges.map((e) => e.toJson()).toList(),
-    'bio': instance.bio,
-    'bioLinks': instance.bioLinks,
-    'currentAvatarImageUrl': instance.currentAvatarImageUrl,
-    'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
-    'currentAvatarTags': instance.currentAvatarTags,
-    'date_joined': instance.dateJoined.toIso8601String(),
-    'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
-    'displayName': instance.displayName,
-    'friendKey': instance.friendKey,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -125,6 +114,17 @@ Map<String, dynamic> _$UserToJson(User instance) {
     }
   }
 
+  writeNotNull('badges', instance.badges?.map((e) => e.toJson()).toList());
+  val['bio'] = instance.bio;
+  val['bioLinks'] = instance.bioLinks;
+  val['currentAvatarImageUrl'] = instance.currentAvatarImageUrl;
+  val['currentAvatarThumbnailImageUrl'] =
+      instance.currentAvatarThumbnailImageUrl;
+  val['currentAvatarTags'] = instance.currentAvatarTags;
+  val['date_joined'] = instance.dateJoined.toIso8601String();
+  val['developerType'] = _$DeveloperTypeEnumMap[instance.developerType]!;
+  val['displayName'] = instance.displayName;
+  val['friendKey'] = instance.friendKey;
   writeNotNull('friendRequestStatus', instance.friendRequestStatus);
   val['id'] = instance.id;
   writeNotNull('instanceId', instance.instanceId);

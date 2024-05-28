@@ -63,6 +63,7 @@ import 'package:vrchat_dart_generated/src/model/license_group.dart';
 import 'package:vrchat_dart_generated/src/model/limited_group.dart';
 import 'package:vrchat_dart_generated/src/model/limited_unity_package.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user.dart';
+import 'package:vrchat_dart_generated/src/model/limited_user_groups.dart';
 import 'package:vrchat_dart_generated/src/model/limited_world.dart';
 import 'package:vrchat_dart_generated/src/model/moderate_user_request.dart';
 import 'package:vrchat_dart_generated/src/model/notification.dart';
@@ -292,6 +293,7 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'InstancePlatforms':
       return InstancePlatforms.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'InstanceRegion':
     case 'InstanceShortNameResponse':
       return InstanceShortNameResponse.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -319,6 +321,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'LimitedUser':
       return LimitedUser.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'LimitedUserGroups':
+      return LimitedUserGroups.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'LimitedWorld':
       return LimitedWorld.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'MIMEType':

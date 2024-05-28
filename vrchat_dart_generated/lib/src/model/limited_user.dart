@@ -19,8 +19,10 @@ class LimitedUser {
   /// Returns a new [LimitedUser] instance.
   LimitedUser({
     this.bio,
+    this.bioLinks,
     this.currentAvatarImageUrl,
     this.currentAvatarThumbnailImageUrl,
+    this.currentAvatarTags,
     required this.developerType,
     required this.displayName,
     this.fallbackAvatar,
@@ -41,6 +43,10 @@ class LimitedUser {
   @JsonKey(name: r'bio', required: false, includeIfNull: false)
   final String? bio;
 
+  ///
+  @JsonKey(name: r'bioLinks', required: false, includeIfNull: false)
+  final List<String>? bioLinks;
+
   /// When profilePicOverride is not empty, use it instead.
   @JsonKey(
       name: r'currentAvatarImageUrl', required: false, includeIfNull: false)
@@ -52,6 +58,9 @@ class LimitedUser {
       required: false,
       includeIfNull: false)
   final String? currentAvatarThumbnailImageUrl;
+
+  @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
+  final List<String>? currentAvatarTags;
 
   @JsonKey(name: r'developerType', required: true, includeIfNull: false)
   final DeveloperType developerType;
@@ -108,9 +117,11 @@ class LimitedUser {
       identical(this, other) ||
       other is LimitedUser &&
           other.bio == bio &&
+          other.bioLinks == bioLinks &&
           other.currentAvatarImageUrl == currentAvatarImageUrl &&
           other.currentAvatarThumbnailImageUrl ==
               currentAvatarThumbnailImageUrl &&
+          other.currentAvatarTags == currentAvatarTags &&
           other.developerType == developerType &&
           other.displayName == displayName &&
           other.fallbackAvatar == fallbackAvatar &&
@@ -131,8 +142,10 @@ class LimitedUser {
   @override
   int get hashCode =>
       bio.hashCode +
+      bioLinks.hashCode +
       currentAvatarImageUrl.hashCode +
       currentAvatarThumbnailImageUrl.hashCode +
+      currentAvatarTags.hashCode +
       developerType.hashCode +
       displayName.hashCode +
       fallbackAvatar.hashCode +

@@ -20,7 +20,7 @@ SentNotification _$SentNotificationFromJson(Map<String, dynamic> json) =>
             'details',
             'id',
             'message',
-            'recieverUserId',
+            'receiverUserId',
             'senderUserId',
             'type'
           ],
@@ -28,10 +28,10 @@ SentNotification _$SentNotificationFromJson(Map<String, dynamic> json) =>
         final val = SentNotification(
           createdAt:
               $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
-          details: $checkedConvert('details', (v) => v as String? ?? '{}'),
+          details: $checkedConvert('details', (v) => v as Object),
           id: $checkedConvert('id', (v) => v as String),
           message: $checkedConvert('message', (v) => v as String),
-          recieverUserId: $checkedConvert('recieverUserId', (v) => v as String),
+          receiverUserId: $checkedConvert('receiverUserId', (v) => v as String),
           senderUserId: $checkedConvert('senderUserId', (v) => v as String),
           senderUsername:
               $checkedConvert('senderUsername', (v) => v as String?),
@@ -49,7 +49,7 @@ Map<String, dynamic> _$SentNotificationToJson(SentNotification instance) {
     'details': instance.details,
     'id': instance.id,
     'message': instance.message,
-    'recieverUserId': instance.recieverUserId,
+    'receiverUserId': instance.receiverUserId,
     'senderUserId': instance.senderUserId,
   };
 

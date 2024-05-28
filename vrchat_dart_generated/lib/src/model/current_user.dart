@@ -29,7 +29,7 @@ class CurrentUser {
     this.accountDeletionLog,
     this.activeFriends,
     required this.allowAvatarCopying,
-    required this.badges,
+    this.badges,
     required this.bio,
     required this.bioLinks,
     required this.currentAvatar,
@@ -112,8 +112,8 @@ class CurrentUser {
   final bool allowAvatarCopying;
 
   ///
-  @JsonKey(name: r'badges', required: true, includeIfNull: false)
-  final List<Badge> badges;
+  @JsonKey(name: r'badges', required: false, includeIfNull: false)
+  final List<Badge>? badges;
 
   @JsonKey(name: r'bio', required: true, includeIfNull: false)
   final String bio;

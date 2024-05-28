@@ -5,7 +5,7 @@
 import 'package:vrchat_dart_generated/api.dart';
 ```
 
-All URIs are relative to *https://api.vrchat.cloud/api/1*
+All URIs are relative to *https://vrchat.com/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserGroups**
-> List<LimitedGroup> getUserGroups(userId)
+> List<LimitedUserGroups> getUserGroups(userId)
 
 Get User Groups
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;LimitedGroup&gt;**](LimitedGroup.md)
+[**List&lt;LimitedUserGroups&gt;**](LimitedUserGroups.md)
 
 ### Authorization
 

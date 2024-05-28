@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
 import 'package:vrchat_dart_generated/src/model/instance_type.dart';
+import 'package:vrchat_dart_generated/src/model/instance_region.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user.dart';
 import 'package:vrchat_dart_generated/src/model/group_access_type.dart';
 import 'package:vrchat_dart_generated/src/model/world.dart';
@@ -110,7 +111,7 @@ class Instance {
   final InstancePlatforms platforms;
 
   @JsonKey(name: r'region', required: true, includeIfNull: false)
-  final Region region;
+  final InstanceRegion region;
 
   @JsonKey(name: r'secureName', required: true, includeIfNull: false)
   final String secureName;

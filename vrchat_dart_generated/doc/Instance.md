@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **permanent** | **bool** |  | [default to false]
 **photonRegion** | [**Region**](Region.md) |  | 
 **platforms** | [**InstancePlatforms**](InstancePlatforms.md) |  | 
-**region** | [**Region**](Region.md) |  | 
+**region** | [**InstanceRegion**](InstanceRegion.md) |  | 
 **secureName** | **String** |  | 
 **shortName** | **String** |  | [optional] 
 **tags** | **List&lt;String&gt;** | The tags array on Instances usually contain the language tags of the people in the instance.  | 

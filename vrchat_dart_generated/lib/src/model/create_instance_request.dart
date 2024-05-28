@@ -4,8 +4,8 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/instance_type.dart';
+import 'package:vrchat_dart_generated/src/model/instance_region.dart';
 import 'package:vrchat_dart_generated/src/model/group_access_type.dart';
-import 'package:vrchat_dart_generated/src/model/region.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_instance_request.g.dart';
@@ -27,6 +27,9 @@ class CreateInstanceRequest {
     this.groupAccessType,
     this.queueEnabled = false,
     this.closedAt,
+    this.canRequestInvite = false,
+    this.hardClose = false,
+    this.inviteOnly = false,
   });
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
@@ -37,7 +40,7 @@ class CreateInstanceRequest {
   final InstanceType type;
 
   @JsonKey(name: r'region', required: true, includeIfNull: false)
-  final Region region;
+  final InstanceRegion region;
 
   /// A groupId if the instance type is \"group\", null if instance type is public, or a userId otherwise
   @JsonKey(name: r'ownerId', required: false, includeIfNull: false)
@@ -53,9 +56,20 @@ class CreateInstanceRequest {
   @JsonKey(name: r'queueEnabled', required: false, includeIfNull: false)
   final bool? queueEnabled;
 
-  /// The time after which users won't be allowed to join the instance
+  /// The time after which users won't be allowed to join the instance. This doesn't work for public instances.
   @JsonKey(name: r'closedAt', required: false, includeIfNull: false)
   final DateTime? closedAt;
+
+  /// Only applies to invite type instances to make them invite+
+  @JsonKey(name: r'canRequestInvite', required: false, includeIfNull: false)
+  final bool? canRequestInvite;
+
+  /// Currently unused, but will eventually be a flag to set if the closing of the instance should kick people.
+  @JsonKey(name: r'hardClose', required: false, includeIfNull: false)
+  final bool? hardClose;
+
+  @JsonKey(name: r'inviteOnly', required: false, includeIfNull: false)
+  final bool? inviteOnly;
 
   @override
   bool operator ==(Object other) =>
@@ -68,7 +82,10 @@ class CreateInstanceRequest {
           other.roleIds == roleIds &&
           other.groupAccessType == groupAccessType &&
           other.queueEnabled == queueEnabled &&
-          other.closedAt == closedAt;
+          other.closedAt == closedAt &&
+          other.canRequestInvite == canRequestInvite &&
+          other.hardClose == hardClose &&
+          other.inviteOnly == inviteOnly;
 
   @override
   int get hashCode =>
@@ -79,7 +96,10 @@ class CreateInstanceRequest {
       roleIds.hashCode +
       groupAccessType.hashCode +
       queueEnabled.hashCode +
-      closedAt.hashCode;
+      closedAt.hashCode +
+      canRequestInvite.hashCode +
+      hardClose.hashCode +
+      inviteOnly.hashCode;
 
   factory CreateInstanceRequest.fromJson(Map<String, dynamic> json) =>
       _$CreateInstanceRequestFromJson(json);

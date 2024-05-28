@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **accountDeletionLog** | [**List&lt;AccountDeletionLog&gt;**](AccountDeletionLog.md) |   | [optional] 
 **activeFriends** | **List&lt;String&gt;** |   | [optional] 
 **allowAvatarCopying** | **bool** |  | 
-**badges** | [**List&lt;Badge&gt;**](Badge.md) |   | 
+**badges** | [**List&lt;Badge&gt;**](Badge.md) |   | [optional] 
 **bio** | **String** |  | 
 **bioLinks** | **List&lt;String&gt;** |   | 
 **currentAvatar** | **String** |  | 
