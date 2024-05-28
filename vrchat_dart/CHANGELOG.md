@@ -1,3 +1,6 @@
+## 3.5.3
+- Tighten dependency constraints
+
 ## 3.5.2
 - Dependency upgrades
 
