@@ -26,6 +26,7 @@ class UpdateUserRequest {
     this.bio,
     this.bioLinks,
     this.pronouns,
+    this.isBoopingEnabled,
     this.userIcon,
   });
 
@@ -57,6 +58,9 @@ class UpdateUserRequest {
   @JsonKey(name: r'pronouns', required: false, includeIfNull: false)
   final String? pronouns;
 
+  @JsonKey(name: r'isBoopingEnabled', required: false, includeIfNull: false)
+  final bool? isBoopingEnabled;
+
   /// MUST be a valid VRChat /file/ url.
   @JsonKey(name: r'userIcon', required: false, includeIfNull: false)
   final String? userIcon;
@@ -74,6 +78,7 @@ class UpdateUserRequest {
           other.bio == bio &&
           other.bioLinks == bioLinks &&
           other.pronouns == pronouns &&
+          other.isBoopingEnabled == isBoopingEnabled &&
           other.userIcon == userIcon;
 
   @override
@@ -87,6 +92,7 @@ class UpdateUserRequest {
       bio.hashCode +
       bioLinks.hashCode +
       pronouns.hashCode +
+      isBoopingEnabled.hashCode +
       userIcon.hashCode;
 
   factory UpdateUserRequest.fromJson(Map<String, dynamic> json) =>

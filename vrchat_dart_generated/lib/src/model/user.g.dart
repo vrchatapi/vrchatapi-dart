@@ -31,6 +31,7 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
             'last_login',
             'last_platform',
             'profilePicOverride',
+            'profilePicOverrideThumbnail',
             'pronouns',
             'state',
             'status',
@@ -74,6 +75,8 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
           note: $checkedConvert('note', (v) => v as String?),
           profilePicOverride:
               $checkedConvert('profilePicOverride', (v) => v as String),
+          profilePicOverrideThumbnail: $checkedConvert(
+              'profilePicOverrideThumbnail', (v) => v as String),
           pronouns: $checkedConvert('pronouns', (v) => v as String),
           state: $checkedConvert(
               'state', (v) => $enumDecode(_$UserStateEnumMap, v)),
@@ -135,6 +138,7 @@ Map<String, dynamic> _$UserToJson(User instance) {
   writeNotNull('location', instance.location);
   writeNotNull('note', instance.note);
   val['profilePicOverride'] = instance.profilePicOverride;
+  val['profilePicOverrideThumbnail'] = instance.profilePicOverrideThumbnail;
   val['pronouns'] = instance.pronouns;
   val['state'] = _$UserStateEnumMap[instance.state]!;
   val['status'] = _$UserStatusEnumMap[instance.status]!;

@@ -54,6 +54,7 @@ class CurrentUser {
     required this.hasPendingEmail,
     required this.homeLocation,
     required this.id,
+    this.isBoopingEnabled = true,
     this.isFriend = false,
     this.lastActivity,
     required this.lastLogin,
@@ -71,6 +72,7 @@ class CurrentUser {
     required this.pastDisplayNames,
     this.presence,
     required this.profilePicOverride,
+    required this.profilePicOverrideThumbnail,
     required this.pronouns,
     required this.state,
     required this.status,
@@ -198,6 +200,9 @@ class CurrentUser {
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
+  @JsonKey(name: r'isBoopingEnabled', required: false, includeIfNull: false)
+  final bool? isBoopingEnabled;
+
   @JsonKey(name: r'isFriend', required: true, includeIfNull: false)
   final bool isFriend;
 
@@ -251,6 +256,12 @@ class CurrentUser {
 
   @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
   final String profilePicOverride;
+
+  @JsonKey(
+      name: r'profilePicOverrideThumbnail',
+      required: true,
+      includeIfNull: false)
+  final String profilePicOverrideThumbnail;
 
   @JsonKey(name: r'pronouns', required: true, includeIfNull: false)
   final String pronouns;
@@ -337,6 +348,7 @@ class CurrentUser {
           other.hasPendingEmail == hasPendingEmail &&
           other.homeLocation == homeLocation &&
           other.id == id &&
+          other.isBoopingEnabled == isBoopingEnabled &&
           other.isFriend == isFriend &&
           other.lastActivity == lastActivity &&
           other.lastLogin == lastLogin &&
@@ -354,6 +366,7 @@ class CurrentUser {
           other.pastDisplayNames == pastDisplayNames &&
           other.presence == presence &&
           other.profilePicOverride == profilePicOverride &&
+          other.profilePicOverrideThumbnail == profilePicOverrideThumbnail &&
           other.pronouns == pronouns &&
           other.state == state &&
           other.status == status &&
@@ -405,6 +418,7 @@ class CurrentUser {
       hasPendingEmail.hashCode +
       homeLocation.hashCode +
       id.hashCode +
+      isBoopingEnabled.hashCode +
       isFriend.hashCode +
       lastActivity.hashCode +
       lastLogin.hashCode +
@@ -422,6 +436,7 @@ class CurrentUser {
       pastDisplayNames.hashCode +
       presence.hashCode +
       profilePicOverride.hashCode +
+      profilePicOverrideThumbnail.hashCode +
       pronouns.hashCode +
       state.hashCode +
       status.hashCode +

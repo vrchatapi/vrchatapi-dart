@@ -116,7 +116,7 @@ class GroupLimitedMember {
       isRepresenting.hashCode +
       roleIds.hashCode +
       mRoleIds.hashCode +
-      joinedAt.hashCode +
+      (joinedAt == null ? 0 : joinedAt.hashCode) +
       membershipStatus.hashCode +
       visibility.hashCode +
       isSubscribedToAnnouncements.hashCode +

@@ -46,6 +46,7 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
             'oculusId',
             'pastDisplayNames',
             'profilePicOverride',
+            'profilePicOverrideThumbnail',
             'pronouns',
             'state',
             'status',
@@ -119,6 +120,8 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
           hasPendingEmail: $checkedConvert('hasPendingEmail', (v) => v as bool),
           homeLocation: $checkedConvert('homeLocation', (v) => v as String),
           id: $checkedConvert('id', (v) => v as String),
+          isBoopingEnabled:
+              $checkedConvert('isBoopingEnabled', (v) => v as bool? ?? true),
           isFriend: $checkedConvert('isFriend', (v) => v as bool? ?? false),
           lastActivity: $checkedConvert('last_activity',
               (v) => v == null ? null : DateTime.parse(v as String)),
@@ -153,6 +156,8 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
                   : CurrentUserPresence.fromJson(v as Map<String, dynamic>)),
           profilePicOverride:
               $checkedConvert('profilePicOverride', (v) => v as String),
+          profilePicOverrideThumbnail: $checkedConvert(
+              'profilePicOverrideThumbnail', (v) => v as String),
           pronouns: $checkedConvert('pronouns', (v) => v as String),
           state: $checkedConvert(
               'state', (v) => $enumDecode(_$UserStateEnumMap, v)),
@@ -233,6 +238,7 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
   val['hasPendingEmail'] = instance.hasPendingEmail;
   val['homeLocation'] = instance.homeLocation;
   val['id'] = instance.id;
+  writeNotNull('isBoopingEnabled', instance.isBoopingEnabled);
   val['isFriend'] = instance.isFriend;
   writeNotNull('last_activity', instance.lastActivity?.toIso8601String());
   val['last_login'] = instance.lastLogin.toIso8601String();
@@ -251,6 +257,7 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
       instance.pastDisplayNames.map((e) => e.toJson()).toList();
   writeNotNull('presence', instance.presence?.toJson());
   val['profilePicOverride'] = instance.profilePicOverride;
+  val['profilePicOverrideThumbnail'] = instance.profilePicOverrideThumbnail;
   val['pronouns'] = instance.pronouns;
   val['state'] = _$UserStateEnumMap[instance.state]!;
   val['status'] = _$UserStatusEnumMap[instance.status]!;

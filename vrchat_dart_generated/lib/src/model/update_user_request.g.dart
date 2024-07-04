@@ -29,6 +29,8 @@ UpdateUserRequest _$UpdateUserRequestFromJson(Map<String, dynamic> json) =>
           bioLinks: $checkedConvert('bioLinks',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           pronouns: $checkedConvert('pronouns', (v) => v as String?),
+          isBoopingEnabled:
+              $checkedConvert('isBoopingEnabled', (v) => v as bool?),
           userIcon: $checkedConvert('userIcon', (v) => v as String?),
         );
         return val;
@@ -53,6 +55,7 @@ Map<String, dynamic> _$UpdateUserRequestToJson(UpdateUserRequest instance) {
   writeNotNull('bio', instance.bio);
   writeNotNull('bioLinks', instance.bioLinks);
   writeNotNull('pronouns', instance.pronouns);
+  writeNotNull('isBoopingEnabled', instance.isBoopingEnabled);
   writeNotNull('userIcon', instance.userIcon);
   return val;
 }

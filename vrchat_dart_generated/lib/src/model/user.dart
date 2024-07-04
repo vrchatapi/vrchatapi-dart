@@ -41,6 +41,7 @@ class User {
     this.location,
     this.note,
     required this.profilePicOverride,
+    required this.profilePicOverrideThumbnail,
     required this.pronouns,
     required this.state,
     required this.status,
@@ -131,6 +132,12 @@ class User {
   @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
   final String profilePicOverride;
 
+  @JsonKey(
+      name: r'profilePicOverrideThumbnail',
+      required: true,
+      includeIfNull: false)
+  final String profilePicOverrideThumbnail;
+
   @JsonKey(name: r'pronouns', required: true, includeIfNull: false)
   final String pronouns;
 
@@ -194,6 +201,7 @@ class User {
           other.location == location &&
           other.note == note &&
           other.profilePicOverride == profilePicOverride &&
+          other.profilePicOverrideThumbnail == profilePicOverrideThumbnail &&
           other.pronouns == pronouns &&
           other.state == state &&
           other.status == status &&
@@ -230,6 +238,7 @@ class User {
       location.hashCode +
       note.hashCode +
       profilePicOverride.hashCode +
+      profilePicOverrideThumbnail.hashCode +
       pronouns.hashCode +
       state.hashCode +
       status.hashCode +
