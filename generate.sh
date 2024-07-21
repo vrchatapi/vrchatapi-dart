@@ -17,6 +17,11 @@ cd ..
 brew install openapi-generator
 openapi-generator generate -g dart-dio -c generator-config.yaml
 
+# We need to do a pub get in the output before patching it
+cd vrchat_dart_generated
+dart pub get
+cd ..
+
 # Format before patching since extra line breaks can break the patches
 dart format .
 cd vrchat_dart
@@ -24,8 +29,6 @@ dart run tool/patch_output.dart
 cd ..
 
 cd vrchat_dart_generated
-dart pub get
-
 # We probably won't ever use these, and telling the generator to not generate them is broken
 echo "Removing tests"
 rm -rf test
