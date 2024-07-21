@@ -20,6 +20,9 @@ jobs:
           key: pub-cache-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: pub-cache-
 
+      - name: Add pub cache to path
+        run: echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
+
       - name: Activate puby
         run: dart pub global activate puby
 
