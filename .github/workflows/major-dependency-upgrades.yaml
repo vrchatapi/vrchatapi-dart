@@ -8,27 +8,27 @@ on:
 jobs:
   upgrade-dependencies:
     runs-on: ubuntu-latest
-    container:
-      image: dart:latest
     steps:
       - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          cache: true
 
       - name: Pub cache
         uses: actions/cache@v4
+        env:
+          cache-name: pub-cache
         with:
-          path: .pub-cache
-          key: pub-cache-${{ hashFiles('**/pubspec.lock') }}
-          restore-keys: pub-cache-
-
-      - name: Add pub cache to path
-        run: echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
+          path: ${{ env.PUB_CACHE }}
+          key: ${{ env.cache-name }}-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: ${{ env.cache-name }}-
 
       - name: Activate puby
         run: dart pub global activate puby
 
       - name: Upgrade dependencies
         run: puby upgrade --major-versions
-
+      
       - name: Check pubspec diff
         id: pubspec_check
         run: |
