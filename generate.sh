@@ -7,6 +7,8 @@ if [ -d "vrchat_dart_generated" ]; then
 fi
 
 cd vrchat_dart
+dart pub get
+
 # Run `./generate.sh local` to use a local copy of the spec
 dart run tool/patch_input.dart "$@"
 cd ..
@@ -22,11 +24,12 @@ dart run tool/patch_output.dart
 cd ..
 
 cd vrchat_dart_generated
+dart pub get
+
 # We probably won't ever use these, and telling the generator to not generate them is broken
 echo "Removing tests"
 rm -rf test
 
-dart pub get
 dart run build_runner build --delete-conflicting-outputs
 dart fix --apply
 dart format .
