@@ -15,19 +15,17 @@ jobs:
 
       - name: Pub cache
         uses: actions/cache@v4
-        env:
-          cache-name: pub-cache
         with:
-          path: ${{ env.PUB_CACHE }}
-          key: ${{ env.cache-name }}-${{ hashFiles('**/pubspec.lock') }}
-          restore-keys: ${{ env.cache-name }}-
+          path: .pub-cache
+          key: pub-cache-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: pub-cache-
 
       - name: Activate puby
         run: dart pub global activate puby
 
       - name: Upgrade dependencies
         run: puby upgrade --major-versions
-      
+
       - name: Check pubspec diff
         id: pubspec_check
         run: |
@@ -39,7 +37,7 @@ jobs:
         if: steps.pubspec_check.outputs.changed
         uses: peter-evans/create-pull-request@v6
         with:
-          branch: dependencies/major-upgrades
+          branch: ci/major-dependency-upgrades
           commit-message: "Upgraded dependency major versions"
           title: "[CI] Major Dependency Upgrades"
           body: "Upgraded dependency major versions"
