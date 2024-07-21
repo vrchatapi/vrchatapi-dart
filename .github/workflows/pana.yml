@@ -4,24 +4,24 @@ on: [push, pull_request]
 jobs:
   package-analysis:
     runs-on: ubuntu-latest
+    container:
+      image: dart:latest
     strategy:
       matrix:
         package: [vrchat_dart, vrchat_dart_generated]
     steps:
       - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2
-        with:
-          cache: true
       - name: Pub cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         env:
           cache-name: pub-cache
         with:
           path: ${{ env.PUB_CACHE }}
           key: ${{ env.cache-name }}-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: ${{ env.cache-name }}-
-      - run: |
+      - name: Run pana
+        run: |
           cd ${{ matrix.package }}
-          flutter pub get
+          dart pub get
           dart pub global activate pana
           pana --no-warning --exit-code-threshold 0
