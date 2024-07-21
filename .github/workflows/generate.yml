@@ -1,3 +1,5 @@
+name: Generate
+
 on:
   repository_dispatch:
     types: [spec_release]
