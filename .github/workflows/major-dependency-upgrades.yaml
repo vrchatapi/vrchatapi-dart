@@ -9,7 +9,7 @@ jobs:
   upgrade-dependencies:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
           cache: true
@@ -38,7 +38,7 @@ jobs:
 
       - name: Create Pull Request
         if: steps.pubspec_check.outputs.changed
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v6
         with:
           branch: dependencies/major-upgrades
           commit-message: "Upgraded dependency major versions"
