@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  package-analysis:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
