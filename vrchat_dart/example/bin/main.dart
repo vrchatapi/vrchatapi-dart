@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:otp/otp.dart';
 import 'package:vrchat_dart/vrchat_dart.dart';
@@ -95,6 +96,9 @@ void main() async {
       .getWorldsApi()
       .getWorld(worldId: worldsResponse.data!.first.id);
   print(getWorldResponse.data!.name);
+
+  // Do not start websocket streaming if this code is running in CI
+  if (Platform.environment.containsKey('GITHUB_ACTIONS')) return;
 
   // Listen for updates
   api.streaming.vrcEventStream.listen(handleVrcEvent);
