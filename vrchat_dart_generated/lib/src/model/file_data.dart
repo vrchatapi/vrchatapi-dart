@@ -19,7 +19,7 @@ class FileData {
   FileData({
     this.category = FileDataCategoryEnum.queued,
     required this.fileName,
-    required this.md5,
+    this.md5,
     required this.sizeInBytes,
     required this.status,
     this.uploadId = '',
@@ -32,8 +32,8 @@ class FileData {
   @JsonKey(name: r'fileName', required: true, includeIfNull: false)
   final String fileName;
 
-  @JsonKey(name: r'md5', required: true, includeIfNull: false)
-  final String md5;
+  @JsonKey(name: r'md5', required: false, includeIfNull: false)
+  final String? md5;
 
   // minimum: 0
   @JsonKey(name: r'sizeInBytes', required: true, includeIfNull: false)

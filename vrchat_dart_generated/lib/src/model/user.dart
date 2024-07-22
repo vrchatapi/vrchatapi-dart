@@ -40,6 +40,7 @@ class User {
     required this.lastPlatform,
     this.location,
     this.note,
+    this.platform,
     required this.profilePicOverride,
     required this.profilePicOverrideThumbnail,
     required this.pronouns,
@@ -129,6 +130,9 @@ class User {
   @JsonKey(name: r'note', required: false, includeIfNull: false)
   final String? note;
 
+  @JsonKey(name: r'platform', required: false, includeIfNull: false)
+  final String? platform;
+
   @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
   final String profilePicOverride;
 
@@ -200,6 +204,7 @@ class User {
           other.lastPlatform == lastPlatform &&
           other.location == location &&
           other.note == note &&
+          other.platform == platform &&
           other.profilePicOverride == profilePicOverride &&
           other.profilePicOverrideThumbnail == profilePicOverrideThumbnail &&
           other.pronouns == pronouns &&
@@ -237,6 +242,7 @@ class User {
       lastPlatform.hashCode +
       location.hashCode +
       note.hashCode +
+      platform.hashCode +
       profilePicOverride.hashCode +
       profilePicOverrideThumbnail.hashCode +
       pronouns.hashCode +
