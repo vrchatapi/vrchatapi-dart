@@ -21,6 +21,19 @@ jobs:
           key: pub-cache-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: pub-cache-
 
+      - name: Homebrew cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            /home/linuxbrew/.linuxbrew
+            /home/linuxbrew/.linuxbrew/Library/Taps
+            /home/linuxbrew/.cache/Homebrew
+            /home/linuxbrew/.linuxbrew/Cellar
+            /home/linuxbrew/.linuxbrew/bin/brew
+          key: ${{ runner.os }}-brew-${{ hashFiles('**/Brewfile') }}
+          restore-keys: |
+            ${{ runner.os }}-brew-
+
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
