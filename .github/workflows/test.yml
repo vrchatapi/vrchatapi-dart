@@ -1,0 +1,37 @@
+name: Test
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  package-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          cache: true
+      - name: Pub cache
+        uses: actions/cache@v4
+        env:
+          cache-name: pub-cache
+        with:
+          path: ${{ env.PUB_CACHE }}
+          key: ${{ env.cache-name }}-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: ${{ env.cache-name }}-
+      - name: Read credentials from secrets
+        env:
+          SECRET_FILE_CONTENT: ${{ secrets.TEST_CREDENTIALS_FILE }}
+        run: |
+          echo $SECRET_FILE_CONTENT | base64 -d > vrchat_dart/example/lib/credentials.dart
+      - name: Run example
+        run: |
+          cd vrchat_dart/example
+          dart pub get
+          dart run bin/main.dart
