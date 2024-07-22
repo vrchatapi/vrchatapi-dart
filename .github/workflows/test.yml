@@ -29,7 +29,7 @@ jobs:
         env:
           SECRET_FILE_CONTENT: ${{ secrets.TEST_CREDENTIALS_FILE }}
         run: |
-          echo $SECRET_FILE_CONTENT | base64 -d > vrchat_dart/example/lib/credentials.dart
+          echo $SECRET_FILE_CONTENT | base64 -d > vrchat_dart/example/bin/credentials.dart
       - name: Run example
         run: |
           cd vrchat_dart/example
