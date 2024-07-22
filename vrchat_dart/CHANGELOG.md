@@ -1,3 +1,6 @@
+## NEXT
+- Updates `CurrentUser.toUser` to handle new fields on `User`
+
 ## 3.5.3
 - Tighten dependency constraints
 

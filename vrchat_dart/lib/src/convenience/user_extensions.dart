@@ -7,6 +7,7 @@ extension CurrentUserExtension on CurrentUser {
     final currentUserJson = toJson();
     currentUserJson['friendRequestStatus'] = '';
     currentUserJson['last_activity'] = '';
+    currentUserJson['platform'] = '';
     return User.fromJson(currentUserJson);
   }
 
