@@ -17,6 +17,7 @@ class Permission {
   /// Returns a new [Permission] instance.
   Permission({
     required this.id,
+    required this.ownerDisplayName,
     required this.name,
     required this.ownerId,
     this.data,
@@ -24,6 +25,9 @@ class Permission {
 
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
+
+  @JsonKey(name: r'ownerDisplayName', required: true, includeIfNull: false)
+  final String ownerDisplayName;
 
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
@@ -40,13 +44,18 @@ class Permission {
       identical(this, other) ||
       other is Permission &&
           other.id == id &&
+          other.ownerDisplayName == ownerDisplayName &&
           other.name == name &&
           other.ownerId == ownerId &&
           other.data == data;
 
   @override
   int get hashCode =>
-      id.hashCode + name.hashCode + ownerId.hashCode + data.hashCode;
+      id.hashCode +
+      ownerDisplayName.hashCode +
+      name.hashCode +
+      ownerId.hashCode +
+      data.hashCode;
 
   factory Permission.fromJson(Map<String, dynamic> json) =>
       _$PermissionFromJson(json);

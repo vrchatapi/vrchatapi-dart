@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **category** | **String** |  | [default to 'queued']
 **fileName** | **String** |  | 
-**md5** | **String** |  | 
+**md5** | **String** |  | [optional] 
 **sizeInBytes** | **int** |  | 
 **status** | [**FileStatus**](FileStatus.md) |  | 
 **uploadId** | **String** |  | [default to '']

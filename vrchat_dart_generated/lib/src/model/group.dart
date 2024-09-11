@@ -41,8 +41,11 @@ class Group {
     this.isVerified = false,
     this.joinState,
     this.tags,
+    this.transferTargetId,
     this.galleries,
     this.createdAt,
+    this.updatedAt,
+    this.lastPostCreatedAt,
     this.onlineMemberCount,
     this.membershipStatus,
     this.myMember,
@@ -104,16 +107,24 @@ class Group {
   @JsonKey(name: r'joinState', required: false, includeIfNull: false)
   final GroupJoinState? joinState;
 
-  ///
   @JsonKey(name: r'tags', required: false, includeIfNull: false)
   final List<String>? tags;
 
-  ///
+  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
+  @JsonKey(name: r'transferTargetId', required: false, includeIfNull: false)
+  final String? transferTargetId;
+
   @JsonKey(name: r'galleries', required: false, includeIfNull: false)
   final List<GroupGallery>? galleries;
 
   @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
   final DateTime? createdAt;
+
+  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
+  final DateTime? updatedAt;
+
+  @JsonKey(name: r'lastPostCreatedAt', required: false, includeIfNull: false)
+  final DateTime? lastPostCreatedAt;
 
   @JsonKey(name: r'onlineMemberCount', required: false, includeIfNull: false)
   final int? onlineMemberCount;
@@ -151,8 +162,11 @@ class Group {
           other.isVerified == isVerified &&
           other.joinState == joinState &&
           other.tags == tags &&
+          other.transferTargetId == transferTargetId &&
           other.galleries == galleries &&
           other.createdAt == createdAt &&
+          other.updatedAt == updatedAt &&
+          other.lastPostCreatedAt == lastPostCreatedAt &&
           other.onlineMemberCount == onlineMemberCount &&
           other.membershipStatus == membershipStatus &&
           other.myMember == myMember &&
@@ -179,8 +193,11 @@ class Group {
       isVerified.hashCode +
       joinState.hashCode +
       tags.hashCode +
+      transferTargetId.hashCode +
       galleries.hashCode +
       createdAt.hashCode +
+      updatedAt.hashCode +
+      (lastPostCreatedAt == null ? 0 : lastPostCreatedAt.hashCode) +
       onlineMemberCount.hashCode +
       membershipStatus.hashCode +
       myMember.hashCode +

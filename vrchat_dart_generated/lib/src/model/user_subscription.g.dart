@@ -45,6 +45,7 @@ UserSubscription _$UserSubscriptionFromJson(Map<String, dynamic> json) =>
           active: $checkedConvert('active', (v) => v as bool? ?? true),
           status: $checkedConvert(
               'status', (v) => $enumDecode(_$TransactionStatusEnumMap, v)),
+          starts: $checkedConvert('starts', (v) => v as String?),
           expires:
               $checkedConvert('expires', (v) => DateTime.parse(v as String)),
           createdAt:
@@ -80,6 +81,7 @@ Map<String, dynamic> _$UserSubscriptionToJson(UserSubscription instance) {
   val['tier'] = instance.tier;
   val['active'] = instance.active;
   val['status'] = _$TransactionStatusEnumMap[instance.status]!;
+  writeNotNull('starts', instance.starts);
   val['expires'] = instance.expires.toIso8601String();
   val['created_at'] = instance.createdAt.toIso8601String();
   val['updated_at'] = instance.updatedAt.toIso8601String();

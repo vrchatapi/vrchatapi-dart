@@ -19,6 +19,7 @@ TransactionAgreement _$TransactionAgreementFromJson(
           requiredKeys: const [
             'agreementId',
             'itemId',
+            'agreement',
             'status',
             'period',
             'frequency',
@@ -39,6 +40,7 @@ TransactionAgreement _$TransactionAgreementFromJson(
         final val = TransactionAgreement(
           agreementId: $checkedConvert('agreementId', (v) => v as String),
           itemId: $checkedConvert('itemId', (v) => v as num),
+          agreement: $checkedConvert('agreement', (v) => v as String),
           status: $checkedConvert('status', (v) => v as String),
           period: $checkedConvert('period', (v) => v as String),
           frequency: $checkedConvert('frequency', (v) => v as num),
@@ -64,6 +66,7 @@ Map<String, dynamic> _$TransactionAgreementToJson(
     <String, dynamic>{
       'agreementId': instance.agreementId,
       'itemId': instance.itemId,
+      'agreement': instance.agreement,
       'status': instance.status,
       'period': instance.period,
       'frequency': instance.frequency,

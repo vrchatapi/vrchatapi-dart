@@ -935,6 +935,7 @@ class WorldsApi {
   /// * [maxUnityVersion] - The maximum Unity version supported by the asset.
   /// * [minUnityVersion] - The minimum Unity version supported by the asset.
   /// * [platform] - The platform the asset supports.
+  /// * [fuzzy]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -959,6 +960,7 @@ class WorldsApi {
     String? maxUnityVersion,
     String? minUnityVersion,
     String? platform,
+    bool? fuzzy,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1001,6 +1003,7 @@ class WorldsApi {
       if (maxUnityVersion != null) r'maxUnityVersion': maxUnityVersion,
       if (minUnityVersion != null) r'minUnityVersion': minUnityVersion,
       if (platform != null) r'platform': platform,
+      if (fuzzy != null) r'fuzzy': fuzzy,
     };
 
     final _response = await _dio.request<Object>(

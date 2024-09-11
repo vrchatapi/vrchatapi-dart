@@ -5,6 +5,7 @@
 export 'package:vrchat_dart_generated/src/api.dart';
 export 'package:vrchat_dart_generated/src/auth/api_key_auth.dart';
 export 'package:vrchat_dart_generated/src/auth/basic_auth.dart';
+export 'package:vrchat_dart_generated/src/auth/bearer_auth.dart';
 export 'package:vrchat_dart_generated/src/auth/oauth.dart';
 
 export 'package:vrchat_dart_generated/src/api/authentication_api.dart';

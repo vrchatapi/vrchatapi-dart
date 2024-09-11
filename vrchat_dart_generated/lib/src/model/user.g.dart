@@ -30,6 +30,7 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
             'last_activity',
             'last_login',
             'last_platform',
+            'platform',
             'profilePicOverride',
             'profilePicOverrideThumbnail',
             'pronouns',
@@ -73,6 +74,7 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
           lastPlatform: $checkedConvert('last_platform', (v) => v as String),
           location: $checkedConvert('location', (v) => v as String?),
           note: $checkedConvert('note', (v) => v as String?),
+          platform: $checkedConvert('platform', (v) => v as String),
           profilePicOverride:
               $checkedConvert('profilePicOverride', (v) => v as String),
           profilePicOverrideThumbnail: $checkedConvert(
@@ -137,6 +139,7 @@ Map<String, dynamic> _$UserToJson(User instance) {
   val['last_platform'] = instance.lastPlatform;
   writeNotNull('location', instance.location);
   writeNotNull('note', instance.note);
+  val['platform'] = instance.platform;
   val['profilePicOverride'] = instance.profilePicOverride;
   val['profilePicOverrideThumbnail'] = instance.profilePicOverrideThumbnail;
   val['pronouns'] = instance.pronouns;

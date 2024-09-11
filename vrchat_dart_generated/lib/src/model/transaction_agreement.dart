@@ -18,6 +18,7 @@ class TransactionAgreement {
   TransactionAgreement({
     required this.agreementId,
     required this.itemId,
+    required this.agreement,
     required this.status,
     required this.period,
     required this.frequency,
@@ -40,6 +41,9 @@ class TransactionAgreement {
 
   @JsonKey(name: r'itemId', required: true, includeIfNull: false)
   final num itemId;
+
+  @JsonKey(name: r'agreement', required: true, includeIfNull: false)
+  final String agreement;
 
   /// This is NOT TransactionStatus, but whatever Steam return.
   @JsonKey(name: r'status', required: true, includeIfNull: false)
@@ -93,6 +97,7 @@ class TransactionAgreement {
       other is TransactionAgreement &&
           other.agreementId == agreementId &&
           other.itemId == itemId &&
+          other.agreement == agreement &&
           other.status == status &&
           other.period == period &&
           other.frequency == frequency &&
@@ -113,6 +118,7 @@ class TransactionAgreement {
   int get hashCode =>
       agreementId.hashCode +
       itemId.hashCode +
+      agreement.hashCode +
       status.hashCode +
       period.hashCode +
       frequency.hashCode +

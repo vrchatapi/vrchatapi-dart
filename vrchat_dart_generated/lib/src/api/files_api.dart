@@ -15,7 +15,6 @@ import 'package:vrchat_dart_generated/src/model/file.dart';
 import 'package:vrchat_dart_generated/src/model/file_upload_url.dart';
 import 'package:vrchat_dart_generated/src/model/file_version_upload_status.dart';
 import 'package:vrchat_dart_generated/src/model/finish_file_data_upload_request.dart';
-import 'package:vrchat_dart_generated/src/model/success.dart';
 
 class FilesApi {
   final Dio _dio;
@@ -233,9 +232,9 @@ class FilesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Success] as data
+  /// Returns a [Future] containing a [Response] with a [File] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Success>> deleteFile({
+  Future<Response<File>> deleteFile({
     required String fileId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -273,13 +272,13 @@ class FilesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Success? _responseData;
+    File? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Success, Success>(rawData, 'Success', growable: true);
+          : deserialize<File, File>(rawData, 'File', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -290,7 +289,7 @@ class FilesApi {
       );
     }
 
-    return Response<Success>(
+    return Response<File>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

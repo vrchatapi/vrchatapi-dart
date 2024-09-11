@@ -20,6 +20,9 @@ class GroupMyMember {
     this.groupId,
     this.userId,
     this.roleIds,
+    this.acceptedByDisplayName,
+    this.acceptedById,
+    this.createdAt,
     this.managerNotes,
     this.membershipStatus,
     this.isSubscribedToAnnouncements = true,
@@ -28,6 +31,9 @@ class GroupMyMember {
     this.joinedAt,
     this.bannedAt,
     this.has2FA = false,
+    this.hasJoinedFromPurchase = false,
+    this.lastPostReadAt,
+    this.mRoleIds,
     this.permissions,
   });
 
@@ -43,6 +49,17 @@ class GroupMyMember {
 
   @JsonKey(name: r'roleIds', required: false, includeIfNull: false)
   final List<String>? roleIds;
+
+  @JsonKey(
+      name: r'acceptedByDisplayName', required: false, includeIfNull: false)
+  final String? acceptedByDisplayName;
+
+  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
+  @JsonKey(name: r'acceptedById', required: false, includeIfNull: false)
+  final String? acceptedById;
+
+  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  final DateTime? createdAt;
 
   @JsonKey(name: r'managerNotes', required: false, includeIfNull: false)
   final String? managerNotes;
@@ -71,6 +88,16 @@ class GroupMyMember {
   @JsonKey(name: r'has2FA', required: false, includeIfNull: false)
   final bool? has2FA;
 
+  @JsonKey(
+      name: r'hasJoinedFromPurchase', required: false, includeIfNull: false)
+  final bool? hasJoinedFromPurchase;
+
+  @JsonKey(name: r'lastPostReadAt', required: false, includeIfNull: false)
+  final DateTime? lastPostReadAt;
+
+  @JsonKey(name: r'mRoleIds', required: false, includeIfNull: false)
+  final List<String>? mRoleIds;
+
   @JsonKey(name: r'permissions', required: false, includeIfNull: false)
   final List<String>? permissions;
 
@@ -82,6 +109,9 @@ class GroupMyMember {
           other.groupId == groupId &&
           other.userId == userId &&
           other.roleIds == roleIds &&
+          other.acceptedByDisplayName == acceptedByDisplayName &&
+          other.acceptedById == acceptedById &&
+          other.createdAt == createdAt &&
           other.managerNotes == managerNotes &&
           other.membershipStatus == membershipStatus &&
           other.isSubscribedToAnnouncements == isSubscribedToAnnouncements &&
@@ -90,6 +120,9 @@ class GroupMyMember {
           other.joinedAt == joinedAt &&
           other.bannedAt == bannedAt &&
           other.has2FA == has2FA &&
+          other.hasJoinedFromPurchase == hasJoinedFromPurchase &&
+          other.lastPostReadAt == lastPostReadAt &&
+          other.mRoleIds == mRoleIds &&
           other.permissions == permissions;
 
   @override
@@ -98,6 +131,9 @@ class GroupMyMember {
       groupId.hashCode +
       userId.hashCode +
       roleIds.hashCode +
+      (acceptedByDisplayName == null ? 0 : acceptedByDisplayName.hashCode) +
+      acceptedById.hashCode +
+      createdAt.hashCode +
       managerNotes.hashCode +
       membershipStatus.hashCode +
       isSubscribedToAnnouncements.hashCode +
@@ -106,6 +142,9 @@ class GroupMyMember {
       joinedAt.hashCode +
       (bannedAt == null ? 0 : bannedAt.hashCode) +
       has2FA.hashCode +
+      hasJoinedFromPurchase.hashCode +
+      (lastPostReadAt == null ? 0 : lastPostReadAt.hashCode) +
+      mRoleIds.hashCode +
       permissions.hashCode;
 
   factory GroupMyMember.fromJson(Map<String, dynamic> json) =>

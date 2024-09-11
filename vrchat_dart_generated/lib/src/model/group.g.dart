@@ -39,12 +39,18 @@ Group _$GroupFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => $enumDecodeNullable(_$GroupJoinStateEnumMap, v)),
           tags: $checkedConvert('tags',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          transferTargetId:
+              $checkedConvert('transferTargetId', (v) => v as String?),
           galleries: $checkedConvert(
               'galleries',
               (v) => (v as List<dynamic>?)
                   ?.map((e) => GroupGallery.fromJson(e as Map<String, dynamic>))
                   .toList()),
           createdAt: $checkedConvert('createdAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          updatedAt: $checkedConvert('updatedAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          lastPostCreatedAt: $checkedConvert('lastPostCreatedAt',
               (v) => v == null ? null : DateTime.parse(v as String)),
           onlineMemberCount:
               $checkedConvert('onlineMemberCount', (v) => (v as num?)?.toInt()),
@@ -94,9 +100,13 @@ Map<String, dynamic> _$GroupToJson(Group instance) {
   writeNotNull('isVerified', instance.isVerified);
   writeNotNull('joinState', _$GroupJoinStateEnumMap[instance.joinState]);
   writeNotNull('tags', instance.tags);
+  writeNotNull('transferTargetId', instance.transferTargetId);
   writeNotNull(
       'galleries', instance.galleries?.map((e) => e.toJson()).toList());
   writeNotNull('createdAt', instance.createdAt?.toIso8601String());
+  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
+  writeNotNull(
+      'lastPostCreatedAt', instance.lastPostCreatedAt?.toIso8601String());
   writeNotNull('onlineMemberCount', instance.onlineMemberCount);
   writeNotNull('membershipStatus',
       _$GroupMemberStatusEnumMap[instance.membershipStatus]);

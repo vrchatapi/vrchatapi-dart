@@ -28,6 +28,7 @@ class UserSubscription {
     required this.tier,
     this.active = true,
     required this.status,
+    this.starts,
     required this.expires,
     required this.createdAt,
     required this.updatedAt,
@@ -66,6 +67,9 @@ class UserSubscription {
   @JsonKey(name: r'status', required: true, includeIfNull: false)
   final TransactionStatus status;
 
+  @JsonKey(name: r'starts', required: false, includeIfNull: false)
+  final String? starts;
+
   @JsonKey(name: r'expires', required: true, includeIfNull: false)
   final DateTime expires;
 
@@ -95,6 +99,7 @@ class UserSubscription {
           other.tier == tier &&
           other.active == active &&
           other.status == status &&
+          other.starts == starts &&
           other.expires == expires &&
           other.createdAt == createdAt &&
           other.updatedAt == updatedAt &&
@@ -113,6 +118,7 @@ class UserSubscription {
       tier.hashCode +
       active.hashCode +
       status.hashCode +
+      starts.hashCode +
       expires.hashCode +
       createdAt.hashCode +
       updatedAt.hashCode +

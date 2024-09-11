@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **agreementId** | **String** |  | 
 **itemId** | **num** |  | 
+**agreement** | **String** |  | 
 **status** | **String** | This is NOT TransactionStatus, but whatever Steam return. | 
 **period** | **String** |  | 
 **frequency** | **num** |  | 

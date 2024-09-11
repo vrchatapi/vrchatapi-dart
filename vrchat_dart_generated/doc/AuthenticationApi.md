@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **checkUserExists**
-> UserExists checkUserExists(email, displayName, userId, excludeUserId)
+> UserExists checkUserExists(email, displayName, username, excludeUserId)
 
 Check User Exists
 
@@ -33,11 +33,11 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getAuthenticationApi();
 final String email = email_example; // String | Filter by email.
 final String displayName = displayName_example; // String | Filter by displayName.
-final String userId = userId_example; // String | Filter by UserID.
+final String username = username_example; // String | Filter by Username.
 final String excludeUserId = excludeUserId_example; // String | Exclude by UserID.
 
 try {
-    final response = api.checkUserExists(email, displayName, userId, excludeUserId);
+    final response = api.checkUserExists(email, displayName, username, excludeUserId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AuthenticationApi->checkUserExists: $e\n');
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **email** | **String**| Filter by email. | [optional] 
  **displayName** | **String**| Filter by displayName. | [optional] 
- **userId** | **String**| Filter by UserID. | [optional] 
+ **username** | **String**| Filter by Username. | [optional] 
  **excludeUserId** | **String**| Exclude by UserID. | [optional] 
 
 ### Return type

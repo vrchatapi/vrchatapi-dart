@@ -14,10 +14,11 @@ UserExists _$UserExistsFromJson(Map<String, dynamic> json) => $checkedCreate(
       ($checkedConvert) {
         $checkKeys(
           json,
-          requiredKeys: const ['userExists'],
+          requiredKeys: const ['userExists', 'nameOk'],
         );
         final val = UserExists(
           userExists: $checkedConvert('userExists', (v) => v as bool? ?? false),
+          nameOk: $checkedConvert('nameOk', (v) => v as bool? ?? false),
         );
         return val;
       },
@@ -26,4 +27,5 @@ UserExists _$UserExistsFromJson(Map<String, dynamic> json) => $checkedCreate(
 Map<String, dynamic> _$UserExistsToJson(UserExists instance) =>
     <String, dynamic>{
       'userExists': instance.userExists,
+      'nameOk': instance.nameOk,
     };

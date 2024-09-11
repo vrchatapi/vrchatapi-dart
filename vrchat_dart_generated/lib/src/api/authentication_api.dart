@@ -29,7 +29,7 @@ class AuthenticationApi {
   /// Parameters:
   /// * [email] - Filter by email.
   /// * [displayName] - Filter by displayName.
-  /// * [userId] - Filter by UserID.
+  /// * [username] - Filter by Username.
   /// * [excludeUserId] - Exclude by UserID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -43,7 +43,7 @@ class AuthenticationApi {
   Future<Response<UserExists>> checkUserExists({
     String? email,
     String? displayName,
-    String? userId,
+    String? username,
     String? excludeUserId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -68,7 +68,7 @@ class AuthenticationApi {
     final _queryParameters = <String, dynamic>{
       if (email != null) r'email': email,
       if (displayName != null) r'displayName': displayName,
-      if (userId != null) r'userId': userId,
+      if (username != null) r'username': username,
       if (excludeUserId != null) r'excludeUserId': excludeUserId,
     };
 

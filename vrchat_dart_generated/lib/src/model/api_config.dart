@@ -26,28 +26,41 @@ class APIConfig {
     required this.address,
     required this.announcements,
     this.appName = 'VrChat',
+    required this.availableLanguageCodes,
+    required this.availableLanguages,
     required this.buildVersionTag,
     required this.clientApiKey,
     this.clientBPSCeiling = 18432,
     this.clientDisconnectTimeout = 30000,
+    this.clientNetDispatchThread = false,
+    this.clientNetInThread = false,
+    this.clientNetInThread2 = false,
+    this.clientNetInThreadMobile = false,
+    this.clientNetInThreadMobile2 = false,
+    this.clientNetOutThread = false,
+    this.clientNetOutThread2 = false,
+    this.clientNetOutThreadMobile = false,
+    this.clientNetOutThreadMobile2 = false,
+    this.clientQR = 1,
     this.clientReservedPlayerBPS = 7168,
     this.clientSentCountAllowance = 15,
     required this.contactEmail,
     required this.copyrightEmail,
+    this.currentPrivacyVersion = 1,
     required this.currentTOSVersion,
     required this.defaultAvatar,
     required this.deploymentGroup,
-    required this.devAppVersionStandalone,
-    required this.devDownloadLinkWindows,
+    this.devLanguageCodes,
     required this.devSdkUrl,
     required this.devSdkVersion,
-    required this.devServerVersionStandalone,
     required this.disCountdown,
+    this.disableAVProInProton = false,
     this.disableAvatarCopying = false,
     this.disableAvatarGating = false,
     this.disableCommunityLabs = false,
     this.disableCommunityLabsPromotion = false,
     this.disableEmail = false,
+    this.disableCaptcha = true,
     this.disableEventStream = false,
     this.disableFeedbackGating = false,
     this.disableFrontendBuilds = false,
@@ -61,26 +74,23 @@ class APIConfig {
     required this.downloadLinkWindows,
     required this.downloadUrls,
     required this.dynamicWorldRows,
+    this.economyPauseEnd,
+    this.economyPauseStart,
+    this.economyState = 1,
     required this.events,
-    required this.gearDemoRoomId,
     required this.homeWorldId,
     this.homepageRedirectTarget = 'https://hello.vrchat.com',
     required this.hubWorldId,
+    required this.imageHostUrlList,
     required this.jobsEmail,
-    required this.messageOfTheDay,
     required this.moderationEmail,
-    required this.moderationQueryPeriod,
     required this.notAllowedToSelectAvatarInPrivateWorldMessage,
-    required this.plugin,
-    required this.releaseAppVersionStandalone,
-    required this.releaseSdkUrl,
-    required this.releaseSdkVersion,
-    required this.releaseServerVersionStandalone,
     required this.sdkDeveloperFaqUrl,
     required this.sdkDiscordUrl,
     required this.sdkNotAllowedToPublishMessage,
     required this.sdkUnityVersion,
     required this.serverName,
+    required this.stringHostUrlList,
     required this.supportEmail,
     required this.timeOutWorldId,
     required this.tutorialWorldId,
@@ -91,15 +101,10 @@ class APIConfig {
     required this.uploadAnalysisPercent,
     required this.urlList,
     this.useReliableUdpForVoice = false,
-    required this.userUpdatePeriod,
-    required this.userVerificationDelay,
-    required this.userVerificationRetry,
-    required this.userVerificationTimeout,
     required this.viveWindowsUrl,
     required this.whiteListedAssetUrls,
-    required this.worldUpdatePeriod,
-    required this.playerUrlResolverHash,
     required this.playerUrlResolverVersion,
+    required this.playerUrlResolverSha1,
   });
 
   /// Unknown, probably voice optimization testing
@@ -128,6 +133,15 @@ class APIConfig {
   @JsonKey(name: r'appName', required: true, includeIfNull: false)
   final String appName;
 
+  /// List of supported Languages
+  @JsonKey(
+      name: r'availableLanguageCodes', required: true, includeIfNull: false)
+  final List<String> availableLanguageCodes;
+
+  /// List of supported Languages
+  @JsonKey(name: r'availableLanguages', required: true, includeIfNull: false)
+  final List<String> availableLanguages;
+
   /// Build tag of the API server
   @JsonKey(name: r'buildVersionTag', required: true, includeIfNull: false)
   final String buildVersionTag;
@@ -147,6 +161,51 @@ class APIConfig {
 
   /// Unknown
   @JsonKey(
+      name: r'clientNetDispatchThread', required: false, includeIfNull: false)
+  final bool? clientNetDispatchThread;
+
+  /// Unknown
+  @JsonKey(name: r'clientNetInThread', required: false, includeIfNull: false)
+  final bool? clientNetInThread;
+
+  /// Unknown
+  @JsonKey(name: r'clientNetInThread2', required: false, includeIfNull: false)
+  final bool? clientNetInThread2;
+
+  /// Unknown
+  @JsonKey(
+      name: r'clientNetInThreadMobile', required: false, includeIfNull: false)
+  final bool? clientNetInThreadMobile;
+
+  /// Unknown
+  @JsonKey(
+      name: r'clientNetInThreadMobile2', required: false, includeIfNull: false)
+  final bool? clientNetInThreadMobile2;
+
+  /// Unknown
+  @JsonKey(name: r'clientNetOutThread', required: false, includeIfNull: false)
+  final bool? clientNetOutThread;
+
+  /// Unknown
+  @JsonKey(name: r'clientNetOutThread2', required: false, includeIfNull: false)
+  final bool? clientNetOutThread2;
+
+  /// Unknown
+  @JsonKey(
+      name: r'clientNetOutThreadMobile', required: false, includeIfNull: false)
+  final bool? clientNetOutThreadMobile;
+
+  /// Unknown
+  @JsonKey(
+      name: r'clientNetOutThreadMobile2', required: false, includeIfNull: false)
+  final bool? clientNetOutThreadMobile2;
+
+  /// Unknown
+  @JsonKey(name: r'clientQR', required: false, includeIfNull: false)
+  final int? clientQR;
+
+  /// Unknown
+  @JsonKey(
       name: r'clientReservedPlayerBPS', required: true, includeIfNull: false)
   final int clientReservedPlayerBPS;
 
@@ -163,6 +222,11 @@ class APIConfig {
   @JsonKey(name: r'copyrightEmail', required: true, includeIfNull: false)
   final String copyrightEmail;
 
+  /// Current version number of the Privacy Agreement
+  @JsonKey(
+      name: r'currentPrivacyVersion', required: false, includeIfNull: false)
+  final int? currentPrivacyVersion;
+
   /// Current version number of the Terms of Service
   // minimum: 0
   @JsonKey(name: r'currentTOSVersion', required: true, includeIfNull: false)
@@ -174,17 +238,9 @@ class APIConfig {
   @JsonKey(name: r'deploymentGroup', required: true, includeIfNull: false)
   final DeploymentGroup deploymentGroup;
 
-  /// Version number for game development build
-  @Deprecated('devAppVersionStandalone has been deprecated')
-  @JsonKey(
-      name: r'devAppVersionStandalone', required: true, includeIfNull: false)
-  final String devAppVersionStandalone;
-
-  /// Developer Download link
-  @Deprecated('devDownloadLinkWindows has been deprecated')
-  @JsonKey(
-      name: r'devDownloadLinkWindows', required: true, includeIfNull: false)
-  final String devDownloadLinkWindows;
+  /// Unknown
+  @JsonKey(name: r'devLanguageCodes', required: false, includeIfNull: false)
+  final List<String>? devLanguageCodes;
 
   /// Link to download the development SDK, use downloadUrls instead
   @Deprecated('devSdkUrl has been deprecated')
@@ -196,15 +252,13 @@ class APIConfig {
   @JsonKey(name: r'devSdkVersion', required: true, includeIfNull: false)
   final String devSdkVersion;
 
-  /// Version number for server development build
-  @Deprecated('devServerVersionStandalone has been deprecated')
-  @JsonKey(
-      name: r'devServerVersionStandalone', required: true, includeIfNull: false)
-  final String devServerVersionStandalone;
-
   /// Unknown, \"dis\" maybe for disconnect?
   @JsonKey(name: r'dis-countdown', required: true, includeIfNull: false)
   final DateTime disCountdown;
+
+  /// Unknown
+  @JsonKey(name: r'disableAVProInProton', required: false, includeIfNull: false)
+  final bool? disableAVProInProton;
 
   /// Toggles if copying avatars should be disabled
   @JsonKey(name: r'disableAvatarCopying', required: true, includeIfNull: false)
@@ -228,6 +282,10 @@ class APIConfig {
   /// Unknown
   @JsonKey(name: r'disableEmail', required: true, includeIfNull: false)
   final bool disableEmail;
+
+  /// Unknown
+  @JsonKey(name: r'disableCaptcha', required: false, includeIfNull: false)
+  final bool? disableCaptcha;
 
   /// Toggles if Analytics should be disabled.
   @JsonKey(name: r'disableEventStream', required: true, includeIfNull: false)
@@ -282,13 +340,20 @@ class APIConfig {
   @JsonKey(name: r'dynamicWorldRows', required: true, includeIfNull: false)
   final Set<DynamicContentRow> dynamicWorldRows;
 
-  @JsonKey(name: r'events', required: true, includeIfNull: false)
-  final APIConfigEvents events;
+  /// Unknown
+  @JsonKey(name: r'economyPauseEnd', required: false, includeIfNull: false)
+  final String? economyPauseEnd;
 
   /// Unknown
-  @Deprecated('gearDemoRoomId has been deprecated')
-  @JsonKey(name: r'gearDemoRoomId', required: true, includeIfNull: false)
-  final String gearDemoRoomId;
+  @JsonKey(name: r'economyPauseStart', required: false, includeIfNull: false)
+  final String? economyPauseStart;
+
+  /// Unknown
+  @JsonKey(name: r'economyState', required: false, includeIfNull: false)
+  final int? economyState;
+
+  @JsonKey(name: r'events', required: true, includeIfNull: false)
+  final APIConfigEvents events;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @JsonKey(name: r'homeWorldId', required: true, includeIfNull: false)
@@ -303,22 +368,17 @@ class APIConfig {
   @JsonKey(name: r'hubWorldId', required: true, includeIfNull: false)
   final String hubWorldId;
 
+  /// A list of explicitly allowed origins that worlds can request images from via the Udon's [VRCImageDownloader#DownloadImage](https://creators.vrchat.com/worlds/udon/image-loading/#downloadimage).
+  @JsonKey(name: r'imageHostUrlList', required: true, includeIfNull: false)
+  final List<String> imageHostUrlList;
+
   /// VRChat's job application email
   @JsonKey(name: r'jobsEmail', required: true, includeIfNull: false)
   final String jobsEmail;
 
-  /// MOTD
-  @Deprecated('messageOfTheDay has been deprecated')
-  @JsonKey(name: r'messageOfTheDay', required: true, includeIfNull: false)
-  final String messageOfTheDay;
-
   /// VRChat's moderation related email
   @JsonKey(name: r'moderationEmail', required: true, includeIfNull: false)
   final String moderationEmail;
-
-  /// Unknown
-  @JsonKey(name: r'moderationQueryPeriod', required: true, includeIfNull: false)
-  final int moderationQueryPeriod;
 
   /// Used in-game to notify a user they aren't allowed to select avatars in private worlds
   @JsonKey(
@@ -326,36 +386,6 @@ class APIConfig {
       required: true,
       includeIfNull: false)
   final String notAllowedToSelectAvatarInPrivateWorldMessage;
-
-  /// Extra [plugin](https://doc.photonengine.com/en-us/server/current/plugins/manual) to run in each instance
-  @JsonKey(name: r'plugin', required: true, includeIfNull: false)
-  final String plugin;
-
-  /// Version number for game release build
-  @Deprecated('releaseAppVersionStandalone has been deprecated')
-  @JsonKey(
-      name: r'releaseAppVersionStandalone',
-      required: true,
-      includeIfNull: false)
-  final String releaseAppVersionStandalone;
-
-  /// Link to download the release SDK
-  @Deprecated('releaseSdkUrl has been deprecated')
-  @JsonKey(name: r'releaseSdkUrl', required: true, includeIfNull: false)
-  final String releaseSdkUrl;
-
-  /// Version of the release SDK
-  @Deprecated('releaseSdkVersion has been deprecated')
-  @JsonKey(name: r'releaseSdkVersion', required: true, includeIfNull: false)
-  final String releaseSdkVersion;
-
-  /// Version number for server release build
-  @Deprecated('releaseServerVersionStandalone has been deprecated')
-  @JsonKey(
-      name: r'releaseServerVersionStandalone',
-      required: true,
-      includeIfNull: false)
-  final String releaseServerVersionStandalone;
 
   /// Link to the developer FAQ
   @JsonKey(name: r'sdkDeveloperFaqUrl', required: true, includeIfNull: false)
@@ -379,6 +409,10 @@ class APIConfig {
   /// Server name of the API server currently responding
   @JsonKey(name: r'serverName', required: true, includeIfNull: false)
   final String serverName;
+
+  /// A list of explicitly allowed origins that worlds can request strings from via the Udon's [VRCStringDownloader.LoadUrl](https://creators.vrchat.com/worlds/udon/string-loading/#ivrcstringdownload).
+  @JsonKey(name: r'stringHostUrlList', required: true, includeIfNull: false)
+  final List<String> stringHostUrlList;
 
   /// VRChat's support email
   @JsonKey(name: r'supportEmail', required: true, includeIfNull: false)
@@ -422,23 +456,6 @@ class APIConfig {
       name: r'useReliableUdpForVoice', required: true, includeIfNull: false)
   final bool useReliableUdpForVoice;
 
-  /// Unknown
-  @JsonKey(name: r'userUpdatePeriod', required: true, includeIfNull: false)
-  final int userUpdatePeriod;
-
-  /// Unknown
-  @JsonKey(name: r'userVerificationDelay', required: true, includeIfNull: false)
-  final int userVerificationDelay;
-
-  /// Unknown
-  @JsonKey(name: r'userVerificationRetry', required: true, includeIfNull: false)
-  final int userVerificationRetry;
-
-  /// Unknown
-  @JsonKey(
-      name: r'userVerificationTimeout', required: true, includeIfNull: false)
-  final int userVerificationTimeout;
-
   /// Download link for game on the Steam website.
   @JsonKey(name: r'viveWindowsUrl', required: true, includeIfNull: false)
   final String viveWindowsUrl;
@@ -447,21 +464,17 @@ class APIConfig {
   @JsonKey(name: r'whiteListedAssetUrls', required: true, includeIfNull: false)
   final List<String> whiteListedAssetUrls;
 
-  /// Unknown
-  @JsonKey(name: r'worldUpdatePeriod', required: true, includeIfNull: false)
-  final int worldUpdatePeriod;
-
-  /// Currently used youtube-dl.exe hash in SHA-256-delimited format
-  @JsonKey(
-      name: r'player-url-resolver-hash', required: true, includeIfNull: false)
-  final String playerUrlResolverHash;
-
   /// Currently used youtube-dl.exe version
   @JsonKey(
       name: r'player-url-resolver-version',
       required: true,
       includeIfNull: false)
   final String playerUrlResolverVersion;
+
+  /// Currently used youtube-dl.exe hash in SHA1-delimited format
+  @JsonKey(
+      name: r'player-url-resolver-sha1', required: true, includeIfNull: false)
+  final String playerUrlResolverSha1;
 
   @override
   bool operator ==(Object other) =>
@@ -473,34 +486,44 @@ class APIConfig {
           other.announcements == announcements &&
 // ignore: deprecated_member_use_from_same_package
           other.appName == appName &&
+          other.availableLanguageCodes == availableLanguageCodes &&
+          other.availableLanguages == availableLanguages &&
           other.buildVersionTag == buildVersionTag &&
           other.clientApiKey == clientApiKey &&
           other.clientBPSCeiling == clientBPSCeiling &&
           other.clientDisconnectTimeout == clientDisconnectTimeout &&
+          other.clientNetDispatchThread == clientNetDispatchThread &&
+          other.clientNetInThread == clientNetInThread &&
+          other.clientNetInThread2 == clientNetInThread2 &&
+          other.clientNetInThreadMobile == clientNetInThreadMobile &&
+          other.clientNetInThreadMobile2 == clientNetInThreadMobile2 &&
+          other.clientNetOutThread == clientNetOutThread &&
+          other.clientNetOutThread2 == clientNetOutThread2 &&
+          other.clientNetOutThreadMobile == clientNetOutThreadMobile &&
+          other.clientNetOutThreadMobile2 == clientNetOutThreadMobile2 &&
+          other.clientQR == clientQR &&
           other.clientReservedPlayerBPS == clientReservedPlayerBPS &&
           other.clientSentCountAllowance == clientSentCountAllowance &&
           other.contactEmail == contactEmail &&
           other.copyrightEmail == copyrightEmail &&
+          other.currentPrivacyVersion == currentPrivacyVersion &&
           other.currentTOSVersion == currentTOSVersion &&
           other.defaultAvatar == defaultAvatar &&
           other.deploymentGroup == deploymentGroup &&
-// ignore: deprecated_member_use_from_same_package
-          other.devAppVersionStandalone == devAppVersionStandalone &&
-// ignore: deprecated_member_use_from_same_package
-          other.devDownloadLinkWindows == devDownloadLinkWindows &&
+          other.devLanguageCodes == devLanguageCodes &&
 // ignore: deprecated_member_use_from_same_package
           other.devSdkUrl == devSdkUrl &&
 // ignore: deprecated_member_use_from_same_package
           other.devSdkVersion == devSdkVersion &&
-// ignore: deprecated_member_use_from_same_package
-          other.devServerVersionStandalone == devServerVersionStandalone &&
           other.disCountdown == disCountdown &&
+          other.disableAVProInProton == disableAVProInProton &&
           other.disableAvatarCopying == disableAvatarCopying &&
           other.disableAvatarGating == disableAvatarGating &&
           other.disableCommunityLabs == disableCommunityLabs &&
           other.disableCommunityLabsPromotion ==
               disableCommunityLabsPromotion &&
           other.disableEmail == disableEmail &&
+          other.disableCaptcha == disableCaptcha &&
           other.disableEventStream == disableEventStream &&
           other.disableFeedbackGating == disableFeedbackGating &&
           other.disableFrontendBuilds == disableFrontendBuilds &&
@@ -515,36 +538,25 @@ class APIConfig {
           other.downloadLinkWindows == downloadLinkWindows &&
           other.downloadUrls == downloadUrls &&
           other.dynamicWorldRows == dynamicWorldRows &&
+          other.economyPauseEnd == economyPauseEnd &&
+          other.economyPauseStart == economyPauseStart &&
+          other.economyState == economyState &&
           other.events == events &&
-// ignore: deprecated_member_use_from_same_package
-          other.gearDemoRoomId == gearDemoRoomId &&
           other.homeWorldId == homeWorldId &&
           other.homepageRedirectTarget == homepageRedirectTarget &&
           other.hubWorldId == hubWorldId &&
+          other.imageHostUrlList == imageHostUrlList &&
           other.jobsEmail == jobsEmail &&
-// ignore: deprecated_member_use_from_same_package
-          other.messageOfTheDay == messageOfTheDay &&
           other.moderationEmail == moderationEmail &&
-          other.moderationQueryPeriod == moderationQueryPeriod &&
           other.notAllowedToSelectAvatarInPrivateWorldMessage ==
               notAllowedToSelectAvatarInPrivateWorldMessage &&
-          other.plugin == plugin &&
-// ignore: deprecated_member_use_from_same_package
-          other.releaseAppVersionStandalone == releaseAppVersionStandalone &&
-// ignore: deprecated_member_use_from_same_package
-          other.releaseSdkUrl == releaseSdkUrl &&
-// ignore: deprecated_member_use_from_same_package
-          other.releaseSdkVersion == releaseSdkVersion &&
-// ignore: deprecated_member_use_from_same_package
-          other.releaseServerVersionStandalone ==
-// ignore: deprecated_member_use_from_same_package
-              releaseServerVersionStandalone &&
           other.sdkDeveloperFaqUrl == sdkDeveloperFaqUrl &&
           other.sdkDiscordUrl == sdkDiscordUrl &&
           other.sdkNotAllowedToPublishMessage ==
               sdkNotAllowedToPublishMessage &&
           other.sdkUnityVersion == sdkUnityVersion &&
           other.serverName == serverName &&
+          other.stringHostUrlList == stringHostUrlList &&
           other.supportEmail == supportEmail &&
           other.timeOutWorldId == timeOutWorldId &&
           other.tutorialWorldId == tutorialWorldId &&
@@ -555,15 +567,10 @@ class APIConfig {
           other.uploadAnalysisPercent == uploadAnalysisPercent &&
           other.urlList == urlList &&
           other.useReliableUdpForVoice == useReliableUdpForVoice &&
-          other.userUpdatePeriod == userUpdatePeriod &&
-          other.userVerificationDelay == userVerificationDelay &&
-          other.userVerificationRetry == userVerificationRetry &&
-          other.userVerificationTimeout == userVerificationTimeout &&
           other.viveWindowsUrl == viveWindowsUrl &&
           other.whiteListedAssetUrls == whiteListedAssetUrls &&
-          other.worldUpdatePeriod == worldUpdatePeriod &&
-          other.playerUrlResolverHash == playerUrlResolverHash &&
-          other.playerUrlResolverVersion == playerUrlResolverVersion;
+          other.playerUrlResolverVersion == playerUrlResolverVersion &&
+          other.playerUrlResolverSha1 == playerUrlResolverSha1;
 
   @override
   int get hashCode =>
@@ -573,33 +580,43 @@ class APIConfig {
       announcements.hashCode +
 // ignore: deprecated_member_use_from_same_package
       appName.hashCode +
+      availableLanguageCodes.hashCode +
+      availableLanguages.hashCode +
       buildVersionTag.hashCode +
       clientApiKey.hashCode +
       clientBPSCeiling.hashCode +
       clientDisconnectTimeout.hashCode +
+      clientNetDispatchThread.hashCode +
+      clientNetInThread.hashCode +
+      clientNetInThread2.hashCode +
+      clientNetInThreadMobile.hashCode +
+      clientNetInThreadMobile2.hashCode +
+      clientNetOutThread.hashCode +
+      clientNetOutThread2.hashCode +
+      clientNetOutThreadMobile.hashCode +
+      clientNetOutThreadMobile2.hashCode +
+      clientQR.hashCode +
       clientReservedPlayerBPS.hashCode +
       clientSentCountAllowance.hashCode +
       contactEmail.hashCode +
       copyrightEmail.hashCode +
+      currentPrivacyVersion.hashCode +
       currentTOSVersion.hashCode +
       defaultAvatar.hashCode +
       deploymentGroup.hashCode +
-// ignore: deprecated_member_use_from_same_package
-      devAppVersionStandalone.hashCode +
-// ignore: deprecated_member_use_from_same_package
-      devDownloadLinkWindows.hashCode +
+      devLanguageCodes.hashCode +
 // ignore: deprecated_member_use_from_same_package
       devSdkUrl.hashCode +
 // ignore: deprecated_member_use_from_same_package
       devSdkVersion.hashCode +
-// ignore: deprecated_member_use_from_same_package
-      devServerVersionStandalone.hashCode +
       disCountdown.hashCode +
+      disableAVProInProton.hashCode +
       disableAvatarCopying.hashCode +
       disableAvatarGating.hashCode +
       disableCommunityLabs.hashCode +
       disableCommunityLabsPromotion.hashCode +
       disableEmail.hashCode +
+      disableCaptcha.hashCode +
       disableEventStream.hashCode +
       disableFeedbackGating.hashCode +
       disableFrontendBuilds.hashCode +
@@ -614,32 +631,23 @@ class APIConfig {
       downloadLinkWindows.hashCode +
       downloadUrls.hashCode +
       dynamicWorldRows.hashCode +
+      economyPauseEnd.hashCode +
+      economyPauseStart.hashCode +
+      economyState.hashCode +
       events.hashCode +
-// ignore: deprecated_member_use_from_same_package
-      gearDemoRoomId.hashCode +
       homeWorldId.hashCode +
       homepageRedirectTarget.hashCode +
       hubWorldId.hashCode +
+      imageHostUrlList.hashCode +
       jobsEmail.hashCode +
-// ignore: deprecated_member_use_from_same_package
-      messageOfTheDay.hashCode +
       moderationEmail.hashCode +
-      moderationQueryPeriod.hashCode +
       notAllowedToSelectAvatarInPrivateWorldMessage.hashCode +
-      plugin.hashCode +
-// ignore: deprecated_member_use_from_same_package
-      releaseAppVersionStandalone.hashCode +
-// ignore: deprecated_member_use_from_same_package
-      releaseSdkUrl.hashCode +
-// ignore: deprecated_member_use_from_same_package
-      releaseSdkVersion.hashCode +
-// ignore: deprecated_member_use_from_same_package
-      releaseServerVersionStandalone.hashCode +
       sdkDeveloperFaqUrl.hashCode +
       sdkDiscordUrl.hashCode +
       sdkNotAllowedToPublishMessage.hashCode +
       sdkUnityVersion.hashCode +
       serverName.hashCode +
+      stringHostUrlList.hashCode +
       supportEmail.hashCode +
       timeOutWorldId.hashCode +
       tutorialWorldId.hashCode +
@@ -650,15 +658,10 @@ class APIConfig {
       uploadAnalysisPercent.hashCode +
       urlList.hashCode +
       useReliableUdpForVoice.hashCode +
-      userUpdatePeriod.hashCode +
-      userVerificationDelay.hashCode +
-      userVerificationRetry.hashCode +
-      userVerificationTimeout.hashCode +
       viveWindowsUrl.hashCode +
       whiteListedAssetUrls.hashCode +
-      worldUpdatePeriod.hashCode +
-      playerUrlResolverHash.hashCode +
-      playerUrlResolverVersion.hashCode;
+      playerUrlResolverVersion.hashCode +
+      playerUrlResolverSha1.hashCode;
 
   factory APIConfig.fromJson(Map<String, dynamic> json) =>
       _$APIConfigFromJson(json);

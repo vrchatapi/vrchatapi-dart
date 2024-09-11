@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **tier** | **num** |  | 
 **active** | **bool** |  | [default to true]
 **status** | [**TransactionStatus**](TransactionStatus.md) |  | 
+**starts** | **String** |  | [optional] 
 **expires** | [**DateTime**](DateTime.md) |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
