@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **assetUrlObject** | **Object** |  | [optional] 
 **assetVersion** | **int** |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**impostorizerVersion** | **String** |  | [optional] 
 **platform** | **String** | This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`. | 
 **pluginUrl** | **String** |  | [optional] 
 **pluginUrlObject** | **Object** |  | [optional] 

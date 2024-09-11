@@ -41,7 +41,7 @@ UserSubscription _$UserSubscriptionFromJson(Map<String, dynamic> json) =>
           description: $checkedConvert('description', (v) => v as String),
           period: $checkedConvert(
               'period', (v) => $enumDecode(_$SubscriptionPeriodEnumMap, v)),
-          tier: $checkedConvert('tier', (v) => v as num),
+          tier: $checkedConvert('tier', (v) => (v as num).toInt()),
           active: $checkedConvert('active', (v) => v as bool? ?? true),
           status: $checkedConvert(
               'status', (v) => $enumDecode(_$TransactionStatusEnumMap, v)),

@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uploadId** | **String** |  | 
 **fileName** | **String** |  | 
-**nextPartNumber** | **num** |  | 
-**maxParts** | **num** |  | 
+**nextPartNumber** | **int** |  | 
+**maxParts** | **int** |  | 
 **parts** | **List&lt;Object&gt;** |  | 
 **etags** | **List&lt;Object&gt;** | Unknown | 
 

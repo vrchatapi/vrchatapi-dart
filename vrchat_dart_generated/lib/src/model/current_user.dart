@@ -74,6 +74,8 @@ class CurrentUser {
     required this.profilePicOverride,
     required this.profilePicOverrideThumbnail,
     required this.pronouns,
+    this.queuedInstance,
+    this.receiveMobileInvitations,
     required this.state,
     required this.status,
     required this.statusDescription,
@@ -266,6 +268,13 @@ class CurrentUser {
   @JsonKey(name: r'pronouns', required: true, includeIfNull: false)
   final String pronouns;
 
+  @JsonKey(name: r'queuedInstance', required: false, includeIfNull: false)
+  final String? queuedInstance;
+
+  @JsonKey(
+      name: r'receiveMobileInvitations', required: false, includeIfNull: false)
+  final bool? receiveMobileInvitations;
+
   @JsonKey(name: r'state', required: true, includeIfNull: false)
   final UserState state;
 
@@ -368,6 +377,8 @@ class CurrentUser {
           other.profilePicOverride == profilePicOverride &&
           other.profilePicOverrideThumbnail == profilePicOverrideThumbnail &&
           other.pronouns == pronouns &&
+          other.queuedInstance == queuedInstance &&
+          other.receiveMobileInvitations == receiveMobileInvitations &&
           other.state == state &&
           other.status == status &&
           other.statusDescription == statusDescription &&
@@ -438,6 +449,8 @@ class CurrentUser {
       profilePicOverride.hashCode +
       profilePicOverrideThumbnail.hashCode +
       pronouns.hashCode +
+      (queuedInstance == null ? 0 : queuedInstance.hashCode) +
+      receiveMobileInvitations.hashCode +
       state.hashCode +
       status.hashCode +
       statusDescription.hashCode +

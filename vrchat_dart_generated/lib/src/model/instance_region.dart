@@ -21,7 +21,11 @@ enum InstanceRegion {
 
   /// Instance region
   @JsonValue(r'jp')
-  jp(r'jp');
+  jp(r'jp'),
+
+  /// Instance region
+  @JsonValue(r'unknown')
+  unknown(r'unknown');
 
   const InstanceRegion(this.value);
 

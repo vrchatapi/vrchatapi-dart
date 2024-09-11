@@ -163,6 +163,7 @@ const _$InstanceRegionEnumMap = {
   InstanceRegion.use: 'use',
   InstanceRegion.eu: 'eu',
   InstanceRegion.jp: 'jp',
+  InstanceRegion.unknown: 'unknown',
 };
 
 const _$InstanceTypeEnumMap = {

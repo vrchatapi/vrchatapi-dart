@@ -57,7 +57,7 @@ class Subscription {
   final SubscriptionPeriod period;
 
   @JsonKey(name: r'tier', required: true, includeIfNull: false)
-  final num tier;
+  final int tier;
 
   @override
   bool operator ==(Object other) =>

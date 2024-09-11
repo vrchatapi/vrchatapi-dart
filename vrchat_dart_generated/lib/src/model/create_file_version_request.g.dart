@@ -20,10 +20,11 @@ CreateFileVersionRequest _$CreateFileVersionRequestFromJson(
         );
         final val = CreateFileVersionRequest(
           signatureMd5: $checkedConvert('signatureMd5', (v) => v as String),
-          signatureSizeInBytes:
-              $checkedConvert('signatureSizeInBytes', (v) => v as num),
+          signatureSizeInBytes: $checkedConvert(
+              'signatureSizeInBytes', (v) => (v as num).toInt()),
           fileMd5: $checkedConvert('fileMd5', (v) => v as String?),
-          fileSizeInBytes: $checkedConvert('fileSizeInBytes', (v) => v as num?),
+          fileSizeInBytes:
+              $checkedConvert('fileSizeInBytes', (v) => (v as num?)?.toInt()),
         );
         return val;
       },

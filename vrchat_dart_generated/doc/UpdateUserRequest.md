@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | **String** |  | [optional] 
 **birthday** | [**DateTime**](DateTime.md) |  | [optional] 
-**acceptedTOSVersion** | **num** |  | [optional] 
+**acceptedTOSVersion** | **int** |  | [optional] 
 **tags** | **List&lt;String&gt;** |   | [optional] 
 **status** | [**UserStatus**](UserStatus.md) |  | [optional] 
 **statusDescription** | **String** |  | [optional] 

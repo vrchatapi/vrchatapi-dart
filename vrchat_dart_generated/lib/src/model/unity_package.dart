@@ -21,6 +21,7 @@ class UnityPackage {
     this.assetUrlObject,
     required this.assetVersion,
     this.createdAt,
+    this.impostorizerVersion,
     required this.platform,
     this.pluginUrl,
     this.pluginUrlObject,
@@ -46,6 +47,9 @@ class UnityPackage {
 
   @JsonKey(name: r'created_at', required: false, includeIfNull: false)
   final DateTime? createdAt;
+
+  @JsonKey(name: r'impostorizerVersion', required: false, includeIfNull: false)
+  final String? impostorizerVersion;
 
   /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
   @JsonKey(name: r'platform', required: true, includeIfNull: false)
@@ -82,6 +86,7 @@ class UnityPackage {
           other.assetUrlObject == assetUrlObject &&
           other.assetVersion == assetVersion &&
           other.createdAt == createdAt &&
+          other.impostorizerVersion == impostorizerVersion &&
           other.platform == platform &&
           other.pluginUrl == pluginUrl &&
           other.pluginUrlObject == pluginUrlObject &&
@@ -98,6 +103,7 @@ class UnityPackage {
       assetUrlObject.hashCode +
       assetVersion.hashCode +
       createdAt.hashCode +
+      impostorizerVersion.hashCode +
       platform.hashCode +
       pluginUrl.hashCode +
       pluginUrlObject.hashCode +

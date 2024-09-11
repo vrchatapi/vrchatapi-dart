@@ -53,7 +53,7 @@ class CreateAvatarRequest {
 
   // minimum: 0
   @JsonKey(name: r'version', required: false, includeIfNull: false)
-  final num? version;
+  final int? version;
 
   @JsonKey(name: r'unityPackageUrl', required: false, includeIfNull: false)
   final String? unityPackageUrl;

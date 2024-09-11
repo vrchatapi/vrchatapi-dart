@@ -59,6 +59,8 @@ Name | Type | Description | Notes
 **profilePicOverride** | **String** |  | 
 **profilePicOverrideThumbnail** | **String** |  | 
 **pronouns** | **String** |  | 
+**queuedInstance** | **String** |  | [optional] 
+**receiveMobileInvitations** | **bool** |  | [optional] 
 **state** | [**UserState**](UserState.md) |  | 
 **status** | [**UserStatus**](UserStatus.md) |  | 
 **statusDescription** | **String** |  | 

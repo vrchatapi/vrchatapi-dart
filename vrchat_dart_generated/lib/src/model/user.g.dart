@@ -30,7 +30,6 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
             'last_activity',
             'last_login',
             'last_platform',
-            'platform',
             'profilePicOverride',
             'profilePicOverrideThumbnail',
             'pronouns',
@@ -71,10 +70,11 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
           isFriend: $checkedConvert('isFriend', (v) => v as bool),
           lastActivity: $checkedConvert('last_activity', (v) => v as String),
           lastLogin: $checkedConvert('last_login', (v) => v as String),
+          lastMobile: $checkedConvert('last_mobile', (v) => v as String?),
           lastPlatform: $checkedConvert('last_platform', (v) => v as String),
           location: $checkedConvert('location', (v) => v as String?),
           note: $checkedConvert('note', (v) => v as String?),
-          platform: $checkedConvert('platform', (v) => v as String),
+          platform: $checkedConvert('platform', (v) => v as String?),
           profilePicOverride:
               $checkedConvert('profilePicOverride', (v) => v as String),
           profilePicOverrideThumbnail: $checkedConvert(
@@ -104,6 +104,7 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'dateJoined': 'date_joined',
         'lastActivity': 'last_activity',
         'lastLogin': 'last_login',
+        'lastMobile': 'last_mobile',
         'lastPlatform': 'last_platform'
       },
     );
@@ -136,10 +137,11 @@ Map<String, dynamic> _$UserToJson(User instance) {
   val['isFriend'] = instance.isFriend;
   val['last_activity'] = instance.lastActivity;
   val['last_login'] = instance.lastLogin;
+  writeNotNull('last_mobile', instance.lastMobile);
   val['last_platform'] = instance.lastPlatform;
   writeNotNull('location', instance.location);
   writeNotNull('note', instance.note);
-  val['platform'] = instance.platform;
+  writeNotNull('platform', instance.platform);
   val['profilePicOverride'] = instance.profilePicOverride;
   val['profilePicOverrideThumbnail'] = instance.profilePicOverrideThumbnail;
   val['pronouns'] = instance.pronouns;

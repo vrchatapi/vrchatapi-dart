@@ -23,7 +23,7 @@ UpdateAvatarRequest _$UpdateAvatarRequestFromJson(Map<String, dynamic> json) =>
           imageUrl: $checkedConvert('imageUrl', (v) => v as String?),
           releaseStatus: $checkedConvert('releaseStatus',
               (v) => $enumDecodeNullable(_$ReleaseStatusEnumMap, v)),
-          version: $checkedConvert('version', (v) => v as num? ?? 1),
+          version: $checkedConvert('version', (v) => (v as num?)?.toInt() ?? 1),
           unityPackageUrl:
               $checkedConvert('unityPackageUrl', (v) => v as String?),
           unityVersion:

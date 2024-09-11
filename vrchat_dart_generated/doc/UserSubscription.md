@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **amount** | **num** |  | 
 **description** | **String** |  | 
 **period** | [**SubscriptionPeriod**](SubscriptionPeriod.md) |  | 
-**tier** | **num** |  | 
+**tier** | **int** |  | 
 **active** | **bool** |  | [default to true]
 **status** | [**TransactionStatus**](TransactionStatus.md) |  | 
 **starts** | **String** |  | [optional] 

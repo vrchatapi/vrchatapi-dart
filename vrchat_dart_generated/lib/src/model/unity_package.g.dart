@@ -30,6 +30,8 @@ UnityPackage _$UnityPackageFromJson(Map<String, dynamic> json) =>
               $checkedConvert('assetVersion', (v) => (v as num).toInt()),
           createdAt: $checkedConvert('created_at',
               (v) => v == null ? null : DateTime.parse(v as String)),
+          impostorizerVersion:
+              $checkedConvert('impostorizerVersion', (v) => v as String?),
           platform: $checkedConvert('platform', (v) => v as String),
           pluginUrl: $checkedConvert('pluginUrl', (v) => v as String?),
           pluginUrlObject: $checkedConvert('pluginUrlObject', (v) => v),
@@ -61,6 +63,7 @@ Map<String, dynamic> _$UnityPackageToJson(UnityPackage instance) {
   writeNotNull('assetUrlObject', instance.assetUrlObject);
   val['assetVersion'] = instance.assetVersion;
   writeNotNull('created_at', instance.createdAt?.toIso8601String());
+  writeNotNull('impostorizerVersion', instance.impostorizerVersion);
   val['platform'] = instance.platform;
   writeNotNull('pluginUrl', instance.pluginUrl);
   writeNotNull('pluginUrlObject', instance.pluginUrlObject);

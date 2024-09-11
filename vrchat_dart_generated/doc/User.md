@@ -25,10 +25,11 @@ Name | Type | Description | Notes
 **isFriend** | **bool** | Either their `friendKey`, or empty string if you are not friends. Unknown usage. | 
 **lastActivity** | **String** | Either a date-time or empty string. | 
 **lastLogin** | **String** | Either a date-time or empty string. | 
+**lastMobile** | **String** |  | [optional] 
 **lastPlatform** | **String** | This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`. | 
 **location** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | [optional] 
 **note** | **String** |  | [optional] 
-**platform** | **String** |  | 
+**platform** | **String** |  | [optional] 
 **profilePicOverride** | **String** |  | 
 **profilePicOverrideThumbnail** | **String** |  | 
 **pronouns** | **String** |  | 

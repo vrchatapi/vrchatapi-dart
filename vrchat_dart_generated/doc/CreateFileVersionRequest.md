@@ -9,9 +9,9 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **signatureMd5** | **String** |  | 
-**signatureSizeInBytes** | **num** |  | 
+**signatureSizeInBytes** | **int** |  | 
 **fileMd5** | **String** |  | [optional] 
-**fileSizeInBytes** | **num** |  | [optional] 
+**fileSizeInBytes** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

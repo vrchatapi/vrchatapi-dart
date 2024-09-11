@@ -37,7 +37,7 @@ class UpdateUserRequest {
   final DateTime? birthday;
 
   @JsonKey(name: r'acceptedTOSVersion', required: false, includeIfNull: false)
-  final num? acceptedTOSVersion;
+  final int? acceptedTOSVersion;
 
   ///
   @JsonKey(name: r'tags', required: false, includeIfNull: false)

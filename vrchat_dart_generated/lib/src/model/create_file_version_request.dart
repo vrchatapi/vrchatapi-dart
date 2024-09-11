@@ -26,13 +26,13 @@ class CreateFileVersionRequest {
   final String signatureMd5;
 
   @JsonKey(name: r'signatureSizeInBytes', required: true, includeIfNull: false)
-  final num signatureSizeInBytes;
+  final int signatureSizeInBytes;
 
   @JsonKey(name: r'fileMd5', required: false, includeIfNull: false)
   final String? fileMd5;
 
   @JsonKey(name: r'fileSizeInBytes', required: false, includeIfNull: false)
-  final num? fileSizeInBytes;
+  final int? fileSizeInBytes;
 
   @override
   bool operator ==(Object other) =>

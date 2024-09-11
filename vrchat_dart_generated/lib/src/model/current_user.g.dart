@@ -159,6 +159,10 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
           profilePicOverrideThumbnail: $checkedConvert(
               'profilePicOverrideThumbnail', (v) => v as String),
           pronouns: $checkedConvert('pronouns', (v) => v as String),
+          queuedInstance:
+              $checkedConvert('queuedInstance', (v) => v as String?),
+          receiveMobileInvitations:
+              $checkedConvert('receiveMobileInvitations', (v) => v as bool?),
           state: $checkedConvert(
               'state', (v) => $enumDecode(_$UserStateEnumMap, v)),
           status: $checkedConvert(
@@ -259,6 +263,8 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
   val['profilePicOverride'] = instance.profilePicOverride;
   val['profilePicOverrideThumbnail'] = instance.profilePicOverrideThumbnail;
   val['pronouns'] = instance.pronouns;
+  writeNotNull('queuedInstance', instance.queuedInstance);
+  writeNotNull('receiveMobileInvitations', instance.receiveMobileInvitations);
   val['state'] = _$UserStateEnumMap[instance.state]!;
   val['status'] = _$UserStatusEnumMap[instance.status]!;
   val['statusDescription'] = instance.statusDescription;

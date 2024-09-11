@@ -40,7 +40,7 @@ class TransactionAgreement {
   final String agreementId;
 
   @JsonKey(name: r'itemId', required: true, includeIfNull: false)
-  final num itemId;
+  final int itemId;
 
   @JsonKey(name: r'agreement', required: true, includeIfNull: false)
   final String agreement;
@@ -53,7 +53,7 @@ class TransactionAgreement {
   final String period;
 
   @JsonKey(name: r'frequency', required: true, includeIfNull: false)
-  final num frequency;
+  final int frequency;
 
   @JsonKey(name: r'billingType', required: true, includeIfNull: false)
   final String billingType;
@@ -86,10 +86,10 @@ class TransactionAgreement {
   final num lastAmountVat;
 
   @JsonKey(name: r'outstanding', required: true, includeIfNull: false)
-  final num outstanding;
+  final int outstanding;
 
   @JsonKey(name: r'failedAttempts', required: true, includeIfNull: false)
-  final num failedAttempts;
+  final int failedAttempts;
 
   @override
   bool operator ==(Object other) =>
