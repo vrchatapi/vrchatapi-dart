@@ -2,9 +2,11 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:fixer/fixer.dart';
+import 'package:path/path.dart' as path;
 
 void main() async {
-  final spec = jsonDecode(File('build/spec.json').readAsStringSync());
+  final spec =
+      jsonDecode(File(path.join('build', 'spec.json')).readAsStringSync());
   final version = spec['info']['version'] as String;
 
   print('Patching pubspec...');
@@ -29,7 +31,8 @@ void main() async {
 }
 
 void patchPubspec(String version) {
-  final pubspec = File('../vrchat_dart_generated/pubspec.yaml');
+  final pubspec =
+      File(path.join('..', 'vrchat_dart_generated', 'pubspec.yaml'));
   final content = pubspec.readAsStringSync();
   final newContent = content.replaceFirst(
     RegExp(r'^version: .+?$', multiLine: true),
@@ -39,7 +42,8 @@ void patchPubspec(String version) {
 }
 
 void patchChangelog(String version) {
-  final changelog = File('../vrchat_dart_generated/CHANGELOG.md');
+  final changelog =
+      File(path.join('..', 'vrchat_dart_generated', 'CHANGELOG.md'));
   final content = changelog.readAsStringSync();
 
   /// Don't add duplicate version to changelog
@@ -59,9 +63,10 @@ final _enumToString = r'''
 ''';
 
 void patchModel() {
-  final modelFiles = Directory('../vrchat_dart_generated/lib/src/model')
-      .listSync()
-      .whereType<File>();
+  final modelFiles =
+      Directory(path.join('..', 'vrchat_dart_generated', 'lib', 'src', 'model'))
+          .listSync()
+          .whereType<File>();
 
   for (final file in modelFiles) {
     var content = file.readAsStringSync();
@@ -83,9 +88,10 @@ void patchModel() {
 }
 
 void patchApi() {
-  final apiFiles = Directory('../vrchat_dart_generated/lib/src/api')
-      .listSync()
-      .whereType<File>();
+  final apiFiles =
+      Directory(path.join('..', 'vrchat_dart_generated', 'lib', 'src', 'api'))
+          .listSync()
+          .whereType<File>();
 
   for (final file in apiFiles) {
     final content = file.readAsStringSync();

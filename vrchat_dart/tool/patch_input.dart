@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:yaml/yaml.dart';
+import 'package:path/path.dart' as path;
 
 final dio = Dio();
 
@@ -16,7 +17,7 @@ Future<void> patchSpec({required bool local}) async {
   final data = await getSpec(local: local);
 
   final outString = jsonEncode(data);
-  final output = File('build/spec.json');
+  final output = File(path.join('build', 'spec.json'));
   output.createSync(recursive: true);
   output.writeAsStringSync(outString);
 }
@@ -25,7 +26,9 @@ Future<Map<String, dynamic>> getSpec({required bool local}) async {
   final YamlMap yaml;
   if (local) {
     print('Using local spec file');
-    final file = File('../../vrchatapi-specification/dist/openapi.yaml');
+    final file = File(
+      path.join('..', '..', 'vrchatapi-specification', 'dist', 'openapi.yaml'),
+    );
     final data = await file.readAsString();
     yaml = loadYaml(data);
   } else {

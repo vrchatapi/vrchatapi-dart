@@ -82,51 +82,36 @@ class VrcStreaming {
       // must be covered
       case VrcStreamingEventType.error:
         event = UnknownEvent(rawString: websocketEvent);
-        break;
       case VrcStreamingEventType.friendOnline:
         event = FriendOnlineEvent.fromJson(jsonDecode(json['content']));
-        break;
       case VrcStreamingEventType.friendOffline:
         event = FriendOfflineEvent.fromJson(jsonDecode(json['content']));
-        break;
       case VrcStreamingEventType.friendActive:
         event = FriendActiveEvent.fromJson(jsonDecode(json['content']));
-        break;
       case VrcStreamingEventType.friendAdd:
         event = FriendAddEvent.fromJson(jsonDecode(json['content']));
-        break;
       case VrcStreamingEventType.friendDelete:
         event = FriendDeleteEvent.fromJson(jsonDecode(json['content']));
-        break;
       case VrcStreamingEventType.friendUpdate:
         event = FriendUpdateEvent.fromJson(jsonDecode(json['content']));
-        break;
       case VrcStreamingEventType.friendLocation:
         event = FriendLocationEvent.fromJson(jsonDecode(json['content']));
-        break;
       case VrcStreamingEventType.userUpdate:
         event = UserUpdateEvent.fromJson(jsonDecode(json['content']));
-        break;
       case VrcStreamingEventType.userLocation:
         event = UserLocationEvent.fromJson(jsonDecode(json['content']));
-        break;
       case VrcStreamingEventType.notificationReceived:
         final content = jsonDecode(json['content']);
         content['details'] = jsonEncode(content['details']);
         event = NotificationReceivedEvent.fromJson({'notification': content});
-        break;
       case VrcStreamingEventType.notificationSeen:
         event = NotificationSeenEvent(notificationId: json['content']);
-        break;
       case VrcStreamingEventType.notificationResponse:
         event = NotificationResponseEvent.fromJson(jsonDecode(json['content']));
-        break;
       case VrcStreamingEventType.notificationHide:
         event = NotificationHideEvent(notificationId: json['content']);
-        break;
       case VrcStreamingEventType.notificationClear:
         event = NotificationClearEvent();
-        break;
     }
     _vrcEventStreamController.add(event);
   }
