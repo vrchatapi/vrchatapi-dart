@@ -44,7 +44,7 @@ void main() async {
     // codes in your script.
     final code = OTP.generateTOTPCodeString(
       Credentials.otpSecret,
-      DateTime.now().millisecondsSinceEpoch,
+      DateTime.timestamp().millisecondsSinceEpoch,
       algorithm: Algorithm.SHA1,
       isGoogle: true,
     );
@@ -112,7 +112,6 @@ void handleVrcEvent(VrcStreamingEvent event) {
       final unknownEvent = event as UnknownEvent;
       message =
           'Unknown [VrcStreamingEvent] received: ${unknownEvent.rawString}';
-      break;
     case VrcStreamingEventType.error:
     case VrcStreamingEventType.friendOnline:
     case VrcStreamingEventType.friendOffline:
@@ -128,10 +127,8 @@ void handleVrcEvent(VrcStreamingEvent event) {
     case VrcStreamingEventType.notificationResponse:
     case VrcStreamingEventType.notificationHide:
       message = jsonEncode(event);
-      break;
     case VrcStreamingEventType.notificationClear:
       message = 'NotificationClear';
-      break;
   }
 
   print(event);
