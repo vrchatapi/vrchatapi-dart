@@ -1286,7 +1286,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getGroupMembers**
-> List<GroupMember> getGroupMembers(groupId, n, offset, sort)
+> List<GroupMember> getGroupMembers(groupId, n, offset, sort, roleId)
 
 List Group Members
 
@@ -1305,9 +1305,10 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final GroupSearchSort sort = ; // GroupSearchSort | The sort order of Group Member results
+final String roleId = roleId_example; // String | Only returns members with a specific groupRoleId
 
 try {
-    final response = api.getGroupMembers(groupId, n, offset, sort);
+    final response = api.getGroupMembers(groupId, n, offset, sort, roleId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling GroupsApi->getGroupMembers: $e\n');
@@ -1322,6 +1323,7 @@ Name | Type | Description  | Notes
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
  **sort** | [**GroupSearchSort**](.md)| The sort order of Group Member results | [optional] 
+ **roleId** | **String**| Only returns members with a specific groupRoleId | [optional] 
 
 ### Return type
 
