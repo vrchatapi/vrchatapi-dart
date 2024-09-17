@@ -32,11 +32,11 @@ class FileVersionUploadStatus {
 
   // minimum: 0
   @JsonKey(name: r'nextPartNumber', required: true, includeIfNull: false)
-  final int nextPartNumber;
+  final num nextPartNumber;
 
   // minimum: 1
   @JsonKey(name: r'maxParts', required: true, includeIfNull: false)
-  final int maxParts;
+  final num maxParts;
 
   @JsonKey(name: r'parts', required: true, includeIfNull: false)
   final List<Object> parts;

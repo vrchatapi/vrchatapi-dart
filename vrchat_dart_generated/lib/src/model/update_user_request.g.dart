@@ -17,8 +17,8 @@ UpdateUserRequest _$UpdateUserRequestFromJson(Map<String, dynamic> json) =>
           email: $checkedConvert('email', (v) => v as String?),
           birthday: $checkedConvert('birthday',
               (v) => v == null ? null : DateTime.parse(v as String)),
-          acceptedTOSVersion: $checkedConvert(
-              'acceptedTOSVersion', (v) => (v as num?)?.toInt()),
+          acceptedTOSVersion:
+              $checkedConvert('acceptedTOSVersion', (v) => v as num?),
           tags: $checkedConvert('tags',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           status: $checkedConvert(

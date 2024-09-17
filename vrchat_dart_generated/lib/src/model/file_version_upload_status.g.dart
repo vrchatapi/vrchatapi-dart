@@ -28,9 +28,8 @@ FileVersionUploadStatus _$FileVersionUploadStatusFromJson(
         final val = FileVersionUploadStatus(
           uploadId: $checkedConvert('uploadId', (v) => v as String),
           fileName: $checkedConvert('fileName', (v) => v as String),
-          nextPartNumber:
-              $checkedConvert('nextPartNumber', (v) => (v as num).toInt()),
-          maxParts: $checkedConvert('maxParts', (v) => (v as num).toInt()),
+          nextPartNumber: $checkedConvert('nextPartNumber', (v) => v as num),
+          maxParts: $checkedConvert('maxParts', (v) => v as num),
           parts: $checkedConvert('parts',
               (v) => (v as List<dynamic>).map((e) => e as Object).toList()),
           etags: $checkedConvert('etags',

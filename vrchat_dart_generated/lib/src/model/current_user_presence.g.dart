@@ -16,8 +16,6 @@ CurrentUserPresence _$CurrentUserPresenceFromJson(Map<String, dynamic> json) =>
         final val = CurrentUserPresence(
           avatarThumbnail:
               $checkedConvert('avatarThumbnail', (v) => v as String?),
-          currentAvatarTags:
-              $checkedConvert('currentAvatarTags', (v) => v as String?),
           displayName: $checkedConvert('displayName', (v) => v as String?),
           groups: $checkedConvert('groups',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
@@ -33,7 +31,6 @@ CurrentUserPresence _$CurrentUserPresenceFromJson(Map<String, dynamic> json) =>
               $checkedConvert('travelingToInstance', (v) => v as String?),
           travelingToWorld:
               $checkedConvert('travelingToWorld', (v) => v as String?),
-          userIcon: $checkedConvert('userIcon', (v) => v as String?),
           world: $checkedConvert('world', (v) => v as String?),
         );
         return val;
@@ -50,7 +47,6 @@ Map<String, dynamic> _$CurrentUserPresenceToJson(CurrentUserPresence instance) {
   }
 
   writeNotNull('avatarThumbnail', instance.avatarThumbnail);
-  writeNotNull('currentAvatarTags', instance.currentAvatarTags);
   writeNotNull('displayName', instance.displayName);
   writeNotNull('groups', instance.groups);
   writeNotNull('id', instance.id);
@@ -62,7 +58,6 @@ Map<String, dynamic> _$CurrentUserPresenceToJson(CurrentUserPresence instance) {
   writeNotNull('status', instance.status);
   writeNotNull('travelingToInstance', instance.travelingToInstance);
   writeNotNull('travelingToWorld', instance.travelingToWorld);
-  writeNotNull('userIcon', instance.userIcon);
   writeNotNull('world', instance.world);
   return val;
 }

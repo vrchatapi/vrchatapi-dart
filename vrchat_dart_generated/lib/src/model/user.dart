@@ -37,11 +37,10 @@ class User {
     required this.isFriend,
     required this.lastActivity,
     required this.lastLogin,
-    this.lastMobile,
     required this.lastPlatform,
     this.location,
     this.note,
-    this.platform,
+    required this.platform,
     required this.profilePicOverride,
     required this.profilePicOverrideThumbnail,
     required this.pronouns,
@@ -120,9 +119,6 @@ class User {
   @JsonKey(name: r'last_login', required: true, includeIfNull: false)
   final String lastLogin;
 
-  @JsonKey(name: r'last_mobile', required: false, includeIfNull: false)
-  final String? lastMobile;
-
   /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
   @JsonKey(name: r'last_platform', required: true, includeIfNull: false)
   final String lastPlatform;
@@ -134,8 +130,8 @@ class User {
   @JsonKey(name: r'note', required: false, includeIfNull: false)
   final String? note;
 
-  @JsonKey(name: r'platform', required: false, includeIfNull: false)
-  final String? platform;
+  @JsonKey(name: r'platform', required: true, includeIfNull: false)
+  final String platform;
 
   @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
   final String profilePicOverride;
@@ -205,7 +201,6 @@ class User {
           other.isFriend == isFriend &&
           other.lastActivity == lastActivity &&
           other.lastLogin == lastLogin &&
-          other.lastMobile == lastMobile &&
           other.lastPlatform == lastPlatform &&
           other.location == location &&
           other.note == note &&
@@ -244,7 +239,6 @@ class User {
       isFriend.hashCode +
       lastActivity.hashCode +
       lastLogin.hashCode +
-      (lastMobile == null ? 0 : lastMobile.hashCode) +
       lastPlatform.hashCode +
       location.hashCode +
       note.hashCode +

@@ -39,11 +39,11 @@ TransactionAgreement _$TransactionAgreementFromJson(
         );
         final val = TransactionAgreement(
           agreementId: $checkedConvert('agreementId', (v) => v as String),
-          itemId: $checkedConvert('itemId', (v) => (v as num).toInt()),
+          itemId: $checkedConvert('itemId', (v) => v as num),
           agreement: $checkedConvert('agreement', (v) => v as String),
           status: $checkedConvert('status', (v) => v as String),
           period: $checkedConvert('period', (v) => v as String),
-          frequency: $checkedConvert('frequency', (v) => (v as num).toInt()),
+          frequency: $checkedConvert('frequency', (v) => v as num),
           billingType: $checkedConvert('billingType', (v) => v as String),
           startDate: $checkedConvert('startDate', (v) => v as String),
           endDate: $checkedConvert('endDate', (v) => v as String),
@@ -54,10 +54,8 @@ TransactionAgreement _$TransactionAgreementFromJson(
           lastPayment: $checkedConvert('lastPayment', (v) => v as String),
           lastAmount: $checkedConvert('lastAmount', (v) => v as num),
           lastAmountVat: $checkedConvert('lastAmountVat', (v) => v as num),
-          outstanding:
-              $checkedConvert('outstanding', (v) => (v as num).toInt()),
-          failedAttempts:
-              $checkedConvert('failedAttempts', (v) => (v as num).toInt()),
+          outstanding: $checkedConvert('outstanding', (v) => v as num),
+          failedAttempts: $checkedConvert('failedAttempts', (v) => v as num),
         );
         return val;
       },

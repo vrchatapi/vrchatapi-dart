@@ -59,7 +59,7 @@ class UserSubscription {
   final SubscriptionPeriod period;
 
   @JsonKey(name: r'tier', required: true, includeIfNull: false)
-  final int tier;
+  final num tier;
 
   @JsonKey(name: r'active', required: true, includeIfNull: false)
   final bool active;

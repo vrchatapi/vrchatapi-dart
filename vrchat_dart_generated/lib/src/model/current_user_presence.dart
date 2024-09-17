@@ -17,7 +17,6 @@ class CurrentUserPresence {
   /// Returns a new [CurrentUserPresence] instance.
   CurrentUserPresence({
     this.avatarThumbnail,
-    this.currentAvatarTags,
     this.displayName,
     this.groups,
     this.id,
@@ -29,15 +28,11 @@ class CurrentUserPresence {
     this.status,
     this.travelingToInstance,
     this.travelingToWorld,
-    this.userIcon,
     this.world,
   });
 
   @JsonKey(name: r'avatarThumbnail', required: false, includeIfNull: false)
   final String? avatarThumbnail;
-
-  @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
-  final String? currentAvatarTags;
 
   @JsonKey(name: r'displayName', required: false, includeIfNull: false)
   final String? displayName;
@@ -77,9 +72,6 @@ class CurrentUserPresence {
   @JsonKey(name: r'travelingToWorld', required: false, includeIfNull: false)
   final String? travelingToWorld;
 
-  @JsonKey(name: r'userIcon', required: false, includeIfNull: false)
-  final String? userIcon;
-
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @JsonKey(name: r'world', required: false, includeIfNull: false)
   final String? world;
@@ -89,7 +81,6 @@ class CurrentUserPresence {
       identical(this, other) ||
       other is CurrentUserPresence &&
           other.avatarThumbnail == avatarThumbnail &&
-          other.currentAvatarTags == currentAvatarTags &&
           other.displayName == displayName &&
           other.groups == groups &&
           other.id == id &&
@@ -101,13 +92,11 @@ class CurrentUserPresence {
           other.status == status &&
           other.travelingToInstance == travelingToInstance &&
           other.travelingToWorld == travelingToWorld &&
-          other.userIcon == userIcon &&
           other.world == world;
 
   @override
   int get hashCode =>
       (avatarThumbnail == null ? 0 : avatarThumbnail.hashCode) +
-      currentAvatarTags.hashCode +
       displayName.hashCode +
       (groups == null ? 0 : groups.hashCode) +
       id.hashCode +
@@ -119,7 +108,6 @@ class CurrentUserPresence {
       (status == null ? 0 : status.hashCode) +
       (travelingToInstance == null ? 0 : travelingToInstance.hashCode) +
       travelingToWorld.hashCode +
-      (userIcon == null ? 0 : userIcon.hashCode) +
       world.hashCode;
 
   factory CurrentUserPresence.fromJson(Map<String, dynamic> json) =>

@@ -9,11 +9,11 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **agreementId** | **String** |  | 
-**itemId** | **int** |  | 
+**itemId** | **num** |  | 
 **agreement** | **String** |  | 
 **status** | **String** | This is NOT TransactionStatus, but whatever Steam return. | 
 **period** | **String** |  | 
-**frequency** | **int** |  | 
+**frequency** | **num** |  | 
 **billingType** | **String** |  | 
 **startDate** | **String** |  | 
 **endDate** | **String** |  | 
@@ -24,8 +24,8 @@ Name | Type | Description | Notes
 **lastPayment** | **String** |  | 
 **lastAmount** | **num** |  | 
 **lastAmountVat** | **num** |  | 
-**outstanding** | **int** |  | 
-**failedAttempts** | **int** |  | 
+**outstanding** | **num** |  | 
+**failedAttempts** | **num** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
