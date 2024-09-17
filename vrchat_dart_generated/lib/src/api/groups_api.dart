@@ -2270,6 +2270,7 @@ class GroupsApi {
   /// * [n] - The number of objects to return.
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [sort] - The sort order of Group Member results
+  /// * [roleId] - Only returns members with a specific groupRoleId
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -2284,6 +2285,7 @@ class GroupsApi {
     int? n = 60,
     int? offset,
     GroupSearchSort? sort,
+    String? roleId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -2316,6 +2318,7 @@ class GroupsApi {
       if (n != null) r'n': n,
       if (offset != null) r'offset': offset,
       if (sort != null) r'sort': sort,
+      if (roleId != null) r'roleId': roleId,
     };
 
     final _response = await _dio.request<Object>(
