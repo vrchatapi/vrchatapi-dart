@@ -20,6 +20,10 @@ enum Region {
   usw(r'usw'),
 
   /// API/Photon region.
+  @JsonValue(r'usx')
+  usx(r'usx'),
+
+  /// API/Photon region.
   @JsonValue(r'eu')
   eu(r'eu'),
 
