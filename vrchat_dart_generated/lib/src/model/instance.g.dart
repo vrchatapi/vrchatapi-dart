@@ -153,6 +153,7 @@ const _$RegionEnumMap = {
   Region.us: 'us',
   Region.use: 'use',
   Region.usw: 'usw',
+  Region.usx: 'usx',
   Region.eu: 'eu',
   Region.jp: 'jp',
   Region.unknown: 'unknown',
