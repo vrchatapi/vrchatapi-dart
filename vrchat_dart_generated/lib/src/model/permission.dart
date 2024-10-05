@@ -16,12 +16,21 @@ part 'permission.g.dart';
 class Permission {
   /// Returns a new [Permission] instance.
   Permission({
+    this.displayName,
+    this.description,
     required this.id,
     required this.ownerDisplayName,
     required this.name,
     required this.ownerId,
+    this.type,
     this.data,
   });
+
+  @JsonKey(name: r'displayName', required: false, includeIfNull: false)
+  final String? displayName;
+
+  @JsonKey(name: r'description', required: false, includeIfNull: false)
+  final String? description;
 
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
@@ -36,6 +45,9 @@ class Permission {
   @JsonKey(name: r'ownerId', required: true, includeIfNull: false)
   final String ownerId;
 
+  @JsonKey(name: r'type', required: false, includeIfNull: false)
+  final String? type;
+
   @JsonKey(name: r'data', required: false, includeIfNull: false)
   final Object? data;
 
@@ -43,18 +55,24 @@ class Permission {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Permission &&
+          other.displayName == displayName &&
+          other.description == description &&
           other.id == id &&
           other.ownerDisplayName == ownerDisplayName &&
           other.name == name &&
           other.ownerId == ownerId &&
+          other.type == type &&
           other.data == data;
 
   @override
   int get hashCode =>
+      displayName.hashCode +
+      description.hashCode +
       id.hashCode +
       ownerDisplayName.hashCode +
       name.hashCode +
       ownerId.hashCode +
+      type.hashCode +
       data.hashCode;
 
   factory Permission.fromJson(Map<String, dynamic> json) =>

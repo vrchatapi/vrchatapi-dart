@@ -22,6 +22,7 @@ part 'group.g.dart';
 class Group {
   /// Returns a new [Group] instance.
   Group({
+    this.badges,
     this.id,
     this.name,
     this.shortCode,
@@ -51,6 +52,9 @@ class Group {
     this.myMember,
     this.roles,
   });
+
+  @JsonKey(name: r'badges', required: false, includeIfNull: false)
+  final List<String>? badges;
 
   @JsonKey(name: r'id', required: false, includeIfNull: false)
   final String? id;
@@ -143,6 +147,7 @@ class Group {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Group &&
+          other.badges == badges &&
           other.id == id &&
           other.name == name &&
           other.shortCode == shortCode &&
@@ -174,6 +179,7 @@ class Group {
 
   @override
   int get hashCode =>
+      badges.hashCode +
       id.hashCode +
       name.hashCode +
       shortCode.hashCode +

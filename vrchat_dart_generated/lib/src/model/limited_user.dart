@@ -29,6 +29,7 @@ class LimitedUser {
     required this.id,
     required this.isFriend,
     required this.lastPlatform,
+    this.lastLogin,
     this.profilePicOverride,
     this.pronouns,
     required this.status,
@@ -82,6 +83,9 @@ class LimitedUser {
   @JsonKey(name: r'last_platform', required: true, includeIfNull: false)
   final String lastPlatform;
 
+  @JsonKey(name: r'last_login', required: false, includeIfNull: false)
+  final DateTime? lastLogin;
+
   @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
   final String? profilePicOverride;
 
@@ -128,6 +132,7 @@ class LimitedUser {
           other.id == id &&
           other.isFriend == isFriend &&
           other.lastPlatform == lastPlatform &&
+          other.lastLogin == lastLogin &&
           other.profilePicOverride == profilePicOverride &&
           other.pronouns == pronouns &&
           other.status == status &&
@@ -152,6 +157,7 @@ class LimitedUser {
       id.hashCode +
       isFriend.hashCode +
       lastPlatform.hashCode +
+      (lastLogin == null ? 0 : lastLogin.hashCode) +
       profilePicOverride.hashCode +
       pronouns.hashCode +
       status.hashCode +

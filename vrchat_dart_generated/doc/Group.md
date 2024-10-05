@@ -8,6 +8,7 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**badges** | **List&lt;String&gt;** |  | [optional] 
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **shortCode** | **String** |  | [optional] 

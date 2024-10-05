@@ -34,7 +34,8 @@ class InstanceShortNameResponse {
           other.shortName == shortName;
 
   @override
-  int get hashCode => secureName.hashCode + shortName.hashCode;
+  int get hashCode =>
+      secureName.hashCode + (shortName == null ? 0 : shortName.hashCode);
 
   factory InstanceShortNameResponse.fromJson(Map<String, dynamic> json) =>
       _$InstanceShortNameResponseFromJson(json);

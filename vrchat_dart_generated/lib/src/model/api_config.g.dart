@@ -19,15 +19,20 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             'VoiceEnableReceiverLimiting',
             'address',
             'announcements',
+            'analyticsSegment_NewUI_PctOfUsers',
+            'analyticsSegment_NewUI_Salt',
             'appName',
             'availableLanguageCodes',
             'availableLanguages',
             'buildVersionTag',
+            'chatboxLogBufferSeconds',
             'clientApiKey',
             'clientBPSCeiling',
             'clientDisconnectTimeout',
+            'clientNetDispatchThreadMobile',
             'clientReservedPlayerBPS',
             'clientSentCountAllowance',
+            'constants',
             'contactEmail',
             'copyrightEmail',
             'currentTOSVersion',
@@ -55,13 +60,24 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             'downloadUrls',
             'dynamicWorldRows',
             'events',
+            'forceUseLatestWorld',
+            'googleApiClientId',
             'homeWorldId',
             'homepageRedirectTarget',
             'hubWorldId',
             'imageHostUrlList',
             'jobsEmail',
+            'minSupportedClientBuildNumber',
+            'minimumUnityVersionForUploads',
             'moderationEmail',
             'notAllowedToSelectAvatarInPrivateWorldMessage',
+            'offlineAnalysis',
+            'photonNameserverOverrides',
+            'photonPublicKeys',
+            'reportCategories',
+            'reportFormUrl',
+            'reportOptions',
+            'reportReasons',
             'sdkDeveloperFaqUrl',
             'sdkDiscordUrl',
             'sdkNotAllowedToPublishMessage',
@@ -69,6 +85,7 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             'serverName',
             'stringHostUrlList',
             'supportEmail',
+            'timekeeping',
             'timeOutWorldId',
             'tutorialWorldId',
             'updateRateMsMaximum',
@@ -81,7 +98,10 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             'viveWindowsUrl',
             'whiteListedAssetUrls',
             'player-url-resolver-version',
-            'player-url-resolver-sha1'
+            'player-url-resolver-sha1',
+            'websocketMaxFriendsRefreshDelay',
+            'websocketQuickReconnectTime',
+            'websocketReconnectMaxDelay'
           ],
         );
         final val = APIConfig(
@@ -96,6 +116,10 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
                   .map((e) =>
                       APIConfigAnnouncement.fromJson(e as Map<String, dynamic>))
                   .toSet()),
+          analyticsSegmentNewUIPctOfUsers: $checkedConvert(
+              'analyticsSegment_NewUI_PctOfUsers', (v) => (v as num).toInt()),
+          analyticsSegmentNewUISalt: $checkedConvert(
+              'analyticsSegment_NewUI_Salt', (v) => v as String),
           appName: $checkedConvert('appName', (v) => v as String? ?? 'VrChat'),
           availableLanguageCodes: $checkedConvert('availableLanguageCodes',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
@@ -103,6 +127,8 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           buildVersionTag:
               $checkedConvert('buildVersionTag', (v) => v as String),
+          chatboxLogBufferSeconds: $checkedConvert(
+              'chatboxLogBufferSeconds', (v) => (v as num?)?.toInt() ?? 40),
           clientApiKey: $checkedConvert('clientApiKey', (v) => v as String),
           clientBPSCeiling: $checkedConvert(
               'clientBPSCeiling', (v) => (v as num?)?.toInt() ?? 18432),
@@ -110,6 +136,8 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               'clientDisconnectTimeout', (v) => (v as num?)?.toInt() ?? 30000),
           clientNetDispatchThread: $checkedConvert(
               'clientNetDispatchThread', (v) => v as bool? ?? false),
+          clientNetDispatchThreadMobile: $checkedConvert(
+              'clientNetDispatchThreadMobile', (v) => v as bool? ?? true),
           clientNetInThread:
               $checkedConvert('clientNetInThread', (v) => v as bool? ?? false),
           clientNetInThread2:
@@ -132,6 +160,8 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               'clientReservedPlayerBPS', (v) => (v as num?)?.toInt() ?? 7168),
           clientSentCountAllowance: $checkedConvert(
               'clientSentCountAllowance', (v) => (v as num?)?.toInt() ?? 15),
+          constants: $checkedConvert('constants',
+              (v) => APIConfigConstants.fromJson(v as Map<String, dynamic>)),
           contactEmail: $checkedConvert('contactEmail', (v) => v as String),
           copyrightEmail: $checkedConvert('copyrightEmail', (v) => v as String),
           currentPrivacyVersion: $checkedConvert(
@@ -201,6 +231,13 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('economyState', (v) => (v as num?)?.toInt() ?? 1),
           events: $checkedConvert('events',
               (v) => APIConfigEvents.fromJson(v as Map<String, dynamic>)),
+          forceUseLatestWorld:
+              $checkedConvert('forceUseLatestWorld', (v) => v as bool? ?? true),
+          googleApiClientId: $checkedConvert(
+              'googleApiClientId',
+              (v) =>
+                  v as String? ??
+                  '827942544393-r2ouvckvouldn9dg9uruseje575e878f.apps.googleusercontent.com'),
           homeWorldId: $checkedConvert('homeWorldId', (v) => v as String),
           homepageRedirectTarget: $checkedConvert('homepageRedirectTarget',
               (v) => v as String? ?? 'https://hello.vrchat.com'),
@@ -208,11 +245,41 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
           imageHostUrlList: $checkedConvert('imageHostUrlList',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           jobsEmail: $checkedConvert('jobsEmail', (v) => v as String),
+          minSupportedClientBuildNumber: $checkedConvert(
+              'minSupportedClientBuildNumber',
+              (v) => APIConfigMinSupportedClientBuildNumber.fromJson(
+                  v as Map<String, dynamic>)),
+          minimumUnityVersionForUploads: $checkedConvert(
+              'minimumUnityVersionForUploads',
+              (v) => v as String? ?? '2019.0.0f1'),
           moderationEmail:
               $checkedConvert('moderationEmail', (v) => v as String),
           notAllowedToSelectAvatarInPrivateWorldMessage: $checkedConvert(
               'notAllowedToSelectAvatarInPrivateWorldMessage',
               (v) => v as String),
+          offlineAnalysis: $checkedConvert(
+              'offlineAnalysis',
+              (v) =>
+                  APIConfigOfflineAnalysis.fromJson(v as Map<String, dynamic>)),
+          photonNameserverOverrides: $checkedConvert(
+              'photonNameserverOverrides',
+              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+          photonPublicKeys: $checkedConvert('photonPublicKeys',
+              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+          reportCategories: $checkedConvert(
+              'reportCategories',
+              (v) => APIConfigReportCategories.fromJson(
+                  v as Map<String, dynamic>)),
+          reportFormUrl: $checkedConvert(
+              'reportFormUrl',
+              (v) =>
+                  v as String? ??
+                  'https://help.vrchat.com/hc/en-us/requests/new?ticket_form_id=1500000182242&tf_360056455174=user_report&tf_360057451993={userId}&tf_1500001445142={reportedId}&tf_subject={reason} {category} By {contentType} {reportedName}&tf_description={description}'),
+          reportOptions: $checkedConvert('reportOptions', (v) => v as Object),
+          reportReasons: $checkedConvert(
+              'reportReasons',
+              (v) =>
+                  APIConfigReportReasons.fromJson(v as Map<String, dynamic>)),
           sdkDeveloperFaqUrl:
               $checkedConvert('sdkDeveloperFaqUrl', (v) => v as String),
           sdkDiscordUrl: $checkedConvert('sdkDiscordUrl', (v) => v as String),
@@ -224,6 +291,8 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
           stringHostUrlList: $checkedConvert('stringHostUrlList',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           supportEmail: $checkedConvert('supportEmail', (v) => v as String),
+          timekeeping:
+              $checkedConvert('timekeeping', (v) => v as bool? ?? true),
           timeOutWorldId: $checkedConvert('timeOutWorldId', (v) => v as String),
           tutorialWorldId:
               $checkedConvert('tutorialWorldId', (v) => v as String),
@@ -248,12 +317,21 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               'player-url-resolver-version', (v) => v as String),
           playerUrlResolverSha1:
               $checkedConvert('player-url-resolver-sha1', (v) => v as String),
+          websocketMaxFriendsRefreshDelay: $checkedConvert(
+              'websocketMaxFriendsRefreshDelay',
+              (v) => (v as num?)?.toInt() ?? 900),
+          websocketQuickReconnectTime: $checkedConvert(
+              'websocketQuickReconnectTime', (v) => (v as num?)?.toInt() ?? 2),
+          websocketReconnectMaxDelay: $checkedConvert(
+              'websocketReconnectMaxDelay', (v) => (v as num?)?.toInt() ?? 2),
         );
         return val;
       },
       fieldKeyMap: const {
         'voiceEnableDegradation': 'VoiceEnableDegradation',
         'voiceEnableReceiverLimiting': 'VoiceEnableReceiverLimiting',
+        'analyticsSegmentNewUIPctOfUsers': 'analyticsSegment_NewUI_PctOfUsers',
+        'analyticsSegmentNewUISalt': 'analyticsSegment_NewUI_Salt',
         'disCountdown': 'dis-countdown',
         'playerUrlResolverVersion': 'player-url-resolver-version',
         'playerUrlResolverSha1': 'player-url-resolver-sha1'
@@ -266,10 +344,14 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) {
     'VoiceEnableReceiverLimiting': instance.voiceEnableReceiverLimiting,
     'address': instance.address,
     'announcements': instance.announcements.map((e) => e.toJson()).toList(),
+    'analyticsSegment_NewUI_PctOfUsers':
+        instance.analyticsSegmentNewUIPctOfUsers,
+    'analyticsSegment_NewUI_Salt': instance.analyticsSegmentNewUISalt,
     'appName': instance.appName,
     'availableLanguageCodes': instance.availableLanguageCodes,
     'availableLanguages': instance.availableLanguages,
     'buildVersionTag': instance.buildVersionTag,
+    'chatboxLogBufferSeconds': instance.chatboxLogBufferSeconds,
     'clientApiKey': instance.clientApiKey,
     'clientBPSCeiling': instance.clientBPSCeiling,
     'clientDisconnectTimeout': instance.clientDisconnectTimeout,
@@ -282,6 +364,7 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) {
   }
 
   writeNotNull('clientNetDispatchThread', instance.clientNetDispatchThread);
+  val['clientNetDispatchThreadMobile'] = instance.clientNetDispatchThreadMobile;
   writeNotNull('clientNetInThread', instance.clientNetInThread);
   writeNotNull('clientNetInThread2', instance.clientNetInThread2);
   writeNotNull('clientNetInThreadMobile', instance.clientNetInThreadMobile);
@@ -293,6 +376,7 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) {
   writeNotNull('clientQR', instance.clientQR);
   val['clientReservedPlayerBPS'] = instance.clientReservedPlayerBPS;
   val['clientSentCountAllowance'] = instance.clientSentCountAllowance;
+  val['constants'] = instance.constants.toJson();
   val['contactEmail'] = instance.contactEmail;
   val['copyrightEmail'] = instance.copyrightEmail;
   writeNotNull('currentPrivacyVersion', instance.currentPrivacyVersion);
@@ -328,14 +412,26 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) {
   writeNotNull('economyPauseStart', instance.economyPauseStart);
   writeNotNull('economyState', instance.economyState);
   val['events'] = instance.events.toJson();
+  val['forceUseLatestWorld'] = instance.forceUseLatestWorld;
+  val['googleApiClientId'] = instance.googleApiClientId;
   val['homeWorldId'] = instance.homeWorldId;
   val['homepageRedirectTarget'] = instance.homepageRedirectTarget;
   val['hubWorldId'] = instance.hubWorldId;
   val['imageHostUrlList'] = instance.imageHostUrlList;
   val['jobsEmail'] = instance.jobsEmail;
+  val['minSupportedClientBuildNumber'] =
+      instance.minSupportedClientBuildNumber.toJson();
+  val['minimumUnityVersionForUploads'] = instance.minimumUnityVersionForUploads;
   val['moderationEmail'] = instance.moderationEmail;
   val['notAllowedToSelectAvatarInPrivateWorldMessage'] =
       instance.notAllowedToSelectAvatarInPrivateWorldMessage;
+  val['offlineAnalysis'] = instance.offlineAnalysis.toJson();
+  val['photonNameserverOverrides'] = instance.photonNameserverOverrides;
+  val['photonPublicKeys'] = instance.photonPublicKeys;
+  val['reportCategories'] = instance.reportCategories.toJson();
+  val['reportFormUrl'] = instance.reportFormUrl;
+  val['reportOptions'] = instance.reportOptions;
+  val['reportReasons'] = instance.reportReasons.toJson();
   val['sdkDeveloperFaqUrl'] = instance.sdkDeveloperFaqUrl;
   val['sdkDiscordUrl'] = instance.sdkDiscordUrl;
   val['sdkNotAllowedToPublishMessage'] = instance.sdkNotAllowedToPublishMessage;
@@ -343,6 +439,7 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) {
   val['serverName'] = instance.serverName;
   val['stringHostUrlList'] = instance.stringHostUrlList;
   val['supportEmail'] = instance.supportEmail;
+  val['timekeeping'] = instance.timekeeping;
   val['timeOutWorldId'] = instance.timeOutWorldId;
   val['tutorialWorldId'] = instance.tutorialWorldId;
   val['updateRateMsMaximum'] = instance.updateRateMsMaximum;
@@ -356,6 +453,10 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) {
   val['whiteListedAssetUrls'] = instance.whiteListedAssetUrls;
   val['player-url-resolver-version'] = instance.playerUrlResolverVersion;
   val['player-url-resolver-sha1'] = instance.playerUrlResolverSha1;
+  val['websocketMaxFriendsRefreshDelay'] =
+      instance.websocketMaxFriendsRefreshDelay;
+  val['websocketQuickReconnectTime'] = instance.websocketQuickReconnectTime;
+  val['websocketReconnectMaxDelay'] = instance.websocketReconnectMaxDelay;
   return val;
 }
 

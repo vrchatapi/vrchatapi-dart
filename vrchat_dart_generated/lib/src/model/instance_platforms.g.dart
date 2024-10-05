@@ -19,6 +19,7 @@ InstancePlatforms _$InstancePlatformsFromJson(Map<String, dynamic> json) =>
         );
         final val = InstancePlatforms(
           android: $checkedConvert('android', (v) => (v as num).toInt()),
+          ios: $checkedConvert('ios', (v) => (v as num?)?.toInt()),
           standalonewindows:
               $checkedConvert('standalonewindows', (v) => (v as num).toInt()),
         );
@@ -26,8 +27,18 @@ InstancePlatforms _$InstancePlatformsFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$InstancePlatformsToJson(InstancePlatforms instance) =>
-    <String, dynamic>{
-      'android': instance.android,
-      'standalonewindows': instance.standalonewindows,
-    };
+Map<String, dynamic> _$InstancePlatformsToJson(InstancePlatforms instance) {
+  final val = <String, dynamic>{
+    'android': instance.android,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('ios', instance.ios);
+  val['standalonewindows'] = instance.standalonewindows;
+  return val;
+}

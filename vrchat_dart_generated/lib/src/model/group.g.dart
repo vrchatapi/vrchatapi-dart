@@ -13,6 +13,8 @@ Group _$GroupFromJson(Map<String, dynamic> json) => $checkedCreate(
       json,
       ($checkedConvert) {
         final val = Group(
+          badges: $checkedConvert('badges',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           id: $checkedConvert('id', (v) => v as String?),
           name: $checkedConvert('name', (v) => v as String?),
           shortCode: $checkedConvert('shortCode', (v) => v as String?),
@@ -80,6 +82,7 @@ Map<String, dynamic> _$GroupToJson(Group instance) {
     }
   }
 
+  writeNotNull('badges', instance.badges);
   writeNotNull('id', instance.id);
   writeNotNull('name', instance.name);
   writeNotNull('shortCode', instance.shortCode);

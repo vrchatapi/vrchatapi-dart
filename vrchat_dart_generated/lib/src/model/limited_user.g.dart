@@ -43,6 +43,8 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
           id: $checkedConvert('id', (v) => v as String),
           isFriend: $checkedConvert('isFriend', (v) => v as bool),
           lastPlatform: $checkedConvert('last_platform', (v) => v as String),
+          lastLogin: $checkedConvert('last_login',
+              (v) => v == null ? null : DateTime.parse(v as String)),
           profilePicOverride:
               $checkedConvert('profilePicOverride', (v) => v as String?),
           pronouns: $checkedConvert('pronouns', (v) => v as String?),
@@ -59,7 +61,10 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         );
         return val;
       },
-      fieldKeyMap: const {'lastPlatform': 'last_platform'},
+      fieldKeyMap: const {
+        'lastPlatform': 'last_platform',
+        'lastLogin': 'last_login'
+      },
     );
 
 Map<String, dynamic> _$LimitedUserToJson(LimitedUser instance) {
@@ -83,6 +88,7 @@ Map<String, dynamic> _$LimitedUserToJson(LimitedUser instance) {
   val['id'] = instance.id;
   val['isFriend'] = instance.isFriend;
   val['last_platform'] = instance.lastPlatform;
+  writeNotNull('last_login', instance.lastLogin?.toIso8601String());
   writeNotNull('profilePicOverride', instance.profilePicOverride);
   writeNotNull('pronouns', instance.pronouns);
   val['status'] = _$UserStatusEnumMap[instance.status]!;

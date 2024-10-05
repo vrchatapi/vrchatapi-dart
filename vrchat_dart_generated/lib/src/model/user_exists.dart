@@ -25,8 +25,8 @@ class UserExists {
   final bool userExists;
 
   /// Is the username valid?
-  @JsonKey(name: r'nameOk', required: true, includeIfNull: false)
-  final bool nameOk;
+  @JsonKey(name: r'nameOk', required: false, includeIfNull: false)
+  final bool? nameOk;
 
   @override
   bool operator ==(Object other) =>

@@ -18,6 +18,8 @@ part 'group_member.g.dart';
 class GroupMember {
   /// Returns a new [GroupMember] instance.
   GroupMember({
+    this.acceptedByDisplayName,
+    this.acceptedById,
     this.id,
     this.groupId,
     this.userId,
@@ -35,6 +37,14 @@ class GroupMember {
     this.lastPostReadAt,
     this.hasJoinedFromPurchase,
   });
+
+  @JsonKey(
+      name: r'acceptedByDisplayName', required: false, includeIfNull: false)
+  final String? acceptedByDisplayName;
+
+  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
+  @JsonKey(name: r'acceptedById', required: false, includeIfNull: false)
+  final String? acceptedById;
 
   @JsonKey(name: r'id', required: false, includeIfNull: false)
   final String? id;
@@ -97,6 +107,8 @@ class GroupMember {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is GroupMember &&
+          other.acceptedByDisplayName == acceptedByDisplayName &&
+          other.acceptedById == acceptedById &&
           other.id == id &&
           other.groupId == groupId &&
           other.userId == userId &&
@@ -116,6 +128,8 @@ class GroupMember {
 
   @override
   int get hashCode =>
+      acceptedByDisplayName.hashCode +
+      acceptedById.hashCode +
       id.hashCode +
       groupId.hashCode +
       userId.hashCode +

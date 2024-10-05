@@ -31,6 +31,7 @@ LimitedWorld _$LimitedWorldFromJson(Map<String, dynamic> json) =>
             'popularity',
             'publicationDate',
             'releaseStatus',
+            'storeId',
             'tags',
             'thumbnailImageUrl',
             'unityPackages',
@@ -66,6 +67,7 @@ LimitedWorld _$LimitedWorldFromJson(Map<String, dynamic> json) =>
               $checkedConvert('publicationDate', (v) => v as String),
           releaseStatus: $checkedConvert(
               'releaseStatus', (v) => $enumDecode(_$ReleaseStatusEnumMap, v)),
+          storeId: $checkedConvert('storeId', (v) => v as String?),
           tags: $checkedConvert('tags',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           thumbnailImageUrl:
@@ -114,6 +116,7 @@ Map<String, dynamic> _$LimitedWorldToJson(LimitedWorld instance) {
   writeNotNull('previewYoutubeId', instance.previewYoutubeId);
   val['publicationDate'] = instance.publicationDate;
   val['releaseStatus'] = _$ReleaseStatusEnumMap[instance.releaseStatus]!;
+  val['storeId'] = instance.storeId;
   val['tags'] = instance.tags;
   val['thumbnailImageUrl'] = instance.thumbnailImageUrl;
   val['unityPackages'] = instance.unityPackages.map((e) => e.toJson()).toList();

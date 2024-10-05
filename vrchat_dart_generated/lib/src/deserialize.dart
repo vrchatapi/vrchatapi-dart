@@ -1,7 +1,19 @@
 import 'package:vrchat_dart_generated/src/model/api_config.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_announcement.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_constants.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_constants_groups.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_constants_instance.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_constants_instancepopulationbrackets.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_constants_instancepopulationbracketscrowded.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_constants_instancepopulationbracketsfew.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_constants_instancepopulationbracketsmany.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_constants_language.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_download_url_list.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_events.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_min_supported_client_build_number.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_offline_analysis.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_report_categories.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_report_reasons.dart';
 import 'package:vrchat_dart_generated/src/model/api_health.dart';
 import 'package:vrchat_dart_generated/src/model/account_deletion_log.dart';
 import 'package:vrchat_dart_generated/src/model/add_favorite_request.dart';
@@ -75,7 +87,10 @@ import 'package:vrchat_dart_generated/src/model/notification_detail_vote_to_kick
 import 'package:vrchat_dart_generated/src/model/paginated_group_audit_log_entry_list.dart';
 import 'package:vrchat_dart_generated/src/model/past_display_name.dart';
 import 'package:vrchat_dart_generated/src/model/permission.dart';
+import 'package:vrchat_dart_generated/src/model/platform_build_info.dart';
 import 'package:vrchat_dart_generated/src/model/player_moderation.dart';
+import 'package:vrchat_dart_generated/src/model/report_category.dart';
+import 'package:vrchat_dart_generated/src/model/report_reason.dart';
 import 'package:vrchat_dart_generated/src/model/represented_group.dart';
 import 'package:vrchat_dart_generated/src/model/request_invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/respond_group_join_request.dart';
@@ -134,11 +149,47 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
 // ignore: deprecated_member_use_from_same_package
       return APIConfigAnnouncement.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'APIConfigConstants':
+      return APIConfigConstants.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'APIConfigConstantsGROUPS':
+      return APIConfigConstantsGROUPS.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'APIConfigConstantsINSTANCE':
+      return APIConfigConstantsINSTANCE.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'APIConfigConstantsINSTANCEPOPULATIONBRACKETS':
+      return APIConfigConstantsINSTANCEPOPULATIONBRACKETS.fromJson(
+          value as Map<String, dynamic>) as ReturnType;
+    case 'APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED':
+      return APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED.fromJson(
+          value as Map<String, dynamic>) as ReturnType;
+    case 'APIConfigConstantsINSTANCEPOPULATIONBRACKETSFEW':
+      return APIConfigConstantsINSTANCEPOPULATIONBRACKETSFEW.fromJson(
+          value as Map<String, dynamic>) as ReturnType;
+    case 'APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY':
+      return APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY.fromJson(
+          value as Map<String, dynamic>) as ReturnType;
+    case 'APIConfigConstantsLANGUAGE':
+      return APIConfigConstantsLANGUAGE.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'APIConfigDownloadURLList':
       return APIConfigDownloadURLList.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'APIConfigEvents':
       return APIConfigEvents.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'APIConfigMinSupportedClientBuildNumber':
+      return APIConfigMinSupportedClientBuildNumber.fromJson(
+          value as Map<String, dynamic>) as ReturnType;
+    case 'APIConfigOfflineAnalysis':
+      return APIConfigOfflineAnalysis.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'APIConfigReportCategories':
+      return APIConfigReportCategories.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'APIConfigReportReasons':
+      return APIConfigReportReasons.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'APIHealth':
       return APIHealth.fromJson(value as Map<String, dynamic>) as ReturnType;
@@ -355,14 +406,23 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'PastDisplayName':
       return PastDisplayName.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'PerformanceRatings':
     case 'Permission':
       return Permission.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'PlatformBuildInfo':
+      return PlatformBuildInfo.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'PlayerModeration':
       return PlayerModeration.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'PlayerModerationType':
     case 'Region':
     case 'ReleaseStatus':
+    case 'ReportCategory':
+      return ReportCategory.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'ReportReason':
+      return ReportReason.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'RepresentedGroup':
       return RepresentedGroup.fromJson(value as Map<String, dynamic>)
           as ReturnType;

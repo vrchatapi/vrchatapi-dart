@@ -19,15 +19,19 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
             'canRequestInvite',
             'capacity',
             'clientNumber',
+            'displayName',
             'full',
+            'gameServerVersion',
             'id',
             'instanceId',
+            'instancePersistenceEnabled',
             'location',
             'n_users',
             'name',
             'permanent',
             'photonRegion',
             'platforms',
+            'playerPersistenceEnabled',
             'region',
             'secureName',
             'tags',
@@ -47,9 +51,14 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('canRequestInvite', (v) => v as bool? ?? true),
           capacity: $checkedConvert('capacity', (v) => (v as num).toInt()),
           clientNumber: $checkedConvert('clientNumber', (v) => v as String),
+          displayName: $checkedConvert('displayName', (v) => v as String?),
           full: $checkedConvert('full', (v) => v as bool? ?? false),
+          gameServerVersion:
+              $checkedConvert('gameServerVersion', (v) => (v as num).toInt()),
           id: $checkedConvert('id', (v) => v as String),
           instanceId: $checkedConvert('instanceId', (v) => v as String),
+          instancePersistenceEnabled: $checkedConvert(
+              'instancePersistenceEnabled', (v) => v as String?),
           location: $checkedConvert('location', (v) => v as String),
           nUsers: $checkedConvert('n_users', (v) => (v as num).toInt()),
           name: $checkedConvert('name', (v) => v as String),
@@ -59,6 +68,8 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
               'photonRegion', (v) => $enumDecode(_$RegionEnumMap, v)),
           platforms: $checkedConvert('platforms',
               (v) => InstancePlatforms.fromJson(v as Map<String, dynamic>)),
+          playerPersistenceEnabled:
+              $checkedConvert('playerPersistenceEnabled', (v) => v as String?),
           region: $checkedConvert(
               'region', (v) => $enumDecode(_$InstanceRegionEnumMap, v)),
           secureName: $checkedConvert('secureName', (v) => v as String),
@@ -105,9 +116,12 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) {
     'canRequestInvite': instance.canRequestInvite,
     'capacity': instance.capacity,
     'clientNumber': instance.clientNumber,
+    'displayName': instance.displayName,
     'full': instance.full,
+    'gameServerVersion': instance.gameServerVersion,
     'id': instance.id,
     'instanceId': instance.instanceId,
+    'instancePersistenceEnabled': instance.instancePersistenceEnabled,
     'location': instance.location,
     'n_users': instance.nUsers,
     'name': instance.name,
@@ -123,6 +137,7 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) {
   val['permanent'] = instance.permanent;
   val['photonRegion'] = _$RegionEnumMap[instance.photonRegion]!;
   val['platforms'] = instance.platforms.toJson();
+  val['playerPersistenceEnabled'] = instance.playerPersistenceEnabled;
   val['region'] = _$InstanceRegionEnumMap[instance.region]!;
   val['secureName'] = instance.secureName;
   writeNotNull('shortName', instance.shortName);

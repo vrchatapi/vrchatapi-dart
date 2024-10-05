@@ -4,9 +4,14 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/api_config_events.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_min_supported_client_build_number.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_download_url_list.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_report_reasons.dart';
 import 'package:vrchat_dart_generated/src/model/deployment_group.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_report_categories.dart';
 import 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_constants.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_offline_analysis.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_announcement.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -25,14 +30,18 @@ class APIConfig {
     this.voiceEnableReceiverLimiting = true,
     required this.address,
     required this.announcements,
+    required this.analyticsSegmentNewUIPctOfUsers,
+    required this.analyticsSegmentNewUISalt,
     this.appName = 'VrChat',
     required this.availableLanguageCodes,
     required this.availableLanguages,
     required this.buildVersionTag,
+    this.chatboxLogBufferSeconds = 40,
     required this.clientApiKey,
     this.clientBPSCeiling = 18432,
     this.clientDisconnectTimeout = 30000,
     this.clientNetDispatchThread = false,
+    this.clientNetDispatchThreadMobile = true,
     this.clientNetInThread = false,
     this.clientNetInThread2 = false,
     this.clientNetInThreadMobile = false,
@@ -44,6 +53,7 @@ class APIConfig {
     this.clientQR = 1,
     this.clientReservedPlayerBPS = 7168,
     this.clientSentCountAllowance = 15,
+    required this.constants,
     required this.contactEmail,
     required this.copyrightEmail,
     this.currentPrivacyVersion = 1,
@@ -78,13 +88,26 @@ class APIConfig {
     this.economyPauseStart,
     this.economyState = 1,
     required this.events,
+    this.forceUseLatestWorld = true,
+    this.googleApiClientId =
+        '827942544393-r2ouvckvouldn9dg9uruseje575e878f.apps.googleusercontent.com',
     required this.homeWorldId,
     this.homepageRedirectTarget = 'https://hello.vrchat.com',
     required this.hubWorldId,
     required this.imageHostUrlList,
     required this.jobsEmail,
+    required this.minSupportedClientBuildNumber,
+    this.minimumUnityVersionForUploads = '2019.0.0f1',
     required this.moderationEmail,
     required this.notAllowedToSelectAvatarInPrivateWorldMessage,
+    required this.offlineAnalysis,
+    required this.photonNameserverOverrides,
+    required this.photonPublicKeys,
+    required this.reportCategories,
+    this.reportFormUrl =
+        'https://help.vrchat.com/hc/en-us/requests/new?ticket_form_id=1500000182242&tf_360056455174=user_report&tf_360057451993={userId}&tf_1500001445142={reportedId}&tf_subject={reason} {category} By {contentType} {reportedName}&tf_description={description}',
+    required this.reportOptions,
+    required this.reportReasons,
     required this.sdkDeveloperFaqUrl,
     required this.sdkDiscordUrl,
     required this.sdkNotAllowedToPublishMessage,
@@ -92,6 +115,7 @@ class APIConfig {
     required this.serverName,
     required this.stringHostUrlList,
     required this.supportEmail,
+    this.timekeeping = true,
     required this.timeOutWorldId,
     required this.tutorialWorldId,
     required this.updateRateMsMaximum,
@@ -105,6 +129,9 @@ class APIConfig {
     required this.whiteListedAssetUrls,
     required this.playerUrlResolverVersion,
     required this.playerUrlResolverSha1,
+    this.websocketMaxFriendsRefreshDelay = 900,
+    this.websocketQuickReconnectTime = 2,
+    this.websocketReconnectMaxDelay = 2,
   });
 
   /// Unknown, probably voice optimization testing
@@ -128,6 +155,20 @@ class APIConfig {
 // ignore: deprecated_member_use_from_same_package
   final Set<APIConfigAnnouncement> announcements;
 
+  /// Unknown
+  @JsonKey(
+      name: r'analyticsSegment_NewUI_PctOfUsers',
+      required: true,
+      includeIfNull: false)
+  final int analyticsSegmentNewUIPctOfUsers;
+
+  /// Unknown
+  @JsonKey(
+      name: r'analyticsSegment_NewUI_Salt',
+      required: true,
+      includeIfNull: false)
+  final String analyticsSegmentNewUISalt;
+
   /// Game name
   @Deprecated('appName has been deprecated')
   @JsonKey(name: r'appName', required: true, includeIfNull: false)
@@ -146,6 +187,11 @@ class APIConfig {
   @JsonKey(name: r'buildVersionTag', required: true, includeIfNull: false)
   final String buildVersionTag;
 
+  /// Unknown
+  @JsonKey(
+      name: r'chatboxLogBufferSeconds', required: true, includeIfNull: false)
+  final int chatboxLogBufferSeconds;
+
   /// apiKey to be used for all other requests
   @JsonKey(name: r'clientApiKey', required: true, includeIfNull: false)
   final String clientApiKey;
@@ -163,6 +209,13 @@ class APIConfig {
   @JsonKey(
       name: r'clientNetDispatchThread', required: false, includeIfNull: false)
   final bool? clientNetDispatchThread;
+
+  /// Unknown
+  @JsonKey(
+      name: r'clientNetDispatchThreadMobile',
+      required: true,
+      includeIfNull: false)
+  final bool clientNetDispatchThreadMobile;
 
   /// Unknown
   @JsonKey(name: r'clientNetInThread', required: false, includeIfNull: false)
@@ -213,6 +266,9 @@ class APIConfig {
   @JsonKey(
       name: r'clientSentCountAllowance', required: true, includeIfNull: false)
   final int clientSentCountAllowance;
+
+  @JsonKey(name: r'constants', required: true, includeIfNull: false)
+  final APIConfigConstants constants;
 
   /// VRChat's contact email
   @JsonKey(name: r'contactEmail', required: true, includeIfNull: false)
@@ -355,6 +411,19 @@ class APIConfig {
   @JsonKey(name: r'events', required: true, includeIfNull: false)
   final APIConfigEvents events;
 
+  /// Unknown
+  @JsonKey(name: r'forceUseLatestWorld', required: true, includeIfNull: false)
+  final bool forceUseLatestWorld;
+
+  /// Unknown
+  @JsonKey(
+      defaultValue:
+          '827942544393-r2ouvckvouldn9dg9uruseje575e878f.apps.googleusercontent.com',
+      name: r'googleApiClientId',
+      required: true,
+      includeIfNull: false)
+  final String googleApiClientId;
+
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @JsonKey(name: r'homeWorldId', required: true, includeIfNull: false)
   final String homeWorldId;
@@ -376,6 +445,19 @@ class APIConfig {
   @JsonKey(name: r'jobsEmail', required: true, includeIfNull: false)
   final String jobsEmail;
 
+  @JsonKey(
+      name: r'minSupportedClientBuildNumber',
+      required: true,
+      includeIfNull: false)
+  final APIConfigMinSupportedClientBuildNumber minSupportedClientBuildNumber;
+
+  /// Minimum Unity version required for uploading assets
+  @JsonKey(
+      name: r'minimumUnityVersionForUploads',
+      required: true,
+      includeIfNull: false)
+  final String minimumUnityVersionForUploads;
+
   /// VRChat's moderation related email
   @JsonKey(name: r'moderationEmail', required: true, includeIfNull: false)
   final String moderationEmail;
@@ -386,6 +468,37 @@ class APIConfig {
       required: true,
       includeIfNull: false)
   final String notAllowedToSelectAvatarInPrivateWorldMessage;
+
+  @JsonKey(name: r'offlineAnalysis', required: true, includeIfNull: false)
+  final APIConfigOfflineAnalysis offlineAnalysis;
+
+  /// Unknown
+  @JsonKey(
+      name: r'photonNameserverOverrides', required: true, includeIfNull: false)
+  final List<String> photonNameserverOverrides;
+
+  /// Unknown
+  @JsonKey(name: r'photonPublicKeys', required: true, includeIfNull: false)
+  final List<String> photonPublicKeys;
+
+  @JsonKey(name: r'reportCategories', required: true, includeIfNull: false)
+  final APIConfigReportCategories reportCategories;
+
+  /// URL to the report form
+  @JsonKey(
+      defaultValue:
+          'https://help.vrchat.com/hc/en-us/requests/new?ticket_form_id=1500000182242&tf_360056455174=user_report&tf_360057451993={userId}&tf_1500001445142={reportedId}&tf_subject={reason} {category} By {contentType} {reportedName}&tf_description={description}',
+      name: r'reportFormUrl',
+      required: true,
+      includeIfNull: false)
+  final String reportFormUrl;
+
+  /// Options for reporting content
+  @JsonKey(name: r'reportOptions', required: true, includeIfNull: false)
+  final Object reportOptions;
+
+  @JsonKey(name: r'reportReasons', required: true, includeIfNull: false)
+  final APIConfigReportReasons reportReasons;
 
   /// Link to the developer FAQ
   @JsonKey(name: r'sdkDeveloperFaqUrl', required: true, includeIfNull: false)
@@ -417,6 +530,10 @@ class APIConfig {
   /// VRChat's support email
   @JsonKey(name: r'supportEmail', required: true, includeIfNull: false)
   final String supportEmail;
+
+  /// Unknown
+  @JsonKey(name: r'timekeeping', required: true, includeIfNull: false)
+  final bool timekeeping;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @JsonKey(name: r'timeOutWorldId', required: true, includeIfNull: false)
@@ -476,6 +593,25 @@ class APIConfig {
       name: r'player-url-resolver-sha1', required: true, includeIfNull: false)
   final String playerUrlResolverSha1;
 
+  /// Unknown
+  @JsonKey(
+      name: r'websocketMaxFriendsRefreshDelay',
+      required: true,
+      includeIfNull: false)
+  final int websocketMaxFriendsRefreshDelay;
+
+  /// Unknown
+  @JsonKey(
+      name: r'websocketQuickReconnectTime',
+      required: true,
+      includeIfNull: false)
+  final int websocketQuickReconnectTime;
+
+  /// Unknown
+  @JsonKey(
+      name: r'websocketReconnectMaxDelay', required: true, includeIfNull: false)
+  final int websocketReconnectMaxDelay;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -484,15 +620,21 @@ class APIConfig {
           other.voiceEnableReceiverLimiting == voiceEnableReceiverLimiting &&
           other.address == address &&
           other.announcements == announcements &&
+          other.analyticsSegmentNewUIPctOfUsers ==
+              analyticsSegmentNewUIPctOfUsers &&
+          other.analyticsSegmentNewUISalt == analyticsSegmentNewUISalt &&
 // ignore: deprecated_member_use_from_same_package
           other.appName == appName &&
           other.availableLanguageCodes == availableLanguageCodes &&
           other.availableLanguages == availableLanguages &&
           other.buildVersionTag == buildVersionTag &&
+          other.chatboxLogBufferSeconds == chatboxLogBufferSeconds &&
           other.clientApiKey == clientApiKey &&
           other.clientBPSCeiling == clientBPSCeiling &&
           other.clientDisconnectTimeout == clientDisconnectTimeout &&
           other.clientNetDispatchThread == clientNetDispatchThread &&
+          other.clientNetDispatchThreadMobile ==
+              clientNetDispatchThreadMobile &&
           other.clientNetInThread == clientNetInThread &&
           other.clientNetInThread2 == clientNetInThread2 &&
           other.clientNetInThreadMobile == clientNetInThreadMobile &&
@@ -504,6 +646,7 @@ class APIConfig {
           other.clientQR == clientQR &&
           other.clientReservedPlayerBPS == clientReservedPlayerBPS &&
           other.clientSentCountAllowance == clientSentCountAllowance &&
+          other.constants == constants &&
           other.contactEmail == contactEmail &&
           other.copyrightEmail == copyrightEmail &&
           other.currentPrivacyVersion == currentPrivacyVersion &&
@@ -542,14 +685,27 @@ class APIConfig {
           other.economyPauseStart == economyPauseStart &&
           other.economyState == economyState &&
           other.events == events &&
+          other.forceUseLatestWorld == forceUseLatestWorld &&
+          other.googleApiClientId == googleApiClientId &&
           other.homeWorldId == homeWorldId &&
           other.homepageRedirectTarget == homepageRedirectTarget &&
           other.hubWorldId == hubWorldId &&
           other.imageHostUrlList == imageHostUrlList &&
           other.jobsEmail == jobsEmail &&
+          other.minSupportedClientBuildNumber ==
+              minSupportedClientBuildNumber &&
+          other.minimumUnityVersionForUploads ==
+              minimumUnityVersionForUploads &&
           other.moderationEmail == moderationEmail &&
           other.notAllowedToSelectAvatarInPrivateWorldMessage ==
               notAllowedToSelectAvatarInPrivateWorldMessage &&
+          other.offlineAnalysis == offlineAnalysis &&
+          other.photonNameserverOverrides == photonNameserverOverrides &&
+          other.photonPublicKeys == photonPublicKeys &&
+          other.reportCategories == reportCategories &&
+          other.reportFormUrl == reportFormUrl &&
+          other.reportOptions == reportOptions &&
+          other.reportReasons == reportReasons &&
           other.sdkDeveloperFaqUrl == sdkDeveloperFaqUrl &&
           other.sdkDiscordUrl == sdkDiscordUrl &&
           other.sdkNotAllowedToPublishMessage ==
@@ -558,6 +714,7 @@ class APIConfig {
           other.serverName == serverName &&
           other.stringHostUrlList == stringHostUrlList &&
           other.supportEmail == supportEmail &&
+          other.timekeeping == timekeeping &&
           other.timeOutWorldId == timeOutWorldId &&
           other.tutorialWorldId == tutorialWorldId &&
           other.updateRateMsMaximum == updateRateMsMaximum &&
@@ -570,7 +727,11 @@ class APIConfig {
           other.viveWindowsUrl == viveWindowsUrl &&
           other.whiteListedAssetUrls == whiteListedAssetUrls &&
           other.playerUrlResolverVersion == playerUrlResolverVersion &&
-          other.playerUrlResolverSha1 == playerUrlResolverSha1;
+          other.playerUrlResolverSha1 == playerUrlResolverSha1 &&
+          other.websocketMaxFriendsRefreshDelay ==
+              websocketMaxFriendsRefreshDelay &&
+          other.websocketQuickReconnectTime == websocketQuickReconnectTime &&
+          other.websocketReconnectMaxDelay == websocketReconnectMaxDelay;
 
   @override
   int get hashCode =>
@@ -578,15 +739,19 @@ class APIConfig {
       voiceEnableReceiverLimiting.hashCode +
       address.hashCode +
       announcements.hashCode +
+      analyticsSegmentNewUIPctOfUsers.hashCode +
+      analyticsSegmentNewUISalt.hashCode +
 // ignore: deprecated_member_use_from_same_package
       appName.hashCode +
       availableLanguageCodes.hashCode +
       availableLanguages.hashCode +
       buildVersionTag.hashCode +
+      chatboxLogBufferSeconds.hashCode +
       clientApiKey.hashCode +
       clientBPSCeiling.hashCode +
       clientDisconnectTimeout.hashCode +
       clientNetDispatchThread.hashCode +
+      clientNetDispatchThreadMobile.hashCode +
       clientNetInThread.hashCode +
       clientNetInThread2.hashCode +
       clientNetInThreadMobile.hashCode +
@@ -598,6 +763,7 @@ class APIConfig {
       clientQR.hashCode +
       clientReservedPlayerBPS.hashCode +
       clientSentCountAllowance.hashCode +
+      constants.hashCode +
       contactEmail.hashCode +
       copyrightEmail.hashCode +
       currentPrivacyVersion.hashCode +
@@ -635,13 +801,24 @@ class APIConfig {
       economyPauseStart.hashCode +
       economyState.hashCode +
       events.hashCode +
+      forceUseLatestWorld.hashCode +
+      googleApiClientId.hashCode +
       homeWorldId.hashCode +
       homepageRedirectTarget.hashCode +
       hubWorldId.hashCode +
       imageHostUrlList.hashCode +
       jobsEmail.hashCode +
+      minSupportedClientBuildNumber.hashCode +
+      minimumUnityVersionForUploads.hashCode +
       moderationEmail.hashCode +
       notAllowedToSelectAvatarInPrivateWorldMessage.hashCode +
+      offlineAnalysis.hashCode +
+      photonNameserverOverrides.hashCode +
+      photonPublicKeys.hashCode +
+      reportCategories.hashCode +
+      reportFormUrl.hashCode +
+      reportOptions.hashCode +
+      reportReasons.hashCode +
       sdkDeveloperFaqUrl.hashCode +
       sdkDiscordUrl.hashCode +
       sdkNotAllowedToPublishMessage.hashCode +
@@ -649,6 +826,7 @@ class APIConfig {
       serverName.hashCode +
       stringHostUrlList.hashCode +
       supportEmail.hashCode +
+      timekeeping.hashCode +
       timeOutWorldId.hashCode +
       tutorialWorldId.hashCode +
       updateRateMsMaximum.hashCode +
@@ -661,7 +839,10 @@ class APIConfig {
       viveWindowsUrl.hashCode +
       whiteListedAssetUrls.hashCode +
       playerUrlResolverVersion.hashCode +
-      playerUrlResolverSha1.hashCode;
+      playerUrlResolverSha1.hashCode +
+      websocketMaxFriendsRefreshDelay.hashCode +
+      websocketQuickReconnectTime.hashCode +
+      websocketReconnectMaxDelay.hashCode;
 
   factory APIConfig.fromJson(Map<String, dynamic> json) =>
       _$APIConfigFromJson(json);

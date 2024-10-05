@@ -27,9 +27,12 @@ class Instance {
     this.canRequestInvite = true,
     required this.capacity,
     required this.clientNumber,
+    required this.displayName,
     this.full = false,
+    required this.gameServerVersion,
     required this.id,
     required this.instanceId,
+    required this.instancePersistenceEnabled,
     required this.location,
     required this.nUsers,
     required this.name,
@@ -37,6 +40,7 @@ class Instance {
     this.permanent = false,
     required this.photonRegion,
     required this.platforms,
+    required this.playerPersistenceEnabled,
     required this.region,
     required this.secureName,
     this.shortName,
@@ -76,8 +80,14 @@ class Instance {
   @JsonKey(name: r'clientNumber', required: true, includeIfNull: false)
   final String clientNumber;
 
+  @JsonKey(name: r'displayName', required: true, includeIfNull: true)
+  final String? displayName;
+
   @JsonKey(name: r'full', required: true, includeIfNull: false)
   final bool full;
+
+  @JsonKey(name: r'gameServerVersion', required: true, includeIfNull: false)
+  final int gameServerVersion;
 
   /// InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
   @JsonKey(name: r'id', required: true, includeIfNull: false)
@@ -85,6 +95,10 @@ class Instance {
 
   @JsonKey(name: r'instanceId', required: true, includeIfNull: false)
   final String instanceId;
+
+  @JsonKey(
+      name: r'instancePersistenceEnabled', required: true, includeIfNull: true)
+  final String? instancePersistenceEnabled;
 
   /// InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
   @JsonKey(name: r'location', required: true, includeIfNull: false)
@@ -109,6 +123,10 @@ class Instance {
 
   @JsonKey(name: r'platforms', required: true, includeIfNull: false)
   final InstancePlatforms platforms;
+
+  @JsonKey(
+      name: r'playerPersistenceEnabled', required: true, includeIfNull: true)
+  final String? playerPersistenceEnabled;
 
   @JsonKey(name: r'region', required: true, includeIfNull: false)
   final InstanceRegion region;
@@ -194,9 +212,12 @@ class Instance {
           other.capacity == capacity &&
 // ignore: deprecated_member_use_from_same_package
           other.clientNumber == clientNumber &&
+          other.displayName == displayName &&
           other.full == full &&
+          other.gameServerVersion == gameServerVersion &&
           other.id == id &&
           other.instanceId == instanceId &&
+          other.instancePersistenceEnabled == instancePersistenceEnabled &&
           other.location == location &&
           other.nUsers == nUsers &&
           other.name == name &&
@@ -204,6 +225,7 @@ class Instance {
           other.permanent == permanent &&
           other.photonRegion == photonRegion &&
           other.platforms == platforms &&
+          other.playerPersistenceEnabled == playerPersistenceEnabled &&
           other.region == region &&
           other.secureName == secureName &&
           other.shortName == shortName &&
@@ -234,9 +256,14 @@ class Instance {
       capacity.hashCode +
 // ignore: deprecated_member_use_from_same_package
       clientNumber.hashCode +
+      (displayName == null ? 0 : displayName.hashCode) +
       full.hashCode +
+      gameServerVersion.hashCode +
       id.hashCode +
       instanceId.hashCode +
+      (instancePersistenceEnabled == null
+          ? 0
+          : instancePersistenceEnabled.hashCode) +
       location.hashCode +
       nUsers.hashCode +
       name.hashCode +
@@ -244,6 +271,9 @@ class Instance {
       permanent.hashCode +
       photonRegion.hashCode +
       platforms.hashCode +
+      (playerPersistenceEnabled == null
+          ? 0
+          : playerPersistenceEnabled.hashCode) +
       region.hashCode +
       secureName.hashCode +
       (shortName == null ? 0 : shortName.hashCode) +
