@@ -15,6 +15,9 @@ jobs:
     strategy:
       matrix:
         package: [vrchat_dart, vrchat_dart_generated]
+    defaults:
+      run:
+        working-directory: ${{ matrix.package }}
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
@@ -23,15 +26,16 @@ jobs:
       - name: Pub cache
         uses: actions/cache@v4
         env:
-          cache-name: pub-cache
+          cache-name: ${{ matrix.package }}
         with:
           path: ${{ env.PUB_CACHE }}
           key: ${{ env.cache-name }}-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: ${{ env.cache-name }}-
+      - name: Pub get
+        run: dart pub get
+      - name: Publish dry run
+        run: dart pub publish --dry-run
       - name: Run pana
         run: |
-          cd ${{ matrix.package }}
-          dart pub get
-          dart pub publish --dry-run
           dart pub global activate pana
           pana --no-warning --exit-code-threshold 0
