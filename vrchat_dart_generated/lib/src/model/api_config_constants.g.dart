@@ -18,26 +18,31 @@ APIConfigConstants _$APIConfigConstantsFromJson(Map<String, dynamic> json) =>
           requiredKeys: const ['GROUPS', 'INSTANCE', 'LANGUAGE'],
         );
         final val = APIConfigConstants(
-          GROUPS: $checkedConvert(
+          groups: $checkedConvert(
               'GROUPS',
               (v) =>
                   APIConfigConstantsGROUPS.fromJson(v as Map<String, dynamic>)),
-          INSTANCE: $checkedConvert(
+          instance: $checkedConvert(
               'INSTANCE',
               (v) => APIConfigConstantsINSTANCE.fromJson(
                   v as Map<String, dynamic>)),
-          LANGUAGE: $checkedConvert(
+          language: $checkedConvert(
               'LANGUAGE',
               (v) => APIConfigConstantsLANGUAGE.fromJson(
                   v as Map<String, dynamic>)),
         );
         return val;
       },
+      fieldKeyMap: const {
+        'groups': 'GROUPS',
+        'instance': 'INSTANCE',
+        'language': 'LANGUAGE'
+      },
     );
 
 Map<String, dynamic> _$APIConfigConstantsToJson(APIConfigConstants instance) =>
     <String, dynamic>{
-      'GROUPS': instance.GROUPS.toJson(),
-      'INSTANCE': instance.INSTANCE.toJson(),
-      'LANGUAGE': instance.LANGUAGE.toJson(),
+      'GROUPS': instance.groups.toJson(),
+      'INSTANCE': instance.instance.toJson(),
+      'LANGUAGE': instance.language.toJson(),
     };

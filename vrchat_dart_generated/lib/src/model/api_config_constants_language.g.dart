@@ -15,7 +15,7 @@ APIConfigConstantsLANGUAGE _$APIConfigConstantsLANGUAGEFromJson(
       json,
       ($checkedConvert) {
         final val = APIConfigConstantsLANGUAGE(
-          SPOKEN_LANGUAGE_OPTIONS: $checkedConvert(
+          spokenLanguageOptions: $checkedConvert(
               'SPOKEN_LANGUAGE_OPTIONS',
               (v) => (v as Map<String, dynamic>?)?.map(
                     (k, e) => MapEntry(k, e as String),
@@ -23,6 +23,7 @@ APIConfigConstantsLANGUAGE _$APIConfigConstantsLANGUAGEFromJson(
         );
         return val;
       },
+      fieldKeyMap: const {'spokenLanguageOptions': 'SPOKEN_LANGUAGE_OPTIONS'},
     );
 
 Map<String, dynamic> _$APIConfigConstantsLANGUAGEToJson(
@@ -35,6 +36,6 @@ Map<String, dynamic> _$APIConfigConstantsLANGUAGEToJson(
     }
   }
 
-  writeNotNull('SPOKEN_LANGUAGE_OPTIONS', instance.SPOKEN_LANGUAGE_OPTIONS);
+  writeNotNull('SPOKEN_LANGUAGE_OPTIONS', instance.spokenLanguageOptions);
   return val;
 }

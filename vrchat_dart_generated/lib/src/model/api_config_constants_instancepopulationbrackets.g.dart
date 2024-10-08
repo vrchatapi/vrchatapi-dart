@@ -16,19 +16,19 @@ APIConfigConstantsINSTANCEPOPULATIONBRACKETS
           json,
           ($checkedConvert) {
             final val = APIConfigConstantsINSTANCEPOPULATIONBRACKETS(
-              CROWDED: $checkedConvert(
+              crowded: $checkedConvert(
                   'CROWDED',
                   (v) => v == null
                       ? null
                       : APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED
                           .fromJson(v as Map<String, dynamic>)),
-              FEW: $checkedConvert(
+              few: $checkedConvert(
                   'FEW',
                   (v) => v == null
                       ? null
                       : APIConfigConstantsINSTANCEPOPULATIONBRACKETSFEW
                           .fromJson(v as Map<String, dynamic>)),
-              MANY: $checkedConvert(
+              many: $checkedConvert(
                   'MANY',
                   (v) => v == null
                       ? null
@@ -36,6 +36,11 @@ APIConfigConstantsINSTANCEPOPULATIONBRACKETS
                           .fromJson(v as Map<String, dynamic>)),
             );
             return val;
+          },
+          fieldKeyMap: const {
+            'crowded': 'CROWDED',
+            'few': 'FEW',
+            'many': 'MANY'
           },
         );
 
@@ -49,8 +54,8 @@ Map<String, dynamic> _$APIConfigConstantsINSTANCEPOPULATIONBRACKETSToJson(
     }
   }
 
-  writeNotNull('CROWDED', instance.CROWDED?.toJson());
-  writeNotNull('FEW', instance.FEW?.toJson());
-  writeNotNull('MANY', instance.MANY?.toJson());
+  writeNotNull('CROWDED', instance.crowded?.toJson());
+  writeNotNull('FEW', instance.few?.toJson());
+  writeNotNull('MANY', instance.many?.toJson());
   return val;
 }

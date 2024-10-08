@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:fixer/fixer.dart';
 import 'package:path/path.dart' as path;
+import 'package:recase/recase.dart';
 
 void main() async {
   final spec =
@@ -100,11 +101,59 @@ void patchApi() {
 }
 
 void patchAnalysisIssues() {
+  // Map of file path to set of identifiers with issues
+  final identifierIssues = <String, Set<String>>{};
+
   fix(
     {
       'deprecated_member_use_from_same_package': (_, line) =>
           '// ignore: deprecated_member_use_from_same_package\n$line',
+      'non_constant_identifier_names': (diagnostic, line) {
+        final fieldMatch = RegExp(r'final .+ (\w+);').firstMatch(line);
+        if (fieldMatch != null) {
+          final group = fieldMatch[1]!;
+          final file = diagnostic.location.file;
+          identifierIssues.update(
+            file,
+            (value) => value..add(group),
+            ifAbsent: () => {group},
+          );
+        }
+        return line;
+      },
     },
     workingDirectory: '../vrchat_dart_generated',
   );
+
+  for (final MapEntry(:key, :value) in identifierIssues.entries) {
+    final file = File(key);
+    var contents = file.readAsStringSync();
+    for (final identifier in value) {
+      final newIdentifier = identifier.camelCase;
+      contents = contents
+          // Constructor parameters
+          .replaceAllMapped(
+            // This is regex
+            // ignore: unnecessary_string_escapes
+            RegExp('this\.$identifier\\b(.*)'),
+            (m) => 'this.$newIdentifier${m[1]}',
+          )
+          // Fields
+          .replaceAllMapped(
+            RegExp('final (.+) $identifier;'),
+            (m) => 'final ${m[1]} $newIdentifier;',
+          )
+          // Equals operator
+          .replaceAll(
+            RegExp('other.$identifier == $identifier'),
+            'other.$newIdentifier == $newIdentifier',
+          )
+          // Hashcode
+          .replaceAll(
+            RegExp('$identifier.hashCode'),
+            '$newIdentifier.hashCode',
+          );
+    }
+    file.writeAsStringSync(contents);
+  }
 }

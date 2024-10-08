@@ -15,29 +15,41 @@ APIConfigConstantsGROUPS _$APIConfigConstantsGROUPSFromJson(
       json,
       ($checkedConvert) {
         final val = APIConfigConstantsGROUPS(
-          CAPACITY: $checkedConvert(
+          capacity: $checkedConvert(
               'CAPACITY', (v) => (v as num?)?.toInt() ?? 100000),
-          GROUP_TRANSFER_REQUIREMENTS: $checkedConvert(
+          groupTransferRequirements: $checkedConvert(
               'GROUP_TRANSFER_REQUIREMENTS',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
-          MAX_INVITES_REQUESTS: $checkedConvert(
+          maxInvitesRequests: $checkedConvert(
               'MAX_INVITES_REQUESTS', (v) => (v as num?)?.toInt() ?? 50),
-          MAX_JOINED:
+          maxJoined:
               $checkedConvert('MAX_JOINED', (v) => (v as num?)?.toInt() ?? 100),
-          MAX_JOINED_PLUS: $checkedConvert(
+          maxJoinedPlus: $checkedConvert(
               'MAX_JOINED_PLUS', (v) => (v as num?)?.toInt() ?? 200),
-          MAX_LANGUAGES: $checkedConvert(
+          maxLanguages: $checkedConvert(
               'MAX_LANGUAGES', (v) => (v as num?)?.toInt() ?? 10),
-          MAX_LINKS:
+          maxLinks:
               $checkedConvert('MAX_LINKS', (v) => (v as num?)?.toInt() ?? 3),
-          MAX_MANAGEMENT_ROLES: $checkedConvert(
+          maxManagementRoles: $checkedConvert(
               'MAX_MANAGEMENT_ROLES', (v) => (v as num?)?.toInt() ?? 5),
-          MAX_OWNED:
+          maxOwned:
               $checkedConvert('MAX_OWNED', (v) => (v as num?)?.toInt() ?? 5),
-          MAX_ROLES:
+          maxRoles:
               $checkedConvert('MAX_ROLES', (v) => (v as num?)?.toInt() ?? 50),
         );
         return val;
+      },
+      fieldKeyMap: const {
+        'capacity': 'CAPACITY',
+        'groupTransferRequirements': 'GROUP_TRANSFER_REQUIREMENTS',
+        'maxInvitesRequests': 'MAX_INVITES_REQUESTS',
+        'maxJoined': 'MAX_JOINED',
+        'maxJoinedPlus': 'MAX_JOINED_PLUS',
+        'maxLanguages': 'MAX_LANGUAGES',
+        'maxLinks': 'MAX_LINKS',
+        'maxManagementRoles': 'MAX_MANAGEMENT_ROLES',
+        'maxOwned': 'MAX_OWNED',
+        'maxRoles': 'MAX_ROLES'
       },
     );
 
@@ -51,16 +63,16 @@ Map<String, dynamic> _$APIConfigConstantsGROUPSToJson(
     }
   }
 
-  writeNotNull('CAPACITY', instance.CAPACITY);
+  writeNotNull('CAPACITY', instance.capacity);
   writeNotNull(
-      'GROUP_TRANSFER_REQUIREMENTS', instance.GROUP_TRANSFER_REQUIREMENTS);
-  writeNotNull('MAX_INVITES_REQUESTS', instance.MAX_INVITES_REQUESTS);
-  writeNotNull('MAX_JOINED', instance.MAX_JOINED);
-  writeNotNull('MAX_JOINED_PLUS', instance.MAX_JOINED_PLUS);
-  writeNotNull('MAX_LANGUAGES', instance.MAX_LANGUAGES);
-  writeNotNull('MAX_LINKS', instance.MAX_LINKS);
-  writeNotNull('MAX_MANAGEMENT_ROLES', instance.MAX_MANAGEMENT_ROLES);
-  writeNotNull('MAX_OWNED', instance.MAX_OWNED);
-  writeNotNull('MAX_ROLES', instance.MAX_ROLES);
+      'GROUP_TRANSFER_REQUIREMENTS', instance.groupTransferRequirements);
+  writeNotNull('MAX_INVITES_REQUESTS', instance.maxInvitesRequests);
+  writeNotNull('MAX_JOINED', instance.maxJoined);
+  writeNotNull('MAX_JOINED_PLUS', instance.maxJoinedPlus);
+  writeNotNull('MAX_LANGUAGES', instance.maxLanguages);
+  writeNotNull('MAX_LINKS', instance.maxLinks);
+  writeNotNull('MAX_MANAGEMENT_ROLES', instance.maxManagementRoles);
+  writeNotNull('MAX_OWNED', instance.maxOwned);
+  writeNotNull('MAX_ROLES', instance.maxRoles);
   return val;
 }

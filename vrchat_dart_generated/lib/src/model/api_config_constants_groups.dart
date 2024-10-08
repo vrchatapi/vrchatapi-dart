@@ -16,16 +16,16 @@ part 'api_config_constants_groups.g.dart';
 class APIConfigConstantsGROUPS {
   /// Returns a new [APIConfigConstantsGROUPS] instance.
   APIConfigConstantsGROUPS({
-    this.CAPACITY = 100000,
-    this.GROUP_TRANSFER_REQUIREMENTS,
-    this.MAX_INVITES_REQUESTS = 50,
-    this.MAX_JOINED = 100,
-    this.MAX_JOINED_PLUS = 200,
-    this.MAX_LANGUAGES = 10,
-    this.MAX_LINKS = 3,
-    this.MAX_MANAGEMENT_ROLES = 5,
-    this.MAX_OWNED = 5,
-    this.MAX_ROLES = 50,
+    this.capacity = 100000,
+    this.groupTransferRequirements,
+    this.maxInvitesRequests = 50,
+    this.maxJoined = 100,
+    this.maxJoinedPlus = 200,
+    this.maxLanguages = 10,
+    this.maxLinks = 3,
+    this.maxManagementRoles = 5,
+    this.maxOwned = 5,
+    this.maxRoles = 50,
   });
 
   /// Maximum group capacity
@@ -34,7 +34,7 @@ class APIConfigConstantsGROUPS {
     required: false,
     includeIfNull: false,
   )
-  final int? CAPACITY;
+  final int? capacity;
 
   /// Requirements for transferring group ownership
   @JsonKey(
@@ -42,7 +42,7 @@ class APIConfigConstantsGROUPS {
     required: false,
     includeIfNull: false,
   )
-  final List<String>? GROUP_TRANSFER_REQUIREMENTS;
+  final List<String>? groupTransferRequirements;
 
   /// Maximum number of invite requests
   @JsonKey(
@@ -50,7 +50,7 @@ class APIConfigConstantsGROUPS {
     required: false,
     includeIfNull: false,
   )
-  final int? MAX_INVITES_REQUESTS;
+  final int? maxInvitesRequests;
 
   /// Maximum number of joined groups
   @JsonKey(
@@ -58,7 +58,7 @@ class APIConfigConstantsGROUPS {
     required: false,
     includeIfNull: false,
   )
-  final int? MAX_JOINED;
+  final int? maxJoined;
 
   /// Maximum number of joined groups for VRChat Plus members
   @JsonKey(
@@ -66,7 +66,7 @@ class APIConfigConstantsGROUPS {
     required: false,
     includeIfNull: false,
   )
-  final int? MAX_JOINED_PLUS;
+  final int? maxJoinedPlus;
 
   /// Maximum number of supported languages
   @JsonKey(
@@ -74,7 +74,7 @@ class APIConfigConstantsGROUPS {
     required: false,
     includeIfNull: false,
   )
-  final int? MAX_LANGUAGES;
+  final int? maxLanguages;
 
   /// Maximum number of group links
   @JsonKey(
@@ -82,7 +82,7 @@ class APIConfigConstantsGROUPS {
     required: false,
     includeIfNull: false,
   )
-  final int? MAX_LINKS;
+  final int? maxLinks;
 
   /// Maximum number of management roles in a group
   @JsonKey(
@@ -90,7 +90,7 @@ class APIConfigConstantsGROUPS {
     required: false,
     includeIfNull: false,
   )
-  final int? MAX_MANAGEMENT_ROLES;
+  final int? maxManagementRoles;
 
   /// Maximum number of groups a user can own
   @JsonKey(
@@ -98,7 +98,7 @@ class APIConfigConstantsGROUPS {
     required: false,
     includeIfNull: false,
   )
-  final int? MAX_OWNED;
+  final int? maxOwned;
 
   /// Maximum number of roles in a group
   @JsonKey(
@@ -106,35 +106,35 @@ class APIConfigConstantsGROUPS {
     required: false,
     includeIfNull: false,
   )
-  final int? MAX_ROLES;
+  final int? maxRoles;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is APIConfigConstantsGROUPS &&
-          other.CAPACITY == CAPACITY &&
-          other.GROUP_TRANSFER_REQUIREMENTS == GROUP_TRANSFER_REQUIREMENTS &&
-          other.MAX_INVITES_REQUESTS == MAX_INVITES_REQUESTS &&
-          other.MAX_JOINED == MAX_JOINED &&
-          other.MAX_JOINED_PLUS == MAX_JOINED_PLUS &&
-          other.MAX_LANGUAGES == MAX_LANGUAGES &&
-          other.MAX_LINKS == MAX_LINKS &&
-          other.MAX_MANAGEMENT_ROLES == MAX_MANAGEMENT_ROLES &&
-          other.MAX_OWNED == MAX_OWNED &&
-          other.MAX_ROLES == MAX_ROLES;
+          other.capacity == capacity &&
+          other.groupTransferRequirements == groupTransferRequirements &&
+          other.maxInvitesRequests == maxInvitesRequests &&
+          other.maxJoined == maxJoined &&
+          other.maxJoinedPlus == maxJoinedPlus &&
+          other.maxLanguages == maxLanguages &&
+          other.maxLinks == maxLinks &&
+          other.maxManagementRoles == maxManagementRoles &&
+          other.maxOwned == maxOwned &&
+          other.maxRoles == maxRoles;
 
   @override
   int get hashCode =>
-      CAPACITY.hashCode +
-      GROUP_TRANSFER_REQUIREMENTS.hashCode +
-      MAX_INVITES_REQUESTS.hashCode +
-      MAX_JOINED.hashCode +
-      MAX_JOINED_PLUS.hashCode +
-      MAX_LANGUAGES.hashCode +
-      MAX_LINKS.hashCode +
-      MAX_MANAGEMENT_ROLES.hashCode +
-      MAX_OWNED.hashCode +
-      MAX_ROLES.hashCode;
+      capacity.hashCode +
+      groupTransferRequirements.hashCode +
+      maxInvitesRequests.hashCode +
+      maxJoined.hashCode +
+      maxJoinedPlus.hashCode +
+      maxLanguages.hashCode +
+      maxLinks.hashCode +
+      maxManagementRoles.hashCode +
+      maxOwned.hashCode +
+      maxRoles.hashCode;
 
   factory APIConfigConstantsGROUPS.fromJson(Map<String, dynamic> json) =>
       _$APIConfigConstantsGROUPSFromJson(json);

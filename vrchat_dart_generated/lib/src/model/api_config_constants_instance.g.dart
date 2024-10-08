@@ -15,7 +15,7 @@ APIConfigConstantsINSTANCE _$APIConfigConstantsINSTANCEFromJson(
       json,
       ($checkedConvert) {
         final val = APIConfigConstantsINSTANCE(
-          POPULATION_BRACKETS: $checkedConvert(
+          populationBrackets: $checkedConvert(
               'POPULATION_BRACKETS',
               (v) => v == null
                   ? null
@@ -24,6 +24,7 @@ APIConfigConstantsINSTANCE _$APIConfigConstantsINSTANCEFromJson(
         );
         return val;
       },
+      fieldKeyMap: const {'populationBrackets': 'POPULATION_BRACKETS'},
     );
 
 Map<String, dynamic> _$APIConfigConstantsINSTANCEToJson(
@@ -36,6 +37,6 @@ Map<String, dynamic> _$APIConfigConstantsINSTANCEToJson(
     }
   }
 
-  writeNotNull('POPULATION_BRACKETS', instance.POPULATION_BRACKETS?.toJson());
+  writeNotNull('POPULATION_BRACKETS', instance.populationBrackets?.toJson());
   return val;
 }

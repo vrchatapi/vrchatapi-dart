@@ -17,7 +17,7 @@ part 'api_config_constants_instance.g.dart';
 class APIConfigConstantsINSTANCE {
   /// Returns a new [APIConfigConstantsINSTANCE] instance.
   APIConfigConstantsINSTANCE({
-    this.POPULATION_BRACKETS,
+    this.populationBrackets,
   });
 
   @JsonKey(
@@ -25,16 +25,16 @@ class APIConfigConstantsINSTANCE {
     required: false,
     includeIfNull: false,
   )
-  final APIConfigConstantsINSTANCEPOPULATIONBRACKETS? POPULATION_BRACKETS;
+  final APIConfigConstantsINSTANCEPOPULATIONBRACKETS? populationBrackets;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is APIConfigConstantsINSTANCE &&
-          other.POPULATION_BRACKETS == POPULATION_BRACKETS;
+          other.populationBrackets == populationBrackets;
 
   @override
-  int get hashCode => POPULATION_BRACKETS.hashCode;
+  int get hashCode => populationBrackets.hashCode;
 
   factory APIConfigConstantsINSTANCE.fromJson(Map<String, dynamic> json) =>
       _$APIConfigConstantsINSTANCEFromJson(json);
