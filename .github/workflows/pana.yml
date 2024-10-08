@@ -32,6 +32,6 @@ jobs:
         run: |
           cd ${{ matrix.package }}
           dart pub get
+          dart pub publish --dry-run
           dart pub global activate pana
           pana --no-warning --exit-code-threshold 0
-          dart pub publish --dry-run
