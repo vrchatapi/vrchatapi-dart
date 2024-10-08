@@ -14,3 +14,8 @@ dev_dependencies:
   build_runner: ^2.4.10
   json_serializable: ^6.1.5
   lints: ^5.0.0
+
+false_secrets:
+  - /doc/APIConfig.md
+  - /lib/src/model/api_config.dart
+  - /lib/src/model/api_config.g.dart
