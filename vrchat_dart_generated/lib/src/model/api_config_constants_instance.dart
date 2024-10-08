@@ -20,7 +20,11 @@ class APIConfigConstantsINSTANCE {
     this.POPULATION_BRACKETS,
   });
 
-  @JsonKey(name: r'POPULATION_BRACKETS', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'POPULATION_BRACKETS',
+    required: false,
+    includeIfNull: false,
+  )
   final APIConfigConstantsINSTANCEPOPULATIONBRACKETS? POPULATION_BRACKETS;
 
   @override

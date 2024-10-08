@@ -23,17 +23,33 @@ class CreateFileRequest {
     this.tags,
   });
 
-  @JsonKey(name: r'name', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'name',
+    required: true,
+    includeIfNull: false,
+  )
   final String name;
 
-  @JsonKey(name: r'mimeType', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'mimeType',
+    required: true,
+    includeIfNull: false,
+  )
   final MIMEType mimeType;
 
-  @JsonKey(name: r'extension', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'extension',
+    required: true,
+    includeIfNull: false,
+  )
   final String extension_;
 
   ///
-  @JsonKey(name: r'tags', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'tags',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? tags;
 
   @override

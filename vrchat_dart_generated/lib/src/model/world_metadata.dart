@@ -21,10 +21,18 @@ class WorldMetadata {
   });
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
-  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'id',
+    required: true,
+    includeIfNull: false,
+  )
   final String id;
 
-  @JsonKey(name: r'metadata', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'metadata',
+    required: true,
+    includeIfNull: false,
+  )
   final Object metadata;
 
   @override

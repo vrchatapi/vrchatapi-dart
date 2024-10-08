@@ -24,13 +24,25 @@ class APIConfigConstantsINSTANCEPOPULATIONBRACKETS {
     this.MANY,
   });
 
-  @JsonKey(name: r'CROWDED', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'CROWDED',
+    required: false,
+    includeIfNull: false,
+  )
   final APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED? CROWDED;
 
-  @JsonKey(name: r'FEW', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'FEW',
+    required: false,
+    includeIfNull: false,
+  )
   final APIConfigConstantsINSTANCEPOPULATIONBRACKETSFEW? FEW;
 
-  @JsonKey(name: r'MANY', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'MANY',
+    required: false,
+    includeIfNull: false,
+  )
   final APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY? MANY;
 
   @override

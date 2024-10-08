@@ -26,30 +26,57 @@ class InviteMessage {
     required this.updatedAt,
   });
 
-  @JsonKey(name: r'canBeUpdated', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'canBeUpdated',
+    required: true,
+    includeIfNull: false,
+  )
   final bool canBeUpdated;
 
-  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'id',
+    required: true,
+    includeIfNull: false,
+  )
   final String id;
 
-  @JsonKey(name: r'message', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'message',
+    required: true,
+    includeIfNull: false,
+  )
   final String message;
 
-  @JsonKey(name: r'messageType', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'messageType',
+    required: true,
+    includeIfNull: false,
+  )
   final InviteMessageType messageType;
 
   /// Changes to 60 when updated, although probably server-side configurable.
   // minimum: 0
   @JsonKey(
-      name: r'remainingCooldownMinutes', required: true, includeIfNull: false)
+    name: r'remainingCooldownMinutes',
+    required: true,
+    includeIfNull: false,
+  )
   final int remainingCooldownMinutes;
 
   // minimum: 0
   // maximum: 11
-  @JsonKey(name: r'slot', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'slot',
+    required: true,
+    includeIfNull: false,
+  )
   final int slot;
 
-  @JsonKey(name: r'updatedAt', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'updatedAt',
+    required: true,
+    includeIfNull: false,
+  )
   final DateTime updatedAt;
 
   @override

@@ -23,16 +23,32 @@ class LicenseGroup {
     required this.licenses,
   });
 
-  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'id',
+    required: true,
+    includeIfNull: false,
+  )
   final String id;
 
-  @JsonKey(name: r'name', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'name',
+    required: true,
+    includeIfNull: false,
+  )
   final String name;
 
-  @JsonKey(name: r'description', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'description',
+    required: true,
+    includeIfNull: false,
+  )
   final String description;
 
-  @JsonKey(name: r'licenses', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'licenses',
+    required: true,
+    includeIfNull: false,
+  )
   final List<License> licenses;
 
   @override

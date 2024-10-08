@@ -19,7 +19,11 @@ class UpdateInviteMessageRequest {
     required this.message,
   });
 
-  @JsonKey(name: r'message', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'message',
+    required: true,
+    includeIfNull: false,
+  )
   final String message;
 
   @override

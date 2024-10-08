@@ -21,11 +21,19 @@ class APIConfigConstantsINSTANCEPOPULATIONBRACKETSFEW {
   });
 
   /// Maximum population for a few instance
-  @JsonKey(name: r'max', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'max',
+    required: false,
+    includeIfNull: false,
+  )
   final int? max;
 
   /// Minimum population for a few instance
-  @JsonKey(name: r'min', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'min',
+    required: false,
+    includeIfNull: false,
+  )
   final int? min;
 
   @override

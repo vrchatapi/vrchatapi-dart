@@ -21,11 +21,19 @@ class ReportReason {
   });
 
   /// The label or name of the report reason
-  @JsonKey(name: r'text', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'text',
+    required: true,
+    includeIfNull: false,
+  )
   final String text;
 
   /// A brief explanation of what this reason entails
-  @JsonKey(name: r'tooltip', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'tooltip',
+    required: true,
+    includeIfNull: false,
+  )
   final String tooltip;
 
   @override

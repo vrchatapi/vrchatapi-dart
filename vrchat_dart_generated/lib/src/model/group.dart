@@ -53,94 +53,210 @@ class Group {
     this.roles,
   });
 
-  @JsonKey(name: r'badges', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'badges',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? badges;
 
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
   final String? id;
 
-  @JsonKey(name: r'name', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'name',
+    required: false,
+    includeIfNull: false,
+  )
   final String? name;
 
-  @JsonKey(name: r'shortCode', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'shortCode',
+    required: false,
+    includeIfNull: false,
+  )
   final String? shortCode;
 
-  @JsonKey(name: r'discriminator', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'discriminator',
+    required: false,
+    includeIfNull: false,
+  )
   final String? discriminator;
 
-  @JsonKey(name: r'description', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'description',
+    required: false,
+    includeIfNull: false,
+  )
   final String? description;
 
-  @JsonKey(name: r'iconUrl', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'iconUrl',
+    required: false,
+    includeIfNull: false,
+  )
   final String? iconUrl;
 
-  @JsonKey(name: r'bannerUrl', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'bannerUrl',
+    required: false,
+    includeIfNull: false,
+  )
   final String? bannerUrl;
 
-  @JsonKey(name: r'privacy', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'privacy',
+    required: false,
+    includeIfNull: false,
+  )
   final GroupPrivacy? privacy;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(name: r'ownerId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'ownerId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? ownerId;
 
-  @JsonKey(name: r'rules', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'rules',
+    required: false,
+    includeIfNull: false,
+  )
   final String? rules;
 
-  @JsonKey(name: r'links', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'links',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? links;
 
-  @JsonKey(name: r'languages', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'languages',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? languages;
 
-  @JsonKey(name: r'iconId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'iconId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? iconId;
 
-  @JsonKey(name: r'bannerId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'bannerId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? bannerId;
 
-  @JsonKey(name: r'memberCount', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'memberCount',
+    required: false,
+    includeIfNull: false,
+  )
   final int? memberCount;
 
-  @JsonKey(name: r'memberCountSyncedAt', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'memberCountSyncedAt',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? memberCountSyncedAt;
 
-  @JsonKey(name: r'isVerified', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'isVerified',
+    required: false,
+    includeIfNull: false,
+  )
   final bool? isVerified;
 
-  @JsonKey(name: r'joinState', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'joinState',
+    required: false,
+    includeIfNull: false,
+  )
   final GroupJoinState? joinState;
 
-  @JsonKey(name: r'tags', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'tags',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? tags;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(name: r'transferTargetId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'transferTargetId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? transferTargetId;
 
-  @JsonKey(name: r'galleries', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'galleries',
+    required: false,
+    includeIfNull: false,
+  )
   final List<GroupGallery>? galleries;
 
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'createdAt',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? createdAt;
 
-  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'updatedAt',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? updatedAt;
 
-  @JsonKey(name: r'lastPostCreatedAt', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'lastPostCreatedAt',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? lastPostCreatedAt;
 
-  @JsonKey(name: r'onlineMemberCount', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'onlineMemberCount',
+    required: false,
+    includeIfNull: false,
+  )
   final int? onlineMemberCount;
 
-  @JsonKey(name: r'membershipStatus', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'membershipStatus',
+    required: false,
+    includeIfNull: false,
+  )
   final GroupMemberStatus? membershipStatus;
 
-  @JsonKey(name: r'myMember', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'myMember',
+    required: false,
+    includeIfNull: false,
+  )
   final GroupMyMember? myMember;
 
   /// Only returned if ?includeRoles=true is specified.
-  @JsonKey(name: r'roles', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'roles',
+    required: false,
+    includeIfNull: false,
+  )
   final List<GroupRole>? roles;
 
   @override

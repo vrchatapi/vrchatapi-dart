@@ -10,8 +10,6 @@ All URIs are relative to *https://vrchat.com/api/1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**clearAllPlayerModerations**](PlayermoderationApi.md#clearallplayermoderations) | **DELETE** /auth/user/playermoderations | Clear All Player Moderations
-[**deletePlayerModeration**](PlayermoderationApi.md#deleteplayermoderation) | **DELETE** /auth/user/playermoderations/{playerModerationId} | Delete Player Moderation
-[**getPlayerModeration**](PlayermoderationApi.md#getplayermoderation) | **GET** /auth/user/playermoderations/{playerModerationId} | Get Player Moderation
 [**getPlayerModerations**](PlayermoderationApi.md#getplayermoderations) | **GET** /auth/user/playermoderations | Search Player Moderations
 [**moderateUser**](PlayermoderationApi.md#moderateuser) | **POST** /auth/user/playermoderations | Moderate User
 [**unmoderateUser**](PlayermoderationApi.md#unmoderateuser) | **PUT** /auth/user/unplayermoderate | Unmoderate User
@@ -48,100 +46,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**Success**](Success.md)
-
-### Authorization
-
-[authCookie](../README.md#authCookie)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **deletePlayerModeration**
-> Success deletePlayerModeration(playerModerationId)
-
-Delete Player Moderation
-
-Deletes a specific player moderation based on it's `pmod_` ID. The website uses `unmoderateUser` instead. You can delete the same player moderation multiple times successfully.
-
-### Example
-```dart
-import 'package:vrchat_dart_generated/api.dart';
-// TODO Configure API key authorization: authCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-
-final api = VrchatDartGenerated().getPlayermoderationApi();
-final String playerModerationId = playerModerationId_example; // String | Must be a valid `pmod_` ID.
-
-try {
-    final response = api.deletePlayerModeration(playerModerationId);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling PlayermoderationApi->deletePlayerModeration: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **playerModerationId** | **String**| Must be a valid `pmod_` ID. | 
-
-### Return type
-
-[**Success**](Success.md)
-
-### Authorization
-
-[authCookie](../README.md#authCookie)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getPlayerModeration**
-> PlayerModeration getPlayerModeration(playerModerationId)
-
-Get Player Moderation
-
-Returns a single Player Moderation. This returns the exact same amount of information as the more generalised `getPlayerModerations`.
-
-### Example
-```dart
-import 'package:vrchat_dart_generated/api.dart';
-// TODO Configure API key authorization: authCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-
-final api = VrchatDartGenerated().getPlayermoderationApi();
-final String playerModerationId = playerModerationId_example; // String | Must be a valid `pmod_` ID.
-
-try {
-    final response = api.getPlayerModeration(playerModerationId);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling PlayermoderationApi->getPlayerModeration: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **playerModerationId** | **String**| Must be a valid `pmod_` ID. | 
-
-### Return type
-
-[**PlayerModeration**](PlayerModeration.md)
 
 ### Authorization
 

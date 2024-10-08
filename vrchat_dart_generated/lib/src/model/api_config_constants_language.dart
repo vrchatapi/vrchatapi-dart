@@ -21,7 +21,10 @@ class APIConfigConstantsLANGUAGE {
 
   /// Supported spoken language options
   @JsonKey(
-      name: r'SPOKEN_LANGUAGE_OPTIONS', required: false, includeIfNull: false)
+    name: r'SPOKEN_LANGUAGE_OPTIONS',
+    required: false,
+    includeIfNull: false,
+  )
   final Map<String, String>? SPOKEN_LANGUAGE_OPTIONS;
 
   @override

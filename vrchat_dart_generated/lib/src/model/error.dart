@@ -20,7 +20,11 @@ class Error {
     this.error,
   });
 
-  @JsonKey(name: r'error', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'error',
+    required: false,
+    includeIfNull: false,
+  )
   final Response? error;
 
   @override

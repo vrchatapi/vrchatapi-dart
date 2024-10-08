@@ -33,42 +33,86 @@ class CreateInstanceRequest {
   });
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
-  @JsonKey(name: r'worldId', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'worldId',
+    required: true,
+    includeIfNull: false,
+  )
   final String worldId;
 
-  @JsonKey(name: r'type', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'type',
+    required: true,
+    includeIfNull: false,
+  )
   final InstanceType type;
 
-  @JsonKey(name: r'region', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'region',
+    required: true,
+    includeIfNull: false,
+  )
   final InstanceRegion region;
 
   /// A groupId if the instance type is \"group\", null if instance type is public, or a userId otherwise
-  @JsonKey(name: r'ownerId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'ownerId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? ownerId;
 
   /// Group roleIds that are allowed to join if the type is \"group\" and groupAccessType is \"member\"
-  @JsonKey(name: r'roleIds', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'roleIds',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? roleIds;
 
-  @JsonKey(name: r'groupAccessType', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'groupAccessType',
+    required: false,
+    includeIfNull: false,
+  )
   final GroupAccessType? groupAccessType;
 
-  @JsonKey(name: r'queueEnabled', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'queueEnabled',
+    required: false,
+    includeIfNull: false,
+  )
   final bool? queueEnabled;
 
   /// The time after which users won't be allowed to join the instance. This doesn't work for public instances.
-  @JsonKey(name: r'closedAt', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'closedAt',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? closedAt;
 
   /// Only applies to invite type instances to make them invite+
-  @JsonKey(name: r'canRequestInvite', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'canRequestInvite',
+    required: false,
+    includeIfNull: false,
+  )
   final bool? canRequestInvite;
 
   /// Currently unused, but will eventually be a flag to set if the closing of the instance should kick people.
-  @JsonKey(name: r'hardClose', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'hardClose',
+    required: false,
+    includeIfNull: false,
+  )
   final bool? hardClose;
 
-  @JsonKey(name: r'inviteOnly', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'inviteOnly',
+    required: false,
+    includeIfNull: false,
+  )
   final bool? inviteOnly;
 
   @override

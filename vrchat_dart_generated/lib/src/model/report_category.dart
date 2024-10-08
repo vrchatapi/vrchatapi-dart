@@ -21,11 +21,19 @@ class ReportCategory {
   });
 
   /// The label of the report category
-  @JsonKey(name: r'text', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'text',
+    required: true,
+    includeIfNull: false,
+  )
   final String text;
 
   /// The tooltip that describes the category
-  @JsonKey(name: r'tooltip', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'tooltip',
+    required: true,
+    includeIfNull: false,
+  )
   final String tooltip;
 
   @override

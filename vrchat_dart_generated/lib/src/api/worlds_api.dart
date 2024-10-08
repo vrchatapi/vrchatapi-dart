@@ -10,6 +10,7 @@ import 'package:vrchat_dart_generated/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:vrchat_dart_generated/src/model/create_world_request.dart';
+import 'package:vrchat_dart_generated/src/model/favorited_world.dart';
 import 'package:vrchat_dart_generated/src/model/instance.dart';
 import 'package:vrchat_dart_generated/src/model/limited_world.dart';
 import 'package:vrchat_dart_generated/src/model/order_option.dart';
@@ -315,9 +316,9 @@ class WorldsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<LimitedWorld>] as data
+  /// Returns a [Future] containing a [Response] with a [List<FavoritedWorld>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<LimitedWorld>>> getFavoritedWorlds({
+  Future<Response<List<FavoritedWorld>>> getFavoritedWorlds({
     bool? featured,
     SortOption? sort,
     int? n = 60,
@@ -383,14 +384,14 @@ class WorldsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<LimitedWorld>? _responseData;
+    List<FavoritedWorld>? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<LimitedWorld>, LimitedWorld>(
-              rawData, 'List<LimitedWorld>',
+          : deserialize<List<FavoritedWorld>, FavoritedWorld>(
+              rawData, 'List<FavoritedWorld>',
               growable: true);
     } catch (error, stackTrace) {
       throw DioException(
@@ -402,7 +403,7 @@ class WorldsApi {
       );
     }
 
-    return Response<List<LimitedWorld>>(
+    return Response<List<FavoritedWorld>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

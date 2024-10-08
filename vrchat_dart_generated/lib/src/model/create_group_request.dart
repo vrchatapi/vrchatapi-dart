@@ -29,28 +29,60 @@ class CreateGroupRequest {
     required this.roleTemplate,
   });
 
-  @JsonKey(name: r'name', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'name',
+    required: true,
+    includeIfNull: false,
+  )
   final String name;
 
-  @JsonKey(name: r'shortCode', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'shortCode',
+    required: true,
+    includeIfNull: false,
+  )
   final String shortCode;
 
-  @JsonKey(name: r'description', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'description',
+    required: false,
+    includeIfNull: false,
+  )
   final String? description;
 
-  @JsonKey(name: r'joinState', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'joinState',
+    required: false,
+    includeIfNull: false,
+  )
   final GroupJoinState? joinState;
 
-  @JsonKey(name: r'iconId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'iconId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? iconId;
 
-  @JsonKey(name: r'bannerId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'bannerId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? bannerId;
 
-  @JsonKey(name: r'privacy', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'privacy',
+    required: false,
+    includeIfNull: false,
+  )
   final GroupPrivacy? privacy;
 
-  @JsonKey(name: r'roleTemplate', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'roleTemplate',
+    required: true,
+    includeIfNull: false,
+  )
   final GroupRoleTemplate roleTemplate;
 
   @override

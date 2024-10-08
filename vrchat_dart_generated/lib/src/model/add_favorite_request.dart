@@ -22,15 +22,27 @@ class AddFavoriteRequest {
     required this.tags,
   });
 
-  @JsonKey(name: r'type', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'type',
+    required: true,
+    includeIfNull: false,
+  )
   final FavoriteType type;
 
   /// Must be either AvatarID, WorldID or UserID.
-  @JsonKey(name: r'favoriteId', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'favoriteId',
+    required: true,
+    includeIfNull: false,
+  )
   final String favoriteId;
 
   /// Tags indicate which group this favorite belongs to. Adding multiple groups makes it show up in all. Removing it from one in that case removes it from all.
-  @JsonKey(name: r'tags', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'tags',
+    required: true,
+    includeIfNull: false,
+  )
   final List<String> tags;
 
   @override

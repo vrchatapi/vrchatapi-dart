@@ -20,10 +20,18 @@ class PastDisplayName {
     required this.updatedAt,
   });
 
-  @JsonKey(name: r'displayName', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'displayName',
+    required: true,
+    includeIfNull: false,
+  )
   final String displayName;
 
-  @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'updated_at',
+    required: true,
+    includeIfNull: false,
+  )
   final DateTime updatedAt;
 
   @override

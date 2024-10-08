@@ -24,23 +24,43 @@ class TransactionSteamInfo {
     required this.transId,
   });
 
-  @JsonKey(name: r'walletInfo', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'walletInfo',
+    required: true,
+    includeIfNull: false,
+  )
   final TransactionSteamWalletInfo walletInfo;
 
   /// Steam User ID
-  @JsonKey(name: r'steamId', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'steamId',
+    required: true,
+    includeIfNull: false,
+  )
   final String steamId;
 
   /// Steam Order ID
-  @JsonKey(name: r'orderId', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'orderId',
+    required: true,
+    includeIfNull: false,
+  )
   final String orderId;
 
   /// Empty
-  @JsonKey(name: r'steamUrl', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'steamUrl',
+    required: true,
+    includeIfNull: false,
+  )
   final String steamUrl;
 
   /// Steam Transaction ID, NOT the same as VRChat TransactionID
-  @JsonKey(name: r'transId', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'transId',
+    required: true,
+    includeIfNull: false,
+  )
   final String transId;
 
   @override

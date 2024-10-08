@@ -31,40 +31,84 @@ class InfoPush {
     this.endDate,
   });
 
-  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'id',
+    required: true,
+    includeIfNull: false,
+  )
   final String id;
 
-  @JsonKey(name: r'isEnabled', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'isEnabled',
+    required: true,
+    includeIfNull: false,
+  )
   final bool isEnabled;
 
-  @JsonKey(name: r'releaseStatus', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'releaseStatus',
+    required: true,
+    includeIfNull: false,
+  )
   final ReleaseStatus releaseStatus;
 
-  @JsonKey(name: r'priority', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'priority',
+    required: true,
+    includeIfNull: false,
+  )
   final int priority;
 
   ///
-  @JsonKey(name: r'tags', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'tags',
+    required: true,
+    includeIfNull: false,
+  )
   final List<String> tags;
 
-  @JsonKey(name: r'data', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'data',
+    required: true,
+    includeIfNull: false,
+  )
   final InfoPushData data;
 
   /// Unknown usage, MD5
-  @JsonKey(name: r'hash', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'hash',
+    required: true,
+    includeIfNull: false,
+  )
   final String hash;
 
-  @JsonKey(name: r'createdAt', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'createdAt',
+    required: true,
+    includeIfNull: false,
+  )
   final DateTime createdAt;
 
-  @JsonKey(name: r'updatedAt', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'updatedAt',
+    required: true,
+    includeIfNull: false,
+  )
   final DateTime updatedAt;
 
   ///
-  @JsonKey(name: r'startDate', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'startDate',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? startDate;
 
-  @JsonKey(name: r'endDate', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'endDate',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? endDate;
 
   @override

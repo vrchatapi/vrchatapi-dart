@@ -26,25 +26,49 @@ class CreateGroupPostRequest {
   });
 
   /// Post title
-  @JsonKey(name: r'title', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'title',
+    required: true,
+    includeIfNull: false,
+  )
   final String title;
 
   /// Post text
-  @JsonKey(name: r'text', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'text',
+    required: true,
+    includeIfNull: false,
+  )
   final String text;
 
-  @JsonKey(name: r'imageId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'imageId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? imageId;
 
   /// Send notification to group members.
-  @JsonKey(name: r'sendNotification', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'sendNotification',
+    required: true,
+    includeIfNull: false,
+  )
   final bool sendNotification;
 
   ///
-  @JsonKey(name: r'roleIds', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'roleIds',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? roleIds;
 
-  @JsonKey(name: r'visibility', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'visibility',
+    required: true,
+    includeIfNull: false,
+  )
   final GroupPostVisibility visibility;
 
   @override

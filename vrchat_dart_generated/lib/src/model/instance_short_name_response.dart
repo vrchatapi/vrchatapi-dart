@@ -20,10 +20,18 @@ class InstanceShortNameResponse {
     this.shortName,
   });
 
-  @JsonKey(name: r'secureName', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'secureName',
+    required: true,
+    includeIfNull: false,
+  )
   final String secureName;
 
-  @JsonKey(name: r'shortName', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'shortName',
+    required: false,
+    includeIfNull: false,
+  )
   final String? shortName;
 
   @override

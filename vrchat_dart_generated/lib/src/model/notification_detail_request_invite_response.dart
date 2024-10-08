@@ -20,11 +20,19 @@ class NotificationDetailRequestInviteResponse {
     this.requestMessage,
   });
 
-  @JsonKey(name: r'inResponseTo', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'inResponseTo',
+    required: true,
+    includeIfNull: false,
+  )
   final String inResponseTo;
 
   /// Used when using InviteMessage Slot.
-  @JsonKey(name: r'requestMessage', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'requestMessage',
+    required: false,
+    includeIfNull: false,
+  )
   final String? requestMessage;
 
   @override

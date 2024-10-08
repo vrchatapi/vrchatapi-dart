@@ -21,11 +21,19 @@ class PlatformBuildInfo {
   });
 
   /// Minimum build number required for the platform
-  @JsonKey(name: r'minBuildNumber', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'minBuildNumber',
+    required: true,
+    includeIfNull: false,
+  )
   final int minBuildNumber;
 
   /// Redirection URL for updating the app
-  @JsonKey(name: r'redirectionAddress', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'redirectionAddress',
+    required: true,
+    includeIfNull: false,
+  )
   final String redirectionAddress;
 
   @override

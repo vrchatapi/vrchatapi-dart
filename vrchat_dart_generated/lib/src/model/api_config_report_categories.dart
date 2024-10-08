@@ -29,34 +29,74 @@ class APIConfigReportCategories {
     required this.worldstore,
   });
 
-  @JsonKey(name: r'avatar', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'avatar',
+    required: true,
+    includeIfNull: false,
+  )
   final ReportCategory avatar;
 
-  @JsonKey(name: r'behavior', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'behavior',
+    required: true,
+    includeIfNull: false,
+  )
   final ReportCategory behavior;
 
-  @JsonKey(name: r'chat', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'chat',
+    required: true,
+    includeIfNull: false,
+  )
   final ReportCategory chat;
 
-  @JsonKey(name: r'environment', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'environment',
+    required: true,
+    includeIfNull: false,
+  )
   final ReportCategory environment;
 
-  @JsonKey(name: r'groupstore', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'groupstore',
+    required: true,
+    includeIfNull: false,
+  )
   final ReportCategory groupstore;
 
-  @JsonKey(name: r'image', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'image',
+    required: true,
+    includeIfNull: false,
+  )
   final ReportCategory image;
 
-  @JsonKey(name: r'text', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'text',
+    required: true,
+    includeIfNull: false,
+  )
   final ReportCategory text;
 
-  @JsonKey(name: r'warnings', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'warnings',
+    required: true,
+    includeIfNull: false,
+  )
   final ReportCategory warnings;
 
-  @JsonKey(name: r'worldimage', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'worldimage',
+    required: true,
+    includeIfNull: false,
+  )
   final ReportCategory worldimage;
 
-  @JsonKey(name: r'worldstore', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'worldstore',
+    required: true,
+    includeIfNull: false,
+  )
   final ReportCategory worldstore;
 
   @override

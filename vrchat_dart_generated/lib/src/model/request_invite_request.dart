@@ -21,7 +21,11 @@ class RequestInviteRequest {
 
   // minimum: 0
   // maximum: 11
-  @JsonKey(name: r'messageSlot', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'messageSlot',
+    required: false,
+    includeIfNull: false,
+  )
   final int? messageSlot;
 
   @override

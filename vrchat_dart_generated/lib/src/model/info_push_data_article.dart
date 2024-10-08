@@ -20,7 +20,11 @@ class InfoPushDataArticle {
     this.content,
   });
 
-  @JsonKey(name: r'content', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'content',
+    required: false,
+    includeIfNull: false,
+  )
   final InfoPushDataArticleContent? content;
 
   @override

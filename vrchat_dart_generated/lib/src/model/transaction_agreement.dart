@@ -36,59 +36,131 @@ class TransactionAgreement {
     required this.failedAttempts,
   });
 
-  @JsonKey(name: r'agreementId', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'agreementId',
+    required: true,
+    includeIfNull: false,
+  )
   final String agreementId;
 
-  @JsonKey(name: r'itemId', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'itemId',
+    required: true,
+    includeIfNull: false,
+  )
   final int itemId;
 
-  @JsonKey(name: r'agreement', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'agreement',
+    required: true,
+    includeIfNull: false,
+  )
   final String agreement;
 
   /// This is NOT TransactionStatus, but whatever Steam return.
-  @JsonKey(name: r'status', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'status',
+    required: true,
+    includeIfNull: false,
+  )
   final String status;
 
-  @JsonKey(name: r'period', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'period',
+    required: true,
+    includeIfNull: false,
+  )
   final String period;
 
-  @JsonKey(name: r'frequency', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'frequency',
+    required: true,
+    includeIfNull: false,
+  )
   final int frequency;
 
-  @JsonKey(name: r'billingType', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'billingType',
+    required: true,
+    includeIfNull: false,
+  )
   final String billingType;
 
-  @JsonKey(name: r'startDate', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'startDate',
+    required: true,
+    includeIfNull: false,
+  )
   final String startDate;
 
-  @JsonKey(name: r'endDate', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'endDate',
+    required: true,
+    includeIfNull: false,
+  )
   final String endDate;
 
-  @JsonKey(name: r'recurringAmt', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'recurringAmt',
+    required: true,
+    includeIfNull: false,
+  )
   final num recurringAmt;
 
-  @JsonKey(name: r'currency', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'currency',
+    required: true,
+    includeIfNull: false,
+  )
   final String currency;
 
-  @JsonKey(name: r'timeCreated', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'timeCreated',
+    required: true,
+    includeIfNull: false,
+  )
   final String timeCreated;
 
-  @JsonKey(name: r'nextPayment', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'nextPayment',
+    required: true,
+    includeIfNull: false,
+  )
   final String nextPayment;
 
-  @JsonKey(name: r'lastPayment', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'lastPayment',
+    required: true,
+    includeIfNull: false,
+  )
   final String lastPayment;
 
-  @JsonKey(name: r'lastAmount', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'lastAmount',
+    required: true,
+    includeIfNull: false,
+  )
   final num lastAmount;
 
-  @JsonKey(name: r'lastAmountVat', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'lastAmountVat',
+    required: true,
+    includeIfNull: false,
+  )
   final num lastAmountVat;
 
-  @JsonKey(name: r'outstanding', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'outstanding',
+    required: true,
+    includeIfNull: false,
+  )
   final int outstanding;
 
-  @JsonKey(name: r'failedAttempts', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'failedAttempts',
+    required: true,
+    includeIfNull: false,
+  )
   final int failedAttempts;
 
   @override

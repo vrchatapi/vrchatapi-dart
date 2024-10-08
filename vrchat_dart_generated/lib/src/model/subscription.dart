@@ -29,34 +29,74 @@ class Subscription {
     required this.tier,
   });
 
-  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'id',
+    required: true,
+    includeIfNull: false,
+  )
   final String id;
 
-  @JsonKey(name: r'steamItemId', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'steamItemId',
+    required: true,
+    includeIfNull: false,
+  )
   final String steamItemId;
 
-  @JsonKey(name: r'oculusSku', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'oculusSku',
+    required: false,
+    includeIfNull: false,
+  )
   final String? oculusSku;
 
-  @JsonKey(name: r'googleProductId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'googleProductId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? googleProductId;
 
-  @JsonKey(name: r'googlePlanId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'googlePlanId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? googlePlanId;
 
-  @JsonKey(name: r'picoSku', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'picoSku',
+    required: false,
+    includeIfNull: false,
+  )
   final String? picoSku;
 
-  @JsonKey(name: r'amount', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'amount',
+    required: true,
+    includeIfNull: false,
+  )
   final num amount;
 
-  @JsonKey(name: r'description', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'description',
+    required: true,
+    includeIfNull: false,
+  )
   final String description;
 
-  @JsonKey(name: r'period', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'period',
+    required: true,
+    includeIfNull: false,
+  )
   final SubscriptionPeriod period;
 
-  @JsonKey(name: r'tier', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'tier',
+    required: true,
+    includeIfNull: false,
+  )
   final int tier;
 
   @override

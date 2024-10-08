@@ -24,13 +24,25 @@ class APIConfigConstants {
     required this.LANGUAGE,
   });
 
-  @JsonKey(name: r'GROUPS', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'GROUPS',
+    required: true,
+    includeIfNull: false,
+  )
   final APIConfigConstantsGROUPS GROUPS;
 
-  @JsonKey(name: r'INSTANCE', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'INSTANCE',
+    required: true,
+    includeIfNull: false,
+  )
   final APIConfigConstantsINSTANCE INSTANCE;
 
-  @JsonKey(name: r'LANGUAGE', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'LANGUAGE',
+    required: true,
+    includeIfNull: false,
+  )
   final APIConfigConstantsLANGUAGE LANGUAGE;
 
   @override

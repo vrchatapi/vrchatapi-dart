@@ -22,16 +22,32 @@ class CreateFileVersionRequest {
     this.fileSizeInBytes,
   });
 
-  @JsonKey(name: r'signatureMd5', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'signatureMd5',
+    required: true,
+    includeIfNull: false,
+  )
   final String signatureMd5;
 
-  @JsonKey(name: r'signatureSizeInBytes', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'signatureSizeInBytes',
+    required: true,
+    includeIfNull: false,
+  )
   final int signatureSizeInBytes;
 
-  @JsonKey(name: r'fileMd5', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'fileMd5',
+    required: false,
+    includeIfNull: false,
+  )
   final String? fileMd5;
 
-  @JsonKey(name: r'fileSizeInBytes', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'fileSizeInBytes',
+    required: false,
+    includeIfNull: false,
+  )
   final int? fileSizeInBytes;
 
   @override

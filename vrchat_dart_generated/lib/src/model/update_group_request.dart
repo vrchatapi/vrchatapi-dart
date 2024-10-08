@@ -29,36 +29,76 @@ class UpdateGroupRequest {
     this.tags,
   });
 
-  @JsonKey(name: r'name', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'name',
+    required: false,
+    includeIfNull: false,
+  )
   final String? name;
 
-  @JsonKey(name: r'shortCode', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'shortCode',
+    required: false,
+    includeIfNull: false,
+  )
   final String? shortCode;
 
-  @JsonKey(name: r'description', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'description',
+    required: false,
+    includeIfNull: false,
+  )
   final String? description;
 
-  @JsonKey(name: r'joinState', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'joinState',
+    required: false,
+    includeIfNull: false,
+  )
   final GroupJoinState? joinState;
 
-  @JsonKey(name: r'iconId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'iconId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? iconId;
 
-  @JsonKey(name: r'bannerId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'bannerId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? bannerId;
 
   /// 3 letter language code
-  @JsonKey(name: r'languages', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'languages',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? languages;
 
-  @JsonKey(name: r'links', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'links',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? links;
 
-  @JsonKey(name: r'rules', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'rules',
+    required: false,
+    includeIfNull: false,
+  )
   final String? rules;
 
   ///
-  @JsonKey(name: r'tags', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'tags',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? tags;
 
   @override

@@ -39,6 +39,7 @@ import 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
 import 'package:vrchat_dart_generated/src/model/favorite.dart';
 import 'package:vrchat_dart_generated/src/model/favorite_group.dart';
+import 'package:vrchat_dart_generated/src/model/favorited_world.dart';
 import 'package:vrchat_dart_generated/src/model/file.dart';
 import 'package:vrchat_dart_generated/src/model/file_data.dart';
 import 'package:vrchat_dart_generated/src/model/file_upload_url.dart';
@@ -70,6 +71,8 @@ import 'package:vrchat_dart_generated/src/model/instance_short_name_response.dar
 import 'package:vrchat_dart_generated/src/model/invite_message.dart';
 import 'package:vrchat_dart_generated/src/model/invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/invite_response.dart';
+import 'package:vrchat_dart_generated/src/model/jam.dart';
+import 'package:vrchat_dart_generated/src/model/jam_state_change_dates.dart';
 import 'package:vrchat_dart_generated/src/model/license.dart';
 import 'package:vrchat_dart_generated/src/model/license_group.dart';
 import 'package:vrchat_dart_generated/src/model/limited_group.dart';
@@ -96,6 +99,7 @@ import 'package:vrchat_dart_generated/src/model/request_invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/respond_group_join_request.dart';
 import 'package:vrchat_dart_generated/src/model/response.dart';
 import 'package:vrchat_dart_generated/src/model/sent_notification.dart';
+import 'package:vrchat_dart_generated/src/model/submission.dart';
 import 'package:vrchat_dart_generated/src/model/subscription.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
 import 'package:vrchat_dart_generated/src/model/transaction.dart';
@@ -265,6 +269,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'FavoriteGroupVisibility':
     case 'FavoriteType':
+    case 'FavoritedWorld':
+      return FavoritedWorld.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'File':
       return File.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'FileData':
@@ -359,6 +366,11 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'InviteResponse':
       return InviteResponse.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'Jam':
+      return Jam.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'JamStateChangeDates':
+      return JamStateChangeDates.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'License':
       return License.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'LicenseAction':
@@ -438,6 +450,8 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return SentNotification.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'SortOption':
+    case 'Submission':
+      return Submission.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Subscription':
       return Subscription.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'SubscriptionPeriod':
@@ -536,9 +550,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
             .toSet() as ReturnType;
       }
       if (value is Map && (match = _regMap.firstMatch(targetType)) != null) {
-        targetType = match![1]!; // ignore: parameter_assignments
-        return Map<dynamic, BaseType>.fromIterables(
-          value.keys,
+        targetType = match![1]!.trim(); // ignore: parameter_assignments
+        return Map<String, BaseType>.fromIterables(
+          value.keys as Iterable<String>,
           value.values.map((dynamic v) => deserialize<BaseType, BaseType>(
               v, targetType,
               growable: growable)),

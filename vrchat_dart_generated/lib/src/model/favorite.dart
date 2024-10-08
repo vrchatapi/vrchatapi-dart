@@ -24,17 +24,33 @@ class Favorite {
   });
 
   /// MUST be either AvatarID, UserID or WorldID.
-  @JsonKey(name: r'favoriteId', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'favoriteId',
+    required: true,
+    includeIfNull: false,
+  )
   final String favoriteId;
 
-  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'id',
+    required: true,
+    includeIfNull: false,
+  )
   final String id;
 
   ///
-  @JsonKey(name: r'tags', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'tags',
+    required: true,
+    includeIfNull: false,
+  )
   final List<String> tags;
 
-  @JsonKey(name: r'type', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'type',
+    required: true,
+    includeIfNull: false,
+  )
   final FavoriteType type;
 
   @override

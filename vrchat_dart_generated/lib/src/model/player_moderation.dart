@@ -26,27 +26,55 @@ class PlayerModeration {
     required this.type,
   });
 
-  @JsonKey(name: r'created', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'created',
+    required: true,
+    includeIfNull: false,
+  )
   final DateTime created;
 
-  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'id',
+    required: true,
+    includeIfNull: false,
+  )
   final String id;
 
-  @JsonKey(name: r'sourceDisplayName', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'sourceDisplayName',
+    required: true,
+    includeIfNull: false,
+  )
   final String sourceDisplayName;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(name: r'sourceUserId', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'sourceUserId',
+    required: true,
+    includeIfNull: false,
+  )
   final String sourceUserId;
 
-  @JsonKey(name: r'targetDisplayName', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'targetDisplayName',
+    required: true,
+    includeIfNull: false,
+  )
   final String targetDisplayName;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(name: r'targetUserId', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'targetUserId',
+    required: true,
+    includeIfNull: false,
+  )
   final String targetUserId;
 
-  @JsonKey(name: r'type', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'type',
+    required: true,
+    includeIfNull: false,
+  )
   final PlayerModerationType type;
 
   @override

@@ -20,10 +20,18 @@ class VerifyAuthTokenResult {
     required this.token,
   });
 
-  @JsonKey(name: r'ok', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'ok',
+    required: true,
+    includeIfNull: false,
+  )
   final bool ok;
 
-  @JsonKey(name: r'token', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'token',
+    required: true,
+    includeIfNull: false,
+  )
   final String token;
 
   @override
