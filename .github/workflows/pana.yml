@@ -34,3 +34,4 @@ jobs:
           dart pub get
           dart pub global activate pana
           pana --no-warning --exit-code-threshold 0
+          dart pub publish --dry-run
