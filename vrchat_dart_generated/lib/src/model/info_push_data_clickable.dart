@@ -20,11 +20,19 @@ class InfoPushDataClickable {
     this.parameters,
   });
 
-  @JsonKey(name: r'command', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'command',
+    required: true,
+    includeIfNull: false,
+  )
   final InfoPushDataClickableCommandEnum command;
 
   /// In case of OpenURL, this would contain the link.
-  @JsonKey(name: r'parameters', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'parameters',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? parameters;
 
   @override
@@ -50,14 +58,18 @@ class InfoPushDataClickable {
 
 enum InfoPushDataClickableCommandEnum {
   @JsonValue(r'OpenURL')
-  openURL,
+  openURL(r'OpenURL'),
   @JsonValue(r'OpenVRCPlusMenu')
-  openVRCPlusMenu,
+  openVRCPlusMenu(r'OpenVRCPlusMenu'),
   @JsonValue(r'OpenSafetyMenu')
-  openSafetyMenu,
+  openSafetyMenu(r'OpenSafetyMenu'),
   @JsonValue(r'CannedWorldSearch')
-  cannedWorldSearch;
+  cannedWorldSearch(r'CannedWorldSearch');
+
+  const InfoPushDataClickableCommandEnum(this.value);
+
+  final String value;
 
   @override
-  String toString() => this.name;
+  String toString() => value;
 }

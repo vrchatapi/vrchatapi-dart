@@ -30,40 +30,88 @@ class GroupRole {
     this.updatedAt,
   });
 
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
   final String? id;
 
-  @JsonKey(name: r'groupId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'groupId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? groupId;
 
-  @JsonKey(name: r'name', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'name',
+    required: false,
+    includeIfNull: false,
+  )
   final String? name;
 
-  @JsonKey(name: r'description', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'description',
+    required: false,
+    includeIfNull: false,
+  )
   final String? description;
 
-  @JsonKey(name: r'isSelfAssignable', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'isSelfAssignable',
+    required: false,
+    includeIfNull: false,
+  )
   final bool? isSelfAssignable;
 
-  @JsonKey(name: r'permissions', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'permissions',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? permissions;
 
-  @JsonKey(name: r'isManagementRole', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'isManagementRole',
+    required: false,
+    includeIfNull: false,
+  )
   final bool? isManagementRole;
 
-  @JsonKey(name: r'requiresTwoFactor', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'requiresTwoFactor',
+    required: false,
+    includeIfNull: false,
+  )
   final bool? requiresTwoFactor;
 
-  @JsonKey(name: r'requiresPurchase', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'requiresPurchase',
+    required: false,
+    includeIfNull: false,
+  )
   final bool? requiresPurchase;
 
-  @JsonKey(name: r'order', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'order',
+    required: false,
+    includeIfNull: false,
+  )
   final int? order;
 
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'createdAt',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? createdAt;
 
-  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'updatedAt',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? updatedAt;
 
   @override

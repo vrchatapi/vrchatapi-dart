@@ -20,7 +20,11 @@ class AvatarUnityPackageUrlObject {
     this.unityPackageUrl,
   });
 
-  @JsonKey(name: r'unityPackageUrl', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'unityPackageUrl',
+    required: false,
+    includeIfNull: false,
+  )
   final String? unityPackageUrl;
 
   @override

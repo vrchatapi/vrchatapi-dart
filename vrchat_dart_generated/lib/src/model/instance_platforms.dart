@@ -17,15 +17,32 @@ class InstancePlatforms {
   /// Returns a new [InstancePlatforms] instance.
   InstancePlatforms({
     required this.android,
+    this.ios,
     required this.standalonewindows,
   });
 
   // minimum: 0
-  @JsonKey(name: r'android', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'android',
+    required: true,
+    includeIfNull: false,
+  )
   final int android;
 
   // minimum: 0
-  @JsonKey(name: r'standalonewindows', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'ios',
+    required: false,
+    includeIfNull: false,
+  )
+  final int? ios;
+
+  // minimum: 0
+  @JsonKey(
+    name: r'standalonewindows',
+    required: true,
+    includeIfNull: false,
+  )
   final int standalonewindows;
 
   @override
@@ -33,10 +50,12 @@ class InstancePlatforms {
       identical(this, other) ||
       other is InstancePlatforms &&
           other.android == android &&
+          other.ios == ios &&
           other.standalonewindows == standalonewindows;
 
   @override
-  int get hashCode => android.hashCode + standalonewindows.hashCode;
+  int get hashCode =>
+      android.hashCode + ios.hashCode + standalonewindows.hashCode;
 
   factory InstancePlatforms.fromJson(Map<String, dynamic> json) =>
       _$InstancePlatformsFromJson(json);

@@ -22,14 +22,26 @@ class UpdateFavoriteGroupRequest {
     this.tags,
   });
 
-  @JsonKey(name: r'displayName', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'displayName',
+    required: false,
+    includeIfNull: false,
+  )
   final String? displayName;
 
-  @JsonKey(name: r'visibility', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'visibility',
+    required: false,
+    includeIfNull: false,
+  )
   final FavoriteGroupVisibility? visibility;
 
   /// Tags on FavoriteGroups are believed to do nothing.
-  @JsonKey(name: r'tags', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'tags',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? tags;
 
   @override

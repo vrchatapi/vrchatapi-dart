@@ -29,44 +29,83 @@ class APIConfigEvents {
   });
 
   /// Unknown
-  @JsonKey(name: r'distanceClose', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'distanceClose',
+    required: true,
+    includeIfNull: false,
+  )
   final int distanceClose;
 
   /// Unknown
-  @JsonKey(name: r'distanceFactor', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'distanceFactor',
+    required: true,
+    includeIfNull: false,
+  )
   final int distanceFactor;
 
   /// Unknown
-  @JsonKey(name: r'distanceFar', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'distanceFar',
+    required: true,
+    includeIfNull: false,
+  )
   final int distanceFar;
 
   /// Unknown
-  @JsonKey(name: r'groupDistance', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'groupDistance',
+    required: true,
+    includeIfNull: false,
+  )
   final int groupDistance;
 
   /// Unknown
-  @JsonKey(name: r'maximumBunchSize', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'maximumBunchSize',
+    required: true,
+    includeIfNull: false,
+  )
   final int maximumBunchSize;
 
   /// Unknown
-  @JsonKey(name: r'notVisibleFactor', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'notVisibleFactor',
+    required: true,
+    includeIfNull: false,
+  )
   final int notVisibleFactor;
 
   /// Unknown
-  @JsonKey(name: r'playerOrderBucketSize', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'playerOrderBucketSize',
+    required: true,
+    includeIfNull: false,
+  )
   final int playerOrderBucketSize;
 
   /// Unknown
-  @JsonKey(name: r'playerOrderFactor', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'playerOrderFactor',
+    required: true,
+    includeIfNull: false,
+  )
   final int playerOrderFactor;
 
   /// Unknown
   @JsonKey(
-      name: r'slowUpdateFactorThreshold', required: true, includeIfNull: false)
+    name: r'slowUpdateFactorThreshold',
+    required: true,
+    includeIfNull: false,
+  )
   final int slowUpdateFactorThreshold;
 
   /// Unknown
-  @JsonKey(name: r'viewSegmentLength', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'viewSegmentLength',
+    required: true,
+    includeIfNull: false,
+  )
   final int viewSegmentLength;
 
   @override

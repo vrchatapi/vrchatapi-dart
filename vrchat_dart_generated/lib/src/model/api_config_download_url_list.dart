@@ -25,23 +25,43 @@ class APIConfigDownloadURLList {
 
   /// Download link for legacy SDK2
   @Deprecated('sdk2 has been deprecated')
-  @JsonKey(name: r'sdk2', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'sdk2',
+    required: true,
+    includeIfNull: false,
+  )
   final String sdk2;
 
   /// Download link for SDK3 for Avatars
-  @JsonKey(name: r'sdk3-avatars', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'sdk3-avatars',
+    required: true,
+    includeIfNull: false,
+  )
   final String sdk3Avatars;
 
   /// Download link for SDK3 for Worlds
-  @JsonKey(name: r'sdk3-worlds', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'sdk3-worlds',
+    required: true,
+    includeIfNull: false,
+  )
   final String sdk3Worlds;
 
   /// Download link for the Creator Companion
-  @JsonKey(name: r'vcc', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'vcc',
+    required: true,
+    includeIfNull: false,
+  )
   final String vcc;
 
   /// Download link for ???
-  @JsonKey(name: r'bootstrap', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'bootstrap',
+    required: true,
+    includeIfNull: false,
+  )
   final String bootstrap;
 
   @override

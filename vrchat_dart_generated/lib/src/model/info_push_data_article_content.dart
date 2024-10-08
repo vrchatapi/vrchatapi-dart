@@ -22,13 +22,25 @@ class InfoPushDataArticleContent {
     this.onPressed,
   });
 
-  @JsonKey(name: r'text', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'text',
+    required: false,
+    includeIfNull: false,
+  )
   final String? text;
 
-  @JsonKey(name: r'imageUrl', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'imageUrl',
+    required: false,
+    includeIfNull: false,
+  )
   final String? imageUrl;
 
-  @JsonKey(name: r'onPressed', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'onPressed',
+    required: false,
+    includeIfNull: false,
+  )
   final InfoPushDataClickable? onPressed;
 
   @override

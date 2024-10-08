@@ -19,7 +19,11 @@ class Verify2FAEmailCodeResult {
     required this.verified,
   });
 
-  @JsonKey(name: r'verified', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'verified',
+    required: true,
+    includeIfNull: false,
+  )
   final bool verified;
 
   @override

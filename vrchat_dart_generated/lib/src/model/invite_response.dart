@@ -21,7 +21,11 @@ class InviteResponse {
 
   // minimum: 0
   // maximum: 11
-  @JsonKey(name: r'responseSlot', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'responseSlot',
+    required: true,
+    includeIfNull: false,
+  )
   final int responseSlot;
 
   @override

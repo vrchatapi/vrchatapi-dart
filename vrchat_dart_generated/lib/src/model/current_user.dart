@@ -93,231 +93,488 @@ class CurrentUser {
   });
 
   // minimum: 0
-  @JsonKey(name: r'acceptedTOSVersion', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'acceptedTOSVersion',
+    required: true,
+    includeIfNull: false,
+  )
   final int acceptedTOSVersion;
 
   // minimum: 0
   @JsonKey(
-      name: r'acceptedPrivacyVersion', required: false, includeIfNull: false)
+    name: r'acceptedPrivacyVersion',
+    required: false,
+    includeIfNull: false,
+  )
   final int? acceptedPrivacyVersion;
 
-  @JsonKey(name: r'accountDeletionDate', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'accountDeletionDate',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? accountDeletionDate;
 
   ///
-  @JsonKey(name: r'accountDeletionLog', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'accountDeletionLog',
+    required: false,
+    includeIfNull: false,
+  )
   final List<AccountDeletionLog>? accountDeletionLog;
 
   ///
-  @JsonKey(name: r'activeFriends', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'activeFriends',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? activeFriends;
 
-  @JsonKey(name: r'allowAvatarCopying', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'allowAvatarCopying',
+    required: true,
+    includeIfNull: false,
+  )
   final bool allowAvatarCopying;
 
   ///
-  @JsonKey(name: r'badges', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'badges',
+    required: false,
+    includeIfNull: false,
+  )
   final List<Badge>? badges;
 
-  @JsonKey(name: r'bio', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'bio',
+    required: true,
+    includeIfNull: false,
+  )
   final String bio;
 
   ///
-  @JsonKey(name: r'bioLinks', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'bioLinks',
+    required: true,
+    includeIfNull: false,
+  )
   final List<String> bioLinks;
 
-  @JsonKey(name: r'currentAvatar', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'currentAvatar',
+    required: true,
+    includeIfNull: false,
+  )
   final String currentAvatar;
 
-  @JsonKey(name: r'currentAvatarAssetUrl', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'currentAvatarAssetUrl',
+    required: true,
+    includeIfNull: false,
+  )
   final String currentAvatarAssetUrl;
 
   /// When profilePicOverride is not empty, use it instead.
-  @JsonKey(name: r'currentAvatarImageUrl', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'currentAvatarImageUrl',
+    required: true,
+    includeIfNull: false,
+  )
   final String currentAvatarImageUrl;
 
   /// When profilePicOverride is not empty, use it instead.
   @JsonKey(
-      name: r'currentAvatarThumbnailImageUrl',
-      required: true,
-      includeIfNull: false)
+    name: r'currentAvatarThumbnailImageUrl',
+    required: true,
+    includeIfNull: false,
+  )
   final String currentAvatarThumbnailImageUrl;
 
-  @JsonKey(name: r'currentAvatarTags', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'currentAvatarTags',
+    required: true,
+    includeIfNull: false,
+  )
   final List<String> currentAvatarTags;
 
-  @JsonKey(name: r'date_joined', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'date_joined',
+    required: true,
+    includeIfNull: false,
+  )
   final DateTime dateJoined;
 
-  @JsonKey(name: r'developerType', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'developerType',
+    required: true,
+    includeIfNull: false,
+  )
   final DeveloperType developerType;
 
-  @JsonKey(name: r'displayName', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'displayName',
+    required: true,
+    includeIfNull: false,
+  )
   final String displayName;
 
-  @JsonKey(name: r'emailVerified', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'emailVerified',
+    required: true,
+    includeIfNull: false,
+  )
   final bool emailVerified;
 
-  @JsonKey(name: r'fallbackAvatar', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'fallbackAvatar',
+    required: false,
+    includeIfNull: false,
+  )
   final String? fallbackAvatar;
 
   /// Always empty array.
   @Deprecated('friendGroupNames has been deprecated')
-  @JsonKey(name: r'friendGroupNames', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'friendGroupNames',
+    required: true,
+    includeIfNull: false,
+  )
   final List<String> friendGroupNames;
 
-  @JsonKey(name: r'friendKey', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'friendKey',
+    required: true,
+    includeIfNull: false,
+  )
   final String friendKey;
 
-  @JsonKey(name: r'friends', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'friends',
+    required: true,
+    includeIfNull: false,
+  )
   final List<String> friends;
 
-  @JsonKey(name: r'hasBirthday', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'hasBirthday',
+    required: true,
+    includeIfNull: false,
+  )
   final bool hasBirthday;
 
   @JsonKey(
-      name: r'hideContentFilterSettings', required: false, includeIfNull: false)
+    name: r'hideContentFilterSettings',
+    required: false,
+    includeIfNull: false,
+  )
   final bool? hideContentFilterSettings;
 
-  @JsonKey(name: r'userLanguage', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'userLanguage',
+    required: false,
+    includeIfNull: false,
+  )
   final String? userLanguage;
 
-  @JsonKey(name: r'userLanguageCode', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'userLanguageCode',
+    required: false,
+    includeIfNull: false,
+  )
   final String? userLanguageCode;
 
-  @JsonKey(name: r'hasEmail', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'hasEmail',
+    required: true,
+    includeIfNull: false,
+  )
   final bool hasEmail;
 
-  @JsonKey(name: r'hasLoggedInFromClient', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'hasLoggedInFromClient',
+    required: true,
+    includeIfNull: false,
+  )
   final bool hasLoggedInFromClient;
 
-  @JsonKey(name: r'hasPendingEmail', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'hasPendingEmail',
+    required: true,
+    includeIfNull: false,
+  )
   final bool hasPendingEmail;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
-  @JsonKey(name: r'homeLocation', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'homeLocation',
+    required: true,
+    includeIfNull: false,
+  )
   final String homeLocation;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'id',
+    required: true,
+    includeIfNull: false,
+  )
   final String id;
 
-  @JsonKey(name: r'isBoopingEnabled', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'isBoopingEnabled',
+    required: false,
+    includeIfNull: false,
+  )
   final bool? isBoopingEnabled;
 
-  @JsonKey(name: r'isFriend', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'isFriend',
+    required: true,
+    includeIfNull: false,
+  )
   final bool isFriend;
 
-  @JsonKey(name: r'last_activity', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'last_activity',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? lastActivity;
 
-  @JsonKey(name: r'last_login', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'last_login',
+    required: true,
+    includeIfNull: false,
+  )
   final DateTime lastLogin;
 
-  @JsonKey(name: r'last_mobile', required: true, includeIfNull: true)
+  @JsonKey(
+    name: r'last_mobile',
+    required: true,
+    includeIfNull: true,
+  )
   final DateTime? lastMobile;
 
   /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
-  @JsonKey(name: r'last_platform', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'last_platform',
+    required: true,
+    includeIfNull: false,
+  )
   final String lastPlatform;
 
-  @JsonKey(name: r'obfuscatedEmail', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'obfuscatedEmail',
+    required: true,
+    includeIfNull: false,
+  )
   final String obfuscatedEmail;
 
   @JsonKey(
-      name: r'obfuscatedPendingEmail', required: true, includeIfNull: false)
+    name: r'obfuscatedPendingEmail',
+    required: true,
+    includeIfNull: false,
+  )
   final String obfuscatedPendingEmail;
 
-  @JsonKey(name: r'oculusId', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'oculusId',
+    required: true,
+    includeIfNull: false,
+  )
   final String oculusId;
 
-  @JsonKey(name: r'googleId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'googleId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? googleId;
 
-  @JsonKey(name: r'googleDetails', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'googleDetails',
+    required: false,
+    includeIfNull: false,
+  )
   final Object? googleDetails;
 
-  @JsonKey(name: r'picoId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'picoId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? picoId;
 
-  @JsonKey(name: r'viveId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'viveId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? viveId;
 
-  @JsonKey(name: r'offlineFriends', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'offlineFriends',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? offlineFriends;
 
-  @JsonKey(name: r'onlineFriends', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'onlineFriends',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? onlineFriends;
 
   ///
-  @JsonKey(name: r'pastDisplayNames', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'pastDisplayNames',
+    required: true,
+    includeIfNull: false,
+  )
   final List<PastDisplayName> pastDisplayNames;
 
-  @JsonKey(name: r'presence', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'presence',
+    required: false,
+    includeIfNull: false,
+  )
   final CurrentUserPresence? presence;
 
-  @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'profilePicOverride',
+    required: true,
+    includeIfNull: false,
+  )
   final String profilePicOverride;
 
   @JsonKey(
-      name: r'profilePicOverrideThumbnail',
-      required: true,
-      includeIfNull: false)
+    name: r'profilePicOverrideThumbnail',
+    required: true,
+    includeIfNull: false,
+  )
   final String profilePicOverrideThumbnail;
 
-  @JsonKey(name: r'pronouns', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'pronouns',
+    required: true,
+    includeIfNull: false,
+  )
   final String pronouns;
 
-  @JsonKey(name: r'queuedInstance', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'queuedInstance',
+    required: false,
+    includeIfNull: false,
+  )
   final String? queuedInstance;
 
   @JsonKey(
-      name: r'receiveMobileInvitations', required: false, includeIfNull: false)
+    name: r'receiveMobileInvitations',
+    required: false,
+    includeIfNull: false,
+  )
   final bool? receiveMobileInvitations;
 
-  @JsonKey(name: r'state', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'state',
+    required: true,
+    includeIfNull: false,
+  )
   final UserState state;
 
-  @JsonKey(name: r'status', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'status',
+    required: true,
+    includeIfNull: false,
+  )
   final UserStatus status;
 
-  @JsonKey(name: r'statusDescription', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'statusDescription',
+    required: true,
+    includeIfNull: false,
+  )
   final String statusDescription;
 
-  @JsonKey(name: r'statusFirstTime', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'statusFirstTime',
+    required: true,
+    includeIfNull: false,
+  )
   final bool statusFirstTime;
 
-  @JsonKey(name: r'statusHistory', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'statusHistory',
+    required: true,
+    includeIfNull: false,
+  )
   final List<String> statusHistory;
 
-  @JsonKey(name: r'steamDetails', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'steamDetails',
+    required: true,
+    includeIfNull: false,
+  )
   final Object steamDetails;
 
-  @JsonKey(name: r'steamId', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'steamId',
+    required: true,
+    includeIfNull: false,
+  )
   final String steamId;
 
-  @JsonKey(name: r'tags', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'tags',
+    required: true,
+    includeIfNull: false,
+  )
   final List<String> tags;
 
-  @JsonKey(name: r'twoFactorAuthEnabled', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'twoFactorAuthEnabled',
+    required: true,
+    includeIfNull: false,
+  )
   final bool twoFactorAuthEnabled;
 
   @JsonKey(
-      name: r'twoFactorAuthEnabledDate', required: false, includeIfNull: false)
+    name: r'twoFactorAuthEnabledDate',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? twoFactorAuthEnabledDate;
 
-  @JsonKey(name: r'unsubscribe', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'unsubscribe',
+    required: true,
+    includeIfNull: false,
+  )
   final bool unsubscribe;
 
-  @JsonKey(name: r'updated_at', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'updated_at',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? updatedAt;
 
-  @JsonKey(name: r'userIcon', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'userIcon',
+    required: true,
+    includeIfNull: false,
+  )
   final String userIcon;
 
   /// -| **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
   @Deprecated('username has been deprecated')
-  @JsonKey(name: r'username', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'username',
+    required: false,
+    includeIfNull: false,
+  )
   final String? username;
 
   @override

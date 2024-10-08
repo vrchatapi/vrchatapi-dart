@@ -22,17 +22,29 @@ class FinishFileDataUploadRequest {
   });
 
   /// Array of ETags uploaded.
-  @JsonKey(name: r'etags', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'etags',
+    required: false,
+    includeIfNull: false,
+  )
   final Set<String>? etags;
 
   /// Always a zero in string form, despite how many parts uploaded.
   @Deprecated('nextPartNumber has been deprecated')
-  @JsonKey(name: r'nextPartNumber', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'nextPartNumber',
+    required: true,
+    includeIfNull: false,
+  )
   final String nextPartNumber;
 
   /// Always a zero in string form, despite how many parts uploaded.
   @Deprecated('maxParts has been deprecated')
-  @JsonKey(name: r'maxParts', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'maxParts',
+    required: true,
+    includeIfNull: false,
+  )
   final String maxParts;
 
   @override

@@ -13,6 +13,9 @@ GroupMember _$GroupMemberFromJson(Map<String, dynamic> json) => $checkedCreate(
       json,
       ($checkedConvert) {
         final val = GroupMember(
+          acceptedByDisplayName:
+              $checkedConvert('acceptedByDisplayName', (v) => v as String?),
+          acceptedById: $checkedConvert('acceptedById', (v) => v as String?),
           id: $checkedConvert('id', (v) => v as String?),
           groupId: $checkedConvert('groupId', (v) => v as String?),
           userId: $checkedConvert('userId', (v) => v as String?),
@@ -57,6 +60,8 @@ Map<String, dynamic> _$GroupMemberToJson(GroupMember instance) {
     }
   }
 
+  writeNotNull('acceptedByDisplayName', instance.acceptedByDisplayName);
+  writeNotNull('acceptedById', instance.acceptedById);
   writeNotNull('id', instance.id);
   writeNotNull('groupId', instance.groupId);
   writeNotNull('userId', instance.userId);

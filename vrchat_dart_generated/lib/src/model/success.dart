@@ -20,7 +20,11 @@ class Success {
     this.success,
   });
 
-  @JsonKey(name: r'success', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'success',
+    required: false,
+    includeIfNull: false,
+  )
   final Response? success;
 
   @override

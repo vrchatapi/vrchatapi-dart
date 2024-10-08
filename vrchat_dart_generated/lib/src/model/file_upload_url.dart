@@ -20,7 +20,11 @@ class FileUploadURL {
   });
 
   ///
-  @JsonKey(name: r'url', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'url',
+    required: true,
+    includeIfNull: false,
+  )
   final String url;
 
   @override

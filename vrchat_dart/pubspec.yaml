@@ -22,3 +22,4 @@ dev_dependencies:
   yaml: ^3.1.1
   fixer: ^0.1.0
   path: ^1.9.0
+  recase: ^4.1.0

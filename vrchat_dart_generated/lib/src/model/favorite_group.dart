@@ -28,30 +28,62 @@ class FavoriteGroup {
     required this.visibility,
   });
 
-  @JsonKey(name: r'displayName', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'displayName',
+    required: true,
+    includeIfNull: false,
+  )
   final String displayName;
 
-  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'id',
+    required: true,
+    includeIfNull: false,
+  )
   final String id;
 
-  @JsonKey(name: r'name', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'name',
+    required: true,
+    includeIfNull: false,
+  )
   final String name;
 
-  @JsonKey(name: r'ownerDisplayName', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'ownerDisplayName',
+    required: true,
+    includeIfNull: false,
+  )
   final String ownerDisplayName;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(name: r'ownerId', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'ownerId',
+    required: true,
+    includeIfNull: false,
+  )
   final String ownerId;
 
   ///
-  @JsonKey(name: r'tags', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'tags',
+    required: true,
+    includeIfNull: false,
+  )
   final List<String> tags;
 
-  @JsonKey(name: r'type', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'type',
+    required: true,
+    includeIfNull: false,
+  )
   final FavoriteType type;
 
-  @JsonKey(name: r'visibility', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'visibility',
+    required: true,
+    includeIfNull: false,
+  )
   final FavoriteGroupVisibility visibility;
 
   @override

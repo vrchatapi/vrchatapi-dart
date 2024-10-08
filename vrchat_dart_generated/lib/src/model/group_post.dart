@@ -31,43 +31,91 @@ class GroupPost {
     this.updatedAt,
   });
 
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
   final String? id;
 
-  @JsonKey(name: r'groupId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'groupId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? groupId;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(name: r'authorId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'authorId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? authorId;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(name: r'editorId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'editorId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? editorId;
 
-  @JsonKey(name: r'visibility', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'visibility',
+    required: false,
+    includeIfNull: false,
+  )
   final GroupPostVisibility? visibility;
 
   ///
-  @JsonKey(name: r'roleId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'roleId',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? roleId;
 
-  @JsonKey(name: r'title', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'title',
+    required: false,
+    includeIfNull: false,
+  )
   final String? title;
 
-  @JsonKey(name: r'text', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'text',
+    required: false,
+    includeIfNull: false,
+  )
   final String? text;
 
-  @JsonKey(name: r'imageId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'imageId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? imageId;
 
-  @JsonKey(name: r'imageUrl', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'imageUrl',
+    required: false,
+    includeIfNull: false,
+  )
   final String? imageUrl;
 
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'createdAt',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? createdAt;
 
-  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'updatedAt',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? updatedAt;
 
   @override

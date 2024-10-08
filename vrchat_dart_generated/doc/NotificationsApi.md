@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**acceptFriendRequest**](NotificationsApi.md#acceptfriendrequest) | **PUT** /auth/user/notifications/{notificationId}/accept | Accept Friend Request
 [**clearNotifications**](NotificationsApi.md#clearnotifications) | **PUT** /auth/user/notifications/clear | Clear All Notifications
 [**deleteNotification**](NotificationsApi.md#deletenotification) | **PUT** /auth/user/notifications/{notificationId}/hide | Delete Notification
+[**getNotification**](NotificationsApi.md#getnotification) | **GET** /auth/user/notifications/{notificationId} | Show notification
 [**getNotifications**](NotificationsApi.md#getnotifications) | **GET** /auth/user/notifications | List Notifications
 [**markNotificationAsRead**](NotificationsApi.md#marknotificationasread) | **PUT** /auth/user/notifications/{notificationId}/see | Mark Notification As Read
 
@@ -129,6 +130,53 @@ try {
     print(response);
 } catch on DioException (e) {
     print('Exception when calling NotificationsApi->deleteNotification: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **notificationId** | **String**| Must be a valid notification ID. | 
+
+### Return type
+
+[**Notification**](Notification.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getNotification**
+> Notification getNotification(notificationId)
+
+Show notification
+
+Get a notification by notification `not_` ID.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getNotificationsApi();
+final String notificationId = notificationId_example; // String | Must be a valid notification ID.
+
+try {
+    final response = api.getNotification(notificationId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling NotificationsApi->getNotification: $e\n');
 }
 ```
 

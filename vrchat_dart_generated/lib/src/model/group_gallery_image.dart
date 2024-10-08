@@ -28,36 +28,76 @@ class GroupGalleryImage {
     this.approvedAt,
   });
 
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
   final String? id;
 
-  @JsonKey(name: r'groupId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'groupId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? groupId;
 
-  @JsonKey(name: r'galleryId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'galleryId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? galleryId;
 
-  @JsonKey(name: r'fileId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'fileId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? fileId;
 
-  @JsonKey(name: r'imageUrl', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'imageUrl',
+    required: false,
+    includeIfNull: false,
+  )
   final String? imageUrl;
 
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'createdAt',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? createdAt;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(name: r'submittedByUserId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'submittedByUserId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? submittedByUserId;
 
-  @JsonKey(name: r'approved', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'approved',
+    required: false,
+    includeIfNull: false,
+  )
   final bool? approved;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(name: r'approvedByUserId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'approvedByUserId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? approvedByUserId;
 
-  @JsonKey(name: r'approvedAt', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'approvedAt',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? approvedAt;
 
   @override

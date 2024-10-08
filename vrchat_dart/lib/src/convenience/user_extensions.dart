@@ -5,9 +5,7 @@ extension CurrentUserExtension on CurrentUser {
   /// Convert a [CurrentUser] to a [User]
   User toUser() {
     final currentUserJson = toJson();
-    currentUserJson['friendRequestStatus'] = '';
     currentUserJson['last_activity'] = '';
-    currentUserJson['platform'] = '';
     return User.fromJson(currentUserJson);
   }
 
@@ -23,7 +21,8 @@ extension UserExtension on User {
   /// Convert a [User] to a [LimitedUser]
   LimitedUser toLimitedUser() {
     final userJson = toJson();
-    userJson['fallbackAvatar'] = '';
+    userJson['last_login'] =
+        lastLogin.isNotEmpty ? DateTime.parse(lastLogin) : null;
     return LimitedUser.fromJson(userJson);
   }
 }

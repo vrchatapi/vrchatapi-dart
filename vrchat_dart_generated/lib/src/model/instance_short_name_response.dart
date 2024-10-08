@@ -20,10 +20,18 @@ class InstanceShortNameResponse {
     this.shortName,
   });
 
-  @JsonKey(name: r'secureName', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'secureName',
+    required: true,
+    includeIfNull: false,
+  )
   final String secureName;
 
-  @JsonKey(name: r'shortName', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'shortName',
+    required: false,
+    includeIfNull: false,
+  )
   final String? shortName;
 
   @override
@@ -34,7 +42,8 @@ class InstanceShortNameResponse {
           other.shortName == shortName;
 
   @override
-  int get hashCode => secureName.hashCode + shortName.hashCode;
+  int get hashCode =>
+      secureName.hashCode + (shortName == null ? 0 : shortName.hashCode);
 
   factory InstanceShortNameResponse.fromJson(Map<String, dynamic> json) =>
       _$InstanceShortNameResponseFromJson(json);

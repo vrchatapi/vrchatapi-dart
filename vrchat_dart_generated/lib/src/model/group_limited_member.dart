@@ -34,58 +34,114 @@ class GroupLimitedMember {
     this.hasJoinedFromPurchase,
   });
 
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
   final String? id;
 
-  @JsonKey(name: r'groupId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'groupId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? groupId;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(name: r'userId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'userId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? userId;
 
   /// Whether the user is representing the group. This makes the group show up above the name tag in-game.
-  @JsonKey(name: r'isRepresenting', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'isRepresenting',
+    required: false,
+    includeIfNull: false,
+  )
   final bool? isRepresenting;
 
-  @JsonKey(name: r'roleIds', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'roleIds',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? roleIds;
 
-  @JsonKey(name: r'mRoleIds', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'mRoleIds',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? mRoleIds;
 
-  @JsonKey(name: r'joinedAt', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'joinedAt',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? joinedAt;
 
-  @JsonKey(name: r'membershipStatus', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'membershipStatus',
+    required: false,
+    includeIfNull: false,
+  )
   final GroupMemberStatus? membershipStatus;
 
-  @JsonKey(name: r'visibility', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'visibility',
+    required: false,
+    includeIfNull: false,
+  )
   final String? visibility;
 
   @JsonKey(
-      name: r'isSubscribedToAnnouncements',
-      required: false,
-      includeIfNull: false)
+    name: r'isSubscribedToAnnouncements',
+    required: false,
+    includeIfNull: false,
+  )
   final bool? isSubscribedToAnnouncements;
 
   /// Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user.
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'createdAt',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? createdAt;
 
   /// Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user.
-  @JsonKey(name: r'bannedAt', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'bannedAt',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? bannedAt;
 
   /// Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user.
-  @JsonKey(name: r'managerNotes', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'managerNotes',
+    required: false,
+    includeIfNull: false,
+  )
   final String? managerNotes;
 
-  @JsonKey(name: r'lastPostReadAt', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'lastPostReadAt',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? lastPostReadAt;
 
   @JsonKey(
-      name: r'hasJoinedFromPurchase', required: false, includeIfNull: false)
+    name: r'hasJoinedFromPurchase',
+    required: false,
+    includeIfNull: false,
+  )
   final bool? hasJoinedFromPurchase;
 
   @override

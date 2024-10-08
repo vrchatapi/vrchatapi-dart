@@ -29,28 +29,60 @@ class InfoPushData {
     this.article,
   });
 
-  @JsonKey(name: r'contentList', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'contentList',
+    required: false,
+    includeIfNull: false,
+  )
   final DynamicContentRow? contentList;
 
-  @JsonKey(name: r'description', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'description',
+    required: false,
+    includeIfNull: false,
+  )
   final String? description;
 
-  @JsonKey(name: r'imageUrl', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'imageUrl',
+    required: false,
+    includeIfNull: false,
+  )
   final String? imageUrl;
 
-  @JsonKey(name: r'name', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'name',
+    required: false,
+    includeIfNull: false,
+  )
   final String? name;
 
-  @JsonKey(name: r'onPressed', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'onPressed',
+    required: false,
+    includeIfNull: false,
+  )
   final InfoPushDataClickable? onPressed;
 
-  @JsonKey(name: r'template', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'template',
+    required: false,
+    includeIfNull: false,
+  )
   final String? template;
 
-  @JsonKey(name: r'version', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'version',
+    required: false,
+    includeIfNull: false,
+  )
   final String? version;
 
-  @JsonKey(name: r'article', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'article',
+    required: false,
+    includeIfNull: false,
+  )
   final InfoPushDataArticle? article;
 
   @override

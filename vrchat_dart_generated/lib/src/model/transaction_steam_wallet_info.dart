@@ -22,16 +22,32 @@ class TransactionSteamWalletInfo {
     required this.status,
   });
 
-  @JsonKey(name: r'state', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'state',
+    required: true,
+    includeIfNull: false,
+  )
   final String state;
 
-  @JsonKey(name: r'country', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'country',
+    required: true,
+    includeIfNull: false,
+  )
   final String country;
 
-  @JsonKey(name: r'currency', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'currency',
+    required: true,
+    includeIfNull: false,
+  )
   final String currency;
 
-  @JsonKey(name: r'status', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'status',
+    required: true,
+    includeIfNull: false,
+  )
   final String status;
 
   @override

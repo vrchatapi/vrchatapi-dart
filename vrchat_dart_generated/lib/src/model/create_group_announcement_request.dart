@@ -23,18 +23,34 @@ class CreateGroupAnnouncementRequest {
   });
 
   /// Announcement title
-  @JsonKey(name: r'title', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'title',
+    required: true,
+    includeIfNull: false,
+  )
   final String title;
 
   /// Announcement text
-  @JsonKey(name: r'text', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'text',
+    required: false,
+    includeIfNull: false,
+  )
   final String? text;
 
-  @JsonKey(name: r'imageId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'imageId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? imageId;
 
   /// Send notification to group members.
-  @JsonKey(name: r'sendNotification', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'sendNotification',
+    required: false,
+    includeIfNull: false,
+  )
   final bool? sendNotification;
 
   @override

@@ -27,31 +27,63 @@ class DynamicContentRow {
   });
 
   // minimum: 0
-  @JsonKey(name: r'index', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'index',
+    required: false,
+    includeIfNull: false,
+  )
   final int? index;
 
-  @JsonKey(name: r'name', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'name',
+    required: true,
+    includeIfNull: false,
+  )
   final String name;
 
   /// Usually \"ThisPlatformSupported\", but can also be other values such as \"all\" or platform specific identifiers.
-  @JsonKey(name: r'platform', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'platform',
+    required: true,
+    includeIfNull: false,
+  )
   final String platform;
 
-  @JsonKey(name: r'sortHeading', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'sortHeading',
+    required: true,
+    includeIfNull: false,
+  )
   final String sortHeading;
 
-  @JsonKey(name: r'sortOrder', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'sortOrder',
+    required: true,
+    includeIfNull: false,
+  )
   final String sortOrder;
 
-  @JsonKey(name: r'sortOwnership', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'sortOwnership',
+    required: true,
+    includeIfNull: false,
+  )
   final String sortOwnership;
 
   /// Tag to filter content for this row.
-  @JsonKey(name: r'tag', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'tag',
+    required: false,
+    includeIfNull: false,
+  )
   final String? tag;
 
   /// Type is not present if it is a world.
-  @JsonKey(name: r'type', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'type',
+    required: false,
+    includeIfNull: false,
+  )
   final String? type;
 
   @override

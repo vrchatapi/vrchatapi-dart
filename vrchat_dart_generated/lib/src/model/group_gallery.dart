@@ -28,41 +28,81 @@ class GroupGallery {
     this.updatedAt,
   });
 
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
   final String? id;
 
   /// Name of the gallery.
-  @JsonKey(name: r'name', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'name',
+    required: false,
+    includeIfNull: false,
+  )
   final String? name;
 
   /// Description of the gallery.
-  @JsonKey(name: r'description', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'description',
+    required: false,
+    includeIfNull: false,
+  )
   final String? description;
 
   /// Whether the gallery is members only.
-  @JsonKey(name: r'membersOnly', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'membersOnly',
+    required: false,
+    includeIfNull: false,
+  )
   final bool? membersOnly;
 
   ///
-  @JsonKey(name: r'roleIdsToView', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'roleIdsToView',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? roleIdsToView;
 
   ///
-  @JsonKey(name: r'roleIdsToSubmit', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'roleIdsToSubmit',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? roleIdsToSubmit;
 
   ///
-  @JsonKey(name: r'roleIdsToAutoApprove', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'roleIdsToAutoApprove',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? roleIdsToAutoApprove;
 
   ///
-  @JsonKey(name: r'roleIdsToManage', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'roleIdsToManage',
+    required: false,
+    includeIfNull: false,
+  )
   final List<String>? roleIdsToManage;
 
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'createdAt',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? createdAt;
 
-  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'updatedAt',
+    required: false,
+    includeIfNull: false,
+  )
   final DateTime? updatedAt;
 
   @override

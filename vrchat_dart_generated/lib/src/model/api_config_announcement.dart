@@ -22,11 +22,19 @@ class APIConfigAnnouncement {
   });
 
   /// Announcement name
-  @JsonKey(name: r'name', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'name',
+    required: true,
+    includeIfNull: false,
+  )
   final String name;
 
   /// Announcement text
-  @JsonKey(name: r'text', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'text',
+    required: true,
+    includeIfNull: false,
+  )
   final String text;
 
   @override

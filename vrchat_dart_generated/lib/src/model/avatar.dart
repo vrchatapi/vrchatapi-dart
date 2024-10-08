@@ -40,63 +40,135 @@ class Avatar {
   });
 
   /// Not present from general serach `/avatars`, only on specific requests `/avatars/{avatarId}`.
-  @JsonKey(name: r'assetUrl', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'assetUrl',
+    required: false,
+    includeIfNull: false,
+  )
   final String? assetUrl;
 
   /// Not present from general serach `/avatars`, only on specific requests `/avatars/{avatarId}`. **Deprecation:** `Object` has unknown usage/fields, and is always empty. Use normal `Url` field instead.
-  @JsonKey(name: r'assetUrlObject', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'assetUrlObject',
+    required: false,
+    includeIfNull: false,
+  )
   final Object? assetUrlObject;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(name: r'authorId', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'authorId',
+    required: true,
+    includeIfNull: false,
+  )
   final String authorId;
 
-  @JsonKey(name: r'authorName', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'authorName',
+    required: true,
+    includeIfNull: false,
+  )
   final String authorName;
 
-  @JsonKey(name: r'created_at', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'created_at',
+    required: true,
+    includeIfNull: false,
+  )
   final DateTime createdAt;
 
-  @JsonKey(name: r'description', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'description',
+    required: true,
+    includeIfNull: false,
+  )
   final String description;
 
-  @JsonKey(name: r'featured', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'featured',
+    required: true,
+    includeIfNull: false,
+  )
   final bool featured;
 
-  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'id',
+    required: true,
+    includeIfNull: false,
+  )
   final String id;
 
-  @JsonKey(name: r'imageUrl', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'imageUrl',
+    required: true,
+    includeIfNull: false,
+  )
   final String imageUrl;
 
-  @JsonKey(name: r'name', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'name',
+    required: true,
+    includeIfNull: false,
+  )
   final String name;
 
-  @JsonKey(name: r'releaseStatus', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'releaseStatus',
+    required: true,
+    includeIfNull: false,
+  )
   final ReleaseStatus releaseStatus;
 
   ///
-  @JsonKey(name: r'tags', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'tags',
+    required: true,
+    includeIfNull: false,
+  )
   final List<String> tags;
 
-  @JsonKey(name: r'thumbnailImageUrl', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'thumbnailImageUrl',
+    required: true,
+    includeIfNull: false,
+  )
   final String thumbnailImageUrl;
 
-  @JsonKey(name: r'unityPackageUrl', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'unityPackageUrl',
+    required: true,
+    includeIfNull: false,
+  )
   final String unityPackageUrl;
 
   @Deprecated('unityPackageUrlObject has been deprecated')
-  @JsonKey(name: r'unityPackageUrlObject', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'unityPackageUrlObject',
+    required: true,
+    includeIfNull: false,
+  )
   final AvatarUnityPackageUrlObject unityPackageUrlObject;
 
-  @JsonKey(name: r'unityPackages', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'unityPackages',
+    required: true,
+    includeIfNull: false,
+  )
   final Set<UnityPackage> unityPackages;
 
-  @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'updated_at',
+    required: true,
+    includeIfNull: false,
+  )
   final DateTime updatedAt;
 
   // minimum: 0
-  @JsonKey(name: r'version', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'version',
+    required: true,
+    includeIfNull: false,
+  )
   final int version;
 
   @override

@@ -21,11 +21,19 @@ class NotificationDetailRequestInvite {
   });
 
   /// TODO: Does this still exist?
-  @JsonKey(name: r'platform', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'platform',
+    required: false,
+    includeIfNull: false,
+  )
   final String? platform;
 
   /// Used when using InviteMessage Slot.
-  @JsonKey(name: r'requestMessage', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'requestMessage',
+    required: false,
+    includeIfNull: false,
+  )
   final String? requestMessage;
 
   @override

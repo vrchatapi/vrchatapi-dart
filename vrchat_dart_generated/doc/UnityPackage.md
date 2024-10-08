@@ -14,11 +14,13 @@ Name | Type | Description | Notes
 **assetVersion** | **int** |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **impostorizerVersion** | **String** |  | [optional] 
+**performanceRating** | [**PerformanceRatings**](PerformanceRatings.md) |  | [optional] 
 **platform** | **String** | This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`. | 
 **pluginUrl** | **String** |  | [optional] 
 **pluginUrlObject** | **Object** |  | [optional] 
 **unitySortNumber** | **int** |  | [optional] 
 **unityVersion** | **String** |  | [default to '5.3.4p1']
+**worldSignature** | **String** |  | [optional] 
 **impostorUrl** | **String** |  | [optional] 
 **scanStatus** | **String** |  | [optional] 
 **variant** | **String** |  | [optional] 

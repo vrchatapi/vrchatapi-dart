@@ -34,47 +34,103 @@ class RepresentedGroup {
     this.isRepresenting,
   });
 
-  @JsonKey(name: r'name', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'name',
+    required: false,
+    includeIfNull: false,
+  )
   final String? name;
 
-  @JsonKey(name: r'shortCode', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'shortCode',
+    required: false,
+    includeIfNull: false,
+  )
   final String? shortCode;
 
-  @JsonKey(name: r'discriminator', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'discriminator',
+    required: false,
+    includeIfNull: false,
+  )
   final String? discriminator;
 
-  @JsonKey(name: r'description', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'description',
+    required: false,
+    includeIfNull: false,
+  )
   final String? description;
 
-  @JsonKey(name: r'iconId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'iconId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? iconId;
 
-  @JsonKey(name: r'iconUrl', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'iconUrl',
+    required: false,
+    includeIfNull: false,
+  )
   final String? iconUrl;
 
-  @JsonKey(name: r'bannerId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'bannerId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? bannerId;
 
-  @JsonKey(name: r'bannerUrl', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'bannerUrl',
+    required: false,
+    includeIfNull: false,
+  )
   final String? bannerUrl;
 
-  @JsonKey(name: r'privacy', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'privacy',
+    required: false,
+    includeIfNull: false,
+  )
   final GroupPrivacy? privacy;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(name: r'ownerId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'ownerId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? ownerId;
 
-  @JsonKey(name: r'memberCount', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'memberCount',
+    required: false,
+    includeIfNull: false,
+  )
   final int? memberCount;
 
-  @JsonKey(name: r'groupId', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'groupId',
+    required: false,
+    includeIfNull: false,
+  )
   final String? groupId;
 
-  @JsonKey(name: r'memberVisibility', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'memberVisibility',
+    required: false,
+    includeIfNull: false,
+  )
   final GroupUserVisibility? memberVisibility;
 
-  @JsonKey(name: r'isRepresenting', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'isRepresenting',
+    required: false,
+    includeIfNull: false,
+  )
   final bool? isRepresenting;
 
   @override

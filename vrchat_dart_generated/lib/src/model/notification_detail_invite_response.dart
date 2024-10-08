@@ -20,10 +20,18 @@ class NotificationDetailInviteResponse {
     required this.responseMessage,
   });
 
-  @JsonKey(name: r'inResponseTo', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'inResponseTo',
+    required: true,
+    includeIfNull: false,
+  )
   final String inResponseTo;
 
-  @JsonKey(name: r'responseMessage', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'responseMessage',
+    required: true,
+    includeIfNull: false,
+  )
   final String responseMessage;
 
   @override

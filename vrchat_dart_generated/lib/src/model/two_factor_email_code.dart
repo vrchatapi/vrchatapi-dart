@@ -19,7 +19,11 @@ class TwoFactorEmailCode {
     required this.code,
   });
 
-  @JsonKey(name: r'code', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'code',
+    required: true,
+    includeIfNull: false,
+  )
   final String code;
 
   @override

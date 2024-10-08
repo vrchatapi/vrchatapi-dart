@@ -19,7 +19,11 @@ class AddGroupGalleryImageRequest {
     required this.fileId,
   });
 
-  @JsonKey(name: r'fileId', required: true, includeIfNull: false)
+  @JsonKey(
+    name: r'fileId',
+    required: true,
+    includeIfNull: false,
+  )
   final String fileId;
 
   @override
