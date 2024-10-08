@@ -26,7 +26,6 @@ Name | Type | Description | Notes
 **previewYoutubeId** | **String** |  | [optional] 
 **publicationDate** | **String** |  | 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | 
-**storeId** | **String** |  | 
 **tags** | **List&lt;String&gt;** |   | 
 **thumbnailImageUrl** | **String** |  | 
 **unityPackages** | [**List&lt;LimitedUnityPackage&gt;**](LimitedUnityPackage.md) |   | 

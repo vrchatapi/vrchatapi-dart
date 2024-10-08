@@ -40,7 +40,6 @@ class FavoritedWorld {
     this.previewYoutubeId,
     required this.publicationDate,
     required this.releaseStatus,
-    required this.storeId,
     required this.tags,
     required this.thumbnailImageUrl,
     required this.unityPackages,
@@ -210,13 +209,6 @@ class FavoritedWorld {
   )
   final ReleaseStatus releaseStatus;
 
-  @JsonKey(
-    name: r'storeId',
-    required: true,
-    includeIfNull: true,
-  )
-  final String? storeId;
-
   ///
   @JsonKey(
     name: r'tags',
@@ -288,7 +280,6 @@ class FavoritedWorld {
           other.previewYoutubeId == previewYoutubeId &&
           other.publicationDate == publicationDate &&
           other.releaseStatus == releaseStatus &&
-          other.storeId == storeId &&
           other.tags == tags &&
           other.thumbnailImageUrl == thumbnailImageUrl &&
           other.unityPackages == unityPackages &&
@@ -320,7 +311,6 @@ class FavoritedWorld {
       (previewYoutubeId == null ? 0 : previewYoutubeId.hashCode) +
       publicationDate.hashCode +
       releaseStatus.hashCode +
-      (storeId == null ? 0 : storeId.hashCode) +
       tags.hashCode +
       thumbnailImageUrl.hashCode +
       unityPackages.hashCode +

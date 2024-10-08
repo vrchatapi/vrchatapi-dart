@@ -31,7 +31,6 @@ Name | Type | Description | Notes
 **publicOccupants** | **int** | Will always be `0` when unauthenticated. | [optional] [default to 0]
 **publicationDate** | **String** |  | 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | 
-**storeId** | **String** |  | 
 **tags** | **List&lt;String&gt;** |   | 
 **thumbnailImageUrl** | **String** |  | 
 **unityPackages** | [**List&lt;UnityPackage&gt;**](UnityPackage.md) | Empty if unauthenticated. | [optional] 

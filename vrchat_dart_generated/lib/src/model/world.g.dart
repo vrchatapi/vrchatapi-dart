@@ -31,7 +31,6 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
             'popularity',
             'publicationDate',
             'releaseStatus',
-            'storeId',
             'tags',
             'thumbnailImageUrl',
             'updated_at',
@@ -80,7 +79,6 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('publicationDate', (v) => v as String),
           releaseStatus: $checkedConvert(
               'releaseStatus', (v) => $enumDecode(_$ReleaseStatusEnumMap, v)),
-          storeId: $checkedConvert('storeId', (v) => v as String?),
           tags: $checkedConvert('tags',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           thumbnailImageUrl:
@@ -135,7 +133,6 @@ Map<String, dynamic> _$WorldToJson(World instance) {
   writeNotNull('publicOccupants', instance.publicOccupants);
   val['publicationDate'] = instance.publicationDate;
   val['releaseStatus'] = _$ReleaseStatusEnumMap[instance.releaseStatus]!;
-  val['storeId'] = instance.storeId;
   val['tags'] = instance.tags;
   val['thumbnailImageUrl'] = instance.thumbnailImageUrl;
   writeNotNull(
