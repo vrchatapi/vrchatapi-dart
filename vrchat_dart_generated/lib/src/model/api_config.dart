@@ -6,6 +6,7 @@
 import 'package:vrchat_dart_generated/src/model/api_config_events.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_min_supported_client_build_number.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_download_url_list.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_avatar_perf_limiter.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_report_reasons.dart';
 import 'package:vrchat_dart_generated/src/model/deployment_group.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_report_categories.dart';
@@ -29,12 +30,15 @@ class APIConfig {
     this.voiceEnableDegradation = false,
     this.voiceEnableReceiverLimiting = true,
     required this.address,
+    required this.ageVerificationP,
+    required this.ageVerificationStatusVisible,
     required this.announcements,
     required this.analyticsSegmentNewUIPctOfUsers,
     required this.analyticsSegmentNewUISalt,
     this.appName = 'VrChat',
     required this.availableLanguageCodes,
     required this.availableLanguages,
+    required this.avatarPerfLimiter,
     required this.buildVersionTag,
     this.chatboxLogBufferSeconds = 40,
     required this.clientApiKey,
@@ -59,6 +63,7 @@ class APIConfig {
     this.currentPrivacyVersion = 1,
     required this.currentTOSVersion,
     required this.defaultAvatar,
+    required this.defaultStickerSet,
     required this.deploymentGroup,
     this.devLanguageCodes,
     required this.devSdkUrl,
@@ -115,6 +120,7 @@ class APIConfig {
     required this.serverName,
     required this.stringHostUrlList,
     required this.supportEmail,
+    required this.supportFormUrl,
     this.timekeeping = true,
     required this.timeOutWorldId,
     required this.tutorialWorldId,
@@ -157,6 +163,20 @@ class APIConfig {
     includeIfNull: false,
   )
   final String address;
+
+  @JsonKey(
+    name: r'ageVerificationP',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool ageVerificationP;
+
+  @JsonKey(
+    name: r'ageVerificationStatusVisible',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool ageVerificationStatusVisible;
 
   /// Public Announcements
   @JsonKey(
@@ -207,6 +227,13 @@ class APIConfig {
     includeIfNull: false,
   )
   final List<String> availableLanguages;
+
+  @JsonKey(
+    name: r'avatarPerfLimiter',
+    required: true,
+    includeIfNull: false,
+  )
+  final APIConfigAvatarPerfLimiter avatarPerfLimiter;
 
   /// Build tag of the API server
   @JsonKey(
@@ -398,6 +425,13 @@ class APIConfig {
     includeIfNull: false,
   )
   final String defaultAvatar;
+
+  @JsonKey(
+    name: r'defaultStickerSet',
+    required: true,
+    includeIfNull: false,
+  )
+  final String defaultStickerSet;
 
   @JsonKey(
     name: r'deploymentGroup',
@@ -831,6 +865,14 @@ class APIConfig {
   )
   final String supportEmail;
 
+  /// VRChat's support form
+  @JsonKey(
+    name: r'supportFormUrl',
+    required: true,
+    includeIfNull: false,
+  )
+  final String supportFormUrl;
+
   /// Unknown
   @JsonKey(
     name: r'timekeeping',
@@ -974,6 +1016,8 @@ class APIConfig {
           other.voiceEnableDegradation == voiceEnableDegradation &&
           other.voiceEnableReceiverLimiting == voiceEnableReceiverLimiting &&
           other.address == address &&
+          other.ageVerificationP == ageVerificationP &&
+          other.ageVerificationStatusVisible == ageVerificationStatusVisible &&
           other.announcements == announcements &&
           other.analyticsSegmentNewUIPctOfUsers ==
               analyticsSegmentNewUIPctOfUsers &&
@@ -982,6 +1026,7 @@ class APIConfig {
           other.appName == appName &&
           other.availableLanguageCodes == availableLanguageCodes &&
           other.availableLanguages == availableLanguages &&
+          other.avatarPerfLimiter == avatarPerfLimiter &&
           other.buildVersionTag == buildVersionTag &&
           other.chatboxLogBufferSeconds == chatboxLogBufferSeconds &&
           other.clientApiKey == clientApiKey &&
@@ -1007,6 +1052,7 @@ class APIConfig {
           other.currentPrivacyVersion == currentPrivacyVersion &&
           other.currentTOSVersion == currentTOSVersion &&
           other.defaultAvatar == defaultAvatar &&
+          other.defaultStickerSet == defaultStickerSet &&
           other.deploymentGroup == deploymentGroup &&
           other.devLanguageCodes == devLanguageCodes &&
 // ignore: deprecated_member_use_from_same_package
@@ -1069,6 +1115,7 @@ class APIConfig {
           other.serverName == serverName &&
           other.stringHostUrlList == stringHostUrlList &&
           other.supportEmail == supportEmail &&
+          other.supportFormUrl == supportFormUrl &&
           other.timekeeping == timekeeping &&
           other.timeOutWorldId == timeOutWorldId &&
           other.tutorialWorldId == tutorialWorldId &&
@@ -1093,6 +1140,8 @@ class APIConfig {
       voiceEnableDegradation.hashCode +
       voiceEnableReceiverLimiting.hashCode +
       address.hashCode +
+      ageVerificationP.hashCode +
+      ageVerificationStatusVisible.hashCode +
       announcements.hashCode +
       analyticsSegmentNewUIPctOfUsers.hashCode +
       analyticsSegmentNewUISalt.hashCode +
@@ -1100,6 +1149,7 @@ class APIConfig {
       appName.hashCode +
       availableLanguageCodes.hashCode +
       availableLanguages.hashCode +
+      avatarPerfLimiter.hashCode +
       buildVersionTag.hashCode +
       chatboxLogBufferSeconds.hashCode +
       clientApiKey.hashCode +
@@ -1124,6 +1174,7 @@ class APIConfig {
       currentPrivacyVersion.hashCode +
       currentTOSVersion.hashCode +
       defaultAvatar.hashCode +
+      defaultStickerSet.hashCode +
       deploymentGroup.hashCode +
       devLanguageCodes.hashCode +
 // ignore: deprecated_member_use_from_same_package
@@ -1181,6 +1232,7 @@ class APIConfig {
       serverName.hashCode +
       stringHostUrlList.hashCode +
       supportEmail.hashCode +
+      supportFormUrl.hashCode +
       timekeeping.hashCode +
       timeOutWorldId.hashCode +
       tutorialWorldId.hashCode +

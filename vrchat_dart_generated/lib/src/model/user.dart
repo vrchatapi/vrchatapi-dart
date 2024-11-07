@@ -20,6 +20,7 @@ part 'user.g.dart';
 class User {
   /// Returns a new [User] instance.
   User({
+    required this.ageVerificationStatus,
     this.allowAvatarCopying = true,
     this.badges,
     required this.bio,
@@ -56,6 +57,13 @@ class User {
     this.username,
     this.worldId,
   });
+
+  @JsonKey(
+    name: r'ageVerificationStatus',
+    required: true,
+    includeIfNull: false,
+  )
+  final String ageVerificationStatus;
 
   @JsonKey(
     name: r'allowAvatarCopying',
@@ -321,6 +329,7 @@ class User {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is User &&
+          other.ageVerificationStatus == ageVerificationStatus &&
           other.allowAvatarCopying == allowAvatarCopying &&
           other.badges == badges &&
           other.bio == bio &&
@@ -361,6 +370,7 @@ class User {
 
   @override
   int get hashCode =>
+      ageVerificationStatus.hashCode +
       allowAvatarCopying.hashCode +
       badges.hashCode +
       bio.hashCode +

@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **thumbnailImageUrl** | **String** |  | 
 **unityPackages** | [**List&lt;UnityPackage&gt;**](UnityPackage.md) |   | 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
+**urlList** | **List&lt;String&gt;** |  | 
 **udonProducts** | **List&lt;String&gt;** |  | [optional] 
 **version** | **int** |  | 
 

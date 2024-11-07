@@ -28,6 +28,8 @@ class CurrentUser {
     this.accountDeletionDate,
     this.accountDeletionLog,
     this.activeFriends,
+    required this.ageVerificationStatus,
+    required this.ageVerified,
     required this.allowAvatarCopying,
     this.badges,
     required this.bio,
@@ -54,6 +56,7 @@ class CurrentUser {
     required this.hasPendingEmail,
     required this.homeLocation,
     required this.id,
+    required this.isAdult,
     this.isBoopingEnabled = true,
     this.isFriend = false,
     this.lastActivity,
@@ -130,6 +133,20 @@ class CurrentUser {
     includeIfNull: false,
   )
   final List<String>? activeFriends;
+
+  @JsonKey(
+    name: r'ageVerificationStatus',
+    required: true,
+    includeIfNull: false,
+  )
+  final String ageVerificationStatus;
+
+  @JsonKey(
+    name: r'ageVerified',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool ageVerified;
 
   @JsonKey(
     name: r'allowAvatarCopying',
@@ -320,6 +337,13 @@ class CurrentUser {
     includeIfNull: false,
   )
   final String id;
+
+  @JsonKey(
+    name: r'isAdult',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool isAdult;
 
   @JsonKey(
     name: r'isBoopingEnabled',
@@ -586,6 +610,8 @@ class CurrentUser {
           other.accountDeletionDate == accountDeletionDate &&
           other.accountDeletionLog == accountDeletionLog &&
           other.activeFriends == activeFriends &&
+          other.ageVerificationStatus == ageVerificationStatus &&
+          other.ageVerified == ageVerified &&
           other.allowAvatarCopying == allowAvatarCopying &&
           other.badges == badges &&
           other.bio == bio &&
@@ -614,6 +640,7 @@ class CurrentUser {
           other.hasPendingEmail == hasPendingEmail &&
           other.homeLocation == homeLocation &&
           other.id == id &&
+          other.isAdult == isAdult &&
           other.isBoopingEnabled == isBoopingEnabled &&
           other.isFriend == isFriend &&
           other.lastActivity == lastActivity &&
@@ -659,6 +686,8 @@ class CurrentUser {
       (accountDeletionDate == null ? 0 : accountDeletionDate.hashCode) +
       (accountDeletionLog == null ? 0 : accountDeletionLog.hashCode) +
       activeFriends.hashCode +
+      ageVerificationStatus.hashCode +
+      ageVerified.hashCode +
       allowAvatarCopying.hashCode +
       badges.hashCode +
       bio.hashCode +
@@ -686,6 +715,7 @@ class CurrentUser {
       hasPendingEmail.hashCode +
       homeLocation.hashCode +
       id.hashCode +
+      isAdult.hashCode +
       isBoopingEnabled.hashCode +
       isFriend.hashCode +
       lastActivity.hashCode +

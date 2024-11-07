@@ -90,6 +90,8 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
                   .toList()),
           updatedAt:
               $checkedConvert('updated_at', (v) => DateTime.parse(v as String)),
+          urlList: $checkedConvert('urlList',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           version: $checkedConvert('version', (v) => (v as num?)?.toInt() ?? 0),
           visits: $checkedConvert('visits', (v) => (v as num?)?.toInt() ?? 0),
           udonProducts: $checkedConvert('udonProducts',
@@ -138,6 +140,7 @@ Map<String, dynamic> _$WorldToJson(World instance) {
   writeNotNull(
       'unityPackages', instance.unityPackages?.map((e) => e.toJson()).toList());
   val['updated_at'] = instance.updatedAt.toIso8601String();
+  writeNotNull('urlList', instance.urlList);
   val['version'] = instance.version;
   val['visits'] = instance.visits;
   writeNotNull('udonProducts', instance.udonProducts);

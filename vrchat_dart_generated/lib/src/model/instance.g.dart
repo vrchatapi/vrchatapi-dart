@@ -47,6 +47,7 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
         );
         final val = Instance(
           active: $checkedConvert('active', (v) => v as bool? ?? true),
+          ageGate: $checkedConvert('ageGate', (v) => v as String?),
           canRequestInvite:
               $checkedConvert('canRequestInvite', (v) => v as bool? ?? true),
           capacity: $checkedConvert('capacity', (v) => (v as num).toInt()),
@@ -69,7 +70,7 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
           platforms: $checkedConvert('platforms',
               (v) => InstancePlatforms.fromJson(v as Map<String, dynamic>)),
           playerPersistenceEnabled:
-              $checkedConvert('playerPersistenceEnabled', (v) => v as String?),
+              $checkedConvert('playerPersistenceEnabled', (v) => v as bool?),
           region: $checkedConvert(
               'region', (v) => $enumDecode(_$InstanceRegionEnumMap, v)),
           secureName: $checkedConvert('secureName', (v) => v as String),
@@ -113,18 +114,6 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
 Map<String, dynamic> _$InstanceToJson(Instance instance) {
   final val = <String, dynamic>{
     'active': instance.active,
-    'canRequestInvite': instance.canRequestInvite,
-    'capacity': instance.capacity,
-    'clientNumber': instance.clientNumber,
-    'displayName': instance.displayName,
-    'full': instance.full,
-    'gameServerVersion': instance.gameServerVersion,
-    'id': instance.id,
-    'instanceId': instance.instanceId,
-    'instancePersistenceEnabled': instance.instancePersistenceEnabled,
-    'location': instance.location,
-    'n_users': instance.nUsers,
-    'name': instance.name,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -133,6 +122,19 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) {
     }
   }
 
+  writeNotNull('ageGate', instance.ageGate);
+  val['canRequestInvite'] = instance.canRequestInvite;
+  val['capacity'] = instance.capacity;
+  val['clientNumber'] = instance.clientNumber;
+  val['displayName'] = instance.displayName;
+  val['full'] = instance.full;
+  val['gameServerVersion'] = instance.gameServerVersion;
+  val['id'] = instance.id;
+  val['instanceId'] = instance.instanceId;
+  val['instancePersistenceEnabled'] = instance.instancePersistenceEnabled;
+  val['location'] = instance.location;
+  val['n_users'] = instance.nUsers;
+  val['name'] = instance.name;
   writeNotNull('ownerId', instance.ownerId);
   val['permanent'] = instance.permanent;
   val['photonRegion'] = _$RegionEnumMap[instance.photonRegion]!;

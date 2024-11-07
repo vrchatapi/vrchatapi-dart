@@ -2,6 +2,7 @@
 README.md
 doc/APIConfig.md
 doc/APIConfigAnnouncement.md
+doc/APIConfigAvatarPerfLimiter.md
 doc/APIConfigConstants.md
 doc/APIConfigConstantsGROUPS.md
 doc/APIConfigConstantsINSTANCE.md
@@ -124,6 +125,7 @@ doc/NotificationsApi.md
 doc/OrderOption.md
 doc/PaginatedGroupAuditLogEntryList.md
 doc/PastDisplayName.md
+doc/PerformanceLimiterInfo.md
 doc/PerformanceRatings.md
 doc/Permission.md
 doc/PermissionsApi.md
@@ -204,6 +206,7 @@ lib/src/model/add_favorite_request.dart
 lib/src/model/add_group_gallery_image_request.dart
 lib/src/model/api_config.dart
 lib/src/model/api_config_announcement.dart
+lib/src/model/api_config_avatar_perf_limiter.dart
 lib/src/model/api_config_constants.dart
 lib/src/model/api_config_constants_groups.dart
 lib/src/model/api_config_constants_instance.dart
@@ -312,6 +315,7 @@ lib/src/model/notification_type.dart
 lib/src/model/order_option.dart
 lib/src/model/paginated_group_audit_log_entry_list.dart
 lib/src/model/past_display_name.dart
+lib/src/model/performance_limiter_info.dart
 lib/src/model/performance_ratings.dart
 lib/src/model/permission.dart
 lib/src/model/platform_build_info.dart
@@ -364,6 +368,7 @@ test/account_deletion_log_test.dart
 test/add_favorite_request_test.dart
 test/add_group_gallery_image_request_test.dart
 test/api_config_announcement_test.dart
+test/api_config_avatar_perf_limiter_test.dart
 test/api_config_constants_groups_test.dart
 test/api_config_constants_instance_test.dart
 test/api_config_constants_instancepopulationbrackets_test.dart
@@ -484,6 +489,7 @@ test/notifications_api_test.dart
 test/order_option_test.dart
 test/paginated_group_audit_log_entry_list_test.dart
 test/past_display_name_test.dart
+test/performance_limiter_info_test.dart
 test/performance_ratings_test.dart
 test/permission_test.dart
 test/permissions_api_test.dart

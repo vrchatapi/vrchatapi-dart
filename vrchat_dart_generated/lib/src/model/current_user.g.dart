@@ -16,6 +16,8 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
           json,
           requiredKeys: const [
             'acceptedTOSVersion',
+            'ageVerificationStatus',
+            'ageVerified',
             'allowAvatarCopying',
             'bio',
             'bioLinks',
@@ -37,6 +39,7 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
             'hasPendingEmail',
             'homeLocation',
             'id',
+            'isAdult',
             'isFriend',
             'last_login',
             'last_mobile',
@@ -76,6 +79,9 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
                   .toList()),
           activeFriends: $checkedConvert('activeFriends',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          ageVerificationStatus:
+              $checkedConvert('ageVerificationStatus', (v) => v as String),
+          ageVerified: $checkedConvert('ageVerified', (v) => v as bool),
           allowAvatarCopying:
               $checkedConvert('allowAvatarCopying', (v) => v as bool),
           badges: $checkedConvert(
@@ -120,6 +126,7 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
           hasPendingEmail: $checkedConvert('hasPendingEmail', (v) => v as bool),
           homeLocation: $checkedConvert('homeLocation', (v) => v as String),
           id: $checkedConvert('id', (v) => v as String),
+          isAdult: $checkedConvert('isAdult', (v) => v as bool),
           isBoopingEnabled:
               $checkedConvert('isBoopingEnabled', (v) => v as bool? ?? true),
           isFriend: $checkedConvert('isFriend', (v) => v as bool? ?? false),
@@ -215,6 +222,8 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
   writeNotNull('accountDeletionLog',
       instance.accountDeletionLog?.map((e) => e.toJson()).toList());
   writeNotNull('activeFriends', instance.activeFriends);
+  val['ageVerificationStatus'] = instance.ageVerificationStatus;
+  val['ageVerified'] = instance.ageVerified;
   val['allowAvatarCopying'] = instance.allowAvatarCopying;
   writeNotNull('badges', instance.badges?.map((e) => e.toJson()).toList());
   val['bio'] = instance.bio;
@@ -242,6 +251,7 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
   val['hasPendingEmail'] = instance.hasPendingEmail;
   val['homeLocation'] = instance.homeLocation;
   val['id'] = instance.id;
+  val['isAdult'] = instance.isAdult;
   writeNotNull('isBoopingEnabled', instance.isBoopingEnabled);
   val['isFriend'] = instance.isFriend;
   writeNotNull('last_activity', instance.lastActivity?.toIso8601String());

@@ -27,6 +27,7 @@ export 'package:vrchat_dart_generated/src/api/worlds_api.dart';
 
 export 'package:vrchat_dart_generated/src/model/api_config.dart';
 export 'package:vrchat_dart_generated/src/model/api_config_announcement.dart';
+export 'package:vrchat_dart_generated/src/model/api_config_avatar_perf_limiter.dart';
 export 'package:vrchat_dart_generated/src/model/api_config_constants.dart';
 export 'package:vrchat_dart_generated/src/model/api_config_constants_groups.dart';
 export 'package:vrchat_dart_generated/src/model/api_config_constants_instance.dart';
@@ -138,6 +139,7 @@ export 'package:vrchat_dart_generated/src/model/notification_type.dart';
 export 'package:vrchat_dart_generated/src/model/order_option.dart';
 export 'package:vrchat_dart_generated/src/model/paginated_group_audit_log_entry_list.dart';
 export 'package:vrchat_dart_generated/src/model/past_display_name.dart';
+export 'package:vrchat_dart_generated/src/model/performance_limiter_info.dart';
 export 'package:vrchat_dart_generated/src/model/performance_ratings.dart';
 export 'package:vrchat_dart_generated/src/model/permission.dart';
 export 'package:vrchat_dart_generated/src/model/platform_build_info.dart';

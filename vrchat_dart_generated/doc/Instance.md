@@ -9,6 +9,7 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **bool** |  | [default to true]
+**ageGate** | **String** |  | [optional] 
 **canRequestInvite** | **bool** |  | [default to true]
 **capacity** | **int** |  | 
 **clientNumber** | **String** | Always returns \"unknown\". | 
@@ -25,7 +26,7 @@ Name | Type | Description | Notes
 **permanent** | **bool** |  | [default to false]
 **photonRegion** | [**Region**](Region.md) |  | 
 **platforms** | [**InstancePlatforms**](InstancePlatforms.md) |  | 
-**playerPersistenceEnabled** | **String** |  | 
+**playerPersistenceEnabled** | **bool** |  | 
 **region** | [**InstanceRegion**](InstanceRegion.md) |  | 
 **secureName** | **String** |  | 
 **shortName** | **String** |  | [optional] 

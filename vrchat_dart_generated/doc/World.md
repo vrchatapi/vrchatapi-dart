@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **thumbnailImageUrl** | **String** |  | 
 **unityPackages** | [**List&lt;UnityPackage&gt;**](UnityPackage.md) | Empty if unauthenticated. | [optional] 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
+**urlList** | **List&lt;String&gt;** |  | [optional] 
 **version** | **int** |  | [default to 0]
 **visits** | **int** |  | [default to 0]
 **udonProducts** | **List&lt;String&gt;** |  | [optional] 
