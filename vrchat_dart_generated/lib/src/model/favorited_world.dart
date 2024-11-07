@@ -44,6 +44,7 @@ class FavoritedWorld {
     required this.thumbnailImageUrl,
     required this.unityPackages,
     required this.updatedAt,
+    required this.urlList,
     this.udonProducts,
     required this.version,
   });
@@ -240,6 +241,13 @@ class FavoritedWorld {
   final DateTime updatedAt;
 
   @JsonKey(
+    name: r'urlList',
+    required: true,
+    includeIfNull: false,
+  )
+  final List<String> urlList;
+
+  @JsonKey(
     name: r'udonProducts',
     required: false,
     includeIfNull: false,
@@ -284,6 +292,7 @@ class FavoritedWorld {
           other.thumbnailImageUrl == thumbnailImageUrl &&
           other.unityPackages == unityPackages &&
           other.updatedAt == updatedAt &&
+          other.urlList == urlList &&
           other.udonProducts == udonProducts &&
           other.version == version;
 
@@ -315,6 +324,7 @@ class FavoritedWorld {
       thumbnailImageUrl.hashCode +
       unityPackages.hashCode +
       updatedAt.hashCode +
+      urlList.hashCode +
       udonProducts.hashCode +
       version.hashCode;
 

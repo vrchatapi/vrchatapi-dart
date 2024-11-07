@@ -45,6 +45,7 @@ class World {
     required this.thumbnailImageUrl,
     this.unityPackages,
     required this.updatedAt,
+    this.urlList,
     this.version = 0,
     this.visits = 0,
     this.udonProducts,
@@ -253,6 +254,13 @@ class World {
   )
   final DateTime updatedAt;
 
+  @JsonKey(
+    name: r'urlList',
+    required: false,
+    includeIfNull: false,
+  )
+  final List<String>? urlList;
+
   // minimum: 0
   @JsonKey(
     name: r'version',
@@ -307,6 +315,7 @@ class World {
           other.thumbnailImageUrl == thumbnailImageUrl &&
           other.unityPackages == unityPackages &&
           other.updatedAt == updatedAt &&
+          other.urlList == urlList &&
           other.version == version &&
           other.visits == visits &&
           other.udonProducts == udonProducts;
@@ -340,6 +349,7 @@ class World {
       thumbnailImageUrl.hashCode +
       unityPackages.hashCode +
       updatedAt.hashCode +
+      urlList.hashCode +
       version.hashCode +
       visits.hashCode +
       udonProducts.hashCode;

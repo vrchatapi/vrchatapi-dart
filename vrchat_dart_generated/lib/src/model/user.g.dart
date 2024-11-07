@@ -15,6 +15,7 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
         $checkKeys(
           json,
           requiredKeys: const [
+            'ageVerificationStatus',
             'allowAvatarCopying',
             'bio',
             'bioLinks',
@@ -41,6 +42,8 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
           ],
         );
         final val = User(
+          ageVerificationStatus:
+              $checkedConvert('ageVerificationStatus', (v) => v as String),
           allowAvatarCopying:
               $checkedConvert('allowAvatarCopying', (v) => v as bool? ?? true),
           badges: $checkedConvert(
@@ -111,6 +114,7 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
 
 Map<String, dynamic> _$UserToJson(User instance) {
   final val = <String, dynamic>{
+    'ageVerificationStatus': instance.ageVerificationStatus,
     'allowAvatarCopying': instance.allowAvatarCopying,
   };
 

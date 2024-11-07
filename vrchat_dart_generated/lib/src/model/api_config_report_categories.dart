@@ -20,10 +20,12 @@ class APIConfigReportCategories {
     required this.avatar,
     required this.behavior,
     required this.chat,
+    this.emoji,
     required this.environment,
     required this.groupstore,
     required this.image,
     required this.text,
+    this.sticker,
     required this.warnings,
     required this.worldimage,
     required this.worldstore,
@@ -49,6 +51,13 @@ class APIConfigReportCategories {
     includeIfNull: false,
   )
   final ReportCategory chat;
+
+  @JsonKey(
+    name: r'emoji',
+    required: false,
+    includeIfNull: false,
+  )
+  final ReportCategory? emoji;
 
   @JsonKey(
     name: r'environment',
@@ -79,6 +88,13 @@ class APIConfigReportCategories {
   final ReportCategory text;
 
   @JsonKey(
+    name: r'sticker',
+    required: false,
+    includeIfNull: false,
+  )
+  final ReportCategory? sticker;
+
+  @JsonKey(
     name: r'warnings',
     required: true,
     includeIfNull: false,
@@ -106,10 +122,12 @@ class APIConfigReportCategories {
           other.avatar == avatar &&
           other.behavior == behavior &&
           other.chat == chat &&
+          other.emoji == emoji &&
           other.environment == environment &&
           other.groupstore == groupstore &&
           other.image == image &&
           other.text == text &&
+          other.sticker == sticker &&
           other.warnings == warnings &&
           other.worldimage == worldimage &&
           other.worldstore == worldstore;
@@ -119,10 +137,12 @@ class APIConfigReportCategories {
       avatar.hashCode +
       behavior.hashCode +
       chat.hashCode +
+      emoji.hashCode +
       environment.hashCode +
       groupstore.hashCode +
       image.hashCode +
       text.hashCode +
+      sticker.hashCode +
       warnings.hashCode +
       worldimage.hashCode +
       worldstore.hashCode;

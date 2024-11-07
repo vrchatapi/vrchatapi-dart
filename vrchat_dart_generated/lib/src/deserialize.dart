@@ -1,5 +1,6 @@
 import 'package:vrchat_dart_generated/src/model/api_config.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_announcement.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_avatar_perf_limiter.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_constants.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_constants_groups.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_constants_instance.dart';
@@ -89,6 +90,7 @@ import 'package:vrchat_dart_generated/src/model/notification_detail_request_invi
 import 'package:vrchat_dart_generated/src/model/notification_detail_vote_to_kick.dart';
 import 'package:vrchat_dart_generated/src/model/paginated_group_audit_log_entry_list.dart';
 import 'package:vrchat_dart_generated/src/model/past_display_name.dart';
+import 'package:vrchat_dart_generated/src/model/performance_limiter_info.dart';
 import 'package:vrchat_dart_generated/src/model/permission.dart';
 import 'package:vrchat_dart_generated/src/model/platform_build_info.dart';
 import 'package:vrchat_dart_generated/src/model/player_moderation.dart';
@@ -152,6 +154,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'APIConfigAnnouncement':
 // ignore: deprecated_member_use_from_same_package
       return APIConfigAnnouncement.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'APIConfigAvatarPerfLimiter':
+      return APIConfigAvatarPerfLimiter.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'APIConfigConstants':
       return APIConfigConstants.fromJson(value as Map<String, dynamic>)
@@ -417,6 +422,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           value as Map<String, dynamic>) as ReturnType;
     case 'PastDisplayName':
       return PastDisplayName.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'PerformanceLimiterInfo':
+      return PerformanceLimiterInfo.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'PerformanceRatings':
     case 'Permission':

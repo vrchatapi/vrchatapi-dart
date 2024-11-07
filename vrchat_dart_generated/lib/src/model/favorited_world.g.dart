@@ -39,6 +39,7 @@ FavoritedWorld _$FavoritedWorldFromJson(Map<String, dynamic> json) =>
             'thumbnailImageUrl',
             'unityPackages',
             'updated_at',
+            'urlList',
             'version'
           ],
         );
@@ -86,6 +87,8 @@ FavoritedWorld _$FavoritedWorldFromJson(Map<String, dynamic> json) =>
                   .toList()),
           updatedAt:
               $checkedConvert('updated_at', (v) => DateTime.parse(v as String)),
+          urlList: $checkedConvert('urlList',
+              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           udonProducts: $checkedConvert('udonProducts',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           version: $checkedConvert('version', (v) => (v as num).toInt()),
@@ -131,6 +134,7 @@ Map<String, dynamic> _$FavoritedWorldToJson(FavoritedWorld instance) {
   val['thumbnailImageUrl'] = instance.thumbnailImageUrl;
   val['unityPackages'] = instance.unityPackages.map((e) => e.toJson()).toList();
   val['updated_at'] = instance.updatedAt.toIso8601String();
+  val['urlList'] = instance.urlList;
   writeNotNull('udonProducts', instance.udonProducts);
   val['version'] = instance.version;
   return val;

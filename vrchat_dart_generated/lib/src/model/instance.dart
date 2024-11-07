@@ -24,6 +24,7 @@ class Instance {
   /// Returns a new [Instance] instance.
   Instance({
     this.active = true,
+    this.ageGate,
     this.canRequestInvite = true,
     required this.capacity,
     required this.clientNumber,
@@ -71,6 +72,13 @@ class Instance {
     includeIfNull: false,
   )
   final bool active;
+
+  @JsonKey(
+    name: r'ageGate',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? ageGate;
 
   @JsonKey(
     name: r'canRequestInvite',
@@ -196,7 +204,7 @@ class Instance {
     required: true,
     includeIfNull: true,
   )
-  final String? playerPersistenceEnabled;
+  final bool? playerPersistenceEnabled;
 
   @JsonKey(
     name: r'region',
@@ -366,6 +374,7 @@ class Instance {
       identical(this, other) ||
       other is Instance &&
           other.active == active &&
+          other.ageGate == ageGate &&
           other.canRequestInvite == canRequestInvite &&
           other.capacity == capacity &&
 // ignore: deprecated_member_use_from_same_package
@@ -410,6 +419,7 @@ class Instance {
   @override
   int get hashCode =>
       active.hashCode +
+      (ageGate == null ? 0 : ageGate.hashCode) +
       canRequestInvite.hashCode +
       capacity.hashCode +
 // ignore: deprecated_member_use_from_same_package

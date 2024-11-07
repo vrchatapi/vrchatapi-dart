@@ -18,12 +18,15 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             'VoiceEnableDegradation',
             'VoiceEnableReceiverLimiting',
             'address',
+            'ageVerificationP',
+            'ageVerificationStatusVisible',
             'announcements',
             'analyticsSegment_NewUI_PctOfUsers',
             'analyticsSegment_NewUI_Salt',
             'appName',
             'availableLanguageCodes',
             'availableLanguages',
+            'avatarPerfLimiter',
             'buildVersionTag',
             'chatboxLogBufferSeconds',
             'clientApiKey',
@@ -37,6 +40,7 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             'copyrightEmail',
             'currentTOSVersion',
             'defaultAvatar',
+            'defaultStickerSet',
             'deploymentGroup',
             'devSdkUrl',
             'devSdkVersion',
@@ -85,6 +89,7 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             'serverName',
             'stringHostUrlList',
             'supportEmail',
+            'supportFormUrl',
             'timekeeping',
             'timeOutWorldId',
             'tutorialWorldId',
@@ -110,6 +115,10 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
           voiceEnableReceiverLimiting: $checkedConvert(
               'VoiceEnableReceiverLimiting', (v) => v as bool? ?? true),
           address: $checkedConvert('address', (v) => v as String),
+          ageVerificationP:
+              $checkedConvert('ageVerificationP', (v) => v as bool),
+          ageVerificationStatusVisible:
+              $checkedConvert('ageVerificationStatusVisible', (v) => v as bool),
           announcements: $checkedConvert(
               'announcements',
               (v) => (v as List<dynamic>)
@@ -125,6 +134,10 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           availableLanguages: $checkedConvert('availableLanguages',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+          avatarPerfLimiter: $checkedConvert(
+              'avatarPerfLimiter',
+              (v) => APIConfigAvatarPerfLimiter.fromJson(
+                  v as Map<String, dynamic>)),
           buildVersionTag:
               $checkedConvert('buildVersionTag', (v) => v as String),
           chatboxLogBufferSeconds: $checkedConvert(
@@ -169,6 +182,8 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
           currentTOSVersion:
               $checkedConvert('currentTOSVersion', (v) => (v as num).toInt()),
           defaultAvatar: $checkedConvert('defaultAvatar', (v) => v as String),
+          defaultStickerSet:
+              $checkedConvert('defaultStickerSet', (v) => v as String),
           deploymentGroup: $checkedConvert('deploymentGroup',
               (v) => $enumDecode(_$DeploymentGroupEnumMap, v)),
           devLanguageCodes: $checkedConvert('devLanguageCodes',
@@ -291,6 +306,7 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
           stringHostUrlList: $checkedConvert('stringHostUrlList',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           supportEmail: $checkedConvert('supportEmail', (v) => v as String),
+          supportFormUrl: $checkedConvert('supportFormUrl', (v) => v as String),
           timekeeping:
               $checkedConvert('timekeeping', (v) => v as bool? ?? true),
           timeOutWorldId: $checkedConvert('timeOutWorldId', (v) => v as String),
@@ -343,6 +359,8 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) {
     'VoiceEnableDegradation': instance.voiceEnableDegradation,
     'VoiceEnableReceiverLimiting': instance.voiceEnableReceiverLimiting,
     'address': instance.address,
+    'ageVerificationP': instance.ageVerificationP,
+    'ageVerificationStatusVisible': instance.ageVerificationStatusVisible,
     'announcements': instance.announcements.map((e) => e.toJson()).toList(),
     'analyticsSegment_NewUI_PctOfUsers':
         instance.analyticsSegmentNewUIPctOfUsers,
@@ -350,6 +368,7 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) {
     'appName': instance.appName,
     'availableLanguageCodes': instance.availableLanguageCodes,
     'availableLanguages': instance.availableLanguages,
+    'avatarPerfLimiter': instance.avatarPerfLimiter.toJson(),
     'buildVersionTag': instance.buildVersionTag,
     'chatboxLogBufferSeconds': instance.chatboxLogBufferSeconds,
     'clientApiKey': instance.clientApiKey,
@@ -382,6 +401,7 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) {
   writeNotNull('currentPrivacyVersion', instance.currentPrivacyVersion);
   val['currentTOSVersion'] = instance.currentTOSVersion;
   val['defaultAvatar'] = instance.defaultAvatar;
+  val['defaultStickerSet'] = instance.defaultStickerSet;
   val['deploymentGroup'] = _$DeploymentGroupEnumMap[instance.deploymentGroup]!;
   writeNotNull('devLanguageCodes', instance.devLanguageCodes);
   val['devSdkUrl'] = instance.devSdkUrl;
@@ -439,6 +459,7 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) {
   val['serverName'] = instance.serverName;
   val['stringHostUrlList'] = instance.stringHostUrlList;
   val['supportEmail'] = instance.supportEmail;
+  val['supportFormUrl'] = instance.supportFormUrl;
   val['timekeeping'] = instance.timekeeping;
   val['timeOutWorldId'] = instance.timeOutWorldId;
   val['tutorialWorldId'] = instance.tutorialWorldId;
