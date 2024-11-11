@@ -47,6 +47,7 @@ export 'package:vrchat_dart_generated/src/model/account_deletion_log.dart';
 export 'package:vrchat_dart_generated/src/model/add_favorite_request.dart';
 export 'package:vrchat_dart_generated/src/model/add_group_gallery_image_request.dart';
 export 'package:vrchat_dart_generated/src/model/avatar.dart';
+export 'package:vrchat_dart_generated/src/model/avatar_styles.dart';
 export 'package:vrchat_dart_generated/src/model/avatar_unity_package_url_object.dart';
 export 'package:vrchat_dart_generated/src/model/badge.dart';
 export 'package:vrchat_dart_generated/src/model/ban_group_member_request.dart';

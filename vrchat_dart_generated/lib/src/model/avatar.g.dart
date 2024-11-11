@@ -24,6 +24,7 @@ Avatar _$AvatarFromJson(Map<String, dynamic> json) => $checkedCreate(
             'imageUrl',
             'name',
             'releaseStatus',
+            'styles',
             'tags',
             'thumbnailImageUrl',
             'unityPackageUrl',
@@ -47,6 +48,8 @@ Avatar _$AvatarFromJson(Map<String, dynamic> json) => $checkedCreate(
           name: $checkedConvert('name', (v) => v as String),
           releaseStatus: $checkedConvert(
               'releaseStatus', (v) => $enumDecode(_$ReleaseStatusEnumMap, v)),
+          styles: $checkedConvert('styles',
+              (v) => AvatarStyles.fromJson(v as Map<String, dynamic>)),
           tags: $checkedConvert('tags',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           thumbnailImageUrl:
@@ -91,6 +94,7 @@ Map<String, dynamic> _$AvatarToJson(Avatar instance) {
   val['imageUrl'] = instance.imageUrl;
   val['name'] = instance.name;
   val['releaseStatus'] = _$ReleaseStatusEnumMap[instance.releaseStatus]!;
+  val['styles'] = instance.styles.toJson();
   val['tags'] = instance.tags;
   val['thumbnailImageUrl'] = instance.thumbnailImageUrl;
   val['unityPackageUrl'] = instance.unityPackageUrl;

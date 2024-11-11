@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/avatar_unity_package_url_object.dart';
+import 'package:vrchat_dart_generated/src/model/avatar_styles.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
 import 'package:vrchat_dart_generated/src/model/unity_package.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -30,6 +31,7 @@ class Avatar {
     required this.imageUrl,
     required this.name,
     required this.releaseStatus,
+    required this.styles,
     required this.tags,
     required this.thumbnailImageUrl,
     required this.unityPackageUrl,
@@ -119,6 +121,13 @@ class Avatar {
   )
   final ReleaseStatus releaseStatus;
 
+  @JsonKey(
+    name: r'styles',
+    required: true,
+    includeIfNull: false,
+  )
+  final AvatarStyles styles;
+
   ///
   @JsonKey(
     name: r'tags',
@@ -186,6 +195,7 @@ class Avatar {
           other.imageUrl == imageUrl &&
           other.name == name &&
           other.releaseStatus == releaseStatus &&
+          other.styles == styles &&
           other.tags == tags &&
           other.thumbnailImageUrl == thumbnailImageUrl &&
           other.unityPackageUrl == unityPackageUrl &&
@@ -208,6 +218,7 @@ class Avatar {
       imageUrl.hashCode +
       name.hashCode +
       releaseStatus.hashCode +
+      styles.hashCode +
       tags.hashCode +
       thumbnailImageUrl.hashCode +
       unityPackageUrl.hashCode +

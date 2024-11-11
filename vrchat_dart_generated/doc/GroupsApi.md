@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 Create Group Announcement
 
-Creates an Announcement for a Group.
+Creates an Announcement for a Group. Warning: This will also remove all announcements. To make proper announcements, use the posts endpoint instead
 
 ### Example
 ```dart

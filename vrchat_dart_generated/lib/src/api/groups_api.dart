@@ -594,7 +594,7 @@ class GroupsApi {
   }
 
   /// Create Group Announcement
-  /// Creates an Announcement for a Group.
+  /// Creates an Announcement for a Group. Warning: This will also remove all announcements. To make proper announcements, use the posts endpoint instead
   ///
   /// Parameters:
   /// * [groupId] - Must be a valid group ID.

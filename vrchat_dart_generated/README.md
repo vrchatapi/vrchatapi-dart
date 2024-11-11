@@ -317,6 +317,7 @@ Class | Method | HTTP request | Description
  - [AddFavoriteRequest](doc/AddFavoriteRequest.md)
  - [AddGroupGalleryImageRequest](doc/AddGroupGalleryImageRequest.md)
  - [Avatar](doc/Avatar.md)
+ - [AvatarStyles](doc/AvatarStyles.md)
  - [AvatarUnityPackageUrlObject](doc/AvatarUnityPackageUrlObject.md)
  - [Badge](doc/Badge.md)
  - [BanGroupMemberRequest](doc/BanGroupMemberRequest.md)

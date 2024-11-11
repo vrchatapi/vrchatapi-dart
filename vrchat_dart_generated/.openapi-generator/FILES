@@ -23,6 +23,7 @@ doc/AddFavoriteRequest.md
 doc/AddGroupGalleryImageRequest.md
 doc/AuthenticationApi.md
 doc/Avatar.md
+doc/AvatarStyles.md
 doc/AvatarUnityPackageUrlObject.md
 doc/AvatarsApi.md
 doc/Badge.md
@@ -223,6 +224,7 @@ lib/src/model/api_config_report_categories.dart
 lib/src/model/api_config_report_reasons.dart
 lib/src/model/api_health.dart
 lib/src/model/avatar.dart
+lib/src/model/avatar_styles.dart
 lib/src/model/avatar_unity_package_url_object.dart
 lib/src/model/badge.dart
 lib/src/model/ban_group_member_request.dart
@@ -386,6 +388,7 @@ test/api_config_report_reasons_test.dart
 test/api_config_test.dart
 test/api_health_test.dart
 test/authentication_api_test.dart
+test/avatar_styles_test.dart
 test/avatar_test.dart
 test/avatar_unity_package_url_object_test.dart
 test/avatars_api_test.dart
