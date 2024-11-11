@@ -189,6 +189,9 @@ Class | Method | HTTP request | Description
 [*FilesApi*](doc/FilesApi.md) | [**getFileDataUploadStatus**](doc/FilesApi.md#getfiledatauploadstatus) | **GET** /file/{fileId}/{versionId}/{fileType}/status | Check FileData Upload Status
 [*FilesApi*](doc/FilesApi.md) | [**getFiles**](doc/FilesApi.md#getfiles) | **GET** /files | List Files
 [*FilesApi*](doc/FilesApi.md) | [**startFileDataUpload**](doc/FilesApi.md#startfiledataupload) | **PUT** /file/{fileId}/{versionId}/{fileType}/start | Start FileData Upload
+[*FilesApi*](doc/FilesApi.md) | [**uploadGalleryImage**](doc/FilesApi.md#uploadgalleryimage) | **POST** /gallery | Upload gallery image
+[*FilesApi*](doc/FilesApi.md) | [**uploadIcon**](doc/FilesApi.md#uploadicon) | **POST** /icon | Upload icon
+[*FilesApi*](doc/FilesApi.md) | [**uploadImage**](doc/FilesApi.md#uploadimage) | **POST** /file/image | Upload gallery image, icon, emoji or sticker
 [*FriendsApi*](doc/FriendsApi.md) | [**deleteFriendRequest**](doc/FriendsApi.md#deletefriendrequest) | **DELETE** /user/{userId}/friendRequest | Delete Friend Request
 [*FriendsApi*](doc/FriendsApi.md) | [**friend**](doc/FriendsApi.md#friend) | **POST** /user/{userId}/friendRequest | Send Friend Request
 [*FriendsApi*](doc/FriendsApi.md) | [**getFriendStatus**](doc/FriendsApi.md#getfriendstatus) | **GET** /user/{userId}/friendStatus | Check Friend Status
