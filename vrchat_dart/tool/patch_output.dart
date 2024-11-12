@@ -95,7 +95,33 @@ void patchApi() {
           .whereType<File>();
 
   for (final file in apiFiles) {
-    final content = file.readAsStringSync();
+    var content = file.readAsStringSync();
+
+    if (file.path.contains('files_api.dart')) {
+
+      final filesApiMapped = {
+        "final _path = r'/file/image';": "try {_bodyData = FormData.fromMap({'file': file, 'tag': tag, if (animationStyle != null) 'animationStyle': animationStyle, if (maskTag != null) 'maskTag': maskTag,});} catch (error, stackTrace) {",
+        "final _path = r'/icon';": "try {_bodyData = FormData.fromMap({'file': file});} catch (error, stackTrace) {",
+        "final _path = r'/gallery';": "try {_bodyData = FormData.fromMap({'file': file});} catch (error, stackTrace) {",
+      };
+
+      final emptyBlockRegExp = RegExp(r'try \{\} catch \(error, stackTrace\) \{');
+      final resultContent = StringBuffer();
+      var currentIndex = 0;
+
+      for (final emptyBlock in emptyBlockRegExp.allMatches(content)) {
+        resultContent.write(content.substring(currentIndex, emptyBlock.start));
+        final closestPathIndex = content.lastIndexOf(RegExp(r"(final _path = r'[^']+?';)"), emptyBlock.start);
+        final closestPath = content.substring(closestPathIndex, content.indexOf(';', closestPathIndex) + 1);
+        final replacement = filesApiMapped[closestPath] ?? '';
+        resultContent.write(replacement);
+        currentIndex = emptyBlock.end;
+      }
+
+      resultContent.write(content.substring(currentIndex));
+      content = resultContent.toString();
+    }
+
     file.writeAsStringSync(content);
   }
 }
