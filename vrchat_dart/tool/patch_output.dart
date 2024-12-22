@@ -95,7 +95,30 @@ void patchApi() {
           .whereType<File>();
 
   for (final file in apiFiles) {
-    final content = file.readAsStringSync();
+    var content = file.readAsStringSync();
+
+    if (file.path.contains('files_api.dart')) {
+      content = content
+          .patchMultipartUpload(
+            path: '/file/image',
+            bodyData: '''
+FormData.fromMap({
+  'file': file,
+  'tag': tag,
+  if (animationStyle != null) 'animationStyle': animationStyle,
+  if (maskTag != null) 'maskTag': maskTag,
+});''',
+          )
+          .patchMultipartUpload(
+            path: '/icon',
+            bodyData: "FormData.fromMap({'file': file});",
+          )
+          .patchMultipartUpload(
+            path: '/gallery',
+            bodyData: "FormData.fromMap({'file': file});",
+          );
+    }
+
     file.writeAsStringSync(content);
   }
 }
@@ -155,5 +178,22 @@ void patchAnalysisIssues() {
           );
     }
     file.writeAsStringSync(contents);
+  }
+}
+
+extension on String {
+  String patchMultipartUpload({
+    required String path,
+    required String bodyData,
+  }) {
+    final escapedPath = RegExp.escape(path);
+    final tabbedBodyData = bodyData.replaceAll('\n', '\n      ');
+    return replaceFirstMapped(
+      RegExp("final _path = r'$escapedPath';(.+?)try {}", dotAll: true),
+      (m) => '''
+final _path = r'$path';${m[1]}try {
+      _bodyData = $tabbedBodyData
+    }''',
+    );
   }
 }

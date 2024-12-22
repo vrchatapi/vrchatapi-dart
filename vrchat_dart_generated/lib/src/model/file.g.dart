@@ -25,6 +25,9 @@ File _$FileFromJson(Map<String, dynamic> json) => $checkedCreate(
           ],
         );
         final val = File(
+          animationStyle:
+              $checkedConvert('animationStyle', (v) => v as String?),
+          maskTag: $checkedConvert('maskTag', (v) => v as String?),
           extension_: $checkedConvert('extension', (v) => v as String),
           id: $checkedConvert('id', (v) => v as String),
           mimeType: $checkedConvert(
@@ -44,15 +47,26 @@ File _$FileFromJson(Map<String, dynamic> json) => $checkedCreate(
       fieldKeyMap: const {'extension_': 'extension'},
     );
 
-Map<String, dynamic> _$FileToJson(File instance) => <String, dynamic>{
-      'extension': instance.extension_,
-      'id': instance.id,
-      'mimeType': _$MIMETypeEnumMap[instance.mimeType]!,
-      'name': instance.name,
-      'ownerId': instance.ownerId,
-      'tags': instance.tags,
-      'versions': instance.versions.map((e) => e.toJson()).toList(),
-    };
+Map<String, dynamic> _$FileToJson(File instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('animationStyle', instance.animationStyle);
+  writeNotNull('maskTag', instance.maskTag);
+  val['extension'] = instance.extension_;
+  val['id'] = instance.id;
+  val['mimeType'] = _$MIMETypeEnumMap[instance.mimeType]!;
+  val['name'] = instance.name;
+  val['ownerId'] = instance.ownerId;
+  val['tags'] = instance.tags;
+  val['versions'] = instance.versions.map((e) => e.toJson()).toList();
+  return val;
+}
 
 const _$MIMETypeEnumMap = {
   MIMEType.imageSlashJpeg: 'image/jpeg',
