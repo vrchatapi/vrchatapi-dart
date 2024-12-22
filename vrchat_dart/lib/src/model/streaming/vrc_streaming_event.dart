@@ -169,10 +169,10 @@ class FriendOnlineEvent extends FriendEventWithUser {
   @StreamedWorldConverter()
   final World? world;
 
-  /// <worldId:locationId>
+  /// `worldId:locationId`
   final String? location;
 
-  /// <locationId>
+  /// `locationId`
   final String? instance;
 
   /// If the current user can request invite on this friend
@@ -298,10 +298,10 @@ class FriendLocationEvent extends FriendEventWithUser {
   @StreamedWorldConverter()
   final World? world;
 
-  /// <worldId:locationId>
+  /// `worldId:locationId`
   final String? location;
 
-  /// <locationId>
+  /// `locationId`
   final String? instance;
 
   /// If the current user can request invite on this friend
@@ -358,10 +358,10 @@ class UserLocationEvent extends UserEvent {
   /// The [world] the user joined
   final World world;
 
-  /// <worldId:locationId>
+  /// `worldId:locationId`
   final String location;
 
-  /// <locationId>
+  /// `locationId`
   final String instance;
 
   /// Create a [UserLocationEvent]
