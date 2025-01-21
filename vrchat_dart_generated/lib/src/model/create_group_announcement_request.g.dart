@@ -30,19 +30,11 @@ CreateGroupAnnouncementRequest _$CreateGroupAnnouncementRequestFromJson(
     );
 
 Map<String, dynamic> _$CreateGroupAnnouncementRequestToJson(
-    CreateGroupAnnouncementRequest instance) {
-  final val = <String, dynamic>{
-    'title': instance.title,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('text', instance.text);
-  writeNotNull('imageId', instance.imageId);
-  writeNotNull('sendNotification', instance.sendNotification);
-  return val;
-}
+        CreateGroupAnnouncementRequest instance) =>
+    <String, dynamic>{
+      'title': instance.title,
+      if (instance.text case final value?) 'text': value,
+      if (instance.imageId case final value?) 'imageId': value,
+      if (instance.sendNotification case final value?)
+        'sendNotification': value,
+    };

@@ -34,6 +34,7 @@ class UserSubscription {
     required this.updatedAt,
     required this.licenseGroups,
     this.isGift = false,
+    this.isBulkGift = false,
   });
 
   @JsonKey(
@@ -149,6 +150,13 @@ class UserSubscription {
   )
   final bool isGift;
 
+  @JsonKey(
+    name: r'isBulkGift',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool isBulkGift;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -168,7 +176,8 @@ class UserSubscription {
           other.createdAt == createdAt &&
           other.updatedAt == updatedAt &&
           other.licenseGroups == licenseGroups &&
-          other.isGift == isGift;
+          other.isGift == isGift &&
+          other.isBulkGift == isBulkGift;
 
   @override
   int get hashCode =>
@@ -187,7 +196,8 @@ class UserSubscription {
       createdAt.hashCode +
       updatedAt.hashCode +
       licenseGroups.hashCode +
-      isGift.hashCode;
+      isGift.hashCode +
+      isBulkGift.hashCode;
 
   factory UserSubscription.fromJson(Map<String, dynamic> json) =>
       _$UserSubscriptionFromJson(json);

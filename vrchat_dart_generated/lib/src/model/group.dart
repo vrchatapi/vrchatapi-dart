@@ -22,6 +22,9 @@ part 'group.g.dart';
 class Group {
   /// Returns a new [Group] instance.
   Group({
+    this.ageVerificationSlotsAvailable,
+    this.ageVerificationBetaCode,
+    this.ageVerificationBetaSlots,
     this.badges,
     this.id,
     this.name,
@@ -52,6 +55,27 @@ class Group {
     this.myMember,
     this.roles,
   });
+
+  @JsonKey(
+    name: r'ageVerificationSlotsAvailable',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? ageVerificationSlotsAvailable;
+
+  @JsonKey(
+    name: r'ageVerificationBetaCode',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? ageVerificationBetaCode;
+
+  @JsonKey(
+    name: r'ageVerificationBetaSlots',
+    required: false,
+    includeIfNull: false,
+  )
+  final num? ageVerificationBetaSlots;
 
   @JsonKey(
     name: r'badges',
@@ -263,6 +287,10 @@ class Group {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Group &&
+          other.ageVerificationSlotsAvailable ==
+              ageVerificationSlotsAvailable &&
+          other.ageVerificationBetaCode == ageVerificationBetaCode &&
+          other.ageVerificationBetaSlots == ageVerificationBetaSlots &&
           other.badges == badges &&
           other.id == id &&
           other.name == name &&
@@ -295,6 +323,9 @@ class Group {
 
   @override
   int get hashCode =>
+      ageVerificationSlotsAvailable.hashCode +
+      ageVerificationBetaCode.hashCode +
+      ageVerificationBetaSlots.hashCode +
       badges.hashCode +
       id.hashCode +
       name.hashCode +

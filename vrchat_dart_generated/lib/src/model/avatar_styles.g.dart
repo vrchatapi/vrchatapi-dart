@@ -23,17 +23,9 @@ AvatarStyles _$AvatarStylesFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$AvatarStylesToJson(AvatarStyles instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('primary', instance.primary);
-  writeNotNull('secondary', instance.secondary);
-  writeNotNull('supplementary', instance.supplementary);
-  return val;
-}
+Map<String, dynamic> _$AvatarStylesToJson(AvatarStyles instance) =>
+    <String, dynamic>{
+      if (instance.primary case final value?) 'primary': value,
+      if (instance.secondary case final value?) 'secondary': value,
+      if (instance.supplementary case final value?) 'supplementary': value,
+    };

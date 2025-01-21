@@ -74,36 +74,27 @@ Avatar _$AvatarFromJson(Map<String, dynamic> json) => $checkedCreate(
       fieldKeyMap: const {'createdAt': 'created_at', 'updatedAt': 'updated_at'},
     );
 
-Map<String, dynamic> _$AvatarToJson(Avatar instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('assetUrl', instance.assetUrl);
-  writeNotNull('assetUrlObject', instance.assetUrlObject);
-  val['authorId'] = instance.authorId;
-  val['authorName'] = instance.authorName;
-  val['created_at'] = instance.createdAt.toIso8601String();
-  val['description'] = instance.description;
-  val['featured'] = instance.featured;
-  val['id'] = instance.id;
-  val['imageUrl'] = instance.imageUrl;
-  val['name'] = instance.name;
-  val['releaseStatus'] = _$ReleaseStatusEnumMap[instance.releaseStatus]!;
-  val['styles'] = instance.styles.toJson();
-  val['tags'] = instance.tags;
-  val['thumbnailImageUrl'] = instance.thumbnailImageUrl;
-  val['unityPackageUrl'] = instance.unityPackageUrl;
-  val['unityPackageUrlObject'] = instance.unityPackageUrlObject.toJson();
-  val['unityPackages'] = instance.unityPackages.map((e) => e.toJson()).toList();
-  val['updated_at'] = instance.updatedAt.toIso8601String();
-  val['version'] = instance.version;
-  return val;
-}
+Map<String, dynamic> _$AvatarToJson(Avatar instance) => <String, dynamic>{
+      if (instance.assetUrl case final value?) 'assetUrl': value,
+      if (instance.assetUrlObject case final value?) 'assetUrlObject': value,
+      'authorId': instance.authorId,
+      'authorName': instance.authorName,
+      'created_at': instance.createdAt.toIso8601String(),
+      'description': instance.description,
+      'featured': instance.featured,
+      'id': instance.id,
+      'imageUrl': instance.imageUrl,
+      'name': instance.name,
+      'releaseStatus': _$ReleaseStatusEnumMap[instance.releaseStatus]!,
+      'styles': instance.styles.toJson(),
+      'tags': instance.tags,
+      'thumbnailImageUrl': instance.thumbnailImageUrl,
+      'unityPackageUrl': instance.unityPackageUrl,
+      'unityPackageUrlObject': instance.unityPackageUrlObject.toJson(),
+      'unityPackages': instance.unityPackages.map((e) => e.toJson()).toList(),
+      'updated_at': instance.updatedAt.toIso8601String(),
+      'version': instance.version,
+    };
 
 const _$ReleaseStatusEnumMap = {
   ReleaseStatus.public: 'public',

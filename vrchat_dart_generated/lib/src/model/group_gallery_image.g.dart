@@ -33,24 +33,20 @@ GroupGalleryImage _$GroupGalleryImageFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$GroupGalleryImageToJson(GroupGalleryImage instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('id', instance.id);
-  writeNotNull('groupId', instance.groupId);
-  writeNotNull('galleryId', instance.galleryId);
-  writeNotNull('fileId', instance.fileId);
-  writeNotNull('imageUrl', instance.imageUrl);
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('submittedByUserId', instance.submittedByUserId);
-  writeNotNull('approved', instance.approved);
-  writeNotNull('approvedByUserId', instance.approvedByUserId);
-  writeNotNull('approvedAt', instance.approvedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$GroupGalleryImageToJson(GroupGalleryImage instance) =>
+    <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.groupId case final value?) 'groupId': value,
+      if (instance.galleryId case final value?) 'galleryId': value,
+      if (instance.fileId case final value?) 'fileId': value,
+      if (instance.imageUrl case final value?) 'imageUrl': value,
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (instance.submittedByUserId case final value?)
+        'submittedByUserId': value,
+      if (instance.approved case final value?) 'approved': value,
+      if (instance.approvedByUserId case final value?)
+        'approvedByUserId': value,
+      if (instance.approvedAt?.toIso8601String() case final value?)
+        'approvedAt': value,
+    };

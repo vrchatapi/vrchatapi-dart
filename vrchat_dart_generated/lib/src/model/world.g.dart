@@ -102,50 +102,43 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
       fieldKeyMap: const {'createdAt': 'created_at', 'updatedAt': 'updated_at'},
     );
 
-Map<String, dynamic> _$WorldToJson(World instance) {
-  final val = <String, dynamic>{
-    'authorId': instance.authorId,
-    'authorName': instance.authorName,
-    'capacity': instance.capacity,
-    'recommendedCapacity': instance.recommendedCapacity,
-    'created_at': instance.createdAt.toIso8601String(),
-    'description': instance.description,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('favorites', instance.favorites);
-  val['featured'] = instance.featured;
-  val['heat'] = instance.heat;
-  val['id'] = instance.id;
-  val['imageUrl'] = instance.imageUrl;
-  writeNotNull('instances', instance.instances);
-  val['labsPublicationDate'] = instance.labsPublicationDate;
-  val['name'] = instance.name;
-  writeNotNull('namespace', instance.namespace);
-  writeNotNull('occupants', instance.occupants);
-  val['organization'] = instance.organization;
-  val['popularity'] = instance.popularity;
-  writeNotNull('previewYoutubeId', instance.previewYoutubeId);
-  writeNotNull('privateOccupants', instance.privateOccupants);
-  writeNotNull('publicOccupants', instance.publicOccupants);
-  val['publicationDate'] = instance.publicationDate;
-  val['releaseStatus'] = _$ReleaseStatusEnumMap[instance.releaseStatus]!;
-  val['tags'] = instance.tags;
-  val['thumbnailImageUrl'] = instance.thumbnailImageUrl;
-  writeNotNull(
-      'unityPackages', instance.unityPackages?.map((e) => e.toJson()).toList());
-  val['updated_at'] = instance.updatedAt.toIso8601String();
-  writeNotNull('urlList', instance.urlList);
-  val['version'] = instance.version;
-  val['visits'] = instance.visits;
-  writeNotNull('udonProducts', instance.udonProducts);
-  return val;
-}
+Map<String, dynamic> _$WorldToJson(World instance) => <String, dynamic>{
+      'authorId': instance.authorId,
+      'authorName': instance.authorName,
+      'capacity': instance.capacity,
+      'recommendedCapacity': instance.recommendedCapacity,
+      'created_at': instance.createdAt.toIso8601String(),
+      'description': instance.description,
+      if (instance.favorites case final value?) 'favorites': value,
+      'featured': instance.featured,
+      'heat': instance.heat,
+      'id': instance.id,
+      'imageUrl': instance.imageUrl,
+      if (instance.instances case final value?) 'instances': value,
+      'labsPublicationDate': instance.labsPublicationDate,
+      'name': instance.name,
+      if (instance.namespace case final value?) 'namespace': value,
+      if (instance.occupants case final value?) 'occupants': value,
+      'organization': instance.organization,
+      'popularity': instance.popularity,
+      if (instance.previewYoutubeId case final value?)
+        'previewYoutubeId': value,
+      if (instance.privateOccupants case final value?)
+        'privateOccupants': value,
+      if (instance.publicOccupants case final value?) 'publicOccupants': value,
+      'publicationDate': instance.publicationDate,
+      'releaseStatus': _$ReleaseStatusEnumMap[instance.releaseStatus]!,
+      'tags': instance.tags,
+      'thumbnailImageUrl': instance.thumbnailImageUrl,
+      if (instance.unityPackages?.map((e) => e.toJson()).toList()
+          case final value?)
+        'unityPackages': value,
+      'updated_at': instance.updatedAt.toIso8601String(),
+      if (instance.urlList case final value?) 'urlList': value,
+      'version': instance.version,
+      'visits': instance.visits,
+      if (instance.udonProducts case final value?) 'udonProducts': value,
+    };
 
 const _$ReleaseStatusEnumMap = {
   ReleaseStatus.public: 'public',

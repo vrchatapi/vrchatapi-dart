@@ -31,19 +31,10 @@ CreateFileVersionRequest _$CreateFileVersionRequestFromJson(
     );
 
 Map<String, dynamic> _$CreateFileVersionRequestToJson(
-    CreateFileVersionRequest instance) {
-  final val = <String, dynamic>{
-    'signatureMd5': instance.signatureMd5,
-    'signatureSizeInBytes': instance.signatureSizeInBytes,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('fileMd5', instance.fileMd5);
-  writeNotNull('fileSizeInBytes', instance.fileSizeInBytes);
-  return val;
-}
+        CreateFileVersionRequest instance) =>
+    <String, dynamic>{
+      'signatureMd5': instance.signatureMd5,
+      'signatureSizeInBytes': instance.signatureSizeInBytes,
+      if (instance.fileMd5 case final value?) 'fileMd5': value,
+      if (instance.fileSizeInBytes case final value?) 'fileSizeInBytes': value,
+    };

@@ -52,35 +52,29 @@ UnityPackage _$UnityPackageFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {'createdAt': 'created_at'},
     );
 
-Map<String, dynamic> _$UnityPackageToJson(UnityPackage instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('assetUrl', instance.assetUrl);
-  writeNotNull('assetUrlObject', instance.assetUrlObject);
-  val['assetVersion'] = instance.assetVersion;
-  writeNotNull('created_at', instance.createdAt?.toIso8601String());
-  writeNotNull('impostorizerVersion', instance.impostorizerVersion);
-  writeNotNull('performanceRating',
-      _$PerformanceRatingsEnumMap[instance.performanceRating]);
-  val['platform'] = instance.platform;
-  writeNotNull('pluginUrl', instance.pluginUrl);
-  writeNotNull('pluginUrlObject', instance.pluginUrlObject);
-  writeNotNull('unitySortNumber', instance.unitySortNumber);
-  val['unityVersion'] = instance.unityVersion;
-  writeNotNull('worldSignature', instance.worldSignature);
-  writeNotNull('impostorUrl', instance.impostorUrl);
-  writeNotNull('scanStatus', instance.scanStatus);
-  writeNotNull('variant', instance.variant);
-  return val;
-}
+Map<String, dynamic> _$UnityPackageToJson(UnityPackage instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      if (instance.assetUrl case final value?) 'assetUrl': value,
+      if (instance.assetUrlObject case final value?) 'assetUrlObject': value,
+      'assetVersion': instance.assetVersion,
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'created_at': value,
+      if (instance.impostorizerVersion case final value?)
+        'impostorizerVersion': value,
+      if (_$PerformanceRatingsEnumMap[instance.performanceRating]
+          case final value?)
+        'performanceRating': value,
+      'platform': instance.platform,
+      if (instance.pluginUrl case final value?) 'pluginUrl': value,
+      if (instance.pluginUrlObject case final value?) 'pluginUrlObject': value,
+      if (instance.unitySortNumber case final value?) 'unitySortNumber': value,
+      'unityVersion': instance.unityVersion,
+      if (instance.worldSignature case final value?) 'worldSignature': value,
+      if (instance.impostorUrl case final value?) 'impostorUrl': value,
+      if (instance.scanStatus case final value?) 'scanStatus': value,
+      if (instance.variant case final value?) 'variant': value,
+    };
 
 const _$PerformanceRatingsEnumMap = {
   PerformanceRatings.none: 'None',

@@ -27,15 +27,8 @@ APIConfigConstantsLANGUAGE _$APIConfigConstantsLANGUAGEFromJson(
     );
 
 Map<String, dynamic> _$APIConfigConstantsLANGUAGEToJson(
-    APIConfigConstantsLANGUAGE instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('SPOKEN_LANGUAGE_OPTIONS', instance.spokenLanguageOptions);
-  return val;
-}
+        APIConfigConstantsLANGUAGE instance) =>
+    <String, dynamic>{
+      if (instance.spokenLanguageOptions case final value?)
+        'SPOKEN_LANGUAGE_OPTIONS': value,
+    };

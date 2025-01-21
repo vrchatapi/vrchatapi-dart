@@ -42,8 +42,8 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
           ],
         );
         final val = User(
-          ageVerificationStatus:
-              $checkedConvert('ageVerificationStatus', (v) => v as String),
+          ageVerificationStatus: $checkedConvert('ageVerificationStatus',
+              (v) => $enumDecode(_$AgeVerificationStatusEnumMap, v)),
           allowAvatarCopying:
               $checkedConvert('allowAvatarCopying', (v) => v as bool? ?? true),
           badges: $checkedConvert(
@@ -112,55 +112,56 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$UserToJson(User instance) {
-  final val = <String, dynamic>{
-    'ageVerificationStatus': instance.ageVerificationStatus,
-    'allowAvatarCopying': instance.allowAvatarCopying,
-  };
+Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
+      'ageVerificationStatus':
+          _$AgeVerificationStatusEnumMap[instance.ageVerificationStatus]!,
+      'allowAvatarCopying': instance.allowAvatarCopying,
+      if (instance.badges?.map((e) => e.toJson()).toList() case final value?)
+        'badges': value,
+      'bio': instance.bio,
+      'bioLinks': instance.bioLinks,
+      'currentAvatarImageUrl': instance.currentAvatarImageUrl,
+      'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
+      'currentAvatarTags': instance.currentAvatarTags,
+      'date_joined': instance.dateJoined.toIso8601String(),
+      'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
+      'displayName': instance.displayName,
+      'friendKey': instance.friendKey,
+      if (instance.friendRequestStatus case final value?)
+        'friendRequestStatus': value,
+      'id': instance.id,
+      if (instance.instanceId case final value?) 'instanceId': value,
+      'isFriend': instance.isFriend,
+      'last_activity': instance.lastActivity,
+      'last_login': instance.lastLogin,
+      if (instance.lastMobile case final value?) 'last_mobile': value,
+      'last_platform': instance.lastPlatform,
+      if (instance.location case final value?) 'location': value,
+      if (instance.note case final value?) 'note': value,
+      if (instance.platform case final value?) 'platform': value,
+      'profilePicOverride': instance.profilePicOverride,
+      'profilePicOverrideThumbnail': instance.profilePicOverrideThumbnail,
+      'pronouns': instance.pronouns,
+      'state': _$UserStateEnumMap[instance.state]!,
+      'status': _$UserStatusEnumMap[instance.status]!,
+      'statusDescription': instance.statusDescription,
+      'tags': instance.tags,
+      if (instance.travelingToInstance case final value?)
+        'travelingToInstance': value,
+      if (instance.travelingToLocation case final value?)
+        'travelingToLocation': value,
+      if (instance.travelingToWorld case final value?)
+        'travelingToWorld': value,
+      'userIcon': instance.userIcon,
+      if (instance.username case final value?) 'username': value,
+      if (instance.worldId case final value?) 'worldId': value,
+    };
 
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('badges', instance.badges?.map((e) => e.toJson()).toList());
-  val['bio'] = instance.bio;
-  val['bioLinks'] = instance.bioLinks;
-  val['currentAvatarImageUrl'] = instance.currentAvatarImageUrl;
-  val['currentAvatarThumbnailImageUrl'] =
-      instance.currentAvatarThumbnailImageUrl;
-  val['currentAvatarTags'] = instance.currentAvatarTags;
-  val['date_joined'] = instance.dateJoined.toIso8601String();
-  val['developerType'] = _$DeveloperTypeEnumMap[instance.developerType]!;
-  val['displayName'] = instance.displayName;
-  val['friendKey'] = instance.friendKey;
-  writeNotNull('friendRequestStatus', instance.friendRequestStatus);
-  val['id'] = instance.id;
-  writeNotNull('instanceId', instance.instanceId);
-  val['isFriend'] = instance.isFriend;
-  val['last_activity'] = instance.lastActivity;
-  val['last_login'] = instance.lastLogin;
-  writeNotNull('last_mobile', instance.lastMobile);
-  val['last_platform'] = instance.lastPlatform;
-  writeNotNull('location', instance.location);
-  writeNotNull('note', instance.note);
-  writeNotNull('platform', instance.platform);
-  val['profilePicOverride'] = instance.profilePicOverride;
-  val['profilePicOverrideThumbnail'] = instance.profilePicOverrideThumbnail;
-  val['pronouns'] = instance.pronouns;
-  val['state'] = _$UserStateEnumMap[instance.state]!;
-  val['status'] = _$UserStatusEnumMap[instance.status]!;
-  val['statusDescription'] = instance.statusDescription;
-  val['tags'] = instance.tags;
-  writeNotNull('travelingToInstance', instance.travelingToInstance);
-  writeNotNull('travelingToLocation', instance.travelingToLocation);
-  writeNotNull('travelingToWorld', instance.travelingToWorld);
-  val['userIcon'] = instance.userIcon;
-  writeNotNull('username', instance.username);
-  writeNotNull('worldId', instance.worldId);
-  return val;
-}
+const _$AgeVerificationStatusEnumMap = {
+  AgeVerificationStatus.hidden: 'hidden',
+  AgeVerificationStatus.verified: 'verified',
+  AgeVerificationStatus.plus18: '18+',
+};
 
 const _$DeveloperTypeEnumMap = {
   DeveloperType.none: 'none',

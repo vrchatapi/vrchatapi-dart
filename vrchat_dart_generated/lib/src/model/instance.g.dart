@@ -47,7 +47,7 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
         );
         final val = Instance(
           active: $checkedConvert('active', (v) => v as bool? ?? true),
-          ageGate: $checkedConvert('ageGate', (v) => v as String?),
+          ageGate: $checkedConvert('ageGate', (v) => v as bool?),
           canRequestInvite:
               $checkedConvert('canRequestInvite', (v) => v as bool? ?? true),
           capacity: $checkedConvert('capacity', (v) => (v as num).toInt()),
@@ -111,60 +111,53 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
       fieldKeyMap: const {'nUsers': 'n_users'},
     );
 
-Map<String, dynamic> _$InstanceToJson(Instance instance) {
-  final val = <String, dynamic>{
-    'active': instance.active,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('ageGate', instance.ageGate);
-  val['canRequestInvite'] = instance.canRequestInvite;
-  val['capacity'] = instance.capacity;
-  val['clientNumber'] = instance.clientNumber;
-  val['displayName'] = instance.displayName;
-  val['full'] = instance.full;
-  val['gameServerVersion'] = instance.gameServerVersion;
-  val['id'] = instance.id;
-  val['instanceId'] = instance.instanceId;
-  val['instancePersistenceEnabled'] = instance.instancePersistenceEnabled;
-  val['location'] = instance.location;
-  val['n_users'] = instance.nUsers;
-  val['name'] = instance.name;
-  writeNotNull('ownerId', instance.ownerId);
-  val['permanent'] = instance.permanent;
-  val['photonRegion'] = _$RegionEnumMap[instance.photonRegion]!;
-  val['platforms'] = instance.platforms.toJson();
-  val['playerPersistenceEnabled'] = instance.playerPersistenceEnabled;
-  val['region'] = _$InstanceRegionEnumMap[instance.region]!;
-  val['secureName'] = instance.secureName;
-  writeNotNull('shortName', instance.shortName);
-  val['tags'] = instance.tags;
-  val['type'] = _$InstanceTypeEnumMap[instance.type]!;
-  val['worldId'] = instance.worldId;
-  writeNotNull('hidden', instance.hidden);
-  writeNotNull('friends', instance.friends);
-  writeNotNull('private', instance.private);
-  val['queueEnabled'] = instance.queueEnabled;
-  val['queueSize'] = instance.queueSize;
-  val['recommendedCapacity'] = instance.recommendedCapacity;
-  writeNotNull('roleRestricted', instance.roleRestricted);
-  val['strict'] = instance.strict;
-  val['userCount'] = instance.userCount;
-  val['world'] = instance.world.toJson();
-  writeNotNull('users', instance.users?.map((e) => e.toJson()).toList());
-  writeNotNull(
-      'groupAccessType', _$GroupAccessTypeEnumMap[instance.groupAccessType]);
-  writeNotNull('hasCapacityForYou', instance.hasCapacityForYou);
-  writeNotNull('nonce', instance.nonce);
-  writeNotNull('closedAt', instance.closedAt?.toIso8601String());
-  writeNotNull('hardClose', instance.hardClose);
-  return val;
-}
+Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
+      'active': instance.active,
+      if (instance.ageGate case final value?) 'ageGate': value,
+      'canRequestInvite': instance.canRequestInvite,
+      'capacity': instance.capacity,
+      'clientNumber': instance.clientNumber,
+      'displayName': instance.displayName,
+      'full': instance.full,
+      'gameServerVersion': instance.gameServerVersion,
+      'id': instance.id,
+      'instanceId': instance.instanceId,
+      'instancePersistenceEnabled': instance.instancePersistenceEnabled,
+      'location': instance.location,
+      'n_users': instance.nUsers,
+      'name': instance.name,
+      if (instance.ownerId case final value?) 'ownerId': value,
+      'permanent': instance.permanent,
+      'photonRegion': _$RegionEnumMap[instance.photonRegion]!,
+      'platforms': instance.platforms.toJson(),
+      'playerPersistenceEnabled': instance.playerPersistenceEnabled,
+      'region': _$InstanceRegionEnumMap[instance.region]!,
+      'secureName': instance.secureName,
+      if (instance.shortName case final value?) 'shortName': value,
+      'tags': instance.tags,
+      'type': _$InstanceTypeEnumMap[instance.type]!,
+      'worldId': instance.worldId,
+      if (instance.hidden case final value?) 'hidden': value,
+      if (instance.friends case final value?) 'friends': value,
+      if (instance.private case final value?) 'private': value,
+      'queueEnabled': instance.queueEnabled,
+      'queueSize': instance.queueSize,
+      'recommendedCapacity': instance.recommendedCapacity,
+      if (instance.roleRestricted case final value?) 'roleRestricted': value,
+      'strict': instance.strict,
+      'userCount': instance.userCount,
+      'world': instance.world.toJson(),
+      if (instance.users?.map((e) => e.toJson()).toList() case final value?)
+        'users': value,
+      if (_$GroupAccessTypeEnumMap[instance.groupAccessType] case final value?)
+        'groupAccessType': value,
+      if (instance.hasCapacityForYou case final value?)
+        'hasCapacityForYou': value,
+      if (instance.nonce case final value?) 'nonce': value,
+      if (instance.closedAt?.toIso8601String() case final value?)
+        'closedAt': value,
+      if (instance.hardClose case final value?) 'hardClose': value,
+    };
 
 const _$RegionEnumMap = {
   Region.us: 'us',

@@ -23,15 +23,6 @@ Success _$SuccessFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$SuccessToJson(Success instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('success', instance.success?.toJson());
-  return val;
-}
+Map<String, dynamic> _$SuccessToJson(Success instance) => <String, dynamic>{
+      if (instance.success?.toJson() case final value?) 'success': value,
+    };

@@ -23,15 +23,7 @@ RequestInviteRequest _$RequestInviteRequestFromJson(
     );
 
 Map<String, dynamic> _$RequestInviteRequestToJson(
-    RequestInviteRequest instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('messageSlot', instance.messageSlot);
-  return val;
-}
+        RequestInviteRequest instance) =>
+    <String, dynamic>{
+      if (instance.messageSlot case final value?) 'messageSlot': value,
+    };

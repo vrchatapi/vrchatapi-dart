@@ -30,17 +30,10 @@ PaginatedGroupAuditLogEntryList _$PaginatedGroupAuditLogEntryListFromJson(
     );
 
 Map<String, dynamic> _$PaginatedGroupAuditLogEntryListToJson(
-    PaginatedGroupAuditLogEntryList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('results', instance.results?.map((e) => e.toJson()).toList());
-  writeNotNull('totalCount', instance.totalCount);
-  writeNotNull('hasNext', instance.hasNext);
-  return val;
-}
+        PaginatedGroupAuditLogEntryList instance) =>
+    <String, dynamic>{
+      if (instance.results?.map((e) => e.toJson()).toList() case final value?)
+        'results': value,
+      if (instance.totalCount case final value?) 'totalCount': value,
+      if (instance.hasNext case final value?) 'hasNext': value,
+    };

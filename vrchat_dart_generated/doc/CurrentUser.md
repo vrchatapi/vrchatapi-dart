@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **accountDeletionDate** | [**DateTime**](DateTime.md) |  | [optional] 
 **accountDeletionLog** | [**List&lt;AccountDeletionLog&gt;**](AccountDeletionLog.md) |   | [optional] 
 **activeFriends** | **List&lt;String&gt;** |   | [optional] 
-**ageVerificationStatus** | **String** |  | 
+**ageVerificationStatus** | [**AgeVerificationStatus**](AgeVerificationStatus.md) |  | 
 **ageVerified** | **bool** |  | 
 **allowAvatarCopying** | **bool** |  | 
 **badges** | [**List&lt;Badge&gt;**](Badge.md) |   | [optional] 

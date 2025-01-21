@@ -16,6 +16,9 @@ Method | HTTP request | Description
 [**downloadFileVersion**](FilesApi.md#downloadfileversion) | **GET** /file/{fileId}/{versionId} | Download File Version
 [**finishFileDataUpload**](FilesApi.md#finishfiledataupload) | **PUT** /file/{fileId}/{versionId}/{fileType}/finish | Finish FileData Upload
 [**getFile**](FilesApi.md#getfile) | **GET** /file/{fileId} | Show File
+[**getFileAnalysis**](FilesApi.md#getfileanalysis) | **GET** /analysis/{fileId}/{versionId} | Get File Version Analysis
+[**getFileAnalysisSecurity**](FilesApi.md#getfileanalysissecurity) | **GET** /analysis/{fileId}/{versionId}/security | Get File Version Analysis Security
+[**getFileAnalysisStandard**](FilesApi.md#getfileanalysisstandard) | **GET** /analysis/{fileId}/{versionId}/standard | Get File Version Analysis Standard
 [**getFileDataUploadStatus**](FilesApi.md#getfiledatauploadstatus) | **GET** /file/{fileId}/{versionId}/{fileType}/status | Check FileData Upload Status
 [**getFiles**](FilesApi.md#getfiles) | **GET** /files | List Files
 [**startFileDataUpload**](FilesApi.md#startfiledataupload) | **PUT** /file/{fileId}/{versionId}/{fileType}/start | Start FileData Upload
@@ -349,6 +352,153 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**File**](File.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getFileAnalysis**
+> FileAnalysis getFileAnalysis(fileId, versionId)
+
+Get File Version Analysis
+
+Get the performance analysis for the uploaded assets of an avatar
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getFilesApi();
+final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Must be a valid file ID.
+final int versionId = 1; // int | Version ID of the asset.
+
+try {
+    final response = api.getFileAnalysis(fileId, versionId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling FilesApi->getFileAnalysis: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fileId** | **String**| Must be a valid file ID. | 
+ **versionId** | **int**| Version ID of the asset. | 
+
+### Return type
+
+[**FileAnalysis**](FileAnalysis.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getFileAnalysisSecurity**
+> FileAnalysis getFileAnalysisSecurity(fileId, versionId)
+
+Get File Version Analysis Security
+
+Get the security performance analysis for the uploaded assets of an avatar
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getFilesApi();
+final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Must be a valid file ID.
+final int versionId = 1; // int | Version ID of the asset.
+
+try {
+    final response = api.getFileAnalysisSecurity(fileId, versionId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling FilesApi->getFileAnalysisSecurity: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fileId** | **String**| Must be a valid file ID. | 
+ **versionId** | **int**| Version ID of the asset. | 
+
+### Return type
+
+[**FileAnalysis**](FileAnalysis.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getFileAnalysisStandard**
+> FileAnalysis getFileAnalysisStandard(fileId, versionId)
+
+Get File Version Analysis Standard
+
+Get the standard performance analysis for the uploaded assets of an avatar
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getFilesApi();
+final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Must be a valid file ID.
+final int versionId = 1; // int | Version ID of the asset.
+
+try {
+    final response = api.getFileAnalysisStandard(fileId, versionId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling FilesApi->getFileAnalysisStandard: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fileId** | **String**| Must be a valid file ID. | 
+ **versionId** | **int**| Version ID of the asset. | 
+
+### Return type
+
+[**FileAnalysis**](FileAnalysis.md)
 
 ### Authorization
 

@@ -44,36 +44,30 @@ LimitedGroup _$LimitedGroupFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$LimitedGroupToJson(LimitedGroup instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('id', instance.id);
-  writeNotNull('name', instance.name);
-  writeNotNull('shortCode', instance.shortCode);
-  writeNotNull('discriminator', instance.discriminator);
-  writeNotNull('description', instance.description);
-  writeNotNull('iconUrl', instance.iconUrl);
-  writeNotNull('bannerUrl', instance.bannerUrl);
-  writeNotNull('ownerId', instance.ownerId);
-  writeNotNull('rules', instance.rules);
-  writeNotNull('iconId', instance.iconId);
-  writeNotNull('bannerId', instance.bannerId);
-  writeNotNull('memberCount', instance.memberCount);
-  writeNotNull('tags', instance.tags);
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('membershipStatus',
-      _$GroupMemberStatusEnumMap[instance.membershipStatus]);
-  writeNotNull('isSearchable', instance.isSearchable);
-  writeNotNull(
-      'galleries', instance.galleries?.map((e) => e.toJson()).toList());
-  return val;
-}
+Map<String, dynamic> _$LimitedGroupToJson(LimitedGroup instance) =>
+    <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.shortCode case final value?) 'shortCode': value,
+      if (instance.discriminator case final value?) 'discriminator': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.iconUrl case final value?) 'iconUrl': value,
+      if (instance.bannerUrl case final value?) 'bannerUrl': value,
+      if (instance.ownerId case final value?) 'ownerId': value,
+      if (instance.rules case final value?) 'rules': value,
+      if (instance.iconId case final value?) 'iconId': value,
+      if (instance.bannerId case final value?) 'bannerId': value,
+      if (instance.memberCount case final value?) 'memberCount': value,
+      if (instance.tags case final value?) 'tags': value,
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (_$GroupMemberStatusEnumMap[instance.membershipStatus]
+          case final value?)
+        'membershipStatus': value,
+      if (instance.isSearchable case final value?) 'isSearchable': value,
+      if (instance.galleries?.map((e) => e.toJson()).toList() case final value?)
+        'galleries': value,
+    };
 
 const _$GroupMemberStatusEnumMap = {
   GroupMemberStatus.inactive: 'inactive',

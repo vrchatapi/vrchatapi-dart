@@ -36,32 +36,26 @@ RepresentedGroup _$RepresentedGroupFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$RepresentedGroupToJson(RepresentedGroup instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('name', instance.name);
-  writeNotNull('shortCode', instance.shortCode);
-  writeNotNull('discriminator', instance.discriminator);
-  writeNotNull('description', instance.description);
-  writeNotNull('iconId', instance.iconId);
-  writeNotNull('iconUrl', instance.iconUrl);
-  writeNotNull('bannerId', instance.bannerId);
-  writeNotNull('bannerUrl', instance.bannerUrl);
-  writeNotNull('privacy', _$GroupPrivacyEnumMap[instance.privacy]);
-  writeNotNull('ownerId', instance.ownerId);
-  writeNotNull('memberCount', instance.memberCount);
-  writeNotNull('groupId', instance.groupId);
-  writeNotNull('memberVisibility',
-      _$GroupUserVisibilityEnumMap[instance.memberVisibility]);
-  writeNotNull('isRepresenting', instance.isRepresenting);
-  return val;
-}
+Map<String, dynamic> _$RepresentedGroupToJson(RepresentedGroup instance) =>
+    <String, dynamic>{
+      if (instance.name case final value?) 'name': value,
+      if (instance.shortCode case final value?) 'shortCode': value,
+      if (instance.discriminator case final value?) 'discriminator': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.iconId case final value?) 'iconId': value,
+      if (instance.iconUrl case final value?) 'iconUrl': value,
+      if (instance.bannerId case final value?) 'bannerId': value,
+      if (instance.bannerUrl case final value?) 'bannerUrl': value,
+      if (_$GroupPrivacyEnumMap[instance.privacy] case final value?)
+        'privacy': value,
+      if (instance.ownerId case final value?) 'ownerId': value,
+      if (instance.memberCount case final value?) 'memberCount': value,
+      if (instance.groupId case final value?) 'groupId': value,
+      if (_$GroupUserVisibilityEnumMap[instance.memberVisibility]
+          case final value?)
+        'memberVisibility': value,
+      if (instance.isRepresenting case final value?) 'isRepresenting': value,
+    };
 
 const _$GroupPrivacyEnumMap = {
   GroupPrivacy.default_: 'default',

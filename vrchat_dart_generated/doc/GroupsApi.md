@@ -978,7 +978,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getGroupAuditLogs**
-> PaginatedGroupAuditLogEntryList getGroupAuditLogs(groupId, n, offset, startDate, endDate)
+> PaginatedGroupAuditLogEntryList getGroupAuditLogs(groupId, n, offset, startDate, endDate, actorIds, eventTypes, targetIds)
 
 Get Group Audit Logs
 
@@ -998,9 +998,12 @@ final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final DateTime startDate = 2013-10-20T19:20:30+01:00; // DateTime | The start date of the search range.
 final DateTime endDate = 2013-10-20T19:20:30+01:00; // DateTime | The end date of the search range.
+final String actorIds = usr_00000000-0000-0000-0000-000000000000,usr_11111111-1111-1111-1111-111111111111; // String | The comma-separated actor ids to search for.
+final String eventTypes = group.member.remove,group.instance.kick; // String | The comma-separated event types to search for.
+final String targetIds = usr_00000000-0000-0000-0000-000000000000,usr_11111111-1111-1111-1111-111111111111; // String | The comma-separated target ids to search for.
 
 try {
-    final response = api.getGroupAuditLogs(groupId, n, offset, startDate, endDate);
+    final response = api.getGroupAuditLogs(groupId, n, offset, startDate, endDate, actorIds, eventTypes, targetIds);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling GroupsApi->getGroupAuditLogs: $e\n');
@@ -1016,6 +1019,9 @@ Name | Type | Description  | Notes
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
  **startDate** | **DateTime**| The start date of the search range. | [optional] 
  **endDate** | **DateTime**| The end date of the search range. | [optional] 
+ **actorIds** | **String**| The comma-separated actor ids to search for. | [optional] 
+ **eventTypes** | **String**| The comma-separated event types to search for. | [optional] 
+ **targetIds** | **String**| The comma-separated target ids to search for. | [optional] 
 
 ### Return type
 

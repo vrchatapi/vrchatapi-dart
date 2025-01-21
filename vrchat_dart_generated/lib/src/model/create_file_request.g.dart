@@ -30,22 +30,13 @@ CreateFileRequest _$CreateFileRequestFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {'extension_': 'extension'},
     );
 
-Map<String, dynamic> _$CreateFileRequestToJson(CreateFileRequest instance) {
-  final val = <String, dynamic>{
-    'name': instance.name,
-    'mimeType': _$MIMETypeEnumMap[instance.mimeType]!,
-    'extension': instance.extension_,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('tags', instance.tags);
-  return val;
-}
+Map<String, dynamic> _$CreateFileRequestToJson(CreateFileRequest instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'mimeType': _$MIMETypeEnumMap[instance.mimeType]!,
+      'extension': instance.extension_,
+      if (instance.tags case final value?) 'tags': value,
+    };
 
 const _$MIMETypeEnumMap = {
   MIMEType.imageSlashJpeg: 'image/jpeg',

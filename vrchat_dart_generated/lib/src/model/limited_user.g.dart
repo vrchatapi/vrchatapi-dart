@@ -67,39 +67,35 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$LimitedUserToJson(LimitedUser instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('bio', instance.bio);
-  writeNotNull('bioLinks', instance.bioLinks);
-  writeNotNull('currentAvatarImageUrl', instance.currentAvatarImageUrl);
-  writeNotNull('currentAvatarThumbnailImageUrl',
-      instance.currentAvatarThumbnailImageUrl);
-  writeNotNull('currentAvatarTags', instance.currentAvatarTags);
-  val['developerType'] = _$DeveloperTypeEnumMap[instance.developerType]!;
-  val['displayName'] = instance.displayName;
-  writeNotNull('fallbackAvatar', instance.fallbackAvatar);
-  val['id'] = instance.id;
-  val['isFriend'] = instance.isFriend;
-  val['last_platform'] = instance.lastPlatform;
-  writeNotNull('last_login', instance.lastLogin?.toIso8601String());
-  writeNotNull('profilePicOverride', instance.profilePicOverride);
-  writeNotNull('pronouns', instance.pronouns);
-  val['status'] = _$UserStatusEnumMap[instance.status]!;
-  val['statusDescription'] = instance.statusDescription;
-  val['tags'] = instance.tags;
-  writeNotNull('userIcon', instance.userIcon);
-  writeNotNull('username', instance.username);
-  writeNotNull('location', instance.location);
-  writeNotNull('friendKey', instance.friendKey);
-  return val;
-}
+Map<String, dynamic> _$LimitedUserToJson(LimitedUser instance) =>
+    <String, dynamic>{
+      if (instance.bio case final value?) 'bio': value,
+      if (instance.bioLinks case final value?) 'bioLinks': value,
+      if (instance.currentAvatarImageUrl case final value?)
+        'currentAvatarImageUrl': value,
+      if (instance.currentAvatarThumbnailImageUrl case final value?)
+        'currentAvatarThumbnailImageUrl': value,
+      if (instance.currentAvatarTags case final value?)
+        'currentAvatarTags': value,
+      'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
+      'displayName': instance.displayName,
+      if (instance.fallbackAvatar case final value?) 'fallbackAvatar': value,
+      'id': instance.id,
+      'isFriend': instance.isFriend,
+      'last_platform': instance.lastPlatform,
+      if (instance.lastLogin?.toIso8601String() case final value?)
+        'last_login': value,
+      if (instance.profilePicOverride case final value?)
+        'profilePicOverride': value,
+      if (instance.pronouns case final value?) 'pronouns': value,
+      'status': _$UserStatusEnumMap[instance.status]!,
+      'statusDescription': instance.statusDescription,
+      'tags': instance.tags,
+      if (instance.userIcon case final value?) 'userIcon': value,
+      if (instance.username case final value?) 'username': value,
+      if (instance.location case final value?) 'location': value,
+      if (instance.friendKey case final value?) 'friendKey': value,
+    };
 
 const _$DeveloperTypeEnumMap = {
   DeveloperType.none: 'none',

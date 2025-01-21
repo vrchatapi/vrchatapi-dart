@@ -24,16 +24,8 @@ APIConfigConstantsINSTANCEPOPULATIONBRACKETSFEW
         );
 
 Map<String, dynamic> _$APIConfigConstantsINSTANCEPOPULATIONBRACKETSFEWToJson(
-    APIConfigConstantsINSTANCEPOPULATIONBRACKETSFEW instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('max', instance.max);
-  writeNotNull('min', instance.min);
-  return val;
-}
+        APIConfigConstantsINSTANCEPOPULATIONBRACKETSFEW instance) =>
+    <String, dynamic>{
+      if (instance.max case final value?) 'max': value,
+      if (instance.min case final value?) 'min': value,
+    };

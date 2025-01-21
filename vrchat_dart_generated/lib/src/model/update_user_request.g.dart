@@ -37,28 +37,25 @@ UpdateUserRequest _$UpdateUserRequestFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$UpdateUserRequestToJson(UpdateUserRequest instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('email', instance.email);
-  writeNotNull('birthday', instance.birthday?.toIso8601String());
-  writeNotNull('acceptedTOSVersion', instance.acceptedTOSVersion);
-  writeNotNull('tags', instance.tags);
-  writeNotNull('status', _$UserStatusEnumMap[instance.status]);
-  writeNotNull('statusDescription', instance.statusDescription);
-  writeNotNull('bio', instance.bio);
-  writeNotNull('bioLinks', instance.bioLinks);
-  writeNotNull('pronouns', instance.pronouns);
-  writeNotNull('isBoopingEnabled', instance.isBoopingEnabled);
-  writeNotNull('userIcon', instance.userIcon);
-  return val;
-}
+Map<String, dynamic> _$UpdateUserRequestToJson(UpdateUserRequest instance) =>
+    <String, dynamic>{
+      if (instance.email case final value?) 'email': value,
+      if (instance.birthday?.toIso8601String() case final value?)
+        'birthday': value,
+      if (instance.acceptedTOSVersion case final value?)
+        'acceptedTOSVersion': value,
+      if (instance.tags case final value?) 'tags': value,
+      if (_$UserStatusEnumMap[instance.status] case final value?)
+        'status': value,
+      if (instance.statusDescription case final value?)
+        'statusDescription': value,
+      if (instance.bio case final value?) 'bio': value,
+      if (instance.bioLinks case final value?) 'bioLinks': value,
+      if (instance.pronouns case final value?) 'pronouns': value,
+      if (instance.isBoopingEnabled case final value?)
+        'isBoopingEnabled': value,
+      if (instance.userIcon case final value?) 'userIcon': value,
+    };
 
 const _$UserStatusEnumMap = {
   UserStatus.active: 'active',

@@ -1717,6 +1717,9 @@ class GroupsApi {
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [startDate] - The start date of the search range.
   /// * [endDate] - The end date of the search range.
+  /// * [actorIds] - The comma-separated actor ids to search for.
+  /// * [eventTypes] - The comma-separated event types to search for.
+  /// * [targetIds] - The comma-separated target ids to search for.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1732,6 +1735,9 @@ class GroupsApi {
     int? offset,
     DateTime? startDate,
     DateTime? endDate,
+    String? actorIds,
+    String? eventTypes,
+    String? targetIds,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1765,6 +1771,9 @@ class GroupsApi {
       if (offset != null) r'offset': offset,
       if (startDate != null) r'startDate': startDate,
       if (endDate != null) r'endDate': endDate,
+      if (actorIds != null) r'actorIds': actorIds,
+      if (eventTypes != null) r'eventTypes': eventTypes,
+      if (targetIds != null) r'targetIds': targetIds,
     };
 
     final _response = await _dio.request<Object>(

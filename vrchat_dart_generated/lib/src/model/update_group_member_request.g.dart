@@ -26,21 +26,14 @@ UpdateGroupMemberRequest _$UpdateGroupMemberRequestFromJson(
     );
 
 Map<String, dynamic> _$UpdateGroupMemberRequestToJson(
-    UpdateGroupMemberRequest instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('visibility', _$GroupUserVisibilityEnumMap[instance.visibility]);
-  writeNotNull(
-      'isSubscribedToAnnouncements', instance.isSubscribedToAnnouncements);
-  writeNotNull('managerNotes', instance.managerNotes);
-  return val;
-}
+        UpdateGroupMemberRequest instance) =>
+    <String, dynamic>{
+      if (_$GroupUserVisibilityEnumMap[instance.visibility] case final value?)
+        'visibility': value,
+      if (instance.isSubscribedToAnnouncements case final value?)
+        'isSubscribedToAnnouncements': value,
+      if (instance.managerNotes case final value?) 'managerNotes': value,
+    };
 
 const _$GroupUserVisibilityEnumMap = {
   GroupUserVisibility.visible: 'visible',

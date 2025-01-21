@@ -40,29 +40,26 @@ CurrentUserPresence _$CurrentUserPresenceFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$CurrentUserPresenceToJson(CurrentUserPresence instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('avatarThumbnail', instance.avatarThumbnail);
-  writeNotNull('currentAvatarTags', instance.currentAvatarTags);
-  writeNotNull('displayName', instance.displayName);
-  writeNotNull('groups', instance.groups);
-  writeNotNull('id', instance.id);
-  writeNotNull('instance', instance.instance);
-  writeNotNull('instanceType', instance.instanceType);
-  writeNotNull('isRejoining', instance.isRejoining);
-  writeNotNull('platform', instance.platform);
-  writeNotNull('profilePicOverride', instance.profilePicOverride);
-  writeNotNull('status', instance.status);
-  writeNotNull('travelingToInstance', instance.travelingToInstance);
-  writeNotNull('travelingToWorld', instance.travelingToWorld);
-  writeNotNull('userIcon', instance.userIcon);
-  writeNotNull('world', instance.world);
-  return val;
-}
+Map<String, dynamic> _$CurrentUserPresenceToJson(
+        CurrentUserPresence instance) =>
+    <String, dynamic>{
+      if (instance.avatarThumbnail case final value?) 'avatarThumbnail': value,
+      if (instance.currentAvatarTags case final value?)
+        'currentAvatarTags': value,
+      if (instance.displayName case final value?) 'displayName': value,
+      if (instance.groups case final value?) 'groups': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.instance case final value?) 'instance': value,
+      if (instance.instanceType case final value?) 'instanceType': value,
+      if (instance.isRejoining case final value?) 'isRejoining': value,
+      if (instance.platform case final value?) 'platform': value,
+      if (instance.profilePicOverride case final value?)
+        'profilePicOverride': value,
+      if (instance.status case final value?) 'status': value,
+      if (instance.travelingToInstance case final value?)
+        'travelingToInstance': value,
+      if (instance.travelingToWorld case final value?)
+        'travelingToWorld': value,
+      if (instance.userIcon case final value?) 'userIcon': value,
+      if (instance.world case final value?) 'world': value,
+    };

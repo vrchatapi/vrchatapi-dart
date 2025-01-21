@@ -31,22 +31,16 @@ GroupMemberLimitedUser _$GroupMemberLimitedUserFromJson(
     );
 
 Map<String, dynamic> _$GroupMemberLimitedUserToJson(
-    GroupMemberLimitedUser instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('id', instance.id);
-  writeNotNull('displayName', instance.displayName);
-  writeNotNull('thumbnailUrl', instance.thumbnailUrl);
-  writeNotNull('iconUrl', instance.iconUrl);
-  writeNotNull('profilePicOverride', instance.profilePicOverride);
-  writeNotNull('currentAvatarThumbnailImageUrl',
-      instance.currentAvatarThumbnailImageUrl);
-  writeNotNull('currentAvatarTags', instance.currentAvatarTags);
-  return val;
-}
+        GroupMemberLimitedUser instance) =>
+    <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.displayName case final value?) 'displayName': value,
+      if (instance.thumbnailUrl case final value?) 'thumbnailUrl': value,
+      if (instance.iconUrl case final value?) 'iconUrl': value,
+      if (instance.profilePicOverride case final value?)
+        'profilePicOverride': value,
+      if (instance.currentAvatarThumbnailImageUrl case final value?)
+        'currentAvatarThumbnailImageUrl': value,
+      if (instance.currentAvatarTags case final value?)
+        'currentAvatarTags': value,
+    };

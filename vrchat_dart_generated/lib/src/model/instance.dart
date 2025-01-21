@@ -78,7 +78,7 @@ class Instance {
     required: false,
     includeIfNull: false,
   )
-  final String? ageGate;
+  final bool? ageGate;
 
   @JsonKey(
     name: r'canRequestInvite',

@@ -66,27 +66,18 @@ APIConfigReportCategories _$APIConfigReportCategoriesFromJson(
     );
 
 Map<String, dynamic> _$APIConfigReportCategoriesToJson(
-    APIConfigReportCategories instance) {
-  final val = <String, dynamic>{
-    'avatar': instance.avatar.toJson(),
-    'behavior': instance.behavior.toJson(),
-    'chat': instance.chat.toJson(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('emoji', instance.emoji?.toJson());
-  val['environment'] = instance.environment.toJson();
-  val['groupstore'] = instance.groupstore.toJson();
-  val['image'] = instance.image.toJson();
-  val['text'] = instance.text.toJson();
-  writeNotNull('sticker', instance.sticker?.toJson());
-  val['warnings'] = instance.warnings.toJson();
-  val['worldimage'] = instance.worldimage.toJson();
-  val['worldstore'] = instance.worldstore.toJson();
-  return val;
-}
+        APIConfigReportCategories instance) =>
+    <String, dynamic>{
+      'avatar': instance.avatar.toJson(),
+      'behavior': instance.behavior.toJson(),
+      'chat': instance.chat.toJson(),
+      if (instance.emoji?.toJson() case final value?) 'emoji': value,
+      'environment': instance.environment.toJson(),
+      'groupstore': instance.groupstore.toJson(),
+      'image': instance.image.toJson(),
+      'text': instance.text.toJson(),
+      if (instance.sticker?.toJson() case final value?) 'sticker': value,
+      'warnings': instance.warnings.toJson(),
+      'worldimage': instance.worldimage.toJson(),
+      'worldstore': instance.worldstore.toJson(),
+    };

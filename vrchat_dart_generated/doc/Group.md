@@ -8,6 +8,9 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ageVerificationSlotsAvailable** | **bool** |  | [optional] 
+**ageVerificationBetaCode** | **String** |  | [optional] 
+**ageVerificationBetaSlots** | **num** |  | [optional] 
 **badges** | **List&lt;String&gt;** |  | [optional] 
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 

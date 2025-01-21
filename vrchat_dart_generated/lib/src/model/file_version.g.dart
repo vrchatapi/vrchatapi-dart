@@ -44,25 +44,16 @@ FileVersion _$FileVersionFromJson(Map<String, dynamic> json) => $checkedCreate(
       fieldKeyMap: const {'createdAt': 'created_at'},
     );
 
-Map<String, dynamic> _$FileVersionToJson(FileVersion instance) {
-  final val = <String, dynamic>{
-    'created_at': instance.createdAt.toIso8601String(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('deleted', instance.deleted);
-  writeNotNull('delta', instance.delta?.toJson());
-  writeNotNull('file', instance.file?.toJson());
-  writeNotNull('signature', instance.signature?.toJson());
-  val['status'] = _$FileStatusEnumMap[instance.status]!;
-  val['version'] = instance.version;
-  return val;
-}
+Map<String, dynamic> _$FileVersionToJson(FileVersion instance) =>
+    <String, dynamic>{
+      'created_at': instance.createdAt.toIso8601String(),
+      if (instance.deleted case final value?) 'deleted': value,
+      if (instance.delta?.toJson() case final value?) 'delta': value,
+      if (instance.file?.toJson() case final value?) 'file': value,
+      if (instance.signature?.toJson() case final value?) 'signature': value,
+      'status': _$FileStatusEnumMap[instance.status]!,
+      'version': instance.version,
+    };
 
 const _$FileStatusEnumMap = {
   FileStatus.waiting: 'waiting',

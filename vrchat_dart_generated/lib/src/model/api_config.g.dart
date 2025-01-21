@@ -354,132 +354,135 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$APIConfigToJson(APIConfig instance) {
-  final val = <String, dynamic>{
-    'VoiceEnableDegradation': instance.voiceEnableDegradation,
-    'VoiceEnableReceiverLimiting': instance.voiceEnableReceiverLimiting,
-    'address': instance.address,
-    'ageVerificationP': instance.ageVerificationP,
-    'ageVerificationStatusVisible': instance.ageVerificationStatusVisible,
-    'announcements': instance.announcements.map((e) => e.toJson()).toList(),
-    'analyticsSegment_NewUI_PctOfUsers':
-        instance.analyticsSegmentNewUIPctOfUsers,
-    'analyticsSegment_NewUI_Salt': instance.analyticsSegmentNewUISalt,
-    'appName': instance.appName,
-    'availableLanguageCodes': instance.availableLanguageCodes,
-    'availableLanguages': instance.availableLanguages,
-    'avatarPerfLimiter': instance.avatarPerfLimiter.toJson(),
-    'buildVersionTag': instance.buildVersionTag,
-    'chatboxLogBufferSeconds': instance.chatboxLogBufferSeconds,
-    'clientApiKey': instance.clientApiKey,
-    'clientBPSCeiling': instance.clientBPSCeiling,
-    'clientDisconnectTimeout': instance.clientDisconnectTimeout,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('clientNetDispatchThread', instance.clientNetDispatchThread);
-  val['clientNetDispatchThreadMobile'] = instance.clientNetDispatchThreadMobile;
-  writeNotNull('clientNetInThread', instance.clientNetInThread);
-  writeNotNull('clientNetInThread2', instance.clientNetInThread2);
-  writeNotNull('clientNetInThreadMobile', instance.clientNetInThreadMobile);
-  writeNotNull('clientNetInThreadMobile2', instance.clientNetInThreadMobile2);
-  writeNotNull('clientNetOutThread', instance.clientNetOutThread);
-  writeNotNull('clientNetOutThread2', instance.clientNetOutThread2);
-  writeNotNull('clientNetOutThreadMobile', instance.clientNetOutThreadMobile);
-  writeNotNull('clientNetOutThreadMobile2', instance.clientNetOutThreadMobile2);
-  writeNotNull('clientQR', instance.clientQR);
-  val['clientReservedPlayerBPS'] = instance.clientReservedPlayerBPS;
-  val['clientSentCountAllowance'] = instance.clientSentCountAllowance;
-  val['constants'] = instance.constants.toJson();
-  val['contactEmail'] = instance.contactEmail;
-  val['copyrightEmail'] = instance.copyrightEmail;
-  writeNotNull('currentPrivacyVersion', instance.currentPrivacyVersion);
-  val['currentTOSVersion'] = instance.currentTOSVersion;
-  val['defaultAvatar'] = instance.defaultAvatar;
-  val['defaultStickerSet'] = instance.defaultStickerSet;
-  val['deploymentGroup'] = _$DeploymentGroupEnumMap[instance.deploymentGroup]!;
-  writeNotNull('devLanguageCodes', instance.devLanguageCodes);
-  val['devSdkUrl'] = instance.devSdkUrl;
-  val['devSdkVersion'] = instance.devSdkVersion;
-  val['dis-countdown'] = instance.disCountdown.toIso8601String();
-  writeNotNull('disableAVProInProton', instance.disableAVProInProton);
-  val['disableAvatarCopying'] = instance.disableAvatarCopying;
-  val['disableAvatarGating'] = instance.disableAvatarGating;
-  val['disableCommunityLabs'] = instance.disableCommunityLabs;
-  val['disableCommunityLabsPromotion'] = instance.disableCommunityLabsPromotion;
-  val['disableEmail'] = instance.disableEmail;
-  writeNotNull('disableCaptcha', instance.disableCaptcha);
-  val['disableEventStream'] = instance.disableEventStream;
-  val['disableFeedbackGating'] = instance.disableFeedbackGating;
-  val['disableFrontendBuilds'] = instance.disableFrontendBuilds;
-  val['disableHello'] = instance.disableHello;
-  val['disableOculusSubs'] = instance.disableOculusSubs;
-  val['disableRegistration'] = instance.disableRegistration;
-  val['disableSteamNetworking'] = instance.disableSteamNetworking;
-  val['disableTwoFactorAuth'] = instance.disableTwoFactorAuth;
-  val['disableUdon'] = instance.disableUdon;
-  val['disableUpgradeAccount'] = instance.disableUpgradeAccount;
-  val['downloadLinkWindows'] = instance.downloadLinkWindows;
-  val['downloadUrls'] = instance.downloadUrls.toJson();
-  val['dynamicWorldRows'] =
-      instance.dynamicWorldRows.map((e) => e.toJson()).toList();
-  writeNotNull('economyPauseEnd', instance.economyPauseEnd);
-  writeNotNull('economyPauseStart', instance.economyPauseStart);
-  writeNotNull('economyState', instance.economyState);
-  val['events'] = instance.events.toJson();
-  val['forceUseLatestWorld'] = instance.forceUseLatestWorld;
-  val['googleApiClientId'] = instance.googleApiClientId;
-  val['homeWorldId'] = instance.homeWorldId;
-  val['homepageRedirectTarget'] = instance.homepageRedirectTarget;
-  val['hubWorldId'] = instance.hubWorldId;
-  val['imageHostUrlList'] = instance.imageHostUrlList;
-  val['jobsEmail'] = instance.jobsEmail;
-  val['minSupportedClientBuildNumber'] =
-      instance.minSupportedClientBuildNumber.toJson();
-  val['minimumUnityVersionForUploads'] = instance.minimumUnityVersionForUploads;
-  val['moderationEmail'] = instance.moderationEmail;
-  val['notAllowedToSelectAvatarInPrivateWorldMessage'] =
-      instance.notAllowedToSelectAvatarInPrivateWorldMessage;
-  val['offlineAnalysis'] = instance.offlineAnalysis.toJson();
-  val['photonNameserverOverrides'] = instance.photonNameserverOverrides;
-  val['photonPublicKeys'] = instance.photonPublicKeys;
-  val['reportCategories'] = instance.reportCategories.toJson();
-  val['reportFormUrl'] = instance.reportFormUrl;
-  val['reportOptions'] = instance.reportOptions;
-  val['reportReasons'] = instance.reportReasons.toJson();
-  val['sdkDeveloperFaqUrl'] = instance.sdkDeveloperFaqUrl;
-  val['sdkDiscordUrl'] = instance.sdkDiscordUrl;
-  val['sdkNotAllowedToPublishMessage'] = instance.sdkNotAllowedToPublishMessage;
-  val['sdkUnityVersion'] = instance.sdkUnityVersion;
-  val['serverName'] = instance.serverName;
-  val['stringHostUrlList'] = instance.stringHostUrlList;
-  val['supportEmail'] = instance.supportEmail;
-  val['supportFormUrl'] = instance.supportFormUrl;
-  val['timekeeping'] = instance.timekeeping;
-  val['timeOutWorldId'] = instance.timeOutWorldId;
-  val['tutorialWorldId'] = instance.tutorialWorldId;
-  val['updateRateMsMaximum'] = instance.updateRateMsMaximum;
-  val['updateRateMsMinimum'] = instance.updateRateMsMinimum;
-  val['updateRateMsNormal'] = instance.updateRateMsNormal;
-  val['updateRateMsUdonManual'] = instance.updateRateMsUdonManual;
-  val['uploadAnalysisPercent'] = instance.uploadAnalysisPercent;
-  val['urlList'] = instance.urlList;
-  val['useReliableUdpForVoice'] = instance.useReliableUdpForVoice;
-  val['viveWindowsUrl'] = instance.viveWindowsUrl;
-  val['whiteListedAssetUrls'] = instance.whiteListedAssetUrls;
-  val['player-url-resolver-version'] = instance.playerUrlResolverVersion;
-  val['player-url-resolver-sha1'] = instance.playerUrlResolverSha1;
-  val['websocketMaxFriendsRefreshDelay'] =
-      instance.websocketMaxFriendsRefreshDelay;
-  val['websocketQuickReconnectTime'] = instance.websocketQuickReconnectTime;
-  val['websocketReconnectMaxDelay'] = instance.websocketReconnectMaxDelay;
-  return val;
-}
+Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
+      'VoiceEnableDegradation': instance.voiceEnableDegradation,
+      'VoiceEnableReceiverLimiting': instance.voiceEnableReceiverLimiting,
+      'address': instance.address,
+      'ageVerificationP': instance.ageVerificationP,
+      'ageVerificationStatusVisible': instance.ageVerificationStatusVisible,
+      'announcements': instance.announcements.map((e) => e.toJson()).toList(),
+      'analyticsSegment_NewUI_PctOfUsers':
+          instance.analyticsSegmentNewUIPctOfUsers,
+      'analyticsSegment_NewUI_Salt': instance.analyticsSegmentNewUISalt,
+      'appName': instance.appName,
+      'availableLanguageCodes': instance.availableLanguageCodes,
+      'availableLanguages': instance.availableLanguages,
+      'avatarPerfLimiter': instance.avatarPerfLimiter.toJson(),
+      'buildVersionTag': instance.buildVersionTag,
+      'chatboxLogBufferSeconds': instance.chatboxLogBufferSeconds,
+      'clientApiKey': instance.clientApiKey,
+      'clientBPSCeiling': instance.clientBPSCeiling,
+      'clientDisconnectTimeout': instance.clientDisconnectTimeout,
+      if (instance.clientNetDispatchThread case final value?)
+        'clientNetDispatchThread': value,
+      'clientNetDispatchThreadMobile': instance.clientNetDispatchThreadMobile,
+      if (instance.clientNetInThread case final value?)
+        'clientNetInThread': value,
+      if (instance.clientNetInThread2 case final value?)
+        'clientNetInThread2': value,
+      if (instance.clientNetInThreadMobile case final value?)
+        'clientNetInThreadMobile': value,
+      if (instance.clientNetInThreadMobile2 case final value?)
+        'clientNetInThreadMobile2': value,
+      if (instance.clientNetOutThread case final value?)
+        'clientNetOutThread': value,
+      if (instance.clientNetOutThread2 case final value?)
+        'clientNetOutThread2': value,
+      if (instance.clientNetOutThreadMobile case final value?)
+        'clientNetOutThreadMobile': value,
+      if (instance.clientNetOutThreadMobile2 case final value?)
+        'clientNetOutThreadMobile2': value,
+      if (instance.clientQR case final value?) 'clientQR': value,
+      'clientReservedPlayerBPS': instance.clientReservedPlayerBPS,
+      'clientSentCountAllowance': instance.clientSentCountAllowance,
+      'constants': instance.constants.toJson(),
+      'contactEmail': instance.contactEmail,
+      'copyrightEmail': instance.copyrightEmail,
+      if (instance.currentPrivacyVersion case final value?)
+        'currentPrivacyVersion': value,
+      'currentTOSVersion': instance.currentTOSVersion,
+      'defaultAvatar': instance.defaultAvatar,
+      'defaultStickerSet': instance.defaultStickerSet,
+      'deploymentGroup': _$DeploymentGroupEnumMap[instance.deploymentGroup]!,
+      if (instance.devLanguageCodes case final value?)
+        'devLanguageCodes': value,
+      'devSdkUrl': instance.devSdkUrl,
+      'devSdkVersion': instance.devSdkVersion,
+      'dis-countdown': instance.disCountdown.toIso8601String(),
+      if (instance.disableAVProInProton case final value?)
+        'disableAVProInProton': value,
+      'disableAvatarCopying': instance.disableAvatarCopying,
+      'disableAvatarGating': instance.disableAvatarGating,
+      'disableCommunityLabs': instance.disableCommunityLabs,
+      'disableCommunityLabsPromotion': instance.disableCommunityLabsPromotion,
+      'disableEmail': instance.disableEmail,
+      if (instance.disableCaptcha case final value?) 'disableCaptcha': value,
+      'disableEventStream': instance.disableEventStream,
+      'disableFeedbackGating': instance.disableFeedbackGating,
+      'disableFrontendBuilds': instance.disableFrontendBuilds,
+      'disableHello': instance.disableHello,
+      'disableOculusSubs': instance.disableOculusSubs,
+      'disableRegistration': instance.disableRegistration,
+      'disableSteamNetworking': instance.disableSteamNetworking,
+      'disableTwoFactorAuth': instance.disableTwoFactorAuth,
+      'disableUdon': instance.disableUdon,
+      'disableUpgradeAccount': instance.disableUpgradeAccount,
+      'downloadLinkWindows': instance.downloadLinkWindows,
+      'downloadUrls': instance.downloadUrls.toJson(),
+      'dynamicWorldRows':
+          instance.dynamicWorldRows.map((e) => e.toJson()).toList(),
+      if (instance.economyPauseEnd case final value?) 'economyPauseEnd': value,
+      if (instance.economyPauseStart case final value?)
+        'economyPauseStart': value,
+      if (instance.economyState case final value?) 'economyState': value,
+      'events': instance.events.toJson(),
+      'forceUseLatestWorld': instance.forceUseLatestWorld,
+      'googleApiClientId': instance.googleApiClientId,
+      'homeWorldId': instance.homeWorldId,
+      'homepageRedirectTarget': instance.homepageRedirectTarget,
+      'hubWorldId': instance.hubWorldId,
+      'imageHostUrlList': instance.imageHostUrlList,
+      'jobsEmail': instance.jobsEmail,
+      'minSupportedClientBuildNumber':
+          instance.minSupportedClientBuildNumber.toJson(),
+      'minimumUnityVersionForUploads': instance.minimumUnityVersionForUploads,
+      'moderationEmail': instance.moderationEmail,
+      'notAllowedToSelectAvatarInPrivateWorldMessage':
+          instance.notAllowedToSelectAvatarInPrivateWorldMessage,
+      'offlineAnalysis': instance.offlineAnalysis.toJson(),
+      'photonNameserverOverrides': instance.photonNameserverOverrides,
+      'photonPublicKeys': instance.photonPublicKeys,
+      'reportCategories': instance.reportCategories.toJson(),
+      'reportFormUrl': instance.reportFormUrl,
+      'reportOptions': instance.reportOptions,
+      'reportReasons': instance.reportReasons.toJson(),
+      'sdkDeveloperFaqUrl': instance.sdkDeveloperFaqUrl,
+      'sdkDiscordUrl': instance.sdkDiscordUrl,
+      'sdkNotAllowedToPublishMessage': instance.sdkNotAllowedToPublishMessage,
+      'sdkUnityVersion': instance.sdkUnityVersion,
+      'serverName': instance.serverName,
+      'stringHostUrlList': instance.stringHostUrlList,
+      'supportEmail': instance.supportEmail,
+      'supportFormUrl': instance.supportFormUrl,
+      'timekeeping': instance.timekeeping,
+      'timeOutWorldId': instance.timeOutWorldId,
+      'tutorialWorldId': instance.tutorialWorldId,
+      'updateRateMsMaximum': instance.updateRateMsMaximum,
+      'updateRateMsMinimum': instance.updateRateMsMinimum,
+      'updateRateMsNormal': instance.updateRateMsNormal,
+      'updateRateMsUdonManual': instance.updateRateMsUdonManual,
+      'uploadAnalysisPercent': instance.uploadAnalysisPercent,
+      'urlList': instance.urlList,
+      'useReliableUdpForVoice': instance.useReliableUdpForVoice,
+      'viveWindowsUrl': instance.viveWindowsUrl,
+      'whiteListedAssetUrls': instance.whiteListedAssetUrls,
+      'player-url-resolver-version': instance.playerUrlResolverVersion,
+      'player-url-resolver-sha1': instance.playerUrlResolverSha1,
+      'websocketMaxFriendsRefreshDelay':
+          instance.websocketMaxFriendsRefreshDelay,
+      'websocketQuickReconnectTime': instance.websocketQuickReconnectTime,
+      'websocketReconnectMaxDelay': instance.websocketReconnectMaxDelay,
+    };
 
 const _$DeploymentGroupEnumMap = {
   DeploymentGroup.blue: 'blue',

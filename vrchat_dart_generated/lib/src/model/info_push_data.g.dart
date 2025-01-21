@@ -39,22 +39,15 @@ InfoPushData _$InfoPushDataFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$InfoPushDataToJson(InfoPushData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('contentList', instance.contentList?.toJson());
-  writeNotNull('description', instance.description);
-  writeNotNull('imageUrl', instance.imageUrl);
-  writeNotNull('name', instance.name);
-  writeNotNull('onPressed', instance.onPressed?.toJson());
-  writeNotNull('template', instance.template);
-  writeNotNull('version', instance.version);
-  writeNotNull('article', instance.article?.toJson());
-  return val;
-}
+Map<String, dynamic> _$InfoPushDataToJson(InfoPushData instance) =>
+    <String, dynamic>{
+      if (instance.contentList?.toJson() case final value?)
+        'contentList': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.imageUrl case final value?) 'imageUrl': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.onPressed?.toJson() case final value?) 'onPressed': value,
+      if (instance.template case final value?) 'template': value,
+      if (instance.version case final value?) 'version': value,
+      if (instance.article?.toJson() case final value?) 'article': value,
+    };

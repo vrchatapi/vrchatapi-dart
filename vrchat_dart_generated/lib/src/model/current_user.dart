@@ -9,6 +9,7 @@ import 'package:vrchat_dart_generated/src/model/past_display_name.dart';
 import 'package:vrchat_dart_generated/src/model/current_user_presence.dart';
 import 'package:vrchat_dart_generated/src/model/account_deletion_log.dart';
 import 'package:vrchat_dart_generated/src/model/badge.dart';
+import 'package:vrchat_dart_generated/src/model/age_verification_status.dart';
 import 'package:vrchat_dart_generated/src/model/user_state.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -139,7 +140,7 @@ class CurrentUser {
     required: true,
     includeIfNull: false,
   )
-  final String ageVerificationStatus;
+  final AgeVerificationStatus ageVerificationStatus;
 
   @JsonKey(
     name: r'ageVerified',

@@ -42,28 +42,19 @@ Subscription _$SubscriptionFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$SubscriptionToJson(Subscription instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'steamItemId': instance.steamItemId,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('oculusSku', instance.oculusSku);
-  writeNotNull('googleProductId', instance.googleProductId);
-  writeNotNull('googlePlanId', instance.googlePlanId);
-  writeNotNull('picoSku', instance.picoSku);
-  val['amount'] = instance.amount;
-  val['description'] = instance.description;
-  val['period'] = _$SubscriptionPeriodEnumMap[instance.period]!;
-  val['tier'] = instance.tier;
-  return val;
-}
+Map<String, dynamic> _$SubscriptionToJson(Subscription instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'steamItemId': instance.steamItemId,
+      if (instance.oculusSku case final value?) 'oculusSku': value,
+      if (instance.googleProductId case final value?) 'googleProductId': value,
+      if (instance.googlePlanId case final value?) 'googlePlanId': value,
+      if (instance.picoSku case final value?) 'picoSku': value,
+      'amount': instance.amount,
+      'description': instance.description,
+      'period': _$SubscriptionPeriodEnumMap[instance.period]!,
+      'tier': instance.tier,
+    };
 
 const _$SubscriptionPeriodEnumMap = {
   SubscriptionPeriod.hour: 'hour',
