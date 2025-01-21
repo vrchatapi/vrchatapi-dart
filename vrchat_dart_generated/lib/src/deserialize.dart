@@ -367,6 +367,7 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'GroupPermission':
       return GroupPermission.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'GroupPermissions':
     case 'GroupPost':
       return GroupPost.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'GroupPostVisibility':

@@ -104,6 +104,7 @@ export 'package:vrchat_dart_generated/src/model/group_member_limited_user.dart';
 export 'package:vrchat_dart_generated/src/model/group_member_status.dart';
 export 'package:vrchat_dart_generated/src/model/group_my_member.dart';
 export 'package:vrchat_dart_generated/src/model/group_permission.dart';
+export 'package:vrchat_dart_generated/src/model/group_permissions.dart';
 export 'package:vrchat_dart_generated/src/model/group_post.dart';
 export 'package:vrchat_dart_generated/src/model/group_post_visibility.dart';
 export 'package:vrchat_dart_generated/src/model/group_privacy.dart';

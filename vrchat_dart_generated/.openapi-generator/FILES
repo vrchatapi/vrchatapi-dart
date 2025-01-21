@@ -85,6 +85,7 @@ doc/GroupMemberLimitedUser.md
 doc/GroupMemberStatus.md
 doc/GroupMyMember.md
 doc/GroupPermission.md
+doc/GroupPermissions.md
 doc/GroupPost.md
 doc/GroupPostVisibility.md
 doc/GroupPrivacy.md
@@ -300,6 +301,7 @@ lib/src/model/group_member_limited_user.dart
 lib/src/model/group_member_status.dart
 lib/src/model/group_my_member.dart
 lib/src/model/group_permission.dart
+lib/src/model/group_permissions.dart
 lib/src/model/group_post.dart
 lib/src/model/group_post_visibility.dart
 lib/src/model/group_privacy.dart
@@ -488,6 +490,7 @@ test/group_member_status_test.dart
 test/group_member_test.dart
 test/group_my_member_test.dart
 test/group_permission_test.dart
+test/group_permissions_test.dart
 test/group_post_test.dart
 test/group_post_visibility_test.dart
 test/group_privacy_test.dart
