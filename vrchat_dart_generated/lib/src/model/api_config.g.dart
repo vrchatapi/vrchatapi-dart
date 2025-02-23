@@ -17,9 +17,13 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
           requiredKeys: const [
             'VoiceEnableDegradation',
             'VoiceEnableReceiverLimiting',
+            'accessLogsUrls',
             'address',
+            'ageVerificationInviteVisible',
             'ageVerificationP',
             'ageVerificationStatusVisible',
+            'analysisMaxRetries',
+            'analysisRetryInterval',
             'announcements',
             'analyticsSegment_NewUI_PctOfUsers',
             'analyticsSegment_NewUI_Salt',
@@ -53,6 +57,7 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             'disableEventStream',
             'disableFeedbackGating',
             'disableFrontendBuilds',
+            'disableGiftDrops',
             'disableHello',
             'disableOculusSubs',
             'disableRegistration',
@@ -65,6 +70,7 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             'dynamicWorldRows',
             'events',
             'forceUseLatestWorld',
+            'giftDisplayType',
             'googleApiClientId',
             'homeWorldId',
             'homepageRedirectTarget',
@@ -82,6 +88,7 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             'reportFormUrl',
             'reportOptions',
             'reportReasons',
+            'requireAgeVerificationBetaTag',
             'sdkDeveloperFaqUrl',
             'sdkDiscordUrl',
             'sdkNotAllowedToPublishMessage',
@@ -114,11 +121,21 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               'VoiceEnableDegradation', (v) => v as bool? ?? false),
           voiceEnableReceiverLimiting: $checkedConvert(
               'VoiceEnableReceiverLimiting', (v) => v as bool? ?? true),
+          accessLogsUrls: $checkedConvert(
+              'accessLogsUrls',
+              (v) =>
+                  APIConfigAccessLogsUrls.fromJson(v as Map<String, dynamic>)),
           address: $checkedConvert('address', (v) => v as String),
+          ageVerificationInviteVisible:
+              $checkedConvert('ageVerificationInviteVisible', (v) => v as bool),
           ageVerificationP:
               $checkedConvert('ageVerificationP', (v) => v as bool),
           ageVerificationStatusVisible:
               $checkedConvert('ageVerificationStatusVisible', (v) => v as bool),
+          analysisMaxRetries:
+              $checkedConvert('analysisMaxRetries', (v) => (v as num).toInt()),
+          analysisRetryInterval: $checkedConvert(
+              'analysisRetryInterval', (v) => (v as num).toInt()),
           announcements: $checkedConvert(
               'announcements',
               (v) => (v as List<dynamic>)
@@ -212,6 +229,8 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               'disableFeedbackGating', (v) => v as bool? ?? false),
           disableFrontendBuilds: $checkedConvert(
               'disableFrontendBuilds', (v) => v as bool? ?? false),
+          disableGiftDrops:
+              $checkedConvert('disableGiftDrops', (v) => v as bool? ?? false),
           disableHello:
               $checkedConvert('disableHello', (v) => v as bool? ?? false),
           disableOculusSubs:
@@ -248,6 +267,8 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => APIConfigEvents.fromJson(v as Map<String, dynamic>)),
           forceUseLatestWorld:
               $checkedConvert('forceUseLatestWorld', (v) => v as bool? ?? true),
+          giftDisplayType:
+              $checkedConvert('giftDisplayType', (v) => v as String),
           googleApiClientId: $checkedConvert(
               'googleApiClientId',
               (v) =>
@@ -290,11 +311,16 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) =>
                   v as String? ??
                   'https://help.vrchat.com/hc/en-us/requests/new?ticket_form_id=1500000182242&tf_360056455174=user_report&tf_360057451993={userId}&tf_1500001445142={reportedId}&tf_subject={reason} {category} By {contentType} {reportedName}&tf_description={description}'),
-          reportOptions: $checkedConvert('reportOptions', (v) => v as Object),
+          reportOptions: $checkedConvert(
+              'reportOptions',
+              (v) =>
+                  APIConfigReportOptions.fromJson(v as Map<String, dynamic>)),
           reportReasons: $checkedConvert(
               'reportReasons',
               (v) =>
                   APIConfigReportReasons.fromJson(v as Map<String, dynamic>)),
+          requireAgeVerificationBetaTag: $checkedConvert(
+              'requireAgeVerificationBetaTag', (v) => v as bool),
           sdkDeveloperFaqUrl:
               $checkedConvert('sdkDeveloperFaqUrl', (v) => v as String),
           sdkDiscordUrl: $checkedConvert('sdkDiscordUrl', (v) => v as String),
@@ -357,9 +383,13 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
 Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
       'VoiceEnableDegradation': instance.voiceEnableDegradation,
       'VoiceEnableReceiverLimiting': instance.voiceEnableReceiverLimiting,
+      'accessLogsUrls': instance.accessLogsUrls.toJson(),
       'address': instance.address,
+      'ageVerificationInviteVisible': instance.ageVerificationInviteVisible,
       'ageVerificationP': instance.ageVerificationP,
       'ageVerificationStatusVisible': instance.ageVerificationStatusVisible,
+      'analysisMaxRetries': instance.analysisMaxRetries,
+      'analysisRetryInterval': instance.analysisRetryInterval,
       'announcements': instance.announcements.map((e) => e.toJson()).toList(),
       'analyticsSegment_NewUI_PctOfUsers':
           instance.analyticsSegmentNewUIPctOfUsers,
@@ -420,6 +450,7 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
       'disableEventStream': instance.disableEventStream,
       'disableFeedbackGating': instance.disableFeedbackGating,
       'disableFrontendBuilds': instance.disableFrontendBuilds,
+      'disableGiftDrops': instance.disableGiftDrops,
       'disableHello': instance.disableHello,
       'disableOculusSubs': instance.disableOculusSubs,
       'disableRegistration': instance.disableRegistration,
@@ -437,6 +468,7 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
       if (instance.economyState case final value?) 'economyState': value,
       'events': instance.events.toJson(),
       'forceUseLatestWorld': instance.forceUseLatestWorld,
+      'giftDisplayType': instance.giftDisplayType,
       'googleApiClientId': instance.googleApiClientId,
       'homeWorldId': instance.homeWorldId,
       'homepageRedirectTarget': instance.homepageRedirectTarget,
@@ -454,8 +486,9 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
       'photonPublicKeys': instance.photonPublicKeys,
       'reportCategories': instance.reportCategories.toJson(),
       'reportFormUrl': instance.reportFormUrl,
-      'reportOptions': instance.reportOptions,
+      'reportOptions': instance.reportOptions.toJson(),
       'reportReasons': instance.reportReasons.toJson(),
+      'requireAgeVerificationBetaTag': instance.requireAgeVerificationBetaTag,
       'sdkDeveloperFaqUrl': instance.sdkDeveloperFaqUrl,
       'sdkDiscordUrl': instance.sdkDiscordUrl,
       'sdkNotAllowedToPublishMessage': instance.sdkNotAllowedToPublishMessage,

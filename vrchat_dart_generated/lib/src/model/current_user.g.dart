@@ -161,6 +161,12 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => v == null
                   ? null
                   : CurrentUserPresence.fromJson(v as Map<String, dynamic>)),
+          platformHistory: $checkedConvert(
+              'platform_history',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => CurrentUserPlatformHistoryInner.fromJson(
+                      e as Map<String, dynamic>))
+                  .toList()),
           profilePicOverride:
               $checkedConvert('profilePicOverride', (v) => v as String),
           profilePicOverrideThumbnail: $checkedConvert(
@@ -201,6 +207,7 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'lastLogin': 'last_login',
         'lastMobile': 'last_mobile',
         'lastPlatform': 'last_platform',
+        'platformHistory': 'platform_history',
         'updatedAt': 'updated_at'
       },
     );
@@ -269,6 +276,9 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) =>
       'pastDisplayNames':
           instance.pastDisplayNames.map((e) => e.toJson()).toList(),
       if (instance.presence?.toJson() case final value?) 'presence': value,
+      if (instance.platformHistory?.map((e) => e.toJson()).toList()
+          case final value?)
+        'platform_history': value,
       'profilePicOverride': instance.profilePicOverride,
       'profilePicOverrideThumbnail': instance.profilePicOverrideThumbnail,
       'pronouns': instance.pronouns,

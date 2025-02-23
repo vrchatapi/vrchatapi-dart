@@ -1,4 +1,4 @@
-# vrchat_dart_generated.model.PlatformBuildInfo
+# vrchat_dart_generated.model.APIConfigReportOptionsGroup
 
 ## Load the model package
 ```dart
@@ -8,8 +8,9 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**minBuildNumber** | **int** | Minimum build number required for the platform | 
-**redirectionAddress** | **String** | Redirection URL for updating the app | [optional] 
+**groupstore** | **List&lt;String&gt;** |  | [optional] 
+**image** | **List&lt;String&gt;** |  | [optional] 
+**text** | **List&lt;String&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -16,6 +16,7 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
           json,
           requiredKeys: const [
             'ageVerificationStatus',
+            'ageVerified',
             'allowAvatarCopying',
             'bio',
             'bioLinks',
@@ -44,6 +45,7 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
         final val = User(
           ageVerificationStatus: $checkedConvert('ageVerificationStatus',
               (v) => $enumDecode(_$AgeVerificationStatusEnumMap, v)),
+          ageVerified: $checkedConvert('ageVerified', (v) => v as bool),
           allowAvatarCopying:
               $checkedConvert('allowAvatarCopying', (v) => v as bool? ?? true),
           badges: $checkedConvert(
@@ -115,6 +117,7 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'ageVerificationStatus':
           _$AgeVerificationStatusEnumMap[instance.ageVerificationStatus]!,
+      'ageVerified': instance.ageVerified,
       'allowAvatarCopying': instance.allowAvatarCopying,
       if (instance.badges?.map((e) => e.toJson()).toList() case final value?)
         'badges': value,

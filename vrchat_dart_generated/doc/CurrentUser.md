@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **accountDeletionLog** | [**List&lt;AccountDeletionLog&gt;**](AccountDeletionLog.md) |   | [optional] 
 **activeFriends** | **List&lt;String&gt;** |   | [optional] 
 **ageVerificationStatus** | [**AgeVerificationStatus**](AgeVerificationStatus.md) |  | 
-**ageVerified** | **bool** |  | 
+**ageVerified** | **bool** | `true` if, user is age verified (not 18+). | 
 **allowAvatarCopying** | **bool** |  | 
 **badges** | [**List&lt;Badge&gt;**](Badge.md) |   | [optional] 
 **bio** | **String** |  | 
@@ -59,6 +59,7 @@ Name | Type | Description | Notes
 **onlineFriends** | **List&lt;String&gt;** |  | [optional] 
 **pastDisplayNames** | [**List&lt;PastDisplayName&gt;**](PastDisplayName.md) |   | 
 **presence** | [**CurrentUserPresence**](CurrentUserPresence.md) |  | [optional] 
+**platformHistory** | [**List&lt;CurrentUserPlatformHistoryInner&gt;**](CurrentUserPlatformHistoryInner.md) |  | [optional] 
 **profilePicOverride** | **String** |  | 
 **profilePicOverrideThumbnail** | **String** |  | 
 **pronouns** | **String** |  | 

@@ -17,7 +17,7 @@ class PlatformBuildInfo {
   /// Returns a new [PlatformBuildInfo] instance.
   PlatformBuildInfo({
     required this.minBuildNumber,
-    required this.redirectionAddress,
+    this.redirectionAddress,
   });
 
   /// Minimum build number required for the platform
@@ -31,10 +31,10 @@ class PlatformBuildInfo {
   /// Redirection URL for updating the app
   @JsonKey(
     name: r'redirectionAddress',
-    required: true,
+    required: false,
     includeIfNull: false,
   )
-  final String redirectionAddress;
+  final String? redirectionAddress;
 
   @override
   bool operator ==(Object other) =>

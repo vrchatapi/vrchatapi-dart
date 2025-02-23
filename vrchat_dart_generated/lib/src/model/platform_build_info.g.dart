@@ -15,13 +15,13 @@ PlatformBuildInfo _$PlatformBuildInfoFromJson(Map<String, dynamic> json) =>
       ($checkedConvert) {
         $checkKeys(
           json,
-          requiredKeys: const ['minBuildNumber', 'redirectionAddress'],
+          requiredKeys: const ['minBuildNumber'],
         );
         final val = PlatformBuildInfo(
           minBuildNumber:
               $checkedConvert('minBuildNumber', (v) => (v as num).toInt()),
           redirectionAddress:
-              $checkedConvert('redirectionAddress', (v) => v as String),
+              $checkedConvert('redirectionAddress', (v) => v as String?),
         );
         return val;
       },
@@ -30,5 +30,6 @@ PlatformBuildInfo _$PlatformBuildInfoFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$PlatformBuildInfoToJson(PlatformBuildInfo instance) =>
     <String, dynamic>{
       'minBuildNumber': instance.minBuildNumber,
-      'redirectionAddress': instance.redirectionAddress,
+      if (instance.redirectionAddress case final value?)
+        'redirectionAddress': value,
     };
