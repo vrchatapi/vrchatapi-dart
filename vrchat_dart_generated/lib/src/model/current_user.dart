@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/current_user_platform_history_inner.dart';
 import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
 import 'package:vrchat_dart_generated/src/model/past_display_name.dart';
@@ -75,6 +76,7 @@ class CurrentUser {
     this.onlineFriends,
     required this.pastDisplayNames,
     this.presence,
+    this.platformHistory,
     required this.profilePicOverride,
     required this.profilePicOverrideThumbnail,
     required this.pronouns,
@@ -142,6 +144,7 @@ class CurrentUser {
   )
   final AgeVerificationStatus ageVerificationStatus;
 
+  /// `true` if, user is age verified (not 18+).
   @JsonKey(
     name: r'ageVerified',
     required: true,
@@ -468,6 +471,13 @@ class CurrentUser {
   final CurrentUserPresence? presence;
 
   @JsonKey(
+    name: r'platform_history',
+    required: false,
+    includeIfNull: false,
+  )
+  final List<CurrentUserPlatformHistoryInner>? platformHistory;
+
+  @JsonKey(
     name: r'profilePicOverride',
     required: true,
     includeIfNull: false,
@@ -659,6 +669,7 @@ class CurrentUser {
           other.onlineFriends == onlineFriends &&
           other.pastDisplayNames == pastDisplayNames &&
           other.presence == presence &&
+          other.platformHistory == platformHistory &&
           other.profilePicOverride == profilePicOverride &&
           other.profilePicOverrideThumbnail == profilePicOverrideThumbnail &&
           other.pronouns == pronouns &&
@@ -734,6 +745,7 @@ class CurrentUser {
       onlineFriends.hashCode +
       pastDisplayNames.hashCode +
       presence.hashCode +
+      platformHistory.hashCode +
       profilePicOverride.hashCode +
       profilePicOverrideThumbnail.hashCode +
       pronouns.hashCode +

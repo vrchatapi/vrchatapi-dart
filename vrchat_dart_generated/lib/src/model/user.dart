@@ -22,6 +22,7 @@ class User {
   /// Returns a new [User] instance.
   User({
     required this.ageVerificationStatus,
+    required this.ageVerified,
     this.allowAvatarCopying = true,
     this.badges,
     required this.bio,
@@ -65,6 +66,14 @@ class User {
     includeIfNull: false,
   )
   final AgeVerificationStatus ageVerificationStatus;
+
+  /// `true` if, user is age verified (not 18+).
+  @JsonKey(
+    name: r'ageVerified',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool ageVerified;
 
   @JsonKey(
     name: r'allowAvatarCopying',
@@ -331,6 +340,7 @@ class User {
       identical(this, other) ||
       other is User &&
           other.ageVerificationStatus == ageVerificationStatus &&
+          other.ageVerified == ageVerified &&
           other.allowAvatarCopying == allowAvatarCopying &&
           other.badges == badges &&
           other.bio == bio &&
@@ -372,6 +382,7 @@ class User {
   @override
   int get hashCode =>
       ageVerificationStatus.hashCode +
+      ageVerified.hashCode +
       allowAvatarCopying.hashCode +
       badges.hashCode +
       bio.hashCode +

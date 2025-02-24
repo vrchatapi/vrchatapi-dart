@@ -10,9 +10,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **voiceEnableDegradation** | **bool** | Unknown, probably voice optimization testing | [default to false]
 **voiceEnableReceiverLimiting** | **bool** | Unknown, probably voice optimization testing | [default to true]
+**accessLogsUrls** | [**APIConfigAccessLogsUrls**](APIConfigAccessLogsUrls.md) |  | 
 **address** | **String** | VRChat's office address | 
+**ageVerificationInviteVisible** | **bool** |  | 
 **ageVerificationP** | **bool** |  | 
 **ageVerificationStatusVisible** | **bool** |  | 
+**analysisMaxRetries** | **int** | Max retries for avatar analysis requests | 
+**analysisRetryInterval** | **int** | Interval between retries for avatar analysis requests | 
 **announcements** | [**Set&lt;APIConfigAnnouncement&gt;**](APIConfigAnnouncement.md) | Public Announcements | 
 **analyticsSegmentNewUIPctOfUsers** | **int** | Unknown | 
 **analyticsSegmentNewUISalt** | **String** | Unknown | 
@@ -60,6 +64,7 @@ Name | Type | Description | Notes
 **disableEventStream** | **bool** | Toggles if Analytics should be disabled. | [default to false]
 **disableFeedbackGating** | **bool** | Toggles if feedback gating should be disabled. Feedback gating restricts submission of feedback (reporting a World or User) to people with the `system_feedback_access` Tag. | [default to false]
 **disableFrontendBuilds** | **bool** | Unknown, probably toggles compilation of frontend web builds? So internal flag? | [default to false]
+**disableGiftDrops** | **bool** | Toggles if gift drops should be disabled | [default to false]
 **disableHello** | **bool** | Unknown | [default to false]
 **disableOculusSubs** | **bool** | Toggles if signing up for Subscriptions in Oculus is disabled or not. | [default to false]
 **disableRegistration** | **bool** | Toggles if new user account registration should be disabled. | [default to false]
@@ -75,6 +80,7 @@ Name | Type | Description | Notes
 **economyState** | **int** | Unknown | [optional] [default to 1]
 **events** | [**APIConfigEvents**](APIConfigEvents.md) |  | 
 **forceUseLatestWorld** | **bool** | Unknown | [default to true]
+**giftDisplayType** | **String** | Display type of gifts | 
 **googleApiClientId** | **String** | Unknown | [default to '827942544393-r2ouvckvouldn9dg9uruseje575e878f.apps.googleusercontent.com']
 **homeWorldId** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | 
 **homepageRedirectTarget** | **String** | Redirect target if you try to open the base API domain in your browser | [default to 'https://hello.vrchat.com']
@@ -90,8 +96,9 @@ Name | Type | Description | Notes
 **photonPublicKeys** | **List&lt;String&gt;** | Unknown | 
 **reportCategories** | [**APIConfigReportCategories**](APIConfigReportCategories.md) |  | 
 **reportFormUrl** | **String** | URL to the report form | [default to 'https://help.vrchat.com/hc/en-us/requests/new?ticket_form_id=1500000182242&tf_360056455174=user_report&tf_360057451993={userId}&tf_1500001445142={reportedId}&tf_subject={reason} {category} By {contentType} {reportedName}&tf_description={description}']
-**reportOptions** | **Object** | Options for reporting content | 
+**reportOptions** | [**APIConfigReportOptions**](APIConfigReportOptions.md) |  | 
 **reportReasons** | [**APIConfigReportReasons**](APIConfigReportReasons.md) |  | 
+**requireAgeVerificationBetaTag** | **bool** |  | 
 **sdkDeveloperFaqUrl** | **String** | Link to the developer FAQ | 
 **sdkDiscordUrl** | **String** | Link to the official VRChat Discord | 
 **sdkNotAllowedToPublishMessage** | **String** | Used in the SDK to notify a user they aren't allowed to upload avatars/worlds yet | 

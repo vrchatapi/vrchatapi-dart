@@ -1,4 +1,5 @@
 import 'package:vrchat_dart_generated/src/model/api_config.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_access_logs_urls.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_announcement.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_avatar_perf_limiter.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_constants.dart';
@@ -14,6 +15,11 @@ import 'package:vrchat_dart_generated/src/model/api_config_events.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_min_supported_client_build_number.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_offline_analysis.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_report_categories.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_report_options.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_report_options_avatar.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_report_options_group.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_report_options_user.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_report_options_world.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_report_reasons.dart';
 import 'package:vrchat_dart_generated/src/model/api_health.dart';
 import 'package:vrchat_dart_generated/src/model/account_deletion_log.dart';
@@ -37,6 +43,7 @@ import 'package:vrchat_dart_generated/src/model/create_group_role_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_instance_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_world_request.dart';
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
+import 'package:vrchat_dart_generated/src/model/current_user_platform_history_inner.dart';
 import 'package:vrchat_dart_generated/src/model/current_user_presence.dart';
 import 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
@@ -168,6 +175,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return (value is double ? value : double.parse('$value')) as ReturnType;
     case 'APIConfig':
       return APIConfig.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'APIConfigAccessLogsUrls':
+      return APIConfigAccessLogsUrls.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'APIConfigAnnouncement':
 // ignore: deprecated_member_use_from_same_package
       return APIConfigAnnouncement.fromJson(value as Map<String, dynamic>)
@@ -213,6 +223,21 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'APIConfigReportCategories':
       return APIConfigReportCategories.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'APIConfigReportOptions':
+      return APIConfigReportOptions.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'APIConfigReportOptionsAvatar':
+      return APIConfigReportOptionsAvatar.fromJson(
+          value as Map<String, dynamic>) as ReturnType;
+    case 'APIConfigReportOptionsGroup':
+      return APIConfigReportOptionsGroup.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'APIConfigReportOptionsUser':
+      return APIConfigReportOptionsUser.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'APIConfigReportOptionsWorld':
+      return APIConfigReportOptionsWorld.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'APIConfigReportReasons':
       return APIConfigReportReasons.fromJson(value as Map<String, dynamic>)
@@ -279,6 +304,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'CurrentUser':
       return CurrentUser.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'CurrentUserPlatformHistoryInner':
+      return CurrentUserPlatformHistoryInner.fromJson(
+          value as Map<String, dynamic>) as ReturnType;
     case 'CurrentUserPresence':
       return CurrentUserPresence.fromJson(value as Map<String, dynamic>)
           as ReturnType;

@@ -1,6 +1,7 @@
 .gitignore
 README.md
 doc/APIConfig.md
+doc/APIConfigAccessLogsUrls.md
 doc/APIConfigAnnouncement.md
 doc/APIConfigAvatarPerfLimiter.md
 doc/APIConfigConstants.md
@@ -16,6 +17,11 @@ doc/APIConfigEvents.md
 doc/APIConfigMinSupportedClientBuildNumber.md
 doc/APIConfigOfflineAnalysis.md
 doc/APIConfigReportCategories.md
+doc/APIConfigReportOptions.md
+doc/APIConfigReportOptionsAvatar.md
+doc/APIConfigReportOptionsGroup.md
+doc/APIConfigReportOptionsUser.md
+doc/APIConfigReportOptionsWorld.md
 doc/APIConfigReportReasons.md
 doc/APIHealth.md
 doc/AccountDeletionLog.md
@@ -42,6 +48,7 @@ doc/CreateGroupRoleRequest.md
 doc/CreateInstanceRequest.md
 doc/CreateWorldRequest.md
 doc/CurrentUser.md
+doc/CurrentUserPlatformHistoryInner.md
 doc/CurrentUserPresence.md
 doc/DeploymentGroup.md
 doc/DeveloperType.md
@@ -227,6 +234,7 @@ lib/src/model/add_favorite_request.dart
 lib/src/model/add_group_gallery_image_request.dart
 lib/src/model/age_verification_status.dart
 lib/src/model/api_config.dart
+lib/src/model/api_config_access_logs_urls.dart
 lib/src/model/api_config_announcement.dart
 lib/src/model/api_config_avatar_perf_limiter.dart
 lib/src/model/api_config_constants.dart
@@ -242,6 +250,11 @@ lib/src/model/api_config_events.dart
 lib/src/model/api_config_min_supported_client_build_number.dart
 lib/src/model/api_config_offline_analysis.dart
 lib/src/model/api_config_report_categories.dart
+lib/src/model/api_config_report_options.dart
+lib/src/model/api_config_report_options_avatar.dart
+lib/src/model/api_config_report_options_group.dart
+lib/src/model/api_config_report_options_user.dart
+lib/src/model/api_config_report_options_world.dart
 lib/src/model/api_config_report_reasons.dart
 lib/src/model/api_health.dart
 lib/src/model/avatar.dart
@@ -262,6 +275,7 @@ lib/src/model/create_group_role_request.dart
 lib/src/model/create_instance_request.dart
 lib/src/model/create_world_request.dart
 lib/src/model/current_user.dart
+lib/src/model/current_user_platform_history_inner.dart
 lib/src/model/current_user_presence.dart
 lib/src/model/deployment_group.dart
 lib/src/model/developer_type.dart
@@ -410,6 +424,7 @@ test/account_deletion_log_test.dart
 test/add_favorite_request_test.dart
 test/add_group_gallery_image_request_test.dart
 test/age_verification_status_test.dart
+test/api_config_access_logs_urls_test.dart
 test/api_config_announcement_test.dart
 test/api_config_avatar_perf_limiter_test.dart
 test/api_config_constants_groups_test.dart
@@ -425,6 +440,11 @@ test/api_config_events_test.dart
 test/api_config_min_supported_client_build_number_test.dart
 test/api_config_offline_analysis_test.dart
 test/api_config_report_categories_test.dart
+test/api_config_report_options_avatar_test.dart
+test/api_config_report_options_group_test.dart
+test/api_config_report_options_test.dart
+test/api_config_report_options_user_test.dart
+test/api_config_report_options_world_test.dart
 test/api_config_report_reasons_test.dart
 test/api_config_test.dart
 test/api_health_test.dart
@@ -447,6 +467,7 @@ test/create_group_request_test.dart
 test/create_group_role_request_test.dart
 test/create_instance_request_test.dart
 test/create_world_request_test.dart
+test/current_user_platform_history_inner_test.dart
 test/current_user_presence_test.dart
 test/current_user_test.dart
 test/deployment_group_test.dart

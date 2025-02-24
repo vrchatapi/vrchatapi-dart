@@ -16,16 +16,8 @@ part 'performance_limiter_info.g.dart';
 class PerformanceLimiterInfo {
   /// Returns a new [PerformanceLimiterInfo] instance.
   PerformanceLimiterInfo({
-    required this.allowed,
     required this.maxSeats,
   });
-
-  @JsonKey(
-    name: r'allowed',
-    required: true,
-    includeIfNull: false,
-  )
-  final bool allowed;
 
   /// Maximum amount of seats. -1 means no limit.
   @JsonKey(
@@ -38,12 +30,10 @@ class PerformanceLimiterInfo {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is PerformanceLimiterInfo &&
-          other.allowed == allowed &&
-          other.maxSeats == maxSeats;
+      other is PerformanceLimiterInfo && other.maxSeats == maxSeats;
 
   @override
-  int get hashCode => allowed.hashCode + maxSeats.hashCode;
+  int get hashCode => maxSeats.hashCode;
 
   factory PerformanceLimiterInfo.fromJson(Map<String, dynamic> json) =>
       _$PerformanceLimiterInfoFromJson(json);

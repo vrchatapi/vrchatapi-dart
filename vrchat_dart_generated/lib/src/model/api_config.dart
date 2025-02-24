@@ -3,17 +3,19 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:vrchat_dart_generated/src/model/api_config_events.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_min_supported_client_build_number.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_download_url_list.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_avatar_perf_limiter.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_report_reasons.dart';
-import 'package:vrchat_dart_generated/src/model/deployment_group.dart';
-import 'package:vrchat_dart_generated/src/model/api_config_report_categories.dart';
-import 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_report_options.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_access_logs_urls.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_constants.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_offline_analysis.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_announcement.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_events.dart';
+import 'package:vrchat_dart_generated/src/model/deployment_group.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_report_categories.dart';
+import 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'api_config.g.dart';
@@ -29,9 +31,13 @@ class APIConfig {
   APIConfig({
     this.voiceEnableDegradation = false,
     this.voiceEnableReceiverLimiting = true,
+    required this.accessLogsUrls,
     required this.address,
+    required this.ageVerificationInviteVisible,
     required this.ageVerificationP,
     required this.ageVerificationStatusVisible,
+    required this.analysisMaxRetries,
+    required this.analysisRetryInterval,
     required this.announcements,
     required this.analyticsSegmentNewUIPctOfUsers,
     required this.analyticsSegmentNewUISalt,
@@ -79,6 +85,7 @@ class APIConfig {
     this.disableEventStream = false,
     this.disableFeedbackGating = false,
     this.disableFrontendBuilds = false,
+    this.disableGiftDrops = false,
     this.disableHello = false,
     this.disableOculusSubs = false,
     this.disableRegistration = false,
@@ -94,6 +101,7 @@ class APIConfig {
     this.economyState = 1,
     required this.events,
     this.forceUseLatestWorld = true,
+    required this.giftDisplayType,
     this.googleApiClientId =
         '827942544393-r2ouvckvouldn9dg9uruseje575e878f.apps.googleusercontent.com',
     required this.homeWorldId,
@@ -113,6 +121,7 @@ class APIConfig {
         'https://help.vrchat.com/hc/en-us/requests/new?ticket_form_id=1500000182242&tf_360056455174=user_report&tf_360057451993={userId}&tf_1500001445142={reportedId}&tf_subject={reason} {category} By {contentType} {reportedName}&tf_description={description}',
     required this.reportOptions,
     required this.reportReasons,
+    required this.requireAgeVerificationBetaTag,
     required this.sdkDeveloperFaqUrl,
     required this.sdkDiscordUrl,
     required this.sdkNotAllowedToPublishMessage,
@@ -156,6 +165,13 @@ class APIConfig {
   )
   final bool voiceEnableReceiverLimiting;
 
+  @JsonKey(
+    name: r'accessLogsUrls',
+    required: true,
+    includeIfNull: false,
+  )
+  final APIConfigAccessLogsUrls accessLogsUrls;
+
   /// VRChat's office address
   @JsonKey(
     name: r'address',
@@ -163,6 +179,13 @@ class APIConfig {
     includeIfNull: false,
   )
   final String address;
+
+  @JsonKey(
+    name: r'ageVerificationInviteVisible',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool ageVerificationInviteVisible;
 
   @JsonKey(
     name: r'ageVerificationP',
@@ -177,6 +200,22 @@ class APIConfig {
     includeIfNull: false,
   )
   final bool ageVerificationStatusVisible;
+
+  /// Max retries for avatar analysis requests
+  @JsonKey(
+    name: r'analysisMaxRetries',
+    required: true,
+    includeIfNull: false,
+  )
+  final int analysisMaxRetries;
+
+  /// Interval between retries for avatar analysis requests
+  @JsonKey(
+    name: r'analysisRetryInterval',
+    required: true,
+    includeIfNull: false,
+  )
+  final int analysisRetryInterval;
 
   /// Public Announcements
   @JsonKey(
@@ -554,6 +593,14 @@ class APIConfig {
   )
   final bool disableFrontendBuilds;
 
+  /// Toggles if gift drops should be disabled
+  @JsonKey(
+    name: r'disableGiftDrops',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool disableGiftDrops;
+
   /// Unknown
   @JsonKey(
     name: r'disableHello',
@@ -672,6 +719,14 @@ class APIConfig {
     includeIfNull: false,
   )
   final bool forceUseLatestWorld;
+
+  /// Display type of gifts
+  @JsonKey(
+    name: r'giftDisplayType',
+    required: true,
+    includeIfNull: false,
+  )
+  final String giftDisplayType;
 
   /// Unknown
   @JsonKey(
@@ -794,13 +849,12 @@ class APIConfig {
   )
   final String reportFormUrl;
 
-  /// Options for reporting content
   @JsonKey(
     name: r'reportOptions',
     required: true,
     includeIfNull: false,
   )
-  final Object reportOptions;
+  final APIConfigReportOptions reportOptions;
 
   @JsonKey(
     name: r'reportReasons',
@@ -808,6 +862,13 @@ class APIConfig {
     includeIfNull: false,
   )
   final APIConfigReportReasons reportReasons;
+
+  @JsonKey(
+    name: r'requireAgeVerificationBetaTag',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool requireAgeVerificationBetaTag;
 
   /// Link to the developer FAQ
   @JsonKey(
@@ -1015,9 +1076,13 @@ class APIConfig {
       other is APIConfig &&
           other.voiceEnableDegradation == voiceEnableDegradation &&
           other.voiceEnableReceiverLimiting == voiceEnableReceiverLimiting &&
+          other.accessLogsUrls == accessLogsUrls &&
           other.address == address &&
+          other.ageVerificationInviteVisible == ageVerificationInviteVisible &&
           other.ageVerificationP == ageVerificationP &&
           other.ageVerificationStatusVisible == ageVerificationStatusVisible &&
+          other.analysisMaxRetries == analysisMaxRetries &&
+          other.analysisRetryInterval == analysisRetryInterval &&
           other.announcements == announcements &&
           other.analyticsSegmentNewUIPctOfUsers ==
               analyticsSegmentNewUIPctOfUsers &&
@@ -1071,6 +1136,7 @@ class APIConfig {
           other.disableEventStream == disableEventStream &&
           other.disableFeedbackGating == disableFeedbackGating &&
           other.disableFrontendBuilds == disableFrontendBuilds &&
+          other.disableGiftDrops == disableGiftDrops &&
           other.disableHello == disableHello &&
           other.disableOculusSubs == disableOculusSubs &&
           other.disableRegistration == disableRegistration &&
@@ -1087,6 +1153,7 @@ class APIConfig {
           other.economyState == economyState &&
           other.events == events &&
           other.forceUseLatestWorld == forceUseLatestWorld &&
+          other.giftDisplayType == giftDisplayType &&
           other.googleApiClientId == googleApiClientId &&
           other.homeWorldId == homeWorldId &&
           other.homepageRedirectTarget == homepageRedirectTarget &&
@@ -1107,6 +1174,8 @@ class APIConfig {
           other.reportFormUrl == reportFormUrl &&
           other.reportOptions == reportOptions &&
           other.reportReasons == reportReasons &&
+          other.requireAgeVerificationBetaTag ==
+              requireAgeVerificationBetaTag &&
           other.sdkDeveloperFaqUrl == sdkDeveloperFaqUrl &&
           other.sdkDiscordUrl == sdkDiscordUrl &&
           other.sdkNotAllowedToPublishMessage ==
@@ -1139,9 +1208,13 @@ class APIConfig {
   int get hashCode =>
       voiceEnableDegradation.hashCode +
       voiceEnableReceiverLimiting.hashCode +
+      accessLogsUrls.hashCode +
       address.hashCode +
+      ageVerificationInviteVisible.hashCode +
       ageVerificationP.hashCode +
       ageVerificationStatusVisible.hashCode +
+      analysisMaxRetries.hashCode +
+      analysisRetryInterval.hashCode +
       announcements.hashCode +
       analyticsSegmentNewUIPctOfUsers.hashCode +
       analyticsSegmentNewUISalt.hashCode +
@@ -1192,6 +1265,7 @@ class APIConfig {
       disableEventStream.hashCode +
       disableFeedbackGating.hashCode +
       disableFrontendBuilds.hashCode +
+      disableGiftDrops.hashCode +
       disableHello.hashCode +
       disableOculusSubs.hashCode +
       disableRegistration.hashCode +
@@ -1208,6 +1282,7 @@ class APIConfig {
       economyState.hashCode +
       events.hashCode +
       forceUseLatestWorld.hashCode +
+      giftDisplayType.hashCode +
       googleApiClientId.hashCode +
       homeWorldId.hashCode +
       homepageRedirectTarget.hashCode +
@@ -1225,6 +1300,7 @@ class APIConfig {
       reportFormUrl.hashCode +
       reportOptions.hashCode +
       reportReasons.hashCode +
+      requireAgeVerificationBetaTag.hashCode +
       sdkDeveloperFaqUrl.hashCode +
       sdkDiscordUrl.hashCode +
       sdkNotAllowedToPublishMessage.hashCode +
