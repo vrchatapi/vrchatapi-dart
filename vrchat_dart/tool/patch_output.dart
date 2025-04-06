@@ -5,7 +5,7 @@ import 'package:fixer/fixer.dart';
 import 'package:path/path.dart' as path;
 import 'package:recase/recase.dart';
 
-void main() async {
+void main() {
   final spec =
       jsonDecode(File(path.join('build', 'spec.json')).readAsStringSync());
   final version = spec['info']['version'] as String;

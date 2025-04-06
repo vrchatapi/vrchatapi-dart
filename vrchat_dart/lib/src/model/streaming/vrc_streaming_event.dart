@@ -2,6 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:vrchat_dart/src/model/streaming/serializers.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 import 'package:vrchat_dart/src/model/streaming/streamed_current_user.dart';
+import 'package:meta/meta.dart';
 
 part 'vrc_streaming_event.g.dart';
 
@@ -96,14 +97,19 @@ extension VrcStreamingEventTypeExtension on VrcStreamingEventType {
 }
 
 /// Base class for [VrcStreamingEvent]s
+@immutable
 abstract class VrcStreamingEvent {
   /// The type of [VrcStreamingEvent] received
   VrcStreamingEventType get type;
+
+  /// Constructor
+  const VrcStreamingEvent();
 }
 
 /// These shouldn't happen unless VRChat adds more events
 ///
 /// If you end up getting [UnknownEvent]s please create an issue on GitHub
+///
 class UnknownEvent extends VrcStreamingEvent {
   @override
   VrcStreamingEventType get type => VrcStreamingEventType.unknown;
@@ -112,7 +118,7 @@ class UnknownEvent extends VrcStreamingEvent {
   final String rawString;
 
   /// Create an [UnknownEvent] with the given [rawString]
-  UnknownEvent({required this.rawString});
+  const UnknownEvent({required this.rawString});
 }
 
 /// An error message returned from the server
@@ -121,7 +127,7 @@ class ErrorEvent extends VrcStreamingEvent {
   VrcStreamingEventType get type => VrcStreamingEventType.error;
 
   /// Create an [ErrorEvent] with the given [message]
-  ErrorEvent({required this.message});
+  const ErrorEvent({required this.message});
 
   /// The error message
   final String message;
@@ -133,7 +139,7 @@ abstract class FriendEvent extends VrcStreamingEvent {
   final String userId;
 
   /// Create a [FriendEvent] with the given [userId]
-  FriendEvent({required this.userId});
+  const FriendEvent({required this.userId});
 }
 
 /// Base class for [FriendEvent]s that contain a user object
@@ -142,7 +148,7 @@ abstract class FriendEventWithUser extends FriendEvent {
   final User user;
 
   /// Create a [FriendEventWithUser] with the given [userId] and [user]
-  FriendEventWithUser({required super.userId, required this.user});
+  const FriendEventWithUser({required super.userId, required this.user});
 }
 
 /// Base class for [UserEvent]s
@@ -151,7 +157,7 @@ abstract class UserEvent extends VrcStreamingEvent {
   final String userId;
 
   /// Create a [UserEvent] with the given [userId]
-  UserEvent({required this.userId});
+  const UserEvent({required this.userId});
 }
 
 /// Base class for [NotificationEvent]s
@@ -179,7 +185,7 @@ class FriendOnlineEvent extends FriendEventWithUser {
   final bool canRequestInvite;
 
   /// Create a [FriendOnlineEvent]
-  FriendOnlineEvent({
+  const FriendOnlineEvent({
     required super.userId,
     required super.user,
     required this.world,
@@ -204,7 +210,7 @@ class FriendOfflineEvent extends FriendEvent {
   VrcStreamingEventType get type => VrcStreamingEventType.friendOffline;
 
   /// Create a [FriendOnlineEvent] with the given [userId]
-  FriendOfflineEvent({required super.userId});
+  const FriendOfflineEvent({required super.userId});
 
   /// Create a [FriendOfflineEvent] from json
   factory FriendOfflineEvent.fromJson(Map<String, dynamic> json) =>
@@ -222,7 +228,7 @@ class FriendActiveEvent extends FriendEventWithUser {
   VrcStreamingEventType get type => VrcStreamingEventType.friendActive;
 
   /// Create a [FriendActiveEvent] with the given [userId] and [user]
-  FriendActiveEvent({required super.userId, required super.user});
+  const FriendActiveEvent({required super.userId, required super.user});
 
   /// Create a [FriendActiveEvent] from json
   factory FriendActiveEvent.fromJson(Map<String, dynamic> json) =>
@@ -240,7 +246,7 @@ class FriendAddEvent extends FriendEventWithUser {
   VrcStreamingEventType get type => VrcStreamingEventType.friendAdd;
 
   /// Create a [FriendAddEvent] with the given [userId] and [user]
-  FriendAddEvent({required super.userId, required super.user});
+  const FriendAddEvent({required super.userId, required super.user});
 
   /// Create a [FriendAddEvent] from json
   factory FriendAddEvent.fromJson(Map<String, dynamic> json) =>
@@ -258,7 +264,7 @@ class FriendDeleteEvent extends FriendEvent {
   VrcStreamingEventType get type => VrcStreamingEventType.friendDelete;
 
   /// Create a [FriendDeleteEvent] with the given [userId]
-  FriendDeleteEvent({required super.userId});
+  const FriendDeleteEvent({required super.userId});
 
   /// Create a [FriendDeleteEvent] from json
   factory FriendDeleteEvent.fromJson(Map<String, dynamic> json) =>
@@ -276,7 +282,7 @@ class FriendUpdateEvent extends FriendEventWithUser {
   VrcStreamingEventType get type => VrcStreamingEventType.friendUpdate;
 
   /// Create a [FriendUpdateEvent] with the given [userId] and [user]
-  FriendUpdateEvent({required super.userId, required super.user});
+  const FriendUpdateEvent({required super.userId, required super.user});
 
   /// Create a [FriendUpdateEvent] from json
   factory FriendUpdateEvent.fromJson(Map<String, dynamic> json) =>
@@ -308,7 +314,7 @@ class FriendLocationEvent extends FriendEventWithUser {
   final bool canRequestInvite;
 
   /// Create a [FriendLocationEvent]
-  FriendLocationEvent({
+  const FriendLocationEvent({
     required super.userId,
     required super.user,
     required this.world,
@@ -339,7 +345,7 @@ class UserUpdateEvent extends UserEvent {
   final StreamedCurrentUser user;
 
   /// Create a [UserUpdateEvent] with the given [userId] and [user]
-  UserUpdateEvent({required super.userId, required this.user});
+  const UserUpdateEvent({required super.userId, required this.user});
 
   /// Create a [UserUpdateEvent] from json
   factory UserUpdateEvent.fromJson(Map<String, dynamic> json) =>
@@ -365,7 +371,7 @@ class UserLocationEvent extends UserEvent {
   final String instance;
 
   /// Create a [UserLocationEvent]
-  UserLocationEvent({
+  const UserLocationEvent({
     required super.userId,
     required this.world,
     required this.location,

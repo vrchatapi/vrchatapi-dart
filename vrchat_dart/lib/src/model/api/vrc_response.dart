@@ -1,7 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:dio_response_validator/dio_response_validator.dart';
+import 'package:meta/meta.dart';
 
 /// A response from the auth API
+@immutable
 class AuthResponse {
   /// True if this account requires two factor auth
   final bool requiresTwoFactorAuth;
@@ -28,6 +30,7 @@ enum TwoFactorAuthType {
 }
 
 /// An error returned from the VRChat API
+@immutable
 class VrcError {
   /// Error message returned from the API
   final String message;
@@ -36,7 +39,7 @@ class VrcError {
   final int statusCode;
 
   /// Create a custom [VrcError]
-  VrcError({required this.message, required this.statusCode});
+  const VrcError({required this.message, required this.statusCode});
 
   /// Construct a [VrcError] from json
   static VrcError? fromDioError(DioException error) {

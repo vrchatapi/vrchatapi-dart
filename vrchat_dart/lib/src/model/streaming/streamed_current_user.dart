@@ -1,9 +1,11 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
+import 'package:meta/meta.dart';
 
 part 'streamed_current_user.g.dart';
 
 /// A user object representing the signed in user streamed from the VRChat websocket connection
+@immutable
 @JsonSerializable()
 class StreamedCurrentUser {
   /// The user's bio
@@ -49,7 +51,7 @@ class StreamedCurrentUser {
   final String username;
 
   /// Create a [StreamedCurrentUser]
-  StreamedCurrentUser({
+  const StreamedCurrentUser({
     required this.bio,
     required this.currentAvatar,
     required this.currentAvatarAssetUrl,
