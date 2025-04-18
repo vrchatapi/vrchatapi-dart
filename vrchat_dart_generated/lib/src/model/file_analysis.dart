@@ -20,6 +20,7 @@ class FileAnalysis {
     required this.avatarStats,
     this.createdAt,
     required this.fileSize,
+    this.performanceRating,
     required this.success,
     required this.uncompressedSize,
   });
@@ -46,6 +47,13 @@ class FileAnalysis {
   final int fileSize;
 
   @JsonKey(
+    name: r'performanceRating',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? performanceRating;
+
+  @JsonKey(
     name: r'success',
     required: true,
     includeIfNull: false,
@@ -66,6 +74,7 @@ class FileAnalysis {
           other.avatarStats == avatarStats &&
           other.createdAt == createdAt &&
           other.fileSize == fileSize &&
+          other.performanceRating == performanceRating &&
           other.success == success &&
           other.uncompressedSize == uncompressedSize;
 
@@ -74,6 +83,7 @@ class FileAnalysis {
       avatarStats.hashCode +
       createdAt.hashCode +
       fileSize.hashCode +
+      performanceRating.hashCode +
       success.hashCode +
       uncompressedSize.hashCode;
 

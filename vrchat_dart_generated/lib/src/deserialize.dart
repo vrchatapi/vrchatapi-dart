@@ -31,6 +31,7 @@ import 'package:vrchat_dart_generated/src/model/avatar_unity_package_url_object.
 import 'package:vrchat_dart_generated/src/model/badge.dart';
 import 'package:vrchat_dart_generated/src/model/balance.dart';
 import 'package:vrchat_dart_generated/src/model/ban_group_member_request.dart';
+import 'package:vrchat_dart_generated/src/model/change_user_tags_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_avatar_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_file_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_file_version_request.dart';
@@ -62,6 +63,7 @@ import 'package:vrchat_dart_generated/src/model/file_version.dart';
 import 'package:vrchat_dart_generated/src/model/file_version_upload_status.dart';
 import 'package:vrchat_dart_generated/src/model/finish_file_data_upload_request.dart';
 import 'package:vrchat_dart_generated/src/model/friend_status.dart';
+import 'package:vrchat_dart_generated/src/model/get_group_posts200_response.dart';
 import 'package:vrchat_dart_generated/src/model/get_user_group_instances200_response.dart';
 import 'package:vrchat_dart_generated/src/model/group.dart';
 import 'package:vrchat_dart_generated/src/model/group_announcement.dart';
@@ -109,6 +111,8 @@ import 'package:vrchat_dart_generated/src/model/performance_limiter_info.dart';
 import 'package:vrchat_dart_generated/src/model/permission.dart';
 import 'package:vrchat_dart_generated/src/model/platform_build_info.dart';
 import 'package:vrchat_dart_generated/src/model/player_moderation.dart';
+import 'package:vrchat_dart_generated/src/model/print.dart';
+import 'package:vrchat_dart_generated/src/model/print_files.dart';
 import 'package:vrchat_dart_generated/src/model/product.dart';
 import 'package:vrchat_dart_generated/src/model/product_listing.dart';
 import 'package:vrchat_dart_generated/src/model/product_listing_variant.dart';
@@ -119,6 +123,8 @@ import 'package:vrchat_dart_generated/src/model/request_invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/respond_group_join_request.dart';
 import 'package:vrchat_dart_generated/src/model/response.dart';
 import 'package:vrchat_dart_generated/src/model/sent_notification.dart';
+import 'package:vrchat_dart_generated/src/model/service_queue_stats.dart';
+import 'package:vrchat_dart_generated/src/model/service_status.dart';
 import 'package:vrchat_dart_generated/src/model/submission.dart';
 import 'package:vrchat_dart_generated/src/model/subscription.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
@@ -139,6 +145,7 @@ import 'package:vrchat_dart_generated/src/model/update_group_member_request.dart
 import 'package:vrchat_dart_generated/src/model/update_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_group_role_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_invite_message_request.dart';
+import 'package:vrchat_dart_generated/src/model/update_user_badge_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_note_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_world_request.dart';
@@ -269,6 +276,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'BanGroupMemberRequest':
       return BanGroupMemberRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'ChangeUserTagsRequest':
+      return ChangeUserTagsRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'CreateAvatarRequest':
       return CreateAvatarRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -310,7 +320,6 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'CurrentUserPresence':
       return CurrentUserPresence.fromJson(value as Map<String, dynamic>)
           as ReturnType;
-    case 'DeploymentGroup':
     case 'DeveloperType':
     case 'DynamicContentRow':
       return DynamicContentRow.fromJson(value as Map<String, dynamic>)
@@ -358,6 +367,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'FriendStatus':
       return FriendStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'GetGroupPosts200Response':
+      return GetGroupPosts200Response.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'GetUserGroupInstances200Response':
       return GetUserGroupInstances200Response.fromJson(
           value as Map<String, dynamic>) as ReturnType;
@@ -503,6 +515,10 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return PlayerModeration.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'PlayerModerationType':
+    case 'Print':
+      return Print.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'PrintFiles':
+      return PrintFiles.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Product':
       return Product.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'ProductListing':
@@ -533,6 +549,12 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return Response.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'SentNotification':
       return SentNotification.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'ServiceQueueStats':
+      return ServiceQueueStats.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'ServiceStatus':
+      return ServiceStatus.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'SortOption':
     case 'Submission':
@@ -588,6 +610,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'UpdateInviteMessageRequest':
       return UpdateInviteMessageRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'UpdateUserBadgeRequest':
+      return UpdateUserBadgeRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'UpdateUserNoteRequest':
       return UpdateUserNoteRequest.fromJson(value as Map<String, dynamic>)

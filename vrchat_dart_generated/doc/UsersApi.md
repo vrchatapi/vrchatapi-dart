@@ -9,6 +9,9 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addTags**](UsersApi.md#addtags) | **POST** /users/{userId}/addTags | Add User Tags
+[**checkUserPersistenceExists**](UsersApi.md#checkuserpersistenceexists) | **GET** /users/{userId}/{worldId}/persist/exists | Check User Persistence Exists
+[**deleteUserPersistence**](UsersApi.md#deleteuserpersistence) | **DELETE** /users/{userId}/{worldId}/persist | Delete User Persistence
 [**getUser**](UsersApi.md#getuser) | **GET** /users/{userId} | Get User by ID
 [**getUserByName**](UsersApi.md#getuserbyname) | **GET** /users/{username}/name | Get User by Username
 [**getUserFeedback**](UsersApi.md#getuserfeedback) | **GET** /users/{userId}/feedback | Get User Feedback
@@ -18,10 +21,157 @@ Method | HTTP request | Description
 [**getUserNote**](UsersApi.md#getusernote) | **GET** /userNotes/{userNoteId} | Get User Note
 [**getUserNotes**](UsersApi.md#getusernotes) | **GET** /userNotes | Get User Notes
 [**getUserRepresentedGroup**](UsersApi.md#getuserrepresentedgroup) | **GET** /users/{userId}/groups/represented | Get user&#39;s current represented group
+[**removeTags**](UsersApi.md#removetags) | **POST** /users/{userId}/removeTags | Remove User Tags
 [**searchUsers**](UsersApi.md#searchusers) | **GET** /users | Search All Users
+[**updateBadge**](UsersApi.md#updatebadge) | **PUT** /users/{userId}/badges/{badgeId} | Update User Badge
 [**updateUser**](UsersApi.md#updateuser) | **PUT** /users/{userId} | Update User Info
 [**updateUserNote**](UsersApi.md#updateusernote) | **POST** /userNotes | Update User Note
 
+
+# **addTags**
+> CurrentUser addTags(userId, changeUserTagsRequest)
+
+Add User Tags
+
+Adds tags to the user's profile
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getUsersApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+final ChangeUserTagsRequest changeUserTagsRequest = ; // ChangeUserTagsRequest | 
+
+try {
+    final response = api.addTags(userId, changeUserTagsRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UsersApi->addTags: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+ **changeUserTagsRequest** | [**ChangeUserTagsRequest**](ChangeUserTagsRequest.md)|  | 
+
+### Return type
+
+[**CurrentUser**](CurrentUser.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **checkUserPersistenceExists**
+> checkUserPersistenceExists(userId, worldId)
+
+Check User Persistence Exists
+
+Checks whether the user has persistence data for a given world
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getUsersApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+final String worldId = worldId_example; // String | Must be a valid world ID.
+
+try {
+    api.checkUserPersistenceExists(userId, worldId);
+} catch on DioException (e) {
+    print('Exception when calling UsersApi->checkUserPersistenceExists: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+ **worldId** | **String**| Must be a valid world ID. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteUserPersistence**
+> deleteUserPersistence(userId, worldId)
+
+Delete User Persistence
+
+Deletes the user's persistence data for a given world
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getUsersApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+final String worldId = worldId_example; // String | Must be a valid world ID.
+
+try {
+    api.deleteUserPersistence(userId, worldId);
+} catch on DioException (e) {
+    print('Exception when calling UsersApi->deleteUserPersistence: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+ **worldId** | **String**| Must be a valid world ID. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUser**
 > User getUser(userId)
@@ -454,6 +604,55 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **removeTags**
+> CurrentUser removeTags(userId, changeUserTagsRequest)
+
+Remove User Tags
+
+Removes tags from the user's profile
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getUsersApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+final ChangeUserTagsRequest changeUserTagsRequest = ; // ChangeUserTagsRequest | 
+
+try {
+    final response = api.removeTags(userId, changeUserTagsRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UsersApi->removeTags: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+ **changeUserTagsRequest** | [**ChangeUserTagsRequest**](ChangeUserTagsRequest.md)|  | 
+
+### Return type
+
+[**CurrentUser**](CurrentUser.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **searchUsers**
 > List<LimitedUser> searchUsers(search, developerType, n, offset)
 
@@ -503,6 +702,56 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateBadge**
+> updateBadge(userId, badgeId, updateUserBadgeRequest)
+
+Update User Badge
+
+Updates a user's badge
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getUsersApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+final String badgeId = badgeId_example; // String | Must be a valid badge ID.
+final UpdateUserBadgeRequest updateUserBadgeRequest = ; // UpdateUserBadgeRequest | 
+
+try {
+    api.updateBadge(userId, badgeId, updateUserBadgeRequest);
+} catch on DioException (e) {
+    print('Exception when calling UsersApi->updateBadge: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+ **badgeId** | **String**| Must be a valid badge ID. | 
+ **updateUserBadgeRequest** | [**UpdateUserBadgeRequest**](UpdateUserBadgeRequest.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

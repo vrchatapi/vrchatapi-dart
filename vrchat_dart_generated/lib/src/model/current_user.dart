@@ -37,7 +37,6 @@ class CurrentUser {
     required this.bio,
     required this.bioLinks,
     required this.currentAvatar,
-    required this.currentAvatarAssetUrl,
     required this.currentAvatarImageUrl,
     required this.currentAvatarThumbnailImageUrl,
     required this.currentAvatarTags,
@@ -188,13 +187,6 @@ class CurrentUser {
     includeIfNull: false,
   )
   final String currentAvatar;
-
-  @JsonKey(
-    name: r'currentAvatarAssetUrl',
-    required: true,
-    includeIfNull: false,
-  )
-  final String currentAvatarAssetUrl;
 
   /// When profilePicOverride is not empty, use it instead.
   @JsonKey(
@@ -628,7 +620,6 @@ class CurrentUser {
           other.bio == bio &&
           other.bioLinks == bioLinks &&
           other.currentAvatar == currentAvatar &&
-          other.currentAvatarAssetUrl == currentAvatarAssetUrl &&
           other.currentAvatarImageUrl == currentAvatarImageUrl &&
           other.currentAvatarThumbnailImageUrl ==
               currentAvatarThumbnailImageUrl &&
@@ -705,7 +696,6 @@ class CurrentUser {
       bio.hashCode +
       bioLinks.hashCode +
       currentAvatar.hashCode +
-      currentAvatarAssetUrl.hashCode +
       currentAvatarImageUrl.hashCode +
       currentAvatarThumbnailImageUrl.hashCode +
       currentAvatarTags.hashCode +

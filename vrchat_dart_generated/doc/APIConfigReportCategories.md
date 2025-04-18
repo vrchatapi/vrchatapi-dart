@@ -9,6 +9,7 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **avatar** | [**ReportCategory**](ReportCategory.md) |  | 
+**avatarpage** | [**ReportCategory**](ReportCategory.md) |  | [optional] 
 **behavior** | [**ReportCategory**](ReportCategory.md) |  | 
 **chat** | [**ReportCategory**](ReportCategory.md) |  | 
 **emoji** | [**ReportCategory**](ReportCategory.md) |  | [optional] 

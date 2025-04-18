@@ -22,7 +22,6 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
             'bio',
             'bioLinks',
             'currentAvatar',
-            'currentAvatarAssetUrl',
             'currentAvatarImageUrl',
             'currentAvatarThumbnailImageUrl',
             'currentAvatarTags',
@@ -93,8 +92,6 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
           bioLinks: $checkedConvert('bioLinks',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           currentAvatar: $checkedConvert('currentAvatar', (v) => v as String),
-          currentAvatarAssetUrl:
-              $checkedConvert('currentAvatarAssetUrl', (v) => v as String),
           currentAvatarImageUrl:
               $checkedConvert('currentAvatarImageUrl', (v) => v as String),
           currentAvatarThumbnailImageUrl: $checkedConvert(
@@ -232,7 +229,6 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) =>
       'bio': instance.bio,
       'bioLinks': instance.bioLinks,
       'currentAvatar': instance.currentAvatar,
-      'currentAvatarAssetUrl': instance.currentAvatarAssetUrl,
       'currentAvatarImageUrl': instance.currentAvatarImageUrl,
       'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
       'currentAvatarTags': instance.currentAvatarTags,

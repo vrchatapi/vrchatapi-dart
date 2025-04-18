@@ -36,7 +36,7 @@ Method | HTTP request | Description
 [**getGroupMember**](GroupsApi.md#getgroupmember) | **GET** /groups/{groupId}/members/{userId} | Get Group Member
 [**getGroupMembers**](GroupsApi.md#getgroupmembers) | **GET** /groups/{groupId}/members | List Group Members
 [**getGroupPermissions**](GroupsApi.md#getgrouppermissions) | **GET** /groups/{groupId}/permissions | List Group Permissions
-[**getGroupPost**](GroupsApi.md#getgrouppost) | **GET** /groups/{groupId}/posts | Get posts from a Group
+[**getGroupPosts**](GroupsApi.md#getgroupposts) | **GET** /groups/{groupId}/posts | Get posts from a Group
 [**getGroupRequests**](GroupsApi.md#getgrouprequests) | **GET** /groups/{groupId}/requests | Get Group Join Requests
 [**getGroupRoles**](GroupsApi.md#getgrouproles) | **GET** /groups/{groupId}/roles | Get Group Roles
 [**joinGroup**](GroupsApi.md#joingroup) | **POST** /groups/{groupId}/join | Join Group
@@ -1393,8 +1393,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getGroupPost**
-> GroupPost getGroupPost(groupId, n, offset, publicOnly)
+# **getGroupPosts**
+> GetGroupPosts200Response getGroupPosts(groupId, n, offset, publicOnly)
 
 Get posts from a Group
 
@@ -1415,10 +1415,10 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 final bool publicOnly = true; // bool | See public posts only.
 
 try {
-    final response = api.getGroupPost(groupId, n, offset, publicOnly);
+    final response = api.getGroupPosts(groupId, n, offset, publicOnly);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling GroupsApi->getGroupPost: $e\n');
+    print('Exception when calling GroupsApi->getGroupPosts: $e\n');
 }
 ```
 
@@ -1433,7 +1433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GroupPost**](GroupPost.md)
+[**GetGroupPosts200Response**](GetGroupPosts200Response.md)
 
 ### Authorization
 
