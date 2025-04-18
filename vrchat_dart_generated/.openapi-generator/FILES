@@ -36,6 +36,7 @@ doc/AvatarsApi.md
 doc/Badge.md
 doc/Balance.md
 doc/BanGroupMemberRequest.md
+doc/ChangeUserTagsRequest.md
 doc/CreateAvatarRequest.md
 doc/CreateFileRequest.md
 doc/CreateFileVersionRequest.md
@@ -50,7 +51,6 @@ doc/CreateWorldRequest.md
 doc/CurrentUser.md
 doc/CurrentUserPlatformHistoryInner.md
 doc/CurrentUserPresence.md
-doc/DeploymentGroup.md
 doc/DeveloperType.md
 doc/DynamicContentRow.md
 doc/EconomyApi.md
@@ -76,6 +76,7 @@ doc/FilesApi.md
 doc/FinishFileDataUploadRequest.md
 doc/FriendStatus.md
 doc/FriendsApi.md
+doc/GetGroupPosts200Response.md
 doc/GetUserGroupInstances200Response.md
 doc/Group.md
 doc/GroupAccessType.md
@@ -150,6 +151,9 @@ doc/PlatformBuildInfo.md
 doc/PlayerModeration.md
 doc/PlayerModerationType.md
 doc/PlayermoderationApi.md
+doc/Print.md
+doc/PrintFiles.md
+doc/PrintsApi.md
 doc/Product.md
 doc/ProductListing.md
 doc/ProductListingType.md
@@ -164,6 +168,8 @@ doc/RequestInviteRequest.md
 doc/RespondGroupJoinRequest.md
 doc/Response.md
 doc/SentNotification.md
+doc/ServiceQueueStats.md
+doc/ServiceStatus.md
 doc/SortOption.md
 doc/Submission.md
 doc/Subscription.md
@@ -188,6 +194,7 @@ doc/UpdateGroupMemberRequest.md
 doc/UpdateGroupRequest.md
 doc/UpdateGroupRoleRequest.md
 doc/UpdateInviteMessageRequest.md
+doc/UpdateUserBadgeRequest.md
 doc/UpdateUserNoteRequest.md
 doc/UpdateUserRequest.md
 doc/UpdateWorldRequest.md
@@ -220,6 +227,7 @@ lib/src/api/jams_api.dart
 lib/src/api/notifications_api.dart
 lib/src/api/permissions_api.dart
 lib/src/api/playermoderation_api.dart
+lib/src/api/prints_api.dart
 lib/src/api/system_api.dart
 lib/src/api/users_api.dart
 lib/src/api/worlds_api.dart
@@ -263,6 +271,7 @@ lib/src/model/avatar_unity_package_url_object.dart
 lib/src/model/badge.dart
 lib/src/model/balance.dart
 lib/src/model/ban_group_member_request.dart
+lib/src/model/change_user_tags_request.dart
 lib/src/model/create_avatar_request.dart
 lib/src/model/create_file_request.dart
 lib/src/model/create_file_version_request.dart
@@ -277,7 +286,6 @@ lib/src/model/create_world_request.dart
 lib/src/model/current_user.dart
 lib/src/model/current_user_platform_history_inner.dart
 lib/src/model/current_user_presence.dart
-lib/src/model/deployment_group.dart
 lib/src/model/developer_type.dart
 lib/src/model/dynamic_content_row.dart
 lib/src/model/error.dart
@@ -299,6 +307,7 @@ lib/src/model/file_version.dart
 lib/src/model/file_version_upload_status.dart
 lib/src/model/finish_file_data_upload_request.dart
 lib/src/model/friend_status.dart
+lib/src/model/get_group_posts200_response.dart
 lib/src/model/get_user_group_instances200_response.dart
 lib/src/model/group.dart
 lib/src/model/group_access_type.dart
@@ -366,6 +375,8 @@ lib/src/model/permission.dart
 lib/src/model/platform_build_info.dart
 lib/src/model/player_moderation.dart
 lib/src/model/player_moderation_type.dart
+lib/src/model/print.dart
+lib/src/model/print_files.dart
 lib/src/model/product.dart
 lib/src/model/product_listing.dart
 lib/src/model/product_listing_type.dart
@@ -380,6 +391,8 @@ lib/src/model/request_invite_request.dart
 lib/src/model/respond_group_join_request.dart
 lib/src/model/response.dart
 lib/src/model/sent_notification.dart
+lib/src/model/service_queue_stats.dart
+lib/src/model/service_status.dart
 lib/src/model/sort_option.dart
 lib/src/model/submission.dart
 lib/src/model/subscription.dart
@@ -403,6 +416,7 @@ lib/src/model/update_group_member_request.dart
 lib/src/model/update_group_request.dart
 lib/src/model/update_group_role_request.dart
 lib/src/model/update_invite_message_request.dart
+lib/src/model/update_user_badge_request.dart
 lib/src/model/update_user_note_request.dart
 lib/src/model/update_user_request.dart
 lib/src/model/update_world_request.dart
@@ -456,6 +470,7 @@ test/avatars_api_test.dart
 test/badge_test.dart
 test/balance_test.dart
 test/ban_group_member_request_test.dart
+test/change_user_tags_request_test.dart
 test/create_avatar_request_test.dart
 test/create_file_request_test.dart
 test/create_file_version_request_test.dart
@@ -470,7 +485,6 @@ test/create_world_request_test.dart
 test/current_user_platform_history_inner_test.dart
 test/current_user_presence_test.dart
 test/current_user_test.dart
-test/deployment_group_test.dart
 test/developer_type_test.dart
 test/dynamic_content_row_test.dart
 test/economy_api_test.dart
@@ -496,6 +510,7 @@ test/files_api_test.dart
 test/finish_file_data_upload_request_test.dart
 test/friend_status_test.dart
 test/friends_api_test.dart
+test/get_group_posts200_response_test.dart
 test/get_user_group_instances200_response_test.dart
 test/group_access_type_test.dart
 test/group_announcement_test.dart
@@ -570,6 +585,9 @@ test/platform_build_info_test.dart
 test/player_moderation_test.dart
 test/player_moderation_type_test.dart
 test/playermoderation_api_test.dart
+test/print_files_test.dart
+test/print_test.dart
+test/prints_api_test.dart
 test/product_listing_test.dart
 test/product_listing_type_test.dart
 test/product_listing_variant_test.dart
@@ -584,6 +602,8 @@ test/request_invite_request_test.dart
 test/respond_group_join_request_test.dart
 test/response_test.dart
 test/sent_notification_test.dart
+test/service_queue_stats_test.dart
+test/service_status_test.dart
 test/sort_option_test.dart
 test/submission_test.dart
 test/subscription_period_test.dart
@@ -608,6 +628,7 @@ test/update_group_member_request_test.dart
 test/update_group_request_test.dart
 test/update_group_role_request_test.dart
 test/update_invite_message_request_test.dart
+test/update_user_badge_request_test.dart
 test/update_user_note_request_test.dart
 test/update_user_request_test.dart
 test/update_world_request_test.dart

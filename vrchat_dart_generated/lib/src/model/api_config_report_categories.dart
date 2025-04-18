@@ -18,6 +18,7 @@ class APIConfigReportCategories {
   /// Returns a new [APIConfigReportCategories] instance.
   APIConfigReportCategories({
     required this.avatar,
+    this.avatarpage,
     required this.behavior,
     required this.chat,
     this.emoji,
@@ -37,6 +38,13 @@ class APIConfigReportCategories {
     includeIfNull: false,
   )
   final ReportCategory avatar;
+
+  @JsonKey(
+    name: r'avatarpage',
+    required: false,
+    includeIfNull: false,
+  )
+  final ReportCategory? avatarpage;
 
   @JsonKey(
     name: r'behavior',
@@ -120,6 +128,7 @@ class APIConfigReportCategories {
       identical(this, other) ||
       other is APIConfigReportCategories &&
           other.avatar == avatar &&
+          other.avatarpage == avatarpage &&
           other.behavior == behavior &&
           other.chat == chat &&
           other.emoji == emoji &&
@@ -135,6 +144,7 @@ class APIConfigReportCategories {
   @override
   int get hashCode =>
       avatar.hashCode +
+      avatarpage.hashCode +
       behavior.hashCode +
       chat.hashCode +
       emoji.hashCode +

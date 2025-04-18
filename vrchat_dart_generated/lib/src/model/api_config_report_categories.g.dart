@@ -32,6 +32,11 @@ APIConfigReportCategories _$APIConfigReportCategoriesFromJson(
         final val = APIConfigReportCategories(
           avatar: $checkedConvert('avatar',
               (v) => ReportCategory.fromJson(v as Map<String, dynamic>)),
+          avatarpage: $checkedConvert(
+              'avatarpage',
+              (v) => v == null
+                  ? null
+                  : ReportCategory.fromJson(v as Map<String, dynamic>)),
           behavior: $checkedConvert('behavior',
               (v) => ReportCategory.fromJson(v as Map<String, dynamic>)),
           chat: $checkedConvert('chat',
@@ -69,6 +74,7 @@ Map<String, dynamic> _$APIConfigReportCategoriesToJson(
         APIConfigReportCategories instance) =>
     <String, dynamic>{
       'avatar': instance.avatar.toJson(),
+      if (instance.avatarpage?.toJson() case final value?) 'avatarpage': value,
       'behavior': instance.behavior.toJson(),
       'chat': instance.chat.toJson(),
       if (instance.emoji?.toJson() case final value?) 'emoji': value,

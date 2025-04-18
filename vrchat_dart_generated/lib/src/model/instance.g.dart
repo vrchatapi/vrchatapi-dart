@@ -21,7 +21,6 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
             'clientNumber',
             'displayName',
             'full',
-            'gameServerVersion',
             'id',
             'instanceId',
             'instancePersistenceEnabled',
@@ -55,7 +54,7 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
           displayName: $checkedConvert('displayName', (v) => v as String?),
           full: $checkedConvert('full', (v) => v as bool? ?? false),
           gameServerVersion:
-              $checkedConvert('gameServerVersion', (v) => (v as num).toInt()),
+              $checkedConvert('gameServerVersion', (v) => (v as num?)?.toInt()),
           id: $checkedConvert('id', (v) => v as String),
           instanceId: $checkedConvert('instanceId', (v) => v as String),
           instancePersistenceEnabled: $checkedConvert(
@@ -119,7 +118,8 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
       'clientNumber': instance.clientNumber,
       'displayName': instance.displayName,
       'full': instance.full,
-      'gameServerVersion': instance.gameServerVersion,
+      if (instance.gameServerVersion case final value?)
+        'gameServerVersion': value,
       'id': instance.id,
       'instanceId': instance.instanceId,
       'instancePersistenceEnabled': instance.instancePersistenceEnabled,

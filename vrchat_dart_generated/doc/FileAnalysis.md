@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **avatarStats** | [**FileAnalysisAvatarStats**](FileAnalysisAvatarStats.md) |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **fileSize** | **int** |  | 
+**performanceRating** | **String** |  | [optional] 
 **success** | **bool** |  | 
 **uncompressedSize** | **int** |  | 
 

@@ -30,6 +30,8 @@ FileAnalysis _$FileAnalysisFromJson(Map<String, dynamic> json) =>
           createdAt: $checkedConvert('created_at',
               (v) => v == null ? null : DateTime.parse(v as String)),
           fileSize: $checkedConvert('fileSize', (v) => (v as num).toInt()),
+          performanceRating:
+              $checkedConvert('performanceRating', (v) => v as String?),
           success: $checkedConvert('success', (v) => v as bool),
           uncompressedSize:
               $checkedConvert('uncompressedSize', (v) => (v as num).toInt()),
@@ -45,6 +47,8 @@ Map<String, dynamic> _$FileAnalysisToJson(FileAnalysis instance) =>
       if (instance.createdAt?.toIso8601String() case final value?)
         'created_at': value,
       'fileSize': instance.fileSize,
+      if (instance.performanceRating case final value?)
+        'performanceRating': value,
       'success': instance.success,
       'uncompressedSize': instance.uncompressedSize,
     };

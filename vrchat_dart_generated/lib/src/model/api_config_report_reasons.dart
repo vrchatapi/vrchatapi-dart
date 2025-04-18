@@ -20,6 +20,8 @@ class APIConfigReportReasons {
     required this.billing,
     required this.botting,
     required this.cancellation,
+    this.copyright,
+    this.fraud,
     required this.gore,
     required this.hacking,
     required this.harassing,
@@ -34,6 +36,7 @@ class APIConfigReportReasons {
     required this.security,
     required this.service,
     required this.sexual,
+    this.technical,
     required this.threatening,
     required this.visuals,
   });
@@ -58,6 +61,20 @@ class APIConfigReportReasons {
     includeIfNull: false,
   )
   final ReportReason cancellation;
+
+  @JsonKey(
+    name: r'copyright',
+    required: false,
+    includeIfNull: false,
+  )
+  final ReportReason? copyright;
+
+  @JsonKey(
+    name: r'fraud',
+    required: false,
+    includeIfNull: false,
+  )
+  final ReportReason? fraud;
 
   @JsonKey(
     name: r'gore',
@@ -158,6 +175,13 @@ class APIConfigReportReasons {
   final ReportReason sexual;
 
   @JsonKey(
+    name: r'technical',
+    required: false,
+    includeIfNull: false,
+  )
+  final ReportReason? technical;
+
+  @JsonKey(
     name: r'threatening',
     required: true,
     includeIfNull: false,
@@ -178,6 +202,8 @@ class APIConfigReportReasons {
           other.billing == billing &&
           other.botting == botting &&
           other.cancellation == cancellation &&
+          other.copyright == copyright &&
+          other.fraud == fraud &&
           other.gore == gore &&
           other.hacking == hacking &&
           other.harassing == harassing &&
@@ -192,6 +218,7 @@ class APIConfigReportReasons {
           other.security == security &&
           other.service == service &&
           other.sexual == sexual &&
+          other.technical == technical &&
           other.threatening == threatening &&
           other.visuals == visuals;
 
@@ -200,6 +227,8 @@ class APIConfigReportReasons {
       billing.hashCode +
       botting.hashCode +
       cancellation.hashCode +
+      copyright.hashCode +
+      fraud.hashCode +
       gore.hashCode +
       hacking.hashCode +
       harassing.hashCode +
@@ -214,6 +243,7 @@ class APIConfigReportReasons {
       security.hashCode +
       service.hashCode +
       sexual.hashCode +
+      technical.hashCode +
       threatening.hashCode +
       visuals.hashCode;
 

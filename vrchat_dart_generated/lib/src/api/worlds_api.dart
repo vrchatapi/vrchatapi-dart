@@ -26,6 +26,64 @@ class WorldsApi {
 
   const WorldsApi(this._dio);
 
+  /// Check User Persistence Exists
+  /// Checks whether the user has persistence data for a given world
+  ///
+  /// Parameters:
+  /// * [userId] - Must be a valid user ID.
+  /// * [worldId] - Must be a valid world ID.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<void>> checkUserPersistenceExists({
+    required String userId,
+    required String worldId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/users/{userId}/{worldId}/persist/exists'
+        .replaceAll('{' r'userId' '}', userId.toString())
+        .replaceAll('{' r'worldId' '}', worldId.toString());
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
+  }
+
   /// Create World
   /// Create a new world. This endpoint requires &#x60;assetUrl&#x60; to be a valid File object with &#x60;.vrcw&#x60; file extension, and &#x60;imageUrl&#x60; to be a valid File object with an image file extension.
   ///
@@ -115,6 +173,64 @@ class WorldsApi {
       statusMessage: _response.statusMessage,
       extra: _response.extra,
     );
+  }
+
+  /// Delete User Persistence
+  /// Deletes the user&#39;s persistence data for a given world
+  ///
+  /// Parameters:
+  /// * [userId] - Must be a valid user ID.
+  /// * [worldId] - Must be a valid world ID.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<void>> deleteUserPersistence({
+    required String userId,
+    required String worldId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/users/{userId}/{worldId}/persist'
+        .replaceAll('{' r'userId' '}', userId.toString())
+        .replaceAll('{' r'worldId' '}', worldId.toString());
+    final _options = Options(
+      method: r'DELETE',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
   }
 
   /// Delete World

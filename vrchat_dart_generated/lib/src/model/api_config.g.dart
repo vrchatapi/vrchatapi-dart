@@ -27,11 +27,9 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             'announcements',
             'analyticsSegment_NewUI_PctOfUsers',
             'analyticsSegment_NewUI_Salt',
-            'appName',
             'availableLanguageCodes',
             'availableLanguages',
             'avatarPerfLimiter',
-            'buildVersionTag',
             'chatboxLogBufferSeconds',
             'clientApiKey',
             'clientBPSCeiling',
@@ -45,7 +43,6 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             'currentTOSVersion',
             'defaultAvatar',
             'defaultStickerSet',
-            'deploymentGroup',
             'devSdkUrl',
             'devSdkVersion',
             'dis-countdown',
@@ -93,7 +90,6 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             'sdkDiscordUrl',
             'sdkNotAllowedToPublishMessage',
             'sdkUnityVersion',
-            'serverName',
             'stringHostUrlList',
             'supportEmail',
             'supportFormUrl',
@@ -111,6 +107,7 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             'whiteListedAssetUrls',
             'player-url-resolver-version',
             'player-url-resolver-sha1',
+            'publicKey',
             'websocketMaxFriendsRefreshDelay',
             'websocketQuickReconnectTime',
             'websocketReconnectMaxDelay'
@@ -146,7 +143,6 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               'analyticsSegment_NewUI_PctOfUsers', (v) => (v as num).toInt()),
           analyticsSegmentNewUISalt: $checkedConvert(
               'analyticsSegment_NewUI_Salt', (v) => v as String),
-          appName: $checkedConvert('appName', (v) => v as String? ?? 'VrChat'),
           availableLanguageCodes: $checkedConvert('availableLanguageCodes',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           availableLanguages: $checkedConvert('availableLanguages',
@@ -155,8 +151,6 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               'avatarPerfLimiter',
               (v) => APIConfigAvatarPerfLimiter.fromJson(
                   v as Map<String, dynamic>)),
-          buildVersionTag:
-              $checkedConvert('buildVersionTag', (v) => v as String),
           chatboxLogBufferSeconds: $checkedConvert(
               'chatboxLogBufferSeconds', (v) => (v as num?)?.toInt() ?? 40),
           clientApiKey: $checkedConvert('clientApiKey', (v) => v as String),
@@ -201,8 +195,6 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
           defaultAvatar: $checkedConvert('defaultAvatar', (v) => v as String),
           defaultStickerSet:
               $checkedConvert('defaultStickerSet', (v) => v as String),
-          deploymentGroup: $checkedConvert('deploymentGroup',
-              (v) => $enumDecode(_$DeploymentGroupEnumMap, v)),
           devLanguageCodes: $checkedConvert('devLanguageCodes',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           devSdkUrl: $checkedConvert('devSdkUrl', (v) => v as String),
@@ -328,7 +320,6 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               'sdkNotAllowedToPublishMessage', (v) => v as String),
           sdkUnityVersion:
               $checkedConvert('sdkUnityVersion', (v) => v as String),
-          serverName: $checkedConvert('serverName', (v) => v as String),
           stringHostUrlList: $checkedConvert('stringHostUrlList',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           supportEmail: $checkedConvert('supportEmail', (v) => v as String),
@@ -359,6 +350,7 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               'player-url-resolver-version', (v) => v as String),
           playerUrlResolverSha1:
               $checkedConvert('player-url-resolver-sha1', (v) => v as String),
+          publicKey: $checkedConvert('publicKey', (v) => v as String),
           websocketMaxFriendsRefreshDelay: $checkedConvert(
               'websocketMaxFriendsRefreshDelay',
               (v) => (v as num?)?.toInt() ?? 900),
@@ -394,11 +386,9 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
       'analyticsSegment_NewUI_PctOfUsers':
           instance.analyticsSegmentNewUIPctOfUsers,
       'analyticsSegment_NewUI_Salt': instance.analyticsSegmentNewUISalt,
-      'appName': instance.appName,
       'availableLanguageCodes': instance.availableLanguageCodes,
       'availableLanguages': instance.availableLanguages,
       'avatarPerfLimiter': instance.avatarPerfLimiter.toJson(),
-      'buildVersionTag': instance.buildVersionTag,
       'chatboxLogBufferSeconds': instance.chatboxLogBufferSeconds,
       'clientApiKey': instance.clientApiKey,
       'clientBPSCeiling': instance.clientBPSCeiling,
@@ -433,7 +423,6 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
       'currentTOSVersion': instance.currentTOSVersion,
       'defaultAvatar': instance.defaultAvatar,
       'defaultStickerSet': instance.defaultStickerSet,
-      'deploymentGroup': _$DeploymentGroupEnumMap[instance.deploymentGroup]!,
       if (instance.devLanguageCodes case final value?)
         'devLanguageCodes': value,
       'devSdkUrl': instance.devSdkUrl,
@@ -493,7 +482,6 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
       'sdkDiscordUrl': instance.sdkDiscordUrl,
       'sdkNotAllowedToPublishMessage': instance.sdkNotAllowedToPublishMessage,
       'sdkUnityVersion': instance.sdkUnityVersion,
-      'serverName': instance.serverName,
       'stringHostUrlList': instance.stringHostUrlList,
       'supportEmail': instance.supportEmail,
       'supportFormUrl': instance.supportFormUrl,
@@ -511,15 +499,9 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
       'whiteListedAssetUrls': instance.whiteListedAssetUrls,
       'player-url-resolver-version': instance.playerUrlResolverVersion,
       'player-url-resolver-sha1': instance.playerUrlResolverSha1,
+      'publicKey': instance.publicKey,
       'websocketMaxFriendsRefreshDelay':
           instance.websocketMaxFriendsRefreshDelay,
       'websocketQuickReconnectTime': instance.websocketQuickReconnectTime,
       'websocketReconnectMaxDelay': instance.websocketReconnectMaxDelay,
     };
-
-const _$DeploymentGroupEnumMap = {
-  DeploymentGroup.blue: 'blue',
-  DeploymentGroup.green: 'green',
-  DeploymentGroup.grape: 'grape',
-  DeploymentGroup.cherry: 'cherry',
-};

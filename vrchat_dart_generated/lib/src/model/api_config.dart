@@ -3,19 +3,18 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/api_config_events.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_min_supported_client_build_number.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_download_url_list.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_avatar_perf_limiter.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_report_reasons.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_report_options.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_access_logs_urls.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_report_categories.dart';
+import 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_constants.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_offline_analysis.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_announcement.dart';
-import 'package:vrchat_dart_generated/src/model/api_config_events.dart';
-import 'package:vrchat_dart_generated/src/model/deployment_group.dart';
-import 'package:vrchat_dart_generated/src/model/api_config_report_categories.dart';
-import 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'api_config.g.dart';
@@ -41,11 +40,9 @@ class APIConfig {
     required this.announcements,
     required this.analyticsSegmentNewUIPctOfUsers,
     required this.analyticsSegmentNewUISalt,
-    this.appName = 'VrChat',
     required this.availableLanguageCodes,
     required this.availableLanguages,
     required this.avatarPerfLimiter,
-    required this.buildVersionTag,
     this.chatboxLogBufferSeconds = 40,
     required this.clientApiKey,
     this.clientBPSCeiling = 18432,
@@ -70,7 +67,6 @@ class APIConfig {
     required this.currentTOSVersion,
     required this.defaultAvatar,
     required this.defaultStickerSet,
-    required this.deploymentGroup,
     this.devLanguageCodes,
     required this.devSdkUrl,
     required this.devSdkVersion,
@@ -126,7 +122,6 @@ class APIConfig {
     required this.sdkDiscordUrl,
     required this.sdkNotAllowedToPublishMessage,
     required this.sdkUnityVersion,
-    required this.serverName,
     required this.stringHostUrlList,
     required this.supportEmail,
     required this.supportFormUrl,
@@ -144,6 +139,7 @@ class APIConfig {
     required this.whiteListedAssetUrls,
     required this.playerUrlResolverVersion,
     required this.playerUrlResolverSha1,
+    required this.publicKey,
     this.websocketMaxFriendsRefreshDelay = 900,
     this.websocketQuickReconnectTime = 2,
     this.websocketReconnectMaxDelay = 2,
@@ -242,15 +238,6 @@ class APIConfig {
   )
   final String analyticsSegmentNewUISalt;
 
-  /// Game name
-  @Deprecated('appName has been deprecated')
-  @JsonKey(
-    name: r'appName',
-    required: true,
-    includeIfNull: false,
-  )
-  final String appName;
-
   /// List of supported Languages
   @JsonKey(
     name: r'availableLanguageCodes',
@@ -273,14 +260,6 @@ class APIConfig {
     includeIfNull: false,
   )
   final APIConfigAvatarPerfLimiter avatarPerfLimiter;
-
-  /// Build tag of the API server
-  @JsonKey(
-    name: r'buildVersionTag',
-    required: true,
-    includeIfNull: false,
-  )
-  final String buildVersionTag;
 
   /// Unknown
   @JsonKey(
@@ -471,13 +450,6 @@ class APIConfig {
     includeIfNull: false,
   )
   final String defaultStickerSet;
-
-  @JsonKey(
-    name: r'deploymentGroup',
-    required: true,
-    includeIfNull: false,
-  )
-  final DeploymentGroup deploymentGroup;
 
   /// Unknown
   @JsonKey(
@@ -902,14 +874,6 @@ class APIConfig {
   )
   final String sdkUnityVersion;
 
-  /// Server name of the API server currently responding
-  @JsonKey(
-    name: r'serverName',
-    required: true,
-    includeIfNull: false,
-  )
-  final String serverName;
-
   /// A list of explicitly allowed origins that worlds can request strings from via the Udon's [VRCStringDownloader.LoadUrl](https://creators.vrchat.com/worlds/udon/string-loading/#ivrcstringdownload).
   @JsonKey(
     name: r'stringHostUrlList',
@@ -1046,6 +1010,14 @@ class APIConfig {
   )
   final String playerUrlResolverSha1;
 
+  /// Public key, hex encoded
+  @JsonKey(
+    name: r'publicKey',
+    required: true,
+    includeIfNull: false,
+  )
+  final String publicKey;
+
   /// Unknown
   @JsonKey(
     name: r'websocketMaxFriendsRefreshDelay',
@@ -1087,12 +1059,9 @@ class APIConfig {
           other.analyticsSegmentNewUIPctOfUsers ==
               analyticsSegmentNewUIPctOfUsers &&
           other.analyticsSegmentNewUISalt == analyticsSegmentNewUISalt &&
-// ignore: deprecated_member_use_from_same_package
-          other.appName == appName &&
           other.availableLanguageCodes == availableLanguageCodes &&
           other.availableLanguages == availableLanguages &&
           other.avatarPerfLimiter == avatarPerfLimiter &&
-          other.buildVersionTag == buildVersionTag &&
           other.chatboxLogBufferSeconds == chatboxLogBufferSeconds &&
           other.clientApiKey == clientApiKey &&
           other.clientBPSCeiling == clientBPSCeiling &&
@@ -1118,7 +1087,6 @@ class APIConfig {
           other.currentTOSVersion == currentTOSVersion &&
           other.defaultAvatar == defaultAvatar &&
           other.defaultStickerSet == defaultStickerSet &&
-          other.deploymentGroup == deploymentGroup &&
           other.devLanguageCodes == devLanguageCodes &&
 // ignore: deprecated_member_use_from_same_package
           other.devSdkUrl == devSdkUrl &&
@@ -1181,7 +1149,6 @@ class APIConfig {
           other.sdkNotAllowedToPublishMessage ==
               sdkNotAllowedToPublishMessage &&
           other.sdkUnityVersion == sdkUnityVersion &&
-          other.serverName == serverName &&
           other.stringHostUrlList == stringHostUrlList &&
           other.supportEmail == supportEmail &&
           other.supportFormUrl == supportFormUrl &&
@@ -1199,6 +1166,7 @@ class APIConfig {
           other.whiteListedAssetUrls == whiteListedAssetUrls &&
           other.playerUrlResolverVersion == playerUrlResolverVersion &&
           other.playerUrlResolverSha1 == playerUrlResolverSha1 &&
+          other.publicKey == publicKey &&
           other.websocketMaxFriendsRefreshDelay ==
               websocketMaxFriendsRefreshDelay &&
           other.websocketQuickReconnectTime == websocketQuickReconnectTime &&
@@ -1218,12 +1186,9 @@ class APIConfig {
       announcements.hashCode +
       analyticsSegmentNewUIPctOfUsers.hashCode +
       analyticsSegmentNewUISalt.hashCode +
-// ignore: deprecated_member_use_from_same_package
-      appName.hashCode +
       availableLanguageCodes.hashCode +
       availableLanguages.hashCode +
       avatarPerfLimiter.hashCode +
-      buildVersionTag.hashCode +
       chatboxLogBufferSeconds.hashCode +
       clientApiKey.hashCode +
       clientBPSCeiling.hashCode +
@@ -1248,7 +1213,6 @@ class APIConfig {
       currentTOSVersion.hashCode +
       defaultAvatar.hashCode +
       defaultStickerSet.hashCode +
-      deploymentGroup.hashCode +
       devLanguageCodes.hashCode +
 // ignore: deprecated_member_use_from_same_package
       devSdkUrl.hashCode +
@@ -1305,7 +1269,6 @@ class APIConfig {
       sdkDiscordUrl.hashCode +
       sdkNotAllowedToPublishMessage.hashCode +
       sdkUnityVersion.hashCode +
-      serverName.hashCode +
       stringHostUrlList.hashCode +
       supportEmail.hashCode +
       supportFormUrl.hashCode +
@@ -1323,6 +1286,7 @@ class APIConfig {
       whiteListedAssetUrls.hashCode +
       playerUrlResolverVersion.hashCode +
       playerUrlResolverSha1.hashCode +
+      publicKey.hashCode +
       websocketMaxFriendsRefreshDelay.hashCode +
       websocketQuickReconnectTime.hashCode +
       websocketReconnectMaxDelay.hashCode;

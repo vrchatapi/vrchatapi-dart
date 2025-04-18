@@ -17,6 +17,8 @@ APIConfigReportOptionsAvatar _$APIConfigReportOptionsAvatarFromJson(
         final val = APIConfigReportOptionsAvatar(
           avatar: $checkedConvert('avatar',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          avatarpage: $checkedConvert('avatarpage',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           warnings: $checkedConvert('warnings',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
         );
@@ -28,5 +30,6 @@ Map<String, dynamic> _$APIConfigReportOptionsAvatarToJson(
         APIConfigReportOptionsAvatar instance) =>
     <String, dynamic>{
       if (instance.avatar case final value?) 'avatar': value,
+      if (instance.avatarpage case final value?) 'avatarpage': value,
       if (instance.warnings case final value?) 'warnings': value,
     };

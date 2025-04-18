@@ -17,6 +17,7 @@ class APIConfigReportOptionsAvatar {
   /// Returns a new [APIConfigReportOptionsAvatar] instance.
   APIConfigReportOptionsAvatar({
     this.avatar,
+    this.avatarpage,
     this.warnings,
   });
 
@@ -26,6 +27,13 @@ class APIConfigReportOptionsAvatar {
     includeIfNull: false,
   )
   final List<String>? avatar;
+
+  @JsonKey(
+    name: r'avatarpage',
+    required: false,
+    includeIfNull: false,
+  )
+  final List<String>? avatarpage;
 
   @JsonKey(
     name: r'warnings',
@@ -39,10 +47,11 @@ class APIConfigReportOptionsAvatar {
       identical(this, other) ||
       other is APIConfigReportOptionsAvatar &&
           other.avatar == avatar &&
+          other.avatarpage == avatarpage &&
           other.warnings == warnings;
 
   @override
-  int get hashCode => avatar.hashCode + warnings.hashCode;
+  int get hashCode => avatar.hashCode + avatarpage.hashCode + warnings.hashCode;
 
   factory APIConfigReportOptionsAvatar.fromJson(Map<String, dynamic> json) =>
       _$APIConfigReportOptionsAvatarFromJson(json);

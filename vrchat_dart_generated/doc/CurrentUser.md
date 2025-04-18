@@ -20,7 +20,6 @@ Name | Type | Description | Notes
 **bio** | **String** |  | 
 **bioLinks** | **List&lt;String&gt;** |   | 
 **currentAvatar** | **String** |  | 
-**currentAvatarAssetUrl** | **String** |  | 
 **currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
 **currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
 **currentAvatarTags** | **List&lt;String&gt;** |  | 

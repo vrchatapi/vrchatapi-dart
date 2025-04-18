@@ -17,6 +17,7 @@ import 'package:vrchat_dart_generated/src/model/create_group_invite_request.dart
 import 'package:vrchat_dart_generated/src/model/create_group_post_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_group_role_request.dart';
+import 'package:vrchat_dart_generated/src/model/get_group_posts200_response.dart';
 import 'package:vrchat_dart_generated/src/model/group.dart';
 import 'package:vrchat_dart_generated/src/model/group_announcement.dart';
 import 'package:vrchat_dart_generated/src/model/group_gallery.dart';
@@ -2468,9 +2469,9 @@ class GroupsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [GroupPost] as data
+  /// Returns a [Future] containing a [Response] with a [GetGroupPosts200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GroupPost>> getGroupPost({
+  Future<Response<GetGroupPosts200Response>> getGroupPosts({
     required String groupId,
     int? n = 60,
     int? offset,
@@ -2518,13 +2519,14 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GroupPost? _responseData;
+    GetGroupPosts200Response? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GroupPost, GroupPost>(rawData, 'GroupPost',
+          : deserialize<GetGroupPosts200Response, GetGroupPosts200Response>(
+              rawData, 'GetGroupPosts200Response',
               growable: true);
     } catch (error, stackTrace) {
       throw DioException(
@@ -2536,7 +2538,7 @@ class GroupsApi {
       );
     }
 
-    return Response<GroupPost>(
+    return Response<GetGroupPosts200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

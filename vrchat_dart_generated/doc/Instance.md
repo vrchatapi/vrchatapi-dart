@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **clientNumber** | **String** | Always returns \"unknown\". | 
 **displayName** | **String** |  | 
 **full** | **bool** |  | [default to false]
-**gameServerVersion** | **int** |  | 
+**gameServerVersion** | **int** |  | [optional] 
 **id** | **String** | InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance. | 
 **instanceId** | **String** |  | 
 **instancePersistenceEnabled** | **String** |  | 
