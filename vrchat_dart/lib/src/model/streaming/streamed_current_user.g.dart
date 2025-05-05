@@ -12,7 +12,6 @@ StreamedCurrentUser _$StreamedCurrentUserFromJson(Map<String, dynamic> json) =>
     StreamedCurrentUser(
       bio: json['bio'] as String,
       currentAvatar: json['currentAvatar'] as String,
-      currentAvatarAssetUrl: json['currentAvatarAssetUrl'] as String,
       currentAvatarImageUrl: json['currentAvatarImageUrl'] as String,
       currentAvatarThumbnailImageUrl:
           json['currentAvatarThumbnailImageUrl'] as String,
@@ -32,7 +31,6 @@ Map<String, dynamic> _$StreamedCurrentUserToJson(
     <String, dynamic>{
       'bio': instance.bio,
       'currentAvatar': instance.currentAvatar,
-      'currentAvatarAssetUrl': instance.currentAvatarAssetUrl,
       'currentAvatarImageUrl': instance.currentAvatarImageUrl,
       'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
       'displayName': instance.displayName,
