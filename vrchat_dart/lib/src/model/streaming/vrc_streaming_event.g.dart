@@ -122,7 +122,9 @@ Map<String, dynamic> _$UserUpdateEventToJson(UserUpdateEvent instance) =>
 UserLocationEvent _$UserLocationEventFromJson(Map<String, dynamic> json) =>
     UserLocationEvent(
       userId: json['userId'] as String,
-      world: World.fromJson(json['world'] as Map<String, dynamic>),
+      world: json['world'] == null
+          ? null
+          : World.fromJson(json['world'] as Map<String, dynamic>),
       location: json['location'] as String,
       instance: json['instance'] as String,
     );
