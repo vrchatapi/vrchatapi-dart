@@ -1,3 +1,8 @@
+## 3.6.0
+
+- Removes `currentAvatarAssetUrl` from `StreamedCurrentUser`
+- Makes `world` optional in `UserLocationEvent`
+
 ## 3.5.4
 
 - Updates `CurrentUser.toUser` to handle new fields on `User`
