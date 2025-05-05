@@ -14,9 +14,6 @@ class StreamedCurrentUser {
   /// The user's avatar id
   final String currentAvatar;
 
-  /// The user's avatar asset url
-  final String currentAvatarAssetUrl;
-
   /// The user's avatar image url
   final String currentAvatarImageUrl;
 
@@ -54,7 +51,6 @@ class StreamedCurrentUser {
   const StreamedCurrentUser({
     required this.bio,
     required this.currentAvatar,
-    required this.currentAvatarAssetUrl,
     required this.currentAvatarImageUrl,
     required this.currentAvatarThumbnailImageUrl,
     required this.displayName,

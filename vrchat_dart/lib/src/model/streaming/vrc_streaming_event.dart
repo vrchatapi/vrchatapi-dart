@@ -334,8 +334,8 @@ class FriendLocationEvent extends FriendEventWithUser {
 /// A [UserUpdateEvent] is sent when something regarding the user has been
 /// updated. Note that the [user] object is not a [LimitedUser] object, even
 /// though it has similarities. It’s missing [developerType], [friendKey],
-/// [isFriend], [lastPlatform] and [location]. It also has extra [currentAvatar]
-/// and [currentAvatarAssetUrl] fields.
+/// [isFriend], [lastPlatform] and [location]. It also has an extra
+/// [currentAvatar] field.
 @JsonSerializable()
 class UserUpdateEvent extends UserEvent {
   @override
@@ -362,7 +362,7 @@ class UserLocationEvent extends UserEvent {
   VrcStreamingEventType get type => VrcStreamingEventType.userLocation;
 
   /// The [world] the user joined
-  final World world;
+  final World? world;
 
   /// `worldId:locationId`
   final String location;
