@@ -108,10 +108,6 @@ void main() async {
 void handleVrcEvent(VrcStreamingEvent event) {
   final String message;
   switch (event.type) {
-    case VrcStreamingEventType.unknown:
-      final unknownEvent = event as UnknownEvent;
-      message =
-          'Unknown [VrcStreamingEvent] received: ${unknownEvent.rawString}';
     case VrcStreamingEventType.error:
     case VrcStreamingEventType.friendOnline:
     case VrcStreamingEventType.friendOffline:
@@ -131,8 +127,10 @@ void handleVrcEvent(VrcStreamingEvent event) {
       message = 'NotificationSeen: ${event.notificationId}';
     case VrcStreamingEventType.notificationClear:
       message = 'NotificationClear';
+    case VrcStreamingEventType.unknown:
+      event as UnknownEvent;
+      message = 'Unknown [VrcStreamingEvent] received: ${event.rawString}';
   }
 
-  print(event);
   print(message);
 }
