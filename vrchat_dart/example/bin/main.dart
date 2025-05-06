@@ -123,10 +123,12 @@ void handleVrcEvent(VrcStreamingEvent event) {
     case VrcStreamingEventType.userUpdate:
     case VrcStreamingEventType.userLocation:
     case VrcStreamingEventType.notificationReceived:
-    case VrcStreamingEventType.notificationSeen:
     case VrcStreamingEventType.notificationResponse:
     case VrcStreamingEventType.notificationHide:
-      message = jsonEncode(event);
+      message = '${event.type.name}: ${jsonEncode(event)}';
+    case VrcStreamingEventType.notificationSeen:
+      event as NotificationSeenEvent;
+      message = 'NotificationSeen: ${event.notificationId}';
     case VrcStreamingEventType.notificationClear:
       message = 'NotificationClear';
   }
