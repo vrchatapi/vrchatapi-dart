@@ -1212,9 +1212,7 @@ class FilesApi {
 
     dynamic _bodyData;
 
-    try {
-      _bodyData = FormData.fromMap({'file': file});
-    } catch (error, stackTrace) {
+    try {} catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
           _dio.options,
@@ -1310,9 +1308,7 @@ class FilesApi {
 
     dynamic _bodyData;
 
-    try {
-      _bodyData = FormData.fromMap({'file': file});
-    } catch (error, stackTrace) {
+    try {} catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
           _dio.options,
@@ -1368,8 +1364,8 @@ class FilesApi {
   /// Parameters:
   /// * [file] - The binary blob of the png file.
   /// * [tag] - Needs to be either icon, gallery, sticker or emoji
-  /// * [animationStyle] - Animation style for sticker, required for sticker.
-  /// * [maskTag] - Mask of the sticker, optional for sticker.
+  /// * [animationStyle] - Animation style for sticker, required for emoji.
+  /// * [maskTag] - Mask of the sticker, optional for emoji.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1414,14 +1410,7 @@ class FilesApi {
 
     dynamic _bodyData;
 
-    try {
-      _bodyData = FormData.fromMap({
-        'file': file,
-        'tag': tag,
-        if (animationStyle != null) 'animationStyle': animationStyle,
-        if (maskTag != null) 'maskTag': maskTag,
-      });
-    } catch (error, stackTrace) {
+    try {} catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
           _dio.options,

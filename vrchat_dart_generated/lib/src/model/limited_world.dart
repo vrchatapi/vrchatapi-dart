@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/instance_content_settings.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
 import 'package:vrchat_dart_generated/src/model/limited_unity_package.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -23,6 +24,7 @@ class LimitedWorld {
     required this.capacity,
     this.recommendedCapacity,
     required this.createdAt,
+    this.defaultContentSettings,
     this.favorites = 0,
     this.visits = 0,
     this.heat = 0,
@@ -78,6 +80,13 @@ class LimitedWorld {
     includeIfNull: false,
   )
   final DateTime createdAt;
+
+  @JsonKey(
+    name: r'defaultContentSettings',
+    required: false,
+    includeIfNull: false,
+  )
+  final InstanceContentSettings? defaultContentSettings;
 
   // minimum: 0
   @JsonKey(
@@ -222,6 +231,7 @@ class LimitedWorld {
           other.capacity == capacity &&
           other.recommendedCapacity == recommendedCapacity &&
           other.createdAt == createdAt &&
+          other.defaultContentSettings == defaultContentSettings &&
           other.favorites == favorites &&
           other.visits == visits &&
           other.heat == heat &&
@@ -248,6 +258,7 @@ class LimitedWorld {
       capacity.hashCode +
       recommendedCapacity.hashCode +
       createdAt.hashCode +
+      defaultContentSettings.hashCode +
       favorites.hashCode +
       visits.hashCode +
       heat.hashCode +

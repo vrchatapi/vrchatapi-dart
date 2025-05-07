@@ -783,8 +783,8 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getFilesApi();
 final MultipartFile file = BINARY_DATA_HERE; // MultipartFile | The binary blob of the png file.
 final String tag = tag_example; // String | Needs to be either icon, gallery, sticker or emoji
-final String animationStyle = animationStyle_example; // String | Animation style for sticker, required for sticker.
-final String maskTag = maskTag_example; // String | Mask of the sticker, optional for sticker.
+final String animationStyle = animationStyle_example; // String | Animation style for sticker, required for emoji.
+final String maskTag = maskTag_example; // String | Mask of the sticker, optional for emoji.
 
 try {
     final response = api.uploadImage(file, tag, animationStyle, maskTag);
@@ -800,8 +800,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file** | **MultipartFile**| The binary blob of the png file. | 
  **tag** | **String**| Needs to be either icon, gallery, sticker or emoji | 
- **animationStyle** | **String**| Animation style for sticker, required for sticker. | [optional] 
- **maskTag** | **String**| Mask of the sticker, optional for sticker. | [optional] 
+ **animationStyle** | **String**| Animation style for sticker, required for emoji. | [optional] 
+ **maskTag** | **String**| Mask of the sticker, optional for emoji. | [optional] 
 
 ### Return type
 

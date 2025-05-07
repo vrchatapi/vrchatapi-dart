@@ -47,26 +47,17 @@ File _$FileFromJson(Map<String, dynamic> json) => $checkedCreate(
       fieldKeyMap: const {'extension_': 'extension'},
     );
 
-Map<String, dynamic> _$FileToJson(File instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('animationStyle', instance.animationStyle);
-  writeNotNull('maskTag', instance.maskTag);
-  val['extension'] = instance.extension_;
-  val['id'] = instance.id;
-  val['mimeType'] = _$MIMETypeEnumMap[instance.mimeType]!;
-  val['name'] = instance.name;
-  val['ownerId'] = instance.ownerId;
-  val['tags'] = instance.tags;
-  val['versions'] = instance.versions.map((e) => e.toJson()).toList();
-  return val;
-}
+Map<String, dynamic> _$FileToJson(File instance) => <String, dynamic>{
+      if (instance.animationStyle case final value?) 'animationStyle': value,
+      if (instance.maskTag case final value?) 'maskTag': value,
+      'extension': instance.extension_,
+      'id': instance.id,
+      'mimeType': _$MIMETypeEnumMap[instance.mimeType]!,
+      'name': instance.name,
+      'ownerId': instance.ownerId,
+      'tags': instance.tags,
+      'versions': instance.versions.map((e) => e.toJson()).toList(),
+    };
 
 const _$MIMETypeEnumMap = {
   MIMEType.imageSlashJpeg: 'image/jpeg',

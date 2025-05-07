@@ -84,6 +84,7 @@ import 'package:vrchat_dart_generated/src/model/info_push_data_article.dart';
 import 'package:vrchat_dart_generated/src/model/info_push_data_article_content.dart';
 import 'package:vrchat_dart_generated/src/model/info_push_data_clickable.dart';
 import 'package:vrchat_dart_generated/src/model/instance.dart';
+import 'package:vrchat_dart_generated/src/model/instance_content_settings.dart';
 import 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
 import 'package:vrchat_dart_generated/src/model/instance_short_name_response.dart';
 import 'package:vrchat_dart_generated/src/model/invite_message.dart';
@@ -432,6 +433,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'Instance':
       return Instance.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'InstanceContentSettings':
+      return InstanceContentSettings.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'InstancePlatforms':
       return InstancePlatforms.fromJson(value as Map<String, dynamic>)
           as ReturnType;

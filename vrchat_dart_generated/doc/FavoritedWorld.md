@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | 
 **recommendedCapacity** | **int** |  | [optional] 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
+**defaultContentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  | [optional] 
 **favorites** | **int** |  | [default to 0]
 **favoriteGroup** | **String** |  | 
 **favoriteId** | **String** |  | 

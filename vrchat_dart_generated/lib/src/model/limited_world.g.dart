@@ -45,6 +45,12 @@ LimitedWorld _$LimitedWorldFromJson(Map<String, dynamic> json) =>
               'recommendedCapacity', (v) => (v as num?)?.toInt()),
           createdAt:
               $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
+          defaultContentSettings: $checkedConvert(
+              'defaultContentSettings',
+              (v) => v == null
+                  ? null
+                  : InstanceContentSettings.fromJson(
+                      v as Map<String, dynamic>)),
           favorites:
               $checkedConvert('favorites', (v) => (v as num?)?.toInt() ?? 0),
           visits: $checkedConvert('visits', (v) => (v as num?)?.toInt() ?? 0),
@@ -94,6 +100,8 @@ Map<String, dynamic> _$LimitedWorldToJson(LimitedWorld instance) =>
       if (instance.recommendedCapacity case final value?)
         'recommendedCapacity': value,
       'created_at': instance.createdAt.toIso8601String(),
+      if (instance.defaultContentSettings?.toJson() case final value?)
+        'defaultContentSettings': value,
       'favorites': instance.favorites,
       if (instance.visits case final value?) 'visits': value,
       'heat': instance.heat,

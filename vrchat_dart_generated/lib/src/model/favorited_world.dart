@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/instance_content_settings.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
 import 'package:vrchat_dart_generated/src/model/unity_package.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -24,6 +25,7 @@ class FavoritedWorld {
     required this.description,
     this.recommendedCapacity,
     required this.createdAt,
+    this.defaultContentSettings,
     this.favorites = 0,
     required this.favoriteGroup,
     required this.favoriteId,
@@ -91,6 +93,13 @@ class FavoritedWorld {
     includeIfNull: false,
   )
   final DateTime createdAt;
+
+  @JsonKey(
+    name: r'defaultContentSettings',
+    required: false,
+    includeIfNull: false,
+  )
+  final InstanceContentSettings? defaultContentSettings;
 
   // minimum: 0
   @JsonKey(
@@ -272,6 +281,7 @@ class FavoritedWorld {
           other.description == description &&
           other.recommendedCapacity == recommendedCapacity &&
           other.createdAt == createdAt &&
+          other.defaultContentSettings == defaultContentSettings &&
           other.favorites == favorites &&
           other.favoriteGroup == favoriteGroup &&
           other.favoriteId == favoriteId &&
@@ -304,6 +314,7 @@ class FavoritedWorld {
       description.hashCode +
       recommendedCapacity.hashCode +
       createdAt.hashCode +
+      defaultContentSettings.hashCode +
       favorites.hashCode +
       favoriteGroup.hashCode +
       favoriteId.hashCode +
