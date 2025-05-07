@@ -30,17 +30,9 @@ FinishFileDataUploadRequest _$FinishFileDataUploadRequestFromJson(
     );
 
 Map<String, dynamic> _$FinishFileDataUploadRequestToJson(
-    FinishFileDataUploadRequest instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('etags', instance.etags?.toList());
-  val['nextPartNumber'] = instance.nextPartNumber;
-  val['maxParts'] = instance.maxParts;
-  return val;
-}
+        FinishFileDataUploadRequest instance) =>
+    <String, dynamic>{
+      if (instance.etags?.toList() case final value?) 'etags': value,
+      'nextPartNumber': instance.nextPartNumber,
+      'maxParts': instance.maxParts,
+    };

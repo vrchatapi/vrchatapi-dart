@@ -44,34 +44,32 @@ GroupLimitedMember _$GroupLimitedMemberFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$GroupLimitedMemberToJson(GroupLimitedMember instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('id', instance.id);
-  writeNotNull('groupId', instance.groupId);
-  writeNotNull('userId', instance.userId);
-  writeNotNull('isRepresenting', instance.isRepresenting);
-  writeNotNull('roleIds', instance.roleIds);
-  writeNotNull('mRoleIds', instance.mRoleIds);
-  writeNotNull('joinedAt', instance.joinedAt?.toIso8601String());
-  writeNotNull('membershipStatus',
-      _$GroupMemberStatusEnumMap[instance.membershipStatus]);
-  writeNotNull('visibility', instance.visibility);
-  writeNotNull(
-      'isSubscribedToAnnouncements', instance.isSubscribedToAnnouncements);
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('bannedAt', instance.bannedAt?.toIso8601String());
-  writeNotNull('managerNotes', instance.managerNotes);
-  writeNotNull('lastPostReadAt', instance.lastPostReadAt?.toIso8601String());
-  writeNotNull('hasJoinedFromPurchase', instance.hasJoinedFromPurchase);
-  return val;
-}
+Map<String, dynamic> _$GroupLimitedMemberToJson(GroupLimitedMember instance) =>
+    <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.groupId case final value?) 'groupId': value,
+      if (instance.userId case final value?) 'userId': value,
+      if (instance.isRepresenting case final value?) 'isRepresenting': value,
+      if (instance.roleIds case final value?) 'roleIds': value,
+      if (instance.mRoleIds case final value?) 'mRoleIds': value,
+      if (instance.joinedAt?.toIso8601String() case final value?)
+        'joinedAt': value,
+      if (_$GroupMemberStatusEnumMap[instance.membershipStatus]
+          case final value?)
+        'membershipStatus': value,
+      if (instance.visibility case final value?) 'visibility': value,
+      if (instance.isSubscribedToAnnouncements case final value?)
+        'isSubscribedToAnnouncements': value,
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (instance.bannedAt?.toIso8601String() case final value?)
+        'bannedAt': value,
+      if (instance.managerNotes case final value?) 'managerNotes': value,
+      if (instance.lastPostReadAt?.toIso8601String() case final value?)
+        'lastPostReadAt': value,
+      if (instance.hasJoinedFromPurchase case final value?)
+        'hasJoinedFromPurchase': value,
+    };
 
 const _$GroupMemberStatusEnumMap = {
   GroupMemberStatus.inactive: 'inactive',

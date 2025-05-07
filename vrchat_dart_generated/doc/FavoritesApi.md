@@ -11,9 +11,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addFavorite**](FavoritesApi.md#addfavorite) | **POST** /favorites | Add Favorite
 [**clearFavoriteGroup**](FavoritesApi.md#clearfavoritegroup) | **DELETE** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Clear Favorite Group
-[**getFavorite**](FavoritesApi.md#getfavorite) | **GET** /favorites/{favoriteId} | Show Favorite
 [**getFavoriteGroup**](FavoritesApi.md#getfavoritegroup) | **GET** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Show Favorite Group
 [**getFavoriteGroups**](FavoritesApi.md#getfavoritegroups) | **GET** /favorite/groups | List Favorite Groups
+[**getFavoriteLimits**](FavoritesApi.md#getfavoritelimits) | **GET** /auth/user/favoritelimits | Get Favorite Limits
 [**getFavorites**](FavoritesApi.md#getfavorites) | **GET** /favorites | List Favorites
 [**removeFavorite**](FavoritesApi.md#removefavorite) | **DELETE** /favorites/{favoriteId} | Remove Favorite
 [**updateFavoriteGroup**](FavoritesApi.md#updatefavoritegroup) | **PUT** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Update Favorite Group
@@ -117,53 +117,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getFavorite**
-> Favorite getFavorite(favoriteId)
-
-Show Favorite
-
-Return information about a specific Favorite.
-
-### Example
-```dart
-import 'package:vrchat_dart_generated/api.dart';
-// TODO Configure API key authorization: authCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-
-final api = VrchatDartGenerated().getFavoritesApi();
-final String favoriteId = favoriteId_example; // String | Must be a valid favorite ID.
-
-try {
-    final response = api.getFavorite(favoriteId);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling FavoritesApi->getFavorite: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **favoriteId** | **String**| Must be a valid favorite ID. | 
-
-### Return type
-
-[**Favorite**](Favorite.md)
-
-### Authorization
-
-[authCookie](../README.md#authCookie)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **getFavoriteGroup**
 > FavoriteGroup getFavoriteGroup(favoriteGroupType, favoriteGroupName, userId)
 
@@ -254,6 +207,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List&lt;FavoriteGroup&gt;**](FavoriteGroup.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getFavoriteLimits**
+> FavoriteLimits getFavoriteLimits()
+
+Get Favorite Limits
+
+Return information about a specific Favorite.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getFavoritesApi();
+
+try {
+    final response = api.getFavoriteLimits();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling FavoritesApi->getFavoriteLimits: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**FavoriteLimits**](FavoriteLimits.md)
 
 ### Authorization
 

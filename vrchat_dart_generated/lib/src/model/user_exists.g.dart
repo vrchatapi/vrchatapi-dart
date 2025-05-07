@@ -24,17 +24,8 @@ UserExists _$UserExistsFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$UserExistsToJson(UserExists instance) {
-  final val = <String, dynamic>{
-    'userExists': instance.userExists,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('nameOk', instance.nameOk);
-  return val;
-}
+Map<String, dynamic> _$UserExistsToJson(UserExists instance) =>
+    <String, dynamic>{
+      'userExists': instance.userExists,
+      if (instance.nameOk case final value?) 'nameOk': value,
+    };

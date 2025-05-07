@@ -3,12 +3,14 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/current_user_platform_history_inner.dart';
 import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
 import 'package:vrchat_dart_generated/src/model/past_display_name.dart';
 import 'package:vrchat_dart_generated/src/model/current_user_presence.dart';
 import 'package:vrchat_dart_generated/src/model/account_deletion_log.dart';
 import 'package:vrchat_dart_generated/src/model/badge.dart';
+import 'package:vrchat_dart_generated/src/model/age_verification_status.dart';
 import 'package:vrchat_dart_generated/src/model/user_state.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -35,7 +37,6 @@ class CurrentUser {
     required this.bio,
     required this.bioLinks,
     required this.currentAvatar,
-    required this.currentAvatarAssetUrl,
     required this.currentAvatarImageUrl,
     required this.currentAvatarThumbnailImageUrl,
     required this.currentAvatarTags,
@@ -74,6 +75,7 @@ class CurrentUser {
     this.onlineFriends,
     required this.pastDisplayNames,
     this.presence,
+    this.platformHistory,
     required this.profilePicOverride,
     required this.profilePicOverrideThumbnail,
     required this.pronouns,
@@ -139,8 +141,9 @@ class CurrentUser {
     required: true,
     includeIfNull: false,
   )
-  final String ageVerificationStatus;
+  final AgeVerificationStatus ageVerificationStatus;
 
+  /// `true` if, user is age verified (not 18+).
   @JsonKey(
     name: r'ageVerified',
     required: true,
@@ -184,13 +187,6 @@ class CurrentUser {
     includeIfNull: false,
   )
   final String currentAvatar;
-
-  @JsonKey(
-    name: r'currentAvatarAssetUrl',
-    required: true,
-    includeIfNull: false,
-  )
-  final String currentAvatarAssetUrl;
 
   /// When profilePicOverride is not empty, use it instead.
   @JsonKey(
@@ -467,6 +463,13 @@ class CurrentUser {
   final CurrentUserPresence? presence;
 
   @JsonKey(
+    name: r'platform_history',
+    required: false,
+    includeIfNull: false,
+  )
+  final List<CurrentUserPlatformHistoryInner>? platformHistory;
+
+  @JsonKey(
     name: r'profilePicOverride',
     required: true,
     includeIfNull: false,
@@ -617,7 +620,6 @@ class CurrentUser {
           other.bio == bio &&
           other.bioLinks == bioLinks &&
           other.currentAvatar == currentAvatar &&
-          other.currentAvatarAssetUrl == currentAvatarAssetUrl &&
           other.currentAvatarImageUrl == currentAvatarImageUrl &&
           other.currentAvatarThumbnailImageUrl ==
               currentAvatarThumbnailImageUrl &&
@@ -658,6 +660,7 @@ class CurrentUser {
           other.onlineFriends == onlineFriends &&
           other.pastDisplayNames == pastDisplayNames &&
           other.presence == presence &&
+          other.platformHistory == platformHistory &&
           other.profilePicOverride == profilePicOverride &&
           other.profilePicOverrideThumbnail == profilePicOverrideThumbnail &&
           other.pronouns == pronouns &&
@@ -693,7 +696,6 @@ class CurrentUser {
       bio.hashCode +
       bioLinks.hashCode +
       currentAvatar.hashCode +
-      currentAvatarAssetUrl.hashCode +
       currentAvatarImageUrl.hashCode +
       currentAvatarThumbnailImageUrl.hashCode +
       currentAvatarTags.hashCode +
@@ -733,6 +735,7 @@ class CurrentUser {
       onlineFriends.hashCode +
       pastDisplayNames.hashCode +
       presence.hashCode +
+      platformHistory.hashCode +
       profilePicOverride.hashCode +
       profilePicOverrideThumbnail.hashCode +
       pronouns.hashCode +

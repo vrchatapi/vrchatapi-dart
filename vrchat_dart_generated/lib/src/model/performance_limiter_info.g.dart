@@ -16,10 +16,9 @@ PerformanceLimiterInfo _$PerformanceLimiterInfoFromJson(
       ($checkedConvert) {
         $checkKeys(
           json,
-          requiredKeys: const ['allowed', 'maxSeats'],
+          requiredKeys: const ['maxSeats'],
         );
         final val = PerformanceLimiterInfo(
-          allowed: $checkedConvert('allowed', (v) => v as bool),
           maxSeats: $checkedConvert('maxSeats', (v) => (v as num).toInt()),
         );
         return val;
@@ -29,6 +28,5 @@ PerformanceLimiterInfo _$PerformanceLimiterInfoFromJson(
 Map<String, dynamic> _$PerformanceLimiterInfoToJson(
         PerformanceLimiterInfo instance) =>
     <String, dynamic>{
-      'allowed': instance.allowed,
       'maxSeats': instance.maxSeats,
     };

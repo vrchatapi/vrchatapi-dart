@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/group_permissions.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_group_role_request.g.dart';
@@ -56,7 +57,7 @@ class CreateGroupRoleRequest {
     required: false,
     includeIfNull: false,
   )
-  final List<String>? permissions;
+  final List<GroupPermissions>? permissions;
 
   @override
   bool operator ==(Object other) =>

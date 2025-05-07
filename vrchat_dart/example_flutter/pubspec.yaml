@@ -15,7 +15,7 @@ dependencies:
   package_info_plus: ^8.0.0
 
 dev_dependencies:
-  rexios_lints: ^8.1.0
+  rexios_lints: ^11.0.4
 
 dependency_overrides:
   vrchat_dart_generated:

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
 **isSelfAssignable** | **bool** |  | [optional] [default to false]
-**permissions** | **List&lt;String&gt;** |  | [optional] 
+**permissions** | [**List&lt;GroupPermissions&gt;**](GroupPermissions.md) |  | [optional] 
 **isManagementRole** | **bool** |  | [optional] [default to false]
 **requiresTwoFactor** | **bool** |  | [optional] [default to false]
 **requiresPurchase** | **bool** |  | [optional] [default to false]

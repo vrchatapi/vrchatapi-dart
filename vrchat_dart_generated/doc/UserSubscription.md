@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
 **licenseGroups** | **List&lt;String&gt;** |  | 
 **isGift** | **bool** |  | [default to false]
+**isBulkGift** | **bool** |  | [default to false]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

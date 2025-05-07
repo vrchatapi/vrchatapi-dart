@@ -25,16 +25,7 @@ Response _$ResponseFromJson(Map<String, dynamic> json) => $checkedCreate(
       fieldKeyMap: const {'statusCode': 'status_code'},
     );
 
-Map<String, dynamic> _$ResponseToJson(Response instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('message', instance.message);
-  val['status_code'] = instance.statusCode;
-  return val;
-}
+Map<String, dynamic> _$ResponseToJson(Response instance) => <String, dynamic>{
+      if (instance.message case final value?) 'message': value,
+      'status_code': instance.statusCode,
+    };

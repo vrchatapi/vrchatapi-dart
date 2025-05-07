@@ -27,20 +27,14 @@ JamStateChangeDates _$JamStateChangeDatesFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$JamStateChangeDatesToJson(JamStateChangeDates instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('closed', instance.closed?.toIso8601String());
-  writeNotNull(
-      'submissionsClosed', instance.submissionsClosed?.toIso8601String());
-  writeNotNull(
-      'submissionsOpened', instance.submissionsOpened?.toIso8601String());
-  writeNotNull('winnersSelected', instance.winnersSelected?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$JamStateChangeDatesToJson(
+        JamStateChangeDates instance) =>
+    <String, dynamic>{
+      if (instance.closed?.toIso8601String() case final value?) 'closed': value,
+      if (instance.submissionsClosed?.toIso8601String() case final value?)
+        'submissionsClosed': value,
+      if (instance.submissionsOpened?.toIso8601String() case final value?)
+        'submissionsOpened': value,
+      if (instance.winnersSelected?.toIso8601String() case final value?)
+        'winnersSelected': value,
+    };

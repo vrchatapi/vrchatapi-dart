@@ -39,22 +39,15 @@ Badge _$BadgeFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$BadgeToJson(Badge instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('assignedAt', instance.assignedAt?.toIso8601String());
-  val['badgeDescription'] = instance.badgeDescription;
-  val['badgeId'] = instance.badgeId;
-  val['badgeImageUrl'] = instance.badgeImageUrl;
-  val['badgeName'] = instance.badgeName;
-  writeNotNull('hidden', instance.hidden);
-  val['showcased'] = instance.showcased;
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$BadgeToJson(Badge instance) => <String, dynamic>{
+      if (instance.assignedAt?.toIso8601String() case final value?)
+        'assignedAt': value,
+      'badgeDescription': instance.badgeDescription,
+      'badgeId': instance.badgeId,
+      'badgeImageUrl': instance.badgeImageUrl,
+      'badgeName': instance.badgeName,
+      if (instance.hidden case final value?) 'hidden': value,
+      'showcased': instance.showcased,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+    };

@@ -36,7 +36,7 @@ Method | HTTP request | Description
 [**getGroupMember**](GroupsApi.md#getgroupmember) | **GET** /groups/{groupId}/members/{userId} | Get Group Member
 [**getGroupMembers**](GroupsApi.md#getgroupmembers) | **GET** /groups/{groupId}/members | List Group Members
 [**getGroupPermissions**](GroupsApi.md#getgrouppermissions) | **GET** /groups/{groupId}/permissions | List Group Permissions
-[**getGroupPost**](GroupsApi.md#getgrouppost) | **GET** /groups/{groupId}/posts | Get posts from a Group
+[**getGroupPosts**](GroupsApi.md#getgroupposts) | **GET** /groups/{groupId}/posts | Get posts from a Group
 [**getGroupRequests**](GroupsApi.md#getgrouprequests) | **GET** /groups/{groupId}/requests | Get Group Join Requests
 [**getGroupRoles**](GroupsApi.md#getgrouproles) | **GET** /groups/{groupId}/roles | Get Group Roles
 [**joinGroup**](GroupsApi.md#joingroup) | **POST** /groups/{groupId}/join | Join Group
@@ -978,7 +978,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getGroupAuditLogs**
-> PaginatedGroupAuditLogEntryList getGroupAuditLogs(groupId, n, offset, startDate, endDate)
+> PaginatedGroupAuditLogEntryList getGroupAuditLogs(groupId, n, offset, startDate, endDate, actorIds, eventTypes, targetIds)
 
 Get Group Audit Logs
 
@@ -998,9 +998,12 @@ final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final DateTime startDate = 2013-10-20T19:20:30+01:00; // DateTime | The start date of the search range.
 final DateTime endDate = 2013-10-20T19:20:30+01:00; // DateTime | The end date of the search range.
+final String actorIds = usr_00000000-0000-0000-0000-000000000000,usr_11111111-1111-1111-1111-111111111111; // String | The comma-separated actor ids to search for.
+final String eventTypes = group.member.remove,group.instance.kick; // String | The comma-separated event types to search for.
+final String targetIds = usr_00000000-0000-0000-0000-000000000000,usr_11111111-1111-1111-1111-111111111111; // String | The comma-separated target ids to search for.
 
 try {
-    final response = api.getGroupAuditLogs(groupId, n, offset, startDate, endDate);
+    final response = api.getGroupAuditLogs(groupId, n, offset, startDate, endDate, actorIds, eventTypes, targetIds);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling GroupsApi->getGroupAuditLogs: $e\n');
@@ -1016,6 +1019,9 @@ Name | Type | Description  | Notes
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
  **startDate** | **DateTime**| The start date of the search range. | [optional] 
  **endDate** | **DateTime**| The end date of the search range. | [optional] 
+ **actorIds** | **String**| The comma-separated actor ids to search for. | [optional] 
+ **eventTypes** | **String**| The comma-separated event types to search for. | [optional] 
+ **targetIds** | **String**| The comma-separated target ids to search for. | [optional] 
 
 ### Return type
 
@@ -1387,8 +1393,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getGroupPost**
-> GroupPost getGroupPost(groupId, n, offset, publicOnly)
+# **getGroupPosts**
+> GetGroupPosts200Response getGroupPosts(groupId, n, offset, publicOnly)
 
 Get posts from a Group
 
@@ -1409,10 +1415,10 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 final bool publicOnly = true; // bool | See public posts only.
 
 try {
-    final response = api.getGroupPost(groupId, n, offset, publicOnly);
+    final response = api.getGroupPosts(groupId, n, offset, publicOnly);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling GroupsApi->getGroupPost: $e\n');
+    print('Exception when calling GroupsApi->getGroupPosts: $e\n');
 }
 ```
 
@@ -1427,7 +1433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GroupPost**](GroupPost.md)
+[**GetGroupPosts200Response**](GetGroupPosts200Response.md)
 
 ### Authorization
 

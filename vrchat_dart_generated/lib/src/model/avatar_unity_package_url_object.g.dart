@@ -23,15 +23,7 @@ AvatarUnityPackageUrlObject _$AvatarUnityPackageUrlObjectFromJson(
     );
 
 Map<String, dynamic> _$AvatarUnityPackageUrlObjectToJson(
-    AvatarUnityPackageUrlObject instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('unityPackageUrl', instance.unityPackageUrl);
-  return val;
-}
+        AvatarUnityPackageUrlObject instance) =>
+    <String, dynamic>{
+      if (instance.unityPackageUrl case final value?) 'unityPackageUrl': value,
+    };

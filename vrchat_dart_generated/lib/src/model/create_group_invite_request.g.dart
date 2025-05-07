@@ -28,17 +28,9 @@ CreateGroupInviteRequest _$CreateGroupInviteRequestFromJson(
     );
 
 Map<String, dynamic> _$CreateGroupInviteRequestToJson(
-    CreateGroupInviteRequest instance) {
-  final val = <String, dynamic>{
-    'userId': instance.userId,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('confirmOverrideBlock', instance.confirmOverrideBlock);
-  return val;
-}
+        CreateGroupInviteRequest instance) =>
+    <String, dynamic>{
+      'userId': instance.userId,
+      if (instance.confirmOverrideBlock case final value?)
+        'confirmOverrideBlock': value,
+    };

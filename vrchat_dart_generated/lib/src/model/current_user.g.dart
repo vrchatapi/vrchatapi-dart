@@ -22,7 +22,6 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
             'bio',
             'bioLinks',
             'currentAvatar',
-            'currentAvatarAssetUrl',
             'currentAvatarImageUrl',
             'currentAvatarThumbnailImageUrl',
             'currentAvatarTags',
@@ -79,8 +78,8 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
                   .toList()),
           activeFriends: $checkedConvert('activeFriends',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
-          ageVerificationStatus:
-              $checkedConvert('ageVerificationStatus', (v) => v as String),
+          ageVerificationStatus: $checkedConvert('ageVerificationStatus',
+              (v) => $enumDecode(_$AgeVerificationStatusEnumMap, v)),
           ageVerified: $checkedConvert('ageVerified', (v) => v as bool),
           allowAvatarCopying:
               $checkedConvert('allowAvatarCopying', (v) => v as bool),
@@ -93,8 +92,6 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
           bioLinks: $checkedConvert('bioLinks',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           currentAvatar: $checkedConvert('currentAvatar', (v) => v as String),
-          currentAvatarAssetUrl:
-              $checkedConvert('currentAvatarAssetUrl', (v) => v as String),
           currentAvatarImageUrl:
               $checkedConvert('currentAvatarImageUrl', (v) => v as String),
           currentAvatarThumbnailImageUrl: $checkedConvert(
@@ -161,6 +158,12 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => v == null
                   ? null
                   : CurrentUserPresence.fromJson(v as Map<String, dynamic>)),
+          platformHistory: $checkedConvert(
+              'platform_history',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => CurrentUserPlatformHistoryInner.fromJson(
+                      e as Map<String, dynamic>))
+                  .toList()),
           profilePicOverride:
               $checkedConvert('profilePicOverride', (v) => v as String),
           profilePicOverrideThumbnail: $checkedConvert(
@@ -201,97 +204,107 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'lastLogin': 'last_login',
         'lastMobile': 'last_mobile',
         'lastPlatform': 'last_platform',
+        'platformHistory': 'platform_history',
         'updatedAt': 'updated_at'
       },
     );
 
-Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
-  final val = <String, dynamic>{
-    'acceptedTOSVersion': instance.acceptedTOSVersion,
-  };
+Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) =>
+    <String, dynamic>{
+      'acceptedTOSVersion': instance.acceptedTOSVersion,
+      if (instance.acceptedPrivacyVersion case final value?)
+        'acceptedPrivacyVersion': value,
+      if (instance.accountDeletionDate?.toIso8601String() case final value?)
+        'accountDeletionDate': value,
+      if (instance.accountDeletionLog?.map((e) => e.toJson()).toList()
+          case final value?)
+        'accountDeletionLog': value,
+      if (instance.activeFriends case final value?) 'activeFriends': value,
+      'ageVerificationStatus':
+          _$AgeVerificationStatusEnumMap[instance.ageVerificationStatus]!,
+      'ageVerified': instance.ageVerified,
+      'allowAvatarCopying': instance.allowAvatarCopying,
+      if (instance.badges?.map((e) => e.toJson()).toList() case final value?)
+        'badges': value,
+      'bio': instance.bio,
+      'bioLinks': instance.bioLinks,
+      'currentAvatar': instance.currentAvatar,
+      'currentAvatarImageUrl': instance.currentAvatarImageUrl,
+      'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
+      'currentAvatarTags': instance.currentAvatarTags,
+      'date_joined': instance.dateJoined.toIso8601String(),
+      'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
+      'displayName': instance.displayName,
+      'emailVerified': instance.emailVerified,
+      if (instance.fallbackAvatar case final value?) 'fallbackAvatar': value,
+      'friendGroupNames': instance.friendGroupNames,
+      'friendKey': instance.friendKey,
+      'friends': instance.friends,
+      'hasBirthday': instance.hasBirthday,
+      if (instance.hideContentFilterSettings case final value?)
+        'hideContentFilterSettings': value,
+      if (instance.userLanguage case final value?) 'userLanguage': value,
+      if (instance.userLanguageCode case final value?)
+        'userLanguageCode': value,
+      'hasEmail': instance.hasEmail,
+      'hasLoggedInFromClient': instance.hasLoggedInFromClient,
+      'hasPendingEmail': instance.hasPendingEmail,
+      'homeLocation': instance.homeLocation,
+      'id': instance.id,
+      'isAdult': instance.isAdult,
+      if (instance.isBoopingEnabled case final value?)
+        'isBoopingEnabled': value,
+      'isFriend': instance.isFriend,
+      if (instance.lastActivity?.toIso8601String() case final value?)
+        'last_activity': value,
+      'last_login': instance.lastLogin.toIso8601String(),
+      'last_mobile': instance.lastMobile?.toIso8601String(),
+      'last_platform': instance.lastPlatform,
+      'obfuscatedEmail': instance.obfuscatedEmail,
+      'obfuscatedPendingEmail': instance.obfuscatedPendingEmail,
+      'oculusId': instance.oculusId,
+      if (instance.googleId case final value?) 'googleId': value,
+      if (instance.googleDetails case final value?) 'googleDetails': value,
+      if (instance.picoId case final value?) 'picoId': value,
+      if (instance.viveId case final value?) 'viveId': value,
+      if (instance.offlineFriends case final value?) 'offlineFriends': value,
+      if (instance.onlineFriends case final value?) 'onlineFriends': value,
+      'pastDisplayNames':
+          instance.pastDisplayNames.map((e) => e.toJson()).toList(),
+      if (instance.presence?.toJson() case final value?) 'presence': value,
+      if (instance.platformHistory?.map((e) => e.toJson()).toList()
+          case final value?)
+        'platform_history': value,
+      'profilePicOverride': instance.profilePicOverride,
+      'profilePicOverrideThumbnail': instance.profilePicOverrideThumbnail,
+      'pronouns': instance.pronouns,
+      if (instance.queuedInstance case final value?) 'queuedInstance': value,
+      if (instance.receiveMobileInvitations case final value?)
+        'receiveMobileInvitations': value,
+      'state': _$UserStateEnumMap[instance.state]!,
+      'status': _$UserStatusEnumMap[instance.status]!,
+      'statusDescription': instance.statusDescription,
+      'statusFirstTime': instance.statusFirstTime,
+      'statusHistory': instance.statusHistory,
+      'steamDetails': instance.steamDetails,
+      'steamId': instance.steamId,
+      'tags': instance.tags,
+      'twoFactorAuthEnabled': instance.twoFactorAuthEnabled,
+      if (instance.twoFactorAuthEnabledDate?.toIso8601String()
+          case final value?)
+        'twoFactorAuthEnabledDate': value,
+      'unsubscribe': instance.unsubscribe,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updated_at': value,
+      'userIcon': instance.userIcon,
+      if (instance.username case final value?) 'username': value,
+    };
 
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('acceptedPrivacyVersion', instance.acceptedPrivacyVersion);
-  writeNotNull(
-      'accountDeletionDate', instance.accountDeletionDate?.toIso8601String());
-  writeNotNull('accountDeletionLog',
-      instance.accountDeletionLog?.map((e) => e.toJson()).toList());
-  writeNotNull('activeFriends', instance.activeFriends);
-  val['ageVerificationStatus'] = instance.ageVerificationStatus;
-  val['ageVerified'] = instance.ageVerified;
-  val['allowAvatarCopying'] = instance.allowAvatarCopying;
-  writeNotNull('badges', instance.badges?.map((e) => e.toJson()).toList());
-  val['bio'] = instance.bio;
-  val['bioLinks'] = instance.bioLinks;
-  val['currentAvatar'] = instance.currentAvatar;
-  val['currentAvatarAssetUrl'] = instance.currentAvatarAssetUrl;
-  val['currentAvatarImageUrl'] = instance.currentAvatarImageUrl;
-  val['currentAvatarThumbnailImageUrl'] =
-      instance.currentAvatarThumbnailImageUrl;
-  val['currentAvatarTags'] = instance.currentAvatarTags;
-  val['date_joined'] = instance.dateJoined.toIso8601String();
-  val['developerType'] = _$DeveloperTypeEnumMap[instance.developerType]!;
-  val['displayName'] = instance.displayName;
-  val['emailVerified'] = instance.emailVerified;
-  writeNotNull('fallbackAvatar', instance.fallbackAvatar);
-  val['friendGroupNames'] = instance.friendGroupNames;
-  val['friendKey'] = instance.friendKey;
-  val['friends'] = instance.friends;
-  val['hasBirthday'] = instance.hasBirthday;
-  writeNotNull('hideContentFilterSettings', instance.hideContentFilterSettings);
-  writeNotNull('userLanguage', instance.userLanguage);
-  writeNotNull('userLanguageCode', instance.userLanguageCode);
-  val['hasEmail'] = instance.hasEmail;
-  val['hasLoggedInFromClient'] = instance.hasLoggedInFromClient;
-  val['hasPendingEmail'] = instance.hasPendingEmail;
-  val['homeLocation'] = instance.homeLocation;
-  val['id'] = instance.id;
-  val['isAdult'] = instance.isAdult;
-  writeNotNull('isBoopingEnabled', instance.isBoopingEnabled);
-  val['isFriend'] = instance.isFriend;
-  writeNotNull('last_activity', instance.lastActivity?.toIso8601String());
-  val['last_login'] = instance.lastLogin.toIso8601String();
-  val['last_mobile'] = instance.lastMobile?.toIso8601String();
-  val['last_platform'] = instance.lastPlatform;
-  val['obfuscatedEmail'] = instance.obfuscatedEmail;
-  val['obfuscatedPendingEmail'] = instance.obfuscatedPendingEmail;
-  val['oculusId'] = instance.oculusId;
-  writeNotNull('googleId', instance.googleId);
-  writeNotNull('googleDetails', instance.googleDetails);
-  writeNotNull('picoId', instance.picoId);
-  writeNotNull('viveId', instance.viveId);
-  writeNotNull('offlineFriends', instance.offlineFriends);
-  writeNotNull('onlineFriends', instance.onlineFriends);
-  val['pastDisplayNames'] =
-      instance.pastDisplayNames.map((e) => e.toJson()).toList();
-  writeNotNull('presence', instance.presence?.toJson());
-  val['profilePicOverride'] = instance.profilePicOverride;
-  val['profilePicOverrideThumbnail'] = instance.profilePicOverrideThumbnail;
-  val['pronouns'] = instance.pronouns;
-  writeNotNull('queuedInstance', instance.queuedInstance);
-  writeNotNull('receiveMobileInvitations', instance.receiveMobileInvitations);
-  val['state'] = _$UserStateEnumMap[instance.state]!;
-  val['status'] = _$UserStatusEnumMap[instance.status]!;
-  val['statusDescription'] = instance.statusDescription;
-  val['statusFirstTime'] = instance.statusFirstTime;
-  val['statusHistory'] = instance.statusHistory;
-  val['steamDetails'] = instance.steamDetails;
-  val['steamId'] = instance.steamId;
-  val['tags'] = instance.tags;
-  val['twoFactorAuthEnabled'] = instance.twoFactorAuthEnabled;
-  writeNotNull('twoFactorAuthEnabledDate',
-      instance.twoFactorAuthEnabledDate?.toIso8601String());
-  val['unsubscribe'] = instance.unsubscribe;
-  writeNotNull('updated_at', instance.updatedAt?.toIso8601String());
-  val['userIcon'] = instance.userIcon;
-  writeNotNull('username', instance.username);
-  return val;
-}
+const _$AgeVerificationStatusEnumMap = {
+  AgeVerificationStatus.hidden: 'hidden',
+  AgeVerificationStatus.verified: 'verified',
+  AgeVerificationStatus.plus18: '18+',
+};
 
 const _$DeveloperTypeEnumMap = {
   DeveloperType.none: 'none',

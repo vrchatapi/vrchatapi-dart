@@ -34,26 +34,19 @@ CreateGroupRequest _$CreateGroupRequestFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$CreateGroupRequestToJson(CreateGroupRequest instance) {
-  final val = <String, dynamic>{
-    'name': instance.name,
-    'shortCode': instance.shortCode,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('description', instance.description);
-  writeNotNull('joinState', _$GroupJoinStateEnumMap[instance.joinState]);
-  writeNotNull('iconId', instance.iconId);
-  writeNotNull('bannerId', instance.bannerId);
-  writeNotNull('privacy', _$GroupPrivacyEnumMap[instance.privacy]);
-  val['roleTemplate'] = _$GroupRoleTemplateEnumMap[instance.roleTemplate]!;
-  return val;
-}
+Map<String, dynamic> _$CreateGroupRequestToJson(CreateGroupRequest instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'shortCode': instance.shortCode,
+      if (instance.description case final value?) 'description': value,
+      if (_$GroupJoinStateEnumMap[instance.joinState] case final value?)
+        'joinState': value,
+      if (instance.iconId case final value?) 'iconId': value,
+      if (instance.bannerId case final value?) 'bannerId': value,
+      if (_$GroupPrivacyEnumMap[instance.privacy] case final value?)
+        'privacy': value,
+      'roleTemplate': _$GroupRoleTemplateEnumMap[instance.roleTemplate]!,
+    };
 
 const _$GroupJoinStateEnumMap = {
   GroupJoinState.closed: 'closed',

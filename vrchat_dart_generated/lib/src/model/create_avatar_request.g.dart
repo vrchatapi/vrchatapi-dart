@@ -37,27 +37,21 @@ CreateAvatarRequest _$CreateAvatarRequestFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$CreateAvatarRequestToJson(CreateAvatarRequest instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('assetUrl', instance.assetUrl);
-  writeNotNull('id', instance.id);
-  val['name'] = instance.name;
-  writeNotNull('description', instance.description);
-  writeNotNull('tags', instance.tags);
-  val['imageUrl'] = instance.imageUrl;
-  writeNotNull('releaseStatus', _$ReleaseStatusEnumMap[instance.releaseStatus]);
-  writeNotNull('version', instance.version);
-  writeNotNull('unityPackageUrl', instance.unityPackageUrl);
-  writeNotNull('unityVersion', instance.unityVersion);
-  return val;
-}
+Map<String, dynamic> _$CreateAvatarRequestToJson(
+        CreateAvatarRequest instance) =>
+    <String, dynamic>{
+      if (instance.assetUrl case final value?) 'assetUrl': value,
+      if (instance.id case final value?) 'id': value,
+      'name': instance.name,
+      if (instance.description case final value?) 'description': value,
+      if (instance.tags case final value?) 'tags': value,
+      'imageUrl': instance.imageUrl,
+      if (_$ReleaseStatusEnumMap[instance.releaseStatus] case final value?)
+        'releaseStatus': value,
+      if (instance.version case final value?) 'version': value,
+      if (instance.unityPackageUrl case final value?) 'unityPackageUrl': value,
+      if (instance.unityVersion case final value?) 'unityVersion': value,
+    };
 
 const _$ReleaseStatusEnumMap = {
   ReleaseStatus.public: 'public',

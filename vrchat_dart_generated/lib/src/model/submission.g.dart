@@ -39,22 +39,13 @@ Submission _$SubmissionFromJson(Map<String, dynamic> json) => $checkedCreate(
       fieldKeyMap: const {'createdAt': 'created_at'},
     );
 
-Map<String, dynamic> _$SubmissionToJson(Submission instance) {
-  final val = <String, dynamic>{
-    'contentId': instance.contentId,
-    'created_at': instance.createdAt.toIso8601String(),
-    'description': instance.description,
-    'id': instance.id,
-    'jamId': instance.jamId,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('ratingScore', instance.ratingScore);
-  val['submitterId'] = instance.submitterId;
-  return val;
-}
+Map<String, dynamic> _$SubmissionToJson(Submission instance) =>
+    <String, dynamic>{
+      'contentId': instance.contentId,
+      'created_at': instance.createdAt.toIso8601String(),
+      'description': instance.description,
+      'id': instance.id,
+      'jamId': instance.jamId,
+      if (instance.ratingScore case final value?) 'ratingScore': value,
+      'submitterId': instance.submitterId,
+    };

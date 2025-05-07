@@ -54,25 +54,19 @@ APIConfigConstantsGROUPS _$APIConfigConstantsGROUPSFromJson(
     );
 
 Map<String, dynamic> _$APIConfigConstantsGROUPSToJson(
-    APIConfigConstantsGROUPS instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('CAPACITY', instance.capacity);
-  writeNotNull(
-      'GROUP_TRANSFER_REQUIREMENTS', instance.groupTransferRequirements);
-  writeNotNull('MAX_INVITES_REQUESTS', instance.maxInvitesRequests);
-  writeNotNull('MAX_JOINED', instance.maxJoined);
-  writeNotNull('MAX_JOINED_PLUS', instance.maxJoinedPlus);
-  writeNotNull('MAX_LANGUAGES', instance.maxLanguages);
-  writeNotNull('MAX_LINKS', instance.maxLinks);
-  writeNotNull('MAX_MANAGEMENT_ROLES', instance.maxManagementRoles);
-  writeNotNull('MAX_OWNED', instance.maxOwned);
-  writeNotNull('MAX_ROLES', instance.maxRoles);
-  return val;
-}
+        APIConfigConstantsGROUPS instance) =>
+    <String, dynamic>{
+      if (instance.capacity case final value?) 'CAPACITY': value,
+      if (instance.groupTransferRequirements case final value?)
+        'GROUP_TRANSFER_REQUIREMENTS': value,
+      if (instance.maxInvitesRequests case final value?)
+        'MAX_INVITES_REQUESTS': value,
+      if (instance.maxJoined case final value?) 'MAX_JOINED': value,
+      if (instance.maxJoinedPlus case final value?) 'MAX_JOINED_PLUS': value,
+      if (instance.maxLanguages case final value?) 'MAX_LANGUAGES': value,
+      if (instance.maxLinks case final value?) 'MAX_LINKS': value,
+      if (instance.maxManagementRoles case final value?)
+        'MAX_MANAGEMENT_ROLES': value,
+      if (instance.maxOwned case final value?) 'MAX_OWNED': value,
+      if (instance.maxRoles case final value?) 'MAX_ROLES': value,
+    };

@@ -39,24 +39,15 @@ CreateGroupPostRequest _$CreateGroupPostRequestFromJson(
     );
 
 Map<String, dynamic> _$CreateGroupPostRequestToJson(
-    CreateGroupPostRequest instance) {
-  final val = <String, dynamic>{
-    'title': instance.title,
-    'text': instance.text,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('imageId', instance.imageId);
-  val['sendNotification'] = instance.sendNotification;
-  writeNotNull('roleIds', instance.roleIds);
-  val['visibility'] = _$GroupPostVisibilityEnumMap[instance.visibility]!;
-  return val;
-}
+        CreateGroupPostRequest instance) =>
+    <String, dynamic>{
+      'title': instance.title,
+      'text': instance.text,
+      if (instance.imageId case final value?) 'imageId': value,
+      'sendNotification': instance.sendNotification,
+      if (instance.roleIds case final value?) 'roleIds': value,
+      'visibility': _$GroupPostVisibilityEnumMap[instance.visibility]!,
+    };
 
 const _$GroupPostVisibilityEnumMap = {
   GroupPostVisibility.group: 'group',

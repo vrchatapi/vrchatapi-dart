@@ -31,22 +31,14 @@ Permission _$PermissionFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$PermissionToJson(Permission instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('displayName', instance.displayName);
-  writeNotNull('description', instance.description);
-  val['id'] = instance.id;
-  val['ownerDisplayName'] = instance.ownerDisplayName;
-  val['name'] = instance.name;
-  val['ownerId'] = instance.ownerId;
-  writeNotNull('type', instance.type);
-  writeNotNull('data', instance.data);
-  return val;
-}
+Map<String, dynamic> _$PermissionToJson(Permission instance) =>
+    <String, dynamic>{
+      if (instance.displayName case final value?) 'displayName': value,
+      if (instance.description case final value?) 'description': value,
+      'id': instance.id,
+      'ownerDisplayName': instance.ownerDisplayName,
+      'name': instance.name,
+      'ownerId': instance.ownerId,
+      if (instance.type case final value?) 'type': value,
+      if (instance.data case final value?) 'data': value,
+    };

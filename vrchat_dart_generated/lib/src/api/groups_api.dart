@@ -17,6 +17,7 @@ import 'package:vrchat_dart_generated/src/model/create_group_invite_request.dart
 import 'package:vrchat_dart_generated/src/model/create_group_post_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_group_role_request.dart';
+import 'package:vrchat_dart_generated/src/model/get_group_posts200_response.dart';
 import 'package:vrchat_dart_generated/src/model/group.dart';
 import 'package:vrchat_dart_generated/src/model/group_announcement.dart';
 import 'package:vrchat_dart_generated/src/model/group_gallery.dart';
@@ -1717,6 +1718,9 @@ class GroupsApi {
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [startDate] - The start date of the search range.
   /// * [endDate] - The end date of the search range.
+  /// * [actorIds] - The comma-separated actor ids to search for.
+  /// * [eventTypes] - The comma-separated event types to search for.
+  /// * [targetIds] - The comma-separated target ids to search for.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1732,6 +1736,9 @@ class GroupsApi {
     int? offset,
     DateTime? startDate,
     DateTime? endDate,
+    String? actorIds,
+    String? eventTypes,
+    String? targetIds,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1765,6 +1772,9 @@ class GroupsApi {
       if (offset != null) r'offset': offset,
       if (startDate != null) r'startDate': startDate,
       if (endDate != null) r'endDate': endDate,
+      if (actorIds != null) r'actorIds': actorIds,
+      if (eventTypes != null) r'eventTypes': eventTypes,
+      if (targetIds != null) r'targetIds': targetIds,
     };
 
     final _response = await _dio.request<Object>(
@@ -2459,9 +2469,9 @@ class GroupsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [GroupPost] as data
+  /// Returns a [Future] containing a [Response] with a [GetGroupPosts200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GroupPost>> getGroupPost({
+  Future<Response<GetGroupPosts200Response>> getGroupPosts({
     required String groupId,
     int? n = 60,
     int? offset,
@@ -2509,13 +2519,14 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GroupPost? _responseData;
+    GetGroupPosts200Response? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GroupPost, GroupPost>(rawData, 'GroupPost',
+          : deserialize<GetGroupPosts200Response, GetGroupPosts200Response>(
+              rawData, 'GetGroupPosts200Response',
               growable: true);
     } catch (error, stackTrace) {
       throw DioException(
@@ -2527,7 +2538,7 @@ class GroupsApi {
       );
     }
 
-    return Response<GroupPost>(
+    return Response<GetGroupPosts200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

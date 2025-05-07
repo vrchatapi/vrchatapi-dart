@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/group_permissions.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'update_group_role_request.g.dart';
@@ -49,7 +50,7 @@ class UpdateGroupRoleRequest {
     required: false,
     includeIfNull: false,
   )
-  final List<String>? permissions;
+  final List<GroupPermissions>? permissions;
 
   @JsonKey(
     name: r'order',

@@ -63,7 +63,7 @@ class GroupAuditLogEntry {
   )
   final String? actorDisplayName;
 
-  /// Typically GroupID or GroupRoleID, but could be other types of IDs.
+  /// Typically a UserID, GroupID, GroupRoleID, or Location, but could be other types of IDs.
   @JsonKey(
     name: r'targetId',
     required: false,

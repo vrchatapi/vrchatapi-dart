@@ -34,29 +34,23 @@ GroupPost _$GroupPostFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$GroupPostToJson(GroupPost instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('id', instance.id);
-  writeNotNull('groupId', instance.groupId);
-  writeNotNull('authorId', instance.authorId);
-  writeNotNull('editorId', instance.editorId);
-  writeNotNull('visibility', _$GroupPostVisibilityEnumMap[instance.visibility]);
-  writeNotNull('roleId', instance.roleId);
-  writeNotNull('title', instance.title);
-  writeNotNull('text', instance.text);
-  writeNotNull('imageId', instance.imageId);
-  writeNotNull('imageUrl', instance.imageUrl);
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$GroupPostToJson(GroupPost instance) => <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.groupId case final value?) 'groupId': value,
+      if (instance.authorId case final value?) 'authorId': value,
+      if (instance.editorId case final value?) 'editorId': value,
+      if (_$GroupPostVisibilityEnumMap[instance.visibility] case final value?)
+        'visibility': value,
+      if (instance.roleId case final value?) 'roleId': value,
+      if (instance.title case final value?) 'title': value,
+      if (instance.text case final value?) 'text': value,
+      if (instance.imageId case final value?) 'imageId': value,
+      if (instance.imageUrl case final value?) 'imageUrl': value,
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+    };
 
 const _$GroupPostVisibilityEnumMap = {
   GroupPostVisibility.group: 'group',

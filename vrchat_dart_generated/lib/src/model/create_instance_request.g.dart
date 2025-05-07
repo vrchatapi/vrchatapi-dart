@@ -43,30 +43,23 @@ CreateInstanceRequest _$CreateInstanceRequestFromJson(
     );
 
 Map<String, dynamic> _$CreateInstanceRequestToJson(
-    CreateInstanceRequest instance) {
-  final val = <String, dynamic>{
-    'worldId': instance.worldId,
-    'type': _$InstanceTypeEnumMap[instance.type]!,
-    'region': _$InstanceRegionEnumMap[instance.region]!,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('ownerId', instance.ownerId);
-  writeNotNull('roleIds', instance.roleIds);
-  writeNotNull(
-      'groupAccessType', _$GroupAccessTypeEnumMap[instance.groupAccessType]);
-  writeNotNull('queueEnabled', instance.queueEnabled);
-  writeNotNull('closedAt', instance.closedAt?.toIso8601String());
-  writeNotNull('canRequestInvite', instance.canRequestInvite);
-  writeNotNull('hardClose', instance.hardClose);
-  writeNotNull('inviteOnly', instance.inviteOnly);
-  return val;
-}
+        CreateInstanceRequest instance) =>
+    <String, dynamic>{
+      'worldId': instance.worldId,
+      'type': _$InstanceTypeEnumMap[instance.type]!,
+      'region': _$InstanceRegionEnumMap[instance.region]!,
+      if (instance.ownerId case final value?) 'ownerId': value,
+      if (instance.roleIds case final value?) 'roleIds': value,
+      if (_$GroupAccessTypeEnumMap[instance.groupAccessType] case final value?)
+        'groupAccessType': value,
+      if (instance.queueEnabled case final value?) 'queueEnabled': value,
+      if (instance.closedAt?.toIso8601String() case final value?)
+        'closedAt': value,
+      if (instance.canRequestInvite case final value?)
+        'canRequestInvite': value,
+      if (instance.hardClose case final value?) 'hardClose': value,
+      if (instance.inviteOnly case final value?) 'inviteOnly': value,
+    };
 
 const _$InstanceTypeEnumMap = {
   InstanceType.public: 'public',

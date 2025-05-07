@@ -50,29 +50,21 @@ InfoPush _$InfoPushFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$InfoPushToJson(InfoPush instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'isEnabled': instance.isEnabled,
-    'releaseStatus': _$ReleaseStatusEnumMap[instance.releaseStatus]!,
-    'priority': instance.priority,
-    'tags': instance.tags,
-    'data': instance.data.toJson(),
-    'hash': instance.hash,
-    'createdAt': instance.createdAt.toIso8601String(),
-    'updatedAt': instance.updatedAt.toIso8601String(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('startDate', instance.startDate?.toIso8601String());
-  writeNotNull('endDate', instance.endDate?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$InfoPushToJson(InfoPush instance) => <String, dynamic>{
+      'id': instance.id,
+      'isEnabled': instance.isEnabled,
+      'releaseStatus': _$ReleaseStatusEnumMap[instance.releaseStatus]!,
+      'priority': instance.priority,
+      'tags': instance.tags,
+      'data': instance.data.toJson(),
+      'hash': instance.hash,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'updatedAt': instance.updatedAt.toIso8601String(),
+      if (instance.startDate?.toIso8601String() case final value?)
+        'startDate': value,
+      if (instance.endDate?.toIso8601String() case final value?)
+        'endDate': value,
+    };
 
 const _$ReleaseStatusEnumMap = {
   ReleaseStatus.public: 'public',

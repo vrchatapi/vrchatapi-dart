@@ -8,7 +8,8 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ageVerificationStatus** | **String** |  | 
+**ageVerificationStatus** | [**AgeVerificationStatus**](AgeVerificationStatus.md) |  | 
+**ageVerified** | **bool** | `true` if, user is age verified (not 18+). | 
 **allowAvatarCopying** | **bool** |  | [default to true]
 **badges** | [**List&lt;Badge&gt;**](Badge.md) |   | [optional] 
 **bio** | **String** |  | 

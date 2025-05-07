@@ -45,17 +45,9 @@ APIConfigConstantsINSTANCEPOPULATIONBRACKETS
         );
 
 Map<String, dynamic> _$APIConfigConstantsINSTANCEPOPULATIONBRACKETSToJson(
-    APIConfigConstantsINSTANCEPOPULATIONBRACKETS instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('CROWDED', instance.crowded?.toJson());
-  writeNotNull('FEW', instance.few?.toJson());
-  writeNotNull('MANY', instance.many?.toJson());
-  return val;
-}
+        APIConfigConstantsINSTANCEPOPULATIONBRACKETS instance) =>
+    <String, dynamic>{
+      if (instance.crowded?.toJson() case final value?) 'CROWDED': value,
+      if (instance.few?.toJson() case final value?) 'FEW': value,
+      if (instance.many?.toJson() case final value?) 'MANY': value,
+    };

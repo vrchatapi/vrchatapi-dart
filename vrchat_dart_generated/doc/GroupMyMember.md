@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **hasJoinedFromPurchase** | **bool** |  | [optional] [default to false]
 **lastPostReadAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **mRoleIds** | **List&lt;String&gt;** |  | [optional] 
-**permissions** | **List&lt;String&gt;** |  | [optional] 
+**permissions** | [**List&lt;GroupPermissions&gt;**](GroupPermissions.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

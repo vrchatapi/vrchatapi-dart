@@ -29,17 +29,8 @@ NotificationDetailRequestInviteResponse
         );
 
 Map<String, dynamic> _$NotificationDetailRequestInviteResponseToJson(
-    NotificationDetailRequestInviteResponse instance) {
-  final val = <String, dynamic>{
-    'inResponseTo': instance.inResponseTo,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('requestMessage', instance.requestMessage);
-  return val;
-}
+        NotificationDetailRequestInviteResponse instance) =>
+    <String, dynamic>{
+      'inResponseTo': instance.inResponseTo,
+      if (instance.requestMessage case final value?) 'requestMessage': value,
+    };

@@ -43,26 +43,17 @@ SentNotification _$SentNotificationFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {'createdAt': 'created_at'},
     );
 
-Map<String, dynamic> _$SentNotificationToJson(SentNotification instance) {
-  final val = <String, dynamic>{
-    'created_at': instance.createdAt.toIso8601String(),
-    'details': instance.details,
-    'id': instance.id,
-    'message': instance.message,
-    'receiverUserId': instance.receiverUserId,
-    'senderUserId': instance.senderUserId,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('senderUsername', instance.senderUsername);
-  val['type'] = _$NotificationTypeEnumMap[instance.type]!;
-  return val;
-}
+Map<String, dynamic> _$SentNotificationToJson(SentNotification instance) =>
+    <String, dynamic>{
+      'created_at': instance.createdAt.toIso8601String(),
+      'details': instance.details,
+      'id': instance.id,
+      'message': instance.message,
+      'receiverUserId': instance.receiverUserId,
+      'senderUserId': instance.senderUserId,
+      if (instance.senderUsername case final value?) 'senderUsername': value,
+      'type': _$NotificationTypeEnumMap[instance.type]!,
+    };
 
 const _$NotificationTypeEnumMap = {
   NotificationType.friendRequest: 'friendRequest',

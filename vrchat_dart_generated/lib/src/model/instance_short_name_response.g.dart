@@ -27,17 +27,8 @@ InstanceShortNameResponse _$InstanceShortNameResponseFromJson(
     );
 
 Map<String, dynamic> _$InstanceShortNameResponseToJson(
-    InstanceShortNameResponse instance) {
-  final val = <String, dynamic>{
-    'secureName': instance.secureName,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('shortName', instance.shortName);
-  return val;
-}
+        InstanceShortNameResponse instance) =>
+    <String, dynamic>{
+      'secureName': instance.secureName,
+      if (instance.shortName case final value?) 'shortName': value,
+    };

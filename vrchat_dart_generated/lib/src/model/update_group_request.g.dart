@@ -33,27 +33,20 @@ UpdateGroupRequest _$UpdateGroupRequestFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$UpdateGroupRequestToJson(UpdateGroupRequest instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('name', instance.name);
-  writeNotNull('shortCode', instance.shortCode);
-  writeNotNull('description', instance.description);
-  writeNotNull('joinState', _$GroupJoinStateEnumMap[instance.joinState]);
-  writeNotNull('iconId', instance.iconId);
-  writeNotNull('bannerId', instance.bannerId);
-  writeNotNull('languages', instance.languages);
-  writeNotNull('links', instance.links);
-  writeNotNull('rules', instance.rules);
-  writeNotNull('tags', instance.tags);
-  return val;
-}
+Map<String, dynamic> _$UpdateGroupRequestToJson(UpdateGroupRequest instance) =>
+    <String, dynamic>{
+      if (instance.name case final value?) 'name': value,
+      if (instance.shortCode case final value?) 'shortCode': value,
+      if (instance.description case final value?) 'description': value,
+      if (_$GroupJoinStateEnumMap[instance.joinState] case final value?)
+        'joinState': value,
+      if (instance.iconId case final value?) 'iconId': value,
+      if (instance.bannerId case final value?) 'bannerId': value,
+      if (instance.languages case final value?) 'languages': value,
+      if (instance.links case final value?) 'links': value,
+      if (instance.rules case final value?) 'rules': value,
+      if (instance.tags case final value?) 'tags': value,
+    };
 
 const _$GroupJoinStateEnumMap = {
   GroupJoinState.closed: 'closed',

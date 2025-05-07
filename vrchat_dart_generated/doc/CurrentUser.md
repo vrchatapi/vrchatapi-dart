@@ -13,14 +13,13 @@ Name | Type | Description | Notes
 **accountDeletionDate** | [**DateTime**](DateTime.md) |  | [optional] 
 **accountDeletionLog** | [**List&lt;AccountDeletionLog&gt;**](AccountDeletionLog.md) |   | [optional] 
 **activeFriends** | **List&lt;String&gt;** |   | [optional] 
-**ageVerificationStatus** | **String** |  | 
-**ageVerified** | **bool** |  | 
+**ageVerificationStatus** | [**AgeVerificationStatus**](AgeVerificationStatus.md) |  | 
+**ageVerified** | **bool** | `true` if, user is age verified (not 18+). | 
 **allowAvatarCopying** | **bool** |  | 
 **badges** | [**List&lt;Badge&gt;**](Badge.md) |   | [optional] 
 **bio** | **String** |  | 
 **bioLinks** | **List&lt;String&gt;** |   | 
 **currentAvatar** | **String** |  | 
-**currentAvatarAssetUrl** | **String** |  | 
 **currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
 **currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
 **currentAvatarTags** | **List&lt;String&gt;** |  | 
@@ -59,6 +58,7 @@ Name | Type | Description | Notes
 **onlineFriends** | **List&lt;String&gt;** |  | [optional] 
 **pastDisplayNames** | [**List&lt;PastDisplayName&gt;**](PastDisplayName.md) |   | 
 **presence** | [**CurrentUserPresence**](CurrentUserPresence.md) |  | [optional] 
+**platformHistory** | [**List&lt;CurrentUserPlatformHistoryInner&gt;**](CurrentUserPlatformHistoryInner.md) |  | [optional] 
 **profilePicOverride** | **String** |  | 
 **profilePicOverrideThumbnail** | **String** |  | 
 **pronouns** | **String** |  | 

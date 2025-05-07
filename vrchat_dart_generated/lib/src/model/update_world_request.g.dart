@@ -36,30 +36,23 @@ UpdateWorldRequest _$UpdateWorldRequestFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$UpdateWorldRequestToJson(UpdateWorldRequest instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('assetUrl', instance.assetUrl);
-  writeNotNull('assetVersion', instance.assetVersion);
-  writeNotNull('authorId', instance.authorId);
-  writeNotNull('authorName', instance.authorName);
-  writeNotNull('capacity', instance.capacity);
-  writeNotNull('description', instance.description);
-  writeNotNull('imageUrl', instance.imageUrl);
-  writeNotNull('name', instance.name);
-  writeNotNull('platform', instance.platform);
-  writeNotNull('releaseStatus', _$ReleaseStatusEnumMap[instance.releaseStatus]);
-  writeNotNull('tags', instance.tags);
-  writeNotNull('unityPackageUrl', instance.unityPackageUrl);
-  writeNotNull('unityVersion', instance.unityVersion);
-  return val;
-}
+Map<String, dynamic> _$UpdateWorldRequestToJson(UpdateWorldRequest instance) =>
+    <String, dynamic>{
+      if (instance.assetUrl case final value?) 'assetUrl': value,
+      if (instance.assetVersion case final value?) 'assetVersion': value,
+      if (instance.authorId case final value?) 'authorId': value,
+      if (instance.authorName case final value?) 'authorName': value,
+      if (instance.capacity case final value?) 'capacity': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.imageUrl case final value?) 'imageUrl': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.platform case final value?) 'platform': value,
+      if (_$ReleaseStatusEnumMap[instance.releaseStatus] case final value?)
+        'releaseStatus': value,
+      if (instance.tags case final value?) 'tags': value,
+      if (instance.unityPackageUrl case final value?) 'unityPackageUrl': value,
+      if (instance.unityVersion case final value?) 'unityVersion': value,
+    };
 
 const _$ReleaseStatusEnumMap = {
   ReleaseStatus.public: 'public',

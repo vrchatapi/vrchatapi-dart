@@ -29,20 +29,11 @@ InfoPushDataClickable _$InfoPushDataClickableFromJson(
     );
 
 Map<String, dynamic> _$InfoPushDataClickableToJson(
-    InfoPushDataClickable instance) {
-  final val = <String, dynamic>{
-    'command': _$InfoPushDataClickableCommandEnumEnumMap[instance.command]!,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('parameters', instance.parameters);
-  return val;
-}
+        InfoPushDataClickable instance) =>
+    <String, dynamic>{
+      'command': _$InfoPushDataClickableCommandEnumEnumMap[instance.command]!,
+      if (instance.parameters case final value?) 'parameters': value,
+    };
 
 const _$InfoPushDataClickableCommandEnumEnumMap = {
   InfoPushDataClickableCommandEnum.openURL: 'OpenURL',

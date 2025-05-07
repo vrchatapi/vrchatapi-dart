@@ -28,15 +28,8 @@ APIConfigConstantsINSTANCE _$APIConfigConstantsINSTANCEFromJson(
     );
 
 Map<String, dynamic> _$APIConfigConstantsINSTANCEToJson(
-    APIConfigConstantsINSTANCE instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('POPULATION_BRACKETS', instance.populationBrackets?.toJson());
-  return val;
-}
+        APIConfigConstantsINSTANCE instance) =>
+    <String, dynamic>{
+      if (instance.populationBrackets?.toJson() case final value?)
+        'POPULATION_BRACKETS': value,
+    };

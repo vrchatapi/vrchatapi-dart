@@ -37,22 +37,14 @@ CreateGroupGalleryRequest _$CreateGroupGalleryRequestFromJson(
     );
 
 Map<String, dynamic> _$CreateGroupGalleryRequestToJson(
-    CreateGroupGalleryRequest instance) {
-  final val = <String, dynamic>{
-    'name': instance.name,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('description', instance.description);
-  writeNotNull('membersOnly', instance.membersOnly);
-  writeNotNull('roleIdsToView', instance.roleIdsToView);
-  writeNotNull('roleIdsToSubmit', instance.roleIdsToSubmit);
-  writeNotNull('roleIdsToAutoApprove', instance.roleIdsToAutoApprove);
-  writeNotNull('roleIdsToManage', instance.roleIdsToManage);
-  return val;
-}
+        CreateGroupGalleryRequest instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      if (instance.description case final value?) 'description': value,
+      if (instance.membersOnly case final value?) 'membersOnly': value,
+      if (instance.roleIdsToView case final value?) 'roleIdsToView': value,
+      if (instance.roleIdsToSubmit case final value?) 'roleIdsToSubmit': value,
+      if (instance.roleIdsToAutoApprove case final value?)
+        'roleIdsToAutoApprove': value,
+      if (instance.roleIdsToManage case final value?) 'roleIdsToManage': value,
+    };

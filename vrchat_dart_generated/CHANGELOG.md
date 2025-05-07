@@ -1,3 +1,15 @@
+## 1.19.2
+- Updated to match spec
+
+## 1.19.1
+- Updated to match spec
+
+## 1.19.0
+- Updated to match spec
+
+## 1.18.9
+- Updated to match spec
+
 ## 1.18.8
 - Updated to match spec
 

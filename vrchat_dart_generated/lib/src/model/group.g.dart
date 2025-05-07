@@ -13,6 +13,12 @@ Group _$GroupFromJson(Map<String, dynamic> json) => $checkedCreate(
       json,
       ($checkedConvert) {
         final val = Group(
+          ageVerificationSlotsAvailable: $checkedConvert(
+              'ageVerificationSlotsAvailable', (v) => v as bool?),
+          ageVerificationBetaCode:
+              $checkedConvert('ageVerificationBetaCode', (v) => v as String?),
+          ageVerificationBetaSlots:
+              $checkedConvert('ageVerificationBetaSlots', (v) => v as num?),
           badges: $checkedConvert('badges',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           id: $checkedConvert('id', (v) => v as String?),
@@ -73,50 +79,55 @@ Group _$GroupFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$GroupToJson(Group instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('badges', instance.badges);
-  writeNotNull('id', instance.id);
-  writeNotNull('name', instance.name);
-  writeNotNull('shortCode', instance.shortCode);
-  writeNotNull('discriminator', instance.discriminator);
-  writeNotNull('description', instance.description);
-  writeNotNull('iconUrl', instance.iconUrl);
-  writeNotNull('bannerUrl', instance.bannerUrl);
-  writeNotNull('privacy', _$GroupPrivacyEnumMap[instance.privacy]);
-  writeNotNull('ownerId', instance.ownerId);
-  writeNotNull('rules', instance.rules);
-  writeNotNull('links', instance.links);
-  writeNotNull('languages', instance.languages);
-  writeNotNull('iconId', instance.iconId);
-  writeNotNull('bannerId', instance.bannerId);
-  writeNotNull('memberCount', instance.memberCount);
-  writeNotNull(
-      'memberCountSyncedAt', instance.memberCountSyncedAt?.toIso8601String());
-  writeNotNull('isVerified', instance.isVerified);
-  writeNotNull('joinState', _$GroupJoinStateEnumMap[instance.joinState]);
-  writeNotNull('tags', instance.tags);
-  writeNotNull('transferTargetId', instance.transferTargetId);
-  writeNotNull(
-      'galleries', instance.galleries?.map((e) => e.toJson()).toList());
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  writeNotNull(
-      'lastPostCreatedAt', instance.lastPostCreatedAt?.toIso8601String());
-  writeNotNull('onlineMemberCount', instance.onlineMemberCount);
-  writeNotNull('membershipStatus',
-      _$GroupMemberStatusEnumMap[instance.membershipStatus]);
-  writeNotNull('myMember', instance.myMember?.toJson());
-  writeNotNull('roles', instance.roles?.map((e) => e.toJson()).toList());
-  return val;
-}
+Map<String, dynamic> _$GroupToJson(Group instance) => <String, dynamic>{
+      if (instance.ageVerificationSlotsAvailable case final value?)
+        'ageVerificationSlotsAvailable': value,
+      if (instance.ageVerificationBetaCode case final value?)
+        'ageVerificationBetaCode': value,
+      if (instance.ageVerificationBetaSlots case final value?)
+        'ageVerificationBetaSlots': value,
+      if (instance.badges case final value?) 'badges': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.shortCode case final value?) 'shortCode': value,
+      if (instance.discriminator case final value?) 'discriminator': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.iconUrl case final value?) 'iconUrl': value,
+      if (instance.bannerUrl case final value?) 'bannerUrl': value,
+      if (_$GroupPrivacyEnumMap[instance.privacy] case final value?)
+        'privacy': value,
+      if (instance.ownerId case final value?) 'ownerId': value,
+      if (instance.rules case final value?) 'rules': value,
+      if (instance.links case final value?) 'links': value,
+      if (instance.languages case final value?) 'languages': value,
+      if (instance.iconId case final value?) 'iconId': value,
+      if (instance.bannerId case final value?) 'bannerId': value,
+      if (instance.memberCount case final value?) 'memberCount': value,
+      if (instance.memberCountSyncedAt?.toIso8601String() case final value?)
+        'memberCountSyncedAt': value,
+      if (instance.isVerified case final value?) 'isVerified': value,
+      if (_$GroupJoinStateEnumMap[instance.joinState] case final value?)
+        'joinState': value,
+      if (instance.tags case final value?) 'tags': value,
+      if (instance.transferTargetId case final value?)
+        'transferTargetId': value,
+      if (instance.galleries?.map((e) => e.toJson()).toList() case final value?)
+        'galleries': value,
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+      if (instance.lastPostCreatedAt?.toIso8601String() case final value?)
+        'lastPostCreatedAt': value,
+      if (instance.onlineMemberCount case final value?)
+        'onlineMemberCount': value,
+      if (_$GroupMemberStatusEnumMap[instance.membershipStatus]
+          case final value?)
+        'membershipStatus': value,
+      if (instance.myMember?.toJson() case final value?) 'myMember': value,
+      if (instance.roles?.map((e) => e.toJson()).toList() case final value?)
+        'roles': value,
+    };
 
 const _$GroupPrivacyEnumMap = {
   GroupPrivacy.default_: 'default',

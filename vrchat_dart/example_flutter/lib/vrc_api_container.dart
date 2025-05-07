@@ -6,7 +6,7 @@ import 'package:vrchat_dart/vrchat_dart.dart';
 class VrcApiContainer {
   /// I do not recommend storing a reference to [VrchatDart.api] or you will
   /// have a bad time with the type checker and conditional imports
-  Future<VrchatDart> create() async {
+  Future<VrchatDart> create() {
     return VrcApiContainerImpl().create();
   }
 }

@@ -30,7 +30,7 @@ class Instance {
     required this.clientNumber,
     required this.displayName,
     this.full = false,
-    required this.gameServerVersion,
+    this.gameServerVersion,
     required this.id,
     required this.instanceId,
     required this.instancePersistenceEnabled,
@@ -78,7 +78,7 @@ class Instance {
     required: false,
     includeIfNull: false,
   )
-  final String? ageGate;
+  final bool? ageGate;
 
   @JsonKey(
     name: r'canRequestInvite',
@@ -120,10 +120,10 @@ class Instance {
 
   @JsonKey(
     name: r'gameServerVersion',
-    required: true,
+    required: false,
     includeIfNull: false,
   )
-  final int gameServerVersion;
+  final int? gameServerVersion;
 
   /// InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
   @JsonKey(

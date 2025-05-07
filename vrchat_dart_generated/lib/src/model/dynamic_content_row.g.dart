@@ -37,22 +37,14 @@ DynamicContentRow _$DynamicContentRowFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$DynamicContentRowToJson(DynamicContentRow instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('index', instance.index);
-  val['name'] = instance.name;
-  val['platform'] = instance.platform;
-  val['sortHeading'] = instance.sortHeading;
-  val['sortOrder'] = instance.sortOrder;
-  val['sortOwnership'] = instance.sortOwnership;
-  writeNotNull('tag', instance.tag);
-  writeNotNull('type', instance.type);
-  return val;
-}
+Map<String, dynamic> _$DynamicContentRowToJson(DynamicContentRow instance) =>
+    <String, dynamic>{
+      if (instance.index case final value?) 'index': value,
+      'name': instance.name,
+      'platform': instance.platform,
+      'sortHeading': instance.sortHeading,
+      'sortOrder': instance.sortOrder,
+      'sortOwnership': instance.sortOwnership,
+      if (instance.tag case final value?) 'tag': value,
+      if (instance.type case final value?) 'type': value,
+    };

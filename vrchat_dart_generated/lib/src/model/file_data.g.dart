@@ -42,25 +42,15 @@ FileData _$FileDataFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$FileDataToJson(FileData instance) {
-  final val = <String, dynamic>{
-    'category': _$FileDataCategoryEnumEnumMap[instance.category]!,
-    'fileName': instance.fileName,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('md5', instance.md5);
-  val['sizeInBytes'] = instance.sizeInBytes;
-  val['status'] = _$FileStatusEnumMap[instance.status]!;
-  val['uploadId'] = instance.uploadId;
-  val['url'] = instance.url;
-  return val;
-}
+Map<String, dynamic> _$FileDataToJson(FileData instance) => <String, dynamic>{
+      'category': _$FileDataCategoryEnumEnumMap[instance.category]!,
+      'fileName': instance.fileName,
+      if (instance.md5 case final value?) 'md5': value,
+      'sizeInBytes': instance.sizeInBytes,
+      'status': _$FileStatusEnumMap[instance.status]!,
+      'uploadId': instance.uploadId,
+      'url': instance.url,
+    };
 
 const _$FileDataCategoryEnumEnumMap = {
   FileDataCategoryEnum.multipart: 'multipart',

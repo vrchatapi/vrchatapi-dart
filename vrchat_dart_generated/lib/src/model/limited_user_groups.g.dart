@@ -41,33 +41,27 @@ LimitedUserGroups _$LimitedUserGroupsFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$LimitedUserGroupsToJson(LimitedUserGroups instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('id', instance.id);
-  writeNotNull('name', instance.name);
-  writeNotNull('shortCode', instance.shortCode);
-  writeNotNull('discriminator', instance.discriminator);
-  writeNotNull('description', instance.description);
-  writeNotNull('iconId', instance.iconId);
-  writeNotNull('iconUrl', instance.iconUrl);
-  writeNotNull('bannerId', instance.bannerId);
-  writeNotNull('bannerUrl', instance.bannerUrl);
-  writeNotNull('privacy', instance.privacy);
-  writeNotNull(
-      'lastPostCreatedAt', instance.lastPostCreatedAt?.toIso8601String());
-  writeNotNull('ownerId', instance.ownerId);
-  writeNotNull('memberCount', instance.memberCount);
-  writeNotNull('groupId', instance.groupId);
-  writeNotNull('memberVisibility', instance.memberVisibility);
-  writeNotNull('isRepresenting', instance.isRepresenting);
-  writeNotNull('mutualGroup', instance.mutualGroup);
-  writeNotNull('lastPostReadAt', instance.lastPostReadAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$LimitedUserGroupsToJson(LimitedUserGroups instance) =>
+    <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.shortCode case final value?) 'shortCode': value,
+      if (instance.discriminator case final value?) 'discriminator': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.iconId case final value?) 'iconId': value,
+      if (instance.iconUrl case final value?) 'iconUrl': value,
+      if (instance.bannerId case final value?) 'bannerId': value,
+      if (instance.bannerUrl case final value?) 'bannerUrl': value,
+      if (instance.privacy case final value?) 'privacy': value,
+      if (instance.lastPostCreatedAt?.toIso8601String() case final value?)
+        'lastPostCreatedAt': value,
+      if (instance.ownerId case final value?) 'ownerId': value,
+      if (instance.memberCount case final value?) 'memberCount': value,
+      if (instance.groupId case final value?) 'groupId': value,
+      if (instance.memberVisibility case final value?)
+        'memberVisibility': value,
+      if (instance.isRepresenting case final value?) 'isRepresenting': value,
+      if (instance.mutualGroup case final value?) 'mutualGroup': value,
+      if (instance.lastPostReadAt?.toIso8601String() case final value?)
+        'lastPostReadAt': value,
+    };

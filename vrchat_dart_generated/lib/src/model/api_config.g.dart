@@ -17,17 +17,19 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
           requiredKeys: const [
             'VoiceEnableDegradation',
             'VoiceEnableReceiverLimiting',
+            'accessLogsUrls',
             'address',
+            'ageVerificationInviteVisible',
             'ageVerificationP',
             'ageVerificationStatusVisible',
+            'analysisMaxRetries',
+            'analysisRetryInterval',
             'announcements',
             'analyticsSegment_NewUI_PctOfUsers',
             'analyticsSegment_NewUI_Salt',
-            'appName',
             'availableLanguageCodes',
             'availableLanguages',
             'avatarPerfLimiter',
-            'buildVersionTag',
             'chatboxLogBufferSeconds',
             'clientApiKey',
             'clientBPSCeiling',
@@ -41,7 +43,6 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             'currentTOSVersion',
             'defaultAvatar',
             'defaultStickerSet',
-            'deploymentGroup',
             'devSdkUrl',
             'devSdkVersion',
             'dis-countdown',
@@ -53,6 +54,7 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             'disableEventStream',
             'disableFeedbackGating',
             'disableFrontendBuilds',
+            'disableGiftDrops',
             'disableHello',
             'disableOculusSubs',
             'disableRegistration',
@@ -65,6 +67,7 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             'dynamicWorldRows',
             'events',
             'forceUseLatestWorld',
+            'giftDisplayType',
             'googleApiClientId',
             'homeWorldId',
             'homepageRedirectTarget',
@@ -82,11 +85,11 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             'reportFormUrl',
             'reportOptions',
             'reportReasons',
+            'requireAgeVerificationBetaTag',
             'sdkDeveloperFaqUrl',
             'sdkDiscordUrl',
             'sdkNotAllowedToPublishMessage',
             'sdkUnityVersion',
-            'serverName',
             'stringHostUrlList',
             'supportEmail',
             'supportFormUrl',
@@ -104,6 +107,7 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             'whiteListedAssetUrls',
             'player-url-resolver-version',
             'player-url-resolver-sha1',
+            'publicKey',
             'websocketMaxFriendsRefreshDelay',
             'websocketQuickReconnectTime',
             'websocketReconnectMaxDelay'
@@ -114,11 +118,21 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               'VoiceEnableDegradation', (v) => v as bool? ?? false),
           voiceEnableReceiverLimiting: $checkedConvert(
               'VoiceEnableReceiverLimiting', (v) => v as bool? ?? true),
+          accessLogsUrls: $checkedConvert(
+              'accessLogsUrls',
+              (v) =>
+                  APIConfigAccessLogsUrls.fromJson(v as Map<String, dynamic>)),
           address: $checkedConvert('address', (v) => v as String),
+          ageVerificationInviteVisible:
+              $checkedConvert('ageVerificationInviteVisible', (v) => v as bool),
           ageVerificationP:
               $checkedConvert('ageVerificationP', (v) => v as bool),
           ageVerificationStatusVisible:
               $checkedConvert('ageVerificationStatusVisible', (v) => v as bool),
+          analysisMaxRetries:
+              $checkedConvert('analysisMaxRetries', (v) => (v as num).toInt()),
+          analysisRetryInterval: $checkedConvert(
+              'analysisRetryInterval', (v) => (v as num).toInt()),
           announcements: $checkedConvert(
               'announcements',
               (v) => (v as List<dynamic>)
@@ -129,7 +143,6 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               'analyticsSegment_NewUI_PctOfUsers', (v) => (v as num).toInt()),
           analyticsSegmentNewUISalt: $checkedConvert(
               'analyticsSegment_NewUI_Salt', (v) => v as String),
-          appName: $checkedConvert('appName', (v) => v as String? ?? 'VrChat'),
           availableLanguageCodes: $checkedConvert('availableLanguageCodes',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           availableLanguages: $checkedConvert('availableLanguages',
@@ -138,8 +151,6 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               'avatarPerfLimiter',
               (v) => APIConfigAvatarPerfLimiter.fromJson(
                   v as Map<String, dynamic>)),
-          buildVersionTag:
-              $checkedConvert('buildVersionTag', (v) => v as String),
           chatboxLogBufferSeconds: $checkedConvert(
               'chatboxLogBufferSeconds', (v) => (v as num?)?.toInt() ?? 40),
           clientApiKey: $checkedConvert('clientApiKey', (v) => v as String),
@@ -184,8 +195,6 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
           defaultAvatar: $checkedConvert('defaultAvatar', (v) => v as String),
           defaultStickerSet:
               $checkedConvert('defaultStickerSet', (v) => v as String),
-          deploymentGroup: $checkedConvert('deploymentGroup',
-              (v) => $enumDecode(_$DeploymentGroupEnumMap, v)),
           devLanguageCodes: $checkedConvert('devLanguageCodes',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           devSdkUrl: $checkedConvert('devSdkUrl', (v) => v as String),
@@ -212,6 +221,8 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               'disableFeedbackGating', (v) => v as bool? ?? false),
           disableFrontendBuilds: $checkedConvert(
               'disableFrontendBuilds', (v) => v as bool? ?? false),
+          disableGiftDrops:
+              $checkedConvert('disableGiftDrops', (v) => v as bool? ?? false),
           disableHello:
               $checkedConvert('disableHello', (v) => v as bool? ?? false),
           disableOculusSubs:
@@ -248,6 +259,8 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => APIConfigEvents.fromJson(v as Map<String, dynamic>)),
           forceUseLatestWorld:
               $checkedConvert('forceUseLatestWorld', (v) => v as bool? ?? true),
+          giftDisplayType:
+              $checkedConvert('giftDisplayType', (v) => v as String),
           googleApiClientId: $checkedConvert(
               'googleApiClientId',
               (v) =>
@@ -290,11 +303,16 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) =>
                   v as String? ??
                   'https://help.vrchat.com/hc/en-us/requests/new?ticket_form_id=1500000182242&tf_360056455174=user_report&tf_360057451993={userId}&tf_1500001445142={reportedId}&tf_subject={reason} {category} By {contentType} {reportedName}&tf_description={description}'),
-          reportOptions: $checkedConvert('reportOptions', (v) => v as Object),
+          reportOptions: $checkedConvert(
+              'reportOptions',
+              (v) =>
+                  APIConfigReportOptions.fromJson(v as Map<String, dynamic>)),
           reportReasons: $checkedConvert(
               'reportReasons',
               (v) =>
                   APIConfigReportReasons.fromJson(v as Map<String, dynamic>)),
+          requireAgeVerificationBetaTag: $checkedConvert(
+              'requireAgeVerificationBetaTag', (v) => v as bool),
           sdkDeveloperFaqUrl:
               $checkedConvert('sdkDeveloperFaqUrl', (v) => v as String),
           sdkDiscordUrl: $checkedConvert('sdkDiscordUrl', (v) => v as String),
@@ -302,7 +320,6 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               'sdkNotAllowedToPublishMessage', (v) => v as String),
           sdkUnityVersion:
               $checkedConvert('sdkUnityVersion', (v) => v as String),
-          serverName: $checkedConvert('serverName', (v) => v as String),
           stringHostUrlList: $checkedConvert('stringHostUrlList',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           supportEmail: $checkedConvert('supportEmail', (v) => v as String),
@@ -333,6 +350,7 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               'player-url-resolver-version', (v) => v as String),
           playerUrlResolverSha1:
               $checkedConvert('player-url-resolver-sha1', (v) => v as String),
+          publicKey: $checkedConvert('publicKey', (v) => v as String),
           websocketMaxFriendsRefreshDelay: $checkedConvert(
               'websocketMaxFriendsRefreshDelay',
               (v) => (v as num?)?.toInt() ?? 900),
@@ -354,136 +372,136 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$APIConfigToJson(APIConfig instance) {
-  final val = <String, dynamic>{
-    'VoiceEnableDegradation': instance.voiceEnableDegradation,
-    'VoiceEnableReceiverLimiting': instance.voiceEnableReceiverLimiting,
-    'address': instance.address,
-    'ageVerificationP': instance.ageVerificationP,
-    'ageVerificationStatusVisible': instance.ageVerificationStatusVisible,
-    'announcements': instance.announcements.map((e) => e.toJson()).toList(),
-    'analyticsSegment_NewUI_PctOfUsers':
-        instance.analyticsSegmentNewUIPctOfUsers,
-    'analyticsSegment_NewUI_Salt': instance.analyticsSegmentNewUISalt,
-    'appName': instance.appName,
-    'availableLanguageCodes': instance.availableLanguageCodes,
-    'availableLanguages': instance.availableLanguages,
-    'avatarPerfLimiter': instance.avatarPerfLimiter.toJson(),
-    'buildVersionTag': instance.buildVersionTag,
-    'chatboxLogBufferSeconds': instance.chatboxLogBufferSeconds,
-    'clientApiKey': instance.clientApiKey,
-    'clientBPSCeiling': instance.clientBPSCeiling,
-    'clientDisconnectTimeout': instance.clientDisconnectTimeout,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('clientNetDispatchThread', instance.clientNetDispatchThread);
-  val['clientNetDispatchThreadMobile'] = instance.clientNetDispatchThreadMobile;
-  writeNotNull('clientNetInThread', instance.clientNetInThread);
-  writeNotNull('clientNetInThread2', instance.clientNetInThread2);
-  writeNotNull('clientNetInThreadMobile', instance.clientNetInThreadMobile);
-  writeNotNull('clientNetInThreadMobile2', instance.clientNetInThreadMobile2);
-  writeNotNull('clientNetOutThread', instance.clientNetOutThread);
-  writeNotNull('clientNetOutThread2', instance.clientNetOutThread2);
-  writeNotNull('clientNetOutThreadMobile', instance.clientNetOutThreadMobile);
-  writeNotNull('clientNetOutThreadMobile2', instance.clientNetOutThreadMobile2);
-  writeNotNull('clientQR', instance.clientQR);
-  val['clientReservedPlayerBPS'] = instance.clientReservedPlayerBPS;
-  val['clientSentCountAllowance'] = instance.clientSentCountAllowance;
-  val['constants'] = instance.constants.toJson();
-  val['contactEmail'] = instance.contactEmail;
-  val['copyrightEmail'] = instance.copyrightEmail;
-  writeNotNull('currentPrivacyVersion', instance.currentPrivacyVersion);
-  val['currentTOSVersion'] = instance.currentTOSVersion;
-  val['defaultAvatar'] = instance.defaultAvatar;
-  val['defaultStickerSet'] = instance.defaultStickerSet;
-  val['deploymentGroup'] = _$DeploymentGroupEnumMap[instance.deploymentGroup]!;
-  writeNotNull('devLanguageCodes', instance.devLanguageCodes);
-  val['devSdkUrl'] = instance.devSdkUrl;
-  val['devSdkVersion'] = instance.devSdkVersion;
-  val['dis-countdown'] = instance.disCountdown.toIso8601String();
-  writeNotNull('disableAVProInProton', instance.disableAVProInProton);
-  val['disableAvatarCopying'] = instance.disableAvatarCopying;
-  val['disableAvatarGating'] = instance.disableAvatarGating;
-  val['disableCommunityLabs'] = instance.disableCommunityLabs;
-  val['disableCommunityLabsPromotion'] = instance.disableCommunityLabsPromotion;
-  val['disableEmail'] = instance.disableEmail;
-  writeNotNull('disableCaptcha', instance.disableCaptcha);
-  val['disableEventStream'] = instance.disableEventStream;
-  val['disableFeedbackGating'] = instance.disableFeedbackGating;
-  val['disableFrontendBuilds'] = instance.disableFrontendBuilds;
-  val['disableHello'] = instance.disableHello;
-  val['disableOculusSubs'] = instance.disableOculusSubs;
-  val['disableRegistration'] = instance.disableRegistration;
-  val['disableSteamNetworking'] = instance.disableSteamNetworking;
-  val['disableTwoFactorAuth'] = instance.disableTwoFactorAuth;
-  val['disableUdon'] = instance.disableUdon;
-  val['disableUpgradeAccount'] = instance.disableUpgradeAccount;
-  val['downloadLinkWindows'] = instance.downloadLinkWindows;
-  val['downloadUrls'] = instance.downloadUrls.toJson();
-  val['dynamicWorldRows'] =
-      instance.dynamicWorldRows.map((e) => e.toJson()).toList();
-  writeNotNull('economyPauseEnd', instance.economyPauseEnd);
-  writeNotNull('economyPauseStart', instance.economyPauseStart);
-  writeNotNull('economyState', instance.economyState);
-  val['events'] = instance.events.toJson();
-  val['forceUseLatestWorld'] = instance.forceUseLatestWorld;
-  val['googleApiClientId'] = instance.googleApiClientId;
-  val['homeWorldId'] = instance.homeWorldId;
-  val['homepageRedirectTarget'] = instance.homepageRedirectTarget;
-  val['hubWorldId'] = instance.hubWorldId;
-  val['imageHostUrlList'] = instance.imageHostUrlList;
-  val['jobsEmail'] = instance.jobsEmail;
-  val['minSupportedClientBuildNumber'] =
-      instance.minSupportedClientBuildNumber.toJson();
-  val['minimumUnityVersionForUploads'] = instance.minimumUnityVersionForUploads;
-  val['moderationEmail'] = instance.moderationEmail;
-  val['notAllowedToSelectAvatarInPrivateWorldMessage'] =
-      instance.notAllowedToSelectAvatarInPrivateWorldMessage;
-  val['offlineAnalysis'] = instance.offlineAnalysis.toJson();
-  val['photonNameserverOverrides'] = instance.photonNameserverOverrides;
-  val['photonPublicKeys'] = instance.photonPublicKeys;
-  val['reportCategories'] = instance.reportCategories.toJson();
-  val['reportFormUrl'] = instance.reportFormUrl;
-  val['reportOptions'] = instance.reportOptions;
-  val['reportReasons'] = instance.reportReasons.toJson();
-  val['sdkDeveloperFaqUrl'] = instance.sdkDeveloperFaqUrl;
-  val['sdkDiscordUrl'] = instance.sdkDiscordUrl;
-  val['sdkNotAllowedToPublishMessage'] = instance.sdkNotAllowedToPublishMessage;
-  val['sdkUnityVersion'] = instance.sdkUnityVersion;
-  val['serverName'] = instance.serverName;
-  val['stringHostUrlList'] = instance.stringHostUrlList;
-  val['supportEmail'] = instance.supportEmail;
-  val['supportFormUrl'] = instance.supportFormUrl;
-  val['timekeeping'] = instance.timekeeping;
-  val['timeOutWorldId'] = instance.timeOutWorldId;
-  val['tutorialWorldId'] = instance.tutorialWorldId;
-  val['updateRateMsMaximum'] = instance.updateRateMsMaximum;
-  val['updateRateMsMinimum'] = instance.updateRateMsMinimum;
-  val['updateRateMsNormal'] = instance.updateRateMsNormal;
-  val['updateRateMsUdonManual'] = instance.updateRateMsUdonManual;
-  val['uploadAnalysisPercent'] = instance.uploadAnalysisPercent;
-  val['urlList'] = instance.urlList;
-  val['useReliableUdpForVoice'] = instance.useReliableUdpForVoice;
-  val['viveWindowsUrl'] = instance.viveWindowsUrl;
-  val['whiteListedAssetUrls'] = instance.whiteListedAssetUrls;
-  val['player-url-resolver-version'] = instance.playerUrlResolverVersion;
-  val['player-url-resolver-sha1'] = instance.playerUrlResolverSha1;
-  val['websocketMaxFriendsRefreshDelay'] =
-      instance.websocketMaxFriendsRefreshDelay;
-  val['websocketQuickReconnectTime'] = instance.websocketQuickReconnectTime;
-  val['websocketReconnectMaxDelay'] = instance.websocketReconnectMaxDelay;
-  return val;
-}
-
-const _$DeploymentGroupEnumMap = {
-  DeploymentGroup.blue: 'blue',
-  DeploymentGroup.green: 'green',
-  DeploymentGroup.grape: 'grape',
-  DeploymentGroup.cherry: 'cherry',
-};
+Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
+      'VoiceEnableDegradation': instance.voiceEnableDegradation,
+      'VoiceEnableReceiverLimiting': instance.voiceEnableReceiverLimiting,
+      'accessLogsUrls': instance.accessLogsUrls.toJson(),
+      'address': instance.address,
+      'ageVerificationInviteVisible': instance.ageVerificationInviteVisible,
+      'ageVerificationP': instance.ageVerificationP,
+      'ageVerificationStatusVisible': instance.ageVerificationStatusVisible,
+      'analysisMaxRetries': instance.analysisMaxRetries,
+      'analysisRetryInterval': instance.analysisRetryInterval,
+      'announcements': instance.announcements.map((e) => e.toJson()).toList(),
+      'analyticsSegment_NewUI_PctOfUsers':
+          instance.analyticsSegmentNewUIPctOfUsers,
+      'analyticsSegment_NewUI_Salt': instance.analyticsSegmentNewUISalt,
+      'availableLanguageCodes': instance.availableLanguageCodes,
+      'availableLanguages': instance.availableLanguages,
+      'avatarPerfLimiter': instance.avatarPerfLimiter.toJson(),
+      'chatboxLogBufferSeconds': instance.chatboxLogBufferSeconds,
+      'clientApiKey': instance.clientApiKey,
+      'clientBPSCeiling': instance.clientBPSCeiling,
+      'clientDisconnectTimeout': instance.clientDisconnectTimeout,
+      if (instance.clientNetDispatchThread case final value?)
+        'clientNetDispatchThread': value,
+      'clientNetDispatchThreadMobile': instance.clientNetDispatchThreadMobile,
+      if (instance.clientNetInThread case final value?)
+        'clientNetInThread': value,
+      if (instance.clientNetInThread2 case final value?)
+        'clientNetInThread2': value,
+      if (instance.clientNetInThreadMobile case final value?)
+        'clientNetInThreadMobile': value,
+      if (instance.clientNetInThreadMobile2 case final value?)
+        'clientNetInThreadMobile2': value,
+      if (instance.clientNetOutThread case final value?)
+        'clientNetOutThread': value,
+      if (instance.clientNetOutThread2 case final value?)
+        'clientNetOutThread2': value,
+      if (instance.clientNetOutThreadMobile case final value?)
+        'clientNetOutThreadMobile': value,
+      if (instance.clientNetOutThreadMobile2 case final value?)
+        'clientNetOutThreadMobile2': value,
+      if (instance.clientQR case final value?) 'clientQR': value,
+      'clientReservedPlayerBPS': instance.clientReservedPlayerBPS,
+      'clientSentCountAllowance': instance.clientSentCountAllowance,
+      'constants': instance.constants.toJson(),
+      'contactEmail': instance.contactEmail,
+      'copyrightEmail': instance.copyrightEmail,
+      if (instance.currentPrivacyVersion case final value?)
+        'currentPrivacyVersion': value,
+      'currentTOSVersion': instance.currentTOSVersion,
+      'defaultAvatar': instance.defaultAvatar,
+      'defaultStickerSet': instance.defaultStickerSet,
+      if (instance.devLanguageCodes case final value?)
+        'devLanguageCodes': value,
+      'devSdkUrl': instance.devSdkUrl,
+      'devSdkVersion': instance.devSdkVersion,
+      'dis-countdown': instance.disCountdown.toIso8601String(),
+      if (instance.disableAVProInProton case final value?)
+        'disableAVProInProton': value,
+      'disableAvatarCopying': instance.disableAvatarCopying,
+      'disableAvatarGating': instance.disableAvatarGating,
+      'disableCommunityLabs': instance.disableCommunityLabs,
+      'disableCommunityLabsPromotion': instance.disableCommunityLabsPromotion,
+      'disableEmail': instance.disableEmail,
+      if (instance.disableCaptcha case final value?) 'disableCaptcha': value,
+      'disableEventStream': instance.disableEventStream,
+      'disableFeedbackGating': instance.disableFeedbackGating,
+      'disableFrontendBuilds': instance.disableFrontendBuilds,
+      'disableGiftDrops': instance.disableGiftDrops,
+      'disableHello': instance.disableHello,
+      'disableOculusSubs': instance.disableOculusSubs,
+      'disableRegistration': instance.disableRegistration,
+      'disableSteamNetworking': instance.disableSteamNetworking,
+      'disableTwoFactorAuth': instance.disableTwoFactorAuth,
+      'disableUdon': instance.disableUdon,
+      'disableUpgradeAccount': instance.disableUpgradeAccount,
+      'downloadLinkWindows': instance.downloadLinkWindows,
+      'downloadUrls': instance.downloadUrls.toJson(),
+      'dynamicWorldRows':
+          instance.dynamicWorldRows.map((e) => e.toJson()).toList(),
+      if (instance.economyPauseEnd case final value?) 'economyPauseEnd': value,
+      if (instance.economyPauseStart case final value?)
+        'economyPauseStart': value,
+      if (instance.economyState case final value?) 'economyState': value,
+      'events': instance.events.toJson(),
+      'forceUseLatestWorld': instance.forceUseLatestWorld,
+      'giftDisplayType': instance.giftDisplayType,
+      'googleApiClientId': instance.googleApiClientId,
+      'homeWorldId': instance.homeWorldId,
+      'homepageRedirectTarget': instance.homepageRedirectTarget,
+      'hubWorldId': instance.hubWorldId,
+      'imageHostUrlList': instance.imageHostUrlList,
+      'jobsEmail': instance.jobsEmail,
+      'minSupportedClientBuildNumber':
+          instance.minSupportedClientBuildNumber.toJson(),
+      'minimumUnityVersionForUploads': instance.minimumUnityVersionForUploads,
+      'moderationEmail': instance.moderationEmail,
+      'notAllowedToSelectAvatarInPrivateWorldMessage':
+          instance.notAllowedToSelectAvatarInPrivateWorldMessage,
+      'offlineAnalysis': instance.offlineAnalysis.toJson(),
+      'photonNameserverOverrides': instance.photonNameserverOverrides,
+      'photonPublicKeys': instance.photonPublicKeys,
+      'reportCategories': instance.reportCategories.toJson(),
+      'reportFormUrl': instance.reportFormUrl,
+      'reportOptions': instance.reportOptions.toJson(),
+      'reportReasons': instance.reportReasons.toJson(),
+      'requireAgeVerificationBetaTag': instance.requireAgeVerificationBetaTag,
+      'sdkDeveloperFaqUrl': instance.sdkDeveloperFaqUrl,
+      'sdkDiscordUrl': instance.sdkDiscordUrl,
+      'sdkNotAllowedToPublishMessage': instance.sdkNotAllowedToPublishMessage,
+      'sdkUnityVersion': instance.sdkUnityVersion,
+      'stringHostUrlList': instance.stringHostUrlList,
+      'supportEmail': instance.supportEmail,
+      'supportFormUrl': instance.supportFormUrl,
+      'timekeeping': instance.timekeeping,
+      'timeOutWorldId': instance.timeOutWorldId,
+      'tutorialWorldId': instance.tutorialWorldId,
+      'updateRateMsMaximum': instance.updateRateMsMaximum,
+      'updateRateMsMinimum': instance.updateRateMsMinimum,
+      'updateRateMsNormal': instance.updateRateMsNormal,
+      'updateRateMsUdonManual': instance.updateRateMsUdonManual,
+      'uploadAnalysisPercent': instance.uploadAnalysisPercent,
+      'urlList': instance.urlList,
+      'useReliableUdpForVoice': instance.useReliableUdpForVoice,
+      'viveWindowsUrl': instance.viveWindowsUrl,
+      'whiteListedAssetUrls': instance.whiteListedAssetUrls,
+      'player-url-resolver-version': instance.playerUrlResolverVersion,
+      'player-url-resolver-sha1': instance.playerUrlResolverSha1,
+      'publicKey': instance.publicKey,
+      'websocketMaxFriendsRefreshDelay':
+          instance.websocketMaxFriendsRefreshDelay,
+      'websocketQuickReconnectTime': instance.websocketQuickReconnectTime,
+      'websocketReconnectMaxDelay': instance.websocketReconnectMaxDelay,
+    };

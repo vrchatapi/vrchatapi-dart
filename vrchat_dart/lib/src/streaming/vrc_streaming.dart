@@ -21,7 +21,7 @@ class VrcStreaming {
   final VrchatDartGenerated _rawApi;
   final String _baseUrl;
 
-  bool _started = false;
+  var _started = false;
   WebSocketChannel? _channel;
 
   /// Create a [VrcStreaming] instance

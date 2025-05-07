@@ -24,16 +24,8 @@ NotificationDetailRequestInvite _$NotificationDetailRequestInviteFromJson(
     );
 
 Map<String, dynamic> _$NotificationDetailRequestInviteToJson(
-    NotificationDetailRequestInvite instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('platform', instance.platform);
-  writeNotNull('requestMessage', instance.requestMessage);
-  return val;
-}
+        NotificationDetailRequestInvite instance) =>
+    <String, dynamic>{
+      if (instance.platform case final value?) 'platform': value,
+      if (instance.requestMessage case final value?) 'requestMessage': value,
+    };

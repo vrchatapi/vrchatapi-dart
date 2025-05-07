@@ -28,17 +28,9 @@ InfoPushDataArticleContent _$InfoPushDataArticleContentFromJson(
     );
 
 Map<String, dynamic> _$InfoPushDataArticleContentToJson(
-    InfoPushDataArticleContent instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('text', instance.text);
-  writeNotNull('imageUrl', instance.imageUrl);
-  writeNotNull('onPressed', instance.onPressed?.toJson());
-  return val;
-}
+        InfoPushDataArticleContent instance) =>
+    <String, dynamic>{
+      if (instance.text case final value?) 'text': value,
+      if (instance.imageUrl case final value?) 'imageUrl': value,
+      if (instance.onPressed?.toJson() case final value?) 'onPressed': value,
+    };

@@ -1,3 +1,5 @@
+import 'package:meta/meta.dart';
+
 /// A user agent that satisfies the VRChat guidelines
 ///
 /// > Applications must identify themselves properly using the User-Agent
@@ -5,6 +7,7 @@
 /// > For example: `VRCAPIApp/1.5.1 contact@example.com`. Failing to identify
 /// > yourself clearly or identifying yourself improperly will result in
 /// > moderation action.
+@immutable
 class VrchatUserAgent {
   /// The name of this application
   final String applicationName;

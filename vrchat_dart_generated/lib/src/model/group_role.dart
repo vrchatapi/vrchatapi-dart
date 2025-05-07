@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/group_permissions.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'group_role.g.dart';
@@ -70,7 +71,7 @@ class GroupRole {
     required: false,
     includeIfNull: false,
   )
-  final List<String>? permissions;
+  final List<GroupPermissions>? permissions;
 
   @JsonKey(
     name: r'isManagementRole',

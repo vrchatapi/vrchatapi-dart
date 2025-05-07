@@ -8,7 +8,8 @@ import 'package:vrchat_dart_generated/src/model/api_config_min_supported_client_
 import 'package:vrchat_dart_generated/src/model/api_config_download_url_list.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_avatar_perf_limiter.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_report_reasons.dart';
-import 'package:vrchat_dart_generated/src/model/deployment_group.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_report_options.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_access_logs_urls.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_report_categories.dart';
 import 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_constants.dart';
@@ -29,17 +30,19 @@ class APIConfig {
   APIConfig({
     this.voiceEnableDegradation = false,
     this.voiceEnableReceiverLimiting = true,
+    required this.accessLogsUrls,
     required this.address,
+    required this.ageVerificationInviteVisible,
     required this.ageVerificationP,
     required this.ageVerificationStatusVisible,
+    required this.analysisMaxRetries,
+    required this.analysisRetryInterval,
     required this.announcements,
     required this.analyticsSegmentNewUIPctOfUsers,
     required this.analyticsSegmentNewUISalt,
-    this.appName = 'VrChat',
     required this.availableLanguageCodes,
     required this.availableLanguages,
     required this.avatarPerfLimiter,
-    required this.buildVersionTag,
     this.chatboxLogBufferSeconds = 40,
     required this.clientApiKey,
     this.clientBPSCeiling = 18432,
@@ -64,7 +67,6 @@ class APIConfig {
     required this.currentTOSVersion,
     required this.defaultAvatar,
     required this.defaultStickerSet,
-    required this.deploymentGroup,
     this.devLanguageCodes,
     required this.devSdkUrl,
     required this.devSdkVersion,
@@ -79,6 +81,7 @@ class APIConfig {
     this.disableEventStream = false,
     this.disableFeedbackGating = false,
     this.disableFrontendBuilds = false,
+    this.disableGiftDrops = false,
     this.disableHello = false,
     this.disableOculusSubs = false,
     this.disableRegistration = false,
@@ -94,6 +97,7 @@ class APIConfig {
     this.economyState = 1,
     required this.events,
     this.forceUseLatestWorld = true,
+    required this.giftDisplayType,
     this.googleApiClientId =
         '827942544393-r2ouvckvouldn9dg9uruseje575e878f.apps.googleusercontent.com',
     required this.homeWorldId,
@@ -113,11 +117,11 @@ class APIConfig {
         'https://help.vrchat.com/hc/en-us/requests/new?ticket_form_id=1500000182242&tf_360056455174=user_report&tf_360057451993={userId}&tf_1500001445142={reportedId}&tf_subject={reason} {category} By {contentType} {reportedName}&tf_description={description}',
     required this.reportOptions,
     required this.reportReasons,
+    required this.requireAgeVerificationBetaTag,
     required this.sdkDeveloperFaqUrl,
     required this.sdkDiscordUrl,
     required this.sdkNotAllowedToPublishMessage,
     required this.sdkUnityVersion,
-    required this.serverName,
     required this.stringHostUrlList,
     required this.supportEmail,
     required this.supportFormUrl,
@@ -135,6 +139,7 @@ class APIConfig {
     required this.whiteListedAssetUrls,
     required this.playerUrlResolverVersion,
     required this.playerUrlResolverSha1,
+    required this.publicKey,
     this.websocketMaxFriendsRefreshDelay = 900,
     this.websocketQuickReconnectTime = 2,
     this.websocketReconnectMaxDelay = 2,
@@ -156,6 +161,13 @@ class APIConfig {
   )
   final bool voiceEnableReceiverLimiting;
 
+  @JsonKey(
+    name: r'accessLogsUrls',
+    required: true,
+    includeIfNull: false,
+  )
+  final APIConfigAccessLogsUrls accessLogsUrls;
+
   /// VRChat's office address
   @JsonKey(
     name: r'address',
@@ -163,6 +175,13 @@ class APIConfig {
     includeIfNull: false,
   )
   final String address;
+
+  @JsonKey(
+    name: r'ageVerificationInviteVisible',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool ageVerificationInviteVisible;
 
   @JsonKey(
     name: r'ageVerificationP',
@@ -177,6 +196,22 @@ class APIConfig {
     includeIfNull: false,
   )
   final bool ageVerificationStatusVisible;
+
+  /// Max retries for avatar analysis requests
+  @JsonKey(
+    name: r'analysisMaxRetries',
+    required: true,
+    includeIfNull: false,
+  )
+  final int analysisMaxRetries;
+
+  /// Interval between retries for avatar analysis requests
+  @JsonKey(
+    name: r'analysisRetryInterval',
+    required: true,
+    includeIfNull: false,
+  )
+  final int analysisRetryInterval;
 
   /// Public Announcements
   @JsonKey(
@@ -203,15 +238,6 @@ class APIConfig {
   )
   final String analyticsSegmentNewUISalt;
 
-  /// Game name
-  @Deprecated('appName has been deprecated')
-  @JsonKey(
-    name: r'appName',
-    required: true,
-    includeIfNull: false,
-  )
-  final String appName;
-
   /// List of supported Languages
   @JsonKey(
     name: r'availableLanguageCodes',
@@ -234,14 +260,6 @@ class APIConfig {
     includeIfNull: false,
   )
   final APIConfigAvatarPerfLimiter avatarPerfLimiter;
-
-  /// Build tag of the API server
-  @JsonKey(
-    name: r'buildVersionTag',
-    required: true,
-    includeIfNull: false,
-  )
-  final String buildVersionTag;
 
   /// Unknown
   @JsonKey(
@@ -433,13 +451,6 @@ class APIConfig {
   )
   final String defaultStickerSet;
 
-  @JsonKey(
-    name: r'deploymentGroup',
-    required: true,
-    includeIfNull: false,
-  )
-  final DeploymentGroup deploymentGroup;
-
   /// Unknown
   @JsonKey(
     name: r'devLanguageCodes',
@@ -553,6 +564,14 @@ class APIConfig {
     includeIfNull: false,
   )
   final bool disableFrontendBuilds;
+
+  /// Toggles if gift drops should be disabled
+  @JsonKey(
+    name: r'disableGiftDrops',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool disableGiftDrops;
 
   /// Unknown
   @JsonKey(
@@ -672,6 +691,14 @@ class APIConfig {
     includeIfNull: false,
   )
   final bool forceUseLatestWorld;
+
+  /// Display type of gifts
+  @JsonKey(
+    name: r'giftDisplayType',
+    required: true,
+    includeIfNull: false,
+  )
+  final String giftDisplayType;
 
   /// Unknown
   @JsonKey(
@@ -794,13 +821,12 @@ class APIConfig {
   )
   final String reportFormUrl;
 
-  /// Options for reporting content
   @JsonKey(
     name: r'reportOptions',
     required: true,
     includeIfNull: false,
   )
-  final Object reportOptions;
+  final APIConfigReportOptions reportOptions;
 
   @JsonKey(
     name: r'reportReasons',
@@ -808,6 +834,13 @@ class APIConfig {
     includeIfNull: false,
   )
   final APIConfigReportReasons reportReasons;
+
+  @JsonKey(
+    name: r'requireAgeVerificationBetaTag',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool requireAgeVerificationBetaTag;
 
   /// Link to the developer FAQ
   @JsonKey(
@@ -840,14 +873,6 @@ class APIConfig {
     includeIfNull: false,
   )
   final String sdkUnityVersion;
-
-  /// Server name of the API server currently responding
-  @JsonKey(
-    name: r'serverName',
-    required: true,
-    includeIfNull: false,
-  )
-  final String serverName;
 
   /// A list of explicitly allowed origins that worlds can request strings from via the Udon's [VRCStringDownloader.LoadUrl](https://creators.vrchat.com/worlds/udon/string-loading/#ivrcstringdownload).
   @JsonKey(
@@ -985,6 +1010,14 @@ class APIConfig {
   )
   final String playerUrlResolverSha1;
 
+  /// Public key, hex encoded
+  @JsonKey(
+    name: r'publicKey',
+    required: true,
+    includeIfNull: false,
+  )
+  final String publicKey;
+
   /// Unknown
   @JsonKey(
     name: r'websocketMaxFriendsRefreshDelay',
@@ -1015,19 +1048,20 @@ class APIConfig {
       other is APIConfig &&
           other.voiceEnableDegradation == voiceEnableDegradation &&
           other.voiceEnableReceiverLimiting == voiceEnableReceiverLimiting &&
+          other.accessLogsUrls == accessLogsUrls &&
           other.address == address &&
+          other.ageVerificationInviteVisible == ageVerificationInviteVisible &&
           other.ageVerificationP == ageVerificationP &&
           other.ageVerificationStatusVisible == ageVerificationStatusVisible &&
+          other.analysisMaxRetries == analysisMaxRetries &&
+          other.analysisRetryInterval == analysisRetryInterval &&
           other.announcements == announcements &&
           other.analyticsSegmentNewUIPctOfUsers ==
               analyticsSegmentNewUIPctOfUsers &&
           other.analyticsSegmentNewUISalt == analyticsSegmentNewUISalt &&
-// ignore: deprecated_member_use_from_same_package
-          other.appName == appName &&
           other.availableLanguageCodes == availableLanguageCodes &&
           other.availableLanguages == availableLanguages &&
           other.avatarPerfLimiter == avatarPerfLimiter &&
-          other.buildVersionTag == buildVersionTag &&
           other.chatboxLogBufferSeconds == chatboxLogBufferSeconds &&
           other.clientApiKey == clientApiKey &&
           other.clientBPSCeiling == clientBPSCeiling &&
@@ -1053,7 +1087,6 @@ class APIConfig {
           other.currentTOSVersion == currentTOSVersion &&
           other.defaultAvatar == defaultAvatar &&
           other.defaultStickerSet == defaultStickerSet &&
-          other.deploymentGroup == deploymentGroup &&
           other.devLanguageCodes == devLanguageCodes &&
 // ignore: deprecated_member_use_from_same_package
           other.devSdkUrl == devSdkUrl &&
@@ -1071,6 +1104,7 @@ class APIConfig {
           other.disableEventStream == disableEventStream &&
           other.disableFeedbackGating == disableFeedbackGating &&
           other.disableFrontendBuilds == disableFrontendBuilds &&
+          other.disableGiftDrops == disableGiftDrops &&
           other.disableHello == disableHello &&
           other.disableOculusSubs == disableOculusSubs &&
           other.disableRegistration == disableRegistration &&
@@ -1087,6 +1121,7 @@ class APIConfig {
           other.economyState == economyState &&
           other.events == events &&
           other.forceUseLatestWorld == forceUseLatestWorld &&
+          other.giftDisplayType == giftDisplayType &&
           other.googleApiClientId == googleApiClientId &&
           other.homeWorldId == homeWorldId &&
           other.homepageRedirectTarget == homepageRedirectTarget &&
@@ -1107,12 +1142,13 @@ class APIConfig {
           other.reportFormUrl == reportFormUrl &&
           other.reportOptions == reportOptions &&
           other.reportReasons == reportReasons &&
+          other.requireAgeVerificationBetaTag ==
+              requireAgeVerificationBetaTag &&
           other.sdkDeveloperFaqUrl == sdkDeveloperFaqUrl &&
           other.sdkDiscordUrl == sdkDiscordUrl &&
           other.sdkNotAllowedToPublishMessage ==
               sdkNotAllowedToPublishMessage &&
           other.sdkUnityVersion == sdkUnityVersion &&
-          other.serverName == serverName &&
           other.stringHostUrlList == stringHostUrlList &&
           other.supportEmail == supportEmail &&
           other.supportFormUrl == supportFormUrl &&
@@ -1130,6 +1166,7 @@ class APIConfig {
           other.whiteListedAssetUrls == whiteListedAssetUrls &&
           other.playerUrlResolverVersion == playerUrlResolverVersion &&
           other.playerUrlResolverSha1 == playerUrlResolverSha1 &&
+          other.publicKey == publicKey &&
           other.websocketMaxFriendsRefreshDelay ==
               websocketMaxFriendsRefreshDelay &&
           other.websocketQuickReconnectTime == websocketQuickReconnectTime &&
@@ -1139,18 +1176,19 @@ class APIConfig {
   int get hashCode =>
       voiceEnableDegradation.hashCode +
       voiceEnableReceiverLimiting.hashCode +
+      accessLogsUrls.hashCode +
       address.hashCode +
+      ageVerificationInviteVisible.hashCode +
       ageVerificationP.hashCode +
       ageVerificationStatusVisible.hashCode +
+      analysisMaxRetries.hashCode +
+      analysisRetryInterval.hashCode +
       announcements.hashCode +
       analyticsSegmentNewUIPctOfUsers.hashCode +
       analyticsSegmentNewUISalt.hashCode +
-// ignore: deprecated_member_use_from_same_package
-      appName.hashCode +
       availableLanguageCodes.hashCode +
       availableLanguages.hashCode +
       avatarPerfLimiter.hashCode +
-      buildVersionTag.hashCode +
       chatboxLogBufferSeconds.hashCode +
       clientApiKey.hashCode +
       clientBPSCeiling.hashCode +
@@ -1175,7 +1213,6 @@ class APIConfig {
       currentTOSVersion.hashCode +
       defaultAvatar.hashCode +
       defaultStickerSet.hashCode +
-      deploymentGroup.hashCode +
       devLanguageCodes.hashCode +
 // ignore: deprecated_member_use_from_same_package
       devSdkUrl.hashCode +
@@ -1192,6 +1229,7 @@ class APIConfig {
       disableEventStream.hashCode +
       disableFeedbackGating.hashCode +
       disableFrontendBuilds.hashCode +
+      disableGiftDrops.hashCode +
       disableHello.hashCode +
       disableOculusSubs.hashCode +
       disableRegistration.hashCode +
@@ -1208,6 +1246,7 @@ class APIConfig {
       economyState.hashCode +
       events.hashCode +
       forceUseLatestWorld.hashCode +
+      giftDisplayType.hashCode +
       googleApiClientId.hashCode +
       homeWorldId.hashCode +
       homepageRedirectTarget.hashCode +
@@ -1225,11 +1264,11 @@ class APIConfig {
       reportFormUrl.hashCode +
       reportOptions.hashCode +
       reportReasons.hashCode +
+      requireAgeVerificationBetaTag.hashCode +
       sdkDeveloperFaqUrl.hashCode +
       sdkDiscordUrl.hashCode +
       sdkNotAllowedToPublishMessage.hashCode +
       sdkUnityVersion.hashCode +
-      serverName.hashCode +
       stringHostUrlList.hashCode +
       supportEmail.hashCode +
       supportFormUrl.hashCode +
@@ -1247,6 +1286,7 @@ class APIConfig {
       whiteListedAssetUrls.hashCode +
       playerUrlResolverVersion.hashCode +
       playerUrlResolverSha1.hashCode +
+      publicKey.hashCode +
       websocketMaxFriendsRefreshDelay.hashCode +
       websocketQuickReconnectTime.hashCode +
       websocketReconnectMaxDelay.hashCode;

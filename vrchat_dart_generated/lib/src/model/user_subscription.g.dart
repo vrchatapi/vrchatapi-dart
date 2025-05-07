@@ -29,7 +29,8 @@ UserSubscription _$UserSubscriptionFromJson(Map<String, dynamic> json) =>
             'created_at',
             'updated_at',
             'licenseGroups',
-            'isGift'
+            'isGift',
+            'isBulkGift'
           ],
         );
         final val = UserSubscription(
@@ -55,40 +56,33 @@ UserSubscription _$UserSubscriptionFromJson(Map<String, dynamic> json) =>
           licenseGroups: $checkedConvert('licenseGroups',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           isGift: $checkedConvert('isGift', (v) => v as bool? ?? false),
+          isBulkGift: $checkedConvert('isBulkGift', (v) => v as bool? ?? false),
         );
         return val;
       },
       fieldKeyMap: const {'createdAt': 'created_at', 'updatedAt': 'updated_at'},
     );
 
-Map<String, dynamic> _$UserSubscriptionToJson(UserSubscription instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'transactionId': instance.transactionId,
-    'store': instance.store,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('steamItemId', instance.steamItemId);
-  val['amount'] = instance.amount;
-  val['description'] = instance.description;
-  val['period'] = _$SubscriptionPeriodEnumMap[instance.period]!;
-  val['tier'] = instance.tier;
-  val['active'] = instance.active;
-  val['status'] = _$TransactionStatusEnumMap[instance.status]!;
-  writeNotNull('starts', instance.starts);
-  val['expires'] = instance.expires.toIso8601String();
-  val['created_at'] = instance.createdAt.toIso8601String();
-  val['updated_at'] = instance.updatedAt.toIso8601String();
-  val['licenseGroups'] = instance.licenseGroups;
-  val['isGift'] = instance.isGift;
-  return val;
-}
+Map<String, dynamic> _$UserSubscriptionToJson(UserSubscription instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'transactionId': instance.transactionId,
+      'store': instance.store,
+      if (instance.steamItemId case final value?) 'steamItemId': value,
+      'amount': instance.amount,
+      'description': instance.description,
+      'period': _$SubscriptionPeriodEnumMap[instance.period]!,
+      'tier': instance.tier,
+      'active': instance.active,
+      'status': _$TransactionStatusEnumMap[instance.status]!,
+      if (instance.starts case final value?) 'starts': value,
+      'expires': instance.expires.toIso8601String(),
+      'created_at': instance.createdAt.toIso8601String(),
+      'updated_at': instance.updatedAt.toIso8601String(),
+      'licenseGroups': instance.licenseGroups,
+      'isGift': instance.isGift,
+      'isBulkGift': instance.isBulkGift,
+    };
 
 const _$SubscriptionPeriodEnumMap = {
   SubscriptionPeriod.hour: 'hour',

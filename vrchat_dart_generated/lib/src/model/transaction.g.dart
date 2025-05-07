@@ -57,31 +57,22 @@ Transaction _$TransactionFromJson(Map<String, dynamic> json) => $checkedCreate(
       fieldKeyMap: const {'createdAt': 'created_at', 'updatedAt': 'updated_at'},
     );
 
-Map<String, dynamic> _$TransactionToJson(Transaction instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('userId', instance.userId);
-  writeNotNull('userDisplayName', instance.userDisplayName);
-  val['status'] = _$TransactionStatusEnumMap[instance.status]!;
-  val['subscription'] = instance.subscription.toJson();
-  val['sandbox'] = instance.sandbox;
-  val['created_at'] = instance.createdAt.toIso8601String();
-  val['updated_at'] = instance.updatedAt.toIso8601String();
-  writeNotNull('steam', instance.steam?.toJson());
-  writeNotNull('agreement', instance.agreement?.toJson());
-  val['error'] = instance.error;
-  writeNotNull('isGift', instance.isGift);
-  writeNotNull('isTokens', instance.isTokens);
-  return val;
-}
+Map<String, dynamic> _$TransactionToJson(Transaction instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      if (instance.userId case final value?) 'userId': value,
+      if (instance.userDisplayName case final value?) 'userDisplayName': value,
+      'status': _$TransactionStatusEnumMap[instance.status]!,
+      'subscription': instance.subscription.toJson(),
+      'sandbox': instance.sandbox,
+      'created_at': instance.createdAt.toIso8601String(),
+      'updated_at': instance.updatedAt.toIso8601String(),
+      if (instance.steam?.toJson() case final value?) 'steam': value,
+      if (instance.agreement?.toJson() case final value?) 'agreement': value,
+      'error': instance.error,
+      if (instance.isGift case final value?) 'isGift': value,
+      if (instance.isTokens case final value?) 'isTokens': value,
+    };
 
 const _$TransactionStatusEnumMap = {
   TransactionStatus.active: 'active',

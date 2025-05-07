@@ -25,15 +25,8 @@ InfoPushDataArticle _$InfoPushDataArticleFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$InfoPushDataArticleToJson(InfoPushDataArticle instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('content', instance.content?.toJson());
-  return val;
-}
+Map<String, dynamic> _$InfoPushDataArticleToJson(
+        InfoPushDataArticle instance) =>
+    <String, dynamic>{
+      if (instance.content?.toJson() case final value?) 'content': value,
+    };

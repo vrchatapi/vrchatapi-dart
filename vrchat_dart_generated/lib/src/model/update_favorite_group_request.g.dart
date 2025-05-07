@@ -26,21 +26,14 @@ UpdateFavoriteGroupRequest _$UpdateFavoriteGroupRequestFromJson(
     );
 
 Map<String, dynamic> _$UpdateFavoriteGroupRequestToJson(
-    UpdateFavoriteGroupRequest instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('displayName', instance.displayName);
-  writeNotNull(
-      'visibility', _$FavoriteGroupVisibilityEnumMap[instance.visibility]);
-  writeNotNull('tags', instance.tags);
-  return val;
-}
+        UpdateFavoriteGroupRequest instance) =>
+    <String, dynamic>{
+      if (instance.displayName case final value?) 'displayName': value,
+      if (_$FavoriteGroupVisibilityEnumMap[instance.visibility]
+          case final value?)
+        'visibility': value,
+      if (instance.tags case final value?) 'tags': value,
+    };
 
 const _$FavoriteGroupVisibilityEnumMap = {
   FavoriteGroupVisibility.private: 'private',

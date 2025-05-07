@@ -24,16 +24,9 @@ APIConfigOfflineAnalysis _$APIConfigOfflineAnalysisFromJson(
     );
 
 Map<String, dynamic> _$APIConfigOfflineAnalysisToJson(
-    APIConfigOfflineAnalysis instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('android', instance.android);
-  writeNotNull('standalonewindows', instance.standalonewindows);
-  return val;
-}
+        APIConfigOfflineAnalysis instance) =>
+    <String, dynamic>{
+      if (instance.android case final value?) 'android': value,
+      if (instance.standalonewindows case final value?)
+        'standalonewindows': value,
+    };

@@ -32,23 +32,17 @@ GroupAuditLogEntry _$GroupAuditLogEntryFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {'createdAt': 'created_at'},
     );
 
-Map<String, dynamic> _$GroupAuditLogEntryToJson(GroupAuditLogEntry instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('id', instance.id);
-  writeNotNull('created_at', instance.createdAt?.toIso8601String());
-  writeNotNull('groupId', instance.groupId);
-  writeNotNull('actorId', instance.actorId);
-  writeNotNull('actorDisplayName', instance.actorDisplayName);
-  writeNotNull('targetId', instance.targetId);
-  writeNotNull('eventType', instance.eventType);
-  writeNotNull('description', instance.description);
-  writeNotNull('data', instance.data);
-  return val;
-}
+Map<String, dynamic> _$GroupAuditLogEntryToJson(GroupAuditLogEntry instance) =>
+    <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'created_at': value,
+      if (instance.groupId case final value?) 'groupId': value,
+      if (instance.actorId case final value?) 'actorId': value,
+      if (instance.actorDisplayName case final value?)
+        'actorDisplayName': value,
+      if (instance.targetId case final value?) 'targetId': value,
+      if (instance.eventType case final value?) 'eventType': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.data case final value?) 'data': value,
+    };
