@@ -18,6 +18,8 @@ part 'file.g.dart';
 class File {
   /// Returns a new [File] instance.
   File({
+    this.animationStyle,
+    this.maskTag,
     required this.extension_,
     required this.id,
     required this.mimeType,
@@ -26,6 +28,20 @@ class File {
     required this.tags,
     required this.versions,
   });
+
+  @JsonKey(
+    name: r'animationStyle',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? animationStyle;
+
+  @JsonKey(
+    name: r'maskTag',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? maskTag;
 
   @JsonKey(
     name: r'extension',
@@ -84,6 +100,8 @@ class File {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is File &&
+          other.animationStyle == animationStyle &&
+          other.maskTag == maskTag &&
           other.extension_ == extension_ &&
           other.id == id &&
           other.mimeType == mimeType &&
@@ -94,6 +112,8 @@ class File {
 
   @override
   int get hashCode =>
+      animationStyle.hashCode +
+      maskTag.hashCode +
       extension_.hashCode +
       id.hashCode +
       mimeType.hashCode +

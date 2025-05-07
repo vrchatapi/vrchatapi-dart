@@ -108,6 +108,7 @@ doc/InfoPushDataArticle.md
 doc/InfoPushDataArticleContent.md
 doc/InfoPushDataClickable.md
 doc/Instance.md
+doc/InstanceContentSettings.md
 doc/InstancePlatforms.md
 doc/InstanceRegion.md
 doc/InstanceShortNameResponse.md
@@ -338,6 +339,7 @@ lib/src/model/info_push_data_article.dart
 lib/src/model/info_push_data_article_content.dart
 lib/src/model/info_push_data_clickable.dart
 lib/src/model/instance.dart
+lib/src/model/instance_content_settings.dart
 lib/src/model/instance_platforms.dart
 lib/src/model/instance_region.dart
 lib/src/model/instance_short_name_response.dart
@@ -541,6 +543,7 @@ test/info_push_data_article_test.dart
 test/info_push_data_clickable_test.dart
 test/info_push_data_test.dart
 test/info_push_test.dart
+test/instance_content_settings_test.dart
 test/instance_platforms_test.dart
 test/instance_region_test.dart
 test/instance_short_name_response_test.dart

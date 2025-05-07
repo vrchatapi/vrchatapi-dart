@@ -37,6 +37,16 @@ CreateInstanceRequest _$CreateInstanceRequestFromJson(
               $checkedConvert('canRequestInvite', (v) => v as bool? ?? false),
           hardClose: $checkedConvert('hardClose', (v) => v as bool? ?? false),
           inviteOnly: $checkedConvert('inviteOnly', (v) => v as bool? ?? false),
+          ageGate: $checkedConvert('ageGate', (v) => v as bool? ?? false),
+          instancePersistenceEnabled:
+              $checkedConvert('instancePersistenceEnabled', (v) => v as bool?),
+          displayName: $checkedConvert('displayName', (v) => v as String?),
+          contentSettings: $checkedConvert(
+              'contentSettings',
+              (v) => v == null
+                  ? null
+                  : InstanceContentSettings.fromJson(
+                      v as Map<String, dynamic>)),
         );
         return val;
       },
@@ -59,6 +69,12 @@ Map<String, dynamic> _$CreateInstanceRequestToJson(
         'canRequestInvite': value,
       if (instance.hardClose case final value?) 'hardClose': value,
       if (instance.inviteOnly case final value?) 'inviteOnly': value,
+      if (instance.ageGate case final value?) 'ageGate': value,
+      if (instance.instancePersistenceEnabled case final value?)
+        'instancePersistenceEnabled': value,
+      if (instance.displayName case final value?) 'displayName': value,
+      if (instance.contentSettings?.toJson() case final value?)
+        'contentSettings': value,
     };
 
 const _$InstanceTypeEnumMap = {

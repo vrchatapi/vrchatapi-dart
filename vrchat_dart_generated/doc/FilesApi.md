@@ -22,6 +22,9 @@ Method | HTTP request | Description
 [**getFileDataUploadStatus**](FilesApi.md#getfiledatauploadstatus) | **GET** /file/{fileId}/{versionId}/{fileType}/status | Check FileData Upload Status
 [**getFiles**](FilesApi.md#getfiles) | **GET** /files | List Files
 [**startFileDataUpload**](FilesApi.md#startfiledataupload) | **PUT** /file/{fileId}/{versionId}/{fileType}/start | Start FileData Upload
+[**uploadGalleryImage**](FilesApi.md#uploadgalleryimage) | **POST** /gallery | Upload gallery image
+[**uploadIcon**](FilesApi.md#uploadicon) | **POST** /icon | Upload icon
+[**uploadImage**](FilesApi.md#uploadimage) | **POST** /file/image | Upload gallery image, icon, emoji or sticker
 
 
 # **createFile**
@@ -664,6 +667,153 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **uploadGalleryImage**
+> File uploadGalleryImage(file)
+
+Upload gallery image
+
+Upload a gallery image
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getFilesApi();
+final MultipartFile file = BINARY_DATA_HERE; // MultipartFile | The binary blob of the png file.
+
+try {
+    final response = api.uploadGalleryImage(file);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling FilesApi->uploadGalleryImage: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **MultipartFile**| The binary blob of the png file. | 
+
+### Return type
+
+[**File**](File.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **uploadIcon**
+> File uploadIcon(file)
+
+Upload icon
+
+Upload an icon
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getFilesApi();
+final MultipartFile file = BINARY_DATA_HERE; // MultipartFile | The binary blob of the png file.
+
+try {
+    final response = api.uploadIcon(file);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling FilesApi->uploadIcon: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **MultipartFile**| The binary blob of the png file. | 
+
+### Return type
+
+[**File**](File.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **uploadImage**
+> File uploadImage(file, tag, animationStyle, maskTag)
+
+Upload gallery image, icon, emoji or sticker
+
+Upload an image, which can be an icon, gallery image, sticker or emoji
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getFilesApi();
+final MultipartFile file = BINARY_DATA_HERE; // MultipartFile | The binary blob of the png file.
+final String tag = tag_example; // String | Needs to be either icon, gallery, sticker or emoji
+final String animationStyle = animationStyle_example; // String | Animation style for sticker, required for emoji.
+final String maskTag = maskTag_example; // String | Mask of the sticker, optional for emoji.
+
+try {
+    final response = api.uploadImage(file, tag, animationStyle, maskTag);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling FilesApi->uploadImage: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **MultipartFile**| The binary blob of the png file. | 
+ **tag** | **String**| Needs to be either icon, gallery, sticker or emoji | 
+ **animationStyle** | **String**| Animation style for sticker, required for emoji. | [optional] 
+ **maskTag** | **String**| Mask of the sticker, optional for emoji. | [optional] 
+
+### Return type
+
+[**File**](File.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

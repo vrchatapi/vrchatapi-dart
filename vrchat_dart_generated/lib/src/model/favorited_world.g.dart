@@ -52,6 +52,12 @@ FavoritedWorld _$FavoritedWorldFromJson(Map<String, dynamic> json) =>
               'recommendedCapacity', (v) => (v as num?)?.toInt()),
           createdAt:
               $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
+          defaultContentSettings: $checkedConvert(
+              'defaultContentSettings',
+              (v) => v == null
+                  ? null
+                  : InstanceContentSettings.fromJson(
+                      v as Map<String, dynamic>)),
           favorites:
               $checkedConvert('favorites', (v) => (v as num?)?.toInt() ?? 0),
           favoriteGroup: $checkedConvert('favoriteGroup', (v) => v as String),
@@ -107,6 +113,8 @@ Map<String, dynamic> _$FavoritedWorldToJson(FavoritedWorld instance) =>
       if (instance.recommendedCapacity case final value?)
         'recommendedCapacity': value,
       'created_at': instance.createdAt.toIso8601String(),
+      if (instance.defaultContentSettings?.toJson() case final value?)
+        'defaultContentSettings': value,
       'favorites': instance.favorites,
       'favoriteGroup': instance.favoriteGroup,
       'favoriteId': instance.favoriteId,

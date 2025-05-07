@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **capacity** | **int** |  | 
 **recommendedCapacity** | **int** |  | [optional] 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
+**defaultContentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  | [optional] 
 **favorites** | **int** |  | [default to 0]
 **visits** | **int** |  | [optional] [default to 0]
 **heat** | **int** |  | [default to 0]

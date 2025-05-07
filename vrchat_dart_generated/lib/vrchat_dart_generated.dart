@@ -127,6 +127,7 @@ export 'package:vrchat_dart_generated/src/model/info_push_data_article.dart';
 export 'package:vrchat_dart_generated/src/model/info_push_data_article_content.dart';
 export 'package:vrchat_dart_generated/src/model/info_push_data_clickable.dart';
 export 'package:vrchat_dart_generated/src/model/instance.dart';
+export 'package:vrchat_dart_generated/src/model/instance_content_settings.dart';
 export 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
 export 'package:vrchat_dart_generated/src/model/instance_region.dart';
 export 'package:vrchat_dart_generated/src/model/instance_short_name_response.dart';

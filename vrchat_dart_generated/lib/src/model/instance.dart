@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
 import 'package:vrchat_dart_generated/src/model/instance_type.dart';
+import 'package:vrchat_dart_generated/src/model/instance_content_settings.dart';
 import 'package:vrchat_dart_generated/src/model/instance_region.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user.dart';
 import 'package:vrchat_dart_generated/src/model/group_access_type.dart';
@@ -28,6 +29,7 @@ class Instance {
     this.canRequestInvite = true,
     required this.capacity,
     required this.clientNumber,
+    required this.contentSettings,
     required this.displayName,
     this.full = false,
     this.gameServerVersion,
@@ -103,6 +105,13 @@ class Instance {
     includeIfNull: false,
   )
   final String clientNumber;
+
+  @JsonKey(
+    name: r'contentSettings',
+    required: true,
+    includeIfNull: false,
+  )
+  final InstanceContentSettings contentSettings;
 
   @JsonKey(
     name: r'displayName',
@@ -379,6 +388,7 @@ class Instance {
           other.capacity == capacity &&
 // ignore: deprecated_member_use_from_same_package
           other.clientNumber == clientNumber &&
+          other.contentSettings == contentSettings &&
           other.displayName == displayName &&
           other.full == full &&
           other.gameServerVersion == gameServerVersion &&
@@ -424,6 +434,7 @@ class Instance {
       capacity.hashCode +
 // ignore: deprecated_member_use_from_same_package
       clientNumber.hashCode +
+      contentSettings.hashCode +
       (displayName == null ? 0 : displayName.hashCode) +
       full.hashCode +
       gameServerVersion.hashCode +

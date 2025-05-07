@@ -46,6 +46,12 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('recommendedCapacity', (v) => (v as num).toInt()),
           createdAt:
               $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
+          defaultContentSettings: $checkedConvert(
+              'defaultContentSettings',
+              (v) => v == null
+                  ? null
+                  : InstanceContentSettings.fromJson(
+                      v as Map<String, dynamic>)),
           description: $checkedConvert('description', (v) => v as String),
           favorites:
               $checkedConvert('favorites', (v) => (v as num?)?.toInt() ?? 0),
@@ -108,6 +114,8 @@ Map<String, dynamic> _$WorldToJson(World instance) => <String, dynamic>{
       'capacity': instance.capacity,
       'recommendedCapacity': instance.recommendedCapacity,
       'created_at': instance.createdAt.toIso8601String(),
+      if (instance.defaultContentSettings?.toJson() case final value?)
+        'defaultContentSettings': value,
       'description': instance.description,
       if (instance.favorites case final value?) 'favorites': value,
       'featured': instance.featured,

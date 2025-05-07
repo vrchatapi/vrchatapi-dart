@@ -8,6 +8,8 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**animationStyle** | **String** |  | [optional] 
+**maskTag** | **String** |  | [optional] 
 **extension_** | **String** |  | 
 **id** | **String** |  | 
 **mimeType** | [**MIMEType**](MIMEType.md) |  | 

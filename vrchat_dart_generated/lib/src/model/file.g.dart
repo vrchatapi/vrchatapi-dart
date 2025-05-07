@@ -25,6 +25,9 @@ File _$FileFromJson(Map<String, dynamic> json) => $checkedCreate(
           ],
         );
         final val = File(
+          animationStyle:
+              $checkedConvert('animationStyle', (v) => v as String?),
+          maskTag: $checkedConvert('maskTag', (v) => v as String?),
           extension_: $checkedConvert('extension', (v) => v as String),
           id: $checkedConvert('id', (v) => v as String),
           mimeType: $checkedConvert(
@@ -45,6 +48,8 @@ File _$FileFromJson(Map<String, dynamic> json) => $checkedCreate(
     );
 
 Map<String, dynamic> _$FileToJson(File instance) => <String, dynamic>{
+      if (instance.animationStyle case final value?) 'animationStyle': value,
+      if (instance.maskTag case final value?) 'maskTag': value,
       'extension': instance.extension_,
       'id': instance.id,
       'mimeType': _$MIMETypeEnumMap[instance.mimeType]!,

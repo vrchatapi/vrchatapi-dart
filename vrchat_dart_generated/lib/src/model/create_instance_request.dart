@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/instance_type.dart';
+import 'package:vrchat_dart_generated/src/model/instance_content_settings.dart';
 import 'package:vrchat_dart_generated/src/model/instance_region.dart';
 import 'package:vrchat_dart_generated/src/model/group_access_type.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -30,6 +31,10 @@ class CreateInstanceRequest {
     this.canRequestInvite = false,
     this.hardClose = false,
     this.inviteOnly = false,
+    this.ageGate = false,
+    this.instancePersistenceEnabled,
+    this.displayName,
+    this.contentSettings,
   });
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
@@ -115,6 +120,34 @@ class CreateInstanceRequest {
   )
   final bool? inviteOnly;
 
+  @JsonKey(
+    name: r'ageGate',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? ageGate;
+
+  @JsonKey(
+    name: r'instancePersistenceEnabled',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? instancePersistenceEnabled;
+
+  @JsonKey(
+    name: r'displayName',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? displayName;
+
+  @JsonKey(
+    name: r'contentSettings',
+    required: false,
+    includeIfNull: false,
+  )
+  final InstanceContentSettings? contentSettings;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -129,7 +162,11 @@ class CreateInstanceRequest {
           other.closedAt == closedAt &&
           other.canRequestInvite == canRequestInvite &&
           other.hardClose == hardClose &&
-          other.inviteOnly == inviteOnly;
+          other.inviteOnly == inviteOnly &&
+          other.ageGate == ageGate &&
+          other.instancePersistenceEnabled == instancePersistenceEnabled &&
+          other.displayName == displayName &&
+          other.contentSettings == contentSettings;
 
   @override
   int get hashCode =>
@@ -143,7 +180,13 @@ class CreateInstanceRequest {
       closedAt.hashCode +
       canRequestInvite.hashCode +
       hardClose.hashCode +
-      inviteOnly.hashCode;
+      inviteOnly.hashCode +
+      ageGate.hashCode +
+      (instancePersistenceEnabled == null
+          ? 0
+          : instancePersistenceEnabled.hashCode) +
+      (displayName == null ? 0 : displayName.hashCode) +
+      contentSettings.hashCode;
 
   factory CreateInstanceRequest.fromJson(Map<String, dynamic> json) =>
       _$CreateInstanceRequestFromJson(json);

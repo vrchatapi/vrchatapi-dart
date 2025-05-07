@@ -19,6 +19,7 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
             'canRequestInvite',
             'capacity',
             'clientNumber',
+            'contentSettings',
             'displayName',
             'full',
             'id',
@@ -51,6 +52,10 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('canRequestInvite', (v) => v as bool? ?? true),
           capacity: $checkedConvert('capacity', (v) => (v as num).toInt()),
           clientNumber: $checkedConvert('clientNumber', (v) => v as String),
+          contentSettings: $checkedConvert(
+              'contentSettings',
+              (v) =>
+                  InstanceContentSettings.fromJson(v as Map<String, dynamic>)),
           displayName: $checkedConvert('displayName', (v) => v as String?),
           full: $checkedConvert('full', (v) => v as bool? ?? false),
           gameServerVersion:
@@ -116,6 +121,7 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
       'canRequestInvite': instance.canRequestInvite,
       'capacity': instance.capacity,
       'clientNumber': instance.clientNumber,
+      'contentSettings': instance.contentSettings.toJson(),
       'displayName': instance.displayName,
       'full': instance.full,
       if (instance.gameServerVersion case final value?)

@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/instance_content_settings.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
 import 'package:vrchat_dart_generated/src/model/unity_package.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -23,6 +24,7 @@ class World {
     required this.capacity,
     required this.recommendedCapacity,
     required this.createdAt,
+    this.defaultContentSettings,
     required this.description,
     this.favorites = 0,
     this.featured = false,
@@ -86,6 +88,13 @@ class World {
     includeIfNull: false,
   )
   final DateTime createdAt;
+
+  @JsonKey(
+    name: r'defaultContentSettings',
+    required: false,
+    includeIfNull: false,
+  )
+  final InstanceContentSettings? defaultContentSettings;
 
   @JsonKey(
     name: r'description',
@@ -293,6 +302,7 @@ class World {
           other.capacity == capacity &&
           other.recommendedCapacity == recommendedCapacity &&
           other.createdAt == createdAt &&
+          other.defaultContentSettings == defaultContentSettings &&
           other.description == description &&
           other.favorites == favorites &&
           other.featured == featured &&
@@ -327,6 +337,7 @@ class World {
       capacity.hashCode +
       recommendedCapacity.hashCode +
       createdAt.hashCode +
+      defaultContentSettings.hashCode +
       description.hashCode +
       favorites.hashCode +
       featured.hashCode +
