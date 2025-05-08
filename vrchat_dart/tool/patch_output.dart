@@ -5,8 +5,10 @@ import 'package:fixer/fixer.dart';
 import 'package:path/path.dart' as path;
 import 'package:recase/recase.dart';
 
+const defaultFormData = "FormData.fromMap({'file': file});";
 const multipartUploadPatches = <String, Map<String, String>>{
   'files_api.dart': {
+    '/file': defaultFormData,
     '/file/image': '''
 FormData.fromMap({
   'file': file,
@@ -14,8 +16,8 @@ FormData.fromMap({
   if (animationStyle != null) 'animationStyle': animationStyle,
   if (maskTag != null) 'maskTag': maskTag,
 });''',
-    '/icon': "FormData.fromMap({'file': file});",
-    '/gallery': "FormData.fromMap({'file': file});",
+    '/icon': defaultFormData,
+    '/gallery': defaultFormData,
   },
 };
 
@@ -111,11 +113,25 @@ void patchApi() {
   for (final file in apiFiles) {
     var content = file.readAsStringSync();
 
-    final mups =
-        multipartUploadPatches[file.path.split(Platform.pathSeparator).last] ??
-            {};
-    for (final MapEntry(key: path, value: bodyData) in mups.entries) {
-      content = content.patchMultipartUpload(path: path, bodyData: bodyData);
+    final fileName = file.path.split(Platform.pathSeparator).last;
+    final mups = multipartUploadPatches[fileName] ?? {};
+
+    final multipartUploads = RegExp(
+      "final _path = r'(.+?)';.+?contentType: 'multipart/form-data'",
+      multiLine: true,
+      dotAll: true,
+    );
+
+    for (final match in multipartUploads.allMatches(content)) {
+      final path = match[1]!;
+      final patch = mups[path];
+
+      if (patch == null) {
+        throw Exception(
+            'No patch found for multipart/form-data: $fileName $path');
+      }
+
+      content = content.patchMultipartUpload(path: path, bodyData: patch);
     }
 
     file.writeAsStringSync(content);
