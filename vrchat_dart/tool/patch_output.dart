@@ -8,7 +8,6 @@ import 'package:recase/recase.dart';
 const defaultFormData = "FormData.fromMap({'file': file});";
 const multipartUploadPatches = <String, Map<String, String>>{
   'files_api.dart': {
-    '/file': defaultFormData,
     '/file/image': '''
 FormData.fromMap({
   'file': file,
