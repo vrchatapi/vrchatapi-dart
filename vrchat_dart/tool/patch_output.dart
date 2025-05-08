@@ -6,7 +6,7 @@ import 'package:path/path.dart' as path;
 import 'package:recase/recase.dart';
 
 const defaultFormData = "FormData.fromMap({'file': file});";
-const multipartUploadPatches = <String, Map<String, String>>{
+const formDataPatches = <String, Map<String, String>>{
   'files_api.dart': {
     '/file/image': '''
 FormData.fromMap({
@@ -112,10 +112,15 @@ void patchApi() {
   for (final file in apiFiles) {
     var content = file.readAsStringSync();
 
-    final mups =
-        multipartUploadPatches[file.path.split(Platform.pathSeparator).last] ??
-            {};
-    for (final MapEntry(key: path, value: bodyData) in mups.entries) {
+    final fdp =
+        formDataPatches[file.path.split(Platform.pathSeparator).last] ?? {};
+    final formDatas = RegExp(r'multipart\/form-data').allMatches(content);
+
+    if (fdp.length != formDatas.length) {
+      throw Exception('Missing FormData patches for ${file.path}');
+    }
+
+    for (final MapEntry(key: path, value: bodyData) in fdp.entries) {
       content = content.patchMultipartUpload(path: path, bodyData: bodyData);
     }
 
