@@ -112,25 +112,11 @@ void patchApi() {
   for (final file in apiFiles) {
     var content = file.readAsStringSync();
 
-    final fileName = file.path.split(Platform.pathSeparator).last;
-    final mups = multipartUploadPatches[fileName] ?? {};
-
-    final multipartUploads = RegExp(
-      "final _path = r'(.+?)';.+?contentType: 'multipart/form-data'",
-      multiLine: true,
-      dotAll: true,
-    );
-
-    for (final match in multipartUploads.allMatches(content)) {
-      final path = match[1]!;
-      final patch = mups[path];
-
-      if (patch == null) {
-        throw Exception(
-            'No patch found for multipart/form-data: $fileName $path');
-      }
-
-      content = content.patchMultipartUpload(path: path, bodyData: patch);
+    final mups =
+        multipartUploadPatches[file.path.split(Platform.pathSeparator).last] ??
+            {};
+    for (final MapEntry(key: path, value: bodyData) in mups.entries) {
+      content = content.patchMultipartUpload(path: path, bodyData: bodyData);
     }
 
     file.writeAsStringSync(content);
