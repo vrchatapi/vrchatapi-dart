@@ -5,6 +5,20 @@ import 'package:fixer/fixer.dart';
 import 'package:path/path.dart' as path;
 import 'package:recase/recase.dart';
 
+const multipartUploadPatches = <String, Map<String, String>>{
+  'files_api.dart': {
+    '/file/image': '''
+FormData.fromMap({
+  'file': file,
+  'tag': tag,
+  if (animationStyle != null) 'animationStyle': animationStyle,
+  if (maskTag != null) 'maskTag': maskTag,
+});''',
+    '/icon': "FormData.fromMap({'file': file});",
+    '/gallery': "FormData.fromMap({'file': file});",
+  },
+};
+
 void main() {
   final spec =
       jsonDecode(File(path.join('build', 'spec.json')).readAsStringSync());
@@ -97,26 +111,11 @@ void patchApi() {
   for (final file in apiFiles) {
     var content = file.readAsStringSync();
 
-    if (file.path.contains('files_api.dart')) {
-      content = content
-          .patchMultipartUpload(
-            path: '/file/image',
-            bodyData: '''
-FormData.fromMap({
-  'file': file,
-  'tag': tag,
-  if (animationStyle != null) 'animationStyle': animationStyle,
-  if (maskTag != null) 'maskTag': maskTag,
-});''',
-          )
-          .patchMultipartUpload(
-            path: '/icon',
-            bodyData: "FormData.fromMap({'file': file});",
-          )
-          .patchMultipartUpload(
-            path: '/gallery',
-            bodyData: "FormData.fromMap({'file': file});",
-          );
+    final mups =
+        multipartUploadPatches[file.path.split(Platform.pathSeparator).last] ??
+            {};
+    for (final MapEntry(key: path, value: bodyData) in mups.entries) {
+      content = content.patchMultipartUpload(path: path, bodyData: bodyData);
     }
 
     file.writeAsStringSync(content);
