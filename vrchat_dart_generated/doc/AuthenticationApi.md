@@ -9,15 +9,67 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**cancelPending2FA**](AuthenticationApi.md#cancelpending2fa) | **DELETE** /auth/twofactorauth/totp/pending | Cancel pending enabling of time-based 2FA codes
 [**checkUserExists**](AuthenticationApi.md#checkuserexists) | **GET** /auth/exists | Check User Exists
+[**confirmEmail**](AuthenticationApi.md#confirmemail) | **GET** /auth/confirmEmail | Confirm Email
 [**deleteUser**](AuthenticationApi.md#deleteuser) | **PUT** /users/{userId}/delete | Delete User
+[**disable2FA**](AuthenticationApi.md#disable2fa) | **DELETE** /auth/twofactorauth | Disable 2FA
+[**enable2FA**](AuthenticationApi.md#enable2fa) | **POST** /auth/twofactorauth/totp/pending | Enable time-based 2FA codes
 [**getCurrentUser**](AuthenticationApi.md#getcurrentuser) | **GET** /auth/user | Login and/or Get Current User Info
+[**getRecoveryCodes**](AuthenticationApi.md#getrecoverycodes) | **GET** /auth/user/twofactorauth/otp | Get 2FA Recovery codes
 [**logout**](AuthenticationApi.md#logout) | **PUT** /logout | Logout
+[**registerUserAccount**](AuthenticationApi.md#registeruseraccount) | **POST** /auth/register | Register User Account
+[**resendEmailConfirmation**](AuthenticationApi.md#resendemailconfirmation) | **POST** /auth/user/resendEmail | Resend Email Confirmation
 [**verify2FA**](AuthenticationApi.md#verify2fa) | **POST** /auth/twofactorauth/totp/verify | Verify 2FA code
 [**verify2FAEmailCode**](AuthenticationApi.md#verify2faemailcode) | **POST** /auth/twofactorauth/emailotp/verify | Verify 2FA email code
 [**verifyAuthToken**](AuthenticationApi.md#verifyauthtoken) | **GET** /auth | Verify Auth Token
+[**verifyLoginPlace**](AuthenticationApi.md#verifyloginplace) | **GET** /auth/verifyLoginPlace | Verify Login Place
+[**verifyPending2FA**](AuthenticationApi.md#verifypending2fa) | **POST** /auth/twofactorauth/totp/pending/verify | Verify Pending 2FA code
 [**verifyRecoveryCode**](AuthenticationApi.md#verifyrecoverycode) | **POST** /auth/twofactorauth/otp/verify | Verify 2FA code with Recovery code
 
+
+# **cancelPending2FA**
+> Disable2FAResult cancelPending2FA()
+
+Cancel pending enabling of time-based 2FA codes
+
+Cancels the sequence for enabling time-based 2FA.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+
+try {
+    final response = api.cancelPending2FA();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AuthenticationApi->cancelPending2FA: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Disable2FAResult**](Disable2FAResult.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **checkUserExists**
 > UserExists checkUserExists(email, displayName, username, excludeUserId)
@@ -68,6 +120,50 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **confirmEmail**
+> confirmEmail(id, verifyEmail)
+
+Confirm Email
+
+Confirms the email address for a user
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+final String id = usr_00000000-0000-0000-0000-000000000000; // String | Target user for which to verify email.
+final String verifyEmail = eml_00000000-0000-0000-0000-000000000000; // String | Token to verify email.
+
+try {
+    api.confirmEmail(id, verifyEmail);
+} catch on DioException (e) {
+    print('Exception when calling AuthenticationApi->confirmEmail: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| Target user for which to verify email. | 
+ **verifyEmail** | **String**| Token to verify email. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **deleteUser**
 > CurrentUser deleteUser(userId)
 
@@ -103,6 +199,92 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CurrentUser**](CurrentUser.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **disable2FA**
+> Disable2FAResult disable2FA()
+
+Disable 2FA
+
+Disables 2FA for the currently logged in account
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+
+try {
+    final response = api.disable2FA();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AuthenticationApi->disable2FA: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Disable2FAResult**](Disable2FAResult.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **enable2FA**
+> Pending2FAResult enable2FA()
+
+Enable time-based 2FA codes
+
+Begins the sequence for enabling time-based 2FA.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+
+try {
+    final response = api.enable2FA();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AuthenticationApi->enable2FA: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Pending2FAResult**](Pending2FAResult.md)
 
 ### Authorization
 
@@ -165,6 +347,49 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getRecoveryCodes**
+> TwoFactorRecoveryCodes getRecoveryCodes()
+
+Get 2FA Recovery codes
+
+Gets the OTP (One Time Password) recovery codes for accounts with 2FA-protection enabled.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+
+try {
+    final response = api.getRecoveryCodes();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AuthenticationApi->getRecoveryCodes: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**TwoFactorRecoveryCodes**](TwoFactorRecoveryCodes.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **logout**
 > Success logout()
 
@@ -187,6 +412,92 @@ try {
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AuthenticationApi->logout: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Success**](Success.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **registerUserAccount**
+> CurrentUser registerUserAccount(registerUserAccountRequest)
+
+Register User Account
+
+~~Register a new user account.~~  **DEPRECATED:** Automated creation of accounts has no legitimate public third-party use case, and would be in violation of ToS §13.2: *By using the Platform, you agree not to: i. [...] use the Platform in a manner inconsistent with individual human usage* This endpoint is documented in the interest of completeness
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+final RegisterUserAccountRequest registerUserAccountRequest = ; // RegisterUserAccountRequest | 
+
+try {
+    final response = api.registerUserAccount(registerUserAccountRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AuthenticationApi->registerUserAccount: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **registerUserAccountRequest** | [**RegisterUserAccountRequest**](RegisterUserAccountRequest.md)|  | 
+
+### Return type
+
+[**CurrentUser**](CurrentUser.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **resendEmailConfirmation**
+> Success resendEmailConfirmation()
+
+Resend Email Confirmation
+
+Requests a resend of pending email address confirmation email
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+
+try {
+    final response = api.resendEmailConfirmation();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AuthenticationApi->resendEmailConfirmation: $e\n');
 }
 ```
 
@@ -341,6 +652,97 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **verifyLoginPlace**
+> verifyLoginPlace(token, userId)
+
+Verify Login Place
+
+Verifies a login attempt for a user
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+final String token = token_example; // String | Token to verify login attempt.
+final String userId = userId_example; // String | Filter by UserID.
+
+try {
+    api.verifyLoginPlace(token, userId);
+} catch on DioException (e) {
+    print('Exception when calling AuthenticationApi->verifyLoginPlace: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **String**| Token to verify login attempt. | 
+ **userId** | **String**| Filter by UserID. | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **verifyPending2FA**
+> Verify2FAResult verifyPending2FA(twoFactorAuthCode)
+
+Verify Pending 2FA code
+
+Finishes sequence for enabling time-based 2FA.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+final TwoFactorAuthCode twoFactorAuthCode = ; // TwoFactorAuthCode | 
+
+try {
+    final response = api.verifyPending2FA(twoFactorAuthCode);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AuthenticationApi->verifyPending2FA: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **twoFactorAuthCode** | [**TwoFactorAuthCode**](TwoFactorAuthCode.md)|  | 
+
+### Return type
+
+[**Verify2FAResult**](Verify2FAResult.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

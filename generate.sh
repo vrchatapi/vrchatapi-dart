@@ -1,3 +1,5 @@
+set -e
+
 if [ -d "vrchat_dart_generated" ]; then
     echo "Removing old files"
     cd vrchat_dart_generated

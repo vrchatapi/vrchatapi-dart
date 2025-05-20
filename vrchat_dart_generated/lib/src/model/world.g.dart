@@ -85,6 +85,7 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('publicationDate', (v) => v as String),
           releaseStatus: $checkedConvert(
               'releaseStatus', (v) => $enumDecode(_$ReleaseStatusEnumMap, v)),
+          storeId: $checkedConvert('storeId', (v) => v as String?),
           tags: $checkedConvert('tags',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           thumbnailImageUrl:
@@ -136,6 +137,7 @@ Map<String, dynamic> _$WorldToJson(World instance) => <String, dynamic>{
       if (instance.publicOccupants case final value?) 'publicOccupants': value,
       'publicationDate': instance.publicationDate,
       'releaseStatus': _$ReleaseStatusEnumMap[instance.releaseStatus]!,
+      if (instance.storeId case final value?) 'storeId': value,
       'tags': instance.tags,
       'thumbnailImageUrl': instance.thumbnailImageUrl,
       if (instance.unityPackages?.map((e) => e.toJson()).toList()

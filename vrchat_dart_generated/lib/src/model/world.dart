@@ -43,6 +43,7 @@ class World {
     this.publicOccupants = 0,
     required this.publicationDate,
     required this.releaseStatus,
+    this.storeId,
     required this.tags,
     required this.thumbnailImageUrl,
     this.unityPackages,
@@ -233,6 +234,13 @@ class World {
   )
   final ReleaseStatus releaseStatus;
 
+  @JsonKey(
+    name: r'storeId',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? storeId;
+
   ///
   @JsonKey(
     name: r'tags',
@@ -321,6 +329,7 @@ class World {
           other.publicOccupants == publicOccupants &&
           other.publicationDate == publicationDate &&
           other.releaseStatus == releaseStatus &&
+          other.storeId == storeId &&
           other.tags == tags &&
           other.thumbnailImageUrl == thumbnailImageUrl &&
           other.unityPackages == unityPackages &&
@@ -356,6 +365,7 @@ class World {
       publicOccupants.hashCode +
       publicationDate.hashCode +
       releaseStatus.hashCode +
+      storeId.hashCode +
       tags.hashCode +
       thumbnailImageUrl.hashCode +
       unityPackages.hashCode +

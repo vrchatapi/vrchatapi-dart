@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/avatar_published_listings_inner.dart';
 import 'package:vrchat_dart_generated/src/model/avatar_unity_package_url_object.dart';
 import 'package:vrchat_dart_generated/src/model/avatar_styles.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
@@ -20,6 +21,7 @@ part 'avatar.g.dart';
 class Avatar {
   /// Returns a new [Avatar] instance.
   Avatar({
+    this.acknowledgements,
     this.assetUrl,
     this.assetUrlObject,
     required this.authorId,
@@ -27,10 +29,16 @@ class Avatar {
     required this.createdAt,
     required this.description,
     this.featured = false,
+    this.highestPrice,
     required this.id,
     required this.imageUrl,
+    this.lock,
+    this.lowestPrice,
     required this.name,
+    this.productId,
+    this.publishedListings,
     required this.releaseStatus,
+    this.searchable = false,
     required this.styles,
     required this.tags,
     required this.thumbnailImageUrl,
@@ -41,7 +49,14 @@ class Avatar {
     this.version = 0,
   });
 
-  /// Not present from general serach `/avatars`, only on specific requests `/avatars/{avatarId}`.
+  @JsonKey(
+    name: r'acknowledgements',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? acknowledgements;
+
+  /// Not present from general search `/avatars`, only on specific requests `/avatars/{avatarId}`.
   @JsonKey(
     name: r'assetUrl',
     required: false,
@@ -49,7 +64,7 @@ class Avatar {
   )
   final String? assetUrl;
 
-  /// Not present from general serach `/avatars`, only on specific requests `/avatars/{avatarId}`. **Deprecation:** `Object` has unknown usage/fields, and is always empty. Use normal `Url` field instead.
+  /// Not present from general search `/avatars`, only on specific requests `/avatars/{avatarId}`. **Deprecation:** `Object` has unknown usage/fields, and is always empty. Use normal `Url` field instead.
   @JsonKey(
     name: r'assetUrlObject',
     required: false,
@@ -94,6 +109,13 @@ class Avatar {
   final bool featured;
 
   @JsonKey(
+    name: r'highestPrice',
+    required: false,
+    includeIfNull: false,
+  )
+  final int? highestPrice;
+
+  @JsonKey(
     name: r'id',
     required: true,
     includeIfNull: false,
@@ -108,6 +130,20 @@ class Avatar {
   final String imageUrl;
 
   @JsonKey(
+    name: r'lock',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? lock;
+
+  @JsonKey(
+    name: r'lowestPrice',
+    required: false,
+    includeIfNull: false,
+  )
+  final int? lowestPrice;
+
+  @JsonKey(
     name: r'name',
     required: true,
     includeIfNull: false,
@@ -115,11 +151,32 @@ class Avatar {
   final String name;
 
   @JsonKey(
+    name: r'productId',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? productId;
+
+  @JsonKey(
+    name: r'publishedListings',
+    required: false,
+    includeIfNull: false,
+  )
+  final List<AvatarPublishedListingsInner>? publishedListings;
+
+  @JsonKey(
     name: r'releaseStatus',
     required: true,
     includeIfNull: false,
   )
   final ReleaseStatus releaseStatus;
+
+  @JsonKey(
+    name: r'searchable',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? searchable;
 
   @JsonKey(
     name: r'styles',
@@ -184,6 +241,7 @@ class Avatar {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Avatar &&
+          other.acknowledgements == acknowledgements &&
           other.assetUrl == assetUrl &&
           other.assetUrlObject == assetUrlObject &&
           other.authorId == authorId &&
@@ -191,10 +249,16 @@ class Avatar {
           other.createdAt == createdAt &&
           other.description == description &&
           other.featured == featured &&
+          other.highestPrice == highestPrice &&
           other.id == id &&
           other.imageUrl == imageUrl &&
+          other.lock == lock &&
+          other.lowestPrice == lowestPrice &&
           other.name == name &&
+          other.productId == productId &&
+          other.publishedListings == publishedListings &&
           other.releaseStatus == releaseStatus &&
+          other.searchable == searchable &&
           other.styles == styles &&
           other.tags == tags &&
           other.thumbnailImageUrl == thumbnailImageUrl &&
@@ -207,6 +271,7 @@ class Avatar {
 
   @override
   int get hashCode =>
+      acknowledgements.hashCode +
       assetUrl.hashCode +
       assetUrlObject.hashCode +
       authorId.hashCode +
@@ -214,10 +279,16 @@ class Avatar {
       createdAt.hashCode +
       description.hashCode +
       featured.hashCode +
+      highestPrice.hashCode +
       id.hashCode +
       imageUrl.hashCode +
+      lock.hashCode +
+      lowestPrice.hashCode +
       name.hashCode +
+      productId.hashCode +
+      publishedListings.hashCode +
       releaseStatus.hashCode +
+      searchable.hashCode +
       styles.hashCode +
       tags.hashCode +
       thumbnailImageUrl.hashCode +

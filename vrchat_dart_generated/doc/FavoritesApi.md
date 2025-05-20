@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFavoriteGroups**
-> List<FavoriteGroup> getFavoriteGroups(n, offset, ownerId)
+> List<FavoriteGroup> getFavoriteGroups(n, offset, userId, ownerId)
 
 List Favorite Groups
 
@@ -186,10 +186,11 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getFavoritesApi();
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
+final String userId = userId_example; // String | Target user to see information on, admin-only.
 final String ownerId = ownerId_example; // String | The owner of whoms favorite groups to return. Must be a UserID.
 
 try {
-    final response = api.getFavoriteGroups(n, offset, ownerId);
+    final response = api.getFavoriteGroups(n, offset, userId, ownerId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling FavoritesApi->getFavoriteGroups: $e\n');
@@ -202,6 +203,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
+ **userId** | **String**| Target user to see information on, admin-only. | [optional] 
  **ownerId** | **String**| The owner of whoms favorite groups to return. Must be a UserID. | [optional] 
 
 ### Return type

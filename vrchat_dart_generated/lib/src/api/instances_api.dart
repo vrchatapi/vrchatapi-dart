@@ -19,7 +19,7 @@ class InstancesApi {
   const InstancesApi(this._dio);
 
   /// Close Instance
-  /// Close an instance or update the closedAt time when it will be closed.  You can only close an instance if the ownerId is yourself or if the instance owner is a group and you have the &#x60;group-instance-moderate&#x60; permission.
+  /// Close an instance or update the closedAt time when it will be closed.  You can only close an instance if the ownerId is yourself or if the instance owner is a group and you have the &#x60;group-instance-manage&#x60; permission.
   ///
   /// Parameters:
   /// * [worldId] - Must be a valid world ID.

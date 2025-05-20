@@ -6,6 +6,7 @@ import 'package:path/path.dart' as path;
 import 'package:recase/recase.dart';
 
 const defaultFormData = "FormData.fromMap({'file': file});";
+const inviteFormData = "FormData.fromMap({'image': image, 'data': data});";
 const formDataPatches = <String, Map<String, String>>{
   'files_api.dart': {
     '/file/image': '''
@@ -17,6 +18,26 @@ FormData.fromMap({
 });''',
     '/icon': defaultFormData,
     '/gallery': defaultFormData,
+  },
+  'invite_api.dart': {
+    '/invite/{userId}/photo': inviteFormData,
+    '/requestInvite/{userId}/photo': inviteFormData,
+    '/invite/{notificationId}/response/photo': inviteFormData,
+  },
+  'prints_api.dart': {
+    '/prints/{printId}': '''
+FormData.fromMap({
+  'image': image,
+  if (note != null) 'note': note,
+});''',
+    '/prints': '''
+FormData.fromMap({
+  'image': image,
+  'timestamp': timestamp,
+  if (note != null) 'note': note,
+  if (worldId != null) 'worldId': worldId,
+  if (worldName != null) 'worldName': worldName,
+});''',
   },
 };
 
@@ -194,9 +215,9 @@ extension on String {
     final escapedPath = RegExp.escape(path);
     final tabbedBodyData = bodyData.replaceAll('\n', '\n      ');
     return replaceFirstMapped(
-      RegExp("final _path = r'$escapedPath';(.+?)try {}", dotAll: true),
+      RegExp("r'$escapedPath'(.+?)try {}", dotAll: true),
       (m) => '''
-final _path = r'$path';${m[1]}try {
+r'$path'${m[1]}try {
       _bodyData = $tabbedBodyData
     }''',
     );

@@ -17,6 +17,7 @@ class Verify2FAResult {
   /// Returns a new [Verify2FAResult] instance.
   Verify2FAResult({
     required this.verified,
+    this.enabled = true,
   });
 
   @JsonKey(
@@ -26,13 +27,22 @@ class Verify2FAResult {
   )
   final bool verified;
 
+  @JsonKey(
+    name: r'enabled',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? enabled;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is Verify2FAResult && other.verified == verified;
+      other is Verify2FAResult &&
+          other.verified == verified &&
+          other.enabled == enabled;
 
   @override
-  int get hashCode => verified.hashCode;
+  int get hashCode => verified.hashCode + enabled.hashCode;
 
   factory Verify2FAResult.fromJson(Map<String, dynamic> json) =>
       _$Verify2FAResultFromJson(json);

@@ -83,6 +83,7 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
           ageVerified: $checkedConvert('ageVerified', (v) => v as bool),
           allowAvatarCopying:
               $checkedConvert('allowAvatarCopying', (v) => v as bool),
+          authToken: $checkedConvert('authToken', (v) => v as String?),
           badges: $checkedConvert(
               'badges',
               (v) => (v as List<dynamic>?)
@@ -91,6 +92,8 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
           bio: $checkedConvert('bio', (v) => v as String),
           bioLinks: $checkedConvert('bioLinks',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+          contentFilters: $checkedConvert('contentFilters',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           currentAvatar: $checkedConvert('currentAvatar', (v) => v as String),
           currentAvatarImageUrl:
               $checkedConvert('currentAvatarImageUrl', (v) => v as String),
@@ -224,10 +227,12 @@ Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) =>
           _$AgeVerificationStatusEnumMap[instance.ageVerificationStatus]!,
       'ageVerified': instance.ageVerified,
       'allowAvatarCopying': instance.allowAvatarCopying,
+      if (instance.authToken case final value?) 'authToken': value,
       if (instance.badges?.map((e) => e.toJson()).toList() case final value?)
         'badges': value,
       'bio': instance.bio,
       'bioLinks': instance.bioLinks,
+      if (instance.contentFilters case final value?) 'contentFilters': value,
       'currentAvatar': instance.currentAvatar,
       'currentAvatarImageUrl': instance.currentAvatarImageUrl,
       'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,

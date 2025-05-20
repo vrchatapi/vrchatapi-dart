@@ -13,9 +13,12 @@ Method | HTTP request | Description
 [**getInviteMessages**](InviteApi.md#getinvitemessages) | **GET** /message/{userId}/{messageType} | List Invite Messages
 [**inviteMyselfTo**](InviteApi.md#invitemyselfto) | **POST** /invite/myself/to/{worldId}:{instanceId} | Invite Myself To Instance
 [**inviteUser**](InviteApi.md#inviteuser) | **POST** /invite/{userId} | Invite User
+[**inviteUserWithPhoto**](InviteApi.md#inviteuserwithphoto) | **POST** /invite/{userId}/photo | Invite User with photo
 [**requestInvite**](InviteApi.md#requestinvite) | **POST** /requestInvite/{userId} | Request Invite
+[**requestInviteWithPhoto**](InviteApi.md#requestinvitewithphoto) | **POST** /requestInvite/{userId}/photo | Request Invite with photo
 [**resetInviteMessage**](InviteApi.md#resetinvitemessage) | **DELETE** /message/{userId}/{messageType}/{slot} | Reset Invite Message
 [**respondInvite**](InviteApi.md#respondinvite) | **POST** /invite/{notificationId}/response | Respond Invite
+[**respondInviteWithPhoto**](InviteApi.md#respondinvitewithphoto) | **POST** /invite/{notificationId}/response/photo | Respond Invite with photo
 [**updateInviteMessage**](InviteApi.md#updateinvitemessage) | **PUT** /message/{userId}/{messageType}/{slot} | Update Invite Message
 
 
@@ -217,6 +220,57 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **inviteUserWithPhoto**
+> SentNotification inviteUserWithPhoto(userId, image, data)
+
+Invite User with photo
+
+Sends an photo invite to a user. Returns the Notification of type `invite` that was sent.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getInviteApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+final MultipartFile image = BINARY_DATA_HERE; // MultipartFile | The binary blob of the png file.
+final InviteRequest data = ; // InviteRequest | 
+
+try {
+    final response = api.inviteUserWithPhoto(userId, image, data);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InviteApi->inviteUserWithPhoto: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+ **image** | **MultipartFile**| The binary blob of the png file. | 
+ **data** | [**InviteRequest**](InviteRequest.md)|  | 
+
+### Return type
+
+[**SentNotification**](SentNotification.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **requestInvite**
 > Notification requestInvite(userId, requestInviteRequest)
 
@@ -262,6 +316,57 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **requestInviteWithPhoto**
+> Notification requestInviteWithPhoto(userId, image, data)
+
+Request Invite with photo
+
+Requests with photo an invite from a user. Returns the Notification of type `requestInvite` that was sent.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getInviteApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+final MultipartFile image = BINARY_DATA_HERE; // MultipartFile | The binary blob of the png file.
+final RequestInviteRequest data = ; // RequestInviteRequest | 
+
+try {
+    final response = api.requestInviteWithPhoto(userId, image, data);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InviteApi->requestInviteWithPhoto: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+ **image** | **MultipartFile**| The binary blob of the png file. | 
+ **data** | [**RequestInviteRequest**](RequestInviteRequest.md)|  | 
+
+### Return type
+
+[**Notification**](Notification.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -322,7 +427,7 @@ Name | Type | Description  | Notes
 
 Respond Invite
 
-Respond to an invite request by sending a world invite to the requesting user. `:notificationId` is the ID of the requesting notification.
+Respond to an invite or invite request without accepting it. `:notificationId` is the ID of the requesting notification.  In case the notification being replied to is an invite, the `responseSlot` refers to a response message from the the `message` collection. In case the notification is an invite request, it will refer to one from the `requestResponse` collection instead.
 
 ### Example
 ```dart
@@ -362,6 +467,57 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **respondInviteWithPhoto**
+> Notification respondInviteWithPhoto(notificationId, image, data)
+
+Respond Invite with photo
+
+Respond with photo to an invite or invite request without accepting it. `:notificationId` is the ID of the requesting notification.  In case the notification being replied to is an invite, the `responseSlot` refers to a response message from the the `message` collection. In case the notification is an invite request, it will refer to one from the `requestResponse` collection instead.'
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getInviteApi();
+final String notificationId = notificationId_example; // String | Must be a valid notification ID.
+final MultipartFile image = BINARY_DATA_HERE; // MultipartFile | The binary blob of the png file.
+final InviteResponse data = ; // InviteResponse | 
+
+try {
+    final response = api.respondInviteWithPhoto(notificationId, image, data);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InviteApi->respondInviteWithPhoto: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **notificationId** | **String**| Must be a valid notification ID. | 
+ **image** | **MultipartFile**| The binary blob of the png file. | 
+ **data** | [**InviteResponse**](InviteResponse.md)|  | 
+
+### Return type
+
+[**Notification**](Notification.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -38,6 +38,7 @@ Method | HTTP request | Description
 [**getGroupPermissions**](GroupsApi.md#getgrouppermissions) | **GET** /groups/{groupId}/permissions | List Group Permissions
 [**getGroupPosts**](GroupsApi.md#getgroupposts) | **GET** /groups/{groupId}/posts | Get posts from a Group
 [**getGroupRequests**](GroupsApi.md#getgrouprequests) | **GET** /groups/{groupId}/requests | Get Group Join Requests
+[**getGroupRoleTemplates**](GroupsApi.md#getgrouproletemplates) | **GET** /groups/roleTemplates | Get Group Role Templates
 [**getGroupRoles**](GroupsApi.md#getgrouproles) | **GET** /groups/{groupId}/roles | Get Group Roles
 [**joinGroup**](GroupsApi.md#joingroup) | **POST** /groups/{groupId}/join | Join Group
 [**kickGroupMember**](GroupsApi.md#kickgroupmember) | **DELETE** /groups/{groupId}/members/{userId} | Kick Group Member
@@ -1487,6 +1488,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List&lt;GroupMember&gt;**](GroupMember.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getGroupRoleTemplates**
+> Map<String, GroupRoleTemplateValues> getGroupRoleTemplates()
+
+Get Group Role Templates
+
+Obtain predefined templates for group roles
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getGroupsApi();
+
+try {
+    final response = api.getGroupRoleTemplates();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling GroupsApi->getGroupRoleTemplates: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Map&lt;String, GroupRoleTemplateValues&gt;**](GroupRoleTemplateValues.md)
 
 ### Authorization
 

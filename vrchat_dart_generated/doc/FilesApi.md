@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **downloadFileVersion**
-> downloadFileVersion(fileId, versionId)
+> MultipartFile downloadFileVersion(fileId, versionId)
 
 Download File Version
 
@@ -239,7 +239,8 @@ final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Mus
 final int versionId = 1; // int | Version ID of the asset.
 
 try {
-    api.downloadFileVersion(fileId, versionId);
+    final response = api.downloadFileVersion(fileId, versionId);
+    print(response);
 } catch on DioException (e) {
     print('Exception when calling FilesApi->downloadFileVersion: $e\n');
 }
@@ -254,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**MultipartFile**](MultipartFile.md)
 
 ### Authorization
 
@@ -263,7 +264,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: image/*, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -766,7 +767,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **uploadImage**
-> File uploadImage(file, tag, animationStyle, maskTag)
+> File uploadImage(file, tag, frames, framesOverTime, animationStyle, maskTag)
 
 Upload gallery image, icon, emoji or sticker
 
@@ -782,12 +783,14 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getFilesApi();
 final MultipartFile file = BINARY_DATA_HERE; // MultipartFile | The binary blob of the png file.
-final String tag = tag_example; // String | Needs to be either icon, gallery, sticker or emoji
+final String tag = tag_example; // String | Needs to be either icon, gallery, sticker, emoji, or emojianimated
+final int frames = 56; // int | Required for emojianimated. Total number of frames to be animated (2-64)
+final int framesOverTime = 56; // int | Required for emojianimated. Animation frames per second (1-64)
 final String animationStyle = animationStyle_example; // String | Animation style for sticker, required for emoji.
 final String maskTag = maskTag_example; // String | Mask of the sticker, optional for emoji.
 
 try {
-    final response = api.uploadImage(file, tag, animationStyle, maskTag);
+    final response = api.uploadImage(file, tag, frames, framesOverTime, animationStyle, maskTag);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling FilesApi->uploadImage: $e\n');
@@ -799,7 +802,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file** | **MultipartFile**| The binary blob of the png file. | 
- **tag** | **String**| Needs to be either icon, gallery, sticker or emoji | 
+ **tag** | **String**| Needs to be either icon, gallery, sticker, emoji, or emojianimated | 
+ **frames** | **int**| Required for emojianimated. Total number of frames to be animated (2-64) | [optional] 
+ **framesOverTime** | **int**| Required for emojianimated. Animation frames per second (1-64) | [optional] 
  **animationStyle** | **String**| Animation style for sticker, required for emoji. | [optional] 
  **maskTag** | **String**| Mask of the sticker, optional for emoji. | [optional] 
 

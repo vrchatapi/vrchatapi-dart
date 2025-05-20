@@ -35,6 +35,8 @@ Avatar _$AvatarFromJson(Map<String, dynamic> json) => $checkedCreate(
           ],
         );
         final val = Avatar(
+          acknowledgements:
+              $checkedConvert('acknowledgements', (v) => v as String?),
           assetUrl: $checkedConvert('assetUrl', (v) => v as String?),
           assetUrlObject: $checkedConvert('assetUrlObject', (v) => v),
           authorId: $checkedConvert('authorId', (v) => v as String),
@@ -43,11 +45,24 @@ Avatar _$AvatarFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
           description: $checkedConvert('description', (v) => v as String),
           featured: $checkedConvert('featured', (v) => v as bool? ?? false),
+          highestPrice:
+              $checkedConvert('highestPrice', (v) => (v as num?)?.toInt()),
           id: $checkedConvert('id', (v) => v as String),
           imageUrl: $checkedConvert('imageUrl', (v) => v as String),
+          lock: $checkedConvert('lock', (v) => v as bool?),
+          lowestPrice:
+              $checkedConvert('lowestPrice', (v) => (v as num?)?.toInt()),
           name: $checkedConvert('name', (v) => v as String),
+          productId: $checkedConvert('productId', (v) => v as String?),
+          publishedListings: $checkedConvert(
+              'publishedListings',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => AvatarPublishedListingsInner.fromJson(
+                      e as Map<String, dynamic>))
+                  .toList()),
           releaseStatus: $checkedConvert(
               'releaseStatus', (v) => $enumDecode(_$ReleaseStatusEnumMap, v)),
+          searchable: $checkedConvert('searchable', (v) => v as bool? ?? false),
           styles: $checkedConvert('styles',
               (v) => AvatarStyles.fromJson(v as Map<String, dynamic>)),
           tags: $checkedConvert('tags',
@@ -75,6 +90,8 @@ Avatar _$AvatarFromJson(Map<String, dynamic> json) => $checkedCreate(
     );
 
 Map<String, dynamic> _$AvatarToJson(Avatar instance) => <String, dynamic>{
+      if (instance.acknowledgements case final value?)
+        'acknowledgements': value,
       if (instance.assetUrl case final value?) 'assetUrl': value,
       if (instance.assetUrlObject case final value?) 'assetUrlObject': value,
       'authorId': instance.authorId,
@@ -82,10 +99,18 @@ Map<String, dynamic> _$AvatarToJson(Avatar instance) => <String, dynamic>{
       'created_at': instance.createdAt.toIso8601String(),
       'description': instance.description,
       'featured': instance.featured,
+      if (instance.highestPrice case final value?) 'highestPrice': value,
       'id': instance.id,
       'imageUrl': instance.imageUrl,
+      if (instance.lock case final value?) 'lock': value,
+      if (instance.lowestPrice case final value?) 'lowestPrice': value,
       'name': instance.name,
+      if (instance.productId case final value?) 'productId': value,
+      if (instance.publishedListings?.map((e) => e.toJson()).toList()
+          case final value?)
+        'publishedListings': value,
       'releaseStatus': _$ReleaseStatusEnumMap[instance.releaseStatus]!,
+      if (instance.searchable case final value?) 'searchable': value,
       'styles': instance.styles.toJson(),
       'tags': instance.tags,
       'thumbnailImageUrl': instance.thumbnailImageUrl,

@@ -15,6 +15,7 @@ UpdateUserRequest _$UpdateUserRequestFromJson(Map<String, dynamic> json) =>
       ($checkedConvert) {
         final val = UpdateUserRequest(
           email: $checkedConvert('email', (v) => v as String?),
+          unsubscribe: $checkedConvert('unsubscribe', (v) => v as bool?),
           birthday: $checkedConvert('birthday',
               (v) => v == null ? null : DateTime.parse(v as String)),
           acceptedTOSVersion: $checkedConvert(
@@ -32,6 +33,14 @@ UpdateUserRequest _$UpdateUserRequestFromJson(Map<String, dynamic> json) =>
           isBoopingEnabled:
               $checkedConvert('isBoopingEnabled', (v) => v as bool?),
           userIcon: $checkedConvert('userIcon', (v) => v as String?),
+          contentFilters: $checkedConvert('contentFilters',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          displayName: $checkedConvert('displayName', (v) => v as String?),
+          revertDisplayName:
+              $checkedConvert('revertDisplayName', (v) => v as bool?),
+          password: $checkedConvert('password', (v) => v as String?),
+          currentPassword:
+              $checkedConvert('currentPassword', (v) => v as String?),
         );
         return val;
       },
@@ -40,6 +49,7 @@ UpdateUserRequest _$UpdateUserRequestFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$UpdateUserRequestToJson(UpdateUserRequest instance) =>
     <String, dynamic>{
       if (instance.email case final value?) 'email': value,
+      if (instance.unsubscribe case final value?) 'unsubscribe': value,
       if (instance.birthday?.toIso8601String() case final value?)
         'birthday': value,
       if (instance.acceptedTOSVersion case final value?)
@@ -55,6 +65,12 @@ Map<String, dynamic> _$UpdateUserRequestToJson(UpdateUserRequest instance) =>
       if (instance.isBoopingEnabled case final value?)
         'isBoopingEnabled': value,
       if (instance.userIcon case final value?) 'userIcon': value,
+      if (instance.contentFilters case final value?) 'contentFilters': value,
+      if (instance.displayName case final value?) 'displayName': value,
+      if (instance.revertDisplayName case final value?)
+        'revertDisplayName': value,
+      if (instance.password case final value?) 'password': value,
+      if (instance.currentPassword case final value?) 'currentPassword': value,
     };
 
 const _$UserStatusEnumMap = {

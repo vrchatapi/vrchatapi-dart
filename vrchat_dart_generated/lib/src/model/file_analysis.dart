@@ -19,6 +19,7 @@ class FileAnalysis {
   FileAnalysis({
     required this.avatarStats,
     this.createdAt,
+    this.encryptionKey,
     required this.fileSize,
     this.performanceRating,
     required this.success,
@@ -38,6 +39,13 @@ class FileAnalysis {
     includeIfNull: false,
   )
   final DateTime? createdAt;
+
+  @JsonKey(
+    name: r'encryptionKey',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? encryptionKey;
 
   @JsonKey(
     name: r'fileSize',
@@ -73,6 +81,7 @@ class FileAnalysis {
       other is FileAnalysis &&
           other.avatarStats == avatarStats &&
           other.createdAt == createdAt &&
+          other.encryptionKey == encryptionKey &&
           other.fileSize == fileSize &&
           other.performanceRating == performanceRating &&
           other.success == success &&
@@ -82,6 +91,7 @@ class FileAnalysis {
   int get hashCode =>
       avatarStats.hashCode +
       createdAt.hashCode +
+      encryptionKey.hashCode +
       fileSize.hashCode +
       performanceRating.hashCode +
       success.hashCode +
