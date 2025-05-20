@@ -30,7 +30,7 @@ APIConfigAvatarPerfLimiter _$APIConfigAvatarPerfLimiterFromJson(
               'AndroidMobile',
               (v) =>
                   PerformanceLimiterInfo.fromJson(v as Map<String, dynamic>)),
-          pc: $checkedConvert(
+          PC: $checkedConvert(
               'PC',
               (v) =>
                   PerformanceLimiterInfo.fromJson(v as Map<String, dynamic>)),
@@ -55,7 +55,6 @@ APIConfigAvatarPerfLimiter _$APIConfigAvatarPerfLimiterFromJson(
       },
       fieldKeyMap: const {
         'androidMobile': 'AndroidMobile',
-        'pc': 'PC',
         'pico': 'Pico',
         'quest': 'Quest',
         'xRElite': 'XRElite'
@@ -66,7 +65,7 @@ Map<String, dynamic> _$APIConfigAvatarPerfLimiterToJson(
         APIConfigAvatarPerfLimiter instance) =>
     <String, dynamic>{
       'AndroidMobile': instance.androidMobile.toJson(),
-      'PC': instance.pc.toJson(),
+      'PC': instance.PC.toJson(),
       'Pico': instance.pico.toJson(),
       'Quest': instance.quest.toJson(),
       'XRElite': instance.xRElite.toJson(),

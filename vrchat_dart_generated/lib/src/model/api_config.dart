@@ -219,7 +219,6 @@ class APIConfig {
     required: true,
     includeIfNull: false,
   )
-// ignore: deprecated_member_use_from_same_package
   final Set<APIConfigAnnouncement> announcements;
 
   /// Unknown
@@ -1088,9 +1087,7 @@ class APIConfig {
           other.defaultAvatar == defaultAvatar &&
           other.defaultStickerSet == defaultStickerSet &&
           other.devLanguageCodes == devLanguageCodes &&
-// ignore: deprecated_member_use_from_same_package
           other.devSdkUrl == devSdkUrl &&
-// ignore: deprecated_member_use_from_same_package
           other.devSdkVersion == devSdkVersion &&
           other.disCountdown == disCountdown &&
           other.disableAVProInProton == disableAVProInProton &&
@@ -1109,7 +1106,6 @@ class APIConfig {
           other.disableOculusSubs == disableOculusSubs &&
           other.disableRegistration == disableRegistration &&
           other.disableSteamNetworking == disableSteamNetworking &&
-// ignore: deprecated_member_use_from_same_package
           other.disableTwoFactorAuth == disableTwoFactorAuth &&
           other.disableUdon == disableUdon &&
           other.disableUpgradeAccount == disableUpgradeAccount &&
@@ -1214,9 +1210,7 @@ class APIConfig {
       defaultAvatar.hashCode +
       defaultStickerSet.hashCode +
       devLanguageCodes.hashCode +
-// ignore: deprecated_member_use_from_same_package
       devSdkUrl.hashCode +
-// ignore: deprecated_member_use_from_same_package
       devSdkVersion.hashCode +
       disCountdown.hashCode +
       disableAVProInProton.hashCode +
@@ -1234,7 +1228,6 @@ class APIConfig {
       disableOculusSubs.hashCode +
       disableRegistration.hashCode +
       disableSteamNetworking.hashCode +
-// ignore: deprecated_member_use_from_same_package
       disableTwoFactorAuth.hashCode +
       disableUdon.hashCode +
       disableUpgradeAccount.hashCode +

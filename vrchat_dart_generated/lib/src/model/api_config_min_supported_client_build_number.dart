@@ -22,7 +22,7 @@ class APIConfigMinSupportedClientBuildNumber {
     required this.firebase,
     required this.firebaseiOS,
     required this.googlePlay,
-    required this.pc,
+    required this.PC,
     required this.picoStore,
     required this.questAppLab,
     required this.questStore,
@@ -70,7 +70,7 @@ class APIConfigMinSupportedClientBuildNumber {
     required: true,
     includeIfNull: false,
   )
-  final PlatformBuildInfo pc;
+  final PlatformBuildInfo PC;
 
   @JsonKey(
     name: r'PicoStore',
@@ -116,7 +116,7 @@ class APIConfigMinSupportedClientBuildNumber {
           other.firebase == firebase &&
           other.firebaseiOS == firebaseiOS &&
           other.googlePlay == googlePlay &&
-          other.pc == pc &&
+          other.PC == PC &&
           other.picoStore == picoStore &&
           other.questAppLab == questAppLab &&
           other.questStore == questStore &&
@@ -130,7 +130,7 @@ class APIConfigMinSupportedClientBuildNumber {
       firebase.hashCode +
       firebaseiOS.hashCode +
       googlePlay.hashCode +
-      pc.hashCode +
+      PC.hashCode +
       picoStore.hashCode +
       questAppLab.hashCode +
       questStore.hashCode +

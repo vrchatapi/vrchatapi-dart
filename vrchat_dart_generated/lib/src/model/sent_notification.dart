@@ -98,7 +98,6 @@ class SentNotification {
           other.message == message &&
           other.receiverUserId == receiverUserId &&
           other.senderUserId == senderUserId &&
-// ignore: deprecated_member_use_from_same_package
           other.senderUsername == senderUsername &&
           other.type == type;
 
@@ -110,7 +109,6 @@ class SentNotification {
       message.hashCode +
       receiverUserId.hashCode +
       senderUserId.hashCode +
-// ignore: deprecated_member_use_from_same_package
       senderUsername.hashCode +
       type.hashCode;
 

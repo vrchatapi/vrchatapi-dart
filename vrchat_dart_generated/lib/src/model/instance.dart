@@ -386,7 +386,6 @@ class Instance {
           other.ageGate == ageGate &&
           other.canRequestInvite == canRequestInvite &&
           other.capacity == capacity &&
-// ignore: deprecated_member_use_from_same_package
           other.clientNumber == clientNumber &&
           other.contentSettings == contentSettings &&
           other.displayName == displayName &&
@@ -432,7 +431,6 @@ class Instance {
       (ageGate == null ? 0 : ageGate.hashCode) +
       canRequestInvite.hashCode +
       capacity.hashCode +
-// ignore: deprecated_member_use_from_same_package
       clientNumber.hashCode +
       contentSettings.hashCode +
       (displayName == null ? 0 : displayName.hashCode) +

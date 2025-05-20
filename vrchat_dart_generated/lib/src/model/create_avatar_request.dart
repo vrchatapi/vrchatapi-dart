@@ -18,11 +18,16 @@ class CreateAvatarRequest {
   /// Returns a new [CreateAvatarRequest] instance.
   CreateAvatarRequest({
     this.assetUrl,
+    this.assetVersion,
+    this.platform,
+    this.createdAt,
+    this.updatedAt,
     this.id,
     required this.name,
     this.description,
     this.tags,
     required this.imageUrl,
+    this.thumbnailImageUrl,
     this.releaseStatus,
     this.version = 1,
     this.unityPackageUrl,
@@ -35,6 +40,37 @@ class CreateAvatarRequest {
     includeIfNull: false,
   )
   final String? assetUrl;
+
+  @JsonKey(
+    name: r'assetVersion',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? assetVersion;
+
+  /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
+  @JsonKey(
+    name: r'platform',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? platform;
+
+  /// A date and time of the pattern `M/d/yyyy h:mm:ss tt` (see C Sharp `System.DateTime`)
+  @JsonKey(
+    name: r'created_at',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? createdAt;
+
+  /// A date and time of the pattern `M/d/yyyy h:mm:ss tt` (see C Sharp `System.DateTime`)
+  @JsonKey(
+    name: r'updated_at',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? updatedAt;
 
   @JsonKey(
     name: r'id',
@@ -73,6 +109,13 @@ class CreateAvatarRequest {
   final String imageUrl;
 
   @JsonKey(
+    name: r'thumbnailImageUrl',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? thumbnailImageUrl;
+
+  @JsonKey(
     name: r'releaseStatus',
     required: false,
     includeIfNull: false,
@@ -106,11 +149,16 @@ class CreateAvatarRequest {
       identical(this, other) ||
       other is CreateAvatarRequest &&
           other.assetUrl == assetUrl &&
+          other.assetVersion == assetVersion &&
+          other.platform == platform &&
+          other.createdAt == createdAt &&
+          other.updatedAt == updatedAt &&
           other.id == id &&
           other.name == name &&
           other.description == description &&
           other.tags == tags &&
           other.imageUrl == imageUrl &&
+          other.thumbnailImageUrl == thumbnailImageUrl &&
           other.releaseStatus == releaseStatus &&
           other.version == version &&
           other.unityPackageUrl == unityPackageUrl &&
@@ -119,11 +167,16 @@ class CreateAvatarRequest {
   @override
   int get hashCode =>
       assetUrl.hashCode +
+      assetVersion.hashCode +
+      platform.hashCode +
+      createdAt.hashCode +
+      updatedAt.hashCode +
       id.hashCode +
       name.hashCode +
       description.hashCode +
       tags.hashCode +
       imageUrl.hashCode +
+      thumbnailImageUrl.hashCode +
       releaseStatus.hashCode +
       version.hashCode +
       unityPackageUrl.hashCode +

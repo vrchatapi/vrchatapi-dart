@@ -19,9 +19,9 @@ part 'api_config_constants_instancepopulationbrackets.g.dart';
 class APIConfigConstantsINSTANCEPOPULATIONBRACKETS {
   /// Returns a new [APIConfigConstantsINSTANCEPOPULATIONBRACKETS] instance.
   APIConfigConstantsINSTANCEPOPULATIONBRACKETS({
-    this.crowded,
-    this.few,
-    this.many,
+    this.CROWDED,
+    this.FEW,
+    this.MANY,
   });
 
   @JsonKey(
@@ -29,32 +29,32 @@ class APIConfigConstantsINSTANCEPOPULATIONBRACKETS {
     required: false,
     includeIfNull: false,
   )
-  final APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED? crowded;
+  final APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED? CROWDED;
 
   @JsonKey(
     name: r'FEW',
     required: false,
     includeIfNull: false,
   )
-  final APIConfigConstantsINSTANCEPOPULATIONBRACKETSFEW? few;
+  final APIConfigConstantsINSTANCEPOPULATIONBRACKETSFEW? FEW;
 
   @JsonKey(
     name: r'MANY',
     required: false,
     includeIfNull: false,
   )
-  final APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY? many;
+  final APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY? MANY;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is APIConfigConstantsINSTANCEPOPULATIONBRACKETS &&
-          other.crowded == crowded &&
-          other.few == few &&
-          other.many == many;
+          other.CROWDED == CROWDED &&
+          other.FEW == FEW &&
+          other.MANY == MANY;
 
   @override
-  int get hashCode => crowded.hashCode + few.hashCode + many.hashCode;
+  int get hashCode => CROWDED.hashCode + FEW.hashCode + MANY.hashCode;
 
   factory APIConfigConstantsINSTANCEPOPULATIONBRACKETS.fromJson(
           Map<String, dynamic> json) =>

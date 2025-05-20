@@ -19,9 +19,9 @@ part 'api_config_constants.g.dart';
 class APIConfigConstants {
   /// Returns a new [APIConfigConstants] instance.
   APIConfigConstants({
-    required this.groups,
-    required this.instance,
-    required this.language,
+    required this.GROUPS,
+    required this.INSTANCE,
+    required this.LANGUAGE,
   });
 
   @JsonKey(
@@ -29,32 +29,32 @@ class APIConfigConstants {
     required: true,
     includeIfNull: false,
   )
-  final APIConfigConstantsGROUPS groups;
+  final APIConfigConstantsGROUPS GROUPS;
 
   @JsonKey(
     name: r'INSTANCE',
     required: true,
     includeIfNull: false,
   )
-  final APIConfigConstantsINSTANCE instance;
+  final APIConfigConstantsINSTANCE INSTANCE;
 
   @JsonKey(
     name: r'LANGUAGE',
     required: true,
     includeIfNull: false,
   )
-  final APIConfigConstantsLANGUAGE language;
+  final APIConfigConstantsLANGUAGE LANGUAGE;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is APIConfigConstants &&
-          other.groups == groups &&
-          other.instance == instance &&
-          other.language == language;
+          other.GROUPS == GROUPS &&
+          other.INSTANCE == INSTANCE &&
+          other.LANGUAGE == LANGUAGE;
 
   @override
-  int get hashCode => groups.hashCode + instance.hashCode + language.hashCode;
+  int get hashCode => GROUPS.hashCode + INSTANCE.hashCode + LANGUAGE.hashCode;
 
   factory APIConfigConstants.fromJson(Map<String, dynamic> json) =>
       _$APIConfigConstantsFromJson(json);

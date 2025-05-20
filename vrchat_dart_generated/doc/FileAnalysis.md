@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **avatarStats** | [**FileAnalysisAvatarStats**](FileAnalysisAvatarStats.md) |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**encryptionKey** | **String** |  | [optional] 
 **fileSize** | **int** |  | 
 **performanceRating** | **String** |  | [optional] 
 **success** | **bool** |  | 

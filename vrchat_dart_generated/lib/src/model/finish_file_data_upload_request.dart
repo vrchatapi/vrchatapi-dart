@@ -52,14 +52,11 @@ class FinishFileDataUploadRequest {
       identical(this, other) ||
       other is FinishFileDataUploadRequest &&
           other.etags == etags &&
-// ignore: deprecated_member_use_from_same_package
           other.nextPartNumber == nextPartNumber &&
-// ignore: deprecated_member_use_from_same_package
           other.maxParts == maxParts;
 
   @override
   int get hashCode =>
-// ignore: deprecated_member_use_from_same_package
       etags.hashCode + nextPartNumber.hashCode + maxParts.hashCode;
 
   factory FinishFileDataUploadRequest.fromJson(Map<String, dynamic> json) =>

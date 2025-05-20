@@ -16,7 +16,7 @@ part 'api_config_constants_language.g.dart';
 class APIConfigConstantsLANGUAGE {
   /// Returns a new [APIConfigConstantsLANGUAGE] instance.
   APIConfigConstantsLANGUAGE({
-    this.spokenLanguageOptions,
+    this.SPOKEN_LANGUAGE_OPTIONS,
   });
 
   /// Supported spoken language options
@@ -25,16 +25,16 @@ class APIConfigConstantsLANGUAGE {
     required: false,
     includeIfNull: false,
   )
-  final Map<String, String>? spokenLanguageOptions;
+  final Map<String, String>? SPOKEN_LANGUAGE_OPTIONS;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is APIConfigConstantsLANGUAGE &&
-          other.spokenLanguageOptions == spokenLanguageOptions;
+          other.SPOKEN_LANGUAGE_OPTIONS == SPOKEN_LANGUAGE_OPTIONS;
 
   @override
-  int get hashCode => spokenLanguageOptions.hashCode;
+  int get hashCode => SPOKEN_LANGUAGE_OPTIONS.hashCode;
 
   factory APIConfigConstantsLANGUAGE.fromJson(Map<String, dynamic> json) =>
       _$APIConfigConstantsLANGUAGEFromJson(json);

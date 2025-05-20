@@ -33,9 +33,11 @@ class CurrentUser {
     required this.ageVerificationStatus,
     required this.ageVerified,
     required this.allowAvatarCopying,
+    this.authToken,
     this.badges,
     required this.bio,
     required this.bioLinks,
+    this.contentFilters,
     required this.currentAvatar,
     required this.currentAvatarImageUrl,
     required this.currentAvatarThumbnailImageUrl,
@@ -158,6 +160,14 @@ class CurrentUser {
   )
   final bool allowAvatarCopying;
 
+  /// The auth token for NEWLY REGISTERED ACCOUNTS ONLY (/auth/register)
+  @JsonKey(
+    name: r'authToken',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? authToken;
+
   ///
   @JsonKey(
     name: r'badges',
@@ -180,6 +190,14 @@ class CurrentUser {
     includeIfNull: false,
   )
   final List<String> bioLinks;
+
+  /// These tags begin with `content_` and control content gating
+  @JsonKey(
+    name: r'contentFilters',
+    required: false,
+    includeIfNull: false,
+  )
+  final List<String>? contentFilters;
 
   @JsonKey(
     name: r'currentAvatar',
@@ -616,9 +634,11 @@ class CurrentUser {
           other.ageVerificationStatus == ageVerificationStatus &&
           other.ageVerified == ageVerified &&
           other.allowAvatarCopying == allowAvatarCopying &&
+          other.authToken == authToken &&
           other.badges == badges &&
           other.bio == bio &&
           other.bioLinks == bioLinks &&
+          other.contentFilters == contentFilters &&
           other.currentAvatar == currentAvatar &&
           other.currentAvatarImageUrl == currentAvatarImageUrl &&
           other.currentAvatarThumbnailImageUrl ==
@@ -629,7 +649,6 @@ class CurrentUser {
           other.displayName == displayName &&
           other.emailVerified == emailVerified &&
           other.fallbackAvatar == fallbackAvatar &&
-// ignore: deprecated_member_use_from_same_package
           other.friendGroupNames == friendGroupNames &&
           other.friendKey == friendKey &&
           other.friends == friends &&
@@ -679,7 +698,6 @@ class CurrentUser {
           other.unsubscribe == unsubscribe &&
           other.updatedAt == updatedAt &&
           other.userIcon == userIcon &&
-// ignore: deprecated_member_use_from_same_package
           other.username == username;
 
   @override
@@ -692,9 +710,11 @@ class CurrentUser {
       ageVerificationStatus.hashCode +
       ageVerified.hashCode +
       allowAvatarCopying.hashCode +
+      authToken.hashCode +
       badges.hashCode +
       bio.hashCode +
       bioLinks.hashCode +
+      contentFilters.hashCode +
       currentAvatar.hashCode +
       currentAvatarImageUrl.hashCode +
       currentAvatarThumbnailImageUrl.hashCode +
@@ -704,7 +724,6 @@ class CurrentUser {
       displayName.hashCode +
       emailVerified.hashCode +
       fallbackAvatar.hashCode +
-// ignore: deprecated_member_use_from_same_package
       friendGroupNames.hashCode +
       friendKey.hashCode +
       friends.hashCode +
@@ -756,7 +775,6 @@ class CurrentUser {
       unsubscribe.hashCode +
       updatedAt.hashCode +
       userIcon.hashCode +
-// ignore: deprecated_member_use_from_same_package
       username.hashCode;
 
   factory CurrentUser.fromJson(Map<String, dynamic> json) =>

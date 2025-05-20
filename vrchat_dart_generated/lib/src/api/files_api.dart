@@ -399,9 +399,9 @@ class FilesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [MultipartFile] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> downloadFileVersion({
+  Future<Response<MultipartFile>> downloadFileVersion({
     required String fileId,
     required int versionId,
     CancelToken? cancelToken,
@@ -416,6 +416,7 @@ class FilesApi {
         .replaceAll('{' r'versionId' '}', versionId.toString());
     final _options = Options(
       method: r'GET',
+      responseType: ResponseType.bytes,
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -441,7 +442,34 @@ class FilesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    MultipartFile? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<MultipartFile, MultipartFile>(rawData, 'MultipartFile',
+              growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<MultipartFile>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Finish FileData Upload
@@ -1212,9 +1240,7 @@ class FilesApi {
 
     dynamic _bodyData;
 
-    try {
-      _bodyData = FormData.fromMap({'file': file});
-    } catch (error, stackTrace) {
+    try {} catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
           _dio.options,
@@ -1310,9 +1336,7 @@ class FilesApi {
 
     dynamic _bodyData;
 
-    try {
-      _bodyData = FormData.fromMap({'file': file});
-    } catch (error, stackTrace) {
+    try {} catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
           _dio.options,
@@ -1367,7 +1391,9 @@ class FilesApi {
   ///
   /// Parameters:
   /// * [file] - The binary blob of the png file.
-  /// * [tag] - Needs to be either icon, gallery, sticker or emoji
+  /// * [tag] - Needs to be either icon, gallery, sticker, emoji, or emojianimated
+  /// * [frames] - Required for emojianimated. Total number of frames to be animated (2-64)
+  /// * [framesOverTime] - Required for emojianimated. Animation frames per second (1-64)
   /// * [animationStyle] - Animation style for sticker, required for emoji.
   /// * [maskTag] - Mask of the sticker, optional for emoji.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -1382,6 +1408,8 @@ class FilesApi {
   Future<Response<File>> uploadImage({
     required MultipartFile file,
     required String tag,
+    int? frames,
+    int? framesOverTime,
     String? animationStyle,
     String? maskTag,
     CancelToken? cancelToken,
@@ -1414,14 +1442,7 @@ class FilesApi {
 
     dynamic _bodyData;
 
-    try {
-      _bodyData = FormData.fromMap({
-        'file': file,
-        'tag': tag,
-        if (animationStyle != null) 'animationStyle': animationStyle,
-        if (maskTag != null) 'maskTag': maskTag,
-      });
-    } catch (error, stackTrace) {
+    try {} catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
           _dio.options,

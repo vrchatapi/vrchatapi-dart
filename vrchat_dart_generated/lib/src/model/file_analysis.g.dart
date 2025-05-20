@@ -29,6 +29,7 @@ FileAnalysis _$FileAnalysisFromJson(Map<String, dynamic> json) =>
                   FileAnalysisAvatarStats.fromJson(v as Map<String, dynamic>)),
           createdAt: $checkedConvert('created_at',
               (v) => v == null ? null : DateTime.parse(v as String)),
+          encryptionKey: $checkedConvert('encryptionKey', (v) => v as String?),
           fileSize: $checkedConvert('fileSize', (v) => (v as num).toInt()),
           performanceRating:
               $checkedConvert('performanceRating', (v) => v as String?),
@@ -46,6 +47,7 @@ Map<String, dynamic> _$FileAnalysisToJson(FileAnalysis instance) =>
       'avatarStats': instance.avatarStats.toJson(),
       if (instance.createdAt?.toIso8601String() case final value?)
         'created_at': value,
+      if (instance.encryptionKey case final value?) 'encryptionKey': value,
       'fileSize': instance.fileSize,
       if (instance.performanceRating case final value?)
         'performanceRating': value,

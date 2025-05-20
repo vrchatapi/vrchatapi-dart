@@ -17,6 +17,9 @@ class TiliaStatus {
   /// Returns a new [TiliaStatus] instance.
   TiliaStatus({
     required this.economyOnline,
+    this.economyState,
+    this.plannedOfflineWindowStart,
+    this.plannedOfflineWindowEnd,
   });
 
   @JsonKey(
@@ -26,13 +29,42 @@ class TiliaStatus {
   )
   final bool economyOnline;
 
+  @JsonKey(
+    name: r'economyState',
+    required: false,
+    includeIfNull: false,
+  )
+  final int? economyState;
+
+  @JsonKey(
+    name: r'plannedOfflineWindowStart',
+    required: false,
+    includeIfNull: false,
+  )
+  final DateTime? plannedOfflineWindowStart;
+
+  @JsonKey(
+    name: r'plannedOfflineWindowEnd',
+    required: false,
+    includeIfNull: false,
+  )
+  final DateTime? plannedOfflineWindowEnd;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is TiliaStatus && other.economyOnline == economyOnline;
+      other is TiliaStatus &&
+          other.economyOnline == economyOnline &&
+          other.economyState == economyState &&
+          other.plannedOfflineWindowStart == plannedOfflineWindowStart &&
+          other.plannedOfflineWindowEnd == plannedOfflineWindowEnd;
 
   @override
-  int get hashCode => economyOnline.hashCode;
+  int get hashCode =>
+      economyOnline.hashCode +
+      economyState.hashCode +
+      plannedOfflineWindowStart.hashCode +
+      plannedOfflineWindowEnd.hashCode;
 
   factory TiliaStatus.fromJson(Map<String, dynamic> json) =>
       _$TiliaStatusFromJson(json);

@@ -219,7 +219,6 @@ class LimitedUser {
           other.statusDescription == statusDescription &&
           other.tags == tags &&
           other.userIcon == userIcon &&
-// ignore: deprecated_member_use_from_same_package
           other.username == username &&
           other.location == location &&
           other.friendKey == friendKey;
@@ -244,7 +243,6 @@ class LimitedUser {
       statusDescription.hashCode +
       tags.hashCode +
       userIcon.hashCode +
-// ignore: deprecated_member_use_from_same_package
       username.hashCode +
       location.hashCode +
       friendKey.hashCode;
