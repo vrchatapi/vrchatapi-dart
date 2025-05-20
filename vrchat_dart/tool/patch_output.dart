@@ -215,9 +215,9 @@ extension on String {
     final escapedPath = RegExp.escape(path);
     final tabbedBodyData = bodyData.replaceAll('\n', '\n      ');
     return replaceFirstMapped(
-      RegExp("final _path = r'$escapedPath'(.+?)try {}", dotAll: true),
+      RegExp("r'$escapedPath'(.+?)try {}", dotAll: true),
       (m) => '''
-final _path = r'$path'${m[1]}try {
+r'$path'${m[1]}try {
       _bodyData = $tabbedBodyData
     }''',
     );
