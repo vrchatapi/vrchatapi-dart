@@ -649,6 +649,7 @@ class CurrentUser {
           other.displayName == displayName &&
           other.emailVerified == emailVerified &&
           other.fallbackAvatar == fallbackAvatar &&
+// ignore: deprecated_member_use_from_same_package
           other.friendGroupNames == friendGroupNames &&
           other.friendKey == friendKey &&
           other.friends == friends &&
@@ -698,6 +699,7 @@ class CurrentUser {
           other.unsubscribe == unsubscribe &&
           other.updatedAt == updatedAt &&
           other.userIcon == userIcon &&
+// ignore: deprecated_member_use_from_same_package
           other.username == username;
 
   @override
@@ -724,6 +726,7 @@ class CurrentUser {
       displayName.hashCode +
       emailVerified.hashCode +
       fallbackAvatar.hashCode +
+// ignore: deprecated_member_use_from_same_package
       friendGroupNames.hashCode +
       friendKey.hashCode +
       friends.hashCode +
@@ -775,6 +778,7 @@ class CurrentUser {
       unsubscribe.hashCode +
       updatedAt.hashCode +
       userIcon.hashCode +
+// ignore: deprecated_member_use_from_same_package
       username.hashCode;
 
   factory CurrentUser.fromJson(Map<String, dynamic> json) =>

@@ -389,7 +389,15 @@ class PrintsApi {
 
     dynamic _bodyData;
 
-    try {} catch (error, stackTrace) {
+    try {
+      _bodyData = FormData.fromMap({
+        'image': image,
+        'timestamp': timestamp,
+        if (note != null) 'note': note,
+        if (worldId != null) 'worldId': worldId,
+        if (worldName != null) 'worldName': worldName,
+      });
+    } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
           _dio.options,

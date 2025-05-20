@@ -437,7 +437,9 @@ class InviteApi {
 
     dynamic _bodyData;
 
-    try {} catch (error, stackTrace) {
+    try {
+      _bodyData = FormData.fromMap({'image': image, 'data': data});
+    } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
           _dio.options,
@@ -642,7 +644,9 @@ class InviteApi {
 
     dynamic _bodyData;
 
-    try {} catch (error, stackTrace) {
+    try {
+      _bodyData = FormData.fromMap({'image': image, 'data': data});
+    } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
           _dio.options,
@@ -935,7 +939,9 @@ class InviteApi {
 
     dynamic _bodyData;
 
-    try {} catch (error, stackTrace) {
+    try {
+      _bodyData = FormData.fromMap({'image': image, 'data': data});
+    } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
           _dio.options,

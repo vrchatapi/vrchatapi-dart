@@ -68,6 +68,7 @@ class APIConfigDownloadURLList {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is APIConfigDownloadURLList &&
+// ignore: deprecated_member_use_from_same_package
           other.sdk2 == sdk2 &&
           other.sdk3Avatars == sdk3Avatars &&
           other.sdk3Worlds == sdk3Worlds &&
@@ -76,6 +77,7 @@ class APIConfigDownloadURLList {
 
   @override
   int get hashCode =>
+// ignore: deprecated_member_use_from_same_package
       sdk2.hashCode +
       sdk3Avatars.hashCode +
       sdk3Worlds.hashCode +

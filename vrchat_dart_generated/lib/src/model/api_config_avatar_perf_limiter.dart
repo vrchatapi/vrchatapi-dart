@@ -18,7 +18,7 @@ class APIConfigAvatarPerfLimiter {
   /// Returns a new [APIConfigAvatarPerfLimiter] instance.
   APIConfigAvatarPerfLimiter({
     required this.androidMobile,
-    required this.PC,
+    required this.pc,
     required this.pico,
     required this.quest,
     required this.xRElite,
@@ -37,7 +37,7 @@ class APIConfigAvatarPerfLimiter {
     required: true,
     includeIfNull: false,
   )
-  final PerformanceLimiterInfo PC;
+  final PerformanceLimiterInfo pc;
 
   @JsonKey(
     name: r'Pico',
@@ -72,7 +72,7 @@ class APIConfigAvatarPerfLimiter {
       identical(this, other) ||
       other is APIConfigAvatarPerfLimiter &&
           other.androidMobile == androidMobile &&
-          other.PC == PC &&
+          other.pc == pc &&
           other.pico == pico &&
           other.quest == quest &&
           other.xRElite == xRElite &&
@@ -81,7 +81,7 @@ class APIConfigAvatarPerfLimiter {
   @override
   int get hashCode =>
       androidMobile.hashCode +
-      PC.hashCode +
+      pc.hashCode +
       pico.hashCode +
       quest.hashCode +
       xRElite.hashCode +

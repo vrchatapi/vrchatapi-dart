@@ -263,6 +263,7 @@ class Avatar {
           other.tags == tags &&
           other.thumbnailImageUrl == thumbnailImageUrl &&
           other.unityPackageUrl == unityPackageUrl &&
+// ignore: deprecated_member_use_from_same_package
           other.unityPackageUrlObject == unityPackageUrlObject &&
           other.unityPackages == unityPackages &&
           other.updatedAt == updatedAt &&
@@ -292,6 +293,7 @@ class Avatar {
       tags.hashCode +
       thumbnailImageUrl.hashCode +
       unityPackageUrl.hashCode +
+// ignore: deprecated_member_use_from_same_package
       unityPackageUrlObject.hashCode +
       unityPackages.hashCode +
       updatedAt.hashCode +
