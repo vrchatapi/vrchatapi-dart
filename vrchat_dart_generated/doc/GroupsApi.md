@@ -51,6 +51,7 @@ Method | HTTP request | Description
 [**updateGroupGallery**](GroupsApi.md#updategroupgallery) | **PUT** /groups/{groupId}/galleries/{groupGalleryId} | Update Group Gallery
 [**updateGroupMember**](GroupsApi.md#updategroupmember) | **PUT** /groups/{groupId}/members/{userId} | Update Group Member
 [**updateGroupPost**](GroupsApi.md#updategrouppost) | **PUT** /groups/{groupId}/posts/{notificationId} | Edits a Group post
+[**updateGroupRepresentation**](GroupsApi.md#updategrouprepresentation) | **PUT** /groups/{groupId}/representation | Update Group Representation
 [**updateGroupRole**](GroupsApi.md#updategrouprole) | **PUT** /groups/{groupId}/roles/{groupRoleId} | Update Group Role
 
 
@@ -2118,6 +2119,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GroupPost**](GroupPost.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateGroupRepresentation**
+> Success updateGroupRepresentation(groupId, updateGroupRepresentationRequest)
+
+Update Group Representation
+
+Updates whether the user is representing the group.  When `isRepresenting` is set to `true`, this flag will be set to `false` for all other groups
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getGroupsApi();
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final UpdateGroupRepresentationRequest updateGroupRepresentationRequest = ; // UpdateGroupRepresentationRequest | 
+
+try {
+    final response = api.updateGroupRepresentation(groupId, updateGroupRepresentationRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling GroupsApi->updateGroupRepresentation: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **String**| Must be a valid group ID. | 
+ **updateGroupRepresentationRequest** | [**UpdateGroupRepresentationRequest**](UpdateGroupRepresentationRequest.md)|  | 
+
+### Return type
+
+[**Success**](Success.md)
 
 ### Authorization
 

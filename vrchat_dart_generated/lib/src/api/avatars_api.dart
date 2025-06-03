@@ -1011,6 +1011,7 @@ class AvatarsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [CurrentUser] as data
   /// Throws [DioException] if API call or serialization fails
+  @Deprecated('This operation has been deprecated')
   Future<Response<CurrentUser>> selectFallbackAvatar({
     required String avatarId,
     CancelToken? cancelToken,

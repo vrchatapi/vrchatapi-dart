@@ -17,11 +17,10 @@ import 'package:vrchat_dart_generated/src/api/groups_api.dart';
 import 'package:vrchat_dart_generated/src/api/instances_api.dart';
 import 'package:vrchat_dart_generated/src/api/invite_api.dart';
 import 'package:vrchat_dart_generated/src/api/jams_api.dart';
+import 'package:vrchat_dart_generated/src/api/miscellaneous_api.dart';
 import 'package:vrchat_dart_generated/src/api/notifications_api.dart';
-import 'package:vrchat_dart_generated/src/api/permissions_api.dart';
 import 'package:vrchat_dart_generated/src/api/playermoderation_api.dart';
 import 'package:vrchat_dart_generated/src/api/prints_api.dart';
-import 'package:vrchat_dart_generated/src/api/system_api.dart';
 import 'package:vrchat_dart_generated/src/api/users_api.dart';
 import 'package:vrchat_dart_generated/src/api/worlds_api.dart';
 
@@ -146,16 +145,16 @@ class VrchatDartGenerated {
     return JamsApi(dio);
   }
 
+  /// Get MiscellaneousApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  MiscellaneousApi getMiscellaneousApi() {
+    return MiscellaneousApi(dio);
+  }
+
   /// Get NotificationsApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   NotificationsApi getNotificationsApi() {
     return NotificationsApi(dio);
-  }
-
-  /// Get PermissionsApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  PermissionsApi getPermissionsApi() {
-    return PermissionsApi(dio);
   }
 
   /// Get PlayermoderationApi instance, base route and serializer can be overridden by a given but be careful,
@@ -168,12 +167,6 @@ class VrchatDartGenerated {
   /// by doing that all interceptors will not be executed
   PrintsApi getPrintsApi() {
     return PrintsApi(dio);
-  }
-
-  /// Get SystemApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  SystemApi getSystemApi() {
-    return SystemApi(dio);
   }
 
   /// Get UsersApi instance, base route and serializer can be overridden by a given but be careful,

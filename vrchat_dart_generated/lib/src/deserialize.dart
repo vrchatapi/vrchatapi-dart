@@ -151,6 +151,7 @@ import 'package:vrchat_dart_generated/src/model/update_avatar_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_favorite_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_group_gallery_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_group_member_request.dart';
+import 'package:vrchat_dart_generated/src/model/update_group_representation_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_group_role_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_invite_message_request.dart';
@@ -638,6 +639,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'UpdateGroupMemberRequest':
       return UpdateGroupMemberRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'UpdateGroupRepresentationRequest':
+      return UpdateGroupRepresentationRequest.fromJson(
+          value as Map<String, dynamic>) as ReturnType;
     case 'UpdateGroupRequest':
       return UpdateGroupRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
