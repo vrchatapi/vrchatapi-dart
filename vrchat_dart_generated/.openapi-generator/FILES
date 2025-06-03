@@ -136,6 +136,7 @@ doc/LimitedUser.md
 doc/LimitedUserGroups.md
 doc/LimitedWorld.md
 doc/MIMEType.md
+doc/MiscellaneousApi.md
 doc/ModerateUserRequest.md
 doc/Notification.md
 doc/NotificationDetailInvite.md
@@ -152,7 +153,6 @@ doc/Pending2FAResult.md
 doc/PerformanceLimiterInfo.md
 doc/PerformanceRatings.md
 doc/Permission.md
-doc/PermissionsApi.md
 doc/PlatformBuildInfo.md
 doc/PlayerModeration.md
 doc/PlayerModerationType.md
@@ -182,7 +182,6 @@ doc/Submission.md
 doc/Subscription.md
 doc/SubscriptionPeriod.md
 doc/Success.md
-doc/SystemApi.md
 doc/TiliaStatus.md
 doc/TiliaTOS.md
 doc/TokenBundle.md
@@ -200,6 +199,7 @@ doc/UpdateAvatarRequest.md
 doc/UpdateFavoriteGroupRequest.md
 doc/UpdateGroupGalleryRequest.md
 doc/UpdateGroupMemberRequest.md
+doc/UpdateGroupRepresentationRequest.md
 doc/UpdateGroupRequest.md
 doc/UpdateGroupRoleRequest.md
 doc/UpdateInviteMessageRequest.md
@@ -233,11 +233,10 @@ lib/src/api/groups_api.dart
 lib/src/api/instances_api.dart
 lib/src/api/invite_api.dart
 lib/src/api/jams_api.dart
+lib/src/api/miscellaneous_api.dart
 lib/src/api/notifications_api.dart
-lib/src/api/permissions_api.dart
 lib/src/api/playermoderation_api.dart
 lib/src/api/prints_api.dart
-lib/src/api/system_api.dart
 lib/src/api/users_api.dart
 lib/src/api/worlds_api.dart
 lib/src/auth/api_key_auth.dart
@@ -431,6 +430,7 @@ lib/src/model/update_avatar_request.dart
 lib/src/model/update_favorite_group_request.dart
 lib/src/model/update_group_gallery_request.dart
 lib/src/model/update_group_member_request.dart
+lib/src/model/update_group_representation_request.dart
 lib/src/model/update_group_request.dart
 lib/src/model/update_group_role_request.dart
 lib/src/model/update_invite_message_request.dart
@@ -588,6 +588,7 @@ test/limited_user_groups_test.dart
 test/limited_user_test.dart
 test/limited_world_test.dart
 test/mime_type_test.dart
+test/miscellaneous_api_test.dart
 test/moderate_user_request_test.dart
 test/notification_detail_invite_response_test.dart
 test/notification_detail_invite_test.dart
@@ -604,7 +605,6 @@ test/pending2_fa_result_test.dart
 test/performance_limiter_info_test.dart
 test/performance_ratings_test.dart
 test/permission_test.dart
-test/permissions_api_test.dart
 test/platform_build_info_test.dart
 test/player_moderation_test.dart
 test/player_moderation_type_test.dart
@@ -634,7 +634,6 @@ test/submission_test.dart
 test/subscription_period_test.dart
 test/subscription_test.dart
 test/success_test.dart
-test/system_api_test.dart
 test/tilia_status_test.dart
 test/tilia_tos_test.dart
 test/token_bundle_test.dart
@@ -652,6 +651,7 @@ test/update_avatar_request_test.dart
 test/update_favorite_group_request_test.dart
 test/update_group_gallery_request_test.dart
 test/update_group_member_request_test.dart
+test/update_group_representation_request_test.dart
 test/update_group_request_test.dart
 test/update_group_role_request_test.dart
 test/update_invite_message_request_test.dart
