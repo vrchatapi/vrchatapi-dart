@@ -99,7 +99,8 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
           users: $checkedConvert(
               'users',
               (v) => (v as List<dynamic>?)
-                  ?.map((e) => LimitedUser.fromJson(e as Map<String, dynamic>))
+                  ?.map((e) =>
+                      LimitedUserInstance.fromJson(e as Map<String, dynamic>))
                   .toList()),
           groupAccessType: $checkedConvert('groupAccessType',
               (v) => $enumDecodeNullable(_$GroupAccessTypeEnumMap, v)),

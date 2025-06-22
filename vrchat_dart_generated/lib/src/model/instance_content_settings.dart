@@ -21,6 +21,7 @@ class InstanceContentSettings {
     this.pedestals = true,
     this.prints = true,
     this.stickers = true,
+    this.props = true,
   });
 
   @JsonKey(
@@ -58,6 +59,13 @@ class InstanceContentSettings {
   )
   final bool? stickers;
 
+  @JsonKey(
+    name: r'props',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? props;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -66,7 +74,8 @@ class InstanceContentSettings {
           other.emoji == emoji &&
           other.pedestals == pedestals &&
           other.prints == prints &&
-          other.stickers == stickers;
+          other.stickers == stickers &&
+          other.props == props;
 
   @override
   int get hashCode =>
@@ -74,7 +83,8 @@ class InstanceContentSettings {
       emoji.hashCode +
       pedestals.hashCode +
       prints.hashCode +
-      stickers.hashCode;
+      stickers.hashCode +
+      props.hashCode;
 
   factory InstanceContentSettings.fromJson(Map<String, dynamic> json) =>
       _$InstanceContentSettingsFromJson(json);

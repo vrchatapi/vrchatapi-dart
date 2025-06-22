@@ -10,7 +10,7 @@ import 'package:vrchat_dart_generated/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:vrchat_dart_generated/src/model/friend_status.dart';
-import 'package:vrchat_dart_generated/src/model/limited_user.dart';
+import 'package:vrchat_dart_generated/src/model/limited_user_friend.dart';
 import 'package:vrchat_dart_generated/src/model/notification.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
 
@@ -278,9 +278,9 @@ class FriendsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<LimitedUser>] as data
+  /// Returns a [Future] containing a [Response] with a [List<LimitedUserFriend>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<LimitedUser>>> getFriends({
+  Future<Response<List<LimitedUserFriend>>> getFriends({
     int? offset,
     int? n = 60,
     bool? offline,
@@ -326,14 +326,14 @@ class FriendsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<LimitedUser>? _responseData;
+    List<LimitedUserFriend>? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<LimitedUser>, LimitedUser>(
-              rawData, 'List<LimitedUser>',
+          : deserialize<List<LimitedUserFriend>, LimitedUserFriend>(
+              rawData, 'List<LimitedUserFriend>',
               growable: true);
     } catch (error, stackTrace) {
       throw DioException(
@@ -345,7 +345,7 @@ class FriendsApi {
       );
     }
 
-    return Response<List<LimitedUser>>(
+    return Response<List<LimitedUserFriend>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

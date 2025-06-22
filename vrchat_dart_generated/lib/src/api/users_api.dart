@@ -14,8 +14,8 @@ import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/feedback.dart';
 import 'package:vrchat_dart_generated/src/model/get_user_group_instances200_response.dart';
 import 'package:vrchat_dart_generated/src/model/group.dart';
-import 'package:vrchat_dart_generated/src/model/limited_user.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user_groups.dart';
+import 'package:vrchat_dart_generated/src/model/limited_user_search.dart';
 import 'package:vrchat_dart_generated/src/model/represented_group.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_badge_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_note_request.dart';
@@ -1125,9 +1125,9 @@ class UsersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<LimitedUser>] as data
+  /// Returns a [Future] containing a [Response] with a [List<LimitedUserSearch>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<LimitedUser>>> searchUsers({
+  Future<Response<List<LimitedUserSearch>>> searchUsers({
     String? search,
     String? developerType,
     int? n = 60,
@@ -1175,14 +1175,14 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<LimitedUser>? _responseData;
+    List<LimitedUserSearch>? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<LimitedUser>, LimitedUser>(
-              rawData, 'List<LimitedUser>',
+          : deserialize<List<LimitedUserSearch>, LimitedUserSearch>(
+              rawData, 'List<LimitedUserSearch>',
               growable: true);
     } catch (error, stackTrace) {
       throw DioException(
@@ -1194,7 +1194,7 @@ class UsersApi {
       );
     }
 
-    return Response<List<LimitedUser>>(
+    return Response<List<LimitedUserSearch>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

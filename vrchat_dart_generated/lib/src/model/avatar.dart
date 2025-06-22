@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/avatar_published_listings_inner.dart';
 import 'package:vrchat_dart_generated/src/model/avatar_unity_package_url_object.dart';
+import 'package:vrchat_dart_generated/src/model/avatar_performance.dart';
 import 'package:vrchat_dart_generated/src/model/avatar_styles.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
 import 'package:vrchat_dart_generated/src/model/unity_package.dart';
@@ -35,6 +36,7 @@ class Avatar {
     this.lock,
     this.lowestPrice,
     required this.name,
+    required this.performance,
     this.productId,
     this.publishedListings,
     required this.releaseStatus,
@@ -151,6 +153,13 @@ class Avatar {
   final String name;
 
   @JsonKey(
+    name: r'performance',
+    required: true,
+    includeIfNull: false,
+  )
+  final AvatarPerformance performance;
+
+  @JsonKey(
     name: r'productId',
     required: false,
     includeIfNull: false,
@@ -255,6 +264,7 @@ class Avatar {
           other.lock == lock &&
           other.lowestPrice == lowestPrice &&
           other.name == name &&
+          other.performance == performance &&
           other.productId == productId &&
           other.publishedListings == publishedListings &&
           other.releaseStatus == releaseStatus &&
@@ -285,6 +295,7 @@ class Avatar {
       lock.hashCode +
       lowestPrice.hashCode +
       name.hashCode +
+      performance.hashCode +
       productId.hashCode +
       publishedListings.hashCode +
       releaseStatus.hashCode +

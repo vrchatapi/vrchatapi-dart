@@ -23,6 +23,7 @@ Avatar _$AvatarFromJson(Map<String, dynamic> json) => $checkedCreate(
             'id',
             'imageUrl',
             'name',
+            'performance',
             'releaseStatus',
             'styles',
             'tags',
@@ -53,6 +54,8 @@ Avatar _$AvatarFromJson(Map<String, dynamic> json) => $checkedCreate(
           lowestPrice:
               $checkedConvert('lowestPrice', (v) => (v as num?)?.toInt()),
           name: $checkedConvert('name', (v) => v as String),
+          performance: $checkedConvert('performance',
+              (v) => AvatarPerformance.fromJson(v as Map<String, dynamic>)),
           productId: $checkedConvert('productId', (v) => v as String?),
           publishedListings: $checkedConvert(
               'publishedListings',
@@ -105,6 +108,7 @@ Map<String, dynamic> _$AvatarToJson(Avatar instance) => <String, dynamic>{
       if (instance.lock case final value?) 'lock': value,
       if (instance.lowestPrice case final value?) 'lowestPrice': value,
       'name': instance.name,
+      'performance': instance.performance.toJson(),
       if (instance.productId case final value?) 'productId': value,
       if (instance.publishedListings?.map((e) => e.toJson()).toList()
           case final value?)

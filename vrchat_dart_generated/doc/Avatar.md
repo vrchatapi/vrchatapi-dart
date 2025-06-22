@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **lock** | **bool** |  | [optional] 
 **lowestPrice** | **int** |  | [optional] 
 **name** | **String** |  | 
+**performance** | [**AvatarPerformance**](AvatarPerformance.md) |  | 
 **productId** | **String** |  | [optional] 
 **publishedListings** | [**List&lt;AvatarPublishedListingsInner&gt;**](AvatarPublishedListingsInner.md) |  | [optional] 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | 

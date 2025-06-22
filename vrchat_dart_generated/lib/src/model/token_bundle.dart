@@ -19,6 +19,7 @@ class TokenBundle {
     required this.id,
     required this.steamItemId,
     required this.oculusSku,
+    this.googleProductId,
     required this.amount,
     required this.description,
     required this.tokens,
@@ -45,6 +46,13 @@ class TokenBundle {
     includeIfNull: false,
   )
   final String oculusSku;
+
+  @JsonKey(
+    name: r'googleProductId',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? googleProductId;
 
   /// price of the bundle
   @JsonKey(
@@ -84,6 +92,7 @@ class TokenBundle {
           other.id == id &&
           other.steamItemId == steamItemId &&
           other.oculusSku == oculusSku &&
+          other.googleProductId == googleProductId &&
           other.amount == amount &&
           other.description == description &&
           other.tokens == tokens &&
@@ -94,6 +103,7 @@ class TokenBundle {
       id.hashCode +
       steamItemId.hashCode +
       oculusSku.hashCode +
+      googleProductId.hashCode +
       amount.hashCode +
       description.hashCode +
       tokens.hashCode +

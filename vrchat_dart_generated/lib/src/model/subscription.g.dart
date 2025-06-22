@@ -32,6 +32,8 @@ Subscription _$SubscriptionFromJson(Map<String, dynamic> json) =>
               $checkedConvert('googleProductId', (v) => v as String?),
           googlePlanId: $checkedConvert('googlePlanId', (v) => v as String?),
           picoSku: $checkedConvert('picoSku', (v) => v as String?),
+          appleProductId:
+              $checkedConvert('appleProductId', (v) => v as String?),
           amount: $checkedConvert('amount', (v) => v as num),
           description: $checkedConvert('description', (v) => v as String),
           period: $checkedConvert(
@@ -50,6 +52,7 @@ Map<String, dynamic> _$SubscriptionToJson(Subscription instance) =>
       if (instance.googleProductId case final value?) 'googleProductId': value,
       if (instance.googlePlanId case final value?) 'googlePlanId': value,
       if (instance.picoSku case final value?) 'picoSku': value,
+      if (instance.appleProductId case final value?) 'appleProductId': value,
       'amount': instance.amount,
       'description': instance.description,
       'period': _$SubscriptionPeriodEnumMap[instance.period]!,

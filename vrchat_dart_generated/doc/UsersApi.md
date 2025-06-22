@@ -654,7 +654,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **searchUsers**
-> List<LimitedUser> searchUsers(search, developerType, n, offset)
+> List<LimitedUserSearch> searchUsers(search, developerType, n, offset)
 
 Search All Users
 
@@ -693,7 +693,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;LimitedUser&gt;**](LimitedUser.md)
+[**List&lt;LimitedUserSearch&gt;**](LimitedUserSearch.md)
 
 ### Authorization
 

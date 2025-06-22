@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | 
 **steamItemId** | **String** |  | 
 **oculusSku** | **String** |  | 
+**googleProductId** | **String** |  | [optional] 
 **amount** | **int** | price of the bundle | 
 **description** | **String** |  | 
 **tokens** | **int** | number of tokens received | 

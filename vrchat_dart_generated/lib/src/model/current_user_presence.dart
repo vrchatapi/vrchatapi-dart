@@ -19,6 +19,7 @@ class CurrentUserPresence {
     this.avatarThumbnail,
     this.currentAvatarTags,
     this.displayName,
+    this.debugflag,
     this.groups,
     this.id,
     this.instance,
@@ -53,6 +54,13 @@ class CurrentUserPresence {
     includeIfNull: false,
   )
   final String? displayName;
+
+  @JsonKey(
+    name: r'debugflag',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? debugflag;
 
   @JsonKey(
     name: r'groups',
@@ -151,6 +159,7 @@ class CurrentUserPresence {
           other.avatarThumbnail == avatarThumbnail &&
           other.currentAvatarTags == currentAvatarTags &&
           other.displayName == displayName &&
+          other.debugflag == debugflag &&
           other.groups == groups &&
           other.id == id &&
           other.instance == instance &&
@@ -169,6 +178,7 @@ class CurrentUserPresence {
       (avatarThumbnail == null ? 0 : avatarThumbnail.hashCode) +
       currentAvatarTags.hashCode +
       displayName.hashCode +
+      debugflag.hashCode +
       (groups == null ? 0 : groups.hashCode) +
       id.hashCode +
       (instance == null ? 0 : instance.hashCode) +

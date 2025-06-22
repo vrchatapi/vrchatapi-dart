@@ -20,6 +20,7 @@ InstanceContentSettings _$InstanceContentSettingsFromJson(
           pedestals: $checkedConvert('pedestals', (v) => v as bool? ?? true),
           prints: $checkedConvert('prints', (v) => v as bool? ?? true),
           stickers: $checkedConvert('stickers', (v) => v as bool? ?? true),
+          props: $checkedConvert('props', (v) => v as bool? ?? true),
         );
         return val;
       },
@@ -33,4 +34,5 @@ Map<String, dynamic> _$InstanceContentSettingsToJson(
       if (instance.pedestals case final value?) 'pedestals': value,
       if (instance.prints case final value?) 'prints': value,
       if (instance.stickers case final value?) 'stickers': value,
+      if (instance.props case final value?) 'props': value,
     };

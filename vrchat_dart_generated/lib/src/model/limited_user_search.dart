@@ -7,7 +7,7 @@ import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'limited_user.g.dart';
+part 'limited_user_search.g.dart';
 
 @JsonSerializable(
   checked: true,
@@ -15,30 +15,25 @@ part 'limited_user.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class LimitedUser {
-  /// Returns a new [LimitedUser] instance.
-  LimitedUser({
+class LimitedUserSearch {
+  /// Returns a new [LimitedUserSearch] instance.
+  LimitedUserSearch({
     this.bio,
     this.bioLinks,
-    this.currentAvatarImageUrl,
-    this.currentAvatarThumbnailImageUrl,
-    this.currentAvatarTags,
+    required this.currentAvatarImageUrl,
+    required this.currentAvatarThumbnailImageUrl,
+    required this.currentAvatarTags,
     required this.developerType,
     required this.displayName,
-    this.fallbackAvatar,
     required this.id,
     required this.isFriend,
     required this.lastPlatform,
-    this.lastLogin,
-    this.profilePicOverride,
+    required this.profilePicOverride,
     this.pronouns,
     required this.status,
     required this.statusDescription,
     required this.tags,
-    this.userIcon,
-    this.username,
-    this.location,
-    this.friendKey,
+    required this.userIcon,
   });
 
   @JsonKey(
@@ -59,25 +54,25 @@ class LimitedUser {
   /// When profilePicOverride is not empty, use it instead.
   @JsonKey(
     name: r'currentAvatarImageUrl',
-    required: false,
+    required: true,
     includeIfNull: false,
   )
-  final String? currentAvatarImageUrl;
+  final String currentAvatarImageUrl;
 
   /// When profilePicOverride is not empty, use it instead.
   @JsonKey(
     name: r'currentAvatarThumbnailImageUrl',
-    required: false,
+    required: true,
     includeIfNull: false,
   )
-  final String? currentAvatarThumbnailImageUrl;
+  final String currentAvatarThumbnailImageUrl;
 
   @JsonKey(
     name: r'currentAvatarTags',
-    required: false,
+    required: true,
     includeIfNull: false,
   )
-  final List<String>? currentAvatarTags;
+  final List<String> currentAvatarTags;
 
   @JsonKey(
     name: r'developerType',
@@ -92,13 +87,6 @@ class LimitedUser {
     includeIfNull: false,
   )
   final String displayName;
-
-  @JsonKey(
-    name: r'fallbackAvatar',
-    required: false,
-    includeIfNull: false,
-  )
-  final String? fallbackAvatar;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(
@@ -124,18 +112,11 @@ class LimitedUser {
   final String lastPlatform;
 
   @JsonKey(
-    name: r'last_login',
-    required: false,
-    includeIfNull: false,
-  )
-  final DateTime? lastLogin;
-
-  @JsonKey(
     name: r'profilePicOverride',
-    required: false,
+    required: true,
     includeIfNull: false,
   )
-  final String? profilePicOverride;
+  final String profilePicOverride;
 
   @JsonKey(
     name: r'pronouns',
@@ -168,38 +149,15 @@ class LimitedUser {
 
   @JsonKey(
     name: r'userIcon',
-    required: false,
+    required: true,
     includeIfNull: false,
   )
-  final String? userIcon;
-
-  /// -| **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
-  @Deprecated('username has been deprecated')
-  @JsonKey(
-    name: r'username',
-    required: false,
-    includeIfNull: false,
-  )
-  final String? username;
-
-  @JsonKey(
-    name: r'location',
-    required: false,
-    includeIfNull: false,
-  )
-  final String? location;
-
-  @JsonKey(
-    name: r'friendKey',
-    required: false,
-    includeIfNull: false,
-  )
-  final String? friendKey;
+  final String userIcon;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is LimitedUser &&
+      other is LimitedUserSearch &&
           other.bio == bio &&
           other.bioLinks == bioLinks &&
           other.currentAvatarImageUrl == currentAvatarImageUrl &&
@@ -208,21 +166,15 @@ class LimitedUser {
           other.currentAvatarTags == currentAvatarTags &&
           other.developerType == developerType &&
           other.displayName == displayName &&
-          other.fallbackAvatar == fallbackAvatar &&
           other.id == id &&
           other.isFriend == isFriend &&
           other.lastPlatform == lastPlatform &&
-          other.lastLogin == lastLogin &&
           other.profilePicOverride == profilePicOverride &&
           other.pronouns == pronouns &&
           other.status == status &&
           other.statusDescription == statusDescription &&
           other.tags == tags &&
-          other.userIcon == userIcon &&
-// ignore: deprecated_member_use_from_same_package
-          other.username == username &&
-          other.location == location &&
-          other.friendKey == friendKey;
+          other.userIcon == userIcon;
 
   @override
   int get hashCode =>
@@ -233,26 +185,20 @@ class LimitedUser {
       currentAvatarTags.hashCode +
       developerType.hashCode +
       displayName.hashCode +
-      fallbackAvatar.hashCode +
       id.hashCode +
       isFriend.hashCode +
       lastPlatform.hashCode +
-      (lastLogin == null ? 0 : lastLogin.hashCode) +
       profilePicOverride.hashCode +
       pronouns.hashCode +
       status.hashCode +
       statusDescription.hashCode +
       tags.hashCode +
-      userIcon.hashCode +
-// ignore: deprecated_member_use_from_same_package
-      username.hashCode +
-      location.hashCode +
-      friendKey.hashCode;
+      userIcon.hashCode;
 
-  factory LimitedUser.fromJson(Map<String, dynamic> json) =>
-      _$LimitedUserFromJson(json);
+  factory LimitedUserSearch.fromJson(Map<String, dynamic> json) =>
+      _$LimitedUserSearchFromJson(json);
 
-  Map<String, dynamic> toJson() => _$LimitedUserToJson(this);
+  Map<String, dynamic> toJson() => _$LimitedUserSearchToJson(this);
 
   @override
   String toString() {

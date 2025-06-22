@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **googleProductId** | **String** |  | [optional] 
 **googlePlanId** | **String** |  | [optional] 
 **picoSku** | **String** |  | [optional] 
+**appleProductId** | **String** |  | [optional] 
 **amount** | **num** |  | 
 **description** | **String** |  | 
 **period** | [**SubscriptionPeriod**](SubscriptionPeriod.md) |  | 

@@ -6,8 +6,8 @@
 import 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
 import 'package:vrchat_dart_generated/src/model/instance_type.dart';
 import 'package:vrchat_dart_generated/src/model/instance_content_settings.dart';
+import 'package:vrchat_dart_generated/src/model/limited_user_instance.dart';
 import 'package:vrchat_dart_generated/src/model/instance_region.dart';
-import 'package:vrchat_dart_generated/src/model/limited_user.dart';
 import 'package:vrchat_dart_generated/src/model/group_access_type.dart';
 import 'package:vrchat_dart_generated/src/model/world.dart';
 import 'package:vrchat_dart_generated/src/model/region.dart';
@@ -341,7 +341,7 @@ class Instance {
     required: false,
     includeIfNull: false,
   )
-  final List<LimitedUser>? users;
+  final List<LimitedUserInstance>? users;
 
   @JsonKey(
     name: r'groupAccessType',

@@ -23,6 +23,7 @@ class Subscription {
     this.googleProductId,
     this.googlePlanId,
     this.picoSku,
+    this.appleProductId,
     required this.amount,
     required this.description,
     required this.period,
@@ -72,6 +73,13 @@ class Subscription {
   final String? picoSku;
 
   @JsonKey(
+    name: r'appleProductId',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? appleProductId;
+
+  @JsonKey(
     name: r'amount',
     required: true,
     includeIfNull: false,
@@ -109,6 +117,7 @@ class Subscription {
           other.googleProductId == googleProductId &&
           other.googlePlanId == googlePlanId &&
           other.picoSku == picoSku &&
+          other.appleProductId == appleProductId &&
           other.amount == amount &&
           other.description == description &&
           other.period == period &&
@@ -122,6 +131,7 @@ class Subscription {
       googleProductId.hashCode +
       googlePlanId.hashCode +
       picoSku.hashCode +
+      appleProductId.hashCode +
       amount.hashCode +
       description.hashCode +
       period.hashCode +

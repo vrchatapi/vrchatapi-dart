@@ -30,6 +30,7 @@ doc/AddGroupGalleryImageRequest.md
 doc/AgeVerificationStatus.md
 doc/AuthenticationApi.md
 doc/Avatar.md
+doc/AvatarPerformance.md
 doc/AvatarPublishedListingsInner.md
 doc/AvatarStyles.md
 doc/AvatarUnityPackageUrlObject.md
@@ -132,8 +133,10 @@ doc/LicenseGroup.md
 doc/LicenseType.md
 doc/LimitedGroup.md
 doc/LimitedUnityPackage.md
-doc/LimitedUser.md
+doc/LimitedUserFriend.md
 doc/LimitedUserGroups.md
+doc/LimitedUserInstance.md
+doc/LimitedUserSearch.md
 doc/LimitedWorld.md
 doc/MIMEType.md
 doc/MiscellaneousApi.md
@@ -274,6 +277,7 @@ lib/src/model/api_config_report_options_world.dart
 lib/src/model/api_config_report_reasons.dart
 lib/src/model/api_health.dart
 lib/src/model/avatar.dart
+lib/src/model/avatar_performance.dart
 lib/src/model/avatar_published_listings_inner.dart
 lib/src/model/avatar_styles.dart
 lib/src/model/avatar_unity_package_url_object.dart
@@ -367,8 +371,10 @@ lib/src/model/license_group.dart
 lib/src/model/license_type.dart
 lib/src/model/limited_group.dart
 lib/src/model/limited_unity_package.dart
-lib/src/model/limited_user.dart
+lib/src/model/limited_user_friend.dart
 lib/src/model/limited_user_groups.dart
+lib/src/model/limited_user_instance.dart
+lib/src/model/limited_user_search.dart
 lib/src/model/limited_world.dart
 lib/src/model/mime_type.dart
 lib/src/model/moderate_user_request.dart
@@ -481,6 +487,7 @@ test/api_config_report_reasons_test.dart
 test/api_config_test.dart
 test/api_health_test.dart
 test/authentication_api_test.dart
+test/avatar_performance_test.dart
 test/avatar_published_listings_inner_test.dart
 test/avatar_styles_test.dart
 test/avatar_test.dart
@@ -584,8 +591,10 @@ test/license_test.dart
 test/license_type_test.dart
 test/limited_group_test.dart
 test/limited_unity_package_test.dart
+test/limited_user_friend_test.dart
 test/limited_user_groups_test.dart
-test/limited_user_test.dart
+test/limited_user_instance_test.dart
+test/limited_user_search_test.dart
 test/limited_world_test.dart
 test/mime_type_test.dart
 test/miscellaneous_api_test.dart
