@@ -1,3 +1,8 @@
+## 3.7.0
+
+- Adds `LimitedUser` class to combine the more specific classes now in `vrchat_dart_generated`
+- Adds `toLimitedUser` extension methods on the new `LimitedUser` classes
+
 ## 3.6.0
 
 - Removes `currentAvatarAssetUrl` from `StreamedCurrentUser`
