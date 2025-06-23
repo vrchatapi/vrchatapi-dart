@@ -83,7 +83,10 @@ void main() async {
 
   // Convenience method to help with storing user objects from different endpoints together
   final limitedTupper = tupper.toLimitedUser();
-  final friendsAndTupper = [limitedTupper, ...friendsResponse.success!.data];
+  final friendsAndTupper = [
+    limitedTupper,
+    ...friendsResponse.success!.data.map((e) => e.toLimitedUser()),
+  ];
 
   print(friendsAndTupper.first.displayName);
 
