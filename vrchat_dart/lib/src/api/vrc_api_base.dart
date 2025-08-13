@@ -1,3 +1,4 @@
+import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
 import 'package:vrchat_dart/src/model/vrchat_user_agent.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
@@ -31,13 +32,13 @@ abstract class VrcApi {
   factory VrcApi.forPlatform({
     required VrchatUserAgent userAgent,
     required BaseOptions options,
-    required String? cookiePath,
+    required PersistCookieJar? cookieJar,
     required String? websocketUrl,
   }) {
     return VrcApiImpl(
       userAgent: userAgent,
       options: options,
-      cookiePath: cookiePath,
+      cookieJar: cookieJar,
       websocketUrl: websocketUrl,
     );
   }

@@ -1,3 +1,4 @@
+import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/browser.dart';
 import 'package:dio/dio.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
@@ -9,7 +10,7 @@ class VrcApiImpl extends VrcApi {
   VrcApiImpl({
     required super.userAgent,
     required BaseOptions options,
-    required String? cookiePath,
+    required PersistCookieJar? cookieJar,
     required super.websocketUrl,
   }) : super(
           rawApi: VrchatDartGenerated(

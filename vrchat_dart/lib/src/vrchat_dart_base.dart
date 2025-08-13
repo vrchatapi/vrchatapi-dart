@@ -1,3 +1,4 @@
+import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
 import 'package:vrchat_dart/src/model/vrchat_user_agent.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
@@ -13,6 +14,8 @@ class VrchatDart {
   final VrchatUserAgent userAgent;
 
   final VrcApi _api;
+
+  final PersistCookieJar? cookieJar;
 
   /// Access to auth convenience methods
   AuthApi get auth => _api.auth;
@@ -41,7 +44,7 @@ class VrchatDart {
   /// Pass in a [websocketUrl] to override the default websocket URL.
   VrchatDart({
     required this.userAgent,
-    String? cookiePath,
+    this.cookieJar,
     String? baseUrl,
     String? websocketUrl,
   }) : _api = VrcApi.forPlatform(
@@ -52,7 +55,7 @@ class VrchatDart {
             receiveTimeout: const Duration(seconds: 3),
             headers: {'User-Agent': userAgent.toString()},
           ),
-          cookiePath: cookiePath,
+          cookieJar: cookieJar!,
           websocketUrl: websocketUrl,
         );
 }
