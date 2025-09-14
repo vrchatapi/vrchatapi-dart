@@ -39,7 +39,7 @@ class LimitedUserSearch {
 
     required this.lastPlatform,
 
-    required this.profilePicOverride,
+    this.profilePicOverride,
 
     this.pronouns,
 
@@ -91,8 +91,8 @@ class LimitedUserSearch {
   @JsonKey(name: r'last_platform', required: true, includeIfNull: false)
   final String lastPlatform;
 
-  @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
-  final String profilePicOverride;
+  @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
+  final String? profilePicOverride;
 
   @JsonKey(name: r'pronouns', required: false, includeIfNull: false)
   final String? pronouns;

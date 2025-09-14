@@ -53,9 +53,9 @@ class LimitedUserFriend {
 
     required this.platform,
 
-    required this.profilePicOverride,
+    this.profilePicOverride,
 
-    required this.profilePicOverrideThumbnail,
+    this.profilePicOverrideThumbnail,
 
     required this.status,
 
@@ -126,15 +126,15 @@ class LimitedUserFriend {
   @JsonKey(name: r'platform', required: true, includeIfNull: false)
   final String platform;
 
-  @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
-  final String profilePicOverride;
+  @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
+  final String? profilePicOverride;
 
   @JsonKey(
     name: r'profilePicOverrideThumbnail',
-    required: true,
+    required: false,
     includeIfNull: false,
   )
-  final String profilePicOverrideThumbnail;
+  final String? profilePicOverrideThumbnail;
 
   @JsonKey(name: r'status', required: true, includeIfNull: false)
   final UserStatus status;
