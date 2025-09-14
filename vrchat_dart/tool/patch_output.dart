@@ -118,7 +118,11 @@ void patchModel() {
           RegExp(r'enum (.*) {((.|\n)*),\n}'),
           (match) =>
               'enum ${match.group(1)} {${match.group(2)};\n\n$_enumToString}',
-        );
+        )
+        .replaceAll(
+            "import 'package:copy_with_extension/copy_with_extension.dart';",
+            '')
+        .replaceAll('@CopyWith()', '');
 
     file.writeAsStringSync(content);
   }
