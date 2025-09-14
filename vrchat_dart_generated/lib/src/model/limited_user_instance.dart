@@ -59,9 +59,9 @@ class LimitedUserInstance {
 
     this.platform,
 
-    this.profilePicOverride,
+    required this.profilePicOverride,
 
-    this.profilePicOverrideThumbnail,
+    required this.profilePicOverrideThumbnail,
 
     required this.pronouns,
 
@@ -143,15 +143,15 @@ class LimitedUserInstance {
   @JsonKey(name: r'platform', required: false, includeIfNull: false)
   final String? platform;
 
-  @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
-  final String? profilePicOverride;
+  @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
+  final String profilePicOverride;
 
   @JsonKey(
     name: r'profilePicOverrideThumbnail',
-    required: false,
+    required: true,
     includeIfNull: false,
   )
-  final String? profilePicOverrideThumbnail;
+  final String profilePicOverrideThumbnail;
 
   @JsonKey(name: r'pronouns', required: true, includeIfNull: false)
   final String pronouns;

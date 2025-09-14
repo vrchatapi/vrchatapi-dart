@@ -29,6 +29,8 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
             'last_activity',
             'last_mobile',
             'platform',
+            'profilePicOverride',
+            'profilePicOverrideThumbnail',
             'status',
             'statusDescription',
             'tags',
@@ -79,11 +81,11 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
           platform: $checkedConvert('platform', (v) => v as String),
           profilePicOverride: $checkedConvert(
             'profilePicOverride',
-            (v) => v as String?,
+            (v) => v as String,
           ),
           profilePicOverrideThumbnail: $checkedConvert(
             'profilePicOverrideThumbnail',
-            (v) => v as String?,
+            (v) => v as String,
           ),
           status: $checkedConvert(
             'status',
@@ -129,8 +131,8 @@ Map<String, dynamic> _$LimitedUserFriendToJson(
   'last_activity': instance.lastActivity?.toIso8601String(),
   'last_mobile': instance.lastMobile?.toIso8601String(),
   'platform': instance.platform,
-  'profilePicOverride': ?instance.profilePicOverride,
-  'profilePicOverrideThumbnail': ?instance.profilePicOverrideThumbnail,
+  'profilePicOverride': instance.profilePicOverride,
+  'profilePicOverrideThumbnail': instance.profilePicOverrideThumbnail,
   'status': _$UserStatusEnumMap[instance.status]!,
   'statusDescription': instance.statusDescription,
   'tags': instance.tags,

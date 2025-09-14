@@ -31,6 +31,8 @@ LimitedUserInstance _$LimitedUserInstanceFromJson(Map<String, dynamic> json) =>
             'last_platform',
             'last_activity',
             'last_mobile',
+            'profilePicOverride',
+            'profilePicOverrideThumbnail',
             'pronouns',
             'state',
             'status',
@@ -91,11 +93,11 @@ LimitedUserInstance _$LimitedUserInstanceFromJson(Map<String, dynamic> json) =>
           platform: $checkedConvert('platform', (v) => v as String?),
           profilePicOverride: $checkedConvert(
             'profilePicOverride',
-            (v) => v as String?,
+            (v) => v as String,
           ),
           profilePicOverrideThumbnail: $checkedConvert(
             'profilePicOverrideThumbnail',
-            (v) => v as String?,
+            (v) => v as String,
           ),
           pronouns: $checkedConvert('pronouns', (v) => v as String),
           state: $checkedConvert(
@@ -149,8 +151,8 @@ Map<String, dynamic> _$LimitedUserInstanceToJson(
   'last_activity': instance.lastActivity?.toIso8601String(),
   'last_mobile': instance.lastMobile?.toIso8601String(),
   'platform': ?instance.platform,
-  'profilePicOverride': ?instance.profilePicOverride,
-  'profilePicOverrideThumbnail': ?instance.profilePicOverrideThumbnail,
+  'profilePicOverride': instance.profilePicOverride,
+  'profilePicOverrideThumbnail': instance.profilePicOverrideThumbnail,
   'pronouns': instance.pronouns,
   'state': _$UserStateEnumMap[instance.state]!,
   'status': _$UserStatusEnumMap[instance.status]!,
