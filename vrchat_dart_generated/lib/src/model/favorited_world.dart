@@ -6,6 +6,7 @@
 import 'package:vrchat_dart_generated/src/model/instance_content_settings.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
 import 'package:vrchat_dart_generated/src/model/unity_package.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'favorited_world.g.dart';
@@ -19,41 +20,70 @@ part 'favorited_world.g.dart';
 class FavoritedWorld {
   /// Returns a new [FavoritedWorld] instance.
   FavoritedWorld({
-    required this.authorId,
+    this.authorId,
+
     required this.authorName,
+
     required this.capacity,
+
     required this.description,
+
     this.recommendedCapacity,
+
     required this.createdAt,
+
     this.defaultContentSettings,
+
     this.favorites = 0,
+
     required this.favoriteGroup,
+
     required this.favoriteId,
+
     this.featured = false,
+
     this.visits = 0,
+
     this.heat = 0,
+
     required this.id,
+
     required this.imageUrl,
+
     required this.labsPublicationDate,
+
     required this.name,
+
     this.occupants = 0,
+
     this.organization = 'vrchat',
+
     this.popularity = 0,
+
     this.previewYoutubeId,
+
     required this.publicationDate,
+
     required this.releaseStatus,
+
     required this.tags,
+
     required this.thumbnailImageUrl,
+
     required this.unityPackages,
+
     required this.updatedAt,
+
     required this.urlList,
+
     this.udonProducts,
+
     required this.version,
   });
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(name: r'authorId', required: true, includeIfNull: false)
-  final String authorId;
+  @JsonKey(name: r'authorId', required: false, includeIfNull: false)
+  final String? authorId;
 
   @JsonKey(name: r'authorName', required: true, includeIfNull: false)
   final String authorName;

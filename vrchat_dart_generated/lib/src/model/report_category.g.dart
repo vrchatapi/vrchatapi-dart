@@ -22,8 +22,8 @@ ReportCategory _$ReportCategoryFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$ReportCategoryToJson(ReportCategory instance) =>
     <String, dynamic>{
-      if (instance.description case final value?) 'description': value,
-      if (instance.title case final value?) 'title': value,
+      'description': ?instance.description,
+      'title': ?instance.title,
       'text': instance.text,
       'tooltip': instance.tooltip,
     };

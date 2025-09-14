@@ -25,16 +25,22 @@ import 'package:vrchat_dart_generated/src/model/api_health.dart';
 import 'package:vrchat_dart_generated/src/model/account_deletion_log.dart';
 import 'package:vrchat_dart_generated/src/model/add_favorite_request.dart';
 import 'package:vrchat_dart_generated/src/model/add_group_gallery_image_request.dart';
+import 'package:vrchat_dart_generated/src/model/admin_asset_bundle.dart';
+import 'package:vrchat_dart_generated/src/model/admin_unity_package.dart';
 import 'package:vrchat_dart_generated/src/model/avatar.dart';
 import 'package:vrchat_dart_generated/src/model/avatar_performance.dart';
 import 'package:vrchat_dart_generated/src/model/avatar_published_listings_inner.dart';
+import 'package:vrchat_dart_generated/src/model/avatar_style.dart';
 import 'package:vrchat_dart_generated/src/model/avatar_styles.dart';
 import 'package:vrchat_dart_generated/src/model/avatar_unity_package_url_object.dart';
 import 'package:vrchat_dart_generated/src/model/badge.dart';
 import 'package:vrchat_dart_generated/src/model/balance.dart';
 import 'package:vrchat_dart_generated/src/model/ban_group_member_request.dart';
+import 'package:vrchat_dart_generated/src/model/calendar_event.dart';
+import 'package:vrchat_dart_generated/src/model/calendar_event_user_interest.dart';
 import 'package:vrchat_dart_generated/src/model/change_user_tags_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_avatar_request.dart';
+import 'package:vrchat_dart_generated/src/model/create_calendar_event_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_file_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_file_version_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_group_announcement_request.dart';
@@ -65,6 +71,7 @@ import 'package:vrchat_dart_generated/src/model/file_upload_url.dart';
 import 'package:vrchat_dart_generated/src/model/file_version.dart';
 import 'package:vrchat_dart_generated/src/model/file_version_upload_status.dart';
 import 'package:vrchat_dart_generated/src/model/finish_file_data_upload_request.dart';
+import 'package:vrchat_dart_generated/src/model/follow_calendar_event_request.dart';
 import 'package:vrchat_dart_generated/src/model/friend_status.dart';
 import 'package:vrchat_dart_generated/src/model/get_group_posts200_response.dart';
 import 'package:vrchat_dart_generated/src/model/get_user_group_instances200_response.dart';
@@ -92,6 +99,13 @@ import 'package:vrchat_dart_generated/src/model/instance.dart';
 import 'package:vrchat_dart_generated/src/model/instance_content_settings.dart';
 import 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
 import 'package:vrchat_dart_generated/src/model/instance_short_name_response.dart';
+import 'package:vrchat_dart_generated/src/model/inventory.dart';
+import 'package:vrchat_dart_generated/src/model/inventory_drop.dart';
+import 'package:vrchat_dart_generated/src/model/inventory_item.dart';
+import 'package:vrchat_dart_generated/src/model/inventory_metadata.dart';
+import 'package:vrchat_dart_generated/src/model/inventory_notification_details.dart';
+import 'package:vrchat_dart_generated/src/model/inventory_spawn.dart';
+import 'package:vrchat_dart_generated/src/model/inventory_template.dart';
 import 'package:vrchat_dart_generated/src/model/invite_message.dart';
 import 'package:vrchat_dart_generated/src/model/invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/invite_response.dart';
@@ -113,6 +127,7 @@ import 'package:vrchat_dart_generated/src/model/notification_detail_invite_respo
 import 'package:vrchat_dart_generated/src/model/notification_detail_request_invite.dart';
 import 'package:vrchat_dart_generated/src/model/notification_detail_request_invite_response.dart';
 import 'package:vrchat_dart_generated/src/model/notification_detail_vote_to_kick.dart';
+import 'package:vrchat_dart_generated/src/model/paginated_calendar_event_list.dart';
 import 'package:vrchat_dart_generated/src/model/paginated_group_audit_log_entry_list.dart';
 import 'package:vrchat_dart_generated/src/model/past_display_name.dart';
 import 'package:vrchat_dart_generated/src/model/pending2_fa_result.dart';
@@ -125,6 +140,8 @@ import 'package:vrchat_dart_generated/src/model/print_files.dart';
 import 'package:vrchat_dart_generated/src/model/product.dart';
 import 'package:vrchat_dart_generated/src/model/product_listing.dart';
 import 'package:vrchat_dart_generated/src/model/product_listing_variant.dart';
+import 'package:vrchat_dart_generated/src/model/prop.dart';
+import 'package:vrchat_dart_generated/src/model/prop_unity_package.dart';
 import 'package:vrchat_dart_generated/src/model/register_user_account_request.dart';
 import 'package:vrchat_dart_generated/src/model/report_category.dart';
 import 'package:vrchat_dart_generated/src/model/report_reason.dart';
@@ -151,6 +168,7 @@ import 'package:vrchat_dart_generated/src/model/two_factor_recovery_codes.dart';
 import 'package:vrchat_dart_generated/src/model/two_factor_recovery_codes_otp_inner.dart';
 import 'package:vrchat_dart_generated/src/model/unity_package.dart';
 import 'package:vrchat_dart_generated/src/model/update_avatar_request.dart';
+import 'package:vrchat_dart_generated/src/model/update_calendar_event_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_favorite_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_group_gallery_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_group_member_request.dart';
@@ -288,6 +306,12 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'AddGroupGalleryImageRequest':
       return AddGroupGalleryImageRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'AdminAssetBundle':
+      return AdminAssetBundle.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'AdminUnityPackage':
+      return AdminUnityPackage.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'AgeVerificationStatus':
     case 'Avatar':
       return Avatar.fromJson(value as Map<String, dynamic>) as ReturnType;
@@ -299,6 +323,8 @@ ReturnType deserialize<ReturnType, BaseType>(
             value as Map<String, dynamic>,
           )
           as ReturnType;
+    case 'AvatarStyle':
+      return AvatarStyle.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AvatarStyles':
       return AvatarStyles.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AvatarUnityPackageUrlObject':
@@ -312,11 +338,20 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'BanGroupMemberRequest':
       return BanGroupMemberRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'CalendarEvent':
+      return CalendarEvent.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'CalendarEventUserInterest':
+      return CalendarEventUserInterest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'ChangeUserTagsRequest':
       return ChangeUserTagsRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'CreateAvatarRequest':
       return CreateAvatarRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'CreateCalendarEventRequest':
+      return CreateCalendarEventRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'CreateFileRequest':
       return CreateFileRequest.fromJson(value as Map<String, dynamic>)
@@ -408,6 +443,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'FinishFileDataUploadRequest':
       return FinishFileDataUploadRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'FollowCalendarEventRequest':
+      return FollowCalendarEventRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'FriendStatus':
       return FriendStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'GetGroupPosts200Response':
@@ -496,6 +534,29 @@ ReturnType deserialize<ReturnType, BaseType>(
       return InstanceShortNameResponse.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'InstanceType':
+    case 'Inventory':
+      return Inventory.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'InventoryDrop':
+      return InventoryDrop.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'InventoryItem':
+      return InventoryItem.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'InventoryItemType':
+    case 'InventoryMetadata':
+      return InventoryMetadata.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'InventoryNotificationDetails':
+      return InventoryNotificationDetails.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'InventorySpawn':
+      return InventorySpawn.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'InventoryTemplate':
+      return InventoryTemplate.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'InviteMessage':
       return InviteMessage.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -567,6 +628,9 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'NotificationType':
     case 'OrderOption':
+    case 'PaginatedCalendarEventList':
+      return PaginatedCalendarEventList.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'PaginatedGroupAuditLogEntryList':
       return PaginatedGroupAuditLogEntryList.fromJson(
             value as Map<String, dynamic>,
@@ -605,6 +669,11 @@ ReturnType deserialize<ReturnType, BaseType>(
       return ProductListingVariant.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'ProductType':
+    case 'Prop':
+      return Prop.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'PropUnityPackage':
+      return PropUnityPackage.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'Region':
     case 'RegisterUserAccountRequest':
       return RegisterUserAccountRequest.fromJson(value as Map<String, dynamic>)
@@ -679,6 +748,9 @@ ReturnType deserialize<ReturnType, BaseType>(
       return UnityPackage.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'UpdateAvatarRequest':
       return UpdateAvatarRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'UpdateCalendarEventRequest':
+      return UpdateCalendarEventRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'UpdateFavoriteGroupRequest':
       return UpdateFavoriteGroupRequest.fromJson(value as Map<String, dynamic>)

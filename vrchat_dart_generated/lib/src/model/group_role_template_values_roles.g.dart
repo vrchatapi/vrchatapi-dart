@@ -28,14 +28,12 @@ GroupRoleTemplateValuesRoles _$GroupRoleTemplateValuesRolesFromJson(
 Map<String, dynamic> _$GroupRoleTemplateValuesRolesToJson(
   GroupRoleTemplateValuesRoles instance,
 ) => <String, dynamic>{
-  if (instance.description case final value?) 'description': value,
-  if (instance.name case final value?) 'name': value,
-  if (instance.basePermissions
-          ?.map((e) => _$GroupPermissionsEnumMap[e]!)
-          .toList()
-      case final value?)
-    'basePermissions': value,
-  if (instance.isAddedOnJoin case final value?) 'isAddedOnJoin': value,
+  'description': ?instance.description,
+  'name': ?instance.name,
+  'basePermissions': ?instance.basePermissions
+      ?.map((e) => _$GroupPermissionsEnumMap[e]!)
+      .toList(),
+  'isAddedOnJoin': ?instance.isAddedOnJoin,
 };
 
 const _$GroupPermissionsEnumMap = {
@@ -67,4 +65,5 @@ const _$GroupPermissionsEnumMap = {
   GroupPermissions.group_members_viewall: 'group-members-viewall',
   GroupPermissions.group_roles_assign: 'group-roles-assign',
   GroupPermissions.group_roles_manage: 'group-roles-manage',
+  GroupPermissions.group_calendar_manage: 'group-calendar-manage',
 };

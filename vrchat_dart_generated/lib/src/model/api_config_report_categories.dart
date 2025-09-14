@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/report_category.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'api_config_report_categories.g.dart';
@@ -18,17 +19,29 @@ class APIConfigReportCategories {
   /// Returns a new [APIConfigReportCategories] instance.
   APIConfigReportCategories({
     required this.avatar,
+
     this.avatarpage,
+
     required this.behavior,
+
     required this.chat,
+
     this.emoji,
+
     required this.environment,
+
     required this.groupstore,
+
     required this.image,
+
     required this.text,
+
     this.sticker,
+
     required this.warnings,
+
     required this.worldimage,
+
     required this.worldstore,
   });
 

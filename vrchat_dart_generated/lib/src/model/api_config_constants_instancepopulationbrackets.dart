@@ -6,6 +6,7 @@
 import 'package:vrchat_dart_generated/src/model/api_config_constants_instancepopulationbracketscrowded.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_constants_instancepopulationbracketsfew.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_constants_instancepopulationbracketsmany.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'api_config_constants_instancepopulationbrackets.g.dart';
@@ -20,7 +21,9 @@ class APIConfigConstantsINSTANCEPOPULATIONBRACKETS {
   /// Returns a new [APIConfigConstantsINSTANCEPOPULATIONBRACKETS] instance.
   APIConfigConstantsINSTANCEPOPULATIONBRACKETS({
     this.crowded,
+
     this.few,
+
     this.many,
   });
 

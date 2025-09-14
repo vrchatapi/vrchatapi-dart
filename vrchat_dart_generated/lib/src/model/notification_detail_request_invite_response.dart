@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'notification_detail_request_invite_response.g.dart';
@@ -17,6 +18,7 @@ class NotificationDetailRequestInviteResponse {
   /// Returns a new [NotificationDetailRequestInviteResponse] instance.
   NotificationDetailRequestInviteResponse({
     required this.inResponseTo,
+
     this.requestMessage,
   });
 

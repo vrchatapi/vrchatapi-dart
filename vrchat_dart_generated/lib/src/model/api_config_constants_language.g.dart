@@ -30,6 +30,5 @@ APIConfigConstantsLANGUAGE _$APIConfigConstantsLANGUAGEFromJson(
 Map<String, dynamic> _$APIConfigConstantsLANGUAGEToJson(
   APIConfigConstantsLANGUAGE instance,
 ) => <String, dynamic>{
-  if (instance.spokenLanguageOptions case final value?)
-    'SPOKEN_LANGUAGE_OPTIONS': value,
+  'SPOKEN_LANGUAGE_OPTIONS': ?instance.spokenLanguageOptions,
 };

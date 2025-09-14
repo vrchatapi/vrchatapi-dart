@@ -38,15 +38,14 @@ InfoPushData _$InfoPushDataFromJson(Map<String, dynamic> json) =>
       return val;
     });
 
-Map<String, dynamic> _$InfoPushDataToJson(
-  InfoPushData instance,
-) => <String, dynamic>{
-  if (instance.contentList?.toJson() case final value?) 'contentList': value,
-  if (instance.description case final value?) 'description': value,
-  if (instance.imageUrl case final value?) 'imageUrl': value,
-  if (instance.name case final value?) 'name': value,
-  if (instance.onPressed?.toJson() case final value?) 'onPressed': value,
-  if (instance.template case final value?) 'template': value,
-  if (instance.version case final value?) 'version': value,
-  if (instance.article?.toJson() case final value?) 'article': value,
-};
+Map<String, dynamic> _$InfoPushDataToJson(InfoPushData instance) =>
+    <String, dynamic>{
+      'contentList': ?instance.contentList?.toJson(),
+      'description': ?instance.description,
+      'imageUrl': ?instance.imageUrl,
+      'name': ?instance.name,
+      'onPressed': ?instance.onPressed?.toJson(),
+      'template': ?instance.template,
+      'version': ?instance.version,
+      'article': ?instance.article?.toJson(),
+    };

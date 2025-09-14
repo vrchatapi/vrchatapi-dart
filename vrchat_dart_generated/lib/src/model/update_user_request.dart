@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'update_user_request.g.dart';
@@ -18,21 +19,37 @@ class UpdateUserRequest {
   /// Returns a new [UpdateUserRequest] instance.
   UpdateUserRequest({
     this.email,
+
     this.unsubscribe,
+
     this.birthday,
+
     this.acceptedTOSVersion,
+
     this.tags,
+
     this.status,
+
     this.statusDescription,
+
     this.bio,
+
     this.bioLinks,
+
     this.pronouns,
+
     this.isBoopingEnabled,
+
     this.userIcon,
+
     this.contentFilters,
+
     this.displayName,
+
     this.revertDisplayName,
+
     this.password,
+
     this.currentPassword,
   });
 

@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/group_privacy.dart';
 import 'package:vrchat_dart_generated/src/model/group_user_visibility.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'represented_group.g.dart';
@@ -19,18 +20,31 @@ class RepresentedGroup {
   /// Returns a new [RepresentedGroup] instance.
   RepresentedGroup({
     this.name,
+
     this.shortCode,
+
     this.discriminator,
+
     this.description,
+
     this.iconId,
+
     this.iconUrl,
+
     this.bannerId,
+
     this.bannerUrl,
+
     this.privacy,
+
     this.ownerId,
+
     this.memberCount,
+
     this.groupId,
+
     this.memberVisibility,
+
     this.isRepresenting,
   });
 

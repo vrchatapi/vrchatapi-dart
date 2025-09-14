@@ -30,8 +30,6 @@ GetUserGroupInstances200Response _$GetUserGroupInstances200ResponseFromJson(
 Map<String, dynamic> _$GetUserGroupInstances200ResponseToJson(
   GetUserGroupInstances200Response instance,
 ) => <String, dynamic>{
-  if (instance.fetchedAt?.toIso8601String() case final value?)
-    'fetchedAt': value,
-  if (instance.instances?.map((e) => e.toJson()).toList() case final value?)
-    'instances': value,
+  'fetchedAt': ?instance.fetchedAt?.toIso8601String(),
+  'instances': ?instance.instances?.map((e) => e.toJson()).toList(),
 };

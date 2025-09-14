@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'transaction_steam_wallet_info.g.dart';
@@ -17,8 +18,11 @@ class TransactionSteamWalletInfo {
   /// Returns a new [TransactionSteamWalletInfo] instance.
   TransactionSteamWalletInfo({
     required this.state,
+
     this.country = 'US',
+
     this.currency = 'USD',
+
     required this.status,
   });
 

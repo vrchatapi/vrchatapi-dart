@@ -64,6 +64,7 @@ Name | Type | Description | Notes
 **profilePicOverride** | **String** |  | 
 **profilePicOverrideThumbnail** | **String** |  | 
 **pronouns** | **String** |  | 
+**pronounsHistory** | **List&lt;String&gt;** |  | 
 **queuedInstance** | **String** |  | [optional] 
 **receiveMobileInvitations** | **bool** |  | [optional] 
 **state** | [**UserState**](UserState.md) |  | 

@@ -50,7 +50,7 @@ Map<String, dynamic> _$PrintToJson(Print instance) => <String, dynamic>{
   'files': instance.files.toJson(),
   'id': instance.id,
   'note': instance.note,
-  if (instance.ownerId case final value?) 'ownerId': value,
+  'ownerId': ?instance.ownerId,
   'timestamp': instance.timestamp.toIso8601String(),
   'worldId': instance.worldId,
   'worldName': instance.worldName,

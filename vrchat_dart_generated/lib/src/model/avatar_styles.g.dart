@@ -23,7 +23,7 @@ AvatarStyles _$AvatarStylesFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$AvatarStylesToJson(AvatarStyles instance) =>
     <String, dynamic>{
-      if (instance.primary case final value?) 'primary': value,
-      if (instance.secondary case final value?) 'secondary': value,
-      if (instance.supplementary case final value?) 'supplementary': value,
+      'primary': ?instance.primary,
+      'secondary': ?instance.secondary,
+      'supplementary': ?instance.supplementary,
     };

@@ -32,6 +32,5 @@ APIConfigConstantsINSTANCE _$APIConfigConstantsINSTANCEFromJson(
 Map<String, dynamic> _$APIConfigConstantsINSTANCEToJson(
   APIConfigConstantsINSTANCE instance,
 ) => <String, dynamic>{
-  if (instance.populationBrackets?.toJson() case final value?)
-    'POPULATION_BRACKETS': value,
+  'POPULATION_BRACKETS': ?instance.populationBrackets?.toJson(),
 };

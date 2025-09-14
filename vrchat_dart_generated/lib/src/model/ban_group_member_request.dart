@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'ban_group_member_request.g.dart';

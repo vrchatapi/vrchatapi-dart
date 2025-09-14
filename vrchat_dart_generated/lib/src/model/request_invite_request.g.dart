@@ -12,13 +12,11 @@ RequestInviteRequest _$RequestInviteRequestFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('RequestInviteRequest', json, ($checkedConvert) {
   final val = RequestInviteRequest(
-    messageSlot: $checkedConvert('messageSlot', (v) => (v as num?)?.toInt()),
+    requestSlot: $checkedConvert('requestSlot', (v) => (v as num?)?.toInt()),
   );
   return val;
 });
 
 Map<String, dynamic> _$RequestInviteRequestToJson(
   RequestInviteRequest instance,
-) => <String, dynamic>{
-  if (instance.messageSlot case final value?) 'messageSlot': value,
-};
+) => <String, dynamic>{'requestSlot': ?instance.requestSlot};

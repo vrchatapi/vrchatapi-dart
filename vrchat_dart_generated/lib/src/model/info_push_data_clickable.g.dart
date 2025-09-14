@@ -29,7 +29,7 @@ Map<String, dynamic> _$InfoPushDataClickableToJson(
   InfoPushDataClickable instance,
 ) => <String, dynamic>{
   'command': _$InfoPushDataClickableCommandEnumEnumMap[instance.command]!,
-  if (instance.parameters case final value?) 'parameters': value,
+  'parameters': ?instance.parameters,
 };
 
 const _$InfoPushDataClickableCommandEnumEnumMap = {

@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/file_data.dart';
 import 'package:vrchat_dart_generated/src/model/file_status.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'file_version.g.dart';
@@ -19,11 +20,17 @@ class FileVersion {
   /// Returns a new [FileVersion] instance.
   FileVersion({
     required this.createdAt,
+
     this.deleted = true,
+
     this.delta,
+
     this.file,
+
     this.signature,
+
     required this.status,
+
     this.version = 0,
   });
 

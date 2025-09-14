@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'notification_detail_vote_to_kick.g.dart';
@@ -17,6 +18,7 @@ class NotificationDetailVoteToKick {
   /// Returns a new [NotificationDetailVoteToKick] instance.
   NotificationDetailVoteToKick({
     required this.initiatorUserId,
+
     required this.userToKickId,
   });
 

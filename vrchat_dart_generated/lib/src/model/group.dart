@@ -9,6 +9,7 @@ import 'package:vrchat_dart_generated/src/model/group_member_status.dart';
 import 'package:vrchat_dart_generated/src/model/group_gallery.dart';
 import 'package:vrchat_dart_generated/src/model/group_my_member.dart';
 import 'package:vrchat_dart_generated/src/model/group_role.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'group.g.dart';
@@ -23,36 +24,67 @@ class Group {
   /// Returns a new [Group] instance.
   Group({
     this.ageVerificationSlotsAvailable,
+
     this.ageVerificationBetaCode,
+
     this.ageVerificationBetaSlots,
+
     this.badges,
+
     this.id,
+
     this.name,
+
     this.shortCode,
+
     this.discriminator,
+
     this.description,
+
     this.iconUrl,
+
     this.bannerUrl,
+
     this.privacy,
+
     this.ownerId,
+
     this.rules,
+
     this.links,
+
     this.languages,
+
     this.iconId,
+
     this.bannerId,
+
     this.memberCount,
+
     this.memberCountSyncedAt,
+
     this.isVerified = false,
+
     this.joinState,
+
     this.tags,
+
     this.transferTargetId,
+
     this.galleries,
+
     this.createdAt,
+
     this.updatedAt,
+
     this.lastPostCreatedAt,
+
     this.onlineMemberCount,
+
     this.membershipStatus,
+
     this.myMember,
+
     this.roles,
   });
 

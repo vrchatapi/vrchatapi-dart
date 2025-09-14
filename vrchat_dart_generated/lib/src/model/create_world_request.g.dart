@@ -43,20 +43,19 @@ CreateWorldRequest _$CreateWorldRequestFromJson(
 Map<String, dynamic> _$CreateWorldRequestToJson(CreateWorldRequest instance) =>
     <String, dynamic>{
       'assetUrl': instance.assetUrl,
-      if (instance.assetVersion case final value?) 'assetVersion': value,
-      if (instance.authorId case final value?) 'authorId': value,
-      if (instance.authorName case final value?) 'authorName': value,
-      if (instance.capacity case final value?) 'capacity': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.id case final value?) 'id': value,
+      'assetVersion': ?instance.assetVersion,
+      'authorId': ?instance.authorId,
+      'authorName': ?instance.authorName,
+      'capacity': ?instance.capacity,
+      'description': ?instance.description,
+      'id': ?instance.id,
       'imageUrl': instance.imageUrl,
       'name': instance.name,
-      if (instance.platform case final value?) 'platform': value,
-      if (_$ReleaseStatusEnumMap[instance.releaseStatus] case final value?)
-        'releaseStatus': value,
-      if (instance.tags case final value?) 'tags': value,
-      if (instance.unityPackageUrl case final value?) 'unityPackageUrl': value,
-      if (instance.unityVersion case final value?) 'unityVersion': value,
+      'platform': ?instance.platform,
+      'releaseStatus': ?_$ReleaseStatusEnumMap[instance.releaseStatus],
+      'tags': ?instance.tags,
+      'unityPackageUrl': ?instance.unityPackageUrl,
+      'unityVersion': ?instance.unityVersion,
     };
 
 const _$ReleaseStatusEnumMap = {

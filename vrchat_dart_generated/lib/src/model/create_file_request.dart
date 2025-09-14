@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/mime_type.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_file_request.g.dart';
@@ -18,8 +19,11 @@ class CreateFileRequest {
   /// Returns a new [CreateFileRequest] instance.
   CreateFileRequest({
     required this.name,
+
     required this.mimeType,
+
     required this.extension_,
+
     this.tags,
   });
 

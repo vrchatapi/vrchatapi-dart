@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_file_version_request.g.dart';
@@ -17,8 +18,11 @@ class CreateFileVersionRequest {
   /// Returns a new [CreateFileVersionRequest] instance.
   CreateFileVersionRequest({
     required this.signatureMd5,
+
     required this.signatureSizeInBytes,
+
     this.fileMd5,
+
     this.fileSizeInBytes,
   });
 

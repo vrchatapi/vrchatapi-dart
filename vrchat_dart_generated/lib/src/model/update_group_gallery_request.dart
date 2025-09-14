@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'update_group_gallery_request.g.dart';
@@ -17,11 +18,17 @@ class UpdateGroupGalleryRequest {
   /// Returns a new [UpdateGroupGalleryRequest] instance.
   UpdateGroupGalleryRequest({
     this.name,
+
     this.description,
+
     this.membersOnly = false,
+
     this.roleIdsToView,
+
     this.roleIdsToSubmit,
+
     this.roleIdsToAutoApprove,
+
     this.roleIdsToManage,
   });
 

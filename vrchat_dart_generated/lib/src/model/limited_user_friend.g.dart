@@ -29,8 +29,6 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
             'last_activity',
             'last_mobile',
             'platform',
-            'profilePicOverride',
-            'profilePicOverrideThumbnail',
             'status',
             'statusDescription',
             'tags',
@@ -81,11 +79,11 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
           platform: $checkedConvert('platform', (v) => v as String),
           profilePicOverride: $checkedConvert(
             'profilePicOverride',
-            (v) => v as String,
+            (v) => v as String?,
           ),
           profilePicOverrideThumbnail: $checkedConvert(
             'profilePicOverrideThumbnail',
-            (v) => v as String,
+            (v) => v as String?,
           ),
           status: $checkedConvert(
             'status',
@@ -114,12 +112,11 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$LimitedUserFriendToJson(
   LimitedUserFriend instance,
 ) => <String, dynamic>{
-  if (instance.bio case final value?) 'bio': value,
-  if (instance.bioLinks case final value?) 'bioLinks': value,
+  'bio': ?instance.bio,
+  'bioLinks': ?instance.bioLinks,
   'currentAvatarImageUrl': instance.currentAvatarImageUrl,
-  if (instance.currentAvatarThumbnailImageUrl case final value?)
-    'currentAvatarThumbnailImageUrl': value,
-  if (instance.currentAvatarTags case final value?) 'currentAvatarTags': value,
+  'currentAvatarThumbnailImageUrl': ?instance.currentAvatarThumbnailImageUrl,
+  'currentAvatarTags': ?instance.currentAvatarTags,
   'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
   'displayName': instance.displayName,
   'friendKey': instance.friendKey,
@@ -132,8 +129,8 @@ Map<String, dynamic> _$LimitedUserFriendToJson(
   'last_activity': instance.lastActivity?.toIso8601String(),
   'last_mobile': instance.lastMobile?.toIso8601String(),
   'platform': instance.platform,
-  'profilePicOverride': instance.profilePicOverride,
-  'profilePicOverrideThumbnail': instance.profilePicOverrideThumbnail,
+  'profilePicOverride': ?instance.profilePicOverride,
+  'profilePicOverrideThumbnail': ?instance.profilePicOverrideThumbnail,
   'status': _$UserStatusEnumMap[instance.status]!,
   'statusDescription': instance.statusDescription,
   'tags': instance.tags,

@@ -25,10 +25,10 @@ InstanceContentSettings _$InstanceContentSettingsFromJson(
 Map<String, dynamic> _$InstanceContentSettingsToJson(
   InstanceContentSettings instance,
 ) => <String, dynamic>{
-  if (instance.drones case final value?) 'drones': value,
-  if (instance.emoji case final value?) 'emoji': value,
-  if (instance.pedestals case final value?) 'pedestals': value,
-  if (instance.prints case final value?) 'prints': value,
-  if (instance.stickers case final value?) 'stickers': value,
-  if (instance.props case final value?) 'props': value,
+  'drones': ?instance.drones,
+  'emoji': ?instance.emoji,
+  'pedestals': ?instance.pedestals,
+  'prints': ?instance.prints,
+  'stickers': ?instance.stickers,
+  'props': ?instance.props,
 };

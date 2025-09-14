@@ -27,11 +27,9 @@ AccountDeletionLog _$AccountDeletionLogFromJson(Map<String, dynamic> json) =>
       return val;
     });
 
-Map<String, dynamic> _$AccountDeletionLogToJson(
-  AccountDeletionLog instance,
-) => <String, dynamic>{
-  if (instance.message case final value?) 'message': value,
-  if (instance.deletionScheduled?.toIso8601String() case final value?)
-    'deletionScheduled': value,
-  if (instance.dateTime?.toIso8601String() case final value?) 'dateTime': value,
-};
+Map<String, dynamic> _$AccountDeletionLogToJson(AccountDeletionLog instance) =>
+    <String, dynamic>{
+      'message': ?instance.message,
+      'deletionScheduled': ?instance.deletionScheduled?.toIso8601String(),
+      'dateTime': ?instance.dateTime?.toIso8601String(),
+    };

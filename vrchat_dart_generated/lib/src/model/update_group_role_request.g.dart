@@ -32,13 +32,13 @@ UpdateGroupRoleRequest _$UpdateGroupRoleRequestFromJson(
 Map<String, dynamic> _$UpdateGroupRoleRequestToJson(
   UpdateGroupRoleRequest instance,
 ) => <String, dynamic>{
-  if (instance.name case final value?) 'name': value,
-  if (instance.description case final value?) 'description': value,
-  if (instance.isSelfAssignable case final value?) 'isSelfAssignable': value,
-  if (instance.permissions?.map((e) => _$GroupPermissionsEnumMap[e]!).toList()
-      case final value?)
-    'permissions': value,
-  if (instance.order case final value?) 'order': value,
+  'name': ?instance.name,
+  'description': ?instance.description,
+  'isSelfAssignable': ?instance.isSelfAssignable,
+  'permissions': ?instance.permissions
+      ?.map((e) => _$GroupPermissionsEnumMap[e]!)
+      .toList(),
+  'order': ?instance.order,
 };
 
 const _$GroupPermissionsEnumMap = {
@@ -70,4 +70,5 @@ const _$GroupPermissionsEnumMap = {
   GroupPermissions.group_members_viewall: 'group-members-viewall',
   GroupPermissions.group_roles_assign: 'group-roles-assign',
   GroupPermissions.group_roles_manage: 'group-roles-manage',
+  GroupPermissions.group_calendar_manage: 'group-calendar-manage',
 };

@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/notification_type.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'sent_notification.g.dart';
@@ -18,12 +19,19 @@ class SentNotification {
   /// Returns a new [SentNotification] instance.
   SentNotification({
     required this.createdAt,
+
     required this.details,
+
     required this.id,
+
     required this.message,
+
     required this.receiverUserId,
+
     required this.senderUserId,
+
     this.senderUsername,
+
     required this.type,
   });
 

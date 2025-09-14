@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/favorite_group_visibility.dart';
 import 'package:vrchat_dart_generated/src/model/favorite_type.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'favorite_group.g.dart';
@@ -19,12 +20,19 @@ class FavoriteGroup {
   /// Returns a new [FavoriteGroup] instance.
   FavoriteGroup({
     required this.displayName,
+
     required this.id,
+
     required this.name,
+
     required this.ownerDisplayName,
+
     required this.ownerId,
+
     required this.tags,
+
     required this.type,
+
     required this.visibility,
   });
 

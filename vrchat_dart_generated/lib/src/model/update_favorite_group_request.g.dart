@@ -28,10 +28,9 @@ UpdateFavoriteGroupRequest _$UpdateFavoriteGroupRequestFromJson(
 Map<String, dynamic> _$UpdateFavoriteGroupRequestToJson(
   UpdateFavoriteGroupRequest instance,
 ) => <String, dynamic>{
-  if (instance.displayName case final value?) 'displayName': value,
-  if (_$FavoriteGroupVisibilityEnumMap[instance.visibility] case final value?)
-    'visibility': value,
-  if (instance.tags case final value?) 'tags': value,
+  'displayName': ?instance.displayName,
+  'visibility': ?_$FavoriteGroupVisibilityEnumMap[instance.visibility],
+  'tags': ?instance.tags,
 };
 
 const _$FavoriteGroupVisibilityEnumMap = {

@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'group_announcement.g.dart';
@@ -17,13 +18,21 @@ class GroupAnnouncement {
   /// Returns a new [GroupAnnouncement] instance.
   GroupAnnouncement({
     this.id,
+
     this.groupId,
+
     this.authorId,
+
     this.title,
+
     this.text,
+
     this.imageId,
+
     this.imageUrl,
+
     this.createdAt,
+
     this.updatedAt,
   });
 

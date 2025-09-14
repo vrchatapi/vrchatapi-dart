@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_world_request.g.dart';
@@ -18,18 +19,31 @@ class CreateWorldRequest {
   /// Returns a new [CreateWorldRequest] instance.
   CreateWorldRequest({
     required this.assetUrl,
+
     this.assetVersion,
+
     this.authorId,
+
     this.authorName,
+
     this.capacity,
+
     this.description,
+
     this.id,
+
     required this.imageUrl,
+
     required this.name,
+
     this.platform,
+
     this.releaseStatus,
+
     this.tags,
+
     this.unityPackageUrl,
+
     this.unityVersion = '5.3.4p1',
   });
 

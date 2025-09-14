@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'limited_user_groups.g.dart';
@@ -17,22 +18,39 @@ class LimitedUserGroups {
   /// Returns a new [LimitedUserGroups] instance.
   LimitedUserGroups({
     this.id,
+
     this.name,
+
     this.shortCode,
+
     this.discriminator,
+
     this.description,
+
     this.iconId,
+
     this.iconUrl,
+
     this.bannerId,
+
     this.bannerUrl,
+
     this.privacy,
+
     this.lastPostCreatedAt,
+
     this.ownerId,
+
     this.memberCount,
+
     this.groupId,
+
     this.memberVisibility,
+
     this.isRepresenting,
+
     this.mutualGroup,
+
     this.lastPostReadAt,
   });
 

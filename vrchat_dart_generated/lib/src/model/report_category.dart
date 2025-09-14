@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'report_category.g.dart';
@@ -17,8 +18,11 @@ class ReportCategory {
   /// Returns a new [ReportCategory] instance.
   ReportCategory({
     this.description,
+
     this.title,
+
     required this.text,
+
     required this.tooltip,
   });
 

@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**deleteFileVersion**](FilesApi.md#deletefileversion) | **DELETE** /file/{fileId}/{versionId} | Delete File Version
 [**downloadFileVersion**](FilesApi.md#downloadfileversion) | **GET** /file/{fileId}/{versionId} | Download File Version
 [**finishFileDataUpload**](FilesApi.md#finishfiledataupload) | **PUT** /file/{fileId}/{versionId}/{fileType}/finish | Finish FileData Upload
+[**getAdminAssetBundle**](FilesApi.md#getadminassetbundle) | **GET** /adminassetbundles/{adminAssetBundleId} | Get AdminAssetBundle
 [**getFile**](FilesApi.md#getfile) | **GET** /file/{fileId} | Show File
 [**getFileAnalysis**](FilesApi.md#getfileanalysis) | **GET** /analysis/{fileId}/{versionId} | Get File Version Analysis
 [**getFileAnalysisSecurity**](FilesApi.md#getfileanalysissecurity) | **GET** /analysis/{fileId}/{versionId}/security | Get File Version Analysis Security
@@ -220,7 +221,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **downloadFileVersion**
-> MultipartFile downloadFileVersion(fileId, versionId)
+> Uint8List downloadFileVersion(fileId, versionId)
 
 Download File Version
 
@@ -255,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MultipartFile**](MultipartFile.md)
+[**Uint8List**](Uint8List.md)
 
 ### Authorization
 
@@ -317,6 +318,53 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAdminAssetBundle**
+> AdminAssetBundle getAdminAssetBundle(adminAssetBundleId)
+
+Get AdminAssetBundle
+
+Returns an AdminAssetBundle
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getFilesApi();
+final String adminAssetBundleId = aab_e159e72c-ce54-4fbe-8c37-96af02f6d18d; // String | Must be a valid admin asset bundle ID.
+
+try {
+    final response = api.getAdminAssetBundle(adminAssetBundleId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling FilesApi->getAdminAssetBundle: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **adminAssetBundleId** | **String**| Must be a valid admin asset bundle ID. | 
+
+### Return type
+
+[**AdminAssetBundle**](AdminAssetBundle.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

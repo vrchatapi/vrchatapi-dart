@@ -6,6 +6,7 @@
 import 'package:vrchat_dart_generated/src/model/group_join_state.dart';
 import 'package:vrchat_dart_generated/src/model/group_privacy.dart';
 import 'package:vrchat_dart_generated/src/model/group_role_template.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_group_request.g.dart';
@@ -20,12 +21,19 @@ class CreateGroupRequest {
   /// Returns a new [CreateGroupRequest] instance.
   CreateGroupRequest({
     required this.name,
+
     required this.shortCode,
+
     this.description,
+
     this.joinState,
+
     this.iconId,
+
     this.bannerId,
+
     this.privacy,
+
     required this.roleTemplate,
   });
 

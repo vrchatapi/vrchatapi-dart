@@ -33,12 +33,10 @@ UserNoteTargetUser _$UserNoteTargetUserFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$UserNoteTargetUserToJson(
   UserNoteTargetUser instance,
 ) => <String, dynamic>{
-  if (instance.currentAvatarTags case final value?) 'currentAvatarTags': value,
-  if (instance.currentAvatarThumbnailImageUrl case final value?)
-    'currentAvatarThumbnailImageUrl': value,
-  if (instance.displayName case final value?) 'displayName': value,
-  if (instance.id case final value?) 'id': value,
-  if (instance.profilePicOverride case final value?)
-    'profilePicOverride': value,
-  if (instance.userIcon case final value?) 'userIcon': value,
+  'currentAvatarTags': ?instance.currentAvatarTags,
+  'currentAvatarThumbnailImageUrl': ?instance.currentAvatarThumbnailImageUrl,
+  'displayName': ?instance.displayName,
+  'id': ?instance.id,
+  'profilePicOverride': ?instance.profilePicOverride,
+  'userIcon': ?instance.userIcon,
 };

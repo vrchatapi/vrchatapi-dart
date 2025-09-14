@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'group_member_limited_user.g.dart';
@@ -17,11 +18,17 @@ class GroupMemberLimitedUser {
   /// Returns a new [GroupMemberLimitedUser] instance.
   GroupMemberLimitedUser({
     this.id,
+
     this.displayName,
+
     this.thumbnailUrl,
+
     this.iconUrl,
+
     this.profilePicOverride,
+
     this.currentAvatarThumbnailImageUrl,
+
     this.currentAvatarTags,
   });
 

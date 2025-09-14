@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_group_invite_request.g.dart';
@@ -17,6 +18,7 @@ class CreateGroupInviteRequest {
   /// Returns a new [CreateGroupInviteRequest] instance.
   CreateGroupInviteRequest({
     required this.userId,
+
     this.confirmOverrideBlock = true,
   });
 

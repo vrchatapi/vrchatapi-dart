@@ -18,7 +18,4 @@ PrintFiles _$PrintFilesFromJson(Map<String, dynamic> json) =>
     });
 
 Map<String, dynamic> _$PrintFilesToJson(PrintFiles instance) =>
-    <String, dynamic>{
-      if (instance.fileId case final value?) 'fileId': value,
-      if (instance.image case final value?) 'image': value,
-    };
+    <String, dynamic>{'fileId': ?instance.fileId, 'image': ?instance.image};

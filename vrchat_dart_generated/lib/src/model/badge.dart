@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'badge.g.dart';
@@ -17,12 +18,19 @@ class Badge {
   /// Returns a new [Badge] instance.
   Badge({
     this.assignedAt,
+
     required this.badgeDescription,
+
     required this.badgeId,
+
     required this.badgeImageUrl,
+
     required this.badgeName,
+
     this.hidden,
+
     required this.showcased,
+
     this.updatedAt,
   });
 

@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_group_announcement_request.g.dart';
@@ -17,8 +18,11 @@ class CreateGroupAnnouncementRequest {
   /// Returns a new [CreateGroupAnnouncementRequest] instance.
   CreateGroupAnnouncementRequest({
     required this.title,
+
     this.text,
+
     this.imageId,
+
     this.sendNotification = false,
   });
 

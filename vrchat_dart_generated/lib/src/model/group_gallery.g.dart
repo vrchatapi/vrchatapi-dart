@@ -45,17 +45,14 @@ GroupGallery _$GroupGalleryFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$GroupGalleryToJson(GroupGallery instance) =>
     <String, dynamic>{
-      if (instance.id case final value?) 'id': value,
-      if (instance.name case final value?) 'name': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.membersOnly case final value?) 'membersOnly': value,
-      if (instance.roleIdsToView case final value?) 'roleIdsToView': value,
-      if (instance.roleIdsToSubmit case final value?) 'roleIdsToSubmit': value,
-      if (instance.roleIdsToAutoApprove case final value?)
-        'roleIdsToAutoApprove': value,
-      if (instance.roleIdsToManage case final value?) 'roleIdsToManage': value,
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
-      if (instance.updatedAt?.toIso8601String() case final value?)
-        'updatedAt': value,
+      'id': ?instance.id,
+      'name': ?instance.name,
+      'description': ?instance.description,
+      'membersOnly': ?instance.membersOnly,
+      'roleIdsToView': ?instance.roleIdsToView,
+      'roleIdsToSubmit': ?instance.roleIdsToSubmit,
+      'roleIdsToAutoApprove': ?instance.roleIdsToAutoApprove,
+      'roleIdsToManage': ?instance.roleIdsToManage,
+      'createdAt': ?instance.createdAt?.toIso8601String(),
+      'updatedAt': ?instance.updatedAt?.toIso8601String(),
     };

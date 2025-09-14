@@ -21,6 +21,6 @@ Balance _$BalanceFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$BalanceToJson(Balance instance) => <String, dynamic>{
   'balance': instance.balance,
-  if (instance.noTransactions case final value?) 'noTransactions': value,
-  if (instance.tiliaResponse case final value?) 'tiliaResponse': value,
+  'noTransactions': ?instance.noTransactions,
+  'tiliaResponse': ?instance.tiliaResponse,
 };

@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'paginated_group_audit_log_entry_list.g.dart';
@@ -18,7 +19,9 @@ class PaginatedGroupAuditLogEntryList {
   /// Returns a new [PaginatedGroupAuditLogEntryList] instance.
   PaginatedGroupAuditLogEntryList({
     this.results,
+
     this.totalCount,
+
     this.hasNext,
   });
 

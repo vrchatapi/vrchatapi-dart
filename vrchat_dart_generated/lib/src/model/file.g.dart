@@ -48,8 +48,8 @@ File _$FileFromJson(Map<String, dynamic> json) =>
     }, fieldKeyMap: const {'extension_': 'extension'});
 
 Map<String, dynamic> _$FileToJson(File instance) => <String, dynamic>{
-  if (instance.animationStyle case final value?) 'animationStyle': value,
-  if (instance.maskTag case final value?) 'maskTag': value,
+  'animationStyle': ?instance.animationStyle,
+  'maskTag': ?instance.maskTag,
   'extension': instance.extension_,
   'id': instance.id,
   'mimeType': _$MIMETypeEnumMap[instance.mimeType]!,

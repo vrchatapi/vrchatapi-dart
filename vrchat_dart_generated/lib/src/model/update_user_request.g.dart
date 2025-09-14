@@ -54,28 +54,26 @@ UpdateUserRequest _$UpdateUserRequestFromJson(
   return val;
 });
 
-Map<String, dynamic> _$UpdateUserRequestToJson(
-  UpdateUserRequest instance,
-) => <String, dynamic>{
-  if (instance.email case final value?) 'email': value,
-  if (instance.unsubscribe case final value?) 'unsubscribe': value,
-  if (instance.birthday?.toIso8601String() case final value?) 'birthday': value,
-  if (instance.acceptedTOSVersion case final value?)
-    'acceptedTOSVersion': value,
-  if (instance.tags case final value?) 'tags': value,
-  if (_$UserStatusEnumMap[instance.status] case final value?) 'status': value,
-  if (instance.statusDescription case final value?) 'statusDescription': value,
-  if (instance.bio case final value?) 'bio': value,
-  if (instance.bioLinks case final value?) 'bioLinks': value,
-  if (instance.pronouns case final value?) 'pronouns': value,
-  if (instance.isBoopingEnabled case final value?) 'isBoopingEnabled': value,
-  if (instance.userIcon case final value?) 'userIcon': value,
-  if (instance.contentFilters case final value?) 'contentFilters': value,
-  if (instance.displayName case final value?) 'displayName': value,
-  if (instance.revertDisplayName case final value?) 'revertDisplayName': value,
-  if (instance.password case final value?) 'password': value,
-  if (instance.currentPassword case final value?) 'currentPassword': value,
-};
+Map<String, dynamic> _$UpdateUserRequestToJson(UpdateUserRequest instance) =>
+    <String, dynamic>{
+      'email': ?instance.email,
+      'unsubscribe': ?instance.unsubscribe,
+      'birthday': ?instance.birthday?.toIso8601String(),
+      'acceptedTOSVersion': ?instance.acceptedTOSVersion,
+      'tags': ?instance.tags,
+      'status': ?_$UserStatusEnumMap[instance.status],
+      'statusDescription': ?instance.statusDescription,
+      'bio': ?instance.bio,
+      'bioLinks': ?instance.bioLinks,
+      'pronouns': ?instance.pronouns,
+      'isBoopingEnabled': ?instance.isBoopingEnabled,
+      'userIcon': ?instance.userIcon,
+      'contentFilters': ?instance.contentFilters,
+      'displayName': ?instance.displayName,
+      'revertDisplayName': ?instance.revertDisplayName,
+      'password': ?instance.password,
+      'currentPassword': ?instance.currentPassword,
+    };
 
 const _$UserStatusEnumMap = {
   UserStatus.active: 'active',

@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/group_permissions.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'group_my_member.g.dart';
@@ -18,23 +19,43 @@ class GroupMyMember {
   /// Returns a new [GroupMyMember] instance.
   GroupMyMember({
     this.id,
+
     this.groupId,
+
     this.userId,
+
     this.roleIds,
+
     this.acceptedByDisplayName,
+
     this.acceptedById,
+
     this.createdAt,
+
     this.managerNotes,
+
     this.membershipStatus,
+
     this.isSubscribedToAnnouncements = true,
+
+    this.isSubscribedToEventAnnouncements,
+
     this.visibility,
+
     this.isRepresenting = false,
+
     this.joinedAt,
+
     this.bannedAt,
+
     this.has2FA = false,
+
     this.hasJoinedFromPurchase = false,
+
     this.lastPostReadAt,
+
     this.mRoleIds,
+
     this.permissions,
   });
 
@@ -76,6 +97,13 @@ class GroupMyMember {
     includeIfNull: false,
   )
   final bool? isSubscribedToAnnouncements;
+
+  @JsonKey(
+    name: r'isSubscribedToEventAnnouncements',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? isSubscribedToEventAnnouncements;
 
   @JsonKey(name: r'visibility', required: false, includeIfNull: false)
   final String? visibility;
@@ -122,6 +150,8 @@ class GroupMyMember {
           other.managerNotes == managerNotes &&
           other.membershipStatus == membershipStatus &&
           other.isSubscribedToAnnouncements == isSubscribedToAnnouncements &&
+          other.isSubscribedToEventAnnouncements ==
+              isSubscribedToEventAnnouncements &&
           other.visibility == visibility &&
           other.isRepresenting == isRepresenting &&
           other.joinedAt == joinedAt &&
@@ -144,6 +174,7 @@ class GroupMyMember {
       managerNotes.hashCode +
       membershipStatus.hashCode +
       isSubscribedToAnnouncements.hashCode +
+      isSubscribedToEventAnnouncements.hashCode +
       visibility.hashCode +
       isRepresenting.hashCode +
       joinedAt.hashCode +

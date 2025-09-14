@@ -47,10 +47,10 @@ Map<String, dynamic> _$NotificationToJson(Notification instance) =>
       'details': instance.details,
       'id': instance.id,
       'message': instance.message,
-      if (instance.seen case final value?) 'seen': value,
-      if (instance.receiverUserId case final value?) 'receiverUserId': value,
+      'seen': ?instance.seen,
+      'receiverUserId': ?instance.receiverUserId,
       'senderUserId': instance.senderUserId,
-      if (instance.senderUsername case final value?) 'senderUsername': value,
+      'senderUsername': ?instance.senderUsername,
       'type': _$NotificationTypeEnumMap[instance.type]!,
     };
 

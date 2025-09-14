@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'group_audit_log_entry.g.dart';
@@ -17,13 +18,21 @@ class GroupAuditLogEntry {
   /// Returns a new [GroupAuditLogEntry] instance.
   GroupAuditLogEntry({
     this.id,
+
     this.createdAt,
+
     this.groupId,
+
     this.actorId,
+
     this.actorDisplayName,
+
     this.targetId,
+
     this.eventType = 'group.update',
+
     this.description,
+
     this.data,
   });
 

@@ -61,21 +61,18 @@ Map<String, dynamic> _$CreateInstanceRequestToJson(
   'worldId': instance.worldId,
   'type': _$InstanceTypeEnumMap[instance.type]!,
   'region': _$InstanceRegionEnumMap[instance.region]!,
-  if (instance.ownerId case final value?) 'ownerId': value,
-  if (instance.roleIds case final value?) 'roleIds': value,
-  if (_$GroupAccessTypeEnumMap[instance.groupAccessType] case final value?)
-    'groupAccessType': value,
-  if (instance.queueEnabled case final value?) 'queueEnabled': value,
-  if (instance.closedAt?.toIso8601String() case final value?) 'closedAt': value,
-  if (instance.canRequestInvite case final value?) 'canRequestInvite': value,
-  if (instance.hardClose case final value?) 'hardClose': value,
-  if (instance.inviteOnly case final value?) 'inviteOnly': value,
-  if (instance.ageGate case final value?) 'ageGate': value,
-  if (instance.instancePersistenceEnabled case final value?)
-    'instancePersistenceEnabled': value,
-  if (instance.displayName case final value?) 'displayName': value,
-  if (instance.contentSettings?.toJson() case final value?)
-    'contentSettings': value,
+  'ownerId': ?instance.ownerId,
+  'roleIds': ?instance.roleIds,
+  'groupAccessType': ?_$GroupAccessTypeEnumMap[instance.groupAccessType],
+  'queueEnabled': ?instance.queueEnabled,
+  'closedAt': ?instance.closedAt?.toIso8601String(),
+  'canRequestInvite': ?instance.canRequestInvite,
+  'hardClose': ?instance.hardClose,
+  'inviteOnly': ?instance.inviteOnly,
+  'ageGate': ?instance.ageGate,
+  'instancePersistenceEnabled': ?instance.instancePersistenceEnabled,
+  'displayName': ?instance.displayName,
+  'contentSettings': ?instance.contentSettings?.toJson(),
 };
 
 const _$InstanceTypeEnumMap = {

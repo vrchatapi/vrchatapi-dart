@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'group_permission.g.dart';
@@ -17,9 +18,13 @@ class GroupPermission {
   /// Returns a new [GroupPermission] instance.
   GroupPermission({
     this.name,
+
     this.displayName,
+
     this.help,
+
     this.isManagementPermission = false,
+
     this.allowedToAdd = false,
   });
 

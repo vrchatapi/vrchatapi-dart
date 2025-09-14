@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/group_user_visibility.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'update_group_member_request.g.dart';
@@ -18,7 +19,11 @@ class UpdateGroupMemberRequest {
   /// Returns a new [UpdateGroupMemberRequest] instance.
   UpdateGroupMemberRequest({
     this.visibility,
+
     this.isSubscribedToAnnouncements,
+
+    this.isSubscribedToEventAnnouncements,
+
     this.managerNotes,
   });
 
@@ -32,6 +37,13 @@ class UpdateGroupMemberRequest {
   )
   final bool? isSubscribedToAnnouncements;
 
+  @JsonKey(
+    name: r'isSubscribedToEventAnnouncements',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? isSubscribedToEventAnnouncements;
+
   @JsonKey(name: r'managerNotes', required: false, includeIfNull: false)
   final String? managerNotes;
 
@@ -41,12 +53,15 @@ class UpdateGroupMemberRequest {
       other is UpdateGroupMemberRequest &&
           other.visibility == visibility &&
           other.isSubscribedToAnnouncements == isSubscribedToAnnouncements &&
+          other.isSubscribedToEventAnnouncements ==
+              isSubscribedToEventAnnouncements &&
           other.managerNotes == managerNotes;
 
   @override
   int get hashCode =>
       visibility.hashCode +
       isSubscribedToAnnouncements.hashCode +
+      isSubscribedToEventAnnouncements.hashCode +
       managerNotes.hashCode;
 
   factory UpdateGroupMemberRequest.fromJson(Map<String, dynamic> json) =>

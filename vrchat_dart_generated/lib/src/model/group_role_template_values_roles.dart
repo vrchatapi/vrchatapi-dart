@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/group_permissions.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'group_role_template_values_roles.g.dart';
@@ -18,8 +19,11 @@ class GroupRoleTemplateValuesRoles {
   /// Returns a new [GroupRoleTemplateValuesRoles] instance.
   GroupRoleTemplateValuesRoles({
     this.description,
+
     this.name,
+
     this.basePermissions,
+
     this.isAddedOnJoin = false,
   });
 

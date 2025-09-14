@@ -51,22 +51,20 @@ GroupRole _$GroupRoleFromJson(Map<String, dynamic> json) =>
     });
 
 Map<String, dynamic> _$GroupRoleToJson(GroupRole instance) => <String, dynamic>{
-  if (instance.id case final value?) 'id': value,
-  if (instance.groupId case final value?) 'groupId': value,
-  if (instance.name case final value?) 'name': value,
-  if (instance.description case final value?) 'description': value,
-  if (instance.isSelfAssignable case final value?) 'isSelfAssignable': value,
-  if (instance.permissions?.map((e) => _$GroupPermissionsEnumMap[e]!).toList()
-      case final value?)
-    'permissions': value,
-  if (instance.isManagementRole case final value?) 'isManagementRole': value,
-  if (instance.requiresTwoFactor case final value?) 'requiresTwoFactor': value,
-  if (instance.requiresPurchase case final value?) 'requiresPurchase': value,
-  if (instance.order case final value?) 'order': value,
-  if (instance.createdAt?.toIso8601String() case final value?)
-    'createdAt': value,
-  if (instance.updatedAt?.toIso8601String() case final value?)
-    'updatedAt': value,
+  'id': ?instance.id,
+  'groupId': ?instance.groupId,
+  'name': ?instance.name,
+  'description': ?instance.description,
+  'isSelfAssignable': ?instance.isSelfAssignable,
+  'permissions': ?instance.permissions
+      ?.map((e) => _$GroupPermissionsEnumMap[e]!)
+      .toList(),
+  'isManagementRole': ?instance.isManagementRole,
+  'requiresTwoFactor': ?instance.requiresTwoFactor,
+  'requiresPurchase': ?instance.requiresPurchase,
+  'order': ?instance.order,
+  'createdAt': ?instance.createdAt?.toIso8601String(),
+  'updatedAt': ?instance.updatedAt?.toIso8601String(),
 };
 
 const _$GroupPermissionsEnumMap = {
@@ -98,4 +96,5 @@ const _$GroupPermissionsEnumMap = {
   GroupPermissions.group_members_viewall: 'group-members-viewall',
   GroupPermissions.group_roles_assign: 'group-roles-assign',
   GroupPermissions.group_roles_manage: 'group-roles-manage',
+  GroupPermissions.group_calendar_manage: 'group-calendar-manage',
 };

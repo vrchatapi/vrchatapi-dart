@@ -33,8 +33,8 @@ APIConfigAccessLogsUrls _$APIConfigAccessLogsUrlsFromJson(
 Map<String, dynamic> _$APIConfigAccessLogsUrlsToJson(
   APIConfigAccessLogsUrls instance,
 ) => <String, dynamic>{
-  if (instance.default_ case final value?) 'Default': value,
-  if (instance.pico case final value?) 'Pico': value,
-  if (instance.quest case final value?) 'Quest': value,
-  if (instance.xRElite case final value?) 'XRElite': value,
+  'Default': ?instance.default_,
+  'Pico': ?instance.pico,
+  'Quest': ?instance.quest,
+  'XRElite': ?instance.xRElite,
 };

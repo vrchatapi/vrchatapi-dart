@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/subscription_period.dart';
 import 'package:vrchat_dart_generated/src/model/transaction_status.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'user_subscription.g.dart';
@@ -19,21 +20,37 @@ class UserSubscription {
   /// Returns a new [UserSubscription] instance.
   UserSubscription({
     required this.id,
+
     required this.transactionId,
+
     required this.store,
+
     this.steamItemId,
+
     required this.amount,
+
     required this.description,
+
     required this.period,
+
     required this.tier,
+
     this.active = true,
+
     required this.status,
+
     this.starts,
+
     required this.expires,
+
     required this.createdAt,
+
     required this.updatedAt,
+
     required this.licenseGroups,
+
     this.isGift = false,
+
     this.isBulkGift = false,
   });
 

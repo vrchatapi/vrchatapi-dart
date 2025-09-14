@@ -53,7 +53,9 @@ enum GroupPermissions {
   @JsonValue(r'group-roles-assign')
   group_roles_assign(r'group-roles-assign'),
   @JsonValue(r'group-roles-manage')
-  group_roles_manage(r'group-roles-manage');
+  group_roles_manage(r'group-roles-manage'),
+  @JsonValue(r'group-calendar-manage')
+  group_calendar_manage(r'group-calendar-manage');
 
   const GroupPermissions(this.value);
 

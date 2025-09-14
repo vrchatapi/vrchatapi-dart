@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/world.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'group_instance.g.dart';
@@ -18,8 +19,11 @@ class GroupInstance {
   /// Returns a new [GroupInstance] instance.
   GroupInstance({
     required this.instanceId,
+
     required this.location,
+
     required this.world,
+
     required this.memberCount,
   });
 

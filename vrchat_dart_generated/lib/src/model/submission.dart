@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'submission.g.dart';
@@ -17,11 +18,17 @@ class Submission {
   /// Returns a new [Submission] instance.
   Submission({
     required this.contentId,
+
     required this.createdAt,
+
     required this.description,
+
     required this.id,
+
     required this.jamId,
+
     this.ratingScore,
+
     required this.submitterId,
   });
 

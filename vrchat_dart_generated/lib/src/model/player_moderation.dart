@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/player_moderation_type.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'player_moderation.g.dart';
@@ -18,11 +19,17 @@ class PlayerModeration {
   /// Returns a new [PlayerModeration] instance.
   PlayerModeration({
     required this.created,
+
     required this.id,
+
     required this.sourceDisplayName,
+
     required this.sourceUserId,
+
     required this.targetDisplayName,
+
     required this.targetUserId,
+
     required this.type,
   });
 

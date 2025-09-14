@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'favorite_group_limits.g.dart';
@@ -17,7 +18,9 @@ class FavoriteGroupLimits {
   /// Returns a new [FavoriteGroupLimits] instance.
   FavoriteGroupLimits({
     required this.avatar,
+
     required this.friend,
+
     required this.world,
   });
 

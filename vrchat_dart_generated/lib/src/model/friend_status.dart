@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'friend_status.g.dart';
@@ -17,7 +18,9 @@ class FriendStatus {
   /// Returns a new [FriendStatus] instance.
   FriendStatus({
     this.incomingRequest = false,
+
     this.isFriend = false,
+
     this.outgoingRequest = false,
   });
 

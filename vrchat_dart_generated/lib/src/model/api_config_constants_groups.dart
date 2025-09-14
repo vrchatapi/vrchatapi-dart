@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'api_config_constants_groups.g.dart';
@@ -17,14 +18,23 @@ class APIConfigConstantsGROUPS {
   /// Returns a new [APIConfigConstantsGROUPS] instance.
   APIConfigConstantsGROUPS({
     this.capacity = 100000,
+
     this.groupTransferRequirements,
+
     this.maxInvitesRequests = 50,
+
     this.maxJoined = 100,
+
     this.maxJoinedPlus = 200,
+
     this.maxLanguages = 10,
+
     this.maxLinks = 3,
+
     this.maxManagementRoles = 5,
+
     this.maxOwned = 5,
+
     this.maxRoles = 50,
   });
 

@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/user_note_target_user.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'user_note.g.dart';
@@ -18,10 +19,15 @@ class UserNote {
   /// Returns a new [UserNote] instance.
   UserNote({
     required this.createdAt,
+
     required this.id,
+
     required this.note,
+
     this.targetUser,
+
     required this.targetUserId,
+
     required this.userId,
   });
 

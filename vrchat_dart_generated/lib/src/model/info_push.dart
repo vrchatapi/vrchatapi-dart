@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/info_push_data.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'info_push.g.dart';
@@ -19,15 +20,25 @@ class InfoPush {
   /// Returns a new [InfoPush] instance.
   InfoPush({
     required this.id,
+
     this.isEnabled = true,
+
     required this.releaseStatus,
+
     required this.priority,
+
     required this.tags,
+
     required this.data,
+
     required this.hash,
+
     required this.createdAt,
+
     required this.updatedAt,
+
     this.startDate,
+
     this.endDate,
   });
 

@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/group_post_visibility.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'group_post.g.dart';
@@ -18,16 +19,27 @@ class GroupPost {
   /// Returns a new [GroupPost] instance.
   GroupPost({
     this.id,
+
     this.groupId,
+
     this.authorId,
+
     this.editorId,
+
     this.visibility,
+
     this.roleId,
+
     this.title,
+
     this.text,
+
     this.imageId,
+
     this.imageUrl,
+
     this.createdAt,
+
     this.updatedAt,
   });
 

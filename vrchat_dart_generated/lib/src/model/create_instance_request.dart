@@ -7,6 +7,7 @@ import 'package:vrchat_dart_generated/src/model/instance_type.dart';
 import 'package:vrchat_dart_generated/src/model/instance_content_settings.dart';
 import 'package:vrchat_dart_generated/src/model/instance_region.dart';
 import 'package:vrchat_dart_generated/src/model/group_access_type.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_instance_request.g.dart';
@@ -21,19 +22,33 @@ class CreateInstanceRequest {
   /// Returns a new [CreateInstanceRequest] instance.
   CreateInstanceRequest({
     required this.worldId,
+
     required this.type,
+
     required this.region,
+
     this.ownerId,
+
     this.roleIds,
+
     this.groupAccessType,
+
     this.queueEnabled = false,
+
     this.closedAt,
+
     this.canRequestInvite = false,
+
     this.hardClose = false,
+
     this.inviteOnly = false,
+
     this.ageGate = false,
+
     this.instancePersistenceEnabled,
+
     this.displayName,
+
     this.contentSettings,
   });
 

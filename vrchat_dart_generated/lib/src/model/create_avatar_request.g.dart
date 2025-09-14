@@ -54,22 +54,21 @@ CreateAvatarRequest _$CreateAvatarRequestFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$CreateAvatarRequestToJson(
   CreateAvatarRequest instance,
 ) => <String, dynamic>{
-  if (instance.assetUrl case final value?) 'assetUrl': value,
-  if (instance.assetVersion case final value?) 'assetVersion': value,
-  if (instance.platform case final value?) 'platform': value,
-  if (instance.createdAt case final value?) 'created_at': value,
-  if (instance.updatedAt case final value?) 'updated_at': value,
-  if (instance.id case final value?) 'id': value,
+  'assetUrl': ?instance.assetUrl,
+  'assetVersion': ?instance.assetVersion,
+  'platform': ?instance.platform,
+  'created_at': ?instance.createdAt,
+  'updated_at': ?instance.updatedAt,
+  'id': ?instance.id,
   'name': instance.name,
-  if (instance.description case final value?) 'description': value,
-  if (instance.tags case final value?) 'tags': value,
+  'description': ?instance.description,
+  'tags': ?instance.tags,
   'imageUrl': instance.imageUrl,
-  if (instance.thumbnailImageUrl case final value?) 'thumbnailImageUrl': value,
-  if (_$ReleaseStatusEnumMap[instance.releaseStatus] case final value?)
-    'releaseStatus': value,
-  if (instance.version case final value?) 'version': value,
-  if (instance.unityPackageUrl case final value?) 'unityPackageUrl': value,
-  if (instance.unityVersion case final value?) 'unityVersion': value,
+  'thumbnailImageUrl': ?instance.thumbnailImageUrl,
+  'releaseStatus': ?_$ReleaseStatusEnumMap[instance.releaseStatus],
+  'version': ?instance.version,
+  'unityPackageUrl': ?instance.unityPackageUrl,
+  'unityVersion': ?instance.unityVersion,
 };
 
 const _$ReleaseStatusEnumMap = {

@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/license_action.dart';
 import 'package:vrchat_dart_generated/src/model/license_type.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'license.g.dart';
@@ -19,8 +20,11 @@ class License {
   /// Returns a new [License] instance.
   License({
     required this.forId,
+
     required this.forType,
+
     required this.forName,
+
     required this.forAction,
   });
 

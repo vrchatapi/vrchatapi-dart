@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/file_version.dart';
 import 'package:vrchat_dart_generated/src/model/mime_type.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'file.g.dart';
@@ -19,13 +20,21 @@ class File {
   /// Returns a new [File] instance.
   File({
     this.animationStyle,
+
     this.maskTag,
+
     required this.extension_,
+
     required this.id,
+
     required this.mimeType,
+
     required this.name,
+
     required this.ownerId,
+
     required this.tags,
+
     required this.versions,
   });
 

@@ -35,7 +35,7 @@ Map<String, dynamic> _$UserNoteToJson(UserNote instance) => <String, dynamic>{
   'createdAt': instance.createdAt.toIso8601String(),
   'id': instance.id,
   'note': instance.note,
-  if (instance.targetUser?.toJson() case final value?) 'targetUser': value,
+  'targetUser': ?instance.targetUser?.toJson(),
   'targetUserId': instance.targetUserId,
   'userId': instance.userId,
 };

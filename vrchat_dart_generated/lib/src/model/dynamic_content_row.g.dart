@@ -35,12 +35,12 @@ DynamicContentRow _$DynamicContentRowFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$DynamicContentRowToJson(DynamicContentRow instance) =>
     <String, dynamic>{
-      if (instance.index case final value?) 'index': value,
+      'index': ?instance.index,
       'name': instance.name,
       'platform': instance.platform,
       'sortHeading': instance.sortHeading,
       'sortOrder': instance.sortOrder,
       'sortOwnership': instance.sortOwnership,
-      if (instance.tag case final value?) 'tag': value,
-      if (instance.type case final value?) 'type': value,
+      'tag': ?instance.tag,
+      'type': ?instance.type,
     };

@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'update_world_request.g.dart';
@@ -18,17 +19,29 @@ class UpdateWorldRequest {
   /// Returns a new [UpdateWorldRequest] instance.
   UpdateWorldRequest({
     this.assetUrl,
+
     this.assetVersion,
+
     this.authorId,
+
     this.authorName,
+
     this.capacity,
+
     this.description,
+
     this.imageUrl,
+
     this.name,
+
     this.platform,
+
     this.releaseStatus,
+
     this.tags,
+
     this.unityPackageUrl,
+
     this.unityVersion = '5.3.4p1',
   });
 

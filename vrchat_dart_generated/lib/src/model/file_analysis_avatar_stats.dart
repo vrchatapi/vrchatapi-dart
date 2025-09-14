@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'file_analysis_avatar_stats.g.dart';
@@ -17,47 +18,91 @@ class FileAnalysisAvatarStats {
   /// Returns a new [FileAnalysisAvatarStats] instance.
   FileAnalysisAvatarStats({
     required this.animatorCount,
+
     required this.audioSourceCount,
+
     required this.blendShapeCount,
+
     required this.boneCount,
+
     required this.bounds,
+
     this.cameraCount,
+
     required this.clothCount,
+
     required this.constraintCount,
+
+    required this.constraintDepth,
+
     required this.contactCount,
+
     required this.customExpressions,
+
     required this.customizeAnimationLayers,
+
     required this.enableEyeLook,
+
     required this.lightCount,
+
     required this.lineRendererCount,
+
     required this.lipSync,
+
     required this.materialCount,
+
     required this.materialSlotsUsed,
+
     required this.meshCount,
+
     required this.meshIndices,
+
     required this.meshParticleMaxPolygons,
+
     required this.meshPolygons,
+
     required this.meshVertices,
+
     required this.particleCollisionEnabled,
+
     required this.particleSystemCount,
+
     required this.particleTrailsEnabled,
+
     required this.physBoneColliderCount,
+
     required this.physBoneCollisionCheckCount,
+
     required this.physBoneComponentCount,
+
     required this.physBoneTransformCount,
+
     required this.physicsColliders,
+
     required this.physicsRigidbodies,
+
     required this.skinnedMeshCount,
+
     required this.skinnedMeshIndices,
+
     required this.skinnedMeshPolygons,
+
     required this.skinnedMeshVertices,
+
     required this.totalClothVertices,
+
     required this.totalIndices,
+
     required this.totalMaxParticles,
+
     required this.totalPolygons,
+
     required this.totalTextureUsage,
+
     required this.totalVertices,
+
     required this.trailRendererCount,
+
     required this.writeDefaultsUsed,
   });
 
@@ -84,6 +129,9 @@ class FileAnalysisAvatarStats {
 
   @JsonKey(name: r'constraintCount', required: true, includeIfNull: false)
   final int constraintCount;
+
+  @JsonKey(name: r'constraintDepth', required: true, includeIfNull: false)
+  final int constraintDepth;
 
   @JsonKey(name: r'contactCount', required: true, includeIfNull: false)
   final int contactCount;
@@ -226,6 +274,7 @@ class FileAnalysisAvatarStats {
           other.cameraCount == cameraCount &&
           other.clothCount == clothCount &&
           other.constraintCount == constraintCount &&
+          other.constraintDepth == constraintDepth &&
           other.contactCount == contactCount &&
           other.customExpressions == customExpressions &&
           other.customizeAnimationLayers == customizeAnimationLayers &&
@@ -272,6 +321,7 @@ class FileAnalysisAvatarStats {
       cameraCount.hashCode +
       clothCount.hashCode +
       constraintCount.hashCode +
+      constraintDepth.hashCode +
       contactCount.hashCode +
       customExpressions.hashCode +
       customizeAnimationLayers.hashCode +

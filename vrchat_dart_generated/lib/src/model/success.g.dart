@@ -21,5 +21,5 @@ Success _$SuccessFromJson(Map<String, dynamic> json) =>
     });
 
 Map<String, dynamic> _$SuccessToJson(Success instance) => <String, dynamic>{
-  if (instance.success?.toJson() case final value?) 'success': value,
+  'success': ?instance.success?.toJson(),
 };

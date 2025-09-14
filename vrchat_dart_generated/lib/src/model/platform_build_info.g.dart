@@ -27,6 +27,5 @@ PlatformBuildInfo _$PlatformBuildInfoFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$PlatformBuildInfoToJson(PlatformBuildInfo instance) =>
     <String, dynamic>{
       'minBuildNumber': instance.minBuildNumber,
-      if (instance.redirectionAddress case final value?)
-        'redirectionAddress': value,
+      'redirectionAddress': ?instance.redirectionAddress,
     };

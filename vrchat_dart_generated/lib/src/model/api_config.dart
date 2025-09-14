@@ -15,6 +15,7 @@ import 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_constants.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_offline_analysis.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_announcement.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'api_config.g.dart';
@@ -29,119 +30,231 @@ class APIConfig {
   /// Returns a new [APIConfig] instance.
   APIConfig({
     this.voiceEnableDegradation = false,
+
     this.voiceEnableReceiverLimiting = true,
+
     required this.accessLogsUrls,
+
     required this.address,
+
     required this.ageVerificationInviteVisible,
+
     required this.ageVerificationP,
+
     required this.ageVerificationStatusVisible,
+
     required this.analysisMaxRetries,
+
     required this.analysisRetryInterval,
+
     required this.announcements,
+
     required this.analyticsSegmentNewUIPctOfUsers,
+
     required this.analyticsSegmentNewUISalt,
+
     required this.availableLanguageCodes,
+
     required this.availableLanguages,
+
     required this.avatarPerfLimiter,
+
     this.chatboxLogBufferSeconds = 40,
+
     required this.clientApiKey,
+
     this.clientBPSCeiling = 18432,
+
     this.clientDisconnectTimeout = 30000,
+
     this.clientNetDispatchThread = false,
+
     this.clientNetDispatchThreadMobile = true,
+
     this.clientNetInThread = false,
+
     this.clientNetInThread2 = false,
+
     this.clientNetInThreadMobile = false,
+
     this.clientNetInThreadMobile2 = false,
+
     this.clientNetOutThread = false,
+
     this.clientNetOutThread2 = false,
+
     this.clientNetOutThreadMobile = false,
+
     this.clientNetOutThreadMobile2 = false,
+
     this.clientQR = 1,
+
     this.clientReservedPlayerBPS = 7168,
+
     this.clientSentCountAllowance = 15,
+
     required this.constants,
+
     required this.contactEmail,
+
     required this.copyrightEmail,
+
     this.currentPrivacyVersion = 1,
+
     required this.currentTOSVersion,
+
     required this.defaultAvatar,
+
     required this.defaultStickerSet,
+
     this.devLanguageCodes,
+
     required this.devSdkUrl,
+
     required this.devSdkVersion,
+
     required this.disCountdown,
+
     this.disableAVProInProton = false,
+
     this.disableAvatarCopying = false,
+
     this.disableAvatarGating = false,
+
     this.disableCommunityLabs = false,
+
     this.disableCommunityLabsPromotion = false,
+
     this.disableEmail = false,
+
     this.disableCaptcha = true,
+
     this.disableEventStream = false,
+
     this.disableFeedbackGating = false,
+
     this.disableFrontendBuilds = false,
+
     this.disableGiftDrops = false,
+
     this.disableHello = false,
+
     this.disableOculusSubs = false,
+
     this.disableRegistration = false,
+
     this.disableSteamNetworking = true,
+
     this.disableTwoFactorAuth = false,
+
     this.disableUdon = false,
+
     this.disableUpgradeAccount = false,
+
     required this.downloadLinkWindows,
+
     required this.downloadUrls,
+
     required this.dynamicWorldRows,
+
     this.economyPauseEnd,
+
     this.economyPauseStart,
+
     this.economyState = 1,
+
     required this.events,
+
     this.forceUseLatestWorld = true,
+
     required this.giftDisplayType,
+
     this.googleApiClientId =
         '827942544393-r2ouvckvouldn9dg9uruseje575e878f.apps.googleusercontent.com',
+
     required this.homeWorldId,
+
     this.homepageRedirectTarget = 'https://hello.vrchat.com',
+
     required this.hubWorldId,
+
     required this.imageHostUrlList,
+
     required this.jobsEmail,
+
     required this.minSupportedClientBuildNumber,
+
     this.minimumUnityVersionForUploads = '2019.0.0f1',
+
     required this.moderationEmail,
+
     required this.notAllowedToSelectAvatarInPrivateWorldMessage,
+
     required this.offlineAnalysis,
+
     required this.photonNameserverOverrides,
+
     required this.photonPublicKeys,
+
     required this.reportCategories,
+
     this.reportFormUrl =
         'https://help.vrchat.com/hc/en-us/requests/new?ticket_form_id=1500000182242&tf_360056455174=user_report&tf_360057451993={userId}&tf_1500001445142={reportedId}&tf_subject={reason} {category} By {contentType} {reportedName}&tf_description={description}',
+
     required this.reportOptions,
+
     required this.reportReasons,
+
     required this.requireAgeVerificationBetaTag,
+
     required this.sdkDeveloperFaqUrl,
+
     required this.sdkDiscordUrl,
+
     required this.sdkNotAllowedToPublishMessage,
+
     required this.sdkUnityVersion,
+
     required this.stringHostUrlList,
+
     required this.supportEmail,
+
     required this.supportFormUrl,
+
     this.timekeeping = true,
+
     required this.timeOutWorldId,
+
     required this.tutorialWorldId,
+
     required this.updateRateMsMaximum,
+
     required this.updateRateMsMinimum,
+
     required this.updateRateMsNormal,
+
     required this.updateRateMsUdonManual,
+
     required this.uploadAnalysisPercent,
+
     required this.urlList,
+
     this.useReliableUdpForVoice = false,
+
     required this.viveWindowsUrl,
+
     required this.whiteListedAssetUrls,
+
     required this.playerUrlResolverVersion,
+
     required this.playerUrlResolverSha1,
+
     required this.publicKey,
+
     this.websocketMaxFriendsRefreshDelay = 900,
+
     this.websocketQuickReconnectTime = 2,
+
     this.websocketReconnectMaxDelay = 2,
   });
 

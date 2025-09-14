@@ -284,7 +284,7 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getUsersApi();
 final String userId = userId_example; // String | Must be a valid user ID.
-final bool contentId = true; // bool | Filter for users' previously submitted feedback, e.g., a groupId, useeId, avatarId, etc.
+final bool contentId = true; // bool | Filter for users' previously submitted feedback, e.g., a groupId, userId, avatarId, etc.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 
@@ -301,7 +301,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**| Must be a valid user ID. | 
- **contentId** | **bool**| Filter for users' previously submitted feedback, e.g., a groupId, useeId, avatarId, etc. | [optional] 
+ **contentId** | **bool**| Filter for users' previously submitted feedback, e.g., a groupId, userId, avatarId, etc. | [optional] 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
 

@@ -31,7 +31,7 @@ Map<String, dynamic> _$CreateFileRequestToJson(CreateFileRequest instance) =>
       'name': instance.name,
       'mimeType': _$MIMETypeEnumMap[instance.mimeType]!,
       'extension': instance.extension_,
-      if (instance.tags case final value?) 'tags': value,
+      'tags': ?instance.tags,
     };
 
 const _$MIMETypeEnumMap = {

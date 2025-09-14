@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/api_config_constants_instancepopulationbrackets.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'api_config_constants_instance.g.dart';

@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **managerNotes** | **String** |  | [optional] 
 **membershipStatus** | **String** |  | [optional] 
 **isSubscribedToAnnouncements** | **bool** |  | [optional] [default to true]
+**isSubscribedToEventAnnouncements** | **bool** |  | [optional] 
 **visibility** | **String** |  | [optional] 
 **isRepresenting** | **bool** |  | [optional] [default to false]
 **joinedAt** | [**DateTime**](DateTime.md) |  | [optional] 

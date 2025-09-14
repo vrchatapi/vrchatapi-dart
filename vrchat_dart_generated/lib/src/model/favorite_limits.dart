@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/favorite_group_limits.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'favorite_limits.g.dart';
@@ -18,8 +19,11 @@ class FavoriteLimits {
   /// Returns a new [FavoriteLimits] instance.
   FavoriteLimits({
     required this.defaultMaxFavoriteGroups,
+
     required this.defaultMaxFavoritesPerGroup,
+
     required this.maxFavoriteGroups,
+
     required this.maxFavoritesPerGroup,
   });
 

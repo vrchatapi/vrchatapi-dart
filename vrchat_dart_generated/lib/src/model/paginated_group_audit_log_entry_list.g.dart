@@ -27,8 +27,7 @@ PaginatedGroupAuditLogEntryList _$PaginatedGroupAuditLogEntryListFromJson(
 Map<String, dynamic> _$PaginatedGroupAuditLogEntryListToJson(
   PaginatedGroupAuditLogEntryList instance,
 ) => <String, dynamic>{
-  if (instance.results?.map((e) => e.toJson()).toList() case final value?)
-    'results': value,
-  if (instance.totalCount case final value?) 'totalCount': value,
-  if (instance.hasNext case final value?) 'hasNext': value,
+  'results': ?instance.results?.map((e) => e.toJson()).toList(),
+  'totalCount': ?instance.totalCount,
+  'hasNext': ?instance.hasNext,
 };

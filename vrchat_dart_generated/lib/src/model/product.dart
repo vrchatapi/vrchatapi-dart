@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/product_type.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'product.g.dart';
@@ -18,21 +19,37 @@ class Product {
   /// Returns a new [Product] instance.
   Product({
     required this.archived,
+
     required this.created,
+
     required this.description,
+
     required this.displayName,
+
     this.groupAccess = false,
+
     this.groupAccessRemove = false,
+
     this.groupId,
+
     this.groupRoleId,
+
     required this.id,
+
     required this.imageId,
+
     required this.parentListings,
+
     required this.productType,
+
     required this.sellerDisplayName,
+
     required this.sellerId,
+
     required this.tags,
+
     required this.updated,
+
     this.useForSubscriberList = false,
   });
 

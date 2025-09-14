@@ -50,6 +50,7 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'profilePicOverride',
         'profilePicOverrideThumbnail',
         'pronouns',
+        'pronounsHistory',
         'state',
         'status',
         'statusDescription',
@@ -230,6 +231,10 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => v as String,
       ),
       pronouns: $checkedConvert('pronouns', (v) => v as String),
+      pronounsHistory: $checkedConvert(
+        'pronounsHistory',
+        (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+      ),
       queuedInstance: $checkedConvert('queuedInstance', (v) => v as String?),
       receiveMobileInvitations: $checkedConvert(
         'receiveMobileInvitations',
@@ -291,24 +296,21 @@ Map<String, dynamic> _$CurrentUserToJson(
   CurrentUser instance,
 ) => <String, dynamic>{
   'acceptedTOSVersion': instance.acceptedTOSVersion,
-  if (instance.acceptedPrivacyVersion case final value?)
-    'acceptedPrivacyVersion': value,
-  if (instance.accountDeletionDate?.toIso8601String() case final value?)
-    'accountDeletionDate': value,
-  if (instance.accountDeletionLog?.map((e) => e.toJson()).toList()
-      case final value?)
-    'accountDeletionLog': value,
-  if (instance.activeFriends case final value?) 'activeFriends': value,
+  'acceptedPrivacyVersion': ?instance.acceptedPrivacyVersion,
+  'accountDeletionDate': ?instance.accountDeletionDate?.toIso8601String(),
+  'accountDeletionLog': ?instance.accountDeletionLog
+      ?.map((e) => e.toJson())
+      .toList(),
+  'activeFriends': ?instance.activeFriends,
   'ageVerificationStatus':
       _$AgeVerificationStatusEnumMap[instance.ageVerificationStatus]!,
   'ageVerified': instance.ageVerified,
   'allowAvatarCopying': instance.allowAvatarCopying,
-  if (instance.authToken case final value?) 'authToken': value,
-  if (instance.badges?.map((e) => e.toJson()).toList() case final value?)
-    'badges': value,
+  'authToken': ?instance.authToken,
+  'badges': ?instance.badges?.map((e) => e.toJson()).toList(),
   'bio': instance.bio,
   'bioLinks': instance.bioLinks,
-  if (instance.contentFilters case final value?) 'contentFilters': value,
+  'contentFilters': ?instance.contentFilters,
   'currentAvatar': instance.currentAvatar,
   'currentAvatarImageUrl': instance.currentAvatarImageUrl,
   'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
@@ -317,48 +319,46 @@ Map<String, dynamic> _$CurrentUserToJson(
   'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
   'displayName': instance.displayName,
   'emailVerified': instance.emailVerified,
-  if (instance.fallbackAvatar case final value?) 'fallbackAvatar': value,
+  'fallbackAvatar': ?instance.fallbackAvatar,
   'friendGroupNames': instance.friendGroupNames,
   'friendKey': instance.friendKey,
   'friends': instance.friends,
   'hasBirthday': instance.hasBirthday,
-  if (instance.hideContentFilterSettings case final value?)
-    'hideContentFilterSettings': value,
-  if (instance.userLanguage case final value?) 'userLanguage': value,
-  if (instance.userLanguageCode case final value?) 'userLanguageCode': value,
+  'hideContentFilterSettings': ?instance.hideContentFilterSettings,
+  'userLanguage': ?instance.userLanguage,
+  'userLanguageCode': ?instance.userLanguageCode,
   'hasEmail': instance.hasEmail,
   'hasLoggedInFromClient': instance.hasLoggedInFromClient,
   'hasPendingEmail': instance.hasPendingEmail,
   'homeLocation': instance.homeLocation,
   'id': instance.id,
   'isAdult': instance.isAdult,
-  if (instance.isBoopingEnabled case final value?) 'isBoopingEnabled': value,
+  'isBoopingEnabled': ?instance.isBoopingEnabled,
   'isFriend': instance.isFriend,
-  if (instance.lastActivity?.toIso8601String() case final value?)
-    'last_activity': value,
+  'last_activity': ?instance.lastActivity?.toIso8601String(),
   'last_login': instance.lastLogin.toIso8601String(),
   'last_mobile': instance.lastMobile?.toIso8601String(),
   'last_platform': instance.lastPlatform,
   'obfuscatedEmail': instance.obfuscatedEmail,
   'obfuscatedPendingEmail': instance.obfuscatedPendingEmail,
   'oculusId': instance.oculusId,
-  if (instance.googleId case final value?) 'googleId': value,
-  if (instance.googleDetails case final value?) 'googleDetails': value,
-  if (instance.picoId case final value?) 'picoId': value,
-  if (instance.viveId case final value?) 'viveId': value,
-  if (instance.offlineFriends case final value?) 'offlineFriends': value,
-  if (instance.onlineFriends case final value?) 'onlineFriends': value,
+  'googleId': ?instance.googleId,
+  'googleDetails': ?instance.googleDetails,
+  'picoId': ?instance.picoId,
+  'viveId': ?instance.viveId,
+  'offlineFriends': ?instance.offlineFriends,
+  'onlineFriends': ?instance.onlineFriends,
   'pastDisplayNames': instance.pastDisplayNames.map((e) => e.toJson()).toList(),
-  if (instance.presence?.toJson() case final value?) 'presence': value,
-  if (instance.platformHistory?.map((e) => e.toJson()).toList()
-      case final value?)
-    'platform_history': value,
+  'presence': ?instance.presence?.toJson(),
+  'platform_history': ?instance.platformHistory
+      ?.map((e) => e.toJson())
+      .toList(),
   'profilePicOverride': instance.profilePicOverride,
   'profilePicOverrideThumbnail': instance.profilePicOverrideThumbnail,
   'pronouns': instance.pronouns,
-  if (instance.queuedInstance case final value?) 'queuedInstance': value,
-  if (instance.receiveMobileInvitations case final value?)
-    'receiveMobileInvitations': value,
+  'pronounsHistory': instance.pronounsHistory,
+  'queuedInstance': ?instance.queuedInstance,
+  'receiveMobileInvitations': ?instance.receiveMobileInvitations,
   'state': _$UserStateEnumMap[instance.state]!,
   'status': _$UserStatusEnumMap[instance.status]!,
   'statusDescription': instance.statusDescription,
@@ -368,13 +368,12 @@ Map<String, dynamic> _$CurrentUserToJson(
   'steamId': instance.steamId,
   'tags': instance.tags,
   'twoFactorAuthEnabled': instance.twoFactorAuthEnabled,
-  if (instance.twoFactorAuthEnabledDate?.toIso8601String() case final value?)
-    'twoFactorAuthEnabledDate': value,
+  'twoFactorAuthEnabledDate': ?instance.twoFactorAuthEnabledDate
+      ?.toIso8601String(),
   'unsubscribe': instance.unsubscribe,
-  if (instance.updatedAt?.toIso8601String() case final value?)
-    'updated_at': value,
+  'updated_at': ?instance.updatedAt?.toIso8601String(),
   'userIcon': instance.userIcon,
-  if (instance.username case final value?) 'username': value,
+  'username': ?instance.username,
 };
 
 const _$AgeVerificationStatusEnumMap = {

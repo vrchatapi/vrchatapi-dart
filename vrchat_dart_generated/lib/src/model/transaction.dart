@@ -7,6 +7,7 @@ import 'package:vrchat_dart_generated/src/model/transaction_status.dart';
 import 'package:vrchat_dart_generated/src/model/transaction_steam_info.dart';
 import 'package:vrchat_dart_generated/src/model/transaction_agreement.dart';
 import 'package:vrchat_dart_generated/src/model/subscription.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'transaction.g.dart';
@@ -21,17 +22,29 @@ class Transaction {
   /// Returns a new [Transaction] instance.
   Transaction({
     required this.id,
+
     this.userId,
+
     this.userDisplayName,
+
     required this.status,
+
     required this.subscription,
+
     this.sandbox = false,
+
     required this.createdAt,
+
     required this.updatedAt,
+
     this.steam,
+
     this.agreement,
+
     required this.error,
+
     this.isGift = false,
+
     this.isTokens = false,
   });
 
@@ -66,8 +79,8 @@ class Transaction {
   @JsonKey(name: r'agreement', required: false, includeIfNull: false)
   final TransactionAgreement? agreement;
 
-  @JsonKey(name: r'error', required: true, includeIfNull: false)
-  final String error;
+  @JsonKey(name: r'error', required: true, includeIfNull: true)
+  final String? error;
 
   @JsonKey(name: r'isGift', required: false, includeIfNull: false)
   final bool? isGift;
@@ -105,7 +118,7 @@ class Transaction {
       updatedAt.hashCode +
       steam.hashCode +
       agreement.hashCode +
-      error.hashCode +
+      (error == null ? 0 : error.hashCode) +
       isGift.hashCode +
       isTokens.hashCode;
 

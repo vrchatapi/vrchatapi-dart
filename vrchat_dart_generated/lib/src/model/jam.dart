@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/jam_state_change_dates.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'jam.g.dart';
@@ -18,14 +19,23 @@ class Jam {
   /// Returns a new [Jam] instance.
   Jam({
     required this.description,
+
     required this.id,
+
     required this.isVisible,
+
     required this.moreInfo,
+
     required this.state,
+
     required this.stateChangeDates,
+
     required this.submissionContentGateDate,
+
     required this.submissionContentGated,
+
     required this.title,
+
     required this.updatedAt,
   });
 

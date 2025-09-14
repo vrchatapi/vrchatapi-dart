@@ -39,9 +39,9 @@ APIConfigReportOptionsWorld _$APIConfigReportOptionsWorldFromJson(
 Map<String, dynamic> _$APIConfigReportOptionsWorldToJson(
   APIConfigReportOptionsWorld instance,
 ) => <String, dynamic>{
-  if (instance.environment case final value?) 'environment': value,
-  if (instance.text case final value?) 'text': value,
-  if (instance.warnings case final value?) 'warnings': value,
-  if (instance.worldimage case final value?) 'worldimage': value,
-  if (instance.worldstore case final value?) 'worldstore': value,
+  'environment': ?instance.environment,
+  'text': ?instance.text,
+  'warnings': ?instance.warnings,
+  'worldimage': ?instance.worldimage,
+  'worldstore': ?instance.worldstore,
 };

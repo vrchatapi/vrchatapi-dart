@@ -23,6 +23,4 @@ InfoPushDataArticle _$InfoPushDataArticleFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$InfoPushDataArticleToJson(
   InfoPushDataArticle instance,
-) => <String, dynamic>{
-  if (instance.content?.toJson() case final value?) 'content': value,
-};
+) => <String, dynamic>{'content': ?instance.content?.toJson()};

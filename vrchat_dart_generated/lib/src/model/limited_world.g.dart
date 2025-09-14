@@ -113,37 +113,34 @@ LimitedWorld _$LimitedWorldFromJson(
   fieldKeyMap: const {'createdAt': 'created_at', 'updatedAt': 'updated_at'},
 );
 
-Map<String, dynamic> _$LimitedWorldToJson(
-  LimitedWorld instance,
-) => <String, dynamic>{
-  'authorId': instance.authorId,
-  'authorName': instance.authorName,
-  'capacity': instance.capacity,
-  if (instance.recommendedCapacity case final value?)
-    'recommendedCapacity': value,
-  'created_at': instance.createdAt.toIso8601String(),
-  if (instance.defaultContentSettings?.toJson() case final value?)
-    'defaultContentSettings': value,
-  'favorites': instance.favorites,
-  if (instance.visits case final value?) 'visits': value,
-  'heat': instance.heat,
-  'id': instance.id,
-  'imageUrl': instance.imageUrl,
-  'labsPublicationDate': instance.labsPublicationDate,
-  'name': instance.name,
-  'occupants': instance.occupants,
-  'organization': instance.organization,
-  'popularity': instance.popularity,
-  if (instance.previewYoutubeId case final value?) 'previewYoutubeId': value,
-  'publicationDate': instance.publicationDate,
-  'releaseStatus': _$ReleaseStatusEnumMap[instance.releaseStatus]!,
-  if (instance.storeId case final value?) 'storeId': value,
-  'tags': instance.tags,
-  'thumbnailImageUrl': instance.thumbnailImageUrl,
-  'unityPackages': instance.unityPackages.map((e) => e.toJson()).toList(),
-  'updated_at': instance.updatedAt.toIso8601String(),
-  if (instance.udonProducts case final value?) 'udonProducts': value,
-};
+Map<String, dynamic> _$LimitedWorldToJson(LimitedWorld instance) =>
+    <String, dynamic>{
+      'authorId': instance.authorId,
+      'authorName': instance.authorName,
+      'capacity': instance.capacity,
+      'recommendedCapacity': ?instance.recommendedCapacity,
+      'created_at': instance.createdAt.toIso8601String(),
+      'defaultContentSettings': ?instance.defaultContentSettings?.toJson(),
+      'favorites': instance.favorites,
+      'visits': ?instance.visits,
+      'heat': instance.heat,
+      'id': instance.id,
+      'imageUrl': instance.imageUrl,
+      'labsPublicationDate': instance.labsPublicationDate,
+      'name': instance.name,
+      'occupants': instance.occupants,
+      'organization': instance.organization,
+      'popularity': instance.popularity,
+      'previewYoutubeId': ?instance.previewYoutubeId,
+      'publicationDate': instance.publicationDate,
+      'releaseStatus': _$ReleaseStatusEnumMap[instance.releaseStatus]!,
+      'storeId': ?instance.storeId,
+      'tags': instance.tags,
+      'thumbnailImageUrl': instance.thumbnailImageUrl,
+      'unityPackages': instance.unityPackages.map((e) => e.toJson()).toList(),
+      'updated_at': instance.updatedAt.toIso8601String(),
+      'udonProducts': ?instance.udonProducts,
+    };
 
 const _$ReleaseStatusEnumMap = {
   ReleaseStatus.public: 'public',

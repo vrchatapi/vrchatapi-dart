@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'transaction_agreement.g.dart';
@@ -17,22 +18,39 @@ class TransactionAgreement {
   /// Returns a new [TransactionAgreement] instance.
   TransactionAgreement({
     required this.agreementId,
+
     required this.itemId,
+
     required this.agreement,
+
     required this.status,
+
     required this.period,
+
     required this.frequency,
+
     required this.billingType,
+
     required this.startDate,
+
     required this.endDate,
+
     required this.recurringAmt,
+
     required this.currency,
+
     required this.timeCreated,
+
     required this.nextPayment,
+
     required this.lastPayment,
+
     required this.lastAmount,
+
     required this.lastAmountVat,
+
     required this.outstanding,
+
     required this.failedAttempts,
   });
 

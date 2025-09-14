@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/favorite_group_visibility.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'update_favorite_group_request.g.dart';

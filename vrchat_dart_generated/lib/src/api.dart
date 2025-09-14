@@ -9,18 +9,21 @@ import 'package:vrchat_dart_generated/src/auth/bearer_auth.dart';
 import 'package:vrchat_dart_generated/src/auth/oauth.dart';
 import 'package:vrchat_dart_generated/src/api/authentication_api.dart';
 import 'package:vrchat_dart_generated/src/api/avatars_api.dart';
+import 'package:vrchat_dart_generated/src/api/calendar_api.dart';
 import 'package:vrchat_dart_generated/src/api/economy_api.dart';
 import 'package:vrchat_dart_generated/src/api/favorites_api.dart';
 import 'package:vrchat_dart_generated/src/api/files_api.dart';
 import 'package:vrchat_dart_generated/src/api/friends_api.dart';
 import 'package:vrchat_dart_generated/src/api/groups_api.dart';
 import 'package:vrchat_dart_generated/src/api/instances_api.dart';
+import 'package:vrchat_dart_generated/src/api/inventory_api.dart';
 import 'package:vrchat_dart_generated/src/api/invite_api.dart';
 import 'package:vrchat_dart_generated/src/api/jams_api.dart';
 import 'package:vrchat_dart_generated/src/api/miscellaneous_api.dart';
 import 'package:vrchat_dart_generated/src/api/notifications_api.dart';
 import 'package:vrchat_dart_generated/src/api/playermoderation_api.dart';
 import 'package:vrchat_dart_generated/src/api/prints_api.dart';
+import 'package:vrchat_dart_generated/src/api/props_api.dart';
 import 'package:vrchat_dart_generated/src/api/users_api.dart';
 import 'package:vrchat_dart_generated/src/api/worlds_api.dart';
 
@@ -105,6 +108,12 @@ class VrchatDartGenerated {
     return AvatarsApi(dio);
   }
 
+  /// Get CalendarApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  CalendarApi getCalendarApi() {
+    return CalendarApi(dio);
+  }
+
   /// Get EconomyApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   EconomyApi getEconomyApi() {
@@ -141,6 +150,12 @@ class VrchatDartGenerated {
     return InstancesApi(dio);
   }
 
+  /// Get InventoryApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  InventoryApi getInventoryApi() {
+    return InventoryApi(dio);
+  }
+
   /// Get InviteApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   InviteApi getInviteApi() {
@@ -175,6 +190,12 @@ class VrchatDartGenerated {
   /// by doing that all interceptors will not be executed
   PrintsApi getPrintsApi() {
     return PrintsApi(dio);
+  }
+
+  /// Get PropsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  PropsApi getPropsApi() {
+    return PropsApi(dio);
   }
 
   /// Get UsersApi instance, base route and serializer can be overridden by a given but be careful,

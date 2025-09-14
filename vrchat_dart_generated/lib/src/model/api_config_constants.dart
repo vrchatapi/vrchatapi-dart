@@ -6,6 +6,7 @@
 import 'package:vrchat_dart_generated/src/model/api_config_constants_language.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_constants_groups.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_constants_instance.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'api_config_constants.g.dart';
@@ -20,7 +21,9 @@ class APIConfigConstants {
   /// Returns a new [APIConfigConstants] instance.
   APIConfigConstants({
     required this.groups,
+
     required this.instance,
+
     required this.language,
   });
 

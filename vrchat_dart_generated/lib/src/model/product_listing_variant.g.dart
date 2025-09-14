@@ -41,8 +41,7 @@ ProductListingVariant _$ProductListingVariantFromJson(
 Map<String, dynamic> _$ProductListingVariantToJson(
   ProductListingVariant instance,
 ) => <String, dynamic>{
-  if (instance.effectiveFrom?.toIso8601String() case final value?)
-    'effectiveFrom': value,
+  'effectiveFrom': ?instance.effectiveFrom?.toIso8601String(),
   'listingVariantId': instance.listingVariantId,
   'nonRefundable': instance.nonRefundable,
   'quantity': instance.quantity,

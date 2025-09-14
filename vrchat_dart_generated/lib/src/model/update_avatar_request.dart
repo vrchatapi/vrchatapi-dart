@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'update_avatar_request.g.dart';
@@ -18,14 +19,23 @@ class UpdateAvatarRequest {
   /// Returns a new [UpdateAvatarRequest] instance.
   UpdateAvatarRequest({
     this.assetUrl,
+
     this.id,
+
     this.name,
+
     this.description,
+
     this.tags,
+
     this.imageUrl,
+
     this.releaseStatus,
+
     this.version = 1,
+
     this.unityPackageUrl,
+
     this.unityVersion = '5.3.4p1',
   });
 

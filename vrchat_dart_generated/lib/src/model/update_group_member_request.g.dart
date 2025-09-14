@@ -20,6 +20,10 @@ UpdateGroupMemberRequest _$UpdateGroupMemberRequestFromJson(
       'isSubscribedToAnnouncements',
       (v) => v as bool?,
     ),
+    isSubscribedToEventAnnouncements: $checkedConvert(
+      'isSubscribedToEventAnnouncements',
+      (v) => v as bool?,
+    ),
     managerNotes: $checkedConvert('managerNotes', (v) => v as String?),
   );
   return val;
@@ -28,11 +32,11 @@ UpdateGroupMemberRequest _$UpdateGroupMemberRequestFromJson(
 Map<String, dynamic> _$UpdateGroupMemberRequestToJson(
   UpdateGroupMemberRequest instance,
 ) => <String, dynamic>{
-  if (_$GroupUserVisibilityEnumMap[instance.visibility] case final value?)
-    'visibility': value,
-  if (instance.isSubscribedToAnnouncements case final value?)
-    'isSubscribedToAnnouncements': value,
-  if (instance.managerNotes case final value?) 'managerNotes': value,
+  'visibility': ?_$GroupUserVisibilityEnumMap[instance.visibility],
+  'isSubscribedToAnnouncements': ?instance.isSubscribedToAnnouncements,
+  'isSubscribedToEventAnnouncements':
+      ?instance.isSubscribedToEventAnnouncements,
+  'managerNotes': ?instance.managerNotes,
 };
 
 const _$GroupUserVisibilityEnumMap = {

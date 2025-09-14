@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'register_user_account_request.g.dart';
@@ -17,13 +18,21 @@ class RegisterUserAccountRequest {
   /// Returns a new [RegisterUserAccountRequest] instance.
   RegisterUserAccountRequest({
     required this.username,
+
     required this.password,
+
     required this.email,
+
     required this.year,
+
     required this.month,
+
     required this.day,
+
     required this.captchaCode,
+
     required this.subscribe,
+
     required this.acceptedTOSVersion,
   });
 

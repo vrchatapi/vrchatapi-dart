@@ -39,17 +39,16 @@ UpdateGroupRequest _$UpdateGroupRequestFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$UpdateGroupRequestToJson(UpdateGroupRequest instance) =>
     <String, dynamic>{
-      if (instance.name case final value?) 'name': value,
-      if (instance.shortCode case final value?) 'shortCode': value,
-      if (instance.description case final value?) 'description': value,
-      if (_$GroupJoinStateEnumMap[instance.joinState] case final value?)
-        'joinState': value,
-      if (instance.iconId case final value?) 'iconId': value,
-      if (instance.bannerId case final value?) 'bannerId': value,
-      if (instance.languages case final value?) 'languages': value,
-      if (instance.links case final value?) 'links': value,
-      if (instance.rules case final value?) 'rules': value,
-      if (instance.tags case final value?) 'tags': value,
+      'name': ?instance.name,
+      'shortCode': ?instance.shortCode,
+      'description': ?instance.description,
+      'joinState': ?_$GroupJoinStateEnumMap[instance.joinState],
+      'iconId': ?instance.iconId,
+      'bannerId': ?instance.bannerId,
+      'languages': ?instance.languages,
+      'links': ?instance.links,
+      'rules': ?instance.rules,
+      'tags': ?instance.tags,
     };
 
 const _$GroupJoinStateEnumMap = {

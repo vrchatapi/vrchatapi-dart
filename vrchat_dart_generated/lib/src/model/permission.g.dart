@@ -32,12 +32,12 @@ Permission _$PermissionFromJson(Map<String, dynamic> json) => $checkedCreate(
 
 Map<String, dynamic> _$PermissionToJson(Permission instance) =>
     <String, dynamic>{
-      if (instance.displayName case final value?) 'displayName': value,
-      if (instance.description case final value?) 'description': value,
+      'displayName': ?instance.displayName,
+      'description': ?instance.description,
       'id': instance.id,
       'ownerDisplayName': instance.ownerDisplayName,
       'name': instance.name,
       'ownerId': instance.ownerId,
-      if (instance.type case final value?) 'type': value,
-      if (instance.data case final value?) 'data': value,
+      'type': ?instance.type,
+      'data': ?instance.data,
     };

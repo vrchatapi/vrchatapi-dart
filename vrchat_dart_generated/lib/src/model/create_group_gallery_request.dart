@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_group_gallery_request.g.dart';
@@ -17,11 +18,17 @@ class CreateGroupGalleryRequest {
   /// Returns a new [CreateGroupGalleryRequest] instance.
   CreateGroupGalleryRequest({
     required this.name,
+
     this.description,
+
     this.membersOnly = false,
+
     this.roleIdsToView,
+
     this.roleIdsToSubmit,
+
     this.roleIdsToAutoApprove,
+
     this.roleIdsToManage,
   });
 

@@ -21,5 +21,5 @@ Verify2FAResult _$Verify2FAResultFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$Verify2FAResultToJson(Verify2FAResult instance) =>
     <String, dynamic>{
       'verified': instance.verified,
-      if (instance.enabled case final value?) 'enabled': value,
+      'enabled': ?instance.enabled,
     };

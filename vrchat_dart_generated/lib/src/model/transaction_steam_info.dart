@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/transaction_steam_wallet_info.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'transaction_steam_info.g.dart';
@@ -18,9 +19,13 @@ class TransactionSteamInfo {
   /// Returns a new [TransactionSteamInfo] instance.
   TransactionSteamInfo({
     required this.walletInfo,
+
     required this.steamId,
+
     required this.orderId,
+
     required this.steamUrl,
+
     required this.transId,
   });
 

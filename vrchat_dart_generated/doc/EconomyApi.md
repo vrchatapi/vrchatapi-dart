@@ -229,7 +229,7 @@ final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final bool hydrate = true; // bool | Populates some fields and changes types of others for certain objects.
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
-final bool active = true; // bool | Filter for users' listings.
+final bool active = true; // bool | Filter for users' listings and inventory bundles.
 
 try {
     final response = api.getProductListings(userId, n, offset, hydrate, groupId, active);
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
  **hydrate** | **bool**| Populates some fields and changes types of others for certain objects. | [optional] 
  **groupId** | **String**| Must be a valid group ID. | [optional] 
- **active** | **bool**| Filter for users' listings. | [optional] 
+ **active** | **bool**| Filter for users' listings and inventory bundles. | [optional] 
 
 ### Return type
 

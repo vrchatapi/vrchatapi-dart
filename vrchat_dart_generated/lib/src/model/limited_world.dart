@@ -6,6 +6,7 @@
 import 'package:vrchat_dart_generated/src/model/instance_content_settings.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
 import 'package:vrchat_dart_generated/src/model/limited_unity_package.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'limited_world.g.dart';
@@ -20,29 +21,53 @@ class LimitedWorld {
   /// Returns a new [LimitedWorld] instance.
   LimitedWorld({
     required this.authorId,
+
     required this.authorName,
+
     required this.capacity,
+
     this.recommendedCapacity,
+
     required this.createdAt,
+
     this.defaultContentSettings,
+
     this.favorites = 0,
+
     this.visits = 0,
+
     this.heat = 0,
+
     required this.id,
+
     required this.imageUrl,
+
     required this.labsPublicationDate,
+
     required this.name,
+
     this.occupants = 0,
+
     this.organization = 'vrchat',
+
     this.popularity = 0,
+
     this.previewYoutubeId,
+
     required this.publicationDate,
+
     required this.releaseStatus,
+
     this.storeId,
+
     required this.tags,
+
     required this.thumbnailImageUrl,
+
     required this.unityPackages,
+
     required this.updatedAt,
+
     this.udonProducts,
   });
 

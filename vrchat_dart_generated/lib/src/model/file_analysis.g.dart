@@ -43,15 +43,13 @@ FileAnalysis _$FileAnalysisFromJson(Map<String, dynamic> json) =>
       return val;
     }, fieldKeyMap: const {'createdAt': 'created_at'});
 
-Map<String, dynamic> _$FileAnalysisToJson(
-  FileAnalysis instance,
-) => <String, dynamic>{
-  'avatarStats': instance.avatarStats.toJson(),
-  if (instance.createdAt?.toIso8601String() case final value?)
-    'created_at': value,
-  if (instance.encryptionKey case final value?) 'encryptionKey': value,
-  'fileSize': instance.fileSize,
-  if (instance.performanceRating case final value?) 'performanceRating': value,
-  'success': instance.success,
-  'uncompressedSize': instance.uncompressedSize,
-};
+Map<String, dynamic> _$FileAnalysisToJson(FileAnalysis instance) =>
+    <String, dynamic>{
+      'avatarStats': instance.avatarStats.toJson(),
+      'created_at': ?instance.createdAt?.toIso8601String(),
+      'encryptionKey': ?instance.encryptionKey,
+      'fileSize': instance.fileSize,
+      'performanceRating': ?instance.performanceRating,
+      'success': instance.success,
+      'uncompressedSize': instance.uncompressedSize,
+    };

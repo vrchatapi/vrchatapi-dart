@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'avatar_performance.g.dart';
@@ -17,10 +18,15 @@ class AvatarPerformance {
   /// Returns a new [AvatarPerformance] instance.
   AvatarPerformance({
     this.android,
+
     this.androidSort,
+
     this.ios,
+
     this.iosSort,
+
     this.standalonewindows,
+
     this.standalonewindowsSort,
   });
 

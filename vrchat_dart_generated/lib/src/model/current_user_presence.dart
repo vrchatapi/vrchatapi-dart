@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'current_user_presence.g.dart';
@@ -17,20 +18,35 @@ class CurrentUserPresence {
   /// Returns a new [CurrentUserPresence] instance.
   CurrentUserPresence({
     this.avatarThumbnail,
+
     this.currentAvatarTags,
+
     this.displayName,
+
     this.debugflag,
+
     this.groups,
+
     this.id,
+
     this.instance,
+
     this.instanceType,
+
     this.isRejoining,
+
     this.platform,
+
     this.profilePicOverride,
+
     this.status,
+
     this.travelingToInstance,
+
     this.travelingToWorld,
+
     this.userIcon,
+
     this.world,
   });
 

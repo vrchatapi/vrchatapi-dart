@@ -44,7 +44,7 @@ FileData _$FileDataFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$FileDataToJson(FileData instance) => <String, dynamic>{
   'category': _$FileDataCategoryEnumEnumMap[instance.category]!,
   'fileName': instance.fileName,
-  if (instance.md5 case final value?) 'md5': value,
+  'md5': ?instance.md5,
   'sizeInBytes': instance.sizeInBytes,
   'status': _$FileStatusEnumMap[instance.status]!,
   'uploadId': instance.uploadId,

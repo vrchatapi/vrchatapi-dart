@@ -31,7 +31,7 @@ APIConfigReportOptionsGroup _$APIConfigReportOptionsGroupFromJson(
 Map<String, dynamic> _$APIConfigReportOptionsGroupToJson(
   APIConfigReportOptionsGroup instance,
 ) => <String, dynamic>{
-  if (instance.groupstore case final value?) 'groupstore': value,
-  if (instance.image case final value?) 'image': value,
-  if (instance.text case final value?) 'text': value,
+  'groupstore': ?instance.groupstore,
+  'image': ?instance.image,
+  'text': ?instance.text,
 };

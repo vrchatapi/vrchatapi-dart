@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/player_moderation_type.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'moderate_user_request.g.dart';

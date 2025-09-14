@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'api_config_download_url_list.g.dart';
@@ -17,9 +18,13 @@ class APIConfigDownloadURLList {
   /// Returns a new [APIConfigDownloadURLList] instance.
   APIConfigDownloadURLList({
     required this.sdk2,
+
     required this.sdk3Avatars,
+
     required this.sdk3Worlds,
+
     required this.vcc,
+
     required this.bootstrap,
   });
 

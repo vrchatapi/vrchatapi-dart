@@ -37,19 +37,16 @@ GroupGalleryImage _$GroupGalleryImageFromJson(Map<String, dynamic> json) =>
       return val;
     });
 
-Map<String, dynamic> _$GroupGalleryImageToJson(
-  GroupGalleryImage instance,
-) => <String, dynamic>{
-  if (instance.id case final value?) 'id': value,
-  if (instance.groupId case final value?) 'groupId': value,
-  if (instance.galleryId case final value?) 'galleryId': value,
-  if (instance.fileId case final value?) 'fileId': value,
-  if (instance.imageUrl case final value?) 'imageUrl': value,
-  if (instance.createdAt?.toIso8601String() case final value?)
-    'createdAt': value,
-  if (instance.submittedByUserId case final value?) 'submittedByUserId': value,
-  if (instance.approved case final value?) 'approved': value,
-  if (instance.approvedByUserId case final value?) 'approvedByUserId': value,
-  if (instance.approvedAt?.toIso8601String() case final value?)
-    'approvedAt': value,
-};
+Map<String, dynamic> _$GroupGalleryImageToJson(GroupGalleryImage instance) =>
+    <String, dynamic>{
+      'id': ?instance.id,
+      'groupId': ?instance.groupId,
+      'galleryId': ?instance.galleryId,
+      'fileId': ?instance.fileId,
+      'imageUrl': ?instance.imageUrl,
+      'createdAt': ?instance.createdAt?.toIso8601String(),
+      'submittedByUserId': ?instance.submittedByUserId,
+      'approved': ?instance.approved,
+      'approvedByUserId': ?instance.approvedByUserId,
+      'approvedAt': ?instance.approvedAt?.toIso8601String(),
+    };

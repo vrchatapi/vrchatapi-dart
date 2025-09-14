@@ -436,7 +436,7 @@ class UsersApi {
   ///
   /// Parameters:
   /// * [userId] - Must be a valid user ID.
-  /// * [contentId] - Filter for users' previously submitted feedback, e.g., a groupId, useeId, avatarId, etc.
+  /// * [contentId] - Filter for users' previously submitted feedback, e.g., a groupId, userId, avatarId, etc.
   /// * [n] - The number of objects to return.
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation

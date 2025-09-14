@@ -21,6 +21,6 @@ NotificationDetailRequestInvite _$NotificationDetailRequestInviteFromJson(
 Map<String, dynamic> _$NotificationDetailRequestInviteToJson(
   NotificationDetailRequestInvite instance,
 ) => <String, dynamic>{
-  if (instance.platform case final value?) 'platform': value,
-  if (instance.requestMessage case final value?) 'requestMessage': value,
+  'platform': ?instance.platform,
+  'requestMessage': ?instance.requestMessage,
 };

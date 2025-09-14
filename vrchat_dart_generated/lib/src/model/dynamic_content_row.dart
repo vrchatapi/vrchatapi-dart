@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'dynamic_content_row.g.dart';
@@ -17,12 +18,19 @@ class DynamicContentRow {
   /// Returns a new [DynamicContentRow] instance.
   DynamicContentRow({
     this.index,
+
     required this.name,
+
     required this.platform,
+
     required this.sortHeading,
+
     required this.sortOrder,
+
     required this.sortOwnership,
+
     this.tag,
+
     this.type,
   });
 

@@ -38,12 +38,11 @@ UpdateGroupGalleryRequest _$UpdateGroupGalleryRequestFromJson(
 Map<String, dynamic> _$UpdateGroupGalleryRequestToJson(
   UpdateGroupGalleryRequest instance,
 ) => <String, dynamic>{
-  if (instance.name case final value?) 'name': value,
-  if (instance.description case final value?) 'description': value,
-  if (instance.membersOnly case final value?) 'membersOnly': value,
-  if (instance.roleIdsToView case final value?) 'roleIdsToView': value,
-  if (instance.roleIdsToSubmit case final value?) 'roleIdsToSubmit': value,
-  if (instance.roleIdsToAutoApprove case final value?)
-    'roleIdsToAutoApprove': value,
-  if (instance.roleIdsToManage case final value?) 'roleIdsToManage': value,
+  'name': ?instance.name,
+  'description': ?instance.description,
+  'membersOnly': ?instance.membersOnly,
+  'roleIdsToView': ?instance.roleIdsToView,
+  'roleIdsToSubmit': ?instance.roleIdsToSubmit,
+  'roleIdsToAutoApprove': ?instance.roleIdsToAutoApprove,
+  'roleIdsToManage': ?instance.roleIdsToManage,
 };

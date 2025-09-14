@@ -7,6 +7,7 @@ import 'package:vrchat_dart_generated/src/model/product_type.dart';
 import 'package:vrchat_dart_generated/src/model/product.dart';
 import 'package:vrchat_dart_generated/src/model/product_listing_variant.dart';
 import 'package:vrchat_dart_generated/src/model/product_listing_type.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'product_listing.g.dart';
@@ -21,49 +22,71 @@ class ProductListing {
   /// Returns a new [ProductListing] instance.
   ProductListing({
     required this.active,
-    required this.archived,
+
     required this.buyerRefundable,
-    required this.created,
+
     required this.description,
+
     required this.displayName,
+
     this.duration,
+
     this.durationType,
-    required this.groupIcon,
-    required this.groupId,
-    required this.groupName,
+
+    this.groupIcon,
+
+    this.groupId,
+
+    this.groupName,
+
+    required this.hasAvatar,
+
+    required this.hasUdon,
+
     this.hydratedProducts,
+
     required this.id,
-    required this.imageId,
-    required this.instant,
+
+    this.imageId,
+
+    this.imageUrl,
+
     required this.listingType,
-    required this.listingVariants,
-    required this.permanent,
+
+    this.listingVariants,
+
+    this.permanent,
+
     required this.priceTokens,
+
     required this.productIds,
+
     required this.productType,
+
     required this.products,
+
     this.quantifiable,
+
     required this.recurrable,
+
     required this.refundable,
+
     required this.sellerDisplayName,
+
     required this.sellerId,
+
     required this.stackable,
+
     required this.storeIds,
-    required this.tags,
-    required this.updated,
+
+    this.tags,
   });
 
   @JsonKey(name: r'active', required: true, includeIfNull: false)
   final bool active;
 
-  @JsonKey(name: r'archived', required: true, includeIfNull: false)
-  final bool archived;
-
   @JsonKey(name: r'buyerRefundable', required: true, includeIfNull: false)
   final bool buyerRefundable;
-
-  @JsonKey(name: r'created', required: true, includeIfNull: false)
-  final DateTime created;
 
   @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
@@ -77,14 +100,20 @@ class ProductListing {
   @JsonKey(name: r'durationType', required: false, includeIfNull: false)
   final String? durationType;
 
-  @JsonKey(name: r'groupIcon', required: true, includeIfNull: false)
-  final String groupIcon;
+  @JsonKey(name: r'groupIcon', required: false, includeIfNull: false)
+  final String? groupIcon;
 
-  @JsonKey(name: r'groupId', required: true, includeIfNull: false)
-  final String groupId;
+  @JsonKey(name: r'groupId', required: false, includeIfNull: false)
+  final String? groupId;
 
-  @JsonKey(name: r'groupName', required: true, includeIfNull: false)
-  final String groupName;
+  @JsonKey(name: r'groupName', required: false, includeIfNull: false)
+  final String? groupName;
+
+  @JsonKey(name: r'hasAvatar', required: true, includeIfNull: false)
+  final bool hasAvatar;
+
+  @JsonKey(name: r'hasUdon', required: true, includeIfNull: false)
+  final bool hasUdon;
 
   @JsonKey(name: r'hydratedProducts', required: false, includeIfNull: false)
   final List<Product>? hydratedProducts;
@@ -92,20 +121,20 @@ class ProductListing {
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(name: r'imageId', required: true, includeIfNull: false)
-  final String imageId;
+  @JsonKey(name: r'imageId', required: false, includeIfNull: false)
+  final String? imageId;
 
-  @JsonKey(name: r'instant', required: true, includeIfNull: false)
-  final bool instant;
+  @JsonKey(name: r'imageUrl', required: false, includeIfNull: false)
+  final String? imageUrl;
 
   @JsonKey(name: r'listingType', required: true, includeIfNull: false)
   final ProductListingType listingType;
 
-  @JsonKey(name: r'listingVariants', required: true, includeIfNull: false)
-  final List<ProductListingVariant> listingVariants;
+  @JsonKey(name: r'listingVariants', required: false, includeIfNull: false)
+  final List<ProductListingVariant>? listingVariants;
 
-  @JsonKey(name: r'permanent', required: true, includeIfNull: false)
-  final bool permanent;
+  @JsonKey(name: r'permanent', required: false, includeIfNull: false)
+  final bool? permanent;
 
   @JsonKey(name: r'priceTokens', required: true, includeIfNull: false)
   final int priceTokens;
@@ -140,20 +169,15 @@ class ProductListing {
   @JsonKey(name: r'storeIds', required: true, includeIfNull: false)
   final List<String> storeIds;
 
-  @JsonKey(name: r'tags', required: true, includeIfNull: false)
-  final List<String> tags;
-
-  @JsonKey(name: r'updated', required: true, includeIfNull: true)
-  final DateTime? updated;
+  @JsonKey(name: r'tags', required: false, includeIfNull: false)
+  final List<String>? tags;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is ProductListing &&
           other.active == active &&
-          other.archived == archived &&
           other.buyerRefundable == buyerRefundable &&
-          other.created == created &&
           other.description == description &&
           other.displayName == displayName &&
           other.duration == duration &&
@@ -161,10 +185,12 @@ class ProductListing {
           other.groupIcon == groupIcon &&
           other.groupId == groupId &&
           other.groupName == groupName &&
+          other.hasAvatar == hasAvatar &&
+          other.hasUdon == hasUdon &&
           other.hydratedProducts == hydratedProducts &&
           other.id == id &&
           other.imageId == imageId &&
-          other.instant == instant &&
+          other.imageUrl == imageUrl &&
           other.listingType == listingType &&
           other.listingVariants == listingVariants &&
           other.permanent == permanent &&
@@ -179,26 +205,25 @@ class ProductListing {
           other.sellerId == sellerId &&
           other.stackable == stackable &&
           other.storeIds == storeIds &&
-          other.tags == tags &&
-          other.updated == updated;
+          other.tags == tags;
 
   @override
   int get hashCode =>
       active.hashCode +
-      archived.hashCode +
       buyerRefundable.hashCode +
-      created.hashCode +
       description.hashCode +
       displayName.hashCode +
-      duration.hashCode +
-      durationType.hashCode +
+      (duration == null ? 0 : duration.hashCode) +
+      (durationType == null ? 0 : durationType.hashCode) +
       groupIcon.hashCode +
       groupId.hashCode +
-      groupName.hashCode +
+      (groupName == null ? 0 : groupName.hashCode) +
+      hasAvatar.hashCode +
+      hasUdon.hashCode +
       hydratedProducts.hashCode +
       id.hashCode +
       imageId.hashCode +
-      instant.hashCode +
+      (imageUrl == null ? 0 : imageUrl.hashCode) +
       listingType.hashCode +
       listingVariants.hashCode +
       permanent.hashCode +
@@ -213,8 +238,7 @@ class ProductListing {
       sellerId.hashCode +
       stackable.hashCode +
       storeIds.hashCode +
-      tags.hashCode +
-      (updated == null ? 0 : updated.hashCode);
+      tags.hashCode;
 
   factory ProductListing.fromJson(Map<String, dynamic> json) =>
       _$ProductListingFromJson(json);

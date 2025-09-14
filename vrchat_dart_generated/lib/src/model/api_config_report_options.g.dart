@@ -43,8 +43,8 @@ APIConfigReportOptions _$APIConfigReportOptionsFromJson(
 Map<String, dynamic> _$APIConfigReportOptionsToJson(
   APIConfigReportOptions instance,
 ) => <String, dynamic>{
-  if (instance.avatar?.toJson() case final value?) 'avatar': value,
-  if (instance.group?.toJson() case final value?) 'group': value,
-  if (instance.user?.toJson() case final value?) 'user': value,
-  if (instance.world?.toJson() case final value?) 'world': value,
+  'avatar': ?instance.avatar?.toJson(),
+  'group': ?instance.group?.toJson(),
+  'user': ?instance.user?.toJson(),
+  'world': ?instance.world?.toJson(),
 };

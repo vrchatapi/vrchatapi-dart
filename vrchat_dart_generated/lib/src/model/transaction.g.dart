@@ -57,7 +57,7 @@ Transaction _$TransactionFromJson(Map<String, dynamic> json) => $checkedCreate(
             ? null
             : TransactionAgreement.fromJson(v as Map<String, dynamic>),
       ),
-      error: $checkedConvert('error', (v) => v as String),
+      error: $checkedConvert('error', (v) => v as String?),
       isGift: $checkedConvert('isGift', (v) => v as bool? ?? false),
       isTokens: $checkedConvert('isTokens', (v) => v as bool? ?? false),
     );
@@ -69,18 +69,18 @@ Transaction _$TransactionFromJson(Map<String, dynamic> json) => $checkedCreate(
 Map<String, dynamic> _$TransactionToJson(Transaction instance) =>
     <String, dynamic>{
       'id': instance.id,
-      if (instance.userId case final value?) 'userId': value,
-      if (instance.userDisplayName case final value?) 'userDisplayName': value,
+      'userId': ?instance.userId,
+      'userDisplayName': ?instance.userDisplayName,
       'status': _$TransactionStatusEnumMap[instance.status]!,
       'subscription': instance.subscription.toJson(),
       'sandbox': instance.sandbox,
       'created_at': instance.createdAt.toIso8601String(),
       'updated_at': instance.updatedAt.toIso8601String(),
-      if (instance.steam?.toJson() case final value?) 'steam': value,
-      if (instance.agreement?.toJson() case final value?) 'agreement': value,
+      'steam': ?instance.steam?.toJson(),
+      'agreement': ?instance.agreement?.toJson(),
       'error': instance.error,
-      if (instance.isGift case final value?) 'isGift': value,
-      if (instance.isTokens case final value?) 'isTokens': value,
+      'isGift': ?instance.isGift,
+      'isTokens': ?instance.isTokens,
     };
 
 const _$TransactionStatusEnumMap = {

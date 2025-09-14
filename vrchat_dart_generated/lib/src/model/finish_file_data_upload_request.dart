@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'finish_file_data_upload_request.g.dart';
@@ -17,7 +18,9 @@ class FinishFileDataUploadRequest {
   /// Returns a new [FinishFileDataUploadRequest] instance.
   FinishFileDataUploadRequest({
     this.etags,
+
     this.nextPartNumber = '0',
+
     this.maxParts = '0',
   });
 

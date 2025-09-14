@@ -66,9 +66,8 @@ Map<String, dynamic> _$InfoPushToJson(InfoPush instance) => <String, dynamic>{
   'hash': instance.hash,
   'createdAt': instance.createdAt.toIso8601String(),
   'updatedAt': instance.updatedAt.toIso8601String(),
-  if (instance.startDate?.toIso8601String() case final value?)
-    'startDate': value,
-  if (instance.endDate?.toIso8601String() case final value?) 'endDate': value,
+  'startDate': ?instance.startDate?.toIso8601String(),
+  'endDate': ?instance.endDate?.toIso8601String(),
 };
 
 const _$ReleaseStatusEnumMap = {

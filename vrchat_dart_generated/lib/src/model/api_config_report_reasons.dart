@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/report_reason.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'api_config_report_reasons.g.dart';
@@ -18,26 +19,47 @@ class APIConfigReportReasons {
   /// Returns a new [APIConfigReportReasons] instance.
   APIConfigReportReasons({
     required this.billing,
+
     required this.botting,
+
     required this.cancellation,
+
     this.copyright,
+
     this.fraud,
+
     required this.gore,
+
     required this.hacking,
+
     required this.harassing,
+
     required this.hateful,
+
     required this.impersonation,
+
     required this.inappropriate,
+
     required this.leaking,
+
     required this.malicious,
+
     required this.missing,
+
     required this.nudity,
+
     required this.renewal,
+
     required this.security,
+
     required this.service,
+
     required this.sexual,
+
     this.technical,
+
     required this.threatening,
+
     required this.visuals,
   });
 

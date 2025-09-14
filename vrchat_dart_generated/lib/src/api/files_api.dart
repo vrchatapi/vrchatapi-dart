@@ -9,6 +9,8 @@ import 'dart:convert';
 import 'package:vrchat_dart_generated/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
+import 'dart:typed_data';
+import 'package:vrchat_dart_generated/src/model/admin_asset_bundle.dart';
 import 'package:vrchat_dart_generated/src/model/create_file_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_file_version_request.dart';
 import 'package:vrchat_dart_generated/src/model/file.dart';
@@ -403,9 +405,9 @@ class FilesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [MultipartFile] as data
+  /// Returns a [Future] containing a [Response] with a [Uint8List] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<MultipartFile>> downloadFileVersion({
+  Future<Response<Uint8List>> downloadFileVersion({
     required String fileId,
     required int versionId,
     CancelToken? cancelToken,
@@ -454,17 +456,11 @@ class FilesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    MultipartFile? _responseData;
+    Uint8List? _responseData;
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<MultipartFile, MultipartFile>(
-              rawData,
-              'MultipartFile',
-              growable: true,
-            );
+      _responseData = rawData == null ? null : rawData as Uint8List;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -475,7 +471,7 @@ class FilesApi {
       );
     }
 
-    return Response<MultipartFile>(
+    return Response<Uint8List>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -593,6 +589,93 @@ class FilesApi {
     }
 
     return Response<File>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Get AdminAssetBundle
+  /// Returns an AdminAssetBundle
+  ///
+  /// Parameters:
+  /// * [adminAssetBundleId] - Must be a valid admin asset bundle ID.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [AdminAssetBundle] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<AdminAssetBundle>> getAdminAssetBundle({
+    required String adminAssetBundleId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/adminassetbundles/{adminAssetBundleId}'.replaceAll(
+      '{'
+      r'adminAssetBundleId'
+      '}',
+      adminAssetBundleId.toString(),
+    );
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    AdminAssetBundle? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<AdminAssetBundle, AdminAssetBundle>(
+              rawData,
+              'AdminAssetBundle',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<AdminAssetBundle>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/invite_message_type.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'invite_message.g.dart';
@@ -18,11 +19,17 @@ class InviteMessage {
   /// Returns a new [InviteMessage] instance.
   InviteMessage({
     this.canBeUpdated = true,
+
     required this.id,
+
     required this.message,
+
     required this.messageType,
+
     this.remainingCooldownMinutes = 0,
+
     required this.slot,
+
     required this.updatedAt,
   });
 

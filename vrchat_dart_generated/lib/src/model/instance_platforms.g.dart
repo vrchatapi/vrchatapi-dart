@@ -25,6 +25,6 @@ InstancePlatforms _$InstancePlatformsFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$InstancePlatformsToJson(InstancePlatforms instance) =>
     <String, dynamic>{
       'android': instance.android,
-      if (instance.ios case final value?) 'ios': value,
+      'ios': ?instance.ios,
       'standalonewindows': instance.standalonewindows,
     };

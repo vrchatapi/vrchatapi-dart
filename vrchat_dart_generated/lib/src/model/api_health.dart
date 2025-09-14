@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'api_health.g.dart';
@@ -17,7 +18,9 @@ class APIHealth {
   /// Returns a new [APIHealth] instance.
   APIHealth({
     required this.ok,
+
     required this.serverName,
+
     required this.buildVersionTag,
   });
 

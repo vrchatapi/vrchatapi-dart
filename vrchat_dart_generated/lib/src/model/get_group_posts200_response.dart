@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/group_post.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'get_group_posts200_response.g.dart';

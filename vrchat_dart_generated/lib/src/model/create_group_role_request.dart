@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/group_permissions.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_group_role_request.g.dart';
@@ -18,9 +19,13 @@ class CreateGroupRoleRequest {
   /// Returns a new [CreateGroupRoleRequest] instance.
   CreateGroupRoleRequest({
     this.id,
+
     this.name,
+
     this.description,
+
     this.isSelfAssignable = false,
+
     this.permissions,
   });
 

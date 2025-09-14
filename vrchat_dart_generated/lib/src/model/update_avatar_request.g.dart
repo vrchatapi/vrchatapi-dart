@@ -40,17 +40,16 @@ UpdateAvatarRequest _$UpdateAvatarRequestFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$UpdateAvatarRequestToJson(
   UpdateAvatarRequest instance,
 ) => <String, dynamic>{
-  if (instance.assetUrl case final value?) 'assetUrl': value,
-  if (instance.id case final value?) 'id': value,
-  if (instance.name case final value?) 'name': value,
-  if (instance.description case final value?) 'description': value,
-  if (instance.tags case final value?) 'tags': value,
-  if (instance.imageUrl case final value?) 'imageUrl': value,
-  if (_$ReleaseStatusEnumMap[instance.releaseStatus] case final value?)
-    'releaseStatus': value,
-  if (instance.version case final value?) 'version': value,
-  if (instance.unityPackageUrl case final value?) 'unityPackageUrl': value,
-  if (instance.unityVersion case final value?) 'unityVersion': value,
+  'assetUrl': ?instance.assetUrl,
+  'id': ?instance.id,
+  'name': ?instance.name,
+  'description': ?instance.description,
+  'tags': ?instance.tags,
+  'imageUrl': ?instance.imageUrl,
+  'releaseStatus': ?_$ReleaseStatusEnumMap[instance.releaseStatus],
+  'version': ?instance.version,
+  'unityPackageUrl': ?instance.unityPackageUrl,
+  'unityVersion': ?instance.unityVersion,
 };
 
 const _$ReleaseStatusEnumMap = {

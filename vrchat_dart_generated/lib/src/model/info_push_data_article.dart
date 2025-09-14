@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/info_push_data_article_content.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'info_push_data_article.g.dart';

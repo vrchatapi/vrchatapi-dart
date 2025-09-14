@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/performance_ratings.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'unity_package.g.dart';
@@ -18,20 +19,35 @@ class UnityPackage {
   /// Returns a new [UnityPackage] instance.
   UnityPackage({
     required this.id,
+
     this.assetUrl,
+
     this.assetUrlObject,
+
     required this.assetVersion,
+
     this.createdAt,
+
     this.impostorizerVersion,
+
     this.performanceRating,
+
     required this.platform,
+
     this.pluginUrl,
+
     this.pluginUrlObject,
+
     this.unitySortNumber,
+
     this.unityVersion = '5.3.4p1',
+
     this.worldSignature,
+
     this.impostorUrl,
+
     this.scanStatus,
+
     this.variant,
   });
 

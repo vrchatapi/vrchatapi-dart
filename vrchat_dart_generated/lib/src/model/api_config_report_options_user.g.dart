@@ -43,10 +43,10 @@ APIConfigReportOptionsUser _$APIConfigReportOptionsUserFromJson(
 Map<String, dynamic> _$APIConfigReportOptionsUserToJson(
   APIConfigReportOptionsUser instance,
 ) => <String, dynamic>{
-  if (instance.behavior case final value?) 'behavior': value,
-  if (instance.chat case final value?) 'chat': value,
-  if (instance.emoji case final value?) 'emoji': value,
-  if (instance.image case final value?) 'image': value,
-  if (instance.sticker case final value?) 'sticker': value,
-  if (instance.text case final value?) 'text': value,
+  'behavior': ?instance.behavior,
+  'chat': ?instance.chat,
+  'emoji': ?instance.emoji,
+  'image': ?instance.image,
+  'sticker': ?instance.sticker,
+  'text': ?instance.text,
 };

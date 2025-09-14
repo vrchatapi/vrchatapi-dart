@@ -40,27 +40,24 @@ LimitedUserGroups _$LimitedUserGroupsFromJson(
   return val;
 });
 
-Map<String, dynamic> _$LimitedUserGroupsToJson(
-  LimitedUserGroups instance,
-) => <String, dynamic>{
-  if (instance.id case final value?) 'id': value,
-  if (instance.name case final value?) 'name': value,
-  if (instance.shortCode case final value?) 'shortCode': value,
-  if (instance.discriminator case final value?) 'discriminator': value,
-  if (instance.description case final value?) 'description': value,
-  if (instance.iconId case final value?) 'iconId': value,
-  if (instance.iconUrl case final value?) 'iconUrl': value,
-  if (instance.bannerId case final value?) 'bannerId': value,
-  if (instance.bannerUrl case final value?) 'bannerUrl': value,
-  if (instance.privacy case final value?) 'privacy': value,
-  if (instance.lastPostCreatedAt?.toIso8601String() case final value?)
-    'lastPostCreatedAt': value,
-  if (instance.ownerId case final value?) 'ownerId': value,
-  if (instance.memberCount case final value?) 'memberCount': value,
-  if (instance.groupId case final value?) 'groupId': value,
-  if (instance.memberVisibility case final value?) 'memberVisibility': value,
-  if (instance.isRepresenting case final value?) 'isRepresenting': value,
-  if (instance.mutualGroup case final value?) 'mutualGroup': value,
-  if (instance.lastPostReadAt?.toIso8601String() case final value?)
-    'lastPostReadAt': value,
-};
+Map<String, dynamic> _$LimitedUserGroupsToJson(LimitedUserGroups instance) =>
+    <String, dynamic>{
+      'id': ?instance.id,
+      'name': ?instance.name,
+      'shortCode': ?instance.shortCode,
+      'discriminator': ?instance.discriminator,
+      'description': ?instance.description,
+      'iconId': ?instance.iconId,
+      'iconUrl': ?instance.iconUrl,
+      'bannerId': ?instance.bannerId,
+      'bannerUrl': ?instance.bannerUrl,
+      'privacy': ?instance.privacy,
+      'lastPostCreatedAt': ?instance.lastPostCreatedAt?.toIso8601String(),
+      'ownerId': ?instance.ownerId,
+      'memberCount': ?instance.memberCount,
+      'groupId': ?instance.groupId,
+      'memberVisibility': ?instance.memberVisibility,
+      'isRepresenting': ?instance.isRepresenting,
+      'mutualGroup': ?instance.mutualGroup,
+      'lastPostReadAt': ?instance.lastPostReadAt?.toIso8601String(),
+    };

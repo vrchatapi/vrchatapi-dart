@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'api_config_report_options_user.g.dart';
@@ -17,10 +18,15 @@ class APIConfigReportOptionsUser {
   /// Returns a new [APIConfigReportOptionsUser] instance.
   APIConfigReportOptionsUser({
     this.behavior,
+
     this.chat,
+
     this.emoji,
+
     this.image,
+
     this.sticker,
+
     this.text,
   });
 

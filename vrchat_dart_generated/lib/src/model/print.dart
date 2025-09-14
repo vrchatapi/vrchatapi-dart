@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/print_files.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'print.g.dart';
@@ -18,14 +19,23 @@ class Print {
   /// Returns a new [Print] instance.
   Print({
     required this.authorId,
+
     required this.authorName,
+
     required this.createdAt,
+
     required this.files,
+
     required this.id,
+
     required this.note,
+
     this.ownerId,
+
     required this.timestamp,
+
     required this.worldId,
+
     required this.worldName,
   });
 

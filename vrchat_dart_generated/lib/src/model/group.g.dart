@@ -108,50 +108,38 @@ Group _$GroupFromJson(
 });
 
 Map<String, dynamic> _$GroupToJson(Group instance) => <String, dynamic>{
-  if (instance.ageVerificationSlotsAvailable case final value?)
-    'ageVerificationSlotsAvailable': value,
-  if (instance.ageVerificationBetaCode case final value?)
-    'ageVerificationBetaCode': value,
-  if (instance.ageVerificationBetaSlots case final value?)
-    'ageVerificationBetaSlots': value,
-  if (instance.badges case final value?) 'badges': value,
-  if (instance.id case final value?) 'id': value,
-  if (instance.name case final value?) 'name': value,
-  if (instance.shortCode case final value?) 'shortCode': value,
-  if (instance.discriminator case final value?) 'discriminator': value,
-  if (instance.description case final value?) 'description': value,
-  if (instance.iconUrl case final value?) 'iconUrl': value,
-  if (instance.bannerUrl case final value?) 'bannerUrl': value,
-  if (_$GroupPrivacyEnumMap[instance.privacy] case final value?)
-    'privacy': value,
-  if (instance.ownerId case final value?) 'ownerId': value,
-  if (instance.rules case final value?) 'rules': value,
-  if (instance.links case final value?) 'links': value,
-  if (instance.languages case final value?) 'languages': value,
-  if (instance.iconId case final value?) 'iconId': value,
-  if (instance.bannerId case final value?) 'bannerId': value,
-  if (instance.memberCount case final value?) 'memberCount': value,
-  if (instance.memberCountSyncedAt?.toIso8601String() case final value?)
-    'memberCountSyncedAt': value,
-  if (instance.isVerified case final value?) 'isVerified': value,
-  if (_$GroupJoinStateEnumMap[instance.joinState] case final value?)
-    'joinState': value,
-  if (instance.tags case final value?) 'tags': value,
-  if (instance.transferTargetId case final value?) 'transferTargetId': value,
-  if (instance.galleries?.map((e) => e.toJson()).toList() case final value?)
-    'galleries': value,
-  if (instance.createdAt?.toIso8601String() case final value?)
-    'createdAt': value,
-  if (instance.updatedAt?.toIso8601String() case final value?)
-    'updatedAt': value,
-  if (instance.lastPostCreatedAt?.toIso8601String() case final value?)
-    'lastPostCreatedAt': value,
-  if (instance.onlineMemberCount case final value?) 'onlineMemberCount': value,
-  if (_$GroupMemberStatusEnumMap[instance.membershipStatus] case final value?)
-    'membershipStatus': value,
-  if (instance.myMember?.toJson() case final value?) 'myMember': value,
-  if (instance.roles?.map((e) => e.toJson()).toList() case final value?)
-    'roles': value,
+  'ageVerificationSlotsAvailable': ?instance.ageVerificationSlotsAvailable,
+  'ageVerificationBetaCode': ?instance.ageVerificationBetaCode,
+  'ageVerificationBetaSlots': ?instance.ageVerificationBetaSlots,
+  'badges': ?instance.badges,
+  'id': ?instance.id,
+  'name': ?instance.name,
+  'shortCode': ?instance.shortCode,
+  'discriminator': ?instance.discriminator,
+  'description': ?instance.description,
+  'iconUrl': ?instance.iconUrl,
+  'bannerUrl': ?instance.bannerUrl,
+  'privacy': ?_$GroupPrivacyEnumMap[instance.privacy],
+  'ownerId': ?instance.ownerId,
+  'rules': ?instance.rules,
+  'links': ?instance.links,
+  'languages': ?instance.languages,
+  'iconId': ?instance.iconId,
+  'bannerId': ?instance.bannerId,
+  'memberCount': ?instance.memberCount,
+  'memberCountSyncedAt': ?instance.memberCountSyncedAt?.toIso8601String(),
+  'isVerified': ?instance.isVerified,
+  'joinState': ?_$GroupJoinStateEnumMap[instance.joinState],
+  'tags': ?instance.tags,
+  'transferTargetId': ?instance.transferTargetId,
+  'galleries': ?instance.galleries?.map((e) => e.toJson()).toList(),
+  'createdAt': ?instance.createdAt?.toIso8601String(),
+  'updatedAt': ?instance.updatedAt?.toIso8601String(),
+  'lastPostCreatedAt': ?instance.lastPostCreatedAt?.toIso8601String(),
+  'onlineMemberCount': ?instance.onlineMemberCount,
+  'membershipStatus': ?_$GroupMemberStatusEnumMap[instance.membershipStatus],
+  'myMember': ?instance.myMember?.toJson(),
+  'roles': ?instance.roles?.map((e) => e.toJson()).toList(),
 };
 
 const _$GroupPrivacyEnumMap = {

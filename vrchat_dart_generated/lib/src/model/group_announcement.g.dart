@@ -32,15 +32,13 @@ GroupAnnouncement _$GroupAnnouncementFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$GroupAnnouncementToJson(GroupAnnouncement instance) =>
     <String, dynamic>{
-      if (instance.id case final value?) 'id': value,
-      if (instance.groupId case final value?) 'groupId': value,
-      if (instance.authorId case final value?) 'authorId': value,
-      if (instance.title case final value?) 'title': value,
-      if (instance.text case final value?) 'text': value,
-      if (instance.imageId case final value?) 'imageId': value,
-      if (instance.imageUrl case final value?) 'imageUrl': value,
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
-      if (instance.updatedAt?.toIso8601String() case final value?)
-        'updatedAt': value,
+      'id': ?instance.id,
+      'groupId': ?instance.groupId,
+      'authorId': ?instance.authorId,
+      'title': ?instance.title,
+      'text': ?instance.text,
+      'imageId': ?instance.imageId,
+      'imageUrl': ?instance.imageUrl,
+      'createdAt': ?instance.createdAt?.toIso8601String(),
+      'updatedAt': ?instance.updatedAt?.toIso8601String(),
     };

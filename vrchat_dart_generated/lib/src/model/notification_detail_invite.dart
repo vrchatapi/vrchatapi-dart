@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'notification_detail_invite.g.dart';
@@ -17,7 +18,9 @@ class NotificationDetailInvite {
   /// Returns a new [NotificationDetailInvite] instance.
   NotificationDetailInvite({
     this.inviteMessage,
+
     required this.worldId,
+
     required this.worldName,
   });
 

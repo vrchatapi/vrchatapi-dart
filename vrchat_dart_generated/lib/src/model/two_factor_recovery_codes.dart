@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/two_factor_recovery_codes_otp_inner.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'two_factor_recovery_codes.g.dart';

@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'file_version_upload_status.g.dart';
@@ -17,10 +18,15 @@ class FileVersionUploadStatus {
   /// Returns a new [FileVersionUploadStatus] instance.
   FileVersionUploadStatus({
     required this.uploadId,
+
     required this.fileName,
+
     required this.nextPartNumber,
+
     required this.maxParts,
+
     required this.parts,
+
     required this.etags,
   });
 

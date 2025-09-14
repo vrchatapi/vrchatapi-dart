@@ -42,20 +42,19 @@ UpdateWorldRequest _$UpdateWorldRequestFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$UpdateWorldRequestToJson(UpdateWorldRequest instance) =>
     <String, dynamic>{
-      if (instance.assetUrl case final value?) 'assetUrl': value,
-      if (instance.assetVersion case final value?) 'assetVersion': value,
-      if (instance.authorId case final value?) 'authorId': value,
-      if (instance.authorName case final value?) 'authorName': value,
-      if (instance.capacity case final value?) 'capacity': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.imageUrl case final value?) 'imageUrl': value,
-      if (instance.name case final value?) 'name': value,
-      if (instance.platform case final value?) 'platform': value,
-      if (_$ReleaseStatusEnumMap[instance.releaseStatus] case final value?)
-        'releaseStatus': value,
-      if (instance.tags case final value?) 'tags': value,
-      if (instance.unityPackageUrl case final value?) 'unityPackageUrl': value,
-      if (instance.unityVersion case final value?) 'unityVersion': value,
+      'assetUrl': ?instance.assetUrl,
+      'assetVersion': ?instance.assetVersion,
+      'authorId': ?instance.authorId,
+      'authorName': ?instance.authorName,
+      'capacity': ?instance.capacity,
+      'description': ?instance.description,
+      'imageUrl': ?instance.imageUrl,
+      'name': ?instance.name,
+      'platform': ?instance.platform,
+      'releaseStatus': ?_$ReleaseStatusEnumMap[instance.releaseStatus],
+      'tags': ?instance.tags,
+      'unityPackageUrl': ?instance.unityPackageUrl,
+      'unityVersion': ?instance.unityVersion,
     };
 
 const _$ReleaseStatusEnumMap = {

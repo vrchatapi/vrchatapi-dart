@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'current_user_platform_history_inner.g.dart';
@@ -17,7 +18,9 @@ class CurrentUserPlatformHistoryInner {
   /// Returns a new [CurrentUserPlatformHistoryInner] instance.
   CurrentUserPlatformHistoryInner({
     this.isMobile,
+
     this.platform,
+
     this.recorded,
   });
 

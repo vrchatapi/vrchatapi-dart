@@ -21,5 +21,5 @@ UserExists _$UserExistsFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$UserExistsToJson(UserExists instance) =>
     <String, dynamic>{
       'userExists': instance.userExists,
-      if (instance.nameOk case final value?) 'nameOk': value,
+      'nameOk': ?instance.nameOk,
     };

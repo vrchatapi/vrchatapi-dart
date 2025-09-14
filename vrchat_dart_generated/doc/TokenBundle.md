@@ -9,6 +9,7 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
+**appleProductId** | **String** |  | 
 **steamItemId** | **String** |  | 
 **oculusSku** | **String** |  | 
 **googleProductId** | **String** |  | [optional] 

@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/favorite_type.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'favorite.g.dart';
@@ -18,8 +19,11 @@ class Favorite {
   /// Returns a new [Favorite] instance.
   Favorite({
     required this.favoriteId,
+
     required this.id,
+
     required this.tags,
+
     required this.type,
   });
 

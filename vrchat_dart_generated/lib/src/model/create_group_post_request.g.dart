@@ -40,9 +40,9 @@ Map<String, dynamic> _$CreateGroupPostRequestToJson(
 ) => <String, dynamic>{
   'title': instance.title,
   'text': instance.text,
-  if (instance.imageId case final value?) 'imageId': value,
+  'imageId': ?instance.imageId,
   'sendNotification': instance.sendNotification,
-  if (instance.roleIds case final value?) 'roleIds': value,
+  'roleIds': ?instance.roleIds,
   'visibility': _$GroupPostVisibilityEnumMap[instance.visibility]!,
 };
 

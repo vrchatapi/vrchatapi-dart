@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/group_member_status.dart';
 import 'package:vrchat_dart_generated/src/model/group_gallery.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'limited_group.g.dart';
@@ -19,21 +20,37 @@ class LimitedGroup {
   /// Returns a new [LimitedGroup] instance.
   LimitedGroup({
     this.id,
+
     this.name,
+
     this.shortCode,
+
     this.discriminator,
+
     this.description,
+
     this.iconUrl,
+
     this.bannerUrl,
+
     this.ownerId,
+
     this.rules,
+
     this.iconId,
+
     this.bannerId,
+
     this.memberCount,
+
     this.tags,
+
     this.createdAt,
+
     this.membershipStatus,
+
     this.isSearchable,
+
     this.galleries,
   });
 

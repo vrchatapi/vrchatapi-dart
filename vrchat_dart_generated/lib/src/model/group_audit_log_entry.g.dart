@@ -33,17 +33,15 @@ GroupAuditLogEntry _$GroupAuditLogEntryFromJson(Map<String, dynamic> json) =>
       return val;
     }, fieldKeyMap: const {'createdAt': 'created_at'});
 
-Map<String, dynamic> _$GroupAuditLogEntryToJson(
-  GroupAuditLogEntry instance,
-) => <String, dynamic>{
-  if (instance.id case final value?) 'id': value,
-  if (instance.createdAt?.toIso8601String() case final value?)
-    'created_at': value,
-  if (instance.groupId case final value?) 'groupId': value,
-  if (instance.actorId case final value?) 'actorId': value,
-  if (instance.actorDisplayName case final value?) 'actorDisplayName': value,
-  if (instance.targetId case final value?) 'targetId': value,
-  if (instance.eventType case final value?) 'eventType': value,
-  if (instance.description case final value?) 'description': value,
-  if (instance.data case final value?) 'data': value,
-};
+Map<String, dynamic> _$GroupAuditLogEntryToJson(GroupAuditLogEntry instance) =>
+    <String, dynamic>{
+      'id': ?instance.id,
+      'created_at': ?instance.createdAt?.toIso8601String(),
+      'groupId': ?instance.groupId,
+      'actorId': ?instance.actorId,
+      'actorDisplayName': ?instance.actorDisplayName,
+      'targetId': ?instance.targetId,
+      'eventType': ?instance.eventType,
+      'description': ?instance.description,
+      'data': ?instance.data,
+    };

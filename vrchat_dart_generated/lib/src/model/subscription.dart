@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/subscription_period.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'subscription.g.dart';
@@ -18,15 +19,25 @@ class Subscription {
   /// Returns a new [Subscription] instance.
   Subscription({
     required this.id,
+
     required this.steamItemId,
+
     this.oculusSku,
+
     this.googleProductId,
+
     this.googlePlanId,
+
     this.picoSku,
+
     this.appleProductId,
+
     required this.amount,
+
     required this.description,
+
     required this.period,
+
     required this.tier,
   });
 

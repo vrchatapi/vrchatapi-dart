@@ -40,13 +40,11 @@ Map<String, dynamic> _$CreateGroupRequestToJson(CreateGroupRequest instance) =>
     <String, dynamic>{
       'name': instance.name,
       'shortCode': instance.shortCode,
-      if (instance.description case final value?) 'description': value,
-      if (_$GroupJoinStateEnumMap[instance.joinState] case final value?)
-        'joinState': value,
-      if (instance.iconId case final value?) 'iconId': value,
-      if (instance.bannerId case final value?) 'bannerId': value,
-      if (_$GroupPrivacyEnumMap[instance.privacy] case final value?)
-        'privacy': value,
+      'description': ?instance.description,
+      'joinState': ?_$GroupJoinStateEnumMap[instance.joinState],
+      'iconId': ?instance.iconId,
+      'bannerId': ?instance.bannerId,
+      'privacy': ?_$GroupPrivacyEnumMap[instance.privacy],
       'roleTemplate': _$GroupRoleTemplateEnumMap[instance.roleTemplate]!,
     };
 

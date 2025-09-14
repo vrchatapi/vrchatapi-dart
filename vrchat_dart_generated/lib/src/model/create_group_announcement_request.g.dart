@@ -28,7 +28,7 @@ Map<String, dynamic> _$CreateGroupAnnouncementRequestToJson(
   CreateGroupAnnouncementRequest instance,
 ) => <String, dynamic>{
   'title': instance.title,
-  if (instance.text case final value?) 'text': value,
-  if (instance.imageId case final value?) 'imageId': value,
-  if (instance.sendNotification case final value?) 'sendNotification': value,
+  'text': ?instance.text,
+  'imageId': ?instance.imageId,
+  'sendNotification': ?instance.sendNotification,
 };

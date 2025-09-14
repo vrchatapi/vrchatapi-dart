@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'api_config_offline_analysis.g.dart';
@@ -17,6 +18,7 @@ class APIConfigOfflineAnalysis {
   /// Returns a new [APIConfigOfflineAnalysis] instance.
   APIConfigOfflineAnalysis({
     this.android = true,
+
     this.standalonewindows = true,
   });
 

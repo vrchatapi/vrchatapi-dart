@@ -16,6 +16,7 @@ TokenBundle _$TokenBundleFromJson(Map<String, dynamic> json) => $checkedCreate(
       json,
       requiredKeys: const [
         'id',
+        'appleProductId',
         'steamItemId',
         'oculusSku',
         'amount',
@@ -26,6 +27,7 @@ TokenBundle _$TokenBundleFromJson(Map<String, dynamic> json) => $checkedCreate(
     );
     final val = TokenBundle(
       id: $checkedConvert('id', (v) => v as String),
+      appleProductId: $checkedConvert('appleProductId', (v) => v as String),
       steamItemId: $checkedConvert('steamItemId', (v) => v as String),
       oculusSku: $checkedConvert('oculusSku', (v) => v as String),
       googleProductId: $checkedConvert('googleProductId', (v) => v as String?),
@@ -41,9 +43,10 @@ TokenBundle _$TokenBundleFromJson(Map<String, dynamic> json) => $checkedCreate(
 Map<String, dynamic> _$TokenBundleToJson(TokenBundle instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'appleProductId': instance.appleProductId,
       'steamItemId': instance.steamItemId,
       'oculusSku': instance.oculusSku,
-      if (instance.googleProductId case final value?) 'googleProductId': value,
+      'googleProductId': ?instance.googleProductId,
       'amount': instance.amount,
       'description': instance.description,
       'tokens': instance.tokens,

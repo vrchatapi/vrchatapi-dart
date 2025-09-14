@@ -36,6 +36,10 @@ GroupMyMember _$GroupMyMemberFromJson(Map<String, dynamic> json) =>
           'isSubscribedToAnnouncements',
           (v) => v as bool? ?? true,
         ),
+        isSubscribedToEventAnnouncements: $checkedConvert(
+          'isSubscribedToEventAnnouncements',
+          (v) => v as bool?,
+        ),
         visibility: $checkedConvert('visibility', (v) => v as String?),
         isRepresenting: $checkedConvert(
           'isRepresenting',
@@ -69,36 +73,32 @@ GroupMyMember _$GroupMyMemberFromJson(Map<String, dynamic> json) =>
       return val;
     });
 
-Map<String, dynamic> _$GroupMyMemberToJson(
-  GroupMyMember instance,
-) => <String, dynamic>{
-  if (instance.id case final value?) 'id': value,
-  if (instance.groupId case final value?) 'groupId': value,
-  if (instance.userId case final value?) 'userId': value,
-  if (instance.roleIds case final value?) 'roleIds': value,
-  if (instance.acceptedByDisplayName case final value?)
-    'acceptedByDisplayName': value,
-  if (instance.acceptedById case final value?) 'acceptedById': value,
-  if (instance.createdAt?.toIso8601String() case final value?)
-    'createdAt': value,
-  if (instance.managerNotes case final value?) 'managerNotes': value,
-  if (instance.membershipStatus case final value?) 'membershipStatus': value,
-  if (instance.isSubscribedToAnnouncements case final value?)
-    'isSubscribedToAnnouncements': value,
-  if (instance.visibility case final value?) 'visibility': value,
-  if (instance.isRepresenting case final value?) 'isRepresenting': value,
-  if (instance.joinedAt?.toIso8601String() case final value?) 'joinedAt': value,
-  if (instance.bannedAt case final value?) 'bannedAt': value,
-  if (instance.has2FA case final value?) 'has2FA': value,
-  if (instance.hasJoinedFromPurchase case final value?)
-    'hasJoinedFromPurchase': value,
-  if (instance.lastPostReadAt?.toIso8601String() case final value?)
-    'lastPostReadAt': value,
-  if (instance.mRoleIds case final value?) 'mRoleIds': value,
-  if (instance.permissions?.map((e) => _$GroupPermissionsEnumMap[e]!).toList()
-      case final value?)
-    'permissions': value,
-};
+Map<String, dynamic> _$GroupMyMemberToJson(GroupMyMember instance) =>
+    <String, dynamic>{
+      'id': ?instance.id,
+      'groupId': ?instance.groupId,
+      'userId': ?instance.userId,
+      'roleIds': ?instance.roleIds,
+      'acceptedByDisplayName': ?instance.acceptedByDisplayName,
+      'acceptedById': ?instance.acceptedById,
+      'createdAt': ?instance.createdAt?.toIso8601String(),
+      'managerNotes': ?instance.managerNotes,
+      'membershipStatus': ?instance.membershipStatus,
+      'isSubscribedToAnnouncements': ?instance.isSubscribedToAnnouncements,
+      'isSubscribedToEventAnnouncements':
+          ?instance.isSubscribedToEventAnnouncements,
+      'visibility': ?instance.visibility,
+      'isRepresenting': ?instance.isRepresenting,
+      'joinedAt': ?instance.joinedAt?.toIso8601String(),
+      'bannedAt': ?instance.bannedAt,
+      'has2FA': ?instance.has2FA,
+      'hasJoinedFromPurchase': ?instance.hasJoinedFromPurchase,
+      'lastPostReadAt': ?instance.lastPostReadAt?.toIso8601String(),
+      'mRoleIds': ?instance.mRoleIds,
+      'permissions': ?instance.permissions
+          ?.map((e) => _$GroupPermissionsEnumMap[e]!)
+          .toList(),
+    };
 
 const _$GroupPermissionsEnumMap = {
   GroupPermissions.group_all: '*',
@@ -129,4 +129,5 @@ const _$GroupPermissionsEnumMap = {
   GroupPermissions.group_members_viewall: 'group-members-viewall',
   GroupPermissions.group_roles_assign: 'group-roles-assign',
   GroupPermissions.group_roles_manage: 'group-roles-manage',
+  GroupPermissions.group_calendar_manage: 'group-calendar-manage',
 };

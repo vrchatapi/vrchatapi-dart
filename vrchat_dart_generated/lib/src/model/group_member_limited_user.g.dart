@@ -35,13 +35,11 @@ GroupMemberLimitedUser _$GroupMemberLimitedUserFromJson(
 Map<String, dynamic> _$GroupMemberLimitedUserToJson(
   GroupMemberLimitedUser instance,
 ) => <String, dynamic>{
-  if (instance.id case final value?) 'id': value,
-  if (instance.displayName case final value?) 'displayName': value,
-  if (instance.thumbnailUrl case final value?) 'thumbnailUrl': value,
-  if (instance.iconUrl case final value?) 'iconUrl': value,
-  if (instance.profilePicOverride case final value?)
-    'profilePicOverride': value,
-  if (instance.currentAvatarThumbnailImageUrl case final value?)
-    'currentAvatarThumbnailImageUrl': value,
-  if (instance.currentAvatarTags case final value?) 'currentAvatarTags': value,
+  'id': ?instance.id,
+  'displayName': ?instance.displayName,
+  'thumbnailUrl': ?instance.thumbnailUrl,
+  'iconUrl': ?instance.iconUrl,
+  'profilePicOverride': ?instance.profilePicOverride,
+  'currentAvatarThumbnailImageUrl': ?instance.currentAvatarThumbnailImageUrl,
+  'currentAvatarTags': ?instance.currentAvatarTags,
 };

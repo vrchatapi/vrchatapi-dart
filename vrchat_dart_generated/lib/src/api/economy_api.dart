@@ -377,7 +377,7 @@ class EconomyApi {
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [hydrate] - Populates some fields and changes types of others for certain objects.
   /// * [groupId] - Must be a valid group ID.
-  /// * [active] - Filter for users' listings.
+  /// * [active] - Filter for users' listings and inventory bundles.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request

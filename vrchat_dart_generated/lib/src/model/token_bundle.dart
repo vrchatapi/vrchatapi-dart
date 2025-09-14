@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'token_bundle.g.dart';
@@ -17,17 +18,29 @@ class TokenBundle {
   /// Returns a new [TokenBundle] instance.
   TokenBundle({
     required this.id,
+
+    required this.appleProductId,
+
     required this.steamItemId,
+
     required this.oculusSku,
+
     this.googleProductId,
+
     required this.amount,
+
     required this.description,
+
     required this.tokens,
+
     required this.imageUrl,
   });
 
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
+
+  @JsonKey(name: r'appleProductId', required: true, includeIfNull: false)
+  final String appleProductId;
 
   @JsonKey(name: r'steamItemId', required: true, includeIfNull: false)
   final String steamItemId;
@@ -58,6 +71,7 @@ class TokenBundle {
       identical(this, other) ||
       other is TokenBundle &&
           other.id == id &&
+          other.appleProductId == appleProductId &&
           other.steamItemId == steamItemId &&
           other.oculusSku == oculusSku &&
           other.googleProductId == googleProductId &&
@@ -69,6 +83,7 @@ class TokenBundle {
   @override
   int get hashCode =>
       id.hashCode +
+      appleProductId.hashCode +
       steamItemId.hashCode +
       oculusSku.hashCode +
       googleProductId.hashCode +

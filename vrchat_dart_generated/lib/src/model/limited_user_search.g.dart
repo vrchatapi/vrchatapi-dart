@@ -21,7 +21,6 @@ LimitedUserSearch _$LimitedUserSearchFromJson(Map<String, dynamic> json) =>
           'id',
           'isFriend',
           'last_platform',
-          'profilePicOverride',
           'status',
           'statusDescription',
           'tags',
@@ -56,7 +55,7 @@ LimitedUserSearch _$LimitedUserSearchFromJson(Map<String, dynamic> json) =>
         lastPlatform: $checkedConvert('last_platform', (v) => v as String),
         profilePicOverride: $checkedConvert(
           'profilePicOverride',
-          (v) => v as String,
+          (v) => v as String?,
         ),
         pronouns: $checkedConvert('pronouns', (v) => v as String?),
         status: $checkedConvert(
@@ -78,8 +77,8 @@ LimitedUserSearch _$LimitedUserSearchFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$LimitedUserSearchToJson(LimitedUserSearch instance) =>
     <String, dynamic>{
-      if (instance.bio case final value?) 'bio': value,
-      if (instance.bioLinks case final value?) 'bioLinks': value,
+      'bio': ?instance.bio,
+      'bioLinks': ?instance.bioLinks,
       'currentAvatarImageUrl': instance.currentAvatarImageUrl,
       'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
       'currentAvatarTags': instance.currentAvatarTags,
@@ -88,8 +87,8 @@ Map<String, dynamic> _$LimitedUserSearchToJson(LimitedUserSearch instance) =>
       'id': instance.id,
       'isFriend': instance.isFriend,
       'last_platform': instance.lastPlatform,
-      'profilePicOverride': instance.profilePicOverride,
-      if (instance.pronouns case final value?) 'pronouns': value,
+      'profilePicOverride': ?instance.profilePicOverride,
+      'pronouns': ?instance.pronouns,
       'status': _$UserStatusEnumMap[instance.status]!,
       'statusDescription': instance.statusDescription,
       'tags': instance.tags,

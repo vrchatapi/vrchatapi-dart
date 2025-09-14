@@ -21,6 +21,6 @@ UpdateUserBadgeRequest _$UpdateUserBadgeRequestFromJson(
 Map<String, dynamic> _$UpdateUserBadgeRequestToJson(
   UpdateUserBadgeRequest instance,
 ) => <String, dynamic>{
-  if (instance.hidden case final value?) 'hidden': value,
-  if (instance.showcased case final value?) 'showcased': value,
+  'hidden': ?instance.hidden,
+  'showcased': ?instance.showcased,
 };

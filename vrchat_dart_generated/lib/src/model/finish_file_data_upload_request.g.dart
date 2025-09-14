@@ -29,7 +29,7 @@ FinishFileDataUploadRequest _$FinishFileDataUploadRequestFromJson(
 Map<String, dynamic> _$FinishFileDataUploadRequestToJson(
   FinishFileDataUploadRequest instance,
 ) => <String, dynamic>{
-  if (instance.etags?.toList() case final value?) 'etags': value,
+  'etags': ?instance.etags?.toList(),
   'nextPartNumber': instance.nextPartNumber,
   'maxParts': instance.maxParts,
 };

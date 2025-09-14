@@ -25,10 +25,10 @@ AvatarPublishedListingsInner _$AvatarPublishedListingsInnerFromJson(
 Map<String, dynamic> _$AvatarPublishedListingsInnerToJson(
   AvatarPublishedListingsInner instance,
 ) => <String, dynamic>{
-  if (instance.description case final value?) 'description': value,
-  if (instance.displayName case final value?) 'displayName': value,
-  if (instance.imageId case final value?) 'imageId': value,
-  if (instance.listingId case final value?) 'listingId': value,
-  if (instance.listingType case final value?) 'listingType': value,
-  if (instance.priceTokens case final value?) 'priceTokens': value,
+  'description': ?instance.description,
+  'displayName': ?instance.displayName,
+  'imageId': ?instance.imageId,
+  'listingId': ?instance.listingId,
+  'listingType': ?instance.listingType,
+  'priceTokens': ?instance.priceTokens,
 };

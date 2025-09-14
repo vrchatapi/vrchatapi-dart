@@ -7,6 +7,7 @@ import 'package:vrchat_dart_generated/src/model/api_config_report_options_avatar
 import 'package:vrchat_dart_generated/src/model/api_config_report_options_user.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_report_options_world.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_report_options_group.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'api_config_report_options.g.dart';

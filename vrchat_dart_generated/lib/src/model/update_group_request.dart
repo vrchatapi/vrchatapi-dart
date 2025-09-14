@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/group_join_state.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'update_group_request.g.dart';
@@ -18,14 +19,23 @@ class UpdateGroupRequest {
   /// Returns a new [UpdateGroupRequest] instance.
   UpdateGroupRequest({
     this.name,
+
     this.shortCode,
+
     this.description,
+
     this.joinState,
+
     this.iconId,
+
     this.bannerId,
+
     this.languages,
+
     this.links,
+
     this.rules,
+
     this.tags,
   });
 

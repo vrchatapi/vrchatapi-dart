@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/license.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'license_group.g.dart';
@@ -18,8 +19,11 @@ class LicenseGroup {
   /// Returns a new [LicenseGroup] instance.
   LicenseGroup({
     required this.id,
+
     required this.name,
+
     required this.description,
+
     required this.licenses,
   });
 

@@ -49,7 +49,7 @@ _$APIConfigConstantsINSTANCEPOPULATIONBRACKETSFromJson(
 Map<String, dynamic> _$APIConfigConstantsINSTANCEPOPULATIONBRACKETSToJson(
   APIConfigConstantsINSTANCEPOPULATIONBRACKETS instance,
 ) => <String, dynamic>{
-  if (instance.crowded?.toJson() case final value?) 'CROWDED': value,
-  if (instance.few?.toJson() case final value?) 'FEW': value,
-  if (instance.many?.toJson() case final value?) 'MANY': value,
+  'CROWDED': ?instance.crowded?.toJson(),
+  'FEW': ?instance.few?.toJson(),
+  'MANY': ?instance.many?.toJson(),
 };

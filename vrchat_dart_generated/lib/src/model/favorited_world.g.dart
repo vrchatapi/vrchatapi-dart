@@ -17,7 +17,6 @@ FavoritedWorld _$FavoritedWorldFromJson(
     $checkKeys(
       json,
       requiredKeys: const [
-        'authorId',
         'authorName',
         'capacity',
         'description',
@@ -45,7 +44,7 @@ FavoritedWorld _$FavoritedWorldFromJson(
       ],
     );
     final val = FavoritedWorld(
-      authorId: $checkedConvert('authorId', (v) => v as String),
+      authorId: $checkedConvert('authorId', (v) => v as String?),
       authorName: $checkedConvert('authorName', (v) => v as String),
       capacity: $checkedConvert('capacity', (v) => (v as num).toInt()),
       description: $checkedConvert('description', (v) => v as String),
@@ -127,42 +126,39 @@ FavoritedWorld _$FavoritedWorldFromJson(
   fieldKeyMap: const {'createdAt': 'created_at', 'updatedAt': 'updated_at'},
 );
 
-Map<String, dynamic> _$FavoritedWorldToJson(
-  FavoritedWorld instance,
-) => <String, dynamic>{
-  'authorId': instance.authorId,
-  'authorName': instance.authorName,
-  'capacity': instance.capacity,
-  'description': instance.description,
-  if (instance.recommendedCapacity case final value?)
-    'recommendedCapacity': value,
-  'created_at': instance.createdAt.toIso8601String(),
-  if (instance.defaultContentSettings?.toJson() case final value?)
-    'defaultContentSettings': value,
-  'favorites': instance.favorites,
-  'favoriteGroup': instance.favoriteGroup,
-  'favoriteId': instance.favoriteId,
-  'featured': instance.featured,
-  if (instance.visits case final value?) 'visits': value,
-  'heat': instance.heat,
-  'id': instance.id,
-  'imageUrl': instance.imageUrl,
-  'labsPublicationDate': instance.labsPublicationDate,
-  'name': instance.name,
-  'occupants': instance.occupants,
-  'organization': instance.organization,
-  'popularity': instance.popularity,
-  if (instance.previewYoutubeId case final value?) 'previewYoutubeId': value,
-  'publicationDate': instance.publicationDate,
-  'releaseStatus': _$ReleaseStatusEnumMap[instance.releaseStatus]!,
-  'tags': instance.tags,
-  'thumbnailImageUrl': instance.thumbnailImageUrl,
-  'unityPackages': instance.unityPackages.map((e) => e.toJson()).toList(),
-  'updated_at': instance.updatedAt.toIso8601String(),
-  'urlList': instance.urlList,
-  if (instance.udonProducts case final value?) 'udonProducts': value,
-  'version': instance.version,
-};
+Map<String, dynamic> _$FavoritedWorldToJson(FavoritedWorld instance) =>
+    <String, dynamic>{
+      'authorId': ?instance.authorId,
+      'authorName': instance.authorName,
+      'capacity': instance.capacity,
+      'description': instance.description,
+      'recommendedCapacity': ?instance.recommendedCapacity,
+      'created_at': instance.createdAt.toIso8601String(),
+      'defaultContentSettings': ?instance.defaultContentSettings?.toJson(),
+      'favorites': instance.favorites,
+      'favoriteGroup': instance.favoriteGroup,
+      'favoriteId': instance.favoriteId,
+      'featured': instance.featured,
+      'visits': ?instance.visits,
+      'heat': instance.heat,
+      'id': instance.id,
+      'imageUrl': instance.imageUrl,
+      'labsPublicationDate': instance.labsPublicationDate,
+      'name': instance.name,
+      'occupants': instance.occupants,
+      'organization': instance.organization,
+      'popularity': instance.popularity,
+      'previewYoutubeId': ?instance.previewYoutubeId,
+      'publicationDate': instance.publicationDate,
+      'releaseStatus': _$ReleaseStatusEnumMap[instance.releaseStatus]!,
+      'tags': instance.tags,
+      'thumbnailImageUrl': instance.thumbnailImageUrl,
+      'unityPackages': instance.unityPackages.map((e) => e.toJson()).toList(),
+      'updated_at': instance.updatedAt.toIso8601String(),
+      'urlList': instance.urlList,
+      'udonProducts': ?instance.udonProducts,
+      'version': instance.version,
+    };
 
 const _$ReleaseStatusEnumMap = {
   ReleaseStatus.public: 'public',

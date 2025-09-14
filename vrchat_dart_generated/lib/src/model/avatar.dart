@@ -9,6 +9,7 @@ import 'package:vrchat_dart_generated/src/model/avatar_performance.dart';
 import 'package:vrchat_dart_generated/src/model/avatar_styles.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
 import 'package:vrchat_dart_generated/src/model/unity_package.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'avatar.g.dart';
@@ -23,31 +24,59 @@ class Avatar {
   /// Returns a new [Avatar] instance.
   Avatar({
     this.acknowledgements,
+
     this.assetUrl,
+
     this.assetUrlObject,
+
     required this.authorId,
+
     required this.authorName,
+
     required this.createdAt,
+
     required this.description,
+
     this.featured = false,
+
     this.highestPrice,
+
     required this.id,
+
     required this.imageUrl,
+
+    required this.listingDate,
+
     this.lock,
+
     this.lowestPrice,
+
     required this.name,
+
     required this.performance,
+
     this.productId,
+
     this.publishedListings,
+
     required this.releaseStatus,
+
     this.searchable = false,
+
     required this.styles,
+
     required this.tags,
+
     required this.thumbnailImageUrl,
+
     required this.unityPackageUrl,
+
     required this.unityPackageUrlObject,
+
     required this.unityPackages,
+
     required this.updatedAt,
+
     this.version = 0,
   });
 
@@ -86,6 +115,9 @@ class Avatar {
 
   @JsonKey(name: r'imageUrl', required: true, includeIfNull: false)
   final String imageUrl;
+
+  @JsonKey(name: r'listingDate', required: true, includeIfNull: true)
+  final String? listingDate;
 
   @JsonKey(name: r'lock', required: false, includeIfNull: false)
   final bool? lock;
@@ -153,6 +185,7 @@ class Avatar {
           other.highestPrice == highestPrice &&
           other.id == id &&
           other.imageUrl == imageUrl &&
+          other.listingDate == listingDate &&
           other.lock == lock &&
           other.lowestPrice == lowestPrice &&
           other.name == name &&
@@ -184,6 +217,7 @@ class Avatar {
       highestPrice.hashCode +
       id.hashCode +
       imageUrl.hashCode +
+      (listingDate == null ? 0 : listingDate.hashCode) +
       lock.hashCode +
       lowestPrice.hashCode +
       name.hashCode +

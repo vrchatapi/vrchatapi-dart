@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'tilia_status.g.dart';
@@ -17,8 +18,11 @@ class TiliaStatus {
   /// Returns a new [TiliaStatus] instance.
   TiliaStatus({
     required this.economyOnline,
+
     this.economyState,
+
     this.plannedOfflineWindowStart,
+
     this.plannedOfflineWindowEnd,
   });
 

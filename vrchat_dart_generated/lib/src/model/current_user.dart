@@ -12,6 +12,7 @@ import 'package:vrchat_dart_generated/src/model/account_deletion_log.dart';
 import 'package:vrchat_dart_generated/src/model/badge.dart';
 import 'package:vrchat_dart_generated/src/model/age_verification_status.dart';
 import 'package:vrchat_dart_generated/src/model/user_state.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'current_user.g.dart';
@@ -26,76 +27,149 @@ class CurrentUser {
   /// Returns a new [CurrentUser] instance.
   CurrentUser({
     required this.acceptedTOSVersion,
+
     this.acceptedPrivacyVersion,
+
     this.accountDeletionDate,
+
     this.accountDeletionLog,
+
     this.activeFriends,
+
     required this.ageVerificationStatus,
+
     required this.ageVerified,
+
     required this.allowAvatarCopying,
+
     this.authToken,
+
     this.badges,
+
     required this.bio,
+
     required this.bioLinks,
+
     this.contentFilters,
+
     required this.currentAvatar,
+
     required this.currentAvatarImageUrl,
+
     required this.currentAvatarThumbnailImageUrl,
+
     required this.currentAvatarTags,
+
     required this.dateJoined,
+
     required this.developerType,
+
     required this.displayName,
+
     required this.emailVerified,
+
     this.fallbackAvatar,
+
     required this.friendGroupNames,
+
     required this.friendKey,
+
     required this.friends,
+
     required this.hasBirthday,
+
     this.hideContentFilterSettings,
+
     this.userLanguage,
+
     this.userLanguageCode,
+
     required this.hasEmail,
+
     required this.hasLoggedInFromClient,
+
     required this.hasPendingEmail,
+
     required this.homeLocation,
+
     required this.id,
+
     required this.isAdult,
+
     this.isBoopingEnabled = true,
+
     this.isFriend = false,
+
     this.lastActivity,
+
     required this.lastLogin,
+
     required this.lastMobile,
+
     required this.lastPlatform,
+
     required this.obfuscatedEmail,
+
     required this.obfuscatedPendingEmail,
+
     required this.oculusId,
+
     this.googleId,
+
     this.googleDetails,
+
     this.picoId,
+
     this.viveId,
+
     this.offlineFriends,
+
     this.onlineFriends,
+
     required this.pastDisplayNames,
+
     this.presence,
+
     this.platformHistory,
+
     required this.profilePicOverride,
+
     required this.profilePicOverrideThumbnail,
+
     required this.pronouns,
+
+    required this.pronounsHistory,
+
     this.queuedInstance,
+
     this.receiveMobileInvitations,
+
     required this.state,
+
     required this.status,
+
     required this.statusDescription,
+
     required this.statusFirstTime,
+
     required this.statusHistory,
+
     required this.steamDetails,
+
     required this.steamId,
+
     required this.tags,
+
     required this.twoFactorAuthEnabled,
+
     this.twoFactorAuthEnabledDate,
+
     required this.unsubscribe,
+
     this.updatedAt,
+
     required this.userIcon,
+
     this.username,
   });
 
@@ -304,6 +378,9 @@ class CurrentUser {
   @JsonKey(name: r'pronouns', required: true, includeIfNull: false)
   final String pronouns;
 
+  @JsonKey(name: r'pronounsHistory', required: true, includeIfNull: false)
+  final List<String> pronounsHistory;
+
   @JsonKey(name: r'queuedInstance', required: false, includeIfNull: false)
   final String? queuedInstance;
 
@@ -424,6 +501,7 @@ class CurrentUser {
           other.profilePicOverride == profilePicOverride &&
           other.profilePicOverrideThumbnail == profilePicOverrideThumbnail &&
           other.pronouns == pronouns &&
+          other.pronounsHistory == pronounsHistory &&
           other.queuedInstance == queuedInstance &&
           other.receiveMobileInvitations == receiveMobileInvitations &&
           other.state == state &&
@@ -501,6 +579,7 @@ class CurrentUser {
       profilePicOverride.hashCode +
       profilePicOverrideThumbnail.hashCode +
       pronouns.hashCode +
+      pronounsHistory.hashCode +
       (queuedInstance == null ? 0 : queuedInstance.hashCode) +
       receiveMobileInvitations.hashCode +
       state.hashCode +

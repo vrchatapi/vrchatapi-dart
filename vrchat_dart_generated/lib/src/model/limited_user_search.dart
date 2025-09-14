@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'limited_user_search.g.dart';
@@ -19,20 +20,35 @@ class LimitedUserSearch {
   /// Returns a new [LimitedUserSearch] instance.
   LimitedUserSearch({
     this.bio,
+
     this.bioLinks,
+
     required this.currentAvatarImageUrl,
+
     required this.currentAvatarThumbnailImageUrl,
+
     required this.currentAvatarTags,
+
     required this.developerType,
+
     required this.displayName,
+
     required this.id,
+
     required this.isFriend,
+
     required this.lastPlatform,
-    required this.profilePicOverride,
+
+    this.profilePicOverride,
+
     this.pronouns,
+
     required this.status,
+
     required this.statusDescription,
+
     required this.tags,
+
     required this.userIcon,
   });
 
@@ -75,8 +91,8 @@ class LimitedUserSearch {
   @JsonKey(name: r'last_platform', required: true, includeIfNull: false)
   final String lastPlatform;
 
-  @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
-  final String profilePicOverride;
+  @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
+  final String? profilePicOverride;
 
   @JsonKey(name: r'pronouns', required: false, includeIfNull: false)
   final String? pronouns;

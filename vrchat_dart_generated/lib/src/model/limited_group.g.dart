@@ -52,26 +52,23 @@ LimitedGroup _$LimitedGroupFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$LimitedGroupToJson(
   LimitedGroup instance,
 ) => <String, dynamic>{
-  if (instance.id case final value?) 'id': value,
-  if (instance.name case final value?) 'name': value,
-  if (instance.shortCode case final value?) 'shortCode': value,
-  if (instance.discriminator case final value?) 'discriminator': value,
-  if (instance.description case final value?) 'description': value,
-  if (instance.iconUrl case final value?) 'iconUrl': value,
-  if (instance.bannerUrl case final value?) 'bannerUrl': value,
-  if (instance.ownerId case final value?) 'ownerId': value,
-  if (instance.rules case final value?) 'rules': value,
-  if (instance.iconId case final value?) 'iconId': value,
-  if (instance.bannerId case final value?) 'bannerId': value,
-  if (instance.memberCount case final value?) 'memberCount': value,
-  if (instance.tags case final value?) 'tags': value,
-  if (instance.createdAt?.toIso8601String() case final value?)
-    'createdAt': value,
-  if (_$GroupMemberStatusEnumMap[instance.membershipStatus] case final value?)
-    'membershipStatus': value,
-  if (instance.isSearchable case final value?) 'isSearchable': value,
-  if (instance.galleries?.map((e) => e.toJson()).toList() case final value?)
-    'galleries': value,
+  'id': ?instance.id,
+  'name': ?instance.name,
+  'shortCode': ?instance.shortCode,
+  'discriminator': ?instance.discriminator,
+  'description': ?instance.description,
+  'iconUrl': ?instance.iconUrl,
+  'bannerUrl': ?instance.bannerUrl,
+  'ownerId': ?instance.ownerId,
+  'rules': ?instance.rules,
+  'iconId': ?instance.iconId,
+  'bannerId': ?instance.bannerId,
+  'memberCount': ?instance.memberCount,
+  'tags': ?instance.tags,
+  'createdAt': ?instance.createdAt?.toIso8601String(),
+  'membershipStatus': ?_$GroupMemberStatusEnumMap[instance.membershipStatus],
+  'isSearchable': ?instance.isSearchable,
+  'galleries': ?instance.galleries?.map((e) => e.toJson()).toList(),
 };
 
 const _$GroupMemberStatusEnumMap = {

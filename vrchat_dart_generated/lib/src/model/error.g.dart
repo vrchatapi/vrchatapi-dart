@@ -21,5 +21,5 @@ Error _$ErrorFromJson(Map<String, dynamic> json) =>
     });
 
 Map<String, dynamic> _$ErrorToJson(Error instance) => <String, dynamic>{
-  if (instance.error?.toJson() case final value?) 'error': value,
+  'error': ?instance.error?.toJson(),
 };

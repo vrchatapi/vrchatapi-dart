@@ -19,6 +19,6 @@ Response _$ResponseFromJson(Map<String, dynamic> json) =>
     }, fieldKeyMap: const {'statusCode': 'status_code'});
 
 Map<String, dynamic> _$ResponseToJson(Response instance) => <String, dynamic>{
-  if (instance.message case final value?) 'message': value,
+  'message': ?instance.message,
   'status_code': instance.statusCode,
 };

@@ -26,6 +26,5 @@ Map<String, dynamic> _$CreateGroupInviteRequestToJson(
   CreateGroupInviteRequest instance,
 ) => <String, dynamic>{
   'userId': instance.userId,
-  if (instance.confirmOverrideBlock case final value?)
-    'confirmOverrideBlock': value,
+  'confirmOverrideBlock': ?instance.confirmOverrideBlock,
 };

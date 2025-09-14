@@ -33,8 +33,6 @@ TwoFactorRecoveryCodes _$TwoFactorRecoveryCodesFromJson(
 Map<String, dynamic> _$TwoFactorRecoveryCodesToJson(
   TwoFactorRecoveryCodes instance,
 ) => <String, dynamic>{
-  if (instance.requiresTwoFactorAuth case final value?)
-    'requiresTwoFactorAuth': value,
-  if (instance.otp?.map((e) => e.toJson()).toList() case final value?)
-    'otp': value,
+  'requiresTwoFactorAuth': ?instance.requiresTwoFactorAuth,
+  'otp': ?instance.otp?.map((e) => e.toJson()).toList(),
 };

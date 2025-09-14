@@ -75,10 +75,10 @@ Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
   'created': instance.created.toIso8601String(),
   'description': instance.description,
   'displayName': instance.displayName,
-  if (instance.groupAccess case final value?) 'groupAccess': value,
-  if (instance.groupAccessRemove case final value?) 'groupAccessRemove': value,
-  if (instance.groupId case final value?) 'groupId': value,
-  if (instance.groupRoleId case final value?) 'groupRoleId': value,
+  'groupAccess': ?instance.groupAccess,
+  'groupAccessRemove': ?instance.groupAccessRemove,
+  'groupId': ?instance.groupId,
+  'groupRoleId': ?instance.groupRoleId,
   'id': instance.id,
   'imageId': instance.imageId,
   'parentListings': instance.parentListings,
@@ -87,8 +87,7 @@ Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
   'sellerId': instance.sellerId,
   'tags': instance.tags,
   'updated': instance.updated?.toIso8601String(),
-  if (instance.useForSubscriberList case final value?)
-    'useForSubscriberList': value,
+  'useForSubscriberList': ?instance.useForSubscriberList,
 };
 
 const _$ProductTypeEnumMap = {

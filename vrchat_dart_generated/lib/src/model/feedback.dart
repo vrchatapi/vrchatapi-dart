@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'feedback.g.dart';
@@ -17,17 +18,29 @@ class Feedback {
   /// Returns a new [Feedback] instance.
   Feedback({
     required this.commenterId,
+
     required this.commenterName,
+
     required this.contentAuthorId,
+
     required this.contentAuthorName,
+
     required this.contentId,
+
     this.contentName,
+
     required this.contentType,
+
     required this.contentVersion,
+
     this.description,
+
     required this.id,
+
     required this.reason,
+
     required this.tags,
+
     required this.type,
   });
 

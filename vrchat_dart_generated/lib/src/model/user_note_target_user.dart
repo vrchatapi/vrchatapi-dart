@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'user_note_target_user.g.dart';
@@ -17,10 +18,15 @@ class UserNoteTargetUser {
   /// Returns a new [UserNoteTargetUser] instance.
   UserNoteTargetUser({
     this.currentAvatarTags,
+
     this.currentAvatarThumbnailImageUrl,
+
     this.displayName,
+
     this.id,
+
     this.profilePicOverride,
+
     this.userIcon,
   });
 

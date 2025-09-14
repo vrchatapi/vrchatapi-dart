@@ -24,5 +24,5 @@ InviteRequest _$InviteRequestFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$InviteRequestToJson(InviteRequest instance) =>
     <String, dynamic>{
       'instanceId': instance.instanceId,
-      if (instance.messageSlot case final value?) 'messageSlot': value,
+      'messageSlot': ?instance.messageSlot,
     };

@@ -39,14 +39,12 @@ AvatarPerformance _$AvatarPerformanceFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$AvatarPerformanceToJson(
-  AvatarPerformance instance,
-) => <String, dynamic>{
-  if (instance.android case final value?) 'android': value,
-  if (instance.androidSort case final value?) 'android-sort': value,
-  if (instance.ios case final value?) 'ios': value,
-  if (instance.iosSort case final value?) 'ios-sort': value,
-  if (instance.standalonewindows case final value?) 'standalonewindows': value,
-  if (instance.standalonewindowsSort case final value?)
-    'standalonewindows-sort': value,
-};
+Map<String, dynamic> _$AvatarPerformanceToJson(AvatarPerformance instance) =>
+    <String, dynamic>{
+      'android': ?instance.android,
+      'android-sort': ?instance.androidSort,
+      'ios': ?instance.ios,
+      'ios-sort': ?instance.iosSort,
+      'standalonewindows': ?instance.standalonewindows,
+      'standalonewindows-sort': ?instance.standalonewindowsSort,
+    };

@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/file_analysis_avatar_stats.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'file_analysis.g.dart';
@@ -18,11 +19,17 @@ class FileAnalysis {
   /// Returns a new [FileAnalysis] instance.
   FileAnalysis({
     required this.avatarStats,
+
     this.createdAt,
+
     this.encryptionKey,
+
     required this.fileSize,
+
     this.performanceRating,
+
     required this.success,
+
     required this.uncompressedSize,
   });
 

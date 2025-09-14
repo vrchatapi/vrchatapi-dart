@@ -39,6 +39,10 @@ GroupLimitedMember _$GroupLimitedMemberFromJson(Map<String, dynamic> json) =>
           'isSubscribedToAnnouncements',
           (v) => v as bool? ?? false,
         ),
+        isSubscribedToEventAnnouncements: $checkedConvert(
+          'isSubscribedToEventAnnouncements',
+          (v) => v as bool?,
+        ),
         createdAt: $checkedConvert(
           'createdAt',
           (v) => v == null ? null : DateTime.parse(v as String),
@@ -63,26 +67,23 @@ GroupLimitedMember _$GroupLimitedMemberFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$GroupLimitedMemberToJson(
   GroupLimitedMember instance,
 ) => <String, dynamic>{
-  if (instance.id case final value?) 'id': value,
-  if (instance.groupId case final value?) 'groupId': value,
-  if (instance.userId case final value?) 'userId': value,
-  if (instance.isRepresenting case final value?) 'isRepresenting': value,
-  if (instance.roleIds case final value?) 'roleIds': value,
-  if (instance.mRoleIds case final value?) 'mRoleIds': value,
-  if (instance.joinedAt?.toIso8601String() case final value?) 'joinedAt': value,
-  if (_$GroupMemberStatusEnumMap[instance.membershipStatus] case final value?)
-    'membershipStatus': value,
-  if (instance.visibility case final value?) 'visibility': value,
-  if (instance.isSubscribedToAnnouncements case final value?)
-    'isSubscribedToAnnouncements': value,
-  if (instance.createdAt?.toIso8601String() case final value?)
-    'createdAt': value,
-  if (instance.bannedAt?.toIso8601String() case final value?) 'bannedAt': value,
-  if (instance.managerNotes case final value?) 'managerNotes': value,
-  if (instance.lastPostReadAt?.toIso8601String() case final value?)
-    'lastPostReadAt': value,
-  if (instance.hasJoinedFromPurchase case final value?)
-    'hasJoinedFromPurchase': value,
+  'id': ?instance.id,
+  'groupId': ?instance.groupId,
+  'userId': ?instance.userId,
+  'isRepresenting': ?instance.isRepresenting,
+  'roleIds': ?instance.roleIds,
+  'mRoleIds': ?instance.mRoleIds,
+  'joinedAt': ?instance.joinedAt?.toIso8601String(),
+  'membershipStatus': ?_$GroupMemberStatusEnumMap[instance.membershipStatus],
+  'visibility': ?instance.visibility,
+  'isSubscribedToAnnouncements': ?instance.isSubscribedToAnnouncements,
+  'isSubscribedToEventAnnouncements':
+      ?instance.isSubscribedToEventAnnouncements,
+  'createdAt': ?instance.createdAt?.toIso8601String(),
+  'bannedAt': ?instance.bannedAt?.toIso8601String(),
+  'managerNotes': ?instance.managerNotes,
+  'lastPostReadAt': ?instance.lastPostReadAt?.toIso8601String(),
+  'hasJoinedFromPurchase': ?instance.hasJoinedFromPurchase,
 };
 
 const _$GroupMemberStatusEnumMap = {

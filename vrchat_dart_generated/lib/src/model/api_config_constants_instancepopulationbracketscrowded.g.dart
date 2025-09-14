@@ -26,7 +26,4 @@ _$APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDEDFromJson(
 Map<String, dynamic>
 _$APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDEDToJson(
   APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED instance,
-) => <String, dynamic>{
-  if (instance.max case final value?) 'max': value,
-  if (instance.min case final value?) 'min': value,
-};
+) => <String, dynamic>{'max': ?instance.max, 'min': ?instance.min};

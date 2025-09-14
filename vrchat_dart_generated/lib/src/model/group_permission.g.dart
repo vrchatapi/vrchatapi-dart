@@ -28,10 +28,9 @@ GroupPermission _$GroupPermissionFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$GroupPermissionToJson(GroupPermission instance) =>
     <String, dynamic>{
-      if (instance.name case final value?) 'name': value,
-      if (instance.displayName case final value?) 'displayName': value,
-      if (instance.help case final value?) 'help': value,
-      if (instance.isManagementPermission case final value?)
-        'isManagementPermission': value,
-      if (instance.allowedToAdd case final value?) 'allowedToAdd': value,
+      'name': ?instance.name,
+      'displayName': ?instance.displayName,
+      'help': ?instance.help,
+      'isManagementPermission': ?instance.isManagementPermission,
+      'allowedToAdd': ?instance.allowedToAdd,
     };

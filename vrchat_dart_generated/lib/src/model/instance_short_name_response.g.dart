@@ -23,5 +23,5 @@ Map<String, dynamic> _$InstanceShortNameResponseToJson(
   InstanceShortNameResponse instance,
 ) => <String, dynamic>{
   'secureName': instance.secureName,
-  if (instance.shortName case final value?) 'shortName': value,
+  'shortName': ?instance.shortName,
 };

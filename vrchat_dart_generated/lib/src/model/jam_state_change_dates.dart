@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'jam_state_change_dates.g.dart';
@@ -17,8 +18,11 @@ class JamStateChangeDates {
   /// Returns a new [JamStateChangeDates] instance.
   JamStateChangeDates({
     this.closed,
+
     this.submissionsClosed,
+
     this.submissionsOpened,
+
     this.winnersSelected,
   });
 

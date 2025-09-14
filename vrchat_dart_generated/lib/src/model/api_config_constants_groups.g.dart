@@ -66,17 +66,14 @@ APIConfigConstantsGROUPS _$APIConfigConstantsGROUPSFromJson(
 Map<String, dynamic> _$APIConfigConstantsGROUPSToJson(
   APIConfigConstantsGROUPS instance,
 ) => <String, dynamic>{
-  if (instance.capacity case final value?) 'CAPACITY': value,
-  if (instance.groupTransferRequirements case final value?)
-    'GROUP_TRANSFER_REQUIREMENTS': value,
-  if (instance.maxInvitesRequests case final value?)
-    'MAX_INVITES_REQUESTS': value,
-  if (instance.maxJoined case final value?) 'MAX_JOINED': value,
-  if (instance.maxJoinedPlus case final value?) 'MAX_JOINED_PLUS': value,
-  if (instance.maxLanguages case final value?) 'MAX_LANGUAGES': value,
-  if (instance.maxLinks case final value?) 'MAX_LINKS': value,
-  if (instance.maxManagementRoles case final value?)
-    'MAX_MANAGEMENT_ROLES': value,
-  if (instance.maxOwned case final value?) 'MAX_OWNED': value,
-  if (instance.maxRoles case final value?) 'MAX_ROLES': value,
+  'CAPACITY': ?instance.capacity,
+  'GROUP_TRANSFER_REQUIREMENTS': ?instance.groupTransferRequirements,
+  'MAX_INVITES_REQUESTS': ?instance.maxInvitesRequests,
+  'MAX_JOINED': ?instance.maxJoined,
+  'MAX_JOINED_PLUS': ?instance.maxJoinedPlus,
+  'MAX_LANGUAGES': ?instance.maxLanguages,
+  'MAX_LINKS': ?instance.maxLinks,
+  'MAX_MANAGEMENT_ROLES': ?instance.maxManagementRoles,
+  'MAX_OWNED': ?instance.maxOwned,
+  'MAX_ROLES': ?instance.maxRoles,
 };

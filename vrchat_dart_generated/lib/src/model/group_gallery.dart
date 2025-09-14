@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'group_gallery.g.dart';
@@ -17,14 +18,23 @@ class GroupGallery {
   /// Returns a new [GroupGallery] instance.
   GroupGallery({
     this.id,
+
     this.name,
+
     this.description,
+
     this.membersOnly = false,
+
     this.roleIdsToView,
+
     this.roleIdsToSubmit,
+
     this.roleIdsToAutoApprove,
+
     this.roleIdsToManage,
+
     this.createdAt,
+
     this.updatedAt,
   });
 

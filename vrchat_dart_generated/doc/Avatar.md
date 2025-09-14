@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **highestPrice** | **int** |  | [optional] 
 **id** | **String** |  | 
 **imageUrl** | **String** |  | 
+**listingDate** | **String** |  | 
 **lock** | **bool** |  | [optional] 
 **lowestPrice** | **int** |  | [optional] 
 **name** | **String** |  | 

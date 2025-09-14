@@ -7,6 +7,7 @@ import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
 import 'package:vrchat_dart_generated/src/model/age_verification_status.dart';
 import 'package:vrchat_dart_generated/src/model/user_state.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'limited_user_instance.g.dart';
@@ -21,31 +22,57 @@ class LimitedUserInstance {
   /// Returns a new [LimitedUserInstance] instance.
   LimitedUserInstance({
     required this.ageVerificationStatus,
+
     required this.ageVerified,
+
     required this.allowAvatarCopying,
+
     this.bio,
+
     this.bioLinks,
+
     required this.currentAvatarImageUrl,
+
     required this.currentAvatarThumbnailImageUrl,
+
     required this.currentAvatarTags,
+
     required this.dateJoined,
+
     required this.developerType,
+
     required this.displayName,
+
     required this.friendKey,
+
     required this.id,
+
     required this.isFriend,
+
     this.imageUrl,
+
     required this.lastPlatform,
+
     required this.lastActivity,
+
     required this.lastMobile,
+
     this.platform,
-    required this.profilePicOverride,
-    required this.profilePicOverrideThumbnail,
+
+    this.profilePicOverride,
+
+    this.profilePicOverrideThumbnail,
+
     required this.pronouns,
+
     required this.state,
+
     required this.status,
+
     required this.statusDescription,
+
     required this.tags,
+
     required this.userIcon,
   });
 
@@ -116,15 +143,15 @@ class LimitedUserInstance {
   @JsonKey(name: r'platform', required: false, includeIfNull: false)
   final String? platform;
 
-  @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
-  final String profilePicOverride;
+  @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
+  final String? profilePicOverride;
 
   @JsonKey(
     name: r'profilePicOverrideThumbnail',
-    required: true,
+    required: false,
     includeIfNull: false,
   )
-  final String profilePicOverrideThumbnail;
+  final String? profilePicOverrideThumbnail;
 
   @JsonKey(name: r'pronouns', required: true, includeIfNull: false)
   final String pronouns;

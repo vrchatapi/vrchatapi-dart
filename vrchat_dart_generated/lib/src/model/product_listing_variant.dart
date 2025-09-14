@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'product_listing_variant.g.dart';
@@ -17,10 +18,15 @@ class ProductListingVariant {
   /// Returns a new [ProductListingVariant] instance.
   ProductListingVariant({
     this.effectiveFrom,
+
     required this.listingVariantId,
+
     required this.nonRefundable,
+
     required this.quantity,
+
     required this.sellerVariant,
+
     required this.unitPriceTokens,
   });
 

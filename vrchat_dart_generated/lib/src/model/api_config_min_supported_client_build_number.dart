@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/platform_build_info.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'api_config_min_supported_client_build_number.g.dart';
@@ -18,15 +19,25 @@ class APIConfigMinSupportedClientBuildNumber {
   /// Returns a new [APIConfigMinSupportedClientBuildNumber] instance.
   APIConfigMinSupportedClientBuildNumber({
     required this.appStore,
+
     required this.default_,
+
     required this.firebase,
+
     required this.firebaseiOS,
+
     required this.googlePlay,
+
     required this.pc,
+
     required this.picoStore,
+
     required this.questAppLab,
+
     required this.questStore,
+
     required this.testFlight,
+
     required this.xRElite,
   });
 

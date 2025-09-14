@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/group_member_limited_user.dart';
 import 'package:vrchat_dart_generated/src/model/group_member_status.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'group_member.g.dart';
@@ -19,22 +20,41 @@ class GroupMember {
   /// Returns a new [GroupMember] instance.
   GroupMember({
     this.acceptedByDisplayName,
+
     this.acceptedById,
+
     this.id,
+
     this.groupId,
+
     this.userId,
+
     this.isRepresenting = false,
+
     this.user,
+
     this.roleIds,
+
     this.mRoleIds,
+
     this.joinedAt,
+
     this.membershipStatus,
+
     this.visibility,
+
     this.isSubscribedToAnnouncements = false,
+
+    this.isSubscribedToEventAnnouncements,
+
     this.createdAt,
+
     this.bannedAt,
+
     this.managerNotes,
+
     this.lastPostReadAt,
+
     this.hasJoinedFromPurchase,
   });
 
@@ -87,6 +107,13 @@ class GroupMember {
   )
   final bool? isSubscribedToAnnouncements;
 
+  @JsonKey(
+    name: r'isSubscribedToEventAnnouncements',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? isSubscribedToEventAnnouncements;
+
   /// Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user.
   @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
   final DateTime? createdAt;
@@ -126,6 +153,8 @@ class GroupMember {
           other.membershipStatus == membershipStatus &&
           other.visibility == visibility &&
           other.isSubscribedToAnnouncements == isSubscribedToAnnouncements &&
+          other.isSubscribedToEventAnnouncements ==
+              isSubscribedToEventAnnouncements &&
           other.createdAt == createdAt &&
           other.bannedAt == bannedAt &&
           other.managerNotes == managerNotes &&
@@ -147,6 +176,7 @@ class GroupMember {
       membershipStatus.hashCode +
       visibility.hashCode +
       isSubscribedToAnnouncements.hashCode +
+      isSubscribedToEventAnnouncements.hashCode +
       (createdAt == null ? 0 : createdAt.hashCode) +
       (bannedAt == null ? 0 : bannedAt.hashCode) +
       (managerNotes == null ? 0 : managerNotes.hashCode) +

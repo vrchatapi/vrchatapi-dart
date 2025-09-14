@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'account_deletion_log.g.dart';
@@ -17,7 +18,9 @@ class AccountDeletionLog {
   /// Returns a new [AccountDeletionLog] instance.
   AccountDeletionLog({
     this.message = 'Deletion requested',
+
     this.deletionScheduled,
+
     this.dateTime,
   });
 

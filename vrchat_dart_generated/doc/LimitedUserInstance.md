@@ -27,8 +27,8 @@ Name | Type | Description | Notes
 **lastActivity** | [**DateTime**](DateTime.md) |  | 
 **lastMobile** | [**DateTime**](DateTime.md) |  | 
 **platform** | **String** |  | [optional] 
-**profilePicOverride** | **String** |  | 
-**profilePicOverrideThumbnail** | **String** |  | 
+**profilePicOverride** | **String** |  | [optional] 
+**profilePicOverrideThumbnail** | **String** |  | [optional] 
 **pronouns** | **String** |  | 
 **state** | [**UserState**](UserState.md) |  | 
 **status** | [**UserStatus**](UserStatus.md) |  | 

@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/file_status.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'file_data.g.dart';
@@ -18,11 +19,17 @@ class FileData {
   /// Returns a new [FileData] instance.
   FileData({
     this.category = FileDataCategoryEnum.queued,
+
     required this.fileName,
+
     this.md5,
+
     required this.sizeInBytes,
+
     required this.status,
+
     this.uploadId = '',
+
     required this.url,
   });
 

@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/group_post_visibility.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_group_post_request.g.dart';
@@ -18,10 +19,15 @@ class CreateGroupPostRequest {
   /// Returns a new [CreateGroupPostRequest] instance.
   CreateGroupPostRequest({
     required this.title,
+
     required this.text,
+
     this.imageId,
+
     this.sendNotification = false,
+
     this.roleIds,
+
     required this.visibility,
   });
 

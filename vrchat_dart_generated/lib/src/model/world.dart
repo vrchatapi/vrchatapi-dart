@@ -6,6 +6,7 @@
 import 'package:vrchat_dart_generated/src/model/instance_content_settings.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
 import 'package:vrchat_dart_generated/src/model/unity_package.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'world.g.dart';
@@ -20,37 +21,69 @@ class World {
   /// Returns a new [World] instance.
   World({
     required this.authorId,
+
     required this.authorName,
+
     required this.capacity,
+
     required this.recommendedCapacity,
+
     required this.createdAt,
+
     this.defaultContentSettings,
+
     required this.description,
+
     this.favorites = 0,
+
     this.featured = false,
+
     this.heat = 0,
+
     required this.id,
+
     required this.imageUrl,
+
     this.instances,
+
     required this.labsPublicationDate,
+
     required this.name,
+
     this.namespace,
+
     this.occupants = 0,
+
     this.organization = 'vrchat',
+
     this.popularity = 0,
+
     this.previewYoutubeId,
+
     this.privateOccupants = 0,
+
     this.publicOccupants = 0,
+
     required this.publicationDate,
+
     required this.releaseStatus,
+
     this.storeId,
+
     required this.tags,
+
     required this.thumbnailImageUrl,
+
     this.unityPackages,
+
     required this.updatedAt,
+
     this.urlList,
+
     this.version = 0,
+
     this.visits = 0,
+
     this.udonProducts,
   });
 

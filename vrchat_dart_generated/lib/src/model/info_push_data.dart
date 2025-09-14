@@ -6,6 +6,7 @@
 import 'package:vrchat_dart_generated/src/model/info_push_data_article.dart';
 import 'package:vrchat_dart_generated/src/model/info_push_data_clickable.dart';
 import 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'info_push_data.g.dart';
@@ -20,12 +21,19 @@ class InfoPushData {
   /// Returns a new [InfoPushData] instance.
   InfoPushData({
     this.contentList,
+
     this.description,
+
     this.imageUrl,
+
     this.name,
+
     this.onPressed,
+
     this.template,
+
     this.version,
+
     this.article,
   });
 

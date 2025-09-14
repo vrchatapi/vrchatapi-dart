@@ -25,7 +25,7 @@ CurrentUserPlatformHistoryInner _$CurrentUserPlatformHistoryInnerFromJson(
 Map<String, dynamic> _$CurrentUserPlatformHistoryInnerToJson(
   CurrentUserPlatformHistoryInner instance,
 ) => <String, dynamic>{
-  if (instance.isMobile case final value?) 'isMobile': value,
-  if (instance.platform case final value?) 'platform': value,
-  if (instance.recorded?.toIso8601String() case final value?) 'recorded': value,
+  'isMobile': ?instance.isMobile,
+  'platform': ?instance.platform,
+  'recorded': ?instance.recorded?.toIso8601String(),
 };

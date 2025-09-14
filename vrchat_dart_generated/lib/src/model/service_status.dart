@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'service_status.g.dart';
@@ -17,13 +18,21 @@ class ServiceStatus {
   /// Returns a new [ServiceStatus] instance.
   ServiceStatus({
     required this.createdAt,
+
     required this.id,
+
     required this.progress,
+
     required this.requesterUserId,
+
     required this.state,
+
     required this.subjectId,
+
     required this.subjectType,
+
     required this.type,
+
     required this.updatedAt,
   });
 

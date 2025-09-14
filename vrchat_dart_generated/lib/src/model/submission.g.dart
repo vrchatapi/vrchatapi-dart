@@ -47,6 +47,6 @@ Map<String, dynamic> _$SubmissionToJson(Submission instance) =>
       'description': instance.description,
       'id': instance.id,
       'jamId': instance.jamId,
-      if (instance.ratingScore case final value?) 'ratingScore': value,
+      'ratingScore': ?instance.ratingScore,
       'submitterId': instance.submitterId,
     };

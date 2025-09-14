@@ -25,5 +25,5 @@ Map<String, dynamic> _$NotificationDetailRequestInviteResponseToJson(
   NotificationDetailRequestInviteResponse instance,
 ) => <String, dynamic>{
   'inResponseTo': instance.inResponseTo,
-  if (instance.requestMessage case final value?) 'requestMessage': value,
+  'requestMessage': ?instance.requestMessage,
 };

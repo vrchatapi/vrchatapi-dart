@@ -43,14 +43,12 @@ Badge _$BadgeFromJson(Map<String, dynamic> json) => $checkedCreate(
 );
 
 Map<String, dynamic> _$BadgeToJson(Badge instance) => <String, dynamic>{
-  if (instance.assignedAt?.toIso8601String() case final value?)
-    'assignedAt': value,
+  'assignedAt': ?instance.assignedAt?.toIso8601String(),
   'badgeDescription': instance.badgeDescription,
   'badgeId': instance.badgeId,
   'badgeImageUrl': instance.badgeImageUrl,
   'badgeName': instance.badgeName,
-  if (instance.hidden case final value?) 'hidden': value,
+  'hidden': ?instance.hidden,
   'showcased': instance.showcased,
-  if (instance.updatedAt?.toIso8601String() case final value?)
-    'updatedAt': value,
+  'updatedAt': ?instance.updatedAt?.toIso8601String(),
 };

@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **membershipStatus** | [**GroupMemberStatus**](GroupMemberStatus.md) |  | [optional] 
 **visibility** | **String** |  | [optional] 
 **isSubscribedToAnnouncements** | **bool** |  | [optional] [default to false]
+**isSubscribedToEventAnnouncements** | **bool** |  | [optional] 
 **createdAt** | [**DateTime**](DateTime.md) | Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user. | [optional] 
 **bannedAt** | [**DateTime**](DateTime.md) | Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user. | [optional] 
 **managerNotes** | **String** | Only visible via the /groups/:groupId/members endpoint, **not** when fetching a specific user. | [optional] 

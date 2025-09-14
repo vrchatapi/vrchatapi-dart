@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'avatar_published_listings_inner.g.dart';
@@ -17,10 +18,15 @@ class AvatarPublishedListingsInner {
   /// Returns a new [AvatarPublishedListingsInner] instance.
   AvatarPublishedListingsInner({
     this.description,
+
     this.displayName,
+
     this.imageId,
+
     this.listingId,
+
     this.listingType,
+
     this.priceTokens,
   });
 

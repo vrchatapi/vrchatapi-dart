@@ -44,10 +44,10 @@ FileVersion _$FileVersionFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$FileVersionToJson(FileVersion instance) =>
     <String, dynamic>{
       'created_at': instance.createdAt.toIso8601String(),
-      if (instance.deleted case final value?) 'deleted': value,
-      if (instance.delta?.toJson() case final value?) 'delta': value,
-      if (instance.file?.toJson() case final value?) 'file': value,
-      if (instance.signature?.toJson() case final value?) 'signature': value,
+      'deleted': ?instance.deleted,
+      'delta': ?instance.delta?.toJson(),
+      'file': ?instance.file?.toJson(),
+      'signature': ?instance.signature?.toJson(),
       'status': _$FileStatusEnumMap[instance.status]!,
       'version': instance.version,
     };

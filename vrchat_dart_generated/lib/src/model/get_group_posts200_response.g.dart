@@ -25,6 +25,5 @@ GetGroupPosts200Response _$GetGroupPosts200ResponseFromJson(
 Map<String, dynamic> _$GetGroupPosts200ResponseToJson(
   GetGroupPosts200Response instance,
 ) => <String, dynamic>{
-  if (instance.posts?.map((e) => e.toJson()).toList() case final value?)
-    'posts': value,
+  'posts': ?instance.posts?.map((e) => e.toJson()).toList(),
 };

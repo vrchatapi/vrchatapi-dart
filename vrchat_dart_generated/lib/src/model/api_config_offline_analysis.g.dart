@@ -24,6 +24,6 @@ APIConfigOfflineAnalysis _$APIConfigOfflineAnalysisFromJson(
 Map<String, dynamic> _$APIConfigOfflineAnalysisToJson(
   APIConfigOfflineAnalysis instance,
 ) => <String, dynamic>{
-  if (instance.android case final value?) 'android': value,
-  if (instance.standalonewindows case final value?) 'standalonewindows': value,
+  'android': ?instance.android,
+  'standalonewindows': ?instance.standalonewindows,
 };

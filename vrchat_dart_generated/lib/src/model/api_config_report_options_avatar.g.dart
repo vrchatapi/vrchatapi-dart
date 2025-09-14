@@ -31,7 +31,7 @@ APIConfigReportOptionsAvatar _$APIConfigReportOptionsAvatarFromJson(
 Map<String, dynamic> _$APIConfigReportOptionsAvatarToJson(
   APIConfigReportOptionsAvatar instance,
 ) => <String, dynamic>{
-  if (instance.avatar case final value?) 'avatar': value,
-  if (instance.avatarpage case final value?) 'avatarpage': value,
-  if (instance.warnings case final value?) 'warnings': value,
+  'avatar': ?instance.avatar,
+  'avatarpage': ?instance.avatarpage,
+  'warnings': ?instance.warnings,
 };

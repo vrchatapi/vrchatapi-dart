@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'instance_content_settings.g.dart';
@@ -17,10 +18,15 @@ class InstanceContentSettings {
   /// Returns a new [InstanceContentSettings] instance.
   InstanceContentSettings({
     this.drones = true,
+
     this.emoji = true,
+
     this.pedestals = true,
+
     this.prints = true,
+
     this.stickers = true,
+
     this.props = true,
   });
 

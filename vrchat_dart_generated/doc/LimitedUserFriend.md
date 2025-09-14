@@ -25,8 +25,8 @@ Name | Type | Description | Notes
 **lastActivity** | [**DateTime**](DateTime.md) |  | 
 **lastMobile** | [**DateTime**](DateTime.md) |  | 
 **platform** | **String** |  | 
-**profilePicOverride** | **String** |  | 
-**profilePicOverrideThumbnail** | **String** |  | 
+**profilePicOverride** | **String** |  | [optional] 
+**profilePicOverrideThumbnail** | **String** |  | [optional] 
 **status** | [**UserStatus**](UserStatus.md) |  | 
 **statusDescription** | **String** |  | 
 **tags** | **List&lt;String&gt;** | <- Always empty. | 

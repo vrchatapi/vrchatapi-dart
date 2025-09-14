@@ -41,22 +41,20 @@ RepresentedGroup _$RepresentedGroupFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$RepresentedGroupToJson(
   RepresentedGroup instance,
 ) => <String, dynamic>{
-  if (instance.name case final value?) 'name': value,
-  if (instance.shortCode case final value?) 'shortCode': value,
-  if (instance.discriminator case final value?) 'discriminator': value,
-  if (instance.description case final value?) 'description': value,
-  if (instance.iconId case final value?) 'iconId': value,
-  if (instance.iconUrl case final value?) 'iconUrl': value,
-  if (instance.bannerId case final value?) 'bannerId': value,
-  if (instance.bannerUrl case final value?) 'bannerUrl': value,
-  if (_$GroupPrivacyEnumMap[instance.privacy] case final value?)
-    'privacy': value,
-  if (instance.ownerId case final value?) 'ownerId': value,
-  if (instance.memberCount case final value?) 'memberCount': value,
-  if (instance.groupId case final value?) 'groupId': value,
-  if (_$GroupUserVisibilityEnumMap[instance.memberVisibility] case final value?)
-    'memberVisibility': value,
-  if (instance.isRepresenting case final value?) 'isRepresenting': value,
+  'name': ?instance.name,
+  'shortCode': ?instance.shortCode,
+  'discriminator': ?instance.discriminator,
+  'description': ?instance.description,
+  'iconId': ?instance.iconId,
+  'iconUrl': ?instance.iconUrl,
+  'bannerId': ?instance.bannerId,
+  'bannerUrl': ?instance.bannerUrl,
+  'privacy': ?_$GroupPrivacyEnumMap[instance.privacy],
+  'ownerId': ?instance.ownerId,
+  'memberCount': ?instance.memberCount,
+  'groupId': ?instance.groupId,
+  'memberVisibility': ?_$GroupUserVisibilityEnumMap[instance.memberVisibility],
+  'isRepresenting': ?instance.isRepresenting,
 };
 
 const _$GroupPrivacyEnumMap = {

@@ -29,13 +29,12 @@ TiliaStatus _$TiliaStatusFromJson(Map<String, dynamic> json) =>
       return val;
     });
 
-Map<String, dynamic> _$TiliaStatusToJson(
-  TiliaStatus instance,
-) => <String, dynamic>{
-  'economyOnline': instance.economyOnline,
-  if (instance.economyState case final value?) 'economyState': value,
-  if (instance.plannedOfflineWindowStart?.toIso8601String() case final value?)
-    'plannedOfflineWindowStart': value,
-  if (instance.plannedOfflineWindowEnd?.toIso8601String() case final value?)
-    'plannedOfflineWindowEnd': value,
-};
+Map<String, dynamic> _$TiliaStatusToJson(TiliaStatus instance) =>
+    <String, dynamic>{
+      'economyOnline': instance.economyOnline,
+      'economyState': ?instance.economyState,
+      'plannedOfflineWindowStart': ?instance.plannedOfflineWindowStart
+          ?.toIso8601String(),
+      'plannedOfflineWindowEnd': ?instance.plannedOfflineWindowEnd
+          ?.toIso8601String(),
+    };

@@ -23,7 +23,7 @@ NotificationDetailInvite _$NotificationDetailInviteFromJson(
 Map<String, dynamic> _$NotificationDetailInviteToJson(
   NotificationDetailInvite instance,
 ) => <String, dynamic>{
-  if (instance.inviteMessage case final value?) 'inviteMessage': value,
+  'inviteMessage': ?instance.inviteMessage,
   'worldId': instance.worldId,
   'worldName': instance.worldName,
 };

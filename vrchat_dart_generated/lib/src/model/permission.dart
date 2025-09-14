@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'permission.g.dart';
@@ -17,12 +18,19 @@ class Permission {
   /// Returns a new [Permission] instance.
   Permission({
     this.displayName,
+
     this.description,
+
     required this.id,
+
     required this.ownerDisplayName,
+
     required this.name,
+
     required this.ownerId,
+
     this.type,
+
     this.data,
   });
 

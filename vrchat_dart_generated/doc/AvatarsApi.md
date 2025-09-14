@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**deleteImpostor**](AvatarsApi.md#deleteimpostor) | **DELETE** /avatars/{avatarId}/impostor | Delete generated Impostor
 [**enqueueImpostor**](AvatarsApi.md#enqueueimpostor) | **POST** /avatars/{avatarId}/impostor/enqueue | Enqueue Impostor generation
 [**getAvatar**](AvatarsApi.md#getavatar) | **GET** /avatars/{avatarId} | Get Avatar
+[**getAvatarStyles**](AvatarsApi.md#getavatarstyles) | **GET** /avatarStyles | Get Avatar Styles
 [**getFavoritedAvatars**](AvatarsApi.md#getfavoritedavatars) | **GET** /avatars/favorites | List Favorited Avatars
 [**getImpostorQueueStats**](AvatarsApi.md#getimpostorqueuestats) | **GET** /avatars/impostor/queue/stats | Get Impostor Queue Stats
 [**getLicensedAvatars**](AvatarsApi.md#getlicensedavatars) | **GET** /avatars/licensed | List Licensed Avatars
@@ -250,6 +251,45 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAvatarStyles**
+> List<AvatarStyle> getAvatarStyles()
+
+Get Avatar Styles
+
+List avatar styles.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+
+final api = VrchatDartGenerated().getAvatarsApi();
+
+try {
+    final response = api.getAvatarStyles();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AvatarsApi->getAvatarStyles: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;AvatarStyle&gt;**](AvatarStyle.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 

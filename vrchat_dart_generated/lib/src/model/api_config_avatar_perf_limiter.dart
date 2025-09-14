@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/performance_limiter_info.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'api_config_avatar_perf_limiter.g.dart';
@@ -18,10 +19,15 @@ class APIConfigAvatarPerfLimiter {
   /// Returns a new [APIConfigAvatarPerfLimiter] instance.
   APIConfigAvatarPerfLimiter({
     required this.androidMobile,
+
     required this.pc,
+
     required this.pico,
+
     required this.quest,
+
     required this.xRElite,
+
     required this.iOSMobile,
   });
 

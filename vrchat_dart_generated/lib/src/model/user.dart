@@ -8,6 +8,7 @@ import 'package:vrchat_dart_generated/src/model/user_status.dart';
 import 'package:vrchat_dart_generated/src/model/badge.dart';
 import 'package:vrchat_dart_generated/src/model/age_verification_status.dart';
 import 'package:vrchat_dart_generated/src/model/user_state.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'user.g.dart';
@@ -22,41 +23,77 @@ class User {
   /// Returns a new [User] instance.
   User({
     required this.ageVerificationStatus,
+
     required this.ageVerified,
+
     this.allowAvatarCopying = true,
+
     this.badges,
+
     required this.bio,
+
     required this.bioLinks,
+
     required this.currentAvatarImageUrl,
+
     required this.currentAvatarThumbnailImageUrl,
+
     required this.currentAvatarTags,
+
     required this.dateJoined,
+
     required this.developerType,
+
     required this.displayName,
+
     required this.friendKey,
+
     this.friendRequestStatus,
+
     required this.id,
+
     this.instanceId,
+
     required this.isFriend,
+
     required this.lastActivity,
+
     required this.lastLogin,
+
     this.lastMobile,
+
     required this.lastPlatform,
+
     this.location,
+
     this.note,
+
     this.platform,
+
     required this.profilePicOverride,
+
     required this.profilePicOverrideThumbnail,
+
     required this.pronouns,
+
     required this.state,
+
     required this.status,
+
     required this.statusDescription,
+
     required this.tags,
+
     this.travelingToInstance,
+
     this.travelingToLocation,
+
     this.travelingToWorld,
+
     required this.userIcon,
+
     this.username,
+
     this.worldId,
   });
 

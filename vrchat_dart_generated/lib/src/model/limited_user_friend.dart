@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'limited_user_friend.g.dart';
@@ -19,27 +20,49 @@ class LimitedUserFriend {
   /// Returns a new [LimitedUserFriend] instance.
   LimitedUserFriend({
     this.bio,
+
     this.bioLinks,
+
     required this.currentAvatarImageUrl,
+
     this.currentAvatarThumbnailImageUrl,
+
     this.currentAvatarTags,
+
     required this.developerType,
+
     required this.displayName,
+
     required this.friendKey,
+
     required this.id,
+
     required this.isFriend,
+
     required this.imageUrl,
+
     required this.lastPlatform,
+
     required this.location,
+
     required this.lastLogin,
+
     required this.lastActivity,
+
     required this.lastMobile,
+
     required this.platform,
-    required this.profilePicOverride,
-    required this.profilePicOverrideThumbnail,
+
+    this.profilePicOverride,
+
+    this.profilePicOverrideThumbnail,
+
     required this.status,
+
     required this.statusDescription,
+
     required this.tags,
+
     required this.userIcon,
   });
 
@@ -103,15 +126,15 @@ class LimitedUserFriend {
   @JsonKey(name: r'platform', required: true, includeIfNull: false)
   final String platform;
 
-  @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
-  final String profilePicOverride;
+  @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
+  final String? profilePicOverride;
 
   @JsonKey(
     name: r'profilePicOverrideThumbnail',
-    required: true,
+    required: false,
     includeIfNull: false,
   )
-  final String profilePicOverrideThumbnail;
+  final String? profilePicOverrideThumbnail;
 
   @JsonKey(name: r'status', required: true, includeIfNull: false)
   final UserStatus status;

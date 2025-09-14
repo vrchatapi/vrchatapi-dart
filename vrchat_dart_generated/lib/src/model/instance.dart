@@ -11,6 +11,7 @@ import 'package:vrchat_dart_generated/src/model/instance_region.dart';
 import 'package:vrchat_dart_generated/src/model/group_access_type.dart';
 import 'package:vrchat_dart_generated/src/model/world.dart';
 import 'package:vrchat_dart_generated/src/model/region.dart';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'instance.g.dart';
@@ -25,46 +26,87 @@ class Instance {
   /// Returns a new [Instance] instance.
   Instance({
     this.active = true,
+
     this.ageGate,
+
     this.canRequestInvite = true,
+
     required this.capacity,
+
     required this.clientNumber,
+
     required this.contentSettings,
+
     required this.displayName,
+
     this.full = false,
+
     this.gameServerVersion,
+
     required this.id,
+
     required this.instanceId,
+
     required this.instancePersistenceEnabled,
+
     required this.location,
+
     required this.nUsers,
+
     required this.name,
+
     this.ownerId,
+
     this.permanent = false,
+
     required this.photonRegion,
+
     required this.platforms,
+
     required this.playerPersistenceEnabled,
+
     required this.region,
+
     required this.secureName,
+
     this.shortName,
+
     required this.tags,
+
     required this.type,
+
     required this.worldId,
+
     this.hidden,
+
     this.friends,
+
     this.private,
+
     required this.queueEnabled,
+
     required this.queueSize,
+
     required this.recommendedCapacity,
+
     this.roleRestricted,
+
     required this.strict,
+
     required this.userCount,
+
     required this.world,
+
     this.users,
+
     this.groupAccessType,
+
     this.hasCapacityForYou,
+
     this.nonce,
+
     this.closedAt,
+
     this.hardClose,
   });
 

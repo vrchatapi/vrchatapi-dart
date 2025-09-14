@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'instance_platforms.g.dart';
@@ -17,7 +18,9 @@ class InstancePlatforms {
   /// Returns a new [InstancePlatforms] instance.
   InstancePlatforms({
     required this.android,
+
     this.ios,
+
     required this.standalonewindows,
   });
 

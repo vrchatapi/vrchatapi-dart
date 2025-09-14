@@ -26,7 +26,7 @@ Map<String, dynamic> _$RespondGroupJoinRequestToJson(
   RespondGroupJoinRequest instance,
 ) => <String, dynamic>{
   'action': _$GroupJoinRequestActionEnumMap[instance.action]!,
-  if (instance.block case final value?) 'block': value,
+  'block': ?instance.block,
 };
 
 const _$GroupJoinRequestActionEnumMap = {

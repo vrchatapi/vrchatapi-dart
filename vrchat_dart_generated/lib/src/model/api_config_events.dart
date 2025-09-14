@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'api_config_events.g.dart';
@@ -17,14 +18,23 @@ class APIConfigEvents {
   /// Returns a new [APIConfigEvents] instance.
   APIConfigEvents({
     required this.distanceClose,
+
     required this.distanceFactor,
+
     required this.distanceFar,
+
     required this.groupDistance,
+
     required this.maximumBunchSize,
+
     required this.notVisibleFactor,
+
     required this.playerOrderBucketSize,
+
     required this.playerOrderFactor,
+
     required this.slowUpdateFactorThreshold,
+
     required this.viewSegmentLength,
   });
 
