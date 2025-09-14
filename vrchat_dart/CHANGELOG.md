@@ -1,3 +1,7 @@
+## 3.7.1
+
+- Fixes an issue with `User.toLimitedUser`
+
 ## 3.7.0
 
 - Adds `LimitedUser` class to combine the more specific classes now in `vrchat_dart_generated`

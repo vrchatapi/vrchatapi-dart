@@ -19,8 +19,8 @@ extension UserExtension on User {
   LimitedUser toLimitedUser() {
     return LimitedUser.fromJson({
       ...toJson(),
-      'last_login': DateTime.tryParse(lastLogin),
-      'last_activity': DateTime.tryParse(lastActivity),
+      'last_login': DateTime.tryParse(lastLogin)?.toIso8601String(),
+      'last_activity': DateTime.tryParse(lastActivity)?.toIso8601String(),
     });
   }
 }

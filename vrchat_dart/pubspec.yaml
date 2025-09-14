@@ -1,7 +1,7 @@
 name: vrchat_dart
 description: This is a Dart client that interacts with the unofficial VRChat API
 homepage: https://github.com/vrchatapi/vrchatapi-dart
-version: 3.7.0
+version: 3.7.1
 
 environment:
   sdk: ^3.0.0
