@@ -16,15 +16,9 @@ part 'error.g.dart';
 )
 class Error {
   /// Returns a new [Error] instance.
-  Error({
-    this.error,
-  });
+  Error({this.error});
 
-  @JsonKey(
-    name: r'error',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'error', required: false, includeIfNull: false)
   final Response? error;
 
   @override

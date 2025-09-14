@@ -15,15 +15,9 @@ part 'tilia_tos.g.dart';
 )
 class TiliaTOS {
   /// Returns a new [TiliaTOS] instance.
-  TiliaTOS({
-    required this.signedTos,
-  });
+  TiliaTOS({required this.signedTos});
 
-  @JsonKey(
-    name: r'signed_tos',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'signed_tos', required: true, includeIfNull: false)
   final bool signedTos;
 
   @override

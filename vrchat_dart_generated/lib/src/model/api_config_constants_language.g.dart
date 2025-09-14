@@ -9,26 +9,27 @@ part of 'api_config_constants_language.dart';
 // **************************************************************************
 
 APIConfigConstantsLANGUAGE _$APIConfigConstantsLANGUAGEFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'APIConfigConstantsLANGUAGE',
-      json,
-      ($checkedConvert) {
-        final val = APIConfigConstantsLANGUAGE(
-          spokenLanguageOptions: $checkedConvert(
-              'SPOKEN_LANGUAGE_OPTIONS',
-              (v) => (v as Map<String, dynamic>?)?.map(
-                    (k, e) => MapEntry(k, e as String),
-                  )),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'spokenLanguageOptions': 'SPOKEN_LANGUAGE_OPTIONS'},
+  Map<String, dynamic> json,
+) => $checkedCreate(
+  'APIConfigConstantsLANGUAGE',
+  json,
+  ($checkedConvert) {
+    final val = APIConfigConstantsLANGUAGE(
+      spokenLanguageOptions: $checkedConvert(
+        'SPOKEN_LANGUAGE_OPTIONS',
+        (v) => (v as Map<String, dynamic>?)?.map(
+          (k, e) => MapEntry(k, e as String),
+        ),
+      ),
     );
+    return val;
+  },
+  fieldKeyMap: const {'spokenLanguageOptions': 'SPOKEN_LANGUAGE_OPTIONS'},
+);
 
 Map<String, dynamic> _$APIConfigConstantsLANGUAGEToJson(
-        APIConfigConstantsLANGUAGE instance) =>
-    <String, dynamic>{
-      if (instance.spokenLanguageOptions case final value?)
-        'SPOKEN_LANGUAGE_OPTIONS': value,
-    };
+  APIConfigConstantsLANGUAGE instance,
+) => <String, dynamic>{
+  if (instance.spokenLanguageOptions case final value?)
+    'SPOKEN_LANGUAGE_OPTIONS': value,
+};

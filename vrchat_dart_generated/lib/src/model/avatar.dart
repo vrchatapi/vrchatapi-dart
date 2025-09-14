@@ -51,199 +51,91 @@ class Avatar {
     this.version = 0,
   });
 
-  @JsonKey(
-    name: r'acknowledgements',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'acknowledgements', required: false, includeIfNull: false)
   final String? acknowledgements;
 
   /// Not present from general search `/avatars`, only on specific requests `/avatars/{avatarId}`.
-  @JsonKey(
-    name: r'assetUrl',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'assetUrl', required: false, includeIfNull: false)
   final String? assetUrl;
 
   /// Not present from general search `/avatars`, only on specific requests `/avatars/{avatarId}`. **Deprecation:** `Object` has unknown usage/fields, and is always empty. Use normal `Url` field instead.
-  @JsonKey(
-    name: r'assetUrlObject',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'assetUrlObject', required: false, includeIfNull: false)
   final Object? assetUrlObject;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(
-    name: r'authorId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'authorId', required: true, includeIfNull: false)
   final String authorId;
 
-  @JsonKey(
-    name: r'authorName',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'authorName', required: true, includeIfNull: false)
   final String authorName;
 
-  @JsonKey(
-    name: r'created_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
 
-  @JsonKey(
-    name: r'description',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
 
-  @JsonKey(
-    name: r'featured',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'featured', required: true, includeIfNull: false)
   final bool featured;
 
-  @JsonKey(
-    name: r'highestPrice',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'highestPrice', required: false, includeIfNull: false)
   final int? highestPrice;
 
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(
-    name: r'imageUrl',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'imageUrl', required: true, includeIfNull: false)
   final String imageUrl;
 
-  @JsonKey(
-    name: r'lock',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'lock', required: false, includeIfNull: false)
   final bool? lock;
 
-  @JsonKey(
-    name: r'lowestPrice',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'lowestPrice', required: false, includeIfNull: false)
   final int? lowestPrice;
 
-  @JsonKey(
-    name: r'name',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
-  @JsonKey(
-    name: r'performance',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'performance', required: true, includeIfNull: false)
   final AvatarPerformance performance;
 
-  @JsonKey(
-    name: r'productId',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'productId', required: false, includeIfNull: false)
   final String? productId;
 
-  @JsonKey(
-    name: r'publishedListings',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'publishedListings', required: false, includeIfNull: false)
   final List<AvatarPublishedListingsInner>? publishedListings;
 
-  @JsonKey(
-    name: r'releaseStatus',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'releaseStatus', required: true, includeIfNull: false)
   final ReleaseStatus releaseStatus;
 
-  @JsonKey(
-    name: r'searchable',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'searchable', required: false, includeIfNull: false)
   final bool? searchable;
 
-  @JsonKey(
-    name: r'styles',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'styles', required: true, includeIfNull: false)
   final AvatarStyles styles;
 
   ///
-  @JsonKey(
-    name: r'tags',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 
-  @JsonKey(
-    name: r'thumbnailImageUrl',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'thumbnailImageUrl', required: true, includeIfNull: false)
   final String thumbnailImageUrl;
 
-  @JsonKey(
-    name: r'unityPackageUrl',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'unityPackageUrl', required: true, includeIfNull: false)
   final String unityPackageUrl;
 
   @Deprecated('unityPackageUrlObject has been deprecated')
-  @JsonKey(
-    name: r'unityPackageUrlObject',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'unityPackageUrlObject', required: true, includeIfNull: false)
   final AvatarUnityPackageUrlObject unityPackageUrlObject;
 
-  @JsonKey(
-    name: r'unityPackages',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'unityPackages', required: true, includeIfNull: false)
   final Set<UnityPackage> unityPackages;
 
-  @JsonKey(
-    name: r'updated_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
   final DateTime updatedAt;
 
   // minimum: 0
-  @JsonKey(
-    name: r'version',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'version', required: true, includeIfNull: false)
   final int version;
 
   @override
@@ -273,7 +165,7 @@ class Avatar {
           other.tags == tags &&
           other.thumbnailImageUrl == thumbnailImageUrl &&
           other.unityPackageUrl == unityPackageUrl &&
-// ignore: deprecated_member_use_from_same_package
+          // ignore: deprecated_member_use_from_same_package
           other.unityPackageUrlObject == unityPackageUrlObject &&
           other.unityPackages == unityPackages &&
           other.updatedAt == updatedAt &&
@@ -304,7 +196,7 @@ class Avatar {
       tags.hashCode +
       thumbnailImageUrl.hashCode +
       unityPackageUrl.hashCode +
-// ignore: deprecated_member_use_from_same_package
+      // ignore: deprecated_member_use_from_same_package
       unityPackageUrlObject.hashCode +
       unityPackages.hashCode +
       updatedAt.hashCode +

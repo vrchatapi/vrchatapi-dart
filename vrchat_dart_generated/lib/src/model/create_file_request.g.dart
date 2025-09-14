@@ -9,26 +9,22 @@ part of 'create_file_request.dart';
 // **************************************************************************
 
 CreateFileRequest _$CreateFileRequestFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'CreateFileRequest',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['name', 'mimeType', 'extension'],
-        );
-        final val = CreateFileRequest(
-          name: $checkedConvert('name', (v) => v as String),
-          mimeType: $checkedConvert(
-              'mimeType', (v) => $enumDecode(_$MIMETypeEnumMap, v)),
-          extension_: $checkedConvert('extension', (v) => v as String),
-          tags: $checkedConvert('tags',
-              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'extension_': 'extension'},
-    );
+    $checkedCreate('CreateFileRequest', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['name', 'mimeType', 'extension']);
+      final val = CreateFileRequest(
+        name: $checkedConvert('name', (v) => v as String),
+        mimeType: $checkedConvert(
+          'mimeType',
+          (v) => $enumDecode(_$MIMETypeEnumMap, v),
+        ),
+        extension_: $checkedConvert('extension', (v) => v as String),
+        tags: $checkedConvert(
+          'tags',
+          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+        ),
+      );
+      return val;
+    }, fieldKeyMap: const {'extension_': 'extension'});
 
 Map<String, dynamic> _$CreateFileRequestToJson(CreateFileRequest instance) =>
     <String, dynamic>{

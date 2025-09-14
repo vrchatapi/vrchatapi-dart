@@ -8,56 +8,56 @@ part of 'file.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-File _$FileFromJson(Map<String, dynamic> json) => $checkedCreate(
-      'File',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const [
-            'extension',
-            'id',
-            'mimeType',
-            'name',
-            'ownerId',
-            'tags',
-            'versions'
-          ],
-        );
-        final val = File(
-          animationStyle:
-              $checkedConvert('animationStyle', (v) => v as String?),
-          maskTag: $checkedConvert('maskTag', (v) => v as String?),
-          extension_: $checkedConvert('extension', (v) => v as String),
-          id: $checkedConvert('id', (v) => v as String),
-          mimeType: $checkedConvert(
-              'mimeType', (v) => $enumDecode(_$MIMETypeEnumMap, v)),
-          name: $checkedConvert('name', (v) => v as String),
-          ownerId: $checkedConvert('ownerId', (v) => v as String),
-          tags: $checkedConvert('tags',
-              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
-          versions: $checkedConvert(
-              'versions',
-              (v) => (v as List<dynamic>)
-                  .map((e) => FileVersion.fromJson(e as Map<String, dynamic>))
-                  .toSet()),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'extension_': 'extension'},
-    );
+File _$FileFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('File', json, ($checkedConvert) {
+      $checkKeys(
+        json,
+        requiredKeys: const [
+          'extension',
+          'id',
+          'mimeType',
+          'name',
+          'ownerId',
+          'tags',
+          'versions',
+        ],
+      );
+      final val = File(
+        animationStyle: $checkedConvert('animationStyle', (v) => v as String?),
+        maskTag: $checkedConvert('maskTag', (v) => v as String?),
+        extension_: $checkedConvert('extension', (v) => v as String),
+        id: $checkedConvert('id', (v) => v as String),
+        mimeType: $checkedConvert(
+          'mimeType',
+          (v) => $enumDecode(_$MIMETypeEnumMap, v),
+        ),
+        name: $checkedConvert('name', (v) => v as String),
+        ownerId: $checkedConvert('ownerId', (v) => v as String),
+        tags: $checkedConvert(
+          'tags',
+          (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+        ),
+        versions: $checkedConvert(
+          'versions',
+          (v) => (v as List<dynamic>)
+              .map((e) => FileVersion.fromJson(e as Map<String, dynamic>))
+              .toSet(),
+        ),
+      );
+      return val;
+    }, fieldKeyMap: const {'extension_': 'extension'});
 
 Map<String, dynamic> _$FileToJson(File instance) => <String, dynamic>{
-      if (instance.animationStyle case final value?) 'animationStyle': value,
-      if (instance.maskTag case final value?) 'maskTag': value,
-      'extension': instance.extension_,
-      'id': instance.id,
-      'mimeType': _$MIMETypeEnumMap[instance.mimeType]!,
-      'name': instance.name,
-      'ownerId': instance.ownerId,
-      'tags': instance.tags,
-      'versions': instance.versions.map((e) => e.toJson()).toList(),
-    };
+  if (instance.animationStyle case final value?) 'animationStyle': value,
+  if (instance.maskTag case final value?) 'maskTag': value,
+  'extension': instance.extension_,
+  'id': instance.id,
+  'mimeType': _$MIMETypeEnumMap[instance.mimeType]!,
+  'name': instance.name,
+  'ownerId': instance.ownerId,
+  'tags': instance.tags,
+  'versions': instance.versions.map((e) => e.toJson()).toList(),
+};
 
 const _$MIMETypeEnumMap = {
   MIMEType.imageSlashJpeg: 'image/jpeg',

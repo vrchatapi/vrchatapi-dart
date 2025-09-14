@@ -15,31 +15,15 @@ part 'balance.g.dart';
 )
 class Balance {
   /// Returns a new [Balance] instance.
-  Balance({
-    this.balance = 0,
-    this.noTransactions,
-    this.tiliaResponse,
-  });
+  Balance({this.balance = 0, this.noTransactions, this.tiliaResponse});
 
-  @JsonKey(
-    name: r'balance',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'balance', required: true, includeIfNull: false)
   final int balance;
 
-  @JsonKey(
-    name: r'noTransactions',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'noTransactions', required: false, includeIfNull: false)
   final bool? noTransactions;
 
-  @JsonKey(
-    name: r'tiliaResponse',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'tiliaResponse', required: false, includeIfNull: false)
   final bool? tiliaResponse;
 
   @override

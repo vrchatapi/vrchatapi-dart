@@ -53,221 +53,97 @@ class ProductListing {
     required this.updated,
   });
 
-  @JsonKey(
-    name: r'active',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'active', required: true, includeIfNull: false)
   final bool active;
 
-  @JsonKey(
-    name: r'archived',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'archived', required: true, includeIfNull: false)
   final bool archived;
 
-  @JsonKey(
-    name: r'buyerRefundable',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'buyerRefundable', required: true, includeIfNull: false)
   final bool buyerRefundable;
 
-  @JsonKey(
-    name: r'created',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'created', required: true, includeIfNull: false)
   final DateTime created;
 
-  @JsonKey(
-    name: r'description',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
 
-  @JsonKey(
-    name: r'displayName',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'displayName', required: true, includeIfNull: false)
   final String displayName;
 
-  @JsonKey(
-    name: r'duration',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'duration', required: false, includeIfNull: false)
   final int? duration;
 
-  @JsonKey(
-    name: r'durationType',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'durationType', required: false, includeIfNull: false)
   final String? durationType;
 
-  @JsonKey(
-    name: r'groupIcon',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'groupIcon', required: true, includeIfNull: false)
   final String groupIcon;
 
-  @JsonKey(
-    name: r'groupId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'groupId', required: true, includeIfNull: false)
   final String groupId;
 
-  @JsonKey(
-    name: r'groupName',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'groupName', required: true, includeIfNull: false)
   final String groupName;
 
-  @JsonKey(
-    name: r'hydratedProducts',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'hydratedProducts', required: false, includeIfNull: false)
   final List<Product>? hydratedProducts;
 
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(
-    name: r'imageId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'imageId', required: true, includeIfNull: false)
   final String imageId;
 
-  @JsonKey(
-    name: r'instant',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'instant', required: true, includeIfNull: false)
   final bool instant;
 
-  @JsonKey(
-    name: r'listingType',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'listingType', required: true, includeIfNull: false)
   final ProductListingType listingType;
 
-  @JsonKey(
-    name: r'listingVariants',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'listingVariants', required: true, includeIfNull: false)
   final List<ProductListingVariant> listingVariants;
 
-  @JsonKey(
-    name: r'permanent',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'permanent', required: true, includeIfNull: false)
   final bool permanent;
 
-  @JsonKey(
-    name: r'priceTokens',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'priceTokens', required: true, includeIfNull: false)
   final int priceTokens;
 
-  @JsonKey(
-    name: r'productIds',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'productIds', required: true, includeIfNull: false)
   final List<String> productIds;
 
-  @JsonKey(
-    name: r'productType',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'productType', required: true, includeIfNull: false)
   final ProductType productType;
 
-  @JsonKey(
-    name: r'products',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'products', required: true, includeIfNull: false)
   final List<Object> products;
 
-  @JsonKey(
-    name: r'quantifiable',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'quantifiable', required: false, includeIfNull: false)
   final bool? quantifiable;
 
-  @JsonKey(
-    name: r'recurrable',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'recurrable', required: true, includeIfNull: false)
   final bool recurrable;
 
-  @JsonKey(
-    name: r'refundable',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'refundable', required: true, includeIfNull: false)
   final bool refundable;
 
-  @JsonKey(
-    name: r'sellerDisplayName',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'sellerDisplayName', required: true, includeIfNull: false)
   final String sellerDisplayName;
 
-  @JsonKey(
-    name: r'sellerId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'sellerId', required: true, includeIfNull: false)
   final String sellerId;
 
-  @JsonKey(
-    name: r'stackable',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'stackable', required: true, includeIfNull: false)
   final bool stackable;
 
-  @JsonKey(
-    name: r'storeIds',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'storeIds', required: true, includeIfNull: false)
   final List<String> storeIds;
 
-  @JsonKey(
-    name: r'tags',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 
-  @JsonKey(
-    name: r'updated',
-    required: true,
-    includeIfNull: true,
-  )
+  @JsonKey(name: r'updated', required: true, includeIfNull: true)
   final DateTime? updated;
 
   @override

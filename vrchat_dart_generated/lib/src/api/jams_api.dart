@@ -40,13 +40,15 @@ class JamsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/jams/{jamId}'.replaceAll('{' r'jamId' '}', jamId.toString());
+    final _path = r'/jams/{jamId}'.replaceAll(
+      '{'
+      r'jamId'
+      '}',
+      jamId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -121,13 +123,15 @@ class JamsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/jams/{jamId}/submissions'
-        .replaceAll('{' r'jamId' '}', jamId.toString());
+    final _path = r'/jams/{jamId}/submissions'.replaceAll(
+      '{'
+      r'jamId'
+      '}',
+      jamId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -157,8 +161,10 @@ class JamsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<Submission>, Submission>(
-              rawData, 'List<Submission>',
-              growable: true);
+              rawData,
+              'List<Submission>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -207,9 +213,7 @@ class JamsApi {
     final _path = r'/jams';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -224,9 +228,7 @@ class JamsApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      if (type != null) r'type': type,
-    };
+    final _queryParameters = <String, dynamic>{if (type != null) r'type': type};
 
     final _response = await _dio.request<Object>(
       _path,

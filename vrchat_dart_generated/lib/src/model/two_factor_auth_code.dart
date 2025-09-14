@@ -15,15 +15,9 @@ part 'two_factor_auth_code.g.dart';
 )
 class TwoFactorAuthCode {
   /// Returns a new [TwoFactorAuthCode] instance.
-  TwoFactorAuthCode({
-    required this.code,
-  });
+  TwoFactorAuthCode({required this.code});
 
-  @JsonKey(
-    name: r'code',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'code', required: true, includeIfNull: false)
   final String code;
 
   @override

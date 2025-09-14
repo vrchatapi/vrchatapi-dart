@@ -9,27 +9,19 @@ part of 'notification_detail_vote_to_kick.dart';
 // **************************************************************************
 
 NotificationDetailVoteToKick _$NotificationDetailVoteToKickFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'NotificationDetailVoteToKick',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['initiatorUserId', 'userToKickId'],
-        );
-        final val = NotificationDetailVoteToKick(
-          initiatorUserId:
-              $checkedConvert('initiatorUserId', (v) => v as String),
-          userToKickId: $checkedConvert('userToKickId', (v) => v as String),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('NotificationDetailVoteToKick', json, ($checkedConvert) {
+  $checkKeys(json, requiredKeys: const ['initiatorUserId', 'userToKickId']);
+  final val = NotificationDetailVoteToKick(
+    initiatorUserId: $checkedConvert('initiatorUserId', (v) => v as String),
+    userToKickId: $checkedConvert('userToKickId', (v) => v as String),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$NotificationDetailVoteToKickToJson(
-        NotificationDetailVoteToKick instance) =>
-    <String, dynamic>{
-      'initiatorUserId': instance.initiatorUserId,
-      'userToKickId': instance.userToKickId,
-    };
+  NotificationDetailVoteToKick instance,
+) => <String, dynamic>{
+  'initiatorUserId': instance.initiatorUserId,
+  'userToKickId': instance.userToKickId,
+};

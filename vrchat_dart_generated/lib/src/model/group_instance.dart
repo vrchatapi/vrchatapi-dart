@@ -23,34 +23,18 @@ class GroupInstance {
     required this.memberCount,
   });
 
-  @JsonKey(
-    name: r'instanceId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'instanceId', required: true, includeIfNull: false)
   final String instanceId;
 
   /// InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
-  @JsonKey(
-    name: r'location',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'location', required: true, includeIfNull: false)
   final String location;
 
-  @JsonKey(
-    name: r'world',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'world', required: true, includeIfNull: false)
   final World world;
 
   // minimum: 0
-  @JsonKey(
-    name: r'memberCount',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'memberCount', required: true, includeIfNull: false)
   final int memberCount;
 
   @override

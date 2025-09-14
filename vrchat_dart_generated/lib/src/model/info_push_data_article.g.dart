@@ -9,24 +9,20 @@ part of 'info_push_data_article.dart';
 // **************************************************************************
 
 InfoPushDataArticle _$InfoPushDataArticleFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'InfoPushDataArticle',
-      json,
-      ($checkedConvert) {
-        final val = InfoPushDataArticle(
-          content: $checkedConvert(
-              'content',
-              (v) => v == null
-                  ? null
-                  : InfoPushDataArticleContent.fromJson(
-                      v as Map<String, dynamic>)),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('InfoPushDataArticle', json, ($checkedConvert) {
+      final val = InfoPushDataArticle(
+        content: $checkedConvert(
+          'content',
+          (v) => v == null
+              ? null
+              : InfoPushDataArticleContent.fromJson(v as Map<String, dynamic>),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$InfoPushDataArticleToJson(
-        InfoPushDataArticle instance) =>
-    <String, dynamic>{
-      if (instance.content?.toJson() case final value?) 'content': value,
-    };
+  InfoPushDataArticle instance,
+) => <String, dynamic>{
+  if (instance.content?.toJson() case final value?) 'content': value,
+};

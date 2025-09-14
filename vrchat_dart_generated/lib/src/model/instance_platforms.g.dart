@@ -9,23 +9,18 @@ part of 'instance_platforms.dart';
 // **************************************************************************
 
 InstancePlatforms _$InstancePlatformsFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'InstancePlatforms',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['android', 'standalonewindows'],
-        );
-        final val = InstancePlatforms(
-          android: $checkedConvert('android', (v) => (v as num).toInt()),
-          ios: $checkedConvert('ios', (v) => (v as num?)?.toInt()),
-          standalonewindows:
-              $checkedConvert('standalonewindows', (v) => (v as num).toInt()),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('InstancePlatforms', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['android', 'standalonewindows']);
+      final val = InstancePlatforms(
+        android: $checkedConvert('android', (v) => (v as num).toInt()),
+        ios: $checkedConvert('ios', (v) => (v as num?)?.toInt()),
+        standalonewindows: $checkedConvert(
+          'standalonewindows',
+          (v) => (v as num).toInt(),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$InstancePlatformsToJson(InstancePlatforms instance) =>
     <String, dynamic>{

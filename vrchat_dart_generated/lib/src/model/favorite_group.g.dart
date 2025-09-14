@@ -8,41 +8,40 @@ part of 'favorite_group.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-FavoriteGroup _$FavoriteGroupFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'FavoriteGroup',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const [
-            'displayName',
-            'id',
-            'name',
-            'ownerDisplayName',
-            'ownerId',
-            'tags',
-            'type',
-            'visibility'
-          ],
-        );
-        final val = FavoriteGroup(
-          displayName: $checkedConvert('displayName', (v) => v as String),
-          id: $checkedConvert('id', (v) => v as String),
-          name: $checkedConvert('name', (v) => v as String),
-          ownerDisplayName:
-              $checkedConvert('ownerDisplayName', (v) => v as String),
-          ownerId: $checkedConvert('ownerId', (v) => v as String),
-          tags: $checkedConvert('tags',
-              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
-          type: $checkedConvert(
-              'type', (v) => $enumDecode(_$FavoriteTypeEnumMap, v)),
-          visibility: $checkedConvert('visibility',
-              (v) => $enumDecode(_$FavoriteGroupVisibilityEnumMap, v)),
-        );
-        return val;
-      },
-    );
+FavoriteGroup _$FavoriteGroupFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('FavoriteGroup', json, ($checkedConvert) {
+  $checkKeys(
+    json,
+    requiredKeys: const [
+      'displayName',
+      'id',
+      'name',
+      'ownerDisplayName',
+      'ownerId',
+      'tags',
+      'type',
+      'visibility',
+    ],
+  );
+  final val = FavoriteGroup(
+    displayName: $checkedConvert('displayName', (v) => v as String),
+    id: $checkedConvert('id', (v) => v as String),
+    name: $checkedConvert('name', (v) => v as String),
+    ownerDisplayName: $checkedConvert('ownerDisplayName', (v) => v as String),
+    ownerId: $checkedConvert('ownerId', (v) => v as String),
+    tags: $checkedConvert(
+      'tags',
+      (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+    ),
+    type: $checkedConvert('type', (v) => $enumDecode(_$FavoriteTypeEnumMap, v)),
+    visibility: $checkedConvert(
+      'visibility',
+      (v) => $enumDecode(_$FavoriteGroupVisibilityEnumMap, v),
+    ),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$FavoriteGroupToJson(FavoriteGroup instance) =>
     <String, dynamic>{

@@ -9,24 +9,19 @@ part of 'service_queue_stats.dart';
 // **************************************************************************
 
 ServiceQueueStats _$ServiceQueueStatsFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'ServiceQueueStats',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['estimatedServiceDurationSeconds'],
-        );
-        final val = ServiceQueueStats(
-          estimatedServiceDurationSeconds: $checkedConvert(
-              'estimatedServiceDurationSeconds', (v) => (v as num).toInt()),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('ServiceQueueStats', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['estimatedServiceDurationSeconds']);
+      final val = ServiceQueueStats(
+        estimatedServiceDurationSeconds: $checkedConvert(
+          'estimatedServiceDurationSeconds',
+          (v) => (v as num).toInt(),
+        ),
+      );
+      return val;
+    });
 
-Map<String, dynamic> _$ServiceQueueStatsToJson(ServiceQueueStats instance) =>
-    <String, dynamic>{
-      'estimatedServiceDurationSeconds':
-          instance.estimatedServiceDurationSeconds,
-    };
+Map<String, dynamic> _$ServiceQueueStatsToJson(
+  ServiceQueueStats instance,
+) => <String, dynamic>{
+  'estimatedServiceDurationSeconds': instance.estimatedServiceDurationSeconds,
+};

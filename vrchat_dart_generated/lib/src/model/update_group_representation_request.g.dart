@@ -9,24 +9,16 @@ part of 'update_group_representation_request.dart';
 // **************************************************************************
 
 UpdateGroupRepresentationRequest _$UpdateGroupRepresentationRequestFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'UpdateGroupRepresentationRequest',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['isRepresenting'],
-        );
-        final val = UpdateGroupRepresentationRequest(
-          isRepresenting: $checkedConvert('isRepresenting', (v) => v as bool),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) =>
+    $checkedCreate('UpdateGroupRepresentationRequest', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['isRepresenting']);
+      final val = UpdateGroupRepresentationRequest(
+        isRepresenting: $checkedConvert('isRepresenting', (v) => v as bool),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$UpdateGroupRepresentationRequestToJson(
-        UpdateGroupRepresentationRequest instance) =>
-    <String, dynamic>{
-      'isRepresenting': instance.isRepresenting,
-    };
+  UpdateGroupRepresentationRequest instance,
+) => <String, dynamic>{'isRepresenting': instance.isRepresenting};

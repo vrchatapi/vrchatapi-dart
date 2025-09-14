@@ -9,24 +9,21 @@ part of 'api_config_offline_analysis.dart';
 // **************************************************************************
 
 APIConfigOfflineAnalysis _$APIConfigOfflineAnalysisFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'APIConfigOfflineAnalysis',
-      json,
-      ($checkedConvert) {
-        final val = APIConfigOfflineAnalysis(
-          android: $checkedConvert('android', (v) => v as bool? ?? true),
-          standalonewindows:
-              $checkedConvert('standalonewindows', (v) => v as bool? ?? true),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('APIConfigOfflineAnalysis', json, ($checkedConvert) {
+  final val = APIConfigOfflineAnalysis(
+    android: $checkedConvert('android', (v) => v as bool? ?? true),
+    standalonewindows: $checkedConvert(
+      'standalonewindows',
+      (v) => v as bool? ?? true,
+    ),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$APIConfigOfflineAnalysisToJson(
-        APIConfigOfflineAnalysis instance) =>
-    <String, dynamic>{
-      if (instance.android case final value?) 'android': value,
-      if (instance.standalonewindows case final value?)
-        'standalonewindows': value,
-    };
+  APIConfigOfflineAnalysis instance,
+) => <String, dynamic>{
+  if (instance.android case final value?) 'android': value,
+  if (instance.standalonewindows case final value?) 'standalonewindows': value,
+};

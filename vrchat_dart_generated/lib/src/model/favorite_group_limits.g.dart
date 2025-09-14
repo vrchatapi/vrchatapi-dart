@@ -9,27 +9,20 @@ part of 'favorite_group_limits.dart';
 // **************************************************************************
 
 FavoriteGroupLimits _$FavoriteGroupLimitsFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'FavoriteGroupLimits',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['avatar', 'friend', 'world'],
-        );
-        final val = FavoriteGroupLimits(
-          avatar: $checkedConvert('avatar', (v) => (v as num).toInt()),
-          friend: $checkedConvert('friend', (v) => (v as num).toInt()),
-          world: $checkedConvert('world', (v) => (v as num).toInt()),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('FavoriteGroupLimits', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['avatar', 'friend', 'world']);
+      final val = FavoriteGroupLimits(
+        avatar: $checkedConvert('avatar', (v) => (v as num).toInt()),
+        friend: $checkedConvert('friend', (v) => (v as num).toInt()),
+        world: $checkedConvert('world', (v) => (v as num).toInt()),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$FavoriteGroupLimitsToJson(
-        FavoriteGroupLimits instance) =>
-    <String, dynamic>{
-      'avatar': instance.avatar,
-      'friend': instance.friend,
-      'world': instance.world,
-    };
+  FavoriteGroupLimits instance,
+) => <String, dynamic>{
+  'avatar': instance.avatar,
+  'friend': instance.friend,
+  'world': instance.world,
+};

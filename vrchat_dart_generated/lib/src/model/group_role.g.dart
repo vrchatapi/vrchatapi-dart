@@ -8,62 +8,66 @@ part of 'group_role.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-GroupRole _$GroupRoleFromJson(Map<String, dynamic> json) => $checkedCreate(
-      'GroupRole',
-      json,
-      ($checkedConvert) {
-        final val = GroupRole(
-          id: $checkedConvert('id', (v) => v as String?),
-          groupId: $checkedConvert('groupId', (v) => v as String?),
-          name: $checkedConvert('name', (v) => v as String?),
-          description: $checkedConvert('description', (v) => v as String?),
-          isSelfAssignable:
-              $checkedConvert('isSelfAssignable', (v) => v as bool? ?? false),
-          permissions: $checkedConvert(
-              'permissions',
-              (v) => (v as List<dynamic>?)
-                  ?.map((e) => $enumDecode(_$GroupPermissionsEnumMap, e))
-                  .toList()),
-          isManagementRole:
-              $checkedConvert('isManagementRole', (v) => v as bool? ?? false),
-          requiresTwoFactor:
-              $checkedConvert('requiresTwoFactor', (v) => v as bool? ?? false),
-          requiresPurchase:
-              $checkedConvert('requiresPurchase', (v) => v as bool? ?? false),
-          order: $checkedConvert('order', (v) => (v as num?)?.toInt()),
-          createdAt: $checkedConvert('createdAt',
-              (v) => v == null ? null : DateTime.parse(v as String)),
-          updatedAt: $checkedConvert('updatedAt',
-              (v) => v == null ? null : DateTime.parse(v as String)),
-        );
-        return val;
-      },
-    );
+GroupRole _$GroupRoleFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('GroupRole', json, ($checkedConvert) {
+      final val = GroupRole(
+        id: $checkedConvert('id', (v) => v as String?),
+        groupId: $checkedConvert('groupId', (v) => v as String?),
+        name: $checkedConvert('name', (v) => v as String?),
+        description: $checkedConvert('description', (v) => v as String?),
+        isSelfAssignable: $checkedConvert(
+          'isSelfAssignable',
+          (v) => v as bool? ?? false,
+        ),
+        permissions: $checkedConvert(
+          'permissions',
+          (v) => (v as List<dynamic>?)
+              ?.map((e) => $enumDecode(_$GroupPermissionsEnumMap, e))
+              .toList(),
+        ),
+        isManagementRole: $checkedConvert(
+          'isManagementRole',
+          (v) => v as bool? ?? false,
+        ),
+        requiresTwoFactor: $checkedConvert(
+          'requiresTwoFactor',
+          (v) => v as bool? ?? false,
+        ),
+        requiresPurchase: $checkedConvert(
+          'requiresPurchase',
+          (v) => v as bool? ?? false,
+        ),
+        order: $checkedConvert('order', (v) => (v as num?)?.toInt()),
+        createdAt: $checkedConvert(
+          'createdAt',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
+        updatedAt: $checkedConvert(
+          'updatedAt',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$GroupRoleToJson(GroupRole instance) => <String, dynamic>{
-      if (instance.id case final value?) 'id': value,
-      if (instance.groupId case final value?) 'groupId': value,
-      if (instance.name case final value?) 'name': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.isSelfAssignable case final value?)
-        'isSelfAssignable': value,
-      if (instance.permissions
-              ?.map((e) => _$GroupPermissionsEnumMap[e]!)
-              .toList()
-          case final value?)
-        'permissions': value,
-      if (instance.isManagementRole case final value?)
-        'isManagementRole': value,
-      if (instance.requiresTwoFactor case final value?)
-        'requiresTwoFactor': value,
-      if (instance.requiresPurchase case final value?)
-        'requiresPurchase': value,
-      if (instance.order case final value?) 'order': value,
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
-      if (instance.updatedAt?.toIso8601String() case final value?)
-        'updatedAt': value,
-    };
+  if (instance.id case final value?) 'id': value,
+  if (instance.groupId case final value?) 'groupId': value,
+  if (instance.name case final value?) 'name': value,
+  if (instance.description case final value?) 'description': value,
+  if (instance.isSelfAssignable case final value?) 'isSelfAssignable': value,
+  if (instance.permissions?.map((e) => _$GroupPermissionsEnumMap[e]!).toList()
+      case final value?)
+    'permissions': value,
+  if (instance.isManagementRole case final value?) 'isManagementRole': value,
+  if (instance.requiresTwoFactor case final value?) 'requiresTwoFactor': value,
+  if (instance.requiresPurchase case final value?) 'requiresPurchase': value,
+  if (instance.order case final value?) 'order': value,
+  if (instance.createdAt?.toIso8601String() case final value?)
+    'createdAt': value,
+  if (instance.updatedAt?.toIso8601String() case final value?)
+    'updatedAt': value,
+};
 
 const _$GroupPermissionsEnumMap = {
   GroupPermissions.group_all: '*',

@@ -9,35 +9,34 @@ part of 'token_bundle.dart';
 // **************************************************************************
 
 TokenBundle _$TokenBundleFromJson(Map<String, dynamic> json) => $checkedCreate(
-      'TokenBundle',
+  'TokenBundle',
+  json,
+  ($checkedConvert) {
+    $checkKeys(
       json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const [
-            'id',
-            'steamItemId',
-            'oculusSku',
-            'amount',
-            'description',
-            'tokens',
-            'imageUrl'
-          ],
-        );
-        final val = TokenBundle(
-          id: $checkedConvert('id', (v) => v as String),
-          steamItemId: $checkedConvert('steamItemId', (v) => v as String),
-          oculusSku: $checkedConvert('oculusSku', (v) => v as String),
-          googleProductId:
-              $checkedConvert('googleProductId', (v) => v as String?),
-          amount: $checkedConvert('amount', (v) => (v as num).toInt()),
-          description: $checkedConvert('description', (v) => v as String),
-          tokens: $checkedConvert('tokens', (v) => (v as num).toInt()),
-          imageUrl: $checkedConvert('imageUrl', (v) => v as String),
-        );
-        return val;
-      },
+      requiredKeys: const [
+        'id',
+        'steamItemId',
+        'oculusSku',
+        'amount',
+        'description',
+        'tokens',
+        'imageUrl',
+      ],
     );
+    final val = TokenBundle(
+      id: $checkedConvert('id', (v) => v as String),
+      steamItemId: $checkedConvert('steamItemId', (v) => v as String),
+      oculusSku: $checkedConvert('oculusSku', (v) => v as String),
+      googleProductId: $checkedConvert('googleProductId', (v) => v as String?),
+      amount: $checkedConvert('amount', (v) => (v as num).toInt()),
+      description: $checkedConvert('description', (v) => v as String),
+      tokens: $checkedConvert('tokens', (v) => (v as num).toInt()),
+      imageUrl: $checkedConvert('imageUrl', (v) => v as String),
+    );
+    return val;
+  },
+);
 
 Map<String, dynamic> _$TokenBundleToJson(TokenBundle instance) =>
     <String, dynamic>{

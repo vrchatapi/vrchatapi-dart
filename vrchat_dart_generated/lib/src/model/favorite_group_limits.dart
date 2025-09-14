@@ -21,25 +21,13 @@ class FavoriteGroupLimits {
     required this.world,
   });
 
-  @JsonKey(
-    name: r'avatar',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'avatar', required: true, includeIfNull: false)
   final int avatar;
 
-  @JsonKey(
-    name: r'friend',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'friend', required: true, includeIfNull: false)
   final int friend;
 
-  @JsonKey(
-    name: r'world',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'world', required: true, includeIfNull: false)
   final int world;
 
   @override

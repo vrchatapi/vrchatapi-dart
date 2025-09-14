@@ -41,12 +41,15 @@ class NotificationsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/auth/user/notifications/{notificationId}/accept'
-        .replaceAll('{' r'notificationId' '}', notificationId.toString());
+        .replaceAll(
+          '{'
+          r'notificationId'
+          '}',
+          notificationId.toString(),
+        );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -122,9 +125,7 @@ class NotificationsApi {
     final _path = r'/auth/user/notifications/clear';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -199,13 +200,15 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/auth/user/notifications/{notificationId}/hide'
-        .replaceAll('{' r'notificationId' '}', notificationId.toString());
+    final _path = r'/auth/user/notifications/{notificationId}/hide'.replaceAll(
+      '{'
+      r'notificationId'
+      '}',
+      notificationId.toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -234,8 +237,11 @@ class NotificationsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Notification, Notification>(rawData, 'Notification',
-              growable: true);
+          : deserialize<Notification, Notification>(
+              rawData,
+              'Notification',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -281,13 +287,15 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/auth/user/notifications/{notificationId}'
-        .replaceAll('{' r'notificationId' '}', notificationId.toString());
+    final _path = r'/auth/user/notifications/{notificationId}'.replaceAll(
+      '{'
+      r'notificationId'
+      '}',
+      notificationId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -316,8 +324,11 @@ class NotificationsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Notification, Notification>(rawData, 'Notification',
-              growable: true);
+          : deserialize<Notification, Notification>(
+              rawData,
+              'Notification',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -376,9 +387,7 @@ class NotificationsApi {
     final _path = r'/auth/user/notifications';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -418,8 +427,10 @@ class NotificationsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<Notification>, Notification>(
-              rawData, 'List<Notification>',
-              growable: true);
+              rawData,
+              'List<Notification>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -465,13 +476,15 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/auth/user/notifications/{notificationId}/see'
-        .replaceAll('{' r'notificationId' '}', notificationId.toString());
+    final _path = r'/auth/user/notifications/{notificationId}/see'.replaceAll(
+      '{'
+      r'notificationId'
+      '}',
+      notificationId.toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -500,8 +513,11 @@ class NotificationsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Notification, Notification>(rawData, 'Notification',
-              growable: true);
+          : deserialize<Notification, Notification>(
+              rawData,
+              'Notification',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

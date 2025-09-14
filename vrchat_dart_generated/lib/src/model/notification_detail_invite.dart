@@ -21,26 +21,14 @@ class NotificationDetailInvite {
     required this.worldName,
   });
 
-  @JsonKey(
-    name: r'inviteMessage',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'inviteMessage', required: false, includeIfNull: false)
   final String? inviteMessage;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
-  @JsonKey(
-    name: r'worldId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'worldId', required: true, includeIfNull: false)
   final String worldId;
 
-  @JsonKey(
-    name: r'worldName',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'worldName', required: true, includeIfNull: false)
   final String worldName;
 
   @override

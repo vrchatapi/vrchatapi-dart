@@ -9,32 +9,26 @@ part of 'create_group_announcement_request.dart';
 // **************************************************************************
 
 CreateGroupAnnouncementRequest _$CreateGroupAnnouncementRequestFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'CreateGroupAnnouncementRequest',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['title'],
-        );
-        final val = CreateGroupAnnouncementRequest(
-          title: $checkedConvert('title', (v) => v as String),
-          text: $checkedConvert('text', (v) => v as String?),
-          imageId: $checkedConvert('imageId', (v) => v as String?),
-          sendNotification:
-              $checkedConvert('sendNotification', (v) => v as bool? ?? false),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('CreateGroupAnnouncementRequest', json, ($checkedConvert) {
+  $checkKeys(json, requiredKeys: const ['title']);
+  final val = CreateGroupAnnouncementRequest(
+    title: $checkedConvert('title', (v) => v as String),
+    text: $checkedConvert('text', (v) => v as String?),
+    imageId: $checkedConvert('imageId', (v) => v as String?),
+    sendNotification: $checkedConvert(
+      'sendNotification',
+      (v) => v as bool? ?? false,
+    ),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$CreateGroupAnnouncementRequestToJson(
-        CreateGroupAnnouncementRequest instance) =>
-    <String, dynamic>{
-      'title': instance.title,
-      if (instance.text case final value?) 'text': value,
-      if (instance.imageId case final value?) 'imageId': value,
-      if (instance.sendNotification case final value?)
-        'sendNotification': value,
-    };
+  CreateGroupAnnouncementRequest instance,
+) => <String, dynamic>{
+  'title': instance.title,
+  if (instance.text case final value?) 'text': value,
+  if (instance.imageId case final value?) 'imageId': value,
+  if (instance.sendNotification case final value?) 'sendNotification': value,
+};

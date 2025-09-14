@@ -15,9 +15,7 @@ part 'service_queue_stats.g.dart';
 )
 class ServiceQueueStats {
   /// Returns a new [ServiceQueueStats] instance.
-  ServiceQueueStats({
-    required this.estimatedServiceDurationSeconds,
-  });
+  ServiceQueueStats({required this.estimatedServiceDurationSeconds});
 
   @JsonKey(
     name: r'estimatedServiceDurationSeconds',

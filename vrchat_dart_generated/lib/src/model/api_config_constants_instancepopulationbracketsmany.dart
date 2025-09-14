@@ -15,25 +15,14 @@ part 'api_config_constants_instancepopulationbracketsmany.g.dart';
 )
 class APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY {
   /// Returns a new [APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY] instance.
-  APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY({
-    this.max,
-    this.min,
-  });
+  APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY({this.max, this.min});
 
   /// Maximum population for a many instance
-  @JsonKey(
-    name: r'max',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'max', required: false, includeIfNull: false)
   final int? max;
 
   /// Minimum population for a many instance
-  @JsonKey(
-    name: r'min',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'min', required: false, includeIfNull: false)
   final int? min;
 
   @override
@@ -47,8 +36,8 @@ class APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY {
   int get hashCode => max.hashCode + min.hashCode;
 
   factory APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY.fromJson(
-          Map<String, dynamic> json) =>
-      _$APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANYFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANYFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANYToJson(this);

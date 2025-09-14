@@ -8,21 +8,18 @@ part of 'success.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Success _$SuccessFromJson(Map<String, dynamic> json) => $checkedCreate(
-      'Success',
-      json,
-      ($checkedConvert) {
-        final val = Success(
-          success: $checkedConvert(
-              'success',
-              (v) => v == null
-                  ? null
-                  : Response.fromJson(v as Map<String, dynamic>)),
-        );
-        return val;
-      },
-    );
+Success _$SuccessFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('Success', json, ($checkedConvert) {
+      final val = Success(
+        success: $checkedConvert(
+          'success',
+          (v) =>
+              v == null ? null : Response.fromJson(v as Map<String, dynamic>),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$SuccessToJson(Success instance) => <String, dynamic>{
-      if (instance.success?.toJson() case final value?) 'success': value,
-    };
+  if (instance.success?.toJson() case final value?) 'success': value,
+};

@@ -21,25 +21,13 @@ class APIHealth {
     required this.buildVersionTag,
   });
 
-  @JsonKey(
-    name: r'ok',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ok', required: true, includeIfNull: false)
   final bool ok;
 
-  @JsonKey(
-    name: r'serverName',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'serverName', required: true, includeIfNull: false)
   final String serverName;
 
-  @JsonKey(
-    name: r'buildVersionTag',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'buildVersionTag', required: true, includeIfNull: false)
   final String buildVersionTag;
 
   @override

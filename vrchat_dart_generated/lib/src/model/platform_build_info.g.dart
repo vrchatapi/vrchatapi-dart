@@ -9,23 +9,20 @@ part of 'platform_build_info.dart';
 // **************************************************************************
 
 PlatformBuildInfo _$PlatformBuildInfoFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'PlatformBuildInfo',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['minBuildNumber'],
-        );
-        final val = PlatformBuildInfo(
-          minBuildNumber:
-              $checkedConvert('minBuildNumber', (v) => (v as num).toInt()),
-          redirectionAddress:
-              $checkedConvert('redirectionAddress', (v) => v as String?),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('PlatformBuildInfo', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['minBuildNumber']);
+      final val = PlatformBuildInfo(
+        minBuildNumber: $checkedConvert(
+          'minBuildNumber',
+          (v) => (v as num).toInt(),
+        ),
+        redirectionAddress: $checkedConvert(
+          'redirectionAddress',
+          (v) => v as String?,
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$PlatformBuildInfoToJson(PlatformBuildInfo instance) =>
     <String, dynamic>{

@@ -22,18 +22,10 @@ class TiliaStatus {
     this.plannedOfflineWindowEnd,
   });
 
-  @JsonKey(
-    name: r'economyOnline',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'economyOnline', required: true, includeIfNull: false)
   final bool economyOnline;
 
-  @JsonKey(
-    name: r'economyState',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'economyState', required: false, includeIfNull: false)
   final int? economyState;
 
   @JsonKey(

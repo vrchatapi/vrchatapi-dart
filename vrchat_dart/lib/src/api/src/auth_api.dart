@@ -25,11 +25,13 @@ class AuthApi {
   }) async {
     final encodedUsername = Uri.encodeComponent('$username');
     final encodedPassword = Uri.encodeComponent('$password');
-    final authorization =
-        base64.encode(utf8.encode('$encodedUsername:$encodedPassword'));
-    final response = await _rawApi.getAuthenticationApi().getCurrentUser(
-      headers: {'Authorization': 'Basic $authorization'},
-    ).validateVrc();
+    final authorization = base64.encode(
+      utf8.encode('$encodedUsername:$encodedPassword'),
+    );
+    final response = await _rawApi
+        .getAuthenticationApi()
+        .getCurrentUser(headers: {'Authorization': 'Basic $authorization'})
+        .validateVrc();
 
     final failure = response.failure;
     if (failure != null) {
@@ -80,8 +82,10 @@ class AuthApi {
   ///
   /// This will set [currentUser] to null
   Future<ValidatedResponse<Success, Success>> logout() async {
-    final response =
-        await _rawApi.getAuthenticationApi().logout().validateVrc();
+    final response = await _rawApi
+        .getAuthenticationApi()
+        .logout()
+        .validateVrc();
     _currentUser = null;
     return response;
   }

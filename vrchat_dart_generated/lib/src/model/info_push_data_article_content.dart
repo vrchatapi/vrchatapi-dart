@@ -16,31 +16,15 @@ part 'info_push_data_article_content.g.dart';
 )
 class InfoPushDataArticleContent {
   /// Returns a new [InfoPushDataArticleContent] instance.
-  InfoPushDataArticleContent({
-    this.text,
-    this.imageUrl,
-    this.onPressed,
-  });
+  InfoPushDataArticleContent({this.text, this.imageUrl, this.onPressed});
 
-  @JsonKey(
-    name: r'text',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'text', required: false, includeIfNull: false)
   final String? text;
 
-  @JsonKey(
-    name: r'imageUrl',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'imageUrl', required: false, includeIfNull: false)
   final String? imageUrl;
 
-  @JsonKey(
-    name: r'onPressed',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'onPressed', required: false, includeIfNull: false)
   final InfoPushDataClickable? onPressed;
 
   @override

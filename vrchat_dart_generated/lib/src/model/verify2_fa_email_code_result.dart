@@ -15,15 +15,9 @@ part 'verify2_fa_email_code_result.g.dart';
 )
 class Verify2FAEmailCodeResult {
   /// Returns a new [Verify2FAEmailCodeResult] instance.
-  Verify2FAEmailCodeResult({
-    required this.verified,
-  });
+  Verify2FAEmailCodeResult({required this.verified});
 
-  @JsonKey(
-    name: r'verified',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'verified', required: true, includeIfNull: false)
   final bool verified;
 
   @override

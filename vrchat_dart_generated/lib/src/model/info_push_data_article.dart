@@ -16,15 +16,9 @@ part 'info_push_data_article.g.dart';
 )
 class InfoPushDataArticle {
   /// Returns a new [InfoPushDataArticle] instance.
-  InfoPushDataArticle({
-    this.content,
-  });
+  InfoPushDataArticle({this.content});
 
-  @JsonKey(
-    name: r'content',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'content', required: false, includeIfNull: false)
   final InfoPushDataArticleContent? content;
 
   @override

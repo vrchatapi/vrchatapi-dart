@@ -9,26 +9,16 @@ part of 'api_config_announcement.dart';
 // **************************************************************************
 
 APIConfigAnnouncement _$APIConfigAnnouncementFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'APIConfigAnnouncement',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['name', 'text'],
-        );
-        final val = APIConfigAnnouncement(
-          name: $checkedConvert('name', (v) => v as String),
-          text: $checkedConvert('text', (v) => v as String),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('APIConfigAnnouncement', json, ($checkedConvert) {
+  $checkKeys(json, requiredKeys: const ['name', 'text']);
+  final val = APIConfigAnnouncement(
+    name: $checkedConvert('name', (v) => v as String),
+    text: $checkedConvert('text', (v) => v as String),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$APIConfigAnnouncementToJson(
-        APIConfigAnnouncement instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'text': instance.text,
-    };
+  APIConfigAnnouncement instance,
+) => <String, dynamic>{'name': instance.name, 'text': instance.text};

@@ -24,8 +24,8 @@ abstract class VrcApi {
     required VrchatUserAgent userAgent,
     required this.rawApi,
     required String? websocketUrl,
-  })  : auth = AuthApi(rawApi),
-        streaming = VrcStreaming(userAgent, rawApi, websocketUrl);
+  }) : auth = AuthApi(rawApi),
+       streaming = VrcStreaming(userAgent, rawApi, websocketUrl);
 
   /// Construct the proper implementation of [VrcApi]
   factory VrcApi.forPlatform({

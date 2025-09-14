@@ -9,28 +9,21 @@ part of 'notification_detail_invite.dart';
 // **************************************************************************
 
 NotificationDetailInvite _$NotificationDetailInviteFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'NotificationDetailInvite',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['worldId', 'worldName'],
-        );
-        final val = NotificationDetailInvite(
-          inviteMessage: $checkedConvert('inviteMessage', (v) => v as String?),
-          worldId: $checkedConvert('worldId', (v) => v as String),
-          worldName: $checkedConvert('worldName', (v) => v as String),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('NotificationDetailInvite', json, ($checkedConvert) {
+  $checkKeys(json, requiredKeys: const ['worldId', 'worldName']);
+  final val = NotificationDetailInvite(
+    inviteMessage: $checkedConvert('inviteMessage', (v) => v as String?),
+    worldId: $checkedConvert('worldId', (v) => v as String),
+    worldName: $checkedConvert('worldName', (v) => v as String),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$NotificationDetailInviteToJson(
-        NotificationDetailInvite instance) =>
-    <String, dynamic>{
-      if (instance.inviteMessage case final value?) 'inviteMessage': value,
-      'worldId': instance.worldId,
-      'worldName': instance.worldName,
-    };
+  NotificationDetailInvite instance,
+) => <String, dynamic>{
+  if (instance.inviteMessage case final value?) 'inviteMessage': value,
+  'worldId': instance.worldId,
+  'worldName': instance.worldName,
+};

@@ -26,39 +26,19 @@ class GroupMemberLimitedUser {
   });
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(
-    name: r'id',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: false, includeIfNull: false)
   final String? id;
 
-  @JsonKey(
-    name: r'displayName',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'displayName', required: false, includeIfNull: false)
   final String? displayName;
 
-  @JsonKey(
-    name: r'thumbnailUrl',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'thumbnailUrl', required: false, includeIfNull: false)
   final String? thumbnailUrl;
 
-  @JsonKey(
-    name: r'iconUrl',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'iconUrl', required: false, includeIfNull: false)
   final String? iconUrl;
 
-  @JsonKey(
-    name: r'profilePicOverride',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
   final String? profilePicOverride;
 
   @JsonKey(
@@ -68,11 +48,7 @@ class GroupMemberLimitedUser {
   )
   final String? currentAvatarThumbnailImageUrl;
 
-  @JsonKey(
-    name: r'currentAvatarTags',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
   final List<String>? currentAvatarTags;
 
   @override

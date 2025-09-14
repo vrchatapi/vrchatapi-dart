@@ -21,25 +21,13 @@ class FriendStatus {
     this.outgoingRequest = false,
   });
 
-  @JsonKey(
-    name: r'incomingRequest',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'incomingRequest', required: true, includeIfNull: false)
   final bool incomingRequest;
 
-  @JsonKey(
-    name: r'isFriend',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'isFriend', required: true, includeIfNull: false)
   final bool isFriend;
 
-  @JsonKey(
-    name: r'outgoingRequest',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'outgoingRequest', required: true, includeIfNull: false)
   final bool outgoingRequest;
 
   @override

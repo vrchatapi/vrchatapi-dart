@@ -32,12 +32,15 @@ class VrchatDartGenerated {
     Dio? dio,
     String? basePathOverride,
     List<Interceptor>? interceptors,
-  }) : this.dio = dio ??
-            Dio(BaseOptions(
-              baseUrl: basePathOverride ?? basePath,
-              connectTimeout: const Duration(milliseconds: 5000),
-              receiveTimeout: const Duration(milliseconds: 3000),
-            )) {
+  }) : this.dio =
+           dio ??
+           Dio(
+             BaseOptions(
+               baseUrl: basePathOverride ?? basePath,
+               connectTimeout: const Duration(milliseconds: 5000),
+               receiveTimeout: const Duration(milliseconds: 3000),
+             ),
+           ) {
     if (interceptors == null) {
       this.dio.interceptors.addAll([
         OAuthInterceptor(),
@@ -53,16 +56,18 @@ class VrchatDartGenerated {
   void setOAuthToken(String name, String token) {
     if (this.dio.interceptors.any((i) => i is OAuthInterceptor)) {
       (this.dio.interceptors.firstWhere((i) => i is OAuthInterceptor)
-              as OAuthInterceptor)
-          .tokens[name] = token;
+                  as OAuthInterceptor)
+              .tokens[name] =
+          token;
     }
   }
 
   void setBearerAuth(String name, String token) {
     if (this.dio.interceptors.any((i) => i is BearerAuthInterceptor)) {
       (this.dio.interceptors.firstWhere((i) => i is BearerAuthInterceptor)
-              as BearerAuthInterceptor)
-          .tokens[name] = token;
+                  as BearerAuthInterceptor)
+              .tokens[name] =
+          token;
     }
   }
 
@@ -70,18 +75,21 @@ class VrchatDartGenerated {
     if (this.dio.interceptors.any((i) => i is BasicAuthInterceptor)) {
       (this.dio.interceptors.firstWhere((i) => i is BasicAuthInterceptor)
               as BasicAuthInterceptor)
-          .authInfo[name] = BasicAuthInfo(username, password);
+          .authInfo[name] = BasicAuthInfo(
+        username,
+        password,
+      );
     }
   }
 
   void setApiKey(String name, String apiKey) {
     if (this.dio.interceptors.any((i) => i is ApiKeyAuthInterceptor)) {
-      (this
-                  .dio
-                  .interceptors
-                  .firstWhere((element) => element is ApiKeyAuthInterceptor)
-              as ApiKeyAuthInterceptor)
-          .apiKeys[name] = apiKey;
+      (this.dio.interceptors.firstWhere(
+                    (element) => element is ApiKeyAuthInterceptor,
+                  )
+                  as ApiKeyAuthInterceptor)
+              .apiKeys[name] =
+          apiKey;
     }
   }
 

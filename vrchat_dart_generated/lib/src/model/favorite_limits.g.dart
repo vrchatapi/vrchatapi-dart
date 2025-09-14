@@ -9,32 +9,36 @@ part of 'favorite_limits.dart';
 // **************************************************************************
 
 FavoriteLimits _$FavoriteLimitsFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'FavoriteLimits',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const [
-            'defaultMaxFavoriteGroups',
-            'defaultMaxFavoritesPerGroup',
-            'maxFavoriteGroups',
-            'maxFavoritesPerGroup'
-          ],
-        );
-        final val = FavoriteLimits(
-          defaultMaxFavoriteGroups: $checkedConvert(
-              'defaultMaxFavoriteGroups', (v) => (v as num).toInt()),
-          defaultMaxFavoritesPerGroup: $checkedConvert(
-              'defaultMaxFavoritesPerGroup', (v) => (v as num).toInt()),
-          maxFavoriteGroups: $checkedConvert('maxFavoriteGroups',
-              (v) => FavoriteGroupLimits.fromJson(v as Map<String, dynamic>)),
-          maxFavoritesPerGroup: $checkedConvert('maxFavoritesPerGroup',
-              (v) => FavoriteGroupLimits.fromJson(v as Map<String, dynamic>)),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('FavoriteLimits', json, ($checkedConvert) {
+      $checkKeys(
+        json,
+        requiredKeys: const [
+          'defaultMaxFavoriteGroups',
+          'defaultMaxFavoritesPerGroup',
+          'maxFavoriteGroups',
+          'maxFavoritesPerGroup',
+        ],
+      );
+      final val = FavoriteLimits(
+        defaultMaxFavoriteGroups: $checkedConvert(
+          'defaultMaxFavoriteGroups',
+          (v) => (v as num).toInt(),
+        ),
+        defaultMaxFavoritesPerGroup: $checkedConvert(
+          'defaultMaxFavoritesPerGroup',
+          (v) => (v as num).toInt(),
+        ),
+        maxFavoriteGroups: $checkedConvert(
+          'maxFavoriteGroups',
+          (v) => FavoriteGroupLimits.fromJson(v as Map<String, dynamic>),
+        ),
+        maxFavoritesPerGroup: $checkedConvert(
+          'maxFavoritesPerGroup',
+          (v) => FavoriteGroupLimits.fromJson(v as Map<String, dynamic>),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$FavoriteLimitsToJson(FavoriteLimits instance) =>
     <String, dynamic>{

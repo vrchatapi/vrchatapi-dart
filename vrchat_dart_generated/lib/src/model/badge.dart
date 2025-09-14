@@ -27,63 +27,31 @@ class Badge {
   });
 
   /// only present in CurrentUser badges
-  @JsonKey(
-    name: r'assignedAt',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'assignedAt', required: false, includeIfNull: false)
   final DateTime? assignedAt;
 
-  @JsonKey(
-    name: r'badgeDescription',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'badgeDescription', required: true, includeIfNull: false)
   final String badgeDescription;
 
-  @JsonKey(
-    name: r'badgeId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'badgeId', required: true, includeIfNull: false)
   final String badgeId;
 
   /// direct url to image
-  @JsonKey(
-    name: r'badgeImageUrl',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'badgeImageUrl', required: true, includeIfNull: false)
   final String badgeImageUrl;
 
-  @JsonKey(
-    name: r'badgeName',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'badgeName', required: true, includeIfNull: false)
   final String badgeName;
 
   /// only present in CurrentUser badges
-  @JsonKey(
-    name: r'hidden',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'hidden', required: false, includeIfNull: false)
   final bool? hidden;
 
-  @JsonKey(
-    name: r'showcased',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'showcased', required: true, includeIfNull: false)
   final bool showcased;
 
   /// only present in CurrentUser badges
-  @JsonKey(
-    name: r'updatedAt',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
   final DateTime? updatedAt;
 
   @override

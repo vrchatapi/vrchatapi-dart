@@ -22,32 +22,16 @@ class JamStateChangeDates {
     this.winnersSelected,
   });
 
-  @JsonKey(
-    name: r'closed',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'closed', required: false, includeIfNull: false)
   final DateTime? closed;
 
-  @JsonKey(
-    name: r'submissionsClosed',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'submissionsClosed', required: false, includeIfNull: false)
   final DateTime? submissionsClosed;
 
-  @JsonKey(
-    name: r'submissionsOpened',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'submissionsOpened', required: false, includeIfNull: false)
   final DateTime? submissionsOpened;
 
-  @JsonKey(
-    name: r'winnersSelected',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'winnersSelected', required: false, includeIfNull: false)
   final DateTime? winnersSelected;
 
   @override

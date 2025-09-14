@@ -8,39 +8,35 @@ part of 'player_moderation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-PlayerModeration _$PlayerModerationFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'PlayerModeration',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const [
-            'created',
-            'id',
-            'sourceDisplayName',
-            'sourceUserId',
-            'targetDisplayName',
-            'targetUserId',
-            'type'
-          ],
-        );
-        final val = PlayerModeration(
-          created:
-              $checkedConvert('created', (v) => DateTime.parse(v as String)),
-          id: $checkedConvert('id', (v) => v as String),
-          sourceDisplayName:
-              $checkedConvert('sourceDisplayName', (v) => v as String),
-          sourceUserId: $checkedConvert('sourceUserId', (v) => v as String),
-          targetDisplayName:
-              $checkedConvert('targetDisplayName', (v) => v as String),
-          targetUserId: $checkedConvert('targetUserId', (v) => v as String),
-          type: $checkedConvert(
-              'type', (v) => $enumDecode(_$PlayerModerationTypeEnumMap, v)),
-        );
-        return val;
-      },
-    );
+PlayerModeration _$PlayerModerationFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('PlayerModeration', json, ($checkedConvert) {
+  $checkKeys(
+    json,
+    requiredKeys: const [
+      'created',
+      'id',
+      'sourceDisplayName',
+      'sourceUserId',
+      'targetDisplayName',
+      'targetUserId',
+      'type',
+    ],
+  );
+  final val = PlayerModeration(
+    created: $checkedConvert('created', (v) => DateTime.parse(v as String)),
+    id: $checkedConvert('id', (v) => v as String),
+    sourceDisplayName: $checkedConvert('sourceDisplayName', (v) => v as String),
+    sourceUserId: $checkedConvert('sourceUserId', (v) => v as String),
+    targetDisplayName: $checkedConvert('targetDisplayName', (v) => v as String),
+    targetUserId: $checkedConvert('targetUserId', (v) => v as String),
+    type: $checkedConvert(
+      'type',
+      (v) => $enumDecode(_$PlayerModerationTypeEnumMap, v),
+    ),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$PlayerModerationToJson(PlayerModeration instance) =>
     <String, dynamic>{

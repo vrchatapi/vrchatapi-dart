@@ -26,61 +26,29 @@ class Permission {
     this.data,
   });
 
-  @JsonKey(
-    name: r'displayName',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'displayName', required: false, includeIfNull: false)
   final String? displayName;
 
-  @JsonKey(
-    name: r'description',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;
 
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(
-    name: r'ownerDisplayName',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ownerDisplayName', required: true, includeIfNull: false)
   final String ownerDisplayName;
 
-  @JsonKey(
-    name: r'name',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(
-    name: r'ownerId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ownerId', required: true, includeIfNull: false)
   final String ownerId;
 
-  @JsonKey(
-    name: r'type',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'type', required: false, includeIfNull: false)
   final String? type;
 
-  @JsonKey(
-    name: r'data',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'data', required: false, includeIfNull: false)
   final Object? data;
 
   @override

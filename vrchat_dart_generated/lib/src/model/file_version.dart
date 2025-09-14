@@ -27,56 +27,28 @@ class FileVersion {
     this.version = 0,
   });
 
-  @JsonKey(
-    name: r'created_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
 
   /// Usually only present if `true`
-  @JsonKey(
-    name: r'deleted',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'deleted', required: false, includeIfNull: false)
   final bool? deleted;
 
-  @JsonKey(
-    name: r'delta',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'delta', required: false, includeIfNull: false)
   final FileData? delta;
 
-  @JsonKey(
-    name: r'file',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'file', required: false, includeIfNull: false)
   final FileData? file;
 
-  @JsonKey(
-    name: r'signature',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'signature', required: false, includeIfNull: false)
   final FileData? signature;
 
-  @JsonKey(
-    name: r'status',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
   final FileStatus status;
 
   /// Incremental version counter, can only be increased.
   // minimum: 0
-  @JsonKey(
-    name: r'version',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'version', required: true, includeIfNull: false)
   final int version;
 
   @override

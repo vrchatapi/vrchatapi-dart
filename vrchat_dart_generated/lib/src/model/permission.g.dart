@@ -9,27 +9,26 @@ part of 'permission.dart';
 // **************************************************************************
 
 Permission _$PermissionFromJson(Map<String, dynamic> json) => $checkedCreate(
-      'Permission',
+  'Permission',
+  json,
+  ($checkedConvert) {
+    $checkKeys(
       json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['id', 'ownerDisplayName', 'name', 'ownerId'],
-        );
-        final val = Permission(
-          displayName: $checkedConvert('displayName', (v) => v as String?),
-          description: $checkedConvert('description', (v) => v as String?),
-          id: $checkedConvert('id', (v) => v as String),
-          ownerDisplayName:
-              $checkedConvert('ownerDisplayName', (v) => v as String),
-          name: $checkedConvert('name', (v) => v as String),
-          ownerId: $checkedConvert('ownerId', (v) => v as String),
-          type: $checkedConvert('type', (v) => v as String?),
-          data: $checkedConvert('data', (v) => v),
-        );
-        return val;
-      },
+      requiredKeys: const ['id', 'ownerDisplayName', 'name', 'ownerId'],
     );
+    final val = Permission(
+      displayName: $checkedConvert('displayName', (v) => v as String?),
+      description: $checkedConvert('description', (v) => v as String?),
+      id: $checkedConvert('id', (v) => v as String),
+      ownerDisplayName: $checkedConvert('ownerDisplayName', (v) => v as String),
+      name: $checkedConvert('name', (v) => v as String),
+      ownerId: $checkedConvert('ownerId', (v) => v as String),
+      type: $checkedConvert('type', (v) => v as String?),
+      data: $checkedConvert('data', (v) => v),
+    );
+    return val;
+  },
+);
 
 Map<String, dynamic> _$PermissionToJson(Permission instance) =>
     <String, dynamic>{

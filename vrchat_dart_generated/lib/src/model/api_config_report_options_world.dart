@@ -23,39 +23,19 @@ class APIConfigReportOptionsWorld {
     this.worldstore,
   });
 
-  @JsonKey(
-    name: r'environment',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'environment', required: false, includeIfNull: false)
   final List<String>? environment;
 
-  @JsonKey(
-    name: r'text',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'text', required: false, includeIfNull: false)
   final List<String>? text;
 
-  @JsonKey(
-    name: r'warnings',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'warnings', required: false, includeIfNull: false)
   final List<String>? warnings;
 
-  @JsonKey(
-    name: r'worldimage',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'worldimage', required: false, includeIfNull: false)
   final List<String>? worldimage;
 
-  @JsonKey(
-    name: r'worldstore',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'worldstore', required: false, includeIfNull: false)
   final List<String>? worldstore;
 
   @override

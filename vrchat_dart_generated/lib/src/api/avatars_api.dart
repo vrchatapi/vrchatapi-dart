@@ -50,9 +50,7 @@ class AvatarsApi {
     final _path = r'/avatars';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -74,10 +72,7 @@ class AvatarsApi {
       _bodyData = jsonEncode(createAvatarRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -145,13 +140,15 @@ class AvatarsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/avatars/{avatarId}'
-        .replaceAll('{' r'avatarId' '}', avatarId.toString());
+    final _path = r'/avatars/{avatarId}'.replaceAll(
+      '{'
+      r'avatarId'
+      '}',
+      avatarId.toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -226,13 +223,15 @@ class AvatarsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/avatars/{avatarId}/impostor'
-        .replaceAll('{' r'avatarId' '}', avatarId.toString());
+    final _path = r'/avatars/{avatarId}/impostor'.replaceAll(
+      '{'
+      r'avatarId'
+      '}',
+      avatarId.toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -281,13 +280,15 @@ class AvatarsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/avatars/{avatarId}/impostor/enqueue'
-        .replaceAll('{' r'avatarId' '}', avatarId.toString());
+    final _path = r'/avatars/{avatarId}/impostor/enqueue'.replaceAll(
+      '{'
+      r'avatarId'
+      '}',
+      avatarId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -316,8 +317,11 @@ class AvatarsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<ServiceStatus, ServiceStatus>(rawData, 'ServiceStatus',
-              growable: true);
+          : deserialize<ServiceStatus, ServiceStatus>(
+              rawData,
+              'ServiceStatus',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -363,13 +367,15 @@ class AvatarsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/avatars/{avatarId}'
-        .replaceAll('{' r'avatarId' '}', avatarId.toString());
+    final _path = r'/avatars/{avatarId}'.replaceAll(
+      '{'
+      r'avatarId'
+      '}',
+      avatarId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -471,9 +477,7 @@ class AvatarsApi {
     final _path = r'/avatars/favorites';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -519,8 +523,11 @@ class AvatarsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Avatar>, Avatar>(rawData, 'List<Avatar>',
-              growable: true);
+          : deserialize<List<Avatar>, Avatar>(
+              rawData,
+              'List<Avatar>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -567,9 +574,7 @@ class AvatarsApi {
     final _path = r'/avatars/impostor/queue/stats';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -599,8 +604,10 @@ class AvatarsApi {
       _responseData = rawData == null
           ? null
           : deserialize<ServiceQueueStats, ServiceQueueStats>(
-              rawData, 'ServiceQueueStats',
-              growable: true);
+              rawData,
+              'ServiceQueueStats',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -651,9 +658,7 @@ class AvatarsApi {
     final _path = r'/avatars/licensed';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -688,8 +693,11 @@ class AvatarsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Avatar>, Avatar>(rawData, 'List<Avatar>',
-              growable: true);
+          : deserialize<List<Avatar>, Avatar>(
+              rawData,
+              'List<Avatar>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -735,13 +743,15 @@ class AvatarsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/users/{userId}/avatar'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/users/{userId}/avatar'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -843,9 +853,7 @@ class AvatarsApi {
     final _path = r'/avatars';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -891,8 +899,11 @@ class AvatarsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Avatar>, Avatar>(rawData, 'List<Avatar>',
-              growable: true);
+          : deserialize<List<Avatar>, Avatar>(
+              rawData,
+              'List<Avatar>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -938,13 +949,15 @@ class AvatarsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/avatars/{avatarId}/select'
-        .replaceAll('{' r'avatarId' '}', avatarId.toString());
+    final _path = r'/avatars/{avatarId}/select'.replaceAll(
+      '{'
+      r'avatarId'
+      '}',
+      avatarId.toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -973,8 +986,11 @@ class AvatarsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<CurrentUser, CurrentUser>(rawData, 'CurrentUser',
-              growable: true);
+          : deserialize<CurrentUser, CurrentUser>(
+              rawData,
+              'CurrentUser',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1021,13 +1037,15 @@ class AvatarsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/avatars/{avatarId}/selectFallback'
-        .replaceAll('{' r'avatarId' '}', avatarId.toString());
+    final _path = r'/avatars/{avatarId}/selectFallback'.replaceAll(
+      '{'
+      r'avatarId'
+      '}',
+      avatarId.toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1056,8 +1074,11 @@ class AvatarsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<CurrentUser, CurrentUser>(rawData, 'CurrentUser',
-              growable: true);
+          : deserialize<CurrentUser, CurrentUser>(
+              rawData,
+              'CurrentUser',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1105,13 +1126,15 @@ class AvatarsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/avatars/{avatarId}'
-        .replaceAll('{' r'avatarId' '}', avatarId.toString());
+    final _path = r'/avatars/{avatarId}'.replaceAll(
+      '{'
+      r'avatarId'
+      '}',
+      avatarId.toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1133,10 +1156,7 @@ class AvatarsApi {
       _bodyData = jsonEncode(updateAvatarRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,

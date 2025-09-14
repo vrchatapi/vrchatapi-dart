@@ -15,15 +15,9 @@ part 'world_publish_status.g.dart';
 )
 class WorldPublishStatus {
   /// Returns a new [WorldPublishStatus] instance.
-  WorldPublishStatus({
-    this.canPublish = true,
-  });
+  WorldPublishStatus({this.canPublish = true});
 
-  @JsonKey(
-    name: r'canPublish',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'canPublish', required: true, includeIfNull: false)
   final bool canPublish;
 
   @override

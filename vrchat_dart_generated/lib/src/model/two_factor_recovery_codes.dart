@@ -16,10 +16,7 @@ part 'two_factor_recovery_codes.g.dart';
 )
 class TwoFactorRecoveryCodes {
   /// Returns a new [TwoFactorRecoveryCodes] instance.
-  TwoFactorRecoveryCodes({
-    this.requiresTwoFactorAuth,
-    this.otp,
-  });
+  TwoFactorRecoveryCodes({this.requiresTwoFactorAuth, this.otp});
 
   @JsonKey(
     name: r'requiresTwoFactorAuth',
@@ -28,11 +25,7 @@ class TwoFactorRecoveryCodes {
   )
   final List<String>? requiresTwoFactorAuth;
 
-  @JsonKey(
-    name: r'otp',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'otp', required: false, includeIfNull: false)
   final List<TwoFactorRecoveryCodesOtpInner>? otp;
 
   @override

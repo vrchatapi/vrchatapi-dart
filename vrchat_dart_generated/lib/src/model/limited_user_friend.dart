@@ -43,27 +43,15 @@ class LimitedUserFriend {
     required this.userIcon,
   });
 
-  @JsonKey(
-    name: r'bio',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'bio', required: false, includeIfNull: false)
   final String? bio;
 
   ///
-  @JsonKey(
-    name: r'bioLinks',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'bioLinks', required: false, includeIfNull: false)
   final List<String>? bioLinks;
 
   /// When profilePicOverride is not empty, use it instead.
-  @JsonKey(
-    name: r'currentAvatarImageUrl',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'currentAvatarImageUrl', required: true, includeIfNull: false)
   final String currentAvatarImageUrl;
 
   /// When profilePicOverride is not empty, use it instead.
@@ -74,104 +62,48 @@ class LimitedUserFriend {
   )
   final String? currentAvatarThumbnailImageUrl;
 
-  @JsonKey(
-    name: r'currentAvatarTags',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
   final List<String>? currentAvatarTags;
 
-  @JsonKey(
-    name: r'developerType',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'developerType', required: true, includeIfNull: false)
   final DeveloperType developerType;
 
-  @JsonKey(
-    name: r'displayName',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'displayName', required: true, includeIfNull: false)
   final String displayName;
 
-  @JsonKey(
-    name: r'friendKey',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'friendKey', required: true, includeIfNull: false)
   final String friendKey;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(
-    name: r'isFriend',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'isFriend', required: true, includeIfNull: false)
   final bool isFriend;
 
-  @JsonKey(
-    name: r'imageUrl',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'imageUrl', required: true, includeIfNull: false)
   final String imageUrl;
 
   /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
-  @JsonKey(
-    name: r'last_platform',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'last_platform', required: true, includeIfNull: false)
   final String lastPlatform;
 
-  @JsonKey(
-    name: r'location',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'location', required: true, includeIfNull: false)
   final String location;
 
-  @JsonKey(
-    name: r'last_login',
-    required: true,
-    includeIfNull: true,
-  )
+  @JsonKey(name: r'last_login', required: true, includeIfNull: true)
   final DateTime? lastLogin;
 
-  @JsonKey(
-    name: r'last_activity',
-    required: true,
-    includeIfNull: true,
-  )
+  @JsonKey(name: r'last_activity', required: true, includeIfNull: true)
   final DateTime? lastActivity;
 
-  @JsonKey(
-    name: r'last_mobile',
-    required: true,
-    includeIfNull: true,
-  )
+  @JsonKey(name: r'last_mobile', required: true, includeIfNull: true)
   final DateTime? lastMobile;
 
-  @JsonKey(
-    name: r'platform',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'platform', required: true, includeIfNull: false)
   final String platform;
 
-  @JsonKey(
-    name: r'profilePicOverride',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
   final String profilePicOverride;
 
   @JsonKey(
@@ -181,33 +113,17 @@ class LimitedUserFriend {
   )
   final String profilePicOverrideThumbnail;
 
-  @JsonKey(
-    name: r'status',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
   final UserStatus status;
 
-  @JsonKey(
-    name: r'statusDescription',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'statusDescription', required: true, includeIfNull: false)
   final String statusDescription;
 
   /// <- Always empty.
-  @JsonKey(
-    name: r'tags',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 
-  @JsonKey(
-    name: r'userIcon',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'userIcon', required: true, includeIfNull: false)
   final String userIcon;
 
   @override

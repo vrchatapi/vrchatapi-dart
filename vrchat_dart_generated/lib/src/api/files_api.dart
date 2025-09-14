@@ -48,9 +48,7 @@ class FilesApi {
     final _path = r'/file';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -72,10 +70,7 @@ class FilesApi {
       _bodyData = jsonEncode(createFileRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -145,13 +140,15 @@ class FilesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/file/{fileId}'.replaceAll('{' r'fileId' '}', fileId.toString());
+    final _path = r'/file/{fileId}'.replaceAll(
+      '{'
+      r'fileId'
+      '}',
+      fileId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -173,10 +170,7 @@ class FilesApi {
       _bodyData = jsonEncode(createFileVersionRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -244,13 +238,15 @@ class FilesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/file/{fileId}'.replaceAll('{' r'fileId' '}', fileId.toString());
+    final _path = r'/file/{fileId}'.replaceAll(
+      '{'
+      r'fileId'
+      '}',
+      fileId.toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -328,13 +324,21 @@ class FilesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/file/{fileId}/{versionId}'
-        .replaceAll('{' r'fileId' '}', fileId.toString())
-        .replaceAll('{' r'versionId' '}', versionId.toString());
+        .replaceAll(
+          '{'
+          r'fileId'
+          '}',
+          fileId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'versionId'
+          '}',
+          versionId.toString(),
+        );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -412,14 +416,22 @@ class FilesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/file/{fileId}/{versionId}'
-        .replaceAll('{' r'fileId' '}', fileId.toString())
-        .replaceAll('{' r'versionId' '}', versionId.toString());
+        .replaceAll(
+          '{'
+          r'fileId'
+          '}',
+          fileId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'versionId'
+          '}',
+          versionId.toString(),
+        );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -448,8 +460,11 @@ class FilesApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<MultipartFile, MultipartFile>(rawData, 'MultipartFile',
-              growable: true);
+          : deserialize<MultipartFile, MultipartFile>(
+              rawData,
+              'MultipartFile',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -502,14 +517,27 @@ class FilesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/file/{fileId}/{versionId}/{fileType}/finish'
-        .replaceAll('{' r'fileId' '}', fileId.toString())
-        .replaceAll('{' r'versionId' '}', versionId.toString())
-        .replaceAll('{' r'fileType' '}', fileType.toString());
+        .replaceAll(
+          '{'
+          r'fileId'
+          '}',
+          fileId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'versionId'
+          '}',
+          versionId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'fileType'
+          '}',
+          fileType.toString(),
+        );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -531,10 +559,7 @@ class FilesApi {
       _bodyData = jsonEncode(finishFileDataUploadRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -602,13 +627,15 @@ class FilesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/file/{fileId}'.replaceAll('{' r'fileId' '}', fileId.toString());
+    final _path = r'/file/{fileId}'.replaceAll(
+      '{'
+      r'fileId'
+      '}',
+      fileId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -686,13 +713,21 @@ class FilesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/analysis/{fileId}/{versionId}'
-        .replaceAll('{' r'fileId' '}', fileId.toString())
-        .replaceAll('{' r'versionId' '}', versionId.toString());
+        .replaceAll(
+          '{'
+          r'fileId'
+          '}',
+          fileId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'versionId'
+          '}',
+          versionId.toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -721,8 +756,11 @@ class FilesApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<FileAnalysis, FileAnalysis>(rawData, 'FileAnalysis',
-              growable: true);
+          : deserialize<FileAnalysis, FileAnalysis>(
+              rawData,
+              'FileAnalysis',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -771,13 +809,21 @@ class FilesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/analysis/{fileId}/{versionId}/security'
-        .replaceAll('{' r'fileId' '}', fileId.toString())
-        .replaceAll('{' r'versionId' '}', versionId.toString());
+        .replaceAll(
+          '{'
+          r'fileId'
+          '}',
+          fileId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'versionId'
+          '}',
+          versionId.toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -806,8 +852,11 @@ class FilesApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<FileAnalysis, FileAnalysis>(rawData, 'FileAnalysis',
-              growable: true);
+          : deserialize<FileAnalysis, FileAnalysis>(
+              rawData,
+              'FileAnalysis',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -856,13 +905,21 @@ class FilesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/analysis/{fileId}/{versionId}/standard'
-        .replaceAll('{' r'fileId' '}', fileId.toString())
-        .replaceAll('{' r'versionId' '}', versionId.toString());
+        .replaceAll(
+          '{'
+          r'fileId'
+          '}',
+          fileId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'versionId'
+          '}',
+          versionId.toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -891,8 +948,11 @@ class FilesApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<FileAnalysis, FileAnalysis>(rawData, 'FileAnalysis',
-              growable: true);
+          : deserialize<FileAnalysis, FileAnalysis>(
+              rawData,
+              'FileAnalysis',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -943,14 +1003,27 @@ class FilesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/file/{fileId}/{versionId}/{fileType}/status'
-        .replaceAll('{' r'fileId' '}', fileId.toString())
-        .replaceAll('{' r'versionId' '}', versionId.toString())
-        .replaceAll('{' r'fileType' '}', fileType.toString());
+        .replaceAll(
+          '{'
+          r'fileId'
+          '}',
+          fileId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'versionId'
+          '}',
+          versionId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'fileType'
+          '}',
+          fileType.toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -980,8 +1053,10 @@ class FilesApi {
       _responseData = rawData == null
           ? null
           : deserialize<FileVersionUploadStatus, FileVersionUploadStatus>(
-              rawData, 'FileVersionUploadStatus',
-              growable: true);
+              rawData,
+              'FileVersionUploadStatus',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1036,9 +1111,7 @@ class FilesApi {
     final _path = r'/files';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1075,8 +1148,11 @@ class FilesApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<File>, File>(rawData, 'List<File>',
-              growable: true);
+          : deserialize<List<File>, File>(
+              rawData,
+              'List<File>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1129,14 +1205,27 @@ class FilesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/file/{fileId}/{versionId}/{fileType}/start'
-        .replaceAll('{' r'fileId' '}', fileId.toString())
-        .replaceAll('{' r'versionId' '}', versionId.toString())
-        .replaceAll('{' r'fileType' '}', fileType.toString());
+        .replaceAll(
+          '{'
+          r'fileId'
+          '}',
+          fileId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'versionId'
+          '}',
+          versionId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'fileType'
+          '}',
+          fileType.toString(),
+        );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1170,8 +1259,11 @@ class FilesApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<FileUploadURL, FileUploadURL>(rawData, 'FileUploadURL',
-              growable: true);
+          : deserialize<FileUploadURL, FileUploadURL>(
+              rawData,
+              'FileUploadURL',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1220,9 +1312,7 @@ class FilesApi {
     final _path = r'/gallery';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1244,10 +1334,7 @@ class FilesApi {
       _bodyData = FormData.fromMap({'file': file});
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1318,9 +1405,7 @@ class FilesApi {
     final _path = r'/icon';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1342,10 +1427,7 @@ class FilesApi {
       _bodyData = FormData.fromMap({'file': file});
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1426,9 +1508,7 @@ class FilesApi {
     final _path = r'/file/image';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1455,10 +1535,7 @@ class FilesApi {
       });
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,

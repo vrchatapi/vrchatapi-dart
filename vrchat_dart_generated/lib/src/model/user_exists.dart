@@ -15,25 +15,14 @@ part 'user_exists.g.dart';
 )
 class UserExists {
   /// Returns a new [UserExists] instance.
-  UserExists({
-    this.userExists = false,
-    this.nameOk = false,
-  });
+  UserExists({this.userExists = false, this.nameOk = false});
 
   /// Status if a user exist with that username or userId.
-  @JsonKey(
-    name: r'userExists',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'userExists', required: true, includeIfNull: false)
   final bool userExists;
 
   /// Is the username valid?
-  @JsonKey(
-    name: r'nameOk',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'nameOk', required: false, includeIfNull: false)
   final bool? nameOk;
 
   @override

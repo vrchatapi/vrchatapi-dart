@@ -53,13 +53,15 @@ class UsersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/users/{userId}/addTags'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/users/{userId}/addTags'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -81,10 +83,7 @@ class UsersApi {
       _bodyData = jsonEncode(changeUserTagsRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -106,8 +105,11 @@ class UsersApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<CurrentUser, CurrentUser>(rawData, 'CurrentUser',
-              growable: true);
+          : deserialize<CurrentUser, CurrentUser>(
+              rawData,
+              'CurrentUser',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -156,13 +158,21 @@ class UsersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/users/{userId}/{worldId}/persist/exists'
-        .replaceAll('{' r'userId' '}', userId.toString())
-        .replaceAll('{' r'worldId' '}', worldId.toString());
+        .replaceAll(
+          '{'
+          r'userId'
+          '}',
+          userId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'worldId'
+          '}',
+          worldId.toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -214,13 +224,21 @@ class UsersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/users/{userId}/{worldId}/persist'
-        .replaceAll('{' r'userId' '}', userId.toString())
-        .replaceAll('{' r'worldId' '}', worldId.toString());
+        .replaceAll(
+          '{'
+          r'userId'
+          '}',
+          userId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'worldId'
+          '}',
+          worldId.toString(),
+        );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -269,13 +287,15 @@ class UsersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/users/{userId}'.replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/users/{userId}'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -351,13 +371,15 @@ class UsersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/users/{username}/name'
-        .replaceAll('{' r'username' '}', username.toString());
+    final _path = r'/users/{username}/name'.replaceAll(
+      '{'
+      r'username'
+      '}',
+      username.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -439,13 +461,15 @@ class UsersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/users/{userId}/feedback'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/users/{userId}/feedback'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -481,8 +505,11 @@ class UsersApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Feedback>, Feedback>(rawData, 'List<Feedback>',
-              growable: true);
+          : deserialize<List<Feedback>, Feedback>(
+              rawData,
+              'List<Feedback>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -528,13 +555,15 @@ class UsersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/users/{userId}/instances/groups'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/users/{userId}/instances/groups'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -563,10 +592,10 @@ class UsersApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GetUserGroupInstances200Response,
-                  GetUserGroupInstances200Response>(
-              rawData, 'GetUserGroupInstances200Response',
-              growable: true);
+          : deserialize<
+              GetUserGroupInstances200Response,
+              GetUserGroupInstances200Response
+            >(rawData, 'GetUserGroupInstances200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -612,13 +641,15 @@ class UsersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/users/{userId}/groups/requested'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/users/{userId}/groups/requested'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -647,8 +678,11 @@ class UsersApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Group>, Group>(rawData, 'List<Group>',
-              growable: true);
+          : deserialize<List<Group>, Group>(
+              rawData,
+              'List<Group>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -694,13 +728,15 @@ class UsersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/users/{userId}/groups'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/users/{userId}/groups'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -730,8 +766,10 @@ class UsersApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<LimitedUserGroups>, LimitedUserGroups>(
-              rawData, 'List<LimitedUserGroups>',
-              growable: true);
+              rawData,
+              'List<LimitedUserGroups>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -777,13 +815,15 @@ class UsersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/userNotes/{userNoteId}'
-        .replaceAll('{' r'userNoteId' '}', userNoteId.toString());
+    final _path = r'/userNotes/{userNoteId}'.replaceAll(
+      '{'
+      r'userNoteId'
+      '}',
+      userNoteId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -812,8 +852,11 @@ class UsersApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<UserNote, UserNote>(rawData, 'UserNote',
-              growable: true);
+          : deserialize<UserNote, UserNote>(
+              rawData,
+              'UserNote',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -864,9 +907,7 @@ class UsersApi {
     final _path = r'/userNotes';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -901,8 +942,11 @@ class UsersApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<UserNote>, UserNote>(rawData, 'List<UserNote>',
-              growable: true);
+          : deserialize<List<UserNote>, UserNote>(
+              rawData,
+              'List<UserNote>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -948,13 +992,15 @@ class UsersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/users/{userId}/groups/represented'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/users/{userId}/groups/represented'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -984,8 +1030,10 @@ class UsersApi {
       _responseData = rawData == null
           ? null
           : deserialize<RepresentedGroup, RepresentedGroup>(
-              rawData, 'RepresentedGroup',
-              growable: true);
+              rawData,
+              'RepresentedGroup',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1033,13 +1081,15 @@ class UsersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/users/{userId}/removeTags'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/users/{userId}/removeTags'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1061,10 +1111,7 @@ class UsersApi {
       _bodyData = jsonEncode(changeUserTagsRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1086,8 +1133,11 @@ class UsersApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<CurrentUser, CurrentUser>(rawData, 'CurrentUser',
-              growable: true);
+          : deserialize<CurrentUser, CurrentUser>(
+              rawData,
+              'CurrentUser',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1142,9 +1192,7 @@ class UsersApi {
     final _path = r'/users';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1182,8 +1230,10 @@ class UsersApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<LimitedUserSearch>, LimitedUserSearch>(
-              rawData, 'List<LimitedUserSearch>',
-              growable: true);
+              rawData,
+              'List<LimitedUserSearch>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1234,13 +1284,21 @@ class UsersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/users/{userId}/badges/{badgeId}'
-        .replaceAll('{' r'userId' '}', userId.toString())
-        .replaceAll('{' r'badgeId' '}', badgeId.toString());
+        .replaceAll(
+          '{'
+          r'userId'
+          '}',
+          userId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'badgeId'
+          '}',
+          badgeId.toString(),
+        );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1262,10 +1320,7 @@ class UsersApi {
       _bodyData = jsonEncode(updateUserBadgeRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1309,13 +1364,15 @@ class UsersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/users/{userId}'.replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/users/{userId}'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1337,10 +1394,7 @@ class UsersApi {
       _bodyData = jsonEncode(updateUserRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1362,8 +1416,11 @@ class UsersApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<CurrentUser, CurrentUser>(rawData, 'CurrentUser',
-              growable: true);
+          : deserialize<CurrentUser, CurrentUser>(
+              rawData,
+              'CurrentUser',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1412,9 +1469,7 @@ class UsersApi {
     final _path = r'/userNotes';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1436,10 +1491,7 @@ class UsersApi {
       _bodyData = jsonEncode(updateUserNoteRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1461,8 +1513,11 @@ class UsersApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<UserNote, UserNote>(rawData, 'UserNote',
-              growable: true);
+          : deserialize<UserNote, UserNote>(
+              rawData,
+              'UserNote',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

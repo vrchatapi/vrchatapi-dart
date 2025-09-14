@@ -22,27 +22,15 @@ class InstancePlatforms {
   });
 
   // minimum: 0
-  @JsonKey(
-    name: r'android',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'android', required: true, includeIfNull: false)
   final int android;
 
   // minimum: 0
-  @JsonKey(
-    name: r'ios',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ios', required: false, includeIfNull: false)
   final int? ios;
 
   // minimum: 0
-  @JsonKey(
-    name: r'standalonewindows',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'standalonewindows', required: true, includeIfNull: false)
   final int standalonewindows;
 
   @override

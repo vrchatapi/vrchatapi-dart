@@ -26,54 +26,26 @@ class FileData {
     required this.url,
   });
 
-  @JsonKey(
-    name: r'category',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'category', required: true, includeIfNull: false)
   final FileDataCategoryEnum category;
 
-  @JsonKey(
-    name: r'fileName',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'fileName', required: true, includeIfNull: false)
   final String fileName;
 
-  @JsonKey(
-    name: r'md5',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'md5', required: false, includeIfNull: false)
   final String? md5;
 
   // minimum: 0
-  @JsonKey(
-    name: r'sizeInBytes',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'sizeInBytes', required: true, includeIfNull: false)
   final int sizeInBytes;
 
-  @JsonKey(
-    name: r'status',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
   final FileStatus status;
 
-  @JsonKey(
-    name: r'uploadId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'uploadId', required: true, includeIfNull: false)
   final String uploadId;
 
-  @JsonKey(
-    name: r'url',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'url', required: true, includeIfNull: false)
   final String url;
 
   @override

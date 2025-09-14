@@ -15,31 +15,15 @@ part 'avatar_styles.g.dart';
 )
 class AvatarStyles {
   /// Returns a new [AvatarStyles] instance.
-  AvatarStyles({
-    this.primary,
-    this.secondary,
-    this.supplementary,
-  });
+  AvatarStyles({this.primary, this.secondary, this.supplementary});
 
-  @JsonKey(
-    name: r'primary',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'primary', required: false, includeIfNull: false)
   final String? primary;
 
-  @JsonKey(
-    name: r'secondary',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'secondary', required: false, includeIfNull: false)
   final String? secondary;
 
-  @JsonKey(
-    name: r'supplementary',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'supplementary', required: false, includeIfNull: false)
   final List<String>? supplementary;
 
   @override

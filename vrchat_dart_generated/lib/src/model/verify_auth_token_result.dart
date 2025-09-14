@@ -15,23 +15,12 @@ part 'verify_auth_token_result.g.dart';
 )
 class VerifyAuthTokenResult {
   /// Returns a new [VerifyAuthTokenResult] instance.
-  VerifyAuthTokenResult({
-    required this.ok,
-    required this.token,
-  });
+  VerifyAuthTokenResult({required this.ok, required this.token});
 
-  @JsonKey(
-    name: r'ok',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ok', required: true, includeIfNull: false)
   final bool ok;
 
-  @JsonKey(
-    name: r'token',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'token', required: true, includeIfNull: false)
   final String token;
 
   @override

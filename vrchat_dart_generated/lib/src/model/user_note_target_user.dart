@@ -24,11 +24,7 @@ class UserNoteTargetUser {
     this.userIcon,
   });
 
-  @JsonKey(
-    name: r'currentAvatarTags',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
   final List<String>? currentAvatarTags;
 
   /// When profilePicOverride is not empty, use it instead.
@@ -39,32 +35,16 @@ class UserNoteTargetUser {
   )
   final String? currentAvatarThumbnailImageUrl;
 
-  @JsonKey(
-    name: r'displayName',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'displayName', required: false, includeIfNull: false)
   final String? displayName;
 
-  @JsonKey(
-    name: r'id',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: false, includeIfNull: false)
   final String? id;
 
-  @JsonKey(
-    name: r'profilePicOverride',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
   final String? profilePicOverride;
 
-  @JsonKey(
-    name: r'userIcon',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'userIcon', required: false, includeIfNull: false)
   final String? userIcon;
 
   @override

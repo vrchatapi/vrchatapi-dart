@@ -8,21 +8,18 @@ part of 'error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Error _$ErrorFromJson(Map<String, dynamic> json) => $checkedCreate(
-      'Error',
-      json,
-      ($checkedConvert) {
-        final val = Error(
-          error: $checkedConvert(
-              'error',
-              (v) => v == null
-                  ? null
-                  : Response.fromJson(v as Map<String, dynamic>)),
-        );
-        return val;
-      },
-    );
+Error _$ErrorFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('Error', json, ($checkedConvert) {
+      final val = Error(
+        error: $checkedConvert(
+          'error',
+          (v) =>
+              v == null ? null : Response.fromJson(v as Map<String, dynamic>),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$ErrorToJson(Error instance) => <String, dynamic>{
-      if (instance.error?.toJson() case final value?) 'error': value,
-    };
+  if (instance.error?.toJson() case final value?) 'error': value,
+};

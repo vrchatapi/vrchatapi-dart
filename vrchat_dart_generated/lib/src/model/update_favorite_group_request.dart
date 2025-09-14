@@ -16,32 +16,16 @@ part 'update_favorite_group_request.g.dart';
 )
 class UpdateFavoriteGroupRequest {
   /// Returns a new [UpdateFavoriteGroupRequest] instance.
-  UpdateFavoriteGroupRequest({
-    this.displayName,
-    this.visibility,
-    this.tags,
-  });
+  UpdateFavoriteGroupRequest({this.displayName, this.visibility, this.tags});
 
-  @JsonKey(
-    name: r'displayName',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'displayName', required: false, includeIfNull: false)
   final String? displayName;
 
-  @JsonKey(
-    name: r'visibility',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'visibility', required: false, includeIfNull: false)
   final FavoriteGroupVisibility? visibility;
 
   /// Tags on FavoriteGroups are believed to do nothing.
-  @JsonKey(
-    name: r'tags',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'tags', required: false, includeIfNull: false)
   final List<String>? tags;
 
   @override

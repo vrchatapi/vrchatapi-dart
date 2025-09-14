@@ -9,38 +9,34 @@ part of 'group_role_template_values_roles.dart';
 // **************************************************************************
 
 GroupRoleTemplateValuesRoles _$GroupRoleTemplateValuesRolesFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'GroupRoleTemplateValuesRoles',
-      json,
-      ($checkedConvert) {
-        final val = GroupRoleTemplateValuesRoles(
-          description: $checkedConvert('description', (v) => v as String?),
-          name: $checkedConvert('name', (v) => v as String?),
-          basePermissions: $checkedConvert(
-              'basePermissions',
-              (v) => (v as List<dynamic>?)
-                  ?.map((e) => $enumDecode(_$GroupPermissionsEnumMap, e))
-                  .toList()),
-          isAddedOnJoin:
-              $checkedConvert('isAddedOnJoin', (v) => v as bool? ?? false),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('GroupRoleTemplateValuesRoles', json, ($checkedConvert) {
+  final val = GroupRoleTemplateValuesRoles(
+    description: $checkedConvert('description', (v) => v as String?),
+    name: $checkedConvert('name', (v) => v as String?),
+    basePermissions: $checkedConvert(
+      'basePermissions',
+      (v) => (v as List<dynamic>?)
+          ?.map((e) => $enumDecode(_$GroupPermissionsEnumMap, e))
+          .toList(),
+    ),
+    isAddedOnJoin: $checkedConvert('isAddedOnJoin', (v) => v as bool? ?? false),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$GroupRoleTemplateValuesRolesToJson(
-        GroupRoleTemplateValuesRoles instance) =>
-    <String, dynamic>{
-      if (instance.description case final value?) 'description': value,
-      if (instance.name case final value?) 'name': value,
-      if (instance.basePermissions
-              ?.map((e) => _$GroupPermissionsEnumMap[e]!)
-              .toList()
-          case final value?)
-        'basePermissions': value,
-      if (instance.isAddedOnJoin case final value?) 'isAddedOnJoin': value,
-    };
+  GroupRoleTemplateValuesRoles instance,
+) => <String, dynamic>{
+  if (instance.description case final value?) 'description': value,
+  if (instance.name case final value?) 'name': value,
+  if (instance.basePermissions
+          ?.map((e) => _$GroupPermissionsEnumMap[e]!)
+          .toList()
+      case final value?)
+    'basePermissions': value,
+  if (instance.isAddedOnJoin case final value?) 'isAddedOnJoin': value,
+};
 
 const _$GroupPermissionsEnumMap = {
   GroupPermissions.group_all: '*',

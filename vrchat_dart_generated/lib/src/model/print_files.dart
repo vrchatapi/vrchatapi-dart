@@ -15,24 +15,13 @@ part 'print_files.g.dart';
 )
 class PrintFiles {
   /// Returns a new [PrintFiles] instance.
-  PrintFiles({
-    this.fileId,
-    this.image,
-  });
+  PrintFiles({this.fileId, this.image});
 
-  @JsonKey(
-    name: r'fileId',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'fileId', required: false, includeIfNull: false)
   final String? fileId;
 
   /// Link to file, e.g. https://api.vrchat.cloud/api/1/file/file_66fe782d-f2bd-4462-9761-1d766d7b2b26/1/file
-  @JsonKey(
-    name: r'image',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'image', required: false, includeIfNull: false)
   final String? image;
 
   @override

@@ -37,124 +37,56 @@ class UserSubscription {
     this.isBulkGift = false,
   });
 
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(
-    name: r'transactionId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'transactionId', required: true, includeIfNull: false)
   final String transactionId;
 
   /// Which \"Store\" it came from. Right now only Stores are \"Steam\" and \"Admin\".
-  @JsonKey(
-    name: r'store',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'store', required: true, includeIfNull: false)
   final String store;
 
-  @JsonKey(
-    name: r'steamItemId',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'steamItemId', required: false, includeIfNull: false)
   final String? steamItemId;
 
-  @JsonKey(
-    name: r'amount',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'amount', required: true, includeIfNull: false)
   final num amount;
 
-  @JsonKey(
-    name: r'description',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
 
-  @JsonKey(
-    name: r'period',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'period', required: true, includeIfNull: false)
   final SubscriptionPeriod period;
 
-  @JsonKey(
-    name: r'tier',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'tier', required: true, includeIfNull: false)
   final int tier;
 
-  @JsonKey(
-    name: r'active',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'active', required: true, includeIfNull: false)
   final bool active;
 
-  @JsonKey(
-    name: r'status',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
   final TransactionStatus status;
 
-  @JsonKey(
-    name: r'starts',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'starts', required: false, includeIfNull: false)
   final String? starts;
 
-  @JsonKey(
-    name: r'expires',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'expires', required: true, includeIfNull: false)
   final DateTime expires;
 
-  @JsonKey(
-    name: r'created_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
 
-  @JsonKey(
-    name: r'updated_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
   final DateTime updatedAt;
 
-  @JsonKey(
-    name: r'licenseGroups',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'licenseGroups', required: true, includeIfNull: false)
   final List<String> licenseGroups;
 
-  @JsonKey(
-    name: r'isGift',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'isGift', required: true, includeIfNull: false)
   final bool isGift;
 
-  @JsonKey(
-    name: r'isBulkGift',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'isBulkGift', required: true, includeIfNull: false)
   final bool isBulkGift;
 
   @override

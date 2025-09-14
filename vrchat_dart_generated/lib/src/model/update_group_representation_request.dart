@@ -15,16 +15,10 @@ part 'update_group_representation_request.g.dart';
 )
 class UpdateGroupRepresentationRequest {
   /// Returns a new [UpdateGroupRepresentationRequest] instance.
-  UpdateGroupRepresentationRequest({
-    required this.isRepresenting,
-  });
+  UpdateGroupRepresentationRequest({required this.isRepresenting});
 
   /// Whether the user is representing the group.
-  @JsonKey(
-    name: r'isRepresenting',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'isRepresenting', required: true, includeIfNull: false)
   final bool isRepresenting;
 
   @override
@@ -37,8 +31,8 @@ class UpdateGroupRepresentationRequest {
   int get hashCode => isRepresenting.hashCode;
 
   factory UpdateGroupRepresentationRequest.fromJson(
-          Map<String, dynamic> json) =>
-      _$UpdateGroupRepresentationRequestFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$UpdateGroupRepresentationRequestFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$UpdateGroupRepresentationRequestToJson(this);

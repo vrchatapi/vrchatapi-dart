@@ -16,15 +16,9 @@ part 'avatar_unity_package_url_object.g.dart';
 )
 class AvatarUnityPackageUrlObject {
   /// Returns a new [AvatarUnityPackageUrlObject] instance.
-  AvatarUnityPackageUrlObject({
-    this.unityPackageUrl,
-  });
+  AvatarUnityPackageUrlObject({this.unityPackageUrl});
 
-  @JsonKey(
-    name: r'unityPackageUrl',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'unityPackageUrl', required: false, includeIfNull: false)
   final String? unityPackageUrl;
 
   @override

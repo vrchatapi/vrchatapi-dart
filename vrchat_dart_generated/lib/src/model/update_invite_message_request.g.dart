@@ -9,24 +9,15 @@ part of 'update_invite_message_request.dart';
 // **************************************************************************
 
 UpdateInviteMessageRequest _$UpdateInviteMessageRequestFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'UpdateInviteMessageRequest',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['message'],
-        );
-        final val = UpdateInviteMessageRequest(
-          message: $checkedConvert('message', (v) => v as String),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('UpdateInviteMessageRequest', json, ($checkedConvert) {
+  $checkKeys(json, requiredKeys: const ['message']);
+  final val = UpdateInviteMessageRequest(
+    message: $checkedConvert('message', (v) => v as String),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$UpdateInviteMessageRequestToJson(
-        UpdateInviteMessageRequest instance) =>
-    <String, dynamic>{
-      'message': instance.message,
-    };
+  UpdateInviteMessageRequest instance,
+) => <String, dynamic>{'message': instance.message};

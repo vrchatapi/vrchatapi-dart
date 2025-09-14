@@ -30,76 +30,36 @@ class Print {
   });
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(
-    name: r'authorId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'authorId', required: true, includeIfNull: false)
   final String authorId;
 
-  @JsonKey(
-    name: r'authorName',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'authorName', required: true, includeIfNull: false)
   final String authorName;
 
-  @JsonKey(
-    name: r'createdAt',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'createdAt', required: true, includeIfNull: false)
   final DateTime createdAt;
 
-  @JsonKey(
-    name: r'files',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'files', required: true, includeIfNull: false)
   final PrintFiles files;
 
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(
-    name: r'note',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'note', required: true, includeIfNull: false)
   final String note;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(
-    name: r'ownerId',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ownerId', required: false, includeIfNull: false)
   final String? ownerId;
 
-  @JsonKey(
-    name: r'timestamp',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'timestamp', required: true, includeIfNull: false)
   final DateTime timestamp;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
-  @JsonKey(
-    name: r'worldId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'worldId', required: true, includeIfNull: false)
   final String worldId;
 
-  @JsonKey(
-    name: r'worldName',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'worldName', required: true, includeIfNull: false)
   final String worldName;
 
   @override

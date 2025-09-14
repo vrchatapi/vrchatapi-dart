@@ -48,13 +48,21 @@ class InstancesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/instances/{worldId}:{instanceId}'
-        .replaceAll('{' r'worldId' '}', worldId.toString())
-        .replaceAll('{' r'instanceId' '}', instanceId.toString());
+        .replaceAll(
+          '{'
+          r'worldId'
+          '}',
+          worldId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'instanceId'
+          '}',
+          instanceId.toString(),
+        );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -89,8 +97,11 @@ class InstancesApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Instance, Instance>(rawData, 'Instance',
-              growable: true);
+          : deserialize<Instance, Instance>(
+              rawData,
+              'Instance',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -139,9 +150,7 @@ class InstancesApi {
     final _path = r'/instances';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -163,10 +172,7 @@ class InstancesApi {
       _bodyData = jsonEncode(createInstanceRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -188,8 +194,11 @@ class InstancesApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Instance, Instance>(rawData, 'Instance',
-              growable: true);
+          : deserialize<Instance, Instance>(
+              rawData,
+              'Instance',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -238,13 +247,21 @@ class InstancesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/instances/{worldId}:{instanceId}'
-        .replaceAll('{' r'worldId' '}', worldId.toString())
-        .replaceAll('{' r'instanceId' '}', instanceId.toString());
+        .replaceAll(
+          '{'
+          r'worldId'
+          '}',
+          worldId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'instanceId'
+          '}',
+          instanceId.toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -273,8 +290,11 @@ class InstancesApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Instance, Instance>(rawData, 'Instance',
-              growable: true);
+          : deserialize<Instance, Instance>(
+              rawData,
+              'Instance',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -320,13 +340,15 @@ class InstancesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/instances/s/{shortName}'
-        .replaceAll('{' r'shortName' '}', shortName.toString());
+    final _path = r'/instances/s/{shortName}'.replaceAll(
+      '{'
+      r'shortName'
+      '}',
+      shortName.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -355,8 +377,11 @@ class InstancesApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Instance, Instance>(rawData, 'Instance',
-              growable: true);
+          : deserialize<Instance, Instance>(
+              rawData,
+              'Instance',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -405,13 +430,21 @@ class InstancesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/instances/{worldId}:{instanceId}/shortName'
-        .replaceAll('{' r'worldId' '}', worldId.toString())
-        .replaceAll('{' r'instanceId' '}', instanceId.toString());
+        .replaceAll(
+          '{'
+          r'worldId'
+          '}',
+          worldId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'instanceId'
+          '}',
+          instanceId.toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -441,8 +474,10 @@ class InstancesApi {
       _responseData = rawData == null
           ? null
           : deserialize<InstanceShortNameResponse, InstanceShortNameResponse>(
-              rawData, 'InstanceShortNameResponse',
-              growable: true);
+              rawData,
+              'InstanceShortNameResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

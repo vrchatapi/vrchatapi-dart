@@ -21,19 +21,11 @@ class APIConfigOfflineAnalysis {
   });
 
   /// Whether to allow offline analysis
-  @JsonKey(
-    name: r'android',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'android', required: false, includeIfNull: false)
   final bool? android;
 
   /// Whether to allow offline analysis
-  @JsonKey(
-    name: r'standalonewindows',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'standalonewindows', required: false, includeIfNull: false)
   final bool? standalonewindows;
 
   @override

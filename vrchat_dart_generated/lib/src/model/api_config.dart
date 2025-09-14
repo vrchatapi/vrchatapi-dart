@@ -161,19 +161,11 @@ class APIConfig {
   )
   final bool voiceEnableReceiverLimiting;
 
-  @JsonKey(
-    name: r'accessLogsUrls',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'accessLogsUrls', required: true, includeIfNull: false)
   final APIConfigAccessLogsUrls accessLogsUrls;
 
   /// VRChat's office address
-  @JsonKey(
-    name: r'address',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'address', required: true, includeIfNull: false)
   final String address;
 
   @JsonKey(
@@ -183,11 +175,7 @@ class APIConfig {
   )
   final bool ageVerificationInviteVisible;
 
-  @JsonKey(
-    name: r'ageVerificationP',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ageVerificationP', required: true, includeIfNull: false)
   final bool ageVerificationP;
 
   @JsonKey(
@@ -198,28 +186,16 @@ class APIConfig {
   final bool ageVerificationStatusVisible;
 
   /// Max retries for avatar analysis requests
-  @JsonKey(
-    name: r'analysisMaxRetries',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'analysisMaxRetries', required: true, includeIfNull: false)
   final int analysisMaxRetries;
 
   /// Interval between retries for avatar analysis requests
-  @JsonKey(
-    name: r'analysisRetryInterval',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'analysisRetryInterval', required: true, includeIfNull: false)
   final int analysisRetryInterval;
 
   /// Public Announcements
-  @JsonKey(
-    name: r'announcements',
-    required: true,
-    includeIfNull: false,
-  )
-// ignore: deprecated_member_use_from_same_package
+  @JsonKey(name: r'announcements', required: true, includeIfNull: false)
+  // ignore: deprecated_member_use_from_same_package
   final Set<APIConfigAnnouncement> announcements;
 
   /// Unknown
@@ -247,18 +223,10 @@ class APIConfig {
   final List<String> availableLanguageCodes;
 
   /// List of supported Languages
-  @JsonKey(
-    name: r'availableLanguages',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'availableLanguages', required: true, includeIfNull: false)
   final List<String> availableLanguages;
 
-  @JsonKey(
-    name: r'avatarPerfLimiter',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'avatarPerfLimiter', required: true, includeIfNull: false)
   final APIConfigAvatarPerfLimiter avatarPerfLimiter;
 
   /// Unknown
@@ -270,19 +238,11 @@ class APIConfig {
   final int chatboxLogBufferSeconds;
 
   /// apiKey to be used for all other requests
-  @JsonKey(
-    name: r'clientApiKey',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'clientApiKey', required: true, includeIfNull: false)
   final String clientApiKey;
 
   /// Unknown
-  @JsonKey(
-    name: r'clientBPSCeiling',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'clientBPSCeiling', required: true, includeIfNull: false)
   final int clientBPSCeiling;
 
   /// Unknown
@@ -310,19 +270,11 @@ class APIConfig {
   final bool clientNetDispatchThreadMobile;
 
   /// Unknown
-  @JsonKey(
-    name: r'clientNetInThread',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'clientNetInThread', required: false, includeIfNull: false)
   final bool? clientNetInThread;
 
   /// Unknown
-  @JsonKey(
-    name: r'clientNetInThread2',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'clientNetInThread2', required: false, includeIfNull: false)
   final bool? clientNetInThread2;
 
   /// Unknown
@@ -342,19 +294,11 @@ class APIConfig {
   final bool? clientNetInThreadMobile2;
 
   /// Unknown
-  @JsonKey(
-    name: r'clientNetOutThread',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'clientNetOutThread', required: false, includeIfNull: false)
   final bool? clientNetOutThread;
 
   /// Unknown
-  @JsonKey(
-    name: r'clientNetOutThread2',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'clientNetOutThread2', required: false, includeIfNull: false)
   final bool? clientNetOutThread2;
 
   /// Unknown
@@ -374,11 +318,7 @@ class APIConfig {
   final bool? clientNetOutThreadMobile2;
 
   /// Unknown
-  @JsonKey(
-    name: r'clientQR',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'clientQR', required: false, includeIfNull: false)
   final int? clientQR;
 
   /// Unknown
@@ -397,27 +337,15 @@ class APIConfig {
   )
   final int clientSentCountAllowance;
 
-  @JsonKey(
-    name: r'constants',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'constants', required: true, includeIfNull: false)
   final APIConfigConstants constants;
 
   /// VRChat's contact email
-  @JsonKey(
-    name: r'contactEmail',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'contactEmail', required: true, includeIfNull: false)
   final String contactEmail;
 
   /// VRChat's copyright-issues-related email
-  @JsonKey(
-    name: r'copyrightEmail',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'copyrightEmail', required: true, includeIfNull: false)
   final String copyrightEmail;
 
   /// Current version number of the Privacy Agreement
@@ -430,91 +358,47 @@ class APIConfig {
 
   /// Current version number of the Terms of Service
   // minimum: 0
-  @JsonKey(
-    name: r'currentTOSVersion',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'currentTOSVersion', required: true, includeIfNull: false)
   final int currentTOSVersion;
 
-  @JsonKey(
-    name: r'defaultAvatar',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'defaultAvatar', required: true, includeIfNull: false)
   final String defaultAvatar;
 
-  @JsonKey(
-    name: r'defaultStickerSet',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'defaultStickerSet', required: true, includeIfNull: false)
   final String defaultStickerSet;
 
   /// Unknown
-  @JsonKey(
-    name: r'devLanguageCodes',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'devLanguageCodes', required: false, includeIfNull: false)
   final List<String>? devLanguageCodes;
 
   /// Link to download the development SDK, use downloadUrls instead
   @Deprecated('devSdkUrl has been deprecated')
-  @JsonKey(
-    name: r'devSdkUrl',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'devSdkUrl', required: true, includeIfNull: false)
   final String devSdkUrl;
 
   /// Version of the development SDK
   @Deprecated('devSdkVersion has been deprecated')
-  @JsonKey(
-    name: r'devSdkVersion',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'devSdkVersion', required: true, includeIfNull: false)
   final String devSdkVersion;
 
   /// Unknown, \"dis\" maybe for disconnect?
-  @JsonKey(
-    name: r'dis-countdown',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'dis-countdown', required: true, includeIfNull: false)
   final DateTime disCountdown;
 
   /// Unknown
-  @JsonKey(
-    name: r'disableAVProInProton',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'disableAVProInProton', required: false, includeIfNull: false)
   final bool? disableAVProInProton;
 
   /// Toggles if copying avatars should be disabled
-  @JsonKey(
-    name: r'disableAvatarCopying',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'disableAvatarCopying', required: true, includeIfNull: false)
   final bool disableAvatarCopying;
 
   /// Toggles if avatar gating should be disabled. Avatar gating restricts uploading of avatars to people with the `system_avatar_access` Tag or `admin_avatar_access` Tag
-  @JsonKey(
-    name: r'disableAvatarGating',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'disableAvatarGating', required: true, includeIfNull: false)
   final bool disableAvatarGating;
 
   /// Toggles if the Community Labs should be disabled
-  @JsonKey(
-    name: r'disableCommunityLabs',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'disableCommunityLabs', required: true, includeIfNull: false)
   final bool disableCommunityLabs;
 
   /// Toggles if promotion out of Community Labs should be disabled
@@ -526,75 +410,39 @@ class APIConfig {
   final bool disableCommunityLabsPromotion;
 
   /// Unknown
-  @JsonKey(
-    name: r'disableEmail',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'disableEmail', required: true, includeIfNull: false)
   final bool disableEmail;
 
   /// Unknown
-  @JsonKey(
-    name: r'disableCaptcha',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'disableCaptcha', required: false, includeIfNull: false)
   final bool? disableCaptcha;
 
   /// Toggles if Analytics should be disabled.
-  @JsonKey(
-    name: r'disableEventStream',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'disableEventStream', required: true, includeIfNull: false)
   final bool disableEventStream;
 
   /// Toggles if feedback gating should be disabled. Feedback gating restricts submission of feedback (reporting a World or User) to people with the `system_feedback_access` Tag.
-  @JsonKey(
-    name: r'disableFeedbackGating',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'disableFeedbackGating', required: true, includeIfNull: false)
   final bool disableFeedbackGating;
 
   /// Unknown, probably toggles compilation of frontend web builds? So internal flag?
-  @JsonKey(
-    name: r'disableFrontendBuilds',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'disableFrontendBuilds', required: true, includeIfNull: false)
   final bool disableFrontendBuilds;
 
   /// Toggles if gift drops should be disabled
-  @JsonKey(
-    name: r'disableGiftDrops',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'disableGiftDrops', required: true, includeIfNull: false)
   final bool disableGiftDrops;
 
   /// Unknown
-  @JsonKey(
-    name: r'disableHello',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'disableHello', required: true, includeIfNull: false)
   final bool disableHello;
 
   /// Toggles if signing up for Subscriptions in Oculus is disabled or not.
-  @JsonKey(
-    name: r'disableOculusSubs',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'disableOculusSubs', required: true, includeIfNull: false)
   final bool disableOculusSubs;
 
   /// Toggles if new user account registration should be disabled.
-  @JsonKey(
-    name: r'disableRegistration',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'disableRegistration', required: true, includeIfNull: false)
   final bool disableRegistration;
 
   /// Toggles if Steam Networking should be disabled. VRChat these days uses Photon Unity Networking (PUN) instead.
@@ -607,97 +455,49 @@ class APIConfig {
 
   /// Toggles if 2FA should be disabled.
   @Deprecated('disableTwoFactorAuth has been deprecated')
-  @JsonKey(
-    name: r'disableTwoFactorAuth',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'disableTwoFactorAuth', required: true, includeIfNull: false)
   final bool disableTwoFactorAuth;
 
   /// Toggles if Udon should be universally disabled in-game.
-  @JsonKey(
-    name: r'disableUdon',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'disableUdon', required: true, includeIfNull: false)
   final bool disableUdon;
 
   /// Toggles if account upgrading \"linking with Steam/Oculus\" should be disabled.
-  @JsonKey(
-    name: r'disableUpgradeAccount',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'disableUpgradeAccount', required: true, includeIfNull: false)
   final bool disableUpgradeAccount;
 
   /// Download link for game on the Oculus Rift website.
-  @JsonKey(
-    name: r'downloadLinkWindows',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'downloadLinkWindows', required: true, includeIfNull: false)
   final String downloadLinkWindows;
 
-  @JsonKey(
-    name: r'downloadUrls',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'downloadUrls', required: true, includeIfNull: false)
   final APIConfigDownloadURLList downloadUrls;
 
   /// Array of DynamicWorldRow objects, used by the game to display the list of world rows
-  @JsonKey(
-    name: r'dynamicWorldRows',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'dynamicWorldRows', required: true, includeIfNull: false)
   final Set<DynamicContentRow> dynamicWorldRows;
 
   /// Unknown
-  @JsonKey(
-    name: r'economyPauseEnd',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'economyPauseEnd', required: false, includeIfNull: false)
   final String? economyPauseEnd;
 
   /// Unknown
-  @JsonKey(
-    name: r'economyPauseStart',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'economyPauseStart', required: false, includeIfNull: false)
   final String? economyPauseStart;
 
   /// Unknown
-  @JsonKey(
-    name: r'economyState',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'economyState', required: false, includeIfNull: false)
   final int? economyState;
 
-  @JsonKey(
-    name: r'events',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'events', required: true, includeIfNull: false)
   final APIConfigEvents events;
 
   /// Unknown
-  @JsonKey(
-    name: r'forceUseLatestWorld',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'forceUseLatestWorld', required: true, includeIfNull: false)
   final bool forceUseLatestWorld;
 
   /// Display type of gifts
-  @JsonKey(
-    name: r'giftDisplayType',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'giftDisplayType', required: true, includeIfNull: false)
   final String giftDisplayType;
 
   /// Unknown
@@ -711,11 +511,7 @@ class APIConfig {
   final String googleApiClientId;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
-  @JsonKey(
-    name: r'homeWorldId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'homeWorldId', required: true, includeIfNull: false)
   final String homeWorldId;
 
   /// Redirect target if you try to open the base API domain in your browser
@@ -727,27 +523,15 @@ class APIConfig {
   final String homepageRedirectTarget;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
-  @JsonKey(
-    name: r'hubWorldId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'hubWorldId', required: true, includeIfNull: false)
   final String hubWorldId;
 
   /// A list of explicitly allowed origins that worlds can request images from via the Udon's [VRCImageDownloader#DownloadImage](https://creators.vrchat.com/worlds/udon/image-loading/#downloadimage).
-  @JsonKey(
-    name: r'imageHostUrlList',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'imageHostUrlList', required: true, includeIfNull: false)
   final List<String> imageHostUrlList;
 
   /// VRChat's job application email
-  @JsonKey(
-    name: r'jobsEmail',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'jobsEmail', required: true, includeIfNull: false)
   final String jobsEmail;
 
   @JsonKey(
@@ -766,11 +550,7 @@ class APIConfig {
   final String minimumUnityVersionForUploads;
 
   /// VRChat's moderation related email
-  @JsonKey(
-    name: r'moderationEmail',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'moderationEmail', required: true, includeIfNull: false)
   final String moderationEmail;
 
   /// Used in-game to notify a user they aren't allowed to select avatars in private worlds
@@ -781,11 +561,7 @@ class APIConfig {
   )
   final String notAllowedToSelectAvatarInPrivateWorldMessage;
 
-  @JsonKey(
-    name: r'offlineAnalysis',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'offlineAnalysis', required: true, includeIfNull: false)
   final APIConfigOfflineAnalysis offlineAnalysis;
 
   /// Unknown
@@ -797,18 +573,10 @@ class APIConfig {
   final List<String> photonNameserverOverrides;
 
   /// Unknown
-  @JsonKey(
-    name: r'photonPublicKeys',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'photonPublicKeys', required: true, includeIfNull: false)
   final List<String> photonPublicKeys;
 
-  @JsonKey(
-    name: r'reportCategories',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'reportCategories', required: true, includeIfNull: false)
   final APIConfigReportCategories reportCategories;
 
   /// URL to the report form
@@ -821,18 +589,10 @@ class APIConfig {
   )
   final String reportFormUrl;
 
-  @JsonKey(
-    name: r'reportOptions',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'reportOptions', required: true, includeIfNull: false)
   final APIConfigReportOptions reportOptions;
 
-  @JsonKey(
-    name: r'reportReasons',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'reportReasons', required: true, includeIfNull: false)
   final APIConfigReportReasons reportReasons;
 
   @JsonKey(
@@ -843,19 +603,11 @@ class APIConfig {
   final bool requireAgeVerificationBetaTag;
 
   /// Link to the developer FAQ
-  @JsonKey(
-    name: r'sdkDeveloperFaqUrl',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'sdkDeveloperFaqUrl', required: true, includeIfNull: false)
   final String sdkDeveloperFaqUrl;
 
   /// Link to the official VRChat Discord
-  @JsonKey(
-    name: r'sdkDiscordUrl',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'sdkDiscordUrl', required: true, includeIfNull: false)
   final String sdkDiscordUrl;
 
   /// Used in the SDK to notify a user they aren't allowed to upload avatars/worlds yet
@@ -867,83 +619,43 @@ class APIConfig {
   final String sdkNotAllowedToPublishMessage;
 
   /// Unity version supported by the SDK
-  @JsonKey(
-    name: r'sdkUnityVersion',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'sdkUnityVersion', required: true, includeIfNull: false)
   final String sdkUnityVersion;
 
   /// A list of explicitly allowed origins that worlds can request strings from via the Udon's [VRCStringDownloader.LoadUrl](https://creators.vrchat.com/worlds/udon/string-loading/#ivrcstringdownload).
-  @JsonKey(
-    name: r'stringHostUrlList',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'stringHostUrlList', required: true, includeIfNull: false)
   final List<String> stringHostUrlList;
 
   /// VRChat's support email
-  @JsonKey(
-    name: r'supportEmail',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'supportEmail', required: true, includeIfNull: false)
   final String supportEmail;
 
   /// VRChat's support form
-  @JsonKey(
-    name: r'supportFormUrl',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'supportFormUrl', required: true, includeIfNull: false)
   final String supportFormUrl;
 
   /// Unknown
-  @JsonKey(
-    name: r'timekeeping',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'timekeeping', required: true, includeIfNull: false)
   final bool timekeeping;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
-  @JsonKey(
-    name: r'timeOutWorldId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'timeOutWorldId', required: true, includeIfNull: false)
   final String timeOutWorldId;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
-  @JsonKey(
-    name: r'tutorialWorldId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'tutorialWorldId', required: true, includeIfNull: false)
   final String tutorialWorldId;
 
   /// Unknown
-  @JsonKey(
-    name: r'updateRateMsMaximum',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'updateRateMsMaximum', required: true, includeIfNull: false)
   final int updateRateMsMaximum;
 
   /// Unknown
-  @JsonKey(
-    name: r'updateRateMsMinimum',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'updateRateMsMinimum', required: true, includeIfNull: false)
   final int updateRateMsMinimum;
 
   /// Unknown
-  @JsonKey(
-    name: r'updateRateMsNormal',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'updateRateMsNormal', required: true, includeIfNull: false)
   final int updateRateMsNormal;
 
   /// Unknown
@@ -955,19 +667,11 @@ class APIConfig {
   final int updateRateMsUdonManual;
 
   /// Unknown
-  @JsonKey(
-    name: r'uploadAnalysisPercent',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'uploadAnalysisPercent', required: true, includeIfNull: false)
   final int uploadAnalysisPercent;
 
   /// List of allowed URLs that bypass the \"Allow untrusted URL's\" setting in-game
-  @JsonKey(
-    name: r'urlList',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'urlList', required: true, includeIfNull: false)
   final List<String> urlList;
 
   /// Unknown
@@ -979,19 +683,11 @@ class APIConfig {
   final bool useReliableUdpForVoice;
 
   /// Download link for game on the Steam website.
-  @JsonKey(
-    name: r'viveWindowsUrl',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'viveWindowsUrl', required: true, includeIfNull: false)
   final String viveWindowsUrl;
 
   /// List of allowed URLs that are allowed to host avatar assets
-  @JsonKey(
-    name: r'whiteListedAssetUrls',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'whiteListedAssetUrls', required: true, includeIfNull: false)
   final List<String> whiteListedAssetUrls;
 
   /// Currently used youtube-dl.exe version
@@ -1011,11 +707,7 @@ class APIConfig {
   final String playerUrlResolverSha1;
 
   /// Public key, hex encoded
-  @JsonKey(
-    name: r'publicKey',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'publicKey', required: true, includeIfNull: false)
   final String publicKey;
 
   /// Unknown
@@ -1088,9 +780,9 @@ class APIConfig {
           other.defaultAvatar == defaultAvatar &&
           other.defaultStickerSet == defaultStickerSet &&
           other.devLanguageCodes == devLanguageCodes &&
-// ignore: deprecated_member_use_from_same_package
+          // ignore: deprecated_member_use_from_same_package
           other.devSdkUrl == devSdkUrl &&
-// ignore: deprecated_member_use_from_same_package
+          // ignore: deprecated_member_use_from_same_package
           other.devSdkVersion == devSdkVersion &&
           other.disCountdown == disCountdown &&
           other.disableAVProInProton == disableAVProInProton &&
@@ -1109,7 +801,7 @@ class APIConfig {
           other.disableOculusSubs == disableOculusSubs &&
           other.disableRegistration == disableRegistration &&
           other.disableSteamNetworking == disableSteamNetworking &&
-// ignore: deprecated_member_use_from_same_package
+          // ignore: deprecated_member_use_from_same_package
           other.disableTwoFactorAuth == disableTwoFactorAuth &&
           other.disableUdon == disableUdon &&
           other.disableUpgradeAccount == disableUpgradeAccount &&
@@ -1214,9 +906,9 @@ class APIConfig {
       defaultAvatar.hashCode +
       defaultStickerSet.hashCode +
       devLanguageCodes.hashCode +
-// ignore: deprecated_member_use_from_same_package
+      // ignore: deprecated_member_use_from_same_package
       devSdkUrl.hashCode +
-// ignore: deprecated_member_use_from_same_package
+      // ignore: deprecated_member_use_from_same_package
       devSdkVersion.hashCode +
       disCountdown.hashCode +
       disableAVProInProton.hashCode +
@@ -1234,7 +926,7 @@ class APIConfig {
       disableOculusSubs.hashCode +
       disableRegistration.hashCode +
       disableSteamNetworking.hashCode +
-// ignore: deprecated_member_use_from_same_package
+      // ignore: deprecated_member_use_from_same_package
       disableTwoFactorAuth.hashCode +
       disableUdon.hashCode +
       disableUpgradeAccount.hashCode +

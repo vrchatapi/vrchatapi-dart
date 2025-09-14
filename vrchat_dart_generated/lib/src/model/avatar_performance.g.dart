@@ -15,32 +15,38 @@ AvatarPerformance _$AvatarPerformanceFromJson(Map<String, dynamic> json) =>
       ($checkedConvert) {
         final val = AvatarPerformance(
           android: $checkedConvert('android', (v) => v as String?),
-          androidSort:
-              $checkedConvert('android-sort', (v) => (v as num?)?.toInt()),
+          androidSort: $checkedConvert(
+            'android-sort',
+            (v) => (v as num?)?.toInt(),
+          ),
           ios: $checkedConvert('ios', (v) => v as String?),
           iosSort: $checkedConvert('ios-sort', (v) => (v as num?)?.toInt()),
-          standalonewindows:
-              $checkedConvert('standalonewindows', (v) => v as String?),
+          standalonewindows: $checkedConvert(
+            'standalonewindows',
+            (v) => v as String?,
+          ),
           standalonewindowsSort: $checkedConvert(
-              'standalonewindows-sort', (v) => (v as num?)?.toInt()),
+            'standalonewindows-sort',
+            (v) => (v as num?)?.toInt(),
+          ),
         );
         return val;
       },
       fieldKeyMap: const {
         'androidSort': 'android-sort',
         'iosSort': 'ios-sort',
-        'standalonewindowsSort': 'standalonewindows-sort'
+        'standalonewindowsSort': 'standalonewindows-sort',
       },
     );
 
-Map<String, dynamic> _$AvatarPerformanceToJson(AvatarPerformance instance) =>
-    <String, dynamic>{
-      if (instance.android case final value?) 'android': value,
-      if (instance.androidSort case final value?) 'android-sort': value,
-      if (instance.ios case final value?) 'ios': value,
-      if (instance.iosSort case final value?) 'ios-sort': value,
-      if (instance.standalonewindows case final value?)
-        'standalonewindows': value,
-      if (instance.standalonewindowsSort case final value?)
-        'standalonewindows-sort': value,
-    };
+Map<String, dynamic> _$AvatarPerformanceToJson(
+  AvatarPerformance instance,
+) => <String, dynamic>{
+  if (instance.android case final value?) 'android': value,
+  if (instance.androidSort case final value?) 'android-sort': value,
+  if (instance.ios case final value?) 'ios': value,
+  if (instance.iosSort case final value?) 'ios-sort': value,
+  if (instance.standalonewindows case final value?) 'standalonewindows': value,
+  if (instance.standalonewindowsSort case final value?)
+    'standalonewindows-sort': value,
+};

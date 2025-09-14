@@ -15,24 +15,13 @@ part 'info_push_data_clickable.g.dart';
 )
 class InfoPushDataClickable {
   /// Returns a new [InfoPushDataClickable] instance.
-  InfoPushDataClickable({
-    required this.command,
-    this.parameters,
-  });
+  InfoPushDataClickable({required this.command, this.parameters});
 
-  @JsonKey(
-    name: r'command',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'command', required: true, includeIfNull: false)
   final InfoPushDataClickableCommandEnum command;
 
   /// In case of OpenURL, this would contain the link.
-  @JsonKey(
-    name: r'parameters',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'parameters', required: false, includeIfNull: false)
   final List<String>? parameters;
 
   @override

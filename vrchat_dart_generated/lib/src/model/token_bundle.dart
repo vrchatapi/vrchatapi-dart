@@ -26,63 +26,31 @@ class TokenBundle {
     required this.imageUrl,
   });
 
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(
-    name: r'steamItemId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'steamItemId', required: true, includeIfNull: false)
   final String steamItemId;
 
-  @JsonKey(
-    name: r'oculusSku',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'oculusSku', required: true, includeIfNull: false)
   final String oculusSku;
 
-  @JsonKey(
-    name: r'googleProductId',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'googleProductId', required: false, includeIfNull: false)
   final String? googleProductId;
 
   /// price of the bundle
-  @JsonKey(
-    name: r'amount',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'amount', required: true, includeIfNull: false)
   final int amount;
 
-  @JsonKey(
-    name: r'description',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
 
   /// number of tokens received
-  @JsonKey(
-    name: r'tokens',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'tokens', required: true, includeIfNull: false)
   final int tokens;
 
   /// direct url to image
-  @JsonKey(
-    name: r'imageUrl',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'imageUrl', required: true, includeIfNull: false)
   final String imageUrl;
 
   @override

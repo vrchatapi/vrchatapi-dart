@@ -42,13 +42,15 @@ class FriendsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/user/{userId}/friendRequest'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/user/{userId}/friendRequest'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -123,13 +125,15 @@ class FriendsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/user/{userId}/friendRequest'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/user/{userId}/friendRequest'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -158,8 +162,11 @@ class FriendsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Notification, Notification>(rawData, 'Notification',
-              growable: true);
+          : deserialize<Notification, Notification>(
+              rawData,
+              'Notification',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -205,13 +212,15 @@ class FriendsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/user/{userId}/friendStatus'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/user/{userId}/friendStatus'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -240,8 +249,11 @@ class FriendsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<FriendStatus, FriendStatus>(rawData, 'FriendStatus',
-              growable: true);
+          : deserialize<FriendStatus, FriendStatus>(
+              rawData,
+              'FriendStatus',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -294,9 +306,7 @@ class FriendsApi {
     final _path = r'/auth/user/friends';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -333,8 +343,10 @@ class FriendsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<LimitedUserFriend>, LimitedUserFriend>(
-              rawData, 'List<LimitedUserFriend>',
-              growable: true);
+              rawData,
+              'List<LimitedUserFriend>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -380,13 +392,15 @@ class FriendsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/auth/user/friends/{userId}'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/auth/user/friends/{userId}'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {

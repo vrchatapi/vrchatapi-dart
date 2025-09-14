@@ -29,47 +29,23 @@ class Jam {
     required this.updatedAt,
   });
 
-  @JsonKey(
-    name: r'description',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
 
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(
-    name: r'isVisible',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'isVisible', required: true, includeIfNull: false)
   final bool isVisible;
 
-  @JsonKey(
-    name: r'moreInfo',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'moreInfo', required: true, includeIfNull: false)
   final String moreInfo;
 
   /// One of: - submissions_open - closed
-  @JsonKey(
-    name: r'state',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'state', required: true, includeIfNull: false)
   final String state;
 
-  @JsonKey(
-    name: r'stateChangeDates',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'stateChangeDates', required: true, includeIfNull: false)
   final JamStateChangeDates stateChangeDates;
 
   @JsonKey(
@@ -86,18 +62,10 @@ class Jam {
   )
   final bool submissionContentGated;
 
-  @JsonKey(
-    name: r'title',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'title', required: true, includeIfNull: false)
   final String title;
 
-  @JsonKey(
-    name: r'updated_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
   final DateTime updatedAt;
 
   @override

@@ -15,23 +15,12 @@ part 'update_user_badge_request.g.dart';
 )
 class UpdateUserBadgeRequest {
   /// Returns a new [UpdateUserBadgeRequest] instance.
-  UpdateUserBadgeRequest({
-    this.hidden,
-    this.showcased,
-  });
+  UpdateUserBadgeRequest({this.hidden, this.showcased});
 
-  @JsonKey(
-    name: r'hidden',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'hidden', required: false, includeIfNull: false)
   final bool? hidden;
 
-  @JsonKey(
-    name: r'showcased',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'showcased', required: false, includeIfNull: false)
   final bool? showcased;
 
   @override

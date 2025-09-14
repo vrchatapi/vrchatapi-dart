@@ -23,32 +23,16 @@ class GroupRoleTemplateValuesRoles {
     this.isAddedOnJoin = false,
   });
 
-  @JsonKey(
-    name: r'description',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;
 
-  @JsonKey(
-    name: r'name',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'name', required: false, includeIfNull: false)
   final String? name;
 
-  @JsonKey(
-    name: r'basePermissions',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'basePermissions', required: false, includeIfNull: false)
   final List<GroupPermissions>? basePermissions;
 
-  @JsonKey(
-    name: r'isAddedOnJoin',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'isAddedOnJoin', required: false, includeIfNull: false)
   final bool? isAddedOnJoin;
 
   @override

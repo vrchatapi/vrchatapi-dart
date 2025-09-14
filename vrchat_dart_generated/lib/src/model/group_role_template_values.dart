@@ -24,32 +24,16 @@ class GroupRoleTemplateValues {
     required this.roles,
   });
 
-  @JsonKey(
-    name: r'basePermissions',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'basePermissions', required: true, includeIfNull: false)
   final List<GroupPermissions> basePermissions;
 
-  @JsonKey(
-    name: r'description',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
 
-  @JsonKey(
-    name: r'name',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
-  @JsonKey(
-    name: r'roles',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'roles', required: true, includeIfNull: false)
   final GroupRoleTemplateValuesRoles roles;
 
   @override

@@ -30,7 +30,7 @@ UserSubscription _$UserSubscriptionFromJson(Map<String, dynamic> json) =>
             'updated_at',
             'licenseGroups',
             'isGift',
-            'isBulkGift'
+            'isBulkGift',
           ],
         );
         final val = UserSubscription(
@@ -41,20 +41,32 @@ UserSubscription _$UserSubscriptionFromJson(Map<String, dynamic> json) =>
           amount: $checkedConvert('amount', (v) => v as num),
           description: $checkedConvert('description', (v) => v as String),
           period: $checkedConvert(
-              'period', (v) => $enumDecode(_$SubscriptionPeriodEnumMap, v)),
+            'period',
+            (v) => $enumDecode(_$SubscriptionPeriodEnumMap, v),
+          ),
           tier: $checkedConvert('tier', (v) => (v as num).toInt()),
           active: $checkedConvert('active', (v) => v as bool? ?? true),
           status: $checkedConvert(
-              'status', (v) => $enumDecode(_$TransactionStatusEnumMap, v)),
+            'status',
+            (v) => $enumDecode(_$TransactionStatusEnumMap, v),
+          ),
           starts: $checkedConvert('starts', (v) => v as String?),
-          expires:
-              $checkedConvert('expires', (v) => DateTime.parse(v as String)),
-          createdAt:
-              $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
-          updatedAt:
-              $checkedConvert('updated_at', (v) => DateTime.parse(v as String)),
-          licenseGroups: $checkedConvert('licenseGroups',
-              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+          expires: $checkedConvert(
+            'expires',
+            (v) => DateTime.parse(v as String),
+          ),
+          createdAt: $checkedConvert(
+            'created_at',
+            (v) => DateTime.parse(v as String),
+          ),
+          updatedAt: $checkedConvert(
+            'updated_at',
+            (v) => DateTime.parse(v as String),
+          ),
+          licenseGroups: $checkedConvert(
+            'licenseGroups',
+            (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+          ),
           isGift: $checkedConvert('isGift', (v) => v as bool? ?? false),
           isBulkGift: $checkedConvert('isBulkGift', (v) => v as bool? ?? false),
         );

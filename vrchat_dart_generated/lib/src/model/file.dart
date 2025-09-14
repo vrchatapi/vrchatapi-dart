@@ -29,71 +29,35 @@ class File {
     required this.versions,
   });
 
-  @JsonKey(
-    name: r'animationStyle',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'animationStyle', required: false, includeIfNull: false)
   final String? animationStyle;
 
-  @JsonKey(
-    name: r'maskTag',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'maskTag', required: false, includeIfNull: false)
   final String? maskTag;
 
-  @JsonKey(
-    name: r'extension',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'extension', required: true, includeIfNull: false)
   final String extension_;
 
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(
-    name: r'mimeType',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'mimeType', required: true, includeIfNull: false)
   final MIMEType mimeType;
 
   ///
-  @JsonKey(
-    name: r'name',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(
-    name: r'ownerId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ownerId', required: true, includeIfNull: false)
   final String ownerId;
 
   ///
-  @JsonKey(
-    name: r'tags',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 
   ///
-  @JsonKey(
-    name: r'versions',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'versions', required: true, includeIfNull: false)
   final Set<FileVersion> versions;
 
   @override

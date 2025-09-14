@@ -15,25 +15,14 @@ part 'report_reason.g.dart';
 )
 class ReportReason {
   /// Returns a new [ReportReason] instance.
-  ReportReason({
-    required this.text,
-    required this.tooltip,
-  });
+  ReportReason({required this.text, required this.tooltip});
 
   /// The label or name of the report reason
-  @JsonKey(
-    name: r'text',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'text', required: true, includeIfNull: false)
   final String text;
 
   /// A brief explanation of what this reason entails
-  @JsonKey(
-    name: r'tooltip',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'tooltip', required: true, includeIfNull: false)
   final String tooltip;
 
   @override

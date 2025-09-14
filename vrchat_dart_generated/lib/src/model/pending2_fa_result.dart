@@ -15,23 +15,12 @@ part 'pending2_fa_result.g.dart';
 )
 class Pending2FAResult {
   /// Returns a new [Pending2FAResult] instance.
-  Pending2FAResult({
-    required this.qrCodeDataUrl,
-    required this.secret,
-  });
+  Pending2FAResult({required this.qrCodeDataUrl, required this.secret});
 
-  @JsonKey(
-    name: r'qrCodeDataUrl',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'qrCodeDataUrl', required: true, includeIfNull: false)
   final String qrCodeDataUrl;
 
-  @JsonKey(
-    name: r'secret',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'secret', required: true, includeIfNull: false)
   final String secret;
 
   @override

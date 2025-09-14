@@ -24,25 +24,13 @@ class APIConfigConstantsINSTANCEPOPULATIONBRACKETS {
     this.many,
   });
 
-  @JsonKey(
-    name: r'CROWDED',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'CROWDED', required: false, includeIfNull: false)
   final APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED? crowded;
 
-  @JsonKey(
-    name: r'FEW',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'FEW', required: false, includeIfNull: false)
   final APIConfigConstantsINSTANCEPOPULATIONBRACKETSFEW? few;
 
-  @JsonKey(
-    name: r'MANY',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'MANY', required: false, includeIfNull: false)
   final APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY? many;
 
   @override
@@ -57,8 +45,8 @@ class APIConfigConstantsINSTANCEPOPULATIONBRACKETS {
   int get hashCode => crowded.hashCode + few.hashCode + many.hashCode;
 
   factory APIConfigConstantsINSTANCEPOPULATIONBRACKETS.fromJson(
-          Map<String, dynamic> json) =>
-      _$APIConfigConstantsINSTANCEPOPULATIONBRACKETSFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$APIConfigConstantsINSTANCEPOPULATIONBRACKETSFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$APIConfigConstantsINSTANCEPOPULATIONBRACKETSToJson(this);

@@ -15,23 +15,12 @@ part 'instance_short_name_response.g.dart';
 )
 class InstanceShortNameResponse {
   /// Returns a new [InstanceShortNameResponse] instance.
-  InstanceShortNameResponse({
-    required this.secureName,
-    this.shortName,
-  });
+  InstanceShortNameResponse({required this.secureName, this.shortName});
 
-  @JsonKey(
-    name: r'secureName',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'secureName', required: true, includeIfNull: false)
   final String secureName;
 
-  @JsonKey(
-    name: r'shortName',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'shortName', required: false, includeIfNull: false)
   final String? shortName;
 
   @override

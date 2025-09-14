@@ -15,9 +15,7 @@ part 'api_config_constants_language.g.dart';
 )
 class APIConfigConstantsLANGUAGE {
   /// Returns a new [APIConfigConstantsLANGUAGE] instance.
-  APIConfigConstantsLANGUAGE({
-    this.spokenLanguageOptions,
-  });
+  APIConfigConstantsLANGUAGE({this.spokenLanguageOptions});
 
   /// Supported spoken language options
   @JsonKey(

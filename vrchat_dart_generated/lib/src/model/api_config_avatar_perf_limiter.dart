@@ -25,46 +25,22 @@ class APIConfigAvatarPerfLimiter {
     required this.iOSMobile,
   });
 
-  @JsonKey(
-    name: r'AndroidMobile',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'AndroidMobile', required: true, includeIfNull: false)
   final PerformanceLimiterInfo androidMobile;
 
-  @JsonKey(
-    name: r'PC',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'PC', required: true, includeIfNull: false)
   final PerformanceLimiterInfo pc;
 
-  @JsonKey(
-    name: r'Pico',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'Pico', required: true, includeIfNull: false)
   final PerformanceLimiterInfo pico;
 
-  @JsonKey(
-    name: r'Quest',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'Quest', required: true, includeIfNull: false)
   final PerformanceLimiterInfo quest;
 
-  @JsonKey(
-    name: r'XRElite',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'XRElite', required: true, includeIfNull: false)
   final PerformanceLimiterInfo xRElite;
 
-  @JsonKey(
-    name: r'iOSMobile',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'iOSMobile', required: true, includeIfNull: false)
   final PerformanceLimiterInfo iOSMobile;
 
   @override

@@ -9,24 +9,14 @@ part of 'world_metadata.dart';
 // **************************************************************************
 
 WorldMetadata _$WorldMetadataFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'WorldMetadata',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['id', 'metadata'],
-        );
-        final val = WorldMetadata(
-          id: $checkedConvert('id', (v) => v as String),
-          metadata: $checkedConvert('metadata', (v) => v as Object),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('WorldMetadata', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['id', 'metadata']);
+      final val = WorldMetadata(
+        id: $checkedConvert('id', (v) => v as String),
+        metadata: $checkedConvert('metadata', (v) => v as Object),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$WorldMetadataToJson(WorldMetadata instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'metadata': instance.metadata,
-    };
+    <String, dynamic>{'id': instance.id, 'metadata': instance.metadata};

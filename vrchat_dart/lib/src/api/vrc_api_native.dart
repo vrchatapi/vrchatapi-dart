@@ -13,15 +13,11 @@ class VrcApiImpl extends VrcApi {
     required String? cookiePath,
     required super.websocketUrl,
   }) : super(
-          rawApi: VrchatDartGenerated(
-            dio: Dio(options),
-            interceptors: [
-              CookieManager(
-                PersistCookieJar(
-                  storage: FileStorage(cookiePath),
-                ),
-              ),
-            ],
-          ),
-        );
+         rawApi: VrchatDartGenerated(
+           dio: Dio(options),
+           interceptors: [
+             CookieManager(PersistCookieJar(storage: FileStorage(cookiePath))),
+           ],
+         ),
+       );
 }

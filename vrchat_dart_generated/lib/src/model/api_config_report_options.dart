@@ -19,39 +19,18 @@ part 'api_config_report_options.g.dart';
 )
 class APIConfigReportOptions {
   /// Returns a new [APIConfigReportOptions] instance.
-  APIConfigReportOptions({
-    this.avatar,
-    this.group,
-    this.user,
-    this.world,
-  });
+  APIConfigReportOptions({this.avatar, this.group, this.user, this.world});
 
-  @JsonKey(
-    name: r'avatar',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'avatar', required: false, includeIfNull: false)
   final APIConfigReportOptionsAvatar? avatar;
 
-  @JsonKey(
-    name: r'group',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'group', required: false, includeIfNull: false)
   final APIConfigReportOptionsGroup? group;
 
-  @JsonKey(
-    name: r'user',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'user', required: false, includeIfNull: false)
   final APIConfigReportOptionsUser? user;
 
-  @JsonKey(
-    name: r'world',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'world', required: false, includeIfNull: false)
   final APIConfigReportOptionsWorld? world;
 
   @override

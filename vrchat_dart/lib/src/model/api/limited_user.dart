@@ -58,109 +58,57 @@ class LimitedUser {
   // Common required fields
 
   /// When profilePicOverride is not empty, use it instead.
-  @JsonKey(
-    name: r'currentAvatarImageUrl',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'currentAvatarImageUrl', required: true, includeIfNull: false)
   final String currentAvatarImageUrl;
 
   /// The developer type of the user.
-  @JsonKey(
-    name: r'developerType',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'developerType', required: true, includeIfNull: false)
   final DeveloperType developerType;
 
   /// The display name of the user.
-  @JsonKey(
-    name: r'displayName',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'displayName', required: true, includeIfNull: false)
   final String displayName;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   /// Whether this user is a friend of the current user.
-  @JsonKey(
-    name: r'isFriend',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'isFriend', required: true, includeIfNull: false)
   final bool isFriend;
 
   /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
-  @JsonKey(
-    name: r'last_platform',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'last_platform', required: true, includeIfNull: false)
   final String lastPlatform;
 
   /// The user's profile picture override URL.
-  @JsonKey(
-    name: r'profilePicOverride',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
   final String profilePicOverride;
 
   /// The user's current status.
-  @JsonKey(
-    name: r'status',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
   final UserStatus status;
 
   /// The user's status description.
-  @JsonKey(
-    name: r'statusDescription',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'statusDescription', required: true, includeIfNull: false)
   final String statusDescription;
 
   /// List of tags associated with the user (usually empty).
-  @JsonKey(
-    name: r'tags',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 
   /// The user's icon URL.
-  @JsonKey(
-    name: r'userIcon',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'userIcon', required: true, includeIfNull: false)
   final String userIcon;
 
   // Common optional fields
 
   /// The user's biography.
-  @JsonKey(
-    name: r'bio',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'bio', required: false, includeIfNull: false)
   final String? bio;
 
   /// List of bio links.
-  @JsonKey(
-    name: r'bioLinks',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'bioLinks', required: false, includeIfNull: false)
   final List<String>? bioLinks;
 
   /// When profilePicOverride is not empty, use it instead.
@@ -172,11 +120,7 @@ class LimitedUser {
   final String? currentAvatarThumbnailImageUrl;
 
   /// Tags associated with the user's current avatar.
-  @JsonKey(
-    name: r'currentAvatarTags',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
   final List<String>? currentAvatarTags;
 
   // Fields from specific variants
@@ -190,83 +134,43 @@ class LimitedUser {
   final AgeVerificationStatus? ageVerificationStatus;
 
   /// `true` if, user is age verified (not 18+).
-  @JsonKey(
-    name: r'ageVerified',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ageVerified', required: false, includeIfNull: false)
   final bool? ageVerified;
 
   /// Whether the user allows avatar copying.
-  @JsonKey(
-    name: r'allowAvatarCopying',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'allowAvatarCopying', required: false, includeIfNull: false)
   final bool? allowAvatarCopying;
 
   /// The date the user joined VRChat.
-  @JsonKey(
-    name: r'date_joined',
-    required: false,
-    includeIfNull: true,
-  )
+  @JsonKey(name: r'date_joined', required: false, includeIfNull: true)
   final DateTime? dateJoined;
 
   /// The user's friend key for friend requests.
-  @JsonKey(
-    name: r'friendKey',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'friendKey', required: false, includeIfNull: false)
   final String? friendKey;
 
   /// The user's image URL.
-  @JsonKey(
-    name: r'imageUrl',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'imageUrl', required: false, includeIfNull: false)
   final String? imageUrl;
 
   /// The user's current location (world instance).
-  @JsonKey(
-    name: r'location',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'location', required: false, includeIfNull: false)
   final String? location;
 
   /// The date and time of the user's last login.
-  @JsonKey(
-    name: r'last_login',
-    required: false,
-    includeIfNull: true,
-  )
+  @JsonKey(name: r'last_login', required: false, includeIfNull: true)
   final DateTime? lastLogin;
 
   /// The date and time of the user's last activity.
-  @JsonKey(
-    name: r'last_activity',
-    required: false,
-    includeIfNull: true,
-  )
+  @JsonKey(name: r'last_activity', required: false, includeIfNull: true)
   final DateTime? lastActivity;
 
   /// The date and time the user was last on mobile.
-  @JsonKey(
-    name: r'last_mobile',
-    required: false,
-    includeIfNull: true,
-  )
+  @JsonKey(name: r'last_mobile', required: false, includeIfNull: true)
   final DateTime? lastMobile;
 
   /// The platform the user is currently on.
-  @JsonKey(
-    name: r'platform',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'platform', required: false, includeIfNull: false)
   final String? platform;
 
   /// The thumbnail URL for the user's profile picture override.
@@ -278,19 +182,11 @@ class LimitedUser {
   final String? profilePicOverrideThumbnail;
 
   /// The user's pronouns.
-  @JsonKey(
-    name: r'pronouns',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'pronouns', required: false, includeIfNull: false)
   final String? pronouns;
 
   /// The user's account state.
-  @JsonKey(
-    name: r'state',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'state', required: false, includeIfNull: false)
   final UserState? state;
 
   @override

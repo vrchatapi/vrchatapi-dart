@@ -26,53 +26,25 @@ class FileAnalysis {
     required this.uncompressedSize,
   });
 
-  @JsonKey(
-    name: r'avatarStats',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'avatarStats', required: true, includeIfNull: false)
   final FileAnalysisAvatarStats avatarStats;
 
-  @JsonKey(
-    name: r'created_at',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'created_at', required: false, includeIfNull: false)
   final DateTime? createdAt;
 
-  @JsonKey(
-    name: r'encryptionKey',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'encryptionKey', required: false, includeIfNull: false)
   final String? encryptionKey;
 
-  @JsonKey(
-    name: r'fileSize',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'fileSize', required: true, includeIfNull: false)
   final int fileSize;
 
-  @JsonKey(
-    name: r'performanceRating',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'performanceRating', required: false, includeIfNull: false)
   final String? performanceRating;
 
-  @JsonKey(
-    name: r'success',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'success', required: true, includeIfNull: false)
   final bool success;
 
-  @JsonKey(
-    name: r'uncompressedSize',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'uncompressedSize', required: true, includeIfNull: false)
   final int uncompressedSize;
 
   @override

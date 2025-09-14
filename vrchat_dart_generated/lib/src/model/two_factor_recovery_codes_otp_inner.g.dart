@@ -9,26 +9,16 @@ part of 'two_factor_recovery_codes_otp_inner.dart';
 // **************************************************************************
 
 TwoFactorRecoveryCodesOtpInner _$TwoFactorRecoveryCodesOtpInnerFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'TwoFactorRecoveryCodesOtpInner',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['code', 'used'],
-        );
-        final val = TwoFactorRecoveryCodesOtpInner(
-          code: $checkedConvert('code', (v) => v as String),
-          used: $checkedConvert('used', (v) => v as bool),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('TwoFactorRecoveryCodesOtpInner', json, ($checkedConvert) {
+  $checkKeys(json, requiredKeys: const ['code', 'used']);
+  final val = TwoFactorRecoveryCodesOtpInner(
+    code: $checkedConvert('code', (v) => v as String),
+    used: $checkedConvert('used', (v) => v as bool),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$TwoFactorRecoveryCodesOtpInnerToJson(
-        TwoFactorRecoveryCodesOtpInner instance) =>
-    <String, dynamic>{
-      'code': instance.code,
-      'used': instance.used,
-    };
+  TwoFactorRecoveryCodesOtpInner instance,
+) => <String, dynamic>{'code': instance.code, 'used': instance.used};

@@ -9,22 +9,13 @@ part of 'two_factor_auth_code.dart';
 // **************************************************************************
 
 TwoFactorAuthCode _$TwoFactorAuthCodeFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'TwoFactorAuthCode',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['code'],
-        );
-        final val = TwoFactorAuthCode(
-          code: $checkedConvert('code', (v) => v as String),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('TwoFactorAuthCode', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['code']);
+      final val = TwoFactorAuthCode(
+        code: $checkedConvert('code', (v) => v as String),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$TwoFactorAuthCodeToJson(TwoFactorAuthCode instance) =>
-    <String, dynamic>{
-      'code': instance.code,
-    };
+    <String, dynamic>{'code': instance.code};

@@ -73,13 +73,21 @@ class GroupsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/groups/{groupId}/galleries/{groupGalleryId}/images'
-        .replaceAll('{' r'groupId' '}', groupId.toString())
-        .replaceAll('{' r'groupGalleryId' '}', groupGalleryId.toString());
+        .replaceAll(
+          '{'
+          r'groupId'
+          '}',
+          groupId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'groupGalleryId'
+          '}',
+          groupGalleryId.toString(),
+        );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -101,10 +109,7 @@ class GroupsApi {
       _bodyData = jsonEncode(addGroupGalleryImageRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -127,8 +132,10 @@ class GroupsApi {
       _responseData = rawData == null
           ? null
           : deserialize<GroupGalleryImage, GroupGalleryImage>(
-              rawData, 'GroupGalleryImage',
-              growable: true);
+              rawData,
+              'GroupGalleryImage',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -179,14 +186,27 @@ class GroupsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/groups/{groupId}/members/{userId}/roles/{groupRoleId}'
-        .replaceAll('{' r'groupId' '}', groupId.toString())
-        .replaceAll('{' r'userId' '}', userId.toString())
-        .replaceAll('{' r'groupRoleId' '}', groupRoleId.toString());
+        .replaceAll(
+          '{'
+          r'groupId'
+          '}',
+          groupId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'userId'
+          '}',
+          userId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'groupRoleId'
+          '}',
+          groupRoleId.toString(),
+        );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -215,8 +235,11 @@ class GroupsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<String>, String>(rawData, 'List<String>',
-              growable: true);
+          : deserialize<List<String>, String>(
+              rawData,
+              'List<String>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -264,13 +287,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/posts'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/posts'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -292,10 +317,7 @@ class GroupsApi {
       _bodyData = jsonEncode(createGroupPostRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -317,8 +339,11 @@ class GroupsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GroupPost, GroupPost>(rawData, 'GroupPost',
-              growable: true);
+          : deserialize<GroupPost, GroupPost>(
+              rawData,
+              'GroupPost',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -366,13 +391,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/bans'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/bans'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -394,10 +421,7 @@ class GroupsApi {
       _bodyData = jsonEncode(banGroupMemberRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -419,8 +443,11 @@ class GroupsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GroupMember, GroupMember>(rawData, 'GroupMember',
-              growable: true);
+          : deserialize<GroupMember, GroupMember>(
+              rawData,
+              'GroupMember',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -466,13 +493,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/requests'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/requests'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -524,9 +553,7 @@ class GroupsApi {
     final _path = r'/groups';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -548,10 +575,7 @@ class GroupsApi {
       _bodyData = jsonEncode(createGroupRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -621,13 +645,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/announcement'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/announcement'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -649,10 +675,7 @@ class GroupsApi {
       _bodyData = jsonEncode(createGroupAnnouncementRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -675,8 +698,10 @@ class GroupsApi {
       _responseData = rawData == null
           ? null
           : deserialize<GroupAnnouncement, GroupAnnouncement>(
-              rawData, 'GroupAnnouncement',
-              growable: true);
+              rawData,
+              'GroupAnnouncement',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -724,13 +749,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/galleries'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/galleries'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -752,10 +779,7 @@ class GroupsApi {
       _bodyData = jsonEncode(createGroupGalleryRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -777,8 +801,11 @@ class GroupsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GroupGallery, GroupGallery>(rawData, 'GroupGallery',
-              growable: true);
+          : deserialize<GroupGallery, GroupGallery>(
+              rawData,
+              'GroupGallery',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -826,13 +853,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/invites'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/invites'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -854,10 +883,7 @@ class GroupsApi {
       _bodyData = jsonEncode(createGroupInviteRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -901,13 +927,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/roles'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/roles'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -929,10 +957,7 @@ class GroupsApi {
       _bodyData = jsonEncode(createGroupRoleRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -954,8 +979,11 @@ class GroupsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GroupRole, GroupRole>(rawData, 'GroupRole',
-              growable: true);
+          : deserialize<GroupRole, GroupRole>(
+              rawData,
+              'GroupRole',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1001,13 +1029,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/groups/{groupId}'.replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1082,13 +1112,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/announcement'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/announcement'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1166,13 +1198,21 @@ class GroupsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/groups/{groupId}/galleries/{groupGalleryId}'
-        .replaceAll('{' r'groupId' '}', groupId.toString())
-        .replaceAll('{' r'groupGalleryId' '}', groupGalleryId.toString());
+        .replaceAll(
+          '{'
+          r'groupId'
+          '}',
+          groupId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'groupGalleryId'
+          '}',
+          groupGalleryId.toString(),
+        );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1253,15 +1293,27 @@ class GroupsApi {
   }) async {
     final _path =
         r'/groups/{groupId}/galleries/{groupGalleryId}/images/{groupGalleryImageId}'
-            .replaceAll('{' r'groupId' '}', groupId.toString())
-            .replaceAll('{' r'groupGalleryId' '}', groupGalleryId.toString())
             .replaceAll(
-                '{' r'groupGalleryImageId' '}', groupGalleryImageId.toString());
+              '{'
+              r'groupId'
+              '}',
+              groupId.toString(),
+            )
+            .replaceAll(
+              '{'
+              r'groupGalleryId'
+              '}',
+              groupGalleryId.toString(),
+            )
+            .replaceAll(
+              '{'
+              r'groupGalleryImageId'
+              '}',
+              groupGalleryImageId.toString(),
+            );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1339,13 +1391,21 @@ class GroupsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/groups/{groupId}/invites/{userId}'
-        .replaceAll('{' r'groupId' '}', groupId.toString())
-        .replaceAll('{' r'userId' '}', userId.toString());
+        .replaceAll(
+          '{'
+          r'groupId'
+          '}',
+          groupId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'userId'
+          '}',
+          userId.toString(),
+        );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1397,13 +1457,21 @@ class GroupsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/groups/{groupId}/posts/{notificationId}'
-        .replaceAll('{' r'groupId' '}', groupId.toString())
-        .replaceAll('{' r'notificationId' '}', notificationId.toString());
+        .replaceAll(
+          '{'
+          r'groupId'
+          '}',
+          groupId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'notificationId'
+          '}',
+          notificationId.toString(),
+        );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1481,13 +1549,21 @@ class GroupsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/groups/{groupId}/roles/{groupRoleId}'
-        .replaceAll('{' r'groupId' '}', groupId.toString())
-        .replaceAll('{' r'groupRoleId' '}', groupRoleId.toString());
+        .replaceAll(
+          '{'
+          r'groupId'
+          '}',
+          groupId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'groupRoleId'
+          '}',
+          groupRoleId.toString(),
+        );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1516,8 +1592,11 @@ class GroupsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<GroupRole>, GroupRole>(rawData, 'List<GroupRole>',
-              growable: true);
+          : deserialize<List<GroupRole>, GroupRole>(
+              rawData,
+              'List<GroupRole>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1565,13 +1644,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/groups/{groupId}'.replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1651,13 +1732,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/announcement'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/announcement'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1687,8 +1770,10 @@ class GroupsApi {
       _responseData = rawData == null
           ? null
           : deserialize<GroupAnnouncement, GroupAnnouncement>(
-              rawData, 'GroupAnnouncement',
-              growable: true);
+              rawData,
+              'GroupAnnouncement',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1748,13 +1833,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/auditLogs'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/auditLogs'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1794,10 +1881,10 @@ class GroupsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<PaginatedGroupAuditLogEntryList,
-                  PaginatedGroupAuditLogEntryList>(
-              rawData, 'PaginatedGroupAuditLogEntryList',
-              growable: true);
+          : deserialize<
+              PaginatedGroupAuditLogEntryList,
+              PaginatedGroupAuditLogEntryList
+            >(rawData, 'PaginatedGroupAuditLogEntryList', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1847,13 +1934,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/bans'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/bans'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1889,8 +1978,10 @@ class GroupsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<GroupMember>, GroupMember>(
-              rawData, 'List<GroupMember>',
-              growable: true);
+              rawData,
+              'List<GroupMember>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1945,13 +2036,21 @@ class GroupsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/groups/{groupId}/galleries/{groupGalleryId}'
-        .replaceAll('{' r'groupId' '}', groupId.toString())
-        .replaceAll('{' r'groupGalleryId' '}', groupGalleryId.toString());
+        .replaceAll(
+          '{'
+          r'groupId'
+          '}',
+          groupId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'groupGalleryId'
+          '}',
+          groupGalleryId.toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1988,8 +2087,10 @@ class GroupsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<GroupGalleryImage>, GroupGalleryImage>(
-              rawData, 'List<GroupGalleryImage>',
-              growable: true);
+              rawData,
+              'List<GroupGalleryImage>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2035,13 +2136,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/instances'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/instances'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -2071,8 +2174,10 @@ class GroupsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<GroupInstance>, GroupInstance>(
-              rawData, 'List<GroupInstance>',
-              growable: true);
+              rawData,
+              'List<GroupInstance>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2122,13 +2227,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/invites'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/invites'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -2164,8 +2271,10 @@ class GroupsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<GroupMember>, GroupMember>(
-              rawData, 'List<GroupMember>',
-              growable: true);
+              rawData,
+              'List<GroupMember>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2214,13 +2323,21 @@ class GroupsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/groups/{groupId}/members/{userId}'
-        .replaceAll('{' r'groupId' '}', groupId.toString())
-        .replaceAll('{' r'userId' '}', userId.toString());
+        .replaceAll(
+          '{'
+          r'groupId'
+          '}',
+          groupId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'userId'
+          '}',
+          userId.toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -2250,8 +2367,10 @@ class GroupsApi {
       _responseData = rawData == null
           ? null
           : deserialize<GroupLimitedMember, GroupLimitedMember>(
-              rawData, 'GroupLimitedMember',
-              growable: true);
+              rawData,
+              'GroupLimitedMember',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2305,13 +2424,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/members'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/members'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -2349,8 +2470,10 @@ class GroupsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<GroupMember>, GroupMember>(
-              rawData, 'List<GroupMember>',
-              growable: true);
+              rawData,
+              'List<GroupMember>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2396,13 +2519,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/permissions'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/permissions'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -2432,8 +2557,10 @@ class GroupsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<GroupPermission>, GroupPermission>(
-              rawData, 'List<GroupPermission>',
-              growable: true);
+              rawData,
+              'List<GroupPermission>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2485,13 +2612,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/posts'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/posts'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -2528,8 +2657,10 @@ class GroupsApi {
       _responseData = rawData == null
           ? null
           : deserialize<GetGroupPosts200Response, GetGroupPosts200Response>(
-              rawData, 'GetGroupPosts200Response',
-              growable: true);
+              rawData,
+              'GetGroupPosts200Response',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2581,13 +2712,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/requests'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/requests'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -2624,8 +2757,10 @@ class GroupsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<GroupMember>, GroupMember>(
-              rawData, 'List<GroupMember>',
-              growable: true);
+              rawData,
+              'List<GroupMember>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2672,9 +2807,7 @@ class GroupsApi {
     final _path = r'/groups/roleTemplates';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -2703,10 +2836,10 @@ class GroupsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Map<String, GroupRoleTemplateValues>,
-                  GroupRoleTemplateValues>(
-              rawData, 'Map<String, GroupRoleTemplateValues>',
-              growable: true);
+          : deserialize<
+              Map<String, GroupRoleTemplateValues>,
+              GroupRoleTemplateValues
+            >(rawData, 'Map<String, GroupRoleTemplateValues>', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2752,13 +2885,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/roles'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/roles'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -2787,8 +2922,11 @@ class GroupsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<GroupRole>, GroupRole>(rawData, 'List<GroupRole>',
-              growable: true);
+          : deserialize<List<GroupRole>, GroupRole>(
+              rawData,
+              'List<GroupRole>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2834,13 +2972,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/join'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/join'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -2869,8 +3009,11 @@ class GroupsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GroupMember, GroupMember>(rawData, 'GroupMember',
-              growable: true);
+          : deserialize<GroupMember, GroupMember>(
+              rawData,
+              'GroupMember',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2919,13 +3062,21 @@ class GroupsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/groups/{groupId}/members/{userId}'
-        .replaceAll('{' r'groupId' '}', groupId.toString())
-        .replaceAll('{' r'userId' '}', userId.toString());
+        .replaceAll(
+          '{'
+          r'groupId'
+          '}',
+          groupId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'userId'
+          '}',
+          userId.toString(),
+        );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -2974,13 +3125,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/leave'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/leave'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -3034,14 +3187,27 @@ class GroupsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/groups/{groupId}/members/{userId}/roles/{groupRoleId}'
-        .replaceAll('{' r'groupId' '}', groupId.toString())
-        .replaceAll('{' r'userId' '}', userId.toString())
-        .replaceAll('{' r'groupRoleId' '}', groupRoleId.toString());
+        .replaceAll(
+          '{'
+          r'groupId'
+          '}',
+          groupId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'userId'
+          '}',
+          userId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'groupRoleId'
+          '}',
+          groupRoleId.toString(),
+        );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -3070,8 +3236,11 @@ class GroupsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<String>, String>(rawData, 'List<String>',
-              growable: true);
+          : deserialize<List<String>, String>(
+              rawData,
+              'List<String>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3122,13 +3291,21 @@ class GroupsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/groups/{groupId}/requests/{userId}'
-        .replaceAll('{' r'groupId' '}', groupId.toString())
-        .replaceAll('{' r'userId' '}', userId.toString());
+        .replaceAll(
+          '{'
+          r'groupId'
+          '}',
+          groupId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'userId'
+          '}',
+          userId.toString(),
+        );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -3150,10 +3327,7 @@ class GroupsApi {
       _bodyData = jsonEncode(respondGroupJoinRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3202,13 +3376,8 @@ class GroupsApi {
     final _path = r'/groups';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -3234,8 +3403,10 @@ class GroupsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<LimitedGroup>, LimitedGroup>(
-              rawData, 'List<LimitedGroup>',
-              growable: true);
+              rawData,
+              'List<LimitedGroup>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3284,13 +3455,21 @@ class GroupsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/groups/{groupId}/bans/{userId}'
-        .replaceAll('{' r'groupId' '}', groupId.toString())
-        .replaceAll('{' r'userId' '}', userId.toString());
+        .replaceAll(
+          '{'
+          r'groupId'
+          '}',
+          groupId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'userId'
+          '}',
+          userId.toString(),
+        );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -3319,8 +3498,11 @@ class GroupsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GroupMember, GroupMember>(rawData, 'GroupMember',
-              growable: true);
+          : deserialize<GroupMember, GroupMember>(
+              rawData,
+              'GroupMember',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3368,13 +3550,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/groups/{groupId}'.replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -3396,10 +3580,7 @@ class GroupsApi {
       _bodyData = jsonEncode(updateGroupRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3472,13 +3653,21 @@ class GroupsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/groups/{groupId}/galleries/{groupGalleryId}'
-        .replaceAll('{' r'groupId' '}', groupId.toString())
-        .replaceAll('{' r'groupGalleryId' '}', groupGalleryId.toString());
+        .replaceAll(
+          '{'
+          r'groupId'
+          '}',
+          groupId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'groupGalleryId'
+          '}',
+          groupGalleryId.toString(),
+        );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -3500,10 +3689,7 @@ class GroupsApi {
       _bodyData = jsonEncode(updateGroupGalleryRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3525,8 +3711,11 @@ class GroupsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GroupGallery, GroupGallery>(rawData, 'GroupGallery',
-              growable: true);
+          : deserialize<GroupGallery, GroupGallery>(
+              rawData,
+              'GroupGallery',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3577,13 +3766,21 @@ class GroupsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/groups/{groupId}/members/{userId}'
-        .replaceAll('{' r'groupId' '}', groupId.toString())
-        .replaceAll('{' r'userId' '}', userId.toString());
+        .replaceAll(
+          '{'
+          r'groupId'
+          '}',
+          groupId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'userId'
+          '}',
+          userId.toString(),
+        );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -3605,10 +3802,7 @@ class GroupsApi {
       _bodyData = jsonEncode(updateGroupMemberRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3631,8 +3825,10 @@ class GroupsApi {
       _responseData = rawData == null
           ? null
           : deserialize<GroupLimitedMember, GroupLimitedMember>(
-              rawData, 'GroupLimitedMember',
-              growable: true);
+              rawData,
+              'GroupLimitedMember',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3683,13 +3879,21 @@ class GroupsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/groups/{groupId}/posts/{notificationId}'
-        .replaceAll('{' r'groupId' '}', groupId.toString())
-        .replaceAll('{' r'notificationId' '}', notificationId.toString());
+        .replaceAll(
+          '{'
+          r'groupId'
+          '}',
+          groupId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'notificationId'
+          '}',
+          notificationId.toString(),
+        );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -3711,10 +3915,7 @@ class GroupsApi {
       _bodyData = jsonEncode(createGroupPostRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3736,8 +3937,11 @@ class GroupsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GroupPost, GroupPost>(rawData, 'GroupPost',
-              growable: true);
+          : deserialize<GroupPost, GroupPost>(
+              rawData,
+              'GroupPost',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3785,13 +3989,15 @@ class GroupsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/groups/{groupId}/representation'
-        .replaceAll('{' r'groupId' '}', groupId.toString());
+    final _path = r'/groups/{groupId}/representation'.replaceAll(
+      '{'
+      r'groupId'
+      '}',
+      groupId.toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -3813,10 +4019,7 @@ class GroupsApi {
       _bodyData = jsonEncode(updateGroupRepresentationRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3889,13 +4092,21 @@ class GroupsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/groups/{groupId}/roles/{groupRoleId}'
-        .replaceAll('{' r'groupId' '}', groupId.toString())
-        .replaceAll('{' r'groupRoleId' '}', groupRoleId.toString());
+        .replaceAll(
+          '{'
+          r'groupId'
+          '}',
+          groupId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'groupRoleId'
+          '}',
+          groupRoleId.toString(),
+        );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -3917,10 +4128,7 @@ class GroupsApi {
       _bodyData = jsonEncode(updateGroupRoleRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3942,8 +4150,11 @@ class GroupsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<GroupRole>, GroupRole>(rawData, 'List<GroupRole>',
-              growable: true);
+          : deserialize<List<GroupRole>, GroupRole>(
+              rawData,
+              'List<GroupRole>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

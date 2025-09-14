@@ -26,7 +26,7 @@ class VrcStreaming {
 
   /// Create a [VrcStreaming] instance
   VrcStreaming(this._userAgent, this._rawApi, String? websocketUrl)
-      : _baseUrl = websocketUrl ?? _defaultBaseUrl;
+    : _baseUrl = websocketUrl ?? _defaultBaseUrl;
 
   /// Start streaming. First login with the auth API to get an auth cookie.
   void start() async {
@@ -34,8 +34,9 @@ class VrcStreaming {
 
     final String authToken;
     try {
-      final authResponse =
-          await _rawApi.getAuthenticationApi().verifyAuthToken();
+      final authResponse = await _rawApi
+          .getAuthenticationApi()
+          .verifyAuthToken();
       authToken = authResponse.data!.token;
     } catch (error) {
       print(

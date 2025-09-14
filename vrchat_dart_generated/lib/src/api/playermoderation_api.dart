@@ -42,9 +42,7 @@ class PlayermoderationApi {
     final _path = r'/auth/user/playermoderations';
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -124,9 +122,7 @@ class PlayermoderationApi {
     final _path = r'/auth/user/playermoderations';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -162,8 +158,10 @@ class PlayermoderationApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<PlayerModeration>, PlayerModeration>(
-              rawData, 'List<PlayerModeration>',
-              growable: true);
+              rawData,
+              'List<PlayerModeration>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -212,9 +210,7 @@ class PlayermoderationApi {
     final _path = r'/auth/user/playermoderations';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -236,10 +232,7 @@ class PlayermoderationApi {
       _bodyData = jsonEncode(moderateUserRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -262,8 +255,10 @@ class PlayermoderationApi {
       _responseData = rawData == null
           ? null
           : deserialize<PlayerModeration, PlayerModeration>(
-              rawData, 'PlayerModeration',
-              growable: true);
+              rawData,
+              'PlayerModeration',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -312,9 +307,7 @@ class PlayermoderationApi {
     final _path = r'/auth/user/unplayermoderate';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -336,10 +329,7 @@ class PlayermoderationApi {
       _bodyData = jsonEncode(moderateUserRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,

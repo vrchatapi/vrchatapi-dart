@@ -9,24 +9,15 @@ part of 'ban_group_member_request.dart';
 // **************************************************************************
 
 BanGroupMemberRequest _$BanGroupMemberRequestFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'BanGroupMemberRequest',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['userId'],
-        );
-        final val = BanGroupMemberRequest(
-          userId: $checkedConvert('userId', (v) => v as String),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('BanGroupMemberRequest', json, ($checkedConvert) {
+  $checkKeys(json, requiredKeys: const ['userId']);
+  final val = BanGroupMemberRequest(
+    userId: $checkedConvert('userId', (v) => v as String),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$BanGroupMemberRequestToJson(
-        BanGroupMemberRequest instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-    };
+  BanGroupMemberRequest instance,
+) => <String, dynamic>{'userId': instance.userId};

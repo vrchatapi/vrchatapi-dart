@@ -25,32 +25,16 @@ class License {
   });
 
   /// Either a AvatarID, LicenseGroupID, PermissionID or ProductID. This depends on the `forType` field.
-  @JsonKey(
-    name: r'forId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'forId', required: true, includeIfNull: false)
   final String forId;
 
-  @JsonKey(
-    name: r'forType',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'forType', required: true, includeIfNull: false)
   final LicenseType forType;
 
-  @JsonKey(
-    name: r'forName',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'forName', required: true, includeIfNull: false)
   final String forName;
 
-  @JsonKey(
-    name: r'forAction',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'forAction', required: true, includeIfNull: false)
   final LicenseAction forAction;
 
   @override

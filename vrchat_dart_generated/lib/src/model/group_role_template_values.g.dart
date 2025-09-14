@@ -9,47 +9,39 @@ part of 'group_role_template_values.dart';
 // **************************************************************************
 
 GroupRoleTemplateValues _$GroupRoleTemplateValuesFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'GroupRoleTemplateValues',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const [
-            'basePermissions',
-            'description',
-            'name',
-            'roles'
-          ],
-        );
-        final val = GroupRoleTemplateValues(
-          basePermissions: $checkedConvert(
-              'basePermissions',
-              (v) => (v as List<dynamic>)
-                  .map((e) => $enumDecode(_$GroupPermissionsEnumMap, e))
-                  .toList()),
-          description: $checkedConvert('description', (v) => v as String),
-          name: $checkedConvert('name', (v) => v as String),
-          roles: $checkedConvert(
-              'roles',
-              (v) => GroupRoleTemplateValuesRoles.fromJson(
-                  v as Map<String, dynamic>)),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('GroupRoleTemplateValues', json, ($checkedConvert) {
+  $checkKeys(
+    json,
+    requiredKeys: const ['basePermissions', 'description', 'name', 'roles'],
+  );
+  final val = GroupRoleTemplateValues(
+    basePermissions: $checkedConvert(
+      'basePermissions',
+      (v) => (v as List<dynamic>)
+          .map((e) => $enumDecode(_$GroupPermissionsEnumMap, e))
+          .toList(),
+    ),
+    description: $checkedConvert('description', (v) => v as String),
+    name: $checkedConvert('name', (v) => v as String),
+    roles: $checkedConvert(
+      'roles',
+      (v) => GroupRoleTemplateValuesRoles.fromJson(v as Map<String, dynamic>),
+    ),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$GroupRoleTemplateValuesToJson(
-        GroupRoleTemplateValues instance) =>
-    <String, dynamic>{
-      'basePermissions': instance.basePermissions
-          .map((e) => _$GroupPermissionsEnumMap[e]!)
-          .toList(),
-      'description': instance.description,
-      'name': instance.name,
-      'roles': instance.roles.toJson(),
-    };
+  GroupRoleTemplateValues instance,
+) => <String, dynamic>{
+  'basePermissions': instance.basePermissions
+      .map((e) => _$GroupPermissionsEnumMap[e]!)
+      .toList(),
+  'description': instance.description,
+  'name': instance.name,
+  'roles': instance.roles.toJson(),
+};
 
 const _$GroupPermissionsEnumMap = {
   GroupPermissions.group_all: '*',

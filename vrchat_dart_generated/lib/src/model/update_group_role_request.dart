@@ -24,39 +24,19 @@ class UpdateGroupRoleRequest {
     this.order,
   });
 
-  @JsonKey(
-    name: r'name',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'name', required: false, includeIfNull: false)
   final String? name;
 
-  @JsonKey(
-    name: r'description',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;
 
-  @JsonKey(
-    name: r'isSelfAssignable',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'isSelfAssignable', required: false, includeIfNull: false)
   final bool? isSelfAssignable;
 
-  @JsonKey(
-    name: r'permissions',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'permissions', required: false, includeIfNull: false)
   final List<GroupPermissions>? permissions;
 
-  @JsonKey(
-    name: r'order',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'order', required: false, includeIfNull: false)
   final int? order;
 
   @override

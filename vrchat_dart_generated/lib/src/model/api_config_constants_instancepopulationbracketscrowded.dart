@@ -15,25 +15,14 @@ part 'api_config_constants_instancepopulationbracketscrowded.g.dart';
 )
 class APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED {
   /// Returns a new [APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED] instance.
-  APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED({
-    this.max,
-    this.min,
-  });
+  APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED({this.max, this.min});
 
   /// Maximum population for a crowded instance
-  @JsonKey(
-    name: r'max',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'max', required: false, includeIfNull: false)
   final int? max;
 
   /// Minimum population for a crowded instance
-  @JsonKey(
-    name: r'min',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'min', required: false, includeIfNull: false)
   final int? min;
 
   @override
@@ -47,8 +36,8 @@ class APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED {
   int get hashCode => max.hashCode + min.hashCode;
 
   factory APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED.fromJson(
-          Map<String, dynamic> json) =>
-      _$APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDEDFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDEDFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDEDToJson(this);

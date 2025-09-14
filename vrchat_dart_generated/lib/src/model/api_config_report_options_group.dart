@@ -15,31 +15,15 @@ part 'api_config_report_options_group.g.dart';
 )
 class APIConfigReportOptionsGroup {
   /// Returns a new [APIConfigReportOptionsGroup] instance.
-  APIConfigReportOptionsGroup({
-    this.groupstore,
-    this.image,
-    this.text,
-  });
+  APIConfigReportOptionsGroup({this.groupstore, this.image, this.text});
 
-  @JsonKey(
-    name: r'groupstore',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'groupstore', required: false, includeIfNull: false)
   final List<String>? groupstore;
 
-  @JsonKey(
-    name: r'image',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'image', required: false, includeIfNull: false)
   final List<String>? image;
 
-  @JsonKey(
-    name: r'text',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'text', required: false, includeIfNull: false)
   final List<String>? text;
 
   @override

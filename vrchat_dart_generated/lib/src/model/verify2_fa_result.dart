@@ -15,23 +15,12 @@ part 'verify2_fa_result.g.dart';
 )
 class Verify2FAResult {
   /// Returns a new [Verify2FAResult] instance.
-  Verify2FAResult({
-    required this.verified,
-    this.enabled = true,
-  });
+  Verify2FAResult({required this.verified, this.enabled = true});
 
-  @JsonKey(
-    name: r'verified',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'verified', required: true, includeIfNull: false)
   final bool verified;
 
-  @JsonKey(
-    name: r'enabled',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'enabled', required: false, includeIfNull: false)
   final bool? enabled;
 
   @override

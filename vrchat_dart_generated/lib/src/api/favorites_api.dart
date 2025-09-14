@@ -47,9 +47,7 @@ class FavoritesApi {
     final _path = r'/favorites';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -71,10 +69,7 @@ class FavoritesApi {
       _bodyData = jsonEncode(addFavoriteRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -96,8 +91,11 @@ class FavoritesApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Favorite, Favorite>(rawData, 'Favorite',
-              growable: true);
+          : deserialize<Favorite, Favorite>(
+              rawData,
+              'Favorite',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -150,15 +148,26 @@ class FavoritesApi {
     final _path =
         r'/favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId}'
             .replaceAll(
-                '{' r'favoriteGroupType' '}', favoriteGroupType.toString())
+              '{'
+              r'favoriteGroupType'
+              '}',
+              favoriteGroupType.toString(),
+            )
             .replaceAll(
-                '{' r'favoriteGroupName' '}', favoriteGroupName.toString())
-            .replaceAll('{' r'userId' '}', userId.toString());
+              '{'
+              r'favoriteGroupName'
+              '}',
+              favoriteGroupName.toString(),
+            )
+            .replaceAll(
+              '{'
+              r'userId'
+              '}',
+              userId.toString(),
+            );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -240,15 +249,26 @@ class FavoritesApi {
     final _path =
         r'/favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId}'
             .replaceAll(
-                '{' r'favoriteGroupType' '}', favoriteGroupType.toString())
+              '{'
+              r'favoriteGroupType'
+              '}',
+              favoriteGroupType.toString(),
+            )
             .replaceAll(
-                '{' r'favoriteGroupName' '}', favoriteGroupName.toString())
-            .replaceAll('{' r'userId' '}', userId.toString());
+              '{'
+              r'favoriteGroupName'
+              '}',
+              favoriteGroupName.toString(),
+            )
+            .replaceAll(
+              '{'
+              r'userId'
+              '}',
+              userId.toString(),
+            );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -277,8 +297,11 @@ class FavoritesApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<FavoriteGroup, FavoriteGroup>(rawData, 'FavoriteGroup',
-              growable: true);
+          : deserialize<FavoriteGroup, FavoriteGroup>(
+              rawData,
+              'FavoriteGroup',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -333,9 +356,7 @@ class FavoritesApi {
     final _path = r'/favorite/groups';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -373,8 +394,10 @@ class FavoritesApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<FavoriteGroup>, FavoriteGroup>(
-              rawData, 'List<FavoriteGroup>',
-              growable: true);
+              rawData,
+              'List<FavoriteGroup>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -421,9 +444,7 @@ class FavoritesApi {
     final _path = r'/auth/user/favoritelimits';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -453,8 +474,10 @@ class FavoritesApi {
       _responseData = rawData == null
           ? null
           : deserialize<FavoriteLimits, FavoriteLimits>(
-              rawData, 'FavoriteLimits',
-              growable: true);
+              rawData,
+              'FavoriteLimits',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -509,9 +532,7 @@ class FavoritesApi {
     final _path = r'/favorites';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -548,8 +569,11 @@ class FavoritesApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Favorite>, Favorite>(rawData, 'List<Favorite>',
-              growable: true);
+          : deserialize<List<Favorite>, Favorite>(
+              rawData,
+              'List<Favorite>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -595,13 +619,15 @@ class FavoritesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/favorites/{favoriteId}'
-        .replaceAll('{' r'favoriteId' '}', favoriteId.toString());
+    final _path = r'/favorites/{favoriteId}'.replaceAll(
+      '{'
+      r'favoriteId'
+      '}',
+      favoriteId.toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -685,15 +711,26 @@ class FavoritesApi {
     final _path =
         r'/favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId}'
             .replaceAll(
-                '{' r'favoriteGroupType' '}', favoriteGroupType.toString())
+              '{'
+              r'favoriteGroupType'
+              '}',
+              favoriteGroupType.toString(),
+            )
             .replaceAll(
-                '{' r'favoriteGroupName' '}', favoriteGroupName.toString())
-            .replaceAll('{' r'userId' '}', userId.toString());
+              '{'
+              r'favoriteGroupName'
+              '}',
+              favoriteGroupName.toString(),
+            )
+            .replaceAll(
+              '{'
+              r'userId'
+              '}',
+              userId.toString(),
+            );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -715,10 +752,7 @@ class FavoritesApi {
       _bodyData = jsonEncode(updateFavoriteGroupRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,

@@ -47,13 +47,15 @@ class EconomyApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/user/{userId}/balance'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/user/{userId}/balance'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -129,9 +131,7 @@ class EconomyApi {
     final _path = r'/auth/user/subscription';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -161,8 +161,10 @@ class EconomyApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<UserSubscription>, UserSubscription>(
-              rawData, 'List<UserSubscription>',
-              growable: true);
+              rawData,
+              'List<UserSubscription>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -208,13 +210,15 @@ class EconomyApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/licenseGroups/{licenseGroupId}'
-        .replaceAll('{' r'licenseGroupId' '}', licenseGroupId.toString());
+    final _path = r'/licenseGroups/{licenseGroupId}'.replaceAll(
+      '{'
+      r'licenseGroupId'
+      '}',
+      licenseGroupId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -243,8 +247,11 @@ class EconomyApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<LicenseGroup, LicenseGroup>(rawData, 'LicenseGroup',
-              growable: true);
+          : deserialize<LicenseGroup, LicenseGroup>(
+              rawData,
+              'LicenseGroup',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -292,13 +299,15 @@ class EconomyApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/listing/{productId}'
-        .replaceAll('{' r'productId' '}', productId.toString());
+    final _path = r'/listing/{productId}'.replaceAll(
+      '{'
+      r'productId'
+      '}',
+      productId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -333,8 +342,10 @@ class EconomyApi {
       _responseData = rawData == null
           ? null
           : deserialize<ProductListing, ProductListing>(
-              rawData, 'ProductListing',
-              growable: true);
+              rawData,
+              'ProductListing',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -390,13 +401,15 @@ class EconomyApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/user/{userId}/listings'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/user/{userId}/listings'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -435,8 +448,10 @@ class EconomyApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<ProductListing>, ProductListing>(
-              rawData, 'List<ProductListing>',
-              growable: true);
+              rawData,
+              'List<ProductListing>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -483,13 +498,15 @@ class EconomyApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/Steam/transactions/{transactionId}'
-        .replaceAll('{' r'transactionId' '}', transactionId.toString());
+    final _path = r'/Steam/transactions/{transactionId}'.replaceAll(
+      '{'
+      r'transactionId'
+      '}',
+      transactionId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -518,8 +535,11 @@ class EconomyApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Transaction, Transaction>(rawData, 'Transaction',
-              growable: true);
+          : deserialize<Transaction, Transaction>(
+              rawData,
+              'Transaction',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -566,9 +586,7 @@ class EconomyApi {
     final _path = r'/Steam/transactions';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -598,8 +616,10 @@ class EconomyApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<Transaction>, Transaction>(
-              rawData, 'List<Transaction>',
-              growable: true);
+              rawData,
+              'List<Transaction>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -646,9 +666,7 @@ class EconomyApi {
     final _path = r'/subscriptions';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -678,8 +696,10 @@ class EconomyApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<Subscription>, Subscription>(
-              rawData, 'List<Subscription>',
-              growable: true);
+              rawData,
+              'List<Subscription>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -726,9 +746,7 @@ class EconomyApi {
     final _path = r'/tilia/status';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -757,8 +775,11 @@ class EconomyApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<TiliaStatus, TiliaStatus>(rawData, 'TiliaStatus',
-              growable: true);
+          : deserialize<TiliaStatus, TiliaStatus>(
+              rawData,
+              'TiliaStatus',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -804,13 +825,15 @@ class EconomyApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/user/{userId}/tilia/tos'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/user/{userId}/tilia/tos'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -839,8 +862,11 @@ class EconomyApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<TiliaTOS, TiliaTOS>(rawData, 'TiliaTOS',
-              growable: true);
+          : deserialize<TiliaTOS, TiliaTOS>(
+              rawData,
+              'TiliaTOS',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -887,9 +913,7 @@ class EconomyApi {
     final _path = r'/tokenBundles';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -919,8 +943,10 @@ class EconomyApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<TokenBundle>, TokenBundle>(
-              rawData, 'List<TokenBundle>',
-              growable: true);
+              rawData,
+              'List<TokenBundle>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

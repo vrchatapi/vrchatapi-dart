@@ -15,24 +15,13 @@ part 'response.g.dart';
 )
 class Response {
   /// Returns a new [Response] instance.
-  Response({
-    this.message,
-    required this.statusCode,
-  });
+  Response({this.message, required this.statusCode});
 
-  @JsonKey(
-    name: r'message',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'message', required: false, includeIfNull: false)
   final String? message;
 
   // minimum: 100
-  @JsonKey(
-    name: r'status_code',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status_code', required: true, includeIfNull: false)
   final int statusCode;
 
   @override

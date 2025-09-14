@@ -27,22 +27,22 @@ StreamedCurrentUser _$StreamedCurrentUserFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$StreamedCurrentUserToJson(
-        StreamedCurrentUser instance) =>
-    <String, dynamic>{
-      'bio': instance.bio,
-      'currentAvatar': instance.currentAvatar,
-      'currentAvatarImageUrl': instance.currentAvatarImageUrl,
-      'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
-      'displayName': instance.displayName,
-      'fallbackAvatar': instance.fallbackAvatar,
-      'id': instance.id,
-      'profilePicOverride': instance.profilePicOverride,
-      'status': _$UserStatusEnumMap[instance.status]!,
-      'statusDescription': instance.statusDescription,
-      'tags': instance.tags,
-      'userIcon': instance.userIcon,
-      'username': instance.username,
-    };
+  StreamedCurrentUser instance,
+) => <String, dynamic>{
+  'bio': instance.bio,
+  'currentAvatar': instance.currentAvatar,
+  'currentAvatarImageUrl': instance.currentAvatarImageUrl,
+  'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
+  'displayName': instance.displayName,
+  'fallbackAvatar': instance.fallbackAvatar,
+  'id': instance.id,
+  'profilePicOverride': instance.profilePicOverride,
+  'status': _$UserStatusEnumMap[instance.status]!,
+  'statusDescription': instance.statusDescription,
+  'tags': instance.tags,
+  'userIcon': instance.userIcon,
+  'username': instance.username,
+};
 
 const _$UserStatusEnumMap = {
   UserStatus.active: 'active',

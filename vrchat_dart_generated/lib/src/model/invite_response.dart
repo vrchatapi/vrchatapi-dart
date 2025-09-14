@@ -15,17 +15,11 @@ part 'invite_response.g.dart';
 )
 class InviteResponse {
   /// Returns a new [InviteResponse] instance.
-  InviteResponse({
-    required this.responseSlot,
-  });
+  InviteResponse({required this.responseSlot});
 
   // minimum: 0
   // maximum: 11
-  @JsonKey(
-    name: r'responseSlot',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'responseSlot', required: true, includeIfNull: false)
   final int responseSlot;
 
   @override

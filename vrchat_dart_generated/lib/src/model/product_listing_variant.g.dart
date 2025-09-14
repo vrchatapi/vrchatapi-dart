@@ -9,44 +9,43 @@ part of 'product_listing_variant.dart';
 // **************************************************************************
 
 ProductListingVariant _$ProductListingVariantFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'ProductListingVariant',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const [
-            'listingVariantId',
-            'nonRefundable',
-            'quantity',
-            'sellerVariant',
-            'unitPriceTokens'
-          ],
-        );
-        final val = ProductListingVariant(
-          effectiveFrom: $checkedConvert('effectiveFrom',
-              (v) => v == null ? null : DateTime.parse(v as String)),
-          listingVariantId:
-              $checkedConvert('listingVariantId', (v) => v as String),
-          nonRefundable: $checkedConvert('nonRefundable', (v) => v as bool),
-          quantity: $checkedConvert('quantity', (v) => (v as num).toInt()),
-          sellerVariant: $checkedConvert('sellerVariant', (v) => v as bool),
-          unitPriceTokens:
-              $checkedConvert('unitPriceTokens', (v) => (v as num).toInt()),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('ProductListingVariant', json, ($checkedConvert) {
+  $checkKeys(
+    json,
+    requiredKeys: const [
+      'listingVariantId',
+      'nonRefundable',
+      'quantity',
+      'sellerVariant',
+      'unitPriceTokens',
+    ],
+  );
+  final val = ProductListingVariant(
+    effectiveFrom: $checkedConvert(
+      'effectiveFrom',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    listingVariantId: $checkedConvert('listingVariantId', (v) => v as String),
+    nonRefundable: $checkedConvert('nonRefundable', (v) => v as bool),
+    quantity: $checkedConvert('quantity', (v) => (v as num).toInt()),
+    sellerVariant: $checkedConvert('sellerVariant', (v) => v as bool),
+    unitPriceTokens: $checkedConvert(
+      'unitPriceTokens',
+      (v) => (v as num).toInt(),
+    ),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$ProductListingVariantToJson(
-        ProductListingVariant instance) =>
-    <String, dynamic>{
-      if (instance.effectiveFrom?.toIso8601String() case final value?)
-        'effectiveFrom': value,
-      'listingVariantId': instance.listingVariantId,
-      'nonRefundable': instance.nonRefundable,
-      'quantity': instance.quantity,
-      'sellerVariant': instance.sellerVariant,
-      'unitPriceTokens': instance.unitPriceTokens,
-    };
+  ProductListingVariant instance,
+) => <String, dynamic>{
+  if (instance.effectiveFrom?.toIso8601String() case final value?)
+    'effectiveFrom': value,
+  'listingVariantId': instance.listingVariantId,
+  'nonRefundable': instance.nonRefundable,
+  'quantity': instance.quantity,
+  'sellerVariant': instance.sellerVariant,
+  'unitPriceTokens': instance.unitPriceTokens,
+};

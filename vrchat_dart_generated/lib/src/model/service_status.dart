@@ -27,72 +27,36 @@ class ServiceStatus {
     required this.updatedAt,
   });
 
-  @JsonKey(
-    name: r'created_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
 
   /// The id of this service, NOT the id of the thing this service was requested for.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(
-    name: r'progress',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'progress', required: true, includeIfNull: false)
   final List<Object> progress;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(
-    name: r'requesterUserId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'requesterUserId', required: true, includeIfNull: false)
   final String requesterUserId;
 
-  @JsonKey(
-    name: r'state',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'state', required: true, includeIfNull: false)
   final String state;
 
   /// The id of the thing this service was requested for.
-  @JsonKey(
-    name: r'subjectId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'subjectId', required: true, includeIfNull: false)
   final String subjectId;
 
   /// The kind of the thing this service was requested for.
-  @JsonKey(
-    name: r'subjectType',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'subjectType', required: true, includeIfNull: false)
   final String subjectType;
 
   /// The kind of service that was requested.
-  @JsonKey(
-    name: r'type',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'type', required: true, includeIfNull: false)
   final String type;
 
-  @JsonKey(
-    name: r'updated_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
   final DateTime updatedAt;
 
   @override

@@ -29,11 +29,7 @@ class APIConfigConstantsGROUPS {
   });
 
   /// Maximum group capacity
-  @JsonKey(
-    name: r'CAPACITY',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'CAPACITY', required: false, includeIfNull: false)
   final int? capacity;
 
   /// Requirements for transferring group ownership
@@ -45,67 +41,35 @@ class APIConfigConstantsGROUPS {
   final List<String>? groupTransferRequirements;
 
   /// Maximum number of invite requests
-  @JsonKey(
-    name: r'MAX_INVITES_REQUESTS',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'MAX_INVITES_REQUESTS', required: false, includeIfNull: false)
   final int? maxInvitesRequests;
 
   /// Maximum number of joined groups
-  @JsonKey(
-    name: r'MAX_JOINED',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'MAX_JOINED', required: false, includeIfNull: false)
   final int? maxJoined;
 
   /// Maximum number of joined groups for VRChat Plus members
-  @JsonKey(
-    name: r'MAX_JOINED_PLUS',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'MAX_JOINED_PLUS', required: false, includeIfNull: false)
   final int? maxJoinedPlus;
 
   /// Maximum number of supported languages
-  @JsonKey(
-    name: r'MAX_LANGUAGES',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'MAX_LANGUAGES', required: false, includeIfNull: false)
   final int? maxLanguages;
 
   /// Maximum number of group links
-  @JsonKey(
-    name: r'MAX_LINKS',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'MAX_LINKS', required: false, includeIfNull: false)
   final int? maxLinks;
 
   /// Maximum number of management roles in a group
-  @JsonKey(
-    name: r'MAX_MANAGEMENT_ROLES',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'MAX_MANAGEMENT_ROLES', required: false, includeIfNull: false)
   final int? maxManagementRoles;
 
   /// Maximum number of groups a user can own
-  @JsonKey(
-    name: r'MAX_OWNED',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'MAX_OWNED', required: false, includeIfNull: false)
   final int? maxOwned;
 
   /// Maximum number of roles in a group
-  @JsonKey(
-    name: r'MAX_ROLES',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'MAX_ROLES', required: false, includeIfNull: false)
   final int? maxRoles;
 
   @override

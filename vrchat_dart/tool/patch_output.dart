@@ -42,8 +42,9 @@ FormData.fromMap({
 };
 
 void main() {
-  final spec =
-      jsonDecode(File(path.join('build', 'spec.json')).readAsStringSync());
+  final spec = jsonDecode(
+    File(path.join('build', 'spec.json')).readAsStringSync(),
+  );
   final version = spec['info']['version'] as String;
 
   print('Patching pubspec...');
@@ -68,8 +69,9 @@ void main() {
 }
 
 void patchPubspec(String version) {
-  final pubspec =
-      File(path.join('..', 'vrchat_dart_generated', 'pubspec.yaml'));
+  final pubspec = File(
+    path.join('..', 'vrchat_dart_generated', 'pubspec.yaml'),
+  );
   final content = pubspec.readAsStringSync();
   final newContent = content.replaceFirst(
     RegExp(r'^version: .+?$', multiLine: true),
@@ -79,14 +81,16 @@ void patchPubspec(String version) {
 }
 
 void patchChangelog(String version) {
-  final changelog =
-      File(path.join('..', 'vrchat_dart_generated', 'CHANGELOG.md'));
+  final changelog = File(
+    path.join('..', 'vrchat_dart_generated', 'CHANGELOG.md'),
+  );
   final content = changelog.readAsStringSync();
 
   /// Don't add duplicate version to changelog
   if (content.contains('## $version')) return;
 
-  final newContent = '''
+  final newContent =
+      '''
 ## $version
 - Updated to match spec
 
@@ -100,10 +104,9 @@ final _enumToString = r'''
 ''';
 
 void patchModel() {
-  final modelFiles =
-      Directory(path.join('..', 'vrchat_dart_generated', 'lib', 'src', 'model'))
-          .listSync()
-          .whereType<File>();
+  final modelFiles = Directory(
+    path.join('..', 'vrchat_dart_generated', 'lib', 'src', 'model'),
+  ).listSync().whereType<File>();
 
   for (final file in modelFiles) {
     var content = file.readAsStringSync();
@@ -120,8 +123,9 @@ void patchModel() {
               'enum ${match.group(1)} {${match.group(2)};\n\n$_enumToString}',
         )
         .replaceAll(
-            "import 'package:copy_with_extension/copy_with_extension.dart';",
-            '')
+          "import 'package:copy_with_extension/copy_with_extension.dart';",
+          '',
+        )
         .replaceAll('@CopyWith()', '');
 
     file.writeAsStringSync(content);
@@ -129,10 +133,9 @@ void patchModel() {
 }
 
 void patchApi() {
-  final apiFiles =
-      Directory(path.join('..', 'vrchat_dart_generated', 'lib', 'src', 'api'))
-          .listSync()
-          .whereType<File>();
+  final apiFiles = Directory(
+    path.join('..', 'vrchat_dart_generated', 'lib', 'src', 'api'),
+  ).listSync().whereType<File>();
 
   for (final file in apiFiles) {
     var content = file.readAsStringSync();
@@ -157,26 +160,23 @@ void patchAnalysisIssues() {
   // Map of file path to set of identifiers with issues
   final identifierIssues = <String, Set<String>>{};
 
-  fix(
-    {
-      'deprecated_member_use_from_same_package': (_, line) =>
-          '// ignore: deprecated_member_use_from_same_package\n$line',
-      'non_constant_identifier_names': (diagnostic, line) {
-        final fieldMatch = RegExp(r'final .+ (\w+);').firstMatch(line);
-        if (fieldMatch != null) {
-          final group = fieldMatch[1]!;
-          final file = diagnostic.location.file;
-          identifierIssues.update(
-            file,
-            (value) => value..add(group),
-            ifAbsent: () => {group},
-          );
-        }
-        return line;
-      },
+  fix({
+    'deprecated_member_use_from_same_package': (_, line) =>
+        '// ignore: deprecated_member_use_from_same_package\n$line',
+    'non_constant_identifier_names': (diagnostic, line) {
+      final fieldMatch = RegExp(r'final .+ (\w+);').firstMatch(line);
+      if (fieldMatch != null) {
+        final group = fieldMatch[1]!;
+        final file = diagnostic.location.file;
+        identifierIssues.update(
+          file,
+          (value) => value..add(group),
+          ifAbsent: () => {group},
+        );
+      }
+      return line;
     },
-    workingDirectory: '../vrchat_dart_generated',
-  );
+  }, workingDirectory: '../vrchat_dart_generated');
 
   for (final MapEntry(:key, :value) in identifierIssues.entries) {
     final file = File(key);
@@ -220,7 +220,8 @@ extension on String {
     final tabbedBodyData = bodyData.replaceAll('\n', '\n      ');
     return replaceFirstMapped(
       RegExp("r'$escapedPath'(.+?)try {}", dotAll: true),
-      (m) => '''
+      (m) =>
+          '''
 r'$path'${m[1]}try {
       _bodyData = $tabbedBodyData
     }''',

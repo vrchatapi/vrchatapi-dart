@@ -16,15 +16,9 @@ part 'get_group_posts200_response.g.dart';
 )
 class GetGroupPosts200Response {
   /// Returns a new [GetGroupPosts200Response] instance.
-  GetGroupPosts200Response({
-    this.posts,
-  });
+  GetGroupPosts200Response({this.posts});
 
-  @JsonKey(
-    name: r'posts',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'posts', required: false, includeIfNull: false)
   final List<GroupPost>? posts;
 
   @override

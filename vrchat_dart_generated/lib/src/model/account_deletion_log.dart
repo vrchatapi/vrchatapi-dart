@@ -22,27 +22,15 @@ class AccountDeletionLog {
   });
 
   /// Typically \"Deletion requested\" or \"Deletion canceled\". Other messages like \"Deletion completed\" may exist, but are these are not possible to see as a regular user.
-  @JsonKey(
-    name: r'message',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'message', required: false, includeIfNull: false)
   final String? message;
 
   /// When the deletion is scheduled to happen, standard is 14 days after the request.
-  @JsonKey(
-    name: r'deletionScheduled',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'deletionScheduled', required: false, includeIfNull: false)
   final DateTime? deletionScheduled;
 
   /// Date and time of the deletion request.
-  @JsonKey(
-    name: r'dateTime',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'dateTime', required: false, includeIfNull: false)
   final DateTime? dateTime;
 
   @override

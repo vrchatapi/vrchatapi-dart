@@ -60,56 +60,28 @@ class User {
     this.worldId,
   });
 
-  @JsonKey(
-    name: r'ageVerificationStatus',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ageVerificationStatus', required: true, includeIfNull: false)
   final AgeVerificationStatus ageVerificationStatus;
 
   /// `true` if, user is age verified (not 18+).
-  @JsonKey(
-    name: r'ageVerified',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ageVerified', required: true, includeIfNull: false)
   final bool ageVerified;
 
-  @JsonKey(
-    name: r'allowAvatarCopying',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'allowAvatarCopying', required: true, includeIfNull: false)
   final bool allowAvatarCopying;
 
   ///
-  @JsonKey(
-    name: r'badges',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'badges', required: false, includeIfNull: false)
   final List<Badge>? badges;
 
-  @JsonKey(
-    name: r'bio',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'bio', required: true, includeIfNull: false)
   final String bio;
 
-  @JsonKey(
-    name: r'bioLinks',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'bioLinks', required: true, includeIfNull: false)
   final List<String> bioLinks;
 
   /// When profilePicOverride is not empty, use it instead.
-  @JsonKey(
-    name: r'currentAvatarImageUrl',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'currentAvatarImageUrl', required: true, includeIfNull: false)
   final String currentAvatarImageUrl;
 
   /// When profilePicOverride is not empty, use it instead.
@@ -120,131 +92,63 @@ class User {
   )
   final String currentAvatarThumbnailImageUrl;
 
-  @JsonKey(
-    name: r'currentAvatarTags',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'currentAvatarTags', required: true, includeIfNull: false)
   final List<String> currentAvatarTags;
 
-  @JsonKey(
-    name: r'date_joined',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'date_joined', required: true, includeIfNull: false)
   final DateTime dateJoined;
 
-  @JsonKey(
-    name: r'developerType',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'developerType', required: true, includeIfNull: false)
   final DeveloperType developerType;
 
   /// A users visual display name. This is what shows up in-game, and can different from their `username`. Changing display name is restricted to a cooldown period.
-  @JsonKey(
-    name: r'displayName',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'displayName', required: true, includeIfNull: false)
   final String displayName;
 
-  @JsonKey(
-    name: r'friendKey',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'friendKey', required: true, includeIfNull: false)
   final String friendKey;
 
-  @JsonKey(
-    name: r'friendRequestStatus',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'friendRequestStatus', required: false, includeIfNull: false)
   final String? friendRequestStatus;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   /// InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
-  @JsonKey(
-    name: r'instanceId',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'instanceId', required: false, includeIfNull: false)
   final String? instanceId;
 
   /// Either their `friendKey`, or empty string if you are not friends. Unknown usage.
-  @JsonKey(
-    name: r'isFriend',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'isFriend', required: true, includeIfNull: false)
   final bool isFriend;
 
   /// Either a date-time or empty string.
-  @JsonKey(
-    name: r'last_activity',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'last_activity', required: true, includeIfNull: false)
   final String lastActivity;
 
   /// Either a date-time or empty string.
-  @JsonKey(
-    name: r'last_login',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'last_login', required: true, includeIfNull: false)
   final String lastLogin;
 
-  @JsonKey(
-    name: r'last_mobile',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'last_mobile', required: false, includeIfNull: false)
   final String? lastMobile;
 
   /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
-  @JsonKey(
-    name: r'last_platform',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'last_platform', required: true, includeIfNull: false)
   final String lastPlatform;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
-  @JsonKey(
-    name: r'location',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'location', required: false, includeIfNull: false)
   final String? location;
 
-  @JsonKey(
-    name: r'note',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'note', required: false, includeIfNull: false)
   final String? note;
 
-  @JsonKey(
-    name: r'platform',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'platform', required: false, includeIfNull: false)
   final String? platform;
 
-  @JsonKey(
-    name: r'profilePicOverride',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
   final String profilePicOverride;
 
   @JsonKey(
@@ -254,85 +158,41 @@ class User {
   )
   final String profilePicOverrideThumbnail;
 
-  @JsonKey(
-    name: r'pronouns',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'pronouns', required: true, includeIfNull: false)
   final String pronouns;
 
-  @JsonKey(
-    name: r'state',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'state', required: true, includeIfNull: false)
   final UserState state;
 
-  @JsonKey(
-    name: r'status',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
   final UserStatus status;
 
-  @JsonKey(
-    name: r'statusDescription',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'statusDescription', required: true, includeIfNull: false)
   final String statusDescription;
 
   ///
-  @JsonKey(
-    name: r'tags',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 
-  @JsonKey(
-    name: r'travelingToInstance',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'travelingToInstance', required: false, includeIfNull: false)
   final String? travelingToInstance;
 
-  @JsonKey(
-    name: r'travelingToLocation',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'travelingToLocation', required: false, includeIfNull: false)
   final String? travelingToLocation;
 
-  @JsonKey(
-    name: r'travelingToWorld',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'travelingToWorld', required: false, includeIfNull: false)
   final String? travelingToWorld;
 
-  @JsonKey(
-    name: r'userIcon',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'userIcon', required: true, includeIfNull: false)
   final String userIcon;
 
   /// -| A users unique name, used during login. This is different from `displayName` which is what shows up in-game. A users `username` can never be changed.' **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
   @Deprecated('username has been deprecated')
-  @JsonKey(
-    name: r'username',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'username', required: false, includeIfNull: false)
   final String? username;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
-  @JsonKey(
-    name: r'worldId',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'worldId', required: false, includeIfNull: false)
   final String? worldId;
 
   @override
@@ -375,7 +235,7 @@ class User {
           other.travelingToLocation == travelingToLocation &&
           other.travelingToWorld == travelingToWorld &&
           other.userIcon == userIcon &&
-// ignore: deprecated_member_use_from_same_package
+          // ignore: deprecated_member_use_from_same_package
           other.username == username &&
           other.worldId == worldId;
 
@@ -416,7 +276,7 @@ class User {
       travelingToLocation.hashCode +
       travelingToWorld.hashCode +
       userIcon.hashCode +
-// ignore: deprecated_member_use_from_same_package
+      // ignore: deprecated_member_use_from_same_package
       username.hashCode +
       worldId.hashCode;
 

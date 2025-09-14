@@ -52,13 +52,21 @@ class WorldsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/users/{userId}/{worldId}/persist/exists'
-        .replaceAll('{' r'userId' '}', userId.toString())
-        .replaceAll('{' r'worldId' '}', worldId.toString());
+        .replaceAll(
+          '{'
+          r'userId'
+          '}',
+          userId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'worldId'
+          '}',
+          worldId.toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -110,13 +118,8 @@ class WorldsApi {
     final _path = r'/worlds';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       contentType: 'application/json',
       validateStatus: validateStatus,
     );
@@ -127,10 +130,7 @@ class WorldsApi {
       _bodyData = jsonEncode(createWorldRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -201,13 +201,21 @@ class WorldsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/users/{userId}/{worldId}/persist'
-        .replaceAll('{' r'userId' '}', userId.toString())
-        .replaceAll('{' r'worldId' '}', worldId.toString());
+        .replaceAll(
+          '{'
+          r'userId'
+          '}',
+          userId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'worldId'
+          '}',
+          worldId.toString(),
+        );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -256,13 +264,15 @@ class WorldsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/worlds/{worldId}'.replaceAll('{' r'worldId' '}', worldId.toString());
+    final _path = r'/worlds/{worldId}'.replaceAll(
+      '{'
+      r'worldId'
+      '}',
+      worldId.toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -336,9 +346,7 @@ class WorldsApi {
     final _path = r'/worlds/active';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -384,8 +392,10 @@ class WorldsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<LimitedWorld>, LimitedWorld>(
-              rawData, 'List<LimitedWorld>',
-              growable: true);
+              rawData,
+              'List<LimitedWorld>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -458,9 +468,7 @@ class WorldsApi {
     final _path = r'/worlds/favorites';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -507,8 +515,10 @@ class WorldsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<FavoritedWorld>, FavoritedWorld>(
-              rawData, 'List<FavoritedWorld>',
-              growable: true);
+              rawData,
+              'List<FavoritedWorld>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -581,9 +591,7 @@ class WorldsApi {
     final _path = r'/worlds/recent';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -630,8 +638,10 @@ class WorldsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<LimitedWorld>, LimitedWorld>(
-              rawData, 'List<LimitedWorld>',
-              growable: true);
+              rawData,
+              'List<LimitedWorld>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -677,17 +687,16 @@ class WorldsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/worlds/{worldId}'.replaceAll('{' r'worldId' '}', worldId.toString());
+    final _path = r'/worlds/{worldId}'.replaceAll(
+      '{'
+      r'worldId'
+      '}',
+      worldId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -754,13 +763,21 @@ class WorldsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/worlds/{worldId}/{instanceId}'
-        .replaceAll('{' r'worldId' '}', worldId.toString())
-        .replaceAll('{' r'instanceId' '}', instanceId.toString());
+        .replaceAll(
+          '{'
+          r'worldId'
+          '}',
+          worldId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'instanceId'
+          '}',
+          instanceId.toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -789,8 +806,11 @@ class WorldsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Instance, Instance>(rawData, 'Instance',
-              growable: true);
+          : deserialize<Instance, Instance>(
+              rawData,
+              'Instance',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -837,13 +857,15 @@ class WorldsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/worlds/{worldId}/metadata'
-        .replaceAll('{' r'worldId' '}', worldId.toString());
+    final _path = r'/worlds/{worldId}/metadata'.replaceAll(
+      '{'
+      r'worldId'
+      '}',
+      worldId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -872,8 +894,11 @@ class WorldsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<WorldMetadata, WorldMetadata>(rawData, 'WorldMetadata',
-              growable: true);
+          : deserialize<WorldMetadata, WorldMetadata>(
+              rawData,
+              'WorldMetadata',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -919,13 +944,15 @@ class WorldsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/worlds/{worldId}/publish'
-        .replaceAll('{' r'worldId' '}', worldId.toString());
+    final _path = r'/worlds/{worldId}/publish'.replaceAll(
+      '{'
+      r'worldId'
+      '}',
+      worldId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -955,8 +982,10 @@ class WorldsApi {
       _responseData = rawData == null
           ? null
           : deserialize<WorldPublishStatus, WorldPublishStatus>(
-              rawData, 'WorldPublishStatus',
-              growable: true);
+              rawData,
+              'WorldPublishStatus',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1002,13 +1031,15 @@ class WorldsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/worlds/{worldId}/publish'
-        .replaceAll('{' r'worldId' '}', worldId.toString());
+    final _path = r'/worlds/{worldId}/publish'.replaceAll(
+      '{'
+      r'worldId'
+      '}',
+      worldId.toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1088,9 +1119,7 @@ class WorldsApi {
     final _path = r'/worlds';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1139,8 +1168,10 @@ class WorldsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<LimitedWorld>, LimitedWorld>(
-              rawData, 'List<LimitedWorld>',
-              growable: true);
+              rawData,
+              'List<LimitedWorld>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1186,13 +1217,15 @@ class WorldsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/worlds/{worldId}/publish'
-        .replaceAll('{' r'worldId' '}', worldId.toString());
+    final _path = r'/worlds/{worldId}/publish'.replaceAll(
+      '{'
+      r'worldId'
+      '}',
+      worldId.toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1243,13 +1276,15 @@ class WorldsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/worlds/{worldId}'.replaceAll('{' r'worldId' '}', worldId.toString());
+    final _path = r'/worlds/{worldId}'.replaceAll(
+      '{'
+      r'worldId'
+      '}',
+      worldId.toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1271,10 +1306,7 @@ class WorldsApi {
       _bodyData = jsonEncode(updateWorldRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,

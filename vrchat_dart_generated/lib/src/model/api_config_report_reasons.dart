@@ -41,158 +41,70 @@ class APIConfigReportReasons {
     required this.visuals,
   });
 
-  @JsonKey(
-    name: r'billing',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'billing', required: true, includeIfNull: false)
   final ReportReason billing;
 
-  @JsonKey(
-    name: r'botting',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'botting', required: true, includeIfNull: false)
   final ReportReason botting;
 
-  @JsonKey(
-    name: r'cancellation',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'cancellation', required: true, includeIfNull: false)
   final ReportReason cancellation;
 
-  @JsonKey(
-    name: r'copyright',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'copyright', required: false, includeIfNull: false)
   final ReportReason? copyright;
 
-  @JsonKey(
-    name: r'fraud',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'fraud', required: false, includeIfNull: false)
   final ReportReason? fraud;
 
-  @JsonKey(
-    name: r'gore',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'gore', required: true, includeIfNull: false)
   final ReportReason gore;
 
-  @JsonKey(
-    name: r'hacking',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'hacking', required: true, includeIfNull: false)
   final ReportReason hacking;
 
-  @JsonKey(
-    name: r'harassing',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'harassing', required: true, includeIfNull: false)
   final ReportReason harassing;
 
-  @JsonKey(
-    name: r'hateful',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'hateful', required: true, includeIfNull: false)
   final ReportReason hateful;
 
-  @JsonKey(
-    name: r'impersonation',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'impersonation', required: true, includeIfNull: false)
   final ReportReason impersonation;
 
-  @JsonKey(
-    name: r'inappropriate',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'inappropriate', required: true, includeIfNull: false)
   final ReportReason inappropriate;
 
-  @JsonKey(
-    name: r'leaking',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'leaking', required: true, includeIfNull: false)
   final ReportReason leaking;
 
-  @JsonKey(
-    name: r'malicious',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'malicious', required: true, includeIfNull: false)
   final ReportReason malicious;
 
-  @JsonKey(
-    name: r'missing',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'missing', required: true, includeIfNull: false)
   final ReportReason missing;
 
-  @JsonKey(
-    name: r'nudity',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'nudity', required: true, includeIfNull: false)
   final ReportReason nudity;
 
-  @JsonKey(
-    name: r'renewal',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'renewal', required: true, includeIfNull: false)
   final ReportReason renewal;
 
-  @JsonKey(
-    name: r'security',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'security', required: true, includeIfNull: false)
   final ReportReason security;
 
-  @JsonKey(
-    name: r'service',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'service', required: true, includeIfNull: false)
   final ReportReason service;
 
-  @JsonKey(
-    name: r'sexual',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'sexual', required: true, includeIfNull: false)
   final ReportReason sexual;
 
-  @JsonKey(
-    name: r'technical',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'technical', required: false, includeIfNull: false)
   final ReportReason? technical;
 
-  @JsonKey(
-    name: r'threatening',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'threatening', required: true, includeIfNull: false)
   final ReportReason threatening;
 
-  @JsonKey(
-    name: r'visuals',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'visuals', required: true, includeIfNull: false)
   final ReportReason visuals;
 
   @override

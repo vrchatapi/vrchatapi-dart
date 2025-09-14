@@ -24,46 +24,22 @@ class ProductListingVariant {
     required this.unitPriceTokens,
   });
 
-  @JsonKey(
-    name: r'effectiveFrom',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'effectiveFrom', required: false, includeIfNull: false)
   final DateTime? effectiveFrom;
 
-  @JsonKey(
-    name: r'listingVariantId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'listingVariantId', required: true, includeIfNull: false)
   final String listingVariantId;
 
-  @JsonKey(
-    name: r'nonRefundable',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'nonRefundable', required: true, includeIfNull: false)
   final bool nonRefundable;
 
-  @JsonKey(
-    name: r'quantity',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'quantity', required: true, includeIfNull: false)
   final int quantity;
 
-  @JsonKey(
-    name: r'sellerVariant',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'sellerVariant', required: true, includeIfNull: false)
   final bool sellerVariant;
 
-  @JsonKey(
-    name: r'unitPriceTokens',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'unitPriceTokens', required: true, includeIfNull: false)
   final int unitPriceTokens;
 
   @override

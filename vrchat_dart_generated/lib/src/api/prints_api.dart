@@ -39,13 +39,15 @@ class PrintsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/prints/{printId}'.replaceAll('{' r'printId' '}', printId.toString());
+    final _path = r'/prints/{printId}'.replaceAll(
+      '{'
+      r'printId'
+      '}',
+      printId.toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -98,13 +100,15 @@ class PrintsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/prints/{printId}'.replaceAll('{' r'printId' '}', printId.toString());
+    final _path = r'/prints/{printId}'.replaceAll(
+      '{'
+      r'printId'
+      '}',
+      printId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -129,10 +133,7 @@ class PrintsApi {
       });
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -200,13 +201,15 @@ class PrintsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/prints/{printId}'.replaceAll('{' r'printId' '}', printId.toString());
+    final _path = r'/prints/{printId}'.replaceAll(
+      '{'
+      r'printId'
+      '}',
+      printId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -281,13 +284,15 @@ class PrintsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/prints/user/{userId}'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/prints/user/{userId}'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -316,8 +321,11 @@ class PrintsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Print>, Print>(rawData, 'List<Print>',
-              growable: true);
+          : deserialize<List<Print>, Print>(
+              rawData,
+              'List<Print>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -374,9 +382,7 @@ class PrintsApi {
     final _path = r'/prints';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -404,10 +410,7 @@ class PrintsApi {
       });
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,

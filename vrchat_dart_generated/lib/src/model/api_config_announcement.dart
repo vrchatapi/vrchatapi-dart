@@ -16,25 +16,14 @@ part 'api_config_announcement.g.dart';
 )
 class APIConfigAnnouncement {
   /// Returns a new [APIConfigAnnouncement] instance.
-  APIConfigAnnouncement({
-    required this.name,
-    required this.text,
-  });
+  APIConfigAnnouncement({required this.name, required this.text});
 
   /// Announcement name
-  @JsonKey(
-    name: r'name',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
   /// Announcement text
-  @JsonKey(
-    name: r'text',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'text', required: true, includeIfNull: false)
   final String text;
 
   @override

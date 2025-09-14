@@ -8,41 +8,38 @@ part of 'file_version.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-FileVersion _$FileVersionFromJson(Map<String, dynamic> json) => $checkedCreate(
-      'FileVersion',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['created_at', 'status', 'version'],
-        );
-        final val = FileVersion(
-          createdAt:
-              $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
-          deleted: $checkedConvert('deleted', (v) => v as bool? ?? true),
-          delta: $checkedConvert(
-              'delta',
-              (v) => v == null
-                  ? null
-                  : FileData.fromJson(v as Map<String, dynamic>)),
-          file: $checkedConvert(
-              'file',
-              (v) => v == null
-                  ? null
-                  : FileData.fromJson(v as Map<String, dynamic>)),
-          signature: $checkedConvert(
-              'signature',
-              (v) => v == null
-                  ? null
-                  : FileData.fromJson(v as Map<String, dynamic>)),
-          status: $checkedConvert(
-              'status', (v) => $enumDecode(_$FileStatusEnumMap, v)),
-          version: $checkedConvert('version', (v) => (v as num?)?.toInt() ?? 0),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'createdAt': 'created_at'},
-    );
+FileVersion _$FileVersionFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('FileVersion', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['created_at', 'status', 'version']);
+      final val = FileVersion(
+        createdAt: $checkedConvert(
+          'created_at',
+          (v) => DateTime.parse(v as String),
+        ),
+        deleted: $checkedConvert('deleted', (v) => v as bool? ?? true),
+        delta: $checkedConvert(
+          'delta',
+          (v) =>
+              v == null ? null : FileData.fromJson(v as Map<String, dynamic>),
+        ),
+        file: $checkedConvert(
+          'file',
+          (v) =>
+              v == null ? null : FileData.fromJson(v as Map<String, dynamic>),
+        ),
+        signature: $checkedConvert(
+          'signature',
+          (v) =>
+              v == null ? null : FileData.fromJson(v as Map<String, dynamic>),
+        ),
+        status: $checkedConvert(
+          'status',
+          (v) => $enumDecode(_$FileStatusEnumMap, v),
+        ),
+        version: $checkedConvert('version', (v) => (v as num?)?.toInt() ?? 0),
+      );
+      return val;
+    }, fieldKeyMap: const {'createdAt': 'created_at'});
 
 Map<String, dynamic> _$FileVersionToJson(FileVersion instance) =>
     <String, dynamic>{

@@ -9,26 +9,19 @@ part of 'instance_short_name_response.dart';
 // **************************************************************************
 
 InstanceShortNameResponse _$InstanceShortNameResponseFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'InstanceShortNameResponse',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['secureName'],
-        );
-        final val = InstanceShortNameResponse(
-          secureName: $checkedConvert('secureName', (v) => v as String),
-          shortName: $checkedConvert('shortName', (v) => v as String?),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('InstanceShortNameResponse', json, ($checkedConvert) {
+  $checkKeys(json, requiredKeys: const ['secureName']);
+  final val = InstanceShortNameResponse(
+    secureName: $checkedConvert('secureName', (v) => v as String),
+    shortName: $checkedConvert('shortName', (v) => v as String?),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$InstanceShortNameResponseToJson(
-        InstanceShortNameResponse instance) =>
-    <String, dynamic>{
-      'secureName': instance.secureName,
-      if (instance.shortName case final value?) 'shortName': value,
-    };
+  InstanceShortNameResponse instance,
+) => <String, dynamic>{
+  'secureName': instance.secureName,
+  if (instance.shortName case final value?) 'shortName': value,
+};

@@ -16,23 +16,12 @@ part 'get_user_group_instances200_response.g.dart';
 )
 class GetUserGroupInstances200Response {
   /// Returns a new [GetUserGroupInstances200Response] instance.
-  GetUserGroupInstances200Response({
-    this.fetchedAt,
-    this.instances,
-  });
+  GetUserGroupInstances200Response({this.fetchedAt, this.instances});
 
-  @JsonKey(
-    name: r'fetchedAt',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'fetchedAt', required: false, includeIfNull: false)
   final DateTime? fetchedAt;
 
-  @JsonKey(
-    name: r'instances',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'instances', required: false, includeIfNull: false)
   final List<Instance>? instances;
 
   @override
@@ -46,8 +35,8 @@ class GetUserGroupInstances200Response {
   int get hashCode => fetchedAt.hashCode + instances.hashCode;
 
   factory GetUserGroupInstances200Response.fromJson(
-          Map<String, dynamic> json) =>
-      _$GetUserGroupInstances200ResponseFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$GetUserGroupInstances200ResponseFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$GetUserGroupInstances200ResponseToJson(this);

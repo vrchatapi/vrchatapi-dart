@@ -12,13 +12,13 @@ class VrcApiImpl extends VrcApi {
     required String? cookiePath,
     required super.websocketUrl,
   }) : super(
-          rawApi: VrchatDartGenerated(
-            // Enable cookies
-            dio: DioForBrowser(options)
-              ..httpClientAdapter =
-                  (BrowserHttpClientAdapter()..withCredentials = true),
-          ),
-        ) {
+         rawApi: VrchatDartGenerated(
+           // Enable cookies
+           dio: DioForBrowser(options)
+             ..httpClientAdapter = (BrowserHttpClientAdapter()
+               ..withCredentials = true),
+         ),
+       ) {
     print('''
 ******************************************************
 USER AGENT CANNOT BE SET ON WEB! USE AT YOUR OWN RISK!

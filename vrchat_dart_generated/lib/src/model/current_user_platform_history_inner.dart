@@ -21,25 +21,13 @@ class CurrentUserPlatformHistoryInner {
     this.recorded,
   });
 
-  @JsonKey(
-    name: r'isMobile',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'isMobile', required: false, includeIfNull: false)
   final bool? isMobile;
 
-  @JsonKey(
-    name: r'platform',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'platform', required: false, includeIfNull: false)
   final String? platform;
 
-  @JsonKey(
-    name: r'recorded',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'recorded', required: false, includeIfNull: false)
   final DateTime? recorded;
 
   @override

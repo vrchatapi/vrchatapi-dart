@@ -9,21 +9,14 @@ part of 'verify2_fa_result.dart';
 // **************************************************************************
 
 Verify2FAResult _$Verify2FAResultFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'Verify2FAResult',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['verified'],
-        );
-        final val = Verify2FAResult(
-          verified: $checkedConvert('verified', (v) => v as bool),
-          enabled: $checkedConvert('enabled', (v) => v as bool? ?? true),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('Verify2FAResult', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['verified']);
+      final val = Verify2FAResult(
+        verified: $checkedConvert('verified', (v) => v as bool),
+        enabled: $checkedConvert('enabled', (v) => v as bool? ?? true),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$Verify2FAResultToJson(Verify2FAResult instance) =>
     <String, dynamic>{

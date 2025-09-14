@@ -15,23 +15,12 @@ part 'two_factor_recovery_codes_otp_inner.g.dart';
 )
 class TwoFactorRecoveryCodesOtpInner {
   /// Returns a new [TwoFactorRecoveryCodesOtpInner] instance.
-  TwoFactorRecoveryCodesOtpInner({
-    required this.code,
-    required this.used,
-  });
+  TwoFactorRecoveryCodesOtpInner({required this.code, required this.used});
 
-  @JsonKey(
-    name: r'code',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'code', required: true, includeIfNull: false)
   final String code;
 
-  @JsonKey(
-    name: r'used',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'used', required: true, includeIfNull: false)
   final bool used;
 
   @override

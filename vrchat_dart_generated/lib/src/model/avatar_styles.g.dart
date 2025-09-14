@@ -9,19 +9,17 @@ part of 'avatar_styles.dart';
 // **************************************************************************
 
 AvatarStyles _$AvatarStylesFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'AvatarStyles',
-      json,
-      ($checkedConvert) {
-        final val = AvatarStyles(
-          primary: $checkedConvert('primary', (v) => v as String?),
-          secondary: $checkedConvert('secondary', (v) => v as String?),
-          supplementary: $checkedConvert('supplementary',
-              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('AvatarStyles', json, ($checkedConvert) {
+      final val = AvatarStyles(
+        primary: $checkedConvert('primary', (v) => v as String?),
+        secondary: $checkedConvert('secondary', (v) => v as String?),
+        supplementary: $checkedConvert(
+          'supplementary',
+          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$AvatarStylesToJson(AvatarStyles instance) =>
     <String, dynamic>{

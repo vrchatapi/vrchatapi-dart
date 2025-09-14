@@ -16,15 +16,9 @@ part 'success.g.dart';
 )
 class Success {
   /// Returns a new [Success] instance.
-  Success({
-    this.success,
-  });
+  Success({this.success});
 
-  @JsonKey(
-    name: r'success',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'success', required: false, includeIfNull: false)
   final Response? success;
 
   @override

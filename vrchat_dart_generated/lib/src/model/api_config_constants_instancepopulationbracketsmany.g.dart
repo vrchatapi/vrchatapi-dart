@@ -9,23 +9,21 @@ part of 'api_config_constants_instancepopulationbracketsmany.dart';
 // **************************************************************************
 
 APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY
-    _$APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANYFromJson(
-            Map<String, dynamic> json) =>
-        $checkedCreate(
-          'APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY',
-          json,
-          ($checkedConvert) {
-            final val = APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY(
-              max: $checkedConvert('max', (v) => (v as num?)?.toInt()),
-              min: $checkedConvert('min', (v) => (v as num?)?.toInt()),
-            );
-            return val;
-          },
-        );
+_$APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANYFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY', json, (
+  $checkedConvert,
+) {
+  final val = APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY(
+    max: $checkedConvert('max', (v) => (v as num?)?.toInt()),
+    min: $checkedConvert('min', (v) => (v as num?)?.toInt()),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANYToJson(
-        APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY instance) =>
-    <String, dynamic>{
-      if (instance.max case final value?) 'max': value,
-      if (instance.min case final value?) 'min': value,
-    };
+  APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY instance,
+) => <String, dynamic>{
+  if (instance.max case final value?) 'max': value,
+  if (instance.min case final value?) 'min': value,
+};

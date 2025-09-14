@@ -24,39 +24,19 @@ class AvatarPerformance {
     this.standalonewindowsSort,
   });
 
-  @JsonKey(
-    name: r'android',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'android', required: false, includeIfNull: false)
   final String? android;
 
-  @JsonKey(
-    name: r'android-sort',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'android-sort', required: false, includeIfNull: false)
   final int? androidSort;
 
-  @JsonKey(
-    name: r'ios',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ios', required: false, includeIfNull: false)
   final String? ios;
 
-  @JsonKey(
-    name: r'ios-sort',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ios-sort', required: false, includeIfNull: false)
   final int? iosSort;
 
-  @JsonKey(
-    name: r'standalonewindows',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'standalonewindows', required: false, includeIfNull: false)
   final String? standalonewindows;
 
   @JsonKey(

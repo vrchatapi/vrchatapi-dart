@@ -15,16 +15,10 @@ part 'file_upload_url.g.dart';
 )
 class FileUploadURL {
   /// Returns a new [FileUploadURL] instance.
-  FileUploadURL({
-    required this.url,
-  });
+  FileUploadURL({required this.url});
 
   ///
-  @JsonKey(
-    name: r'url',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'url', required: true, includeIfNull: false)
   final String url;
 
   @override

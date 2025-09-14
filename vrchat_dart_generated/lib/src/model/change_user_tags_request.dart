@@ -15,16 +15,10 @@ part 'change_user_tags_request.g.dart';
 )
 class ChangeUserTagsRequest {
   /// Returns a new [ChangeUserTagsRequest] instance.
-  ChangeUserTagsRequest({
-    required this.tags,
-  });
+  ChangeUserTagsRequest({required this.tags});
 
   /// The tags being added or removed.
-  @JsonKey(
-    name: r'tags',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 
   @override

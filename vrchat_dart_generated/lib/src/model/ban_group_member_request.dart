@@ -15,16 +15,10 @@ part 'ban_group_member_request.g.dart';
 )
 class BanGroupMemberRequest {
   /// Returns a new [BanGroupMemberRequest] instance.
-  BanGroupMemberRequest({
-    required this.userId,
-  });
+  BanGroupMemberRequest({required this.userId});
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(
-    name: r'userId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'userId', required: true, includeIfNull: false)
   final String userId;
 
   @override

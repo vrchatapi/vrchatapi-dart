@@ -45,14 +45,14 @@ class VrchatDart {
     String? baseUrl,
     String? websocketUrl,
   }) : _api = VrcApi.forPlatform(
-          userAgent: userAgent,
-          options: BaseOptions(
-            baseUrl: baseUrl ?? VrchatDartGenerated.basePath,
-            connectTimeout: const Duration(seconds: 5),
-            receiveTimeout: const Duration(seconds: 3),
-            headers: {'User-Agent': userAgent.toString()},
-          ),
-          cookiePath: cookiePath,
-          websocketUrl: websocketUrl,
-        );
+         userAgent: userAgent,
+         options: BaseOptions(
+           baseUrl: baseUrl ?? VrchatDartGenerated.basePath,
+           connectTimeout: const Duration(seconds: 5),
+           receiveTimeout: const Duration(seconds: 3),
+           headers: {'User-Agent': userAgent.toString()},
+         ),
+         cookiePath: cookiePath,
+         websocketUrl: websocketUrl,
+       );
 }

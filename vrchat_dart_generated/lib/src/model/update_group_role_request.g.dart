@@ -9,41 +9,37 @@ part of 'update_group_role_request.dart';
 // **************************************************************************
 
 UpdateGroupRoleRequest _$UpdateGroupRoleRequestFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'UpdateGroupRoleRequest',
-      json,
-      ($checkedConvert) {
-        final val = UpdateGroupRoleRequest(
-          name: $checkedConvert('name', (v) => v as String?),
-          description: $checkedConvert('description', (v) => v as String?),
-          isSelfAssignable:
-              $checkedConvert('isSelfAssignable', (v) => v as bool? ?? false),
-          permissions: $checkedConvert(
-              'permissions',
-              (v) => (v as List<dynamic>?)
-                  ?.map((e) => $enumDecode(_$GroupPermissionsEnumMap, e))
-                  .toList()),
-          order: $checkedConvert('order', (v) => (v as num?)?.toInt()),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('UpdateGroupRoleRequest', json, ($checkedConvert) {
+  final val = UpdateGroupRoleRequest(
+    name: $checkedConvert('name', (v) => v as String?),
+    description: $checkedConvert('description', (v) => v as String?),
+    isSelfAssignable: $checkedConvert(
+      'isSelfAssignable',
+      (v) => v as bool? ?? false,
+    ),
+    permissions: $checkedConvert(
+      'permissions',
+      (v) => (v as List<dynamic>?)
+          ?.map((e) => $enumDecode(_$GroupPermissionsEnumMap, e))
+          .toList(),
+    ),
+    order: $checkedConvert('order', (v) => (v as num?)?.toInt()),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$UpdateGroupRoleRequestToJson(
-        UpdateGroupRoleRequest instance) =>
-    <String, dynamic>{
-      if (instance.name case final value?) 'name': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.isSelfAssignable case final value?)
-        'isSelfAssignable': value,
-      if (instance.permissions
-              ?.map((e) => _$GroupPermissionsEnumMap[e]!)
-              .toList()
-          case final value?)
-        'permissions': value,
-      if (instance.order case final value?) 'order': value,
-    };
+  UpdateGroupRoleRequest instance,
+) => <String, dynamic>{
+  if (instance.name case final value?) 'name': value,
+  if (instance.description case final value?) 'description': value,
+  if (instance.isSelfAssignable case final value?) 'isSelfAssignable': value,
+  if (instance.permissions?.map((e) => _$GroupPermissionsEnumMap[e]!).toList()
+      case final value?)
+    'permissions': value,
+  if (instance.order case final value?) 'order': value,
+};
 
 const _$GroupPermissionsEnumMap = {
   GroupPermissions.group_all: '*',

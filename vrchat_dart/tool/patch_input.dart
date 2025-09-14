@@ -33,8 +33,9 @@ Future<Map<String, dynamic>> getSpec({required bool local}) async {
     yaml = loadYaml(data);
   } else {
     print('Using remote spec file');
-    final response =
-        await dio.get('https://vrchatapi.github.io/specification/openapi.yaml');
+    final response = await dio.get(
+      'https://vrchatapi.github.io/specification/openapi.yaml',
+    );
     yaml = loadYaml(response.data!);
   }
 

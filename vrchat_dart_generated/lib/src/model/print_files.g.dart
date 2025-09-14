@@ -8,17 +8,14 @@ part of 'print_files.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-PrintFiles _$PrintFilesFromJson(Map<String, dynamic> json) => $checkedCreate(
-      'PrintFiles',
-      json,
-      ($checkedConvert) {
-        final val = PrintFiles(
-          fileId: $checkedConvert('fileId', (v) => v as String?),
-          image: $checkedConvert('image', (v) => v as String?),
-        );
-        return val;
-      },
-    );
+PrintFiles _$PrintFilesFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('PrintFiles', json, ($checkedConvert) {
+      final val = PrintFiles(
+        fileId: $checkedConvert('fileId', (v) => v as String?),
+        image: $checkedConvert('image', (v) => v as String?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$PrintFilesToJson(PrintFiles instance) =>
     <String, dynamic>{

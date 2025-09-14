@@ -9,33 +9,29 @@ part of 'dynamic_content_row.dart';
 // **************************************************************************
 
 DynamicContentRow _$DynamicContentRowFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'DynamicContentRow',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const [
-            'name',
-            'platform',
-            'sortHeading',
-            'sortOrder',
-            'sortOwnership'
-          ],
-        );
-        final val = DynamicContentRow(
-          index: $checkedConvert('index', (v) => (v as num?)?.toInt()),
-          name: $checkedConvert('name', (v) => v as String),
-          platform: $checkedConvert('platform', (v) => v as String),
-          sortHeading: $checkedConvert('sortHeading', (v) => v as String),
-          sortOrder: $checkedConvert('sortOrder', (v) => v as String),
-          sortOwnership: $checkedConvert('sortOwnership', (v) => v as String),
-          tag: $checkedConvert('tag', (v) => v as String?),
-          type: $checkedConvert('type', (v) => v as String?),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('DynamicContentRow', json, ($checkedConvert) {
+      $checkKeys(
+        json,
+        requiredKeys: const [
+          'name',
+          'platform',
+          'sortHeading',
+          'sortOrder',
+          'sortOwnership',
+        ],
+      );
+      final val = DynamicContentRow(
+        index: $checkedConvert('index', (v) => (v as num?)?.toInt()),
+        name: $checkedConvert('name', (v) => v as String),
+        platform: $checkedConvert('platform', (v) => v as String),
+        sortHeading: $checkedConvert('sortHeading', (v) => v as String),
+        sortOrder: $checkedConvert('sortOrder', (v) => v as String),
+        sortOwnership: $checkedConvert('sortOwnership', (v) => v as String),
+        tag: $checkedConvert('tag', (v) => v as String?),
+        type: $checkedConvert('type', (v) => v as String?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$DynamicContentRowToJson(DynamicContentRow instance) =>
     <String, dynamic>{

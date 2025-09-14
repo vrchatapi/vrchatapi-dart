@@ -9,23 +9,18 @@ part of 'notification_detail_request_invite.dart';
 // **************************************************************************
 
 NotificationDetailRequestInvite _$NotificationDetailRequestInviteFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'NotificationDetailRequestInvite',
-      json,
-      ($checkedConvert) {
-        final val = NotificationDetailRequestInvite(
-          platform: $checkedConvert('platform', (v) => v as String?),
-          requestMessage:
-              $checkedConvert('requestMessage', (v) => v as String?),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('NotificationDetailRequestInvite', json, ($checkedConvert) {
+  final val = NotificationDetailRequestInvite(
+    platform: $checkedConvert('platform', (v) => v as String?),
+    requestMessage: $checkedConvert('requestMessage', (v) => v as String?),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$NotificationDetailRequestInviteToJson(
-        NotificationDetailRequestInvite instance) =>
-    <String, dynamic>{
-      if (instance.platform case final value?) 'platform': value,
-      if (instance.requestMessage case final value?) 'requestMessage': value,
-    };
+  NotificationDetailRequestInvite instance,
+) => <String, dynamic>{
+  if (instance.platform case final value?) 'platform': value,
+  if (instance.requestMessage case final value?) 'requestMessage': value,
+};

@@ -9,22 +9,17 @@ part of 'invite_request.dart';
 // **************************************************************************
 
 InviteRequest _$InviteRequestFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'InviteRequest',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['instanceId'],
-        );
-        final val = InviteRequest(
-          instanceId: $checkedConvert('instanceId', (v) => v as String),
-          messageSlot:
-              $checkedConvert('messageSlot', (v) => (v as num?)?.toInt()),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('InviteRequest', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['instanceId']);
+      final val = InviteRequest(
+        instanceId: $checkedConvert('instanceId', (v) => v as String),
+        messageSlot: $checkedConvert(
+          'messageSlot',
+          (v) => (v as num?)?.toInt(),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$InviteRequestToJson(InviteRequest instance) =>
     <String, dynamic>{

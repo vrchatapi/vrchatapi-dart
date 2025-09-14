@@ -9,23 +9,16 @@ part of 'invite_response.dart';
 // **************************************************************************
 
 InviteResponse _$InviteResponseFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'InviteResponse',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['responseSlot'],
-        );
-        final val = InviteResponse(
-          responseSlot:
-              $checkedConvert('responseSlot', (v) => (v as num).toInt()),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('InviteResponse', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['responseSlot']);
+      final val = InviteResponse(
+        responseSlot: $checkedConvert(
+          'responseSlot',
+          (v) => (v as num).toInt(),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$InviteResponseToJson(InviteResponse instance) =>
-    <String, dynamic>{
-      'responseSlot': instance.responseSlot,
-    };
+    <String, dynamic>{'responseSlot': instance.responseSlot};

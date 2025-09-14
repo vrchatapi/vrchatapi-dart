@@ -22,11 +22,7 @@ class UpdateGroupMemberRequest {
     this.managerNotes,
   });
 
-  @JsonKey(
-    name: r'visibility',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'visibility', required: false, includeIfNull: false)
   final GroupUserVisibility? visibility;
 
   @JsonKey(
@@ -36,11 +32,7 @@ class UpdateGroupMemberRequest {
   )
   final bool? isSubscribedToAnnouncements;
 
-  @JsonKey(
-    name: r'managerNotes',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'managerNotes', required: false, includeIfNull: false)
   final String? managerNotes;
 
   @override

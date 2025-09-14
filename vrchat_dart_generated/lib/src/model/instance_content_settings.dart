@@ -24,46 +24,22 @@ class InstanceContentSettings {
     this.props = true,
   });
 
-  @JsonKey(
-    name: r'drones',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'drones', required: false, includeIfNull: false)
   final bool? drones;
 
-  @JsonKey(
-    name: r'emoji',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'emoji', required: false, includeIfNull: false)
   final bool? emoji;
 
-  @JsonKey(
-    name: r'pedestals',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'pedestals', required: false, includeIfNull: false)
   final bool? pedestals;
 
-  @JsonKey(
-    name: r'prints',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'prints', required: false, includeIfNull: false)
   final bool? prints;
 
-  @JsonKey(
-    name: r'stickers',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'stickers', required: false, includeIfNull: false)
   final bool? stickers;
 
-  @JsonKey(
-    name: r'props',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'props', required: false, includeIfNull: false)
   final bool? props;
 
   @override

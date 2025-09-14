@@ -15,26 +15,15 @@ part 'invite_request.g.dart';
 )
 class InviteRequest {
   /// Returns a new [InviteRequest] instance.
-  InviteRequest({
-    required this.instanceId,
-    this.messageSlot,
-  });
+  InviteRequest({required this.instanceId, this.messageSlot});
 
   /// InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
-  @JsonKey(
-    name: r'instanceId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'instanceId', required: true, includeIfNull: false)
   final String instanceId;
 
   // minimum: 0
   // maximum: 11
-  @JsonKey(
-    name: r'messageSlot',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'messageSlot', required: false, includeIfNull: false)
   final int? messageSlot;
 
   @override

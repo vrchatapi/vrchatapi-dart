@@ -16,15 +16,9 @@ part 'api_config_constants_instance.g.dart';
 )
 class APIConfigConstantsINSTANCE {
   /// Returns a new [APIConfigConstantsINSTANCE] instance.
-  APIConfigConstantsINSTANCE({
-    this.populationBrackets,
-  });
+  APIConfigConstantsINSTANCE({this.populationBrackets});
 
-  @JsonKey(
-    name: r'POPULATION_BRACKETS',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'POPULATION_BRACKETS', required: false, includeIfNull: false)
   final APIConfigConstantsINSTANCEPOPULATIONBRACKETS? populationBrackets;
 
   @override

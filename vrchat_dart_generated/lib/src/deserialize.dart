@@ -178,8 +178,11 @@ final _regList = RegExp(r'^List<(.*)>$');
 final _regSet = RegExp(r'^Set<(.*)>$');
 final _regMap = RegExp(r'^Map<String,(.*)>$');
 
-ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
-    {bool growable = true}) {
+ReturnType deserialize<ReturnType, BaseType>(
+  dynamic value,
+  String targetType, {
+  bool growable = true,
+}) {
   switch (targetType) {
     case 'String':
       return '$value' as ReturnType;
@@ -199,7 +202,7 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return APIConfigAccessLogsUrls.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'APIConfigAnnouncement':
-// ignore: deprecated_member_use_from_same_package
+      // ignore: deprecated_member_use_from_same_package
       return APIConfigAnnouncement.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'APIConfigAvatarPerfLimiter':
@@ -216,16 +219,24 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'APIConfigConstantsINSTANCEPOPULATIONBRACKETS':
       return APIConfigConstantsINSTANCEPOPULATIONBRACKETS.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED':
       return APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'APIConfigConstantsINSTANCEPOPULATIONBRACKETSFEW':
       return APIConfigConstantsINSTANCEPOPULATIONBRACKETSFEW.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY':
       return APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'APIConfigConstantsLANGUAGE':
       return APIConfigConstantsLANGUAGE.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -237,7 +248,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'APIConfigMinSupportedClientBuildNumber':
       return APIConfigMinSupportedClientBuildNumber.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'APIConfigOfflineAnalysis':
       return APIConfigOfflineAnalysis.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -249,7 +262,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'APIConfigReportOptionsAvatar':
       return APIConfigReportOptionsAvatar.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'APIConfigReportOptionsGroup':
       return APIConfigReportOptionsGroup.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -281,11 +296,13 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'AvatarPublishedListingsInner':
       return AvatarPublishedListingsInner.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'AvatarStyles':
       return AvatarStyles.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AvatarUnityPackageUrlObject':
-// ignore: deprecated_member_use_from_same_package
+      // ignore: deprecated_member_use_from_same_package
       return AvatarUnityPackageUrlObject.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'Badge':
@@ -309,7 +326,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'CreateGroupAnnouncementRequest':
       return CreateGroupAnnouncementRequest.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'CreateGroupGalleryRequest':
       return CreateGroupGalleryRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -335,7 +354,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return CurrentUser.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CurrentUserPlatformHistoryInner':
       return CurrentUserPlatformHistoryInner.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'CurrentUserPresence':
       return CurrentUserPresence.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -394,7 +415,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'GetUserGroupInstances200Response':
       return GetUserGroupInstances200Response.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'Group':
       return Group.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'GroupAccessType':
@@ -442,7 +465,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'GroupRoleTemplateValuesRoles':
       return GroupRoleTemplateValuesRoles.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'GroupSearchSort':
     case 'GroupUserVisibility':
     case 'InfoPush':
@@ -522,21 +547,31 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'NotificationDetailInviteResponse':
       return NotificationDetailInviteResponse.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'NotificationDetailRequestInvite':
       return NotificationDetailRequestInvite.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'NotificationDetailRequestInviteResponse':
       return NotificationDetailRequestInviteResponse.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'NotificationDetailVoteToKick':
       return NotificationDetailVoteToKick.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'NotificationType':
     case 'OrderOption':
     case 'PaginatedGroupAuditLogEntryList':
       return PaginatedGroupAuditLogEntryList.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'PastDisplayName':
       return PastDisplayName.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -637,7 +672,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'TwoFactorRecoveryCodesOtpInner':
       return TwoFactorRecoveryCodesOtpInner.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'UnityPackage':
       return UnityPackage.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'UpdateAvatarRequest':
@@ -654,7 +691,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'UpdateGroupRepresentationRequest':
       return UpdateGroupRepresentationRequest.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'UpdateGroupRequest':
       return UpdateGroupRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -713,27 +752,42 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       if (value is List && (match = _regList.firstMatch(targetType)) != null) {
         targetType = match![1]!; // ignore: parameter_assignments
         return value
-            .map<BaseType>((dynamic v) => deserialize<BaseType, BaseType>(
-                v, targetType,
-                growable: growable))
-            .toList(growable: growable) as ReturnType;
+                .map<BaseType>(
+                  (dynamic v) => deserialize<BaseType, BaseType>(
+                    v,
+                    targetType,
+                    growable: growable,
+                  ),
+                )
+                .toList(growable: growable)
+            as ReturnType;
       }
       if (value is Set && (match = _regSet.firstMatch(targetType)) != null) {
         targetType = match![1]!; // ignore: parameter_assignments
         return value
-            .map<BaseType>((dynamic v) => deserialize<BaseType, BaseType>(
-                v, targetType,
-                growable: growable))
-            .toSet() as ReturnType;
+                .map<BaseType>(
+                  (dynamic v) => deserialize<BaseType, BaseType>(
+                    v,
+                    targetType,
+                    growable: growable,
+                  ),
+                )
+                .toSet()
+            as ReturnType;
       }
       if (value is Map && (match = _regMap.firstMatch(targetType)) != null) {
         targetType = match![1]!.trim(); // ignore: parameter_assignments
         return Map<String, BaseType>.fromIterables(
-          value.keys as Iterable<String>,
-          value.values.map((dynamic v) => deserialize<BaseType, BaseType>(
-              v, targetType,
-              growable: growable)),
-        ) as ReturnType;
+              value.keys as Iterable<String>,
+              value.values.map(
+                (dynamic v) => deserialize<BaseType, BaseType>(
+                  v,
+                  targetType,
+                  growable: growable,
+                ),
+              ),
+            )
+            as ReturnType;
       }
       break;
   }

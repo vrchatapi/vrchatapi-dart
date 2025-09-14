@@ -24,46 +24,22 @@ class APIConfigReportOptionsUser {
     this.text,
   });
 
-  @JsonKey(
-    name: r'behavior',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'behavior', required: false, includeIfNull: false)
   final List<String>? behavior;
 
-  @JsonKey(
-    name: r'chat',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'chat', required: false, includeIfNull: false)
   final List<String>? chat;
 
-  @JsonKey(
-    name: r'emoji',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'emoji', required: false, includeIfNull: false)
   final List<String>? emoji;
 
-  @JsonKey(
-    name: r'image',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'image', required: false, includeIfNull: false)
   final List<String>? image;
 
-  @JsonKey(
-    name: r'sticker',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'sticker', required: false, includeIfNull: false)
   final List<String>? sticker;
 
-  @JsonKey(
-    name: r'text',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'text', required: false, includeIfNull: false)
   final List<String>? text;
 
   @override

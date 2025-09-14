@@ -37,18 +37,10 @@ class FavoriteLimits {
   )
   final int defaultMaxFavoritesPerGroup;
 
-  @JsonKey(
-    name: r'maxFavoriteGroups',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'maxFavoriteGroups', required: true, includeIfNull: false)
   final FavoriteGroupLimits maxFavoriteGroups;
 
-  @JsonKey(
-    name: r'maxFavoritesPerGroup',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'maxFavoritesPerGroup', required: true, includeIfNull: false)
   final FavoriteGroupLimits maxFavoritesPerGroup;
 
   @override

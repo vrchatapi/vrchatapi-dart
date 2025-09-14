@@ -28,75 +28,39 @@ class RegisterUserAccountRequest {
   });
 
   /// Display Name / Username (Username is a sanitized version)
-  @JsonKey(
-    name: r'username',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'username', required: true, includeIfNull: false)
   final String username;
 
   /// Password
-  @JsonKey(
-    name: r'password',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'password', required: true, includeIfNull: false)
   final String password;
 
   /// Email address
-  @JsonKey(
-    name: r'email',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'email', required: true, includeIfNull: false)
   final String email;
 
   /// Birth year
-  @JsonKey(
-    name: r'year',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'year', required: true, includeIfNull: false)
   final String year;
 
   /// Birth month of year
-  @JsonKey(
-    name: r'month',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'month', required: true, includeIfNull: false)
   final String month;
 
   /// Birth day of month
-  @JsonKey(
-    name: r'day',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'day', required: true, includeIfNull: false)
   final String day;
 
   /// Captcha code
-  @JsonKey(
-    name: r'captchaCode',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'captchaCode', required: true, includeIfNull: false)
   final String captchaCode;
 
   /// Whether to recieve promotional emails
-  @JsonKey(
-    name: r'subscribe',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'subscribe', required: true, includeIfNull: false)
   final bool subscribe;
 
   /// The most recent version of the TOS
-  @JsonKey(
-    name: r'acceptedTOSVersion',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'acceptedTOSVersion', required: true, includeIfNull: false)
   final int acceptedTOSVersion;
 
   @override

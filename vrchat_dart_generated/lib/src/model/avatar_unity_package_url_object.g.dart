@@ -9,21 +9,16 @@ part of 'avatar_unity_package_url_object.dart';
 // **************************************************************************
 
 AvatarUnityPackageUrlObject _$AvatarUnityPackageUrlObjectFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'AvatarUnityPackageUrlObject',
-      json,
-      ($checkedConvert) {
-        final val = AvatarUnityPackageUrlObject(
-          unityPackageUrl:
-              $checkedConvert('unityPackageUrl', (v) => v as String?),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('AvatarUnityPackageUrlObject', json, ($checkedConvert) {
+  final val = AvatarUnityPackageUrlObject(
+    unityPackageUrl: $checkedConvert('unityPackageUrl', (v) => v as String?),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$AvatarUnityPackageUrlObjectToJson(
-        AvatarUnityPackageUrlObject instance) =>
-    <String, dynamic>{
-      if (instance.unityPackageUrl case final value?) 'unityPackageUrl': value,
-    };
+  AvatarUnityPackageUrlObject instance,
+) => <String, dynamic>{
+  if (instance.unityPackageUrl case final value?) 'unityPackageUrl': value,
+};

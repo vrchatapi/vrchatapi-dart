@@ -15,16 +15,10 @@ part 'performance_limiter_info.g.dart';
 )
 class PerformanceLimiterInfo {
   /// Returns a new [PerformanceLimiterInfo] instance.
-  PerformanceLimiterInfo({
-    required this.maxSeats,
-  });
+  PerformanceLimiterInfo({required this.maxSeats});
 
   /// Maximum amount of seats. -1 means no limit.
-  @JsonKey(
-    name: r'maxSeats',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'maxSeats', required: true, includeIfNull: false)
   final int maxSeats;
 
   @override

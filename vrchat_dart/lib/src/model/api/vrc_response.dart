@@ -12,9 +12,8 @@ class AuthResponse {
   final List<TwoFactorAuthType> twoFactorAuthTypes;
 
   /// Create an [AuthResponse]
-  AuthResponse({
-    this.twoFactorAuthTypes = const [],
-  }) : requiresTwoFactorAuth = twoFactorAuthTypes.isNotEmpty;
+  AuthResponse({this.twoFactorAuthTypes = const []})
+    : requiresTwoFactorAuth = twoFactorAuthTypes.isNotEmpty;
 }
 
 /// Types of two factor auth for VRChat

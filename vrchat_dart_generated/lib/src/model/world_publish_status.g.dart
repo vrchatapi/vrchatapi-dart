@@ -9,22 +9,13 @@ part of 'world_publish_status.dart';
 // **************************************************************************
 
 WorldPublishStatus _$WorldPublishStatusFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'WorldPublishStatus',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['canPublish'],
-        );
-        final val = WorldPublishStatus(
-          canPublish: $checkedConvert('canPublish', (v) => v as bool? ?? true),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('WorldPublishStatus', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['canPublish']);
+      final val = WorldPublishStatus(
+        canPublish: $checkedConvert('canPublish', (v) => v as bool? ?? true),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$WorldPublishStatusToJson(WorldPublishStatus instance) =>
-    <String, dynamic>{
-      'canPublish': instance.canPublish,
-    };
+    <String, dynamic>{'canPublish': instance.canPublish};

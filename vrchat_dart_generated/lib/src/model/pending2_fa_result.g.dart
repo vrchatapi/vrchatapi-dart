@@ -9,21 +9,14 @@ part of 'pending2_fa_result.dart';
 // **************************************************************************
 
 Pending2FAResult _$Pending2FAResultFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'Pending2FAResult',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['qrCodeDataUrl', 'secret'],
-        );
-        final val = Pending2FAResult(
-          qrCodeDataUrl: $checkedConvert('qrCodeDataUrl', (v) => v as String),
-          secret: $checkedConvert('secret', (v) => v as String),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('Pending2FAResult', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['qrCodeDataUrl', 'secret']);
+      final val = Pending2FAResult(
+        qrCodeDataUrl: $checkedConvert('qrCodeDataUrl', (v) => v as String),
+        secret: $checkedConvert('secret', (v) => v as String),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$Pending2FAResultToJson(Pending2FAResult instance) =>
     <String, dynamic>{

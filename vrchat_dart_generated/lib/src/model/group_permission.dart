@@ -24,27 +24,15 @@ class GroupPermission {
   });
 
   /// The name of the permission.
-  @JsonKey(
-    name: r'name',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'name', required: false, includeIfNull: false)
   final String? name;
 
   /// The display name of the permission.
-  @JsonKey(
-    name: r'displayName',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'displayName', required: false, includeIfNull: false)
   final String? displayName;
 
   /// Human-readable description of the permission.
-  @JsonKey(
-    name: r'help',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'help', required: false, includeIfNull: false)
   final String? help;
 
   /// Whether this permission is a \"management\" permission.
@@ -56,11 +44,7 @@ class GroupPermission {
   final bool? isManagementPermission;
 
   /// Whether the user is allowed to add this permission to a role.
-  @JsonKey(
-    name: r'allowedToAdd',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'allowedToAdd', required: false, includeIfNull: false)
   final bool? allowedToAdd;
 
   @override

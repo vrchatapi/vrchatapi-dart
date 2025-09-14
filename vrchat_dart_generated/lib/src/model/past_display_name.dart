@@ -15,23 +15,12 @@ part 'past_display_name.g.dart';
 )
 class PastDisplayName {
   /// Returns a new [PastDisplayName] instance.
-  PastDisplayName({
-    required this.displayName,
-    required this.updatedAt,
-  });
+  PastDisplayName({required this.displayName, required this.updatedAt});
 
-  @JsonKey(
-    name: r'displayName',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'displayName', required: true, includeIfNull: false)
   final String displayName;
 
-  @JsonKey(
-    name: r'updated_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
   final DateTime updatedAt;
 
   @override

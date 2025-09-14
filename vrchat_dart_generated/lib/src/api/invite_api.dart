@@ -51,14 +51,27 @@ class InviteApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/message/{userId}/{messageType}/{slot}'
-        .replaceAll('{' r'userId' '}', userId.toString())
-        .replaceAll('{' r'messageType' '}', messageType.toString())
-        .replaceAll('{' r'slot' '}', slot.toString());
+        .replaceAll(
+          '{'
+          r'userId'
+          '}',
+          userId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'messageType'
+          '}',
+          messageType.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'slot'
+          '}',
+          slot.toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -87,8 +100,11 @@ class InviteApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<InviteMessage, InviteMessage>(rawData, 'InviteMessage',
-              growable: true);
+          : deserialize<InviteMessage, InviteMessage>(
+              rawData,
+              'InviteMessage',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -137,13 +153,21 @@ class InviteApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/message/{userId}/{messageType}'
-        .replaceAll('{' r'userId' '}', userId.toString())
-        .replaceAll('{' r'messageType' '}', messageType.toString());
+        .replaceAll(
+          '{'
+          r'userId'
+          '}',
+          userId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'messageType'
+          '}',
+          messageType.toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -173,8 +197,10 @@ class InviteApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<InviteMessage>, InviteMessage>(
-              rawData, 'List<InviteMessage>',
-              growable: true);
+              rawData,
+              'List<InviteMessage>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -223,13 +249,21 @@ class InviteApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/invite/myself/to/{worldId}:{instanceId}'
-        .replaceAll('{' r'worldId' '}', worldId.toString())
-        .replaceAll('{' r'instanceId' '}', instanceId.toString());
+        .replaceAll(
+          '{'
+          r'worldId'
+          '}',
+          worldId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'instanceId'
+          '}',
+          instanceId.toString(),
+        );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -259,8 +293,10 @@ class InviteApi {
       _responseData = rawData == null
           ? null
           : deserialize<SentNotification, SentNotification>(
-              rawData, 'SentNotification',
-              growable: true);
+              rawData,
+              'SentNotification',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -308,13 +344,15 @@ class InviteApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/invite/{userId}'.replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/invite/{userId}'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -336,10 +374,7 @@ class InviteApi {
       _bodyData = jsonEncode(inviteRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -362,8 +397,10 @@ class InviteApi {
       _responseData = rawData == null
           ? null
           : deserialize<SentNotification, SentNotification>(
-              rawData, 'SentNotification',
-              growable: true);
+              rawData,
+              'SentNotification',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -413,13 +450,15 @@ class InviteApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/invite/{userId}/photo'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/invite/{userId}/photo'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -441,10 +480,7 @@ class InviteApi {
       _bodyData = FormData.fromMap({'image': image, 'data': data});
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -467,8 +503,10 @@ class InviteApi {
       _responseData = rawData == null
           ? null
           : deserialize<SentNotification, SentNotification>(
-              rawData, 'SentNotification',
-              growable: true);
+              rawData,
+              'SentNotification',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -516,13 +554,15 @@ class InviteApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/requestInvite/{userId}'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/requestInvite/{userId}'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -544,10 +584,7 @@ class InviteApi {
       _bodyData = jsonEncode(requestInviteRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -569,8 +606,11 @@ class InviteApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Notification, Notification>(rawData, 'Notification',
-              growable: true);
+          : deserialize<Notification, Notification>(
+              rawData,
+              'Notification',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -620,13 +660,15 @@ class InviteApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/requestInvite/{userId}/photo'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/requestInvite/{userId}/photo'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -648,10 +690,7 @@ class InviteApi {
       _bodyData = FormData.fromMap({'image': image, 'data': data});
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -673,8 +712,11 @@ class InviteApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Notification, Notification>(rawData, 'Notification',
-              growable: true);
+          : deserialize<Notification, Notification>(
+              rawData,
+              'Notification',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -725,14 +767,27 @@ class InviteApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/message/{userId}/{messageType}/{slot}'
-        .replaceAll('{' r'userId' '}', userId.toString())
-        .replaceAll('{' r'messageType' '}', messageType.toString())
-        .replaceAll('{' r'slot' '}', slot.toString());
+        .replaceAll(
+          '{'
+          r'userId'
+          '}',
+          userId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'messageType'
+          '}',
+          messageType.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'slot'
+          '}',
+          slot.toString(),
+        );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -762,8 +817,10 @@ class InviteApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<InviteMessage>, InviteMessage>(
-              rawData, 'List<InviteMessage>',
-              growable: true);
+              rawData,
+              'List<InviteMessage>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -811,13 +868,15 @@ class InviteApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/invite/{notificationId}/response'
-        .replaceAll('{' r'notificationId' '}', notificationId.toString());
+    final _path = r'/invite/{notificationId}/response'.replaceAll(
+      '{'
+      r'notificationId'
+      '}',
+      notificationId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -839,10 +898,7 @@ class InviteApi {
       _bodyData = jsonEncode(inviteResponse);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -864,8 +920,11 @@ class InviteApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Notification, Notification>(rawData, 'Notification',
-              growable: true);
+          : deserialize<Notification, Notification>(
+              rawData,
+              'Notification',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -915,13 +974,15 @@ class InviteApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/invite/{notificationId}/response/photo'
-        .replaceAll('{' r'notificationId' '}', notificationId.toString());
+    final _path = r'/invite/{notificationId}/response/photo'.replaceAll(
+      '{'
+      r'notificationId'
+      '}',
+      notificationId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -943,10 +1004,7 @@ class InviteApi {
       _bodyData = FormData.fromMap({'image': image, 'data': data});
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -968,8 +1026,11 @@ class InviteApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Notification, Notification>(rawData, 'Notification',
-              growable: true);
+          : deserialize<Notification, Notification>(
+              rawData,
+              'Notification',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1022,14 +1083,27 @@ class InviteApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/message/{userId}/{messageType}/{slot}'
-        .replaceAll('{' r'userId' '}', userId.toString())
-        .replaceAll('{' r'messageType' '}', messageType.toString())
-        .replaceAll('{' r'slot' '}', slot.toString());
+        .replaceAll(
+          '{'
+          r'userId'
+          '}',
+          userId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'messageType'
+          '}',
+          messageType.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'slot'
+          '}',
+          slot.toString(),
+        );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1051,10 +1125,7 @@ class InviteApi {
       _bodyData = jsonEncode(updateInviteMessageRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1077,8 +1148,10 @@ class InviteApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<InviteMessage>, InviteMessage>(
-              rawData, 'List<InviteMessage>',
-              growable: true);
+              rawData,
+              'List<InviteMessage>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

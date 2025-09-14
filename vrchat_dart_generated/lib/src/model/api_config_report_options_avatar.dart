@@ -15,31 +15,15 @@ part 'api_config_report_options_avatar.g.dart';
 )
 class APIConfigReportOptionsAvatar {
   /// Returns a new [APIConfigReportOptionsAvatar] instance.
-  APIConfigReportOptionsAvatar({
-    this.avatar,
-    this.avatarpage,
-    this.warnings,
-  });
+  APIConfigReportOptionsAvatar({this.avatar, this.avatarpage, this.warnings});
 
-  @JsonKey(
-    name: r'avatar',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'avatar', required: false, includeIfNull: false)
   final List<String>? avatar;
 
-  @JsonKey(
-    name: r'avatarpage',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'avatarpage', required: false, includeIfNull: false)
   final List<String>? avatarpage;
 
-  @JsonKey(
-    name: r'warnings',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'warnings', required: false, includeIfNull: false)
   final List<String>? warnings;
 
   @override

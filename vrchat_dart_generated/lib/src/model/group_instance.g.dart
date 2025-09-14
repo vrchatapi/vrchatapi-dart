@@ -9,30 +9,22 @@ part of 'group_instance.dart';
 // **************************************************************************
 
 GroupInstance _$GroupInstanceFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'GroupInstance',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const [
-            'instanceId',
-            'location',
-            'world',
-            'memberCount'
-          ],
-        );
-        final val = GroupInstance(
-          instanceId: $checkedConvert('instanceId', (v) => v as String),
-          location: $checkedConvert('location', (v) => v as String),
-          world: $checkedConvert(
-              'world', (v) => World.fromJson(v as Map<String, dynamic>)),
-          memberCount:
-              $checkedConvert('memberCount', (v) => (v as num).toInt()),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('GroupInstance', json, ($checkedConvert) {
+      $checkKeys(
+        json,
+        requiredKeys: const ['instanceId', 'location', 'world', 'memberCount'],
+      );
+      final val = GroupInstance(
+        instanceId: $checkedConvert('instanceId', (v) => v as String),
+        location: $checkedConvert('location', (v) => v as String),
+        world: $checkedConvert(
+          'world',
+          (v) => World.fromJson(v as Map<String, dynamic>),
+        ),
+        memberCount: $checkedConvert('memberCount', (v) => (v as num).toInt()),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$GroupInstanceToJson(GroupInstance instance) =>
     <String, dynamic>{

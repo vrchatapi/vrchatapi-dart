@@ -15,25 +15,14 @@ part 'platform_build_info.g.dart';
 )
 class PlatformBuildInfo {
   /// Returns a new [PlatformBuildInfo] instance.
-  PlatformBuildInfo({
-    required this.minBuildNumber,
-    this.redirectionAddress,
-  });
+  PlatformBuildInfo({required this.minBuildNumber, this.redirectionAddress});
 
   /// Minimum build number required for the platform
-  @JsonKey(
-    name: r'minBuildNumber',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'minBuildNumber', required: true, includeIfNull: false)
   final int minBuildNumber;
 
   /// Redirection URL for updating the app
-  @JsonKey(
-    name: r'redirectionAddress',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'redirectionAddress', required: false, includeIfNull: false)
   final String? redirectionAddress;
 
   @override

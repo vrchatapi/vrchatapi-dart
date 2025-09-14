@@ -23,27 +23,15 @@ class PaginatedGroupAuditLogEntryList {
   });
 
   ///
-  @JsonKey(
-    name: r'results',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'results', required: false, includeIfNull: false)
   final List<GroupAuditLogEntry>? results;
 
   /// The total number of results that the query would return if there were no pagination.
-  @JsonKey(
-    name: r'totalCount',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'totalCount', required: false, includeIfNull: false)
   final int? totalCount;
 
   /// Whether there are more results after this page.
-  @JsonKey(
-    name: r'hasNext',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'hasNext', required: false, includeIfNull: false)
   final bool? hasNext;
 
   @override

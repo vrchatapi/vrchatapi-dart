@@ -34,114 +34,54 @@ class CreateAvatarRequest {
     this.unityVersion = '5.3.4p1',
   });
 
-  @JsonKey(
-    name: r'assetUrl',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'assetUrl', required: false, includeIfNull: false)
   final String? assetUrl;
 
-  @JsonKey(
-    name: r'assetVersion',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'assetVersion', required: false, includeIfNull: false)
   final String? assetVersion;
 
   /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
-  @JsonKey(
-    name: r'platform',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'platform', required: false, includeIfNull: false)
   final String? platform;
 
   /// A date and time of the pattern `M/d/yyyy h:mm:ss tt` (see C Sharp `System.DateTime`)
-  @JsonKey(
-    name: r'created_at',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'created_at', required: false, includeIfNull: false)
   final String? createdAt;
 
   /// A date and time of the pattern `M/d/yyyy h:mm:ss tt` (see C Sharp `System.DateTime`)
-  @JsonKey(
-    name: r'updated_at',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'updated_at', required: false, includeIfNull: false)
   final String? updatedAt;
 
-  @JsonKey(
-    name: r'id',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: false, includeIfNull: false)
   final String? id;
 
-  @JsonKey(
-    name: r'name',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
-  @JsonKey(
-    name: r'description',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;
 
   ///
-  @JsonKey(
-    name: r'tags',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'tags', required: false, includeIfNull: false)
   final List<String>? tags;
 
-  @JsonKey(
-    name: r'imageUrl',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'imageUrl', required: true, includeIfNull: false)
   final String imageUrl;
 
-  @JsonKey(
-    name: r'thumbnailImageUrl',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'thumbnailImageUrl', required: false, includeIfNull: false)
   final String? thumbnailImageUrl;
 
-  @JsonKey(
-    name: r'releaseStatus',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'releaseStatus', required: false, includeIfNull: false)
   final ReleaseStatus? releaseStatus;
 
   // minimum: 0
-  @JsonKey(
-    name: r'version',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'version', required: false, includeIfNull: false)
   final int? version;
 
-  @JsonKey(
-    name: r'unityPackageUrl',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'unityPackageUrl', required: false, includeIfNull: false)
   final String? unityPackageUrl;
 
-  @JsonKey(
-    name: r'unityVersion',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'unityVersion', required: false, includeIfNull: false)
   final String? unityVersion;
 
   @override

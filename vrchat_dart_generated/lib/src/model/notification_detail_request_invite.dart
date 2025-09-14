@@ -15,25 +15,14 @@ part 'notification_detail_request_invite.g.dart';
 )
 class NotificationDetailRequestInvite {
   /// Returns a new [NotificationDetailRequestInvite] instance.
-  NotificationDetailRequestInvite({
-    this.platform,
-    this.requestMessage,
-  });
+  NotificationDetailRequestInvite({this.platform, this.requestMessage});
 
   /// TODO: Does this still exist?
-  @JsonKey(
-    name: r'platform',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'platform', required: false, includeIfNull: false)
   final String? platform;
 
   /// Used when using InviteMessage Slot.
-  @JsonKey(
-    name: r'requestMessage',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'requestMessage', required: false, includeIfNull: false)
   final String? requestMessage;
 
   @override

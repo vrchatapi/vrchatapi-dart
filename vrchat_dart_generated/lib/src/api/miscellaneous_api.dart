@@ -43,9 +43,7 @@ class MiscellaneousApi {
     final _path = r'/auth/permissions';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -75,8 +73,10 @@ class MiscellaneousApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<Permission>, Permission>(
-              rawData, 'List<Permission>',
-              growable: true);
+              rawData,
+              'List<Permission>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -127,13 +127,8 @@ class MiscellaneousApi {
     final _path = r'/css/app.css';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -204,13 +199,8 @@ class MiscellaneousApi {
     final _path = r'/config';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -228,8 +218,11 @@ class MiscellaneousApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<APIConfig, APIConfig>(rawData, 'APIConfig',
-              growable: true);
+          : deserialize<APIConfig, APIConfig>(
+              rawData,
+              'APIConfig',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -276,13 +269,8 @@ class MiscellaneousApi {
     final _path = r'/visits';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -348,13 +336,8 @@ class MiscellaneousApi {
     final _path = r'/health';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -372,8 +355,11 @@ class MiscellaneousApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<APIHealth, APIHealth>(rawData, 'APIHealth',
-              growable: true);
+          : deserialize<APIHealth, APIHealth>(
+              rawData,
+              'APIHealth',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -424,13 +410,8 @@ class MiscellaneousApi {
     final _path = r'/infoPush';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -454,8 +435,11 @@ class MiscellaneousApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<InfoPush>, InfoPush>(rawData, 'List<InfoPush>',
-              growable: true);
+          : deserialize<List<InfoPush>, InfoPush>(
+              rawData,
+              'List<InfoPush>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -506,13 +490,8 @@ class MiscellaneousApi {
     final _path = r'/js/app.js';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -582,13 +561,15 @@ class MiscellaneousApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/permissions/{permissionId}'
-        .replaceAll('{' r'permissionId' '}', permissionId.toString());
+    final _path = r'/permissions/{permissionId}'.replaceAll(
+      '{'
+      r'permissionId'
+      '}',
+      permissionId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -617,8 +598,11 @@ class MiscellaneousApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Permission, Permission>(rawData, 'Permission',
-              growable: true);
+          : deserialize<Permission, Permission>(
+              rawData,
+              'Permission',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -665,13 +649,8 @@ class MiscellaneousApi {
     final _path = r'/time';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -689,8 +668,11 @@ class MiscellaneousApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<DateTime, DateTime>(rawData, 'DateTime',
-              growable: true);
+          : deserialize<DateTime, DateTime>(
+              rawData,
+              'DateTime',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

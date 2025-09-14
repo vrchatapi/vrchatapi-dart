@@ -15,39 +15,18 @@ part 'api_config_access_logs_urls.g.dart';
 )
 class APIConfigAccessLogsUrls {
   /// Returns a new [APIConfigAccessLogsUrls] instance.
-  APIConfigAccessLogsUrls({
-    this.default_,
-    this.pico,
-    this.quest,
-    this.xRElite,
-  });
+  APIConfigAccessLogsUrls({this.default_, this.pico, this.quest, this.xRElite});
 
-  @JsonKey(
-    name: r'Default',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'Default', required: false, includeIfNull: false)
   final String? default_;
 
-  @JsonKey(
-    name: r'Pico',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'Pico', required: false, includeIfNull: false)
   final String? pico;
 
-  @JsonKey(
-    name: r'Quest',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'Quest', required: false, includeIfNull: false)
   final String? quest;
 
-  @JsonKey(
-    name: r'XRElite',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'XRElite', required: false, includeIfNull: false)
   final String? xRElite;
 
   @override

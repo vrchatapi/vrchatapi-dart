@@ -20,18 +20,10 @@ class NotificationDetailInviteResponse {
     required this.responseMessage,
   });
 
-  @JsonKey(
-    name: r'inResponseTo',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'inResponseTo', required: true, includeIfNull: false)
   final String inResponseTo;
 
-  @JsonKey(
-    name: r'responseMessage',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'responseMessage', required: true, includeIfNull: false)
   final String responseMessage;
 
   @override
@@ -45,8 +37,8 @@ class NotificationDetailInviteResponse {
   int get hashCode => inResponseTo.hashCode + responseMessage.hashCode;
 
   factory NotificationDetailInviteResponse.fromJson(
-          Map<String, dynamic> json) =>
-      _$NotificationDetailInviteResponseFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$NotificationDetailInviteResponseFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$NotificationDetailInviteResponseToJson(this);

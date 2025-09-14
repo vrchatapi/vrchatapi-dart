@@ -26,55 +26,27 @@ class Submission {
   });
 
   /// Either world ID or avatar ID
-  @JsonKey(
-    name: r'contentId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'contentId', required: true, includeIfNull: false)
   final String contentId;
 
-  @JsonKey(
-    name: r'created_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
 
-  @JsonKey(
-    name: r'description',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
 
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(
-    name: r'jamId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'jamId', required: true, includeIfNull: false)
   final String jamId;
 
   // minimum: 0
-  @JsonKey(
-    name: r'ratingScore',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ratingScore', required: false, includeIfNull: false)
   final int? ratingScore;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(
-    name: r'submitterId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'submitterId', required: true, includeIfNull: false)
   final String submitterId;
 
   @override

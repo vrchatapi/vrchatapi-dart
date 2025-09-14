@@ -38,33 +38,17 @@ class GroupMyMember {
     this.permissions,
   });
 
-  @JsonKey(
-    name: r'id',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: false, includeIfNull: false)
   final String? id;
 
-  @JsonKey(
-    name: r'groupId',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'groupId', required: false, includeIfNull: false)
   final String? groupId;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(
-    name: r'userId',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'userId', required: false, includeIfNull: false)
   final String? userId;
 
-  @JsonKey(
-    name: r'roleIds',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'roleIds', required: false, includeIfNull: false)
   final List<String>? roleIds;
 
   @JsonKey(
@@ -74,32 +58,16 @@ class GroupMyMember {
   )
   final String? acceptedByDisplayName;
 
-  @JsonKey(
-    name: r'acceptedById',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'acceptedById', required: false, includeIfNull: false)
   final String? acceptedById;
 
-  @JsonKey(
-    name: r'createdAt',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
   final DateTime? createdAt;
 
-  @JsonKey(
-    name: r'managerNotes',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'managerNotes', required: false, includeIfNull: false)
   final String? managerNotes;
 
-  @JsonKey(
-    name: r'membershipStatus',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'membershipStatus', required: false, includeIfNull: false)
   final String? membershipStatus;
 
   @JsonKey(
@@ -109,39 +77,19 @@ class GroupMyMember {
   )
   final bool? isSubscribedToAnnouncements;
 
-  @JsonKey(
-    name: r'visibility',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'visibility', required: false, includeIfNull: false)
   final String? visibility;
 
-  @JsonKey(
-    name: r'isRepresenting',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'isRepresenting', required: false, includeIfNull: false)
   final bool? isRepresenting;
 
-  @JsonKey(
-    name: r'joinedAt',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'joinedAt', required: false, includeIfNull: false)
   final DateTime? joinedAt;
 
-  @JsonKey(
-    name: r'bannedAt',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'bannedAt', required: false, includeIfNull: false)
   final String? bannedAt;
 
-  @JsonKey(
-    name: r'has2FA',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'has2FA', required: false, includeIfNull: false)
   final bool? has2FA;
 
   @JsonKey(
@@ -151,25 +99,13 @@ class GroupMyMember {
   )
   final bool? hasJoinedFromPurchase;
 
-  @JsonKey(
-    name: r'lastPostReadAt',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'lastPostReadAt', required: false, includeIfNull: false)
   final DateTime? lastPostReadAt;
 
-  @JsonKey(
-    name: r'mRoleIds',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'mRoleIds', required: false, includeIfNull: false)
   final List<String>? mRoleIds;
 
-  @JsonKey(
-    name: r'permissions',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'permissions', required: false, includeIfNull: false)
   final List<GroupPermissions>? permissions;
 
   @override

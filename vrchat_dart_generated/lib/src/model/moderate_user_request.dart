@@ -16,24 +16,13 @@ part 'moderate_user_request.g.dart';
 )
 class ModerateUserRequest {
   /// Returns a new [ModerateUserRequest] instance.
-  ModerateUserRequest({
-    required this.moderated,
-    required this.type,
-  });
+  ModerateUserRequest({required this.moderated, required this.type});
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(
-    name: r'moderated',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'moderated', required: true, includeIfNull: false)
   final String moderated;
 
-  @JsonKey(
-    name: r'type',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'type', required: true, includeIfNull: false)
   final PlayerModerationType type;
 
   @override

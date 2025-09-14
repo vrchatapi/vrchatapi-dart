@@ -24,46 +24,22 @@ class AvatarPublishedListingsInner {
     this.priceTokens,
   });
 
-  @JsonKey(
-    name: r'description',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;
 
-  @JsonKey(
-    name: r'displayName',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'displayName', required: false, includeIfNull: false)
   final String? displayName;
 
-  @JsonKey(
-    name: r'imageId',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'imageId', required: false, includeIfNull: false)
   final String? imageId;
 
-  @JsonKey(
-    name: r'listingId',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'listingId', required: false, includeIfNull: false)
   final String? listingId;
 
-  @JsonKey(
-    name: r'listingType',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'listingType', required: false, includeIfNull: false)
   final String? listingType;
 
-  @JsonKey(
-    name: r'priceTokens',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'priceTokens', required: false, includeIfNull: false)
   final int? priceTokens;
 
   @override

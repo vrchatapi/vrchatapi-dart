@@ -30,81 +30,37 @@ class APIConfigMinSupportedClientBuildNumber {
     required this.xRElite,
   });
 
-  @JsonKey(
-    name: r'AppStore',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'AppStore', required: true, includeIfNull: false)
   final PlatformBuildInfo appStore;
 
-  @JsonKey(
-    name: r'Default',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'Default', required: true, includeIfNull: false)
   final PlatformBuildInfo default_;
 
-  @JsonKey(
-    name: r'Firebase',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'Firebase', required: true, includeIfNull: false)
   final PlatformBuildInfo firebase;
 
-  @JsonKey(
-    name: r'FirebaseiOS',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'FirebaseiOS', required: true, includeIfNull: false)
   final PlatformBuildInfo firebaseiOS;
 
-  @JsonKey(
-    name: r'GooglePlay',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'GooglePlay', required: true, includeIfNull: false)
   final PlatformBuildInfo googlePlay;
 
-  @JsonKey(
-    name: r'PC',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'PC', required: true, includeIfNull: false)
   final PlatformBuildInfo pc;
 
-  @JsonKey(
-    name: r'PicoStore',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'PicoStore', required: true, includeIfNull: false)
   final PlatformBuildInfo picoStore;
 
-  @JsonKey(
-    name: r'QuestAppLab',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'QuestAppLab', required: true, includeIfNull: false)
   final PlatformBuildInfo questAppLab;
 
-  @JsonKey(
-    name: r'QuestStore',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'QuestStore', required: true, includeIfNull: false)
   final PlatformBuildInfo questStore;
 
-  @JsonKey(
-    name: r'TestFlight',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'TestFlight', required: true, includeIfNull: false)
   final PlatformBuildInfo testFlight;
 
-  @JsonKey(
-    name: r'XRElite',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'XRElite', required: true, includeIfNull: false)
   final PlatformBuildInfo xRElite;
 
   @override
@@ -138,8 +94,8 @@ class APIConfigMinSupportedClientBuildNumber {
       xRElite.hashCode;
 
   factory APIConfigMinSupportedClientBuildNumber.fromJson(
-          Map<String, dynamic> json) =>
-      _$APIConfigMinSupportedClientBuildNumberFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$APIConfigMinSupportedClientBuildNumberFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$APIConfigMinSupportedClientBuildNumberToJson(this);

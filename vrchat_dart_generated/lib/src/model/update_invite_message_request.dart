@@ -15,15 +15,9 @@ part 'update_invite_message_request.g.dart';
 )
 class UpdateInviteMessageRequest {
   /// Returns a new [UpdateInviteMessageRequest] instance.
-  UpdateInviteMessageRequest({
-    required this.message,
-  });
+  UpdateInviteMessageRequest({required this.message});
 
-  @JsonKey(
-    name: r'message',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'message', required: true, includeIfNull: false)
   final String message;
 
   @override

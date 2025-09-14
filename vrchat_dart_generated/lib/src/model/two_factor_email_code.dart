@@ -15,15 +15,9 @@ part 'two_factor_email_code.g.dart';
 )
 class TwoFactorEmailCode {
   /// Returns a new [TwoFactorEmailCode] instance.
-  TwoFactorEmailCode({
-    required this.code,
-  });
+  TwoFactorEmailCode({required this.code});
 
-  @JsonKey(
-    name: r'code',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'code', required: true, includeIfNull: false)
   final String code;
 
   @override

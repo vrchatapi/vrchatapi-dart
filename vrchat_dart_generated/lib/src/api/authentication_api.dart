@@ -51,9 +51,7 @@ class AuthenticationApi {
     final _path = r'/auth/twofactorauth/totp/pending';
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -83,8 +81,10 @@ class AuthenticationApi {
       _responseData = rawData == null
           ? null
           : deserialize<Disable2FAResult, Disable2FAResult>(
-              rawData, 'Disable2FAResult',
-              growable: true);
+              rawData,
+              'Disable2FAResult',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -139,13 +139,8 @@ class AuthenticationApi {
     final _path = r'/auth/exists';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -171,8 +166,11 @@ class AuthenticationApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<UserExists, UserExists>(rawData, 'UserExists',
-              growable: true);
+          : deserialize<UserExists, UserExists>(
+              rawData,
+              'UserExists',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -223,13 +221,8 @@ class AuthenticationApi {
     final _path = r'/auth/confirmEmail';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -273,13 +266,15 @@ class AuthenticationApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/users/{userId}/delete'
-        .replaceAll('{' r'userId' '}', userId.toString());
+    final _path = r'/users/{userId}/delete'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -308,8 +303,11 @@ class AuthenticationApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<CurrentUser, CurrentUser>(rawData, 'CurrentUser',
-              growable: true);
+          : deserialize<CurrentUser, CurrentUser>(
+              rawData,
+              'CurrentUser',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -356,9 +354,7 @@ class AuthenticationApi {
     final _path = r'/auth/twofactorauth';
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -388,8 +384,10 @@ class AuthenticationApi {
       _responseData = rawData == null
           ? null
           : deserialize<Disable2FAResult, Disable2FAResult>(
-              rawData, 'Disable2FAResult',
-              growable: true);
+              rawData,
+              'Disable2FAResult',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -436,9 +434,7 @@ class AuthenticationApi {
     final _path = r'/auth/twofactorauth/totp/pending';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -468,8 +464,10 @@ class AuthenticationApi {
       _responseData = rawData == null
           ? null
           : deserialize<Pending2FAResult, Pending2FAResult>(
-              rawData, 'Pending2FAResult',
-              growable: true);
+              rawData,
+              'Pending2FAResult',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -516,16 +514,10 @@ class AuthenticationApi {
     final _path = r'/auth/user';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'basic',
-            'name': 'authHeader',
-          },
+          {'type': 'http', 'scheme': 'basic', 'name': 'authHeader'},
           {
             'type': 'apiKey',
             'name': 'twoFactorAuthCookie',
@@ -558,8 +550,11 @@ class AuthenticationApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<CurrentUser, CurrentUser>(rawData, 'CurrentUser',
-              growable: true);
+          : deserialize<CurrentUser, CurrentUser>(
+              rawData,
+              'CurrentUser',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -606,9 +601,7 @@ class AuthenticationApi {
     final _path = r'/auth/user/twofactorauth/otp';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -638,8 +631,10 @@ class AuthenticationApi {
       _responseData = rawData == null
           ? null
           : deserialize<TwoFactorRecoveryCodes, TwoFactorRecoveryCodes>(
-              rawData, 'TwoFactorRecoveryCodes',
-              growable: true);
+              rawData,
+              'TwoFactorRecoveryCodes',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -686,9 +681,7 @@ class AuthenticationApi {
     final _path = r'/logout';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -767,13 +760,8 @@ class AuthenticationApi {
     final _path = r'/auth/register';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       contentType: 'application/json',
       validateStatus: validateStatus,
     );
@@ -784,10 +772,7 @@ class AuthenticationApi {
       _bodyData = jsonEncode(registerUserAccountRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -809,8 +794,11 @@ class AuthenticationApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<CurrentUser, CurrentUser>(rawData, 'CurrentUser',
-              growable: true);
+          : deserialize<CurrentUser, CurrentUser>(
+              rawData,
+              'CurrentUser',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -857,9 +845,7 @@ class AuthenticationApi {
     final _path = r'/auth/user/resendEmail';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -937,9 +923,7 @@ class AuthenticationApi {
     final _path = r'/auth/twofactorauth/totp/verify';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -961,10 +945,7 @@ class AuthenticationApi {
       _bodyData = jsonEncode(twoFactorAuthCode);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -987,8 +968,10 @@ class AuthenticationApi {
       _responseData = rawData == null
           ? null
           : deserialize<Verify2FAResult, Verify2FAResult>(
-              rawData, 'Verify2FAResult',
-              growable: true);
+              rawData,
+              'Verify2FAResult',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1037,9 +1020,7 @@ class AuthenticationApi {
     final _path = r'/auth/twofactorauth/emailotp/verify';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1061,10 +1042,7 @@ class AuthenticationApi {
       _bodyData = jsonEncode(twoFactorEmailCode);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1087,8 +1065,10 @@ class AuthenticationApi {
       _responseData = rawData == null
           ? null
           : deserialize<Verify2FAEmailCodeResult, Verify2FAEmailCodeResult>(
-              rawData, 'Verify2FAEmailCodeResult',
-              growable: true);
+              rawData,
+              'Verify2FAEmailCodeResult',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1135,9 +1115,7 @@ class AuthenticationApi {
     final _path = r'/auth';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1167,8 +1145,10 @@ class AuthenticationApi {
       _responseData = rawData == null
           ? null
           : deserialize<VerifyAuthTokenResult, VerifyAuthTokenResult>(
-              rawData, 'VerifyAuthTokenResult',
-              growable: true);
+              rawData,
+              'VerifyAuthTokenResult',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1219,13 +1199,8 @@ class AuthenticationApi {
     final _path = r'/auth/verifyLoginPlace';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -1272,9 +1247,7 @@ class AuthenticationApi {
     final _path = r'/auth/twofactorauth/totp/pending/verify';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1296,10 +1269,7 @@ class AuthenticationApi {
       _bodyData = jsonEncode(twoFactorAuthCode);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1322,8 +1292,10 @@ class AuthenticationApi {
       _responseData = rawData == null
           ? null
           : deserialize<Verify2FAResult, Verify2FAResult>(
-              rawData, 'Verify2FAResult',
-              growable: true);
+              rawData,
+              'Verify2FAResult',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1372,9 +1344,7 @@ class AuthenticationApi {
     final _path = r'/auth/twofactorauth/otp/verify';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1396,10 +1366,7 @@ class AuthenticationApi {
       _bodyData = jsonEncode(twoFactorAuthCode);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1422,8 +1389,10 @@ class AuthenticationApi {
       _responseData = rawData == null
           ? null
           : deserialize<Verify2FAResult, Verify2FAResult>(
-              rawData, 'Verify2FAResult',
-              growable: true);
+              rawData,
+              'Verify2FAResult',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

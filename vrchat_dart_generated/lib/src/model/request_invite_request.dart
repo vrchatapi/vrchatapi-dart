@@ -15,17 +15,11 @@ part 'request_invite_request.g.dart';
 )
 class RequestInviteRequest {
   /// Returns a new [RequestInviteRequest] instance.
-  RequestInviteRequest({
-    this.messageSlot,
-  });
+  RequestInviteRequest({this.messageSlot});
 
   // minimum: 0
   // maximum: 11
-  @JsonKey(
-    name: r'messageSlot',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'messageSlot', required: false, includeIfNull: false)
   final int? messageSlot;
 
   @override

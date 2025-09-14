@@ -15,15 +15,9 @@ part 'disable2_fa_result.g.dart';
 )
 class Disable2FAResult {
   /// Returns a new [Disable2FAResult] instance.
-  Disable2FAResult({
-    required this.removed,
-  });
+  Disable2FAResult({required this.removed});
 
-  @JsonKey(
-    name: r'removed',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'removed', required: true, includeIfNull: false)
   final bool removed;
 
   @override

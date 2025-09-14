@@ -36,123 +36,55 @@ class Product {
     this.useForSubscriberList = false,
   });
 
-  @JsonKey(
-    name: r'archived',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'archived', required: true, includeIfNull: false)
   final bool archived;
 
-  @JsonKey(
-    name: r'created',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'created', required: true, includeIfNull: false)
   final DateTime created;
 
-  @JsonKey(
-    name: r'description',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
 
-  @JsonKey(
-    name: r'displayName',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'displayName', required: true, includeIfNull: false)
   final String displayName;
 
-  @JsonKey(
-    name: r'groupAccess',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'groupAccess', required: false, includeIfNull: false)
   final bool? groupAccess;
 
-  @JsonKey(
-    name: r'groupAccessRemove',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'groupAccessRemove', required: false, includeIfNull: false)
   final bool? groupAccessRemove;
 
-  @JsonKey(
-    name: r'groupId',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'groupId', required: false, includeIfNull: false)
   final String? groupId;
 
-  @JsonKey(
-    name: r'groupRoleId',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'groupRoleId', required: false, includeIfNull: false)
   final String? groupRoleId;
 
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(
-    name: r'imageId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'imageId', required: true, includeIfNull: false)
   final String imageId;
 
-  @JsonKey(
-    name: r'parentListings',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'parentListings', required: true, includeIfNull: false)
   final List<String> parentListings;
 
-  @JsonKey(
-    name: r'productType',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'productType', required: true, includeIfNull: false)
   final ProductType productType;
 
-  @JsonKey(
-    name: r'sellerDisplayName',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'sellerDisplayName', required: true, includeIfNull: false)
   final String sellerDisplayName;
 
-  @JsonKey(
-    name: r'sellerId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'sellerId', required: true, includeIfNull: false)
   final String sellerId;
 
-  @JsonKey(
-    name: r'tags',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 
-  @JsonKey(
-    name: r'updated',
-    required: true,
-    includeIfNull: true,
-  )
+  @JsonKey(name: r'updated', required: true, includeIfNull: true)
   final DateTime? updated;
 
-  @JsonKey(
-    name: r'useForSubscriberList',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'useForSubscriberList', required: false, includeIfNull: false)
   final bool? useForSubscriberList;
 
   @override

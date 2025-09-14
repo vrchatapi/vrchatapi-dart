@@ -24,49 +24,25 @@ class FileVersionUploadStatus {
     required this.etags,
   });
 
-  @JsonKey(
-    name: r'uploadId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'uploadId', required: true, includeIfNull: false)
   final String uploadId;
 
-  @JsonKey(
-    name: r'fileName',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'fileName', required: true, includeIfNull: false)
   final String fileName;
 
   // minimum: 0
-  @JsonKey(
-    name: r'nextPartNumber',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'nextPartNumber', required: true, includeIfNull: false)
   final int nextPartNumber;
 
   // minimum: 1
-  @JsonKey(
-    name: r'maxParts',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'maxParts', required: true, includeIfNull: false)
   final int maxParts;
 
-  @JsonKey(
-    name: r'parts',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'parts', required: true, includeIfNull: false)
   final List<Object> parts;
 
   /// Unknown
-  @JsonKey(
-    name: r'etags',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'etags', required: true, includeIfNull: false)
   final List<Object> etags;
 
   @override

@@ -15,15 +15,9 @@ part 'add_group_gallery_image_request.g.dart';
 )
 class AddGroupGalleryImageRequest {
   /// Returns a new [AddGroupGalleryImageRequest] instance.
-  AddGroupGalleryImageRequest({
-    required this.fileId,
-  });
+  AddGroupGalleryImageRequest({required this.fileId});
 
-  @JsonKey(
-    name: r'fileId',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'fileId', required: true, includeIfNull: false)
   final String fileId;
 
   @override

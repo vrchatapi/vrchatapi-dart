@@ -16,24 +16,13 @@ part 'respond_group_join_request.g.dart';
 )
 class RespondGroupJoinRequest {
   /// Returns a new [RespondGroupJoinRequest] instance.
-  RespondGroupJoinRequest({
-    required this.action,
-    this.block,
-  });
+  RespondGroupJoinRequest({required this.action, this.block});
 
-  @JsonKey(
-    name: r'action',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'action', required: true, includeIfNull: false)
   final GroupJoinRequestAction action;
 
   /// Whether to block the user from requesting again
-  @JsonKey(
-    name: r'block',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'block', required: false, includeIfNull: false)
   final bool? block;
 
   @override
