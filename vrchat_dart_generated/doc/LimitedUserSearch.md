@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **status** | [**UserStatus**](UserStatus.md) |  | 
 **statusDescription** | **String** |  | 
 **tags** | **List&lt;String&gt;** | <- Always empty. | 
-**userIcon** | **String** |  | 
+**userIcon** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

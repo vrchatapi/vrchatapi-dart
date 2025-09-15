@@ -24,7 +24,6 @@ LimitedUserSearch _$LimitedUserSearchFromJson(Map<String, dynamic> json) =>
           'status',
           'statusDescription',
           'tags',
-          'userIcon',
         ],
       );
       final val = LimitedUserSearch(
@@ -70,7 +69,7 @@ LimitedUserSearch _$LimitedUserSearchFromJson(Map<String, dynamic> json) =>
           'tags',
           (v) => (v as List<dynamic>).map((e) => e as String).toList(),
         ),
-        userIcon: $checkedConvert('userIcon', (v) => v as String),
+        userIcon: $checkedConvert('userIcon', (v) => v as String?),
       );
       return val;
     }, fieldKeyMap: const {'lastPlatform': 'last_platform'});
@@ -92,7 +91,7 @@ Map<String, dynamic> _$LimitedUserSearchToJson(LimitedUserSearch instance) =>
       'status': _$UserStatusEnumMap[instance.status]!,
       'statusDescription': instance.statusDescription,
       'tags': instance.tags,
-      'userIcon': instance.userIcon,
+      'userIcon': ?instance.userIcon,
     };
 
 const _$DeveloperTypeEnumMap = {

@@ -32,7 +32,6 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
             'status',
             'statusDescription',
             'tags',
-            'userIcon',
           ],
         );
         final val = LimitedUserFriend(
@@ -97,7 +96,7 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
             'tags',
             (v) => (v as List<dynamic>).map((e) => e as String).toList(),
           ),
-          userIcon: $checkedConvert('userIcon', (v) => v as String),
+          userIcon: $checkedConvert('userIcon', (v) => v as String?),
         );
         return val;
       },
@@ -134,7 +133,7 @@ Map<String, dynamic> _$LimitedUserFriendToJson(
   'status': _$UserStatusEnumMap[instance.status]!,
   'statusDescription': instance.statusDescription,
   'tags': instance.tags,
-  'userIcon': instance.userIcon,
+  'userIcon': ?instance.userIcon,
 };
 
 const _$DeveloperTypeEnumMap = {

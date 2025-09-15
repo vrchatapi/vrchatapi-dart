@@ -73,7 +73,7 @@ class LimitedUserInstance {
 
     required this.tags,
 
-    required this.userIcon,
+    this.userIcon,
   });
 
   @JsonKey(name: r'ageVerificationStatus', required: true, includeIfNull: false)
@@ -168,8 +168,8 @@ class LimitedUserInstance {
   @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 
-  @JsonKey(name: r'userIcon', required: true, includeIfNull: false)
-  final String userIcon;
+  @JsonKey(name: r'userIcon', required: false, includeIfNull: false)
+  final String? userIcon;
 
   @override
   bool operator ==(Object other) =>
