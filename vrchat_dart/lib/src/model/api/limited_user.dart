@@ -83,7 +83,7 @@ class LimitedUser {
 
   /// The user's profile picture override URL.
   @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
-  final String profilePicOverride;
+  final String? profilePicOverride;
 
   /// The user's current status.
   @JsonKey(name: r'status', required: true, includeIfNull: false)
@@ -99,7 +99,7 @@ class LimitedUser {
 
   /// The user's icon URL.
   @JsonKey(name: r'userIcon', required: true, includeIfNull: false)
-  final String userIcon;
+  final String? userIcon;
 
   // Common optional fields
 

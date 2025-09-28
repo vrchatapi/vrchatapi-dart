@@ -43,7 +43,7 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
       lastPlatform: $checkedConvert('last_platform', (v) => v as String),
       profilePicOverride: $checkedConvert(
         'profilePicOverride',
-        (v) => v as String,
+        (v) => v as String?,
       ),
       status: $checkedConvert(
         'status',
@@ -57,7 +57,7 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'tags',
         (v) => (v as List<dynamic>).map((e) => e as String).toList(),
       ),
-      userIcon: $checkedConvert('userIcon', (v) => v as String),
+      userIcon: $checkedConvert('userIcon', (v) => v as String?),
       bio: $checkedConvert('bio', (v) => v as String?),
       bioLinks: $checkedConvert(
         'bioLinks',
@@ -130,34 +130,30 @@ Map<String, dynamic> _$LimitedUserToJson(
   'id': instance.id,
   'isFriend': instance.isFriend,
   'last_platform': instance.lastPlatform,
-  'profilePicOverride': instance.profilePicOverride,
+  'profilePicOverride': ?instance.profilePicOverride,
   'status': _$UserStatusEnumMap[instance.status]!,
   'statusDescription': instance.statusDescription,
   'tags': instance.tags,
-  'userIcon': instance.userIcon,
-  if (instance.bio case final value?) 'bio': value,
-  if (instance.bioLinks case final value?) 'bioLinks': value,
-  if (instance.currentAvatarThumbnailImageUrl case final value?)
-    'currentAvatarThumbnailImageUrl': value,
-  if (instance.currentAvatarTags case final value?) 'currentAvatarTags': value,
-  if (_$AgeVerificationStatusEnumMap[instance.ageVerificationStatus]
-      case final value?)
-    'ageVerificationStatus': value,
-  if (instance.ageVerified case final value?) 'ageVerified': value,
-  if (instance.allowAvatarCopying case final value?)
-    'allowAvatarCopying': value,
+  'userIcon': ?instance.userIcon,
+  'bio': ?instance.bio,
+  'bioLinks': ?instance.bioLinks,
+  'currentAvatarThumbnailImageUrl': ?instance.currentAvatarThumbnailImageUrl,
+  'currentAvatarTags': ?instance.currentAvatarTags,
+  'ageVerificationStatus':
+      ?_$AgeVerificationStatusEnumMap[instance.ageVerificationStatus],
+  'ageVerified': ?instance.ageVerified,
+  'allowAvatarCopying': ?instance.allowAvatarCopying,
   'date_joined': instance.dateJoined?.toIso8601String(),
-  if (instance.friendKey case final value?) 'friendKey': value,
-  if (instance.imageUrl case final value?) 'imageUrl': value,
-  if (instance.location case final value?) 'location': value,
+  'friendKey': ?instance.friendKey,
+  'imageUrl': ?instance.imageUrl,
+  'location': ?instance.location,
   'last_login': instance.lastLogin?.toIso8601String(),
   'last_activity': instance.lastActivity?.toIso8601String(),
   'last_mobile': instance.lastMobile?.toIso8601String(),
-  if (instance.platform case final value?) 'platform': value,
-  if (instance.profilePicOverrideThumbnail case final value?)
-    'profilePicOverrideThumbnail': value,
-  if (instance.pronouns case final value?) 'pronouns': value,
-  if (_$UserStateEnumMap[instance.state] case final value?) 'state': value,
+  'platform': ?instance.platform,
+  'profilePicOverrideThumbnail': ?instance.profilePicOverrideThumbnail,
+  'pronouns': ?instance.pronouns,
+  'state': ?_$UserStateEnumMap[instance.state],
 };
 
 const _$DeveloperTypeEnumMap = {
