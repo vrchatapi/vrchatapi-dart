@@ -41,10 +41,6 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
       id: $checkedConvert('id', (v) => v as String),
       isFriend: $checkedConvert('isFriend', (v) => v as bool),
       lastPlatform: $checkedConvert('last_platform', (v) => v as String),
-      profilePicOverride: $checkedConvert(
-        'profilePicOverride',
-        (v) => v as String?,
-      ),
       status: $checkedConvert(
         'status',
         (v) => $enumDecode(_$UserStatusEnumMap, v),
@@ -57,7 +53,6 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'tags',
         (v) => (v as List<dynamic>).map((e) => e as String).toList(),
       ),
-      userIcon: $checkedConvert('userIcon', (v) => v as String?),
       bio: $checkedConvert('bio', (v) => v as String?),
       bioLinks: $checkedConvert(
         'bioLinks',
@@ -71,6 +66,11 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'currentAvatarTags',
         (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
       ),
+      profilePicOverride: $checkedConvert(
+        'profilePicOverride',
+        (v) => v as String?,
+      ),
+      userIcon: $checkedConvert('userIcon', (v) => v as String?),
       ageVerificationStatus: $checkedConvert(
         'ageVerificationStatus',
         (v) => $enumDecodeNullable(_$AgeVerificationStatusEnumMap, v),

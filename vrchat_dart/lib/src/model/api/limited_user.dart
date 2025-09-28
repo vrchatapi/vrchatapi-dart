@@ -26,17 +26,17 @@ class LimitedUser {
     required this.id,
     required this.isFriend,
     required this.lastPlatform,
-    required this.profilePicOverride,
     required this.status,
     required this.statusDescription,
     required this.tags,
-    required this.userIcon,
 
     // Common optional fields (present in all but optional)
     this.bio,
     this.bioLinks,
     this.currentAvatarThumbnailImageUrl,
     this.currentAvatarTags,
+    this.profilePicOverride,
+    this.userIcon,
 
     // Fields from specific variants
     this.ageVerificationStatus,
