@@ -82,7 +82,7 @@ class LimitedUser {
   final String lastPlatform;
 
   /// The user's profile picture override URL.
-  @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
+  @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
   final String? profilePicOverride;
 
   /// The user's current status.
@@ -98,7 +98,7 @@ class LimitedUser {
   final List<String> tags;
 
   /// The user's icon URL.
-  @JsonKey(name: r'userIcon', required: true, includeIfNull: false)
+  @JsonKey(name: r'userIcon', required: false, includeIfNull: false)
   final String? userIcon;
 
   // Common optional fields

@@ -21,11 +21,9 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'id',
         'isFriend',
         'last_platform',
-        'profilePicOverride',
         'status',
         'statusDescription',
         'tags',
-        'userIcon',
       ],
     );
     final val = LimitedUser(
