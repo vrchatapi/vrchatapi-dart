@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**getGroupCalendarEvent**](CalendarApi.md#getgroupcalendarevent) | **GET** /calendar/{groupId}/{calendarId} | Get a calendar event
 [**getGroupCalendarEventICS**](CalendarApi.md#getgroupcalendareventics) | **GET** /calendar/{groupId}/{calendarId}.ics | Download calendar event as ICS
 [**getGroupCalendarEvents**](CalendarApi.md#getgroupcalendarevents) | **GET** /calendar/{groupId} | List a group&#39;s calendar events
+[**searchCalendarEvents**](CalendarApi.md#searchcalendarevents) | **GET** /calendar/search | Search for calendar events
 [**updateGroupCalendarEvent**](CalendarApi.md#updategroupcalendarevent) | **PUT** /calendar/{groupId}/{calendarId}/event | Update a calendar event
 
 
@@ -452,6 +453,59 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupId** | **String**| Must be a valid group ID. | 
  **date** | **DateTime**| The month to search in. | [optional] 
+ **n** | **int**| The number of objects to return. | [optional] [default to 60]
+ **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
+
+### Return type
+
+[**PaginatedCalendarEventList**](PaginatedCalendarEventList.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **searchCalendarEvents**
+> PaginatedCalendarEventList searchCalendarEvents(searchTerm, utcOffset, n, offset)
+
+Search for calendar events
+
+Get a list of calendar events by search terms
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getCalendarApi();
+final String searchTerm = game night; // String | Search term for calendar events.
+final int utcOffset = 56; // int | The offset from UTC in hours of the client or authenticated user.
+final int n = 56; // int | The number of objects to return.
+final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
+
+try {
+    final response = api.searchCalendarEvents(searchTerm, utcOffset, n, offset);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling CalendarApi->searchCalendarEvents: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **searchTerm** | **String**| Search term for calendar events. | 
+ **utcOffset** | **int**| The offset from UTC in hours of the client or authenticated user. | [optional] 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
 

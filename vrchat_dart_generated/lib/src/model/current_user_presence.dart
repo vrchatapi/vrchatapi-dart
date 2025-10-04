@@ -93,7 +93,7 @@ class CurrentUserPresence {
   @JsonKey(name: r'travelingToInstance', required: false, includeIfNull: false)
   final String? travelingToInstance;
 
-  /// WorldID be \"offline\" on User profiles if you are not friends with that user.
+  /// Represents a unique location, consisting of a world identifier and an instance identifier, or \"offline\" if the user is not on your friends list.
   @JsonKey(name: r'travelingToWorld', required: false, includeIfNull: false)
   final String? travelingToWorld;
 

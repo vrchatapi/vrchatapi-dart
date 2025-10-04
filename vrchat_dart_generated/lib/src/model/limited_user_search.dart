@@ -39,7 +39,7 @@ class LimitedUserSearch {
 
     required this.lastPlatform,
 
-    required this.profilePicOverride,
+    this.profilePicOverride,
 
     this.pronouns,
 
@@ -49,7 +49,7 @@ class LimitedUserSearch {
 
     required this.tags,
 
-    required this.userIcon,
+    this.userIcon,
   });
 
   @JsonKey(name: r'bio', required: false, includeIfNull: false)
@@ -91,8 +91,8 @@ class LimitedUserSearch {
   @JsonKey(name: r'last_platform', required: true, includeIfNull: false)
   final String lastPlatform;
 
-  @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
-  final String profilePicOverride;
+  @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
+  final String? profilePicOverride;
 
   @JsonKey(name: r'pronouns', required: false, includeIfNull: false)
   final String? pronouns;
@@ -107,8 +107,8 @@ class LimitedUserSearch {
   @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 
-  @JsonKey(name: r'userIcon', required: true, includeIfNull: false)
-  final String userIcon;
+  @JsonKey(name: r'userIcon', required: false, includeIfNull: false)
+  final String? userIcon;
 
   @override
   bool operator ==(Object other) =>

@@ -18,9 +18,9 @@ Name | Type | Description | Notes
 **full** | **bool** |  | [default to false]
 **gameServerVersion** | **int** |  | [optional] 
 **id** | **String** | InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance. | 
-**instanceId** | **String** |  | 
+**instanceId** | **String** | InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance. | 
 **instancePersistenceEnabled** | **String** |  | 
-**location** | **String** | InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance. | 
+**location** | **String** | Represents a unique location, consisting of a world identifier and an instance identifier, or \"offline\" if the user is not on your friends list. | 
 **nUsers** | **int** |  | 
 **name** | **String** |  | 
 **ownerId** | **String** | A groupId if the instance type is \"group\", null if instance type is public, or a userId otherwise | [optional] 

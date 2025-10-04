@@ -55,7 +55,9 @@ enum GroupPermissions {
   @JsonValue(r'group-roles-manage')
   group_roles_manage(r'group-roles-manage'),
   @JsonValue(r'group-calendar-manage')
-  group_calendar_manage(r'group-calendar-manage');
+  group_calendar_manage(r'group-calendar-manage'),
+  @JsonValue(r'group-instance-calendar-link')
+  group_instance_calendar_link(r'group-instance-calendar-link');
 
   const GroupPermissions(this.value);
 

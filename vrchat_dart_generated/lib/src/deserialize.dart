@@ -56,6 +56,7 @@ import 'package:vrchat_dart_generated/src/model/current_user_platform_history_in
 import 'package:vrchat_dart_generated/src/model/current_user_presence.dart';
 import 'package:vrchat_dart_generated/src/model/disable2_fa_result.dart';
 import 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';
+import 'package:vrchat_dart_generated/src/model/economy_account.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
 import 'package:vrchat_dart_generated/src/model/favorite.dart';
 import 'package:vrchat_dart_generated/src/model/favorite_group.dart';
@@ -127,6 +128,7 @@ import 'package:vrchat_dart_generated/src/model/notification_detail_invite_respo
 import 'package:vrchat_dart_generated/src/model/notification_detail_request_invite.dart';
 import 'package:vrchat_dart_generated/src/model/notification_detail_request_invite_response.dart';
 import 'package:vrchat_dart_generated/src/model/notification_detail_vote_to_kick.dart';
+import 'package:vrchat_dart_generated/src/model/ok_status.dart';
 import 'package:vrchat_dart_generated/src/model/paginated_calendar_event_list.dart';
 import 'package:vrchat_dart_generated/src/model/paginated_group_audit_log_entry_list.dart';
 import 'package:vrchat_dart_generated/src/model/past_display_name.dart';
@@ -152,6 +154,9 @@ import 'package:vrchat_dart_generated/src/model/response.dart';
 import 'package:vrchat_dart_generated/src/model/sent_notification.dart';
 import 'package:vrchat_dart_generated/src/model/service_queue_stats.dart';
 import 'package:vrchat_dart_generated/src/model/service_status.dart';
+import 'package:vrchat_dart_generated/src/model/share_inventory_item_direct_request.dart';
+import 'package:vrchat_dart_generated/src/model/store.dart';
+import 'package:vrchat_dart_generated/src/model/store_shelf.dart';
 import 'package:vrchat_dart_generated/src/model/submission.dart';
 import 'package:vrchat_dart_generated/src/model/subscription.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
@@ -175,6 +180,7 @@ import 'package:vrchat_dart_generated/src/model/update_group_member_request.dart
 import 'package:vrchat_dart_generated/src/model/update_group_representation_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_group_role_request.dart';
+import 'package:vrchat_dart_generated/src/model/update_inventory_item_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_invite_message_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_badge_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_note_request.dart';
@@ -185,6 +191,7 @@ import 'package:vrchat_dart_generated/src/model/user_exists.dart';
 import 'package:vrchat_dart_generated/src/model/user_note.dart';
 import 'package:vrchat_dart_generated/src/model/user_note_target_user.dart';
 import 'package:vrchat_dart_generated/src/model/user_subscription.dart';
+import 'package:vrchat_dart_generated/src/model/user_subscription_eligible.dart';
 import 'package:vrchat_dart_generated/src/model/verify2_fa_email_code_result.dart';
 import 'package:vrchat_dart_generated/src/model/verify2_fa_result.dart';
 import 'package:vrchat_dart_generated/src/model/verify_auth_token_result.dart';
@@ -402,6 +409,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'DynamicContentRow':
       return DynamicContentRow.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'EconomyAccount':
+      return EconomyAccount.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'Error':
       return Error.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Favorite':
@@ -539,6 +549,7 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'InventoryDrop':
       return InventoryDrop.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'InventoryFlag':
     case 'InventoryItem':
       return InventoryItem.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -627,6 +638,8 @@ ReturnType deserialize<ReturnType, BaseType>(
           )
           as ReturnType;
     case 'NotificationType':
+    case 'OkStatus':
+      return OkStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'OrderOption':
     case 'PaginatedCalendarEventList':
       return PaginatedCalendarEventList.fromJson(value as Map<String, dynamic>)
@@ -704,7 +717,18 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'ServiceStatus':
       return ServiceStatus.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'ShareInventoryItemDirectRequest':
+      return ShareInventoryItemDirectRequest.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'SortOption':
+    case 'Store':
+      return Store.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'StoreShelf':
+      return StoreShelf.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'StoreType':
+    case 'StoreView':
     case 'Submission':
       return Submission.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Subscription':
@@ -772,6 +796,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'UpdateGroupRoleRequest':
       return UpdateGroupRoleRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'UpdateInventoryItemRequest':
+      return UpdateInventoryItemRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'UpdateInviteMessageRequest':
       return UpdateInviteMessageRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -800,6 +827,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'UserStatus':
     case 'UserSubscription':
       return UserSubscription.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'UserSubscriptionEligible':
+      return UserSubscriptionEligible.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'Verify2FAEmailCodeResult':
       return Verify2FAEmailCodeResult.fromJson(value as Map<String, dynamic>)

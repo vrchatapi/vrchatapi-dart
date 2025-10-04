@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **lastLogin** | **String** | Either a date-time or empty string. | 
 **lastMobile** | **String** |  | [optional] 
 **lastPlatform** | **String** | This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`. | 
-**location** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | [optional] 
+**location** | **String** | Represents a unique location, consisting of a world identifier and an instance identifier, or \"offline\" if the user is not on your friends list. | [optional] 
 **note** | **String** |  | [optional] 
 **platform** | **String** |  | [optional] 
 **profilePicOverride** | **String** |  | 

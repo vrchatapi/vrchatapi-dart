@@ -27,14 +27,14 @@ Name | Type | Description | Notes
 **lastActivity** | [**DateTime**](DateTime.md) |  | 
 **lastMobile** | [**DateTime**](DateTime.md) |  | 
 **platform** | **String** |  | [optional] 
-**profilePicOverride** | **String** |  | 
-**profilePicOverrideThumbnail** | **String** |  | 
+**profilePicOverride** | **String** |  | [optional] 
+**profilePicOverrideThumbnail** | **String** |  | [optional] 
 **pronouns** | **String** |  | 
 **state** | [**UserState**](UserState.md) |  | 
 **status** | [**UserStatus**](UserStatus.md) |  | 
 **statusDescription** | **String** |  | 
 **tags** | **List&lt;String&gt;** |  | 
-**userIcon** | **String** |  | 
+**userIcon** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

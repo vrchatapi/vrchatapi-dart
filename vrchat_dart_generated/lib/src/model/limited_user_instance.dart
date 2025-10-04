@@ -59,9 +59,9 @@ class LimitedUserInstance {
 
     this.platform,
 
-    required this.profilePicOverride,
+    this.profilePicOverride,
 
-    required this.profilePicOverrideThumbnail,
+    this.profilePicOverrideThumbnail,
 
     required this.pronouns,
 
@@ -73,7 +73,7 @@ class LimitedUserInstance {
 
     required this.tags,
 
-    required this.userIcon,
+    this.userIcon,
   });
 
   @JsonKey(name: r'ageVerificationStatus', required: true, includeIfNull: false)
@@ -143,15 +143,15 @@ class LimitedUserInstance {
   @JsonKey(name: r'platform', required: false, includeIfNull: false)
   final String? platform;
 
-  @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
-  final String profilePicOverride;
+  @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
+  final String? profilePicOverride;
 
   @JsonKey(
     name: r'profilePicOverrideThumbnail',
-    required: true,
+    required: false,
     includeIfNull: false,
   )
-  final String profilePicOverrideThumbnail;
+  final String? profilePicOverrideThumbnail;
 
   @JsonKey(name: r'pronouns', required: true, includeIfNull: false)
   final String pronouns;
@@ -168,8 +168,8 @@ class LimitedUserInstance {
   @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 
-  @JsonKey(name: r'userIcon', required: true, includeIfNull: false)
-  final String userIcon;
+  @JsonKey(name: r'userIcon', required: false, includeIfNull: false)
+  final String? userIcon;
 
   @override
   bool operator ==(Object other) =>

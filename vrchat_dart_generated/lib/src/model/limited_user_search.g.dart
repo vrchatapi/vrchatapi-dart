@@ -21,11 +21,9 @@ LimitedUserSearch _$LimitedUserSearchFromJson(Map<String, dynamic> json) =>
           'id',
           'isFriend',
           'last_platform',
-          'profilePicOverride',
           'status',
           'statusDescription',
           'tags',
-          'userIcon',
         ],
       );
       final val = LimitedUserSearch(
@@ -56,7 +54,7 @@ LimitedUserSearch _$LimitedUserSearchFromJson(Map<String, dynamic> json) =>
         lastPlatform: $checkedConvert('last_platform', (v) => v as String),
         profilePicOverride: $checkedConvert(
           'profilePicOverride',
-          (v) => v as String,
+          (v) => v as String?,
         ),
         pronouns: $checkedConvert('pronouns', (v) => v as String?),
         status: $checkedConvert(
@@ -71,7 +69,7 @@ LimitedUserSearch _$LimitedUserSearchFromJson(Map<String, dynamic> json) =>
           'tags',
           (v) => (v as List<dynamic>).map((e) => e as String).toList(),
         ),
-        userIcon: $checkedConvert('userIcon', (v) => v as String),
+        userIcon: $checkedConvert('userIcon', (v) => v as String?),
       );
       return val;
     }, fieldKeyMap: const {'lastPlatform': 'last_platform'});
@@ -88,12 +86,12 @@ Map<String, dynamic> _$LimitedUserSearchToJson(LimitedUserSearch instance) =>
       'id': instance.id,
       'isFriend': instance.isFriend,
       'last_platform': instance.lastPlatform,
-      'profilePicOverride': instance.profilePicOverride,
+      'profilePicOverride': ?instance.profilePicOverride,
       'pronouns': ?instance.pronouns,
       'status': _$UserStatusEnumMap[instance.status]!,
       'statusDescription': instance.statusDescription,
       'tags': instance.tags,
-      'userIcon': instance.userIcon,
+      'userIcon': ?instance.userIcon,
     };
 
 const _$DeveloperTypeEnumMap = {

@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**createInstance**](InstancesApi.md#createinstance) | **POST** /instances | Create Instance
 [**getInstance**](InstancesApi.md#getinstance) | **GET** /instances/{worldId}:{instanceId} | Get Instance
 [**getInstanceByShortName**](InstancesApi.md#getinstancebyshortname) | **GET** /instances/s/{shortName} | Get Instance By Short Name
+[**getRecentLocations**](InstancesApi.md#getrecentlocations) | **GET** /instances/recent | List Recent Locations
 [**getShortName**](InstancesApi.md#getshortname) | **GET** /instances/{worldId}:{instanceId}/shortName | Get Instance Short Name
 
 
@@ -200,6 +201,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Instance**](Instance.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getRecentLocations**
+> List<String> getRecentLocations(n, offset)
+
+List Recent Locations
+
+Returns a list of recently visited locations.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getInstancesApi();
+final int n = 56; // int | The number of objects to return.
+final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
+
+try {
+    final response = api.getRecentLocations(n, offset);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InstancesApi->getRecentLocations: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **n** | **int**| The number of objects to return. | [optional] [default to 60]
+ **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
+
+### Return type
+
+**List&lt;String&gt;**
 
 ### Authorization
 
