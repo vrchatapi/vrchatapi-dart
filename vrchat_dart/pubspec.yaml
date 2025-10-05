@@ -7,7 +7,7 @@ environment:
   sdk: ^3.8.0
 
 dependencies:
-  vrchat_dart_generated: ^1.20.0
+  vrchat_dart_generated: ^1.20.4
   dio_cookie_manager: ^3.0.0
   cookie_jar: ^4.0.1
   dio: ^5.2.0
