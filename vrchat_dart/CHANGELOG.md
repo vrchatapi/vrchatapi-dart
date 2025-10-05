@@ -1,3 +1,7 @@
+## 3.7.2
+
+- Makes `LimitedUser` fields `profilePicOverride` and `userIcon` optional to match the spec
+
 ## 3.7.1
 
 - Fixes an issue with `User.toLimitedUser`
