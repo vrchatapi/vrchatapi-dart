@@ -144,6 +144,7 @@ class Instance {
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
+  /// InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
   @JsonKey(name: r'instanceId', required: true, includeIfNull: false)
   final String instanceId;
 
@@ -154,7 +155,7 @@ class Instance {
   )
   final String? instancePersistenceEnabled;
 
-  /// InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
+  /// Represents a unique location, consisting of a world identifier and an instance identifier, or \"offline\" if the user is not on your friends list.
   @JsonKey(name: r'location', required: true, includeIfNull: false)
   final String location;
 

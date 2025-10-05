@@ -71,4 +71,5 @@ const _$GroupPermissionsEnumMap = {
   GroupPermissions.group_roles_assign: 'group-roles-assign',
   GroupPermissions.group_roles_manage: 'group-roles-manage',
   GroupPermissions.group_calendar_manage: 'group-calendar-manage',
+  GroupPermissions.group_instance_calendar_link: 'group-instance-calendar-link',
 };

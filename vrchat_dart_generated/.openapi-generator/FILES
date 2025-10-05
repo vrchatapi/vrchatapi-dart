@@ -63,6 +63,7 @@ doc/CurrentUserPresence.md
 doc/DeveloperType.md
 doc/Disable2FAResult.md
 doc/DynamicContentRow.md
+doc/EconomyAccount.md
 doc/EconomyApi.md
 doc/Error.md
 doc/Favorite.md
@@ -130,6 +131,7 @@ doc/InstancesApi.md
 doc/Inventory.md
 doc/InventoryApi.md
 doc/InventoryDrop.md
+doc/InventoryFlag.md
 doc/InventoryItem.md
 doc/InventoryItemType.md
 doc/InventoryMetadata.md
@@ -166,6 +168,7 @@ doc/NotificationDetailRequestInviteResponse.md
 doc/NotificationDetailVoteToKick.md
 doc/NotificationType.md
 doc/NotificationsApi.md
+doc/OkStatus.md
 doc/OrderOption.md
 doc/PaginatedCalendarEventList.md
 doc/PaginatedGroupAuditLogEntryList.md
@@ -201,7 +204,12 @@ doc/Response.md
 doc/SentNotification.md
 doc/ServiceQueueStats.md
 doc/ServiceStatus.md
+doc/ShareInventoryItemDirectRequest.md
 doc/SortOption.md
+doc/Store.md
+doc/StoreShelf.md
+doc/StoreType.md
+doc/StoreView.md
 doc/Submission.md
 doc/Subscription.md
 doc/SubscriptionPeriod.md
@@ -227,6 +235,7 @@ doc/UpdateGroupMemberRequest.md
 doc/UpdateGroupRepresentationRequest.md
 doc/UpdateGroupRequest.md
 doc/UpdateGroupRoleRequest.md
+doc/UpdateInventoryItemRequest.md
 doc/UpdateInviteMessageRequest.md
 doc/UpdateUserBadgeRequest.md
 doc/UpdateUserNoteRequest.md
@@ -239,6 +248,7 @@ doc/UserNoteTargetUser.md
 doc/UserState.md
 doc/UserStatus.md
 doc/UserSubscription.md
+doc/UserSubscriptionEligible.md
 doc/UsersApi.md
 doc/Verify2FAEmailCodeResult.md
 doc/Verify2FAResult.md
@@ -333,6 +343,7 @@ lib/src/model/current_user_presence.dart
 lib/src/model/developer_type.dart
 lib/src/model/disable2_fa_result.dart
 lib/src/model/dynamic_content_row.dart
+lib/src/model/economy_account.dart
 lib/src/model/error.dart
 lib/src/model/favorite.dart
 lib/src/model/favorite_group.dart
@@ -393,6 +404,7 @@ lib/src/model/instance_short_name_response.dart
 lib/src/model/instance_type.dart
 lib/src/model/inventory.dart
 lib/src/model/inventory_drop.dart
+lib/src/model/inventory_flag.dart
 lib/src/model/inventory_item.dart
 lib/src/model/inventory_item_type.dart
 lib/src/model/inventory_metadata.dart
@@ -425,6 +437,7 @@ lib/src/model/notification_detail_request_invite.dart
 lib/src/model/notification_detail_request_invite_response.dart
 lib/src/model/notification_detail_vote_to_kick.dart
 lib/src/model/notification_type.dart
+lib/src/model/ok_status.dart
 lib/src/model/order_option.dart
 lib/src/model/paginated_calendar_event_list.dart
 lib/src/model/paginated_group_audit_log_entry_list.dart
@@ -457,7 +470,12 @@ lib/src/model/response.dart
 lib/src/model/sent_notification.dart
 lib/src/model/service_queue_stats.dart
 lib/src/model/service_status.dart
+lib/src/model/share_inventory_item_direct_request.dart
 lib/src/model/sort_option.dart
+lib/src/model/store.dart
+lib/src/model/store_shelf.dart
+lib/src/model/store_type.dart
+lib/src/model/store_view.dart
 lib/src/model/submission.dart
 lib/src/model/subscription.dart
 lib/src/model/subscription_period.dart
@@ -483,6 +501,7 @@ lib/src/model/update_group_member_request.dart
 lib/src/model/update_group_representation_request.dart
 lib/src/model/update_group_request.dart
 lib/src/model/update_group_role_request.dart
+lib/src/model/update_inventory_item_request.dart
 lib/src/model/update_invite_message_request.dart
 lib/src/model/update_user_badge_request.dart
 lib/src/model/update_user_note_request.dart
@@ -495,6 +514,7 @@ lib/src/model/user_note_target_user.dart
 lib/src/model/user_state.dart
 lib/src/model/user_status.dart
 lib/src/model/user_subscription.dart
+lib/src/model/user_subscription_eligible.dart
 lib/src/model/verify2_fa_email_code_result.dart
 lib/src/model/verify2_fa_result.dart
 lib/src/model/verify_auth_token_result.dart
@@ -565,6 +585,7 @@ test/current_user_test.dart
 test/developer_type_test.dart
 test/disable2_fa_result_test.dart
 test/dynamic_content_row_test.dart
+test/economy_account_test.dart
 test/economy_api_test.dart
 test/error_test.dart
 test/favorite_group_limits_test.dart
@@ -631,6 +652,7 @@ test/instance_type_test.dart
 test/instances_api_test.dart
 test/inventory_api_test.dart
 test/inventory_drop_test.dart
+test/inventory_flag_test.dart
 test/inventory_item_test.dart
 test/inventory_item_type_test.dart
 test/inventory_metadata_test.dart
@@ -668,6 +690,7 @@ test/notification_detail_vote_to_kick_test.dart
 test/notification_test.dart
 test/notification_type_test.dart
 test/notifications_api_test.dart
+test/ok_status_test.dart
 test/order_option_test.dart
 test/paginated_calendar_event_list_test.dart
 test/paginated_group_audit_log_entry_list_test.dart
@@ -703,7 +726,12 @@ test/response_test.dart
 test/sent_notification_test.dart
 test/service_queue_stats_test.dart
 test/service_status_test.dart
+test/share_inventory_item_direct_request_test.dart
 test/sort_option_test.dart
+test/store_shelf_test.dart
+test/store_test.dart
+test/store_type_test.dart
+test/store_view_test.dart
 test/submission_test.dart
 test/subscription_period_test.dart
 test/subscription_test.dart
@@ -729,6 +757,7 @@ test/update_group_member_request_test.dart
 test/update_group_representation_request_test.dart
 test/update_group_request_test.dart
 test/update_group_role_request_test.dart
+test/update_inventory_item_request_test.dart
 test/update_invite_message_request_test.dart
 test/update_user_badge_request_test.dart
 test/update_user_note_request_test.dart
@@ -739,6 +768,7 @@ test/user_note_target_user_test.dart
 test/user_note_test.dart
 test/user_state_test.dart
 test/user_status_test.dart
+test/user_subscription_eligible_test.dart
 test/user_subscription_test.dart
 test/user_test.dart
 test/users_api_test.dart

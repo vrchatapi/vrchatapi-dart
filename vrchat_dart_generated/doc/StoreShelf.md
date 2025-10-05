@@ -1,4 +1,4 @@
-# vrchat_dart_generated.model.NotificationDetailInvite
+# vrchat_dart_generated.model.StoreShelf
 
 ## Load the model package
 ```dart
@@ -8,9 +8,13 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**inviteMessage** | **String** |  | [optional] 
-**worldId** | **String** | Represents a unique location, consisting of a world identifier and an instance identifier, or \"offline\" if the user is not on your friends list. | 
-**worldName** | **String** |  | 
+**id** | **String** |  | 
+**listingIds** | **List&lt;String&gt;** |  | 
+**listings** | [**List&lt;ProductListing&gt;**](ProductListing.md) |  | [optional] 
+**shelfDescription** | **String** |  | 
+**shelfLayout** | **String** |  | 
+**shelfTitle** | **String** |  | 
+**updatedAt** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

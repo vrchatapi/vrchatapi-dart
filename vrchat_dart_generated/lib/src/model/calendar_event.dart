@@ -24,7 +24,7 @@ class CalendarEvent {
 
     this.closeInstanceAfterEndMinutes,
 
-    required this.createdAt,
+    this.createdAt,
 
     this.deletedAt,
 
@@ -84,8 +84,8 @@ class CalendarEvent {
   )
   final int? closeInstanceAfterEndMinutes;
 
-  @JsonKey(name: r'createdAt', required: true, includeIfNull: false)
-  final DateTime createdAt;
+  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  final DateTime? createdAt;
 
   @JsonKey(name: r'deletedAt', required: false, includeIfNull: false)
   final DateTime? deletedAt;

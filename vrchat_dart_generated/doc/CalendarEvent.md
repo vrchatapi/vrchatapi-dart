@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **accessType** | **String** |  | 
 **category** | **String** |  | [optional] 
 **closeInstanceAfterEndMinutes** | **int** |  | [optional] 
-**createdAt** | [**DateTime**](DateTime.md) |  | 
+**createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **deletedAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **description** | **String** |  | [optional] 
 **endsAt** | [**DateTime**](DateTime.md) |  | [optional] 

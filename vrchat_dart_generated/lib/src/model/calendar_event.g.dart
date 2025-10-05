@@ -10,10 +10,7 @@ part of 'calendar_event.dart';
 
 CalendarEvent _$CalendarEventFromJson(Map<String, dynamic> json) =>
     $checkedCreate('CalendarEvent', json, ($checkedConvert) {
-      $checkKeys(
-        json,
-        requiredKeys: const ['accessType', 'createdAt', 'id', 'title'],
-      );
+      $checkKeys(json, requiredKeys: const ['accessType', 'id', 'title']);
       final val = CalendarEvent(
         accessType: $checkedConvert('accessType', (v) => v as String),
         category: $checkedConvert('category', (v) => v as String?),
@@ -23,7 +20,7 @@ CalendarEvent _$CalendarEventFromJson(Map<String, dynamic> json) =>
         ),
         createdAt: $checkedConvert(
           'createdAt',
-          (v) => DateTime.parse(v as String),
+          (v) => v == null ? null : DateTime.parse(v as String),
         ),
         deletedAt: $checkedConvert(
           'deletedAt',
@@ -97,7 +94,7 @@ Map<String, dynamic> _$CalendarEventToJson(CalendarEvent instance) =>
       'accessType': instance.accessType,
       'category': ?instance.category,
       'closeInstanceAfterEndMinutes': ?instance.closeInstanceAfterEndMinutes,
-      'createdAt': instance.createdAt.toIso8601String(),
+      'createdAt': ?instance.createdAt?.toIso8601String(),
       'deletedAt': ?instance.deletedAt?.toIso8601String(),
       'description': ?instance.description,
       'endsAt': ?instance.endsAt?.toIso8601String(),
