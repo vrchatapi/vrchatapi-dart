@@ -78,8 +78,9 @@ class VrcError {
 /// Extension on [Dio] [Response] futures for validation
 extension VrcResponseValidator<T> on Future<Response<T>> {
   /// Validate a VRC response, and transform the error to a [VrcError]
-  Future<ValidatedResponse<T, T>> validateVrc() =>
-      validate(transformDioError: (e) => VrcError.fromDioError(e) ?? e);
+  Future<ValidatedResponse<T>> validateVrc() => validate().transform(
+    transformDioException: (e) => VrcError.fromDioError(e) ?? e,
+  );
 }
 
 /// Extension on [ValidatedResponse] to get the [VrcError] if it exists
