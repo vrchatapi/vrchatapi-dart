@@ -13,7 +13,8 @@ dependencies:
   dio: ^5.2.0
   web_socket_channel: ^3.0.0
   json_annotation: ^4.7.0
-  dio_response_validator: ^0.2.1
+  dio_response_validator:
+    path: ../../dio_response_validator
   meta: ^1.16.0
 
 dev_dependencies:
@@ -24,7 +25,3 @@ dev_dependencies:
   fixer: ^0.1.0
   path: ^1.9.0
   recase: ^4.1.0
-
-dependency_overrides:
-  dio_response_validator:
-    path: ../../dio_response_validator

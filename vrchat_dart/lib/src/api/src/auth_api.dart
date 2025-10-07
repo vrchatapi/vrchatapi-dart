@@ -34,6 +34,7 @@ class AuthApi {
         .validateVrc();
 
     if (success != null) {
+      _currentUser = success.data;
       return (ValidResponse(AuthResponse(), success.response), null);
     } else if (failure != null) {
       final response = failure.response;

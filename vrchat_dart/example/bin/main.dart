@@ -19,18 +19,18 @@ void main() async {
     ),
   );
 
-  final loginResponse = await api.auth.login(
+  final (loginSuccess, loginFailure) = await api.auth.login(
     username: Credentials.username,
     password: Credentials.password,
   );
 
-  if (loginResponse.failure != null) {
+  if (loginFailure != null) {
     print('authError');
-    print(loginResponse.failure);
+    print(loginFailure);
     throw Exception('Login failed');
   }
 
-  final authResponse = loginResponse.success!.data;
+  final authResponse = loginSuccess!.data;
   if (authResponse.requiresTwoFactorAuth) {
     print('requiresTwoFactorAuth');
 
@@ -48,12 +48,12 @@ void main() async {
       algorithm: Algorithm.SHA1,
       isGoogle: true,
     );
-    final twoFactorResponse = await api.auth.verify2fa(code);
-    if (twoFactorResponse.failure == null) {
+    final (twoFactorSuccess, twoFactorFailure) = await api.auth.verify2fa(code);
+    if (twoFactorFailure == null) {
       print('2fa verification success');
     } else {
       print('2fa verification failure');
-      print(twoFactorResponse.failure);
+      print(twoFactorFailure);
     }
   }
 
@@ -68,12 +68,12 @@ void main() async {
   currentUser.toUser();
   currentUser.toLimitedUser();
 
-  final friendsResponse = await api.rawApi
+  final (friendsSuccess, friendsFailure) = await api.rawApi
       .getFriendsApi()
       .getFriends()
       .validateVrc(); // Call [validateVrc] to handle errors
 
-  final error = friendsResponse.failure?.vrcError;
+  final error = friendsFailure?.vrcError;
   if (error != null) {
     print(error);
   }
@@ -85,7 +85,7 @@ void main() async {
   final limitedTupper = tupper.toLimitedUser();
   final friendsAndTupper = [
     limitedTupper,
-    ...friendsResponse.success!.data.map((e) => e.toLimitedUser()),
+    ...friendsSuccess!.data.map((e) => e.toLimitedUser()),
   ];
 
   print(friendsAndTupper.first.displayName);
