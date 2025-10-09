@@ -24,3 +24,7 @@ dev_dependencies:
   fixer: ^0.1.0
   path: ^1.9.0
   recase: ^4.1.0
+
+dependency_overrides:
+  dio_response_validator:
+    path: ../../dio_response_validator

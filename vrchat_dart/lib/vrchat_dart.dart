@@ -1,3 +1,5 @@
+export 'package:dio_response_validator/dio_response_validator.dart';
+
 // base
 export 'src/vrchat_dart_base.dart';
 export 'package:vrchat_dart_generated/vrchat_dart_generated.dart';

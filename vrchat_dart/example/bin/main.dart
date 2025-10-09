@@ -24,37 +24,37 @@ void main() async {
     password: Credentials.password,
   );
 
-  if (loginResponse.failure != null) {
-    print('authError');
-    print(loginResponse.failure);
-    throw Exception('Login failed');
-  }
+  switch (loginResponse) {
+    case ValidResponse(data: final data):
+      if (data.requiresTwoFactorAuth) {
+        print('requiresTwoFactorAuth');
 
-  final authResponse = loginResponse.success!.data;
-  if (authResponse.requiresTwoFactorAuth) {
-    print('requiresTwoFactorAuth');
+        if (!data.twoFactorAuthTypes.contains(TwoFactorAuthType.totp)) {
+          throw Exception('Cannot automatically handle 2FA');
+        }
 
-    if (!authResponse.twoFactorAuthTypes.contains(TwoFactorAuthType.totp)) {
-      throw Exception('Cannot automatically handle 2FA');
-    }
-
-    // VRChat is forcing 2FA these days. If you don't have 2FA enabled on your
-    // account, you will be required to 2FA over email which is not ideal for
-    // scripts. To get around this, enable 2FA on your account and generate
-    // codes in your script.
-    final code = OTP.generateTOTPCodeString(
-      Credentials.otpSecret,
-      DateTime.timestamp().millisecondsSinceEpoch,
-      algorithm: Algorithm.SHA1,
-      isGoogle: true,
-    );
-    final twoFactorResponse = await api.auth.verify2fa(code);
-    if (twoFactorResponse.failure == null) {
-      print('2fa verification success');
-    } else {
-      print('2fa verification failure');
-      print(twoFactorResponse.failure);
-    }
+        // VRChat is forcing 2FA these days. If you don't have 2FA enabled on your
+        // account, you will be required to 2FA over email which is not ideal for
+        // scripts. To get around this, enable 2FA on your account and generate
+        // codes in your script.
+        final code = OTP.generateTOTPCodeString(
+          Credentials.otpSecret,
+          DateTime.timestamp().millisecondsSinceEpoch,
+          algorithm: Algorithm.SHA1,
+          isGoogle: true,
+        );
+        final twoFactorResponse = await api.auth.verify2fa(code);
+        switch (twoFactorResponse) {
+          case ValidResponse():
+            print('2fa verification success');
+          case InvalidResponse():
+            print(twoFactorResponse);
+        }
+      }
+    case InvalidResponse():
+      print('authError');
+      print(loginResponse);
+      throw Exception('Login failed');
   }
 
   final currentUser = api.auth.currentUser;
