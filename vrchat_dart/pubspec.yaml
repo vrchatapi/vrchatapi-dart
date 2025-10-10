@@ -27,4 +27,6 @@ dev_dependencies:
 
 dependency_overrides:
   dio_response_validator:
-    path: ../../dio_response_validator
+    git:
+      url: https://github.com/Rexios80/dio_response_validator
+      ref: ce85e0ba702c45f7b30a0d1f57e3d6c84f28f588

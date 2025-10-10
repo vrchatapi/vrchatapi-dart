@@ -63,7 +63,7 @@ class AuthApi {
   Future<TransformedResponse<dynamic, AuthResponse>> verify2fa(
     String code,
   ) async {
-    final TransformedResponse response = await _rawApi
+    final response = await _rawApi
         .getAuthenticationApi()
         .verify2FA(twoFactorAuthCode: TwoFactorAuthCode(code: code))
         .validateVrc();
