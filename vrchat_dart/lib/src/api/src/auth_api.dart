@@ -19,7 +19,7 @@ class AuthApi {
   ///
   /// Logging in without a [username]/[password] will use the stored auth
   /// session if available
-  Future<ValidatedResponse<dynamic, AuthResponse>> login({
+  Future<TransformedResponse<dynamic, AuthResponse>> login({
     String? username,
     String? password,
   }) async {
@@ -28,51 +28,49 @@ class AuthApi {
     final authorization = base64.encode(
       utf8.encode('$encodedUsername:$encodedPassword'),
     );
-    final response = await _rawApi
+    final (success, failure) = await _rawApi
         .getAuthenticationApi()
         .getCurrentUser(headers: {'Authorization': 'Basic $authorization'})
         .validateVrc();
 
-    final failure = response.failure;
-    if (failure != null) {
+    if (success != null) {
+      _currentUser = success.data;
+      return (ValidResponse(AuthResponse(), success.response), null);
+    } else if (failure != null) {
       final response = failure.response;
-
-      if (response == null) return failure.cast();
+      if (response == null) return (null, failure);
 
       final data = response.data;
-      if (data is! Map<String, dynamic>) return failure.cast();
+      if (data is! Map<String, dynamic>) return (null, failure);
 
       final twoFactorAuthTypes = (data['requiresTwoFactorAuth'] as List?)
           ?.cast<String>()
           .map(TwoFactorAuthType.values.byName)
           .toList();
-      if (twoFactorAuthTypes != null) {
-        return ValidatedResponse.success(
+      if (twoFactorAuthTypes == null) return (null, failure);
+
+      return (
+        ValidResponse(
           AuthResponse(twoFactorAuthTypes: twoFactorAuthTypes),
           response,
-        );
-      }
-
-      return failure.cast();
+        ),
+        null,
+      );
+    } else {
+      throw StateError('This should never happen');
     }
-
-    final success = response.success!;
-    _currentUser = success.data;
-
-    return ValidatedResponse.success(AuthResponse(), success.response);
   }
 
   /// Verify a 2fa code
-  Future<ValidatedResponse<dynamic, AuthResponse>> verify2fa(
+  Future<TransformedResponse<dynamic, AuthResponse>> verify2fa(
     String code,
   ) async {
-    final response = await _rawApi
+    final (success, failure) = await _rawApi
         .getAuthenticationApi()
         .verify2FA(twoFactorAuthCode: TwoFactorAuthCode(code: code))
         .validateVrc();
 
-    final failure = response.failure;
-    if (failure != null) return failure.cast();
+    if (failure != null) return (null, failure);
 
     // Call the login function to set the [currentUser]
     return login();
@@ -81,7 +79,7 @@ class AuthApi {
   /// Logout
   ///
   /// This will set [currentUser] to null
-  Future<ValidatedResponse<Success, Success>> logout() async {
+  Future<ValidatedResponse<Success>> logout() async {
     final response = await _rawApi
         .getAuthenticationApi()
         .logout()

@@ -13,7 +13,7 @@ dependencies:
   dio: ^5.2.0
   web_socket_channel: ^3.0.0
   json_annotation: ^4.7.0
-  dio_response_validator: ^0.2.1
+  dio_response_validator: ^0.3.1
   meta: ^1.16.0
 
 dev_dependencies:

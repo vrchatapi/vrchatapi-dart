@@ -19,23 +19,24 @@ void main() async {
     ),
   );
 
-  final loginResponse = await api.auth.login(
+  final (loginSuccess, loginFailure) = await api.auth.login(
     username: Credentials.username,
     password: Credentials.password,
   );
 
-  if (loginResponse.failure != null) {
-    print('authError');
-    print(loginResponse.failure);
-    throw Exception('Login failed');
+  if (loginSuccess == null) {
+    print('Login failed');
+    print(loginFailure);
+    return;
   }
 
-  final authResponse = loginResponse.success!.data;
+  final authResponse = loginSuccess.data;
   if (authResponse.requiresTwoFactorAuth) {
     print('requiresTwoFactorAuth');
 
     if (!authResponse.twoFactorAuthTypes.contains(TwoFactorAuthType.totp)) {
-      throw Exception('Cannot automatically handle 2FA');
+      print('Cannot automatically handle 2FA');
+      return;
     }
 
     // VRChat is forcing 2FA these days. If you don't have 2FA enabled on your
@@ -48,18 +49,20 @@ void main() async {
       algorithm: Algorithm.SHA1,
       isGoogle: true,
     );
-    final twoFactorResponse = await api.auth.verify2fa(code);
-    if (twoFactorResponse.failure == null) {
+    final (twoFactorSuccess, twoFactorFailure) = await api.auth.verify2fa(code);
+    if (twoFactorFailure == null) {
       print('2fa verification success');
     } else {
       print('2fa verification failure');
-      print(twoFactorResponse.failure);
+      print(twoFactorFailure);
+      return;
     }
   }
 
   final currentUser = api.auth.currentUser;
   if (currentUser == null) {
-    throw Exception('Login failed');
+    print('Login failed');
+    return;
   }
 
   print('Logged in as ${currentUser.displayName}');
@@ -68,37 +71,58 @@ void main() async {
   currentUser.toUser();
   currentUser.toLimitedUser();
 
-  final friendsResponse = await api.rawApi
+  final (friendsSuccess, friendsFailure) = await api.rawApi
       .getFriendsApi()
       .getFriends()
       .validateVrc(); // Call [validateVrc] to handle errors
 
-  final error = friendsResponse.failure?.vrcError;
-  if (error != null) {
-    print(error);
+  if (friendsSuccess == null) {
+    print('Fetching friends failed');
+    print(friendsFailure);
+    return;
   }
 
-  final tupper =
-      (await api.rawApi.getUsersApi().getUser(userId: tupperUid)).data!;
+  final (tupperSuccess, tupperFailure) =
+      await api.rawApi.getUsersApi().getUser(userId: tupperUid).validateVrc();
+
+  if (tupperSuccess == null) {
+    print('Fetching tupper failed');
+    print(tupperFailure);
+    return;
+  }
 
   // Convenience method to help with storing user objects from different endpoints together
-  final limitedTupper = tupper.toLimitedUser();
+  final limitedTupper = tupperSuccess.data.toLimitedUser();
   final friendsAndTupper = [
     limitedTupper,
-    ...friendsResponse.success!.data.map((e) => e.toLimitedUser()),
+    ...friendsSuccess.data.map((e) => e.toLimitedUser()),
   ];
 
   print(friendsAndTupper.first.displayName);
 
-  final worldsResponse = await api.rawApi
+  final (worldsSuccess, worldsFailure) = await api.rawApi
       .getWorldsApi()
-      .searchWorlds(releaseStatus: ReleaseStatus.public);
-  print(worldsResponse.data!.first.name);
+      .searchWorlds(releaseStatus: ReleaseStatus.public)
+      .validateVrc();
+  if (worldsSuccess == null) {
+    print('Fetching worlds failed');
+    print(worldsFailure);
+    return;
+  }
 
-  final getWorldResponse = await api.rawApi
+  print(worldsSuccess.data.first.name);
+
+  final (worldSuccess, worldFailure) = await api.rawApi
       .getWorldsApi()
-      .getWorld(worldId: worldsResponse.data!.first.id);
-  print(getWorldResponse.data!.name);
+      .getWorld(worldId: worldsSuccess.data.first.id)
+      .validateVrc();
+  if (worldSuccess == null) {
+    print('Fetching world failed');
+    print(worldFailure);
+    return;
+  }
+
+  print(worldSuccess.data.name);
 
   // Do not start websocket streaming if this code is running in CI
   if (Platform.environment.containsKey('GITHUB_ACTIONS')) return;
