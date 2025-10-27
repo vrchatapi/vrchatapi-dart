@@ -59,6 +59,8 @@ export 'package:vrchat_dart_generated/src/model/admin_asset_bundle.dart';
 export 'package:vrchat_dart_generated/src/model/admin_unity_package.dart';
 export 'package:vrchat_dart_generated/src/model/age_verification_status.dart';
 export 'package:vrchat_dart_generated/src/model/avatar.dart';
+export 'package:vrchat_dart_generated/src/model/avatar_moderation.dart';
+export 'package:vrchat_dart_generated/src/model/avatar_moderation_type.dart';
 export 'package:vrchat_dart_generated/src/model/avatar_performance.dart';
 export 'package:vrchat_dart_generated/src/model/avatar_published_listings_inner.dart';
 export 'package:vrchat_dart_generated/src/model/avatar_style.dart';

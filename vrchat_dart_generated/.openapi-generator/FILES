@@ -32,6 +32,8 @@ doc/AdminUnityPackage.md
 doc/AgeVerificationStatus.md
 doc/AuthenticationApi.md
 doc/Avatar.md
+doc/AvatarModeration.md
+doc/AvatarModerationType.md
 doc/AvatarPerformance.md
 doc/AvatarPublishedListingsInner.md
 doc/AvatarStyle.md
@@ -314,6 +316,8 @@ lib/src/model/api_config_report_options_world.dart
 lib/src/model/api_config_report_reasons.dart
 lib/src/model/api_health.dart
 lib/src/model/avatar.dart
+lib/src/model/avatar_moderation.dart
+lib/src/model/avatar_moderation_type.dart
 lib/src/model/avatar_performance.dart
 lib/src/model/avatar_published_listings_inner.dart
 lib/src/model/avatar_style.dart
@@ -553,6 +557,8 @@ test/api_config_report_reasons_test.dart
 test/api_config_test.dart
 test/api_health_test.dart
 test/authentication_api_test.dart
+test/avatar_moderation_test.dart
+test/avatar_moderation_type_test.dart
 test/avatar_performance_test.dart
 test/avatar_published_listings_inner_test.dart
 test/avatar_style_test.dart

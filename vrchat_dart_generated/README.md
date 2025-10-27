@@ -152,6 +152,7 @@ Class | Method | HTTP request | Description
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**disable2FA**](doc/AuthenticationApi.md#disable2fa) | **DELETE** /auth/twofactorauth | Disable 2FA
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**enable2FA**](doc/AuthenticationApi.md#enable2fa) | **POST** /auth/twofactorauth/totp/pending | Enable time-based 2FA codes
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**getCurrentUser**](doc/AuthenticationApi.md#getcurrentuser) | **GET** /auth/user | Login and/or Get Current User Info
+[*AuthenticationApi*](doc/AuthenticationApi.md) | [**getGlobalAvatarModerations**](doc/AuthenticationApi.md#getglobalavatarmoderations) | **GET** /auth/user/avatarmoderations | Get Global Avatar Moderations
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**getRecoveryCodes**](doc/AuthenticationApi.md#getrecoverycodes) | **GET** /auth/user/twofactorauth/otp | Get 2FA Recovery codes
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**logout**](doc/AuthenticationApi.md#logout) | **PUT** /logout | Logout
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**registerUserAccount**](doc/AuthenticationApi.md#registeruseraccount) | **POST** /auth/register | Register User Account
@@ -398,6 +399,8 @@ Class | Method | HTTP request | Description
  - [AdminUnityPackage](doc/AdminUnityPackage.md)
  - [AgeVerificationStatus](doc/AgeVerificationStatus.md)
  - [Avatar](doc/Avatar.md)
+ - [AvatarModeration](doc/AvatarModeration.md)
+ - [AvatarModerationType](doc/AvatarModerationType.md)
  - [AvatarPerformance](doc/AvatarPerformance.md)
  - [AvatarPublishedListingsInner](doc/AvatarPublishedListingsInner.md)
  - [AvatarStyle](doc/AvatarStyle.md)

@@ -28,6 +28,7 @@ import 'package:vrchat_dart_generated/src/model/add_group_gallery_image_request.
 import 'package:vrchat_dart_generated/src/model/admin_asset_bundle.dart';
 import 'package:vrchat_dart_generated/src/model/admin_unity_package.dart';
 import 'package:vrchat_dart_generated/src/model/avatar.dart';
+import 'package:vrchat_dart_generated/src/model/avatar_moderation.dart';
 import 'package:vrchat_dart_generated/src/model/avatar_performance.dart';
 import 'package:vrchat_dart_generated/src/model/avatar_published_listings_inner.dart';
 import 'package:vrchat_dart_generated/src/model/avatar_style.dart';
@@ -322,6 +323,10 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'AgeVerificationStatus':
     case 'Avatar':
       return Avatar.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'AvatarModeration':
+      return AvatarModeration.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'AvatarModerationType':
     case 'AvatarPerformance':
       return AvatarPerformance.fromJson(value as Map<String, dynamic>)
           as ReturnType;

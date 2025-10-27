@@ -23,7 +23,7 @@ class LimitedUserFriend {
 
     this.bioLinks,
 
-    required this.currentAvatarImageUrl,
+    this.currentAvatarImageUrl,
 
     this.currentAvatarThumbnailImageUrl,
 
@@ -74,8 +74,12 @@ class LimitedUserFriend {
   final List<String>? bioLinks;
 
   /// When profilePicOverride is not empty, use it instead.
-  @JsonKey(name: r'currentAvatarImageUrl', required: true, includeIfNull: false)
-  final String currentAvatarImageUrl;
+  @JsonKey(
+    name: r'currentAvatarImageUrl',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? currentAvatarImageUrl;
 
   /// When profilePicOverride is not empty, use it instead.
   @JsonKey(
