@@ -11,7 +11,7 @@ dependencies:
   otp: ^3.1.3
 
 dev_dependencies:
-  rexios_lints: ^15.0.0
+  rexios_lints: ^16.0.0
 
 dependency_overrides:
   vrchat_dart_generated:
