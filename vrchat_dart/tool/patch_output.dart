@@ -165,13 +165,13 @@ void patchAnalysisIssues() {
         '// ignore: deprecated_member_use_from_same_package\n$line',
     'non_constant_identifier_names': (diagnostic, line) {
       final fieldMatch = RegExp(r'final .+ (\w+);').firstMatch(line);
-      if (fieldMatch != null) {
-        final group = fieldMatch[1]!;
+      final group1 = fieldMatch?[1];
+      if (fieldMatch != null && group1 != null) {
         final file = diagnostic.location.file;
         identifierIssues.update(
           file,
-          (value) => value..add(group),
-          ifAbsent: () => {group},
+          (value) => value..add(group1),
+          ifAbsent: () => {group1},
         );
       }
       return line;
