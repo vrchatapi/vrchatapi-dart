@@ -36,7 +36,9 @@ Future<Map<String, dynamic>> getSpec({required bool local}) async {
     final response = await dio.get(
       'https://vrchatapi.github.io/specification/openapi.yaml',
     );
-    yaml = loadYaml(response.data!);
+    final data = response.data;
+    if (data == null) throw 'Failed to fetch spec';
+    yaml = loadYaml(data);
   }
 
   // Make the map modifiable

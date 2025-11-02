@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:vrchat_dart/src/model/api/vrc_response.dart';
 import 'package:vrchat_dart/src/model/vrchat_user_agent.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
@@ -32,18 +33,19 @@ class VrcStreaming {
   void start() async {
     _started = true;
 
-    final String authToken;
-    try {
-      final authResponse = await _rawApi
-          .getAuthenticationApi()
-          .verifyAuthToken();
-      authToken = authResponse.data!.token;
-    } catch (error) {
+    final (success, failure) = await _rawApi
+        .getAuthenticationApi()
+        .verifyAuthToken()
+        .validateVrc();
+
+    if (success == null) {
       print(
         'ERROR: Unable to fetch auth token. Make sure to successfully login before starting to stream.',
       );
       return;
     }
+
+    final authToken = success.data.token;
 
     _channel = connect(
       Uri.parse('$_baseUrl?authToken=$authToken'),
