@@ -1,4 +1,4 @@
-# vrchat_dart_generated.model.GroupPostsResponse
+# vrchat_dart_generated.model.GetGroupPosts200Response
 
 ## Load the model package
 ```dart

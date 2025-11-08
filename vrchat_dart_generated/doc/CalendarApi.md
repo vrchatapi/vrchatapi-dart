@@ -38,7 +38,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getCalendarApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final CreateCalendarEventRequest createCalendarEventRequest = ; // CreateCalendarEventRequest | 
 
 try {
@@ -87,8 +87,8 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getCalendarApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
-final String calendarId = calendarId_example; // String | Must be a valid calendar ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final String calendarId = cal_00000000-0000-0000-0000-000000000000; // String | Must be a valid calendar ID.
 
 try {
     final response = api.deleteGroupCalendarEvent(groupId, calendarId);
@@ -136,8 +136,8 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getCalendarApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
-final String calendarId = calendarId_example; // String | Must be a valid calendar ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final String calendarId = cal_00000000-0000-0000-0000-000000000000; // String | Must be a valid calendar ID.
 final FollowCalendarEventRequest followCalendarEventRequest = ; // FollowCalendarEventRequest | 
 
 try {
@@ -340,8 +340,8 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getCalendarApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
-final String calendarId = calendarId_example; // String | Must be a valid calendar ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final String calendarId = cal_00000000-0000-0000-0000-000000000000; // String | Must be a valid calendar ID.
 
 try {
     final response = api.getGroupCalendarEvent(groupId, calendarId);
@@ -385,8 +385,8 @@ Returns the specified calendar in iCalendar (ICS) format.
 import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getCalendarApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
-final String calendarId = calendarId_example; // String | Must be a valid calendar ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final String calendarId = cal_00000000-0000-0000-0000-000000000000; // String | Must be a valid calendar ID.
 
 try {
     final response = api.getGroupCalendarEventICS(groupId, calendarId);
@@ -434,7 +434,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getCalendarApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final DateTime date = 2013-10-20T19:20:30+01:00; // DateTime | The month to search in.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
@@ -487,7 +487,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getCalendarApi();
-final String searchTerm = searchTerm_example; // String | Search term for calendar events.
+final String searchTerm = game night; // String | Search term for calendar events.
 final int utcOffset = 56; // int | The offset from UTC in hours of the client or authenticated user.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
@@ -540,8 +540,8 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getCalendarApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
-final String calendarId = calendarId_example; // String | Must be a valid calendar ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final String calendarId = cal_00000000-0000-0000-0000-000000000000; // String | Must be a valid calendar ID.
 final UpdateCalendarEventRequest updateCalendarEventRequest = ; // UpdateCalendarEventRequest | 
 
 try {

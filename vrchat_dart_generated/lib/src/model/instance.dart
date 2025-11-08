@@ -35,9 +35,9 @@ class Instance {
 
     required this.clientNumber,
 
-    required this.contentSettings,
+    this.contentSettings,
 
-    required this.displayName,
+    this.displayName,
 
     this.full = false,
 
@@ -47,7 +47,7 @@ class Instance {
 
     required this.instanceId,
 
-    required this.instancePersistenceEnabled,
+    this.instancePersistenceEnabled,
 
     required this.location,
 
@@ -63,7 +63,7 @@ class Instance {
 
     required this.platforms,
 
-    required this.playerPersistenceEnabled,
+    this.playerPersistenceEnabled,
 
     required this.region,
 
@@ -128,10 +128,10 @@ class Instance {
   @JsonKey(name: r'clientNumber', required: true, includeIfNull: false)
   final String clientNumber;
 
-  @JsonKey(name: r'contentSettings', required: true, includeIfNull: false)
-  final InstanceContentSettings contentSettings;
+  @JsonKey(name: r'contentSettings', required: false, includeIfNull: false)
+  final InstanceContentSettings? contentSettings;
 
-  @JsonKey(name: r'displayName', required: true, includeIfNull: true)
+  @JsonKey(name: r'displayName', required: false, includeIfNull: false)
   final String? displayName;
 
   @JsonKey(name: r'full', required: true, includeIfNull: false)
@@ -150,8 +150,8 @@ class Instance {
 
   @JsonKey(
     name: r'instancePersistenceEnabled',
-    required: true,
-    includeIfNull: true,
+    required: false,
+    includeIfNull: false,
   )
   final String? instancePersistenceEnabled;
 
@@ -181,8 +181,8 @@ class Instance {
 
   @JsonKey(
     name: r'playerPersistenceEnabled',
-    required: true,
-    includeIfNull: true,
+    required: false,
+    includeIfNull: false,
   )
   final bool? playerPersistenceEnabled;
 
@@ -329,7 +329,7 @@ class Instance {
       location.hashCode +
       nUsers.hashCode +
       name.hashCode +
-      ownerId.hashCode +
+      (ownerId == null ? 0 : ownerId.hashCode) +
       permanent.hashCode +
       photonRegion.hashCode +
       platforms.hashCode +

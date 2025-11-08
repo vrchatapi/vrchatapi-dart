@@ -145,7 +145,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getInventoryApi();
-final String inventoryTemplateId = inventoryTemplateId_example; // String | Must be a valid inventory template ID.
+final String inventoryTemplateId = invt_00000000-0000-0000-0000-000000000000; // String | Must be a valid inventory template ID.
 
 try {
     final response = api.getInventoryTemplate(inventoryTemplateId);
@@ -192,7 +192,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getInventoryApi();
-final String inventoryItemId = inventoryItemId_example; // String | Must be a valid inventory item ID.
+final String inventoryItemId = inv_00000000-0000-0000-0000-000000000000; // String | Must be a valid inventory item ID.
 
 try {
     final response = api.getOwnInventoryItem(inventoryItemId);
@@ -386,7 +386,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getInventoryApi();
-final String inventoryItemId = inventoryItemId_example; // String | Must be a valid inventory item ID.
+final String inventoryItemId = inv_00000000-0000-0000-0000-000000000000; // String | Must be a valid inventory item ID.
 final UpdateInventoryItemRequest updateInventoryItemRequest = ; // UpdateInventoryItemRequest | 
 
 try {

@@ -7,7 +7,7 @@ import 'package:vrchat_dart_generated/src/model/group_post.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
-part 'group_posts_response.g.dart';
+part 'get_group_posts200_response.g.dart';
 
 @JsonSerializable(
   checked: true,
@@ -15,9 +15,9 @@ part 'group_posts_response.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class GroupPostsResponse {
-  /// Returns a new [GroupPostsResponse] instance.
-  GroupPostsResponse({this.posts});
+class GetGroupPosts200Response {
+  /// Returns a new [GetGroupPosts200Response] instance.
+  GetGroupPosts200Response({this.posts});
 
   @JsonKey(name: r'posts', required: false, includeIfNull: false)
   final List<GroupPost>? posts;
@@ -25,15 +25,15 @@ class GroupPostsResponse {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is GroupPostsResponse && other.posts == posts;
+      other is GetGroupPosts200Response && other.posts == posts;
 
   @override
   int get hashCode => posts.hashCode;
 
-  factory GroupPostsResponse.fromJson(Map<String, dynamic> json) =>
-      _$GroupPostsResponseFromJson(json);
+  factory GetGroupPosts200Response.fromJson(Map<String, dynamic> json) =>
+      _$GetGroupPosts200ResponseFromJson(json);
 
-  Map<String, dynamic> toJson() => _$GroupPostsResponseToJson(this);
+  Map<String, dynamic> toJson() => _$GetGroupPosts200ResponseToJson(this);
 
   @override
   String toString() {

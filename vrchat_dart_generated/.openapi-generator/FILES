@@ -92,6 +92,8 @@ doc/FinishFileDataUploadRequest.md
 doc/FollowCalendarEventRequest.md
 doc/FriendStatus.md
 doc/FriendsApi.md
+doc/GetGroupPosts200Response.md
+doc/GetUserGroupInstances200Response.md
 doc/Group.md
 doc/GroupAccessType.md
 doc/GroupAnnouncement.md
@@ -110,7 +112,6 @@ doc/GroupPermission.md
 doc/GroupPermissions.md
 doc/GroupPost.md
 doc/GroupPostVisibility.md
-doc/GroupPostsResponse.md
 doc/GroupPrivacy.md
 doc/GroupRole.md
 doc/GroupRoleTemplate.md
@@ -247,7 +248,6 @@ doc/UpdateUserRequest.md
 doc/UpdateWorldRequest.md
 doc/User.md
 doc/UserExists.md
-doc/UserGroupInstanceListResponse.md
 doc/UserNote.md
 doc/UserNoteTargetUser.md
 doc/UserState.md
@@ -373,6 +373,8 @@ lib/src/model/file_version_upload_status.dart
 lib/src/model/finish_file_data_upload_request.dart
 lib/src/model/follow_calendar_event_request.dart
 lib/src/model/friend_status.dart
+lib/src/model/get_group_posts200_response.dart
+lib/src/model/get_user_group_instances200_response.dart
 lib/src/model/group.dart
 lib/src/model/group_access_type.dart
 lib/src/model/group_announcement.dart
@@ -391,7 +393,6 @@ lib/src/model/group_permission.dart
 lib/src/model/group_permissions.dart
 lib/src/model/group_post.dart
 lib/src/model/group_post_visibility.dart
-lib/src/model/group_posts_response.dart
 lib/src/model/group_privacy.dart
 lib/src/model/group_role.dart
 lib/src/model/group_role_template.dart
@@ -518,7 +519,6 @@ lib/src/model/update_user_request.dart
 lib/src/model/update_world_request.dart
 lib/src/model/user.dart
 lib/src/model/user_exists.dart
-lib/src/model/user_group_instance_list_response.dart
 lib/src/model/user_note.dart
 lib/src/model/user_note_target_user.dart
 lib/src/model/user_state.dart
@@ -624,6 +624,8 @@ test/finish_file_data_upload_request_test.dart
 test/follow_calendar_event_request_test.dart
 test/friend_status_test.dart
 test/friends_api_test.dart
+test/get_group_posts200_response_test.dart
+test/get_user_group_instances200_response_test.dart
 test/group_access_type_test.dart
 test/group_announcement_test.dart
 test/group_audit_log_entry_test.dart
@@ -641,7 +643,6 @@ test/group_permission_test.dart
 test/group_permissions_test.dart
 test/group_post_test.dart
 test/group_post_visibility_test.dart
-test/group_posts_response_test.dart
 test/group_privacy_test.dart
 test/group_role_template_test.dart
 test/group_role_template_values_roles_test.dart
@@ -778,7 +779,6 @@ test/update_user_note_request_test.dart
 test/update_user_request_test.dart
 test/update_world_request_test.dart
 test/user_exists_test.dart
-test/user_group_instance_list_response_test.dart
 test/user_note_target_user_test.dart
 test/user_note_test.dart
 test/user_state_test.dart

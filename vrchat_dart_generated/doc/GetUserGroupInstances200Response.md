@@ -1,4 +1,4 @@
-# vrchat_dart_generated.model.UserGroupInstanceListResponse
+# vrchat_dart_generated.model.GetUserGroupInstances200Response
 
 ## Load the model package
 ```dart

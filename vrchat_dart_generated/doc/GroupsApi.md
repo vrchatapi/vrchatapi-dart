@@ -71,8 +71,8 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
-final String groupGalleryId = groupGalleryId_example; // String | Must be a valid group gallery ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final String groupGalleryId = ggal_00000000-0000-0000-0000-000000000000; // String | Must be a valid group gallery ID.
 final AddGroupGalleryImageRequest addGroupGalleryImageRequest = ; // AddGroupGalleryImageRequest | 
 
 try {
@@ -122,9 +122,9 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final String userId = userId_example; // String | Must be a valid user ID.
-final String groupRoleId = groupRoleId_example; // String | Must be a valid group role ID.
+final String groupRoleId = grol_00000000-0000-0000-0000-000000000000; // String | Must be a valid group role ID.
 
 try {
     final response = api.addGroupMemberRole(groupId, userId, groupRoleId);
@@ -173,7 +173,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final CreateGroupPostRequest createGroupPostRequest = ; // CreateGroupPostRequest | 
 
 try {
@@ -222,7 +222,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final BanGroupMemberRequest banGroupMemberRequest = ; // BanGroupMemberRequest | 
 
 try {
@@ -271,7 +271,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 
 try {
     api.cancelGroupRequest(groupId);
@@ -364,7 +364,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final CreateGroupAnnouncementRequest createGroupAnnouncementRequest = ; // CreateGroupAnnouncementRequest | 
 
 try {
@@ -413,7 +413,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final CreateGroupGalleryRequest createGroupGalleryRequest = ; // CreateGroupGalleryRequest | 
 
 try {
@@ -462,7 +462,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final CreateGroupInviteRequest createGroupInviteRequest = ; // CreateGroupInviteRequest | 
 
 try {
@@ -510,7 +510,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final CreateGroupRoleRequest createGroupRoleRequest = ; // CreateGroupRoleRequest | 
 
 try {
@@ -559,7 +559,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 
 try {
     final response = api.deleteGroup(groupId);
@@ -606,7 +606,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 
 try {
     final response = api.deleteGroupAnnouncement(groupId);
@@ -653,8 +653,8 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
-final String groupGalleryId = groupGalleryId_example; // String | Must be a valid group gallery ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final String groupGalleryId = ggal_00000000-0000-0000-0000-000000000000; // String | Must be a valid group gallery ID.
 
 try {
     final response = api.deleteGroupGallery(groupId, groupGalleryId);
@@ -702,9 +702,9 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
-final String groupGalleryId = groupGalleryId_example; // String | Must be a valid group gallery ID.
-final String groupGalleryImageId = groupGalleryImageId_example; // String | Must be a valid group gallery image ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final String groupGalleryId = ggal_00000000-0000-0000-0000-000000000000; // String | Must be a valid group gallery ID.
+final String groupGalleryImageId = ggim_00000000-0000-0000-0000-000000000000; // String | Must be a valid group gallery image ID.
 
 try {
     final response = api.deleteGroupGalleryImage(groupId, groupGalleryId, groupGalleryImageId);
@@ -753,7 +753,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final String userId = userId_example; // String | Must be a valid user ID.
 
 try {
@@ -801,7 +801,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final String notificationId = notificationId_example; // String | Must be a valid notification ID.
 
 try {
@@ -850,8 +850,8 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
-final String groupRoleId = groupRoleId_example; // String | Must be a valid group role ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final String groupRoleId = grol_00000000-0000-0000-0000-000000000000; // String | Must be a valid group role ID.
 
 try {
     final response = api.deleteGroupRole(groupId, groupRoleId);
@@ -899,7 +899,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final bool includeRoles = true; // bool | Include roles for the Group object. Defaults to false.
 
 try {
@@ -948,7 +948,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 
 try {
     final response = api.getGroupAnnouncements(groupId);
@@ -995,14 +995,14 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final DateTime startDate = 2013-10-20T19:20:30+01:00; // DateTime | The start date of the search range.
 final DateTime endDate = 2013-10-20T19:20:30+01:00; // DateTime | The end date of the search range.
-final String actorIds = actorIds_example; // String | The comma-separated actor ids to search for.
-final String eventTypes = eventTypes_example; // String | The comma-separated event types to search for.
-final String targetIds = targetIds_example; // String | The comma-separated target ids to search for.
+final String actorIds = usr_00000000-0000-0000-0000-000000000000,usr_11111111-1111-1111-1111-111111111111; // String | The comma-separated actor ids to search for.
+final String eventTypes = group.member.remove,group.instance.kick; // String | The comma-separated event types to search for.
+final String targetIds = usr_00000000-0000-0000-0000-000000000000,usr_11111111-1111-1111-1111-111111111111; // String | The comma-separated target ids to search for.
 
 try {
     final response = api.getGroupAuditLogs(groupId, n, offset, startDate, endDate, actorIds, eventTypes, targetIds);
@@ -1056,7 +1056,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 
@@ -1107,8 +1107,8 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
-final String groupGalleryId = groupGalleryId_example; // String | Must be a valid group gallery ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final String groupGalleryId = ggal_00000000-0000-0000-0000-000000000000; // String | Must be a valid group gallery ID.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final bool approved = true; // bool | If specified, only returns images that have been approved or not approved.
@@ -1162,7 +1162,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 
 try {
     final response = api.getGroupInstances(groupId);
@@ -1209,7 +1209,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 
@@ -1260,7 +1260,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final String userId = userId_example; // String | Must be a valid user ID.
 
 try {
@@ -1309,7 +1309,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final GroupSearchSort sort = ; // GroupSearchSort | The sort order of Group Member results
@@ -1364,7 +1364,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 
 try {
     final response = api.getGroupPermissions(groupId);
@@ -1396,7 +1396,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getGroupPosts**
-> GroupPostsResponse getGroupPosts(groupId, n, offset, publicOnly)
+> GetGroupPosts200Response getGroupPosts(groupId, n, offset, publicOnly)
 
 Get posts from a Group
 
@@ -1411,7 +1411,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final bool publicOnly = true; // bool | See public posts only.
@@ -1435,7 +1435,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GroupPostsResponse**](GroupPostsResponse.md)
+[**GetGroupPosts200Response**](GetGroupPosts200Response.md)
 
 ### Authorization
 
@@ -1464,7 +1464,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final bool blocked = true; // bool | See blocked join requests
@@ -1560,7 +1560,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 
 try {
     final response = api.getGroupRoles(groupId);
@@ -1607,7 +1607,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 
 try {
     final response = api.joinGroup(groupId);
@@ -1654,7 +1654,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final String userId = userId_example; // String | Must be a valid user ID.
 
 try {
@@ -1702,7 +1702,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 
 try {
     api.leaveGroup(groupId);
@@ -1748,9 +1748,9 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final String userId = userId_example; // String | Must be a valid user ID.
-final String groupRoleId = groupRoleId_example; // String | Must be a valid group role ID.
+final String groupRoleId = grol_00000000-0000-0000-0000-000000000000; // String | Must be a valid group role ID.
 
 try {
     final response = api.removeGroupMemberRole(groupId, userId, groupRoleId);
@@ -1799,7 +1799,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final String userId = userId_example; // String | Must be a valid user ID.
 final RespondGroupJoinRequest respondGroupJoinRequest = ; // RespondGroupJoinRequest | 
 
@@ -1896,7 +1896,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final String userId = userId_example; // String | Must be a valid user ID.
 
 try {
@@ -1945,7 +1945,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final UpdateGroupRequest updateGroupRequest = ; // UpdateGroupRequest | 
 
 try {
@@ -1994,8 +1994,8 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
-final String groupGalleryId = groupGalleryId_example; // String | Must be a valid group gallery ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final String groupGalleryId = ggal_00000000-0000-0000-0000-000000000000; // String | Must be a valid group gallery ID.
 final UpdateGroupGalleryRequest updateGroupGalleryRequest = ; // UpdateGroupGalleryRequest | 
 
 try {
@@ -2045,7 +2045,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final String userId = userId_example; // String | Must be a valid user ID.
 final UpdateGroupMemberRequest updateGroupMemberRequest = ; // UpdateGroupMemberRequest | 
 
@@ -2096,7 +2096,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final String notificationId = notificationId_example; // String | Must be a valid notification ID.
 final CreateGroupPostRequest createGroupPostRequest = ; // CreateGroupPostRequest | 
 
@@ -2147,7 +2147,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
 final UpdateGroupRepresentationRequest updateGroupRepresentationRequest = ; // UpdateGroupRepresentationRequest | 
 
 try {
@@ -2196,8 +2196,8 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
-final String groupId = groupId_example; // String | Must be a valid group ID.
-final String groupRoleId = groupRoleId_example; // String | Must be a valid group role ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final String groupRoleId = grol_00000000-0000-0000-0000-000000000000; // String | Must be a valid group role ID.
 final UpdateGroupRoleRequest updateGroupRoleRequest = ; // UpdateGroupRoleRequest | 
 
 try {

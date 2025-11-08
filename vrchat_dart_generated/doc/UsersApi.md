@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserGroupInstances**
-> UserGroupInstanceListResponse getUserGroupInstances(userId)
+> GetUserGroupInstances200Response getUserGroupInstances(userId)
 
 Get User Group Instances
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserGroupInstanceListResponse**](UserGroupInstanceListResponse.md)
+[**GetUserGroupInstances200Response**](GetUserGroupInstances200Response.md)
 
 ### Authorization
 
