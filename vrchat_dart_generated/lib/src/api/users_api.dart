@@ -12,7 +12,6 @@ import 'package:dio/dio.dart';
 import 'package:vrchat_dart_generated/src/model/change_user_tags_request.dart';
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/feedback.dart';
-import 'package:vrchat_dart_generated/src/model/get_user_group_instances200_response.dart';
 import 'package:vrchat_dart_generated/src/model/group.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user_groups.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user_search.dart';
@@ -21,6 +20,7 @@ import 'package:vrchat_dart_generated/src/model/update_user_badge_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_note_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_request.dart';
 import 'package:vrchat_dart_generated/src/model/user.dart';
+import 'package:vrchat_dart_generated/src/model/user_group_instance_list_response.dart';
 import 'package:vrchat_dart_generated/src/model/user_note.dart';
 
 class UsersApi {
@@ -544,9 +544,9 @@ class UsersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [GetUserGroupInstances200Response] as data
+  /// Returns a [Future] containing a [Response] with a [UserGroupInstanceListResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GetUserGroupInstances200Response>> getUserGroupInstances({
+  Future<Response<UserGroupInstanceListResponse>> getUserGroupInstances({
     required String userId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -586,16 +586,16 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GetUserGroupInstances200Response? _responseData;
+    UserGroupInstanceListResponse? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
           : deserialize<
-              GetUserGroupInstances200Response,
-              GetUserGroupInstances200Response
-            >(rawData, 'GetUserGroupInstances200Response', growable: true);
+              UserGroupInstanceListResponse,
+              UserGroupInstanceListResponse
+            >(rawData, 'UserGroupInstanceListResponse', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -606,7 +606,7 @@ class UsersApi {
       );
     }
 
-    return Response<GetUserGroupInstances200Response>(
+    return Response<UserGroupInstanceListResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

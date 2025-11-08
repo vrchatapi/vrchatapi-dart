@@ -7,7 +7,7 @@ import 'package:vrchat_dart_generated/src/model/instance.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
-part 'get_user_group_instances200_response.g.dart';
+part 'user_group_instance_list_response.g.dart';
 
 @JsonSerializable(
   checked: true,
@@ -15,9 +15,9 @@ part 'get_user_group_instances200_response.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class GetUserGroupInstances200Response {
-  /// Returns a new [GetUserGroupInstances200Response] instance.
-  GetUserGroupInstances200Response({this.fetchedAt, this.instances});
+class UserGroupInstanceListResponse {
+  /// Returns a new [UserGroupInstanceListResponse] instance.
+  UserGroupInstanceListResponse({this.fetchedAt, this.instances});
 
   @JsonKey(name: r'fetchedAt', required: false, includeIfNull: false)
   final DateTime? fetchedAt;
@@ -28,19 +28,17 @@ class GetUserGroupInstances200Response {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is GetUserGroupInstances200Response &&
+      other is UserGroupInstanceListResponse &&
           other.fetchedAt == fetchedAt &&
           other.instances == instances;
 
   @override
   int get hashCode => fetchedAt.hashCode + instances.hashCode;
 
-  factory GetUserGroupInstances200Response.fromJson(
-    Map<String, dynamic> json,
-  ) => _$GetUserGroupInstances200ResponseFromJson(json);
+  factory UserGroupInstanceListResponse.fromJson(Map<String, dynamic> json) =>
+      _$UserGroupInstanceListResponseFromJson(json);
 
-  Map<String, dynamic> toJson() =>
-      _$GetUserGroupInstances200ResponseToJson(this);
+  Map<String, dynamic> toJson() => _$UserGroupInstanceListResponseToJson(this);
 
   @override
   String toString() {

@@ -271,7 +271,6 @@ class CurrentUser {
   final String? fallbackAvatar;
 
   /// Always empty array.
-  @Deprecated('friendGroupNames has been deprecated')
   @JsonKey(name: r'friendGroupNames', required: true, includeIfNull: false)
   final List<String> friendGroupNames;
 
@@ -480,7 +479,6 @@ class CurrentUser {
           other.displayName == displayName &&
           other.emailVerified == emailVerified &&
           other.fallbackAvatar == fallbackAvatar &&
-          // ignore: deprecated_member_use_from_same_package
           other.friendGroupNames == friendGroupNames &&
           other.friendKey == friendKey &&
           other.friends == friends &&
@@ -560,7 +558,6 @@ class CurrentUser {
       displayName.hashCode +
       emailVerified.hashCode +
       fallbackAvatar.hashCode +
-      // ignore: deprecated_member_use_from_same_package
       friendGroupNames.hashCode +
       friendKey.hashCode +
       friends.hashCode +

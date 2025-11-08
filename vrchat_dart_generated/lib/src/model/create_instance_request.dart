@@ -132,7 +132,7 @@ class CreateInstanceRequest {
       worldId.hashCode +
       type.hashCode +
       region.hashCode +
-      (ownerId == null ? 0 : ownerId.hashCode) +
+      ownerId.hashCode +
       roleIds.hashCode +
       groupAccessType.hashCode +
       queueEnabled.hashCode +

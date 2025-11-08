@@ -1396,7 +1396,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getGroupPosts**
-> GetGroupPosts200Response getGroupPosts(groupId, n, offset, publicOnly)
+> GroupPostsResponse getGroupPosts(groupId, n, offset, publicOnly)
 
 Get posts from a Group
 
@@ -1435,7 +1435,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetGroupPosts200Response**](GetGroupPosts200Response.md)
+[**GroupPostsResponse**](GroupPostsResponse.md)
 
 ### Authorization
 

@@ -77,8 +77,6 @@ import 'package:vrchat_dart_generated/src/model/file_version_upload_status.dart'
 import 'package:vrchat_dart_generated/src/model/finish_file_data_upload_request.dart';
 import 'package:vrchat_dart_generated/src/model/follow_calendar_event_request.dart';
 import 'package:vrchat_dart_generated/src/model/friend_status.dart';
-import 'package:vrchat_dart_generated/src/model/get_group_posts200_response.dart';
-import 'package:vrchat_dart_generated/src/model/get_user_group_instances200_response.dart';
 import 'package:vrchat_dart_generated/src/model/group.dart';
 import 'package:vrchat_dart_generated/src/model/group_announcement.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry.dart';
@@ -91,6 +89,7 @@ import 'package:vrchat_dart_generated/src/model/group_member_limited_user.dart';
 import 'package:vrchat_dart_generated/src/model/group_my_member.dart';
 import 'package:vrchat_dart_generated/src/model/group_permission.dart';
 import 'package:vrchat_dart_generated/src/model/group_post.dart';
+import 'package:vrchat_dart_generated/src/model/group_posts_response.dart';
 import 'package:vrchat_dart_generated/src/model/group_role.dart';
 import 'package:vrchat_dart_generated/src/model/group_role_template_values.dart';
 import 'package:vrchat_dart_generated/src/model/group_role_template_values_roles.dart';
@@ -192,6 +191,7 @@ import 'package:vrchat_dart_generated/src/model/update_user_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_world_request.dart';
 import 'package:vrchat_dart_generated/src/model/user.dart';
 import 'package:vrchat_dart_generated/src/model/user_exists.dart';
+import 'package:vrchat_dart_generated/src/model/user_group_instance_list_response.dart';
 import 'package:vrchat_dart_generated/src/model/user_note.dart';
 import 'package:vrchat_dart_generated/src/model/user_note_target_user.dart';
 import 'package:vrchat_dart_generated/src/model/user_subscription.dart';
@@ -472,14 +472,6 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'FriendStatus':
       return FriendStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'GetGroupPosts200Response':
-      return GetGroupPosts200Response.fromJson(value as Map<String, dynamic>)
-          as ReturnType;
-    case 'GetUserGroupInstances200Response':
-      return GetUserGroupInstances200Response.fromJson(
-            value as Map<String, dynamic>,
-          )
-          as ReturnType;
     case 'Group':
       return Group.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'GroupAccessType':
@@ -518,6 +510,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'GroupPost':
       return GroupPost.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'GroupPostVisibility':
+    case 'GroupPostsResponse':
+      return GroupPostsResponse.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'GroupPrivacy':
     case 'GroupRole':
       return GroupRole.fromJson(value as Map<String, dynamic>) as ReturnType;
@@ -835,6 +830,11 @@ ReturnType deserialize<ReturnType, BaseType>(
       return User.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'UserExists':
       return UserExists.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'UserGroupInstanceListResponse':
+      return UserGroupInstanceListResponse.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'UserNote':
       return UserNote.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'UserNoteTargetUser':

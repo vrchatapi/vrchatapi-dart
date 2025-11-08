@@ -17,7 +17,6 @@ import 'package:vrchat_dart_generated/src/model/create_group_invite_request.dart
 import 'package:vrchat_dart_generated/src/model/create_group_post_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_group_role_request.dart';
-import 'package:vrchat_dart_generated/src/model/get_group_posts200_response.dart';
 import 'package:vrchat_dart_generated/src/model/group.dart';
 import 'package:vrchat_dart_generated/src/model/group_announcement.dart';
 import 'package:vrchat_dart_generated/src/model/group_gallery.dart';
@@ -27,6 +26,7 @@ import 'package:vrchat_dart_generated/src/model/group_limited_member.dart';
 import 'package:vrchat_dart_generated/src/model/group_member.dart';
 import 'package:vrchat_dart_generated/src/model/group_permission.dart';
 import 'package:vrchat_dart_generated/src/model/group_post.dart';
+import 'package:vrchat_dart_generated/src/model/group_posts_response.dart';
 import 'package:vrchat_dart_generated/src/model/group_role.dart';
 import 'package:vrchat_dart_generated/src/model/group_role_template_values.dart';
 import 'package:vrchat_dart_generated/src/model/group_search_sort.dart';
@@ -2598,9 +2598,9 @@ class GroupsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [GetGroupPosts200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GroupPostsResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GetGroupPosts200Response>> getGroupPosts({
+  Future<Response<GroupPostsResponse>> getGroupPosts({
     required String groupId,
     int? n = 60,
     int? offset,
@@ -2650,15 +2650,15 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GetGroupPosts200Response? _responseData;
+    GroupPostsResponse? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GetGroupPosts200Response, GetGroupPosts200Response>(
+          : deserialize<GroupPostsResponse, GroupPostsResponse>(
               rawData,
-              'GetGroupPosts200Response',
+              'GroupPostsResponse',
               growable: true,
             );
     } catch (error, stackTrace) {
@@ -2671,7 +2671,7 @@ class GroupsApi {
       );
     }
 
-    return Response<GetGroupPosts200Response>(
+    return Response<GroupPostsResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

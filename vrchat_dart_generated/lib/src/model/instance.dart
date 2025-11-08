@@ -329,7 +329,7 @@ class Instance {
       location.hashCode +
       nUsers.hashCode +
       name.hashCode +
-      (ownerId == null ? 0 : ownerId.hashCode) +
+      ownerId.hashCode +
       permanent.hashCode +
       photonRegion.hashCode +
       platforms.hashCode +
