@@ -27,6 +27,8 @@ Name | Type | Description | Notes
 **currentAvatarTags** | **List&lt;String&gt;** |  | 
 **dateJoined** | [**DateTime**](DateTime.md) |  | 
 **developerType** | [**DeveloperType**](DeveloperType.md) |  | 
+**discordDetails** | [**DiscordDetails**](DiscordDetails.md) |  | [optional] 
+**discordId** | **String** | https://discord.com/developers/docs/reference#snowflakes | [optional] 
 **displayName** | **String** |  | 
 **emailVerified** | **bool** |  | 
 **fallbackAvatar** | **String** |  | [optional] 

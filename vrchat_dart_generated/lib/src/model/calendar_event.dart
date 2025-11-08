@@ -20,7 +20,7 @@ class CalendarEvent {
   CalendarEvent({
     required this.accessType,
 
-    this.category,
+    required this.category,
 
     this.closeInstanceAfterEndMinutes,
 
@@ -28,9 +28,9 @@ class CalendarEvent {
 
     this.deletedAt,
 
-    this.description,
+    required this.description,
 
-    this.endsAt,
+    required this.endsAt,
 
     this.featured,
 
@@ -56,7 +56,7 @@ class CalendarEvent {
 
     this.roleIds,
 
-    this.startsAt,
+    required this.startsAt,
 
     this.tags,
 
@@ -74,8 +74,8 @@ class CalendarEvent {
   @JsonKey(name: r'accessType', required: true, includeIfNull: false)
   final String accessType;
 
-  @JsonKey(name: r'category', required: false, includeIfNull: false)
-  final String? category;
+  @JsonKey(name: r'category', required: true, includeIfNull: false)
+  final String category;
 
   @JsonKey(
     name: r'closeInstanceAfterEndMinutes',
@@ -90,11 +90,11 @@ class CalendarEvent {
   @JsonKey(name: r'deletedAt', required: false, includeIfNull: false)
   final DateTime? deletedAt;
 
-  @JsonKey(name: r'description', required: false, includeIfNull: false)
-  final String? description;
+  @JsonKey(name: r'description', required: true, includeIfNull: false)
+  final String description;
 
-  @JsonKey(name: r'endsAt', required: false, includeIfNull: false)
-  final DateTime? endsAt;
+  @JsonKey(name: r'endsAt', required: true, includeIfNull: false)
+  final DateTime endsAt;
 
   @JsonKey(name: r'featured', required: false, includeIfNull: false)
   final bool? featured;
@@ -139,8 +139,8 @@ class CalendarEvent {
   @JsonKey(name: r'roleIds', required: false, includeIfNull: false)
   final List<String>? roleIds;
 
-  @JsonKey(name: r'startsAt', required: false, includeIfNull: false)
-  final DateTime? startsAt;
+  @JsonKey(name: r'startsAt', required: true, includeIfNull: false)
+  final DateTime startsAt;
 
   ///
   @JsonKey(name: r'tags', required: false, includeIfNull: false)

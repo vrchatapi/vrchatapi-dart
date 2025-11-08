@@ -25,6 +25,7 @@ UpdateAvatarRequest _$UpdateAvatarRequestFromJson(Map<String, dynamic> json) =>
           (v) => $enumDecodeNullable(_$ReleaseStatusEnumMap, v),
         ),
         version: $checkedConvert('version', (v) => (v as num?)?.toInt() ?? 1),
+        featured: $checkedConvert('featured', (v) => v as bool?),
         unityPackageUrl: $checkedConvert(
           'unityPackageUrl',
           (v) => v as String?,
@@ -48,6 +49,7 @@ Map<String, dynamic> _$UpdateAvatarRequestToJson(
   'imageUrl': ?instance.imageUrl,
   'releaseStatus': ?_$ReleaseStatusEnumMap[instance.releaseStatus],
   'version': ?instance.version,
+  'featured': ?instance.featured,
   'unityPackageUrl': ?instance.unityPackageUrl,
   'unityVersion': ?instance.unityVersion,
 };

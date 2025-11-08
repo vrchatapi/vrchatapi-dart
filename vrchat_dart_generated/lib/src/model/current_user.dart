@@ -8,6 +8,7 @@ import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
 import 'package:vrchat_dart_generated/src/model/past_display_name.dart';
 import 'package:vrchat_dart_generated/src/model/current_user_presence.dart';
+import 'package:vrchat_dart_generated/src/model/discord_details.dart';
 import 'package:vrchat_dart_generated/src/model/account_deletion_log.dart';
 import 'package:vrchat_dart_generated/src/model/badge.dart';
 import 'package:vrchat_dart_generated/src/model/age_verification_status.dart';
@@ -63,6 +64,10 @@ class CurrentUser {
     required this.dateJoined,
 
     required this.developerType,
+
+    this.discordDetails,
+
+    this.discordId,
 
     required this.displayName,
 
@@ -248,6 +253,13 @@ class CurrentUser {
 
   @JsonKey(name: r'developerType', required: true, includeIfNull: false)
   final DeveloperType developerType;
+
+  @JsonKey(name: r'discordDetails', required: false, includeIfNull: false)
+  final DiscordDetails? discordDetails;
+
+  /// https://discord.com/developers/docs/reference#snowflakes
+  @JsonKey(name: r'discordId', required: false, includeIfNull: false)
+  final String? discordId;
 
   @JsonKey(name: r'displayName', required: true, includeIfNull: false)
   final String displayName;
@@ -463,6 +475,8 @@ class CurrentUser {
           other.currentAvatarTags == currentAvatarTags &&
           other.dateJoined == dateJoined &&
           other.developerType == developerType &&
+          other.discordDetails == discordDetails &&
+          other.discordId == discordId &&
           other.displayName == displayName &&
           other.emailVerified == emailVerified &&
           other.fallbackAvatar == fallbackAvatar &&
@@ -541,6 +555,8 @@ class CurrentUser {
       currentAvatarTags.hashCode +
       dateJoined.hashCode +
       developerType.hashCode +
+      discordDetails.hashCode +
+      discordId.hashCode +
       displayName.hashCode +
       emailVerified.hashCode +
       fallbackAvatar.hashCode +

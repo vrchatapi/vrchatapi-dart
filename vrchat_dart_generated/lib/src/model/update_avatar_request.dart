@@ -34,6 +34,8 @@ class UpdateAvatarRequest {
 
     this.version = 1,
 
+    this.featured,
+
     this.unityPackageUrl,
 
     this.unityVersion = '5.3.4p1',
@@ -65,6 +67,10 @@ class UpdateAvatarRequest {
   @JsonKey(name: r'version', required: false, includeIfNull: false)
   final int? version;
 
+  /// Enabling featured tag requires Admin Credentials.
+  @JsonKey(name: r'featured', required: false, includeIfNull: false)
+  final bool? featured;
+
   @JsonKey(name: r'unityPackageUrl', required: false, includeIfNull: false)
   final String? unityPackageUrl;
 
@@ -83,6 +89,7 @@ class UpdateAvatarRequest {
           other.imageUrl == imageUrl &&
           other.releaseStatus == releaseStatus &&
           other.version == version &&
+          other.featured == featured &&
           other.unityPackageUrl == unityPackageUrl &&
           other.unityVersion == unityVersion;
 
@@ -96,6 +103,7 @@ class UpdateAvatarRequest {
       imageUrl.hashCode +
       releaseStatus.hashCode +
       version.hashCode +
+      featured.hashCode +
       unityPackageUrl.hashCode +
       unityVersion.hashCode;
 

@@ -133,6 +133,13 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'developerType',
         (v) => $enumDecode(_$DeveloperTypeEnumMap, v),
       ),
+      discordDetails: $checkedConvert(
+        'discordDetails',
+        (v) => v == null
+            ? null
+            : DiscordDetails.fromJson(v as Map<String, dynamic>),
+      ),
+      discordId: $checkedConvert('discordId', (v) => v as String?),
       displayName: $checkedConvert('displayName', (v) => v as String),
       emailVerified: $checkedConvert('emailVerified', (v) => v as bool),
       fallbackAvatar: $checkedConvert('fallbackAvatar', (v) => v as String?),
@@ -317,6 +324,8 @@ Map<String, dynamic> _$CurrentUserToJson(
   'currentAvatarTags': instance.currentAvatarTags,
   'date_joined': instance.dateJoined.toIso8601String(),
   'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
+  'discordDetails': ?instance.discordDetails?.toJson(),
+  'discordId': ?instance.discordId,
   'displayName': instance.displayName,
   'emailVerified': instance.emailVerified,
   'fallbackAvatar': ?instance.fallbackAvatar,

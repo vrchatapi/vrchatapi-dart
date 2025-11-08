@@ -10,10 +10,21 @@ part of 'calendar_event.dart';
 
 CalendarEvent _$CalendarEventFromJson(Map<String, dynamic> json) =>
     $checkedCreate('CalendarEvent', json, ($checkedConvert) {
-      $checkKeys(json, requiredKeys: const ['accessType', 'id', 'title']);
+      $checkKeys(
+        json,
+        requiredKeys: const [
+          'accessType',
+          'category',
+          'description',
+          'endsAt',
+          'id',
+          'startsAt',
+          'title',
+        ],
+      );
       final val = CalendarEvent(
         accessType: $checkedConvert('accessType', (v) => v as String),
-        category: $checkedConvert('category', (v) => v as String?),
+        category: $checkedConvert('category', (v) => v as String),
         closeInstanceAfterEndMinutes: $checkedConvert(
           'closeInstanceAfterEndMinutes',
           (v) => (v as num?)?.toInt(),
@@ -26,11 +37,8 @@ CalendarEvent _$CalendarEventFromJson(Map<String, dynamic> json) =>
           'deletedAt',
           (v) => v == null ? null : DateTime.parse(v as String),
         ),
-        description: $checkedConvert('description', (v) => v as String?),
-        endsAt: $checkedConvert(
-          'endsAt',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
+        description: $checkedConvert('description', (v) => v as String),
+        endsAt: $checkedConvert('endsAt', (v) => DateTime.parse(v as String)),
         featured: $checkedConvert('featured', (v) => v as bool?),
         guestEarlyJoinMinutes: $checkedConvert(
           'guestEarlyJoinMinutes',
@@ -63,7 +71,7 @@ CalendarEvent _$CalendarEventFromJson(Map<String, dynamic> json) =>
         ),
         startsAt: $checkedConvert(
           'startsAt',
-          (v) => v == null ? null : DateTime.parse(v as String),
+          (v) => DateTime.parse(v as String),
         ),
         tags: $checkedConvert(
           'tags',
@@ -92,12 +100,12 @@ CalendarEvent _$CalendarEventFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$CalendarEventToJson(CalendarEvent instance) =>
     <String, dynamic>{
       'accessType': instance.accessType,
-      'category': ?instance.category,
+      'category': instance.category,
       'closeInstanceAfterEndMinutes': ?instance.closeInstanceAfterEndMinutes,
       'createdAt': ?instance.createdAt?.toIso8601String(),
       'deletedAt': ?instance.deletedAt?.toIso8601String(),
-      'description': ?instance.description,
-      'endsAt': ?instance.endsAt?.toIso8601String(),
+      'description': instance.description,
+      'endsAt': instance.endsAt.toIso8601String(),
       'featured': ?instance.featured,
       'guestEarlyJoinMinutes': ?instance.guestEarlyJoinMinutes,
       'hostEarlyJoinMinutes': ?instance.hostEarlyJoinMinutes,
@@ -110,7 +118,7 @@ Map<String, dynamic> _$CalendarEventToJson(CalendarEvent instance) =>
       'ownerId': ?instance.ownerId,
       'platforms': ?instance.platforms,
       'roleIds': ?instance.roleIds,
-      'startsAt': ?instance.startsAt?.toIso8601String(),
+      'startsAt': instance.startsAt.toIso8601String(),
       'tags': ?instance.tags,
       'title': instance.title,
       'type': ?instance.type,

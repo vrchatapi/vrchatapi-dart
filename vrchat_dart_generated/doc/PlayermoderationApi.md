@@ -59,7 +59,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPlayerModerations**
-> List<PlayerModeration> getPlayerModerations(type, targetUserId)
+> List<PlayerModeration> getPlayerModerations(type, sourceUserId, targetUserId)
 
 Search Player Moderations
 
@@ -74,11 +74,12 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getPlayermoderationApi();
-final String type = type_example; // String | Must be one of PlayerModerationType, except unblock. Unblocking simply removes a block.
+final PlayerModerationType type = ; // PlayerModerationType | Must be one of PlayerModerationType.
+final String sourceUserId = sourceUserId_example; // String | Must be valid UserID. Trying to view someone else's moderations results with \"Can't view someone else's player moderations\" error.
 final String targetUserId = targetUserId_example; // String | Must be valid UserID.
 
 try {
-    final response = api.getPlayerModerations(type, targetUserId);
+    final response = api.getPlayerModerations(type, sourceUserId, targetUserId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling PlayermoderationApi->getPlayerModerations: $e\n');
@@ -89,7 +90,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **String**| Must be one of PlayerModerationType, except unblock. Unblocking simply removes a block. | [optional] 
+ **type** | [**PlayerModerationType**](.md)| Must be one of PlayerModerationType. | [optional] 
+ **sourceUserId** | **String**| Must be valid UserID. Trying to view someone else's moderations results with \"Can't view someone else's player moderations\" error. | [optional] 
  **targetUserId** | **String**| Must be valid UserID. | [optional] 
 
 ### Return type

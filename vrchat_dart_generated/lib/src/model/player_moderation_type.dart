@@ -6,14 +6,20 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum PlayerModerationType {
-  @JsonValue(r'mute')
-  mute(r'mute'),
-  @JsonValue(r'unmute')
-  unmute(r'unmute'),
   @JsonValue(r'block')
   block(r'block'),
-  @JsonValue(r'unblock')
-  unblock(r'unblock'),
+  @JsonValue(r'mute')
+  mute(r'mute'),
+  @JsonValue(r'muteChat')
+  muteChat(r'muteChat'),
+  @JsonValue(r'unmute')
+  unmute(r'unmute'),
+  @JsonValue(r'unmuteChat')
+  unmuteChat(r'unmuteChat'),
+  @JsonValue(r'hideAvatar')
+  hideAvatar(r'hideAvatar'),
+  @JsonValue(r'showAvatar')
+  showAvatar(r'showAvatar'),
   @JsonValue(r'interactOn')
   interactOn(r'interactOn'),
   @JsonValue(r'interactOff')

@@ -32,6 +32,8 @@ doc/AdminUnityPackage.md
 doc/AgeVerificationStatus.md
 doc/AuthenticationApi.md
 doc/Avatar.md
+doc/AvatarModeration.md
+doc/AvatarModerationType.md
 doc/AvatarPerformance.md
 doc/AvatarPublishedListingsInner.md
 doc/AvatarStyle.md
@@ -56,12 +58,14 @@ doc/CreateGroupPostRequest.md
 doc/CreateGroupRequest.md
 doc/CreateGroupRoleRequest.md
 doc/CreateInstanceRequest.md
+doc/CreatePermissionRequest.md
 doc/CreateWorldRequest.md
 doc/CurrentUser.md
 doc/CurrentUserPlatformHistoryInner.md
 doc/CurrentUserPresence.md
 doc/DeveloperType.md
 doc/Disable2FAResult.md
+doc/DiscordDetails.md
 doc/DynamicContentRow.md
 doc/EconomyAccount.md
 doc/EconomyApi.md
@@ -237,6 +241,7 @@ doc/UpdateGroupRequest.md
 doc/UpdateGroupRoleRequest.md
 doc/UpdateInventoryItemRequest.md
 doc/UpdateInviteMessageRequest.md
+doc/UpdatePermissionRequest.md
 doc/UpdateUserBadgeRequest.md
 doc/UpdateUserNoteRequest.md
 doc/UpdateUserRequest.md
@@ -314,6 +319,8 @@ lib/src/model/api_config_report_options_world.dart
 lib/src/model/api_config_report_reasons.dart
 lib/src/model/api_health.dart
 lib/src/model/avatar.dart
+lib/src/model/avatar_moderation.dart
+lib/src/model/avatar_moderation_type.dart
 lib/src/model/avatar_performance.dart
 lib/src/model/avatar_published_listings_inner.dart
 lib/src/model/avatar_style.dart
@@ -336,12 +343,14 @@ lib/src/model/create_group_post_request.dart
 lib/src/model/create_group_request.dart
 lib/src/model/create_group_role_request.dart
 lib/src/model/create_instance_request.dart
+lib/src/model/create_permission_request.dart
 lib/src/model/create_world_request.dart
 lib/src/model/current_user.dart
 lib/src/model/current_user_platform_history_inner.dart
 lib/src/model/current_user_presence.dart
 lib/src/model/developer_type.dart
 lib/src/model/disable2_fa_result.dart
+lib/src/model/discord_details.dart
 lib/src/model/dynamic_content_row.dart
 lib/src/model/economy_account.dart
 lib/src/model/error.dart
@@ -503,6 +512,7 @@ lib/src/model/update_group_request.dart
 lib/src/model/update_group_role_request.dart
 lib/src/model/update_inventory_item_request.dart
 lib/src/model/update_invite_message_request.dart
+lib/src/model/update_permission_request.dart
 lib/src/model/update_user_badge_request.dart
 lib/src/model/update_user_note_request.dart
 lib/src/model/update_user_request.dart
@@ -553,6 +563,8 @@ test/api_config_report_reasons_test.dart
 test/api_config_test.dart
 test/api_health_test.dart
 test/authentication_api_test.dart
+test/avatar_moderation_test.dart
+test/avatar_moderation_type_test.dart
 test/avatar_performance_test.dart
 test/avatar_published_listings_inner_test.dart
 test/avatar_style_test.dart
@@ -578,12 +590,14 @@ test/create_group_post_request_test.dart
 test/create_group_request_test.dart
 test/create_group_role_request_test.dart
 test/create_instance_request_test.dart
+test/create_permission_request_test.dart
 test/create_world_request_test.dart
 test/current_user_platform_history_inner_test.dart
 test/current_user_presence_test.dart
 test/current_user_test.dart
 test/developer_type_test.dart
 test/disable2_fa_result_test.dart
+test/discord_details_test.dart
 test/dynamic_content_row_test.dart
 test/economy_account_test.dart
 test/economy_api_test.dart
@@ -759,6 +773,7 @@ test/update_group_request_test.dart
 test/update_group_role_request_test.dart
 test/update_inventory_item_request_test.dart
 test/update_invite_message_request_test.dart
+test/update_permission_request_test.dart
 test/update_user_badge_request_test.dart
 test/update_user_note_request_test.dart
 test/update_user_request_test.dart

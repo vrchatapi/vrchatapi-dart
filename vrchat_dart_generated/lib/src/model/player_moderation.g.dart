@@ -50,10 +50,13 @@ Map<String, dynamic> _$PlayerModerationToJson(PlayerModeration instance) =>
     };
 
 const _$PlayerModerationTypeEnumMap = {
-  PlayerModerationType.mute: 'mute',
-  PlayerModerationType.unmute: 'unmute',
   PlayerModerationType.block: 'block',
-  PlayerModerationType.unblock: 'unblock',
+  PlayerModerationType.mute: 'mute',
+  PlayerModerationType.muteChat: 'muteChat',
+  PlayerModerationType.unmute: 'unmute',
+  PlayerModerationType.unmuteChat: 'unmuteChat',
+  PlayerModerationType.hideAvatar: 'hideAvatar',
+  PlayerModerationType.showAvatar: 'showAvatar',
   PlayerModerationType.interactOn: 'interactOn',
   PlayerModerationType.interactOff: 'interactOff',
 };

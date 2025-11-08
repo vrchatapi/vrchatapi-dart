@@ -28,6 +28,7 @@ import 'package:vrchat_dart_generated/src/model/add_group_gallery_image_request.
 import 'package:vrchat_dart_generated/src/model/admin_asset_bundle.dart';
 import 'package:vrchat_dart_generated/src/model/admin_unity_package.dart';
 import 'package:vrchat_dart_generated/src/model/avatar.dart';
+import 'package:vrchat_dart_generated/src/model/avatar_moderation.dart';
 import 'package:vrchat_dart_generated/src/model/avatar_performance.dart';
 import 'package:vrchat_dart_generated/src/model/avatar_published_listings_inner.dart';
 import 'package:vrchat_dart_generated/src/model/avatar_style.dart';
@@ -50,11 +51,13 @@ import 'package:vrchat_dart_generated/src/model/create_group_post_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_group_role_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_instance_request.dart';
+import 'package:vrchat_dart_generated/src/model/create_permission_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_world_request.dart';
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/current_user_platform_history_inner.dart';
 import 'package:vrchat_dart_generated/src/model/current_user_presence.dart';
 import 'package:vrchat_dart_generated/src/model/disable2_fa_result.dart';
+import 'package:vrchat_dart_generated/src/model/discord_details.dart';
 import 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';
 import 'package:vrchat_dart_generated/src/model/economy_account.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
@@ -182,6 +185,7 @@ import 'package:vrchat_dart_generated/src/model/update_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_group_role_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_inventory_item_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_invite_message_request.dart';
+import 'package:vrchat_dart_generated/src/model/update_permission_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_badge_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_note_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_request.dart';
@@ -322,6 +326,10 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'AgeVerificationStatus':
     case 'Avatar':
       return Avatar.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'AvatarModeration':
+      return AvatarModeration.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'AvatarModerationType':
     case 'AvatarPerformance':
       return AvatarPerformance.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -389,6 +397,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'CreateInstanceRequest':
       return CreateInstanceRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'CreatePermissionRequest':
+      return CreatePermissionRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'CreateWorldRequest':
       return CreateWorldRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -405,6 +416,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'DeveloperType':
     case 'Disable2FAResult':
       return Disable2FAResult.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'DiscordDetails':
+      return DiscordDetails.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'DynamicContentRow':
       return DynamicContentRow.fromJson(value as Map<String, dynamic>)
@@ -801,6 +815,9 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'UpdateInviteMessageRequest':
       return UpdateInviteMessageRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'UpdatePermissionRequest':
+      return UpdatePermissionRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'UpdateUserBadgeRequest':
       return UpdateUserBadgeRequest.fromJson(value as Map<String, dynamic>)

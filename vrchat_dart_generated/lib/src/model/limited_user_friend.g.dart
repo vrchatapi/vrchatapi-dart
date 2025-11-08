@@ -16,7 +16,6 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
         $checkKeys(
           json,
           requiredKeys: const [
-            'currentAvatarImageUrl',
             'developerType',
             'displayName',
             'friendKey',
@@ -42,7 +41,7 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
           ),
           currentAvatarImageUrl: $checkedConvert(
             'currentAvatarImageUrl',
-            (v) => v as String,
+            (v) => v as String?,
           ),
           currentAvatarThumbnailImageUrl: $checkedConvert(
             'currentAvatarThumbnailImageUrl',
@@ -113,7 +112,7 @@ Map<String, dynamic> _$LimitedUserFriendToJson(
 ) => <String, dynamic>{
   'bio': ?instance.bio,
   'bioLinks': ?instance.bioLinks,
-  'currentAvatarImageUrl': instance.currentAvatarImageUrl,
+  'currentAvatarImageUrl': ?instance.currentAvatarImageUrl,
   'currentAvatarThumbnailImageUrl': ?instance.currentAvatarThumbnailImageUrl,
   'currentAvatarTags': ?instance.currentAvatarTags,
   'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,

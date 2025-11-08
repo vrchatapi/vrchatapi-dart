@@ -11,6 +11,7 @@ import 'package:dio/dio.dart';
 
 import 'package:vrchat_dart_generated/src/model/moderate_user_request.dart';
 import 'package:vrchat_dart_generated/src/model/player_moderation.dart';
+import 'package:vrchat_dart_generated/src/model/player_moderation_type.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
 
 class PlayermoderationApi {
@@ -98,7 +99,8 @@ class PlayermoderationApi {
   /// Returns a list of all player moderations made by **you**.  This endpoint does not have pagination, and will return *all* results. Use query parameters to limit your query if needed.
   ///
   /// Parameters:
-  /// * [type] - Must be one of PlayerModerationType, except unblock. Unblocking simply removes a block.
+  /// * [type] - Must be one of PlayerModerationType.
+  /// * [sourceUserId] - Must be valid UserID. Trying to view someone else's moderations results with \"Can't view someone else's player moderations\" error.
   /// * [targetUserId] - Must be valid UserID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -110,7 +112,8 @@ class PlayermoderationApi {
   /// Returns a [Future] containing a [Response] with a [List<PlayerModeration>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<PlayerModeration>>> getPlayerModerations({
-    String? type,
+    PlayerModerationType? type,
+    String? sourceUserId,
     String? targetUserId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -139,6 +142,7 @@ class PlayermoderationApi {
 
     final _queryParameters = <String, dynamic>{
       if (type != null) r'type': type,
+      if (sourceUserId != null) r'sourceUserId': sourceUserId,
       if (targetUserId != null) r'targetUserId': targetUserId,
     };
 

@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**disable2FA**](AuthenticationApi.md#disable2fa) | **DELETE** /auth/twofactorauth | Disable 2FA
 [**enable2FA**](AuthenticationApi.md#enable2fa) | **POST** /auth/twofactorauth/totp/pending | Enable time-based 2FA codes
 [**getCurrentUser**](AuthenticationApi.md#getcurrentuser) | **GET** /auth/user | Login and/or Get Current User Info
+[**getGlobalAvatarModerations**](AuthenticationApi.md#getglobalavatarmoderations) | **GET** /auth/user/avatarmoderations | Get Global Avatar Moderations
 [**getRecoveryCodes**](AuthenticationApi.md#getrecoverycodes) | **GET** /auth/user/twofactorauth/otp | Get 2FA Recovery codes
 [**logout**](AuthenticationApi.md#logout) | **PUT** /logout | Logout
 [**registerUserAccount**](AuthenticationApi.md#registeruseraccount) | **POST** /auth/register | Register User Account
@@ -339,6 +340,49 @@ This endpoint does not need any parameter.
 ### Authorization
 
 [authHeader](../README.md#authHeader), [twoFactorAuthCookie](../README.md#twoFactorAuthCookie), [authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getGlobalAvatarModerations**
+> List<AvatarModeration> getGlobalAvatarModerations()
+
+Get Global Avatar Moderations
+
+Returns list of globally blocked avatars.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+
+try {
+    final response = api.getGlobalAvatarModerations();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AuthenticationApi->getGlobalAvatarModerations: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;AvatarModeration&gt;**](AvatarModeration.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 

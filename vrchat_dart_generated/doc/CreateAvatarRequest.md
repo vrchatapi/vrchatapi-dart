@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **thumbnailImageUrl** | **String** |  | [optional] 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | [optional] 
 **version** | **int** |  | [optional] [default to 1]
+**featured** | **bool** | Enabling featured tag requires Admin Credentials. | [optional] 
 **unityPackageUrl** | **String** |  | [optional] 
 **unityVersion** | **String** |  | [optional] [default to '5.3.4p1']
 
