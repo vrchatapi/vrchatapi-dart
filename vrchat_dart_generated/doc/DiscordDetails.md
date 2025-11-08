@@ -8,8 +8,8 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**globalName** | **String** |  | 
-**id** | **String** | https://discord.com/developers/docs/reference#snowflakes | 
+**globalName** | **String** |  | [optional] 
+**id** | **String** | https://discord.com/developers/docs/reference#snowflakes | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

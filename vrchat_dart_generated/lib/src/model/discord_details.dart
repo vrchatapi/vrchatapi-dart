@@ -16,14 +16,14 @@ part 'discord_details.g.dart';
 )
 class DiscordDetails {
   /// Returns a new [DiscordDetails] instance.
-  DiscordDetails({required this.globalName, required this.id});
+  DiscordDetails({this.globalName, this.id});
 
-  @JsonKey(name: r'global_name', required: true, includeIfNull: false)
-  final String globalName;
+  @JsonKey(name: r'global_name', required: false, includeIfNull: false)
+  final String? globalName;
 
   /// https://discord.com/developers/docs/reference#snowflakes
-  @JsonKey(name: r'id', required: true, includeIfNull: false)
-  final String id;
+  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  final String? id;
 
   @override
   bool operator ==(Object other) =>
