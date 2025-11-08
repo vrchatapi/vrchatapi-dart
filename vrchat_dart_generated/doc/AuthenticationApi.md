@@ -133,8 +133,8 @@ Confirms the email address for a user
 import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getAuthenticationApi();
-final String id = usr_00000000-0000-0000-0000-000000000000; // String | Target user for which to verify email.
-final String verifyEmail = eml_00000000-0000-0000-0000-000000000000; // String | Token to verify email.
+final String id = id_example; // String | Target user for which to verify email.
+final String verifyEmail = verifyEmail_example; // String | Token to verify email.
 
 try {
     api.confirmEmail(id, verifyEmail);

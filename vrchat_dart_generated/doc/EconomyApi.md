@@ -371,7 +371,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final bool hydrate = true; // bool | Populates some fields and changes types of others for certain objects.
-final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final String groupId = groupId_example; // String | Must be a valid group ID.
 final bool active = true; // bool | Filter for users' listings and inventory bundles.
 
 try {
@@ -793,7 +793,7 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getEconomyApi();
 final String userId = userId_example; // String | Must be a valid user ID.
-final String steamId = game night; // String | The Steam ID of the user.
+final String steamId = steamId_example; // String | The Steam ID of the user.
 
 try {
     final response = api.getUserSubscriptionEligible(userId, steamId);

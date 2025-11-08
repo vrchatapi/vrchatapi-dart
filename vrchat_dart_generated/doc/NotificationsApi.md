@@ -217,10 +217,10 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getNotificationsApi();
-final String type = all; // String | Only send notifications of this type (can use `all` for all). This parameter no longer does anything, and is deprecated.
+final String type = type_example; // String | Only send notifications of this type (can use `all` for all). This parameter no longer does anything, and is deprecated.
 final bool sent = true; // bool | Return notifications sent by the user. Must be false or omitted.
 final bool hidden = true; // bool | Whether to return hidden or non-hidden notifications. True only allowed on type `friendRequest`.
-final String after = five_minutes_ago; // String | Only return notifications sent after this Date. Ignored if type is `friendRequest`.
+final String after = after_example; // String | Only return notifications sent after this Date. Ignored if type is `friendRequest`.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 

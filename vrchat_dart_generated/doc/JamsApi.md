@@ -30,7 +30,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getJamsApi();
-final String jamId = jam_0b7e3f6d-4647-4648-b2a1-1431e76906d9; // String | Must be a valid query ID.
+final String jamId = jamId_example; // String | Must be a valid query ID.
 
 try {
     final response = api.getJam(jamId);
@@ -77,7 +77,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getJamsApi();
-final String jamId = jam_0b7e3f6d-4647-4648-b2a1-1431e76906d9; // String | Must be a valid query ID.
+final String jamId = jamId_example; // String | Must be a valid query ID.
 
 try {
     final response = api.getJamSubmissions(jamId);
@@ -124,7 +124,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getJamsApi();
-final String type = avatar; // String | Only show jams of this type (`avatar` or `world`).
+final String type = type_example; // String | Only show jams of this type (`avatar` or `world`).
 
 try {
     final response = api.getJams(type);
