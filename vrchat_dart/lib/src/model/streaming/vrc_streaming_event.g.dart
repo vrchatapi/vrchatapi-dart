@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: document_ignores, require_trailing_commas, not_null_assertion
+// ignore_for_file: document_ignores, require_trailing_commas, rexios_lints/not_null_assertion
 
 part of 'vrc_streaming_event.dart';
 

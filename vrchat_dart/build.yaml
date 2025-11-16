@@ -6,4 +6,4 @@ targets:
           ignore_for_file:
             - document_ignores
             - require_trailing_commas
-            - not_null_assertion
+            - rexios_lints/not_null_assertion
