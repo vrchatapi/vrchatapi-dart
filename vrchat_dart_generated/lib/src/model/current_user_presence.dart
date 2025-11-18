@@ -54,7 +54,7 @@ class CurrentUserPresence {
   final String? avatarThumbnail;
 
   @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
-  final String? currentAvatarTags;
+  final List<String>? currentAvatarTags;
 
   @JsonKey(name: r'displayName', required: false, includeIfNull: false)
   final String? displayName;

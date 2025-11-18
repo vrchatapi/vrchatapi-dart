@@ -9,7 +9,7 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **avatarThumbnail** | **String** |  | [optional] 
-**currentAvatarTags** | **String** |  | [optional] 
+**currentAvatarTags** | **List&lt;String&gt;** |  | [optional] 
 **displayName** | **String** |  | [optional] 
 **debugflag** | **String** |  | [optional] 
 **groups** | **List&lt;String&gt;** |  | [optional] 

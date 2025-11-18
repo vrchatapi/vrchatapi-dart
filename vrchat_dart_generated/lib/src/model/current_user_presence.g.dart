@@ -15,7 +15,7 @@ CurrentUserPresence _$CurrentUserPresenceFromJson(
     avatarThumbnail: $checkedConvert('avatarThumbnail', (v) => v as String?),
     currentAvatarTags: $checkedConvert(
       'currentAvatarTags',
-      (v) => v as String?,
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
     displayName: $checkedConvert('displayName', (v) => v as String?),
     debugflag: $checkedConvert('debugflag', (v) => v as String?),
