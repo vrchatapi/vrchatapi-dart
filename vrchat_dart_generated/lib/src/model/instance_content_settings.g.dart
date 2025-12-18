@@ -16,8 +16,8 @@ InstanceContentSettings _$InstanceContentSettingsFromJson(
     emoji: $checkedConvert('emoji', (v) => v as bool? ?? true),
     pedestals: $checkedConvert('pedestals', (v) => v as bool? ?? true),
     prints: $checkedConvert('prints', (v) => v as bool? ?? true),
-    stickers: $checkedConvert('stickers', (v) => v as bool? ?? true),
     props: $checkedConvert('props', (v) => v as bool? ?? true),
+    stickers: $checkedConvert('stickers', (v) => v as bool? ?? true),
   );
   return val;
 });
@@ -29,6 +29,6 @@ Map<String, dynamic> _$InstanceContentSettingsToJson(
   'emoji': ?instance.emoji,
   'pedestals': ?instance.pedestals,
   'prints': ?instance.prints,
-  'stickers': ?instance.stickers,
   'props': ?instance.props,
+  'stickers': ?instance.stickers,
 };

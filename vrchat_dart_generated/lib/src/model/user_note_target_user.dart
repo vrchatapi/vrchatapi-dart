@@ -17,18 +17,21 @@ part 'user_note_target_user.g.dart';
 class UserNoteTargetUser {
   /// Returns a new [UserNoteTargetUser] instance.
   UserNoteTargetUser({
+    this.id,
+
     this.currentAvatarTags,
 
     this.currentAvatarThumbnailImageUrl,
 
     this.displayName,
 
-    this.id,
-
     this.profilePicOverride,
 
     this.userIcon,
   });
+
+  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  final String? id;
 
   @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
   final List<String>? currentAvatarTags;
@@ -44,9 +47,6 @@ class UserNoteTargetUser {
   @JsonKey(name: r'displayName', required: false, includeIfNull: false)
   final String? displayName;
 
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
-  final String? id;
-
   @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
   final String? profilePicOverride;
 
@@ -57,20 +57,20 @@ class UserNoteTargetUser {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is UserNoteTargetUser &&
+          other.id == id &&
           other.currentAvatarTags == currentAvatarTags &&
           other.currentAvatarThumbnailImageUrl ==
               currentAvatarThumbnailImageUrl &&
           other.displayName == displayName &&
-          other.id == id &&
           other.profilePicOverride == profilePicOverride &&
           other.userIcon == userIcon;
 
   @override
   int get hashCode =>
+      id.hashCode +
       currentAvatarTags.hashCode +
       currentAvatarThumbnailImageUrl.hashCode +
       displayName.hashCode +
-      id.hashCode +
       (profilePicOverride == null ? 0 : profilePicOverride.hashCode) +
       userIcon.hashCode;
 

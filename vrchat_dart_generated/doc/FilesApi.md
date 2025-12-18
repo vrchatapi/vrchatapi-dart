@@ -288,7 +288,7 @@ final api = VrchatDartGenerated().getFilesApi();
 final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Must be a valid file ID.
 final int versionId = 1; // int | Version ID of the asset.
 final String fileType = file; // String | Type of file.
-final FinishFileDataUploadRequest finishFileDataUploadRequest = {"etags":["xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"],"nextPartNumber":"0","maxParts":"0"}; // FinishFileDataUploadRequest | Please see documentation on ETag's: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag's should NOT be present when uploading a `signature`.
+final FinishFileDataUploadRequest finishFileDataUploadRequest = {"etags":["xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"],"maxParts":"0","nextPartNumber":"0"}; // FinishFileDataUploadRequest | Please see documentation on ETag's: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag's should NOT be present when uploading a `signature`.
 
 try {
     final response = api.finishFileDataUpload(fileId, versionId, fileType, finishFileDataUploadRequest);
@@ -815,7 +815,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **uploadImage**
-> File uploadImage(file, tag, frames, framesOverTime, animationStyle, maskTag)
+> File uploadImage(file, tag, animationStyle, frames, framesOverTime, maskTag)
 
 Upload gallery image, icon, emoji or sticker
 
@@ -832,13 +832,13 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getFilesApi();
 final MultipartFile file = BINARY_DATA_HERE; // MultipartFile | The binary blob of the png file.
 final String tag = tag_example; // String | Needs to be either icon, gallery, sticker, emoji, or emojianimated
+final String animationStyle = animationStyle_example; // String | Animation style for sticker, required for emoji.
 final int frames = 56; // int | Required for emojianimated. Total number of frames to be animated (2-64)
 final int framesOverTime = 56; // int | Required for emojianimated. Animation frames per second (1-64)
-final String animationStyle = animationStyle_example; // String | Animation style for sticker, required for emoji.
 final String maskTag = maskTag_example; // String | Mask of the sticker, optional for emoji.
 
 try {
-    final response = api.uploadImage(file, tag, frames, framesOverTime, animationStyle, maskTag);
+    final response = api.uploadImage(file, tag, animationStyle, frames, framesOverTime, maskTag);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling FilesApi->uploadImage: $e\n');
@@ -851,9 +851,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file** | **MultipartFile**| The binary blob of the png file. | 
  **tag** | **String**| Needs to be either icon, gallery, sticker, emoji, or emojianimated | 
+ **animationStyle** | **String**| Animation style for sticker, required for emoji. | [optional] 
  **frames** | **int**| Required for emojianimated. Total number of frames to be animated (2-64) | [optional] 
  **framesOverTime** | **int**| Required for emojianimated. Animation frames per second (1-64) | [optional] 
- **animationStyle** | **String**| Animation style for sticker, required for emoji. | [optional] 
  **maskTag** | **String**| Mask of the sticker, optional for emoji. | [optional] 
 
 ### Return type

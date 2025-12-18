@@ -1710,7 +1710,7 @@ class GroupsApi {
   }
 
   /// Get Group Announcement
-  /// Returns the announcement for a Group. If no announcement has been made, then it returns **empty object**.  If an announcement exists, then it will always return all fields except &#x60;imageId&#x60; and &#x60;imageUrl&#x60; which may be null.
+  /// Returns the announcement for a Group. If no announcement has been made, then it returns **empty object**. If an announcement exists, then it will always return all fields except &#x60;imageId&#x60; and &#x60;imageUrl&#x60; which may be null.
   ///
   /// Parameters:
   /// * [groupId] - Must be a valid group ID.

@@ -17,38 +17,38 @@ part 'account_deletion_log.g.dart';
 class AccountDeletionLog {
   /// Returns a new [AccountDeletionLog] instance.
   AccountDeletionLog({
-    this.message = 'Deletion requested',
+    this.dateTime,
 
     this.deletionScheduled,
 
-    this.dateTime,
+    this.message = 'Deletion requested',
   });
-
-  /// Typically \"Deletion requested\" or \"Deletion canceled\". Other messages like \"Deletion completed\" may exist, but are these are not possible to see as a regular user.
-  @JsonKey(name: r'message', required: false, includeIfNull: false)
-  final String? message;
-
-  /// When the deletion is scheduled to happen, standard is 14 days after the request.
-  @JsonKey(name: r'deletionScheduled', required: false, includeIfNull: false)
-  final DateTime? deletionScheduled;
 
   /// Date and time of the deletion request.
   @JsonKey(name: r'dateTime', required: false, includeIfNull: false)
   final DateTime? dateTime;
 
+  /// When the deletion is scheduled to happen, standard is 14 days after the request.
+  @JsonKey(name: r'deletionScheduled', required: false, includeIfNull: false)
+  final DateTime? deletionScheduled;
+
+  /// Typically \"Deletion requested\" or \"Deletion canceled\". Other messages like \"Deletion completed\" may exist, but are these are not possible to see as a regular user.
+  @JsonKey(name: r'message', required: false, includeIfNull: false)
+  final String? message;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is AccountDeletionLog &&
-          other.message == message &&
+          other.dateTime == dateTime &&
           other.deletionScheduled == deletionScheduled &&
-          other.dateTime == dateTime;
+          other.message == message;
 
   @override
   int get hashCode =>
-      message.hashCode +
+      dateTime.hashCode +
       (deletionScheduled == null ? 0 : deletionScheduled.hashCode) +
-      dateTime.hashCode;
+      message.hashCode;
 
   factory AccountDeletionLog.fromJson(Map<String, dynamic> json) =>
       _$AccountDeletionLogFromJson(json);

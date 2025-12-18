@@ -66,9 +66,9 @@ class CalendarEvent {
 
     this.updatedAt,
 
-    this.usesInstanceOverflow,
-
     this.userInterest,
+
+    this.usesInstanceOverflow,
   });
 
   @JsonKey(name: r'accessType', required: true, includeIfNull: false)
@@ -155,11 +155,11 @@ class CalendarEvent {
   @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
   final DateTime? updatedAt;
 
-  @JsonKey(name: r'usesInstanceOverflow', required: false, includeIfNull: false)
-  final bool? usesInstanceOverflow;
-
   @JsonKey(name: r'userInterest', required: false, includeIfNull: false)
   final CalendarEventUserInterest? userInterest;
+
+  @JsonKey(name: r'usesInstanceOverflow', required: false, includeIfNull: false)
+  final bool? usesInstanceOverflow;
 
   @override
   bool operator ==(Object other) =>
@@ -189,8 +189,8 @@ class CalendarEvent {
           other.title == title &&
           other.type == type &&
           other.updatedAt == updatedAt &&
-          other.usesInstanceOverflow == usesInstanceOverflow &&
-          other.userInterest == userInterest;
+          other.userInterest == userInterest &&
+          other.usesInstanceOverflow == usesInstanceOverflow;
 
   @override
   int get hashCode =>
@@ -218,8 +218,8 @@ class CalendarEvent {
       title.hashCode +
       type.hashCode +
       updatedAt.hashCode +
-      usesInstanceOverflow.hashCode +
-      userInterest.hashCode;
+      userInterest.hashCode +
+      usesInstanceOverflow.hashCode;
 
   factory CalendarEvent.fromJson(Map<String, dynamic> json) =>
       _$CalendarEventFromJson(json);

@@ -20,40 +20,37 @@ part 'create_group_request.g.dart';
 class CreateGroupRequest {
   /// Returns a new [CreateGroupRequest] instance.
   CreateGroupRequest({
-    required this.name,
-
-    required this.shortCode,
+    this.bannerId,
 
     this.description,
 
-    this.joinState,
-
     this.iconId,
 
-    this.bannerId,
+    this.joinState,
+
+    required this.name,
 
     this.privacy,
 
     required this.roleTemplate,
+
+    required this.shortCode,
   });
 
-  @JsonKey(name: r'name', required: true, includeIfNull: false)
-  final String name;
-
-  @JsonKey(name: r'shortCode', required: true, includeIfNull: false)
-  final String shortCode;
+  @JsonKey(name: r'bannerId', required: false, includeIfNull: false)
+  final String? bannerId;
 
   @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;
 
-  @JsonKey(name: r'joinState', required: false, includeIfNull: false)
-  final GroupJoinState? joinState;
-
   @JsonKey(name: r'iconId', required: false, includeIfNull: false)
   final String? iconId;
 
-  @JsonKey(name: r'bannerId', required: false, includeIfNull: false)
-  final String? bannerId;
+  @JsonKey(name: r'joinState', required: false, includeIfNull: false)
+  final GroupJoinState? joinState;
+
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
+  final String name;
 
   @JsonKey(name: r'privacy', required: false, includeIfNull: false)
   final GroupPrivacy? privacy;
@@ -61,29 +58,32 @@ class CreateGroupRequest {
   @JsonKey(name: r'roleTemplate', required: true, includeIfNull: false)
   final GroupRoleTemplate roleTemplate;
 
+  @JsonKey(name: r'shortCode', required: true, includeIfNull: false)
+  final String shortCode;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is CreateGroupRequest &&
-          other.name == name &&
-          other.shortCode == shortCode &&
-          other.description == description &&
-          other.joinState == joinState &&
-          other.iconId == iconId &&
           other.bannerId == bannerId &&
+          other.description == description &&
+          other.iconId == iconId &&
+          other.joinState == joinState &&
+          other.name == name &&
           other.privacy == privacy &&
-          other.roleTemplate == roleTemplate;
+          other.roleTemplate == roleTemplate &&
+          other.shortCode == shortCode;
 
   @override
   int get hashCode =>
-      name.hashCode +
-      shortCode.hashCode +
-      description.hashCode +
-      joinState.hashCode +
-      (iconId == null ? 0 : iconId.hashCode) +
       (bannerId == null ? 0 : bannerId.hashCode) +
+      description.hashCode +
+      (iconId == null ? 0 : iconId.hashCode) +
+      joinState.hashCode +
+      name.hashCode +
       privacy.hashCode +
-      roleTemplate.hashCode;
+      roleTemplate.hashCode +
+      shortCode.hashCode;
 
   factory CreateGroupRequest.fromJson(Map<String, dynamic> json) =>
       _$CreateGroupRequestFromJson(json);

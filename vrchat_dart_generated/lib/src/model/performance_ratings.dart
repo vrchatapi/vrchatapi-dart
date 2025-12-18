@@ -8,10 +8,6 @@ import 'package:json_annotation/json_annotation.dart';
 /// Avatar Performance ratings.
 enum PerformanceRatings {
   /// Avatar Performance ratings.
-  @JsonValue(r'None')
-  none(r'None'),
-
-  /// Avatar Performance ratings.
   @JsonValue(r'Excellent')
   excellent(r'Excellent'),
 
@@ -22,6 +18,10 @@ enum PerformanceRatings {
   /// Avatar Performance ratings.
   @JsonValue(r'Medium')
   medium(r'Medium'),
+
+  /// Avatar Performance ratings.
+  @JsonValue(r'None')
+  none(r'None'),
 
   /// Avatar Performance ratings.
   @JsonValue(r'Poor')

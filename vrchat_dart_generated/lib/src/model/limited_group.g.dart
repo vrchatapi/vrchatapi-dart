@@ -11,39 +11,39 @@ part of 'limited_group.dart';
 LimitedGroup _$LimitedGroupFromJson(Map<String, dynamic> json) =>
     $checkedCreate('LimitedGroup', json, ($checkedConvert) {
       final val = LimitedGroup(
-        id: $checkedConvert('id', (v) => v as String?),
-        name: $checkedConvert('name', (v) => v as String?),
-        shortCode: $checkedConvert('shortCode', (v) => v as String?),
-        discriminator: $checkedConvert('discriminator', (v) => v as String?),
-        description: $checkedConvert('description', (v) => v as String?),
-        iconUrl: $checkedConvert('iconUrl', (v) => v as String?),
-        bannerUrl: $checkedConvert('bannerUrl', (v) => v as String?),
-        ownerId: $checkedConvert('ownerId', (v) => v as String?),
-        rules: $checkedConvert('rules', (v) => v as String?),
-        iconId: $checkedConvert('iconId', (v) => v as String?),
         bannerId: $checkedConvert('bannerId', (v) => v as String?),
-        memberCount: $checkedConvert(
-          'memberCount',
-          (v) => (v as num?)?.toInt(),
-        ),
-        tags: $checkedConvert(
-          'tags',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-        ),
+        bannerUrl: $checkedConvert('bannerUrl', (v) => v as String?),
         createdAt: $checkedConvert(
           'createdAt',
           (v) => v == null ? null : DateTime.parse(v as String),
         ),
-        membershipStatus: $checkedConvert(
-          'membershipStatus',
-          (v) => $enumDecodeNullable(_$GroupMemberStatusEnumMap, v),
-        ),
-        isSearchable: $checkedConvert('isSearchable', (v) => v as bool?),
+        description: $checkedConvert('description', (v) => v as String?),
+        discriminator: $checkedConvert('discriminator', (v) => v as String?),
         galleries: $checkedConvert(
           'galleries',
           (v) => (v as List<dynamic>?)
               ?.map((e) => GroupGallery.fromJson(e as Map<String, dynamic>))
               .toList(),
+        ),
+        iconId: $checkedConvert('iconId', (v) => v as String?),
+        iconUrl: $checkedConvert('iconUrl', (v) => v as String?),
+        id: $checkedConvert('id', (v) => v as String?),
+        isSearchable: $checkedConvert('isSearchable', (v) => v as bool?),
+        memberCount: $checkedConvert(
+          'memberCount',
+          (v) => (v as num?)?.toInt(),
+        ),
+        membershipStatus: $checkedConvert(
+          'membershipStatus',
+          (v) => $enumDecodeNullable(_$GroupMemberStatusEnumMap, v),
+        ),
+        name: $checkedConvert('name', (v) => v as String?),
+        ownerId: $checkedConvert('ownerId', (v) => v as String?),
+        rules: $checkedConvert('rules', (v) => v as String?),
+        shortCode: $checkedConvert('shortCode', (v) => v as String?),
+        tags: $checkedConvert(
+          'tags',
+          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
         ),
       );
       return val;
@@ -52,30 +52,30 @@ LimitedGroup _$LimitedGroupFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$LimitedGroupToJson(
   LimitedGroup instance,
 ) => <String, dynamic>{
-  'id': ?instance.id,
-  'name': ?instance.name,
-  'shortCode': ?instance.shortCode,
-  'discriminator': ?instance.discriminator,
-  'description': ?instance.description,
-  'iconUrl': ?instance.iconUrl,
+  'bannerId': ?instance.bannerId,
   'bannerUrl': ?instance.bannerUrl,
+  'createdAt': ?instance.createdAt?.toIso8601String(),
+  'description': ?instance.description,
+  'discriminator': ?instance.discriminator,
+  'galleries': ?instance.galleries?.map((e) => e.toJson()).toList(),
+  'iconId': ?instance.iconId,
+  'iconUrl': ?instance.iconUrl,
+  'id': ?instance.id,
+  'isSearchable': ?instance.isSearchable,
+  'memberCount': ?instance.memberCount,
+  'membershipStatus': ?_$GroupMemberStatusEnumMap[instance.membershipStatus],
+  'name': ?instance.name,
   'ownerId': ?instance.ownerId,
   'rules': ?instance.rules,
-  'iconId': ?instance.iconId,
-  'bannerId': ?instance.bannerId,
-  'memberCount': ?instance.memberCount,
+  'shortCode': ?instance.shortCode,
   'tags': ?instance.tags,
-  'createdAt': ?instance.createdAt?.toIso8601String(),
-  'membershipStatus': ?_$GroupMemberStatusEnumMap[instance.membershipStatus],
-  'isSearchable': ?instance.isSearchable,
-  'galleries': ?instance.galleries?.map((e) => e.toJson()).toList(),
 };
 
 const _$GroupMemberStatusEnumMap = {
+  GroupMemberStatus.banned: 'banned',
   GroupMemberStatus.inactive: 'inactive',
+  GroupMemberStatus.invited: 'invited',
   GroupMemberStatus.member: 'member',
   GroupMemberStatus.requested: 'requested',
-  GroupMemberStatus.invited: 'invited',
-  GroupMemberStatus.banned: 'banned',
   GroupMemberStatus.userblocked: 'userblocked',
 };

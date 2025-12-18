@@ -20,13 +20,13 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
             'displayName',
             'friendKey',
             'id',
-            'isFriend',
             'imageUrl',
+            'isFriend',
+            'last_activity',
+            'last_login',
+            'last_mobile',
             'last_platform',
             'location',
-            'last_login',
-            'last_activity',
-            'last_mobile',
             'platform',
             'status',
             'statusDescription',
@@ -43,13 +43,13 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
             'currentAvatarImageUrl',
             (v) => v as String?,
           ),
-          currentAvatarThumbnailImageUrl: $checkedConvert(
-            'currentAvatarThumbnailImageUrl',
-            (v) => v as String?,
-          ),
           currentAvatarTags: $checkedConvert(
             'currentAvatarTags',
             (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+          ),
+          currentAvatarThumbnailImageUrl: $checkedConvert(
+            'currentAvatarThumbnailImageUrl',
+            (v) => v as String?,
           ),
           developerType: $checkedConvert(
             'developerType',
@@ -58,22 +58,22 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
           displayName: $checkedConvert('displayName', (v) => v as String),
           friendKey: $checkedConvert('friendKey', (v) => v as String),
           id: $checkedConvert('id', (v) => v as String),
-          isFriend: $checkedConvert('isFriend', (v) => v as bool),
           imageUrl: $checkedConvert('imageUrl', (v) => v as String),
-          lastPlatform: $checkedConvert('last_platform', (v) => v as String),
-          location: $checkedConvert('location', (v) => v as String),
-          lastLogin: $checkedConvert(
-            'last_login',
-            (v) => v == null ? null : DateTime.parse(v as String),
-          ),
+          isFriend: $checkedConvert('isFriend', (v) => v as bool),
           lastActivity: $checkedConvert(
             'last_activity',
+            (v) => v == null ? null : DateTime.parse(v as String),
+          ),
+          lastLogin: $checkedConvert(
+            'last_login',
             (v) => v == null ? null : DateTime.parse(v as String),
           ),
           lastMobile: $checkedConvert(
             'last_mobile',
             (v) => v == null ? null : DateTime.parse(v as String),
           ),
+          lastPlatform: $checkedConvert('last_platform', (v) => v as String),
+          location: $checkedConvert('location', (v) => v as String),
           platform: $checkedConvert('platform', (v) => v as String),
           profilePicOverride: $checkedConvert(
             'profilePicOverride',
@@ -100,10 +100,10 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
         return val;
       },
       fieldKeyMap: const {
-        'lastPlatform': 'last_platform',
-        'lastLogin': 'last_login',
         'lastActivity': 'last_activity',
+        'lastLogin': 'last_login',
         'lastMobile': 'last_mobile',
+        'lastPlatform': 'last_platform',
       },
     );
 
@@ -113,19 +113,19 @@ Map<String, dynamic> _$LimitedUserFriendToJson(
   'bio': ?instance.bio,
   'bioLinks': ?instance.bioLinks,
   'currentAvatarImageUrl': ?instance.currentAvatarImageUrl,
-  'currentAvatarThumbnailImageUrl': ?instance.currentAvatarThumbnailImageUrl,
   'currentAvatarTags': ?instance.currentAvatarTags,
+  'currentAvatarThumbnailImageUrl': ?instance.currentAvatarThumbnailImageUrl,
   'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
   'displayName': instance.displayName,
   'friendKey': instance.friendKey,
   'id': instance.id,
-  'isFriend': instance.isFriend,
   'imageUrl': instance.imageUrl,
+  'isFriend': instance.isFriend,
+  'last_activity': instance.lastActivity?.toIso8601String(),
+  'last_login': instance.lastLogin?.toIso8601String(),
+  'last_mobile': instance.lastMobile?.toIso8601String(),
   'last_platform': instance.lastPlatform,
   'location': instance.location,
-  'last_login': instance.lastLogin?.toIso8601String(),
-  'last_activity': instance.lastActivity?.toIso8601String(),
-  'last_mobile': instance.lastMobile?.toIso8601String(),
   'platform': instance.platform,
   'profilePicOverride': ?instance.profilePicOverride,
   'profilePicOverrideThumbnail': ?instance.profilePicOverrideThumbnail,
@@ -136,16 +136,16 @@ Map<String, dynamic> _$LimitedUserFriendToJson(
 };
 
 const _$DeveloperTypeEnumMap = {
-  DeveloperType.none: 'none',
-  DeveloperType.trusted: 'trusted',
   DeveloperType.internal: 'internal',
   DeveloperType.moderator: 'moderator',
+  DeveloperType.none: 'none',
+  DeveloperType.trusted: 'trusted',
 };
 
 const _$UserStatusEnumMap = {
   UserStatus.active: 'active',
-  UserStatus.joinMe: 'join me',
   UserStatus.askMe: 'ask me',
   UserStatus.busy: 'busy',
+  UserStatus.joinMe: 'join me',
   UserStatus.offline: 'offline',
 };

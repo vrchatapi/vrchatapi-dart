@@ -11,6 +11,7 @@ import 'package:dio/dio.dart';
 
 import 'package:vrchat_dart_generated/src/model/inventory.dart';
 import 'package:vrchat_dart_generated/src/model/inventory_drop.dart';
+import 'package:vrchat_dart_generated/src/model/inventory_equip_slot.dart';
 import 'package:vrchat_dart_generated/src/model/inventory_flag.dart';
 import 'package:vrchat_dart_generated/src/model/inventory_item.dart';
 import 'package:vrchat_dart_generated/src/model/inventory_item_type.dart';
@@ -18,6 +19,7 @@ import 'package:vrchat_dart_generated/src/model/inventory_spawn.dart';
 import 'package:vrchat_dart_generated/src/model/inventory_template.dart';
 import 'package:vrchat_dart_generated/src/model/ok_status.dart';
 import 'package:vrchat_dart_generated/src/model/share_inventory_item_direct_request.dart';
+import 'package:vrchat_dart_generated/src/model/success_flag.dart';
 import 'package:vrchat_dart_generated/src/model/update_inventory_item_request.dart';
 
 class InventoryApi {
@@ -25,12 +27,101 @@ class InventoryApi {
 
   const InventoryApi(this._dio);
 
+  /// Delete Own Inventory Item
+  /// Deletes an InventoryItem from the inventory of the currently logged in user.
+  ///
+  /// Parameters:
+  /// * [inventoryItemId] - Must be a valid inventory item ID.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [SuccessFlag] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<SuccessFlag>> deleteOwnInventoryItem({
+    required String inventoryItemId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/inventory/{inventoryItemId}'.replaceAll(
+      '{'
+      r'inventoryItemId'
+      '}',
+      inventoryItemId.toString(),
+    );
+    final _options = Options(
+      method: r'DELETE',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    SuccessFlag? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<SuccessFlag, SuccessFlag>(
+              rawData,
+              'SuccessFlag',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<SuccessFlag>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// Get Inventory
   /// Returns an Inventory object.
   ///
   /// Parameters:
   /// * [n] - The number of objects to return.
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
+  /// * [holderId] - The UserID of the owner of the inventory; defaults to the currently authenticated user.
+  /// * [equipSlot] - Filter for inventory retrieval.
   /// * [order] - Sort order for inventory retrieval.
   /// * [tags] - Filter tags for inventory retrieval (comma-separated).
   /// * [types] - Filter for inventory retrieval.
@@ -50,6 +141,8 @@ class InventoryApi {
   Future<Response<Inventory>> getInventory({
     int? n = 60,
     int? offset,
+    String? holderId,
+    InventoryEquipSlot? equipSlot,
     String? order,
     String? tags,
     InventoryItemType? types,
@@ -85,6 +178,8 @@ class InventoryApi {
     final _queryParameters = <String, dynamic>{
       if (n != null) r'n': n,
       if (offset != null) r'offset': offset,
+      if (holderId != null) r'holderId': holderId,
+      if (equipSlot != null) r'equipSlot': equipSlot,
       if (order != null) r'order': order,
       if (tags != null) r'tags': tags,
       if (types != null) r'types': types,

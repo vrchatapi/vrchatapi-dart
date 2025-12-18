@@ -12,20 +12,30 @@ UpdateUserRequest _$UpdateUserRequestFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('UpdateUserRequest', json, ($checkedConvert) {
   final val = UpdateUserRequest(
-    email: $checkedConvert('email', (v) => v as String?),
-    unsubscribe: $checkedConvert('unsubscribe', (v) => v as bool?),
-    birthday: $checkedConvert(
-      'birthday',
-      (v) => v == null ? null : DateTime.parse(v as String),
-    ),
     acceptedTOSVersion: $checkedConvert(
       'acceptedTOSVersion',
       (v) => (v as num?)?.toInt(),
     ),
-    tags: $checkedConvert(
-      'tags',
+    bio: $checkedConvert('bio', (v) => v as String?),
+    bioLinks: $checkedConvert(
+      'bioLinks',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
+    birthday: $checkedConvert(
+      'birthday',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    contentFilters: $checkedConvert(
+      'contentFilters',
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+    ),
+    currentPassword: $checkedConvert('currentPassword', (v) => v as String?),
+    displayName: $checkedConvert('displayName', (v) => v as String?),
+    email: $checkedConvert('email', (v) => v as String?),
+    isBoopingEnabled: $checkedConvert('isBoopingEnabled', (v) => v as bool?),
+    password: $checkedConvert('password', (v) => v as String?),
+    pronouns: $checkedConvert('pronouns', (v) => v as String?),
+    revertDisplayName: $checkedConvert('revertDisplayName', (v) => v as bool?),
     status: $checkedConvert(
       'status',
       (v) => $enumDecodeNullable(_$UserStatusEnumMap, v),
@@ -34,51 +44,41 @@ UpdateUserRequest _$UpdateUserRequestFromJson(
       'statusDescription',
       (v) => v as String?,
     ),
-    bio: $checkedConvert('bio', (v) => v as String?),
-    bioLinks: $checkedConvert(
-      'bioLinks',
+    tags: $checkedConvert(
+      'tags',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
-    pronouns: $checkedConvert('pronouns', (v) => v as String?),
-    isBoopingEnabled: $checkedConvert('isBoopingEnabled', (v) => v as bool?),
+    unsubscribe: $checkedConvert('unsubscribe', (v) => v as bool?),
     userIcon: $checkedConvert('userIcon', (v) => v as String?),
-    contentFilters: $checkedConvert(
-      'contentFilters',
-      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-    ),
-    displayName: $checkedConvert('displayName', (v) => v as String?),
-    revertDisplayName: $checkedConvert('revertDisplayName', (v) => v as bool?),
-    password: $checkedConvert('password', (v) => v as String?),
-    currentPassword: $checkedConvert('currentPassword', (v) => v as String?),
   );
   return val;
 });
 
 Map<String, dynamic> _$UpdateUserRequestToJson(UpdateUserRequest instance) =>
     <String, dynamic>{
-      'email': ?instance.email,
-      'unsubscribe': ?instance.unsubscribe,
-      'birthday': ?instance.birthday?.toIso8601String(),
       'acceptedTOSVersion': ?instance.acceptedTOSVersion,
-      'tags': ?instance.tags,
-      'status': ?_$UserStatusEnumMap[instance.status],
-      'statusDescription': ?instance.statusDescription,
       'bio': ?instance.bio,
       'bioLinks': ?instance.bioLinks,
-      'pronouns': ?instance.pronouns,
-      'isBoopingEnabled': ?instance.isBoopingEnabled,
-      'userIcon': ?instance.userIcon,
+      'birthday': ?instance.birthday?.toIso8601String(),
       'contentFilters': ?instance.contentFilters,
-      'displayName': ?instance.displayName,
-      'revertDisplayName': ?instance.revertDisplayName,
-      'password': ?instance.password,
       'currentPassword': ?instance.currentPassword,
+      'displayName': ?instance.displayName,
+      'email': ?instance.email,
+      'isBoopingEnabled': ?instance.isBoopingEnabled,
+      'password': ?instance.password,
+      'pronouns': ?instance.pronouns,
+      'revertDisplayName': ?instance.revertDisplayName,
+      'status': ?_$UserStatusEnumMap[instance.status],
+      'statusDescription': ?instance.statusDescription,
+      'tags': ?instance.tags,
+      'unsubscribe': ?instance.unsubscribe,
+      'userIcon': ?instance.userIcon,
     };
 
 const _$UserStatusEnumMap = {
   UserStatus.active: 'active',
-  UserStatus.joinMe: 'join me',
   UserStatus.askMe: 'ask me',
   UserStatus.busy: 'busy',
+  UserStatus.joinMe: 'join me',
   UserStatus.offline: 'offline',
 };

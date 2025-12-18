@@ -16,23 +16,23 @@ part 'verify2_fa_result.g.dart';
 )
 class Verify2FAResult {
   /// Returns a new [Verify2FAResult] instance.
-  Verify2FAResult({required this.verified, this.enabled = true});
-
-  @JsonKey(name: r'verified', required: true, includeIfNull: false)
-  final bool verified;
+  Verify2FAResult({this.enabled = true, required this.verified});
 
   @JsonKey(name: r'enabled', required: false, includeIfNull: false)
   final bool? enabled;
+
+  @JsonKey(name: r'verified', required: true, includeIfNull: false)
+  final bool verified;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Verify2FAResult &&
-          other.verified == verified &&
-          other.enabled == enabled;
+          other.enabled == enabled &&
+          other.verified == verified;
 
   @override
-  int get hashCode => verified.hashCode + enabled.hashCode;
+  int get hashCode => enabled.hashCode + verified.hashCode;
 
   factory Verify2FAResult.fromJson(Map<String, dynamic> json) =>
       _$Verify2FAResultFromJson(json);

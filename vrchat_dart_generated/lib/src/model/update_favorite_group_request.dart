@@ -17,29 +17,29 @@ part 'update_favorite_group_request.g.dart';
 )
 class UpdateFavoriteGroupRequest {
   /// Returns a new [UpdateFavoriteGroupRequest] instance.
-  UpdateFavoriteGroupRequest({this.displayName, this.visibility, this.tags});
+  UpdateFavoriteGroupRequest({this.displayName, this.tags, this.visibility});
 
   @JsonKey(name: r'displayName', required: false, includeIfNull: false)
   final String? displayName;
 
-  @JsonKey(name: r'visibility', required: false, includeIfNull: false)
-  final FavoriteGroupVisibility? visibility;
-
   /// Tags on FavoriteGroups are believed to do nothing.
   @JsonKey(name: r'tags', required: false, includeIfNull: false)
   final List<String>? tags;
+
+  @JsonKey(name: r'visibility', required: false, includeIfNull: false)
+  final FavoriteGroupVisibility? visibility;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is UpdateFavoriteGroupRequest &&
           other.displayName == displayName &&
-          other.visibility == visibility &&
-          other.tags == tags;
+          other.tags == tags &&
+          other.visibility == visibility;
 
   @override
   int get hashCode =>
-      displayName.hashCode + visibility.hashCode + tags.hashCode;
+      displayName.hashCode + tags.hashCode + visibility.hashCode;
 
   factory UpdateFavoriteGroupRequest.fromJson(Map<String, dynamic> json) =>
       _$UpdateFavoriteGroupRequestFromJson(json);

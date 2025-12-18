@@ -14,30 +14,30 @@ FileVersionUploadStatus _$FileVersionUploadStatusFromJson(
   $checkKeys(
     json,
     requiredKeys: const [
-      'uploadId',
-      'fileName',
-      'nextPartNumber',
-      'maxParts',
-      'parts',
       'etags',
+      'fileName',
+      'maxParts',
+      'nextPartNumber',
+      'parts',
+      'uploadId',
     ],
   );
   final val = FileVersionUploadStatus(
-    uploadId: $checkedConvert('uploadId', (v) => v as String),
-    fileName: $checkedConvert('fileName', (v) => v as String),
-    nextPartNumber: $checkedConvert(
-      'nextPartNumber',
-      (v) => (v as num).toInt(),
-    ),
-    maxParts: $checkedConvert('maxParts', (v) => (v as num).toInt()),
-    parts: $checkedConvert(
-      'parts',
-      (v) => (v as List<dynamic>).map((e) => e as Object).toList(),
-    ),
     etags: $checkedConvert(
       'etags',
       (v) => (v as List<dynamic>).map((e) => e as Object).toList(),
     ),
+    fileName: $checkedConvert('fileName', (v) => v as String),
+    maxParts: $checkedConvert('maxParts', (v) => (v as num).toInt()),
+    nextPartNumber: $checkedConvert(
+      'nextPartNumber',
+      (v) => (v as num).toInt(),
+    ),
+    parts: $checkedConvert(
+      'parts',
+      (v) => (v as List<dynamic>).map((e) => e as Object).toList(),
+    ),
+    uploadId: $checkedConvert('uploadId', (v) => v as String),
   );
   return val;
 });
@@ -45,10 +45,10 @@ FileVersionUploadStatus _$FileVersionUploadStatusFromJson(
 Map<String, dynamic> _$FileVersionUploadStatusToJson(
   FileVersionUploadStatus instance,
 ) => <String, dynamic>{
-  'uploadId': instance.uploadId,
-  'fileName': instance.fileName,
-  'nextPartNumber': instance.nextPartNumber,
-  'maxParts': instance.maxParts,
-  'parts': instance.parts,
   'etags': instance.etags,
+  'fileName': instance.fileName,
+  'maxParts': instance.maxParts,
+  'nextPartNumber': instance.nextPartNumber,
+  'parts': instance.parts,
+  'uploadId': instance.uploadId,
 };

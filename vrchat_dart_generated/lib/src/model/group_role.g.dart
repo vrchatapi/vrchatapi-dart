@@ -11,36 +11,36 @@ part of 'group_role.dart';
 GroupRole _$GroupRoleFromJson(Map<String, dynamic> json) =>
     $checkedCreate('GroupRole', json, ($checkedConvert) {
       final val = GroupRole(
-        id: $checkedConvert('id', (v) => v as String?),
-        groupId: $checkedConvert('groupId', (v) => v as String?),
-        name: $checkedConvert('name', (v) => v as String?),
+        createdAt: $checkedConvert(
+          'createdAt',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
         description: $checkedConvert('description', (v) => v as String?),
+        groupId: $checkedConvert('groupId', (v) => v as String?),
+        id: $checkedConvert('id', (v) => v as String?),
+        isManagementRole: $checkedConvert(
+          'isManagementRole',
+          (v) => v as bool? ?? false,
+        ),
         isSelfAssignable: $checkedConvert(
           'isSelfAssignable',
           (v) => v as bool? ?? false,
         ),
+        name: $checkedConvert('name', (v) => v as String?),
+        order: $checkedConvert('order', (v) => (v as num?)?.toInt()),
         permissions: $checkedConvert(
           'permissions',
           (v) => (v as List<dynamic>?)
               ?.map((e) => $enumDecode(_$GroupPermissionsEnumMap, e))
               .toList(),
         ),
-        isManagementRole: $checkedConvert(
-          'isManagementRole',
+        requiresPurchase: $checkedConvert(
+          'requiresPurchase',
           (v) => v as bool? ?? false,
         ),
         requiresTwoFactor: $checkedConvert(
           'requiresTwoFactor',
           (v) => v as bool? ?? false,
-        ),
-        requiresPurchase: $checkedConvert(
-          'requiresPurchase',
-          (v) => v as bool? ?? false,
-        ),
-        order: $checkedConvert('order', (v) => (v as num?)?.toInt()),
-        createdAt: $checkedConvert(
-          'createdAt',
-          (v) => v == null ? null : DateTime.parse(v as String),
         ),
         updatedAt: $checkedConvert(
           'updatedAt',
@@ -51,19 +51,19 @@ GroupRole _$GroupRoleFromJson(Map<String, dynamic> json) =>
     });
 
 Map<String, dynamic> _$GroupRoleToJson(GroupRole instance) => <String, dynamic>{
-  'id': ?instance.id,
-  'groupId': ?instance.groupId,
-  'name': ?instance.name,
+  'createdAt': ?instance.createdAt?.toIso8601String(),
   'description': ?instance.description,
+  'groupId': ?instance.groupId,
+  'id': ?instance.id,
+  'isManagementRole': ?instance.isManagementRole,
   'isSelfAssignable': ?instance.isSelfAssignable,
+  'name': ?instance.name,
+  'order': ?instance.order,
   'permissions': ?instance.permissions
       ?.map((e) => _$GroupPermissionsEnumMap[e]!)
       .toList(),
-  'isManagementRole': ?instance.isManagementRole,
-  'requiresTwoFactor': ?instance.requiresTwoFactor,
   'requiresPurchase': ?instance.requiresPurchase,
-  'order': ?instance.order,
-  'createdAt': ?instance.createdAt?.toIso8601String(),
+  'requiresTwoFactor': ?instance.requiresTwoFactor,
   'updatedAt': ?instance.updatedAt?.toIso8601String(),
 };
 
@@ -72,11 +72,13 @@ const _$GroupPermissionsEnumMap = {
   GroupPermissions.group_announcement_manage: 'group-announcement-manage',
   GroupPermissions.group_audit_view: 'group-audit-view',
   GroupPermissions.group_bans_manage: 'group-bans-manage',
+  GroupPermissions.group_calendar_manage: 'group-calendar-manage',
   GroupPermissions.group_data_manage: 'group-data-manage',
   GroupPermissions.group_default_role_manage: 'group-default-role-manage',
   GroupPermissions.group_galleries_manage: 'group-galleries-manage',
   GroupPermissions.group_instance_age_gated_create:
       'group-instance-age-gated-create',
+  GroupPermissions.group_instance_calendar_link: 'group-instance-calendar-link',
   GroupPermissions.group_instance_join: 'group-instance-join',
   GroupPermissions.group_instance_manage: 'group-instance-manage',
   GroupPermissions.group_instance_moderate: 'group-instance-moderate',
@@ -96,6 +98,4 @@ const _$GroupPermissionsEnumMap = {
   GroupPermissions.group_members_viewall: 'group-members-viewall',
   GroupPermissions.group_roles_assign: 'group-roles-assign',
   GroupPermissions.group_roles_manage: 'group-roles-manage',
-  GroupPermissions.group_calendar_manage: 'group-calendar-manage',
-  GroupPermissions.group_instance_calendar_link: 'group-instance-calendar-link',
 };

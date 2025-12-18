@@ -12,6 +12,7 @@ PaginatedGroupAuditLogEntryList _$PaginatedGroupAuditLogEntryListFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('PaginatedGroupAuditLogEntryList', json, ($checkedConvert) {
   final val = PaginatedGroupAuditLogEntryList(
+    hasNext: $checkedConvert('hasNext', (v) => v as bool?),
     results: $checkedConvert(
       'results',
       (v) => (v as List<dynamic>?)
@@ -19,7 +20,6 @@ PaginatedGroupAuditLogEntryList _$PaginatedGroupAuditLogEntryListFromJson(
           .toList(),
     ),
     totalCount: $checkedConvert('totalCount', (v) => (v as num?)?.toInt()),
-    hasNext: $checkedConvert('hasNext', (v) => v as bool?),
   );
   return val;
 });
@@ -27,7 +27,7 @@ PaginatedGroupAuditLogEntryList _$PaginatedGroupAuditLogEntryListFromJson(
 Map<String, dynamic> _$PaginatedGroupAuditLogEntryListToJson(
   PaginatedGroupAuditLogEntryList instance,
 ) => <String, dynamic>{
+  'hasNext': ?instance.hasNext,
   'results': ?instance.results?.map((e) => e.toJson()).toList(),
   'totalCount': ?instance.totalCount,
-  'hasNext': ?instance.hasNext,
 };

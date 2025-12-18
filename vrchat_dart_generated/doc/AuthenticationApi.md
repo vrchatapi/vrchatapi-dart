@@ -12,6 +12,8 @@ Method | HTTP request | Description
 [**cancelPending2FA**](AuthenticationApi.md#cancelpending2fa) | **DELETE** /auth/twofactorauth/totp/pending | Cancel pending enabling of time-based 2FA codes
 [**checkUserExists**](AuthenticationApi.md#checkuserexists) | **GET** /auth/exists | Check User Exists
 [**confirmEmail**](AuthenticationApi.md#confirmemail) | **GET** /auth/confirmEmail | Confirm Email
+[**createGlobalAvatarModeration**](AuthenticationApi.md#createglobalavatarmoderation) | **POST** /auth/user/avatarmoderations | Create Global Avatar Moderation
+[**deleteGlobalAvatarModeration**](AuthenticationApi.md#deleteglobalavatarmoderation) | **DELETE** /auth/user/avatarmoderations | Delete Global Avatar Moderation
 [**deleteUser**](AuthenticationApi.md#deleteuser) | **PUT** /users/{userId}/delete | Delete User
 [**disable2FA**](AuthenticationApi.md#disable2fa) | **DELETE** /auth/twofactorauth | Disable 2FA
 [**enable2FA**](AuthenticationApi.md#enable2fa) | **POST** /auth/twofactorauth/totp/pending | Enable time-based 2FA codes
@@ -165,6 +167,102 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **createGlobalAvatarModeration**
+> AvatarModerationCreated createGlobalAvatarModeration(createAvatarModerationRequest)
+
+Create Global Avatar Moderation
+
+Globally moderates an avatar.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+final CreateAvatarModerationRequest createAvatarModerationRequest = ; // CreateAvatarModerationRequest | 
+
+try {
+    final response = api.createGlobalAvatarModeration(createAvatarModerationRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AuthenticationApi->createGlobalAvatarModeration: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createAvatarModerationRequest** | [**CreateAvatarModerationRequest**](CreateAvatarModerationRequest.md)|  | 
+
+### Return type
+
+[**AvatarModerationCreated**](AvatarModerationCreated.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteGlobalAvatarModeration**
+> OkStatus2 deleteGlobalAvatarModeration(targetAvatarId, avatarModerationType)
+
+Delete Global Avatar Moderation
+
+Globally unmoderates an avatar.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+final String targetAvatarId = targetAvatarId_example; // String | Must be a valid avatar ID.
+final AvatarModerationType avatarModerationType = ; // AvatarModerationType | The avatar moderation type associated with the avatar.
+
+try {
+    final response = api.deleteGlobalAvatarModeration(targetAvatarId, avatarModerationType);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AuthenticationApi->deleteGlobalAvatarModeration: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetAvatarId** | **String**| Must be a valid avatar ID. | 
+ **avatarModerationType** | [**AvatarModerationType**](.md)| The avatar moderation type associated with the avatar. | 
+
+### Return type
+
+[**OkStatus2**](OkStatus2.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **deleteUser**
 > CurrentUser deleteUser(userId)
 
@@ -303,7 +401,7 @@ This endpoint does not need any parameter.
 
 Login and/or Get Current User Info
 
-This endpoint does the following two operations:   1) Checks if you are already logged in by looking for a valid `auth` cookie. If you are have a valid auth cookie then no additional auth-related actions are taken. If you are **not** logged in then it will log you in with the `Authorization` header and set the `auth` cookie. The `auth` cookie will only be sent once.   2) If logged in, this function will also return the CurrentUser object containing detailed information about the currently logged in user.  The auth string after `Authorization: Basic {string}` is a base64-encoded string of the username and password, both individually url-encoded, and then joined with a colon.    > base64(urlencode(username):urlencode(password))  **WARNING: Session Limit:** Each authentication with login credentials counts as a separate session, out of which you have a limited amount. Make sure to save and reuse the `auth` cookie if you are often restarting the program. The provided API libraries automatically save cookies during runtime, but does not persist during restart. While it can be fine to use username/password during development, expect in production to very fast run into the rate-limit and be temporarily blocked from making new sessions until older ones expire. The exact number of simultaneous sessions is unknown/undisclosed.
+This endpoint does the following two operations:   1) Checks if you are already logged in by looking for a valid `auth` cookie. If you are have a valid auth cookie then no additional auth-related actions are taken. If you are **not** logged in then it will log you in with the `Authorization` header and set the `auth` cookie. The `auth` cookie will only be sent once.   2) If logged in, this function will also return the CurrentUser object containing detailed information about the currently logged in user.  The auth string after `Authorization: Basic {string}` is a base64-encoded string of the username and password, both individually url-encoded, and then joined with a colon.  > base64(urlencode(username):urlencode(password))  **WARNING: Session Limit:** Each authentication with login credentials counts as a separate session, out of which you have a limited amount. Make sure to save and reuse the `auth` cookie if you are often restarting the program. The provided API libraries automatically save cookies during runtime, but does not persist during restart. While it can be fine to use username/password during development, expect in production to very fast run into the rate-limit and be temporarily blocked from making new sessions until older ones expire. The exact number of simultaneous sessions is unknown/undisclosed.
 
 ### Example
 ```dart
@@ -353,7 +451,7 @@ This endpoint does not need any parameter.
 
 Get Global Avatar Moderations
 
-Returns list of globally blocked avatars.
+Returns list of globally moderated avatars.
 
 ### Example
 ```dart

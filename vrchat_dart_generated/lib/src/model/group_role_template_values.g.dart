@@ -48,11 +48,13 @@ const _$GroupPermissionsEnumMap = {
   GroupPermissions.group_announcement_manage: 'group-announcement-manage',
   GroupPermissions.group_audit_view: 'group-audit-view',
   GroupPermissions.group_bans_manage: 'group-bans-manage',
+  GroupPermissions.group_calendar_manage: 'group-calendar-manage',
   GroupPermissions.group_data_manage: 'group-data-manage',
   GroupPermissions.group_default_role_manage: 'group-default-role-manage',
   GroupPermissions.group_galleries_manage: 'group-galleries-manage',
   GroupPermissions.group_instance_age_gated_create:
       'group-instance-age-gated-create',
+  GroupPermissions.group_instance_calendar_link: 'group-instance-calendar-link',
   GroupPermissions.group_instance_join: 'group-instance-join',
   GroupPermissions.group_instance_manage: 'group-instance-manage',
   GroupPermissions.group_instance_moderate: 'group-instance-moderate',
@@ -72,6 +74,4 @@ const _$GroupPermissionsEnumMap = {
   GroupPermissions.group_members_viewall: 'group-members-viewall',
   GroupPermissions.group_roles_assign: 'group-roles-assign',
   GroupPermissions.group_roles_manage: 'group-roles-manage',
-  GroupPermissions.group_calendar_manage: 'group-calendar-manage',
-  GroupPermissions.group_instance_calendar_link: 'group-instance-calendar-link',
 };

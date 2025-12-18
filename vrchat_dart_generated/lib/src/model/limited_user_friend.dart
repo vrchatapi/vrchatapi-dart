@@ -25,9 +25,9 @@ class LimitedUserFriend {
 
     this.currentAvatarImageUrl,
 
-    this.currentAvatarThumbnailImageUrl,
-
     this.currentAvatarTags,
+
+    this.currentAvatarThumbnailImageUrl,
 
     required this.developerType,
 
@@ -37,19 +37,19 @@ class LimitedUserFriend {
 
     required this.id,
 
+    required this.imageUrl,
+
     required this.isFriend,
 
-    required this.imageUrl,
+    required this.lastActivity,
+
+    required this.lastLogin,
+
+    required this.lastMobile,
 
     required this.lastPlatform,
 
     required this.location,
-
-    required this.lastLogin,
-
-    required this.lastActivity,
-
-    required this.lastMobile,
 
     required this.platform,
 
@@ -81,6 +81,9 @@ class LimitedUserFriend {
   )
   final String? currentAvatarImageUrl;
 
+  @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
+  final List<String>? currentAvatarTags;
+
   /// When profilePicOverride is not empty, use it instead.
   @JsonKey(
     name: r'currentAvatarThumbnailImageUrl',
@@ -88,9 +91,6 @@ class LimitedUserFriend {
     includeIfNull: false,
   )
   final String? currentAvatarThumbnailImageUrl;
-
-  @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
-  final List<String>? currentAvatarTags;
 
   @JsonKey(name: r'developerType', required: true, includeIfNull: false)
   final DeveloperType developerType;
@@ -105,11 +105,20 @@ class LimitedUserFriend {
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
+  @JsonKey(name: r'imageUrl', required: true, includeIfNull: false)
+  final String imageUrl;
+
   @JsonKey(name: r'isFriend', required: true, includeIfNull: false)
   final bool isFriend;
 
-  @JsonKey(name: r'imageUrl', required: true, includeIfNull: false)
-  final String imageUrl;
+  @JsonKey(name: r'last_activity', required: true, includeIfNull: true)
+  final DateTime? lastActivity;
+
+  @JsonKey(name: r'last_login', required: true, includeIfNull: true)
+  final DateTime? lastLogin;
+
+  @JsonKey(name: r'last_mobile', required: true, includeIfNull: true)
+  final DateTime? lastMobile;
 
   /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
   @JsonKey(name: r'last_platform', required: true, includeIfNull: false)
@@ -117,15 +126,6 @@ class LimitedUserFriend {
 
   @JsonKey(name: r'location', required: true, includeIfNull: false)
   final String location;
-
-  @JsonKey(name: r'last_login', required: true, includeIfNull: true)
-  final DateTime? lastLogin;
-
-  @JsonKey(name: r'last_activity', required: true, includeIfNull: true)
-  final DateTime? lastActivity;
-
-  @JsonKey(name: r'last_mobile', required: true, includeIfNull: true)
-  final DateTime? lastMobile;
 
   @JsonKey(name: r'platform', required: true, includeIfNull: false)
   final String platform;
@@ -160,20 +160,20 @@ class LimitedUserFriend {
           other.bio == bio &&
           other.bioLinks == bioLinks &&
           other.currentAvatarImageUrl == currentAvatarImageUrl &&
+          other.currentAvatarTags == currentAvatarTags &&
           other.currentAvatarThumbnailImageUrl ==
               currentAvatarThumbnailImageUrl &&
-          other.currentAvatarTags == currentAvatarTags &&
           other.developerType == developerType &&
           other.displayName == displayName &&
           other.friendKey == friendKey &&
           other.id == id &&
-          other.isFriend == isFriend &&
           other.imageUrl == imageUrl &&
+          other.isFriend == isFriend &&
+          other.lastActivity == lastActivity &&
+          other.lastLogin == lastLogin &&
+          other.lastMobile == lastMobile &&
           other.lastPlatform == lastPlatform &&
           other.location == location &&
-          other.lastLogin == lastLogin &&
-          other.lastActivity == lastActivity &&
-          other.lastMobile == lastMobile &&
           other.platform == platform &&
           other.profilePicOverride == profilePicOverride &&
           other.profilePicOverrideThumbnail == profilePicOverrideThumbnail &&
@@ -187,19 +187,19 @@ class LimitedUserFriend {
       bio.hashCode +
       bioLinks.hashCode +
       currentAvatarImageUrl.hashCode +
-      currentAvatarThumbnailImageUrl.hashCode +
       currentAvatarTags.hashCode +
+      currentAvatarThumbnailImageUrl.hashCode +
       developerType.hashCode +
       displayName.hashCode +
       friendKey.hashCode +
       id.hashCode +
-      isFriend.hashCode +
       imageUrl.hashCode +
+      isFriend.hashCode +
+      (lastActivity == null ? 0 : lastActivity.hashCode) +
+      (lastLogin == null ? 0 : lastLogin.hashCode) +
+      (lastMobile == null ? 0 : lastMobile.hashCode) +
       lastPlatform.hashCode +
       location.hashCode +
-      (lastLogin == null ? 0 : lastLogin.hashCode) +
-      (lastActivity == null ? 0 : lastActivity.hashCode) +
-      (lastMobile == null ? 0 : lastMobile.hashCode) +
       platform.hashCode +
       profilePicOverride.hashCode +
       profilePicOverrideThumbnail.hashCode +

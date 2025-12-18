@@ -53,8 +53,8 @@ Map<String, dynamic> _$FileVersionToJson(FileVersion instance) =>
     };
 
 const _$FileStatusEnumMap = {
-  FileStatus.waiting: 'waiting',
   FileStatus.complete: 'complete',
   FileStatus.none: 'none',
   FileStatus.queued: 'queued',
+  FileStatus.waiting: 'waiting',
 };

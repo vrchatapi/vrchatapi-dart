@@ -18,37 +18,37 @@ part 'create_group_post_request.g.dart';
 class CreateGroupPostRequest {
   /// Returns a new [CreateGroupPostRequest] instance.
   CreateGroupPostRequest({
-    required this.title,
-
-    required this.text,
-
     this.imageId,
+
+    this.roleIds,
 
     this.sendNotification = false,
 
-    this.roleIds,
+    required this.text,
+
+    required this.title,
 
     required this.visibility,
   });
 
-  /// Post title
-  @JsonKey(name: r'title', required: true, includeIfNull: false)
-  final String title;
-
-  /// Post text
-  @JsonKey(name: r'text', required: true, includeIfNull: false)
-  final String text;
-
   @JsonKey(name: r'imageId', required: false, includeIfNull: false)
   final String? imageId;
+
+  ///
+  @JsonKey(name: r'roleIds', required: false, includeIfNull: false)
+  final List<String>? roleIds;
 
   /// Send notification to group members.
   @JsonKey(name: r'sendNotification', required: true, includeIfNull: false)
   final bool sendNotification;
 
-  ///
-  @JsonKey(name: r'roleIds', required: false, includeIfNull: false)
-  final List<String>? roleIds;
+  /// Post text
+  @JsonKey(name: r'text', required: true, includeIfNull: false)
+  final String text;
+
+  /// Post title
+  @JsonKey(name: r'title', required: true, includeIfNull: false)
+  final String title;
 
   @JsonKey(name: r'visibility', required: true, includeIfNull: false)
   final GroupPostVisibility visibility;
@@ -57,20 +57,20 @@ class CreateGroupPostRequest {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is CreateGroupPostRequest &&
-          other.title == title &&
-          other.text == text &&
           other.imageId == imageId &&
-          other.sendNotification == sendNotification &&
           other.roleIds == roleIds &&
+          other.sendNotification == sendNotification &&
+          other.text == text &&
+          other.title == title &&
           other.visibility == visibility;
 
   @override
   int get hashCode =>
-      title.hashCode +
-      text.hashCode +
       imageId.hashCode +
-      sendNotification.hashCode +
       roleIds.hashCode +
+      sendNotification.hashCode +
+      text.hashCode +
+      title.hashCode +
       visibility.hashCode;
 
   factory CreateGroupPostRequest.fromJson(Map<String, dynamic> json) =>

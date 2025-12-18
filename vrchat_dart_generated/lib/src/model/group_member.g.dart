@@ -16,36 +16,24 @@ GroupMember _$GroupMemberFromJson(Map<String, dynamic> json) =>
           (v) => v as String?,
         ),
         acceptedById: $checkedConvert('acceptedById', (v) => v as String?),
-        id: $checkedConvert('id', (v) => v as String?),
+        bannedAt: $checkedConvert(
+          'bannedAt',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
+        createdAt: $checkedConvert(
+          'createdAt',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
         groupId: $checkedConvert('groupId', (v) => v as String?),
-        userId: $checkedConvert('userId', (v) => v as String?),
+        hasJoinedFromPurchase: $checkedConvert(
+          'hasJoinedFromPurchase',
+          (v) => v as bool?,
+        ),
+        id: $checkedConvert('id', (v) => v as String?),
         isRepresenting: $checkedConvert(
           'isRepresenting',
           (v) => v as bool? ?? false,
         ),
-        user: $checkedConvert(
-          'user',
-          (v) => v == null
-              ? null
-              : GroupMemberLimitedUser.fromJson(v as Map<String, dynamic>),
-        ),
-        roleIds: $checkedConvert(
-          'roleIds',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-        ),
-        mRoleIds: $checkedConvert(
-          'mRoleIds',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-        ),
-        joinedAt: $checkedConvert(
-          'joinedAt',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        membershipStatus: $checkedConvert(
-          'membershipStatus',
-          (v) => $enumDecodeNullable(_$GroupMemberStatusEnumMap, v),
-        ),
-        visibility: $checkedConvert('visibility', (v) => v as String?),
         isSubscribedToAnnouncements: $checkedConvert(
           'isSubscribedToAnnouncements',
           (v) => v as bool? ?? false,
@@ -54,23 +42,35 @@ GroupMember _$GroupMemberFromJson(Map<String, dynamic> json) =>
           'isSubscribedToEventAnnouncements',
           (v) => v as bool?,
         ),
-        createdAt: $checkedConvert(
-          'createdAt',
+        joinedAt: $checkedConvert(
+          'joinedAt',
           (v) => v == null ? null : DateTime.parse(v as String),
         ),
-        bannedAt: $checkedConvert(
-          'bannedAt',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        managerNotes: $checkedConvert('managerNotes', (v) => v as String?),
         lastPostReadAt: $checkedConvert(
           'lastPostReadAt',
           (v) => v == null ? null : DateTime.parse(v as String),
         ),
-        hasJoinedFromPurchase: $checkedConvert(
-          'hasJoinedFromPurchase',
-          (v) => v as bool?,
+        mRoleIds: $checkedConvert(
+          'mRoleIds',
+          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
         ),
+        managerNotes: $checkedConvert('managerNotes', (v) => v as String?),
+        membershipStatus: $checkedConvert(
+          'membershipStatus',
+          (v) => $enumDecodeNullable(_$GroupMemberStatusEnumMap, v),
+        ),
+        roleIds: $checkedConvert(
+          'roleIds',
+          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+        ),
+        user: $checkedConvert(
+          'user',
+          (v) => v == null
+              ? null
+              : GroupMemberLimitedUser.fromJson(v as Map<String, dynamic>),
+        ),
+        userId: $checkedConvert('userId', (v) => v as String?),
+        visibility: $checkedConvert('visibility', (v) => v as String?),
       );
       return val;
     });
@@ -80,31 +80,31 @@ Map<String, dynamic> _$GroupMemberToJson(
 ) => <String, dynamic>{
   'acceptedByDisplayName': ?instance.acceptedByDisplayName,
   'acceptedById': ?instance.acceptedById,
-  'id': ?instance.id,
+  'bannedAt': ?instance.bannedAt?.toIso8601String(),
+  'createdAt': ?instance.createdAt?.toIso8601String(),
   'groupId': ?instance.groupId,
-  'userId': ?instance.userId,
+  'hasJoinedFromPurchase': ?instance.hasJoinedFromPurchase,
+  'id': ?instance.id,
   'isRepresenting': ?instance.isRepresenting,
-  'user': ?instance.user?.toJson(),
-  'roleIds': ?instance.roleIds,
-  'mRoleIds': ?instance.mRoleIds,
-  'joinedAt': ?instance.joinedAt?.toIso8601String(),
-  'membershipStatus': ?_$GroupMemberStatusEnumMap[instance.membershipStatus],
-  'visibility': ?instance.visibility,
   'isSubscribedToAnnouncements': ?instance.isSubscribedToAnnouncements,
   'isSubscribedToEventAnnouncements':
       ?instance.isSubscribedToEventAnnouncements,
-  'createdAt': ?instance.createdAt?.toIso8601String(),
-  'bannedAt': ?instance.bannedAt?.toIso8601String(),
-  'managerNotes': ?instance.managerNotes,
+  'joinedAt': ?instance.joinedAt?.toIso8601String(),
   'lastPostReadAt': ?instance.lastPostReadAt?.toIso8601String(),
-  'hasJoinedFromPurchase': ?instance.hasJoinedFromPurchase,
+  'mRoleIds': ?instance.mRoleIds,
+  'managerNotes': ?instance.managerNotes,
+  'membershipStatus': ?_$GroupMemberStatusEnumMap[instance.membershipStatus],
+  'roleIds': ?instance.roleIds,
+  'user': ?instance.user?.toJson(),
+  'userId': ?instance.userId,
+  'visibility': ?instance.visibility,
 };
 
 const _$GroupMemberStatusEnumMap = {
+  GroupMemberStatus.banned: 'banned',
   GroupMemberStatus.inactive: 'inactive',
+  GroupMemberStatus.invited: 'invited',
   GroupMemberStatus.member: 'member',
   GroupMemberStatus.requested: 'requested',
-  GroupMemberStatus.invited: 'invited',
-  GroupMemberStatus.banned: 'banned',
   GroupMemberStatus.userblocked: 'userblocked',
 };

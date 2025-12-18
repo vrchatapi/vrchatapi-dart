@@ -17,8 +17,8 @@ CurrentUserPresence _$CurrentUserPresenceFromJson(
       'currentAvatarTags',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
-    displayName: $checkedConvert('displayName', (v) => v as String?),
     debugflag: $checkedConvert('debugflag', (v) => v as String?),
+    displayName: $checkedConvert('displayName', (v) => v as String?),
     groups: $checkedConvert(
       'groups',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -49,8 +49,8 @@ Map<String, dynamic> _$CurrentUserPresenceToJson(
 ) => <String, dynamic>{
   'avatarThumbnail': ?instance.avatarThumbnail,
   'currentAvatarTags': ?instance.currentAvatarTags,
-  'displayName': ?instance.displayName,
   'debugflag': ?instance.debugflag,
+  'displayName': ?instance.displayName,
   'groups': ?instance.groups,
   'id': ?instance.id,
   'instance': ?instance.instance,

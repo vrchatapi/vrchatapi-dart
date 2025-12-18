@@ -14,29 +14,40 @@ CreateCalendarEventRequest _$CreateCalendarEventRequestFromJson(
   $checkKeys(
     json,
     requiredKeys: const [
-      'title',
-      'startsAt',
+      'accessType',
+      'category',
       'description',
       'endsAt',
-      'category',
       'sendCreationNotification',
-      'accessType',
+      'startsAt',
+      'title',
     ],
   );
   final val = CreateCalendarEventRequest(
-    title: $checkedConvert('title', (v) => v as String),
-    startsAt: $checkedConvert('startsAt', (v) => DateTime.parse(v as String)),
+    accessType: $checkedConvert(
+      'accessType',
+      (v) => $enumDecode(_$CreateCalendarEventRequestAccessTypeEnumEnumMap, v),
+    ),
+    category: $checkedConvert('category', (v) => v as String),
+    closeInstanceAfterEndMinutes: $checkedConvert(
+      'closeInstanceAfterEndMinutes',
+      (v) => (v as num?)?.toInt(),
+    ),
     description: $checkedConvert('description', (v) => v as String),
     endsAt: $checkedConvert('endsAt', (v) => DateTime.parse(v as String)),
-    category: $checkedConvert('category', (v) => v as String),
-    tags: $checkedConvert(
-      'tags',
-      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+    featured: $checkedConvert('featured', (v) => v as bool?),
+    guestEarlyJoinMinutes: $checkedConvert(
+      'guestEarlyJoinMinutes',
+      (v) => (v as num?)?.toInt(),
     ),
-    isDraft: $checkedConvert('isDraft', (v) => v as bool?),
+    hostEarlyJoinMinutes: $checkedConvert(
+      'hostEarlyJoinMinutes',
+      (v) => (v as num?)?.toInt(),
+    ),
     imageId: $checkedConvert('imageId', (v) => v as String?),
-    roleIds: $checkedConvert(
-      'roleIds',
+    isDraft: $checkedConvert('isDraft', (v) => v as bool?),
+    languages: $checkedConvert(
+      'languages',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
     parentId: $checkedConvert('parentId', (v) => v as String?),
@@ -44,34 +55,23 @@ CreateCalendarEventRequest _$CreateCalendarEventRequestFromJson(
       'platforms',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
-    languages: $checkedConvert(
-      'languages',
+    roleIds: $checkedConvert(
+      'roleIds',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
     sendCreationNotification: $checkedConvert(
       'sendCreationNotification',
       (v) => v as bool,
     ),
-    featured: $checkedConvert('featured', (v) => v as bool?),
-    hostEarlyJoinMinutes: $checkedConvert(
-      'hostEarlyJoinMinutes',
-      (v) => (v as num?)?.toInt(),
+    startsAt: $checkedConvert('startsAt', (v) => DateTime.parse(v as String)),
+    tags: $checkedConvert(
+      'tags',
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
-    guestEarlyJoinMinutes: $checkedConvert(
-      'guestEarlyJoinMinutes',
-      (v) => (v as num?)?.toInt(),
-    ),
-    closeInstanceAfterEndMinutes: $checkedConvert(
-      'closeInstanceAfterEndMinutes',
-      (v) => (v as num?)?.toInt(),
-    ),
+    title: $checkedConvert('title', (v) => v as String),
     usesInstanceOverflow: $checkedConvert(
       'usesInstanceOverflow',
       (v) => v as bool?,
-    ),
-    accessType: $checkedConvert(
-      'accessType',
-      (v) => $enumDecode(_$CreateCalendarEventRequestAccessTypeEnumEnumMap, v),
     ),
   );
   return val;
@@ -80,29 +80,29 @@ CreateCalendarEventRequest _$CreateCalendarEventRequestFromJson(
 Map<String, dynamic> _$CreateCalendarEventRequestToJson(
   CreateCalendarEventRequest instance,
 ) => <String, dynamic>{
-  'title': instance.title,
-  'startsAt': instance.startsAt.toIso8601String(),
-  'description': instance.description,
-  'endsAt': instance.endsAt.toIso8601String(),
-  'category': instance.category,
-  'tags': ?instance.tags,
-  'isDraft': ?instance.isDraft,
-  'imageId': ?instance.imageId,
-  'roleIds': ?instance.roleIds,
-  'parentId': ?instance.parentId,
-  'platforms': ?instance.platforms,
-  'languages': ?instance.languages,
-  'sendCreationNotification': instance.sendCreationNotification,
-  'featured': ?instance.featured,
-  'hostEarlyJoinMinutes': ?instance.hostEarlyJoinMinutes,
-  'guestEarlyJoinMinutes': ?instance.guestEarlyJoinMinutes,
-  'closeInstanceAfterEndMinutes': ?instance.closeInstanceAfterEndMinutes,
-  'usesInstanceOverflow': ?instance.usesInstanceOverflow,
   'accessType':
       _$CreateCalendarEventRequestAccessTypeEnumEnumMap[instance.accessType]!,
+  'category': instance.category,
+  'closeInstanceAfterEndMinutes': ?instance.closeInstanceAfterEndMinutes,
+  'description': instance.description,
+  'endsAt': instance.endsAt.toIso8601String(),
+  'featured': ?instance.featured,
+  'guestEarlyJoinMinutes': ?instance.guestEarlyJoinMinutes,
+  'hostEarlyJoinMinutes': ?instance.hostEarlyJoinMinutes,
+  'imageId': ?instance.imageId,
+  'isDraft': ?instance.isDraft,
+  'languages': ?instance.languages,
+  'parentId': ?instance.parentId,
+  'platforms': ?instance.platforms,
+  'roleIds': ?instance.roleIds,
+  'sendCreationNotification': instance.sendCreationNotification,
+  'startsAt': instance.startsAt.toIso8601String(),
+  'tags': ?instance.tags,
+  'title': instance.title,
+  'usesInstanceOverflow': ?instance.usesInstanceOverflow,
 };
 
 const _$CreateCalendarEventRequestAccessTypeEnumEnumMap = {
-  CreateCalendarEventRequestAccessTypeEnum.public: 'public',
   CreateCalendarEventRequestAccessTypeEnum.group: 'group',
+  CreateCalendarEventRequestAccessTypeEnum.public: 'public',
 };

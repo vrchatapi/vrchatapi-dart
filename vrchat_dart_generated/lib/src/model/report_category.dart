@@ -19,9 +19,9 @@ class ReportCategory {
   ReportCategory({
     this.description,
 
-    this.title,
-
     required this.text,
+
+    this.title,
 
     required this.tooltip,
   });
@@ -30,13 +30,13 @@ class ReportCategory {
   @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;
 
-  /// The title of the report category
-  @JsonKey(name: r'title', required: false, includeIfNull: false)
-  final String? title;
-
   /// The label of the report category
   @JsonKey(name: r'text', required: true, includeIfNull: false)
   final String text;
+
+  /// The title of the report category
+  @JsonKey(name: r'title', required: false, includeIfNull: false)
+  final String? title;
 
   /// The tooltip that describes the category
   @JsonKey(name: r'tooltip', required: true, includeIfNull: false)
@@ -47,13 +47,13 @@ class ReportCategory {
       identical(this, other) ||
       other is ReportCategory &&
           other.description == description &&
-          other.title == title &&
           other.text == text &&
+          other.title == title &&
           other.tooltip == tooltip;
 
   @override
   int get hashCode =>
-      description.hashCode + title.hashCode + text.hashCode + tooltip.hashCode;
+      description.hashCode + text.hashCode + title.hashCode + tooltip.hashCode;
 
   factory ReportCategory.fromJson(Map<String, dynamic> json) =>
       _$ReportCategoryFromJson(json);

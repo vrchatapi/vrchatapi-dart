@@ -11,37 +11,37 @@ part of 'group_audit_log_entry.dart';
 GroupAuditLogEntry _$GroupAuditLogEntryFromJson(Map<String, dynamic> json) =>
     $checkedCreate('GroupAuditLogEntry', json, ($checkedConvert) {
       final val = GroupAuditLogEntry(
-        id: $checkedConvert('id', (v) => v as String?),
-        createdAt: $checkedConvert(
-          'created_at',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        groupId: $checkedConvert('groupId', (v) => v as String?),
-        actorId: $checkedConvert('actorId', (v) => v as String?),
         actorDisplayName: $checkedConvert(
           'actorDisplayName',
           (v) => v as String?,
         ),
-        targetId: $checkedConvert('targetId', (v) => v as String?),
+        actorId: $checkedConvert('actorId', (v) => v as String?),
+        createdAt: $checkedConvert(
+          'created_at',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
+        data: $checkedConvert('data', (v) => v),
+        description: $checkedConvert('description', (v) => v as String?),
         eventType: $checkedConvert(
           'eventType',
           (v) => v as String? ?? 'group.update',
         ),
-        description: $checkedConvert('description', (v) => v as String?),
-        data: $checkedConvert('data', (v) => v),
+        groupId: $checkedConvert('groupId', (v) => v as String?),
+        id: $checkedConvert('id', (v) => v as String?),
+        targetId: $checkedConvert('targetId', (v) => v as String?),
       );
       return val;
     }, fieldKeyMap: const {'createdAt': 'created_at'});
 
 Map<String, dynamic> _$GroupAuditLogEntryToJson(GroupAuditLogEntry instance) =>
     <String, dynamic>{
-      'id': ?instance.id,
-      'created_at': ?instance.createdAt?.toIso8601String(),
-      'groupId': ?instance.groupId,
-      'actorId': ?instance.actorId,
       'actorDisplayName': ?instance.actorDisplayName,
-      'targetId': ?instance.targetId,
-      'eventType': ?instance.eventType,
-      'description': ?instance.description,
+      'actorId': ?instance.actorId,
+      'created_at': ?instance.createdAt?.toIso8601String(),
       'data': ?instance.data,
+      'description': ?instance.description,
+      'eventType': ?instance.eventType,
+      'groupId': ?instance.groupId,
+      'id': ?instance.id,
+      'targetId': ?instance.targetId,
     };

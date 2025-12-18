@@ -11,10 +11,10 @@ part of 'update_user_note_request.dart';
 UpdateUserNoteRequest _$UpdateUserNoteRequestFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('UpdateUserNoteRequest', json, ($checkedConvert) {
-  $checkKeys(json, requiredKeys: const ['targetUserId', 'note']);
+  $checkKeys(json, requiredKeys: const ['note', 'targetUserId']);
   final val = UpdateUserNoteRequest(
-    targetUserId: $checkedConvert('targetUserId', (v) => v as String),
     note: $checkedConvert('note', (v) => v as String),
+    targetUserId: $checkedConvert('targetUserId', (v) => v as String),
   );
   return val;
 });
@@ -22,6 +22,6 @@ UpdateUserNoteRequest _$UpdateUserNoteRequestFromJson(
 Map<String, dynamic> _$UpdateUserNoteRequestToJson(
   UpdateUserNoteRequest instance,
 ) => <String, dynamic>{
-  'targetUserId': instance.targetUserId,
   'note': instance.note,
+  'targetUserId': instance.targetUserId,
 };

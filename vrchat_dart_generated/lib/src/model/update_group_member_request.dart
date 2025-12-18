@@ -18,17 +18,14 @@ part 'update_group_member_request.g.dart';
 class UpdateGroupMemberRequest {
   /// Returns a new [UpdateGroupMemberRequest] instance.
   UpdateGroupMemberRequest({
-    this.visibility,
-
     this.isSubscribedToAnnouncements,
 
     this.isSubscribedToEventAnnouncements,
 
     this.managerNotes,
-  });
 
-  @JsonKey(name: r'visibility', required: false, includeIfNull: false)
-  final GroupUserVisibility? visibility;
+    this.visibility,
+  });
 
   @JsonKey(
     name: r'isSubscribedToAnnouncements',
@@ -47,22 +44,25 @@ class UpdateGroupMemberRequest {
   @JsonKey(name: r'managerNotes', required: false, includeIfNull: false)
   final String? managerNotes;
 
+  @JsonKey(name: r'visibility', required: false, includeIfNull: false)
+  final GroupUserVisibility? visibility;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is UpdateGroupMemberRequest &&
-          other.visibility == visibility &&
           other.isSubscribedToAnnouncements == isSubscribedToAnnouncements &&
           other.isSubscribedToEventAnnouncements ==
               isSubscribedToEventAnnouncements &&
-          other.managerNotes == managerNotes;
+          other.managerNotes == managerNotes &&
+          other.visibility == visibility;
 
   @override
   int get hashCode =>
-      visibility.hashCode +
       isSubscribedToAnnouncements.hashCode +
       isSubscribedToEventAnnouncements.hashCode +
-      managerNotes.hashCode;
+      managerNotes.hashCode +
+      visibility.hashCode;
 
   factory UpdateGroupMemberRequest.fromJson(Map<String, dynamic> json) =>
       _$UpdateGroupMemberRequestFromJson(json);

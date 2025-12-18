@@ -6,14 +6,14 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum ReleaseStatus {
-  @JsonValue(r'public')
-  public(r'public'),
-  @JsonValue(r'private')
-  private(r'private'),
+  @JsonValue(r'all')
+  all(r'all'),
   @JsonValue(r'hidden')
   hidden(r'hidden'),
-  @JsonValue(r'all')
-  all(r'all');
+  @JsonValue(r'private')
+  private(r'private'),
+  @JsonValue(r'public')
+  public(r'public');
 
   const ReleaseStatus(this.value);
 

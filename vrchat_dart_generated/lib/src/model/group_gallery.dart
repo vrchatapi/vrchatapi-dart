@@ -17,49 +17,44 @@ part 'group_gallery.g.dart';
 class GroupGallery {
   /// Returns a new [GroupGallery] instance.
   GroupGallery({
-    this.id,
-
-    this.name,
+    this.createdAt,
 
     this.description,
 
+    this.id,
+
     this.membersOnly = false,
 
-    this.roleIdsToView,
-
-    this.roleIdsToSubmit,
+    this.name,
 
     this.roleIdsToAutoApprove,
 
     this.roleIdsToManage,
 
-    this.createdAt,
+    this.roleIdsToSubmit,
+
+    this.roleIdsToView,
 
     this.updatedAt,
   });
 
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
-  final String? id;
-
-  /// Name of the gallery.
-  @JsonKey(name: r'name', required: false, includeIfNull: false)
-  final String? name;
+  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  final DateTime? createdAt;
 
   /// Description of the gallery.
   @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;
 
+  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  final String? id;
+
   /// Whether the gallery is members only.
   @JsonKey(name: r'membersOnly', required: false, includeIfNull: false)
   final bool? membersOnly;
 
-  ///
-  @JsonKey(name: r'roleIdsToView', required: false, includeIfNull: false)
-  final List<String>? roleIdsToView;
-
-  ///
-  @JsonKey(name: r'roleIdsToSubmit', required: false, includeIfNull: false)
-  final List<String>? roleIdsToSubmit;
+  /// Name of the gallery.
+  @JsonKey(name: r'name', required: false, includeIfNull: false)
+  final String? name;
 
   ///
   @JsonKey(name: r'roleIdsToAutoApprove', required: false, includeIfNull: false)
@@ -69,8 +64,13 @@ class GroupGallery {
   @JsonKey(name: r'roleIdsToManage', required: false, includeIfNull: false)
   final List<String>? roleIdsToManage;
 
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
-  final DateTime? createdAt;
+  ///
+  @JsonKey(name: r'roleIdsToSubmit', required: false, includeIfNull: false)
+  final List<String>? roleIdsToSubmit;
+
+  ///
+  @JsonKey(name: r'roleIdsToView', required: false, includeIfNull: false)
+  final List<String>? roleIdsToView;
 
   @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
   final DateTime? updatedAt;
@@ -79,28 +79,28 @@ class GroupGallery {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is GroupGallery &&
-          other.id == id &&
-          other.name == name &&
+          other.createdAt == createdAt &&
           other.description == description &&
+          other.id == id &&
           other.membersOnly == membersOnly &&
-          other.roleIdsToView == roleIdsToView &&
-          other.roleIdsToSubmit == roleIdsToSubmit &&
+          other.name == name &&
           other.roleIdsToAutoApprove == roleIdsToAutoApprove &&
           other.roleIdsToManage == roleIdsToManage &&
-          other.createdAt == createdAt &&
+          other.roleIdsToSubmit == roleIdsToSubmit &&
+          other.roleIdsToView == roleIdsToView &&
           other.updatedAt == updatedAt;
 
   @override
   int get hashCode =>
-      id.hashCode +
-      name.hashCode +
+      createdAt.hashCode +
       description.hashCode +
+      id.hashCode +
       membersOnly.hashCode +
-      (roleIdsToView == null ? 0 : roleIdsToView.hashCode) +
-      (roleIdsToSubmit == null ? 0 : roleIdsToSubmit.hashCode) +
+      name.hashCode +
       (roleIdsToAutoApprove == null ? 0 : roleIdsToAutoApprove.hashCode) +
       (roleIdsToManage == null ? 0 : roleIdsToManage.hashCode) +
-      createdAt.hashCode +
+      (roleIdsToSubmit == null ? 0 : roleIdsToSubmit.hashCode) +
+      (roleIdsToView == null ? 0 : roleIdsToView.hashCode) +
       updatedAt.hashCode;
 
   factory GroupGallery.fromJson(Map<String, dynamic> json) =>

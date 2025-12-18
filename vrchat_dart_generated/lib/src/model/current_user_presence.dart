@@ -21,9 +21,9 @@ class CurrentUserPresence {
 
     this.currentAvatarTags,
 
-    this.displayName,
-
     this.debugflag,
+
+    this.displayName,
 
     this.groups,
 
@@ -56,11 +56,11 @@ class CurrentUserPresence {
   @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
   final List<String>? currentAvatarTags;
 
-  @JsonKey(name: r'displayName', required: false, includeIfNull: false)
-  final String? displayName;
-
   @JsonKey(name: r'debugflag', required: false, includeIfNull: false)
   final String? debugflag;
+
+  @JsonKey(name: r'displayName', required: false, includeIfNull: false)
+  final String? displayName;
 
   @JsonKey(name: r'groups', required: false, includeIfNull: false)
   final List<String>? groups;
@@ -79,7 +79,7 @@ class CurrentUserPresence {
   @JsonKey(name: r'isRejoining', required: false, includeIfNull: false)
   final String? isRejoining;
 
-  /// either a Platform or an empty string
+  /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
   @JsonKey(name: r'platform', required: false, includeIfNull: false)
   final String? platform;
 
@@ -110,8 +110,8 @@ class CurrentUserPresence {
       other is CurrentUserPresence &&
           other.avatarThumbnail == avatarThumbnail &&
           other.currentAvatarTags == currentAvatarTags &&
-          other.displayName == displayName &&
           other.debugflag == debugflag &&
+          other.displayName == displayName &&
           other.groups == groups &&
           other.id == id &&
           other.instance == instance &&
@@ -129,14 +129,14 @@ class CurrentUserPresence {
   int get hashCode =>
       (avatarThumbnail == null ? 0 : avatarThumbnail.hashCode) +
       currentAvatarTags.hashCode +
-      displayName.hashCode +
       debugflag.hashCode +
+      displayName.hashCode +
       (groups == null ? 0 : groups.hashCode) +
       id.hashCode +
       (instance == null ? 0 : instance.hashCode) +
       (instanceType == null ? 0 : instanceType.hashCode) +
       (isRejoining == null ? 0 : isRejoining.hashCode) +
-      (platform == null ? 0 : platform.hashCode) +
+      platform.hashCode +
       (profilePicOverride == null ? 0 : profilePicOverride.hashCode) +
       (status == null ? 0 : status.hashCode) +
       (travelingToInstance == null ? 0 : travelingToInstance.hashCode) +

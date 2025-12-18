@@ -10,10 +10,10 @@ enum GroupJoinState {
   closed(r'closed'),
   @JsonValue(r'invite')
   invite(r'invite'),
-  @JsonValue(r'request')
-  request(r'request'),
   @JsonValue(r'open')
-  open(r'open');
+  open(r'open'),
+  @JsonValue(r'request')
+  request(r'request');
 
   const GroupJoinState(this.value);
 

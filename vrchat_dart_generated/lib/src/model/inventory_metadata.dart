@@ -17,8 +17,6 @@ part 'inventory_metadata.g.dart';
 class InventoryMetadata {
   /// Returns a new [InventoryMetadata] instance.
   InventoryMetadata({
-    this.inventoryItemsToInstantiate,
-
     this.animated,
 
     this.animationStyle,
@@ -29,18 +27,12 @@ class InventoryMetadata {
 
     this.imageUrl,
 
+    this.inventoryItemsToInstantiate,
+
     this.maskTag,
 
     this.propId,
   });
-
-  /// Only in bundles
-  @JsonKey(
-    name: r'inventoryItemsToInstantiate',
-    required: false,
-    includeIfNull: false,
-  )
-  final List<String>? inventoryItemsToInstantiate;
 
   @JsonKey(name: r'animated', required: false, includeIfNull: false)
   final bool? animated;
@@ -57,6 +49,14 @@ class InventoryMetadata {
   @JsonKey(name: r'imageUrl', required: false, includeIfNull: false)
   final String? imageUrl;
 
+  /// Only in bundles
+  @JsonKey(
+    name: r'inventoryItemsToInstantiate',
+    required: false,
+    includeIfNull: false,
+  )
+  final List<String>? inventoryItemsToInstantiate;
+
   @JsonKey(name: r'maskTag', required: false, includeIfNull: false)
   final String? maskTag;
 
@@ -67,23 +67,23 @@ class InventoryMetadata {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is InventoryMetadata &&
-          other.inventoryItemsToInstantiate == inventoryItemsToInstantiate &&
           other.animated == animated &&
           other.animationStyle == animationStyle &&
           other.assetBundleId == assetBundleId &&
           other.fileId == fileId &&
           other.imageUrl == imageUrl &&
+          other.inventoryItemsToInstantiate == inventoryItemsToInstantiate &&
           other.maskTag == maskTag &&
           other.propId == propId;
 
   @override
   int get hashCode =>
-      inventoryItemsToInstantiate.hashCode +
       animated.hashCode +
       animationStyle.hashCode +
       assetBundleId.hashCode +
       fileId.hashCode +
       imageUrl.hashCode +
+      inventoryItemsToInstantiate.hashCode +
       maskTag.hashCode +
       propId.hashCode;
 

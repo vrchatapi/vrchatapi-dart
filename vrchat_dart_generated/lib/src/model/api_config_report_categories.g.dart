@@ -61,14 +61,14 @@ APIConfigReportCategories _$APIConfigReportCategoriesFromJson(
       'image',
       (v) => ReportCategory.fromJson(v as Map<String, dynamic>),
     ),
-    text: $checkedConvert(
-      'text',
-      (v) => ReportCategory.fromJson(v as Map<String, dynamic>),
-    ),
     sticker: $checkedConvert(
       'sticker',
       (v) =>
           v == null ? null : ReportCategory.fromJson(v as Map<String, dynamic>),
+    ),
+    text: $checkedConvert(
+      'text',
+      (v) => ReportCategory.fromJson(v as Map<String, dynamic>),
     ),
     warnings: $checkedConvert(
       'warnings',
@@ -97,8 +97,8 @@ Map<String, dynamic> _$APIConfigReportCategoriesToJson(
   'environment': instance.environment.toJson(),
   'groupstore': instance.groupstore.toJson(),
   'image': instance.image.toJson(),
-  'text': instance.text.toJson(),
   'sticker': ?instance.sticker?.toJson(),
+  'text': instance.text.toJson(),
   'warnings': instance.warnings.toJson(),
   'worldimage': instance.worldimage.toJson(),
   'worldstore': instance.worldstore.toJson(),

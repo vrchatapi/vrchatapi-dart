@@ -18,12 +18,16 @@ part 'paginated_group_audit_log_entry_list.g.dart';
 class PaginatedGroupAuditLogEntryList {
   /// Returns a new [PaginatedGroupAuditLogEntryList] instance.
   PaginatedGroupAuditLogEntryList({
+    this.hasNext,
+
     this.results,
 
     this.totalCount,
-
-    this.hasNext,
   });
+
+  /// Whether there are more results after this page.
+  @JsonKey(name: r'hasNext', required: false, includeIfNull: false)
+  final bool? hasNext;
 
   ///
   @JsonKey(name: r'results', required: false, includeIfNull: false)
@@ -33,20 +37,16 @@ class PaginatedGroupAuditLogEntryList {
   @JsonKey(name: r'totalCount', required: false, includeIfNull: false)
   final int? totalCount;
 
-  /// Whether there are more results after this page.
-  @JsonKey(name: r'hasNext', required: false, includeIfNull: false)
-  final bool? hasNext;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is PaginatedGroupAuditLogEntryList &&
+          other.hasNext == hasNext &&
           other.results == results &&
-          other.totalCount == totalCount &&
-          other.hasNext == hasNext;
+          other.totalCount == totalCount;
 
   @override
-  int get hashCode => results.hashCode + totalCount.hashCode + hasNext.hashCode;
+  int get hashCode => hasNext.hashCode + results.hashCode + totalCount.hashCode;
 
   factory PaginatedGroupAuditLogEntryList.fromJson(Map<String, dynamic> json) =>
       _$PaginatedGroupAuditLogEntryListFromJson(json);

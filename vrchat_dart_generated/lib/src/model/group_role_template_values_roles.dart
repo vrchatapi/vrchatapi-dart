@@ -18,20 +18,20 @@ part 'group_role_template_values_roles.g.dart';
 class GroupRoleTemplateValuesRoles {
   /// Returns a new [GroupRoleTemplateValuesRoles] instance.
   GroupRoleTemplateValuesRoles({
-    this.description,
-
     this.name,
+
+    this.description,
 
     this.basePermissions,
 
     this.isAddedOnJoin = false,
   });
 
-  @JsonKey(name: r'description', required: false, includeIfNull: false)
-  final String? description;
-
   @JsonKey(name: r'name', required: false, includeIfNull: false)
   final String? name;
+
+  @JsonKey(name: r'description', required: false, includeIfNull: false)
+  final String? description;
 
   @JsonKey(name: r'basePermissions', required: false, includeIfNull: false)
   final List<GroupPermissions>? basePermissions;
@@ -43,15 +43,15 @@ class GroupRoleTemplateValuesRoles {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is GroupRoleTemplateValuesRoles &&
-          other.description == description &&
           other.name == name &&
+          other.description == description &&
           other.basePermissions == basePermissions &&
           other.isAddedOnJoin == isAddedOnJoin;
 
   @override
   int get hashCode =>
-      description.hashCode +
       name.hashCode +
+      description.hashCode +
       basePermissions.hashCode +
       isAddedOnJoin.hashCode;
 

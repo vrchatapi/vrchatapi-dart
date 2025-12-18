@@ -16,24 +16,24 @@ part 'info_push_data_clickable.g.dart';
 )
 class InfoPushDataClickable {
   /// Returns a new [InfoPushDataClickable] instance.
-  InfoPushDataClickable({required this.command, this.parameters});
-
-  @JsonKey(name: r'command', required: true, includeIfNull: false)
-  final InfoPushDataClickableCommandEnum command;
+  InfoPushDataClickable({this.parameters, required this.command});
 
   /// In case of OpenURL, this would contain the link.
   @JsonKey(name: r'parameters', required: false, includeIfNull: false)
   final List<String>? parameters;
 
+  @JsonKey(name: r'command', required: true, includeIfNull: false)
+  final InfoPushDataClickableCommandEnum command;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is InfoPushDataClickable &&
-          other.command == command &&
-          other.parameters == parameters;
+          other.parameters == parameters &&
+          other.command == command;
 
   @override
-  int get hashCode => command.hashCode + parameters.hashCode;
+  int get hashCode => parameters.hashCode + command.hashCode;
 
   factory InfoPushDataClickable.fromJson(Map<String, dynamic> json) =>
       _$InfoPushDataClickableFromJson(json);
@@ -47,14 +47,14 @@ class InfoPushDataClickable {
 }
 
 enum InfoPushDataClickableCommandEnum {
+  @JsonValue(r'CannedWorldSearch')
+  cannedWorldSearch(r'CannedWorldSearch'),
+  @JsonValue(r'OpenSafetyMenu')
+  openSafetyMenu(r'OpenSafetyMenu'),
   @JsonValue(r'OpenURL')
   openURL(r'OpenURL'),
   @JsonValue(r'OpenVRCPlusMenu')
-  openVRCPlusMenu(r'OpenVRCPlusMenu'),
-  @JsonValue(r'OpenSafetyMenu')
-  openSafetyMenu(r'OpenSafetyMenu'),
-  @JsonValue(r'CannedWorldSearch')
-  cannedWorldSearch(r'CannedWorldSearch');
+  openVRCPlusMenu(r'OpenVRCPlusMenu');
 
   const InfoPushDataClickableCommandEnum(this.value);
 

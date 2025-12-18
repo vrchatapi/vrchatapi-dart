@@ -35,13 +35,25 @@ class Instance {
 
     required this.clientNumber,
 
+    this.closedAt,
+
     this.contentSettings,
 
     this.displayName,
 
+    this.friends,
+
     this.full = false,
 
     this.gameServerVersion,
+
+    this.groupAccessType,
+
+    this.hardClose,
+
+    this.hasCapacityForYou,
+
+    this.hidden,
 
     required this.id,
 
@@ -55,6 +67,8 @@ class Instance {
 
     required this.name,
 
+    this.nonce,
+
     this.ownerId,
 
     this.permanent = false,
@@ -65,22 +79,6 @@ class Instance {
 
     this.playerPersistenceEnabled,
 
-    required this.region,
-
-    required this.secureName,
-
-    this.shortName,
-
-    required this.tags,
-
-    required this.type,
-
-    required this.worldId,
-
-    this.hidden,
-
-    this.friends,
-
     this.private,
 
     required this.queueEnabled,
@@ -89,25 +87,27 @@ class Instance {
 
     required this.recommendedCapacity,
 
+    required this.region,
+
     this.roleRestricted,
+
+    required this.secureName,
+
+    this.shortName,
 
     required this.strict,
 
-    required this.userCount,
+    required this.tags,
 
-    required this.world,
+    required this.type,
+
+    required this.userCount,
 
     this.users,
 
-    this.groupAccessType,
+    required this.world,
 
-    this.hasCapacityForYou,
-
-    this.nonce,
-
-    this.closedAt,
-
-    this.hardClose,
+    required this.worldId,
   });
 
   @JsonKey(name: r'active', required: true, includeIfNull: false)
@@ -128,17 +128,37 @@ class Instance {
   @JsonKey(name: r'clientNumber', required: true, includeIfNull: false)
   final String clientNumber;
 
+  @JsonKey(name: r'closedAt', required: false, includeIfNull: false)
+  final DateTime? closedAt;
+
   @JsonKey(name: r'contentSettings', required: false, includeIfNull: false)
   final InstanceContentSettings? contentSettings;
 
   @JsonKey(name: r'displayName', required: false, includeIfNull: false)
   final String? displayName;
 
+  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
+  @JsonKey(name: r'friends', required: false, includeIfNull: false)
+  final String? friends;
+
   @JsonKey(name: r'full', required: true, includeIfNull: false)
   final bool full;
 
   @JsonKey(name: r'gameServerVersion', required: false, includeIfNull: false)
   final int? gameServerVersion;
+
+  @JsonKey(name: r'groupAccessType', required: false, includeIfNull: false)
+  final GroupAccessType? groupAccessType;
+
+  @JsonKey(name: r'hardClose', required: false, includeIfNull: false)
+  final bool? hardClose;
+
+  @JsonKey(name: r'hasCapacityForYou', required: false, includeIfNull: false)
+  final bool? hasCapacityForYou;
+
+  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
+  @JsonKey(name: r'hidden', required: false, includeIfNull: false)
+  final String? hidden;
 
   /// InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
   @JsonKey(name: r'id', required: true, includeIfNull: false)
@@ -166,6 +186,9 @@ class Instance {
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
+  @JsonKey(name: r'nonce', required: false, includeIfNull: false)
+  final String? nonce;
+
   /// A groupId if the instance type is \"group\", null if instance type is public, or a userId otherwise
   @JsonKey(name: r'ownerId', required: false, includeIfNull: false)
   final String? ownerId;
@@ -186,34 +209,6 @@ class Instance {
   )
   final bool? playerPersistenceEnabled;
 
-  @JsonKey(name: r'region', required: true, includeIfNull: false)
-  final InstanceRegion region;
-
-  @JsonKey(name: r'secureName', required: true, includeIfNull: false)
-  final String secureName;
-
-  @JsonKey(name: r'shortName', required: false, includeIfNull: false)
-  final String? shortName;
-
-  /// The tags array on Instances usually contain the language tags of the people in the instance.
-  @JsonKey(name: r'tags', required: true, includeIfNull: false)
-  final List<String> tags;
-
-  @JsonKey(name: r'type', required: true, includeIfNull: false)
-  final InstanceType type;
-
-  /// WorldID be \"offline\" on User profiles if you are not friends with that user.
-  @JsonKey(name: r'worldId', required: true, includeIfNull: false)
-  final String worldId;
-
-  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(name: r'hidden', required: false, includeIfNull: false)
-  final String? hidden;
-
-  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(name: r'friends', required: false, includeIfNull: false)
-  final String? friends;
-
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(name: r'private', required: false, includeIfNull: false)
   final String? private;
@@ -229,37 +224,42 @@ class Instance {
   @JsonKey(name: r'recommendedCapacity', required: true, includeIfNull: false)
   final int recommendedCapacity;
 
+  @JsonKey(name: r'region', required: true, includeIfNull: false)
+  final InstanceRegion region;
+
   @JsonKey(name: r'roleRestricted', required: false, includeIfNull: false)
   final bool? roleRestricted;
 
+  @JsonKey(name: r'secureName', required: true, includeIfNull: false)
+  final String secureName;
+
+  @JsonKey(name: r'shortName', required: false, includeIfNull: false)
+  final String? shortName;
+
   @JsonKey(name: r'strict', required: true, includeIfNull: false)
   final bool strict;
+
+  /// The tags array on Instances usually contain the language tags of the people in the instance.
+  @JsonKey(name: r'tags', required: true, includeIfNull: false)
+  final List<String> tags;
+
+  @JsonKey(name: r'type', required: true, includeIfNull: false)
+  final InstanceType type;
 
   // minimum: 0
   @JsonKey(name: r'userCount', required: true, includeIfNull: false)
   final int userCount;
 
-  @JsonKey(name: r'world', required: true, includeIfNull: false)
-  final World world;
-
   /// The users field is present on instances created by the requesting user.
   @JsonKey(name: r'users', required: false, includeIfNull: false)
   final List<LimitedUserInstance>? users;
 
-  @JsonKey(name: r'groupAccessType', required: false, includeIfNull: false)
-  final GroupAccessType? groupAccessType;
+  @JsonKey(name: r'world', required: true, includeIfNull: false)
+  final World world;
 
-  @JsonKey(name: r'hasCapacityForYou', required: false, includeIfNull: false)
-  final bool? hasCapacityForYou;
-
-  @JsonKey(name: r'nonce', required: false, includeIfNull: false)
-  final String? nonce;
-
-  @JsonKey(name: r'closedAt', required: false, includeIfNull: false)
-  final DateTime? closedAt;
-
-  @JsonKey(name: r'hardClose', required: false, includeIfNull: false)
-  final bool? hardClose;
+  /// WorldID be \"offline\" on User profiles if you are not friends with that user.
+  @JsonKey(name: r'worldId', required: true, includeIfNull: false)
+  final String worldId;
 
   @override
   bool operator ==(Object other) =>
@@ -271,43 +271,43 @@ class Instance {
           other.capacity == capacity &&
           // ignore: deprecated_member_use_from_same_package
           other.clientNumber == clientNumber &&
+          other.closedAt == closedAt &&
           other.contentSettings == contentSettings &&
           other.displayName == displayName &&
+          other.friends == friends &&
           other.full == full &&
           other.gameServerVersion == gameServerVersion &&
+          other.groupAccessType == groupAccessType &&
+          other.hardClose == hardClose &&
+          other.hasCapacityForYou == hasCapacityForYou &&
+          other.hidden == hidden &&
           other.id == id &&
           other.instanceId == instanceId &&
           other.instancePersistenceEnabled == instancePersistenceEnabled &&
           other.location == location &&
           other.nUsers == nUsers &&
           other.name == name &&
+          other.nonce == nonce &&
           other.ownerId == ownerId &&
           other.permanent == permanent &&
           other.photonRegion == photonRegion &&
           other.platforms == platforms &&
           other.playerPersistenceEnabled == playerPersistenceEnabled &&
-          other.region == region &&
-          other.secureName == secureName &&
-          other.shortName == shortName &&
-          other.tags == tags &&
-          other.type == type &&
-          other.worldId == worldId &&
-          other.hidden == hidden &&
-          other.friends == friends &&
           other.private == private &&
           other.queueEnabled == queueEnabled &&
           other.queueSize == queueSize &&
           other.recommendedCapacity == recommendedCapacity &&
+          other.region == region &&
           other.roleRestricted == roleRestricted &&
+          other.secureName == secureName &&
+          other.shortName == shortName &&
           other.strict == strict &&
+          other.tags == tags &&
+          other.type == type &&
           other.userCount == userCount &&
-          other.world == world &&
           other.users == users &&
-          other.groupAccessType == groupAccessType &&
-          other.hasCapacityForYou == hasCapacityForYou &&
-          other.nonce == nonce &&
-          other.closedAt == closedAt &&
-          other.hardClose == hardClose;
+          other.world == world &&
+          other.worldId == worldId;
 
   @override
   int get hashCode =>
@@ -317,10 +317,16 @@ class Instance {
       capacity.hashCode +
       // ignore: deprecated_member_use_from_same_package
       clientNumber.hashCode +
+      (closedAt == null ? 0 : closedAt.hashCode) +
       contentSettings.hashCode +
       (displayName == null ? 0 : displayName.hashCode) +
+      friends.hashCode +
       full.hashCode +
       gameServerVersion.hashCode +
+      groupAccessType.hashCode +
+      (hardClose == null ? 0 : hardClose.hashCode) +
+      hasCapacityForYou.hashCode +
+      hidden.hashCode +
       id.hashCode +
       instanceId.hashCode +
       (instancePersistenceEnabled == null
@@ -329,6 +335,7 @@ class Instance {
       location.hashCode +
       nUsers.hashCode +
       name.hashCode +
+      nonce.hashCode +
       (ownerId == null ? 0 : ownerId.hashCode) +
       permanent.hashCode +
       photonRegion.hashCode +
@@ -336,28 +343,21 @@ class Instance {
       (playerPersistenceEnabled == null
           ? 0
           : playerPersistenceEnabled.hashCode) +
-      region.hashCode +
-      secureName.hashCode +
-      (shortName == null ? 0 : shortName.hashCode) +
-      tags.hashCode +
-      type.hashCode +
-      worldId.hashCode +
-      hidden.hashCode +
-      friends.hashCode +
       private.hashCode +
       queueEnabled.hashCode +
       queueSize.hashCode +
       recommendedCapacity.hashCode +
+      region.hashCode +
       roleRestricted.hashCode +
+      secureName.hashCode +
+      (shortName == null ? 0 : shortName.hashCode) +
       strict.hashCode +
+      tags.hashCode +
+      type.hashCode +
       userCount.hashCode +
-      world.hashCode +
       users.hashCode +
-      groupAccessType.hashCode +
-      hasCapacityForYou.hashCode +
-      nonce.hashCode +
-      (closedAt == null ? 0 : closedAt.hashCode) +
-      (hardClose == null ? 0 : hardClose.hashCode);
+      world.hashCode +
+      worldId.hashCode;
 
   factory Instance.fromJson(Map<String, dynamic> json) =>
       _$InstanceFromJson(json);

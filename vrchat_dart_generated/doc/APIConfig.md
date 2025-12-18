@@ -17,9 +17,9 @@ Name | Type | Description | Notes
 **ageVerificationStatusVisible** | **bool** |  | 
 **analysisMaxRetries** | **int** | Max retries for avatar analysis requests | 
 **analysisRetryInterval** | **int** | Interval between retries for avatar analysis requests | 
-**announcements** | [**Set&lt;APIConfigAnnouncement&gt;**](APIConfigAnnouncement.md) | Public Announcements | 
 **analyticsSegmentNewUIPctOfUsers** | **int** | Unknown | 
 **analyticsSegmentNewUISalt** | **String** | Unknown | 
+**announcements** | [**Set&lt;APIConfigAnnouncement&gt;**](APIConfigAnnouncement.md) | Public Announcements | 
 **availableLanguageCodes** | **List&lt;String&gt;** | List of supported Languages | 
 **availableLanguages** | **List&lt;String&gt;** | List of supported Languages | 
 **avatarPerfLimiter** | [**APIConfigAvatarPerfLimiter**](APIConfigAvatarPerfLimiter.md) |  | 
@@ -54,10 +54,10 @@ Name | Type | Description | Notes
 **disableAVProInProton** | **bool** | Unknown | [optional] [default to false]
 **disableAvatarCopying** | **bool** | Toggles if copying avatars should be disabled | [default to false]
 **disableAvatarGating** | **bool** | Toggles if avatar gating should be disabled. Avatar gating restricts uploading of avatars to people with the `system_avatar_access` Tag or `admin_avatar_access` Tag | [default to false]
+**disableCaptcha** | **bool** | Unknown | [optional] [default to true]
 **disableCommunityLabs** | **bool** | Toggles if the Community Labs should be disabled | [default to false]
 **disableCommunityLabsPromotion** | **bool** | Toggles if promotion out of Community Labs should be disabled | [default to false]
 **disableEmail** | **bool** | Unknown | [default to false]
-**disableCaptcha** | **bool** | Unknown | [optional] [default to true]
 **disableEventStream** | **bool** | Toggles if Analytics should be disabled. | [default to false]
 **disableFeedbackGating** | **bool** | Toggles if feedback gating should be disabled. Feedback gating restricts submission of feedback (reporting a World or User) to people with the `system_feedback_access` Tag. | [default to false]
 **disableFrontendBuilds** | **bool** | Unknown, probably toggles compilation of frontend web builds? So internal flag? | [default to false]
@@ -91,6 +91,9 @@ Name | Type | Description | Notes
 **offlineAnalysis** | [**APIConfigOfflineAnalysis**](APIConfigOfflineAnalysis.md) |  | 
 **photonNameserverOverrides** | **List&lt;String&gt;** | Unknown | 
 **photonPublicKeys** | **List&lt;String&gt;** | Unknown | 
+**playerUrlResolverSha1** | **String** | Currently used youtube-dl.exe hash in SHA1-delimited format | 
+**playerUrlResolverVersion** | **String** | Currently used youtube-dl.exe version | 
+**publicKey** | **String** | Public key, hex encoded | 
 **reportCategories** | [**APIConfigReportCategories**](APIConfigReportCategories.md) |  | 
 **reportFormUrl** | **String** | URL to the report form | [default to 'https://help.vrchat.com/hc/en-us/requests/new?ticket_form_id=1500000182242&tf_360056455174=user_report&tf_360057451993={userId}&tf_1500001445142={reportedId}&tf_subject={reason} {category} By {contentType} {reportedName}&tf_description={description}']
 **reportOptions** | [**APIConfigReportOptions**](APIConfigReportOptions.md) |  | 
@@ -103,8 +106,8 @@ Name | Type | Description | Notes
 **stringHostUrlList** | **List&lt;String&gt;** | A list of explicitly allowed origins that worlds can request strings from via the Udon's [VRCStringDownloader.LoadUrl](https://creators.vrchat.com/worlds/udon/string-loading/#ivrcstringdownload). | 
 **supportEmail** | **String** | VRChat's support email | 
 **supportFormUrl** | **String** | VRChat's support form | 
-**timekeeping** | **bool** | Unknown | [default to true]
 **timeOutWorldId** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | 
+**timekeeping** | **bool** | Unknown | [default to true]
 **tutorialWorldId** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | 
 **updateRateMsMaximum** | **int** | Unknown | 
 **updateRateMsMinimum** | **int** | Unknown | 
@@ -114,13 +117,10 @@ Name | Type | Description | Notes
 **urlList** | **List&lt;String&gt;** | List of allowed URLs that bypass the \"Allow untrusted URL's\" setting in-game | 
 **useReliableUdpForVoice** | **bool** | Unknown | [default to false]
 **viveWindowsUrl** | **String** | Download link for game on the Steam website. | 
-**whiteListedAssetUrls** | **List&lt;String&gt;** | List of allowed URLs that are allowed to host avatar assets | 
-**playerUrlResolverVersion** | **String** | Currently used youtube-dl.exe version | 
-**playerUrlResolverSha1** | **String** | Currently used youtube-dl.exe hash in SHA1-delimited format | 
-**publicKey** | **String** | Public key, hex encoded | 
 **websocketMaxFriendsRefreshDelay** | **int** | Unknown | [default to 900]
 **websocketQuickReconnectTime** | **int** | Unknown | [default to 2]
 **websocketReconnectMaxDelay** | **int** | Unknown | [default to 2]
+**whiteListedAssetUrls** | **List&lt;String&gt;** | List of allowed URLs that are allowed to host avatar assets | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

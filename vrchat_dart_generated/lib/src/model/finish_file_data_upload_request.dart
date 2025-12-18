@@ -19,9 +19,9 @@ class FinishFileDataUploadRequest {
   FinishFileDataUploadRequest({
     this.etags,
 
-    this.nextPartNumber = '0',
-
     this.maxParts = '0',
+
+    this.nextPartNumber = '0',
   });
 
   /// Array of ETags uploaded.
@@ -29,14 +29,14 @@ class FinishFileDataUploadRequest {
   final Set<String>? etags;
 
   /// Always a zero in string form, despite how many parts uploaded.
-  @Deprecated('nextPartNumber has been deprecated')
-  @JsonKey(name: r'nextPartNumber', required: true, includeIfNull: false)
-  final String nextPartNumber;
-
-  /// Always a zero in string form, despite how many parts uploaded.
   @Deprecated('maxParts has been deprecated')
   @JsonKey(name: r'maxParts', required: true, includeIfNull: false)
   final String maxParts;
+
+  /// Always a zero in string form, despite how many parts uploaded.
+  @Deprecated('nextPartNumber has been deprecated')
+  @JsonKey(name: r'nextPartNumber', required: true, includeIfNull: false)
+  final String nextPartNumber;
 
   @override
   bool operator ==(Object other) =>
@@ -44,14 +44,14 @@ class FinishFileDataUploadRequest {
       other is FinishFileDataUploadRequest &&
           other.etags == etags &&
           // ignore: deprecated_member_use_from_same_package
-          other.nextPartNumber == nextPartNumber &&
+          other.maxParts == maxParts &&
           // ignore: deprecated_member_use_from_same_package
-          other.maxParts == maxParts;
+          other.nextPartNumber == nextPartNumber;
 
   @override
   int get hashCode =>
       // ignore: deprecated_member_use_from_same_package
-      etags.hashCode + nextPartNumber.hashCode + maxParts.hashCode;
+      etags.hashCode + maxParts.hashCode + nextPartNumber.hashCode;
 
   factory FinishFileDataUploadRequest.fromJson(Map<String, dynamic> json) =>
       _$FinishFileDataUploadRequestFromJson(json);

@@ -11,26 +11,26 @@ part of 'group_permission.dart';
 GroupPermission _$GroupPermissionFromJson(Map<String, dynamic> json) =>
     $checkedCreate('GroupPermission', json, ($checkedConvert) {
       final val = GroupPermission(
-        name: $checkedConvert('name', (v) => v as String?),
+        allowedToAdd: $checkedConvert(
+          'allowedToAdd',
+          (v) => v as bool? ?? false,
+        ),
         displayName: $checkedConvert('displayName', (v) => v as String?),
         help: $checkedConvert('help', (v) => v as String?),
         isManagementPermission: $checkedConvert(
           'isManagementPermission',
           (v) => v as bool? ?? false,
         ),
-        allowedToAdd: $checkedConvert(
-          'allowedToAdd',
-          (v) => v as bool? ?? false,
-        ),
+        name: $checkedConvert('name', (v) => v as String?),
       );
       return val;
     });
 
 Map<String, dynamic> _$GroupPermissionToJson(GroupPermission instance) =>
     <String, dynamic>{
-      'name': ?instance.name,
+      'allowedToAdd': ?instance.allowedToAdd,
       'displayName': ?instance.displayName,
       'help': ?instance.help,
       'isManagementPermission': ?instance.isManagementPermission,
-      'allowedToAdd': ?instance.allowedToAdd,
+      'name': ?instance.name,
     };

@@ -17,80 +17,80 @@ part 'token_bundle.g.dart';
 class TokenBundle {
   /// Returns a new [TokenBundle] instance.
   TokenBundle({
-    required this.id,
+    required this.amount,
 
     required this.appleProductId,
 
-    required this.steamItemId,
-
-    required this.oculusSku,
+    required this.description,
 
     this.googleProductId,
 
-    required this.amount,
-
-    required this.description,
-
-    required this.tokens,
+    required this.id,
 
     required this.imageUrl,
+
+    required this.oculusSku,
+
+    required this.steamItemId,
+
+    required this.tokens,
   });
-
-  @JsonKey(name: r'id', required: true, includeIfNull: false)
-  final String id;
-
-  @JsonKey(name: r'appleProductId', required: true, includeIfNull: false)
-  final String appleProductId;
-
-  @JsonKey(name: r'steamItemId', required: true, includeIfNull: false)
-  final String steamItemId;
-
-  @JsonKey(name: r'oculusSku', required: true, includeIfNull: false)
-  final String oculusSku;
-
-  @JsonKey(name: r'googleProductId', required: false, includeIfNull: false)
-  final String? googleProductId;
 
   /// price of the bundle
   @JsonKey(name: r'amount', required: true, includeIfNull: false)
   final int amount;
 
+  @JsonKey(name: r'appleProductId', required: true, includeIfNull: false)
+  final String appleProductId;
+
   @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
 
-  /// number of tokens received
-  @JsonKey(name: r'tokens', required: true, includeIfNull: false)
-  final int tokens;
+  @JsonKey(name: r'googleProductId', required: false, includeIfNull: false)
+  final String? googleProductId;
+
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
 
   /// direct url to image
   @JsonKey(name: r'imageUrl', required: true, includeIfNull: false)
   final String imageUrl;
 
+  @JsonKey(name: r'oculusSku', required: true, includeIfNull: false)
+  final String oculusSku;
+
+  @JsonKey(name: r'steamItemId', required: true, includeIfNull: false)
+  final String steamItemId;
+
+  /// number of tokens received
+  @JsonKey(name: r'tokens', required: true, includeIfNull: false)
+  final int tokens;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is TokenBundle &&
-          other.id == id &&
-          other.appleProductId == appleProductId &&
-          other.steamItemId == steamItemId &&
-          other.oculusSku == oculusSku &&
-          other.googleProductId == googleProductId &&
           other.amount == amount &&
+          other.appleProductId == appleProductId &&
           other.description == description &&
-          other.tokens == tokens &&
-          other.imageUrl == imageUrl;
+          other.googleProductId == googleProductId &&
+          other.id == id &&
+          other.imageUrl == imageUrl &&
+          other.oculusSku == oculusSku &&
+          other.steamItemId == steamItemId &&
+          other.tokens == tokens;
 
   @override
   int get hashCode =>
-      id.hashCode +
-      appleProductId.hashCode +
-      steamItemId.hashCode +
-      oculusSku.hashCode +
-      googleProductId.hashCode +
       amount.hashCode +
+      appleProductId.hashCode +
       description.hashCode +
-      tokens.hashCode +
-      imageUrl.hashCode;
+      googleProductId.hashCode +
+      id.hashCode +
+      imageUrl.hashCode +
+      oculusSku.hashCode +
+      steamItemId.hashCode +
+      tokens.hashCode;
 
   factory TokenBundle.fromJson(Map<String, dynamic> json) =>
       _$TokenBundleFromJson(json);

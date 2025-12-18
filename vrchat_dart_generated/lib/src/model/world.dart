@@ -26,8 +26,6 @@ class World {
 
     required this.capacity,
 
-    required this.recommendedCapacity,
-
     required this.createdAt,
 
     this.defaultContentSettings,
@@ -66,6 +64,8 @@ class World {
 
     required this.publicationDate,
 
+    required this.recommendedCapacity,
+
     required this.releaseStatus,
 
     this.storeId,
@@ -73,6 +73,8 @@ class World {
     required this.tags,
 
     required this.thumbnailImageUrl,
+
+    this.udonProducts,
 
     this.unityPackages,
 
@@ -83,8 +85,6 @@ class World {
     this.version = 0,
 
     this.visits = 0,
-
-    this.udonProducts,
   });
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
@@ -96,9 +96,6 @@ class World {
 
   @JsonKey(name: r'capacity', required: true, includeIfNull: false)
   final int capacity;
-
-  @JsonKey(name: r'recommendedCapacity', required: true, includeIfNull: false)
-  final int recommendedCapacity;
 
   @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
@@ -172,6 +169,9 @@ class World {
   @JsonKey(name: r'publicationDate', required: true, includeIfNull: false)
   final String publicationDate;
 
+  @JsonKey(name: r'recommendedCapacity', required: true, includeIfNull: false)
+  final int recommendedCapacity;
+
   @JsonKey(name: r'releaseStatus', required: true, includeIfNull: false)
   final ReleaseStatus releaseStatus;
 
@@ -184,6 +184,9 @@ class World {
 
   @JsonKey(name: r'thumbnailImageUrl', required: true, includeIfNull: false)
   final String thumbnailImageUrl;
+
+  @JsonKey(name: r'udonProducts', required: false, includeIfNull: false)
+  final List<String>? udonProducts;
 
   /// Empty if unauthenticated.
   @JsonKey(name: r'unityPackages', required: false, includeIfNull: false)
@@ -203,9 +206,6 @@ class World {
   @JsonKey(name: r'visits', required: true, includeIfNull: false)
   final int visits;
 
-  @JsonKey(name: r'udonProducts', required: false, includeIfNull: false)
-  final List<String>? udonProducts;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -213,7 +213,6 @@ class World {
           other.authorId == authorId &&
           other.authorName == authorName &&
           other.capacity == capacity &&
-          other.recommendedCapacity == recommendedCapacity &&
           other.createdAt == createdAt &&
           other.defaultContentSettings == defaultContentSettings &&
           other.description == description &&
@@ -233,23 +232,23 @@ class World {
           other.privateOccupants == privateOccupants &&
           other.publicOccupants == publicOccupants &&
           other.publicationDate == publicationDate &&
+          other.recommendedCapacity == recommendedCapacity &&
           other.releaseStatus == releaseStatus &&
           other.storeId == storeId &&
           other.tags == tags &&
           other.thumbnailImageUrl == thumbnailImageUrl &&
+          other.udonProducts == udonProducts &&
           other.unityPackages == unityPackages &&
           other.updatedAt == updatedAt &&
           other.urlList == urlList &&
           other.version == version &&
-          other.visits == visits &&
-          other.udonProducts == udonProducts;
+          other.visits == visits;
 
   @override
   int get hashCode =>
       authorId.hashCode +
       authorName.hashCode +
       capacity.hashCode +
-      recommendedCapacity.hashCode +
       createdAt.hashCode +
       defaultContentSettings.hashCode +
       description.hashCode +
@@ -269,16 +268,17 @@ class World {
       privateOccupants.hashCode +
       publicOccupants.hashCode +
       publicationDate.hashCode +
+      recommendedCapacity.hashCode +
       releaseStatus.hashCode +
       storeId.hashCode +
       tags.hashCode +
       thumbnailImageUrl.hashCode +
+      udonProducts.hashCode +
       unityPackages.hashCode +
       updatedAt.hashCode +
       urlList.hashCode +
       version.hashCode +
-      visits.hashCode +
-      udonProducts.hashCode;
+      visits.hashCode;
 
   factory World.fromJson(Map<String, dynamic> json) => _$WorldFromJson(json);
 

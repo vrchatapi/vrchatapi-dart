@@ -83,15 +83,15 @@ CalendarEvent _$CalendarEventFromJson(Map<String, dynamic> json) =>
           'updatedAt',
           (v) => v == null ? null : DateTime.parse(v as String),
         ),
-        usesInstanceOverflow: $checkedConvert(
-          'usesInstanceOverflow',
-          (v) => v as bool?,
-        ),
         userInterest: $checkedConvert(
           'userInterest',
           (v) => v == null
               ? null
               : CalendarEventUserInterest.fromJson(v as Map<String, dynamic>),
+        ),
+        usesInstanceOverflow: $checkedConvert(
+          'usesInstanceOverflow',
+          (v) => v as bool?,
         ),
       );
       return val;
@@ -123,6 +123,6 @@ Map<String, dynamic> _$CalendarEventToJson(CalendarEvent instance) =>
       'title': instance.title,
       'type': ?instance.type,
       'updatedAt': ?instance.updatedAt?.toIso8601String(),
-      'usesInstanceOverflow': ?instance.usesInstanceOverflow,
       'userInterest': ?instance.userInterest?.toJson(),
+      'usesInstanceOverflow': ?instance.usesInstanceOverflow,
     };

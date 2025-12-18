@@ -212,7 +212,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getActiveWorlds**
-> List<LimitedWorld> getActiveWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform)
+> List<LimitedWorld> getActiveWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, noplatform)
 
 List Active Worlds
 
@@ -239,9 +239,10 @@ final ReleaseStatus releaseStatus = ; // ReleaseStatus | Filter by ReleaseStatus
 final String maxUnityVersion = maxUnityVersion_example; // String | The maximum Unity version supported by the asset.
 final String minUnityVersion = minUnityVersion_example; // String | The minimum Unity version supported by the asset.
 final String platform = platform_example; // String | The platform the asset supports.
+final String noplatform = noplatform_example; // String | The platform the asset does not support.
 
 try {
-    final response = api.getActiveWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform);
+    final response = api.getActiveWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, noplatform);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling WorldsApi->getActiveWorlds: $e\n');
@@ -264,6 +265,7 @@ Name | Type | Description  | Notes
  **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional] 
  **minUnityVersion** | **String**| The minimum Unity version supported by the asset. | [optional] 
  **platform** | **String**| The platform the asset supports. | [optional] 
+ **noplatform** | **String**| The platform the asset does not support. | [optional] 
 
 ### Return type
 
@@ -655,7 +657,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **searchWorlds**
-> List<LimitedWorld> searchWorlds(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, fuzzy)
+> List<LimitedWorld> searchWorlds(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, noplatform, fuzzy, avatarSpecific)
 
 Search All Worlds
 
@@ -684,10 +686,12 @@ final ReleaseStatus releaseStatus = ; // ReleaseStatus | Filter by ReleaseStatus
 final String maxUnityVersion = maxUnityVersion_example; // String | The maximum Unity version supported by the asset.
 final String minUnityVersion = minUnityVersion_example; // String | The minimum Unity version supported by the asset.
 final String platform = platform_example; // String | The platform the asset supports.
+final String noplatform = noplatform_example; // String | The platform the asset does not support.
 final bool fuzzy = true; // bool | 
+final bool avatarSpecific = true; // bool | Only search for avatar worlds.
 
 try {
-    final response = api.searchWorlds(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, fuzzy);
+    final response = api.searchWorlds(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, noplatform, fuzzy, avatarSpecific);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling WorldsApi->searchWorlds: $e\n');
@@ -712,7 +716,9 @@ Name | Type | Description  | Notes
  **maxUnityVersion** | **String**| The maximum Unity version supported by the asset. | [optional] 
  **minUnityVersion** | **String**| The minimum Unity version supported by the asset. | [optional] 
  **platform** | **String**| The platform the asset supports. | [optional] 
+ **noplatform** | **String**| The platform the asset does not support. | [optional] 
  **fuzzy** | **bool**|  | [optional] 
+ **avatarSpecific** | **bool**| Only search for avatar worlds. | [optional] 
 
 ### Return type
 

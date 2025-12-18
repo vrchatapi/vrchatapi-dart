@@ -18,15 +18,12 @@ part 'add_favorite_request.g.dart';
 class AddFavoriteRequest {
   /// Returns a new [AddFavoriteRequest] instance.
   AddFavoriteRequest({
-    required this.type,
-
     required this.favoriteId,
 
     required this.tags,
-  });
 
-  @JsonKey(name: r'type', required: true, includeIfNull: false)
-  final FavoriteType type;
+    required this.type,
+  });
 
   /// Must be either AvatarID, WorldID or UserID.
   @JsonKey(name: r'favoriteId', required: true, includeIfNull: false)
@@ -36,16 +33,19 @@ class AddFavoriteRequest {
   @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 
+  @JsonKey(name: r'type', required: true, includeIfNull: false)
+  final FavoriteType type;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is AddFavoriteRequest &&
-          other.type == type &&
           other.favoriteId == favoriteId &&
-          other.tags == tags;
+          other.tags == tags &&
+          other.type == type;
 
   @override
-  int get hashCode => type.hashCode + favoriteId.hashCode + tags.hashCode;
+  int get hashCode => favoriteId.hashCode + tags.hashCode + type.hashCode;
 
   factory AddFavoriteRequest.fromJson(Map<String, dynamic> json) =>
       _$AddFavoriteRequestFromJson(json);

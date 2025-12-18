@@ -12,6 +12,7 @@ PaginatedCalendarEventList _$PaginatedCalendarEventListFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('PaginatedCalendarEventList', json, ($checkedConvert) {
   final val = PaginatedCalendarEventList(
+    hasNext: $checkedConvert('hasNext', (v) => v as bool?),
     results: $checkedConvert(
       'results',
       (v) => (v as List<dynamic>?)
@@ -19,7 +20,6 @@ PaginatedCalendarEventList _$PaginatedCalendarEventListFromJson(
           .toList(),
     ),
     totalCount: $checkedConvert('totalCount', (v) => (v as num?)?.toInt()),
-    hasNext: $checkedConvert('hasNext', (v) => v as bool?),
   );
   return val;
 });
@@ -27,7 +27,7 @@ PaginatedCalendarEventList _$PaginatedCalendarEventListFromJson(
 Map<String, dynamic> _$PaginatedCalendarEventListToJson(
   PaginatedCalendarEventList instance,
 ) => <String, dynamic>{
+  'hasNext': ?instance.hasNext,
   'results': ?instance.results?.map((e) => e.toJson()).toList(),
   'totalCount': ?instance.totalCount,
-  'hasNext': ?instance.hasNext,
 };

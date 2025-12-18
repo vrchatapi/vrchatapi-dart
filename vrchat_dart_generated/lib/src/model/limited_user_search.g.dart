@@ -14,8 +14,8 @@ LimitedUserSearch _$LimitedUserSearchFromJson(Map<String, dynamic> json) =>
         json,
         requiredKeys: const [
           'currentAvatarImageUrl',
-          'currentAvatarThumbnailImageUrl',
           'currentAvatarTags',
+          'currentAvatarThumbnailImageUrl',
           'developerType',
           'displayName',
           'id',
@@ -36,13 +36,13 @@ LimitedUserSearch _$LimitedUserSearchFromJson(Map<String, dynamic> json) =>
           'currentAvatarImageUrl',
           (v) => v as String,
         ),
-        currentAvatarThumbnailImageUrl: $checkedConvert(
-          'currentAvatarThumbnailImageUrl',
-          (v) => v as String,
-        ),
         currentAvatarTags: $checkedConvert(
           'currentAvatarTags',
           (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+        ),
+        currentAvatarThumbnailImageUrl: $checkedConvert(
+          'currentAvatarThumbnailImageUrl',
+          (v) => v as String,
         ),
         developerType: $checkedConvert(
           'developerType',
@@ -79,8 +79,8 @@ Map<String, dynamic> _$LimitedUserSearchToJson(LimitedUserSearch instance) =>
       'bio': ?instance.bio,
       'bioLinks': ?instance.bioLinks,
       'currentAvatarImageUrl': instance.currentAvatarImageUrl,
-      'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
       'currentAvatarTags': instance.currentAvatarTags,
+      'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
       'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
       'displayName': instance.displayName,
       'id': instance.id,
@@ -95,16 +95,16 @@ Map<String, dynamic> _$LimitedUserSearchToJson(LimitedUserSearch instance) =>
     };
 
 const _$DeveloperTypeEnumMap = {
-  DeveloperType.none: 'none',
-  DeveloperType.trusted: 'trusted',
   DeveloperType.internal: 'internal',
   DeveloperType.moderator: 'moderator',
+  DeveloperType.none: 'none',
+  DeveloperType.trusted: 'trusted',
 };
 
 const _$UserStatusEnumMap = {
   UserStatus.active: 'active',
-  UserStatus.joinMe: 'join me',
   UserStatus.askMe: 'ask me',
   UserStatus.busy: 'busy',
+  UserStatus.joinMe: 'join me',
   UserStatus.offline: 'offline',
 };

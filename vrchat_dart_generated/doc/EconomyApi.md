@@ -12,11 +12,13 @@ Method | HTTP request | Description
 [**getActiveLicenses**](EconomyApi.md#getactivelicenses) | **GET** /economy/licenses/active | Get Active Licenses
 [**getBalance**](EconomyApi.md#getbalance) | **GET** /user/{userId}/balance | Get Balance
 [**getBalanceEarnings**](EconomyApi.md#getbalanceearnings) | **GET** /user/{userId}/balance/earnings | Get Balance Earnings
+[**getBulkGiftPurchases**](EconomyApi.md#getbulkgiftpurchases) | **GET** /user/bulk/gift/purchases | Get Bulk Gift Purchases
 [**getCurrentSubscriptions**](EconomyApi.md#getcurrentsubscriptions) | **GET** /auth/user/subscription | Get Current Subscriptions
 [**getEconomyAccount**](EconomyApi.md#geteconomyaccount) | **GET** /user/{userId}/economy/account | Get Economy Account
 [**getLicenseGroup**](EconomyApi.md#getlicensegroup) | **GET** /licenseGroups/{licenseGroupId} | Get License Group
 [**getProductListing**](EconomyApi.md#getproductlisting) | **GET** /listing/{productId} | Get Product Listing
 [**getProductListings**](EconomyApi.md#getproductlistings) | **GET** /user/{userId}/listings | Get User Product Listings
+[**getRecentSubscription**](EconomyApi.md#getrecentsubscription) | **GET** /user/subscription/recent | Get Recent Subscription
 [**getSteamTransaction**](EconomyApi.md#getsteamtransaction) | **GET** /Steam/transactions/{transactionId} | Get Steam Transaction
 [**getSteamTransactions**](EconomyApi.md#getsteamtransactions) | **GET** /Steam/transactions | List Steam Transactions
 [**getStore**](EconomyApi.md#getstore) | **GET** /economy/store | Get Store
@@ -25,7 +27,9 @@ Method | HTTP request | Description
 [**getTiliaStatus**](EconomyApi.md#gettiliastatus) | **GET** /tilia/status | Get Tilia Status
 [**getTiliaTos**](EconomyApi.md#gettiliatos) | **GET** /user/{userId}/tilia/tos | Get Tilia TOS Agreement Status
 [**getTokenBundles**](EconomyApi.md#gettokenbundles) | **GET** /tokenBundles | List Token Bundles
+[**getUserCreditsEligible**](EconomyApi.md#getusercreditseligible) | **GET** /users/{userId}/credits/eligible | Get User Credits Eligiblity
 [**getUserSubscriptionEligible**](EconomyApi.md#getusersubscriptioneligible) | **GET** /users/{userId}/subscription/eligible | Get User Subscription Eligiblity
+[**updateTiliaTos**](EconomyApi.md#updatetiliatos) | **PUT** /user/{userId}/tilia/tos | Update Tilia TOS Agreement Status
 
 
 # **getActiveLicenses**
@@ -153,6 +157,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Balance**](Balance.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getBulkGiftPurchases**
+> List<Object> getBulkGiftPurchases(mostRecent)
+
+Get Bulk Gift Purchases
+
+Get bulk gift purchases made by the user.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getEconomyApi();
+final bool mostRecent = true; // bool | 
+
+try {
+    final response = api.getBulkGiftPurchases(mostRecent);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling EconomyApi->getBulkGiftPurchases: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mostRecent** | **bool**|  | [optional] 
+
+### Return type
+
+**List&lt;Object&gt;**
 
 ### Authorization
 
@@ -396,6 +447,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List&lt;ProductListing&gt;**](ProductListing.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getRecentSubscription**
+> UserSubscription getRecentSubscription()
+
+Get Recent Subscription
+
+Get the most recent user subscription.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getEconomyApi();
+
+try {
+    final response = api.getRecentSubscription();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling EconomyApi->getRecentSubscription: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**UserSubscription**](UserSubscription.md)
 
 ### Authorization
 
@@ -776,6 +870,55 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getUserCreditsEligible**
+> UserCreditsEligible getUserCreditsEligible(userId, subscriptionId)
+
+Get User Credits Eligiblity
+
+Get the user's eligibility status for subscriptions based on available credits.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getEconomyApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+final String subscriptionId = subscriptionId_example; // String | 
+
+try {
+    final response = api.getUserCreditsEligible(userId, subscriptionId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling EconomyApi->getUserCreditsEligible: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+ **subscriptionId** | **String**|  | 
+
+### Return type
+
+[**UserCreditsEligible**](UserCreditsEligible.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getUserSubscriptionEligible**
 > UserSubscriptionEligible getUserSubscriptionEligible(userId, steamId)
 
@@ -821,6 +964,55 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateTiliaTos**
+> Object updateTiliaTos(userId, updateTiliaTOSRequest)
+
+Update Tilia TOS Agreement Status
+
+Updates the status of the agreement of a user to the Tilia TOS
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getEconomyApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+final UpdateTiliaTOSRequest updateTiliaTOSRequest = ; // UpdateTiliaTOSRequest | 
+
+try {
+    final response = api.updateTiliaTos(userId, updateTiliaTOSRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling EconomyApi->updateTiliaTos: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+ **updateTiliaTOSRequest** | [**UpdateTiliaTOSRequest**](UpdateTiliaTOSRequest.md)|  | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

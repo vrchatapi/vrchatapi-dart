@@ -17,7 +17,7 @@ part 'group_permission.g.dart';
 class GroupPermission {
   /// Returns a new [GroupPermission] instance.
   GroupPermission({
-    this.name,
+    this.allowedToAdd = false,
 
     this.displayName,
 
@@ -25,12 +25,12 @@ class GroupPermission {
 
     this.isManagementPermission = false,
 
-    this.allowedToAdd = false,
+    this.name,
   });
 
-  /// The name of the permission.
-  @JsonKey(name: r'name', required: false, includeIfNull: false)
-  final String? name;
+  /// Whether the user is allowed to add this permission to a role.
+  @JsonKey(name: r'allowedToAdd', required: false, includeIfNull: false)
+  final bool? allowedToAdd;
 
   /// The display name of the permission.
   @JsonKey(name: r'displayName', required: false, includeIfNull: false)
@@ -48,27 +48,27 @@ class GroupPermission {
   )
   final bool? isManagementPermission;
 
-  /// Whether the user is allowed to add this permission to a role.
-  @JsonKey(name: r'allowedToAdd', required: false, includeIfNull: false)
-  final bool? allowedToAdd;
+  /// The name of the permission.
+  @JsonKey(name: r'name', required: false, includeIfNull: false)
+  final String? name;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is GroupPermission &&
-          other.name == name &&
+          other.allowedToAdd == allowedToAdd &&
           other.displayName == displayName &&
           other.help == help &&
           other.isManagementPermission == isManagementPermission &&
-          other.allowedToAdd == allowedToAdd;
+          other.name == name;
 
   @override
   int get hashCode =>
-      name.hashCode +
+      allowedToAdd.hashCode +
       displayName.hashCode +
       help.hashCode +
       isManagementPermission.hashCode +
-      allowedToAdd.hashCode;
+      name.hashCode;
 
   factory GroupPermission.fromJson(Map<String, dynamic> json) =>
       _$GroupPermissionFromJson(json);

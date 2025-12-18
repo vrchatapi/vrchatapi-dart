@@ -12,23 +12,23 @@ UpdateGroupGalleryRequest _$UpdateGroupGalleryRequestFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('UpdateGroupGalleryRequest', json, ($checkedConvert) {
   final val = UpdateGroupGalleryRequest(
-    name: $checkedConvert('name', (v) => v as String?),
     description: $checkedConvert('description', (v) => v as String?),
     membersOnly: $checkedConvert('membersOnly', (v) => v as bool? ?? false),
-    roleIdsToView: $checkedConvert(
-      'roleIdsToView',
-      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-    ),
-    roleIdsToSubmit: $checkedConvert(
-      'roleIdsToSubmit',
-      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-    ),
+    name: $checkedConvert('name', (v) => v as String?),
     roleIdsToAutoApprove: $checkedConvert(
       'roleIdsToAutoApprove',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
     roleIdsToManage: $checkedConvert(
       'roleIdsToManage',
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+    ),
+    roleIdsToSubmit: $checkedConvert(
+      'roleIdsToSubmit',
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+    ),
+    roleIdsToView: $checkedConvert(
+      'roleIdsToView',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
   );
@@ -38,11 +38,11 @@ UpdateGroupGalleryRequest _$UpdateGroupGalleryRequestFromJson(
 Map<String, dynamic> _$UpdateGroupGalleryRequestToJson(
   UpdateGroupGalleryRequest instance,
 ) => <String, dynamic>{
-  'name': ?instance.name,
   'description': ?instance.description,
   'membersOnly': ?instance.membersOnly,
-  'roleIdsToView': ?instance.roleIdsToView,
-  'roleIdsToSubmit': ?instance.roleIdsToSubmit,
+  'name': ?instance.name,
   'roleIdsToAutoApprove': ?instance.roleIdsToAutoApprove,
   'roleIdsToManage': ?instance.roleIdsToManage,
+  'roleIdsToSubmit': ?instance.roleIdsToSubmit,
+  'roleIdsToView': ?instance.roleIdsToView,
 };

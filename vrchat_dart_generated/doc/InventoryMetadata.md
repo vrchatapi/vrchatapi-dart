@@ -8,12 +8,12 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**inventoryItemsToInstantiate** | **List&lt;String&gt;** | Only in bundles | [optional] 
 **animated** | **bool** |  | [optional] 
 **animationStyle** | **String** |  | [optional] 
 **assetBundleId** | **String** |  | [optional] 
 **fileId** | **String** |  | [optional] 
 **imageUrl** | **String** |  | [optional] 
+**inventoryItemsToInstantiate** | **List&lt;String&gt;** | Only in bundles | [optional] 
 **maskTag** | **String** |  | [optional] 
 **propId** | **String** |  | [optional] 
 

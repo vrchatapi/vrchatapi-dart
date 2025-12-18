@@ -14,17 +14,17 @@ Permission _$PermissionFromJson(Map<String, dynamic> json) => $checkedCreate(
   ($checkedConvert) {
     $checkKeys(
       json,
-      requiredKeys: const ['id', 'ownerDisplayName', 'name', 'ownerId'],
+      requiredKeys: const ['id', 'name', 'ownerDisplayName', 'ownerId'],
     );
     final val = Permission(
-      displayName: $checkedConvert('displayName', (v) => v as String?),
+      data: $checkedConvert('data', (v) => v),
       description: $checkedConvert('description', (v) => v as String?),
+      displayName: $checkedConvert('displayName', (v) => v as String?),
       id: $checkedConvert('id', (v) => v as String),
-      ownerDisplayName: $checkedConvert('ownerDisplayName', (v) => v as String),
       name: $checkedConvert('name', (v) => v as String),
+      ownerDisplayName: $checkedConvert('ownerDisplayName', (v) => v as String),
       ownerId: $checkedConvert('ownerId', (v) => v as String),
       type: $checkedConvert('type', (v) => v as String?),
-      data: $checkedConvert('data', (v) => v),
     );
     return val;
   },
@@ -32,12 +32,12 @@ Permission _$PermissionFromJson(Map<String, dynamic> json) => $checkedCreate(
 
 Map<String, dynamic> _$PermissionToJson(Permission instance) =>
     <String, dynamic>{
-      'displayName': ?instance.displayName,
+      'data': ?instance.data,
       'description': ?instance.description,
+      'displayName': ?instance.displayName,
       'id': instance.id,
-      'ownerDisplayName': instance.ownerDisplayName,
       'name': instance.name,
+      'ownerDisplayName': instance.ownerDisplayName,
       'ownerId': instance.ownerId,
       'type': ?instance.type,
-      'data': ?instance.data,
     };

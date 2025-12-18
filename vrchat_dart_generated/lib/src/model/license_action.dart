@@ -6,10 +6,10 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum LicenseAction {
-  @JsonValue(r'wear')
-  wear(r'wear'),
   @JsonValue(r'have')
-  have(r'have');
+  have(r'have'),
+  @JsonValue(r'wear')
+  wear(r'wear');
 
   const LicenseAction(this.value);
 

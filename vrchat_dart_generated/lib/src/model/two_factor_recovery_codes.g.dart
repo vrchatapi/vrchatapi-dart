@@ -12,10 +12,6 @@ TwoFactorRecoveryCodes _$TwoFactorRecoveryCodesFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('TwoFactorRecoveryCodes', json, ($checkedConvert) {
   final val = TwoFactorRecoveryCodes(
-    requiresTwoFactorAuth: $checkedConvert(
-      'requiresTwoFactorAuth',
-      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-    ),
     otp: $checkedConvert(
       'otp',
       (v) => (v as List<dynamic>?)
@@ -26,6 +22,10 @@ TwoFactorRecoveryCodes _$TwoFactorRecoveryCodesFromJson(
           )
           .toList(),
     ),
+    requiresTwoFactorAuth: $checkedConvert(
+      'requiresTwoFactorAuth',
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+    ),
   );
   return val;
 });
@@ -33,6 +33,6 @@ TwoFactorRecoveryCodes _$TwoFactorRecoveryCodesFromJson(
 Map<String, dynamic> _$TwoFactorRecoveryCodesToJson(
   TwoFactorRecoveryCodes instance,
 ) => <String, dynamic>{
-  'requiresTwoFactorAuth': ?instance.requiresTwoFactorAuth,
   'otp': ?instance.otp?.map((e) => e.toJson()).toList(),
+  'requiresTwoFactorAuth': ?instance.requiresTwoFactorAuth,
 };

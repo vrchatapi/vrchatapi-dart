@@ -149,8 +149,8 @@ Map<String, dynamic> _$AvatarToJson(Avatar instance) => <String, dynamic>{
 };
 
 const _$ReleaseStatusEnumMap = {
-  ReleaseStatus.public: 'public',
-  ReleaseStatus.private: 'private',
-  ReleaseStatus.hidden: 'hidden',
   ReleaseStatus.all: 'all',
+  ReleaseStatus.hidden: 'hidden',
+  ReleaseStatus.private: 'private',
+  ReleaseStatus.public: 'public',
 };

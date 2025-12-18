@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**getUserByName**](UsersApi.md#getuserbyname) | **GET** /users/{username}/name | Get User by Username
 [**getUserFeedback**](UsersApi.md#getuserfeedback) | **GET** /users/{userId}/feedback | Get User Feedback
 [**getUserGroupInstances**](UsersApi.md#getusergroupinstances) | **GET** /users/{userId}/instances/groups | Get User Group Instances
+[**getUserGroupInstancesForGroup**](UsersApi.md#getusergroupinstancesforgroup) | **GET** /users/{userId}/instances/groups/{groupId} | Get User Group Instances for a specific Group
 [**getUserGroupRequests**](UsersApi.md#getusergrouprequests) | **GET** /users/{userId}/groups/requested | Get User Group Requests
 [**getUserGroups**](UsersApi.md#getusergroups) | **GET** /users/{userId}/groups | Get User Groups
 [**getUserNote**](UsersApi.md#getusernote) | **GET** /userNotes/{userNoteId} | Get User Note
@@ -351,6 +352,55 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**| Must be a valid user ID. | 
+
+### Return type
+
+[**GetUserGroupInstances200Response**](GetUserGroupInstances200Response.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getUserGroupInstancesForGroup**
+> GetUserGroupInstances200Response getUserGroupInstancesForGroup(userId, groupId)
+
+Get User Group Instances for a specific Group
+
+Returns a list of a group's instances for a user
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getUsersApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+
+try {
+    final response = api.getUserGroupInstancesForGroup(userId, groupId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UsersApi->getUserGroupInstancesForGroup: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+ **groupId** | **String**| Must be a valid group ID. | 
 
 ### Return type
 

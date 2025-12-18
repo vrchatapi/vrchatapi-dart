@@ -17,59 +17,59 @@ part 'file_version_upload_status.g.dart';
 class FileVersionUploadStatus {
   /// Returns a new [FileVersionUploadStatus] instance.
   FileVersionUploadStatus({
-    required this.uploadId,
+    required this.etags,
 
     required this.fileName,
 
-    required this.nextPartNumber,
-
     required this.maxParts,
+
+    required this.nextPartNumber,
 
     required this.parts,
 
-    required this.etags,
+    required this.uploadId,
   });
-
-  @JsonKey(name: r'uploadId', required: true, includeIfNull: false)
-  final String uploadId;
-
-  @JsonKey(name: r'fileName', required: true, includeIfNull: false)
-  final String fileName;
-
-  // minimum: 0
-  @JsonKey(name: r'nextPartNumber', required: true, includeIfNull: false)
-  final int nextPartNumber;
-
-  // minimum: 1
-  @JsonKey(name: r'maxParts', required: true, includeIfNull: false)
-  final int maxParts;
-
-  @JsonKey(name: r'parts', required: true, includeIfNull: false)
-  final List<Object> parts;
 
   /// Unknown
   @JsonKey(name: r'etags', required: true, includeIfNull: false)
   final List<Object> etags;
 
+  @JsonKey(name: r'fileName', required: true, includeIfNull: false)
+  final String fileName;
+
+  // minimum: 1
+  @JsonKey(name: r'maxParts', required: true, includeIfNull: false)
+  final int maxParts;
+
+  // minimum: 0
+  @JsonKey(name: r'nextPartNumber', required: true, includeIfNull: false)
+  final int nextPartNumber;
+
+  @JsonKey(name: r'parts', required: true, includeIfNull: false)
+  final List<Object> parts;
+
+  @JsonKey(name: r'uploadId', required: true, includeIfNull: false)
+  final String uploadId;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is FileVersionUploadStatus &&
-          other.uploadId == uploadId &&
+          other.etags == etags &&
           other.fileName == fileName &&
-          other.nextPartNumber == nextPartNumber &&
           other.maxParts == maxParts &&
+          other.nextPartNumber == nextPartNumber &&
           other.parts == parts &&
-          other.etags == etags;
+          other.uploadId == uploadId;
 
   @override
   int get hashCode =>
-      uploadId.hashCode +
+      etags.hashCode +
       fileName.hashCode +
-      nextPartNumber.hashCode +
       maxParts.hashCode +
+      nextPartNumber.hashCode +
       parts.hashCode +
-      etags.hashCode;
+      uploadId.hashCode;
 
   factory FileVersionUploadStatus.fromJson(Map<String, dynamic> json) =>
       _$FileVersionUploadStatusFromJson(json);

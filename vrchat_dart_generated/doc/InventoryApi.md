@@ -9,6 +9,7 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**deleteOwnInventoryItem**](InventoryApi.md#deleteowninventoryitem) | **DELETE** /inventory/{inventoryItemId} | Delete Own Inventory Item
 [**getInventory**](InventoryApi.md#getinventory) | **GET** /inventory | Get Inventory
 [**getInventoryDrops**](InventoryApi.md#getinventorydrops) | **GET** /inventory/drops | List Inventory Drops
 [**getInventoryTemplate**](InventoryApi.md#getinventorytemplate) | **GET** /inventory/template/{inventoryTemplateId} | Get Inventory Template
@@ -19,8 +20,55 @@ Method | HTTP request | Description
 [**updateOwnInventoryItem**](InventoryApi.md#updateowninventoryitem) | **PUT** /inventory/{inventoryItemId} | Update Own Inventory Item
 
 
+# **deleteOwnInventoryItem**
+> SuccessFlag deleteOwnInventoryItem(inventoryItemId)
+
+Delete Own Inventory Item
+
+Deletes an InventoryItem from the inventory of the currently logged in user.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getInventoryApi();
+final String inventoryItemId = inv_00000000-0000-0000-0000-000000000000; // String | Must be a valid inventory item ID.
+
+try {
+    final response = api.deleteOwnInventoryItem(inventoryItemId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InventoryApi->deleteOwnInventoryItem: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inventoryItemId** | **String**| Must be a valid inventory item ID. | 
+
+### Return type
+
+[**SuccessFlag**](SuccessFlag.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getInventory**
-> Inventory getInventory(n, offset, order, tags, types, flags, notTypes, notFlags, archived)
+> Inventory getInventory(n, offset, holderId, equipSlot, order, tags, types, flags, notTypes, notFlags, archived)
 
 Get Inventory
 
@@ -37,6 +85,8 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getInventoryApi();
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
+final String holderId = holderId_example; // String | The UserID of the owner of the inventory; defaults to the currently authenticated user.
+final InventoryEquipSlot equipSlot = ; // InventoryEquipSlot | Filter for inventory retrieval.
 final String order = order_example; // String | Sort order for inventory retrieval.
 final String tags = tags_example; // String | Filter tags for inventory retrieval (comma-separated).
 final InventoryItemType types = ; // InventoryItemType | Filter for inventory retrieval.
@@ -46,7 +96,7 @@ final InventoryFlag notFlags = ; // InventoryFlag | Filter out flags for invento
 final bool archived = true; // bool | Filter archived status for inventory retrieval.
 
 try {
-    final response = api.getInventory(n, offset, order, tags, types, flags, notTypes, notFlags, archived);
+    final response = api.getInventory(n, offset, holderId, equipSlot, order, tags, types, flags, notTypes, notFlags, archived);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling InventoryApi->getInventory: $e\n');
@@ -59,6 +109,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
+ **holderId** | **String**| The UserID of the owner of the inventory; defaults to the currently authenticated user. | [optional] 
+ **equipSlot** | [**InventoryEquipSlot**](.md)| Filter for inventory retrieval. | [optional] 
  **order** | **String**| Sort order for inventory retrieval. | [optional] 
  **tags** | **String**| Filter tags for inventory retrieval (comma-separated). | [optional] 
  **types** | [**InventoryItemType**](.md)| Filter for inventory retrieval. | [optional] 

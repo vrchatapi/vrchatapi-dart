@@ -20,6 +20,8 @@ part 'info_push_data.g.dart';
 class InfoPushData {
   /// Returns a new [InfoPushData] instance.
   InfoPushData({
+    this.article,
+
     this.contentList,
 
     this.description,
@@ -33,9 +35,10 @@ class InfoPushData {
     this.template,
 
     this.version,
-
-    this.article,
   });
+
+  @JsonKey(name: r'article', required: false, includeIfNull: false)
+  final InfoPushDataArticle? article;
 
   @JsonKey(name: r'contentList', required: false, includeIfNull: false)
   final DynamicContentRow? contentList;
@@ -58,32 +61,29 @@ class InfoPushData {
   @JsonKey(name: r'version', required: false, includeIfNull: false)
   final String? version;
 
-  @JsonKey(name: r'article', required: false, includeIfNull: false)
-  final InfoPushDataArticle? article;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is InfoPushData &&
+          other.article == article &&
           other.contentList == contentList &&
           other.description == description &&
           other.imageUrl == imageUrl &&
           other.name == name &&
           other.onPressed == onPressed &&
           other.template == template &&
-          other.version == version &&
-          other.article == article;
+          other.version == version;
 
   @override
   int get hashCode =>
+      article.hashCode +
       contentList.hashCode +
       description.hashCode +
       imageUrl.hashCode +
       name.hashCode +
       onPressed.hashCode +
       template.hashCode +
-      version.hashCode +
-      article.hashCode;
+      version.hashCode;
 
   factory InfoPushData.fromJson(Map<String, dynamic> json) =>
       _$InfoPushDataFromJson(json);

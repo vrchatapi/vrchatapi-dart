@@ -17,7 +17,11 @@ part 'paginated_calendar_event_list.g.dart';
 )
 class PaginatedCalendarEventList {
   /// Returns a new [PaginatedCalendarEventList] instance.
-  PaginatedCalendarEventList({this.results, this.totalCount, this.hasNext});
+  PaginatedCalendarEventList({this.hasNext, this.results, this.totalCount});
+
+  /// Whether there are more results after this page.
+  @JsonKey(name: r'hasNext', required: false, includeIfNull: false)
+  final bool? hasNext;
 
   ///
   @JsonKey(name: r'results', required: false, includeIfNull: false)
@@ -27,20 +31,16 @@ class PaginatedCalendarEventList {
   @JsonKey(name: r'totalCount', required: false, includeIfNull: false)
   final int? totalCount;
 
-  /// Whether there are more results after this page.
-  @JsonKey(name: r'hasNext', required: false, includeIfNull: false)
-  final bool? hasNext;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is PaginatedCalendarEventList &&
+          other.hasNext == hasNext &&
           other.results == results &&
-          other.totalCount == totalCount &&
-          other.hasNext == hasNext;
+          other.totalCount == totalCount;
 
   @override
-  int get hashCode => results.hashCode + totalCount.hashCode + hasNext.hashCode;
+  int get hashCode => hasNext.hashCode + results.hashCode + totalCount.hashCode;
 
   factory PaginatedCalendarEventList.fromJson(Map<String, dynamic> json) =>
       _$PaginatedCalendarEventListFromJson(json);

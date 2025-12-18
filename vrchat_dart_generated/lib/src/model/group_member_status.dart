@@ -6,16 +6,16 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum GroupMemberStatus {
+  @JsonValue(r'banned')
+  banned(r'banned'),
   @JsonValue(r'inactive')
   inactive(r'inactive'),
+  @JsonValue(r'invited')
+  invited(r'invited'),
   @JsonValue(r'member')
   member(r'member'),
   @JsonValue(r'requested')
   requested(r'requested'),
-  @JsonValue(r'invited')
-  invited(r'invited'),
-  @JsonValue(r'banned')
-  banned(r'banned'),
   @JsonValue(r'userblocked')
   userblocked(r'userblocked');
 

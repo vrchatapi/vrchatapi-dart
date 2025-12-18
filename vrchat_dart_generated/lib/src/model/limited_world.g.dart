@@ -42,10 +42,6 @@ LimitedWorld _$LimitedWorldFromJson(
       authorId: $checkedConvert('authorId', (v) => v as String),
       authorName: $checkedConvert('authorName', (v) => v as String),
       capacity: $checkedConvert('capacity', (v) => (v as num).toInt()),
-      recommendedCapacity: $checkedConvert(
-        'recommendedCapacity',
-        (v) => (v as num?)?.toInt(),
-      ),
       createdAt: $checkedConvert(
         'created_at',
         (v) => DateTime.parse(v as String),
@@ -57,7 +53,6 @@ LimitedWorld _$LimitedWorldFromJson(
             : InstanceContentSettings.fromJson(v as Map<String, dynamic>),
       ),
       favorites: $checkedConvert('favorites', (v) => (v as num?)?.toInt() ?? 0),
-      visits: $checkedConvert('visits', (v) => (v as num?)?.toInt() ?? 0),
       heat: $checkedConvert('heat', (v) => (v as num?)?.toInt() ?? 0),
       id: $checkedConvert('id', (v) => v as String),
       imageUrl: $checkedConvert('imageUrl', (v) => v as String),
@@ -80,6 +75,10 @@ LimitedWorld _$LimitedWorldFromJson(
         (v) => v as String?,
       ),
       publicationDate: $checkedConvert('publicationDate', (v) => v as String),
+      recommendedCapacity: $checkedConvert(
+        'recommendedCapacity',
+        (v) => (v as num?)?.toInt(),
+      ),
       releaseStatus: $checkedConvert(
         'releaseStatus',
         (v) => $enumDecode(_$ReleaseStatusEnumMap, v),
@@ -93,6 +92,10 @@ LimitedWorld _$LimitedWorldFromJson(
         'thumbnailImageUrl',
         (v) => v as String,
       ),
+      udonProducts: $checkedConvert(
+        'udonProducts',
+        (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+      ),
       unityPackages: $checkedConvert(
         'unityPackages',
         (v) => (v as List<dynamic>)
@@ -103,10 +106,7 @@ LimitedWorld _$LimitedWorldFromJson(
         'updated_at',
         (v) => DateTime.parse(v as String),
       ),
-      udonProducts: $checkedConvert(
-        'udonProducts',
-        (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-      ),
+      visits: $checkedConvert('visits', (v) => (v as num?)?.toInt() ?? 0),
     );
     return val;
   },
@@ -118,11 +118,9 @@ Map<String, dynamic> _$LimitedWorldToJson(LimitedWorld instance) =>
       'authorId': instance.authorId,
       'authorName': instance.authorName,
       'capacity': instance.capacity,
-      'recommendedCapacity': ?instance.recommendedCapacity,
       'created_at': instance.createdAt.toIso8601String(),
       'defaultContentSettings': ?instance.defaultContentSettings?.toJson(),
       'favorites': instance.favorites,
-      'visits': ?instance.visits,
       'heat': instance.heat,
       'id': instance.id,
       'imageUrl': instance.imageUrl,
@@ -133,18 +131,20 @@ Map<String, dynamic> _$LimitedWorldToJson(LimitedWorld instance) =>
       'popularity': instance.popularity,
       'previewYoutubeId': ?instance.previewYoutubeId,
       'publicationDate': instance.publicationDate,
+      'recommendedCapacity': ?instance.recommendedCapacity,
       'releaseStatus': _$ReleaseStatusEnumMap[instance.releaseStatus]!,
       'storeId': ?instance.storeId,
       'tags': instance.tags,
       'thumbnailImageUrl': instance.thumbnailImageUrl,
+      'udonProducts': ?instance.udonProducts,
       'unityPackages': instance.unityPackages.map((e) => e.toJson()).toList(),
       'updated_at': instance.updatedAt.toIso8601String(),
-      'udonProducts': ?instance.udonProducts,
+      'visits': ?instance.visits,
     };
 
 const _$ReleaseStatusEnumMap = {
-  ReleaseStatus.public: 'public',
-  ReleaseStatus.private: 'private',
-  ReleaseStatus.hidden: 'hidden',
   ReleaseStatus.all: 'all',
+  ReleaseStatus.hidden: 'hidden',
+  ReleaseStatus.private: 'private',
+  ReleaseStatus.public: 'public',
 };

@@ -17,22 +17,14 @@ part 'create_group_announcement_request.g.dart';
 class CreateGroupAnnouncementRequest {
   /// Returns a new [CreateGroupAnnouncementRequest] instance.
   CreateGroupAnnouncementRequest({
-    required this.title,
-
-    this.text,
-
     this.imageId,
 
     this.sendNotification = false,
+
+    this.text,
+
+    required this.title,
   });
-
-  /// Announcement title
-  @JsonKey(name: r'title', required: true, includeIfNull: false)
-  final String title;
-
-  /// Announcement text
-  @JsonKey(name: r'text', required: false, includeIfNull: false)
-  final String? text;
 
   @JsonKey(name: r'imageId', required: false, includeIfNull: false)
   final String? imageId;
@@ -41,21 +33,29 @@ class CreateGroupAnnouncementRequest {
   @JsonKey(name: r'sendNotification', required: false, includeIfNull: false)
   final bool? sendNotification;
 
+  /// Announcement text
+  @JsonKey(name: r'text', required: false, includeIfNull: false)
+  final String? text;
+
+  /// Announcement title
+  @JsonKey(name: r'title', required: true, includeIfNull: false)
+  final String title;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is CreateGroupAnnouncementRequest &&
-          other.title == title &&
-          other.text == text &&
           other.imageId == imageId &&
-          other.sendNotification == sendNotification;
+          other.sendNotification == sendNotification &&
+          other.text == text &&
+          other.title == title;
 
   @override
   int get hashCode =>
-      title.hashCode +
-      text.hashCode +
       imageId.hashCode +
-      sendNotification.hashCode;
+      sendNotification.hashCode +
+      text.hashCode +
+      title.hashCode;
 
   factory CreateGroupAnnouncementRequest.fromJson(Map<String, dynamic> json) =>
       _$CreateGroupAnnouncementRequestFromJson(json);

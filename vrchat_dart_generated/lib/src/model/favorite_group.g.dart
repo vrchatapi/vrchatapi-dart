@@ -56,13 +56,13 @@ Map<String, dynamic> _$FavoriteGroupToJson(FavoriteGroup instance) =>
     };
 
 const _$FavoriteTypeEnumMap = {
-  FavoriteType.world: 'world',
-  FavoriteType.friend: 'friend',
   FavoriteType.avatar: 'avatar',
+  FavoriteType.friend: 'friend',
+  FavoriteType.world: 'world',
 };
 
 const _$FavoriteGroupVisibilityEnumMap = {
-  FavoriteGroupVisibility.private: 'private',
   FavoriteGroupVisibility.friends: 'friends',
+  FavoriteGroupVisibility.private: 'private',
   FavoriteGroupVisibility.public: 'public',
 };

@@ -12,16 +12,16 @@ enum UserStatus {
   active(r'active'),
 
   /// Defines the User's current status, for example \"ask me\", \"join me\" or \"offline. This status is a combined indicator of their online activity and privacy preference.
-  @JsonValue(r'join me')
-  joinMe(r'join me'),
-
-  /// Defines the User's current status, for example \"ask me\", \"join me\" or \"offline. This status is a combined indicator of their online activity and privacy preference.
   @JsonValue(r'ask me')
   askMe(r'ask me'),
 
   /// Defines the User's current status, for example \"ask me\", \"join me\" or \"offline. This status is a combined indicator of their online activity and privacy preference.
   @JsonValue(r'busy')
   busy(r'busy'),
+
+  /// Defines the User's current status, for example \"ask me\", \"join me\" or \"offline. This status is a combined indicator of their online activity and privacy preference.
+  @JsonValue(r'join me')
+  joinMe(r'join me'),
 
   /// Defines the User's current status, for example \"ask me\", \"join me\" or \"offline. This status is a combined indicator of their online activity and privacy preference.
   @JsonValue(r'offline')

@@ -34,9 +34,9 @@ class APIConfigReportCategories {
 
     required this.image,
 
-    required this.text,
-
     this.sticker,
+
+    required this.text,
 
     required this.warnings,
 
@@ -69,11 +69,11 @@ class APIConfigReportCategories {
   @JsonKey(name: r'image', required: true, includeIfNull: false)
   final ReportCategory image;
 
-  @JsonKey(name: r'text', required: true, includeIfNull: false)
-  final ReportCategory text;
-
   @JsonKey(name: r'sticker', required: false, includeIfNull: false)
   final ReportCategory? sticker;
+
+  @JsonKey(name: r'text', required: true, includeIfNull: false)
+  final ReportCategory text;
 
   @JsonKey(name: r'warnings', required: true, includeIfNull: false)
   final ReportCategory warnings;
@@ -96,8 +96,8 @@ class APIConfigReportCategories {
           other.environment == environment &&
           other.groupstore == groupstore &&
           other.image == image &&
-          other.text == text &&
           other.sticker == sticker &&
+          other.text == text &&
           other.warnings == warnings &&
           other.worldimage == worldimage &&
           other.worldstore == worldstore;
@@ -112,8 +112,8 @@ class APIConfigReportCategories {
       environment.hashCode +
       groupstore.hashCode +
       image.hashCode +
-      text.hashCode +
       sticker.hashCode +
+      text.hashCode +
       warnings.hashCode +
       worldimage.hashCode +
       worldstore.hashCode;

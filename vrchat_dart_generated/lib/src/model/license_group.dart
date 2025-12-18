@@ -18,39 +18,39 @@ part 'license_group.g.dart';
 class LicenseGroup {
   /// Returns a new [LicenseGroup] instance.
   LicenseGroup({
-    required this.id,
-
-    required this.name,
-
     required this.description,
 
+    required this.id,
+
     required this.licenses,
+
+    required this.name,
   });
-
-  @JsonKey(name: r'id', required: true, includeIfNull: false)
-  final String id;
-
-  @JsonKey(name: r'name', required: true, includeIfNull: false)
-  final String name;
 
   @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
 
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
+
   @JsonKey(name: r'licenses', required: true, includeIfNull: false)
   final List<License> licenses;
+
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
+  final String name;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is LicenseGroup &&
-          other.id == id &&
-          other.name == name &&
           other.description == description &&
-          other.licenses == licenses;
+          other.id == id &&
+          other.licenses == licenses &&
+          other.name == name;
 
   @override
   int get hashCode =>
-      id.hashCode + name.hashCode + description.hashCode + licenses.hashCode;
+      description.hashCode + id.hashCode + licenses.hashCode + name.hashCode;
 
   factory LicenseGroup.fromJson(Map<String, dynamic> json) =>
       _$LicenseGroupFromJson(json);

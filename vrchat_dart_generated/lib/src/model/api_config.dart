@@ -47,11 +47,11 @@ class APIConfig {
 
     required this.analysisRetryInterval,
 
-    required this.announcements,
-
     required this.analyticsSegmentNewUIPctOfUsers,
 
     required this.analyticsSegmentNewUISalt,
+
+    required this.announcements,
 
     required this.availableLanguageCodes,
 
@@ -121,13 +121,13 @@ class APIConfig {
 
     this.disableAvatarGating = false,
 
+    this.disableCaptcha = true,
+
     this.disableCommunityLabs = false,
 
     this.disableCommunityLabsPromotion = false,
 
     this.disableEmail = false,
-
-    this.disableCaptcha = true,
 
     this.disableEventStream = false,
 
@@ -196,6 +196,12 @@ class APIConfig {
 
     required this.photonPublicKeys,
 
+    required this.playerUrlResolverSha1,
+
+    required this.playerUrlResolverVersion,
+
+    required this.publicKey,
+
     required this.reportCategories,
 
     this.reportFormUrl =
@@ -221,9 +227,9 @@ class APIConfig {
 
     required this.supportFormUrl,
 
-    this.timekeeping = true,
-
     required this.timeOutWorldId,
+
+    this.timekeeping = true,
 
     required this.tutorialWorldId,
 
@@ -243,19 +249,13 @@ class APIConfig {
 
     required this.viveWindowsUrl,
 
-    required this.whiteListedAssetUrls,
-
-    required this.playerUrlResolverVersion,
-
-    required this.playerUrlResolverSha1,
-
-    required this.publicKey,
-
     this.websocketMaxFriendsRefreshDelay = 900,
 
     this.websocketQuickReconnectTime = 2,
 
     this.websocketReconnectMaxDelay = 2,
+
+    required this.whiteListedAssetUrls,
   });
 
   /// Unknown, probably voice optimization testing
@@ -306,11 +306,6 @@ class APIConfig {
   @JsonKey(name: r'analysisRetryInterval', required: true, includeIfNull: false)
   final int analysisRetryInterval;
 
-  /// Public Announcements
-  @JsonKey(name: r'announcements', required: true, includeIfNull: false)
-  // ignore: deprecated_member_use_from_same_package
-  final Set<APIConfigAnnouncement> announcements;
-
   /// Unknown
   @JsonKey(
     name: r'analyticsSegment_NewUI_PctOfUsers',
@@ -326,6 +321,11 @@ class APIConfig {
     includeIfNull: false,
   )
   final String analyticsSegmentNewUISalt;
+
+  /// Public Announcements
+  @JsonKey(name: r'announcements', required: true, includeIfNull: false)
+  // ignore: deprecated_member_use_from_same_package
+  final Set<APIConfigAnnouncement> announcements;
 
   /// List of supported Languages
   @JsonKey(
@@ -510,6 +510,10 @@ class APIConfig {
   @JsonKey(name: r'disableAvatarGating', required: true, includeIfNull: false)
   final bool disableAvatarGating;
 
+  /// Unknown
+  @JsonKey(name: r'disableCaptcha', required: false, includeIfNull: false)
+  final bool? disableCaptcha;
+
   /// Toggles if the Community Labs should be disabled
   @JsonKey(name: r'disableCommunityLabs', required: true, includeIfNull: false)
   final bool disableCommunityLabs;
@@ -525,10 +529,6 @@ class APIConfig {
   /// Unknown
   @JsonKey(name: r'disableEmail', required: true, includeIfNull: false)
   final bool disableEmail;
-
-  /// Unknown
-  @JsonKey(name: r'disableCaptcha', required: false, includeIfNull: false)
-  final bool? disableCaptcha;
 
   /// Toggles if Analytics should be disabled.
   @JsonKey(name: r'disableEventStream', required: true, includeIfNull: false)
@@ -689,6 +689,26 @@ class APIConfig {
   @JsonKey(name: r'photonPublicKeys', required: true, includeIfNull: false)
   final List<String> photonPublicKeys;
 
+  /// Currently used youtube-dl.exe hash in SHA1-delimited format
+  @JsonKey(
+    name: r'player-url-resolver-sha1',
+    required: true,
+    includeIfNull: false,
+  )
+  final String playerUrlResolverSha1;
+
+  /// Currently used youtube-dl.exe version
+  @JsonKey(
+    name: r'player-url-resolver-version',
+    required: true,
+    includeIfNull: false,
+  )
+  final String playerUrlResolverVersion;
+
+  /// Public key, hex encoded
+  @JsonKey(name: r'publicKey', required: true, includeIfNull: false)
+  final String publicKey;
+
   @JsonKey(name: r'reportCategories', required: true, includeIfNull: false)
   final APIConfigReportCategories reportCategories;
 
@@ -747,13 +767,13 @@ class APIConfig {
   @JsonKey(name: r'supportFormUrl', required: true, includeIfNull: false)
   final String supportFormUrl;
 
-  /// Unknown
-  @JsonKey(name: r'timekeeping', required: true, includeIfNull: false)
-  final bool timekeeping;
-
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @JsonKey(name: r'timeOutWorldId', required: true, includeIfNull: false)
   final String timeOutWorldId;
+
+  /// Unknown
+  @JsonKey(name: r'timekeeping', required: true, includeIfNull: false)
+  final bool timekeeping;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @JsonKey(name: r'tutorialWorldId', required: true, includeIfNull: false)
@@ -799,30 +819,6 @@ class APIConfig {
   @JsonKey(name: r'viveWindowsUrl', required: true, includeIfNull: false)
   final String viveWindowsUrl;
 
-  /// List of allowed URLs that are allowed to host avatar assets
-  @JsonKey(name: r'whiteListedAssetUrls', required: true, includeIfNull: false)
-  final List<String> whiteListedAssetUrls;
-
-  /// Currently used youtube-dl.exe version
-  @JsonKey(
-    name: r'player-url-resolver-version',
-    required: true,
-    includeIfNull: false,
-  )
-  final String playerUrlResolverVersion;
-
-  /// Currently used youtube-dl.exe hash in SHA1-delimited format
-  @JsonKey(
-    name: r'player-url-resolver-sha1',
-    required: true,
-    includeIfNull: false,
-  )
-  final String playerUrlResolverSha1;
-
-  /// Public key, hex encoded
-  @JsonKey(name: r'publicKey', required: true, includeIfNull: false)
-  final String publicKey;
-
   /// Unknown
   @JsonKey(
     name: r'websocketMaxFriendsRefreshDelay',
@@ -847,6 +843,10 @@ class APIConfig {
   )
   final int websocketReconnectMaxDelay;
 
+  /// List of allowed URLs that are allowed to host avatar assets
+  @JsonKey(name: r'whiteListedAssetUrls', required: true, includeIfNull: false)
+  final List<String> whiteListedAssetUrls;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -860,10 +860,10 @@ class APIConfig {
           other.ageVerificationStatusVisible == ageVerificationStatusVisible &&
           other.analysisMaxRetries == analysisMaxRetries &&
           other.analysisRetryInterval == analysisRetryInterval &&
-          other.announcements == announcements &&
           other.analyticsSegmentNewUIPctOfUsers ==
               analyticsSegmentNewUIPctOfUsers &&
           other.analyticsSegmentNewUISalt == analyticsSegmentNewUISalt &&
+          other.announcements == announcements &&
           other.availableLanguageCodes == availableLanguageCodes &&
           other.availableLanguages == availableLanguages &&
           other.avatarPerfLimiter == avatarPerfLimiter &&
@@ -901,11 +901,11 @@ class APIConfig {
           other.disableAVProInProton == disableAVProInProton &&
           other.disableAvatarCopying == disableAvatarCopying &&
           other.disableAvatarGating == disableAvatarGating &&
+          other.disableCaptcha == disableCaptcha &&
           other.disableCommunityLabs == disableCommunityLabs &&
           other.disableCommunityLabsPromotion ==
               disableCommunityLabsPromotion &&
           other.disableEmail == disableEmail &&
-          other.disableCaptcha == disableCaptcha &&
           other.disableEventStream == disableEventStream &&
           other.disableFeedbackGating == disableFeedbackGating &&
           other.disableFrontendBuilds == disableFrontendBuilds &&
@@ -943,6 +943,9 @@ class APIConfig {
           other.offlineAnalysis == offlineAnalysis &&
           other.photonNameserverOverrides == photonNameserverOverrides &&
           other.photonPublicKeys == photonPublicKeys &&
+          other.playerUrlResolverSha1 == playerUrlResolverSha1 &&
+          other.playerUrlResolverVersion == playerUrlResolverVersion &&
+          other.publicKey == publicKey &&
           other.reportCategories == reportCategories &&
           other.reportFormUrl == reportFormUrl &&
           other.reportOptions == reportOptions &&
@@ -957,8 +960,8 @@ class APIConfig {
           other.stringHostUrlList == stringHostUrlList &&
           other.supportEmail == supportEmail &&
           other.supportFormUrl == supportFormUrl &&
-          other.timekeeping == timekeeping &&
           other.timeOutWorldId == timeOutWorldId &&
+          other.timekeeping == timekeeping &&
           other.tutorialWorldId == tutorialWorldId &&
           other.updateRateMsMaximum == updateRateMsMaximum &&
           other.updateRateMsMinimum == updateRateMsMinimum &&
@@ -968,14 +971,11 @@ class APIConfig {
           other.urlList == urlList &&
           other.useReliableUdpForVoice == useReliableUdpForVoice &&
           other.viveWindowsUrl == viveWindowsUrl &&
-          other.whiteListedAssetUrls == whiteListedAssetUrls &&
-          other.playerUrlResolverVersion == playerUrlResolverVersion &&
-          other.playerUrlResolverSha1 == playerUrlResolverSha1 &&
-          other.publicKey == publicKey &&
           other.websocketMaxFriendsRefreshDelay ==
               websocketMaxFriendsRefreshDelay &&
           other.websocketQuickReconnectTime == websocketQuickReconnectTime &&
-          other.websocketReconnectMaxDelay == websocketReconnectMaxDelay;
+          other.websocketReconnectMaxDelay == websocketReconnectMaxDelay &&
+          other.whiteListedAssetUrls == whiteListedAssetUrls;
 
   @override
   int get hashCode =>
@@ -988,9 +988,9 @@ class APIConfig {
       ageVerificationStatusVisible.hashCode +
       analysisMaxRetries.hashCode +
       analysisRetryInterval.hashCode +
-      announcements.hashCode +
       analyticsSegmentNewUIPctOfUsers.hashCode +
       analyticsSegmentNewUISalt.hashCode +
+      announcements.hashCode +
       availableLanguageCodes.hashCode +
       availableLanguages.hashCode +
       avatarPerfLimiter.hashCode +
@@ -1027,10 +1027,10 @@ class APIConfig {
       disableAVProInProton.hashCode +
       disableAvatarCopying.hashCode +
       disableAvatarGating.hashCode +
+      disableCaptcha.hashCode +
       disableCommunityLabs.hashCode +
       disableCommunityLabsPromotion.hashCode +
       disableEmail.hashCode +
-      disableCaptcha.hashCode +
       disableEventStream.hashCode +
       disableFeedbackGating.hashCode +
       disableFrontendBuilds.hashCode +
@@ -1065,6 +1065,9 @@ class APIConfig {
       offlineAnalysis.hashCode +
       photonNameserverOverrides.hashCode +
       photonPublicKeys.hashCode +
+      playerUrlResolverSha1.hashCode +
+      playerUrlResolverVersion.hashCode +
+      publicKey.hashCode +
       reportCategories.hashCode +
       reportFormUrl.hashCode +
       reportOptions.hashCode +
@@ -1077,8 +1080,8 @@ class APIConfig {
       stringHostUrlList.hashCode +
       supportEmail.hashCode +
       supportFormUrl.hashCode +
-      timekeeping.hashCode +
       timeOutWorldId.hashCode +
+      timekeeping.hashCode +
       tutorialWorldId.hashCode +
       updateRateMsMaximum.hashCode +
       updateRateMsMinimum.hashCode +
@@ -1088,13 +1091,10 @@ class APIConfig {
       urlList.hashCode +
       useReliableUdpForVoice.hashCode +
       viveWindowsUrl.hashCode +
-      whiteListedAssetUrls.hashCode +
-      playerUrlResolverVersion.hashCode +
-      playerUrlResolverSha1.hashCode +
-      publicKey.hashCode +
       websocketMaxFriendsRefreshDelay.hashCode +
       websocketQuickReconnectTime.hashCode +
-      websocketReconnectMaxDelay.hashCode;
+      websocketReconnectMaxDelay.hashCode +
+      whiteListedAssetUrls.hashCode;
 
   factory APIConfig.fromJson(Map<String, dynamic> json) =>
       _$APIConfigFromJson(json);

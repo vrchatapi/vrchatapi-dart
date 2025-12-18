@@ -17,20 +17,14 @@ part 'create_file_version_request.g.dart';
 class CreateFileVersionRequest {
   /// Returns a new [CreateFileVersionRequest] instance.
   CreateFileVersionRequest({
-    required this.signatureMd5,
-
-    required this.signatureSizeInBytes,
-
     this.fileMd5,
 
     this.fileSizeInBytes,
+
+    required this.signatureMd5,
+
+    required this.signatureSizeInBytes,
   });
-
-  @JsonKey(name: r'signatureMd5', required: true, includeIfNull: false)
-  final String signatureMd5;
-
-  @JsonKey(name: r'signatureSizeInBytes', required: true, includeIfNull: false)
-  final int signatureSizeInBytes;
 
   @JsonKey(name: r'fileMd5', required: false, includeIfNull: false)
   final String? fileMd5;
@@ -38,21 +32,27 @@ class CreateFileVersionRequest {
   @JsonKey(name: r'fileSizeInBytes', required: false, includeIfNull: false)
   final int? fileSizeInBytes;
 
+  @JsonKey(name: r'signatureMd5', required: true, includeIfNull: false)
+  final String signatureMd5;
+
+  @JsonKey(name: r'signatureSizeInBytes', required: true, includeIfNull: false)
+  final int signatureSizeInBytes;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is CreateFileVersionRequest &&
-          other.signatureMd5 == signatureMd5 &&
-          other.signatureSizeInBytes == signatureSizeInBytes &&
           other.fileMd5 == fileMd5 &&
-          other.fileSizeInBytes == fileSizeInBytes;
+          other.fileSizeInBytes == fileSizeInBytes &&
+          other.signatureMd5 == signatureMd5 &&
+          other.signatureSizeInBytes == signatureSizeInBytes;
 
   @override
   int get hashCode =>
-      signatureMd5.hashCode +
-      signatureSizeInBytes.hashCode +
       fileMd5.hashCode +
-      fileSizeInBytes.hashCode;
+      fileSizeInBytes.hashCode +
+      signatureMd5.hashCode +
+      signatureSizeInBytes.hashCode;
 
   factory CreateFileVersionRequest.fromJson(Map<String, dynamic> json) =>
       _$CreateFileVersionRequestFromJson(json);

@@ -24,9 +24,9 @@ File _$FileFromJson(Map<String, dynamic> json) =>
       );
       final val = File(
         animationStyle: $checkedConvert('animationStyle', (v) => v as String?),
-        maskTag: $checkedConvert('maskTag', (v) => v as String?),
         extension_: $checkedConvert('extension', (v) => v as String),
         id: $checkedConvert('id', (v) => v as String),
+        maskTag: $checkedConvert('maskTag', (v) => v as String?),
         mimeType: $checkedConvert(
           'mimeType',
           (v) => $enumDecode(_$MIMETypeEnumMap, v),
@@ -49,9 +49,9 @@ File _$FileFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$FileToJson(File instance) => <String, dynamic>{
   'animationStyle': ?instance.animationStyle,
-  'maskTag': ?instance.maskTag,
   'extension': instance.extension_,
   'id': instance.id,
+  'maskTag': ?instance.maskTag,
   'mimeType': _$MIMETypeEnumMap[instance.mimeType]!,
   'name': instance.name,
   'ownerId': instance.ownerId,
@@ -60,18 +60,18 @@ Map<String, dynamic> _$FileToJson(File instance) => <String, dynamic>{
 };
 
 const _$MIMETypeEnumMap = {
+  MIMEType.applicationSlashGzip: 'application/gzip',
+  MIMEType.applicationSlashOctetStream: 'application/octet-stream',
+  MIMEType.applicationSlashXAvatar: 'application/x-avatar',
+  MIMEType.applicationSlashXRsyncDelta: 'application/x-rsync-delta',
+  MIMEType.applicationSlashXRsyncSignature: 'application/x-rsync-signature',
+  MIMEType.applicationSlashXWorld: 'application/x-world',
+  MIMEType.imageSlashBmp: 'image/bmp',
+  MIMEType.imageSlashGif: 'image/gif',
   MIMEType.imageSlashJpeg: 'image/jpeg',
   MIMEType.imageSlashJpg: 'image/jpg',
   MIMEType.imageSlashPng: 'image/png',
-  MIMEType.imageSlashWebp: 'image/webp',
-  MIMEType.imageSlashGif: 'image/gif',
-  MIMEType.imageSlashBmp: 'image/bmp',
   MIMEType.imageSlashSvgxml: 'image/svg＋xml',
   MIMEType.imageSlashTiff: 'image/tiff',
-  MIMEType.applicationSlashXAvatar: 'application/x-avatar',
-  MIMEType.applicationSlashXWorld: 'application/x-world',
-  MIMEType.applicationSlashGzip: 'application/gzip',
-  MIMEType.applicationSlashXRsyncSignature: 'application/x-rsync-signature',
-  MIMEType.applicationSlashXRsyncDelta: 'application/x-rsync-delta',
-  MIMEType.applicationSlashOctetStream: 'application/octet-stream',
+  MIMEType.imageSlashWebp: 'image/webp',
 };

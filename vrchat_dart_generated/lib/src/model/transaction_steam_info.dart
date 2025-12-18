@@ -18,27 +18,24 @@ part 'transaction_steam_info.g.dart';
 class TransactionSteamInfo {
   /// Returns a new [TransactionSteamInfo] instance.
   TransactionSteamInfo({
-    required this.walletInfo,
+    required this.orderId,
 
     required this.steamId,
-
-    required this.orderId,
 
     required this.steamUrl,
 
     required this.transId,
+
+    required this.walletInfo,
   });
-
-  @JsonKey(name: r'walletInfo', required: true, includeIfNull: false)
-  final TransactionSteamWalletInfo walletInfo;
-
-  /// Steam User ID
-  @JsonKey(name: r'steamId', required: true, includeIfNull: false)
-  final String steamId;
 
   /// Steam Order ID
   @JsonKey(name: r'orderId', required: true, includeIfNull: false)
   final String orderId;
+
+  /// Steam User ID
+  @JsonKey(name: r'steamId', required: true, includeIfNull: false)
+  final String steamId;
 
   /// Empty
   @JsonKey(name: r'steamUrl', required: true, includeIfNull: false)
@@ -48,23 +45,26 @@ class TransactionSteamInfo {
   @JsonKey(name: r'transId', required: true, includeIfNull: false)
   final String transId;
 
+  @JsonKey(name: r'walletInfo', required: true, includeIfNull: false)
+  final TransactionSteamWalletInfo walletInfo;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is TransactionSteamInfo &&
-          other.walletInfo == walletInfo &&
-          other.steamId == steamId &&
           other.orderId == orderId &&
+          other.steamId == steamId &&
           other.steamUrl == steamUrl &&
-          other.transId == transId;
+          other.transId == transId &&
+          other.walletInfo == walletInfo;
 
   @override
   int get hashCode =>
-      walletInfo.hashCode +
-      steamId.hashCode +
       orderId.hashCode +
+      steamId.hashCode +
       steamUrl.hashCode +
-      transId.hashCode;
+      transId.hashCode +
+      walletInfo.hashCode;
 
   factory TransactionSteamInfo.fromJson(Map<String, dynamic> json) =>
       _$TransactionSteamInfoFromJson(json);

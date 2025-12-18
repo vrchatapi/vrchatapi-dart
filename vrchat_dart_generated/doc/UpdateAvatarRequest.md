@@ -9,16 +9,15 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assetUrl** | **String** |  | [optional] 
-**id** | **String** |  | [optional] 
-**name** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
-**tags** | **List&lt;String&gt;** |   | [optional] 
+**id** | **String** |  | [optional] 
 **imageUrl** | **String** |  | [optional] 
+**name** | **String** |  | [optional] 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | [optional] 
-**version** | **int** |  | [optional] [default to 1]
-**featured** | **bool** | Enabling featured tag requires Admin Credentials. | [optional] 
+**tags** | **List&lt;String&gt;** |   | [optional] 
 **unityPackageUrl** | **String** |  | [optional] 
 **unityVersion** | **String** |  | [optional] [default to '5.3.4p1']
+**version** | **int** |  | [optional] [default to 1]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

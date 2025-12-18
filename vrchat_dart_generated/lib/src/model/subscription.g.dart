@@ -13,31 +13,31 @@ Subscription _$SubscriptionFromJson(Map<String, dynamic> json) =>
       $checkKeys(
         json,
         requiredKeys: const [
-          'id',
-          'steamItemId',
           'amount',
           'description',
+          'id',
           'period',
+          'steamItemId',
           'tier',
         ],
       );
       final val = Subscription(
-        id: $checkedConvert('id', (v) => v as String),
-        steamItemId: $checkedConvert('steamItemId', (v) => v as String),
-        oculusSku: $checkedConvert('oculusSku', (v) => v as String?),
+        amount: $checkedConvert('amount', (v) => v as num),
+        appleProductId: $checkedConvert('appleProductId', (v) => v as String?),
+        description: $checkedConvert('description', (v) => v as String),
+        googlePlanId: $checkedConvert('googlePlanId', (v) => v as String?),
         googleProductId: $checkedConvert(
           'googleProductId',
           (v) => v as String?,
         ),
-        googlePlanId: $checkedConvert('googlePlanId', (v) => v as String?),
-        picoSku: $checkedConvert('picoSku', (v) => v as String?),
-        appleProductId: $checkedConvert('appleProductId', (v) => v as String?),
-        amount: $checkedConvert('amount', (v) => v as num),
-        description: $checkedConvert('description', (v) => v as String),
+        id: $checkedConvert('id', (v) => v as String),
+        oculusSku: $checkedConvert('oculusSku', (v) => v as String?),
         period: $checkedConvert(
           'period',
           (v) => $enumDecode(_$SubscriptionPeriodEnumMap, v),
         ),
+        picoSku: $checkedConvert('picoSku', (v) => v as String?),
+        steamItemId: $checkedConvert('steamItemId', (v) => v as String),
         tier: $checkedConvert('tier', (v) => (v as num).toInt()),
       );
       return val;
@@ -45,23 +45,23 @@ Subscription _$SubscriptionFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$SubscriptionToJson(Subscription instance) =>
     <String, dynamic>{
-      'id': instance.id,
-      'steamItemId': instance.steamItemId,
-      'oculusSku': ?instance.oculusSku,
-      'googleProductId': ?instance.googleProductId,
-      'googlePlanId': ?instance.googlePlanId,
-      'picoSku': ?instance.picoSku,
-      'appleProductId': ?instance.appleProductId,
       'amount': instance.amount,
+      'appleProductId': ?instance.appleProductId,
       'description': instance.description,
+      'googlePlanId': ?instance.googlePlanId,
+      'googleProductId': ?instance.googleProductId,
+      'id': instance.id,
+      'oculusSku': ?instance.oculusSku,
       'period': _$SubscriptionPeriodEnumMap[instance.period]!,
+      'picoSku': ?instance.picoSku,
+      'steamItemId': instance.steamItemId,
       'tier': instance.tier,
     };
 
 const _$SubscriptionPeriodEnumMap = {
-  SubscriptionPeriod.hour: 'hour',
   SubscriptionPeriod.day: 'day',
-  SubscriptionPeriod.week: 'week',
+  SubscriptionPeriod.hour: 'hour',
   SubscriptionPeriod.month: 'month',
+  SubscriptionPeriod.week: 'week',
   SubscriptionPeriod.year: 'year',
 };

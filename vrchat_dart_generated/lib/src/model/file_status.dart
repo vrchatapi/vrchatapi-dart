@@ -6,14 +6,14 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum FileStatus {
-  @JsonValue(r'waiting')
-  waiting(r'waiting'),
   @JsonValue(r'complete')
   complete(r'complete'),
   @JsonValue(r'none')
   none(r'none'),
   @JsonValue(r'queued')
-  queued(r'queued');
+  queued(r'queued'),
+  @JsonValue(r'waiting')
+  waiting(r'waiting');
 
   const FileStatus(this.value);
 

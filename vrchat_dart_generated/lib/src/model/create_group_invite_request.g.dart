@@ -13,11 +13,11 @@ CreateGroupInviteRequest _$CreateGroupInviteRequestFromJson(
 ) => $checkedCreate('CreateGroupInviteRequest', json, ($checkedConvert) {
   $checkKeys(json, requiredKeys: const ['userId']);
   final val = CreateGroupInviteRequest(
-    userId: $checkedConvert('userId', (v) => v as String),
     confirmOverrideBlock: $checkedConvert(
       'confirmOverrideBlock',
       (v) => v as bool? ?? true,
     ),
+    userId: $checkedConvert('userId', (v) => v as String),
   );
   return val;
 });
@@ -25,6 +25,6 @@ CreateGroupInviteRequest _$CreateGroupInviteRequestFromJson(
 Map<String, dynamic> _$CreateGroupInviteRequestToJson(
   CreateGroupInviteRequest instance,
 ) => <String, dynamic>{
-  'userId': instance.userId,
   'confirmOverrideBlock': ?instance.confirmOverrideBlock,
+  'userId': instance.userId,
 };

@@ -13,20 +13,20 @@ CreateGroupPostRequest _$CreateGroupPostRequestFromJson(
 ) => $checkedCreate('CreateGroupPostRequest', json, ($checkedConvert) {
   $checkKeys(
     json,
-    requiredKeys: const ['title', 'text', 'sendNotification', 'visibility'],
+    requiredKeys: const ['sendNotification', 'text', 'title', 'visibility'],
   );
   final val = CreateGroupPostRequest(
-    title: $checkedConvert('title', (v) => v as String),
-    text: $checkedConvert('text', (v) => v as String),
     imageId: $checkedConvert('imageId', (v) => v as String?),
-    sendNotification: $checkedConvert(
-      'sendNotification',
-      (v) => v as bool? ?? false,
-    ),
     roleIds: $checkedConvert(
       'roleIds',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
+    sendNotification: $checkedConvert(
+      'sendNotification',
+      (v) => v as bool? ?? false,
+    ),
+    text: $checkedConvert('text', (v) => v as String),
+    title: $checkedConvert('title', (v) => v as String),
     visibility: $checkedConvert(
       'visibility',
       (v) => $enumDecode(_$GroupPostVisibilityEnumMap, v),
@@ -38,11 +38,11 @@ CreateGroupPostRequest _$CreateGroupPostRequestFromJson(
 Map<String, dynamic> _$CreateGroupPostRequestToJson(
   CreateGroupPostRequest instance,
 ) => <String, dynamic>{
-  'title': instance.title,
-  'text': instance.text,
   'imageId': ?instance.imageId,
-  'sendNotification': instance.sendNotification,
   'roleIds': ?instance.roleIds,
+  'sendNotification': instance.sendNotification,
+  'text': instance.text,
+  'title': instance.title,
   'visibility': _$GroupPostVisibilityEnumMap[instance.visibility]!,
 };
 

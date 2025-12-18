@@ -19,11 +19,11 @@ FavoritedWorld _$FavoritedWorldFromJson(
       requiredKeys: const [
         'authorName',
         'capacity',
-        'description',
         'created_at',
-        'favorites',
+        'description',
         'favoriteGroup',
         'favoriteId',
+        'favorites',
         'featured',
         'heat',
         'id',
@@ -47,11 +47,6 @@ FavoritedWorld _$FavoritedWorldFromJson(
       authorId: $checkedConvert('authorId', (v) => v as String?),
       authorName: $checkedConvert('authorName', (v) => v as String),
       capacity: $checkedConvert('capacity', (v) => (v as num).toInt()),
-      description: $checkedConvert('description', (v) => v as String),
-      recommendedCapacity: $checkedConvert(
-        'recommendedCapacity',
-        (v) => (v as num?)?.toInt(),
-      ),
       createdAt: $checkedConvert(
         'created_at',
         (v) => DateTime.parse(v as String),
@@ -62,11 +57,11 @@ FavoritedWorld _$FavoritedWorldFromJson(
             ? null
             : InstanceContentSettings.fromJson(v as Map<String, dynamic>),
       ),
-      favorites: $checkedConvert('favorites', (v) => (v as num?)?.toInt() ?? 0),
+      description: $checkedConvert('description', (v) => v as String),
       favoriteGroup: $checkedConvert('favoriteGroup', (v) => v as String),
       favoriteId: $checkedConvert('favoriteId', (v) => v as String),
+      favorites: $checkedConvert('favorites', (v) => (v as num?)?.toInt() ?? 0),
       featured: $checkedConvert('featured', (v) => v as bool? ?? false),
-      visits: $checkedConvert('visits', (v) => (v as num?)?.toInt() ?? 0),
       heat: $checkedConvert('heat', (v) => (v as num?)?.toInt() ?? 0),
       id: $checkedConvert('id', (v) => v as String),
       imageUrl: $checkedConvert('imageUrl', (v) => v as String),
@@ -89,6 +84,10 @@ FavoritedWorld _$FavoritedWorldFromJson(
         (v) => v as String?,
       ),
       publicationDate: $checkedConvert('publicationDate', (v) => v as String),
+      recommendedCapacity: $checkedConvert(
+        'recommendedCapacity',
+        (v) => (v as num?)?.toInt(),
+      ),
       releaseStatus: $checkedConvert(
         'releaseStatus',
         (v) => $enumDecode(_$ReleaseStatusEnumMap, v),
@@ -100,6 +99,10 @@ FavoritedWorld _$FavoritedWorldFromJson(
       thumbnailImageUrl: $checkedConvert(
         'thumbnailImageUrl',
         (v) => v as String,
+      ),
+      udonProducts: $checkedConvert(
+        'udonProducts',
+        (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
       ),
       unityPackages: $checkedConvert(
         'unityPackages',
@@ -115,11 +118,8 @@ FavoritedWorld _$FavoritedWorldFromJson(
         'urlList',
         (v) => (v as List<dynamic>).map((e) => e as String).toList(),
       ),
-      udonProducts: $checkedConvert(
-        'udonProducts',
-        (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-      ),
       version: $checkedConvert('version', (v) => (v as num).toInt()),
+      visits: $checkedConvert('visits', (v) => (v as num?)?.toInt() ?? 0),
     );
     return val;
   },
@@ -131,15 +131,13 @@ Map<String, dynamic> _$FavoritedWorldToJson(FavoritedWorld instance) =>
       'authorId': ?instance.authorId,
       'authorName': instance.authorName,
       'capacity': instance.capacity,
-      'description': instance.description,
-      'recommendedCapacity': ?instance.recommendedCapacity,
       'created_at': instance.createdAt.toIso8601String(),
       'defaultContentSettings': ?instance.defaultContentSettings?.toJson(),
-      'favorites': instance.favorites,
+      'description': instance.description,
       'favoriteGroup': instance.favoriteGroup,
       'favoriteId': instance.favoriteId,
+      'favorites': instance.favorites,
       'featured': instance.featured,
-      'visits': ?instance.visits,
       'heat': instance.heat,
       'id': instance.id,
       'imageUrl': instance.imageUrl,
@@ -150,19 +148,21 @@ Map<String, dynamic> _$FavoritedWorldToJson(FavoritedWorld instance) =>
       'popularity': instance.popularity,
       'previewYoutubeId': ?instance.previewYoutubeId,
       'publicationDate': instance.publicationDate,
+      'recommendedCapacity': ?instance.recommendedCapacity,
       'releaseStatus': _$ReleaseStatusEnumMap[instance.releaseStatus]!,
       'tags': instance.tags,
       'thumbnailImageUrl': instance.thumbnailImageUrl,
+      'udonProducts': ?instance.udonProducts,
       'unityPackages': instance.unityPackages.map((e) => e.toJson()).toList(),
       'updated_at': instance.updatedAt.toIso8601String(),
       'urlList': instance.urlList,
-      'udonProducts': ?instance.udonProducts,
       'version': instance.version,
+      'visits': ?instance.visits,
     };
 
 const _$ReleaseStatusEnumMap = {
-  ReleaseStatus.public: 'public',
-  ReleaseStatus.private: 'private',
-  ReleaseStatus.hidden: 'hidden',
   ReleaseStatus.all: 'all',
+  ReleaseStatus.hidden: 'hidden',
+  ReleaseStatus.private: 'private',
+  ReleaseStatus.public: 'public',
 };

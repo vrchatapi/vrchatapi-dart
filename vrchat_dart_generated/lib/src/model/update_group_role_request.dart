@@ -18,19 +18,16 @@ part 'update_group_role_request.g.dart';
 class UpdateGroupRoleRequest {
   /// Returns a new [UpdateGroupRoleRequest] instance.
   UpdateGroupRoleRequest({
-    this.name,
-
     this.description,
 
     this.isSelfAssignable = false,
 
-    this.permissions,
+    this.name,
 
     this.order,
-  });
 
-  @JsonKey(name: r'name', required: false, includeIfNull: false)
-  final String? name;
+    this.permissions,
+  });
 
   @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;
@@ -38,29 +35,32 @@ class UpdateGroupRoleRequest {
   @JsonKey(name: r'isSelfAssignable', required: false, includeIfNull: false)
   final bool? isSelfAssignable;
 
-  @JsonKey(name: r'permissions', required: false, includeIfNull: false)
-  final List<GroupPermissions>? permissions;
+  @JsonKey(name: r'name', required: false, includeIfNull: false)
+  final String? name;
 
   @JsonKey(name: r'order', required: false, includeIfNull: false)
   final int? order;
+
+  @JsonKey(name: r'permissions', required: false, includeIfNull: false)
+  final List<GroupPermissions>? permissions;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is UpdateGroupRoleRequest &&
-          other.name == name &&
           other.description == description &&
           other.isSelfAssignable == isSelfAssignable &&
-          other.permissions == permissions &&
-          other.order == order;
+          other.name == name &&
+          other.order == order &&
+          other.permissions == permissions;
 
   @override
   int get hashCode =>
-      name.hashCode +
       description.hashCode +
       isSelfAssignable.hashCode +
-      permissions.hashCode +
-      order.hashCode;
+      name.hashCode +
+      order.hashCode +
+      permissions.hashCode;
 
   factory UpdateGroupRoleRequest.fromJson(Map<String, dynamic> json) =>
       _$UpdateGroupRoleRequestFromJson(json);

@@ -16,25 +16,25 @@ part 'user_exists.g.dart';
 )
 class UserExists {
   /// Returns a new [UserExists] instance.
-  UserExists({this.userExists = false, this.nameOk = false});
-
-  /// Status if a user exist with that username or userId.
-  @JsonKey(name: r'userExists', required: true, includeIfNull: false)
-  final bool userExists;
+  UserExists({this.nameOk = false, this.userExists = false});
 
   /// Is the username valid?
   @JsonKey(name: r'nameOk', required: false, includeIfNull: false)
   final bool? nameOk;
 
+  /// Status if a user exist with that username or userId.
+  @JsonKey(name: r'userExists', required: true, includeIfNull: false)
+  final bool userExists;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is UserExists &&
-          other.userExists == userExists &&
-          other.nameOk == nameOk;
+          other.nameOk == nameOk &&
+          other.userExists == userExists;
 
   @override
-  int get hashCode => userExists.hashCode + nameOk.hashCode;
+  int get hashCode => nameOk.hashCode + userExists.hashCode;
 
   factory UserExists.fromJson(Map<String, dynamic> json) =>
       _$UserExistsFromJson(json);

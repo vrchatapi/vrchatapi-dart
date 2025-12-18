@@ -26,23 +26,19 @@ class FavoritedWorld {
 
     required this.capacity,
 
-    required this.description,
-
-    this.recommendedCapacity,
-
     required this.createdAt,
 
     this.defaultContentSettings,
 
-    this.favorites = 0,
+    required this.description,
 
     required this.favoriteGroup,
 
     required this.favoriteId,
 
-    this.featured = false,
+    this.favorites = 0,
 
-    this.visits = 0,
+    this.featured = false,
 
     this.heat = 0,
 
@@ -64,11 +60,15 @@ class FavoritedWorld {
 
     required this.publicationDate,
 
+    this.recommendedCapacity,
+
     required this.releaseStatus,
 
     required this.tags,
 
     required this.thumbnailImageUrl,
+
+    this.udonProducts,
 
     required this.unityPackages,
 
@@ -76,9 +76,9 @@ class FavoritedWorld {
 
     required this.urlList,
 
-    this.udonProducts,
-
     required this.version,
+
+    this.visits = 0,
   });
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
@@ -91,12 +91,6 @@ class FavoritedWorld {
   @JsonKey(name: r'capacity', required: true, includeIfNull: false)
   final int capacity;
 
-  @JsonKey(name: r'description', required: true, includeIfNull: false)
-  final String description;
-
-  @JsonKey(name: r'recommendedCapacity', required: false, includeIfNull: false)
-  final int? recommendedCapacity;
-
   @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
 
@@ -107,9 +101,8 @@ class FavoritedWorld {
   )
   final InstanceContentSettings? defaultContentSettings;
 
-  // minimum: 0
-  @JsonKey(name: r'favorites', required: true, includeIfNull: false)
-  final int favorites;
+  @JsonKey(name: r'description', required: true, includeIfNull: false)
+  final String description;
 
   @JsonKey(name: r'favoriteGroup', required: true, includeIfNull: false)
   final String favoriteGroup;
@@ -117,12 +110,12 @@ class FavoritedWorld {
   @JsonKey(name: r'favoriteId', required: true, includeIfNull: false)
   final String favoriteId;
 
+  // minimum: 0
+  @JsonKey(name: r'favorites', required: true, includeIfNull: false)
+  final int favorites;
+
   @JsonKey(name: r'featured', required: true, includeIfNull: false)
   final bool featured;
-
-  // minimum: 0
-  @JsonKey(name: r'visits', required: false, includeIfNull: false)
-  final int? visits;
 
   // minimum: 0
   @JsonKey(name: r'heat', required: true, includeIfNull: false)
@@ -158,6 +151,9 @@ class FavoritedWorld {
   @JsonKey(name: r'publicationDate', required: true, includeIfNull: false)
   final String publicationDate;
 
+  @JsonKey(name: r'recommendedCapacity', required: false, includeIfNull: false)
+  final int? recommendedCapacity;
+
   @JsonKey(name: r'releaseStatus', required: true, includeIfNull: false)
   final ReleaseStatus releaseStatus;
 
@@ -167,6 +163,9 @@ class FavoritedWorld {
 
   @JsonKey(name: r'thumbnailImageUrl', required: true, includeIfNull: false)
   final String thumbnailImageUrl;
+
+  @JsonKey(name: r'udonProducts', required: false, includeIfNull: false)
+  final List<String>? udonProducts;
 
   ///
   @JsonKey(name: r'unityPackages', required: true, includeIfNull: false)
@@ -178,12 +177,13 @@ class FavoritedWorld {
   @JsonKey(name: r'urlList', required: true, includeIfNull: false)
   final List<String> urlList;
 
-  @JsonKey(name: r'udonProducts', required: false, includeIfNull: false)
-  final List<String>? udonProducts;
-
   // minimum: 1
   @JsonKey(name: r'version', required: true, includeIfNull: false)
   final int version;
+
+  // minimum: 0
+  @JsonKey(name: r'visits', required: false, includeIfNull: false)
+  final int? visits;
 
   @override
   bool operator ==(Object other) =>
@@ -192,15 +192,13 @@ class FavoritedWorld {
           other.authorId == authorId &&
           other.authorName == authorName &&
           other.capacity == capacity &&
-          other.description == description &&
-          other.recommendedCapacity == recommendedCapacity &&
           other.createdAt == createdAt &&
           other.defaultContentSettings == defaultContentSettings &&
-          other.favorites == favorites &&
+          other.description == description &&
           other.favoriteGroup == favoriteGroup &&
           other.favoriteId == favoriteId &&
+          other.favorites == favorites &&
           other.featured == featured &&
-          other.visits == visits &&
           other.heat == heat &&
           other.id == id &&
           other.imageUrl == imageUrl &&
@@ -211,29 +209,29 @@ class FavoritedWorld {
           other.popularity == popularity &&
           other.previewYoutubeId == previewYoutubeId &&
           other.publicationDate == publicationDate &&
+          other.recommendedCapacity == recommendedCapacity &&
           other.releaseStatus == releaseStatus &&
           other.tags == tags &&
           other.thumbnailImageUrl == thumbnailImageUrl &&
+          other.udonProducts == udonProducts &&
           other.unityPackages == unityPackages &&
           other.updatedAt == updatedAt &&
           other.urlList == urlList &&
-          other.udonProducts == udonProducts &&
-          other.version == version;
+          other.version == version &&
+          other.visits == visits;
 
   @override
   int get hashCode =>
       authorId.hashCode +
       authorName.hashCode +
       capacity.hashCode +
-      description.hashCode +
-      recommendedCapacity.hashCode +
       createdAt.hashCode +
       defaultContentSettings.hashCode +
-      favorites.hashCode +
+      description.hashCode +
       favoriteGroup.hashCode +
       favoriteId.hashCode +
+      favorites.hashCode +
       featured.hashCode +
-      visits.hashCode +
       heat.hashCode +
       id.hashCode +
       imageUrl.hashCode +
@@ -244,14 +242,16 @@ class FavoritedWorld {
       popularity.hashCode +
       (previewYoutubeId == null ? 0 : previewYoutubeId.hashCode) +
       publicationDate.hashCode +
+      recommendedCapacity.hashCode +
       releaseStatus.hashCode +
       tags.hashCode +
       thumbnailImageUrl.hashCode +
+      udonProducts.hashCode +
       unityPackages.hashCode +
       updatedAt.hashCode +
       urlList.hashCode +
-      udonProducts.hashCode +
-      version.hashCode;
+      version.hashCode +
+      visits.hashCode;
 
   factory FavoritedWorld.fromJson(Map<String, dynamic> json) =>
       _$FavoritedWorldFromJson(json);

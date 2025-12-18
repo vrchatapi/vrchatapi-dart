@@ -58,8 +58,8 @@ Map<String, dynamic> _$UpdateWorldRequestToJson(UpdateWorldRequest instance) =>
     };
 
 const _$ReleaseStatusEnumMap = {
-  ReleaseStatus.public: 'public',
-  ReleaseStatus.private: 'private',
-  ReleaseStatus.hidden: 'hidden',
   ReleaseStatus.all: 'all',
+  ReleaseStatus.hidden: 'hidden',
+  ReleaseStatus.private: 'private',
+  ReleaseStatus.public: 'public',
 };

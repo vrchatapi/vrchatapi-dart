@@ -12,28 +12,33 @@ License _$LicenseFromJson(Map<String, dynamic> json) =>
     $checkedCreate('License', json, ($checkedConvert) {
       $checkKeys(
         json,
-        requiredKeys: const ['forId', 'forType', 'forName', 'forAction'],
+        requiredKeys: const ['forAction', 'forId', 'forName', 'forType'],
       );
       final val = License(
-        forId: $checkedConvert('forId', (v) => v as String),
-        forType: $checkedConvert(
-          'forType',
-          (v) => $enumDecode(_$LicenseTypeEnumMap, v),
-        ),
-        forName: $checkedConvert('forName', (v) => v as String),
         forAction: $checkedConvert(
           'forAction',
           (v) => $enumDecode(_$LicenseActionEnumMap, v),
+        ),
+        forId: $checkedConvert('forId', (v) => v as String),
+        forName: $checkedConvert('forName', (v) => v as String),
+        forType: $checkedConvert(
+          'forType',
+          (v) => $enumDecode(_$LicenseTypeEnumMap, v),
         ),
       );
       return val;
     });
 
 Map<String, dynamic> _$LicenseToJson(License instance) => <String, dynamic>{
-  'forId': instance.forId,
-  'forType': _$LicenseTypeEnumMap[instance.forType]!,
-  'forName': instance.forName,
   'forAction': _$LicenseActionEnumMap[instance.forAction]!,
+  'forId': instance.forId,
+  'forName': instance.forName,
+  'forType': _$LicenseTypeEnumMap[instance.forType]!,
+};
+
+const _$LicenseActionEnumMap = {
+  LicenseAction.have: 'have',
+  LicenseAction.wear: 'wear',
 };
 
 const _$LicenseTypeEnumMap = {
@@ -41,9 +46,4 @@ const _$LicenseTypeEnumMap = {
   LicenseType.licenseGroup: 'licenseGroup',
   LicenseType.permission: 'permission',
   LicenseType.product: 'product',
-};
-
-const _$LicenseActionEnumMap = {
-  LicenseAction.wear: 'wear',
-  LicenseAction.have: 'have',
 };

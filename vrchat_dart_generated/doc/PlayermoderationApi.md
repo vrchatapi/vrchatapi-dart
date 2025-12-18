@@ -59,7 +59,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPlayerModerations**
-> List<PlayerModeration> getPlayerModerations(type, sourceUserId, targetUserId)
+> List<PlayerModeration> getPlayerModerations(type, targetUserId)
 
 Search Player Moderations
 
@@ -75,11 +75,10 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getPlayermoderationApi();
 final PlayerModerationType type = ; // PlayerModerationType | Must be one of PlayerModerationType.
-final String sourceUserId = sourceUserId_example; // String | Must be valid UserID. Trying to view someone else's moderations results with \"Can't view someone else's player moderations\" error.
 final String targetUserId = targetUserId_example; // String | Must be valid UserID.
 
 try {
-    final response = api.getPlayerModerations(type, sourceUserId, targetUserId);
+    final response = api.getPlayerModerations(type, targetUserId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling PlayermoderationApi->getPlayerModerations: $e\n');
@@ -91,7 +90,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | [**PlayerModerationType**](.md)| Must be one of PlayerModerationType. | [optional] 
- **sourceUserId** | **String**| Must be valid UserID. Trying to view someone else's moderations results with \"Can't view someone else's player moderations\" error. | [optional] 
  **targetUserId** | **String**| Must be valid UserID. | [optional] 
 
 ### Return type

@@ -12,22 +12,22 @@ GroupMemberLimitedUser _$GroupMemberLimitedUserFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('GroupMemberLimitedUser', json, ($checkedConvert) {
   final val = GroupMemberLimitedUser(
-    id: $checkedConvert('id', (v) => v as String?),
-    displayName: $checkedConvert('displayName', (v) => v as String?),
-    thumbnailUrl: $checkedConvert('thumbnailUrl', (v) => v as String?),
-    iconUrl: $checkedConvert('iconUrl', (v) => v as String?),
-    profilePicOverride: $checkedConvert(
-      'profilePicOverride',
-      (v) => v as String?,
+    currentAvatarTags: $checkedConvert(
+      'currentAvatarTags',
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
     currentAvatarThumbnailImageUrl: $checkedConvert(
       'currentAvatarThumbnailImageUrl',
       (v) => v as String?,
     ),
-    currentAvatarTags: $checkedConvert(
-      'currentAvatarTags',
-      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+    displayName: $checkedConvert('displayName', (v) => v as String?),
+    iconUrl: $checkedConvert('iconUrl', (v) => v as String?),
+    id: $checkedConvert('id', (v) => v as String?),
+    profilePicOverride: $checkedConvert(
+      'profilePicOverride',
+      (v) => v as String?,
     ),
+    thumbnailUrl: $checkedConvert('thumbnailUrl', (v) => v as String?),
   );
   return val;
 });
@@ -35,11 +35,11 @@ GroupMemberLimitedUser _$GroupMemberLimitedUserFromJson(
 Map<String, dynamic> _$GroupMemberLimitedUserToJson(
   GroupMemberLimitedUser instance,
 ) => <String, dynamic>{
-  'id': ?instance.id,
-  'displayName': ?instance.displayName,
-  'thumbnailUrl': ?instance.thumbnailUrl,
-  'iconUrl': ?instance.iconUrl,
-  'profilePicOverride': ?instance.profilePicOverride,
-  'currentAvatarThumbnailImageUrl': ?instance.currentAvatarThumbnailImageUrl,
   'currentAvatarTags': ?instance.currentAvatarTags,
+  'currentAvatarThumbnailImageUrl': ?instance.currentAvatarThumbnailImageUrl,
+  'displayName': ?instance.displayName,
+  'iconUrl': ?instance.iconUrl,
+  'id': ?instance.id,
+  'profilePicOverride': ?instance.profilePicOverride,
+  'thumbnailUrl': ?instance.thumbnailUrl,
 };

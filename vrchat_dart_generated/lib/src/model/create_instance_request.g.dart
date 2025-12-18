@@ -11,46 +11,46 @@ part of 'create_instance_request.dart';
 CreateInstanceRequest _$CreateInstanceRequestFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('CreateInstanceRequest', json, ($checkedConvert) {
-  $checkKeys(json, requiredKeys: const ['worldId', 'type', 'region']);
+  $checkKeys(json, requiredKeys: const ['region', 'type', 'worldId']);
   final val = CreateInstanceRequest(
-    worldId: $checkedConvert('worldId', (v) => v as String),
-    type: $checkedConvert('type', (v) => $enumDecode(_$InstanceTypeEnumMap, v)),
-    region: $checkedConvert(
-      'region',
-      (v) => $enumDecode(_$InstanceRegionEnumMap, v),
-    ),
-    ownerId: $checkedConvert('ownerId', (v) => v as String?),
-    roleIds: $checkedConvert(
-      'roleIds',
-      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-    ),
-    groupAccessType: $checkedConvert(
-      'groupAccessType',
-      (v) => $enumDecodeNullable(_$GroupAccessTypeEnumMap, v),
-    ),
-    queueEnabled: $checkedConvert('queueEnabled', (v) => v as bool? ?? false),
-    closedAt: $checkedConvert(
-      'closedAt',
-      (v) => v == null ? null : DateTime.parse(v as String),
-    ),
+    ageGate: $checkedConvert('ageGate', (v) => v as bool? ?? false),
     canRequestInvite: $checkedConvert(
       'canRequestInvite',
       (v) => v as bool? ?? false,
     ),
-    hardClose: $checkedConvert('hardClose', (v) => v as bool? ?? false),
-    inviteOnly: $checkedConvert('inviteOnly', (v) => v as bool? ?? false),
-    ageGate: $checkedConvert('ageGate', (v) => v as bool? ?? false),
-    instancePersistenceEnabled: $checkedConvert(
-      'instancePersistenceEnabled',
-      (v) => v as bool?,
+    closedAt: $checkedConvert(
+      'closedAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
     ),
-    displayName: $checkedConvert('displayName', (v) => v as String?),
     contentSettings: $checkedConvert(
       'contentSettings',
       (v) => v == null
           ? null
           : InstanceContentSettings.fromJson(v as Map<String, dynamic>),
     ),
+    displayName: $checkedConvert('displayName', (v) => v as String?),
+    groupAccessType: $checkedConvert(
+      'groupAccessType',
+      (v) => $enumDecodeNullable(_$GroupAccessTypeEnumMap, v),
+    ),
+    hardClose: $checkedConvert('hardClose', (v) => v as bool? ?? false),
+    instancePersistenceEnabled: $checkedConvert(
+      'instancePersistenceEnabled',
+      (v) => v as bool?,
+    ),
+    inviteOnly: $checkedConvert('inviteOnly', (v) => v as bool? ?? false),
+    ownerId: $checkedConvert('ownerId', (v) => v as String?),
+    queueEnabled: $checkedConvert('queueEnabled', (v) => v as bool? ?? false),
+    region: $checkedConvert(
+      'region',
+      (v) => $enumDecode(_$InstanceRegionEnumMap, v),
+    ),
+    roleIds: $checkedConvert(
+      'roleIds',
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+    ),
+    type: $checkedConvert('type', (v) => $enumDecode(_$InstanceTypeEnumMap, v)),
+    worldId: $checkedConvert('worldId', (v) => v as String),
   );
   return val;
 });
@@ -58,41 +58,41 @@ CreateInstanceRequest _$CreateInstanceRequestFromJson(
 Map<String, dynamic> _$CreateInstanceRequestToJson(
   CreateInstanceRequest instance,
 ) => <String, dynamic>{
-  'worldId': instance.worldId,
-  'type': _$InstanceTypeEnumMap[instance.type]!,
-  'region': _$InstanceRegionEnumMap[instance.region]!,
-  'ownerId': ?instance.ownerId,
-  'roleIds': ?instance.roleIds,
-  'groupAccessType': ?_$GroupAccessTypeEnumMap[instance.groupAccessType],
-  'queueEnabled': ?instance.queueEnabled,
-  'closedAt': ?instance.closedAt?.toIso8601String(),
-  'canRequestInvite': ?instance.canRequestInvite,
-  'hardClose': ?instance.hardClose,
-  'inviteOnly': ?instance.inviteOnly,
   'ageGate': ?instance.ageGate,
-  'instancePersistenceEnabled': ?instance.instancePersistenceEnabled,
-  'displayName': ?instance.displayName,
+  'canRequestInvite': ?instance.canRequestInvite,
+  'closedAt': ?instance.closedAt?.toIso8601String(),
   'contentSettings': ?instance.contentSettings?.toJson(),
-};
-
-const _$InstanceTypeEnumMap = {
-  InstanceType.public: 'public',
-  InstanceType.hidden: 'hidden',
-  InstanceType.friends: 'friends',
-  InstanceType.private: 'private',
-  InstanceType.group: 'group',
-};
-
-const _$InstanceRegionEnumMap = {
-  InstanceRegion.us: 'us',
-  InstanceRegion.use: 'use',
-  InstanceRegion.eu: 'eu',
-  InstanceRegion.jp: 'jp',
-  InstanceRegion.unknown: 'unknown',
+  'displayName': ?instance.displayName,
+  'groupAccessType': ?_$GroupAccessTypeEnumMap[instance.groupAccessType],
+  'hardClose': ?instance.hardClose,
+  'instancePersistenceEnabled': ?instance.instancePersistenceEnabled,
+  'inviteOnly': ?instance.inviteOnly,
+  'ownerId': ?instance.ownerId,
+  'queueEnabled': ?instance.queueEnabled,
+  'region': _$InstanceRegionEnumMap[instance.region]!,
+  'roleIds': ?instance.roleIds,
+  'type': _$InstanceTypeEnumMap[instance.type]!,
+  'worldId': instance.worldId,
 };
 
 const _$GroupAccessTypeEnumMap = {
-  GroupAccessType.public: 'public',
-  GroupAccessType.plus: 'plus',
   GroupAccessType.members: 'members',
+  GroupAccessType.plus: 'plus',
+  GroupAccessType.public: 'public',
+};
+
+const _$InstanceRegionEnumMap = {
+  InstanceRegion.eu: 'eu',
+  InstanceRegion.jp: 'jp',
+  InstanceRegion.unknown: 'unknown',
+  InstanceRegion.us: 'us',
+  InstanceRegion.use: 'use',
+};
+
+const _$InstanceTypeEnumMap = {
+  InstanceType.friends: 'friends',
+  InstanceType.group: 'group',
+  InstanceType.hidden: 'hidden',
+  InstanceType.private: 'private',
+  InstanceType.public: 'public',
 };

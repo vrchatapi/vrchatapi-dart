@@ -8,6 +8,18 @@ import 'package:json_annotation/json_annotation.dart';
 /// API/Photon region.
 enum Region {
   /// API/Photon region.
+  @JsonValue(r'eu')
+  eu(r'eu'),
+
+  /// API/Photon region.
+  @JsonValue(r'jp')
+  jp(r'jp'),
+
+  /// API/Photon region.
+  @JsonValue(r'unknown')
+  unknown(r'unknown'),
+
+  /// API/Photon region.
   @JsonValue(r'us')
   us(r'us'),
 
@@ -21,19 +33,7 @@ enum Region {
 
   /// API/Photon region.
   @JsonValue(r'usx')
-  usx(r'usx'),
-
-  /// API/Photon region.
-  @JsonValue(r'eu')
-  eu(r'eu'),
-
-  /// API/Photon region.
-  @JsonValue(r'jp')
-  jp(r'jp'),
-
-  /// API/Photon region.
-  @JsonValue(r'unknown')
-  unknown(r'unknown');
+  usx(r'usx');
 
   const Region(this.value);
 

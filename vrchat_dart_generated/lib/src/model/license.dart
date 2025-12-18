@@ -19,40 +19,40 @@ part 'license.g.dart';
 class License {
   /// Returns a new [License] instance.
   License({
-    required this.forId,
+    required this.forAction,
 
-    required this.forType,
+    required this.forId,
 
     required this.forName,
 
-    required this.forAction,
+    required this.forType,
   });
+
+  @JsonKey(name: r'forAction', required: true, includeIfNull: false)
+  final LicenseAction forAction;
 
   /// Either a AvatarID, LicenseGroupID, PermissionID or ProductID. This depends on the `forType` field.
   @JsonKey(name: r'forId', required: true, includeIfNull: false)
   final String forId;
 
-  @JsonKey(name: r'forType', required: true, includeIfNull: false)
-  final LicenseType forType;
-
   @JsonKey(name: r'forName', required: true, includeIfNull: false)
   final String forName;
 
-  @JsonKey(name: r'forAction', required: true, includeIfNull: false)
-  final LicenseAction forAction;
+  @JsonKey(name: r'forType', required: true, includeIfNull: false)
+  final LicenseType forType;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is License &&
+          other.forAction == forAction &&
           other.forId == forId &&
-          other.forType == forType &&
           other.forName == forName &&
-          other.forAction == forAction;
+          other.forType == forType;
 
   @override
   int get hashCode =>
-      forId.hashCode + forType.hashCode + forName.hashCode + forAction.hashCode;
+      forAction.hashCode + forId.hashCode + forName.hashCode + forType.hashCode;
 
   factory License.fromJson(Map<String, dynamic> json) =>
       _$LicenseFromJson(json);

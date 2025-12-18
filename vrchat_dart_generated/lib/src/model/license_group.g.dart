@@ -12,26 +12,26 @@ LicenseGroup _$LicenseGroupFromJson(Map<String, dynamic> json) =>
     $checkedCreate('LicenseGroup', json, ($checkedConvert) {
       $checkKeys(
         json,
-        requiredKeys: const ['id', 'name', 'description', 'licenses'],
+        requiredKeys: const ['description', 'id', 'licenses', 'name'],
       );
       final val = LicenseGroup(
-        id: $checkedConvert('id', (v) => v as String),
-        name: $checkedConvert('name', (v) => v as String),
         description: $checkedConvert('description', (v) => v as String),
+        id: $checkedConvert('id', (v) => v as String),
         licenses: $checkedConvert(
           'licenses',
           (v) => (v as List<dynamic>)
               .map((e) => License.fromJson(e as Map<String, dynamic>))
               .toList(),
         ),
+        name: $checkedConvert('name', (v) => v as String),
       );
       return val;
     });
 
 Map<String, dynamic> _$LicenseGroupToJson(LicenseGroup instance) =>
     <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
       'description': instance.description,
+      'id': instance.id,
       'licenses': instance.licenses.map((e) => e.toJson()).toList(),
+      'name': instance.name,
     };

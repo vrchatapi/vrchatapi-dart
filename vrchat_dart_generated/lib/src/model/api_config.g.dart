@@ -24,9 +24,9 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         'ageVerificationStatusVisible',
         'analysisMaxRetries',
         'analysisRetryInterval',
-        'announcements',
         'analyticsSegment_NewUI_PctOfUsers',
         'analyticsSegment_NewUI_Salt',
+        'announcements',
         'availableLanguageCodes',
         'availableLanguages',
         'avatarPerfLimiter',
@@ -81,6 +81,9 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         'offlineAnalysis',
         'photonNameserverOverrides',
         'photonPublicKeys',
+        'player-url-resolver-sha1',
+        'player-url-resolver-version',
+        'publicKey',
         'reportCategories',
         'reportFormUrl',
         'reportOptions',
@@ -93,8 +96,8 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         'stringHostUrlList',
         'supportEmail',
         'supportFormUrl',
-        'timekeeping',
         'timeOutWorldId',
+        'timekeeping',
         'tutorialWorldId',
         'updateRateMsMaximum',
         'updateRateMsMinimum',
@@ -104,13 +107,10 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         'urlList',
         'useReliableUdpForVoice',
         'viveWindowsUrl',
-        'whiteListedAssetUrls',
-        'player-url-resolver-version',
-        'player-url-resolver-sha1',
-        'publicKey',
         'websocketMaxFriendsRefreshDelay',
         'websocketQuickReconnectTime',
         'websocketReconnectMaxDelay',
+        'whiteListedAssetUrls',
       ],
     );
     final val = APIConfig(
@@ -144,14 +144,6 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         'analysisRetryInterval',
         (v) => (v as num).toInt(),
       ),
-      announcements: $checkedConvert(
-        'announcements',
-        (v) => (v as List<dynamic>)
-            .map(
-              (e) => APIConfigAnnouncement.fromJson(e as Map<String, dynamic>),
-            )
-            .toSet(),
-      ),
       analyticsSegmentNewUIPctOfUsers: $checkedConvert(
         'analyticsSegment_NewUI_PctOfUsers',
         (v) => (v as num).toInt(),
@@ -159,6 +151,14 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
       analyticsSegmentNewUISalt: $checkedConvert(
         'analyticsSegment_NewUI_Salt',
         (v) => v as String,
+      ),
+      announcements: $checkedConvert(
+        'announcements',
+        (v) => (v as List<dynamic>)
+            .map(
+              (e) => APIConfigAnnouncement.fromJson(e as Map<String, dynamic>),
+            )
+            .toSet(),
       ),
       availableLanguageCodes: $checkedConvert(
         'availableLanguageCodes',
@@ -275,6 +275,10 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         'disableAvatarGating',
         (v) => v as bool? ?? false,
       ),
+      disableCaptcha: $checkedConvert(
+        'disableCaptcha',
+        (v) => v as bool? ?? true,
+      ),
       disableCommunityLabs: $checkedConvert(
         'disableCommunityLabs',
         (v) => v as bool? ?? false,
@@ -284,10 +288,6 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => v as bool? ?? false,
       ),
       disableEmail: $checkedConvert('disableEmail', (v) => v as bool? ?? false),
-      disableCaptcha: $checkedConvert(
-        'disableCaptcha',
-        (v) => v as bool? ?? true,
-      ),
       disableEventStream: $checkedConvert(
         'disableEventStream',
         (v) => v as bool? ?? false,
@@ -402,6 +402,15 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         'photonPublicKeys',
         (v) => (v as List<dynamic>).map((e) => e as String).toList(),
       ),
+      playerUrlResolverSha1: $checkedConvert(
+        'player-url-resolver-sha1',
+        (v) => v as String,
+      ),
+      playerUrlResolverVersion: $checkedConvert(
+        'player-url-resolver-version',
+        (v) => v as String,
+      ),
+      publicKey: $checkedConvert('publicKey', (v) => v as String),
       reportCategories: $checkedConvert(
         'reportCategories',
         (v) => APIConfigReportCategories.fromJson(v as Map<String, dynamic>),
@@ -440,8 +449,8 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
       ),
       supportEmail: $checkedConvert('supportEmail', (v) => v as String),
       supportFormUrl: $checkedConvert('supportFormUrl', (v) => v as String),
-      timekeeping: $checkedConvert('timekeeping', (v) => v as bool? ?? true),
       timeOutWorldId: $checkedConvert('timeOutWorldId', (v) => v as String),
+      timekeeping: $checkedConvert('timekeeping', (v) => v as bool? ?? true),
       tutorialWorldId: $checkedConvert('tutorialWorldId', (v) => v as String),
       updateRateMsMaximum: $checkedConvert(
         'updateRateMsMaximum',
@@ -472,19 +481,6 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => v as bool? ?? false,
       ),
       viveWindowsUrl: $checkedConvert('viveWindowsUrl', (v) => v as String),
-      whiteListedAssetUrls: $checkedConvert(
-        'whiteListedAssetUrls',
-        (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-      ),
-      playerUrlResolverVersion: $checkedConvert(
-        'player-url-resolver-version',
-        (v) => v as String,
-      ),
-      playerUrlResolverSha1: $checkedConvert(
-        'player-url-resolver-sha1',
-        (v) => v as String,
-      ),
-      publicKey: $checkedConvert('publicKey', (v) => v as String),
       websocketMaxFriendsRefreshDelay: $checkedConvert(
         'websocketMaxFriendsRefreshDelay',
         (v) => (v as num?)?.toInt() ?? 900,
@@ -497,6 +493,10 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         'websocketReconnectMaxDelay',
         (v) => (v as num?)?.toInt() ?? 2,
       ),
+      whiteListedAssetUrls: $checkedConvert(
+        'whiteListedAssetUrls',
+        (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+      ),
     );
     return val;
   },
@@ -506,8 +506,8 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
     'analyticsSegmentNewUIPctOfUsers': 'analyticsSegment_NewUI_PctOfUsers',
     'analyticsSegmentNewUISalt': 'analyticsSegment_NewUI_Salt',
     'disCountdown': 'dis-countdown',
-    'playerUrlResolverVersion': 'player-url-resolver-version',
     'playerUrlResolverSha1': 'player-url-resolver-sha1',
+    'playerUrlResolverVersion': 'player-url-resolver-version',
   },
 );
 
@@ -521,9 +521,9 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
   'ageVerificationStatusVisible': instance.ageVerificationStatusVisible,
   'analysisMaxRetries': instance.analysisMaxRetries,
   'analysisRetryInterval': instance.analysisRetryInterval,
-  'announcements': instance.announcements.map((e) => e.toJson()).toList(),
   'analyticsSegment_NewUI_PctOfUsers': instance.analyticsSegmentNewUIPctOfUsers,
   'analyticsSegment_NewUI_Salt': instance.analyticsSegmentNewUISalt,
+  'announcements': instance.announcements.map((e) => e.toJson()).toList(),
   'availableLanguageCodes': instance.availableLanguageCodes,
   'availableLanguages': instance.availableLanguages,
   'avatarPerfLimiter': instance.avatarPerfLimiter.toJson(),
@@ -558,10 +558,10 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
   'disableAVProInProton': ?instance.disableAVProInProton,
   'disableAvatarCopying': instance.disableAvatarCopying,
   'disableAvatarGating': instance.disableAvatarGating,
+  'disableCaptcha': ?instance.disableCaptcha,
   'disableCommunityLabs': instance.disableCommunityLabs,
   'disableCommunityLabsPromotion': instance.disableCommunityLabsPromotion,
   'disableEmail': instance.disableEmail,
-  'disableCaptcha': ?instance.disableCaptcha,
   'disableEventStream': instance.disableEventStream,
   'disableFeedbackGating': instance.disableFeedbackGating,
   'disableFrontendBuilds': instance.disableFrontendBuilds,
@@ -597,6 +597,9 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
   'offlineAnalysis': instance.offlineAnalysis.toJson(),
   'photonNameserverOverrides': instance.photonNameserverOverrides,
   'photonPublicKeys': instance.photonPublicKeys,
+  'player-url-resolver-sha1': instance.playerUrlResolverSha1,
+  'player-url-resolver-version': instance.playerUrlResolverVersion,
+  'publicKey': instance.publicKey,
   'reportCategories': instance.reportCategories.toJson(),
   'reportFormUrl': instance.reportFormUrl,
   'reportOptions': instance.reportOptions.toJson(),
@@ -609,8 +612,8 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
   'stringHostUrlList': instance.stringHostUrlList,
   'supportEmail': instance.supportEmail,
   'supportFormUrl': instance.supportFormUrl,
-  'timekeeping': instance.timekeeping,
   'timeOutWorldId': instance.timeOutWorldId,
+  'timekeeping': instance.timekeeping,
   'tutorialWorldId': instance.tutorialWorldId,
   'updateRateMsMaximum': instance.updateRateMsMaximum,
   'updateRateMsMinimum': instance.updateRateMsMinimum,
@@ -620,11 +623,8 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
   'urlList': instance.urlList,
   'useReliableUdpForVoice': instance.useReliableUdpForVoice,
   'viveWindowsUrl': instance.viveWindowsUrl,
-  'whiteListedAssetUrls': instance.whiteListedAssetUrls,
-  'player-url-resolver-version': instance.playerUrlResolverVersion,
-  'player-url-resolver-sha1': instance.playerUrlResolverSha1,
-  'publicKey': instance.publicKey,
   'websocketMaxFriendsRefreshDelay': instance.websocketMaxFriendsRefreshDelay,
   'websocketQuickReconnectTime': instance.websocketQuickReconnectTime,
   'websocketReconnectMaxDelay': instance.websocketReconnectMaxDelay,
+  'whiteListedAssetUrls': instance.whiteListedAssetUrls,
 };

@@ -25,9 +25,9 @@ class LimitedUserSearch {
 
     required this.currentAvatarImageUrl,
 
-    required this.currentAvatarThumbnailImageUrl,
-
     required this.currentAvatarTags,
+
+    required this.currentAvatarThumbnailImageUrl,
 
     required this.developerType,
 
@@ -63,6 +63,9 @@ class LimitedUserSearch {
   @JsonKey(name: r'currentAvatarImageUrl', required: true, includeIfNull: false)
   final String currentAvatarImageUrl;
 
+  @JsonKey(name: r'currentAvatarTags', required: true, includeIfNull: false)
+  final List<String> currentAvatarTags;
+
   /// When profilePicOverride is not empty, use it instead.
   @JsonKey(
     name: r'currentAvatarThumbnailImageUrl',
@@ -70,9 +73,6 @@ class LimitedUserSearch {
     includeIfNull: false,
   )
   final String currentAvatarThumbnailImageUrl;
-
-  @JsonKey(name: r'currentAvatarTags', required: true, includeIfNull: false)
-  final List<String> currentAvatarTags;
 
   @JsonKey(name: r'developerType', required: true, includeIfNull: false)
   final DeveloperType developerType;
@@ -117,9 +117,9 @@ class LimitedUserSearch {
           other.bio == bio &&
           other.bioLinks == bioLinks &&
           other.currentAvatarImageUrl == currentAvatarImageUrl &&
+          other.currentAvatarTags == currentAvatarTags &&
           other.currentAvatarThumbnailImageUrl ==
               currentAvatarThumbnailImageUrl &&
-          other.currentAvatarTags == currentAvatarTags &&
           other.developerType == developerType &&
           other.displayName == displayName &&
           other.id == id &&
@@ -137,8 +137,8 @@ class LimitedUserSearch {
       bio.hashCode +
       bioLinks.hashCode +
       currentAvatarImageUrl.hashCode +
-      currentAvatarThumbnailImageUrl.hashCode +
       currentAvatarTags.hashCode +
+      currentAvatarThumbnailImageUrl.hashCode +
       developerType.hashCode +
       displayName.hashCode +
       id.hashCode +

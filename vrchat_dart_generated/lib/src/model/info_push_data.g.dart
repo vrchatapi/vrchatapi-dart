@@ -11,6 +11,12 @@ part of 'info_push_data.dart';
 InfoPushData _$InfoPushDataFromJson(Map<String, dynamic> json) =>
     $checkedCreate('InfoPushData', json, ($checkedConvert) {
       final val = InfoPushData(
+        article: $checkedConvert(
+          'article',
+          (v) => v == null
+              ? null
+              : InfoPushDataArticle.fromJson(v as Map<String, dynamic>),
+        ),
         contentList: $checkedConvert(
           'contentList',
           (v) => v == null
@@ -28,18 +34,13 @@ InfoPushData _$InfoPushDataFromJson(Map<String, dynamic> json) =>
         ),
         template: $checkedConvert('template', (v) => v as String?),
         version: $checkedConvert('version', (v) => v as String?),
-        article: $checkedConvert(
-          'article',
-          (v) => v == null
-              ? null
-              : InfoPushDataArticle.fromJson(v as Map<String, dynamic>),
-        ),
       );
       return val;
     });
 
 Map<String, dynamic> _$InfoPushDataToJson(InfoPushData instance) =>
     <String, dynamic>{
+      'article': ?instance.article?.toJson(),
       'contentList': ?instance.contentList?.toJson(),
       'description': ?instance.description,
       'imageUrl': ?instance.imageUrl,
@@ -47,5 +48,4 @@ Map<String, dynamic> _$InfoPushDataToJson(InfoPushData instance) =>
       'onPressed': ?instance.onPressed?.toJson(),
       'template': ?instance.template,
       'version': ?instance.version,
-      'article': ?instance.article?.toJson(),
     };

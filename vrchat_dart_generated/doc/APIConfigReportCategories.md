@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **environment** | [**ReportCategory**](ReportCategory.md) |  | 
 **groupstore** | [**ReportCategory**](ReportCategory.md) |  | 
 **image** | [**ReportCategory**](ReportCategory.md) |  | 
-**text** | [**ReportCategory**](ReportCategory.md) |  | 
 **sticker** | [**ReportCategory**](ReportCategory.md) |  | [optional] 
+**text** | [**ReportCategory**](ReportCategory.md) |  | 
 **warnings** | [**ReportCategory**](ReportCategory.md) |  | 
 **worldimage** | [**ReportCategory**](ReportCategory.md) |  | 
 **worldstore** | [**ReportCategory**](ReportCategory.md) |  | 

@@ -3,8 +3,11 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/inventory_equip_slot.dart';
 import 'package:vrchat_dart_generated/src/model/inventory_metadata.dart';
 import 'package:vrchat_dart_generated/src/model/inventory_item_type.dart';
+import 'package:vrchat_dart_generated/src/model/inventory_default_attributes_value.dart';
+import 'package:vrchat_dart_generated/src/model/inventory_user_attributes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -23,7 +26,13 @@ class InventoryItem {
 
     required this.createdAt,
 
+    required this.defaultAttributes,
+
     required this.description,
+
+    this.equipSlot,
+
+    this.equipSlots,
 
     required this.expiryDate,
 
@@ -56,6 +65,10 @@ class InventoryItem {
     required this.templateUpdatedAt,
 
     required this.updatedAt,
+
+    required this.userAttributes,
+
+    required this.validateUserAttributes,
   });
 
   @JsonKey(name: r'collections', required: true, includeIfNull: false)
@@ -64,8 +77,17 @@ class InventoryItem {
   @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
 
+  @JsonKey(name: r'defaultAttributes', required: true, includeIfNull: false)
+  final Map<String, InventoryDefaultAttributesValue> defaultAttributes;
+
   @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
+
+  @JsonKey(name: r'equipSlot', required: false, includeIfNull: false)
+  final InventoryEquipSlot? equipSlot;
+
+  @JsonKey(name: r'equipSlots', required: false, includeIfNull: false)
+  final List<InventoryEquipSlot>? equipSlots;
 
   @JsonKey(name: r'expiryDate', required: true, includeIfNull: true)
   final DateTime? expiryDate;
@@ -116,13 +138,26 @@ class InventoryItem {
   @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
   final DateTime updatedAt;
 
+  @JsonKey(name: r'userAttributes', required: true, includeIfNull: false)
+  final InventoryUserAttributes userAttributes;
+
+  @JsonKey(
+    name: r'validateUserAttributes',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool validateUserAttributes;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is InventoryItem &&
           other.collections == collections &&
           other.createdAt == createdAt &&
+          other.defaultAttributes == defaultAttributes &&
           other.description == description &&
+          other.equipSlot == equipSlot &&
+          other.equipSlots == equipSlots &&
           other.expiryDate == expiryDate &&
           other.flags == flags &&
           other.holderId == holderId &&
@@ -138,13 +173,18 @@ class InventoryItem {
           other.templateId == templateId &&
           other.templateCreatedAt == templateCreatedAt &&
           other.templateUpdatedAt == templateUpdatedAt &&
-          other.updatedAt == updatedAt;
+          other.updatedAt == updatedAt &&
+          other.userAttributes == userAttributes &&
+          other.validateUserAttributes == validateUserAttributes;
 
   @override
   int get hashCode =>
       collections.hashCode +
       createdAt.hashCode +
+      defaultAttributes.hashCode +
       description.hashCode +
+      equipSlot.hashCode +
+      equipSlots.hashCode +
       (expiryDate == null ? 0 : expiryDate.hashCode) +
       flags.hashCode +
       holderId.hashCode +
@@ -160,7 +200,9 @@ class InventoryItem {
       templateId.hashCode +
       templateCreatedAt.hashCode +
       templateUpdatedAt.hashCode +
-      updatedAt.hashCode;
+      updatedAt.hashCode +
+      userAttributes.hashCode +
+      validateUserAttributes.hashCode;
 
   factory InventoryItem.fromJson(Map<String, dynamic> json) =>
       _$InventoryItemFromJson(json);

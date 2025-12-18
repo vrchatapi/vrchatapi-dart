@@ -36,9 +36,9 @@ class User {
 
     required this.currentAvatarImageUrl,
 
-    required this.currentAvatarThumbnailImageUrl,
-
     required this.currentAvatarTags,
+
+    required this.currentAvatarThumbnailImageUrl,
 
     required this.dateJoined,
 
@@ -121,6 +121,9 @@ class User {
   @JsonKey(name: r'currentAvatarImageUrl', required: true, includeIfNull: false)
   final String currentAvatarImageUrl;
 
+  @JsonKey(name: r'currentAvatarTags', required: true, includeIfNull: false)
+  final List<String> currentAvatarTags;
+
   /// When profilePicOverride is not empty, use it instead.
   @JsonKey(
     name: r'currentAvatarThumbnailImageUrl',
@@ -128,9 +131,6 @@ class User {
     includeIfNull: false,
   )
   final String currentAvatarThumbnailImageUrl;
-
-  @JsonKey(name: r'currentAvatarTags', required: true, includeIfNull: false)
-  final List<String> currentAvatarTags;
 
   @JsonKey(name: r'date_joined', required: true, includeIfNull: false)
   final DateTime dateJoined;
@@ -243,9 +243,9 @@ class User {
           other.bio == bio &&
           other.bioLinks == bioLinks &&
           other.currentAvatarImageUrl == currentAvatarImageUrl &&
+          other.currentAvatarTags == currentAvatarTags &&
           other.currentAvatarThumbnailImageUrl ==
               currentAvatarThumbnailImageUrl &&
-          other.currentAvatarTags == currentAvatarTags &&
           other.dateJoined == dateJoined &&
           other.developerType == developerType &&
           other.displayName == displayName &&
@@ -285,8 +285,8 @@ class User {
       bio.hashCode +
       bioLinks.hashCode +
       currentAvatarImageUrl.hashCode +
-      currentAvatarThumbnailImageUrl.hashCode +
       currentAvatarTags.hashCode +
+      currentAvatarThumbnailImageUrl.hashCode +
       dateJoined.hashCode +
       developerType.hashCode +
       displayName.hashCode +

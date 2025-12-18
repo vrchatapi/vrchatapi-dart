@@ -18,6 +18,7 @@ InventoryItem _$InventoryItemFromJson(Map<String, dynamic> json) =>
           requiredKeys: const [
             'collections',
             'created_at',
+            'defaultAttributes',
             'description',
             'expiryDate',
             'flags',
@@ -35,6 +36,8 @@ InventoryItem _$InventoryItemFromJson(Map<String, dynamic> json) =>
             'template_created_at',
             'template_updated_at',
             'updated_at',
+            'userAttributes',
+            'validateUserAttributes',
           ],
         );
         final val = InventoryItem(
@@ -46,7 +49,28 @@ InventoryItem _$InventoryItemFromJson(Map<String, dynamic> json) =>
             'created_at',
             (v) => DateTime.parse(v as String),
           ),
+          defaultAttributes: $checkedConvert(
+            'defaultAttributes',
+            (v) => (v as Map<String, dynamic>).map(
+              (k, e) => MapEntry(
+                k,
+                InventoryDefaultAttributesValue.fromJson(
+                  e as Map<String, dynamic>,
+                ),
+              ),
+            ),
+          ),
           description: $checkedConvert('description', (v) => v as String),
+          equipSlot: $checkedConvert(
+            'equipSlot',
+            (v) => $enumDecodeNullable(_$InventoryEquipSlotEnumMap, v),
+          ),
+          equipSlots: $checkedConvert(
+            'equipSlots',
+            (v) => (v as List<dynamic>?)
+                ?.map((e) => $enumDecode(_$InventoryEquipSlotEnumMap, e))
+                .toList(),
+          ),
           expiryDate: $checkedConvert(
             'expiryDate',
             (v) => v == null ? null : DateTime.parse(v as String),
@@ -87,6 +111,14 @@ InventoryItem _$InventoryItemFromJson(Map<String, dynamic> json) =>
             'updated_at',
             (v) => DateTime.parse(v as String),
           ),
+          userAttributes: $checkedConvert(
+            'userAttributes',
+            (v) => InventoryUserAttributes.fromJson(v as Map<String, dynamic>),
+          ),
+          validateUserAttributes: $checkedConvert(
+            'validateUserAttributes',
+            (v) => v as bool,
+          ),
         );
         return val;
       },
@@ -102,7 +134,14 @@ Map<String, dynamic> _$InventoryItemToJson(InventoryItem instance) =>
     <String, dynamic>{
       'collections': instance.collections,
       'created_at': instance.createdAt.toIso8601String(),
+      'defaultAttributes': instance.defaultAttributes.map(
+        (k, e) => MapEntry(k, e.toJson()),
+      ),
       'description': instance.description,
+      'equipSlot': ?_$InventoryEquipSlotEnumMap[instance.equipSlot],
+      'equipSlots': ?instance.equipSlots
+          ?.map((e) => _$InventoryEquipSlotEnumMap[e]!)
+          .toList(),
       'expiryDate': instance.expiryDate?.toIso8601String(),
       'flags': instance.flags,
       'holderId': instance.holderId,
@@ -119,11 +158,21 @@ Map<String, dynamic> _$InventoryItemToJson(InventoryItem instance) =>
       'template_created_at': instance.templateCreatedAt.toIso8601String(),
       'template_updated_at': instance.templateUpdatedAt.toIso8601String(),
       'updated_at': instance.updatedAt.toIso8601String(),
+      'userAttributes': instance.userAttributes.toJson(),
+      'validateUserAttributes': instance.validateUserAttributes,
     };
+
+const _$InventoryEquipSlotEnumMap = {
+  InventoryEquipSlot.empty: '',
+  InventoryEquipSlot.drone: 'drone',
+  InventoryEquipSlot.portal: 'portal',
+};
 
 const _$InventoryItemTypeEnumMap = {
   InventoryItemType.bundle: 'bundle',
-  InventoryItemType.prop: 'prop',
+  InventoryItemType.droneskin: 'droneskin',
   InventoryItemType.emoji: 'emoji',
+  InventoryItemType.portalskin: 'portalskin',
+  InventoryItemType.prop: 'prop',
   InventoryItemType.sticker: 'sticker',
 };

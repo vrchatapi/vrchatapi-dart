@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **inviteUserWithPhoto**
-> SentNotification inviteUserWithPhoto(userId, image, data)
+> SentNotification inviteUserWithPhoto(userId, data, image)
 
 Invite User with photo
 
@@ -237,11 +237,11 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getInviteApi();
 final String userId = userId_example; // String | Must be a valid user ID.
-final MultipartFile image = BINARY_DATA_HERE; // MultipartFile | The binary blob of the png file.
 final InviteRequest data = ; // InviteRequest | 
+final MultipartFile image = BINARY_DATA_HERE; // MultipartFile | The binary blob of the png file.
 
 try {
-    final response = api.inviteUserWithPhoto(userId, image, data);
+    final response = api.inviteUserWithPhoto(userId, data, image);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling InviteApi->inviteUserWithPhoto: $e\n');
@@ -253,8 +253,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**| Must be a valid user ID. | 
- **image** | **MultipartFile**| The binary blob of the png file. | 
  **data** | [**InviteRequest**](InviteRequest.md)|  | 
+ **image** | **MultipartFile**| The binary blob of the png file. | 
 
 ### Return type
 
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **requestInviteWithPhoto**
-> Notification requestInviteWithPhoto(userId, image, data)
+> Notification requestInviteWithPhoto(userId, data, image)
 
 Request Invite with photo
 
@@ -337,11 +337,11 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getInviteApi();
 final String userId = userId_example; // String | Must be a valid user ID.
-final MultipartFile image = BINARY_DATA_HERE; // MultipartFile | The binary blob of the png file.
 final RequestInviteRequest data = ; // RequestInviteRequest | 
+final MultipartFile image = BINARY_DATA_HERE; // MultipartFile | The binary blob of the png file.
 
 try {
-    final response = api.requestInviteWithPhoto(userId, image, data);
+    final response = api.requestInviteWithPhoto(userId, data, image);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling InviteApi->requestInviteWithPhoto: $e\n');
@@ -353,8 +353,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**| Must be a valid user ID. | 
- **image** | **MultipartFile**| The binary blob of the png file. | 
  **data** | [**RequestInviteRequest**](RequestInviteRequest.md)|  | 
+ **image** | **MultipartFile**| The binary blob of the png file. | 
 
 ### Return type
 
@@ -472,7 +472,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **respondInviteWithPhoto**
-> Notification respondInviteWithPhoto(notificationId, image, data)
+> Notification respondInviteWithPhoto(notificationId, data, image)
 
 Respond Invite with photo
 
@@ -488,11 +488,11 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getInviteApi();
 final String notificationId = notificationId_example; // String | Must be a valid notification ID.
-final MultipartFile image = BINARY_DATA_HERE; // MultipartFile | The binary blob of the png file.
 final InviteResponse data = ; // InviteResponse | 
+final MultipartFile image = BINARY_DATA_HERE; // MultipartFile | The binary blob of the png file.
 
 try {
-    final response = api.respondInviteWithPhoto(notificationId, image, data);
+    final response = api.respondInviteWithPhoto(notificationId, data, image);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling InviteApi->respondInviteWithPhoto: $e\n');
@@ -504,8 +504,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **notificationId** | **String**| Must be a valid notification ID. | 
- **image** | **MultipartFile**| The binary blob of the png file. | 
  **data** | [**InviteResponse**](InviteResponse.md)|  | 
+ **image** | **MultipartFile**| The binary blob of the png file. | 
 
 ### Return type
 

@@ -23,77 +23,70 @@ part 'group.g.dart';
 class Group {
   /// Returns a new [Group] instance.
   Group({
-    this.ageVerificationSlotsAvailable,
-
     this.ageVerificationBetaCode,
 
     this.ageVerificationBetaSlots,
 
+    this.ageVerificationSlotsAvailable,
+
     this.badges,
-
-    this.id,
-
-    this.name,
-
-    this.shortCode,
-
-    this.discriminator,
-
-    this.description,
-
-    this.iconUrl,
-
-    this.bannerUrl,
-
-    this.privacy,
-
-    this.ownerId,
-
-    this.rules,
-
-    this.links,
-
-    this.languages,
-
-    this.iconId,
 
     this.bannerId,
 
-    this.memberCount,
+    this.bannerUrl,
 
-    this.memberCountSyncedAt,
+    this.createdAt,
+
+    this.description,
+
+    this.discriminator,
+
+    this.galleries,
+
+    this.iconId,
+
+    this.iconUrl,
+
+    this.id,
 
     this.isVerified = false,
 
     this.joinState,
 
-    this.tags,
-
-    this.transferTargetId,
-
-    this.galleries,
-
-    this.createdAt,
-
-    this.updatedAt,
+    this.languages,
 
     this.lastPostCreatedAt,
 
-    this.onlineMemberCount,
+    this.links,
+
+    this.memberCount,
+
+    this.memberCountSyncedAt,
 
     this.membershipStatus,
 
     this.myMember,
 
-    this.roles,
-  });
+    this.name,
 
-  @JsonKey(
-    name: r'ageVerificationSlotsAvailable',
-    required: false,
-    includeIfNull: false,
-  )
-  final bool? ageVerificationSlotsAvailable;
+    this.onlineMemberCount,
+
+    this.ownerId,
+
+    this.privacy,
+
+    this.roles,
+
+    this.rules,
+
+    this.shortCode,
+
+    this.tags,
+
+    this.transferTargetId,
+
+    this.updatedAt,
+  });
 
   @JsonKey(
     name: r'ageVerificationBetaCode',
@@ -109,51 +102,57 @@ class Group {
   )
   final num? ageVerificationBetaSlots;
 
+  @JsonKey(
+    name: r'ageVerificationSlotsAvailable',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? ageVerificationSlotsAvailable;
+
   @JsonKey(name: r'badges', required: false, includeIfNull: false)
   final List<String>? badges;
 
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
-  final String? id;
-
-  @JsonKey(name: r'name', required: false, includeIfNull: false)
-  final String? name;
-
-  @JsonKey(name: r'shortCode', required: false, includeIfNull: false)
-  final String? shortCode;
-
-  @JsonKey(name: r'discriminator', required: false, includeIfNull: false)
-  final String? discriminator;
-
-  @JsonKey(name: r'description', required: false, includeIfNull: false)
-  final String? description;
-
-  @JsonKey(name: r'iconUrl', required: false, includeIfNull: false)
-  final String? iconUrl;
+  @JsonKey(name: r'bannerId', required: false, includeIfNull: false)
+  final String? bannerId;
 
   @JsonKey(name: r'bannerUrl', required: false, includeIfNull: false)
   final String? bannerUrl;
 
-  @JsonKey(name: r'privacy', required: false, includeIfNull: false)
-  final GroupPrivacy? privacy;
+  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  final DateTime? createdAt;
 
-  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(name: r'ownerId', required: false, includeIfNull: false)
-  final String? ownerId;
+  @JsonKey(name: r'description', required: false, includeIfNull: false)
+  final String? description;
 
-  @JsonKey(name: r'rules', required: false, includeIfNull: false)
-  final String? rules;
+  @JsonKey(name: r'discriminator', required: false, includeIfNull: false)
+  final String? discriminator;
 
-  @JsonKey(name: r'links', required: false, includeIfNull: false)
-  final List<String>? links;
-
-  @JsonKey(name: r'languages', required: false, includeIfNull: false)
-  final List<String>? languages;
+  @JsonKey(name: r'galleries', required: false, includeIfNull: false)
+  final List<GroupGallery>? galleries;
 
   @JsonKey(name: r'iconId', required: false, includeIfNull: false)
   final String? iconId;
 
-  @JsonKey(name: r'bannerId', required: false, includeIfNull: false)
-  final String? bannerId;
+  @JsonKey(name: r'iconUrl', required: false, includeIfNull: false)
+  final String? iconUrl;
+
+  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  final String? id;
+
+  @JsonKey(name: r'isVerified', required: false, includeIfNull: false)
+  final bool? isVerified;
+
+  @JsonKey(name: r'joinState', required: false, includeIfNull: false)
+  final GroupJoinState? joinState;
+
+  @JsonKey(name: r'languages', required: false, includeIfNull: false)
+  final List<String>? languages;
+
+  @JsonKey(name: r'lastPostCreatedAt', required: false, includeIfNull: false)
+  final DateTime? lastPostCreatedAt;
+
+  @JsonKey(name: r'links', required: false, includeIfNull: false)
+  final List<String>? links;
 
   @JsonKey(name: r'memberCount', required: false, includeIfNull: false)
   final int? memberCount;
@@ -161,11 +160,34 @@ class Group {
   @JsonKey(name: r'memberCountSyncedAt', required: false, includeIfNull: false)
   final DateTime? memberCountSyncedAt;
 
-  @JsonKey(name: r'isVerified', required: false, includeIfNull: false)
-  final bool? isVerified;
+  @JsonKey(name: r'membershipStatus', required: false, includeIfNull: false)
+  final GroupMemberStatus? membershipStatus;
 
-  @JsonKey(name: r'joinState', required: false, includeIfNull: false)
-  final GroupJoinState? joinState;
+  @JsonKey(name: r'myMember', required: false, includeIfNull: false)
+  final GroupMyMember? myMember;
+
+  @JsonKey(name: r'name', required: false, includeIfNull: false)
+  final String? name;
+
+  @JsonKey(name: r'onlineMemberCount', required: false, includeIfNull: false)
+  final int? onlineMemberCount;
+
+  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
+  @JsonKey(name: r'ownerId', required: false, includeIfNull: false)
+  final String? ownerId;
+
+  @JsonKey(name: r'privacy', required: false, includeIfNull: false)
+  final GroupPrivacy? privacy;
+
+  /// Only returned if ?includeRoles=true is specified.
+  @JsonKey(name: r'roles', required: false, includeIfNull: false)
+  final List<GroupRole>? roles;
+
+  @JsonKey(name: r'rules', required: false, includeIfNull: false)
+  final String? rules;
+
+  @JsonKey(name: r'shortCode', required: false, includeIfNull: false)
+  final String? shortCode;
 
   @JsonKey(name: r'tags', required: false, includeIfNull: false)
   final List<String>? tags;
@@ -174,103 +196,81 @@ class Group {
   @JsonKey(name: r'transferTargetId', required: false, includeIfNull: false)
   final String? transferTargetId;
 
-  @JsonKey(name: r'galleries', required: false, includeIfNull: false)
-  final List<GroupGallery>? galleries;
-
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
-  final DateTime? createdAt;
-
   @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
   final DateTime? updatedAt;
-
-  @JsonKey(name: r'lastPostCreatedAt', required: false, includeIfNull: false)
-  final DateTime? lastPostCreatedAt;
-
-  @JsonKey(name: r'onlineMemberCount', required: false, includeIfNull: false)
-  final int? onlineMemberCount;
-
-  @JsonKey(name: r'membershipStatus', required: false, includeIfNull: false)
-  final GroupMemberStatus? membershipStatus;
-
-  @JsonKey(name: r'myMember', required: false, includeIfNull: false)
-  final GroupMyMember? myMember;
-
-  /// Only returned if ?includeRoles=true is specified.
-  @JsonKey(name: r'roles', required: false, includeIfNull: false)
-  final List<GroupRole>? roles;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Group &&
-          other.ageVerificationSlotsAvailable ==
-              ageVerificationSlotsAvailable &&
           other.ageVerificationBetaCode == ageVerificationBetaCode &&
           other.ageVerificationBetaSlots == ageVerificationBetaSlots &&
+          other.ageVerificationSlotsAvailable ==
+              ageVerificationSlotsAvailable &&
           other.badges == badges &&
-          other.id == id &&
-          other.name == name &&
-          other.shortCode == shortCode &&
-          other.discriminator == discriminator &&
-          other.description == description &&
-          other.iconUrl == iconUrl &&
-          other.bannerUrl == bannerUrl &&
-          other.privacy == privacy &&
-          other.ownerId == ownerId &&
-          other.rules == rules &&
-          other.links == links &&
-          other.languages == languages &&
-          other.iconId == iconId &&
           other.bannerId == bannerId &&
-          other.memberCount == memberCount &&
-          other.memberCountSyncedAt == memberCountSyncedAt &&
+          other.bannerUrl == bannerUrl &&
+          other.createdAt == createdAt &&
+          other.description == description &&
+          other.discriminator == discriminator &&
+          other.galleries == galleries &&
+          other.iconId == iconId &&
+          other.iconUrl == iconUrl &&
+          other.id == id &&
           other.isVerified == isVerified &&
           other.joinState == joinState &&
-          other.tags == tags &&
-          other.transferTargetId == transferTargetId &&
-          other.galleries == galleries &&
-          other.createdAt == createdAt &&
-          other.updatedAt == updatedAt &&
+          other.languages == languages &&
           other.lastPostCreatedAt == lastPostCreatedAt &&
-          other.onlineMemberCount == onlineMemberCount &&
+          other.links == links &&
+          other.memberCount == memberCount &&
+          other.memberCountSyncedAt == memberCountSyncedAt &&
           other.membershipStatus == membershipStatus &&
           other.myMember == myMember &&
-          other.roles == roles;
+          other.name == name &&
+          other.onlineMemberCount == onlineMemberCount &&
+          other.ownerId == ownerId &&
+          other.privacy == privacy &&
+          other.roles == roles &&
+          other.rules == rules &&
+          other.shortCode == shortCode &&
+          other.tags == tags &&
+          other.transferTargetId == transferTargetId &&
+          other.updatedAt == updatedAt;
 
   @override
   int get hashCode =>
-      ageVerificationSlotsAvailable.hashCode +
       ageVerificationBetaCode.hashCode +
       ageVerificationBetaSlots.hashCode +
+      ageVerificationSlotsAvailable.hashCode +
       badges.hashCode +
-      id.hashCode +
-      name.hashCode +
-      shortCode.hashCode +
-      discriminator.hashCode +
-      description.hashCode +
-      (iconUrl == null ? 0 : iconUrl.hashCode) +
-      (bannerUrl == null ? 0 : bannerUrl.hashCode) +
-      privacy.hashCode +
-      ownerId.hashCode +
-      (rules == null ? 0 : rules.hashCode) +
-      links.hashCode +
-      languages.hashCode +
-      (iconId == null ? 0 : iconId.hashCode) +
       (bannerId == null ? 0 : bannerId.hashCode) +
-      memberCount.hashCode +
-      memberCountSyncedAt.hashCode +
+      (bannerUrl == null ? 0 : bannerUrl.hashCode) +
+      createdAt.hashCode +
+      description.hashCode +
+      discriminator.hashCode +
+      galleries.hashCode +
+      (iconId == null ? 0 : iconId.hashCode) +
+      (iconUrl == null ? 0 : iconUrl.hashCode) +
+      id.hashCode +
       isVerified.hashCode +
       joinState.hashCode +
-      tags.hashCode +
-      transferTargetId.hashCode +
-      galleries.hashCode +
-      createdAt.hashCode +
-      updatedAt.hashCode +
+      languages.hashCode +
       (lastPostCreatedAt == null ? 0 : lastPostCreatedAt.hashCode) +
-      onlineMemberCount.hashCode +
+      links.hashCode +
+      memberCount.hashCode +
+      memberCountSyncedAt.hashCode +
       membershipStatus.hashCode +
       myMember.hashCode +
-      (roles == null ? 0 : roles.hashCode);
+      name.hashCode +
+      onlineMemberCount.hashCode +
+      ownerId.hashCode +
+      privacy.hashCode +
+      (roles == null ? 0 : roles.hashCode) +
+      (rules == null ? 0 : rules.hashCode) +
+      shortCode.hashCode +
+      tags.hashCode +
+      transferTargetId.hashCode +
+      updatedAt.hashCode;
 
   factory Group.fromJson(Map<String, dynamic> json) => _$GroupFromJson(json);
 

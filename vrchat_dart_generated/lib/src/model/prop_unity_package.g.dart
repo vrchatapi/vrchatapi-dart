@@ -15,8 +15,8 @@ PropUnityPackage _$PropUnityPackageFromJson(Map<String, dynamic> json) =>
         requiredKeys: const [
           'assetUrl',
           'assetVersion',
-          'propSignature',
           'platform',
+          'propSignature',
           'unityVersion',
           'variant',
         ],
@@ -27,8 +27,8 @@ PropUnityPackage _$PropUnityPackageFromJson(Map<String, dynamic> json) =>
           'assetVersion',
           (v) => (v as num).toInt(),
         ),
-        propSignature: $checkedConvert('propSignature', (v) => v as String),
         platform: $checkedConvert('platform', (v) => v as String),
+        propSignature: $checkedConvert('propSignature', (v) => v as String),
         unityVersion: $checkedConvert(
           'unityVersion',
           (v) => v as String? ?? '2022.3.22f1',
@@ -42,8 +42,8 @@ Map<String, dynamic> _$PropUnityPackageToJson(PropUnityPackage instance) =>
     <String, dynamic>{
       'assetUrl': instance.assetUrl,
       'assetVersion': instance.assetVersion,
-      'propSignature': instance.propSignature,
       'platform': instance.platform,
+      'propSignature': instance.propSignature,
       'unityVersion': instance.unityVersion,
       'variant': instance.variant,
     };

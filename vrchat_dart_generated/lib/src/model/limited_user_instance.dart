@@ -33,9 +33,9 @@ class LimitedUserInstance {
 
     required this.currentAvatarImageUrl,
 
-    required this.currentAvatarThumbnailImageUrl,
-
     required this.currentAvatarTags,
+
+    required this.currentAvatarThumbnailImageUrl,
 
     required this.dateJoined,
 
@@ -47,15 +47,15 @@ class LimitedUserInstance {
 
     required this.id,
 
-    required this.isFriend,
-
     this.imageUrl,
 
-    required this.lastPlatform,
+    required this.isFriend,
 
     required this.lastActivity,
 
     required this.lastMobile,
+
+    required this.lastPlatform,
 
     this.platform,
 
@@ -97,6 +97,9 @@ class LimitedUserInstance {
   @JsonKey(name: r'currentAvatarImageUrl', required: true, includeIfNull: false)
   final String currentAvatarImageUrl;
 
+  @JsonKey(name: r'currentAvatarTags', required: true, includeIfNull: false)
+  final List<String> currentAvatarTags;
+
   /// When profilePicOverride is not empty, use it instead.
   @JsonKey(
     name: r'currentAvatarThumbnailImageUrl',
@@ -104,9 +107,6 @@ class LimitedUserInstance {
     includeIfNull: false,
   )
   final String currentAvatarThumbnailImageUrl;
-
-  @JsonKey(name: r'currentAvatarTags', required: true, includeIfNull: false)
-  final List<String> currentAvatarTags;
 
   @JsonKey(name: r'date_joined', required: true, includeIfNull: true)
   final DateTime? dateJoined;
@@ -124,15 +124,11 @@ class LimitedUserInstance {
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(name: r'isFriend', required: true, includeIfNull: false)
-  final bool isFriend;
-
   @JsonKey(name: r'imageUrl', required: false, includeIfNull: false)
   final String? imageUrl;
 
-  /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
-  @JsonKey(name: r'last_platform', required: true, includeIfNull: false)
-  final String lastPlatform;
+  @JsonKey(name: r'isFriend', required: true, includeIfNull: false)
+  final bool isFriend;
 
   @JsonKey(name: r'last_activity', required: true, includeIfNull: true)
   final DateTime? lastActivity;
@@ -140,6 +136,11 @@ class LimitedUserInstance {
   @JsonKey(name: r'last_mobile', required: true, includeIfNull: true)
   final DateTime? lastMobile;
 
+  /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
+  @JsonKey(name: r'last_platform', required: true, includeIfNull: false)
+  final String lastPlatform;
+
+  /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
   @JsonKey(name: r'platform', required: false, includeIfNull: false)
   final String? platform;
 
@@ -181,19 +182,19 @@ class LimitedUserInstance {
           other.bio == bio &&
           other.bioLinks == bioLinks &&
           other.currentAvatarImageUrl == currentAvatarImageUrl &&
+          other.currentAvatarTags == currentAvatarTags &&
           other.currentAvatarThumbnailImageUrl ==
               currentAvatarThumbnailImageUrl &&
-          other.currentAvatarTags == currentAvatarTags &&
           other.dateJoined == dateJoined &&
           other.developerType == developerType &&
           other.displayName == displayName &&
           other.friendKey == friendKey &&
           other.id == id &&
-          other.isFriend == isFriend &&
           other.imageUrl == imageUrl &&
-          other.lastPlatform == lastPlatform &&
+          other.isFriend == isFriend &&
           other.lastActivity == lastActivity &&
           other.lastMobile == lastMobile &&
+          other.lastPlatform == lastPlatform &&
           other.platform == platform &&
           other.profilePicOverride == profilePicOverride &&
           other.profilePicOverrideThumbnail == profilePicOverrideThumbnail &&
@@ -212,18 +213,18 @@ class LimitedUserInstance {
       bio.hashCode +
       bioLinks.hashCode +
       currentAvatarImageUrl.hashCode +
-      currentAvatarThumbnailImageUrl.hashCode +
       currentAvatarTags.hashCode +
+      currentAvatarThumbnailImageUrl.hashCode +
       (dateJoined == null ? 0 : dateJoined.hashCode) +
       developerType.hashCode +
       displayName.hashCode +
       friendKey.hashCode +
       id.hashCode +
-      isFriend.hashCode +
       imageUrl.hashCode +
-      lastPlatform.hashCode +
+      isFriend.hashCode +
       (lastActivity == null ? 0 : lastActivity.hashCode) +
       (lastMobile == null ? 0 : lastMobile.hashCode) +
+      lastPlatform.hashCode +
       platform.hashCode +
       profilePicOverride.hashCode +
       profilePicOverrideThumbnail.hashCode +

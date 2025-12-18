@@ -22,9 +22,9 @@ class GroupInstance {
 
     required this.location,
 
-    required this.world,
-
     required this.memberCount,
+
+    required this.world,
   });
 
   /// InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
@@ -35,12 +35,12 @@ class GroupInstance {
   @JsonKey(name: r'location', required: true, includeIfNull: false)
   final String location;
 
-  @JsonKey(name: r'world', required: true, includeIfNull: false)
-  final World world;
-
   // minimum: 0
   @JsonKey(name: r'memberCount', required: true, includeIfNull: false)
   final int memberCount;
+
+  @JsonKey(name: r'world', required: true, includeIfNull: false)
+  final World world;
 
   @override
   bool operator ==(Object other) =>
@@ -48,15 +48,15 @@ class GroupInstance {
       other is GroupInstance &&
           other.instanceId == instanceId &&
           other.location == location &&
-          other.world == world &&
-          other.memberCount == memberCount;
+          other.memberCount == memberCount &&
+          other.world == world;
 
   @override
   int get hashCode =>
       instanceId.hashCode +
       location.hashCode +
-      world.hashCode +
-      memberCount.hashCode;
+      memberCount.hashCode +
+      world.hashCode;
 
   factory GroupInstance.fromJson(Map<String, dynamic> json) =>
       _$GroupInstanceFromJson(json);

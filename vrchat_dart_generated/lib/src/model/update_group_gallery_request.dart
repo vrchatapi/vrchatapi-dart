@@ -17,24 +17,20 @@ part 'update_group_gallery_request.g.dart';
 class UpdateGroupGalleryRequest {
   /// Returns a new [UpdateGroupGalleryRequest] instance.
   UpdateGroupGalleryRequest({
-    this.name,
-
     this.description,
 
     this.membersOnly = false,
 
-    this.roleIdsToView,
-
-    this.roleIdsToSubmit,
+    this.name,
 
     this.roleIdsToAutoApprove,
 
     this.roleIdsToManage,
-  });
 
-  /// Name of the gallery.
-  @JsonKey(name: r'name', required: false, includeIfNull: false)
-  final String? name;
+    this.roleIdsToSubmit,
+
+    this.roleIdsToView,
+  });
 
   /// Description of the gallery.
   @JsonKey(name: r'description', required: false, includeIfNull: false)
@@ -44,13 +40,9 @@ class UpdateGroupGalleryRequest {
   @JsonKey(name: r'membersOnly', required: false, includeIfNull: false)
   final bool? membersOnly;
 
-  ///
-  @JsonKey(name: r'roleIdsToView', required: false, includeIfNull: false)
-  final List<String>? roleIdsToView;
-
-  ///
-  @JsonKey(name: r'roleIdsToSubmit', required: false, includeIfNull: false)
-  final List<String>? roleIdsToSubmit;
+  /// Name of the gallery.
+  @JsonKey(name: r'name', required: false, includeIfNull: false)
+  final String? name;
 
   ///
   @JsonKey(name: r'roleIdsToAutoApprove', required: false, includeIfNull: false)
@@ -60,27 +52,35 @@ class UpdateGroupGalleryRequest {
   @JsonKey(name: r'roleIdsToManage', required: false, includeIfNull: false)
   final List<String>? roleIdsToManage;
 
+  ///
+  @JsonKey(name: r'roleIdsToSubmit', required: false, includeIfNull: false)
+  final List<String>? roleIdsToSubmit;
+
+  ///
+  @JsonKey(name: r'roleIdsToView', required: false, includeIfNull: false)
+  final List<String>? roleIdsToView;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is UpdateGroupGalleryRequest &&
-          other.name == name &&
           other.description == description &&
           other.membersOnly == membersOnly &&
-          other.roleIdsToView == roleIdsToView &&
-          other.roleIdsToSubmit == roleIdsToSubmit &&
+          other.name == name &&
           other.roleIdsToAutoApprove == roleIdsToAutoApprove &&
-          other.roleIdsToManage == roleIdsToManage;
+          other.roleIdsToManage == roleIdsToManage &&
+          other.roleIdsToSubmit == roleIdsToSubmit &&
+          other.roleIdsToView == roleIdsToView;
 
   @override
   int get hashCode =>
-      name.hashCode +
       description.hashCode +
       membersOnly.hashCode +
-      (roleIdsToView == null ? 0 : roleIdsToView.hashCode) +
-      (roleIdsToSubmit == null ? 0 : roleIdsToSubmit.hashCode) +
+      name.hashCode +
       (roleIdsToAutoApprove == null ? 0 : roleIdsToAutoApprove.hashCode) +
-      (roleIdsToManage == null ? 0 : roleIdsToManage.hashCode);
+      (roleIdsToManage == null ? 0 : roleIdsToManage.hashCode) +
+      (roleIdsToSubmit == null ? 0 : roleIdsToSubmit.hashCode) +
+      (roleIdsToView == null ? 0 : roleIdsToView.hashCode);
 
   factory UpdateGroupGalleryRequest.fromJson(Map<String, dynamic> json) =>
       _$UpdateGroupGalleryRequestFromJson(json);

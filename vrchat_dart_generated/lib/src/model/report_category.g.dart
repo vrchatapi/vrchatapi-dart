@@ -13,8 +13,8 @@ ReportCategory _$ReportCategoryFromJson(Map<String, dynamic> json) =>
       $checkKeys(json, requiredKeys: const ['text', 'tooltip']);
       final val = ReportCategory(
         description: $checkedConvert('description', (v) => v as String?),
-        title: $checkedConvert('title', (v) => v as String?),
         text: $checkedConvert('text', (v) => v as String),
+        title: $checkedConvert('title', (v) => v as String?),
         tooltip: $checkedConvert('tooltip', (v) => v as String),
       );
       return val;
@@ -23,7 +23,7 @@ ReportCategory _$ReportCategoryFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$ReportCategoryToJson(ReportCategory instance) =>
     <String, dynamic>{
       'description': ?instance.description,
-      'title': ?instance.title,
       'text': instance.text,
+      'title': ?instance.title,
       'tooltip': instance.tooltip,
     };

@@ -35,7 +35,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFavoritesApi();
-final AddFavoriteRequest addFavoriteRequest = {"type":"friend","favoriteId":"usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469","tags":["group_0"]}; // AddFavoriteRequest | 
+final AddFavoriteRequest addFavoriteRequest = {"type":"avatar","favoriteId":"avtr_912d66a4-4714-43b8-8407-7de2cafbf55b","tags":["avatars1"]}; // AddFavoriteRequest | 
 
 try {
     final response = api.addFavorite(addFavoriteRequest);

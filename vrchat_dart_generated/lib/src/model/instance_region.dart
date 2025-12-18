@@ -8,14 +8,6 @@ import 'package:json_annotation/json_annotation.dart';
 /// Instance region
 enum InstanceRegion {
   /// Instance region
-  @JsonValue(r'us')
-  us(r'us'),
-
-  /// Instance region
-  @JsonValue(r'use')
-  use(r'use'),
-
-  /// Instance region
   @JsonValue(r'eu')
   eu(r'eu'),
 
@@ -25,7 +17,15 @@ enum InstanceRegion {
 
   /// Instance region
   @JsonValue(r'unknown')
-  unknown(r'unknown');
+  unknown(r'unknown'),
+
+  /// Instance region
+  @JsonValue(r'us')
+  us(r'us'),
+
+  /// Instance region
+  @JsonValue(r'use')
+  use(r'use');
 
   const InstanceRegion(this.value);
 

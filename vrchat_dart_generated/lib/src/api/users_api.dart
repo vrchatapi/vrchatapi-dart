@@ -618,6 +618,102 @@ class UsersApi {
     );
   }
 
+  /// Get User Group Instances for a specific Group
+  /// Returns a list of a group&#39;s instances for a user
+  ///
+  /// Parameters:
+  /// * [userId] - Must be a valid user ID.
+  /// * [groupId] - Must be a valid group ID.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [GetUserGroupInstances200Response] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<GetUserGroupInstances200Response>>
+  getUserGroupInstancesForGroup({
+    required String userId,
+    required String groupId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/users/{userId}/instances/groups/{groupId}'
+        .replaceAll(
+          '{'
+          r'userId'
+          '}',
+          userId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'groupId'
+          '}',
+          groupId.toString(),
+        );
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    GetUserGroupInstances200Response? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<
+              GetUserGroupInstances200Response,
+              GetUserGroupInstances200Response
+            >(rawData, 'GetUserGroupInstances200Response', growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<GetUserGroupInstances200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// Get User Group Requests
   /// Returns a list of Groups the user has requested to be invited into.
   ///

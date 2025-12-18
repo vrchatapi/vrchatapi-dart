@@ -17,10 +17,7 @@ part 'info_push_data_article_content.g.dart';
 )
 class InfoPushDataArticleContent {
   /// Returns a new [InfoPushDataArticleContent] instance.
-  InfoPushDataArticleContent({this.text, this.imageUrl, this.onPressed});
-
-  @JsonKey(name: r'text', required: false, includeIfNull: false)
-  final String? text;
+  InfoPushDataArticleContent({this.imageUrl, this.onPressed, this.text});
 
   @JsonKey(name: r'imageUrl', required: false, includeIfNull: false)
   final String? imageUrl;
@@ -28,16 +25,19 @@ class InfoPushDataArticleContent {
   @JsonKey(name: r'onPressed', required: false, includeIfNull: false)
   final InfoPushDataClickable? onPressed;
 
+  @JsonKey(name: r'text', required: false, includeIfNull: false)
+  final String? text;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is InfoPushDataArticleContent &&
-          other.text == text &&
           other.imageUrl == imageUrl &&
-          other.onPressed == onPressed;
+          other.onPressed == onPressed &&
+          other.text == text;
 
   @override
-  int get hashCode => text.hashCode + imageUrl.hashCode + onPressed.hashCode;
+  int get hashCode => imageUrl.hashCode + onPressed.hashCode + text.hashCode;
 
   factory InfoPushDataArticleContent.fromJson(Map<String, dynamic> json) =>
       _$InfoPushDataArticleContentFromJson(json);

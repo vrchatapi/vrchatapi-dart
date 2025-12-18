@@ -8,16 +8,16 @@ import 'package:json_annotation/json_annotation.dart';
 /// Group access type when the instance type is \"group\"
 enum GroupAccessType {
   /// Group access type when the instance type is \"group\"
-  @JsonValue(r'public')
-  public(r'public'),
+  @JsonValue(r'members')
+  members(r'members'),
 
   /// Group access type when the instance type is \"group\"
   @JsonValue(r'plus')
   plus(r'plus'),
 
   /// Group access type when the instance type is \"group\"
-  @JsonValue(r'members')
-  members(r'members');
+  @JsonValue(r'public')
+  public(r'public');
 
   const GroupAccessType(this.value);
 

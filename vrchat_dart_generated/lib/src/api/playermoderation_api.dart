@@ -100,7 +100,6 @@ class PlayermoderationApi {
   ///
   /// Parameters:
   /// * [type] - Must be one of PlayerModerationType.
-  /// * [sourceUserId] - Must be valid UserID. Trying to view someone else's moderations results with \"Can't view someone else's player moderations\" error.
   /// * [targetUserId] - Must be valid UserID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -113,7 +112,6 @@ class PlayermoderationApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<PlayerModeration>>> getPlayerModerations({
     PlayerModerationType? type,
-    String? sourceUserId,
     String? targetUserId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -142,7 +140,6 @@ class PlayermoderationApi {
 
     final _queryParameters = <String, dynamic>{
       if (type != null) r'type': type,
-      if (sourceUserId != null) r'sourceUserId': sourceUserId,
       if (targetUserId != null) r'targetUserId': targetUserId,
     };
 

@@ -11,17 +11,17 @@ part of 'finish_file_data_upload_request.dart';
 FinishFileDataUploadRequest _$FinishFileDataUploadRequestFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('FinishFileDataUploadRequest', json, ($checkedConvert) {
-  $checkKeys(json, requiredKeys: const ['nextPartNumber', 'maxParts']);
+  $checkKeys(json, requiredKeys: const ['maxParts', 'nextPartNumber']);
   final val = FinishFileDataUploadRequest(
     etags: $checkedConvert(
       'etags',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toSet(),
     ),
+    maxParts: $checkedConvert('maxParts', (v) => v as String? ?? '0'),
     nextPartNumber: $checkedConvert(
       'nextPartNumber',
       (v) => v as String? ?? '0',
     ),
-    maxParts: $checkedConvert('maxParts', (v) => v as String? ?? '0'),
   );
   return val;
 });
@@ -30,6 +30,6 @@ Map<String, dynamic> _$FinishFileDataUploadRequestToJson(
   FinishFileDataUploadRequest instance,
 ) => <String, dynamic>{
   'etags': ?instance.etags?.toList(),
-  'nextPartNumber': instance.nextPartNumber,
   'maxParts': instance.maxParts,
+  'nextPartNumber': instance.nextPartNumber,
 };

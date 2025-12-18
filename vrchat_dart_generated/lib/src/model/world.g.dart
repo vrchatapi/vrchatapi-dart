@@ -18,7 +18,6 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
         'authorId',
         'authorName',
         'capacity',
-        'recommendedCapacity',
         'created_at',
         'description',
         'featured',
@@ -30,6 +29,7 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
         'organization',
         'popularity',
         'publicationDate',
+        'recommendedCapacity',
         'releaseStatus',
         'tags',
         'thumbnailImageUrl',
@@ -42,10 +42,6 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
       authorId: $checkedConvert('authorId', (v) => v as String),
       authorName: $checkedConvert('authorName', (v) => v as String),
       capacity: $checkedConvert('capacity', (v) => (v as num).toInt()),
-      recommendedCapacity: $checkedConvert(
-        'recommendedCapacity',
-        (v) => (v as num).toInt(),
-      ),
       createdAt: $checkedConvert(
         'created_at',
         (v) => DateTime.parse(v as String),
@@ -96,6 +92,10 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => (v as num?)?.toInt() ?? 0,
       ),
       publicationDate: $checkedConvert('publicationDate', (v) => v as String),
+      recommendedCapacity: $checkedConvert(
+        'recommendedCapacity',
+        (v) => (v as num).toInt(),
+      ),
       releaseStatus: $checkedConvert(
         'releaseStatus',
         (v) => $enumDecode(_$ReleaseStatusEnumMap, v),
@@ -108,6 +108,10 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
       thumbnailImageUrl: $checkedConvert(
         'thumbnailImageUrl',
         (v) => v as String,
+      ),
+      udonProducts: $checkedConvert(
+        'udonProducts',
+        (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
       ),
       unityPackages: $checkedConvert(
         'unityPackages',
@@ -125,10 +129,6 @@ World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
       ),
       version: $checkedConvert('version', (v) => (v as num?)?.toInt() ?? 0),
       visits: $checkedConvert('visits', (v) => (v as num?)?.toInt() ?? 0),
-      udonProducts: $checkedConvert(
-        'udonProducts',
-        (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-      ),
     );
     return val;
   },
@@ -139,7 +139,6 @@ Map<String, dynamic> _$WorldToJson(World instance) => <String, dynamic>{
   'authorId': instance.authorId,
   'authorName': instance.authorName,
   'capacity': instance.capacity,
-  'recommendedCapacity': instance.recommendedCapacity,
   'created_at': instance.createdAt.toIso8601String(),
   'defaultContentSettings': ?instance.defaultContentSettings?.toJson(),
   'description': instance.description,
@@ -159,21 +158,22 @@ Map<String, dynamic> _$WorldToJson(World instance) => <String, dynamic>{
   'privateOccupants': ?instance.privateOccupants,
   'publicOccupants': ?instance.publicOccupants,
   'publicationDate': instance.publicationDate,
+  'recommendedCapacity': instance.recommendedCapacity,
   'releaseStatus': _$ReleaseStatusEnumMap[instance.releaseStatus]!,
   'storeId': ?instance.storeId,
   'tags': instance.tags,
   'thumbnailImageUrl': instance.thumbnailImageUrl,
+  'udonProducts': ?instance.udonProducts,
   'unityPackages': ?instance.unityPackages?.map((e) => e.toJson()).toList(),
   'updated_at': instance.updatedAt.toIso8601String(),
   'urlList': ?instance.urlList,
   'version': instance.version,
   'visits': instance.visits,
-  'udonProducts': ?instance.udonProducts,
 };
 
 const _$ReleaseStatusEnumMap = {
-  ReleaseStatus.public: 'public',
-  ReleaseStatus.private: 'private',
-  ReleaseStatus.hidden: 'hidden',
   ReleaseStatus.all: 'all',
+  ReleaseStatus.hidden: 'hidden',
+  ReleaseStatus.private: 'private',
+  ReleaseStatus.public: 'public',
 };

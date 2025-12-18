@@ -17,50 +17,52 @@ part 'update_calendar_event_request.g.dart';
 class UpdateCalendarEventRequest {
   /// Returns a new [UpdateCalendarEventRequest] instance.
   UpdateCalendarEventRequest({
-    this.title,
+    this.category,
 
-    this.startsAt,
+    this.closeInstanceAfterEndMinutes,
 
     this.description,
 
     this.endsAt,
 
-    this.category,
+    this.featured,
 
-    this.tags,
+    this.guestEarlyJoinMinutes,
 
-    this.isDraft,
+    this.hostEarlyJoinMinutes,
 
     this.imageId,
 
-    this.roleIds,
+    this.isDraft,
+
+    this.languages,
 
     this.parentId,
 
     this.platforms,
 
-    this.languages,
+    this.roleIds,
 
     this.sendCreationNotification = false,
 
-    this.featured,
+    this.startsAt,
 
-    this.hostEarlyJoinMinutes,
+    this.tags,
 
-    this.guestEarlyJoinMinutes,
-
-    this.closeInstanceAfterEndMinutes,
+    this.title,
 
     this.usesInstanceOverflow,
   });
 
-  /// Event title
-  @JsonKey(name: r'title', required: false, includeIfNull: false)
-  final String? title;
+  @JsonKey(name: r'category', required: false, includeIfNull: false)
+  final String? category;
 
-  /// Time the vent starts at
-  @JsonKey(name: r'startsAt', required: false, includeIfNull: false)
-  final DateTime? startsAt;
+  @JsonKey(
+    name: r'closeInstanceAfterEndMinutes',
+    required: false,
+    includeIfNull: false,
+  )
+  final int? closeInstanceAfterEndMinutes;
 
   @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;
@@ -69,20 +71,27 @@ class UpdateCalendarEventRequest {
   @JsonKey(name: r'endsAt', required: false, includeIfNull: false)
   final DateTime? endsAt;
 
-  @JsonKey(name: r'category', required: false, includeIfNull: false)
-  final String? category;
+  @JsonKey(name: r'featured', required: false, includeIfNull: false)
+  final bool? featured;
 
-  @JsonKey(name: r'tags', required: false, includeIfNull: false)
-  final List<String>? tags;
+  @JsonKey(
+    name: r'guestEarlyJoinMinutes',
+    required: false,
+    includeIfNull: false,
+  )
+  final int? guestEarlyJoinMinutes;
 
-  @JsonKey(name: r'isDraft', required: false, includeIfNull: false)
-  final bool? isDraft;
+  @JsonKey(name: r'hostEarlyJoinMinutes', required: false, includeIfNull: false)
+  final int? hostEarlyJoinMinutes;
 
   @JsonKey(name: r'imageId', required: false, includeIfNull: false)
   final String? imageId;
 
-  @JsonKey(name: r'roleIds', required: false, includeIfNull: false)
-  final List<String>? roleIds;
+  @JsonKey(name: r'isDraft', required: false, includeIfNull: false)
+  final bool? isDraft;
+
+  @JsonKey(name: r'languages', required: false, includeIfNull: false)
+  final List<String>? languages;
 
   @JsonKey(name: r'parentId', required: false, includeIfNull: false)
   final String? parentId;
@@ -90,8 +99,8 @@ class UpdateCalendarEventRequest {
   @JsonKey(name: r'platforms', required: false, includeIfNull: false)
   final List<String>? platforms;
 
-  @JsonKey(name: r'languages', required: false, includeIfNull: false)
-  final List<String>? languages;
+  @JsonKey(name: r'roleIds', required: false, includeIfNull: false)
+  final List<String>? roleIds;
 
   /// Send notification to group members.
   @JsonKey(
@@ -101,25 +110,16 @@ class UpdateCalendarEventRequest {
   )
   final bool? sendCreationNotification;
 
-  @JsonKey(name: r'featured', required: false, includeIfNull: false)
-  final bool? featured;
+  /// Time the vent starts at
+  @JsonKey(name: r'startsAt', required: false, includeIfNull: false)
+  final DateTime? startsAt;
 
-  @JsonKey(name: r'hostEarlyJoinMinutes', required: false, includeIfNull: false)
-  final int? hostEarlyJoinMinutes;
+  @JsonKey(name: r'tags', required: false, includeIfNull: false)
+  final List<String>? tags;
 
-  @JsonKey(
-    name: r'guestEarlyJoinMinutes',
-    required: false,
-    includeIfNull: false,
-  )
-  final int? guestEarlyJoinMinutes;
-
-  @JsonKey(
-    name: r'closeInstanceAfterEndMinutes',
-    required: false,
-    includeIfNull: false,
-  )
-  final int? closeInstanceAfterEndMinutes;
+  /// Event title
+  @JsonKey(name: r'title', required: false, includeIfNull: false)
+  final String? title;
 
   @JsonKey(name: r'usesInstanceOverflow', required: false, includeIfNull: false)
   final bool? usesInstanceOverflow;
@@ -128,44 +128,44 @@ class UpdateCalendarEventRequest {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is UpdateCalendarEventRequest &&
-          other.title == title &&
-          other.startsAt == startsAt &&
+          other.category == category &&
+          other.closeInstanceAfterEndMinutes == closeInstanceAfterEndMinutes &&
           other.description == description &&
           other.endsAt == endsAt &&
-          other.category == category &&
-          other.tags == tags &&
-          other.isDraft == isDraft &&
+          other.featured == featured &&
+          other.guestEarlyJoinMinutes == guestEarlyJoinMinutes &&
+          other.hostEarlyJoinMinutes == hostEarlyJoinMinutes &&
           other.imageId == imageId &&
-          other.roleIds == roleIds &&
+          other.isDraft == isDraft &&
+          other.languages == languages &&
           other.parentId == parentId &&
           other.platforms == platforms &&
-          other.languages == languages &&
+          other.roleIds == roleIds &&
           other.sendCreationNotification == sendCreationNotification &&
-          other.featured == featured &&
-          other.hostEarlyJoinMinutes == hostEarlyJoinMinutes &&
-          other.guestEarlyJoinMinutes == guestEarlyJoinMinutes &&
-          other.closeInstanceAfterEndMinutes == closeInstanceAfterEndMinutes &&
+          other.startsAt == startsAt &&
+          other.tags == tags &&
+          other.title == title &&
           other.usesInstanceOverflow == usesInstanceOverflow;
 
   @override
   int get hashCode =>
-      title.hashCode +
-      startsAt.hashCode +
+      category.hashCode +
+      closeInstanceAfterEndMinutes.hashCode +
       description.hashCode +
       endsAt.hashCode +
-      category.hashCode +
-      tags.hashCode +
-      isDraft.hashCode +
+      featured.hashCode +
+      guestEarlyJoinMinutes.hashCode +
+      hostEarlyJoinMinutes.hashCode +
       imageId.hashCode +
-      roleIds.hashCode +
+      isDraft.hashCode +
+      languages.hashCode +
       parentId.hashCode +
       platforms.hashCode +
-      languages.hashCode +
+      roleIds.hashCode +
       sendCreationNotification.hashCode +
-      featured.hashCode +
-      hostEarlyJoinMinutes.hashCode +
-      guestEarlyJoinMinutes.hashCode +
-      closeInstanceAfterEndMinutes.hashCode +
+      startsAt.hashCode +
+      tags.hashCode +
+      title.hashCode +
       usesInstanceOverflow.hashCode;
 
   factory UpdateCalendarEventRequest.fromJson(Map<String, dynamic> json) =>

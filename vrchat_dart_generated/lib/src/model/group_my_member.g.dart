@@ -11,26 +11,26 @@ part of 'group_my_member.dart';
 GroupMyMember _$GroupMyMemberFromJson(Map<String, dynamic> json) =>
     $checkedCreate('GroupMyMember', json, ($checkedConvert) {
       final val = GroupMyMember(
-        id: $checkedConvert('id', (v) => v as String?),
-        groupId: $checkedConvert('groupId', (v) => v as String?),
-        userId: $checkedConvert('userId', (v) => v as String?),
-        roleIds: $checkedConvert(
-          'roleIds',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-        ),
         acceptedByDisplayName: $checkedConvert(
           'acceptedByDisplayName',
           (v) => v as String?,
         ),
         acceptedById: $checkedConvert('acceptedById', (v) => v as String?),
+        bannedAt: $checkedConvert('bannedAt', (v) => v as String?),
         createdAt: $checkedConvert(
           'createdAt',
           (v) => v == null ? null : DateTime.parse(v as String),
         ),
-        managerNotes: $checkedConvert('managerNotes', (v) => v as String?),
-        membershipStatus: $checkedConvert(
-          'membershipStatus',
-          (v) => v as String?,
+        groupId: $checkedConvert('groupId', (v) => v as String?),
+        has2FA: $checkedConvert('has2FA', (v) => v as bool? ?? false),
+        hasJoinedFromPurchase: $checkedConvert(
+          'hasJoinedFromPurchase',
+          (v) => v as bool? ?? false,
+        ),
+        id: $checkedConvert('id', (v) => v as String?),
+        isRepresenting: $checkedConvert(
+          'isRepresenting',
+          (v) => v as bool? ?? false,
         ),
         isSubscribedToAnnouncements: $checkedConvert(
           'isSubscribedToAnnouncements',
@@ -40,20 +40,9 @@ GroupMyMember _$GroupMyMemberFromJson(Map<String, dynamic> json) =>
           'isSubscribedToEventAnnouncements',
           (v) => v as bool?,
         ),
-        visibility: $checkedConvert('visibility', (v) => v as String?),
-        isRepresenting: $checkedConvert(
-          'isRepresenting',
-          (v) => v as bool? ?? false,
-        ),
         joinedAt: $checkedConvert(
           'joinedAt',
           (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        bannedAt: $checkedConvert('bannedAt', (v) => v as String?),
-        has2FA: $checkedConvert('has2FA', (v) => v as bool? ?? false),
-        hasJoinedFromPurchase: $checkedConvert(
-          'hasJoinedFromPurchase',
-          (v) => v as bool? ?? false,
         ),
         lastPostReadAt: $checkedConvert(
           'lastPostReadAt',
@@ -63,41 +52,52 @@ GroupMyMember _$GroupMyMemberFromJson(Map<String, dynamic> json) =>
           'mRoleIds',
           (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
         ),
+        managerNotes: $checkedConvert('managerNotes', (v) => v as String?),
+        membershipStatus: $checkedConvert(
+          'membershipStatus',
+          (v) => v as String?,
+        ),
         permissions: $checkedConvert(
           'permissions',
           (v) => (v as List<dynamic>?)
               ?.map((e) => $enumDecode(_$GroupPermissionsEnumMap, e))
               .toList(),
         ),
+        roleIds: $checkedConvert(
+          'roleIds',
+          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+        ),
+        userId: $checkedConvert('userId', (v) => v as String?),
+        visibility: $checkedConvert('visibility', (v) => v as String?),
       );
       return val;
     });
 
 Map<String, dynamic> _$GroupMyMemberToJson(GroupMyMember instance) =>
     <String, dynamic>{
-      'id': ?instance.id,
-      'groupId': ?instance.groupId,
-      'userId': ?instance.userId,
-      'roleIds': ?instance.roleIds,
       'acceptedByDisplayName': ?instance.acceptedByDisplayName,
       'acceptedById': ?instance.acceptedById,
+      'bannedAt': ?instance.bannedAt,
       'createdAt': ?instance.createdAt?.toIso8601String(),
-      'managerNotes': ?instance.managerNotes,
-      'membershipStatus': ?instance.membershipStatus,
+      'groupId': ?instance.groupId,
+      'has2FA': ?instance.has2FA,
+      'hasJoinedFromPurchase': ?instance.hasJoinedFromPurchase,
+      'id': ?instance.id,
+      'isRepresenting': ?instance.isRepresenting,
       'isSubscribedToAnnouncements': ?instance.isSubscribedToAnnouncements,
       'isSubscribedToEventAnnouncements':
           ?instance.isSubscribedToEventAnnouncements,
-      'visibility': ?instance.visibility,
-      'isRepresenting': ?instance.isRepresenting,
       'joinedAt': ?instance.joinedAt?.toIso8601String(),
-      'bannedAt': ?instance.bannedAt,
-      'has2FA': ?instance.has2FA,
-      'hasJoinedFromPurchase': ?instance.hasJoinedFromPurchase,
       'lastPostReadAt': ?instance.lastPostReadAt?.toIso8601String(),
       'mRoleIds': ?instance.mRoleIds,
+      'managerNotes': ?instance.managerNotes,
+      'membershipStatus': ?instance.membershipStatus,
       'permissions': ?instance.permissions
           ?.map((e) => _$GroupPermissionsEnumMap[e]!)
           .toList(),
+      'roleIds': ?instance.roleIds,
+      'userId': ?instance.userId,
+      'visibility': ?instance.visibility,
     };
 
 const _$GroupPermissionsEnumMap = {
@@ -105,11 +105,13 @@ const _$GroupPermissionsEnumMap = {
   GroupPermissions.group_announcement_manage: 'group-announcement-manage',
   GroupPermissions.group_audit_view: 'group-audit-view',
   GroupPermissions.group_bans_manage: 'group-bans-manage',
+  GroupPermissions.group_calendar_manage: 'group-calendar-manage',
   GroupPermissions.group_data_manage: 'group-data-manage',
   GroupPermissions.group_default_role_manage: 'group-default-role-manage',
   GroupPermissions.group_galleries_manage: 'group-galleries-manage',
   GroupPermissions.group_instance_age_gated_create:
       'group-instance-age-gated-create',
+  GroupPermissions.group_instance_calendar_link: 'group-instance-calendar-link',
   GroupPermissions.group_instance_join: 'group-instance-join',
   GroupPermissions.group_instance_manage: 'group-instance-manage',
   GroupPermissions.group_instance_moderate: 'group-instance-moderate',
@@ -129,6 +131,4 @@ const _$GroupPermissionsEnumMap = {
   GroupPermissions.group_members_viewall: 'group-members-viewall',
   GroupPermissions.group_roles_assign: 'group-roles-assign',
   GroupPermissions.group_roles_manage: 'group-roles-manage',
-  GroupPermissions.group_calendar_manage: 'group-calendar-manage',
-  GroupPermissions.group_instance_calendar_link: 'group-instance-calendar-link',
 };

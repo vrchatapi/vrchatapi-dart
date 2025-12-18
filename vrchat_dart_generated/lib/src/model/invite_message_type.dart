@@ -12,16 +12,16 @@ enum InviteMessageType {
   message(r'message'),
 
   ///
-  @JsonValue(r'response')
-  response(r'response'),
-
-  ///
   @JsonValue(r'request')
   request(r'request'),
 
   ///
   @JsonValue(r'requestResponse')
-  requestResponse(r'requestResponse');
+  requestResponse(r'requestResponse'),
+
+  ///
+  @JsonValue(r'response')
+  response(r'response');
 
   const InviteMessageType(this.value);
 

@@ -26,21 +26,8 @@ Store _$StoreFromJson(Map<String, dynamic> json) =>
       final val = Store(
         description: $checkedConvert('description', (v) => v as String),
         displayName: $checkedConvert('displayName', (v) => v as String),
+        groupId: $checkedConvert('groupId', (v) => v as String?),
         id: $checkedConvert('id', (v) => v as String),
-        sellerDisplayName: $checkedConvert(
-          'sellerDisplayName',
-          (v) => v as String,
-        ),
-        sellerId: $checkedConvert('sellerId', (v) => v as String),
-        storeId: $checkedConvert('storeId', (v) => v as String),
-        storeType: $checkedConvert(
-          'storeType',
-          (v) => $enumDecode(_$StoreTypeEnumMap, v),
-        ),
-        tags: $checkedConvert(
-          'tags',
-          (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-        ),
         listingIds: $checkedConvert(
           'listingIds',
           (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -51,8 +38,11 @@ Store _$StoreFromJson(Map<String, dynamic> json) =>
               ?.map((e) => ProductListing.fromJson(e as Map<String, dynamic>))
               .toList(),
         ),
-        worldId: $checkedConvert('worldId', (v) => v as String?),
-        groupId: $checkedConvert('groupId', (v) => v as String?),
+        sellerDisplayName: $checkedConvert(
+          'sellerDisplayName',
+          (v) => v as String,
+        ),
+        sellerId: $checkedConvert('sellerId', (v) => v as String),
         shelfIds: $checkedConvert(
           'shelfIds',
           (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -63,6 +53,16 @@ Store _$StoreFromJson(Map<String, dynamic> json) =>
               ?.map((e) => StoreShelf.fromJson(e as Map<String, dynamic>))
               .toList(),
         ),
+        storeId: $checkedConvert('storeId', (v) => v as String),
+        storeType: $checkedConvert(
+          'storeType',
+          (v) => $enumDecode(_$StoreTypeEnumMap, v),
+        ),
+        tags: $checkedConvert(
+          'tags',
+          (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+        ),
+        worldId: $checkedConvert('worldId', (v) => v as String?),
       );
       return val;
     });
@@ -70,22 +70,22 @@ Store _$StoreFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$StoreToJson(Store instance) => <String, dynamic>{
   'description': instance.description,
   'displayName': instance.displayName,
+  'groupId': ?instance.groupId,
   'id': instance.id,
+  'listingIds': ?instance.listingIds,
+  'listings': ?instance.listings?.map((e) => e.toJson()).toList(),
   'sellerDisplayName': instance.sellerDisplayName,
   'sellerId': instance.sellerId,
+  'shelfIds': ?instance.shelfIds,
+  'shelves': ?instance.shelves?.map((e) => e.toJson()).toList(),
   'storeId': instance.storeId,
   'storeType': _$StoreTypeEnumMap[instance.storeType]!,
   'tags': instance.tags,
-  'listingIds': ?instance.listingIds,
-  'listings': ?instance.listings?.map((e) => e.toJson()).toList(),
   'worldId': ?instance.worldId,
-  'groupId': ?instance.groupId,
-  'shelfIds': ?instance.shelfIds,
-  'shelves': ?instance.shelves?.map((e) => e.toJson()).toList(),
 };
 
 const _$StoreTypeEnumMap = {
+  StoreType.group: 'group',
   StoreType.house: 'house',
   StoreType.world: 'world',
-  StoreType.group: 'group',
 };

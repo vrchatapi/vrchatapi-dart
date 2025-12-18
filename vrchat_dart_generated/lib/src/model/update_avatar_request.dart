@@ -20,56 +20,46 @@ class UpdateAvatarRequest {
   UpdateAvatarRequest({
     this.assetUrl,
 
-    this.id,
-
-    this.name,
-
     this.description,
 
-    this.tags,
+    this.id,
 
     this.imageUrl,
 
+    this.name,
+
     this.releaseStatus,
 
-    this.version = 1,
-
-    this.featured,
+    this.tags,
 
     this.unityPackageUrl,
 
     this.unityVersion = '5.3.4p1',
+
+    this.version = 1,
   });
 
   @JsonKey(name: r'assetUrl', required: false, includeIfNull: false)
   final String? assetUrl;
 
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
-  final String? id;
-
-  @JsonKey(name: r'name', required: false, includeIfNull: false)
-  final String? name;
-
   @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;
 
-  ///
-  @JsonKey(name: r'tags', required: false, includeIfNull: false)
-  final List<String>? tags;
+  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  final String? id;
 
   @JsonKey(name: r'imageUrl', required: false, includeIfNull: false)
   final String? imageUrl;
 
+  @JsonKey(name: r'name', required: false, includeIfNull: false)
+  final String? name;
+
   @JsonKey(name: r'releaseStatus', required: false, includeIfNull: false)
   final ReleaseStatus? releaseStatus;
 
-  // minimum: 0
-  @JsonKey(name: r'version', required: false, includeIfNull: false)
-  final int? version;
-
-  /// Enabling featured tag requires Admin Credentials.
-  @JsonKey(name: r'featured', required: false, includeIfNull: false)
-  final bool? featured;
+  ///
+  @JsonKey(name: r'tags', required: false, includeIfNull: false)
+  final List<String>? tags;
 
   @JsonKey(name: r'unityPackageUrl', required: false, includeIfNull: false)
   final String? unityPackageUrl;
@@ -77,35 +67,37 @@ class UpdateAvatarRequest {
   @JsonKey(name: r'unityVersion', required: false, includeIfNull: false)
   final String? unityVersion;
 
+  // minimum: 0
+  @JsonKey(name: r'version', required: false, includeIfNull: false)
+  final int? version;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is UpdateAvatarRequest &&
           other.assetUrl == assetUrl &&
-          other.id == id &&
-          other.name == name &&
           other.description == description &&
-          other.tags == tags &&
+          other.id == id &&
           other.imageUrl == imageUrl &&
+          other.name == name &&
           other.releaseStatus == releaseStatus &&
-          other.version == version &&
-          other.featured == featured &&
+          other.tags == tags &&
           other.unityPackageUrl == unityPackageUrl &&
-          other.unityVersion == unityVersion;
+          other.unityVersion == unityVersion &&
+          other.version == version;
 
   @override
   int get hashCode =>
       assetUrl.hashCode +
-      id.hashCode +
-      name.hashCode +
       description.hashCode +
-      tags.hashCode +
+      id.hashCode +
       imageUrl.hashCode +
+      name.hashCode +
       releaseStatus.hashCode +
-      version.hashCode +
-      featured.hashCode +
+      tags.hashCode +
       unityPackageUrl.hashCode +
-      unityVersion.hashCode;
+      unityVersion.hashCode +
+      version.hashCode;
 
   factory UpdateAvatarRequest.fromJson(Map<String, dynamic> json) =>
       _$UpdateAvatarRequestFromJson(json);

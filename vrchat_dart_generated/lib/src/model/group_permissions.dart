@@ -14,6 +14,8 @@ enum GroupPermissions {
   group_audit_view(r'group-audit-view'),
   @JsonValue(r'group-bans-manage')
   group_bans_manage(r'group-bans-manage'),
+  @JsonValue(r'group-calendar-manage')
+  group_calendar_manage(r'group-calendar-manage'),
   @JsonValue(r'group-data-manage')
   group_data_manage(r'group-data-manage'),
   @JsonValue(r'group-default-role-manage')
@@ -22,6 +24,8 @@ enum GroupPermissions {
   group_galleries_manage(r'group-galleries-manage'),
   @JsonValue(r'group-instance-age-gated-create')
   group_instance_age_gated_create(r'group-instance-age-gated-create'),
+  @JsonValue(r'group-instance-calendar-link')
+  group_instance_calendar_link(r'group-instance-calendar-link'),
   @JsonValue(r'group-instance-join')
   group_instance_join(r'group-instance-join'),
   @JsonValue(r'group-instance-manage')
@@ -53,11 +57,7 @@ enum GroupPermissions {
   @JsonValue(r'group-roles-assign')
   group_roles_assign(r'group-roles-assign'),
   @JsonValue(r'group-roles-manage')
-  group_roles_manage(r'group-roles-manage'),
-  @JsonValue(r'group-calendar-manage')
-  group_calendar_manage(r'group-calendar-manage'),
-  @JsonValue(r'group-instance-calendar-link')
-  group_instance_calendar_link(r'group-instance-calendar-link');
+  group_roles_manage(r'group-roles-manage');
 
   const GroupPermissions(this.value);
 

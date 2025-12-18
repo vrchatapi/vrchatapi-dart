@@ -17,7 +17,10 @@ part 'two_factor_recovery_codes.g.dart';
 )
 class TwoFactorRecoveryCodes {
   /// Returns a new [TwoFactorRecoveryCodes] instance.
-  TwoFactorRecoveryCodes({this.requiresTwoFactorAuth, this.otp});
+  TwoFactorRecoveryCodes({this.otp, this.requiresTwoFactorAuth});
+
+  @JsonKey(name: r'otp', required: false, includeIfNull: false)
+  final List<TwoFactorRecoveryCodesOtpInner>? otp;
 
   @JsonKey(
     name: r'requiresTwoFactorAuth',
@@ -26,18 +29,15 @@ class TwoFactorRecoveryCodes {
   )
   final List<String>? requiresTwoFactorAuth;
 
-  @JsonKey(name: r'otp', required: false, includeIfNull: false)
-  final List<TwoFactorRecoveryCodesOtpInner>? otp;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is TwoFactorRecoveryCodes &&
-          other.requiresTwoFactorAuth == requiresTwoFactorAuth &&
-          other.otp == otp;
+          other.otp == otp &&
+          other.requiresTwoFactorAuth == requiresTwoFactorAuth;
 
   @override
-  int get hashCode => requiresTwoFactorAuth.hashCode + otp.hashCode;
+  int get hashCode => otp.hashCode + requiresTwoFactorAuth.hashCode;
 
   factory TwoFactorRecoveryCodes.fromJson(Map<String, dynamic> json) =>
       _$TwoFactorRecoveryCodesFromJson(json);

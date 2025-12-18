@@ -21,9 +21,9 @@ class TiliaStatus {
 
     this.economyState,
 
-    this.plannedOfflineWindowStart,
-
     this.plannedOfflineWindowEnd,
+
+    this.plannedOfflineWindowStart,
   });
 
   @JsonKey(name: r'economyOnline', required: true, includeIfNull: false)
@@ -33,18 +33,18 @@ class TiliaStatus {
   final int? economyState;
 
   @JsonKey(
-    name: r'plannedOfflineWindowStart',
-    required: false,
-    includeIfNull: false,
-  )
-  final DateTime? plannedOfflineWindowStart;
-
-  @JsonKey(
     name: r'plannedOfflineWindowEnd',
     required: false,
     includeIfNull: false,
   )
   final DateTime? plannedOfflineWindowEnd;
+
+  @JsonKey(
+    name: r'plannedOfflineWindowStart',
+    required: false,
+    includeIfNull: false,
+  )
+  final DateTime? plannedOfflineWindowStart;
 
   @override
   bool operator ==(Object other) =>
@@ -52,15 +52,15 @@ class TiliaStatus {
       other is TiliaStatus &&
           other.economyOnline == economyOnline &&
           other.economyState == economyState &&
-          other.plannedOfflineWindowStart == plannedOfflineWindowStart &&
-          other.plannedOfflineWindowEnd == plannedOfflineWindowEnd;
+          other.plannedOfflineWindowEnd == plannedOfflineWindowEnd &&
+          other.plannedOfflineWindowStart == plannedOfflineWindowStart;
 
   @override
   int get hashCode =>
       economyOnline.hashCode +
       economyState.hashCode +
-      plannedOfflineWindowStart.hashCode +
-      plannedOfflineWindowEnd.hashCode;
+      plannedOfflineWindowEnd.hashCode +
+      plannedOfflineWindowStart.hashCode;
 
   factory TiliaStatus.fromJson(Map<String, dynamic> json) =>
       _$TiliaStatusFromJson(json);

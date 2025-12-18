@@ -21,8 +21,8 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'bio',
         'bioLinks',
         'currentAvatarImageUrl',
-        'currentAvatarThumbnailImageUrl',
         'currentAvatarTags',
+        'currentAvatarThumbnailImageUrl',
         'date_joined',
         'developerType',
         'displayName',
@@ -67,13 +67,13 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'currentAvatarImageUrl',
         (v) => v as String,
       ),
-      currentAvatarThumbnailImageUrl: $checkedConvert(
-        'currentAvatarThumbnailImageUrl',
-        (v) => v as String,
-      ),
       currentAvatarTags: $checkedConvert(
         'currentAvatarTags',
         (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+      ),
+      currentAvatarThumbnailImageUrl: $checkedConvert(
+        'currentAvatarThumbnailImageUrl',
+        (v) => v as String,
       ),
       dateJoined: $checkedConvert(
         'date_joined',
@@ -160,8 +160,8 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
   'bio': instance.bio,
   'bioLinks': instance.bioLinks,
   'currentAvatarImageUrl': instance.currentAvatarImageUrl,
-  'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
   'currentAvatarTags': instance.currentAvatarTags,
+  'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
   'date_joined': instance.dateJoined.toIso8601String(),
   'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
   'displayName': instance.displayName,
@@ -193,28 +193,28 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
 };
 
 const _$AgeVerificationStatusEnumMap = {
-  AgeVerificationStatus.hidden: 'hidden',
+  AgeVerificationStatus.hidden: '18+',
+  AgeVerificationStatus.plus18: 'hidden',
   AgeVerificationStatus.verified: 'verified',
-  AgeVerificationStatus.plus18: '18+',
 };
 
 const _$DeveloperTypeEnumMap = {
-  DeveloperType.none: 'none',
-  DeveloperType.trusted: 'trusted',
   DeveloperType.internal: 'internal',
   DeveloperType.moderator: 'moderator',
+  DeveloperType.none: 'none',
+  DeveloperType.trusted: 'trusted',
 };
 
 const _$UserStateEnumMap = {
-  UserState.offline: 'offline',
   UserState.active: 'active',
+  UserState.offline: 'offline',
   UserState.online: 'online',
 };
 
 const _$UserStatusEnumMap = {
   UserStatus.active: 'active',
-  UserStatus.joinMe: 'join me',
   UserStatus.askMe: 'ask me',
   UserStatus.busy: 'busy',
+  UserStatus.joinMe: 'join me',
   UserStatus.offline: 'offline',
 };

@@ -11,18 +11,14 @@ part of 'group_gallery.dart';
 GroupGallery _$GroupGalleryFromJson(Map<String, dynamic> json) =>
     $checkedCreate('GroupGallery', json, ($checkedConvert) {
       final val = GroupGallery(
-        id: $checkedConvert('id', (v) => v as String?),
-        name: $checkedConvert('name', (v) => v as String?),
+        createdAt: $checkedConvert(
+          'createdAt',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
         description: $checkedConvert('description', (v) => v as String?),
+        id: $checkedConvert('id', (v) => v as String?),
         membersOnly: $checkedConvert('membersOnly', (v) => v as bool? ?? false),
-        roleIdsToView: $checkedConvert(
-          'roleIdsToView',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-        ),
-        roleIdsToSubmit: $checkedConvert(
-          'roleIdsToSubmit',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-        ),
+        name: $checkedConvert('name', (v) => v as String?),
         roleIdsToAutoApprove: $checkedConvert(
           'roleIdsToAutoApprove',
           (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -31,9 +27,13 @@ GroupGallery _$GroupGalleryFromJson(Map<String, dynamic> json) =>
           'roleIdsToManage',
           (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
         ),
-        createdAt: $checkedConvert(
-          'createdAt',
-          (v) => v == null ? null : DateTime.parse(v as String),
+        roleIdsToSubmit: $checkedConvert(
+          'roleIdsToSubmit',
+          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+        ),
+        roleIdsToView: $checkedConvert(
+          'roleIdsToView',
+          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
         ),
         updatedAt: $checkedConvert(
           'updatedAt',
@@ -45,14 +45,14 @@ GroupGallery _$GroupGalleryFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$GroupGalleryToJson(GroupGallery instance) =>
     <String, dynamic>{
-      'id': ?instance.id,
-      'name': ?instance.name,
+      'createdAt': ?instance.createdAt?.toIso8601String(),
       'description': ?instance.description,
+      'id': ?instance.id,
       'membersOnly': ?instance.membersOnly,
-      'roleIdsToView': ?instance.roleIdsToView,
-      'roleIdsToSubmit': ?instance.roleIdsToSubmit,
+      'name': ?instance.name,
       'roleIdsToAutoApprove': ?instance.roleIdsToAutoApprove,
       'roleIdsToManage': ?instance.roleIdsToManage,
-      'createdAt': ?instance.createdAt?.toIso8601String(),
+      'roleIdsToSubmit': ?instance.roleIdsToSubmit,
+      'roleIdsToView': ?instance.roleIdsToView,
       'updatedAt': ?instance.updatedAt?.toIso8601String(),
     };

@@ -17,6 +17,8 @@ part 'api_config_download_url_list.g.dart';
 class APIConfigDownloadURLList {
   /// Returns a new [APIConfigDownloadURLList] instance.
   APIConfigDownloadURLList({
+    required this.bootstrap,
+
     required this.sdk2,
 
     required this.sdk3Avatars,
@@ -24,9 +26,11 @@ class APIConfigDownloadURLList {
     required this.sdk3Worlds,
 
     required this.vcc,
-
-    required this.bootstrap,
   });
+
+  /// Download link for ???
+  @JsonKey(name: r'bootstrap', required: true, includeIfNull: false)
+  final String bootstrap;
 
   /// Download link for legacy SDK2
   @Deprecated('sdk2 has been deprecated')
@@ -45,29 +49,25 @@ class APIConfigDownloadURLList {
   @JsonKey(name: r'vcc', required: true, includeIfNull: false)
   final String vcc;
 
-  /// Download link for ???
-  @JsonKey(name: r'bootstrap', required: true, includeIfNull: false)
-  final String bootstrap;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is APIConfigDownloadURLList &&
+          other.bootstrap == bootstrap &&
           // ignore: deprecated_member_use_from_same_package
           other.sdk2 == sdk2 &&
           other.sdk3Avatars == sdk3Avatars &&
           other.sdk3Worlds == sdk3Worlds &&
-          other.vcc == vcc &&
-          other.bootstrap == bootstrap;
+          other.vcc == vcc;
 
   @override
   int get hashCode =>
+      bootstrap.hashCode +
       // ignore: deprecated_member_use_from_same_package
       sdk2.hashCode +
       sdk3Avatars.hashCode +
       sdk3Worlds.hashCode +
-      vcc.hashCode +
-      bootstrap.hashCode;
+      vcc.hashCode;
 
   factory APIConfigDownloadURLList.fromJson(Map<String, dynamic> json) =>
       _$APIConfigDownloadURLListFromJson(json);

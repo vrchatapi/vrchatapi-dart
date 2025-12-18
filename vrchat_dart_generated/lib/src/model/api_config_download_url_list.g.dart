@@ -17,19 +17,19 @@ APIConfigDownloadURLList _$APIConfigDownloadURLListFromJson(
     $checkKeys(
       json,
       requiredKeys: const [
+        'bootstrap',
         'sdk2',
         'sdk3-avatars',
         'sdk3-worlds',
         'vcc',
-        'bootstrap',
       ],
     );
     final val = APIConfigDownloadURLList(
+      bootstrap: $checkedConvert('bootstrap', (v) => v as String),
       sdk2: $checkedConvert('sdk2', (v) => v as String),
       sdk3Avatars: $checkedConvert('sdk3-avatars', (v) => v as String),
       sdk3Worlds: $checkedConvert('sdk3-worlds', (v) => v as String),
       vcc: $checkedConvert('vcc', (v) => v as String),
-      bootstrap: $checkedConvert('bootstrap', (v) => v as String),
     );
     return val;
   },
@@ -42,9 +42,9 @@ APIConfigDownloadURLList _$APIConfigDownloadURLListFromJson(
 Map<String, dynamic> _$APIConfigDownloadURLListToJson(
   APIConfigDownloadURLList instance,
 ) => <String, dynamic>{
+  'bootstrap': instance.bootstrap,
   'sdk2': instance.sdk2,
   'sdk3-avatars': instance.sdk3Avatars,
   'sdk3-worlds': instance.sdk3Worlds,
   'vcc': instance.vcc,
-  'bootstrap': instance.bootstrap,
 };

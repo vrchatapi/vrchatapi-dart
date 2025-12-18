@@ -17,36 +17,23 @@ part 'group_member_limited_user.g.dart';
 class GroupMemberLimitedUser {
   /// Returns a new [GroupMemberLimitedUser] instance.
   GroupMemberLimitedUser({
-    this.id,
-
-    this.displayName,
-
-    this.thumbnailUrl,
-
-    this.iconUrl,
-
-    this.profilePicOverride,
+    this.currentAvatarTags,
 
     this.currentAvatarThumbnailImageUrl,
 
-    this.currentAvatarTags,
+    this.displayName,
+
+    this.iconUrl,
+
+    this.id,
+
+    this.profilePicOverride,
+
+    this.thumbnailUrl,
   });
 
-  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
-  final String? id;
-
-  @JsonKey(name: r'displayName', required: false, includeIfNull: false)
-  final String? displayName;
-
-  @JsonKey(name: r'thumbnailUrl', required: false, includeIfNull: false)
-  final String? thumbnailUrl;
-
-  @JsonKey(name: r'iconUrl', required: false, includeIfNull: false)
-  final String? iconUrl;
-
-  @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
-  final String? profilePicOverride;
+  @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
+  final List<String>? currentAvatarTags;
 
   @JsonKey(
     name: r'currentAvatarThumbnailImageUrl',
@@ -55,33 +42,46 @@ class GroupMemberLimitedUser {
   )
   final String? currentAvatarThumbnailImageUrl;
 
-  @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
-  final List<String>? currentAvatarTags;
+  @JsonKey(name: r'displayName', required: false, includeIfNull: false)
+  final String? displayName;
+
+  @JsonKey(name: r'iconUrl', required: false, includeIfNull: false)
+  final String? iconUrl;
+
+  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
+  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  final String? id;
+
+  @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
+  final String? profilePicOverride;
+
+  @JsonKey(name: r'thumbnailUrl', required: false, includeIfNull: false)
+  final String? thumbnailUrl;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is GroupMemberLimitedUser &&
-          other.id == id &&
-          other.displayName == displayName &&
-          other.thumbnailUrl == thumbnailUrl &&
-          other.iconUrl == iconUrl &&
-          other.profilePicOverride == profilePicOverride &&
+          other.currentAvatarTags == currentAvatarTags &&
           other.currentAvatarThumbnailImageUrl ==
               currentAvatarThumbnailImageUrl &&
-          other.currentAvatarTags == currentAvatarTags;
+          other.displayName == displayName &&
+          other.iconUrl == iconUrl &&
+          other.id == id &&
+          other.profilePicOverride == profilePicOverride &&
+          other.thumbnailUrl == thumbnailUrl;
 
   @override
   int get hashCode =>
-      id.hashCode +
-      displayName.hashCode +
-      (thumbnailUrl == null ? 0 : thumbnailUrl.hashCode) +
-      iconUrl.hashCode +
-      profilePicOverride.hashCode +
+      currentAvatarTags.hashCode +
       (currentAvatarThumbnailImageUrl == null
           ? 0
           : currentAvatarThumbnailImageUrl.hashCode) +
-      currentAvatarTags.hashCode;
+      displayName.hashCode +
+      iconUrl.hashCode +
+      id.hashCode +
+      profilePicOverride.hashCode +
+      (thumbnailUrl == null ? 0 : thumbnailUrl.hashCode);
 
   factory GroupMemberLimitedUser.fromJson(Map<String, dynamic> json) =>
       _$GroupMemberLimitedUserFromJson(json);

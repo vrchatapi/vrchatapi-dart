@@ -26,9 +26,9 @@ class Notification {
 
     required this.message,
 
-    this.seen = false,
-
     this.receiverUserId,
+
+    this.seen = false,
 
     required this.senderUserId,
 
@@ -51,13 +51,13 @@ class Notification {
   @JsonKey(name: r'message', required: true, includeIfNull: false)
   final String message;
 
-  /// Not included in notification objects received from the Websocket API
-  @JsonKey(name: r'seen', required: false, includeIfNull: false)
-  final bool? seen;
-
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(name: r'receiverUserId', required: false, includeIfNull: false)
   final String? receiverUserId;
+
+  /// Not included in notification objects received from the Websocket API
+  @JsonKey(name: r'seen', required: false, includeIfNull: false)
+  final bool? seen;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(name: r'senderUserId', required: true, includeIfNull: false)
@@ -79,8 +79,8 @@ class Notification {
           other.details == details &&
           other.id == id &&
           other.message == message &&
-          other.seen == seen &&
           other.receiverUserId == receiverUserId &&
+          other.seen == seen &&
           other.senderUserId == senderUserId &&
           // ignore: deprecated_member_use_from_same_package
           other.senderUsername == senderUsername &&
@@ -92,8 +92,8 @@ class Notification {
       details.hashCode +
       id.hashCode +
       message.hashCode +
-      seen.hashCode +
       receiverUserId.hashCode +
+      seen.hashCode +
       senderUserId.hashCode +
       // ignore: deprecated_member_use_from_same_package
       senderUsername.hashCode +

@@ -27,9 +27,9 @@ part 'current_user.g.dart';
 class CurrentUser {
   /// Returns a new [CurrentUser] instance.
   CurrentUser({
-    required this.acceptedTOSVersion,
-
     this.acceptedPrivacyVersion,
+
+    required this.acceptedTOSVersion,
 
     this.accountDeletionDate,
 
@@ -57,9 +57,9 @@ class CurrentUser {
 
     required this.currentAvatarImageUrl,
 
-    required this.currentAvatarThumbnailImageUrl,
-
     required this.currentAvatarTags,
+
+    required this.currentAvatarThumbnailImageUrl,
 
     required this.dateJoined,
 
@@ -81,19 +81,19 @@ class CurrentUser {
 
     required this.friends,
 
+    this.googleDetails,
+
+    this.googleId,
+
     required this.hasBirthday,
-
-    this.hideContentFilterSettings,
-
-    this.userLanguage,
-
-    this.userLanguageCode,
 
     required this.hasEmail,
 
     required this.hasLoggedInFromClient,
 
     required this.hasPendingEmail,
+
+    this.hideContentFilterSettings,
 
     required this.homeLocation,
 
@@ -119,23 +119,17 @@ class CurrentUser {
 
     required this.oculusId,
 
-    this.googleId,
-
-    this.googleDetails,
-
-    this.picoId,
-
-    this.viveId,
-
     this.offlineFriends,
 
     this.onlineFriends,
 
     required this.pastDisplayNames,
 
-    this.presence,
+    this.picoId,
 
     this.platformHistory,
+
+    this.presence,
 
     required this.profilePicOverride,
 
@@ -175,12 +169,14 @@ class CurrentUser {
 
     required this.userIcon,
 
-    this.username,
-  });
+    this.userLanguage,
 
-  // minimum: 0
-  @JsonKey(name: r'acceptedTOSVersion', required: true, includeIfNull: false)
-  final int acceptedTOSVersion;
+    this.userLanguageCode,
+
+    this.username,
+
+    this.viveId,
+  });
 
   // minimum: 0
   @JsonKey(
@@ -189,6 +185,10 @@ class CurrentUser {
     includeIfNull: false,
   )
   final int? acceptedPrivacyVersion;
+
+  // minimum: 0
+  @JsonKey(name: r'acceptedTOSVersion', required: true, includeIfNull: false)
+  final int acceptedTOSVersion;
 
   @JsonKey(name: r'accountDeletionDate', required: false, includeIfNull: false)
   final DateTime? accountDeletionDate;
@@ -237,6 +237,9 @@ class CurrentUser {
   @JsonKey(name: r'currentAvatarImageUrl', required: true, includeIfNull: false)
   final String currentAvatarImageUrl;
 
+  @JsonKey(name: r'currentAvatarTags', required: true, includeIfNull: false)
+  final List<String> currentAvatarTags;
+
   /// When profilePicOverride is not empty, use it instead.
   @JsonKey(
     name: r'currentAvatarThumbnailImageUrl',
@@ -244,9 +247,6 @@ class CurrentUser {
     includeIfNull: false,
   )
   final String currentAvatarThumbnailImageUrl;
-
-  @JsonKey(name: r'currentAvatarTags', required: true, includeIfNull: false)
-  final List<String> currentAvatarTags;
 
   @JsonKey(name: r'date_joined', required: true, includeIfNull: false)
   final DateTime dateJoined;
@@ -281,21 +281,14 @@ class CurrentUser {
   @JsonKey(name: r'friends', required: true, includeIfNull: false)
   final List<String> friends;
 
+  @JsonKey(name: r'googleDetails', required: false, includeIfNull: false)
+  final Object? googleDetails;
+
+  @JsonKey(name: r'googleId', required: false, includeIfNull: false)
+  final String? googleId;
+
   @JsonKey(name: r'hasBirthday', required: true, includeIfNull: false)
   final bool hasBirthday;
-
-  @JsonKey(
-    name: r'hideContentFilterSettings',
-    required: false,
-    includeIfNull: false,
-  )
-  final bool? hideContentFilterSettings;
-
-  @JsonKey(name: r'userLanguage', required: false, includeIfNull: false)
-  final String? userLanguage;
-
-  @JsonKey(name: r'userLanguageCode', required: false, includeIfNull: false)
-  final String? userLanguageCode;
 
   @JsonKey(name: r'hasEmail', required: true, includeIfNull: false)
   final bool hasEmail;
@@ -305,6 +298,13 @@ class CurrentUser {
 
   @JsonKey(name: r'hasPendingEmail', required: true, includeIfNull: false)
   final bool hasPendingEmail;
+
+  @JsonKey(
+    name: r'hideContentFilterSettings',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? hideContentFilterSettings;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @JsonKey(name: r'homeLocation', required: true, includeIfNull: false)
@@ -349,18 +349,6 @@ class CurrentUser {
   @JsonKey(name: r'oculusId', required: true, includeIfNull: false)
   final String oculusId;
 
-  @JsonKey(name: r'googleId', required: false, includeIfNull: false)
-  final String? googleId;
-
-  @JsonKey(name: r'googleDetails', required: false, includeIfNull: false)
-  final Object? googleDetails;
-
-  @JsonKey(name: r'picoId', required: false, includeIfNull: false)
-  final String? picoId;
-
-  @JsonKey(name: r'viveId', required: false, includeIfNull: false)
-  final String? viveId;
-
   @JsonKey(name: r'offlineFriends', required: false, includeIfNull: false)
   final List<String>? offlineFriends;
 
@@ -371,11 +359,14 @@ class CurrentUser {
   @JsonKey(name: r'pastDisplayNames', required: true, includeIfNull: false)
   final List<PastDisplayName> pastDisplayNames;
 
-  @JsonKey(name: r'presence', required: false, includeIfNull: false)
-  final CurrentUserPresence? presence;
+  @JsonKey(name: r'picoId', required: false, includeIfNull: false)
+  final String? picoId;
 
   @JsonKey(name: r'platform_history', required: false, includeIfNull: false)
   final List<CurrentUserPlatformHistoryInner>? platformHistory;
+
+  @JsonKey(name: r'presence', required: false, includeIfNull: false)
+  final CurrentUserPresence? presence;
 
   @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
   final String profilePicOverride;
@@ -446,17 +437,26 @@ class CurrentUser {
   @JsonKey(name: r'userIcon', required: true, includeIfNull: false)
   final String userIcon;
 
+  @JsonKey(name: r'userLanguage', required: false, includeIfNull: false)
+  final String? userLanguage;
+
+  @JsonKey(name: r'userLanguageCode', required: false, includeIfNull: false)
+  final String? userLanguageCode;
+
   /// -| **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
   @Deprecated('username has been deprecated')
   @JsonKey(name: r'username', required: false, includeIfNull: false)
   final String? username;
 
+  @JsonKey(name: r'viveId', required: false, includeIfNull: false)
+  final String? viveId;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is CurrentUser &&
-          other.acceptedTOSVersion == acceptedTOSVersion &&
           other.acceptedPrivacyVersion == acceptedPrivacyVersion &&
+          other.acceptedTOSVersion == acceptedTOSVersion &&
           other.accountDeletionDate == accountDeletionDate &&
           other.accountDeletionLog == accountDeletionLog &&
           other.activeFriends == activeFriends &&
@@ -470,9 +470,9 @@ class CurrentUser {
           other.contentFilters == contentFilters &&
           other.currentAvatar == currentAvatar &&
           other.currentAvatarImageUrl == currentAvatarImageUrl &&
+          other.currentAvatarTags == currentAvatarTags &&
           other.currentAvatarThumbnailImageUrl ==
               currentAvatarThumbnailImageUrl &&
-          other.currentAvatarTags == currentAvatarTags &&
           other.dateJoined == dateJoined &&
           other.developerType == developerType &&
           other.discordDetails == discordDetails &&
@@ -484,13 +484,13 @@ class CurrentUser {
           other.friendGroupNames == friendGroupNames &&
           other.friendKey == friendKey &&
           other.friends == friends &&
+          other.googleDetails == googleDetails &&
+          other.googleId == googleId &&
           other.hasBirthday == hasBirthday &&
-          other.hideContentFilterSettings == hideContentFilterSettings &&
-          other.userLanguage == userLanguage &&
-          other.userLanguageCode == userLanguageCode &&
           other.hasEmail == hasEmail &&
           other.hasLoggedInFromClient == hasLoggedInFromClient &&
           other.hasPendingEmail == hasPendingEmail &&
+          other.hideContentFilterSettings == hideContentFilterSettings &&
           other.homeLocation == homeLocation &&
           other.id == id &&
           other.isAdult == isAdult &&
@@ -503,15 +503,12 @@ class CurrentUser {
           other.obfuscatedEmail == obfuscatedEmail &&
           other.obfuscatedPendingEmail == obfuscatedPendingEmail &&
           other.oculusId == oculusId &&
-          other.googleId == googleId &&
-          other.googleDetails == googleDetails &&
-          other.picoId == picoId &&
-          other.viveId == viveId &&
           other.offlineFriends == offlineFriends &&
           other.onlineFriends == onlineFriends &&
           other.pastDisplayNames == pastDisplayNames &&
-          other.presence == presence &&
+          other.picoId == picoId &&
           other.platformHistory == platformHistory &&
+          other.presence == presence &&
           other.profilePicOverride == profilePicOverride &&
           other.profilePicOverrideThumbnail == profilePicOverrideThumbnail &&
           other.pronouns == pronouns &&
@@ -531,13 +528,16 @@ class CurrentUser {
           other.unsubscribe == unsubscribe &&
           other.updatedAt == updatedAt &&
           other.userIcon == userIcon &&
+          other.userLanguage == userLanguage &&
+          other.userLanguageCode == userLanguageCode &&
           // ignore: deprecated_member_use_from_same_package
-          other.username == username;
+          other.username == username &&
+          other.viveId == viveId;
 
   @override
   int get hashCode =>
-      acceptedTOSVersion.hashCode +
       acceptedPrivacyVersion.hashCode +
+      acceptedTOSVersion.hashCode +
       (accountDeletionDate == null ? 0 : accountDeletionDate.hashCode) +
       (accountDeletionLog == null ? 0 : accountDeletionLog.hashCode) +
       activeFriends.hashCode +
@@ -551,8 +551,8 @@ class CurrentUser {
       contentFilters.hashCode +
       currentAvatar.hashCode +
       currentAvatarImageUrl.hashCode +
-      currentAvatarThumbnailImageUrl.hashCode +
       currentAvatarTags.hashCode +
+      currentAvatarThumbnailImageUrl.hashCode +
       dateJoined.hashCode +
       developerType.hashCode +
       discordDetails.hashCode +
@@ -564,13 +564,13 @@ class CurrentUser {
       friendGroupNames.hashCode +
       friendKey.hashCode +
       friends.hashCode +
+      googleDetails.hashCode +
+      googleId.hashCode +
       hasBirthday.hashCode +
-      hideContentFilterSettings.hashCode +
-      (userLanguage == null ? 0 : userLanguage.hashCode) +
-      (userLanguageCode == null ? 0 : userLanguageCode.hashCode) +
       hasEmail.hashCode +
       hasLoggedInFromClient.hashCode +
       hasPendingEmail.hashCode +
+      hideContentFilterSettings.hashCode +
       homeLocation.hashCode +
       id.hashCode +
       isAdult.hashCode +
@@ -583,15 +583,12 @@ class CurrentUser {
       obfuscatedEmail.hashCode +
       obfuscatedPendingEmail.hashCode +
       oculusId.hashCode +
-      googleId.hashCode +
-      googleDetails.hashCode +
-      picoId.hashCode +
-      viveId.hashCode +
       offlineFriends.hashCode +
       onlineFriends.hashCode +
       pastDisplayNames.hashCode +
-      presence.hashCode +
+      picoId.hashCode +
       platformHistory.hashCode +
+      presence.hashCode +
       profilePicOverride.hashCode +
       profilePicOverrideThumbnail.hashCode +
       pronouns.hashCode +
@@ -613,8 +610,11 @@ class CurrentUser {
       unsubscribe.hashCode +
       updatedAt.hashCode +
       userIcon.hashCode +
+      (userLanguage == null ? 0 : userLanguage.hashCode) +
+      (userLanguageCode == null ? 0 : userLanguageCode.hashCode) +
       // ignore: deprecated_member_use_from_same_package
-      username.hashCode;
+      username.hashCode +
+      viveId.hashCode;
 
   factory CurrentUser.fromJson(Map<String, dynamic> json) =>
       _$CurrentUserFromJson(json);

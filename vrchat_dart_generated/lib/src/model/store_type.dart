@@ -6,12 +6,12 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum StoreType {
+  @JsonValue(r'group')
+  group(r'group'),
   @JsonValue(r'house')
   house(r'house'),
   @JsonValue(r'world')
-  world(r'world'),
-  @JsonValue(r'group')
-  group(r'group');
+  world(r'world');
 
   const StoreType(this.value);
 

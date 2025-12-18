@@ -18,8 +18,6 @@ part 'unity_package.g.dart';
 class UnityPackage {
   /// Returns a new [UnityPackage] instance.
   UnityPackage({
-    required this.id,
-
     this.assetUrl,
 
     this.assetUrlObject,
@@ -27,6 +25,10 @@ class UnityPackage {
     required this.assetVersion,
 
     this.createdAt,
+
+    required this.id,
+
+    this.impostorUrl,
 
     this.impostorizerVersion,
 
@@ -38,21 +40,16 @@ class UnityPackage {
 
     this.pluginUrlObject,
 
+    this.scanStatus,
+
     this.unitySortNumber,
 
     this.unityVersion = '5.3.4p1',
 
-    this.worldSignature,
-
-    this.impostorUrl,
-
-    this.scanStatus,
-
     this.variant,
-  });
 
-  @JsonKey(name: r'id', required: true, includeIfNull: false)
-  final String id;
+    this.worldSignature,
+  });
 
   @JsonKey(name: r'assetUrl', required: false, includeIfNull: false)
   final String? assetUrl;
@@ -66,6 +63,12 @@ class UnityPackage {
 
   @JsonKey(name: r'created_at', required: false, includeIfNull: false)
   final DateTime? createdAt;
+
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
+
+  @JsonKey(name: r'impostorUrl', required: false, includeIfNull: false)
+  final String? impostorUrl;
 
   @JsonKey(name: r'impostorizerVersion', required: false, includeIfNull: false)
   final String? impostorizerVersion;
@@ -83,6 +86,9 @@ class UnityPackage {
   @JsonKey(name: r'pluginUrlObject', required: false, includeIfNull: false)
   final Object? pluginUrlObject;
 
+  @JsonKey(name: r'scanStatus', required: false, includeIfNull: false)
+  final String? scanStatus;
+
   // minimum: 0
   @JsonKey(name: r'unitySortNumber', required: false, includeIfNull: false)
   final int? unitySortNumber;
@@ -90,57 +96,51 @@ class UnityPackage {
   @JsonKey(name: r'unityVersion', required: true, includeIfNull: false)
   final String unityVersion;
 
-  @JsonKey(name: r'worldSignature', required: false, includeIfNull: false)
-  final String? worldSignature;
-
-  @JsonKey(name: r'impostorUrl', required: false, includeIfNull: false)
-  final String? impostorUrl;
-
-  @JsonKey(name: r'scanStatus', required: false, includeIfNull: false)
-  final String? scanStatus;
-
   @JsonKey(name: r'variant', required: false, includeIfNull: false)
   final String? variant;
+
+  @JsonKey(name: r'worldSignature', required: false, includeIfNull: false)
+  final String? worldSignature;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is UnityPackage &&
-          other.id == id &&
           other.assetUrl == assetUrl &&
           other.assetUrlObject == assetUrlObject &&
           other.assetVersion == assetVersion &&
           other.createdAt == createdAt &&
+          other.id == id &&
+          other.impostorUrl == impostorUrl &&
           other.impostorizerVersion == impostorizerVersion &&
           other.performanceRating == performanceRating &&
           other.platform == platform &&
           other.pluginUrl == pluginUrl &&
           other.pluginUrlObject == pluginUrlObject &&
+          other.scanStatus == scanStatus &&
           other.unitySortNumber == unitySortNumber &&
           other.unityVersion == unityVersion &&
-          other.worldSignature == worldSignature &&
-          other.impostorUrl == impostorUrl &&
-          other.scanStatus == scanStatus &&
-          other.variant == variant;
+          other.variant == variant &&
+          other.worldSignature == worldSignature;
 
   @override
   int get hashCode =>
-      id.hashCode +
       (assetUrl == null ? 0 : assetUrl.hashCode) +
       assetUrlObject.hashCode +
       assetVersion.hashCode +
       createdAt.hashCode +
+      id.hashCode +
+      (impostorUrl == null ? 0 : impostorUrl.hashCode) +
       impostorizerVersion.hashCode +
       performanceRating.hashCode +
       platform.hashCode +
       pluginUrl.hashCode +
       pluginUrlObject.hashCode +
+      scanStatus.hashCode +
       unitySortNumber.hashCode +
       unityVersion.hashCode +
-      (worldSignature == null ? 0 : worldSignature.hashCode) +
-      (impostorUrl == null ? 0 : impostorUrl.hashCode) +
-      scanStatus.hashCode +
-      variant.hashCode;
+      variant.hashCode +
+      (worldSignature == null ? 0 : worldSignature.hashCode);
 
   factory UnityPackage.fromJson(Map<String, dynamic> json) =>
       _$UnityPackageFromJson(json);

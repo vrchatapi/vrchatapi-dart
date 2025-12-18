@@ -18,23 +18,23 @@ part 'create_file_request.g.dart';
 class CreateFileRequest {
   /// Returns a new [CreateFileRequest] instance.
   CreateFileRequest({
-    required this.name,
+    required this.extension_,
 
     required this.mimeType,
 
-    required this.extension_,
+    required this.name,
 
     this.tags,
   });
 
-  @JsonKey(name: r'name', required: true, includeIfNull: false)
-  final String name;
+  @JsonKey(name: r'extension', required: true, includeIfNull: false)
+  final String extension_;
 
   @JsonKey(name: r'mimeType', required: true, includeIfNull: false)
   final MIMEType mimeType;
 
-  @JsonKey(name: r'extension', required: true, includeIfNull: false)
-  final String extension_;
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
+  final String name;
 
   ///
   @JsonKey(name: r'tags', required: false, includeIfNull: false)
@@ -44,14 +44,14 @@ class CreateFileRequest {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is CreateFileRequest &&
-          other.name == name &&
-          other.mimeType == mimeType &&
           other.extension_ == extension_ &&
+          other.mimeType == mimeType &&
+          other.name == name &&
           other.tags == tags;
 
   @override
   int get hashCode =>
-      name.hashCode + mimeType.hashCode + extension_.hashCode + tags.hashCode;
+      extension_.hashCode + mimeType.hashCode + name.hashCode + tags.hashCode;
 
   factory CreateFileRequest.fromJson(Map<String, dynamic> json) =>
       _$CreateFileRequestFromJson(json);

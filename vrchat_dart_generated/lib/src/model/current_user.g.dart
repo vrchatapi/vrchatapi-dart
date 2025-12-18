@@ -23,8 +23,8 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'bioLinks',
         'currentAvatar',
         'currentAvatarImageUrl',
-        'currentAvatarThumbnailImageUrl',
         'currentAvatarTags',
+        'currentAvatarThumbnailImageUrl',
         'date_joined',
         'developerType',
         'displayName',
@@ -65,13 +65,13 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
       ],
     );
     final val = CurrentUser(
-      acceptedTOSVersion: $checkedConvert(
-        'acceptedTOSVersion',
-        (v) => (v as num).toInt(),
-      ),
       acceptedPrivacyVersion: $checkedConvert(
         'acceptedPrivacyVersion',
         (v) => (v as num?)?.toInt(),
+      ),
+      acceptedTOSVersion: $checkedConvert(
+        'acceptedTOSVersion',
+        (v) => (v as num).toInt(),
       ),
       accountDeletionDate: $checkedConvert(
         'accountDeletionDate',
@@ -117,13 +117,13 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'currentAvatarImageUrl',
         (v) => v as String,
       ),
-      currentAvatarThumbnailImageUrl: $checkedConvert(
-        'currentAvatarThumbnailImageUrl',
-        (v) => v as String,
-      ),
       currentAvatarTags: $checkedConvert(
         'currentAvatarTags',
         (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+      ),
+      currentAvatarThumbnailImageUrl: $checkedConvert(
+        'currentAvatarThumbnailImageUrl',
+        (v) => v as String,
       ),
       dateJoined: $checkedConvert(
         'date_joined',
@@ -152,22 +152,19 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'friends',
         (v) => (v as List<dynamic>).map((e) => e as String).toList(),
       ),
+      googleDetails: $checkedConvert('googleDetails', (v) => v),
+      googleId: $checkedConvert('googleId', (v) => v as String?),
       hasBirthday: $checkedConvert('hasBirthday', (v) => v as bool),
-      hideContentFilterSettings: $checkedConvert(
-        'hideContentFilterSettings',
-        (v) => v as bool?,
-      ),
-      userLanguage: $checkedConvert('userLanguage', (v) => v as String?),
-      userLanguageCode: $checkedConvert(
-        'userLanguageCode',
-        (v) => v as String?,
-      ),
       hasEmail: $checkedConvert('hasEmail', (v) => v as bool),
       hasLoggedInFromClient: $checkedConvert(
         'hasLoggedInFromClient',
         (v) => v as bool,
       ),
       hasPendingEmail: $checkedConvert('hasPendingEmail', (v) => v as bool),
+      hideContentFilterSettings: $checkedConvert(
+        'hideContentFilterSettings',
+        (v) => v as bool?,
+      ),
       homeLocation: $checkedConvert('homeLocation', (v) => v as String),
       id: $checkedConvert('id', (v) => v as String),
       isAdult: $checkedConvert('isAdult', (v) => v as bool),
@@ -195,10 +192,6 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => v as String,
       ),
       oculusId: $checkedConvert('oculusId', (v) => v as String),
-      googleId: $checkedConvert('googleId', (v) => v as String?),
-      googleDetails: $checkedConvert('googleDetails', (v) => v),
-      picoId: $checkedConvert('picoId', (v) => v as String?),
-      viveId: $checkedConvert('viveId', (v) => v as String?),
       offlineFriends: $checkedConvert(
         'offlineFriends',
         (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -213,12 +206,7 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
             .map((e) => PastDisplayName.fromJson(e as Map<String, dynamic>))
             .toList(),
       ),
-      presence: $checkedConvert(
-        'presence',
-        (v) => v == null
-            ? null
-            : CurrentUserPresence.fromJson(v as Map<String, dynamic>),
-      ),
+      picoId: $checkedConvert('picoId', (v) => v as String?),
       platformHistory: $checkedConvert(
         'platform_history',
         (v) => (v as List<dynamic>?)
@@ -228,6 +216,12 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
               ),
             )
             .toList(),
+      ),
+      presence: $checkedConvert(
+        'presence',
+        (v) => v == null
+            ? null
+            : CurrentUserPresence.fromJson(v as Map<String, dynamic>),
       ),
       profilePicOverride: $checkedConvert(
         'profilePicOverride',
@@ -284,7 +278,13 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => v == null ? null : DateTime.parse(v as String),
       ),
       userIcon: $checkedConvert('userIcon', (v) => v as String),
+      userLanguage: $checkedConvert('userLanguage', (v) => v as String?),
+      userLanguageCode: $checkedConvert(
+        'userLanguageCode',
+        (v) => v as String?,
+      ),
       username: $checkedConvert('username', (v) => v as String?),
+      viveId: $checkedConvert('viveId', (v) => v as String?),
     );
     return val;
   },
@@ -302,8 +302,8 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
 Map<String, dynamic> _$CurrentUserToJson(
   CurrentUser instance,
 ) => <String, dynamic>{
-  'acceptedTOSVersion': instance.acceptedTOSVersion,
   'acceptedPrivacyVersion': ?instance.acceptedPrivacyVersion,
+  'acceptedTOSVersion': instance.acceptedTOSVersion,
   'accountDeletionDate': ?instance.accountDeletionDate?.toIso8601String(),
   'accountDeletionLog': ?instance.accountDeletionLog
       ?.map((e) => e.toJson())
@@ -320,8 +320,8 @@ Map<String, dynamic> _$CurrentUserToJson(
   'contentFilters': ?instance.contentFilters,
   'currentAvatar': instance.currentAvatar,
   'currentAvatarImageUrl': instance.currentAvatarImageUrl,
-  'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
   'currentAvatarTags': instance.currentAvatarTags,
+  'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
   'date_joined': instance.dateJoined.toIso8601String(),
   'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
   'discordDetails': ?instance.discordDetails?.toJson(),
@@ -332,13 +332,13 @@ Map<String, dynamic> _$CurrentUserToJson(
   'friendGroupNames': instance.friendGroupNames,
   'friendKey': instance.friendKey,
   'friends': instance.friends,
+  'googleDetails': ?instance.googleDetails,
+  'googleId': ?instance.googleId,
   'hasBirthday': instance.hasBirthday,
-  'hideContentFilterSettings': ?instance.hideContentFilterSettings,
-  'userLanguage': ?instance.userLanguage,
-  'userLanguageCode': ?instance.userLanguageCode,
   'hasEmail': instance.hasEmail,
   'hasLoggedInFromClient': instance.hasLoggedInFromClient,
   'hasPendingEmail': instance.hasPendingEmail,
+  'hideContentFilterSettings': ?instance.hideContentFilterSettings,
   'homeLocation': instance.homeLocation,
   'id': instance.id,
   'isAdult': instance.isAdult,
@@ -351,17 +351,14 @@ Map<String, dynamic> _$CurrentUserToJson(
   'obfuscatedEmail': instance.obfuscatedEmail,
   'obfuscatedPendingEmail': instance.obfuscatedPendingEmail,
   'oculusId': instance.oculusId,
-  'googleId': ?instance.googleId,
-  'googleDetails': ?instance.googleDetails,
-  'picoId': ?instance.picoId,
-  'viveId': ?instance.viveId,
   'offlineFriends': ?instance.offlineFriends,
   'onlineFriends': ?instance.onlineFriends,
   'pastDisplayNames': instance.pastDisplayNames.map((e) => e.toJson()).toList(),
-  'presence': ?instance.presence?.toJson(),
+  'picoId': ?instance.picoId,
   'platform_history': ?instance.platformHistory
       ?.map((e) => e.toJson())
       .toList(),
+  'presence': ?instance.presence?.toJson(),
   'profilePicOverride': instance.profilePicOverride,
   'profilePicOverrideThumbnail': instance.profilePicOverrideThumbnail,
   'pronouns': instance.pronouns,
@@ -382,32 +379,35 @@ Map<String, dynamic> _$CurrentUserToJson(
   'unsubscribe': instance.unsubscribe,
   'updated_at': ?instance.updatedAt?.toIso8601String(),
   'userIcon': instance.userIcon,
+  'userLanguage': ?instance.userLanguage,
+  'userLanguageCode': ?instance.userLanguageCode,
   'username': ?instance.username,
+  'viveId': ?instance.viveId,
 };
 
 const _$AgeVerificationStatusEnumMap = {
-  AgeVerificationStatus.hidden: 'hidden',
+  AgeVerificationStatus.hidden: '18+',
+  AgeVerificationStatus.plus18: 'hidden',
   AgeVerificationStatus.verified: 'verified',
-  AgeVerificationStatus.plus18: '18+',
 };
 
 const _$DeveloperTypeEnumMap = {
-  DeveloperType.none: 'none',
-  DeveloperType.trusted: 'trusted',
   DeveloperType.internal: 'internal',
   DeveloperType.moderator: 'moderator',
+  DeveloperType.none: 'none',
+  DeveloperType.trusted: 'trusted',
 };
 
 const _$UserStateEnumMap = {
-  UserState.offline: 'offline',
   UserState.active: 'active',
+  UserState.offline: 'offline',
   UserState.online: 'online',
 };
 
 const _$UserStatusEnumMap = {
   UserStatus.active: 'active',
-  UserStatus.joinMe: 'join me',
   UserStatus.askMe: 'ask me',
   UserStatus.busy: 'busy',
+  UserStatus.joinMe: 'join me',
   UserStatus.offline: 'offline',
 };

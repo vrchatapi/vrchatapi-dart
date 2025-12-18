@@ -25,9 +25,9 @@ class InstanceContentSettings {
 
     this.prints = true,
 
-    this.stickers = true,
-
     this.props = true,
+
+    this.stickers = true,
   });
 
   @JsonKey(name: r'drones', required: false, includeIfNull: false)
@@ -42,11 +42,11 @@ class InstanceContentSettings {
   @JsonKey(name: r'prints', required: false, includeIfNull: false)
   final bool? prints;
 
-  @JsonKey(name: r'stickers', required: false, includeIfNull: false)
-  final bool? stickers;
-
   @JsonKey(name: r'props', required: false, includeIfNull: false)
   final bool? props;
+
+  @JsonKey(name: r'stickers', required: false, includeIfNull: false)
+  final bool? stickers;
 
   @override
   bool operator ==(Object other) =>
@@ -56,8 +56,8 @@ class InstanceContentSettings {
           other.emoji == emoji &&
           other.pedestals == pedestals &&
           other.prints == prints &&
-          other.stickers == stickers &&
-          other.props == props;
+          other.props == props &&
+          other.stickers == stickers;
 
   @override
   int get hashCode =>
@@ -65,8 +65,8 @@ class InstanceContentSettings {
       emoji.hashCode +
       pedestals.hashCode +
       prints.hashCode +
-      stickers.hashCode +
-      props.hashCode;
+      props.hashCode +
+      stickers.hashCode;
 
   factory InstanceContentSettings.fromJson(Map<String, dynamic> json) =>
       _$InstanceContentSettingsFromJson(json);

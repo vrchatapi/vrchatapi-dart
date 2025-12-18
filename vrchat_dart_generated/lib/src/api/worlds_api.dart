@@ -314,6 +314,7 @@ class WorldsApi {
   /// * [maxUnityVersion] - The maximum Unity version supported by the asset.
   /// * [minUnityVersion] - The minimum Unity version supported by the asset.
   /// * [platform] - The platform the asset supports.
+  /// * [noplatform] - The platform the asset does not support.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -336,6 +337,7 @@ class WorldsApi {
     String? maxUnityVersion,
     String? minUnityVersion,
     String? platform,
+    String? noplatform,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -374,6 +376,7 @@ class WorldsApi {
       if (maxUnityVersion != null) r'maxUnityVersion': maxUnityVersion,
       if (minUnityVersion != null) r'minUnityVersion': minUnityVersion,
       if (platform != null) r'platform': platform,
+      if (noplatform != null) r'noplatform': noplatform,
     };
 
     final _response = await _dio.request<Object>(
@@ -1083,7 +1086,9 @@ class WorldsApi {
   /// * [maxUnityVersion] - The maximum Unity version supported by the asset.
   /// * [minUnityVersion] - The minimum Unity version supported by the asset.
   /// * [platform] - The platform the asset supports.
+  /// * [noplatform] - The platform the asset does not support.
   /// * [fuzzy]
+  /// * [avatarSpecific] - Only search for avatar worlds.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1108,7 +1113,9 @@ class WorldsApi {
     String? maxUnityVersion,
     String? minUnityVersion,
     String? platform,
+    String? noplatform,
     bool? fuzzy,
+    bool? avatarSpecific,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1149,7 +1156,9 @@ class WorldsApi {
       if (maxUnityVersion != null) r'maxUnityVersion': maxUnityVersion,
       if (minUnityVersion != null) r'minUnityVersion': minUnityVersion,
       if (platform != null) r'platform': platform,
+      if (noplatform != null) r'noplatform': noplatform,
       if (fuzzy != null) r'fuzzy': fuzzy,
+      if (avatarSpecific != null) r'avatarSpecific': avatarSpecific,
     };
 
     final _response = await _dio.request<Object>(

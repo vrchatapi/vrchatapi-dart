@@ -54,7 +54,7 @@ Map<String, dynamic> _$InviteMessageToJson(InviteMessage instance) =>
 
 const _$InviteMessageTypeEnumMap = {
   InviteMessageType.message: 'message',
-  InviteMessageType.response: 'response',
   InviteMessageType.request: 'request',
   InviteMessageType.requestResponse: 'requestResponse',
+  InviteMessageType.response: 'response',
 };

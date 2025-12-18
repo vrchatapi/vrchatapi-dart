@@ -27,6 +27,7 @@ class CurrentUserPlatformHistoryInner {
   @JsonKey(name: r'isMobile', required: false, includeIfNull: false)
   final bool? isMobile;
 
+  /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
   @JsonKey(name: r'platform', required: false, includeIfNull: false)
   final String? platform;
 
@@ -42,10 +43,7 @@ class CurrentUserPlatformHistoryInner {
           other.recorded == recorded;
 
   @override
-  int get hashCode =>
-      isMobile.hashCode +
-      (platform == null ? 0 : platform.hashCode) +
-      recorded.hashCode;
+  int get hashCode => isMobile.hashCode + platform.hashCode + recorded.hashCode;
 
   factory CurrentUserPlatformHistoryInner.fromJson(Map<String, dynamic> json) =>
       _$CurrentUserPlatformHistoryInnerFromJson(json);

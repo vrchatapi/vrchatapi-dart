@@ -12,10 +12,9 @@ UnityPackage _$UnityPackageFromJson(Map<String, dynamic> json) =>
     $checkedCreate('UnityPackage', json, ($checkedConvert) {
       $checkKeys(
         json,
-        requiredKeys: const ['id', 'assetVersion', 'platform', 'unityVersion'],
+        requiredKeys: const ['assetVersion', 'id', 'platform', 'unityVersion'],
       );
       final val = UnityPackage(
-        id: $checkedConvert('id', (v) => v as String),
         assetUrl: $checkedConvert('assetUrl', (v) => v as String?),
         assetUrlObject: $checkedConvert('assetUrlObject', (v) => v),
         assetVersion: $checkedConvert(
@@ -26,6 +25,8 @@ UnityPackage _$UnityPackageFromJson(Map<String, dynamic> json) =>
           'created_at',
           (v) => v == null ? null : DateTime.parse(v as String),
         ),
+        id: $checkedConvert('id', (v) => v as String),
+        impostorUrl: $checkedConvert('impostorUrl', (v) => v as String?),
         impostorizerVersion: $checkedConvert(
           'impostorizerVersion',
           (v) => v as String?,
@@ -37,6 +38,7 @@ UnityPackage _$UnityPackageFromJson(Map<String, dynamic> json) =>
         platform: $checkedConvert('platform', (v) => v as String),
         pluginUrl: $checkedConvert('pluginUrl', (v) => v as String?),
         pluginUrlObject: $checkedConvert('pluginUrlObject', (v) => v),
+        scanStatus: $checkedConvert('scanStatus', (v) => v as String?),
         unitySortNumber: $checkedConvert(
           'unitySortNumber',
           (v) => (v as num?)?.toInt(),
@@ -45,10 +47,8 @@ UnityPackage _$UnityPackageFromJson(Map<String, dynamic> json) =>
           'unityVersion',
           (v) => v as String? ?? '5.3.4p1',
         ),
-        worldSignature: $checkedConvert('worldSignature', (v) => v as String?),
-        impostorUrl: $checkedConvert('impostorUrl', (v) => v as String?),
-        scanStatus: $checkedConvert('scanStatus', (v) => v as String?),
         variant: $checkedConvert('variant', (v) => v as String?),
+        worldSignature: $checkedConvert('worldSignature', (v) => v as String?),
       );
       return val;
     }, fieldKeyMap: const {'createdAt': 'created_at'});
@@ -56,29 +56,29 @@ UnityPackage _$UnityPackageFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$UnityPackageToJson(
   UnityPackage instance,
 ) => <String, dynamic>{
-  'id': instance.id,
   'assetUrl': ?instance.assetUrl,
   'assetUrlObject': ?instance.assetUrlObject,
   'assetVersion': instance.assetVersion,
   'created_at': ?instance.createdAt?.toIso8601String(),
+  'id': instance.id,
+  'impostorUrl': ?instance.impostorUrl,
   'impostorizerVersion': ?instance.impostorizerVersion,
   'performanceRating': ?_$PerformanceRatingsEnumMap[instance.performanceRating],
   'platform': instance.platform,
   'pluginUrl': ?instance.pluginUrl,
   'pluginUrlObject': ?instance.pluginUrlObject,
+  'scanStatus': ?instance.scanStatus,
   'unitySortNumber': ?instance.unitySortNumber,
   'unityVersion': instance.unityVersion,
-  'worldSignature': ?instance.worldSignature,
-  'impostorUrl': ?instance.impostorUrl,
-  'scanStatus': ?instance.scanStatus,
   'variant': ?instance.variant,
+  'worldSignature': ?instance.worldSignature,
 };
 
 const _$PerformanceRatingsEnumMap = {
-  PerformanceRatings.none: 'None',
   PerformanceRatings.excellent: 'Excellent',
   PerformanceRatings.good: 'Good',
   PerformanceRatings.medium: 'Medium',
+  PerformanceRatings.none: 'None',
   PerformanceRatings.poor: 'Poor',
   PerformanceRatings.veryPoor: 'VeryPoor',
 };

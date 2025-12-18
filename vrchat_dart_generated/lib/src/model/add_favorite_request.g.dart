@@ -10,16 +10,16 @@ part of 'add_favorite_request.dart';
 
 AddFavoriteRequest _$AddFavoriteRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate('AddFavoriteRequest', json, ($checkedConvert) {
-      $checkKeys(json, requiredKeys: const ['type', 'favoriteId', 'tags']);
+      $checkKeys(json, requiredKeys: const ['favoriteId', 'tags', 'type']);
       final val = AddFavoriteRequest(
-        type: $checkedConvert(
-          'type',
-          (v) => $enumDecode(_$FavoriteTypeEnumMap, v),
-        ),
         favoriteId: $checkedConvert('favoriteId', (v) => v as String),
         tags: $checkedConvert(
           'tags',
           (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+        ),
+        type: $checkedConvert(
+          'type',
+          (v) => $enumDecode(_$FavoriteTypeEnumMap, v),
         ),
       );
       return val;
@@ -27,13 +27,13 @@ AddFavoriteRequest _$AddFavoriteRequestFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$AddFavoriteRequestToJson(AddFavoriteRequest instance) =>
     <String, dynamic>{
-      'type': _$FavoriteTypeEnumMap[instance.type]!,
       'favoriteId': instance.favoriteId,
       'tags': instance.tags,
+      'type': _$FavoriteTypeEnumMap[instance.type]!,
     };
 
 const _$FavoriteTypeEnumMap = {
-  FavoriteType.world: 'world',
-  FavoriteType.friend: 'friend',
   FavoriteType.avatar: 'avatar',
+  FavoriteType.friend: 'friend',
+  FavoriteType.world: 'world',
 };

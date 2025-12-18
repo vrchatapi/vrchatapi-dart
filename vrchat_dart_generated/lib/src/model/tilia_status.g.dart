@@ -17,12 +17,12 @@ TiliaStatus _$TiliaStatusFromJson(Map<String, dynamic> json) =>
           'economyState',
           (v) => (v as num?)?.toInt(),
         ),
-        plannedOfflineWindowStart: $checkedConvert(
-          'plannedOfflineWindowStart',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
         plannedOfflineWindowEnd: $checkedConvert(
           'plannedOfflineWindowEnd',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
+        plannedOfflineWindowStart: $checkedConvert(
+          'plannedOfflineWindowStart',
           (v) => v == null ? null : DateTime.parse(v as String),
         ),
       );
@@ -33,8 +33,8 @@ Map<String, dynamic> _$TiliaStatusToJson(TiliaStatus instance) =>
     <String, dynamic>{
       'economyOnline': instance.economyOnline,
       'economyState': ?instance.economyState,
-      'plannedOfflineWindowStart': ?instance.plannedOfflineWindowStart
-          ?.toIso8601String(),
       'plannedOfflineWindowEnd': ?instance.plannedOfflineWindowEnd
+          ?.toIso8601String(),
+      'plannedOfflineWindowStart': ?instance.plannedOfflineWindowStart
           ?.toIso8601String(),
     };

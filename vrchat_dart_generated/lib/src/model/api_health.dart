@@ -17,12 +17,15 @@ part 'api_health.g.dart';
 class APIHealth {
   /// Returns a new [APIHealth] instance.
   APIHealth({
+    required this.buildVersionTag,
+
     required this.ok,
 
     required this.serverName,
-
-    required this.buildVersionTag,
   });
+
+  @JsonKey(name: r'buildVersionTag', required: true, includeIfNull: false)
+  final String buildVersionTag;
 
   @JsonKey(name: r'ok', required: true, includeIfNull: false)
   final bool ok;
@@ -30,20 +33,17 @@ class APIHealth {
   @JsonKey(name: r'serverName', required: true, includeIfNull: false)
   final String serverName;
 
-  @JsonKey(name: r'buildVersionTag', required: true, includeIfNull: false)
-  final String buildVersionTag;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is APIHealth &&
+          other.buildVersionTag == buildVersionTag &&
           other.ok == ok &&
-          other.serverName == serverName &&
-          other.buildVersionTag == buildVersionTag;
+          other.serverName == serverName;
 
   @override
   int get hashCode =>
-      ok.hashCode + serverName.hashCode + buildVersionTag.hashCode;
+      buildVersionTag.hashCode + ok.hashCode + serverName.hashCode;
 
   factory APIHealth.fromJson(Map<String, dynamic> json) =>
       _$APIHealthFromJson(json);

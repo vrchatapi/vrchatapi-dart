@@ -12,10 +12,6 @@ UpdateGroupMemberRequest _$UpdateGroupMemberRequestFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('UpdateGroupMemberRequest', json, ($checkedConvert) {
   final val = UpdateGroupMemberRequest(
-    visibility: $checkedConvert(
-      'visibility',
-      (v) => $enumDecodeNullable(_$GroupUserVisibilityEnumMap, v),
-    ),
     isSubscribedToAnnouncements: $checkedConvert(
       'isSubscribedToAnnouncements',
       (v) => v as bool?,
@@ -25,6 +21,10 @@ UpdateGroupMemberRequest _$UpdateGroupMemberRequestFromJson(
       (v) => v as bool?,
     ),
     managerNotes: $checkedConvert('managerNotes', (v) => v as String?),
+    visibility: $checkedConvert(
+      'visibility',
+      (v) => $enumDecodeNullable(_$GroupUserVisibilityEnumMap, v),
+    ),
   );
   return val;
 });
@@ -32,15 +32,15 @@ UpdateGroupMemberRequest _$UpdateGroupMemberRequestFromJson(
 Map<String, dynamic> _$UpdateGroupMemberRequestToJson(
   UpdateGroupMemberRequest instance,
 ) => <String, dynamic>{
-  'visibility': ?_$GroupUserVisibilityEnumMap[instance.visibility],
   'isSubscribedToAnnouncements': ?instance.isSubscribedToAnnouncements,
   'isSubscribedToEventAnnouncements':
       ?instance.isSubscribedToEventAnnouncements,
   'managerNotes': ?instance.managerNotes,
+  'visibility': ?_$GroupUserVisibilityEnumMap[instance.visibility],
 };
 
 const _$GroupUserVisibilityEnumMap = {
-  GroupUserVisibility.visible: 'visible',
-  GroupUserVisibility.hidden: 'hidden',
   GroupUserVisibility.friends: 'friends',
+  GroupUserVisibility.hidden: 'hidden',
+  GroupUserVisibility.visible: 'visible',
 };

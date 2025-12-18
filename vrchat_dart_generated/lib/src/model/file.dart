@@ -21,11 +21,11 @@ class File {
   File({
     this.animationStyle,
 
-    this.maskTag,
-
     required this.extension_,
 
     required this.id,
+
+    this.maskTag,
 
     required this.mimeType,
 
@@ -41,14 +41,14 @@ class File {
   @JsonKey(name: r'animationStyle', required: false, includeIfNull: false)
   final String? animationStyle;
 
-  @JsonKey(name: r'maskTag', required: false, includeIfNull: false)
-  final String? maskTag;
-
   @JsonKey(name: r'extension', required: true, includeIfNull: false)
   final String extension_;
 
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
+
+  @JsonKey(name: r'maskTag', required: false, includeIfNull: false)
+  final String? maskTag;
 
   @JsonKey(name: r'mimeType', required: true, includeIfNull: false)
   final MIMEType mimeType;
@@ -74,9 +74,9 @@ class File {
       identical(this, other) ||
       other is File &&
           other.animationStyle == animationStyle &&
-          other.maskTag == maskTag &&
           other.extension_ == extension_ &&
           other.id == id &&
+          other.maskTag == maskTag &&
           other.mimeType == mimeType &&
           other.name == name &&
           other.ownerId == ownerId &&
@@ -86,9 +86,9 @@ class File {
   @override
   int get hashCode =>
       animationStyle.hashCode +
-      maskTag.hashCode +
       extension_.hashCode +
       id.hashCode +
+      maskTag.hashCode +
       mimeType.hashCode +
       name.hashCode +
       ownerId.hashCode +

@@ -8,15 +8,15 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | 
-**appleProductId** | **String** |  | 
-**steamItemId** | **String** |  | 
-**oculusSku** | **String** |  | 
-**googleProductId** | **String** |  | [optional] 
 **amount** | **int** | price of the bundle | 
+**appleProductId** | **String** |  | 
 **description** | **String** |  | 
-**tokens** | **int** | number of tokens received | 
+**googleProductId** | **String** |  | [optional] 
+**id** | **String** |  | 
 **imageUrl** | **String** | direct url to image | 
+**oculusSku** | **String** |  | 
+**steamItemId** | **String** |  | 
+**tokens** | **int** | number of tokens received | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

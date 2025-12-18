@@ -26,15 +26,11 @@ class LimitedWorld {
 
     required this.capacity,
 
-    this.recommendedCapacity,
-
     required this.createdAt,
 
     this.defaultContentSettings,
 
     this.favorites = 0,
-
-    this.visits = 0,
 
     this.heat = 0,
 
@@ -56,6 +52,8 @@ class LimitedWorld {
 
     required this.publicationDate,
 
+    this.recommendedCapacity,
+
     required this.releaseStatus,
 
     this.storeId,
@@ -64,11 +62,13 @@ class LimitedWorld {
 
     required this.thumbnailImageUrl,
 
+    this.udonProducts,
+
     required this.unityPackages,
 
     required this.updatedAt,
 
-    this.udonProducts,
+    this.visits = 0,
   });
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
@@ -80,9 +80,6 @@ class LimitedWorld {
 
   @JsonKey(name: r'capacity', required: true, includeIfNull: false)
   final int capacity;
-
-  @JsonKey(name: r'recommendedCapacity', required: false, includeIfNull: false)
-  final int? recommendedCapacity;
 
   @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
@@ -97,10 +94,6 @@ class LimitedWorld {
   // minimum: 0
   @JsonKey(name: r'favorites', required: true, includeIfNull: false)
   final int favorites;
-
-  // minimum: 0
-  @JsonKey(name: r'visits', required: false, includeIfNull: false)
-  final int? visits;
 
   // minimum: 0
   @JsonKey(name: r'heat', required: true, includeIfNull: false)
@@ -136,6 +129,9 @@ class LimitedWorld {
   @JsonKey(name: r'publicationDate', required: true, includeIfNull: false)
   final String publicationDate;
 
+  @JsonKey(name: r'recommendedCapacity', required: false, includeIfNull: false)
+  final int? recommendedCapacity;
+
   @JsonKey(name: r'releaseStatus', required: true, includeIfNull: false)
   final ReleaseStatus releaseStatus;
 
@@ -149,6 +145,9 @@ class LimitedWorld {
   @JsonKey(name: r'thumbnailImageUrl', required: true, includeIfNull: false)
   final String thumbnailImageUrl;
 
+  @JsonKey(name: r'udonProducts', required: false, includeIfNull: false)
+  final List<String>? udonProducts;
+
   ///
   @JsonKey(name: r'unityPackages', required: true, includeIfNull: false)
   final List<LimitedUnityPackage> unityPackages;
@@ -156,8 +155,9 @@ class LimitedWorld {
   @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
   final DateTime updatedAt;
 
-  @JsonKey(name: r'udonProducts', required: false, includeIfNull: false)
-  final List<String>? udonProducts;
+  // minimum: 0
+  @JsonKey(name: r'visits', required: false, includeIfNull: false)
+  final int? visits;
 
   @override
   bool operator ==(Object other) =>
@@ -166,11 +166,9 @@ class LimitedWorld {
           other.authorId == authorId &&
           other.authorName == authorName &&
           other.capacity == capacity &&
-          other.recommendedCapacity == recommendedCapacity &&
           other.createdAt == createdAt &&
           other.defaultContentSettings == defaultContentSettings &&
           other.favorites == favorites &&
-          other.visits == visits &&
           other.heat == heat &&
           other.id == id &&
           other.imageUrl == imageUrl &&
@@ -181,24 +179,24 @@ class LimitedWorld {
           other.popularity == popularity &&
           other.previewYoutubeId == previewYoutubeId &&
           other.publicationDate == publicationDate &&
+          other.recommendedCapacity == recommendedCapacity &&
           other.releaseStatus == releaseStatus &&
           other.storeId == storeId &&
           other.tags == tags &&
           other.thumbnailImageUrl == thumbnailImageUrl &&
+          other.udonProducts == udonProducts &&
           other.unityPackages == unityPackages &&
           other.updatedAt == updatedAt &&
-          other.udonProducts == udonProducts;
+          other.visits == visits;
 
   @override
   int get hashCode =>
       authorId.hashCode +
       authorName.hashCode +
       capacity.hashCode +
-      recommendedCapacity.hashCode +
       createdAt.hashCode +
       defaultContentSettings.hashCode +
       favorites.hashCode +
-      visits.hashCode +
       heat.hashCode +
       id.hashCode +
       imageUrl.hashCode +
@@ -209,13 +207,15 @@ class LimitedWorld {
       popularity.hashCode +
       (previewYoutubeId == null ? 0 : previewYoutubeId.hashCode) +
       publicationDate.hashCode +
+      recommendedCapacity.hashCode +
       releaseStatus.hashCode +
       storeId.hashCode +
       tags.hashCode +
       thumbnailImageUrl.hashCode +
+      udonProducts.hashCode +
       unityPackages.hashCode +
       updatedAt.hashCode +
-      udonProducts.hashCode;
+      visits.hashCode;
 
   factory LimitedWorld.fromJson(Map<String, dynamic> json) =>
       _$LimitedWorldFromJson(json);

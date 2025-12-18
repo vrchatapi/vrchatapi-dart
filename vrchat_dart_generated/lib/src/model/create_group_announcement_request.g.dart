@@ -13,13 +13,13 @@ CreateGroupAnnouncementRequest _$CreateGroupAnnouncementRequestFromJson(
 ) => $checkedCreate('CreateGroupAnnouncementRequest', json, ($checkedConvert) {
   $checkKeys(json, requiredKeys: const ['title']);
   final val = CreateGroupAnnouncementRequest(
-    title: $checkedConvert('title', (v) => v as String),
-    text: $checkedConvert('text', (v) => v as String?),
     imageId: $checkedConvert('imageId', (v) => v as String?),
     sendNotification: $checkedConvert(
       'sendNotification',
       (v) => v as bool? ?? false,
     ),
+    text: $checkedConvert('text', (v) => v as String?),
+    title: $checkedConvert('title', (v) => v as String),
   );
   return val;
 });
@@ -27,8 +27,8 @@ CreateGroupAnnouncementRequest _$CreateGroupAnnouncementRequestFromJson(
 Map<String, dynamic> _$CreateGroupAnnouncementRequestToJson(
   CreateGroupAnnouncementRequest instance,
 ) => <String, dynamic>{
-  'title': instance.title,
-  'text': ?instance.text,
   'imageId': ?instance.imageId,
   'sendNotification': ?instance.sendNotification,
+  'text': ?instance.text,
+  'title': instance.title,
 };

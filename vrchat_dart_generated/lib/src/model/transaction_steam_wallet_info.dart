@@ -17,23 +17,23 @@ part 'transaction_steam_wallet_info.g.dart';
 class TransactionSteamWalletInfo {
   /// Returns a new [TransactionSteamWalletInfo] instance.
   TransactionSteamWalletInfo({
-    required this.state,
-
     this.country = 'US',
 
     this.currency = 'USD',
 
+    required this.state,
+
     required this.status,
   });
-
-  @JsonKey(name: r'state', required: true, includeIfNull: false)
-  final String state;
 
   @JsonKey(name: r'country', required: true, includeIfNull: false)
   final String country;
 
   @JsonKey(name: r'currency', required: true, includeIfNull: false)
   final String currency;
+
+  @JsonKey(name: r'state', required: true, includeIfNull: false)
+  final String state;
 
   @JsonKey(name: r'status', required: true, includeIfNull: false)
   final String status;
@@ -42,14 +42,14 @@ class TransactionSteamWalletInfo {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is TransactionSteamWalletInfo &&
-          other.state == state &&
           other.country == country &&
           other.currency == currency &&
+          other.state == state &&
           other.status == status;
 
   @override
   int get hashCode =>
-      state.hashCode + country.hashCode + currency.hashCode + status.hashCode;
+      country.hashCode + currency.hashCode + state.hashCode + status.hashCode;
 
   factory TransactionSteamWalletInfo.fromJson(Map<String, dynamic> json) =>
       _$TransactionSteamWalletInfoFromJson(json);

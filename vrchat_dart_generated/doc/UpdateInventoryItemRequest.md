@@ -9,6 +9,8 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **isArchived** | **bool** |  | [optional] 
+**isSeen** | **bool** |  | [optional] 
+**userAttributes** | [**InventoryUserAttributes**](InventoryUserAttributes.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

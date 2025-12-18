@@ -20,17 +20,17 @@ LimitedUserInstance _$LimitedUserInstanceFromJson(Map<String, dynamic> json) =>
             'ageVerified',
             'allowAvatarCopying',
             'currentAvatarImageUrl',
-            'currentAvatarThumbnailImageUrl',
             'currentAvatarTags',
+            'currentAvatarThumbnailImageUrl',
             'date_joined',
             'developerType',
             'displayName',
             'friendKey',
             'id',
             'isFriend',
-            'last_platform',
             'last_activity',
             'last_mobile',
+            'last_platform',
             'pronouns',
             'state',
             'status',
@@ -57,13 +57,13 @@ LimitedUserInstance _$LimitedUserInstanceFromJson(Map<String, dynamic> json) =>
             'currentAvatarImageUrl',
             (v) => v as String,
           ),
-          currentAvatarThumbnailImageUrl: $checkedConvert(
-            'currentAvatarThumbnailImageUrl',
-            (v) => v as String,
-          ),
           currentAvatarTags: $checkedConvert(
             'currentAvatarTags',
             (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+          ),
+          currentAvatarThumbnailImageUrl: $checkedConvert(
+            'currentAvatarThumbnailImageUrl',
+            (v) => v as String,
           ),
           dateJoined: $checkedConvert(
             'date_joined',
@@ -76,9 +76,8 @@ LimitedUserInstance _$LimitedUserInstanceFromJson(Map<String, dynamic> json) =>
           displayName: $checkedConvert('displayName', (v) => v as String),
           friendKey: $checkedConvert('friendKey', (v) => v as String),
           id: $checkedConvert('id', (v) => v as String),
-          isFriend: $checkedConvert('isFriend', (v) => v as bool),
           imageUrl: $checkedConvert('imageUrl', (v) => v as String?),
-          lastPlatform: $checkedConvert('last_platform', (v) => v as String),
+          isFriend: $checkedConvert('isFriend', (v) => v as bool),
           lastActivity: $checkedConvert(
             'last_activity',
             (v) => v == null ? null : DateTime.parse(v as String),
@@ -87,6 +86,7 @@ LimitedUserInstance _$LimitedUserInstanceFromJson(Map<String, dynamic> json) =>
             'last_mobile',
             (v) => v == null ? null : DateTime.parse(v as String),
           ),
+          lastPlatform: $checkedConvert('last_platform', (v) => v as String),
           platform: $checkedConvert('platform', (v) => v as String?),
           profilePicOverride: $checkedConvert(
             'profilePicOverride',
@@ -119,9 +119,9 @@ LimitedUserInstance _$LimitedUserInstanceFromJson(Map<String, dynamic> json) =>
       },
       fieldKeyMap: const {
         'dateJoined': 'date_joined',
-        'lastPlatform': 'last_platform',
         'lastActivity': 'last_activity',
         'lastMobile': 'last_mobile',
+        'lastPlatform': 'last_platform',
       },
     );
 
@@ -135,18 +135,18 @@ Map<String, dynamic> _$LimitedUserInstanceToJson(
   'bio': ?instance.bio,
   'bioLinks': ?instance.bioLinks,
   'currentAvatarImageUrl': instance.currentAvatarImageUrl,
-  'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
   'currentAvatarTags': instance.currentAvatarTags,
+  'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
   'date_joined': instance.dateJoined?.toIso8601String(),
   'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
   'displayName': instance.displayName,
   'friendKey': instance.friendKey,
   'id': instance.id,
-  'isFriend': instance.isFriend,
   'imageUrl': ?instance.imageUrl,
-  'last_platform': instance.lastPlatform,
+  'isFriend': instance.isFriend,
   'last_activity': instance.lastActivity?.toIso8601String(),
   'last_mobile': instance.lastMobile?.toIso8601String(),
+  'last_platform': instance.lastPlatform,
   'platform': ?instance.platform,
   'profilePicOverride': ?instance.profilePicOverride,
   'profilePicOverrideThumbnail': ?instance.profilePicOverrideThumbnail,
@@ -159,28 +159,28 @@ Map<String, dynamic> _$LimitedUserInstanceToJson(
 };
 
 const _$AgeVerificationStatusEnumMap = {
-  AgeVerificationStatus.hidden: 'hidden',
+  AgeVerificationStatus.hidden: '18+',
+  AgeVerificationStatus.plus18: 'hidden',
   AgeVerificationStatus.verified: 'verified',
-  AgeVerificationStatus.plus18: '18+',
 };
 
 const _$DeveloperTypeEnumMap = {
-  DeveloperType.none: 'none',
-  DeveloperType.trusted: 'trusted',
   DeveloperType.internal: 'internal',
   DeveloperType.moderator: 'moderator',
+  DeveloperType.none: 'none',
+  DeveloperType.trusted: 'trusted',
 };
 
 const _$UserStateEnumMap = {
-  UserState.offline: 'offline',
   UserState.active: 'active',
+  UserState.offline: 'offline',
   UserState.online: 'online',
 };
 
 const _$UserStatusEnumMap = {
   UserStatus.active: 'active',
-  UserStatus.joinMe: 'join me',
   UserStatus.askMe: 'ask me',
   UserStatus.busy: 'busy',
+  UserStatus.joinMe: 'join me',
   UserStatus.offline: 'offline',
 };

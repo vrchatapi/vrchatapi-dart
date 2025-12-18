@@ -8,12 +8,12 @@ import 'package:json_annotation/json_annotation.dart';
 enum TransactionStatus {
   @JsonValue(r'active')
   active(r'active'),
-  @JsonValue(r'failed')
-  failed(r'failed'),
+  @JsonValue(r'chargeback')
+  chargeback(r'chargeback'),
   @JsonValue(r'expired')
   expired(r'expired'),
-  @JsonValue(r'chargeback')
-  chargeback(r'chargeback');
+  @JsonValue(r'failed')
+  failed(r'failed');
 
   const TransactionStatus(this.value);
 

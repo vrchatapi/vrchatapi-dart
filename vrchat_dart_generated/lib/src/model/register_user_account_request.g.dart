@@ -14,30 +14,30 @@ RegisterUserAccountRequest _$RegisterUserAccountRequestFromJson(
   $checkKeys(
     json,
     requiredKeys: const [
-      'username',
-      'password',
-      'email',
-      'year',
-      'month',
-      'day',
-      'captchaCode',
-      'subscribe',
       'acceptedTOSVersion',
+      'captchaCode',
+      'day',
+      'email',
+      'month',
+      'password',
+      'subscribe',
+      'username',
+      'year',
     ],
   );
   final val = RegisterUserAccountRequest(
-    username: $checkedConvert('username', (v) => v as String),
-    password: $checkedConvert('password', (v) => v as String),
-    email: $checkedConvert('email', (v) => v as String),
-    year: $checkedConvert('year', (v) => v as String),
-    month: $checkedConvert('month', (v) => v as String),
-    day: $checkedConvert('day', (v) => v as String),
-    captchaCode: $checkedConvert('captchaCode', (v) => v as String),
-    subscribe: $checkedConvert('subscribe', (v) => v as bool),
     acceptedTOSVersion: $checkedConvert(
       'acceptedTOSVersion',
       (v) => (v as num).toInt(),
     ),
+    captchaCode: $checkedConvert('captchaCode', (v) => v as String),
+    day: $checkedConvert('day', (v) => v as String),
+    email: $checkedConvert('email', (v) => v as String),
+    month: $checkedConvert('month', (v) => v as String),
+    password: $checkedConvert('password', (v) => v as String),
+    subscribe: $checkedConvert('subscribe', (v) => v as bool),
+    username: $checkedConvert('username', (v) => v as String),
+    year: $checkedConvert('year', (v) => v as String),
   );
   return val;
 });
@@ -45,13 +45,13 @@ RegisterUserAccountRequest _$RegisterUserAccountRequestFromJson(
 Map<String, dynamic> _$RegisterUserAccountRequestToJson(
   RegisterUserAccountRequest instance,
 ) => <String, dynamic>{
-  'username': instance.username,
-  'password': instance.password,
-  'email': instance.email,
-  'year': instance.year,
-  'month': instance.month,
-  'day': instance.day,
-  'captchaCode': instance.captchaCode,
-  'subscribe': instance.subscribe,
   'acceptedTOSVersion': instance.acceptedTOSVersion,
+  'captchaCode': instance.captchaCode,
+  'day': instance.day,
+  'email': instance.email,
+  'month': instance.month,
+  'password': instance.password,
+  'subscribe': instance.subscribe,
+  'username': instance.username,
+  'year': instance.year,
 };

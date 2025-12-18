@@ -41,7 +41,7 @@ class DynamicContentRow {
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
-  /// Usually \"ThisPlatformSupported\", but can also be other values such as \"all\" or platform specific identifiers.
+  /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
   @JsonKey(name: r'platform', required: true, includeIfNull: false)
   final String platform;
 
@@ -54,7 +54,7 @@ class DynamicContentRow {
   @JsonKey(name: r'sortOwnership', required: true, includeIfNull: false)
   final String sortOwnership;
 
-  /// Tag to filter content for this row.
+  /// Tags are a way to grant various access, assign restrictions or other kinds of metadata to various to objects such as worlds, users and avatars.  System tags starting with `system_` are granted automatically by the system, while admin tags with `admin_` are granted manually. More prefixes such as `language_ ` (to indicate that a player can speak the tagged language), and `author_tag_` (provided by a world author for search and sorting) exist as well.
   @JsonKey(name: r'tag', required: false, includeIfNull: false)
   final String? tag;
 

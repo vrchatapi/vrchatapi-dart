@@ -21,9 +21,9 @@ class PropUnityPackage {
 
     required this.assetVersion,
 
-    required this.propSignature,
-
     required this.platform,
+
+    required this.propSignature,
 
     this.unityVersion = '2022.3.22f1',
 
@@ -37,12 +37,12 @@ class PropUnityPackage {
   @JsonKey(name: r'assetVersion', required: true, includeIfNull: false)
   final int assetVersion;
 
-  @JsonKey(name: r'propSignature', required: true, includeIfNull: false)
-  final String propSignature;
-
   /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
   @JsonKey(name: r'platform', required: true, includeIfNull: false)
   final String platform;
+
+  @JsonKey(name: r'propSignature', required: true, includeIfNull: false)
+  final String propSignature;
 
   @JsonKey(name: r'unityVersion', required: true, includeIfNull: false)
   final String unityVersion;
@@ -56,8 +56,8 @@ class PropUnityPackage {
       other is PropUnityPackage &&
           other.assetUrl == assetUrl &&
           other.assetVersion == assetVersion &&
-          other.propSignature == propSignature &&
           other.platform == platform &&
+          other.propSignature == propSignature &&
           other.unityVersion == unityVersion &&
           other.variant == variant;
 
@@ -65,8 +65,8 @@ class PropUnityPackage {
   int get hashCode =>
       assetUrl.hashCode +
       assetVersion.hashCode +
-      propSignature.hashCode +
       platform.hashCode +
+      propSignature.hashCode +
       unityVersion.hashCode +
       variant.hashCode;
 

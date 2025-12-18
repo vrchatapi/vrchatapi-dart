@@ -104,7 +104,9 @@ Map<String, dynamic> _$InventoryTemplateToJson(InventoryTemplate instance) =>
 
 const _$InventoryItemTypeEnumMap = {
   InventoryItemType.bundle: 'bundle',
-  InventoryItemType.prop: 'prop',
+  InventoryItemType.droneskin: 'droneskin',
   InventoryItemType.emoji: 'emoji',
+  InventoryItemType.portalskin: 'portalskin',
+  InventoryItemType.prop: 'prop',
   InventoryItemType.sticker: 'sticker',
 };

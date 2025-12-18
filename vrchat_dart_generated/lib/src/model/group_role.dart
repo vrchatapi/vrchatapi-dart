@@ -18,63 +18,63 @@ part 'group_role.g.dart';
 class GroupRole {
   /// Returns a new [GroupRole] instance.
   GroupRole({
-    this.id,
-
-    this.groupId,
-
-    this.name,
+    this.createdAt,
 
     this.description,
 
-    this.isSelfAssignable = false,
+    this.groupId,
 
-    this.permissions,
+    this.id,
 
     this.isManagementRole = false,
 
-    this.requiresTwoFactor = false,
+    this.isSelfAssignable = false,
 
-    this.requiresPurchase = false,
+    this.name,
 
     this.order,
 
-    this.createdAt,
+    this.permissions,
+
+    this.requiresPurchase = false,
+
+    this.requiresTwoFactor = false,
 
     this.updatedAt,
   });
 
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
-  final String? id;
-
-  @JsonKey(name: r'groupId', required: false, includeIfNull: false)
-  final String? groupId;
-
-  @JsonKey(name: r'name', required: false, includeIfNull: false)
-  final String? name;
+  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  final DateTime? createdAt;
 
   @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;
 
-  @JsonKey(name: r'isSelfAssignable', required: false, includeIfNull: false)
-  final bool? isSelfAssignable;
+  @JsonKey(name: r'groupId', required: false, includeIfNull: false)
+  final String? groupId;
 
-  @JsonKey(name: r'permissions', required: false, includeIfNull: false)
-  final List<GroupPermissions>? permissions;
+  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  final String? id;
 
   @JsonKey(name: r'isManagementRole', required: false, includeIfNull: false)
   final bool? isManagementRole;
 
-  @JsonKey(name: r'requiresTwoFactor', required: false, includeIfNull: false)
-  final bool? requiresTwoFactor;
+  @JsonKey(name: r'isSelfAssignable', required: false, includeIfNull: false)
+  final bool? isSelfAssignable;
 
-  @JsonKey(name: r'requiresPurchase', required: false, includeIfNull: false)
-  final bool? requiresPurchase;
+  @JsonKey(name: r'name', required: false, includeIfNull: false)
+  final String? name;
 
   @JsonKey(name: r'order', required: false, includeIfNull: false)
   final int? order;
 
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
-  final DateTime? createdAt;
+  @JsonKey(name: r'permissions', required: false, includeIfNull: false)
+  final List<GroupPermissions>? permissions;
+
+  @JsonKey(name: r'requiresPurchase', required: false, includeIfNull: false)
+  final bool? requiresPurchase;
+
+  @JsonKey(name: r'requiresTwoFactor', required: false, includeIfNull: false)
+  final bool? requiresTwoFactor;
 
   @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
   final DateTime? updatedAt;
@@ -83,32 +83,32 @@ class GroupRole {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is GroupRole &&
-          other.id == id &&
-          other.groupId == groupId &&
-          other.name == name &&
-          other.description == description &&
-          other.isSelfAssignable == isSelfAssignable &&
-          other.permissions == permissions &&
-          other.isManagementRole == isManagementRole &&
-          other.requiresTwoFactor == requiresTwoFactor &&
-          other.requiresPurchase == requiresPurchase &&
-          other.order == order &&
           other.createdAt == createdAt &&
+          other.description == description &&
+          other.groupId == groupId &&
+          other.id == id &&
+          other.isManagementRole == isManagementRole &&
+          other.isSelfAssignable == isSelfAssignable &&
+          other.name == name &&
+          other.order == order &&
+          other.permissions == permissions &&
+          other.requiresPurchase == requiresPurchase &&
+          other.requiresTwoFactor == requiresTwoFactor &&
           other.updatedAt == updatedAt;
 
   @override
   int get hashCode =>
-      id.hashCode +
-      groupId.hashCode +
-      name.hashCode +
-      description.hashCode +
-      isSelfAssignable.hashCode +
-      permissions.hashCode +
-      isManagementRole.hashCode +
-      requiresTwoFactor.hashCode +
-      requiresPurchase.hashCode +
-      order.hashCode +
       createdAt.hashCode +
+      description.hashCode +
+      groupId.hashCode +
+      id.hashCode +
+      isManagementRole.hashCode +
+      isSelfAssignable.hashCode +
+      name.hashCode +
+      order.hashCode +
+      permissions.hashCode +
+      requiresPurchase.hashCode +
+      requiresTwoFactor.hashCode +
       updatedAt.hashCode;
 
   factory GroupRole.fromJson(Map<String, dynamic> json) =>

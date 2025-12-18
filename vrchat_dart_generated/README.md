@@ -148,6 +148,8 @@ Class | Method | HTTP request | Description
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**cancelPending2FA**](doc/AuthenticationApi.md#cancelpending2fa) | **DELETE** /auth/twofactorauth/totp/pending | Cancel pending enabling of time-based 2FA codes
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**checkUserExists**](doc/AuthenticationApi.md#checkuserexists) | **GET** /auth/exists | Check User Exists
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**confirmEmail**](doc/AuthenticationApi.md#confirmemail) | **GET** /auth/confirmEmail | Confirm Email
+[*AuthenticationApi*](doc/AuthenticationApi.md) | [**createGlobalAvatarModeration**](doc/AuthenticationApi.md#createglobalavatarmoderation) | **POST** /auth/user/avatarmoderations | Create Global Avatar Moderation
+[*AuthenticationApi*](doc/AuthenticationApi.md) | [**deleteGlobalAvatarModeration**](doc/AuthenticationApi.md#deleteglobalavatarmoderation) | **DELETE** /auth/user/avatarmoderations | Delete Global Avatar Moderation
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**deleteUser**](doc/AuthenticationApi.md#deleteuser) | **PUT** /users/{userId}/delete | Delete User
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**disable2FA**](doc/AuthenticationApi.md#disable2fa) | **DELETE** /auth/twofactorauth | Disable 2FA
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**enable2FA**](doc/AuthenticationApi.md#enable2fa) | **POST** /auth/twofactorauth/totp/pending | Enable time-based 2FA codes
@@ -191,11 +193,13 @@ Class | Method | HTTP request | Description
 [*EconomyApi*](doc/EconomyApi.md) | [**getActiveLicenses**](doc/EconomyApi.md#getactivelicenses) | **GET** /economy/licenses/active | Get Active Licenses
 [*EconomyApi*](doc/EconomyApi.md) | [**getBalance**](doc/EconomyApi.md#getbalance) | **GET** /user/{userId}/balance | Get Balance
 [*EconomyApi*](doc/EconomyApi.md) | [**getBalanceEarnings**](doc/EconomyApi.md#getbalanceearnings) | **GET** /user/{userId}/balance/earnings | Get Balance Earnings
+[*EconomyApi*](doc/EconomyApi.md) | [**getBulkGiftPurchases**](doc/EconomyApi.md#getbulkgiftpurchases) | **GET** /user/bulk/gift/purchases | Get Bulk Gift Purchases
 [*EconomyApi*](doc/EconomyApi.md) | [**getCurrentSubscriptions**](doc/EconomyApi.md#getcurrentsubscriptions) | **GET** /auth/user/subscription | Get Current Subscriptions
 [*EconomyApi*](doc/EconomyApi.md) | [**getEconomyAccount**](doc/EconomyApi.md#geteconomyaccount) | **GET** /user/{userId}/economy/account | Get Economy Account
 [*EconomyApi*](doc/EconomyApi.md) | [**getLicenseGroup**](doc/EconomyApi.md#getlicensegroup) | **GET** /licenseGroups/{licenseGroupId} | Get License Group
 [*EconomyApi*](doc/EconomyApi.md) | [**getProductListing**](doc/EconomyApi.md#getproductlisting) | **GET** /listing/{productId} | Get Product Listing
 [*EconomyApi*](doc/EconomyApi.md) | [**getProductListings**](doc/EconomyApi.md#getproductlistings) | **GET** /user/{userId}/listings | Get User Product Listings
+[*EconomyApi*](doc/EconomyApi.md) | [**getRecentSubscription**](doc/EconomyApi.md#getrecentsubscription) | **GET** /user/subscription/recent | Get Recent Subscription
 [*EconomyApi*](doc/EconomyApi.md) | [**getSteamTransaction**](doc/EconomyApi.md#getsteamtransaction) | **GET** /Steam/transactions/{transactionId} | Get Steam Transaction
 [*EconomyApi*](doc/EconomyApi.md) | [**getSteamTransactions**](doc/EconomyApi.md#getsteamtransactions) | **GET** /Steam/transactions | List Steam Transactions
 [*EconomyApi*](doc/EconomyApi.md) | [**getStore**](doc/EconomyApi.md#getstore) | **GET** /economy/store | Get Store
@@ -204,7 +208,9 @@ Class | Method | HTTP request | Description
 [*EconomyApi*](doc/EconomyApi.md) | [**getTiliaStatus**](doc/EconomyApi.md#gettiliastatus) | **GET** /tilia/status | Get Tilia Status
 [*EconomyApi*](doc/EconomyApi.md) | [**getTiliaTos**](doc/EconomyApi.md#gettiliatos) | **GET** /user/{userId}/tilia/tos | Get Tilia TOS Agreement Status
 [*EconomyApi*](doc/EconomyApi.md) | [**getTokenBundles**](doc/EconomyApi.md#gettokenbundles) | **GET** /tokenBundles | List Token Bundles
+[*EconomyApi*](doc/EconomyApi.md) | [**getUserCreditsEligible**](doc/EconomyApi.md#getusercreditseligible) | **GET** /users/{userId}/credits/eligible | Get User Credits Eligiblity
 [*EconomyApi*](doc/EconomyApi.md) | [**getUserSubscriptionEligible**](doc/EconomyApi.md#getusersubscriptioneligible) | **GET** /users/{userId}/subscription/eligible | Get User Subscription Eligiblity
+[*EconomyApi*](doc/EconomyApi.md) | [**updateTiliaTos**](doc/EconomyApi.md#updatetiliatos) | **PUT** /user/{userId}/tilia/tos | Update Tilia TOS Agreement Status
 [*FavoritesApi*](doc/FavoritesApi.md) | [**addFavorite**](doc/FavoritesApi.md#addfavorite) | **POST** /favorites | Add Favorite
 [*FavoritesApi*](doc/FavoritesApi.md) | [**clearFavoriteGroup**](doc/FavoritesApi.md#clearfavoritegroup) | **DELETE** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Clear Favorite Group
 [*FavoritesApi*](doc/FavoritesApi.md) | [**getFavoriteGroup**](doc/FavoritesApi.md#getfavoritegroup) | **GET** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Show Favorite Group
@@ -285,6 +291,7 @@ Class | Method | HTTP request | Description
 [*InstancesApi*](doc/InstancesApi.md) | [**getInstanceByShortName**](doc/InstancesApi.md#getinstancebyshortname) | **GET** /instances/s/{shortName} | Get Instance By Short Name
 [*InstancesApi*](doc/InstancesApi.md) | [**getRecentLocations**](doc/InstancesApi.md#getrecentlocations) | **GET** /instances/recent | List Recent Locations
 [*InstancesApi*](doc/InstancesApi.md) | [**getShortName**](doc/InstancesApi.md#getshortname) | **GET** /instances/{worldId}:{instanceId}/shortName | Get Instance Short Name
+[*InventoryApi*](doc/InventoryApi.md) | [**deleteOwnInventoryItem**](doc/InventoryApi.md#deleteowninventoryitem) | **DELETE** /inventory/{inventoryItemId} | Delete Own Inventory Item
 [*InventoryApi*](doc/InventoryApi.md) | [**getInventory**](doc/InventoryApi.md#getinventory) | **GET** /inventory | Get Inventory
 [*InventoryApi*](doc/InventoryApi.md) | [**getInventoryDrops**](doc/InventoryApi.md#getinventorydrops) | **GET** /inventory/drops | List Inventory Drops
 [*InventoryApi*](doc/InventoryApi.md) | [**getInventoryTemplate**](doc/InventoryApi.md#getinventorytemplate) | **GET** /inventory/template/{inventoryTemplateId} | Get Inventory Template
@@ -339,6 +346,7 @@ Class | Method | HTTP request | Description
 [*UsersApi*](doc/UsersApi.md) | [**getUserByName**](doc/UsersApi.md#getuserbyname) | **GET** /users/{username}/name | Get User by Username
 [*UsersApi*](doc/UsersApi.md) | [**getUserFeedback**](doc/UsersApi.md#getuserfeedback) | **GET** /users/{userId}/feedback | Get User Feedback
 [*UsersApi*](doc/UsersApi.md) | [**getUserGroupInstances**](doc/UsersApi.md#getusergroupinstances) | **GET** /users/{userId}/instances/groups | Get User Group Instances
+[*UsersApi*](doc/UsersApi.md) | [**getUserGroupInstancesForGroup**](doc/UsersApi.md#getusergroupinstancesforgroup) | **GET** /users/{userId}/instances/groups/{groupId} | Get User Group Instances for a specific Group
 [*UsersApi*](doc/UsersApi.md) | [**getUserGroupRequests**](doc/UsersApi.md#getusergrouprequests) | **GET** /users/{userId}/groups/requested | Get User Group Requests
 [*UsersApi*](doc/UsersApi.md) | [**getUserGroups**](doc/UsersApi.md#getusergroups) | **GET** /users/{userId}/groups | Get User Groups
 [*UsersApi*](doc/UsersApi.md) | [**getUserNote**](doc/UsersApi.md#getusernote) | **GET** /userNotes/{userNoteId} | Get User Note
@@ -400,6 +408,7 @@ Class | Method | HTTP request | Description
  - [AgeVerificationStatus](doc/AgeVerificationStatus.md)
  - [Avatar](doc/Avatar.md)
  - [AvatarModeration](doc/AvatarModeration.md)
+ - [AvatarModerationCreated](doc/AvatarModerationCreated.md)
  - [AvatarModerationType](doc/AvatarModerationType.md)
  - [AvatarPerformance](doc/AvatarPerformance.md)
  - [AvatarPublishedListingsInner](doc/AvatarPublishedListingsInner.md)
@@ -412,6 +421,7 @@ Class | Method | HTTP request | Description
  - [CalendarEvent](doc/CalendarEvent.md)
  - [CalendarEventUserInterest](doc/CalendarEventUserInterest.md)
  - [ChangeUserTagsRequest](doc/ChangeUserTagsRequest.md)
+ - [CreateAvatarModerationRequest](doc/CreateAvatarModerationRequest.md)
  - [CreateAvatarRequest](doc/CreateAvatarRequest.md)
  - [CreateCalendarEventRequest](doc/CreateCalendarEventRequest.md)
  - [CreateFileRequest](doc/CreateFileRequest.md)
@@ -423,7 +433,6 @@ Class | Method | HTTP request | Description
  - [CreateGroupRequest](doc/CreateGroupRequest.md)
  - [CreateGroupRoleRequest](doc/CreateGroupRoleRequest.md)
  - [CreateInstanceRequest](doc/CreateInstanceRequest.md)
- - [CreatePermissionRequest](doc/CreatePermissionRequest.md)
  - [CreateWorldRequest](doc/CreateWorldRequest.md)
  - [CurrentUser](doc/CurrentUser.md)
  - [CurrentUserPlatformHistoryInner](doc/CurrentUserPlatformHistoryInner.md)
@@ -492,7 +501,10 @@ Class | Method | HTTP request | Description
  - [InstanceShortNameResponse](doc/InstanceShortNameResponse.md)
  - [InstanceType](doc/InstanceType.md)
  - [Inventory](doc/Inventory.md)
+ - [InventoryDefaultAttributesValue](doc/InventoryDefaultAttributesValue.md)
+ - [InventoryDefaultAttributesValueValidator](doc/InventoryDefaultAttributesValueValidator.md)
  - [InventoryDrop](doc/InventoryDrop.md)
+ - [InventoryEquipSlot](doc/InventoryEquipSlot.md)
  - [InventoryFlag](doc/InventoryFlag.md)
  - [InventoryItem](doc/InventoryItem.md)
  - [InventoryItemType](doc/InventoryItemType.md)
@@ -500,6 +512,7 @@ Class | Method | HTTP request | Description
  - [InventoryNotificationDetails](doc/InventoryNotificationDetails.md)
  - [InventorySpawn](doc/InventorySpawn.md)
  - [InventoryTemplate](doc/InventoryTemplate.md)
+ - [InventoryUserAttributes](doc/InventoryUserAttributes.md)
  - [InviteMessage](doc/InviteMessage.md)
  - [InviteMessageType](doc/InviteMessageType.md)
  - [InviteRequest](doc/InviteRequest.md)
@@ -527,6 +540,7 @@ Class | Method | HTTP request | Description
  - [NotificationDetailVoteToKick](doc/NotificationDetailVoteToKick.md)
  - [NotificationType](doc/NotificationType.md)
  - [OkStatus](doc/OkStatus.md)
+ - [OkStatus2](doc/OkStatus2.md)
  - [OrderOption](doc/OrderOption.md)
  - [PaginatedCalendarEventList](doc/PaginatedCalendarEventList.md)
  - [PaginatedGroupAuditLogEntryList](doc/PaginatedGroupAuditLogEntryList.md)
@@ -569,6 +583,7 @@ Class | Method | HTTP request | Description
  - [Subscription](doc/Subscription.md)
  - [SubscriptionPeriod](doc/SubscriptionPeriod.md)
  - [Success](doc/Success.md)
+ - [SuccessFlag](doc/SuccessFlag.md)
  - [TiliaStatus](doc/TiliaStatus.md)
  - [TiliaTOS](doc/TiliaTOS.md)
  - [TokenBundle](doc/TokenBundle.md)
@@ -592,12 +607,13 @@ Class | Method | HTTP request | Description
  - [UpdateGroupRoleRequest](doc/UpdateGroupRoleRequest.md)
  - [UpdateInventoryItemRequest](doc/UpdateInventoryItemRequest.md)
  - [UpdateInviteMessageRequest](doc/UpdateInviteMessageRequest.md)
- - [UpdatePermissionRequest](doc/UpdatePermissionRequest.md)
+ - [UpdateTiliaTOSRequest](doc/UpdateTiliaTOSRequest.md)
  - [UpdateUserBadgeRequest](doc/UpdateUserBadgeRequest.md)
  - [UpdateUserNoteRequest](doc/UpdateUserNoteRequest.md)
  - [UpdateUserRequest](doc/UpdateUserRequest.md)
  - [UpdateWorldRequest](doc/UpdateWorldRequest.md)
  - [User](doc/User.md)
+ - [UserCreditsEligible](doc/UserCreditsEligible.md)
  - [UserExists](doc/UserExists.md)
  - [UserNote](doc/UserNote.md)
  - [UserNoteTargetUser](doc/UserNoteTargetUser.md)
@@ -617,15 +633,15 @@ Class | Method | HTTP request | Description
 
 
 Authentication schemes defined for the API:
-### authHeader
-
-- **Type**: HTTP basic authentication
-
 ### authCookie
 
 - **Type**: API key
 - **API key parameter name**: auth
 - **Location**: 
+
+### authHeader
+
+- **Type**: HTTP basic authentication
 
 ### twoFactorAuthCookie
 

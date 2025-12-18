@@ -428,8 +428,8 @@ class InviteApi {
   ///
   /// Parameters:
   /// * [userId] - Must be a valid user ID.
-  /// * [image] - The binary blob of the png file.
   /// * [data]
+  /// * [image] - The binary blob of the png file.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -441,8 +441,8 @@ class InviteApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<SentNotification>> inviteUserWithPhoto({
     required String userId,
-    required MultipartFile image,
     required InviteRequest data,
+    required MultipartFile image,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -638,8 +638,8 @@ class InviteApi {
   ///
   /// Parameters:
   /// * [userId] - Must be a valid user ID.
-  /// * [image] - The binary blob of the png file.
   /// * [data]
+  /// * [image] - The binary blob of the png file.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -651,8 +651,8 @@ class InviteApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<Notification>> requestInviteWithPhoto({
     required String userId,
-    required MultipartFile image,
     required RequestInviteRequest data,
+    required MultipartFile image,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -952,8 +952,8 @@ class InviteApi {
   ///
   /// Parameters:
   /// * [notificationId] - Must be a valid notification ID.
-  /// * [image] - The binary blob of the png file.
   /// * [data]
+  /// * [image] - The binary blob of the png file.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -965,8 +965,8 @@ class InviteApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<Notification>> respondInviteWithPhoto({
     required String notificationId,
-    required MultipartFile image,
     required InviteResponse data,
+    required MultipartFile image,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

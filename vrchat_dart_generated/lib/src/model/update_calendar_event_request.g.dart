@@ -12,25 +12,29 @@ UpdateCalendarEventRequest _$UpdateCalendarEventRequestFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('UpdateCalendarEventRequest', json, ($checkedConvert) {
   final val = UpdateCalendarEventRequest(
-    title: $checkedConvert('title', (v) => v as String?),
-    startsAt: $checkedConvert(
-      'startsAt',
-      (v) => v == null ? null : DateTime.parse(v as String),
+    category: $checkedConvert('category', (v) => v as String?),
+    closeInstanceAfterEndMinutes: $checkedConvert(
+      'closeInstanceAfterEndMinutes',
+      (v) => (v as num?)?.toInt(),
     ),
     description: $checkedConvert('description', (v) => v as String?),
     endsAt: $checkedConvert(
       'endsAt',
       (v) => v == null ? null : DateTime.parse(v as String),
     ),
-    category: $checkedConvert('category', (v) => v as String?),
-    tags: $checkedConvert(
-      'tags',
-      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+    featured: $checkedConvert('featured', (v) => v as bool?),
+    guestEarlyJoinMinutes: $checkedConvert(
+      'guestEarlyJoinMinutes',
+      (v) => (v as num?)?.toInt(),
     ),
-    isDraft: $checkedConvert('isDraft', (v) => v as bool?),
+    hostEarlyJoinMinutes: $checkedConvert(
+      'hostEarlyJoinMinutes',
+      (v) => (v as num?)?.toInt(),
+    ),
     imageId: $checkedConvert('imageId', (v) => v as String?),
-    roleIds: $checkedConvert(
-      'roleIds',
+    isDraft: $checkedConvert('isDraft', (v) => v as bool?),
+    languages: $checkedConvert(
+      'languages',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
     parentId: $checkedConvert('parentId', (v) => v as String?),
@@ -38,27 +42,23 @@ UpdateCalendarEventRequest _$UpdateCalendarEventRequestFromJson(
       'platforms',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
-    languages: $checkedConvert(
-      'languages',
+    roleIds: $checkedConvert(
+      'roleIds',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
     sendCreationNotification: $checkedConvert(
       'sendCreationNotification',
       (v) => v as bool? ?? false,
     ),
-    featured: $checkedConvert('featured', (v) => v as bool?),
-    hostEarlyJoinMinutes: $checkedConvert(
-      'hostEarlyJoinMinutes',
-      (v) => (v as num?)?.toInt(),
+    startsAt: $checkedConvert(
+      'startsAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
     ),
-    guestEarlyJoinMinutes: $checkedConvert(
-      'guestEarlyJoinMinutes',
-      (v) => (v as num?)?.toInt(),
+    tags: $checkedConvert(
+      'tags',
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
-    closeInstanceAfterEndMinutes: $checkedConvert(
-      'closeInstanceAfterEndMinutes',
-      (v) => (v as num?)?.toInt(),
-    ),
+    title: $checkedConvert('title', (v) => v as String?),
     usesInstanceOverflow: $checkedConvert(
       'usesInstanceOverflow',
       (v) => v as bool?,
@@ -70,22 +70,22 @@ UpdateCalendarEventRequest _$UpdateCalendarEventRequestFromJson(
 Map<String, dynamic> _$UpdateCalendarEventRequestToJson(
   UpdateCalendarEventRequest instance,
 ) => <String, dynamic>{
-  'title': ?instance.title,
-  'startsAt': ?instance.startsAt?.toIso8601String(),
+  'category': ?instance.category,
+  'closeInstanceAfterEndMinutes': ?instance.closeInstanceAfterEndMinutes,
   'description': ?instance.description,
   'endsAt': ?instance.endsAt?.toIso8601String(),
-  'category': ?instance.category,
-  'tags': ?instance.tags,
-  'isDraft': ?instance.isDraft,
+  'featured': ?instance.featured,
+  'guestEarlyJoinMinutes': ?instance.guestEarlyJoinMinutes,
+  'hostEarlyJoinMinutes': ?instance.hostEarlyJoinMinutes,
   'imageId': ?instance.imageId,
-  'roleIds': ?instance.roleIds,
+  'isDraft': ?instance.isDraft,
+  'languages': ?instance.languages,
   'parentId': ?instance.parentId,
   'platforms': ?instance.platforms,
-  'languages': ?instance.languages,
+  'roleIds': ?instance.roleIds,
   'sendCreationNotification': ?instance.sendCreationNotification,
-  'featured': ?instance.featured,
-  'hostEarlyJoinMinutes': ?instance.hostEarlyJoinMinutes,
-  'guestEarlyJoinMinutes': ?instance.guestEarlyJoinMinutes,
-  'closeInstanceAfterEndMinutes': ?instance.closeInstanceAfterEndMinutes,
+  'startsAt': ?instance.startsAt?.toIso8601String(),
+  'tags': ?instance.tags,
+  'title': ?instance.title,
   'usesInstanceOverflow': ?instance.usesInstanceOverflow,
 };

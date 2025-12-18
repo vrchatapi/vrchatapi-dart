@@ -17,85 +17,66 @@ part 'transaction_agreement.g.dart';
 class TransactionAgreement {
   /// Returns a new [TransactionAgreement] instance.
   TransactionAgreement({
-    required this.agreementId,
-
-    required this.itemId,
-
     required this.agreement,
 
-    required this.status,
-
-    required this.period,
-
-    required this.frequency,
+    required this.agreementId,
 
     required this.billingType,
 
-    required this.startDate,
+    required this.currency,
 
     required this.endDate,
 
-    required this.recurringAmt,
+    required this.failedAttempts,
 
-    required this.currency,
+    required this.frequency,
 
-    required this.timeCreated,
-
-    required this.nextPayment,
-
-    required this.lastPayment,
+    required this.itemId,
 
     required this.lastAmount,
 
     required this.lastAmountVat,
 
+    required this.lastPayment,
+
+    required this.nextPayment,
+
     required this.outstanding,
 
-    required this.failedAttempts,
+    required this.period,
+
+    required this.recurringAmt,
+
+    required this.startDate,
+
+    required this.status,
+
+    required this.timeCreated,
   });
-
-  @JsonKey(name: r'agreementId', required: true, includeIfNull: false)
-  final String agreementId;
-
-  @JsonKey(name: r'itemId', required: true, includeIfNull: false)
-  final int itemId;
 
   @JsonKey(name: r'agreement', required: true, includeIfNull: false)
   final String agreement;
 
-  /// This is NOT TransactionStatus, but whatever Steam return.
-  @JsonKey(name: r'status', required: true, includeIfNull: false)
-  final String status;
-
-  @JsonKey(name: r'period', required: true, includeIfNull: false)
-  final String period;
-
-  @JsonKey(name: r'frequency', required: true, includeIfNull: false)
-  final int frequency;
+  @JsonKey(name: r'agreementId', required: true, includeIfNull: false)
+  final String agreementId;
 
   @JsonKey(name: r'billingType', required: true, includeIfNull: false)
   final String billingType;
 
-  @JsonKey(name: r'startDate', required: true, includeIfNull: false)
-  final String startDate;
+  @JsonKey(name: r'currency', required: true, includeIfNull: false)
+  final String currency;
 
   @JsonKey(name: r'endDate', required: true, includeIfNull: false)
   final String endDate;
 
-  @JsonKey(name: r'recurringAmt', required: true, includeIfNull: false)
-  final num recurringAmt;
+  @JsonKey(name: r'failedAttempts', required: true, includeIfNull: false)
+  final int failedAttempts;
 
-  @JsonKey(name: r'currency', required: true, includeIfNull: false)
-  final String currency;
+  @JsonKey(name: r'frequency', required: true, includeIfNull: false)
+  final int frequency;
 
-  @JsonKey(name: r'timeCreated', required: true, includeIfNull: false)
-  final String timeCreated;
-
-  @JsonKey(name: r'nextPayment', required: true, includeIfNull: false)
-  final String nextPayment;
-
-  @JsonKey(name: r'lastPayment', required: true, includeIfNull: false)
-  final String lastPayment;
+  @JsonKey(name: r'itemId', required: true, includeIfNull: false)
+  final int itemId;
 
   @JsonKey(name: r'lastAmount', required: true, includeIfNull: false)
   final num lastAmount;
@@ -103,55 +84,74 @@ class TransactionAgreement {
   @JsonKey(name: r'lastAmountVat', required: true, includeIfNull: false)
   final num lastAmountVat;
 
+  @JsonKey(name: r'lastPayment', required: true, includeIfNull: false)
+  final String lastPayment;
+
+  @JsonKey(name: r'nextPayment', required: true, includeIfNull: false)
+  final String nextPayment;
+
   @JsonKey(name: r'outstanding', required: true, includeIfNull: false)
   final int outstanding;
 
-  @JsonKey(name: r'failedAttempts', required: true, includeIfNull: false)
-  final int failedAttempts;
+  @JsonKey(name: r'period', required: true, includeIfNull: false)
+  final String period;
+
+  @JsonKey(name: r'recurringAmt', required: true, includeIfNull: false)
+  final num recurringAmt;
+
+  @JsonKey(name: r'startDate', required: true, includeIfNull: false)
+  final String startDate;
+
+  /// This is NOT TransactionStatus, but whatever Steam return.
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
+  final String status;
+
+  @JsonKey(name: r'timeCreated', required: true, includeIfNull: false)
+  final String timeCreated;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is TransactionAgreement &&
-          other.agreementId == agreementId &&
-          other.itemId == itemId &&
           other.agreement == agreement &&
-          other.status == status &&
-          other.period == period &&
-          other.frequency == frequency &&
+          other.agreementId == agreementId &&
           other.billingType == billingType &&
-          other.startDate == startDate &&
-          other.endDate == endDate &&
-          other.recurringAmt == recurringAmt &&
           other.currency == currency &&
-          other.timeCreated == timeCreated &&
-          other.nextPayment == nextPayment &&
-          other.lastPayment == lastPayment &&
+          other.endDate == endDate &&
+          other.failedAttempts == failedAttempts &&
+          other.frequency == frequency &&
+          other.itemId == itemId &&
           other.lastAmount == lastAmount &&
           other.lastAmountVat == lastAmountVat &&
+          other.lastPayment == lastPayment &&
+          other.nextPayment == nextPayment &&
           other.outstanding == outstanding &&
-          other.failedAttempts == failedAttempts;
+          other.period == period &&
+          other.recurringAmt == recurringAmt &&
+          other.startDate == startDate &&
+          other.status == status &&
+          other.timeCreated == timeCreated;
 
   @override
   int get hashCode =>
-      agreementId.hashCode +
-      itemId.hashCode +
       agreement.hashCode +
-      status.hashCode +
-      period.hashCode +
-      frequency.hashCode +
+      agreementId.hashCode +
       billingType.hashCode +
-      startDate.hashCode +
-      endDate.hashCode +
-      recurringAmt.hashCode +
       currency.hashCode +
-      timeCreated.hashCode +
-      nextPayment.hashCode +
-      lastPayment.hashCode +
+      endDate.hashCode +
+      failedAttempts.hashCode +
+      frequency.hashCode +
+      itemId.hashCode +
       lastAmount.hashCode +
       lastAmountVat.hashCode +
+      lastPayment.hashCode +
+      nextPayment.hashCode +
       outstanding.hashCode +
-      failedAttempts.hashCode;
+      period.hashCode +
+      recurringAmt.hashCode +
+      startDate.hashCode +
+      status.hashCode +
+      timeCreated.hashCode;
 
   factory TransactionAgreement.fromJson(Map<String, dynamic> json) =>
       _$TransactionAgreementFromJson(json);

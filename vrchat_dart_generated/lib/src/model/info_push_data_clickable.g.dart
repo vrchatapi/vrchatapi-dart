@@ -13,13 +13,13 @@ InfoPushDataClickable _$InfoPushDataClickableFromJson(
 ) => $checkedCreate('InfoPushDataClickable', json, ($checkedConvert) {
   $checkKeys(json, requiredKeys: const ['command']);
   final val = InfoPushDataClickable(
-    command: $checkedConvert(
-      'command',
-      (v) => $enumDecode(_$InfoPushDataClickableCommandEnumEnumMap, v),
-    ),
     parameters: $checkedConvert(
       'parameters',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+    ),
+    command: $checkedConvert(
+      'command',
+      (v) => $enumDecode(_$InfoPushDataClickableCommandEnumEnumMap, v),
     ),
   );
   return val;
@@ -28,13 +28,13 @@ InfoPushDataClickable _$InfoPushDataClickableFromJson(
 Map<String, dynamic> _$InfoPushDataClickableToJson(
   InfoPushDataClickable instance,
 ) => <String, dynamic>{
-  'command': _$InfoPushDataClickableCommandEnumEnumMap[instance.command]!,
   'parameters': ?instance.parameters,
+  'command': _$InfoPushDataClickableCommandEnumEnumMap[instance.command]!,
 };
 
 const _$InfoPushDataClickableCommandEnumEnumMap = {
+  InfoPushDataClickableCommandEnum.cannedWorldSearch: 'CannedWorldSearch',
+  InfoPushDataClickableCommandEnum.openSafetyMenu: 'OpenSafetyMenu',
   InfoPushDataClickableCommandEnum.openURL: 'OpenURL',
   InfoPushDataClickableCommandEnum.openVRCPlusMenu: 'OpenVRCPlusMenu',
-  InfoPushDataClickableCommandEnum.openSafetyMenu: 'OpenSafetyMenu',
-  InfoPushDataClickableCommandEnum.cannedWorldSearch: 'CannedWorldSearch',
 };

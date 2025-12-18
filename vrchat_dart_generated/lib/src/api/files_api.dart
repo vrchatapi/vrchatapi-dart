@@ -1561,9 +1561,9 @@ class FilesApi {
   /// Parameters:
   /// * [file] - The binary blob of the png file.
   /// * [tag] - Needs to be either icon, gallery, sticker, emoji, or emojianimated
+  /// * [animationStyle] - Animation style for sticker, required for emoji.
   /// * [frames] - Required for emojianimated. Total number of frames to be animated (2-64)
   /// * [framesOverTime] - Required for emojianimated. Animation frames per second (1-64)
-  /// * [animationStyle] - Animation style for sticker, required for emoji.
   /// * [maskTag] - Mask of the sticker, optional for emoji.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -1577,9 +1577,9 @@ class FilesApi {
   Future<Response<File>> uploadImage({
     required MultipartFile file,
     required String tag,
+    String? animationStyle,
     int? frames,
     int? framesOverTime,
-    String? animationStyle,
     String? maskTag,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
