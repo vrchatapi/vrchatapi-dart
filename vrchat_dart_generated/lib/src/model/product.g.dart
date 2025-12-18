@@ -13,8 +13,6 @@ Product _$ProductFromJson(Map<String, dynamic> json) =>
       $checkKeys(
         json,
         requiredKeys: const [
-          'archived',
-          'created',
           'description',
           'displayName',
           'id',
@@ -24,12 +22,14 @@ Product _$ProductFromJson(Map<String, dynamic> json) =>
           'sellerDisplayName',
           'sellerId',
           'tags',
-          'updated',
         ],
       );
       final val = Product(
-        archived: $checkedConvert('archived', (v) => v as bool),
-        created: $checkedConvert('created', (v) => DateTime.parse(v as String)),
+        archived: $checkedConvert('archived', (v) => v as bool?),
+        created: $checkedConvert(
+          'created',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
         description: $checkedConvert('description', (v) => v as String),
         displayName: $checkedConvert('displayName', (v) => v as String),
         groupAccess: $checkedConvert('groupAccess', (v) => v as bool? ?? false),
@@ -71,8 +71,8 @@ Product _$ProductFromJson(Map<String, dynamic> json) =>
     });
 
 Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
-  'archived': instance.archived,
-  'created': instance.created.toIso8601String(),
+  'archived': ?instance.archived,
+  'created': ?instance.created?.toIso8601String(),
   'description': instance.description,
   'displayName': instance.displayName,
   'groupAccess': ?instance.groupAccess,
@@ -86,7 +86,7 @@ Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
   'sellerDisplayName': instance.sellerDisplayName,
   'sellerId': instance.sellerId,
   'tags': instance.tags,
-  'updated': instance.updated?.toIso8601String(),
+  'updated': ?instance.updated?.toIso8601String(),
   'useForSubscriberList': ?instance.useForSubscriberList,
 };
 

@@ -20,7 +20,6 @@ InventoryItem _$InventoryItemFromJson(Map<String, dynamic> json) =>
             'created_at',
             'defaultAttributes',
             'description',
-            'expiryDate',
             'flags',
             'holderId',
             'id',
@@ -31,6 +30,7 @@ InventoryItem _$InventoryItemFromJson(Map<String, dynamic> json) =>
             'itemTypeLabel',
             'metadata',
             'name',
+            'quantifiable',
             'tags',
             'templateId',
             'template_created_at',
@@ -94,6 +94,7 @@ InventoryItem _$InventoryItemFromJson(Map<String, dynamic> json) =>
             (v) => InventoryMetadata.fromJson(v as Map<String, dynamic>),
           ),
           name: $checkedConvert('name', (v) => v as String),
+          quantifiable: $checkedConvert('quantifiable', (v) => v as bool),
           tags: $checkedConvert(
             'tags',
             (v) => (v as List<dynamic>).map((e) => e as String).toList(),
@@ -142,7 +143,7 @@ Map<String, dynamic> _$InventoryItemToJson(InventoryItem instance) =>
       'equipSlots': ?instance.equipSlots
           ?.map((e) => _$InventoryEquipSlotEnumMap[e]!)
           .toList(),
-      'expiryDate': instance.expiryDate?.toIso8601String(),
+      'expiryDate': ?instance.expiryDate?.toIso8601String(),
       'flags': instance.flags,
       'holderId': instance.holderId,
       'id': instance.id,
@@ -153,6 +154,7 @@ Map<String, dynamic> _$InventoryItemToJson(InventoryItem instance) =>
       'itemTypeLabel': instance.itemTypeLabel,
       'metadata': instance.metadata.toJson(),
       'name': instance.name,
+      'quantifiable': instance.quantifiable,
       'tags': instance.tags,
       'templateId': instance.templateId,
       'template_created_at': instance.templateCreatedAt.toIso8601String(),

@@ -75,11 +75,19 @@ class ProductListing {
 
     required this.sellerId,
 
+    this.soldByVrc,
+
     required this.stackable,
 
     required this.storeIds,
 
+    this.subtitle,
+
     this.tags,
+
+    this.vrcPlusDiscountPrice,
+
+    this.whenToExpire,
   });
 
   @JsonKey(name: r'active', required: true, includeIfNull: false)
@@ -163,14 +171,26 @@ class ProductListing {
   @JsonKey(name: r'sellerId', required: true, includeIfNull: false)
   final String sellerId;
 
+  @JsonKey(name: r'soldByVrc', required: false, includeIfNull: false)
+  final bool? soldByVrc;
+
   @JsonKey(name: r'stackable', required: true, includeIfNull: false)
   final bool stackable;
 
   @JsonKey(name: r'storeIds', required: true, includeIfNull: false)
   final List<String> storeIds;
 
+  @JsonKey(name: r'subtitle', required: false, includeIfNull: false)
+  final String? subtitle;
+
   @JsonKey(name: r'tags', required: false, includeIfNull: false)
   final List<String>? tags;
+
+  @JsonKey(name: r'vrcPlusDiscountPrice', required: false, includeIfNull: false)
+  final int? vrcPlusDiscountPrice;
+
+  @JsonKey(name: r'whenToExpire', required: false, includeIfNull: false)
+  final DateTime? whenToExpire;
 
   @override
   bool operator ==(Object other) =>
@@ -203,9 +223,13 @@ class ProductListing {
           other.refundable == refundable &&
           other.sellerDisplayName == sellerDisplayName &&
           other.sellerId == sellerId &&
+          other.soldByVrc == soldByVrc &&
           other.stackable == stackable &&
           other.storeIds == storeIds &&
-          other.tags == tags;
+          other.subtitle == subtitle &&
+          other.tags == tags &&
+          other.vrcPlusDiscountPrice == vrcPlusDiscountPrice &&
+          other.whenToExpire == whenToExpire;
 
   @override
   int get hashCode =>
@@ -236,9 +260,13 @@ class ProductListing {
       refundable.hashCode +
       sellerDisplayName.hashCode +
       sellerId.hashCode +
+      soldByVrc.hashCode +
       stackable.hashCode +
       storeIds.hashCode +
-      tags.hashCode;
+      subtitle.hashCode +
+      tags.hashCode +
+      vrcPlusDiscountPrice.hashCode +
+      (whenToExpire == null ? 0 : whenToExpire.hashCode);
 
   factory ProductListing.fromJson(Map<String, dynamic> json) =>
       _$ProductListingFromJson(json);

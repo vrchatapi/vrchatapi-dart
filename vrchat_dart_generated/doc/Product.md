@@ -8,8 +8,8 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**archived** | **bool** |  | 
-**created** | [**DateTime**](DateTime.md) |  | 
+**archived** | **bool** |  | [optional] 
+**created** | [**DateTime**](DateTime.md) |  | [optional] 
 **description** | **String** |  | 
 **displayName** | **String** |  | 
 **groupAccess** | **bool** |  | [optional] [default to false]
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **sellerDisplayName** | **String** |  | 
 **sellerId** | **String** |  | 
 **tags** | **List&lt;String&gt;** |  | 
-**updated** | [**DateTime**](DateTime.md) |  | 
+**updated** | [**DateTime**](DateTime.md) |  | [optional] 
 **useForSubscriberList** | **bool** |  | [optional] [default to false]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

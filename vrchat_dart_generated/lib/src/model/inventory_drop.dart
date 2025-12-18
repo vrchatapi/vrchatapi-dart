@@ -28,6 +28,8 @@ class InventoryDrop {
 
     required this.id,
 
+    required this.isDisabled,
+
     required this.name,
 
     required this.notificationDetails,
@@ -60,6 +62,9 @@ class InventoryDrop {
 
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
+
+  @JsonKey(name: r'isDisabled', required: true, includeIfNull: false)
+  final bool isDisabled;
 
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
@@ -94,6 +99,7 @@ class InventoryDrop {
           other.dropExpiryDate == dropExpiryDate &&
           other.endDropDate == endDropDate &&
           other.id == id &&
+          other.isDisabled == isDisabled &&
           other.name == name &&
           other.notificationDetails == notificationDetails &&
           other.startDropDate == startDropDate &&
@@ -110,6 +116,7 @@ class InventoryDrop {
       (dropExpiryDate == null ? 0 : dropExpiryDate.hashCode) +
       endDropDate.hashCode +
       id.hashCode +
+      isDisabled.hashCode +
       name.hashCode +
       notificationDetails.hashCode +
       startDropDate.hashCode +

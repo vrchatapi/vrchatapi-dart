@@ -89,14 +89,24 @@ ProductListing _$ProductListingFromJson(Map<String, dynamic> json) =>
           (v) => v as String,
         ),
         sellerId: $checkedConvert('sellerId', (v) => v as String),
+        soldByVrc: $checkedConvert('soldByVrc', (v) => v as bool?),
         stackable: $checkedConvert('stackable', (v) => v as bool),
         storeIds: $checkedConvert(
           'storeIds',
           (v) => (v as List<dynamic>).map((e) => e as String).toList(),
         ),
+        subtitle: $checkedConvert('subtitle', (v) => v as String?),
         tags: $checkedConvert(
           'tags',
           (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+        ),
+        vrcPlusDiscountPrice: $checkedConvert(
+          'vrcPlusDiscountPrice',
+          (v) => (v as num?)?.toInt(),
+        ),
+        whenToExpire: $checkedConvert(
+          'whenToExpire',
+          (v) => v == null ? null : DateTime.parse(v as String),
         ),
       );
       return val;
@@ -134,9 +144,13 @@ Map<String, dynamic> _$ProductListingToJson(
   'refundable': instance.refundable,
   'sellerDisplayName': instance.sellerDisplayName,
   'sellerId': instance.sellerId,
+  'soldByVrc': ?instance.soldByVrc,
   'stackable': instance.stackable,
   'storeIds': instance.storeIds,
+  'subtitle': ?instance.subtitle,
   'tags': ?instance.tags,
+  'vrcPlusDiscountPrice': ?instance.vrcPlusDiscountPrice,
+  'whenToExpire': ?instance.whenToExpire?.toIso8601String(),
 };
 
 const _$ProductListingTypeEnumMap = {

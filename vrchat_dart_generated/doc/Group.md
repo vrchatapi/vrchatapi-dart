@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **ageVerificationBetaCode** | **String** |  | [optional] 
 **ageVerificationBetaSlots** | **num** |  | [optional] 
 **ageVerificationSlotsAvailable** | **bool** |  | [optional] 
+**allowGroupJoinPrompt** | **bool** |  | [optional] 
 **badges** | **List&lt;String&gt;** |  | [optional] 
 **bannerId** | **String** |  | [optional] 
 **bannerUrl** | **String** |  | [optional] 

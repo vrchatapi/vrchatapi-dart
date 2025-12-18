@@ -14,9 +14,6 @@ Instance _$InstanceFromJson(
   $checkKeys(
     json,
     requiredKeys: const [
-      'active',
-      'canRequestInvite',
-      'capacity',
       'clientNumber',
       'full',
       'id',
@@ -43,11 +40,12 @@ Instance _$InstanceFromJson(
   final val = Instance(
     active: $checkedConvert('active', (v) => v as bool? ?? true),
     ageGate: $checkedConvert('ageGate', (v) => v as bool?),
+    calendarEntryId: $checkedConvert('calendarEntryId', (v) => v as String?),
     canRequestInvite: $checkedConvert(
       'canRequestInvite',
       (v) => v as bool? ?? true,
     ),
-    capacity: $checkedConvert('capacity', (v) => (v as num).toInt()),
+    capacity: $checkedConvert('capacity', (v) => (v as num?)?.toInt()),
     clientNumber: $checkedConvert('clientNumber', (v) => v as String),
     closedAt: $checkedConvert(
       'closedAt',
@@ -59,6 +57,7 @@ Instance _$InstanceFromJson(
           ? null
           : InstanceContentSettings.fromJson(v as Map<String, dynamic>),
     ),
+    creatorId: $checkedConvert('creatorId', (v) => v as String?),
     displayName: $checkedConvert('displayName', (v) => v as String?),
     friends: $checkedConvert('friends', (v) => v as String?),
     full: $checkedConvert('full', (v) => v as bool? ?? false),
@@ -77,7 +76,7 @@ Instance _$InstanceFromJson(
     instanceId: $checkedConvert('instanceId', (v) => v as String),
     instancePersistenceEnabled: $checkedConvert(
       'instancePersistenceEnabled',
-      (v) => v as String?,
+      (v) => v as bool?,
     ),
     location: $checkedConvert('location', (v) => v as String),
     nUsers: $checkedConvert('n_users', (v) => (v as num).toInt()),
@@ -134,13 +133,15 @@ Instance _$InstanceFromJson(
 }, fieldKeyMap: const {'nUsers': 'n_users'});
 
 Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
-  'active': instance.active,
+  'active': ?instance.active,
   'ageGate': ?instance.ageGate,
-  'canRequestInvite': instance.canRequestInvite,
-  'capacity': instance.capacity,
+  'calendarEntryId': ?instance.calendarEntryId,
+  'canRequestInvite': ?instance.canRequestInvite,
+  'capacity': ?instance.capacity,
   'clientNumber': instance.clientNumber,
   'closedAt': ?instance.closedAt?.toIso8601String(),
   'contentSettings': ?instance.contentSettings?.toJson(),
+  'creatorId': ?instance.creatorId,
   'displayName': ?instance.displayName,
   'friends': ?instance.friends,
   'full': instance.full,

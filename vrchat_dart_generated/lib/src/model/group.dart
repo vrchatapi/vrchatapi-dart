@@ -29,6 +29,8 @@ class Group {
 
     this.ageVerificationSlotsAvailable,
 
+    this.allowGroupJoinPrompt,
+
     this.badges,
 
     this.bannerId,
@@ -108,6 +110,9 @@ class Group {
     includeIfNull: false,
   )
   final bool? ageVerificationSlotsAvailable;
+
+  @JsonKey(name: r'allowGroupJoinPrompt', required: false, includeIfNull: false)
+  final bool? allowGroupJoinPrompt;
 
   @JsonKey(name: r'badges', required: false, includeIfNull: false)
   final List<String>? badges;
@@ -207,6 +212,7 @@ class Group {
           other.ageVerificationBetaSlots == ageVerificationBetaSlots &&
           other.ageVerificationSlotsAvailable ==
               ageVerificationSlotsAvailable &&
+          other.allowGroupJoinPrompt == allowGroupJoinPrompt &&
           other.badges == badges &&
           other.bannerId == bannerId &&
           other.bannerUrl == bannerUrl &&
@@ -242,6 +248,7 @@ class Group {
       ageVerificationBetaCode.hashCode +
       ageVerificationBetaSlots.hashCode +
       ageVerificationSlotsAvailable.hashCode +
+      allowGroupJoinPrompt.hashCode +
       badges.hashCode +
       (bannerId == null ? 0 : bannerId.hashCode) +
       (bannerUrl == null ? 0 : bannerUrl.hashCode) +

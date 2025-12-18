@@ -150,15 +150,18 @@ Class | Method | HTTP request | Description
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**confirmEmail**](doc/AuthenticationApi.md#confirmemail) | **GET** /auth/confirmEmail | Confirm Email
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**createGlobalAvatarModeration**](doc/AuthenticationApi.md#createglobalavatarmoderation) | **POST** /auth/user/avatarmoderations | Create Global Avatar Moderation
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**deleteGlobalAvatarModeration**](doc/AuthenticationApi.md#deleteglobalavatarmoderation) | **DELETE** /auth/user/avatarmoderations | Delete Global Avatar Moderation
+[*AuthenticationApi*](doc/AuthenticationApi.md) | [**deleteModerationReport**](doc/AuthenticationApi.md#deletemoderationreport) | **DELETE** /moderationReports/{moderationReportId} | Delete Moderation Report
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**deleteUser**](doc/AuthenticationApi.md#deleteuser) | **PUT** /users/{userId}/delete | Delete User
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**disable2FA**](doc/AuthenticationApi.md#disable2fa) | **DELETE** /auth/twofactorauth | Disable 2FA
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**enable2FA**](doc/AuthenticationApi.md#enable2fa) | **POST** /auth/twofactorauth/totp/pending | Enable time-based 2FA codes
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**getCurrentUser**](doc/AuthenticationApi.md#getcurrentuser) | **GET** /auth/user | Login and/or Get Current User Info
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**getGlobalAvatarModerations**](doc/AuthenticationApi.md#getglobalavatarmoderations) | **GET** /auth/user/avatarmoderations | Get Global Avatar Moderations
+[*AuthenticationApi*](doc/AuthenticationApi.md) | [**getModerationReports**](doc/AuthenticationApi.md#getmoderationreports) | **GET** /moderationReports | Get Moderation Reports
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**getRecoveryCodes**](doc/AuthenticationApi.md#getrecoverycodes) | **GET** /auth/user/twofactorauth/otp | Get 2FA Recovery codes
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**logout**](doc/AuthenticationApi.md#logout) | **PUT** /logout | Logout
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**registerUserAccount**](doc/AuthenticationApi.md#registeruseraccount) | **POST** /auth/register | Register User Account
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**resendEmailConfirmation**](doc/AuthenticationApi.md#resendemailconfirmation) | **POST** /auth/user/resendEmail | Resend Email Confirmation
+[*AuthenticationApi*](doc/AuthenticationApi.md) | [**submitModerationReport**](doc/AuthenticationApi.md#submitmoderationreport) | **POST** /moderationReports | Submit Moderation Report
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**verify2FA**](doc/AuthenticationApi.md#verify2fa) | **POST** /auth/twofactorauth/totp/verify | Verify 2FA code
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**verify2FAEmailCode**](doc/AuthenticationApi.md#verify2faemailcode) | **POST** /auth/twofactorauth/emailotp/verify | Verify 2FA email code
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**verifyAuthToken**](doc/AuthenticationApi.md#verifyauthtoken) | **GET** /auth | Verify Auth Token
@@ -189,6 +192,7 @@ Class | Method | HTTP request | Description
 [*CalendarApi*](doc/CalendarApi.md) | [**getGroupCalendarEvent**](doc/CalendarApi.md#getgroupcalendarevent) | **GET** /calendar/{groupId}/{calendarId} | Get a calendar event
 [*CalendarApi*](doc/CalendarApi.md) | [**getGroupCalendarEventICS**](doc/CalendarApi.md#getgroupcalendareventics) | **GET** /calendar/{groupId}/{calendarId}.ics | Download calendar event as ICS
 [*CalendarApi*](doc/CalendarApi.md) | [**getGroupCalendarEvents**](doc/CalendarApi.md#getgroupcalendarevents) | **GET** /calendar/{groupId} | List a group&#39;s calendar events
+[*CalendarApi*](doc/CalendarApi.md) | [**getGroupNextCalendarEvent**](doc/CalendarApi.md#getgroupnextcalendarevent) | **GET** /calendar/{groupId}/next | Get next calendar event
 [*CalendarApi*](doc/CalendarApi.md) | [**searchCalendarEvents**](doc/CalendarApi.md#searchcalendarevents) | **GET** /calendar/search | Search for calendar events
 [*CalendarApi*](doc/CalendarApi.md) | [**updateGroupCalendarEvent**](doc/CalendarApi.md#updategroupcalendarevent) | **PUT** /calendar/{groupId}/{calendarId}/event | Update a calendar event
 [*EconomyApi*](doc/EconomyApi.md) | [**getActiveLicenses**](doc/EconomyApi.md#getactivelicenses) | **GET** /economy/licenses/active | Get Active Licenses
@@ -300,9 +304,11 @@ Class | Method | HTTP request | Description
 [*InventoryApi*](doc/InventoryApi.md) | [**deleteOwnInventoryItem**](doc/InventoryApi.md#deleteowninventoryitem) | **DELETE** /inventory/{inventoryItemId} | Delete Own Inventory Item
 [*InventoryApi*](doc/InventoryApi.md) | [**equipOwnInventoryItem**](doc/InventoryApi.md#equipowninventoryitem) | **PUT** /inventory/{inventoryItemId}/equip | Equip Own Inventory Item
 [*InventoryApi*](doc/InventoryApi.md) | [**getInventory**](doc/InventoryApi.md#getinventory) | **GET** /inventory | Get Inventory
+[*InventoryApi*](doc/InventoryApi.md) | [**getInventoryCollections**](doc/InventoryApi.md#getinventorycollections) | **GET** /inventory/collections | List Inventory Collections
 [*InventoryApi*](doc/InventoryApi.md) | [**getInventoryDrops**](doc/InventoryApi.md#getinventorydrops) | **GET** /inventory/drops | List Inventory Drops
 [*InventoryApi*](doc/InventoryApi.md) | [**getInventoryTemplate**](doc/InventoryApi.md#getinventorytemplate) | **GET** /inventory/template/{inventoryTemplateId} | Get Inventory Template
 [*InventoryApi*](doc/InventoryApi.md) | [**getOwnInventoryItem**](doc/InventoryApi.md#getowninventoryitem) | **GET** /inventory/{inventoryItemId} | Get Own Inventory Item
+[*InventoryApi*](doc/InventoryApi.md) | [**getUserInventoryItem**](doc/InventoryApi.md#getuserinventoryitem) | **GET** /user/{userId}/inventory/{inventoryItemId} | Get User Inventory Item
 [*InventoryApi*](doc/InventoryApi.md) | [**shareInventoryItemDirect**](doc/InventoryApi.md#shareinventoryitemdirect) | **POST** /inventory/cloning/direct | Share Inventory Item Direct
 [*InventoryApi*](doc/InventoryApi.md) | [**shareInventoryItemPedestal**](doc/InventoryApi.md#shareinventoryitempedestal) | **GET** /inventory/cloning/pedestal | Share Inventory Item by Pedestal
 [*InventoryApi*](doc/InventoryApi.md) | [**spawnInventoryItem**](doc/InventoryApi.md#spawninventoryitem) | **GET** /inventory/spawn | Spawn Inventory Item
@@ -332,11 +338,18 @@ Class | Method | HTTP request | Description
 [*MiscellaneousApi*](doc/MiscellaneousApi.md) | [**getPermission**](doc/MiscellaneousApi.md#getpermission) | **GET** /permissions/{permissionId} | Get Permission
 [*MiscellaneousApi*](doc/MiscellaneousApi.md) | [**getSystemTime**](doc/MiscellaneousApi.md#getsystemtime) | **GET** /time | Current System Time
 [*NotificationsApi*](doc/NotificationsApi.md) | [**acceptFriendRequest**](doc/NotificationsApi.md#acceptfriendrequest) | **PUT** /auth/user/notifications/{notificationId}/accept | Accept Friend Request
+[*NotificationsApi*](doc/NotificationsApi.md) | [**acknowledgeNotificationV2**](doc/NotificationsApi.md#acknowledgenotificationv2) | **POST** /notifications/{notificationId}/see | Acknowledge NotificationV2
 [*NotificationsApi*](doc/NotificationsApi.md) | [**clearNotifications**](doc/NotificationsApi.md#clearnotifications) | **PUT** /auth/user/notifications/clear | Clear All Notifications
+[*NotificationsApi*](doc/NotificationsApi.md) | [**deleteAllNotificationV2s**](doc/NotificationsApi.md#deleteallnotificationv2s) | **DELETE** /notifications | Delete All NotificationV2s
 [*NotificationsApi*](doc/NotificationsApi.md) | [**deleteNotification**](doc/NotificationsApi.md#deletenotification) | **PUT** /auth/user/notifications/{notificationId}/hide | Delete Notification
+[*NotificationsApi*](doc/NotificationsApi.md) | [**deleteNotificationV2**](doc/NotificationsApi.md#deletenotificationv2) | **DELETE** /notifications/{notificationId} | Delete NotificationV2
 [*NotificationsApi*](doc/NotificationsApi.md) | [**getNotification**](doc/NotificationsApi.md#getnotification) | **GET** /auth/user/notifications/{notificationId} | Show notification
+[*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationV2**](doc/NotificationsApi.md#getnotificationv2) | **GET** /notifications/{notificationId} | Get NotificationV2
+[*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationV2s**](doc/NotificationsApi.md#getnotificationv2s) | **GET** /notifications | List NotificationV2s
 [*NotificationsApi*](doc/NotificationsApi.md) | [**getNotifications**](doc/NotificationsApi.md#getnotifications) | **GET** /auth/user/notifications | List Notifications
 [*NotificationsApi*](doc/NotificationsApi.md) | [**markNotificationAsRead**](doc/NotificationsApi.md#marknotificationasread) | **PUT** /auth/user/notifications/{notificationId}/see | Mark Notification As Read
+[*NotificationsApi*](doc/NotificationsApi.md) | [**replyNotificationV2**](doc/NotificationsApi.md#replynotificationv2) | **POST** /notifications/{notificationId}/reply | Reply NotificationV2
+[*NotificationsApi*](doc/NotificationsApi.md) | [**respondNotificationV2**](doc/NotificationsApi.md#respondnotificationv2) | **POST** /notifications/{notificationId}/respond | Respond NotificationV2
 [*PlayermoderationApi*](doc/PlayermoderationApi.md) | [**clearAllPlayerModerations**](doc/PlayermoderationApi.md#clearallplayermoderations) | **DELETE** /auth/user/playermoderations | Clear All Player Moderations
 [*PlayermoderationApi*](doc/PlayermoderationApi.md) | [**getPlayerModerations**](doc/PlayermoderationApi.md#getplayermoderations) | **GET** /auth/user/playermoderations | Search Player Moderations
 [*PlayermoderationApi*](doc/PlayermoderationApi.md) | [**moderateUser**](doc/PlayermoderationApi.md#moderateuser) | **POST** /auth/user/playermoderations | Moderate User
@@ -431,11 +444,15 @@ Class | Method | HTTP request | Description
  - [BanGroupMemberRequest](doc/BanGroupMemberRequest.md)
  - [BoopRequest](doc/BoopRequest.md)
  - [CalendarEvent](doc/CalendarEvent.md)
+ - [CalendarEventAccess](doc/CalendarEventAccess.md)
+ - [CalendarEventCategory](doc/CalendarEventCategory.md)
  - [CalendarEventDiscovery](doc/CalendarEventDiscovery.md)
  - [CalendarEventDiscoveryInclusion](doc/CalendarEventDiscoveryInclusion.md)
  - [CalendarEventDiscoveryScope](doc/CalendarEventDiscoveryScope.md)
+ - [CalendarEventPlatform](doc/CalendarEventPlatform.md)
  - [CalendarEventUserInterest](doc/CalendarEventUserInterest.md)
  - [ChangeUserTagsRequest](doc/ChangeUserTagsRequest.md)
+ - [ContentFilter](doc/ContentFilter.md)
  - [CreateAvatarModerationRequest](doc/CreateAvatarModerationRequest.md)
  - [CreateAvatarRequest](doc/CreateAvatarRequest.md)
  - [CreateCalendarEventRequest](doc/CreateCalendarEventRequest.md)
@@ -549,6 +566,7 @@ Class | Method | HTTP request | Description
  - [LimitedWorld](doc/LimitedWorld.md)
  - [MIMEType](doc/MIMEType.md)
  - [ModerateUserRequest](doc/ModerateUserRequest.md)
+ - [ModerationReport](doc/ModerationReport.md)
  - [MutualFriend](doc/MutualFriend.md)
  - [Mutuals](doc/Mutuals.md)
  - [Notification](doc/Notification.md)
@@ -558,17 +576,22 @@ Class | Method | HTTP request | Description
  - [NotificationDetailRequestInviteResponse](doc/NotificationDetailRequestInviteResponse.md)
  - [NotificationDetailVoteToKick](doc/NotificationDetailVoteToKick.md)
  - [NotificationType](doc/NotificationType.md)
+ - [NotificationV2](doc/NotificationV2.md)
+ - [NotificationV2Response](doc/NotificationV2Response.md)
+ - [NotificationV2Type](doc/NotificationV2Type.md)
  - [OkStatus](doc/OkStatus.md)
  - [OkStatus2](doc/OkStatus2.md)
  - [OrderOption](doc/OrderOption.md)
  - [OrderOptionShort](doc/OrderOptionShort.md)
  - [PaginatedCalendarEventList](doc/PaginatedCalendarEventList.md)
  - [PaginatedGroupAuditLogEntryList](doc/PaginatedGroupAuditLogEntryList.md)
+ - [PaginatedModerationReportList](doc/PaginatedModerationReportList.md)
  - [PastDisplayName](doc/PastDisplayName.md)
  - [Pending2FAResult](doc/Pending2FAResult.md)
  - [PerformanceLimiterInfo](doc/PerformanceLimiterInfo.md)
  - [PerformanceRatings](doc/PerformanceRatings.md)
  - [Permission](doc/Permission.md)
+ - [PermissionData](doc/PermissionData.md)
  - [PlatformBuildInfo](doc/PlatformBuildInfo.md)
  - [PlayerModeration](doc/PlayerModeration.md)
  - [PlayerModerationType](doc/PlayerModerationType.md)
@@ -585,13 +608,16 @@ Class | Method | HTTP request | Description
  - [PropUnityPackage](doc/PropUnityPackage.md)
  - [PurchaseProductListingRequest](doc/PurchaseProductListingRequest.md)
  - [Region](doc/Region.md)
+ - [RegisterUserAccount200Response](doc/RegisterUserAccount200Response.md)
  - [RegisterUserAccountRequest](doc/RegisterUserAccountRequest.md)
  - [ReleaseStatus](doc/ReleaseStatus.md)
  - [ReportCategory](doc/ReportCategory.md)
  - [ReportReason](doc/ReportReason.md)
  - [RepresentedGroup](doc/RepresentedGroup.md)
  - [RequestInviteRequest](doc/RequestInviteRequest.md)
+ - [RequiresTwoFactorAuth](doc/RequiresTwoFactorAuth.md)
  - [RespondGroupJoinRequest](doc/RespondGroupJoinRequest.md)
+ - [RespondNotificationV2Request](doc/RespondNotificationV2Request.md)
  - [Response](doc/Response.md)
  - [SentNotification](doc/SentNotification.md)
  - [ServiceQueueStats](doc/ServiceQueueStats.md)
@@ -604,6 +630,8 @@ Class | Method | HTTP request | Description
  - [StoreType](doc/StoreType.md)
  - [StoreView](doc/StoreView.md)
  - [Submission](doc/Submission.md)
+ - [SubmitModerationReportRequest](doc/SubmitModerationReportRequest.md)
+ - [SubmitModerationReportRequestDetails](doc/SubmitModerationReportRequestDetails.md)
  - [Subscription](doc/Subscription.md)
  - [SubscriptionPeriod](doc/SubscriptionPeriod.md)
  - [Success](doc/Success.md)
@@ -617,6 +645,7 @@ Class | Method | HTTP request | Description
  - [TransactionSteamInfo](doc/TransactionSteamInfo.md)
  - [TransactionSteamWalletInfo](doc/TransactionSteamWalletInfo.md)
  - [TwoFactorAuthCode](doc/TwoFactorAuthCode.md)
+ - [TwoFactorAuthType](doc/TwoFactorAuthType.md)
  - [TwoFactorEmailCode](doc/TwoFactorEmailCode.md)
  - [TwoFactorRecoveryCodes](doc/TwoFactorRecoveryCodes.md)
  - [TwoFactorRecoveryCodesOtpInner](doc/TwoFactorRecoveryCodesOtpInner.md)

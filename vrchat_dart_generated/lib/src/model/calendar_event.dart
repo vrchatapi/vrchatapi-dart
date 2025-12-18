@@ -3,7 +3,10 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/calendar_event_category.dart';
+import 'package:vrchat_dart_generated/src/model/calendar_event_access.dart';
 import 'package:vrchat_dart_generated/src/model/calendar_event_user_interest.dart';
+import 'package:vrchat_dart_generated/src/model/calendar_event_platform.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -29,6 +32,8 @@ class CalendarEvent {
     this.deletedAt,
 
     required this.description,
+
+    this.durationInMs,
 
     required this.endsAt,
 
@@ -72,10 +77,10 @@ class CalendarEvent {
   });
 
   @JsonKey(name: r'accessType', required: true, includeIfNull: false)
-  final String accessType;
+  final CalendarEventAccess accessType;
 
   @JsonKey(name: r'category', required: true, includeIfNull: false)
-  final String category;
+  final CalendarEventCategory category;
 
   @JsonKey(
     name: r'closeInstanceAfterEndMinutes',
@@ -92,6 +97,9 @@ class CalendarEvent {
 
   @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
+
+  @JsonKey(name: r'durationInMs', required: false, includeIfNull: false)
+  final int? durationInMs;
 
   @JsonKey(name: r'endsAt', required: true, includeIfNull: false)
   final DateTime endsAt;
@@ -124,25 +132,24 @@ class CalendarEvent {
   @JsonKey(name: r'isDraft', required: false, includeIfNull: false)
   final bool? isDraft;
 
-  ///
+  /// Languages that might be spoken at this event
   @JsonKey(name: r'languages', required: false, includeIfNull: false)
   final List<String>? languages;
 
   @JsonKey(name: r'ownerId', required: false, includeIfNull: false)
   final String? ownerId;
 
-  ///
   @JsonKey(name: r'platforms', required: false, includeIfNull: false)
-  final List<String>? platforms;
+  final List<CalendarEventPlatform>? platforms;
 
-  ///
+  /// Group roles that may join this event
   @JsonKey(name: r'roleIds', required: false, includeIfNull: false)
   final List<String>? roleIds;
 
   @JsonKey(name: r'startsAt', required: true, includeIfNull: false)
   final DateTime startsAt;
 
-  ///
+  /// Custom tags for this event
   @JsonKey(name: r'tags', required: false, includeIfNull: false)
   final List<String>? tags;
 
@@ -171,6 +178,7 @@ class CalendarEvent {
           other.createdAt == createdAt &&
           other.deletedAt == deletedAt &&
           other.description == description &&
+          other.durationInMs == durationInMs &&
           other.endsAt == endsAt &&
           other.featured == featured &&
           other.guestEarlyJoinMinutes == guestEarlyJoinMinutes &&
@@ -200,6 +208,7 @@ class CalendarEvent {
       createdAt.hashCode +
       (deletedAt == null ? 0 : deletedAt.hashCode) +
       description.hashCode +
+      durationInMs.hashCode +
       endsAt.hashCode +
       featured.hashCode +
       guestEarlyJoinMinutes.hashCode +

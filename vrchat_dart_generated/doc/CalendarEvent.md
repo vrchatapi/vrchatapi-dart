@@ -8,12 +8,13 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accessType** | **String** |  | 
-**category** | **String** |  | 
+**accessType** | [**CalendarEventAccess**](CalendarEventAccess.md) |  | 
+**category** | [**CalendarEventCategory**](CalendarEventCategory.md) |  | 
 **closeInstanceAfterEndMinutes** | **int** |  | [optional] 
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **deletedAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **description** | **String** |  | 
+**durationInMs** | **int** |  | [optional] 
 **endsAt** | [**DateTime**](DateTime.md) |  | 
 **featured** | **bool** |  | [optional] 
 **guestEarlyJoinMinutes** | **int** |  | [optional] 
@@ -23,12 +24,12 @@ Name | Type | Description | Notes
 **imageUrl** | **String** |  | [optional] 
 **interestedUserCount** | **int** |  | [optional] 
 **isDraft** | **bool** |  | [optional] 
-**languages** | **List&lt;String&gt;** |   | [optional] 
+**languages** | **List&lt;String&gt;** | Languages that might be spoken at this event | [optional] 
 **ownerId** | **String** |  | [optional] 
-**platforms** | **List&lt;String&gt;** |   | [optional] 
-**roleIds** | **List&lt;String&gt;** |   | [optional] 
+**platforms** | [**List&lt;CalendarEventPlatform&gt;**](CalendarEventPlatform.md) |  | [optional] 
+**roleIds** | **List&lt;String&gt;** | Group roles that may join this event | [optional] 
 **startsAt** | [**DateTime**](DateTime.md) |  | 
-**tags** | **List&lt;String&gt;** |   | [optional] 
+**tags** | **List&lt;String&gt;** | Custom tags for this event | [optional] 
 **title** | **String** |  | 
 **type** | **String** |  | [optional] 
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] 

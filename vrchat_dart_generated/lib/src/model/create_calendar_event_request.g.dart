@@ -26,9 +26,12 @@ CreateCalendarEventRequest _$CreateCalendarEventRequestFromJson(
   final val = CreateCalendarEventRequest(
     accessType: $checkedConvert(
       'accessType',
-      (v) => $enumDecode(_$CreateCalendarEventRequestAccessTypeEnumEnumMap, v),
+      (v) => $enumDecode(_$CalendarEventAccessEnumMap, v),
     ),
-    category: $checkedConvert('category', (v) => v as String),
+    category: $checkedConvert(
+      'category',
+      (v) => $enumDecode(_$CalendarEventCategoryEnumMap, v),
+    ),
     closeInstanceAfterEndMinutes: $checkedConvert(
       'closeInstanceAfterEndMinutes',
       (v) => (v as num?)?.toInt(),
@@ -53,7 +56,9 @@ CreateCalendarEventRequest _$CreateCalendarEventRequestFromJson(
     parentId: $checkedConvert('parentId', (v) => v as String?),
     platforms: $checkedConvert(
       'platforms',
-      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+      (v) => (v as List<dynamic>?)
+          ?.map((e) => $enumDecode(_$CalendarEventPlatformEnumMap, e))
+          .toList(),
     ),
     roleIds: $checkedConvert(
       'roleIds',
@@ -80,9 +85,8 @@ CreateCalendarEventRequest _$CreateCalendarEventRequestFromJson(
 Map<String, dynamic> _$CreateCalendarEventRequestToJson(
   CreateCalendarEventRequest instance,
 ) => <String, dynamic>{
-  'accessType':
-      _$CreateCalendarEventRequestAccessTypeEnumEnumMap[instance.accessType]!,
-  'category': instance.category,
+  'accessType': _$CalendarEventAccessEnumMap[instance.accessType]!,
+  'category': _$CalendarEventCategoryEnumMap[instance.category]!,
   'closeInstanceAfterEndMinutes': ?instance.closeInstanceAfterEndMinutes,
   'description': instance.description,
   'endsAt': instance.endsAt.toIso8601String(),
@@ -93,7 +97,9 @@ Map<String, dynamic> _$CreateCalendarEventRequestToJson(
   'isDraft': ?instance.isDraft,
   'languages': ?instance.languages,
   'parentId': ?instance.parentId,
-  'platforms': ?instance.platforms,
+  'platforms': ?instance.platforms
+      ?.map((e) => _$CalendarEventPlatformEnumMap[e]!)
+      .toList(),
   'roleIds': ?instance.roleIds,
   'sendCreationNotification': instance.sendCreationNotification,
   'startsAt': instance.startsAt.toIso8601String(),
@@ -102,7 +108,29 @@ Map<String, dynamic> _$CreateCalendarEventRequestToJson(
   'usesInstanceOverflow': ?instance.usesInstanceOverflow,
 };
 
-const _$CreateCalendarEventRequestAccessTypeEnumEnumMap = {
-  CreateCalendarEventRequestAccessTypeEnum.group: 'group',
-  CreateCalendarEventRequestAccessTypeEnum.public: 'public',
+const _$CalendarEventAccessEnumMap = {
+  CalendarEventAccess.group: 'group',
+  CalendarEventAccess.public: 'public',
+};
+
+const _$CalendarEventCategoryEnumMap = {
+  CalendarEventCategory.arts: 'arts',
+  CalendarEventCategory.avatars: 'avatars',
+  CalendarEventCategory.dance: 'dance',
+  CalendarEventCategory.education: 'education',
+  CalendarEventCategory.exploration: 'exploration',
+  CalendarEventCategory.filmMedia: 'film_media',
+  CalendarEventCategory.gaming: 'gaming',
+  CalendarEventCategory.hangout: 'hangout',
+  CalendarEventCategory.music: 'music',
+  CalendarEventCategory.other: 'other',
+  CalendarEventCategory.performance: 'performance',
+  CalendarEventCategory.roleplaying: 'roleplaying',
+  CalendarEventCategory.wellness: 'wellness',
+};
+
+const _$CalendarEventPlatformEnumMap = {
+  CalendarEventPlatform.android: 'android',
+  CalendarEventPlatform.ios: 'ios',
+  CalendarEventPlatform.standalonewindows: 'standalonewindows',
 };

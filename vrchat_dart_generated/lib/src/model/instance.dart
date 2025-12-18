@@ -29,15 +29,19 @@ class Instance {
 
     this.ageGate,
 
+    this.calendarEntryId,
+
     this.canRequestInvite = true,
 
-    required this.capacity,
+    this.capacity,
 
     required this.clientNumber,
 
     this.closedAt,
 
     this.contentSettings,
+
+    this.creatorId,
 
     this.displayName,
 
@@ -110,18 +114,21 @@ class Instance {
     required this.worldId,
   });
 
-  @JsonKey(name: r'active', required: true, includeIfNull: false)
-  final bool active;
+  @JsonKey(name: r'active', required: false, includeIfNull: false)
+  final bool? active;
 
   @JsonKey(name: r'ageGate', required: false, includeIfNull: false)
   final bool? ageGate;
 
-  @JsonKey(name: r'canRequestInvite', required: true, includeIfNull: false)
-  final bool canRequestInvite;
+  @JsonKey(name: r'calendarEntryId', required: false, includeIfNull: false)
+  final String? calendarEntryId;
+
+  @JsonKey(name: r'canRequestInvite', required: false, includeIfNull: false)
+  final bool? canRequestInvite;
 
   // minimum: 0
-  @JsonKey(name: r'capacity', required: true, includeIfNull: false)
-  final int capacity;
+  @JsonKey(name: r'capacity', required: false, includeIfNull: false)
+  final int? capacity;
 
   /// Always returns \"unknown\".
   @Deprecated('clientNumber has been deprecated')
@@ -133,6 +140,10 @@ class Instance {
 
   @JsonKey(name: r'contentSettings', required: false, includeIfNull: false)
   final InstanceContentSettings? contentSettings;
+
+  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
+  @JsonKey(name: r'creatorId', required: false, includeIfNull: false)
+  final String? creatorId;
 
   @JsonKey(name: r'displayName', required: false, includeIfNull: false)
   final String? displayName;
@@ -173,7 +184,7 @@ class Instance {
     required: false,
     includeIfNull: false,
   )
-  final String? instancePersistenceEnabled;
+  final bool? instancePersistenceEnabled;
 
   /// Represents a unique location, consisting of a world identifier and an instance identifier, or \"offline\" if the user is not on your friends list.
   @JsonKey(name: r'location', required: true, includeIfNull: false)
@@ -267,12 +278,14 @@ class Instance {
       other is Instance &&
           other.active == active &&
           other.ageGate == ageGate &&
+          other.calendarEntryId == calendarEntryId &&
           other.canRequestInvite == canRequestInvite &&
           other.capacity == capacity &&
           // ignore: deprecated_member_use_from_same_package
           other.clientNumber == clientNumber &&
           other.closedAt == closedAt &&
           other.contentSettings == contentSettings &&
+          other.creatorId == creatorId &&
           other.displayName == displayName &&
           other.friends == friends &&
           other.full == full &&
@@ -313,16 +326,18 @@ class Instance {
   int get hashCode =>
       active.hashCode +
       (ageGate == null ? 0 : ageGate.hashCode) +
+      (calendarEntryId == null ? 0 : calendarEntryId.hashCode) +
       canRequestInvite.hashCode +
       capacity.hashCode +
       // ignore: deprecated_member_use_from_same_package
       clientNumber.hashCode +
       (closedAt == null ? 0 : closedAt.hashCode) +
       contentSettings.hashCode +
+      creatorId.hashCode +
       (displayName == null ? 0 : displayName.hashCode) +
       friends.hashCode +
       full.hashCode +
-      gameServerVersion.hashCode +
+      (gameServerVersion == null ? 0 : gameServerVersion.hashCode) +
       groupAccessType.hashCode +
       (hardClose == null ? 0 : hardClose.hashCode) +
       hasCapacityForYou.hashCode +

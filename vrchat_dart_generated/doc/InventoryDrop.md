@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **dropExpiryDate** | [**DateTime**](DateTime.md) |  | 
 **endDropDate** | [**DateTime**](DateTime.md) |  | 
 **id** | **String** |  | 
+**isDisabled** | **bool** |  | 
 **name** | **String** |  | 
 **notificationDetails** | [**InventoryNotificationDetails**](InventoryNotificationDetails.md) |  | 
 **startDropDate** | [**DateTime**](DateTime.md) |  | 

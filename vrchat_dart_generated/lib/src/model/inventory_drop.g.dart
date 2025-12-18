@@ -21,6 +21,7 @@ InventoryDrop _$InventoryDropFromJson(Map<String, dynamic> json) =>
             'dropExpiryDate',
             'endDropDate',
             'id',
+            'isDisabled',
             'name',
             'notificationDetails',
             'startDropDate',
@@ -46,6 +47,7 @@ InventoryDrop _$InventoryDropFromJson(Map<String, dynamic> json) =>
             (v) => DateTime.parse(v as String),
           ),
           id: $checkedConvert('id', (v) => v as String),
+          isDisabled: $checkedConvert('isDisabled', (v) => v as bool),
           name: $checkedConvert('name', (v) => v as String),
           notificationDetails: $checkedConvert(
             'notificationDetails',
@@ -84,6 +86,7 @@ Map<String, dynamic> _$InventoryDropToJson(InventoryDrop instance) =>
       'dropExpiryDate': instance.dropExpiryDate?.toIso8601String(),
       'endDropDate': instance.endDropDate.toIso8601String(),
       'id': instance.id,
+      'isDisabled': instance.isDisabled,
       'name': instance.name,
       'notificationDetails': instance.notificationDetails.toJson(),
       'startDropDate': instance.startDropDate.toIso8601String(),

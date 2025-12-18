@@ -24,6 +24,10 @@ Group _$GroupFromJson(
       'ageVerificationSlotsAvailable',
       (v) => v as bool?,
     ),
+    allowGroupJoinPrompt: $checkedConvert(
+      'allowGroupJoinPrompt',
+      (v) => v as bool?,
+    ),
     badges: $checkedConvert(
       'badges',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -111,6 +115,7 @@ Map<String, dynamic> _$GroupToJson(Group instance) => <String, dynamic>{
   'ageVerificationBetaCode': ?instance.ageVerificationBetaCode,
   'ageVerificationBetaSlots': ?instance.ageVerificationBetaSlots,
   'ageVerificationSlotsAvailable': ?instance.ageVerificationSlotsAvailable,
+  'allowGroupJoinPrompt': ?instance.allowGroupJoinPrompt,
   'badges': ?instance.badges,
   'bannerId': ?instance.bannerId,
   'bannerUrl': ?instance.bannerUrl,

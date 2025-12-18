@@ -18,9 +18,9 @@ part 'product.g.dart';
 class Product {
   /// Returns a new [Product] instance.
   Product({
-    required this.archived,
+    this.archived,
 
-    required this.created,
+    this.created,
 
     required this.description,
 
@@ -48,16 +48,16 @@ class Product {
 
     required this.tags,
 
-    required this.updated,
+    this.updated,
 
     this.useForSubscriberList = false,
   });
 
-  @JsonKey(name: r'archived', required: true, includeIfNull: false)
-  final bool archived;
+  @JsonKey(name: r'archived', required: false, includeIfNull: false)
+  final bool? archived;
 
-  @JsonKey(name: r'created', required: true, includeIfNull: false)
-  final DateTime created;
+  @JsonKey(name: r'created', required: false, includeIfNull: false)
+  final DateTime? created;
 
   @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
@@ -98,7 +98,7 @@ class Product {
   @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 
-  @JsonKey(name: r'updated', required: true, includeIfNull: true)
+  @JsonKey(name: r'updated', required: false, includeIfNull: false)
   final DateTime? updated;
 
   @JsonKey(name: r'useForSubscriberList', required: false, includeIfNull: false)

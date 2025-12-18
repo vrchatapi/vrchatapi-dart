@@ -15,10 +15,15 @@ import 'package:vrchat_dart_generated/src/model/avatar_moderation_type.dart';
 import 'package:vrchat_dart_generated/src/model/create_avatar_moderation_request.dart';
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/disable2_fa_result.dart';
+import 'package:vrchat_dart_generated/src/model/moderation_report.dart';
 import 'package:vrchat_dart_generated/src/model/ok_status2.dart';
+import 'package:vrchat_dart_generated/src/model/paginated_moderation_report_list.dart';
 import 'package:vrchat_dart_generated/src/model/pending2_fa_result.dart';
+import 'package:vrchat_dart_generated/src/model/register_user_account200_response.dart';
 import 'package:vrchat_dart_generated/src/model/register_user_account_request.dart';
+import 'package:vrchat_dart_generated/src/model/submit_moderation_report_request.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
+import 'package:vrchat_dart_generated/src/model/success_flag.dart';
 import 'package:vrchat_dart_generated/src/model/two_factor_auth_code.dart';
 import 'package:vrchat_dart_generated/src/model/two_factor_email_code.dart';
 import 'package:vrchat_dart_generated/src/model/two_factor_recovery_codes.dart';
@@ -435,6 +440,93 @@ class AuthenticationApi {
     );
   }
 
+  /// Delete Moderation Report
+  /// Delete a moderation report
+  ///
+  /// Parameters:
+  /// * [moderationReportId] - The moderation report id.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [SuccessFlag] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<SuccessFlag>> deleteModerationReport({
+    required String moderationReportId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/moderationReports/{moderationReportId}'.replaceAll(
+      '{'
+      r'moderationReportId'
+      '}',
+      moderationReportId.toString(),
+    );
+    final _options = Options(
+      method: r'DELETE',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    SuccessFlag? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<SuccessFlag, SuccessFlag>(
+              rawData,
+              'SuccessFlag',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<SuccessFlag>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// Delete User
   /// Deletes the account with given ID. Normal users only have permission to delete their own account. Account deletion is 14 days from this request, and will be cancelled if you do an authenticated request with the account afterwards.  **VRC+ NOTE:** Despite the 14-days cooldown, any VRC+ subscription will be cancelled **immediately**.  **METHOD NOTE:** Despite this being a Delete action, the method type required is PUT.
   ///
@@ -693,9 +785,9 @@ class AuthenticationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [CurrentUser] as data
+  /// Returns a [Future] containing a [Response] with a [RegisterUserAccount200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CurrentUser>> getCurrentUser({
+  Future<Response<RegisterUserAccount200Response>> getCurrentUser({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -736,17 +828,16 @@ class AuthenticationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    CurrentUser? _responseData;
+    RegisterUserAccount200Response? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<CurrentUser, CurrentUser>(
-              rawData,
-              'CurrentUser',
-              growable: true,
-            );
+          : deserialize<
+              RegisterUserAccount200Response,
+              RegisterUserAccount200Response
+            >(rawData, 'RegisterUserAccount200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -757,7 +848,7 @@ class AuthenticationApi {
       );
     }
 
-    return Response<CurrentUser>(
+    return Response<RegisterUserAccount200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -838,6 +929,104 @@ class AuthenticationApi {
     }
 
     return Response<List<AvatarModeration>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Get Moderation Reports
+  /// Get submitted moderation reports
+  ///
+  /// Parameters:
+  /// * [offset] - A zero-based offset from the default object sorting from where search results start.
+  /// * [n] - The number of objects to return.
+  /// * [reportingUserId] - Filter for moderation reports.
+  /// * [status] - Filter for moderation reports. One of: `closed`...
+  /// * [type] - Filter for moderation reports. One of: `avatar`, `group`, `user`, `world`...
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [PaginatedModerationReportList] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<PaginatedModerationReportList>> getModerationReports({
+    int? offset,
+    int? n = 60,
+    String? reportingUserId,
+    String? status,
+    String? type,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/moderationReports';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (offset != null) r'offset': offset,
+      if (n != null) r'n': n,
+      if (reportingUserId != null) r'reportingUserId': reportingUserId,
+      if (status != null) r'status': status,
+      if (type != null) r'type': type,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    PaginatedModerationReportList? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<
+              PaginatedModerationReportList,
+              PaginatedModerationReportList
+            >(rawData, 'PaginatedModerationReportList', growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<PaginatedModerationReportList>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1017,10 +1206,10 @@ class AuthenticationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [CurrentUser] as data
+  /// Returns a [Future] containing a [Response] with a [RegisterUserAccount200Response] as data
   /// Throws [DioException] if API call or serialization fails
   @Deprecated('This operation has been deprecated')
-  Future<Response<CurrentUser>> registerUserAccount({
+  Future<Response<RegisterUserAccount200Response>> registerUserAccount({
     required RegisterUserAccountRequest registerUserAccountRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1060,17 +1249,16 @@ class AuthenticationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    CurrentUser? _responseData;
+    RegisterUserAccount200Response? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<CurrentUser, CurrentUser>(
-              rawData,
-              'CurrentUser',
-              growable: true,
-            );
+          : deserialize<
+              RegisterUserAccount200Response,
+              RegisterUserAccount200Response
+            >(rawData, 'RegisterUserAccount200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1081,7 +1269,7 @@ class AuthenticationApi {
       );
     }
 
-    return Response<CurrentUser>(
+    return Response<RegisterUserAccount200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1158,6 +1346,103 @@ class AuthenticationApi {
     }
 
     return Response<Success>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Submit Moderation Report
+  /// Submit a moderation report
+  ///
+  /// Parameters:
+  /// * [submitModerationReportRequest]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [ModerationReport] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<ModerationReport>> submitModerationReport({
+    required SubmitModerationReportRequest submitModerationReportRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/moderationReports';
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      _bodyData = jsonEncode(submitModerationReportRequest);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(_dio.options, _path),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    ModerationReport? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<ModerationReport, ModerationReport>(
+              rawData,
+              'ModerationReport',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<ModerationReport>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

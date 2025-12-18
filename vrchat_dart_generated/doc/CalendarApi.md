@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**getGroupCalendarEvent**](CalendarApi.md#getgroupcalendarevent) | **GET** /calendar/{groupId}/{calendarId} | Get a calendar event
 [**getGroupCalendarEventICS**](CalendarApi.md#getgroupcalendareventics) | **GET** /calendar/{groupId}/{calendarId}.ics | Download calendar event as ICS
 [**getGroupCalendarEvents**](CalendarApi.md#getgroupcalendarevents) | **GET** /calendar/{groupId} | List a group&#39;s calendar events
+[**getGroupNextCalendarEvent**](CalendarApi.md#getgroupnextcalendarevent) | **GET** /calendar/{groupId}/next | Get next calendar event
 [**searchCalendarEvents**](CalendarApi.md#searchcalendarevents) | **GET** /calendar/search | Search for calendar events
 [**updateGroupCalendarEvent**](CalendarApi.md#updategroupcalendarevent) | **PUT** /calendar/{groupId}/{calendarId}/event | Update a calendar event
 
@@ -527,6 +528,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaginatedCalendarEventList**](PaginatedCalendarEventList.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getGroupNextCalendarEvent**
+> CalendarEvent getGroupNextCalendarEvent(groupId)
+
+Get next calendar event
+
+Get the closest future calendar event scheduled for a group
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getCalendarApi();
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+
+try {
+    final response = api.getGroupNextCalendarEvent(groupId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling CalendarApi->getGroupNextCalendarEvent: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **String**| Must be a valid group ID. | 
+
+### Return type
+
+[**CalendarEvent**](CalendarEvent.md)
 
 ### Authorization
 

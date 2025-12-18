@@ -26,7 +26,11 @@ class InventoryTemplate {
 
     required this.createdAt,
 
+    required this.defaultAttributes,
+
     required this.description,
+
+    required this.equipSlots,
 
     required this.flags,
 
@@ -49,6 +53,8 @@ class InventoryTemplate {
     required this.tags,
 
     required this.updatedAt,
+
+    required this.validateUserAttributes,
   });
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
@@ -61,8 +67,14 @@ class InventoryTemplate {
   @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
 
+  @JsonKey(name: r'defaultAttributes', required: true, includeIfNull: false)
+  final Object defaultAttributes;
+
   @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
+
+  @JsonKey(name: r'equipSlots', required: true, includeIfNull: false)
+  final List<String> equipSlots;
 
   @JsonKey(name: r'flags', required: true, includeIfNull: false)
   final List<String> flags;
@@ -97,6 +109,13 @@ class InventoryTemplate {
   @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
   final DateTime updatedAt;
 
+  @JsonKey(
+    name: r'validateUserAttributes',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool validateUserAttributes;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -104,7 +123,9 @@ class InventoryTemplate {
           other.authorId == authorId &&
           other.collections == collections &&
           other.createdAt == createdAt &&
+          other.defaultAttributes == defaultAttributes &&
           other.description == description &&
+          other.equipSlots == equipSlots &&
           other.flags == flags &&
           other.id == id &&
           other.imageUrl == imageUrl &&
@@ -115,14 +136,17 @@ class InventoryTemplate {
           other.notificationDetails == notificationDetails &&
           other.status == status &&
           other.tags == tags &&
-          other.updatedAt == updatedAt;
+          other.updatedAt == updatedAt &&
+          other.validateUserAttributes == validateUserAttributes;
 
   @override
   int get hashCode =>
       authorId.hashCode +
       collections.hashCode +
       createdAt.hashCode +
+      defaultAttributes.hashCode +
       description.hashCode +
+      equipSlots.hashCode +
       flags.hashCode +
       id.hashCode +
       imageUrl.hashCode +
@@ -133,7 +157,8 @@ class InventoryTemplate {
       notificationDetails.hashCode +
       status.hashCode +
       tags.hashCode +
-      updatedAt.hashCode;
+      updatedAt.hashCode +
+      validateUserAttributes.hashCode;
 
   factory InventoryTemplate.fromJson(Map<String, dynamic> json) =>
       _$InventoryTemplateFromJson(json);

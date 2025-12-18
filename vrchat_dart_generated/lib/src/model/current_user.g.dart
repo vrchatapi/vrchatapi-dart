@@ -62,6 +62,7 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'twoFactorAuthEnabled',
         'unsubscribe',
         'userIcon',
+        'usesGeneratedPassword',
       ],
     );
     final val = CurrentUser(
@@ -284,6 +285,10 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => v as String?,
       ),
       username: $checkedConvert('username', (v) => v as String?),
+      usesGeneratedPassword: $checkedConvert(
+        'usesGeneratedPassword',
+        (v) => v as bool,
+      ),
       viveId: $checkedConvert('viveId', (v) => v as String?),
     );
     return val;
@@ -382,6 +387,7 @@ Map<String, dynamic> _$CurrentUserToJson(
   'userLanguage': ?instance.userLanguage,
   'userLanguageCode': ?instance.userLanguageCode,
   'username': ?instance.username,
+  'usesGeneratedPassword': instance.usesGeneratedPassword,
   'viveId': ?instance.viveId,
 };
 

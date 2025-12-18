@@ -175,6 +175,8 @@ class CurrentUser {
 
     this.username,
 
+    required this.usesGeneratedPassword,
+
     this.viveId,
   });
 
@@ -332,7 +334,7 @@ class CurrentUser {
   @JsonKey(name: r'last_mobile', required: true, includeIfNull: true)
   final DateTime? lastMobile;
 
-  /// This can be `standalonewindows` or `android`, but can also pretty much be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
+  /// This is normally `android`, `ios`, `standalonewindows`, `web`, or the empty value ``, but also supposedly can be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
   @JsonKey(name: r'last_platform', required: true, includeIfNull: false)
   final String lastPlatform;
 
@@ -448,6 +450,9 @@ class CurrentUser {
   @JsonKey(name: r'username', required: false, includeIfNull: false)
   final String? username;
 
+  @JsonKey(name: r'usesGeneratedPassword', required: true, includeIfNull: false)
+  final bool usesGeneratedPassword;
+
   @JsonKey(name: r'viveId', required: false, includeIfNull: false)
   final String? viveId;
 
@@ -532,6 +537,7 @@ class CurrentUser {
           other.userLanguageCode == userLanguageCode &&
           // ignore: deprecated_member_use_from_same_package
           other.username == username &&
+          other.usesGeneratedPassword == usesGeneratedPassword &&
           other.viveId == viveId;
 
   @override
@@ -614,6 +620,7 @@ class CurrentUser {
       (userLanguageCode == null ? 0 : userLanguageCode.hashCode) +
       // ignore: deprecated_member_use_from_same_package
       username.hashCode +
+      usesGeneratedPassword.hashCode +
       viveId.hashCode;
 
   factory CurrentUser.fromJson(Map<String, dynamic> json) =>

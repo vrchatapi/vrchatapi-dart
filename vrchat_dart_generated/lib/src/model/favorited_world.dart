@@ -26,11 +26,11 @@ class FavoritedWorld {
 
     required this.capacity,
 
-    required this.createdAt,
+    this.createdAt,
 
     this.defaultContentSettings,
 
-    required this.description,
+    this.description,
 
     required this.favoriteGroup,
 
@@ -46,7 +46,7 @@ class FavoritedWorld {
 
     required this.imageUrl,
 
-    required this.labsPublicationDate,
+    this.labsPublicationDate,
 
     required this.name,
 
@@ -58,25 +58,25 @@ class FavoritedWorld {
 
     this.previewYoutubeId,
 
-    required this.publicationDate,
+    this.publicationDate,
 
     this.recommendedCapacity,
 
     required this.releaseStatus,
 
-    required this.tags,
+    this.tags,
 
     required this.thumbnailImageUrl,
 
     this.udonProducts,
 
-    required this.unityPackages,
+    this.unityPackages,
 
-    required this.updatedAt,
+    this.updatedAt,
 
-    required this.urlList,
+    this.urlList,
 
-    required this.version,
+    this.version,
 
     this.visits = 0,
   });
@@ -91,8 +91,8 @@ class FavoritedWorld {
   @JsonKey(name: r'capacity', required: true, includeIfNull: false)
   final int capacity;
 
-  @JsonKey(name: r'created_at', required: true, includeIfNull: false)
-  final DateTime createdAt;
+  @JsonKey(name: r'created_at', required: false, includeIfNull: false)
+  final DateTime? createdAt;
 
   @JsonKey(
     name: r'defaultContentSettings',
@@ -101,8 +101,8 @@ class FavoritedWorld {
   )
   final InstanceContentSettings? defaultContentSettings;
 
-  @JsonKey(name: r'description', required: true, includeIfNull: false)
-  final String description;
+  @JsonKey(name: r'description', required: false, includeIfNull: false)
+  final String? description;
 
   @JsonKey(name: r'favoriteGroup', required: true, includeIfNull: false)
   final String favoriteGroup;
@@ -111,15 +111,15 @@ class FavoritedWorld {
   final String favoriteId;
 
   // minimum: 0
-  @JsonKey(name: r'favorites', required: true, includeIfNull: false)
-  final int favorites;
+  @JsonKey(name: r'favorites', required: false, includeIfNull: false)
+  final int? favorites;
 
-  @JsonKey(name: r'featured', required: true, includeIfNull: false)
-  final bool featured;
+  @JsonKey(name: r'featured', required: false, includeIfNull: false)
+  final bool? featured;
 
   // minimum: 0
-  @JsonKey(name: r'heat', required: true, includeIfNull: false)
-  final int heat;
+  @JsonKey(name: r'heat', required: false, includeIfNull: false)
+  final int? heat;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @JsonKey(name: r'id', required: true, includeIfNull: false)
@@ -128,8 +128,8 @@ class FavoritedWorld {
   @JsonKey(name: r'imageUrl', required: true, includeIfNull: false)
   final String imageUrl;
 
-  @JsonKey(name: r'labsPublicationDate', required: true, includeIfNull: false)
-  final String labsPublicationDate;
+  @JsonKey(name: r'labsPublicationDate', required: false, includeIfNull: false)
+  final String? labsPublicationDate;
 
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
@@ -138,18 +138,18 @@ class FavoritedWorld {
   @JsonKey(name: r'occupants', required: true, includeIfNull: false)
   final int occupants;
 
-  @JsonKey(name: r'organization', required: true, includeIfNull: false)
-  final String organization;
+  @JsonKey(name: r'organization', required: false, includeIfNull: false)
+  final String? organization;
 
   // minimum: 0
-  @JsonKey(name: r'popularity', required: true, includeIfNull: false)
-  final int popularity;
+  @JsonKey(name: r'popularity', required: false, includeIfNull: false)
+  final int? popularity;
 
   @JsonKey(name: r'previewYoutubeId', required: false, includeIfNull: false)
   final String? previewYoutubeId;
 
-  @JsonKey(name: r'publicationDate', required: true, includeIfNull: false)
-  final String publicationDate;
+  @JsonKey(name: r'publicationDate', required: false, includeIfNull: false)
+  final String? publicationDate;
 
   @JsonKey(name: r'recommendedCapacity', required: false, includeIfNull: false)
   final int? recommendedCapacity;
@@ -158,8 +158,8 @@ class FavoritedWorld {
   final ReleaseStatus releaseStatus;
 
   ///
-  @JsonKey(name: r'tags', required: true, includeIfNull: false)
-  final List<String> tags;
+  @JsonKey(name: r'tags', required: false, includeIfNull: false)
+  final List<String>? tags;
 
   @JsonKey(name: r'thumbnailImageUrl', required: true, includeIfNull: false)
   final String thumbnailImageUrl;
@@ -168,18 +168,18 @@ class FavoritedWorld {
   final List<String>? udonProducts;
 
   ///
-  @JsonKey(name: r'unityPackages', required: true, includeIfNull: false)
-  final List<UnityPackage> unityPackages;
+  @JsonKey(name: r'unityPackages', required: false, includeIfNull: false)
+  final List<UnityPackage>? unityPackages;
 
-  @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
-  final DateTime updatedAt;
+  @JsonKey(name: r'updated_at', required: false, includeIfNull: false)
+  final DateTime? updatedAt;
 
-  @JsonKey(name: r'urlList', required: true, includeIfNull: false)
-  final List<String> urlList;
+  @JsonKey(name: r'urlList', required: false, includeIfNull: false)
+  final List<String>? urlList;
 
   // minimum: 1
-  @JsonKey(name: r'version', required: true, includeIfNull: false)
-  final int version;
+  @JsonKey(name: r'version', required: false, includeIfNull: false)
+  final int? version;
 
   // minimum: 0
   @JsonKey(name: r'visits', required: false, includeIfNull: false)

@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/content_filter.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
 
 import 'package:json_annotation/json_annotation.dart';
@@ -33,6 +34,8 @@ class UpdateUserRequest {
     this.displayName,
 
     this.email,
+
+    this.hasSharedConnectionsOptOut,
 
     this.isBoopingEnabled,
 
@@ -67,7 +70,7 @@ class UpdateUserRequest {
 
   /// These tags begin with `content_` and control content gating
   @JsonKey(name: r'contentFilters', required: false, includeIfNull: false)
-  final List<String>? contentFilters;
+  final List<ContentFilter>? contentFilters;
 
   @JsonKey(name: r'currentPassword', required: false, includeIfNull: false)
   final String? currentPassword;
@@ -78,6 +81,14 @@ class UpdateUserRequest {
 
   @JsonKey(name: r'email', required: false, includeIfNull: false)
   final String? email;
+
+  /// Opt out of the Mutuals feature
+  @JsonKey(
+    name: r'hasSharedConnectionsOptOut',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? hasSharedConnectionsOptOut;
 
   @JsonKey(name: r'isBoopingEnabled', required: false, includeIfNull: false)
   final bool? isBoopingEnabled;
@@ -122,6 +133,7 @@ class UpdateUserRequest {
           other.currentPassword == currentPassword &&
           other.displayName == displayName &&
           other.email == email &&
+          other.hasSharedConnectionsOptOut == hasSharedConnectionsOptOut &&
           other.isBoopingEnabled == isBoopingEnabled &&
           other.password == password &&
           other.pronouns == pronouns &&
@@ -142,6 +154,7 @@ class UpdateUserRequest {
       currentPassword.hashCode +
       displayName.hashCode +
       email.hashCode +
+      hasSharedConnectionsOptOut.hashCode +
       isBoopingEnabled.hashCode +
       password.hashCode +
       pronouns.hashCode +

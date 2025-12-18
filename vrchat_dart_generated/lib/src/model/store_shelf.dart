@@ -18,6 +18,10 @@ part 'store_shelf.g.dart';
 class StoreShelf {
   /// Returns a new [StoreShelf] instance.
   StoreShelf({
+    this.highlightListing,
+
+    this.highlightListingId,
+
     required this.id,
 
     required this.listingIds,
@@ -32,6 +36,12 @@ class StoreShelf {
 
     required this.updatedAt,
   });
+
+  @JsonKey(name: r'highlightListing', required: false, includeIfNull: false)
+  final ProductListing? highlightListing;
+
+  @JsonKey(name: r'highlightListingId', required: false, includeIfNull: false)
+  final String? highlightListingId;
 
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
@@ -52,12 +62,14 @@ class StoreShelf {
   final String shelfTitle;
 
   @JsonKey(name: r'updatedAt', required: true, includeIfNull: false)
-  final String updatedAt;
+  final DateTime updatedAt;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is StoreShelf &&
+          other.highlightListing == highlightListing &&
+          other.highlightListingId == highlightListingId &&
           other.id == id &&
           other.listingIds == listingIds &&
           other.listings == listings &&
@@ -68,6 +80,8 @@ class StoreShelf {
 
   @override
   int get hashCode =>
+      highlightListing.hashCode +
+      highlightListingId.hashCode +
       id.hashCode +
       listingIds.hashCode +
       listings.hashCode +

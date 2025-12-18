@@ -14,15 +14,18 @@ Method | HTTP request | Description
 [**confirmEmail**](AuthenticationApi.md#confirmemail) | **GET** /auth/confirmEmail | Confirm Email
 [**createGlobalAvatarModeration**](AuthenticationApi.md#createglobalavatarmoderation) | **POST** /auth/user/avatarmoderations | Create Global Avatar Moderation
 [**deleteGlobalAvatarModeration**](AuthenticationApi.md#deleteglobalavatarmoderation) | **DELETE** /auth/user/avatarmoderations | Delete Global Avatar Moderation
+[**deleteModerationReport**](AuthenticationApi.md#deletemoderationreport) | **DELETE** /moderationReports/{moderationReportId} | Delete Moderation Report
 [**deleteUser**](AuthenticationApi.md#deleteuser) | **PUT** /users/{userId}/delete | Delete User
 [**disable2FA**](AuthenticationApi.md#disable2fa) | **DELETE** /auth/twofactorauth | Disable 2FA
 [**enable2FA**](AuthenticationApi.md#enable2fa) | **POST** /auth/twofactorauth/totp/pending | Enable time-based 2FA codes
 [**getCurrentUser**](AuthenticationApi.md#getcurrentuser) | **GET** /auth/user | Login and/or Get Current User Info
 [**getGlobalAvatarModerations**](AuthenticationApi.md#getglobalavatarmoderations) | **GET** /auth/user/avatarmoderations | Get Global Avatar Moderations
+[**getModerationReports**](AuthenticationApi.md#getmoderationreports) | **GET** /moderationReports | Get Moderation Reports
 [**getRecoveryCodes**](AuthenticationApi.md#getrecoverycodes) | **GET** /auth/user/twofactorauth/otp | Get 2FA Recovery codes
 [**logout**](AuthenticationApi.md#logout) | **PUT** /logout | Logout
 [**registerUserAccount**](AuthenticationApi.md#registeruseraccount) | **POST** /auth/register | Register User Account
 [**resendEmailConfirmation**](AuthenticationApi.md#resendemailconfirmation) | **POST** /auth/user/resendEmail | Resend Email Confirmation
+[**submitModerationReport**](AuthenticationApi.md#submitmoderationreport) | **POST** /moderationReports | Submit Moderation Report
 [**verify2FA**](AuthenticationApi.md#verify2fa) | **POST** /auth/twofactorauth/totp/verify | Verify 2FA code
 [**verify2FAEmailCode**](AuthenticationApi.md#verify2faemailcode) | **POST** /auth/twofactorauth/emailotp/verify | Verify 2FA email code
 [**verifyAuthToken**](AuthenticationApi.md#verifyauthtoken) | **GET** /auth | Verify Auth Token
@@ -263,6 +266,53 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **deleteModerationReport**
+> SuccessFlag deleteModerationReport(moderationReportId)
+
+Delete Moderation Report
+
+Delete a moderation report
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+final String moderationReportId = moderationReportId_example; // String | The moderation report id.
+
+try {
+    final response = api.deleteModerationReport(moderationReportId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AuthenticationApi->deleteModerationReport: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **moderationReportId** | **String**| The moderation report id. | 
+
+### Return type
+
+[**SuccessFlag**](SuccessFlag.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **deleteUser**
 > CurrentUser deleteUser(userId)
 
@@ -397,7 +447,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCurrentUser**
-> CurrentUser getCurrentUser()
+> RegisterUserAccount200Response getCurrentUser()
 
 Login and/or Get Current User Info
 
@@ -433,7 +483,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**CurrentUser**](CurrentUser.md)
+[**RegisterUserAccount200Response**](RegisterUserAccount200Response.md)
 
 ### Authorization
 
@@ -477,6 +527,61 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**List&lt;AvatarModeration&gt;**](AvatarModeration.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getModerationReports**
+> PaginatedModerationReportList getModerationReports(offset, n, reportingUserId, status, type)
+
+Get Moderation Reports
+
+Get submitted moderation reports
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
+final int n = 56; // int | The number of objects to return.
+final String reportingUserId = reportingUserId_example; // String | Filter for moderation reports.
+final String status = status_example; // String | Filter for moderation reports. One of: `closed`...
+final String type = type_example; // String | Filter for moderation reports. One of: `avatar`, `group`, `user`, `world`...
+
+try {
+    final response = api.getModerationReports(offset, n, reportingUserId, status, type);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AuthenticationApi->getModerationReports: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
+ **n** | **int**| The number of objects to return. | [optional] [default to 60]
+ **reportingUserId** | **String**| Filter for moderation reports. | [optional] 
+ **status** | **String**| Filter for moderation reports. One of: `closed`... | [optional] 
+ **type** | **String**| Filter for moderation reports. One of: `avatar`, `group`, `user`, `world`... | [optional] 
+
+### Return type
+
+[**PaginatedModerationReportList**](PaginatedModerationReportList.md)
 
 ### Authorization
 
@@ -576,7 +681,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **registerUserAccount**
-> CurrentUser registerUserAccount(registerUserAccountRequest)
+> RegisterUserAccount200Response registerUserAccount(registerUserAccountRequest)
 
 Register User Account
 
@@ -605,7 +710,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CurrentUser**](CurrentUser.md)
+[**RegisterUserAccount200Response**](RegisterUserAccount200Response.md)
 
 ### Authorization
 
@@ -657,6 +762,53 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **submitModerationReport**
+> ModerationReport submitModerationReport(submitModerationReportRequest)
+
+Submit Moderation Report
+
+Submit a moderation report
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+final SubmitModerationReportRequest submitModerationReportRequest = ; // SubmitModerationReportRequest | 
+
+try {
+    final response = api.submitModerationReport(submitModerationReportRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AuthenticationApi->submitModerationReport: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **submitModerationReportRequest** | [**SubmitModerationReportRequest**](SubmitModerationReportRequest.md)|  | 
+
+### Return type
+
+[**ModerationReport**](ModerationReport.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

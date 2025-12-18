@@ -8,8 +8,8 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accessType** | **String** |  | 
-**category** | **String** |  | 
+**accessType** | [**CalendarEventAccess**](CalendarEventAccess.md) |  | 
+**category** | [**CalendarEventCategory**](CalendarEventCategory.md) |  | 
 **closeInstanceAfterEndMinutes** | **int** |  | [optional] 
 **description** | **String** |  | 
 **endsAt** | [**DateTime**](DateTime.md) | Time the event ends at | 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **isDraft** | **bool** |  | [optional] 
 **languages** | **List&lt;String&gt;** |  | [optional] 
 **parentId** | **String** |  | [optional] 
-**platforms** | **List&lt;String&gt;** |  | [optional] 
+**platforms** | [**List&lt;CalendarEventPlatform&gt;**](CalendarEventPlatform.md) |  | [optional] 
 **roleIds** | **List&lt;String&gt;** |  | [optional] 
 **sendCreationNotification** | **bool** | Send notification to group members. | 
 **startsAt** | [**DateTime**](DateTime.md) | Time the event starts at | 

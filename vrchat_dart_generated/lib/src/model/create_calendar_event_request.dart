@@ -3,6 +3,9 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/calendar_event_category.dart';
+import 'package:vrchat_dart_generated/src/model/calendar_event_access.dart';
+import 'package:vrchat_dart_generated/src/model/calendar_event_platform.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -57,10 +60,10 @@ class CreateCalendarEventRequest {
   });
 
   @JsonKey(name: r'accessType', required: true, includeIfNull: false)
-  final CreateCalendarEventRequestAccessTypeEnum accessType;
+  final CalendarEventAccess accessType;
 
   @JsonKey(name: r'category', required: true, includeIfNull: false)
-  final String category;
+  final CalendarEventCategory category;
 
   @JsonKey(
     name: r'closeInstanceAfterEndMinutes',
@@ -102,7 +105,7 @@ class CreateCalendarEventRequest {
   final String? parentId;
 
   @JsonKey(name: r'platforms', required: false, includeIfNull: false)
-  final List<String>? platforms;
+  final List<CalendarEventPlatform>? platforms;
 
   @JsonKey(name: r'roleIds', required: false, includeIfNull: false)
   final List<String>? roleIds;
@@ -184,18 +187,4 @@ class CreateCalendarEventRequest {
   String toString() {
     return toJson().toString();
   }
-}
-
-enum CreateCalendarEventRequestAccessTypeEnum {
-  @JsonValue(r'group')
-  group(r'group'),
-  @JsonValue(r'public')
-  public(r'public');
-
-  const CreateCalendarEventRequestAccessTypeEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }

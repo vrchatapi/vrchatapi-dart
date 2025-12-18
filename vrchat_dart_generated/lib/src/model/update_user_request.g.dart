@@ -27,11 +27,17 @@ UpdateUserRequest _$UpdateUserRequestFromJson(
     ),
     contentFilters: $checkedConvert(
       'contentFilters',
-      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+      (v) => (v as List<dynamic>?)
+          ?.map((e) => $enumDecode(_$ContentFilterEnumMap, e))
+          .toList(),
     ),
     currentPassword: $checkedConvert('currentPassword', (v) => v as String?),
     displayName: $checkedConvert('displayName', (v) => v as String?),
     email: $checkedConvert('email', (v) => v as String?),
+    hasSharedConnectionsOptOut: $checkedConvert(
+      'hasSharedConnectionsOptOut',
+      (v) => v as bool?,
+    ),
     isBoopingEnabled: $checkedConvert('isBoopingEnabled', (v) => v as bool?),
     password: $checkedConvert('password', (v) => v as String?),
     pronouns: $checkedConvert('pronouns', (v) => v as String?),
@@ -60,10 +66,13 @@ Map<String, dynamic> _$UpdateUserRequestToJson(UpdateUserRequest instance) =>
       'bio': ?instance.bio,
       'bioLinks': ?instance.bioLinks,
       'birthday': ?instance.birthday?.toIso8601String(),
-      'contentFilters': ?instance.contentFilters,
+      'contentFilters': ?instance.contentFilters
+          ?.map((e) => _$ContentFilterEnumMap[e]!)
+          .toList(),
       'currentPassword': ?instance.currentPassword,
       'displayName': ?instance.displayName,
       'email': ?instance.email,
+      'hasSharedConnectionsOptOut': ?instance.hasSharedConnectionsOptOut,
       'isBoopingEnabled': ?instance.isBoopingEnabled,
       'password': ?instance.password,
       'pronouns': ?instance.pronouns,
@@ -74,6 +83,14 @@ Map<String, dynamic> _$UpdateUserRequestToJson(UpdateUserRequest instance) =>
       'unsubscribe': ?instance.unsubscribe,
       'userIcon': ?instance.userIcon,
     };
+
+const _$ContentFilterEnumMap = {
+  ContentFilter.contentAdult: 'content_adult',
+  ContentFilter.contentGore: 'content_gore',
+  ContentFilter.contentHorror: 'content_horror',
+  ContentFilter.contentSex: 'content_sex',
+  ContentFilter.contentViolence: 'content_violence',
+};
 
 const _$UserStatusEnumMap = {
   UserStatus.active: 'active',

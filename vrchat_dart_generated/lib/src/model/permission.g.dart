@@ -8,31 +8,33 @@ part of 'permission.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Permission _$PermissionFromJson(Map<String, dynamic> json) => $checkedCreate(
-  'Permission',
-  json,
-  ($checkedConvert) {
-    $checkKeys(
-      json,
-      requiredKeys: const ['id', 'name', 'ownerDisplayName', 'ownerId'],
-    );
-    final val = Permission(
-      data: $checkedConvert('data', (v) => v),
-      description: $checkedConvert('description', (v) => v as String?),
-      displayName: $checkedConvert('displayName', (v) => v as String?),
-      id: $checkedConvert('id', (v) => v as String),
-      name: $checkedConvert('name', (v) => v as String),
-      ownerDisplayName: $checkedConvert('ownerDisplayName', (v) => v as String),
-      ownerId: $checkedConvert('ownerId', (v) => v as String),
-      type: $checkedConvert('type', (v) => v as String?),
-    );
-    return val;
-  },
-);
+Permission _$PermissionFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('Permission', json, ($checkedConvert) {
+  $checkKeys(
+    json,
+    requiredKeys: const ['id', 'name', 'ownerDisplayName', 'ownerId'],
+  );
+  final val = Permission(
+    data: $checkedConvert(
+      'data',
+      (v) =>
+          v == null ? null : PermissionData.fromJson(v as Map<String, dynamic>),
+    ),
+    description: $checkedConvert('description', (v) => v as String?),
+    displayName: $checkedConvert('displayName', (v) => v as String?),
+    id: $checkedConvert('id', (v) => v as String),
+    name: $checkedConvert('name', (v) => v as String),
+    ownerDisplayName: $checkedConvert('ownerDisplayName', (v) => v as String),
+    ownerId: $checkedConvert('ownerId', (v) => v as String),
+    type: $checkedConvert('type', (v) => v as String?),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$PermissionToJson(Permission instance) =>
     <String, dynamic>{
-      'data': ?instance.data,
+      'data': ?instance.data?.toJson(),
       'description': ?instance.description,
       'displayName': ?instance.displayName,
       'id': instance.id,

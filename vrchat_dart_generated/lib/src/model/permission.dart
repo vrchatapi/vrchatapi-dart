@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/permission_data.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -35,7 +36,7 @@ class Permission {
   });
 
   @JsonKey(name: r'data', required: false, includeIfNull: false)
-  final Object? data;
+  final PermissionData? data;
 
   @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;

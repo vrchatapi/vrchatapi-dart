@@ -34,7 +34,7 @@ class InventoryItem {
 
     this.equipSlots,
 
-    required this.expiryDate,
+    this.expiryDate,
 
     required this.flags,
 
@@ -55,6 +55,8 @@ class InventoryItem {
     required this.metadata,
 
     required this.name,
+
+    required this.quantifiable,
 
     required this.tags,
 
@@ -89,7 +91,7 @@ class InventoryItem {
   @JsonKey(name: r'equipSlots', required: false, includeIfNull: false)
   final List<InventoryEquipSlot>? equipSlots;
 
-  @JsonKey(name: r'expiryDate', required: true, includeIfNull: true)
+  @JsonKey(name: r'expiryDate', required: false, includeIfNull: false)
   final DateTime? expiryDate;
 
   @JsonKey(name: r'flags', required: true, includeIfNull: false)
@@ -122,6 +124,9 @@ class InventoryItem {
 
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
+
+  @JsonKey(name: r'quantifiable', required: true, includeIfNull: false)
+  final bool quantifiable;
 
   @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
@@ -169,6 +174,7 @@ class InventoryItem {
           other.itemTypeLabel == itemTypeLabel &&
           other.metadata == metadata &&
           other.name == name &&
+          other.quantifiable == quantifiable &&
           other.tags == tags &&
           other.templateId == templateId &&
           other.templateCreatedAt == templateCreatedAt &&
@@ -196,6 +202,7 @@ class InventoryItem {
       itemTypeLabel.hashCode +
       metadata.hashCode +
       name.hashCode +
+      quantifiable.hashCode +
       tags.hashCode +
       templateId.hashCode +
       templateCreatedAt.hashCode +

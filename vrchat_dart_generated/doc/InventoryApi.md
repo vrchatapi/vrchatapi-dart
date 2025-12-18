@@ -13,9 +13,11 @@ Method | HTTP request | Description
 [**deleteOwnInventoryItem**](InventoryApi.md#deleteowninventoryitem) | **DELETE** /inventory/{inventoryItemId} | Delete Own Inventory Item
 [**equipOwnInventoryItem**](InventoryApi.md#equipowninventoryitem) | **PUT** /inventory/{inventoryItemId}/equip | Equip Own Inventory Item
 [**getInventory**](InventoryApi.md#getinventory) | **GET** /inventory | Get Inventory
+[**getInventoryCollections**](InventoryApi.md#getinventorycollections) | **GET** /inventory/collections | List Inventory Collections
 [**getInventoryDrops**](InventoryApi.md#getinventorydrops) | **GET** /inventory/drops | List Inventory Drops
 [**getInventoryTemplate**](InventoryApi.md#getinventorytemplate) | **GET** /inventory/template/{inventoryTemplateId} | Get Inventory Template
 [**getOwnInventoryItem**](InventoryApi.md#getowninventoryitem) | **GET** /inventory/{inventoryItemId} | Get Own Inventory Item
+[**getUserInventoryItem**](InventoryApi.md#getuserinventoryitem) | **GET** /user/{userId}/inventory/{inventoryItemId} | Get User Inventory Item
 [**shareInventoryItemDirect**](InventoryApi.md#shareinventoryitemdirect) | **POST** /inventory/cloning/direct | Share Inventory Item Direct
 [**shareInventoryItemPedestal**](InventoryApi.md#shareinventoryitempedestal) | **GET** /inventory/cloning/pedestal | Share Inventory Item by Pedestal
 [**spawnInventoryItem**](InventoryApi.md#spawninventoryitem) | **GET** /inventory/spawn | Spawn Inventory Item
@@ -233,6 +235,49 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getInventoryCollections**
+> List<String> getInventoryCollections()
+
+List Inventory Collections
+
+Returns a list of collection names.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getInventoryApi();
+
+try {
+    final response = api.getInventoryCollections();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InventoryApi->getInventoryCollections: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**List&lt;String&gt;**
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getInventoryDrops**
 > List<InventoryDrop> getInventoryDrops(active)
 
@@ -357,6 +402,55 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **inventoryItemId** | **String**| Must be a valid inventory item ID. | 
+
+### Return type
+
+[**InventoryItem**](InventoryItem.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getUserInventoryItem**
+> InventoryItem getUserInventoryItem(userId, inventoryItemId)
+
+Get User Inventory Item
+
+Returns an InventoryItem object held by the given user.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getInventoryApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+final String inventoryItemId = inv_00000000-0000-0000-0000-000000000000; // String | Must be a valid inventory item ID.
+
+try {
+    final response = api.getUserInventoryItem(userId, inventoryItemId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InventoryApi->getUserInventoryItem: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
  **inventoryItemId** | **String**| Must be a valid inventory item ID. | 
 
 ### Return type
