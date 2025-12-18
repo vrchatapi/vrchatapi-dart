@@ -29,7 +29,7 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
     final val = LimitedUser(
       currentAvatarImageUrl: $checkedConvert(
         'currentAvatarImageUrl',
-        (v) => v as String,
+        (v) => v as String?,
       ),
       developerType: $checkedConvert(
         'developerType',
@@ -122,7 +122,7 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
 Map<String, dynamic> _$LimitedUserToJson(
   LimitedUser instance,
 ) => <String, dynamic>{
-  'currentAvatarImageUrl': instance.currentAvatarImageUrl,
+  'currentAvatarImageUrl': ?instance.currentAvatarImageUrl,
   'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
   'displayName': instance.displayName,
   'id': instance.id,

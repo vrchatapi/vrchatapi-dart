@@ -59,7 +59,7 @@ class LimitedUser {
 
   /// When profilePicOverride is not empty, use it instead.
   @JsonKey(name: r'currentAvatarImageUrl', required: true, includeIfNull: false)
-  final String currentAvatarImageUrl;
+  final String? currentAvatarImageUrl;
 
   /// The developer type of the user.
   @JsonKey(name: r'developerType', required: true, includeIfNull: false)
