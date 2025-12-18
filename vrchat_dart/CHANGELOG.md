@@ -1,3 +1,7 @@
+## 4.0.1
+
+- Makes `LimitedUser.currentAvatarImageUrl` optional
+
 ## 4.0.0
 
 - BREAKING: Upgrades `dio_response_validator` to `0.3.0`. See the updated example for the new usage pattern.
