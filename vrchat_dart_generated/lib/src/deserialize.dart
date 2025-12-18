@@ -166,13 +166,11 @@ import 'package:vrchat_dart_generated/src/model/product_purchase_purchase_contex
 import 'package:vrchat_dart_generated/src/model/prop.dart';
 import 'package:vrchat_dart_generated/src/model/prop_unity_package.dart';
 import 'package:vrchat_dart_generated/src/model/purchase_product_listing_request.dart';
-import 'package:vrchat_dart_generated/src/model/register_user_account200_response.dart';
 import 'package:vrchat_dart_generated/src/model/register_user_account_request.dart';
 import 'package:vrchat_dart_generated/src/model/report_category.dart';
 import 'package:vrchat_dart_generated/src/model/report_reason.dart';
 import 'package:vrchat_dart_generated/src/model/represented_group.dart';
 import 'package:vrchat_dart_generated/src/model/request_invite_request.dart';
-import 'package:vrchat_dart_generated/src/model/requires_two_factor_auth.dart';
 import 'package:vrchat_dart_generated/src/model/respond_group_join_request.dart';
 import 'package:vrchat_dart_generated/src/model/respond_notification_v2_request.dart';
 import 'package:vrchat_dart_generated/src/model/response.dart';
@@ -802,11 +800,6 @@ ReturnType deserialize<ReturnType, BaseType>(
           )
           as ReturnType;
     case 'Region':
-    case 'RegisterUserAccount200Response':
-      return RegisterUserAccount200Response.fromJson(
-            value as Map<String, dynamic>,
-          )
-          as ReturnType;
     case 'RegisterUserAccountRequest':
       return RegisterUserAccountRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -821,9 +814,6 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'RequestInviteRequest':
       return RequestInviteRequest.fromJson(value as Map<String, dynamic>)
-          as ReturnType;
-    case 'RequiresTwoFactorAuth':
-      return RequiresTwoFactorAuth.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'RespondGroupJoinRequest':
       return RespondGroupJoinRequest.fromJson(value as Map<String, dynamic>)
@@ -897,7 +887,6 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'TwoFactorAuthCode':
       return TwoFactorAuthCode.fromJson(value as Map<String, dynamic>)
           as ReturnType;
-    case 'TwoFactorAuthType':
     case 'TwoFactorEmailCode':
       return TwoFactorEmailCode.fromJson(value as Map<String, dynamic>)
           as ReturnType;

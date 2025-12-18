@@ -447,7 +447,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCurrentUser**
-> RegisterUserAccount200Response getCurrentUser()
+> CurrentUser getCurrentUser()
 
 Login and/or Get Current User Info
 
@@ -483,7 +483,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**RegisterUserAccount200Response**](RegisterUserAccount200Response.md)
+[**CurrentUser**](CurrentUser.md)
 
 ### Authorization
 
@@ -681,7 +681,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **registerUserAccount**
-> RegisterUserAccount200Response registerUserAccount(registerUserAccountRequest)
+> CurrentUser registerUserAccount(registerUserAccountRequest)
 
 Register User Account
 
@@ -710,7 +710,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RegisterUserAccount200Response**](RegisterUserAccount200Response.md)
+[**CurrentUser**](CurrentUser.md)
 
 ### Authorization
 

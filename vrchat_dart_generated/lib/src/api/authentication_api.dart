@@ -19,7 +19,6 @@ import 'package:vrchat_dart_generated/src/model/moderation_report.dart';
 import 'package:vrchat_dart_generated/src/model/ok_status2.dart';
 import 'package:vrchat_dart_generated/src/model/paginated_moderation_report_list.dart';
 import 'package:vrchat_dart_generated/src/model/pending2_fa_result.dart';
-import 'package:vrchat_dart_generated/src/model/register_user_account200_response.dart';
 import 'package:vrchat_dart_generated/src/model/register_user_account_request.dart';
 import 'package:vrchat_dart_generated/src/model/submit_moderation_report_request.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
@@ -785,9 +784,9 @@ class AuthenticationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [RegisterUserAccount200Response] as data
+  /// Returns a [Future] containing a [Response] with a [CurrentUser] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<RegisterUserAccount200Response>> getCurrentUser({
+  Future<Response<CurrentUser>> getCurrentUser({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -828,16 +827,17 @@ class AuthenticationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    RegisterUserAccount200Response? _responseData;
+    CurrentUser? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<
-              RegisterUserAccount200Response,
-              RegisterUserAccount200Response
-            >(rawData, 'RegisterUserAccount200Response', growable: true);
+          : deserialize<CurrentUser, CurrentUser>(
+              rawData,
+              'CurrentUser',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -848,7 +848,7 @@ class AuthenticationApi {
       );
     }
 
-    return Response<RegisterUserAccount200Response>(
+    return Response<CurrentUser>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1206,10 +1206,10 @@ class AuthenticationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [RegisterUserAccount200Response] as data
+  /// Returns a [Future] containing a [Response] with a [CurrentUser] as data
   /// Throws [DioException] if API call or serialization fails
   @Deprecated('This operation has been deprecated')
-  Future<Response<RegisterUserAccount200Response>> registerUserAccount({
+  Future<Response<CurrentUser>> registerUserAccount({
     required RegisterUserAccountRequest registerUserAccountRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1249,16 +1249,17 @@ class AuthenticationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    RegisterUserAccount200Response? _responseData;
+    CurrentUser? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<
-              RegisterUserAccount200Response,
-              RegisterUserAccount200Response
-            >(rawData, 'RegisterUserAccount200Response', growable: true);
+          : deserialize<CurrentUser, CurrentUser>(
+              rawData,
+              'CurrentUser',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1269,7 +1270,7 @@ class AuthenticationApi {
       );
     }
 
-    return Response<RegisterUserAccount200Response>(
+    return Response<CurrentUser>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
