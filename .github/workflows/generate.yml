@@ -42,25 +42,10 @@ jobs:
       - name: Generate
         run: ./generate.sh
 
-      - name: Commit and push changes
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git diff --staged --quiet || git commit -m "Regenerated from spec"
-          git push
-
-      - name: Create and push tag
-        run: |
-          VERSION=$(grep '^version:' vrchat_dart_generated/pubspec.yaml | cut -d' ' -f2)
-          TAG="vrchat_dart_generated-$VERSION"
-          git tag "$TAG"
-          git push origin "$TAG"
-
-  publish:
-    needs: generate
-    permissions:
-      id-token: write
-    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
-    with:
-      working-directory: vrchat_dart_generated
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: ci/regenerate-from-spec
+          commit-message: "Regenerated from spec"
+          title: "[CI] Regenerated from spec"
+          body: "Regenerated from spec"
