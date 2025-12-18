@@ -11,6 +11,9 @@ import 'package:dio/dio.dart';
 
 import 'dart:typed_data';
 import 'package:vrchat_dart_generated/src/model/calendar_event.dart';
+import 'package:vrchat_dart_generated/src/model/calendar_event_discovery.dart';
+import 'package:vrchat_dart_generated/src/model/calendar_event_discovery_inclusion.dart';
+import 'package:vrchat_dart_generated/src/model/calendar_event_discovery_scope.dart';
 import 'package:vrchat_dart_generated/src/model/create_calendar_event_request.dart';
 import 'package:vrchat_dart_generated/src/model/follow_calendar_event_request.dart';
 import 'package:vrchat_dart_generated/src/model/paginated_calendar_event_list.dart';
@@ -207,6 +210,127 @@ class CalendarApi {
     }
 
     return Response<Success>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Discover calendar events
+  /// Get a list of calendar events Initially, call without a &#x60;nextCursor&#x60; parameter For every successive call, use the &#x60;nextCursor&#x60; property returned in the previous call &amp; the &#x60;number&#x60; of entries desired for this call The &#x60;nextCursor&#x60; internally keeps track of the &#x60;offset&#x60; of the results, the initial request parameters, and accounts for discrepancies that might arise from time elapsed between calls
+  ///
+  /// Parameters:
+  /// * [scope] - Scope for calendar event discovery.
+  /// * [categories] - Filter for calendar event discovery.
+  /// * [tags] - Filter for calendar event discovery.
+  /// * [featuredResults] - Filter for calendar event discovery.
+  /// * [nonFeaturedResults] - Filter for calendar event discovery.
+  /// * [personalizedResults] - Filter for calendar event discovery.
+  /// * [minimumInterestCount] - Filter for calendar event discovery.
+  /// * [minimumRemainingMinutes] - Filter for calendar event discovery.
+  /// * [upcomingOffsetMinutes] - Filter for calendar event discovery.
+  /// * [n] - The number of objects to return.
+  /// * [nextCursor] - Cursor returned from previous calendar discovery queries (see nextCursor property of the schema CalendarEventDiscovery).
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [CalendarEventDiscovery] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<CalendarEventDiscovery>> discoverCalendarEvents({
+    CalendarEventDiscoveryScope? scope,
+    String? categories,
+    String? tags,
+    CalendarEventDiscoveryInclusion? featuredResults,
+    CalendarEventDiscoveryInclusion? nonFeaturedResults,
+    CalendarEventDiscoveryInclusion? personalizedResults,
+    int? minimumInterestCount,
+    int? minimumRemainingMinutes,
+    int? upcomingOffsetMinutes,
+    int? n = 60,
+    String? nextCursor,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/calendar/discover';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (scope != null) r'scope': scope,
+      if (categories != null) r'categories': categories,
+      if (tags != null) r'tags': tags,
+      if (featuredResults != null) r'featuredResults': featuredResults,
+      if (nonFeaturedResults != null) r'nonFeaturedResults': nonFeaturedResults,
+      if (personalizedResults != null)
+        r'personalizedResults': personalizedResults,
+      if (minimumInterestCount != null)
+        r'minimumInterestCount': minimumInterestCount,
+      if (minimumRemainingMinutes != null)
+        r'minimumRemainingMinutes': minimumRemainingMinutes,
+      if (upcomingOffsetMinutes != null)
+        r'upcomingOffsetMinutes': upcomingOffsetMinutes,
+      if (n != null) r'n': n,
+      if (nextCursor != null) r'nextCursor': nextCursor,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    CalendarEventDiscovery? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<CalendarEventDiscovery, CalendarEventDiscovery>(
+              rawData,
+              'CalendarEventDiscovery',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<CalendarEventDiscovery>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

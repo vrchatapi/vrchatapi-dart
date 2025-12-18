@@ -11,7 +11,9 @@ enum InventoryEquipSlot {
   @JsonValue(r'drone')
   drone(r'drone'),
   @JsonValue(r'portal')
-  portal(r'portal');
+  portal(r'portal'),
+  @JsonValue(r'warp')
+  warp(r'warp');
 
   const InventoryEquipSlot(this.value);
 

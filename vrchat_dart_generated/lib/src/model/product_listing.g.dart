@@ -140,10 +140,13 @@ Map<String, dynamic> _$ProductListingToJson(
 };
 
 const _$ProductListingTypeEnumMap = {
+  ProductListingType.duration: 'duration',
+  ProductListingType.permanent: 'permanent',
   ProductListingType.subscription: 'subscription',
 };
 
 const _$ProductTypeEnumMap = {
+  ProductType.inventory: 'inventory',
   ProductType.listing: 'listing',
   ProductType.role: 'role',
   ProductType.udon: 'udon',

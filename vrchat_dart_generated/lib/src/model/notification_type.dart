@@ -6,6 +6,8 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum NotificationType {
+  @JsonValue(r'boop')
+  boop(r'boop'),
   @JsonValue(r'friendRequest')
   friendRequest(r'friendRequest'),
   @JsonValue(r'invite')

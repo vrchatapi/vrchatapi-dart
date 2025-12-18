@@ -9,12 +9,62 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**boop**](FriendsApi.md#boop) | **POST** /users/{userId}/boop | Send Boop
 [**deleteFriendRequest**](FriendsApi.md#deletefriendrequest) | **DELETE** /user/{userId}/friendRequest | Delete Friend Request
 [**friend**](FriendsApi.md#friend) | **POST** /user/{userId}/friendRequest | Send Friend Request
 [**getFriendStatus**](FriendsApi.md#getfriendstatus) | **GET** /user/{userId}/friendStatus | Check Friend Status
 [**getFriends**](FriendsApi.md#getfriends) | **GET** /auth/user/friends | List Friends
 [**unfriend**](FriendsApi.md#unfriend) | **DELETE** /auth/user/friends/{userId} | Unfriend
 
+
+# **boop**
+> Success boop(userId, boopRequest)
+
+Send Boop
+
+Send a boop to another user.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getFriendsApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+final BoopRequest boopRequest = ; // BoopRequest | 
+
+try {
+    final response = api.boop(userId, boopRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling FriendsApi->boop: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+ **boopRequest** | [**BoopRequest**](BoopRequest.md)|  | 
+
+### Return type
+
+[**Success**](Success.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteFriendRequest**
 > Success deleteFriendRequest(userId)

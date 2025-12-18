@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createGroupCalendarEvent**](CalendarApi.md#creategroupcalendarevent) | **POST** /calendar/{groupId}/event | Create a calendar event
 [**deleteGroupCalendarEvent**](CalendarApi.md#deletegroupcalendarevent) | **DELETE** /calendar/{groupId}/{calendarId} | Delete a calendar event
+[**discoverCalendarEvents**](CalendarApi.md#discovercalendarevents) | **GET** /calendar/discover | Discover calendar events
 [**followGroupCalendarEvent**](CalendarApi.md#followgroupcalendarevent) | **POST** /calendar/{groupId}/{calendarId}/follow | Follow a calendar event
 [**getCalendarEvents**](CalendarApi.md#getcalendarevents) | **GET** /calendar | List calendar events
 [**getFeaturedCalendarEvents**](CalendarApi.md#getfeaturedcalendarevents) | **GET** /calendar/featured | List featured calendar events
@@ -108,6 +109,73 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Success**](Success.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **discoverCalendarEvents**
+> CalendarEventDiscovery discoverCalendarEvents(scope, categories, tags, featuredResults, nonFeaturedResults, personalizedResults, minimumInterestCount, minimumRemainingMinutes, upcomingOffsetMinutes, n, nextCursor)
+
+Discover calendar events
+
+Get a list of calendar events Initially, call without a `nextCursor` parameter For every successive call, use the `nextCursor` property returned in the previous call & the `number` of entries desired for this call The `nextCursor` internally keeps track of the `offset` of the results, the initial request parameters, and accounts for discrepancies that might arise from time elapsed between calls
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getCalendarApi();
+final CalendarEventDiscoveryScope scope = ; // CalendarEventDiscoveryScope | Scope for calendar event discovery.
+final String categories = avatars,exploration,gaming,roleplaying,music,performance; // String | Filter for calendar event discovery.
+final String tags = vrc_event_group_fair; // String | Filter for calendar event discovery.
+final CalendarEventDiscoveryInclusion featuredResults = ; // CalendarEventDiscoveryInclusion | Filter for calendar event discovery.
+final CalendarEventDiscoveryInclusion nonFeaturedResults = ; // CalendarEventDiscoveryInclusion | Filter for calendar event discovery.
+final CalendarEventDiscoveryInclusion personalizedResults = ; // CalendarEventDiscoveryInclusion | Filter for calendar event discovery.
+final int minimumInterestCount = 5; // int | Filter for calendar event discovery.
+final int minimumRemainingMinutes = 10; // int | Filter for calendar event discovery.
+final int upcomingOffsetMinutes = 10080; // int | Filter for calendar event discovery.
+final int n = 56; // int | The number of objects to return.
+final String nextCursor = nextCursor_example; // String | Cursor returned from previous calendar discovery queries (see nextCursor property of the schema CalendarEventDiscovery).
+
+try {
+    final response = api.discoverCalendarEvents(scope, categories, tags, featuredResults, nonFeaturedResults, personalizedResults, minimumInterestCount, minimumRemainingMinutes, upcomingOffsetMinutes, n, nextCursor);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling CalendarApi->discoverCalendarEvents: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | [**CalendarEventDiscoveryScope**](.md)| Scope for calendar event discovery. | [optional] 
+ **categories** | **String**| Filter for calendar event discovery. | [optional] 
+ **tags** | **String**| Filter for calendar event discovery. | [optional] 
+ **featuredResults** | [**CalendarEventDiscoveryInclusion**](.md)| Filter for calendar event discovery. | [optional] 
+ **nonFeaturedResults** | [**CalendarEventDiscoveryInclusion**](.md)| Filter for calendar event discovery. | [optional] 
+ **personalizedResults** | [**CalendarEventDiscoveryInclusion**](.md)| Filter for calendar event discovery. | [optional] 
+ **minimumInterestCount** | **int**| Filter for calendar event discovery. | [optional] 
+ **minimumRemainingMinutes** | **int**| Filter for calendar event discovery. | [optional] 
+ **upcomingOffsetMinutes** | **int**| Filter for calendar event discovery. | [optional] 
+ **n** | **int**| The number of objects to return. | [optional] [default to 60]
+ **nextCursor** | **String**| Cursor returned from previous calendar discovery queries (see nextCursor property of the schema CalendarEventDiscovery). | [optional] 
+
+### Return type
+
+[**CalendarEventDiscovery**](CalendarEventDiscovery.md)
 
 ### Authorization
 

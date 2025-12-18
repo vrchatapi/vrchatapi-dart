@@ -54,6 +54,7 @@ Map<String, dynamic> _$SentNotificationToJson(SentNotification instance) =>
     };
 
 const _$NotificationTypeEnumMap = {
+  NotificationType.boop: 'boop',
   NotificationType.friendRequest: 'friendRequest',
   NotificationType.invite: 'invite',
   NotificationType.inviteResponse: 'inviteResponse',

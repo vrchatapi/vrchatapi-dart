@@ -109,4 +109,5 @@ const _$InventoryItemTypeEnumMap = {
   InventoryItemType.portalskin: 'portalskin',
   InventoryItemType.prop: 'prop',
   InventoryItemType.sticker: 'sticker',
+  InventoryItemType.warpeffect: 'warpeffect',
 };

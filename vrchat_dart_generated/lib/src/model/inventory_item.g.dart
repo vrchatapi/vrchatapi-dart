@@ -166,6 +166,7 @@ const _$InventoryEquipSlotEnumMap = {
   InventoryEquipSlot.empty: '',
   InventoryEquipSlot.drone: 'drone',
   InventoryEquipSlot.portal: 'portal',
+  InventoryEquipSlot.warp: 'warp',
 };
 
 const _$InventoryItemTypeEnumMap = {
@@ -175,4 +176,5 @@ const _$InventoryItemTypeEnumMap = {
   InventoryItemType.portalskin: 'portalskin',
   InventoryItemType.prop: 'prop',
   InventoryItemType.sticker: 'sticker',
+  InventoryItemType.warpeffect: 'warpeffect',
 };

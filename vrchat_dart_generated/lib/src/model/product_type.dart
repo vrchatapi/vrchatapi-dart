@@ -6,6 +6,8 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum ProductType {
+  @JsonValue(r'inventory')
+  inventory(r'inventory'),
   @JsonValue(r'listing')
   listing(r'listing'),
   @JsonValue(r'role')

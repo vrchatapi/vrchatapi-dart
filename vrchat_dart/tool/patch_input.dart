@@ -34,7 +34,7 @@ Future<Map<String, dynamic>> getSpec({required bool local}) async {
   } else {
     print('Using remote spec file');
     final response = await dio.get(
-      'https://vrchatapi.github.io/specification/openapi.yaml',
+      'https://github.com/vrchatapi/specification/releases/latest/download/openapi.json',
     );
     final data = response.data;
     if (data == null) throw 'Failed to fetch spec';

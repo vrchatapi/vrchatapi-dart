@@ -17,7 +17,9 @@ enum InventoryItemType {
   @JsonValue(r'prop')
   prop(r'prop'),
   @JsonValue(r'sticker')
-  sticker(r'sticker');
+  sticker(r'sticker'),
+  @JsonValue(r'warpeffect')
+  warpeffect(r'warpeffect');
 
   const InventoryItemType(this.value);
 

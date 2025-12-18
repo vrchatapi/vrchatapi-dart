@@ -9,7 +9,9 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**consumeOwnInventoryItem**](InventoryApi.md#consumeowninventoryitem) | **PUT** /inventory/{inventoryItemId}/consume | Consume Own Inventory Item
 [**deleteOwnInventoryItem**](InventoryApi.md#deleteowninventoryitem) | **DELETE** /inventory/{inventoryItemId} | Delete Own Inventory Item
+[**equipOwnInventoryItem**](InventoryApi.md#equipowninventoryitem) | **PUT** /inventory/{inventoryItemId}/equip | Equip Own Inventory Item
 [**getInventory**](InventoryApi.md#getinventory) | **GET** /inventory | Get Inventory
 [**getInventoryDrops**](InventoryApi.md#getinventorydrops) | **GET** /inventory/drops | List Inventory Drops
 [**getInventoryTemplate**](InventoryApi.md#getinventorytemplate) | **GET** /inventory/template/{inventoryTemplateId} | Get Inventory Template
@@ -17,8 +19,56 @@ Method | HTTP request | Description
 [**shareInventoryItemDirect**](InventoryApi.md#shareinventoryitemdirect) | **POST** /inventory/cloning/direct | Share Inventory Item Direct
 [**shareInventoryItemPedestal**](InventoryApi.md#shareinventoryitempedestal) | **GET** /inventory/cloning/pedestal | Share Inventory Item by Pedestal
 [**spawnInventoryItem**](InventoryApi.md#spawninventoryitem) | **GET** /inventory/spawn | Spawn Inventory Item
+[**unequipOwnInventorySlot**](InventoryApi.md#unequipowninventoryslot) | **DELETE** /inventory/{inventoryItemId}/equip | Unequip Own Inventory Slot
 [**updateOwnInventoryItem**](InventoryApi.md#updateowninventoryitem) | **PUT** /inventory/{inventoryItemId} | Update Own Inventory Item
 
+
+# **consumeOwnInventoryItem**
+> InventoryConsumptionResults consumeOwnInventoryItem(inventoryItemId)
+
+Consume Own Inventory Item
+
+Returns the modified InventoryItem object as held by the currently logged in user.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getInventoryApi();
+final String inventoryItemId = inv_00000000-0000-0000-0000-000000000000; // String | Must be a valid inventory item ID.
+
+try {
+    final response = api.consumeOwnInventoryItem(inventoryItemId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InventoryApi->consumeOwnInventoryItem: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inventoryItemId** | **String**| Must be a valid inventory item ID. | 
+
+### Return type
+
+[**InventoryConsumptionResults**](InventoryConsumptionResults.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteOwnInventoryItem**
 > SuccessFlag deleteOwnInventoryItem(inventoryItemId)
@@ -63,6 +113,55 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **equipOwnInventoryItem**
+> InventoryItem equipOwnInventoryItem(inventoryItemId, equipInventoryItemRequest)
+
+Equip Own Inventory Item
+
+Returns the modified InventoryItem object as held by the currently logged in user.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getInventoryApi();
+final String inventoryItemId = inv_00000000-0000-0000-0000-000000000000; // String | Must be a valid inventory item ID.
+final EquipInventoryItemRequest equipInventoryItemRequest = ; // EquipInventoryItemRequest | 
+
+try {
+    final response = api.equipOwnInventoryItem(inventoryItemId, equipInventoryItemRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InventoryApi->equipOwnInventoryItem: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inventoryItemId** | **String**| Must be a valid inventory item ID. | 
+ **equipInventoryItemRequest** | [**EquipInventoryItemRequest**](EquipInventoryItemRequest.md)|  | [optional] 
+
+### Return type
+
+[**InventoryItem**](InventoryItem.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -410,6 +509,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InventorySpawn**](InventorySpawn.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **unequipOwnInventorySlot**
+> String unequipOwnInventorySlot(inventoryItemId)
+
+Unequip Own Inventory Slot
+
+Unequips the InventoryItem in the given slot of the inventory of the currently logged in user.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getInventoryApi();
+final InventoryEquipSlot inventoryItemId = ; // InventoryEquipSlot | Selector for inventory slot management.
+
+try {
+    final response = api.unequipOwnInventorySlot(inventoryItemId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InventoryApi->unequipOwnInventorySlot: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inventoryItemId** | [**InventoryEquipSlot**](.md)| Selector for inventory slot management. | 
+
+### Return type
+
+**String**
 
 ### Authorization
 
