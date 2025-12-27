@@ -47,7 +47,7 @@ final String worldId = worldId_example; // String | Must be a valid world ID.
 
 try {
     api.checkUserPersistenceExists(userId, worldId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling WorldsApi->checkUserPersistenceExists: $e\n');
 }
 ```
@@ -91,7 +91,7 @@ final CreateWorldRequest createWorldRequest = ; // CreateWorldRequest |
 try {
     final response = api.createWorld(createWorldRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling WorldsApi->createWorld: $e\n');
 }
 ```
@@ -138,7 +138,7 @@ final String worldId = worldId_example; // String | Must be a valid world ID.
 
 try {
     api.deleteUserPersistence(userId, worldId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling WorldsApi->deleteUserPersistence: $e\n');
 }
 ```
@@ -185,7 +185,7 @@ final String worldId = worldId_example; // String | Must be a valid world ID.
 
 try {
     api.deleteWorld(worldId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling WorldsApi->deleteWorld: $e\n');
 }
 ```
@@ -244,7 +244,7 @@ final String noplatform = noplatform_example; // String | The platform the asset
 try {
     final response = api.getActiveWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, noplatform);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling WorldsApi->getActiveWorlds: $e\n');
 }
 ```
@@ -315,7 +315,7 @@ final String userId = userId_example; // String | Target user to see information
 try {
     final response = api.getFavoritedWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling WorldsApi->getFavoritedWorlds: $e\n');
 }
 ```
@@ -386,7 +386,7 @@ final String userId = userId_example; // String | Target user to see information
 try {
     final response = api.getRecentWorlds(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling WorldsApi->getRecentWorlds: $e\n');
 }
 ```
@@ -441,7 +441,7 @@ final String worldId = worldId_example; // String | Must be a valid world ID.
 try {
     final response = api.getWorld(worldId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling WorldsApi->getWorld: $e\n');
 }
 ```
@@ -489,7 +489,7 @@ final String instanceId = instanceId_example; // String | Must be a valid instan
 try {
     final response = api.getWorldInstance(worldId, instanceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling WorldsApi->getWorldInstance: $e\n');
 }
 ```
@@ -537,7 +537,7 @@ final String worldId = worldId_example; // String | Must be a valid world ID.
 try {
     final response = api.getWorldMetadata(worldId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling WorldsApi->getWorldMetadata: $e\n');
 }
 ```
@@ -584,7 +584,7 @@ final String worldId = worldId_example; // String | Must be a valid world ID.
 try {
     final response = api.getWorldPublishStatus(worldId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling WorldsApi->getWorldPublishStatus: $e\n');
 }
 ```
@@ -630,7 +630,7 @@ final String worldId = worldId_example; // String | Must be a valid world ID.
 
 try {
     api.publishWorld(worldId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling WorldsApi->publishWorld: $e\n');
 }
 ```
@@ -693,7 +693,7 @@ final bool avatarSpecific = true; // bool | Only search for avatar worlds.
 try {
     final response = api.searchWorlds(featured, sort, user, userId, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, noplatform, fuzzy, avatarSpecific);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling WorldsApi->searchWorlds: $e\n');
 }
 ```
@@ -755,7 +755,7 @@ final String worldId = worldId_example; // String | Must be a valid world ID.
 
 try {
     api.unpublishWorld(worldId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling WorldsApi->unpublishWorld: $e\n');
 }
 ```
@@ -803,7 +803,7 @@ final UpdateWorldRequest updateWorldRequest = ; // UpdateWorldRequest |
 try {
     final response = api.updateWorld(worldId, updateWorldRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling WorldsApi->updateWorld: $e\n');
 }
 ```

@@ -46,7 +46,7 @@ final CreateAvatarRequest createAvatarRequest = ; // CreateAvatarRequest |
 try {
     final response = api.createAvatar(createAvatarRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AvatarsApi->createAvatar: $e\n');
 }
 ```
@@ -93,7 +93,7 @@ final String avatarId = avatarId_example; // String | Must be a valid avatar ID.
 try {
     final response = api.deleteAvatar(avatarId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AvatarsApi->deleteAvatar: $e\n');
 }
 ```
@@ -139,7 +139,7 @@ final String avatarId = avatarId_example; // String | Must be a valid avatar ID.
 
 try {
     api.deleteImpostor(avatarId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AvatarsApi->deleteImpostor: $e\n');
 }
 ```
@@ -186,7 +186,7 @@ final String avatarId = avatarId_example; // String | Must be a valid avatar ID.
 try {
     final response = api.enqueueImpostor(avatarId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AvatarsApi->enqueueImpostor: $e\n');
 }
 ```
@@ -233,7 +233,7 @@ final String avatarId = avatarId_example; // String | Must be a valid avatar ID.
 try {
     final response = api.getAvatar(avatarId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AvatarsApi->getAvatar: $e\n');
 }
 ```
@@ -275,7 +275,7 @@ final api = VrchatDartGenerated().getAvatarsApi();
 try {
     final response = api.getAvatarStyles();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AvatarsApi->getAvatarStyles: $e\n');
 }
 ```
@@ -331,7 +331,7 @@ final String userId = userId_example; // String | Target user to see information
 try {
     final response = api.getFavoritedAvatars(featured, sort, n, order, offset, search, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform, userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AvatarsApi->getFavoritedAvatars: $e\n');
 }
 ```
@@ -389,7 +389,7 @@ final api = VrchatDartGenerated().getAvatarsApi();
 try {
     final response = api.getImpostorQueueStats();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AvatarsApi->getImpostorQueueStats: $e\n');
 }
 ```
@@ -434,7 +434,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getLicensedAvatars(n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AvatarsApi->getLicensedAvatars: $e\n');
 }
 ```
@@ -482,7 +482,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getOwnAvatar(userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AvatarsApi->getOwnAvatar: $e\n');
 }
 ```
@@ -541,7 +541,7 @@ final String platform = platform_example; // String | The platform the asset sup
 try {
     final response = api.searchAvatars(featured, sort, user, userId, n, order, offset, tag, notag, releaseStatus, maxUnityVersion, minUnityVersion, platform);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AvatarsApi->searchAvatars: $e\n');
 }
 ```
@@ -600,7 +600,7 @@ final String avatarId = avatarId_example; // String | Must be a valid avatar ID.
 try {
     final response = api.selectAvatar(avatarId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AvatarsApi->selectAvatar: $e\n');
 }
 ```
@@ -647,7 +647,7 @@ final String avatarId = avatarId_example; // String | Must be a valid avatar ID.
 try {
     final response = api.selectFallbackAvatar(avatarId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AvatarsApi->selectFallbackAvatar: $e\n');
 }
 ```
@@ -695,7 +695,7 @@ final UpdateAvatarRequest updateAvatarRequest = ; // UpdateAvatarRequest |
 try {
     final response = api.updateAvatar(avatarId, updateAvatarRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AvatarsApi->updateAvatar: $e\n');
 }
 ```

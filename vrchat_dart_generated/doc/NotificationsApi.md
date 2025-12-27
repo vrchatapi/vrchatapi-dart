@@ -38,7 +38,7 @@ final String notificationId = notificationId_example; // String | Must be a vali
 try {
     final response = api.acceptFriendRequest(notificationId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->acceptFriendRequest: $e\n');
 }
 ```
@@ -84,7 +84,7 @@ final api = VrchatDartGenerated().getNotificationsApi();
 try {
     final response = api.clearNotifications();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->clearNotifications: $e\n');
 }
 ```
@@ -128,7 +128,7 @@ final String notificationId = notificationId_example; // String | Must be a vali
 try {
     final response = api.deleteNotification(notificationId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->deleteNotification: $e\n');
 }
 ```
@@ -175,7 +175,7 @@ final String notificationId = notificationId_example; // String | Must be a vali
 try {
     final response = api.getNotification(notificationId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->getNotification: $e\n');
 }
 ```
@@ -227,7 +227,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getNotifications(type, sent, hidden, after, n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->getNotifications: $e\n');
 }
 ```
@@ -279,7 +279,7 @@ final String notificationId = notificationId_example; // String | Must be a vali
 try {
     final response = api.markNotificationAsRead(notificationId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->markNotificationAsRead: $e\n');
 }
 ```

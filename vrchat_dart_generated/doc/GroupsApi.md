@@ -78,7 +78,7 @@ final AddGroupGalleryImageRequest addGroupGalleryImageRequest = ; // AddGroupGal
 try {
     final response = api.addGroupGalleryImage(groupId, groupGalleryId, addGroupGalleryImageRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->addGroupGalleryImage: $e\n');
 }
 ```
@@ -129,7 +129,7 @@ final String groupRoleId = grol_00000000-0000-0000-0000-000000000000; // String 
 try {
     final response = api.addGroupMemberRole(groupId, userId, groupRoleId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->addGroupMemberRole: $e\n');
 }
 ```
@@ -179,7 +179,7 @@ final CreateGroupPostRequest createGroupPostRequest = ; // CreateGroupPostReques
 try {
     final response = api.addGroupPost(groupId, createGroupPostRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->addGroupPost: $e\n');
 }
 ```
@@ -228,7 +228,7 @@ final BanGroupMemberRequest banGroupMemberRequest = ; // BanGroupMemberRequest |
 try {
     final response = api.banGroupMember(groupId, banGroupMemberRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->banGroupMember: $e\n');
 }
 ```
@@ -275,7 +275,7 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 
 try {
     api.cancelGroupRequest(groupId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->cancelGroupRequest: $e\n');
 }
 ```
@@ -322,7 +322,7 @@ final CreateGroupRequest createGroupRequest = ; // CreateGroupRequest |
 try {
     final response = api.createGroup(createGroupRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->createGroup: $e\n');
 }
 ```
@@ -370,7 +370,7 @@ final CreateGroupAnnouncementRequest createGroupAnnouncementRequest = ; // Creat
 try {
     final response = api.createGroupAnnouncement(groupId, createGroupAnnouncementRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->createGroupAnnouncement: $e\n');
 }
 ```
@@ -419,7 +419,7 @@ final CreateGroupGalleryRequest createGroupGalleryRequest = ; // CreateGroupGall
 try {
     final response = api.createGroupGallery(groupId, createGroupGalleryRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->createGroupGallery: $e\n');
 }
 ```
@@ -467,7 +467,7 @@ final CreateGroupInviteRequest createGroupInviteRequest = ; // CreateGroupInvite
 
 try {
     api.createGroupInvite(groupId, createGroupInviteRequest);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->createGroupInvite: $e\n');
 }
 ```
@@ -516,7 +516,7 @@ final CreateGroupRoleRequest createGroupRoleRequest = ; // CreateGroupRoleReques
 try {
     final response = api.createGroupRole(groupId, createGroupRoleRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->createGroupRole: $e\n');
 }
 ```
@@ -564,7 +564,7 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.deleteGroup(groupId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->deleteGroup: $e\n');
 }
 ```
@@ -611,7 +611,7 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.deleteGroupAnnouncement(groupId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->deleteGroupAnnouncement: $e\n');
 }
 ```
@@ -659,7 +659,7 @@ final String groupGalleryId = ggal_00000000-0000-0000-0000-000000000000; // Stri
 try {
     final response = api.deleteGroupGallery(groupId, groupGalleryId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->deleteGroupGallery: $e\n');
 }
 ```
@@ -709,7 +709,7 @@ final String groupGalleryImageId = ggim_00000000-0000-0000-0000-000000000000; //
 try {
     final response = api.deleteGroupGalleryImage(groupId, groupGalleryId, groupGalleryImageId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->deleteGroupGalleryImage: $e\n');
 }
 ```
@@ -758,7 +758,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 
 try {
     api.deleteGroupInvite(groupId, userId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->deleteGroupInvite: $e\n');
 }
 ```
@@ -807,7 +807,7 @@ final String notificationId = notificationId_example; // String | Must be a vali
 try {
     final response = api.deleteGroupPost(groupId, notificationId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->deleteGroupPost: $e\n');
 }
 ```
@@ -856,7 +856,7 @@ final String groupRoleId = grol_00000000-0000-0000-0000-000000000000; // String 
 try {
     final response = api.deleteGroupRole(groupId, groupRoleId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->deleteGroupRole: $e\n');
 }
 ```
@@ -905,7 +905,7 @@ final bool includeRoles = true; // bool | Include roles for the Group object. De
 try {
     final response = api.getGroup(groupId, includeRoles);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroup: $e\n');
 }
 ```
@@ -953,7 +953,7 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.getGroupAnnouncements(groupId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupAnnouncements: $e\n');
 }
 ```
@@ -1007,7 +1007,7 @@ final String targetIds = usr_00000000-0000-0000-0000-000000000000,usr_11111111-1
 try {
     final response = api.getGroupAuditLogs(groupId, n, offset, startDate, endDate, actorIds, eventTypes, targetIds);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupAuditLogs: $e\n');
 }
 ```
@@ -1063,7 +1063,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getGroupBans(groupId, n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupBans: $e\n');
 }
 ```
@@ -1116,7 +1116,7 @@ final bool approved = true; // bool | If specified, only returns images that hav
 try {
     final response = api.getGroupGalleryImages(groupId, groupGalleryId, n, offset, approved);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupGalleryImages: $e\n');
 }
 ```
@@ -1167,7 +1167,7 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.getGroupInstances(groupId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupInstances: $e\n');
 }
 ```
@@ -1216,7 +1216,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getGroupInvites(groupId, n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupInvites: $e\n');
 }
 ```
@@ -1266,7 +1266,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getGroupMember(groupId, userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupMember: $e\n');
 }
 ```
@@ -1318,7 +1318,7 @@ final String roleId = roleId_example; // String | Only returns members with a sp
 try {
     final response = api.getGroupMembers(groupId, n, offset, sort, roleId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupMembers: $e\n');
 }
 ```
@@ -1369,7 +1369,7 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.getGroupPermissions(groupId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupPermissions: $e\n');
 }
 ```
@@ -1419,7 +1419,7 @@ final bool publicOnly = true; // bool | See public posts only.
 try {
     final response = api.getGroupPosts(groupId, n, offset, publicOnly);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupPosts: $e\n');
 }
 ```
@@ -1472,7 +1472,7 @@ final bool blocked = true; // bool | See blocked join requests
 try {
     final response = api.getGroupRequests(groupId, n, offset, blocked);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupRequests: $e\n');
 }
 ```
@@ -1521,7 +1521,7 @@ final api = VrchatDartGenerated().getGroupsApi();
 try {
     final response = api.getGroupRoleTemplates();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupRoleTemplates: $e\n');
 }
 ```
@@ -1565,7 +1565,7 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.getGroupRoles(groupId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupRoles: $e\n');
 }
 ```
@@ -1612,7 +1612,7 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.joinGroup(groupId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->joinGroup: $e\n');
 }
 ```
@@ -1659,7 +1659,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 
 try {
     api.kickGroupMember(groupId, userId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->kickGroupMember: $e\n');
 }
 ```
@@ -1706,7 +1706,7 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 
 try {
     api.leaveGroup(groupId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->leaveGroup: $e\n');
 }
 ```
@@ -1755,7 +1755,7 @@ final String groupRoleId = grol_00000000-0000-0000-0000-000000000000; // String 
 try {
     final response = api.removeGroupMemberRole(groupId, userId, groupRoleId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->removeGroupMemberRole: $e\n');
 }
 ```
@@ -1805,7 +1805,7 @@ final RespondGroupJoinRequest respondGroupJoinRequest = ; // RespondGroupJoinReq
 
 try {
     api.respondGroupJoinRequest(groupId, userId, respondGroupJoinRequest);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->respondGroupJoinRequest: $e\n');
 }
 ```
@@ -1852,7 +1852,7 @@ final int n = 56; // int | The number of objects to return.
 try {
     final response = api.searchGroups(query, offset, n);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->searchGroups: $e\n');
 }
 ```
@@ -1902,7 +1902,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.unbanGroupMember(groupId, userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->unbanGroupMember: $e\n');
 }
 ```
@@ -1951,7 +1951,7 @@ final UpdateGroupRequest updateGroupRequest = ; // UpdateGroupRequest |
 try {
     final response = api.updateGroup(groupId, updateGroupRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->updateGroup: $e\n');
 }
 ```
@@ -2001,7 +2001,7 @@ final UpdateGroupGalleryRequest updateGroupGalleryRequest = ; // UpdateGroupGall
 try {
     final response = api.updateGroupGallery(groupId, groupGalleryId, updateGroupGalleryRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->updateGroupGallery: $e\n');
 }
 ```
@@ -2052,7 +2052,7 @@ final UpdateGroupMemberRequest updateGroupMemberRequest = ; // UpdateGroupMember
 try {
     final response = api.updateGroupMember(groupId, userId, updateGroupMemberRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->updateGroupMember: $e\n');
 }
 ```
@@ -2103,7 +2103,7 @@ final CreateGroupPostRequest createGroupPostRequest = ; // CreateGroupPostReques
 try {
     final response = api.updateGroupPost(groupId, notificationId, createGroupPostRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->updateGroupPost: $e\n');
 }
 ```
@@ -2153,7 +2153,7 @@ final UpdateGroupRepresentationRequest updateGroupRepresentationRequest = ; // U
 try {
     final response = api.updateGroupRepresentation(groupId, updateGroupRepresentationRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->updateGroupRepresentation: $e\n');
 }
 ```
@@ -2203,7 +2203,7 @@ final UpdateGroupRoleRequest updateGroupRoleRequest = ; // UpdateGroupRoleReques
 try {
     final response = api.updateGroupRole(groupId, groupRoleId, updateGroupRoleRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->updateGroupRole: $e\n');
 }
 ```

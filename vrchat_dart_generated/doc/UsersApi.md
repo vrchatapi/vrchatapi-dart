@@ -54,7 +54,7 @@ final ChangeUserTagsRequest changeUserTagsRequest = ; // ChangeUserTagsRequest |
 try {
     final response = api.addTags(userId, changeUserTagsRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->addTags: $e\n');
 }
 ```
@@ -102,7 +102,7 @@ final String worldId = worldId_example; // String | Must be a valid world ID.
 
 try {
     api.checkUserPersistenceExists(userId, worldId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->checkUserPersistenceExists: $e\n');
 }
 ```
@@ -150,7 +150,7 @@ final String worldId = worldId_example; // String | Must be a valid world ID.
 
 try {
     api.deleteUserPersistence(userId, worldId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->deleteUserPersistence: $e\n');
 }
 ```
@@ -200,7 +200,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getMutualFriends(userId, n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getMutualFriends: $e\n');
 }
 ```
@@ -251,7 +251,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getMutualGroups(userId, n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getMutualGroups: $e\n');
 }
 ```
@@ -300,7 +300,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getMutuals(userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getMutuals: $e\n');
 }
 ```
@@ -347,7 +347,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getUser(userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getUser: $e\n');
 }
 ```
@@ -394,7 +394,7 @@ final String username = username_example; // String | Username of the user
 try {
     final response = api.getUserByName(username);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getUserByName: $e\n');
 }
 ```
@@ -444,7 +444,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getUserFeedback(userId, contentId, n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getUserFeedback: $e\n');
 }
 ```
@@ -494,7 +494,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getUserGroupInstances(userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getUserGroupInstances: $e\n');
 }
 ```
@@ -542,7 +542,7 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.getUserGroupInstancesForGroup(userId, groupId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getUserGroupInstancesForGroup: $e\n');
 }
 ```
@@ -590,7 +590,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getUserGroupRequests(userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getUserGroupRequests: $e\n');
 }
 ```
@@ -637,7 +637,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getUserGroups(userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getUserGroups: $e\n');
 }
 ```
@@ -684,7 +684,7 @@ final String userNoteId = userNoteId_example; // String | Must be a valid user n
 try {
     final response = api.getUserNote(userNoteId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getUserNote: $e\n');
 }
 ```
@@ -732,7 +732,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getUserNotes(n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getUserNotes: $e\n');
 }
 ```
@@ -780,7 +780,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getUserRepresentedGroup(userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getUserRepresentedGroup: $e\n');
 }
 ```
@@ -828,7 +828,7 @@ final ChangeUserTagsRequest changeUserTagsRequest = ; // ChangeUserTagsRequest |
 try {
     final response = api.removeTags(userId, changeUserTagsRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->removeTags: $e\n');
 }
 ```
@@ -879,7 +879,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.searchUsers(search, developerType, n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->searchUsers: $e\n');
 }
 ```
@@ -930,7 +930,7 @@ final UpdateUserBadgeRequest updateUserBadgeRequest = ; // UpdateUserBadgeReques
 
 try {
     api.updateBadge(userId, badgeId, updateUserBadgeRequest);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->updateBadge: $e\n');
 }
 ```
@@ -980,7 +980,7 @@ final UpdateUserRequest updateUserRequest = ; // UpdateUserRequest |
 try {
     final response = api.updateUser(userId, updateUserRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->updateUser: $e\n');
 }
 ```
@@ -1028,7 +1028,7 @@ final UpdateUserNoteRequest updateUserNoteRequest = ; // UpdateUserNoteRequest |
 try {
     final response = api.updateUserNote(updateUserNoteRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->updateUserNote: $e\n');
 }
 ```

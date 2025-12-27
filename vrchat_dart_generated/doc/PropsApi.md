@@ -33,7 +33,7 @@ final String propId = prop_829ba6f6-b837-49d9-b9a9-056b82103b58; // String | Pro
 try {
     final response = api.getProp(propId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling PropsApi->getProp: $e\n');
 }
 ```

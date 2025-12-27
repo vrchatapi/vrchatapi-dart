@@ -44,7 +44,7 @@ final String inventoryItemId = inv_00000000-0000-0000-0000-000000000000; // Stri
 try {
     final response = api.consumeOwnInventoryItem(inventoryItemId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InventoryApi->consumeOwnInventoryItem: $e\n');
 }
 ```
@@ -91,7 +91,7 @@ final String inventoryItemId = inv_00000000-0000-0000-0000-000000000000; // Stri
 try {
     final response = api.deleteOwnInventoryItem(inventoryItemId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InventoryApi->deleteOwnInventoryItem: $e\n');
 }
 ```
@@ -139,7 +139,7 @@ final EquipInventoryItemRequest equipInventoryItemRequest = ; // EquipInventoryI
 try {
     final response = api.equipOwnInventoryItem(inventoryItemId, equipInventoryItemRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InventoryApi->equipOwnInventoryItem: $e\n');
 }
 ```
@@ -197,7 +197,7 @@ final bool archived = true; // bool | Filter archived status for inventory retri
 try {
     final response = api.getInventory(n, offset, holderId, equipSlot, order, tags, types, flags, notTypes, notFlags, archived);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InventoryApi->getInventory: $e\n');
 }
 ```
@@ -254,7 +254,7 @@ final bool active = true; // bool | Filter for users' listings and inventory bun
 try {
     final response = api.getInventoryDrops(active);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InventoryApi->getInventoryDrops: $e\n');
 }
 ```
@@ -301,7 +301,7 @@ final String inventoryTemplateId = invt_00000000-0000-0000-0000-000000000000; //
 try {
     final response = api.getInventoryTemplate(inventoryTemplateId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InventoryApi->getInventoryTemplate: $e\n');
 }
 ```
@@ -348,7 +348,7 @@ final String inventoryItemId = inv_00000000-0000-0000-0000-000000000000; // Stri
 try {
     final response = api.getOwnInventoryItem(inventoryItemId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InventoryApi->getOwnInventoryItem: $e\n');
 }
 ```
@@ -397,7 +397,7 @@ final ShareInventoryItemDirectRequest shareInventoryItemDirectRequest = ; // Sha
 try {
     final response = api.shareInventoryItemDirect(itemId, duration, shareInventoryItemDirectRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InventoryApi->shareInventoryItemDirect: $e\n');
 }
 ```
@@ -447,7 +447,7 @@ final int duration = 56; // int | The duration before the sharing pedestal despa
 try {
     final response = api.shareInventoryItemPedestal(itemId, duration);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InventoryApi->shareInventoryItemPedestal: $e\n');
 }
 ```
@@ -495,7 +495,7 @@ final String id = id_example; // String | Id for inventory item spawning.
 try {
     final response = api.spawnInventoryItem(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InventoryApi->spawnInventoryItem: $e\n');
 }
 ```
@@ -542,7 +542,7 @@ final InventoryEquipSlot inventoryItemId = ; // InventoryEquipSlot | Selector fo
 try {
     final response = api.unequipOwnInventorySlot(inventoryItemId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InventoryApi->unequipOwnInventorySlot: $e\n');
 }
 ```
@@ -590,7 +590,7 @@ final UpdateInventoryItemRequest updateInventoryItemRequest = ; // UpdateInvento
 try {
     final response = api.updateOwnInventoryItem(inventoryItemId, updateInventoryItemRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InventoryApi->updateOwnInventoryItem: $e\n');
 }
 ```

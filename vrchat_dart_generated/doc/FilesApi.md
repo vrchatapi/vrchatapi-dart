@@ -49,7 +49,7 @@ final CreateFileRequest createFileRequest = ; // CreateFileRequest |
 try {
     final response = api.createFile(createFileRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->createFile: $e\n');
 }
 ```
@@ -97,7 +97,7 @@ final CreateFileVersionRequest createFileVersionRequest = ; // CreateFileVersion
 try {
     final response = api.createFileVersion(fileId, createFileVersionRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->createFileVersion: $e\n');
 }
 ```
@@ -145,7 +145,7 @@ final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.deleteFile(fileId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->deleteFile: $e\n');
 }
 ```
@@ -193,7 +193,7 @@ final int versionId = 1; // int | Version ID of the asset.
 try {
     final response = api.deleteFileVersion(fileId, versionId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->deleteFileVersion: $e\n');
 }
 ```
@@ -242,7 +242,7 @@ final int versionId = 1; // int | Version ID of the asset.
 try {
     final response = api.downloadFileVersion(fileId, versionId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->downloadFileVersion: $e\n');
 }
 ```
@@ -293,7 +293,7 @@ final FinishFileDataUploadRequest finishFileDataUploadRequest = {"etags":["xxxxx
 try {
     final response = api.finishFileDataUpload(fileId, versionId, fileType, finishFileDataUploadRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->finishFileDataUpload: $e\n');
 }
 ```
@@ -343,7 +343,7 @@ final String adminAssetBundleId = aab_e159e72c-ce54-4fbe-8c37-96af02f6d18d; // S
 try {
     final response = api.getAdminAssetBundle(adminAssetBundleId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->getAdminAssetBundle: $e\n');
 }
 ```
@@ -390,7 +390,7 @@ final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.getFile(fileId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->getFile: $e\n');
 }
 ```
@@ -438,7 +438,7 @@ final int versionId = 1; // int | Version ID of the asset.
 try {
     final response = api.getFileAnalysis(fileId, versionId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->getFileAnalysis: $e\n');
 }
 ```
@@ -487,7 +487,7 @@ final int versionId = 1; // int | Version ID of the asset.
 try {
     final response = api.getFileAnalysisSecurity(fileId, versionId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->getFileAnalysisSecurity: $e\n');
 }
 ```
@@ -536,7 +536,7 @@ final int versionId = 1; // int | Version ID of the asset.
 try {
     final response = api.getFileAnalysisStandard(fileId, versionId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->getFileAnalysisStandard: $e\n');
 }
 ```
@@ -586,7 +586,7 @@ final String fileType = file; // String | Type of file.
 try {
     final response = api.getFileDataUploadStatus(fileId, versionId, fileType);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->getFileDataUploadStatus: $e\n');
 }
 ```
@@ -638,7 +638,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getFiles(tag, userId, n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->getFiles: $e\n');
 }
 ```
@@ -691,7 +691,7 @@ final int partNumber = 1; // int | The part number to start uploading. If not pr
 try {
     final response = api.startFileDataUpload(fileId, versionId, fileType, partNumber);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->startFileDataUpload: $e\n');
 }
 ```
@@ -741,7 +741,7 @@ final MultipartFile file = BINARY_DATA_HERE; // MultipartFile | The binary blob 
 try {
     final response = api.uploadGalleryImage(file);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->uploadGalleryImage: $e\n');
 }
 ```
@@ -788,7 +788,7 @@ final MultipartFile file = BINARY_DATA_HERE; // MultipartFile | The binary blob 
 try {
     final response = api.uploadIcon(file);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->uploadIcon: $e\n');
 }
 ```
@@ -840,7 +840,7 @@ final String maskTag = maskTag_example; // String | Mask of the sticker, optiona
 try {
     final response = api.uploadImage(file, tag, animationStyle, frames, framesOverTime, maskTag);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->uploadImage: $e\n');
 }
 ```
