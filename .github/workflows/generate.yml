@@ -42,7 +42,17 @@ jobs:
       - name: Generate
         run: ./generate.sh
 
+      - name: Check for CHANGELOG changes
+        id: changelog
+        run: |
+          if git diff --quiet vrchat_dart_generated/CHANGELOG.md; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
       - name: Create Pull Request
+        if: steps.changelog.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
           branch: ci/regenerate-from-spec
