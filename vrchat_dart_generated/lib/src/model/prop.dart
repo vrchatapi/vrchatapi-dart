@@ -39,7 +39,7 @@ class Prop {
 
     required this.releaseStatus,
 
-    this.spawnType = 0,
+    this.spawnType = 1,
 
     required this.tags,
 
@@ -83,6 +83,8 @@ class Prop {
   @JsonKey(name: r'releaseStatus', required: true, includeIfNull: false)
   final ReleaseStatus releaseStatus;
 
+  /// How a prop is summoned and interacted with. 0: the prop fixed to some surface in the world 1: the prop is a pickup and may be held by users 2: ???
+  // minimum: 0
   @JsonKey(name: r'spawnType', required: true, includeIfNull: false)
   final int spawnType;
 
@@ -98,6 +100,8 @@ class Prop {
   @JsonKey(name: r'unityPackages', required: true, includeIfNull: false)
   final Set<PropUnityPackage> unityPackages;
 
+  /// Bitmask for restrictions on what world surfaces a prop may be summoned. 0: no restrictions 1: floors 2: walls 4: ceilings
+  // minimum: 0
   @JsonKey(name: r'worldPlacementMask', required: true, includeIfNull: false)
   final int worldPlacementMask;
 

@@ -27,7 +27,10 @@ SentNotification _$SentNotificationFromJson(Map<String, dynamic> json) =>
           'created_at',
           (v) => DateTime.parse(v as String),
         ),
-        details: $checkedConvert('details', (v) => v as Object),
+        details: $checkedConvert(
+          'details',
+          (v) => Map<String, String>.from(v as Map),
+        ),
         id: $checkedConvert('id', (v) => v as String),
         message: $checkedConvert('message', (v) => v as String),
         receiverUserId: $checkedConvert('receiverUserId', (v) => v as String),

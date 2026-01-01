@@ -3,8 +3,11 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/image_mask.dart';
 import 'package:vrchat_dart_generated/src/model/file_version.dart';
+import 'package:vrchat_dart_generated/src/model/image_loop_style.dart';
 import 'package:vrchat_dart_generated/src/model/mime_type.dart';
+import 'package:vrchat_dart_generated/src/model/image_animation_style.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -23,11 +26,19 @@ class File {
 
     required this.extension_,
 
+    this.frames,
+
+    this.framesOverTime,
+
     required this.id,
+
+    this.loopStyle,
 
     this.maskTag,
 
     required this.mimeType,
+
+    this.modifiedThumbnailFileName,
 
     required this.name,
 
@@ -39,19 +50,41 @@ class File {
   });
 
   @JsonKey(name: r'animationStyle', required: false, includeIfNull: false)
-  final String? animationStyle;
+  final ImageAnimationStyle? animationStyle;
 
   @JsonKey(name: r'extension', required: true, includeIfNull: false)
   final String extension_;
 
+  /// The number of frames for animated spritesheet images.
+  // minimum: 2
+  // maximum: 64
+  @JsonKey(name: r'frames', required: false, includeIfNull: false)
+  final int? frames;
+
+  /// The frames per second for animated spritesheet images.
+  // minimum: 1
+  // maximum: 64
+  @JsonKey(name: r'framesOverTime', required: false, includeIfNull: false)
+  final int? framesOverTime;
+
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
+  @JsonKey(name: r'loopStyle', required: false, includeIfNull: false)
+  final ImageLoopStyle? loopStyle;
+
   @JsonKey(name: r'maskTag', required: false, includeIfNull: false)
-  final String? maskTag;
+  final ImageMask? maskTag;
 
   @JsonKey(name: r'mimeType', required: true, includeIfNull: false)
   final MIMEType mimeType;
+
+  @JsonKey(
+    name: r'modifiedThumbnailFileName',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? modifiedThumbnailFileName;
 
   ///
   @JsonKey(name: r'name', required: true, includeIfNull: false)
@@ -75,9 +108,13 @@ class File {
       other is File &&
           other.animationStyle == animationStyle &&
           other.extension_ == extension_ &&
+          other.frames == frames &&
+          other.framesOverTime == framesOverTime &&
           other.id == id &&
+          other.loopStyle == loopStyle &&
           other.maskTag == maskTag &&
           other.mimeType == mimeType &&
+          other.modifiedThumbnailFileName == modifiedThumbnailFileName &&
           other.name == name &&
           other.ownerId == ownerId &&
           other.tags == tags &&
@@ -87,9 +124,13 @@ class File {
   int get hashCode =>
       animationStyle.hashCode +
       extension_.hashCode +
+      frames.hashCode +
+      framesOverTime.hashCode +
       id.hashCode +
+      loopStyle.hashCode +
       maskTag.hashCode +
       mimeType.hashCode +
+      modifiedThumbnailFileName.hashCode +
       name.hashCode +
       ownerId.hashCode +
       tags.hashCode +

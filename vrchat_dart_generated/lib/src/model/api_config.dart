@@ -3,18 +3,19 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:vrchat_dart_generated/src/model/api_config_events.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_min_supported_client_build_number.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_download_url_list.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_avatar_perf_limiter.dart';
-import 'package:vrchat_dart_generated/src/model/api_config_report_reasons.dart';
-import 'package:vrchat_dart_generated/src/model/api_config_report_options.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_access_logs_urls.dart';
-import 'package:vrchat_dart_generated/src/model/api_config_report_categories.dart';
-import 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_constants.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_offline_analysis.dart';
+import 'package:vrchat_dart_generated/src/model/report_category.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_announcement.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_events.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_ios_version.dart';
+import 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_audio_config.dart';
+import 'package:vrchat_dart_generated/src/model/report_reason.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -29,6 +30,12 @@ part 'api_config.g.dart';
 class APIConfig {
   /// Returns a new [APIConfig] instance.
   APIConfig({
+    required this.campaignStatus,
+
+    this.disableBackgroundPreloads = true,
+
+    this.locationGiftingNonSubPrioEnabled = true,
+
     this.voiceEnableDegradation = false,
 
     this.voiceEnableReceiverLimiting = true,
@@ -52,6 +59,8 @@ class APIConfig {
     required this.analyticsSegmentNewUISalt,
 
     required this.announcements,
+
+    this.audioConfig,
 
     required this.availableLanguageCodes,
 
@@ -98,6 +107,8 @@ class APIConfig {
     required this.contactEmail,
 
     required this.copyrightEmail,
+
+    required this.copyrightFormUrl,
 
     this.currentPrivacyVersion = 1,
 
@@ -157,9 +168,17 @@ class APIConfig {
 
     required this.dynamicWorldRows,
 
-    this.economyPauseEnd,
+    required this.economyLedgerBackfill,
 
-    this.economyPauseStart,
+    required this.economyLedgerMigrationStop,
+
+    required this.economyLedgerMode,
+
+    required this.economyPauseEnd,
+
+    required this.economyPauseStart,
+
+    required this.economyPurchaseRepairEnabled,
 
     this.economyState = 1,
 
@@ -180,7 +199,15 @@ class APIConfig {
 
     required this.imageHostUrlList,
 
+    required this.iosAppVersion,
+
+    required this.iosVersion,
+
     required this.jobsEmail,
+
+    this.maxUserEmoji = 18,
+
+    this.maxUserStickers = 18,
 
     required this.minSupportedClientBuildNumber,
 
@@ -258,6 +285,26 @@ class APIConfig {
     required this.whiteListedAssetUrls,
   });
 
+  /// The current platform-wide event taking place
+  @JsonKey(name: r'CampaignStatus', required: true, includeIfNull: false)
+  final String campaignStatus;
+
+  /// Toggles if certain assets are preloaded in the background
+  @JsonKey(
+    name: r'DisableBackgroundPreloads',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool disableBackgroundPreloads;
+
+  /// Toggles whether users without a current VRC+ subscription are priority recipients for gift drops
+  @JsonKey(
+    name: r'LocationGiftingNonSubPrioEnabled',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool locationGiftingNonSubPrioEnabled;
+
   /// Unknown, probably voice optimization testing
   @JsonKey(
     name: r'VoiceEnableDegradation',
@@ -326,6 +373,9 @@ class APIConfig {
   @JsonKey(name: r'announcements', required: true, includeIfNull: false)
   // ignore: deprecated_member_use_from_same_package
   final Set<APIConfigAnnouncement> announcements;
+
+  @JsonKey(name: r'audioConfig', required: false, includeIfNull: false)
+  final APIConfigAudioConfig? audioConfig;
 
   /// List of supported Languages
   @JsonKey(
@@ -461,13 +511,13 @@ class APIConfig {
   @JsonKey(name: r'copyrightEmail', required: true, includeIfNull: false)
   final String copyrightEmail;
 
+  /// VRChat's DMCA claim webform url
+  @JsonKey(name: r'copyrightFormUrl', required: true, includeIfNull: false)
+  final String copyrightFormUrl;
+
   /// Current version number of the Privacy Agreement
-  @JsonKey(
-    name: r'currentPrivacyVersion',
-    required: false,
-    includeIfNull: false,
-  )
-  final int? currentPrivacyVersion;
+  @JsonKey(name: r'currentPrivacyVersion', required: true, includeIfNull: false)
+  final int currentPrivacyVersion;
 
   /// Current version number of the Terms of Service
   // minimum: 0
@@ -591,16 +641,40 @@ class APIConfig {
   final Set<DynamicContentRow> dynamicWorldRows;
 
   /// Unknown
-  @JsonKey(name: r'economyPauseEnd', required: false, includeIfNull: false)
-  final String? economyPauseEnd;
+  @JsonKey(name: r'economyLedgerBackfill', required: true, includeIfNull: false)
+  final bool economyLedgerBackfill;
 
   /// Unknown
-  @JsonKey(name: r'economyPauseStart', required: false, includeIfNull: false)
-  final String? economyPauseStart;
+  @JsonKey(
+    name: r'economyLedgerMigrationStop',
+    required: true,
+    includeIfNull: false,
+  )
+  final String economyLedgerMigrationStop;
 
   /// Unknown
-  @JsonKey(name: r'economyState', required: false, includeIfNull: false)
-  final int? economyState;
+  @JsonKey(name: r'economyLedgerMode', required: true, includeIfNull: false)
+  final String economyLedgerMode;
+
+  /// Unknown
+  @JsonKey(name: r'economyPauseEnd', required: true, includeIfNull: false)
+  final DateTime economyPauseEnd;
+
+  /// Unknown
+  @JsonKey(name: r'economyPauseStart', required: true, includeIfNull: false)
+  final DateTime economyPauseStart;
+
+  /// Unknown
+  @JsonKey(
+    name: r'economyPurchaseRepairEnabled',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool economyPurchaseRepairEnabled;
+
+  /// Unknown
+  @JsonKey(name: r'economyState', required: true, includeIfNull: false)
+  final int economyState;
 
   @JsonKey(name: r'events', required: true, includeIfNull: false)
   final APIConfigEvents events;
@@ -643,9 +717,24 @@ class APIConfig {
   @JsonKey(name: r'imageHostUrlList', required: true, includeIfNull: false)
   final List<String> imageHostUrlList;
 
+  /// Current app version for iOS
+  @JsonKey(name: r'iosAppVersion', required: true, includeIfNull: false)
+  final List<String> iosAppVersion;
+
+  @JsonKey(name: r'iosVersion', required: true, includeIfNull: false)
+  final APIConfigIosVersion iosVersion;
+
   /// VRChat's job application email
   @JsonKey(name: r'jobsEmail', required: true, includeIfNull: false)
   final String jobsEmail;
+
+  /// The maximum number of custom emoji each user may have at a given time.
+  @JsonKey(name: r'maxUserEmoji', required: true, includeIfNull: false)
+  final int maxUserEmoji;
+
+  /// The maximum number of custom stickers each user may have at a given time.
+  @JsonKey(name: r'maxUserStickers', required: true, includeIfNull: false)
+  final int maxUserStickers;
 
   @JsonKey(
     name: r'minSupportedClientBuildNumber',
@@ -709,8 +798,9 @@ class APIConfig {
   @JsonKey(name: r'publicKey', required: true, includeIfNull: false)
   final String publicKey;
 
+  /// Categories available for reporting objectionable content
   @JsonKey(name: r'reportCategories', required: true, includeIfNull: false)
-  final APIConfigReportCategories reportCategories;
+  final Map<String, ReportCategory> reportCategories;
 
   /// URL to the report form
   @JsonKey(
@@ -722,11 +812,13 @@ class APIConfig {
   )
   final String reportFormUrl;
 
+  /// Options for reporting content. Select a key+value from this mapping as the `type` of the report. Select one key+value from the object at reportOptions[type] as the `category` of the report. reportCategories[category] contains user-facing text to display for all possible categories. Select one value from the array at reportOptions[type][category] as the `reason` of the report. reportReasons[reason] contains user-facing text to display for all possible categories.
   @JsonKey(name: r'reportOptions', required: true, includeIfNull: false)
-  final APIConfigReportOptions reportOptions;
+  final Map<String, Map<String, List<String>>> reportOptions;
 
+  /// Reasons available for submitting a report
   @JsonKey(name: r'reportReasons', required: true, includeIfNull: false)
-  final APIConfigReportReasons reportReasons;
+  final Map<String, ReportReason> reportReasons;
 
   @JsonKey(
     name: r'requireAgeVerificationBetaTag',
@@ -851,6 +943,10 @@ class APIConfig {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is APIConfig &&
+          other.campaignStatus == campaignStatus &&
+          other.disableBackgroundPreloads == disableBackgroundPreloads &&
+          other.locationGiftingNonSubPrioEnabled ==
+              locationGiftingNonSubPrioEnabled &&
           other.voiceEnableDegradation == voiceEnableDegradation &&
           other.voiceEnableReceiverLimiting == voiceEnableReceiverLimiting &&
           other.accessLogsUrls == accessLogsUrls &&
@@ -864,6 +960,7 @@ class APIConfig {
               analyticsSegmentNewUIPctOfUsers &&
           other.analyticsSegmentNewUISalt == analyticsSegmentNewUISalt &&
           other.announcements == announcements &&
+          other.audioConfig == audioConfig &&
           other.availableLanguageCodes == availableLanguageCodes &&
           other.availableLanguages == availableLanguages &&
           other.avatarPerfLimiter == avatarPerfLimiter &&
@@ -888,6 +985,7 @@ class APIConfig {
           other.constants == constants &&
           other.contactEmail == contactEmail &&
           other.copyrightEmail == copyrightEmail &&
+          other.copyrightFormUrl == copyrightFormUrl &&
           other.currentPrivacyVersion == currentPrivacyVersion &&
           other.currentTOSVersion == currentTOSVersion &&
           other.defaultAvatar == defaultAvatar &&
@@ -921,8 +1019,12 @@ class APIConfig {
           other.downloadLinkWindows == downloadLinkWindows &&
           other.downloadUrls == downloadUrls &&
           other.dynamicWorldRows == dynamicWorldRows &&
+          other.economyLedgerBackfill == economyLedgerBackfill &&
+          other.economyLedgerMigrationStop == economyLedgerMigrationStop &&
+          other.economyLedgerMode == economyLedgerMode &&
           other.economyPauseEnd == economyPauseEnd &&
           other.economyPauseStart == economyPauseStart &&
+          other.economyPurchaseRepairEnabled == economyPurchaseRepairEnabled &&
           other.economyState == economyState &&
           other.events == events &&
           other.forceUseLatestWorld == forceUseLatestWorld &&
@@ -932,7 +1034,11 @@ class APIConfig {
           other.homepageRedirectTarget == homepageRedirectTarget &&
           other.hubWorldId == hubWorldId &&
           other.imageHostUrlList == imageHostUrlList &&
+          other.iosAppVersion == iosAppVersion &&
+          other.iosVersion == iosVersion &&
           other.jobsEmail == jobsEmail &&
+          other.maxUserEmoji == maxUserEmoji &&
+          other.maxUserStickers == maxUserStickers &&
           other.minSupportedClientBuildNumber ==
               minSupportedClientBuildNumber &&
           other.minimumUnityVersionForUploads ==
@@ -979,6 +1085,9 @@ class APIConfig {
 
   @override
   int get hashCode =>
+      campaignStatus.hashCode +
+      disableBackgroundPreloads.hashCode +
+      locationGiftingNonSubPrioEnabled.hashCode +
       voiceEnableDegradation.hashCode +
       voiceEnableReceiverLimiting.hashCode +
       accessLogsUrls.hashCode +
@@ -991,6 +1100,7 @@ class APIConfig {
       analyticsSegmentNewUIPctOfUsers.hashCode +
       analyticsSegmentNewUISalt.hashCode +
       announcements.hashCode +
+      audioConfig.hashCode +
       availableLanguageCodes.hashCode +
       availableLanguages.hashCode +
       avatarPerfLimiter.hashCode +
@@ -1014,6 +1124,7 @@ class APIConfig {
       constants.hashCode +
       contactEmail.hashCode +
       copyrightEmail.hashCode +
+      copyrightFormUrl.hashCode +
       currentPrivacyVersion.hashCode +
       currentTOSVersion.hashCode +
       defaultAvatar.hashCode +
@@ -1046,8 +1157,12 @@ class APIConfig {
       downloadLinkWindows.hashCode +
       downloadUrls.hashCode +
       dynamicWorldRows.hashCode +
+      economyLedgerBackfill.hashCode +
+      economyLedgerMigrationStop.hashCode +
+      economyLedgerMode.hashCode +
       economyPauseEnd.hashCode +
       economyPauseStart.hashCode +
+      economyPurchaseRepairEnabled.hashCode +
       economyState.hashCode +
       events.hashCode +
       forceUseLatestWorld.hashCode +
@@ -1057,7 +1172,11 @@ class APIConfig {
       homepageRedirectTarget.hashCode +
       hubWorldId.hashCode +
       imageHostUrlList.hashCode +
+      iosAppVersion.hashCode +
+      iosVersion.hashCode +
       jobsEmail.hashCode +
+      maxUserEmoji.hashCode +
+      maxUserStickers.hashCode +
       minSupportedClientBuildNumber.hashCode +
       minimumUnityVersionForUploads.hashCode +
       moderationEmail.hashCode +

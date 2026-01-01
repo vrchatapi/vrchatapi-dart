@@ -21,6 +21,8 @@ class FavoriteGroupLimits {
 
     required this.friend,
 
+    required this.vrcPlusWorld,
+
     required this.world,
   });
 
@@ -29,6 +31,9 @@ class FavoriteGroupLimits {
 
   @JsonKey(name: r'friend', required: true, includeIfNull: false)
   final int friend;
+
+  @JsonKey(name: r'vrcPlusWorld', required: true, includeIfNull: false)
+  final int vrcPlusWorld;
 
   @JsonKey(name: r'world', required: true, includeIfNull: false)
   final int world;
@@ -39,10 +44,15 @@ class FavoriteGroupLimits {
       other is FavoriteGroupLimits &&
           other.avatar == avatar &&
           other.friend == friend &&
+          other.vrcPlusWorld == vrcPlusWorld &&
           other.world == world;
 
   @override
-  int get hashCode => avatar.hashCode + friend.hashCode + world.hashCode;
+  int get hashCode =>
+      avatar.hashCode +
+      friend.hashCode +
+      vrcPlusWorld.hashCode +
+      world.hashCode;
 
   factory FavoriteGroupLimits.fromJson(Map<String, dynamic> json) =>
       _$FavoriteGroupLimitsFromJson(json);

@@ -11,7 +11,8 @@ Name | Type | Description | Notes
 **canDelete** | **bool** |  | 
 **category** | **String** |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
-**data** | **Object** |  | 
+**data** | **Map&lt;String, String&gt;** |  | 
+**details** | [**NotificationV2DetailsBoop**](NotificationV2DetailsBoop.md) |  | [optional] 
 **expiresAt** | [**DateTime**](DateTime.md) |  | 
 **expiryAfterSeen** | **int** |  | 
 **id** | **String** |  | 

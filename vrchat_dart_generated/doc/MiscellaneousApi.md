@@ -40,7 +40,7 @@ final api = VrchatDartGenerated().getMiscellaneousApi();
 try {
     final response = api.getAssignedPermissions();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MiscellaneousApi->getAssignedPermissions: $e\n');
 }
 ```
@@ -81,7 +81,7 @@ final String branch = branch_example; // String | Specifies which git branch the
 try {
     final response = api.getCSS(variant, branch);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MiscellaneousApi->getCSS: $e\n');
 }
 ```
@@ -124,7 +124,7 @@ final api = VrchatDartGenerated().getMiscellaneousApi();
 try {
     final response = api.getConfig();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MiscellaneousApi->getConfig: $e\n');
 }
 ```
@@ -163,7 +163,7 @@ final api = VrchatDartGenerated().getMiscellaneousApi();
 try {
     final response = api.getCurrentOnlineUsers();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MiscellaneousApi->getCurrentOnlineUsers: $e\n');
 }
 ```
@@ -202,7 +202,7 @@ final api = VrchatDartGenerated().getMiscellaneousApi();
 try {
     final response = api.getHealth();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MiscellaneousApi->getHealth: $e\n');
 }
 ```
@@ -243,7 +243,7 @@ final String include = include_example; // String | Tags to include (comma-separ
 try {
     final response = api.getInfoPush(require, include);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MiscellaneousApi->getInfoPush: $e\n');
 }
 ```
@@ -288,7 +288,7 @@ final String branch = branch_example; // String | Specifies which git branch the
 try {
     final response = api.getJavaScript(variant, branch);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MiscellaneousApi->getJavaScript: $e\n');
 }
 ```
@@ -336,7 +336,7 @@ final String permissionId = permissionId_example; // String | Must be a valid pe
 try {
     final response = api.getPermission(permissionId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MiscellaneousApi->getPermission: $e\n');
 }
 ```
@@ -378,7 +378,7 @@ final api = VrchatDartGenerated().getMiscellaneousApi();
 try {
     final response = api.getSystemTime();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MiscellaneousApi->getSystemTime: $e\n');
 }
 ```

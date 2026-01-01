@@ -891,6 +891,7 @@ class AvatarsApi {
   /// * [maxUnityVersion] - The maximum Unity version supported by the asset.
   /// * [minUnityVersion] - The minimum Unity version supported by the asset.
   /// * [platform] - The platform the asset supports.
+  /// * [isInternalVariant] - Not quite sure what this actually does (exists on the website but doesn't seem to be used)
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -914,6 +915,7 @@ class AvatarsApi {
     String? maxUnityVersion,
     String? minUnityVersion,
     String? platform,
+    bool? isInternalVariant,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -953,6 +955,7 @@ class AvatarsApi {
       if (maxUnityVersion != null) r'maxUnityVersion': maxUnityVersion,
       if (minUnityVersion != null) r'minUnityVersion': minUnityVersion,
       if (platform != null) r'platform': platform,
+      if (isInternalVariant != null) r'isInternalVariant': isInternalVariant,
     };
 
     final _response = await _dio.request<Object>(

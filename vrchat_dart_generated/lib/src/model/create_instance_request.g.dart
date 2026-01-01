@@ -14,6 +14,7 @@ CreateInstanceRequest _$CreateInstanceRequestFromJson(
   $checkKeys(json, requiredKeys: const ['region', 'type', 'worldId']);
   final val = CreateInstanceRequest(
     ageGate: $checkedConvert('ageGate', (v) => v as bool? ?? false),
+    calendarEntryId: $checkedConvert('calendarEntryId', (v) => v as String?),
     canRequestInvite: $checkedConvert(
       'canRequestInvite',
       (v) => v as bool? ?? false,
@@ -40,6 +41,10 @@ CreateInstanceRequest _$CreateInstanceRequestFromJson(
     ),
     inviteOnly: $checkedConvert('inviteOnly', (v) => v as bool? ?? false),
     ownerId: $checkedConvert('ownerId', (v) => v as String?),
+    playerPersistenceEnabled: $checkedConvert(
+      'playerPersistenceEnabled',
+      (v) => v as bool?,
+    ),
     queueEnabled: $checkedConvert('queueEnabled', (v) => v as bool? ?? false),
     region: $checkedConvert(
       'region',
@@ -59,6 +64,7 @@ Map<String, dynamic> _$CreateInstanceRequestToJson(
   CreateInstanceRequest instance,
 ) => <String, dynamic>{
   'ageGate': ?instance.ageGate,
+  'calendarEntryId': ?instance.calendarEntryId,
   'canRequestInvite': ?instance.canRequestInvite,
   'closedAt': ?instance.closedAt?.toIso8601String(),
   'contentSettings': ?instance.contentSettings?.toJson(),
@@ -68,6 +74,7 @@ Map<String, dynamic> _$CreateInstanceRequestToJson(
   'instancePersistenceEnabled': ?instance.instancePersistenceEnabled,
   'inviteOnly': ?instance.inviteOnly,
   'ownerId': ?instance.ownerId,
+  'playerPersistenceEnabled': ?instance.playerPersistenceEnabled,
   'queueEnabled': ?instance.queueEnabled,
   'region': _$InstanceRegionEnumMap[instance.region]!,
   'roleIds': ?instance.roleIds,

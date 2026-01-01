@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **imageUrl** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**platform** | **String** | This is normally `android`, `ios`, `standalonewindows`, `web`, or the empty value ``, but also supposedly can be any random Unity verison such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`. | [optional] 
+**platform** | **String** | This is normally `android`, `ios`, `standalonewindows`, `web`, or the empty value ``, but also supposedly can be any random Unity version such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`. | [optional] 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | [optional] 
 **tags** | **List&lt;String&gt;** |   | [optional] 
 **unityPackageUrl** | **String** |  | [optional] 

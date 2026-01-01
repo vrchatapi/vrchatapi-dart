@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/notification_v2_type.dart';
 import 'package:vrchat_dart_generated/src/model/notification_v2_response.dart';
+import 'package:vrchat_dart_generated/src/model/notification_v2_details_boop.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -26,6 +27,8 @@ class NotificationV2 {
     required this.createdAt,
 
     required this.data,
+
+    this.details,
 
     required this.expiresAt,
 
@@ -84,7 +87,10 @@ class NotificationV2 {
   final DateTime createdAt;
 
   @JsonKey(name: r'data', required: true, includeIfNull: false)
-  final Object data;
+  final Map<String, String> data;
+
+  @JsonKey(name: r'details', required: false, includeIfNull: false)
+  final NotificationV2DetailsBoop? details;
 
   @JsonKey(name: r'expiresAt', required: true, includeIfNull: false)
   final DateTime expiresAt;
@@ -165,6 +171,7 @@ class NotificationV2 {
           other.category == category &&
           other.createdAt == createdAt &&
           other.data == data &&
+          other.details == details &&
           other.expiresAt == expiresAt &&
           other.expiryAfterSeen == expiryAfterSeen &&
           other.id == id &&
@@ -195,6 +202,7 @@ class NotificationV2 {
       category.hashCode +
       createdAt.hashCode +
       data.hashCode +
+      details.hashCode +
       expiresAt.hashCode +
       (expiryAfterSeen == null ? 0 : expiryAfterSeen.hashCode) +
       id.hashCode +

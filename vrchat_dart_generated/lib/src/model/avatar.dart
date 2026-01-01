@@ -25,6 +25,8 @@ class Avatar {
   Avatar({
     this.acknowledgements,
 
+    this.activeAssetReviewId,
+
     this.assetUrl,
 
     this.assetUrlObject,
@@ -52,6 +54,8 @@ class Avatar {
     this.lowestPrice,
 
     required this.name,
+
+    this.pendingUpload = false,
 
     required this.performance,
 
@@ -82,6 +86,10 @@ class Avatar {
 
   @JsonKey(name: r'acknowledgements', required: false, includeIfNull: false)
   final String? acknowledgements;
+
+  /// Only present for the avatar author on avatars under active review.
+  @JsonKey(name: r'activeAssetReviewId', required: false, includeIfNull: false)
+  final String? activeAssetReviewId;
 
   /// Not present from general search `/avatars`, only on specific requests `/avatars/{avatarId}`.
   @JsonKey(name: r'assetUrl', required: false, includeIfNull: false)
@@ -127,6 +135,9 @@ class Avatar {
 
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
+
+  @JsonKey(name: r'pendingUpload', required: false, includeIfNull: false)
+  final bool? pendingUpload;
 
   @JsonKey(name: r'performance', required: true, includeIfNull: false)
   final AvatarPerformance performance;
@@ -175,6 +186,7 @@ class Avatar {
       identical(this, other) ||
       other is Avatar &&
           other.acknowledgements == acknowledgements &&
+          other.activeAssetReviewId == activeAssetReviewId &&
           other.assetUrl == assetUrl &&
           other.assetUrlObject == assetUrlObject &&
           other.authorId == authorId &&
@@ -189,6 +201,7 @@ class Avatar {
           other.lock == lock &&
           other.lowestPrice == lowestPrice &&
           other.name == name &&
+          other.pendingUpload == pendingUpload &&
           other.performance == performance &&
           other.productId == productId &&
           other.publishedListings == publishedListings &&
@@ -207,6 +220,7 @@ class Avatar {
   @override
   int get hashCode =>
       acknowledgements.hashCode +
+      activeAssetReviewId.hashCode +
       assetUrl.hashCode +
       assetUrlObject.hashCode +
       authorId.hashCode +
@@ -221,6 +235,7 @@ class Avatar {
       lock.hashCode +
       lowestPrice.hashCode +
       name.hashCode +
+      pendingUpload.hashCode +
       performance.hashCode +
       productId.hashCode +
       publishedListings.hashCode +

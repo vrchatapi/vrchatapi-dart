@@ -56,7 +56,7 @@ Prop _$PropFromJson(Map<String, dynamic> json) => $checkedCreate(
         'releaseStatus',
         (v) => $enumDecode(_$ReleaseStatusEnumMap, v),
       ),
-      spawnType: $checkedConvert('spawnType', (v) => (v as num?)?.toInt() ?? 0),
+      spawnType: $checkedConvert('spawnType', (v) => (v as num?)?.toInt() ?? 1),
       tags: $checkedConvert(
         'tags',
         (v) => (v as List<dynamic>).map((e) => e as String).toList(),

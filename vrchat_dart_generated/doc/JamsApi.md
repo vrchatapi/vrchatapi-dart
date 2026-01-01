@@ -35,7 +35,7 @@ final String jamId = jam_0b7e3f6d-4647-4648-b2a1-1431e76906d9; // String | Must 
 try {
     final response = api.getJam(jamId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling JamsApi->getJam: $e\n');
 }
 ```
@@ -82,7 +82,7 @@ final String jamId = jam_0b7e3f6d-4647-4648-b2a1-1431e76906d9; // String | Must 
 try {
     final response = api.getJamSubmissions(jamId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling JamsApi->getJamSubmissions: $e\n');
 }
 ```
@@ -129,7 +129,7 @@ final String type = avatar; // String | Only show jams of this type (`avatar` or
 try {
     final response = api.getJams(type);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling JamsApi->getJams: $e\n');
 }
 ```
