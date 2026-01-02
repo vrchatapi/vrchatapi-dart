@@ -15,6 +15,9 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
     $checkKeys(
       json,
       requiredKeys: const [
+        'CampaignStatus',
+        'DisableBackgroundPreloads',
+        'LocationGiftingNonSubPrioEnabled',
         'VoiceEnableDegradation',
         'VoiceEnableReceiverLimiting',
         'accessLogsUrls',
@@ -40,6 +43,8 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         'constants',
         'contactEmail',
         'copyrightEmail',
+        'copyrightFormUrl',
+        'currentPrivacyVersion',
         'currentTOSVersion',
         'defaultAvatar',
         'defaultStickerSet',
@@ -65,6 +70,13 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         'downloadLinkWindows',
         'downloadUrls',
         'dynamicWorldRows',
+        'economyLedgerBackfill',
+        'economyLedgerMigrationStop',
+        'economyLedgerMode',
+        'economyPauseEnd',
+        'economyPauseStart',
+        'economyPurchaseRepairEnabled',
+        'economyState',
         'events',
         'forceUseLatestWorld',
         'giftDisplayType',
@@ -73,7 +85,11 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         'homepageRedirectTarget',
         'hubWorldId',
         'imageHostUrlList',
+        'iosAppVersion',
+        'iosVersion',
         'jobsEmail',
+        'maxUserEmoji',
+        'maxUserStickers',
         'minSupportedClientBuildNumber',
         'minimumUnityVersionForUploads',
         'moderationEmail',
@@ -114,6 +130,15 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
       ],
     );
     final val = APIConfig(
+      campaignStatus: $checkedConvert('CampaignStatus', (v) => v as String),
+      disableBackgroundPreloads: $checkedConvert(
+        'DisableBackgroundPreloads',
+        (v) => v as bool? ?? true,
+      ),
+      locationGiftingNonSubPrioEnabled: $checkedConvert(
+        'LocationGiftingNonSubPrioEnabled',
+        (v) => v as bool? ?? true,
+      ),
       voiceEnableDegradation: $checkedConvert(
         'VoiceEnableDegradation',
         (v) => v as bool? ?? false,
@@ -159,6 +184,12 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
               (e) => APIConfigAnnouncement.fromJson(e as Map<String, dynamic>),
             )
             .toSet(),
+      ),
+      audioConfig: $checkedConvert(
+        'audioConfig',
+        (v) => v == null
+            ? null
+            : APIConfigAudioConfig.fromJson(v as Map<String, dynamic>),
       ),
       availableLanguageCodes: $checkedConvert(
         'availableLanguageCodes',
@@ -240,6 +271,7 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
       ),
       contactEmail: $checkedConvert('contactEmail', (v) => v as String),
       copyrightEmail: $checkedConvert('copyrightEmail', (v) => v as String),
+      copyrightFormUrl: $checkedConvert('copyrightFormUrl', (v) => v as String),
       currentPrivacyVersion: $checkedConvert(
         'currentPrivacyVersion',
         (v) => (v as num?)?.toInt() ?? 1,
@@ -340,10 +372,29 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
             .map((e) => DynamicContentRow.fromJson(e as Map<String, dynamic>))
             .toSet(),
       ),
-      economyPauseEnd: $checkedConvert('economyPauseEnd', (v) => v as String?),
+      economyLedgerBackfill: $checkedConvert(
+        'economyLedgerBackfill',
+        (v) => v as bool,
+      ),
+      economyLedgerMigrationStop: $checkedConvert(
+        'economyLedgerMigrationStop',
+        (v) => v as String,
+      ),
+      economyLedgerMode: $checkedConvert(
+        'economyLedgerMode',
+        (v) => v as String,
+      ),
+      economyPauseEnd: $checkedConvert(
+        'economyPauseEnd',
+        (v) => DateTime.parse(v as String),
+      ),
       economyPauseStart: $checkedConvert(
         'economyPauseStart',
-        (v) => v as String?,
+        (v) => DateTime.parse(v as String),
+      ),
+      economyPurchaseRepairEnabled: $checkedConvert(
+        'economyPurchaseRepairEnabled',
+        (v) => v as bool,
       ),
       economyState: $checkedConvert(
         'economyState',
@@ -374,7 +425,23 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         'imageHostUrlList',
         (v) => (v as List<dynamic>).map((e) => e as String).toList(),
       ),
+      iosAppVersion: $checkedConvert(
+        'iosAppVersion',
+        (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+      ),
+      iosVersion: $checkedConvert(
+        'iosVersion',
+        (v) => APIConfigIosVersion.fromJson(v as Map<String, dynamic>),
+      ),
       jobsEmail: $checkedConvert('jobsEmail', (v) => v as String),
+      maxUserEmoji: $checkedConvert(
+        'maxUserEmoji',
+        (v) => (v as num?)?.toInt() ?? 18,
+      ),
+      maxUserStickers: $checkedConvert(
+        'maxUserStickers',
+        (v) => (v as num?)?.toInt() ?? 18,
+      ),
       minSupportedClientBuildNumber: $checkedConvert(
         'minSupportedClientBuildNumber',
         (v) => APIConfigMinSupportedClientBuildNumber.fromJson(
@@ -413,7 +480,10 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
       publicKey: $checkedConvert('publicKey', (v) => v as String),
       reportCategories: $checkedConvert(
         'reportCategories',
-        (v) => APIConfigReportCategories.fromJson(v as Map<String, dynamic>),
+        (v) => (v as Map<String, dynamic>).map(
+          (k, e) =>
+              MapEntry(k, ReportCategory.fromJson(e as Map<String, dynamic>)),
+        ),
       ),
       reportFormUrl: $checkedConvert(
         'reportFormUrl',
@@ -423,11 +493,24 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
       ),
       reportOptions: $checkedConvert(
         'reportOptions',
-        (v) => APIConfigReportOptions.fromJson(v as Map<String, dynamic>),
+        (v) => (v as Map<String, dynamic>).map(
+          (k, e) => MapEntry(
+            k,
+            (e as Map<String, dynamic>).map(
+              (k, e) => MapEntry(
+                k,
+                (e as List<dynamic>).map((e) => e as String).toList(),
+              ),
+            ),
+          ),
+        ),
       ),
       reportReasons: $checkedConvert(
         'reportReasons',
-        (v) => APIConfigReportReasons.fromJson(v as Map<String, dynamic>),
+        (v) => (v as Map<String, dynamic>).map(
+          (k, e) =>
+              MapEntry(k, ReportReason.fromJson(e as Map<String, dynamic>)),
+        ),
       ),
       requireAgeVerificationBetaTag: $checkedConvert(
         'requireAgeVerificationBetaTag',
@@ -501,6 +584,9 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
     return val;
   },
   fieldKeyMap: const {
+    'campaignStatus': 'CampaignStatus',
+    'disableBackgroundPreloads': 'DisableBackgroundPreloads',
+    'locationGiftingNonSubPrioEnabled': 'LocationGiftingNonSubPrioEnabled',
     'voiceEnableDegradation': 'VoiceEnableDegradation',
     'voiceEnableReceiverLimiting': 'VoiceEnableReceiverLimiting',
     'analyticsSegmentNewUIPctOfUsers': 'analyticsSegment_NewUI_PctOfUsers',
@@ -512,6 +598,9 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
 );
 
 Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
+  'CampaignStatus': instance.campaignStatus,
+  'DisableBackgroundPreloads': instance.disableBackgroundPreloads,
+  'LocationGiftingNonSubPrioEnabled': instance.locationGiftingNonSubPrioEnabled,
   'VoiceEnableDegradation': instance.voiceEnableDegradation,
   'VoiceEnableReceiverLimiting': instance.voiceEnableReceiverLimiting,
   'accessLogsUrls': instance.accessLogsUrls.toJson(),
@@ -524,6 +613,7 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
   'analyticsSegment_NewUI_PctOfUsers': instance.analyticsSegmentNewUIPctOfUsers,
   'analyticsSegment_NewUI_Salt': instance.analyticsSegmentNewUISalt,
   'announcements': instance.announcements.map((e) => e.toJson()).toList(),
+  'audioConfig': ?instance.audioConfig?.toJson(),
   'availableLanguageCodes': instance.availableLanguageCodes,
   'availableLanguages': instance.availableLanguages,
   'avatarPerfLimiter': instance.avatarPerfLimiter.toJson(),
@@ -547,7 +637,8 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
   'constants': instance.constants.toJson(),
   'contactEmail': instance.contactEmail,
   'copyrightEmail': instance.copyrightEmail,
-  'currentPrivacyVersion': ?instance.currentPrivacyVersion,
+  'copyrightFormUrl': instance.copyrightFormUrl,
+  'currentPrivacyVersion': instance.currentPrivacyVersion,
   'currentTOSVersion': instance.currentTOSVersion,
   'defaultAvatar': instance.defaultAvatar,
   'defaultStickerSet': instance.defaultStickerSet,
@@ -576,9 +667,13 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
   'downloadLinkWindows': instance.downloadLinkWindows,
   'downloadUrls': instance.downloadUrls.toJson(),
   'dynamicWorldRows': instance.dynamicWorldRows.map((e) => e.toJson()).toList(),
-  'economyPauseEnd': ?instance.economyPauseEnd,
-  'economyPauseStart': ?instance.economyPauseStart,
-  'economyState': ?instance.economyState,
+  'economyLedgerBackfill': instance.economyLedgerBackfill,
+  'economyLedgerMigrationStop': instance.economyLedgerMigrationStop,
+  'economyLedgerMode': instance.economyLedgerMode,
+  'economyPauseEnd': instance.economyPauseEnd.toIso8601String(),
+  'economyPauseStart': instance.economyPauseStart.toIso8601String(),
+  'economyPurchaseRepairEnabled': instance.economyPurchaseRepairEnabled,
+  'economyState': instance.economyState,
   'events': instance.events.toJson(),
   'forceUseLatestWorld': instance.forceUseLatestWorld,
   'giftDisplayType': instance.giftDisplayType,
@@ -587,7 +682,11 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
   'homepageRedirectTarget': instance.homepageRedirectTarget,
   'hubWorldId': instance.hubWorldId,
   'imageHostUrlList': instance.imageHostUrlList,
+  'iosAppVersion': instance.iosAppVersion,
+  'iosVersion': instance.iosVersion.toJson(),
   'jobsEmail': instance.jobsEmail,
+  'maxUserEmoji': instance.maxUserEmoji,
+  'maxUserStickers': instance.maxUserStickers,
   'minSupportedClientBuildNumber': instance.minSupportedClientBuildNumber
       .toJson(),
   'minimumUnityVersionForUploads': instance.minimumUnityVersionForUploads,
@@ -600,10 +699,14 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
   'player-url-resolver-sha1': instance.playerUrlResolverSha1,
   'player-url-resolver-version': instance.playerUrlResolverVersion,
   'publicKey': instance.publicKey,
-  'reportCategories': instance.reportCategories.toJson(),
+  'reportCategories': instance.reportCategories.map(
+    (k, e) => MapEntry(k, e.toJson()),
+  ),
   'reportFormUrl': instance.reportFormUrl,
-  'reportOptions': instance.reportOptions.toJson(),
-  'reportReasons': instance.reportReasons.toJson(),
+  'reportOptions': instance.reportOptions,
+  'reportReasons': instance.reportReasons.map(
+    (k, e) => MapEntry(k, e.toJson()),
+  ),
   'requireAgeVerificationBetaTag': instance.requireAgeVerificationBetaTag,
   'sdkDeveloperFaqUrl': instance.sdkDeveloperFaqUrl,
   'sdkDiscordUrl': instance.sdkDiscordUrl,

@@ -35,6 +35,8 @@ class APIConfigEvents {
 
     required this.slowUpdateFactorThreshold,
 
+    required this.useDirectPlayerSerialization,
+
     required this.viewSegmentLength,
   });
 
@@ -79,6 +81,14 @@ class APIConfigEvents {
   final int slowUpdateFactorThreshold;
 
   /// Unknown
+  @JsonKey(
+    name: r'useDirectPlayerSerialization',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool useDirectPlayerSerialization;
+
+  /// Unknown
   @JsonKey(name: r'viewSegmentLength', required: true, includeIfNull: false)
   final int viewSegmentLength;
 
@@ -95,6 +105,7 @@ class APIConfigEvents {
           other.playerOrderBucketSize == playerOrderBucketSize &&
           other.playerOrderFactor == playerOrderFactor &&
           other.slowUpdateFactorThreshold == slowUpdateFactorThreshold &&
+          other.useDirectPlayerSerialization == useDirectPlayerSerialization &&
           other.viewSegmentLength == viewSegmentLength;
 
   @override
@@ -108,6 +119,7 @@ class APIConfigEvents {
       playerOrderBucketSize.hashCode +
       playerOrderFactor.hashCode +
       slowUpdateFactorThreshold.hashCode +
+      useDirectPlayerSerialization.hashCode +
       viewSegmentLength.hashCode;
 
   factory APIConfigEvents.fromJson(Map<String, dynamic> json) =>

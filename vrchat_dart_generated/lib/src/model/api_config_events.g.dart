@@ -23,6 +23,7 @@ APIConfigEvents _$APIConfigEventsFromJson(
       'playerOrderBucketSize',
       'playerOrderFactor',
       'slowUpdateFactorThreshold',
+      'useDirectPlayerSerialization',
       'viewSegmentLength',
     ],
   );
@@ -54,6 +55,10 @@ APIConfigEvents _$APIConfigEventsFromJson(
       'slowUpdateFactorThreshold',
       (v) => (v as num).toInt(),
     ),
+    useDirectPlayerSerialization: $checkedConvert(
+      'useDirectPlayerSerialization',
+      (v) => v as bool,
+    ),
     viewSegmentLength: $checkedConvert(
       'viewSegmentLength',
       (v) => (v as num).toInt(),
@@ -73,5 +78,6 @@ Map<String, dynamic> _$APIConfigEventsToJson(APIConfigEvents instance) =>
       'playerOrderBucketSize': instance.playerOrderBucketSize,
       'playerOrderFactor': instance.playerOrderFactor,
       'slowUpdateFactorThreshold': instance.slowUpdateFactorThreshold,
+      'useDirectPlayerSerialization': instance.useDirectPlayerSerialization,
       'viewSegmentLength': instance.viewSegmentLength,
     };

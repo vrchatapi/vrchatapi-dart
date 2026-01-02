@@ -22,6 +22,10 @@ enum NotificationV2Type {
   eventPeriodAnnouncement(r'event.announcement'),
   @JsonValue(r'group.announcement')
   groupPeriodAnnouncement(r'group.announcement'),
+  @JsonValue(r'group.event.created')
+  groupPeriodEventPeriodCreated(r'group.event.created'),
+  @JsonValue(r'group.event.starting')
+  groupPeriodEventPeriodStarting(r'group.event.starting'),
   @JsonValue(r'group.informative')
   groupPeriodInformative(r'group.informative'),
   @JsonValue(r'group.invite')
@@ -30,6 +34,8 @@ enum NotificationV2Type {
   groupPeriodJoinRequest(r'group.joinRequest'),
   @JsonValue(r'group.post')
   groupPeriodPost(r'group.post'),
+  @JsonValue(r'group.transfer')
+  groupPeriodTransfer(r'group.transfer'),
   @JsonValue(r'invite.instance.contentGated')
   invitePeriodInstancePeriodContentGated(r'invite.instance.contentGated'),
   @JsonValue(r'moderation.contentrestriction')

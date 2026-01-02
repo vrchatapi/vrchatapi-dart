@@ -54,7 +54,7 @@ final api = VrchatDartGenerated().getAuthenticationApi();
 try {
     final response = api.cancelPending2FA();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->cancelPending2FA: $e\n');
 }
 ```
@@ -97,7 +97,7 @@ final String excludeUserId = excludeUserId_example; // String | Exclude by UserI
 try {
     final response = api.checkUserExists(email, displayName, username, excludeUserId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->checkUserExists: $e\n');
 }
 ```
@@ -143,7 +143,7 @@ final String verifyEmail = eml_00000000-0000-0000-0000-000000000000; // String |
 
 try {
     api.confirmEmail(id, verifyEmail);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->confirmEmail: $e\n');
 }
 ```
@@ -191,7 +191,7 @@ final CreateAvatarModerationRequest createAvatarModerationRequest = ; // CreateA
 try {
     final response = api.createGlobalAvatarModeration(createAvatarModerationRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->createGlobalAvatarModeration: $e\n');
 }
 ```
@@ -239,7 +239,7 @@ final AvatarModerationType avatarModerationType = ; // AvatarModerationType | Th
 try {
     final response = api.deleteGlobalAvatarModeration(targetAvatarId, avatarModerationType);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->deleteGlobalAvatarModeration: $e\n');
 }
 ```
@@ -287,7 +287,7 @@ final String moderationReportId = moderationReportId_example; // String | The mo
 try {
     final response = api.deleteModerationReport(moderationReportId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->deleteModerationReport: $e\n');
 }
 ```
@@ -334,7 +334,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.deleteUser(userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->deleteUser: $e\n');
 }
 ```
@@ -380,7 +380,7 @@ final api = VrchatDartGenerated().getAuthenticationApi();
 try {
     final response = api.disable2FA();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->disable2FA: $e\n');
 }
 ```
@@ -423,7 +423,7 @@ final api = VrchatDartGenerated().getAuthenticationApi();
 try {
     final response = api.enable2FA();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->enable2FA: $e\n');
 }
 ```
@@ -473,7 +473,7 @@ final api = VrchatDartGenerated().getAuthenticationApi();
 try {
     final response = api.getCurrentUser();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->getCurrentUser: $e\n');
 }
 ```
@@ -516,7 +516,7 @@ final api = VrchatDartGenerated().getAuthenticationApi();
 try {
     final response = api.getGlobalAvatarModerations();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->getGlobalAvatarModerations: $e\n');
 }
 ```
@@ -564,7 +564,7 @@ final String type = type_example; // String | Filter for moderation reports. One
 try {
     final response = api.getModerationReports(offset, n, reportingUserId, status, type);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->getModerationReports: $e\n');
 }
 ```
@@ -614,7 +614,7 @@ final api = VrchatDartGenerated().getAuthenticationApi();
 try {
     final response = api.getRecoveryCodes();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->getRecoveryCodes: $e\n');
 }
 ```
@@ -657,7 +657,7 @@ final api = VrchatDartGenerated().getAuthenticationApi();
 try {
     final response = api.logout();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->logout: $e\n');
 }
 ```
@@ -697,7 +697,7 @@ final RegisterUserAccountRequest registerUserAccountRequest = ; // RegisterUserA
 try {
     final response = api.registerUserAccount(registerUserAccountRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->registerUserAccount: $e\n');
 }
 ```
@@ -743,7 +743,7 @@ final api = VrchatDartGenerated().getAuthenticationApi();
 try {
     final response = api.resendEmailConfirmation();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->resendEmailConfirmation: $e\n');
 }
 ```
@@ -787,7 +787,7 @@ final SubmitModerationReportRequest submitModerationReportRequest = ; // SubmitM
 try {
     final response = api.submitModerationReport(submitModerationReportRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->submitModerationReport: $e\n');
 }
 ```
@@ -834,7 +834,7 @@ final TwoFactorAuthCode twoFactorAuthCode = ; // TwoFactorAuthCode |
 try {
     final response = api.verify2FA(twoFactorAuthCode);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->verify2FA: $e\n');
 }
 ```
@@ -881,7 +881,7 @@ final TwoFactorEmailCode twoFactorEmailCode = ; // TwoFactorEmailCode |
 try {
     final response = api.verify2FAEmailCode(twoFactorEmailCode);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->verify2FAEmailCode: $e\n');
 }
 ```
@@ -927,7 +927,7 @@ final api = VrchatDartGenerated().getAuthenticationApi();
 try {
     final response = api.verifyAuthToken();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->verifyAuthToken: $e\n');
 }
 ```
@@ -967,7 +967,7 @@ final String userId = userId_example; // String | Filter by UserID.
 
 try {
     api.verifyLoginPlace(token, userId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->verifyLoginPlace: $e\n');
 }
 ```
@@ -1015,7 +1015,7 @@ final TwoFactorAuthCode twoFactorAuthCode = ; // TwoFactorAuthCode |
 try {
     final response = api.verifyPending2FA(twoFactorAuthCode);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->verifyPending2FA: $e\n');
 }
 ```
@@ -1062,7 +1062,7 @@ final TwoFactorAuthCode twoFactorAuthCode = ; // TwoFactorAuthCode |
 try {
     final response = api.verifyRecoveryCode(twoFactorAuthCode);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AuthenticationApi->verifyRecoveryCode: $e\n');
 }
 ```

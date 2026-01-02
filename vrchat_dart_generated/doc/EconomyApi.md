@@ -55,7 +55,7 @@ final api = VrchatDartGenerated().getEconomyApi();
 try {
     final response = api.getActiveLicenses();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getActiveLicenses: $e\n');
 }
 ```
@@ -99,7 +99,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getBalance(userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getBalance: $e\n');
 }
 ```
@@ -146,7 +146,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getBalanceEarnings(userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getBalanceEarnings: $e\n');
 }
 ```
@@ -193,7 +193,7 @@ final bool mostRecent = true; // bool |
 try {
     final response = api.getBulkGiftPurchases(mostRecent);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getBulkGiftPurchases: $e\n');
 }
 ```
@@ -239,7 +239,7 @@ final api = VrchatDartGenerated().getEconomyApi();
 try {
     final response = api.getCurrentSubscriptions();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getCurrentSubscriptions: $e\n');
 }
 ```
@@ -283,7 +283,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getEconomyAccount(userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getEconomyAccount: $e\n');
 }
 ```
@@ -330,7 +330,7 @@ final String licenseGroupId = licenseGroupId_example; // String | Must be a vali
 try {
     final response = api.getLicenseGroup(licenseGroupId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getLicenseGroup: $e\n');
 }
 ```
@@ -378,7 +378,7 @@ final bool hydrate = true; // bool | Populates some fields and changes types of 
 try {
     final response = api.getProductListing(productId, hydrate);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getProductListing: $e\n');
 }
 ```
@@ -426,7 +426,7 @@ final String productId = productId_example; // String | Must be a valid product 
 try {
     final response = api.getProductListingAlternate(productId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getProductListingAlternate: $e\n');
 }
 ```
@@ -478,7 +478,7 @@ final bool active = true; // bool | Filter for users' listings and inventory bun
 try {
     final response = api.getProductListings(userId, n, offset, hydrate, groupId, active);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getProductListings: $e\n');
 }
 ```
@@ -535,7 +535,7 @@ final OrderOptionShort order = ; // OrderOptionShort | Result ordering
 try {
     final response = api.getProductPurchases(buyerId, n, offset, mostRecent, sort, order);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getProductPurchases: $e\n');
 }
 ```
@@ -586,7 +586,7 @@ final api = VrchatDartGenerated().getEconomyApi();
 try {
     final response = api.getRecentSubscription();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getRecentSubscription: $e\n');
 }
 ```
@@ -630,7 +630,7 @@ final String transactionId = transactionId_example; // String | Must be a valid 
 try {
     final response = api.getSteamTransaction(transactionId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getSteamTransaction: $e\n');
 }
 ```
@@ -676,7 +676,7 @@ final api = VrchatDartGenerated().getEconomyApi();
 try {
     final response = api.getSteamTransactions();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getSteamTransactions: $e\n');
 }
 ```
@@ -722,7 +722,7 @@ final bool hydrateProducts = true; // bool | Products fields will be populated.
 try {
     final response = api.getStore(storeId, hydrateListings, hydrateProducts);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getStore: $e\n');
 }
 ```
@@ -773,7 +773,7 @@ final StoreView fetch = ; // StoreView |
 try {
     final response = api.getStoreShelves(storeId, hydrateListings, fetch);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getStoreShelves: $e\n');
 }
 ```
@@ -821,7 +821,7 @@ final api = VrchatDartGenerated().getEconomyApi();
 try {
     final response = api.getSubscriptions();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getSubscriptions: $e\n');
 }
 ```
@@ -864,7 +864,7 @@ final api = VrchatDartGenerated().getEconomyApi();
 try {
     final response = api.getTiliaStatus();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getTiliaStatus: $e\n');
 }
 ```
@@ -908,7 +908,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getTiliaTos(userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getTiliaTos: $e\n');
 }
 ```
@@ -954,7 +954,7 @@ final api = VrchatDartGenerated().getEconomyApi();
 try {
     final response = api.getTokenBundles();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getTokenBundles: $e\n');
 }
 ```
@@ -999,7 +999,7 @@ final String subscriptionId = subscriptionId_example; // String |
 try {
     final response = api.getUserCreditsEligible(userId, subscriptionId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getUserCreditsEligible: $e\n');
 }
 ```
@@ -1048,7 +1048,7 @@ final String steamId = game night; // String | The Steam ID of the user.
 try {
     final response = api.getUserSubscriptionEligible(userId, steamId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->getUserSubscriptionEligible: $e\n');
 }
 ```
@@ -1096,7 +1096,7 @@ final PurchaseProductListingRequest purchaseProductListingRequest = ; // Purchas
 try {
     final response = api.purchaseProductListing(purchaseProductListingRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->purchaseProductListing: $e\n');
 }
 ```
@@ -1144,7 +1144,7 @@ final UpdateTiliaTOSRequest updateTiliaTOSRequest = ; // UpdateTiliaTOSRequest |
 try {
     final response = api.updateTiliaTos(userId, updateTiliaTOSRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EconomyApi->updateTiliaTos: $e\n');
 }
 ```

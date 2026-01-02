@@ -1,6 +1,7 @@
 import 'package:vrchat_dart_generated/src/model/api_config.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_access_logs_urls.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_announcement.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_audio_config.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_avatar_perf_limiter.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_constants.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_constants_groups.dart';
@@ -12,21 +13,18 @@ import 'package:vrchat_dart_generated/src/model/api_config_constants_instancepop
 import 'package:vrchat_dart_generated/src/model/api_config_constants_language.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_download_url_list.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_events.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_ios_version.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_min_supported_client_build_number.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_offline_analysis.dart';
-import 'package:vrchat_dart_generated/src/model/api_config_report_categories.dart';
-import 'package:vrchat_dart_generated/src/model/api_config_report_options.dart';
-import 'package:vrchat_dart_generated/src/model/api_config_report_options_avatar.dart';
-import 'package:vrchat_dart_generated/src/model/api_config_report_options_group.dart';
-import 'package:vrchat_dart_generated/src/model/api_config_report_options_user.dart';
-import 'package:vrchat_dart_generated/src/model/api_config_report_options_world.dart';
-import 'package:vrchat_dart_generated/src/model/api_config_report_reasons.dart';
 import 'package:vrchat_dart_generated/src/model/api_health.dart';
 import 'package:vrchat_dart_generated/src/model/account_deletion_log.dart';
 import 'package:vrchat_dart_generated/src/model/add_favorite_request.dart';
 import 'package:vrchat_dart_generated/src/model/add_group_gallery_image_request.dart';
 import 'package:vrchat_dart_generated/src/model/admin_asset_bundle.dart';
 import 'package:vrchat_dart_generated/src/model/admin_unity_package.dart';
+import 'package:vrchat_dart_generated/src/model/agreement.dart';
+import 'package:vrchat_dart_generated/src/model/agreement_request.dart';
+import 'package:vrchat_dart_generated/src/model/agreement_status.dart';
 import 'package:vrchat_dart_generated/src/model/avatar.dart';
 import 'package:vrchat_dart_generated/src/model/avatar_moderation.dart';
 import 'package:vrchat_dart_generated/src/model/avatar_moderation_created.dart';
@@ -55,10 +53,12 @@ import 'package:vrchat_dart_generated/src/model/create_group_post_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_group_role_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_instance_request.dart';
+import 'package:vrchat_dart_generated/src/model/create_prop_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_world_request.dart';
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/current_user_platform_history_inner.dart';
 import 'package:vrchat_dart_generated/src/model/current_user_presence.dart';
+import 'package:vrchat_dart_generated/src/model/decline_group_invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/disable2_fa_result.dart';
 import 'package:vrchat_dart_generated/src/model/discord_details.dart';
 import 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';
@@ -87,6 +87,8 @@ import 'package:vrchat_dart_generated/src/model/group.dart';
 import 'package:vrchat_dart_generated/src/model/group_announcement.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry.dart';
 import 'package:vrchat_dart_generated/src/model/group_gallery.dart';
+import 'package:vrchat_dart_generated/src/model/group_gallery_file_order.dart';
+import 'package:vrchat_dart_generated/src/model/group_gallery_file_order_request.dart';
 import 'package:vrchat_dart_generated/src/model/group_gallery_image.dart';
 import 'package:vrchat_dart_generated/src/model/group_instance.dart';
 import 'package:vrchat_dart_generated/src/model/group_limited_member.dart';
@@ -98,6 +100,8 @@ import 'package:vrchat_dart_generated/src/model/group_post.dart';
 import 'package:vrchat_dart_generated/src/model/group_role.dart';
 import 'package:vrchat_dart_generated/src/model/group_role_template_values.dart';
 import 'package:vrchat_dart_generated/src/model/group_role_template_values_roles.dart';
+import 'package:vrchat_dart_generated/src/model/group_transferable.dart';
+import 'package:vrchat_dart_generated/src/model/group_transferable_requirements.dart';
 import 'package:vrchat_dart_generated/src/model/info_push.dart';
 import 'package:vrchat_dart_generated/src/model/info_push_data.dart';
 import 'package:vrchat_dart_generated/src/model/info_push_data_article.dart';
@@ -123,6 +127,7 @@ import 'package:vrchat_dart_generated/src/model/invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/invite_response.dart';
 import 'package:vrchat_dart_generated/src/model/jam.dart';
 import 'package:vrchat_dart_generated/src/model/jam_state_change_dates.dart';
+import 'package:vrchat_dart_generated/src/model/join_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/license.dart';
 import 'package:vrchat_dart_generated/src/model/license_group.dart';
 import 'package:vrchat_dart_generated/src/model/limited_group.dart';
@@ -143,6 +148,7 @@ import 'package:vrchat_dart_generated/src/model/notification_detail_request_invi
 import 'package:vrchat_dart_generated/src/model/notification_detail_request_invite_response.dart';
 import 'package:vrchat_dart_generated/src/model/notification_detail_vote_to_kick.dart';
 import 'package:vrchat_dart_generated/src/model/notification_v2.dart';
+import 'package:vrchat_dart_generated/src/model/notification_v2_details_boop.dart';
 import 'package:vrchat_dart_generated/src/model/notification_v2_response.dart';
 import 'package:vrchat_dart_generated/src/model/ok_status.dart';
 import 'package:vrchat_dart_generated/src/model/ok_status2.dart';
@@ -164,6 +170,7 @@ import 'package:vrchat_dart_generated/src/model/product_listing_variant.dart';
 import 'package:vrchat_dart_generated/src/model/product_purchase.dart';
 import 'package:vrchat_dart_generated/src/model/product_purchase_purchase_context.dart';
 import 'package:vrchat_dart_generated/src/model/prop.dart';
+import 'package:vrchat_dart_generated/src/model/prop_publish_status.dart';
 import 'package:vrchat_dart_generated/src/model/prop_unity_package.dart';
 import 'package:vrchat_dart_generated/src/model/purchase_product_listing_request.dart';
 import 'package:vrchat_dart_generated/src/model/register_user_account_request.dart';
@@ -174,6 +181,7 @@ import 'package:vrchat_dart_generated/src/model/request_invite_request.dart';
 import 'package:vrchat_dart_generated/src/model/respond_group_join_request.dart';
 import 'package:vrchat_dart_generated/src/model/respond_notification_v2_request.dart';
 import 'package:vrchat_dart_generated/src/model/response.dart';
+import 'package:vrchat_dart_generated/src/model/search_group_members200_response.dart';
 import 'package:vrchat_dart_generated/src/model/sent_notification.dart';
 import 'package:vrchat_dart_generated/src/model/service_queue_stats.dart';
 import 'package:vrchat_dart_generated/src/model/service_status.dart';
@@ -193,11 +201,13 @@ import 'package:vrchat_dart_generated/src/model/transaction.dart';
 import 'package:vrchat_dart_generated/src/model/transaction_agreement.dart';
 import 'package:vrchat_dart_generated/src/model/transaction_steam_info.dart';
 import 'package:vrchat_dart_generated/src/model/transaction_steam_wallet_info.dart';
+import 'package:vrchat_dart_generated/src/model/transfer_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/two_factor_auth_code.dart';
 import 'package:vrchat_dart_generated/src/model/two_factor_email_code.dart';
 import 'package:vrchat_dart_generated/src/model/two_factor_recovery_codes.dart';
 import 'package:vrchat_dart_generated/src/model/two_factor_recovery_codes_otp_inner.dart';
 import 'package:vrchat_dart_generated/src/model/unity_package.dart';
+import 'package:vrchat_dart_generated/src/model/update_asset_review_notes_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_avatar_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_calendar_event_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_favorite_group_request.dart';
@@ -208,6 +218,7 @@ import 'package:vrchat_dart_generated/src/model/update_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_group_role_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_inventory_item_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_invite_message_request.dart';
+import 'package:vrchat_dart_generated/src/model/update_prop_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_tilia_tos_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_badge_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_note_request.dart';
@@ -258,6 +269,9 @@ ReturnType deserialize<ReturnType, BaseType>(
       // ignore: deprecated_member_use_from_same_package
       return APIConfigAnnouncement.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'APIConfigAudioConfig':
+      return APIConfigAudioConfig.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'APIConfigAvatarPerfLimiter':
       return APIConfigAvatarPerfLimiter.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -299,6 +313,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'APIConfigEvents':
       return APIConfigEvents.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'APIConfigIosVersion':
+      return APIConfigIosVersion.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'APIConfigMinSupportedClientBuildNumber':
       return APIConfigMinSupportedClientBuildNumber.fromJson(
             value as Map<String, dynamic>,
@@ -306,29 +323,6 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'APIConfigOfflineAnalysis':
       return APIConfigOfflineAnalysis.fromJson(value as Map<String, dynamic>)
-          as ReturnType;
-    case 'APIConfigReportCategories':
-      return APIConfigReportCategories.fromJson(value as Map<String, dynamic>)
-          as ReturnType;
-    case 'APIConfigReportOptions':
-      return APIConfigReportOptions.fromJson(value as Map<String, dynamic>)
-          as ReturnType;
-    case 'APIConfigReportOptionsAvatar':
-      return APIConfigReportOptionsAvatar.fromJson(
-            value as Map<String, dynamic>,
-          )
-          as ReturnType;
-    case 'APIConfigReportOptionsGroup':
-      return APIConfigReportOptionsGroup.fromJson(value as Map<String, dynamic>)
-          as ReturnType;
-    case 'APIConfigReportOptionsUser':
-      return APIConfigReportOptionsUser.fromJson(value as Map<String, dynamic>)
-          as ReturnType;
-    case 'APIConfigReportOptionsWorld':
-      return APIConfigReportOptionsWorld.fromJson(value as Map<String, dynamic>)
-          as ReturnType;
-    case 'APIConfigReportReasons':
-      return APIConfigReportReasons.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'APIHealth':
       return APIHealth.fromJson(value as Map<String, dynamic>) as ReturnType;
@@ -348,6 +342,15 @@ ReturnType deserialize<ReturnType, BaseType>(
       return AdminUnityPackage.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'AgeVerificationStatus':
+    case 'Agreement':
+      return Agreement.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'AgreementCode':
+    case 'AgreementRequest':
+      return AgreementRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'AgreementStatus':
+      return AgreementStatus.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'Avatar':
       return Avatar.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AvatarModeration':
@@ -440,6 +443,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'CreateInstanceRequest':
       return CreateInstanceRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'CreatePropRequest':
+      return CreatePropRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'CreateWorldRequest':
       return CreateWorldRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -452,6 +458,9 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'CurrentUserPresence':
       return CurrentUserPresence.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'DeclineGroupInviteRequest':
+      return DeclineGroupInviteRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'DeveloperType':
     case 'Disable2FAResult':
@@ -534,6 +543,14 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'GroupGallery':
       return GroupGallery.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'GroupGalleryFileOrder':
+      return GroupGalleryFileOrder.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'GroupGalleryFileOrderRequest':
+      return GroupGalleryFileOrderRequest.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'GroupGalleryImage':
       return GroupGalleryImage.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -574,7 +591,19 @@ ReturnType deserialize<ReturnType, BaseType>(
           )
           as ReturnType;
     case 'GroupSearchSort':
+    case 'GroupTransferable':
+      return GroupTransferable.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'GroupTransferableRequirements':
+      return GroupTransferableRequirements.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'GroupUserVisibility':
+    case 'ImageAnimationStyle':
+    case 'ImageLoopStyle':
+    case 'ImageMask':
+    case 'ImagePurpose':
     case 'InfoPush':
       return InfoPush.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'InfoPushData':
@@ -657,6 +686,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'JamStateChangeDates':
       return JamStateChangeDates.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'JoinGroupRequest':
+      return JoinGroupRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'License':
       return License.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'LicenseAction':
@@ -721,6 +753,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'NotificationType':
     case 'NotificationV2':
       return NotificationV2.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'NotificationV2DetailsBoop':
+      return NotificationV2DetailsBoop.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'NotificationV2Response':
       return NotificationV2Response.fromJson(value as Map<String, dynamic>)
@@ -791,6 +826,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'ProductType':
     case 'Prop':
       return Prop.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'PropPublishStatus':
+      return PropPublishStatus.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'PropUnityPackage':
       return PropUnityPackage.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -825,6 +863,11 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'Response':
       return Response.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'SearchGroupMembers200Response':
+      return SearchGroupMembers200Response.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'SentNotification':
       return SentNotification.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -884,6 +927,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'TransactionSteamWalletInfo':
       return TransactionSteamWalletInfo.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'TransferGroupRequest':
+      return TransferGroupRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'TwoFactorAuthCode':
       return TwoFactorAuthCode.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -900,6 +946,11 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'UnityPackage':
       return UnityPackage.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'UpdateAssetReviewNotesRequest':
+      return UpdateAssetReviewNotesRequest.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'UpdateAvatarRequest':
       return UpdateAvatarRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -931,6 +982,9 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'UpdateInviteMessageRequest':
       return UpdateInviteMessageRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'UpdatePropRequest':
+      return UpdatePropRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'UpdateTiliaTOSRequest':
       return UpdateTiliaTOSRequest.fromJson(value as Map<String, dynamic>)

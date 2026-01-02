@@ -14,6 +14,7 @@ import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/feedback.dart';
 import 'package:vrchat_dart_generated/src/model/get_user_group_instances200_response.dart';
 import 'package:vrchat_dart_generated/src/model/group.dart';
+import 'package:vrchat_dart_generated/src/model/group_permissions.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user_groups.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user_search.dart';
 import 'package:vrchat_dart_generated/src/model/mutual_friend.dart';
@@ -200,6 +201,63 @@ class UsersApi {
     return _response;
   }
 
+  /// Delete All User Persistence Data
+  /// Deletes all of the user&#39;s persistence data for every world.
+  ///
+  /// Parameters:
+  /// * [userId] - Must be a valid user ID.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<void>> deleteAllUserPersistenceData({
+    required String userId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/users/{userId}/persist'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
+    final _options = Options(
+      method: r'DELETE',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
+  }
+
   /// Delete User Persistence
   /// Deletes the user&#39;s persistence data for a given world
   ///
@@ -264,6 +322,180 @@ class UsersApi {
     );
 
     return _response;
+  }
+
+  /// Get User Group Blocks
+  /// Returns a list of Groups the user has blocked.
+  ///
+  /// Parameters:
+  /// * [userId] - Must be a valid user ID.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [List<Group>] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<List<Group>>> getBlockedGroups({
+    required String userId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/users/{userId}/groups/userblocked'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    List<Group>? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<Group>, Group>(
+              rawData,
+              'List<Group>',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<List<Group>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Get User Group Invited
+  /// Returns a list of Groups the user has been invited to.
+  ///
+  /// Parameters:
+  /// * [userId] - Must be a valid user ID.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [List<Group>] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<List<Group>>> getInvitedGroups({
+    required String userId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/users/{userId}/groups/invited'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    List<Group>? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<Group>, Group>(
+              rawData,
+              'List<Group>',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<List<Group>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Get User Mutual Friends
@@ -615,6 +847,101 @@ class UsersApi {
     }
 
     return Response<User>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Get user&#39;s permissions for all joined groups.
+  /// Returns a mapping of GroupIDs to arrays of GroupPermissions.
+  ///
+  /// Parameters:
+  /// * [userId] - Must be a valid user ID.
+  /// * [groupIds] - Comma-separated (no spaces!) list of GroupIDs to retrieve permissions for.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [Map<String, List<GroupPermissions>>] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<Map<String, List<GroupPermissions>>>>
+  getUserAllGroupPermissions({
+    required String userId,
+    String? groupIds,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/users/{userId}/groups/permissions'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (groupIds != null) r'groupIds': groupIds,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    Map<String, List<GroupPermissions>>? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Map<String, List<GroupPermissions>>, List>(
+              rawData,
+              'Map<String, List<GroupPermissions>>',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<Map<String, List<GroupPermissions>>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1543,6 +1870,7 @@ class UsersApi {
   /// * [developerType] - Active user by developer type, none for normal users and internal for moderators
   /// * [n] - The number of objects to return.
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
+  /// * [isInternalVariant] - Not quite sure what this actually does (exists on the website but doesn't seem to be used)
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1557,6 +1885,7 @@ class UsersApi {
     String? developerType,
     int? n = 60,
     int? offset,
+    bool? isInternalVariant,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1587,6 +1916,7 @@ class UsersApi {
       if (developerType != null) r'developerType': developerType,
       if (n != null) r'n': n,
       if (offset != null) r'offset': offset,
+      if (isInternalVariant != null) r'isInternalVariant': isInternalVariant,
     };
 
     final _response = await _dio.request<Object>(

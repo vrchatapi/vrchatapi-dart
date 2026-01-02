@@ -41,6 +41,10 @@ Avatar _$AvatarFromJson(Map<String, dynamic> json) => $checkedCreate(
         'acknowledgements',
         (v) => v as String?,
       ),
+      activeAssetReviewId: $checkedConvert(
+        'activeAssetReviewId',
+        (v) => v as String?,
+      ),
       assetUrl: $checkedConvert('assetUrl', (v) => v as String?),
       assetUrlObject: $checkedConvert('assetUrlObject', (v) => v),
       authorId: $checkedConvert('authorId', (v) => v as String),
@@ -61,6 +65,10 @@ Avatar _$AvatarFromJson(Map<String, dynamic> json) => $checkedCreate(
       lock: $checkedConvert('lock', (v) => v as bool?),
       lowestPrice: $checkedConvert('lowestPrice', (v) => (v as num?)?.toInt()),
       name: $checkedConvert('name', (v) => v as String),
+      pendingUpload: $checkedConvert(
+        'pendingUpload',
+        (v) => v as bool? ?? false,
+      ),
       performance: $checkedConvert(
         'performance',
         (v) => AvatarPerformance.fromJson(v as Map<String, dynamic>),
@@ -117,6 +125,7 @@ Avatar _$AvatarFromJson(Map<String, dynamic> json) => $checkedCreate(
 
 Map<String, dynamic> _$AvatarToJson(Avatar instance) => <String, dynamic>{
   'acknowledgements': ?instance.acknowledgements,
+  'activeAssetReviewId': ?instance.activeAssetReviewId,
   'assetUrl': ?instance.assetUrl,
   'assetUrlObject': ?instance.assetUrlObject,
   'authorId': instance.authorId,
@@ -131,6 +140,7 @@ Map<String, dynamic> _$AvatarToJson(Avatar instance) => <String, dynamic>{
   'lock': ?instance.lock,
   'lowestPrice': ?instance.lowestPrice,
   'name': instance.name,
+  'pendingUpload': ?instance.pendingUpload,
   'performance': instance.performance.toJson(),
   'productId': ?instance.productId,
   'publishedListings': ?instance.publishedListings

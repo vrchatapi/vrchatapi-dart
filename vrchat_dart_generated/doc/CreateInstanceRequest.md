@@ -9,6 +9,7 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ageGate** | **bool** |  | [optional] [default to false]
+**calendarEntryId** | **String** |  | [optional] 
 **canRequestInvite** | **bool** | Only applies to invite type instances to make them invite+ | [optional] [default to false]
 **closedAt** | [**DateTime**](DateTime.md) | The time after which users won't be allowed to join the instance. This doesn't work for public instances. | [optional] 
 **contentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  | [optional] 
@@ -18,6 +19,7 @@ Name | Type | Description | Notes
 **instancePersistenceEnabled** | **bool** |  | [optional] 
 **inviteOnly** | **bool** |  | [optional] [default to false]
 **ownerId** | **String** | A groupId if the instance type is \"group\", null if instance type is public, or a userId otherwise | [optional] 
+**playerPersistenceEnabled** | **bool** |  | [optional] 
 **queueEnabled** | **bool** |  | [optional] [default to false]
 **region** | [**InstanceRegion**](InstanceRegion.md) |  | 
 **roleIds** | **List&lt;String&gt;** | Group roleIds that are allowed to join if the type is \"group\" and groupAccessType is \"member\" | [optional] 

@@ -23,6 +23,8 @@ class CreateInstanceRequest {
   CreateInstanceRequest({
     this.ageGate = false,
 
+    this.calendarEntryId,
+
     this.canRequestInvite = false,
 
     this.closedAt,
@@ -41,6 +43,8 @@ class CreateInstanceRequest {
 
     this.ownerId,
 
+    this.playerPersistenceEnabled,
+
     this.queueEnabled = false,
 
     required this.region,
@@ -54,6 +58,9 @@ class CreateInstanceRequest {
 
   @JsonKey(name: r'ageGate', required: false, includeIfNull: false)
   final bool? ageGate;
+
+  @JsonKey(name: r'calendarEntryId', required: false, includeIfNull: false)
+  final String? calendarEntryId;
 
   /// Only applies to invite type instances to make them invite+
   @JsonKey(name: r'canRequestInvite', required: false, includeIfNull: false)
@@ -90,6 +97,13 @@ class CreateInstanceRequest {
   @JsonKey(name: r'ownerId', required: false, includeIfNull: false)
   final String? ownerId;
 
+  @JsonKey(
+    name: r'playerPersistenceEnabled',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? playerPersistenceEnabled;
+
   @JsonKey(name: r'queueEnabled', required: false, includeIfNull: false)
   final bool? queueEnabled;
 
@@ -112,6 +126,7 @@ class CreateInstanceRequest {
       identical(this, other) ||
       other is CreateInstanceRequest &&
           other.ageGate == ageGate &&
+          other.calendarEntryId == calendarEntryId &&
           other.canRequestInvite == canRequestInvite &&
           other.closedAt == closedAt &&
           other.contentSettings == contentSettings &&
@@ -121,6 +136,7 @@ class CreateInstanceRequest {
           other.instancePersistenceEnabled == instancePersistenceEnabled &&
           other.inviteOnly == inviteOnly &&
           other.ownerId == ownerId &&
+          other.playerPersistenceEnabled == playerPersistenceEnabled &&
           other.queueEnabled == queueEnabled &&
           other.region == region &&
           other.roleIds == roleIds &&
@@ -130,6 +146,7 @@ class CreateInstanceRequest {
   @override
   int get hashCode =>
       ageGate.hashCode +
+      calendarEntryId.hashCode +
       canRequestInvite.hashCode +
       closedAt.hashCode +
       contentSettings.hashCode +
@@ -141,6 +158,9 @@ class CreateInstanceRequest {
           : instancePersistenceEnabled.hashCode) +
       inviteOnly.hashCode +
       (ownerId == null ? 0 : ownerId.hashCode) +
+      (playerPersistenceEnabled == null
+          ? 0
+          : playerPersistenceEnabled.hashCode) +
       queueEnabled.hashCode +
       region.hashCode +
       roleIds.hashCode +

@@ -39,7 +39,7 @@ class SentNotification {
   final DateTime createdAt;
 
   @JsonKey(name: r'details', required: true, includeIfNull: false)
-  final Object details;
+  final Map<String, String> details;
 
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;

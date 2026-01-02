@@ -11,11 +11,15 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addTags**](UsersApi.md#addtags) | **POST** /users/{userId}/addTags | Add User Tags
 [**checkUserPersistenceExists**](UsersApi.md#checkuserpersistenceexists) | **GET** /users/{userId}/{worldId}/persist/exists | Check User Persistence Exists
+[**deleteAllUserPersistenceData**](UsersApi.md#deletealluserpersistencedata) | **DELETE** /users/{userId}/persist | Delete All User Persistence Data
 [**deleteUserPersistence**](UsersApi.md#deleteuserpersistence) | **DELETE** /users/{userId}/{worldId}/persist | Delete User Persistence
+[**getBlockedGroups**](UsersApi.md#getblockedgroups) | **GET** /users/{userId}/groups/userblocked | Get User Group Blocks
+[**getInvitedGroups**](UsersApi.md#getinvitedgroups) | **GET** /users/{userId}/groups/invited | Get User Group Invited
 [**getMutualFriends**](UsersApi.md#getmutualfriends) | **GET** /users/{userId}/mutuals/friends | Get User Mutual Friends
 [**getMutualGroups**](UsersApi.md#getmutualgroups) | **GET** /users/{userId}/mutuals/groups | Get User Mutual Groups
 [**getMutuals**](UsersApi.md#getmutuals) | **GET** /users/{userId}/mutuals | Get User Mutuals
 [**getUser**](UsersApi.md#getuser) | **GET** /users/{userId} | Get User by ID
+[**getUserAllGroupPermissions**](UsersApi.md#getuserallgrouppermissions) | **GET** /users/{userId}/groups/permissions | Get user&#39;s permissions for all joined groups.
 [**getUserByName**](UsersApi.md#getuserbyname) | **GET** /users/{username}/name | Get User by Username
 [**getUserFeedback**](UsersApi.md#getuserfeedback) | **GET** /users/{userId}/feedback | Get User Feedback
 [**getUserGroupInstances**](UsersApi.md#getusergroupinstances) | **GET** /users/{userId}/instances/groups | Get User Group Instances
@@ -54,7 +58,7 @@ final ChangeUserTagsRequest changeUserTagsRequest = ; // ChangeUserTagsRequest |
 try {
     final response = api.addTags(userId, changeUserTagsRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->addTags: $e\n');
 }
 ```
@@ -102,7 +106,7 @@ final String worldId = worldId_example; // String | Must be a valid world ID.
 
 try {
     api.checkUserPersistenceExists(userId, worldId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->checkUserPersistenceExists: $e\n');
 }
 ```
@@ -113,6 +117,52 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**| Must be a valid user ID. | 
  **worldId** | **String**| Must be a valid world ID. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteAllUserPersistenceData**
+> deleteAllUserPersistenceData(userId)
+
+Delete All User Persistence Data
+
+Deletes all of the user's persistence data for every world.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getUsersApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+
+try {
+    api.deleteAllUserPersistenceData(userId);
+} on DioException catch (e) {
+    print('Exception when calling UsersApi->deleteAllUserPersistenceData: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
 
 ### Return type
 
@@ -150,7 +200,7 @@ final String worldId = worldId_example; // String | Must be a valid world ID.
 
 try {
     api.deleteUserPersistence(userId, worldId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->deleteUserPersistence: $e\n');
 }
 ```
@@ -165,6 +215,100 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getBlockedGroups**
+> List<Group> getBlockedGroups(userId)
+
+Get User Group Blocks
+
+Returns a list of Groups the user has blocked.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getUsersApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+
+try {
+    final response = api.getBlockedGroups(userId);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling UsersApi->getBlockedGroups: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+
+### Return type
+
+[**List&lt;Group&gt;**](Group.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getInvitedGroups**
+> List<Group> getInvitedGroups(userId)
+
+Get User Group Invited
+
+Returns a list of Groups the user has been invited to.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getUsersApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+
+try {
+    final response = api.getInvitedGroups(userId);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling UsersApi->getInvitedGroups: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+
+### Return type
+
+[**List&lt;Group&gt;**](Group.md)
 
 ### Authorization
 
@@ -200,7 +344,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getMutualFriends(userId, n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getMutualFriends: $e\n');
 }
 ```
@@ -251,7 +395,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getMutualGroups(userId, n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getMutualGroups: $e\n');
 }
 ```
@@ -300,7 +444,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getMutuals(userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getMutuals: $e\n');
 }
 ```
@@ -347,7 +491,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getUser(userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getUser: $e\n');
 }
 ```
@@ -361,6 +505,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**User**](User.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getUserAllGroupPermissions**
+> Map<String, List<GroupPermissions>> getUserAllGroupPermissions(userId, groupIds)
+
+Get user's permissions for all joined groups.
+
+Returns a mapping of GroupIDs to arrays of GroupPermissions.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getUsersApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+final String groupIds = grp_00000000-0000-0000-0000-000000000000,grp_11111111-1111-1111-1111-111111111111; // String | Comma-separated (no spaces!) list of GroupIDs to retrieve permissions for.
+
+try {
+    final response = api.getUserAllGroupPermissions(userId, groupIds);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling UsersApi->getUserAllGroupPermissions: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+ **groupIds** | **String**| Comma-separated (no spaces!) list of GroupIDs to retrieve permissions for. | [optional] 
+
+### Return type
+
+[**Map&lt;String, List&lt;GroupPermissions&gt;&gt;**](List.md)
 
 ### Authorization
 
@@ -394,7 +587,7 @@ final String username = username_example; // String | Username of the user
 try {
     final response = api.getUserByName(username);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getUserByName: $e\n');
 }
 ```
@@ -444,7 +637,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getUserFeedback(userId, contentId, n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getUserFeedback: $e\n');
 }
 ```
@@ -494,7 +687,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getUserGroupInstances(userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getUserGroupInstances: $e\n');
 }
 ```
@@ -542,7 +735,7 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.getUserGroupInstancesForGroup(userId, groupId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getUserGroupInstancesForGroup: $e\n');
 }
 ```
@@ -590,7 +783,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getUserGroupRequests(userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getUserGroupRequests: $e\n');
 }
 ```
@@ -637,7 +830,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getUserGroups(userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getUserGroups: $e\n');
 }
 ```
@@ -684,7 +877,7 @@ final String userNoteId = userNoteId_example; // String | Must be a valid user n
 try {
     final response = api.getUserNote(userNoteId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getUserNote: $e\n');
 }
 ```
@@ -732,7 +925,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getUserNotes(n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getUserNotes: $e\n');
 }
 ```
@@ -780,7 +973,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getUserRepresentedGroup(userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->getUserRepresentedGroup: $e\n');
 }
 ```
@@ -828,7 +1021,7 @@ final ChangeUserTagsRequest changeUserTagsRequest = ; // ChangeUserTagsRequest |
 try {
     final response = api.removeTags(userId, changeUserTagsRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->removeTags: $e\n');
 }
 ```
@@ -856,7 +1049,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **searchUsers**
-> List<LimitedUserSearch> searchUsers(search, developerType, n, offset)
+> List<LimitedUserSearch> searchUsers(search, developerType, n, offset, isInternalVariant)
 
 Search All Users
 
@@ -875,11 +1068,12 @@ final String search = search_example; // String | Searches by `displayName`. Wil
 final String developerType = developerType_example; // String | Active user by developer type, none for normal users and internal for moderators
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
+final bool isInternalVariant = false; // bool | Not quite sure what this actually does (exists on the website but doesn't seem to be used)
 
 try {
-    final response = api.searchUsers(search, developerType, n, offset);
+    final response = api.searchUsers(search, developerType, n, offset, isInternalVariant);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->searchUsers: $e\n');
 }
 ```
@@ -892,6 +1086,7 @@ Name | Type | Description  | Notes
  **developerType** | **String**| Active user by developer type, none for normal users and internal for moderators | [optional] 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
+ **isInternalVariant** | **bool**| Not quite sure what this actually does (exists on the website but doesn't seem to be used) | [optional] 
 
 ### Return type
 
@@ -930,7 +1125,7 @@ final UpdateUserBadgeRequest updateUserBadgeRequest = ; // UpdateUserBadgeReques
 
 try {
     api.updateBadge(userId, badgeId, updateUserBadgeRequest);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->updateBadge: $e\n');
 }
 ```
@@ -980,7 +1175,7 @@ final UpdateUserRequest updateUserRequest = ; // UpdateUserRequest |
 try {
     final response = api.updateUser(userId, updateUserRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->updateUser: $e\n');
 }
 ```
@@ -1028,7 +1223,7 @@ final UpdateUserNoteRequest updateUserNoteRequest = ; // UpdateUserNoteRequest |
 try {
     final response = api.updateUserNote(updateUserNoteRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UsersApi->updateUserNote: $e\n');
 }
 ```

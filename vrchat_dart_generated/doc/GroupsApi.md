@@ -13,12 +13,15 @@ Method | HTTP request | Description
 [**addGroupMemberRole**](GroupsApi.md#addgroupmemberrole) | **PUT** /groups/{groupId}/members/{userId}/roles/{groupRoleId} | Add Role to GroupMember
 [**addGroupPost**](GroupsApi.md#addgrouppost) | **POST** /groups/{groupId}/posts | Create a post in a Group
 [**banGroupMember**](GroupsApi.md#bangroupmember) | **POST** /groups/{groupId}/bans | Ban Group Member
+[**blockGroup**](GroupsApi.md#blockgroup) | **POST** /groups/{groupId}/block | Block Group
 [**cancelGroupRequest**](GroupsApi.md#cancelgrouprequest) | **DELETE** /groups/{groupId}/requests | Cancel Group Join Request
+[**cancelGroupTransfer**](GroupsApi.md#cancelgrouptransfer) | **DELETE** /groups/{groupId}/transfer | Cancel Group Transfer
 [**createGroup**](GroupsApi.md#creategroup) | **POST** /groups | Create Group
 [**createGroupAnnouncement**](GroupsApi.md#creategroupannouncement) | **POST** /groups/{groupId}/announcement | Create Group Announcement
 [**createGroupGallery**](GroupsApi.md#creategroupgallery) | **POST** /groups/{groupId}/galleries | Create Group Gallery
 [**createGroupInvite**](GroupsApi.md#creategroupinvite) | **POST** /groups/{groupId}/invites | Invite User to Group
 [**createGroupRole**](GroupsApi.md#creategrouprole) | **POST** /groups/{groupId}/roles | Create GroupRole
+[**declineGroupInvite**](GroupsApi.md#declinegroupinvite) | **PUT** /groups/{groupId}/invites | Decline Invite from Group
 [**deleteGroup**](GroupsApi.md#deletegroup) | **DELETE** /groups/{groupId} | Delete Group
 [**deleteGroupAnnouncement**](GroupsApi.md#deletegroupannouncement) | **DELETE** /groups/{groupId}/announcement | Delete Group Announcement
 [**deleteGroupGallery**](GroupsApi.md#deletegroupgallery) | **DELETE** /groups/{groupId}/galleries/{groupGalleryId} | Delete Group Gallery
@@ -28,6 +31,7 @@ Method | HTTP request | Description
 [**deleteGroupRole**](GroupsApi.md#deletegrouprole) | **DELETE** /groups/{groupId}/roles/{groupRoleId} | Delete Group Role
 [**getGroup**](GroupsApi.md#getgroup) | **GET** /groups/{groupId} | Get Group by ID
 [**getGroupAnnouncements**](GroupsApi.md#getgroupannouncements) | **GET** /groups/{groupId}/announcement | Get Group Announcement
+[**getGroupAuditLogEntryTypes**](GroupsApi.md#getgroupauditlogentrytypes) | **GET** /groups/{groupId}/auditLogTypes | Get Group Audit Log Entry Types
 [**getGroupAuditLogs**](GroupsApi.md#getgroupauditlogs) | **GET** /groups/{groupId}/auditLogs | Get Group Audit Logs
 [**getGroupBans**](GroupsApi.md#getgroupbans) | **GET** /groups/{groupId}/bans | Get Group Bans
 [**getGroupGalleryImages**](GroupsApi.md#getgroupgalleryimages) | **GET** /groups/{groupId}/galleries/{groupGalleryId} | Get Group Gallery Images
@@ -40,11 +44,14 @@ Method | HTTP request | Description
 [**getGroupRequests**](GroupsApi.md#getgrouprequests) | **GET** /groups/{groupId}/requests | Get Group Join Requests
 [**getGroupRoleTemplates**](GroupsApi.md#getgrouproletemplates) | **GET** /groups/roleTemplates | Get Group Role Templates
 [**getGroupRoles**](GroupsApi.md#getgrouproles) | **GET** /groups/{groupId}/roles | Get Group Roles
+[**getGroupTransferability**](GroupsApi.md#getgrouptransferability) | **GET** /groups/{groupId}/transfer | Get Group Transferability
+[**initiateOrAcceptGroupTransfer**](GroupsApi.md#initiateoracceptgrouptransfer) | **POST** /groups/{groupId}/transfer | Initiate or Accept Group Transfer
 [**joinGroup**](GroupsApi.md#joingroup) | **POST** /groups/{groupId}/join | Join Group
 [**kickGroupMember**](GroupsApi.md#kickgroupmember) | **DELETE** /groups/{groupId}/members/{userId} | Kick Group Member
 [**leaveGroup**](GroupsApi.md#leavegroup) | **POST** /groups/{groupId}/leave | Leave Group
 [**removeGroupMemberRole**](GroupsApi.md#removegroupmemberrole) | **DELETE** /groups/{groupId}/members/{userId}/roles/{groupRoleId} | Remove Role from GroupMember
 [**respondGroupJoinRequest**](GroupsApi.md#respondgroupjoinrequest) | **PUT** /groups/{groupId}/requests/{userId} | Respond Group Join request
+[**searchGroupMembers**](GroupsApi.md#searchgroupmembers) | **GET** /groups/{groupId}/members/search | Search Group Members
 [**searchGroups**](GroupsApi.md#searchgroups) | **GET** /groups | Search Group
 [**unbanGroupMember**](GroupsApi.md#unbangroupmember) | **DELETE** /groups/{groupId}/bans/{userId} | Unban Group Member
 [**updateGroup**](GroupsApi.md#updategroup) | **PUT** /groups/{groupId} | Update Group
@@ -78,7 +85,7 @@ final AddGroupGalleryImageRequest addGroupGalleryImageRequest = ; // AddGroupGal
 try {
     final response = api.addGroupGalleryImage(groupId, groupGalleryId, addGroupGalleryImageRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->addGroupGalleryImage: $e\n');
 }
 ```
@@ -129,7 +136,7 @@ final String groupRoleId = grol_00000000-0000-0000-0000-000000000000; // String 
 try {
     final response = api.addGroupMemberRole(groupId, userId, groupRoleId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->addGroupMemberRole: $e\n');
 }
 ```
@@ -179,7 +186,7 @@ final CreateGroupPostRequest createGroupPostRequest = ; // CreateGroupPostReques
 try {
     final response = api.addGroupPost(groupId, createGroupPostRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->addGroupPost: $e\n');
 }
 ```
@@ -228,7 +235,7 @@ final BanGroupMemberRequest banGroupMemberRequest = ; // BanGroupMemberRequest |
 try {
     final response = api.banGroupMember(groupId, banGroupMemberRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->banGroupMember: $e\n');
 }
 ```
@@ -255,6 +262,53 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **blockGroup**
+> Success blockGroup(groupId)
+
+Block Group
+
+Blocks a Group for the current user. To unblock a group, call kickGroupMember (DELETE /groups/{groupId}/members/{userId}).
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getGroupsApi();
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+
+try {
+    final response = api.blockGroup(groupId);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling GroupsApi->blockGroup: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **String**| Must be a valid group ID. | 
+
+### Return type
+
+[**Success**](Success.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **cancelGroupRequest**
 > cancelGroupRequest(groupId)
 
@@ -275,7 +329,7 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 
 try {
     api.cancelGroupRequest(groupId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->cancelGroupRequest: $e\n');
 }
 ```
@@ -289,6 +343,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cancelGroupTransfer**
+> Success cancelGroupTransfer(groupId)
+
+Cancel Group Transfer
+
+Cancel a Group Transfer.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getGroupsApi();
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+
+try {
+    final response = api.cancelGroupTransfer(groupId);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling GroupsApi->cancelGroupTransfer: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **String**| Must be a valid group ID. | 
+
+### Return type
+
+[**Success**](Success.md)
 
 ### Authorization
 
@@ -322,7 +423,7 @@ final CreateGroupRequest createGroupRequest = ; // CreateGroupRequest |
 try {
     final response = api.createGroup(createGroupRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->createGroup: $e\n');
 }
 ```
@@ -370,7 +471,7 @@ final CreateGroupAnnouncementRequest createGroupAnnouncementRequest = ; // Creat
 try {
     final response = api.createGroupAnnouncement(groupId, createGroupAnnouncementRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->createGroupAnnouncement: $e\n');
 }
 ```
@@ -419,7 +520,7 @@ final CreateGroupGalleryRequest createGroupGalleryRequest = ; // CreateGroupGall
 try {
     final response = api.createGroupGallery(groupId, createGroupGalleryRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->createGroupGallery: $e\n');
 }
 ```
@@ -467,7 +568,7 @@ final CreateGroupInviteRequest createGroupInviteRequest = ; // CreateGroupInvite
 
 try {
     api.createGroupInvite(groupId, createGroupInviteRequest);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->createGroupInvite: $e\n');
 }
 ```
@@ -516,7 +617,7 @@ final CreateGroupRoleRequest createGroupRoleRequest = ; // CreateGroupRoleReques
 try {
     final response = api.createGroupRole(groupId, createGroupRoleRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->createGroupRole: $e\n');
 }
 ```
@@ -543,8 +644,57 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **declineGroupInvite**
+> Success declineGroupInvite(groupId, declineGroupInviteRequest)
+
+Decline Invite from Group
+
+Declines an invite to the user from a group.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getGroupsApi();
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final DeclineGroupInviteRequest declineGroupInviteRequest = ; // DeclineGroupInviteRequest | 
+
+try {
+    final response = api.declineGroupInvite(groupId, declineGroupInviteRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling GroupsApi->declineGroupInvite: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **String**| Must be a valid group ID. | 
+ **declineGroupInviteRequest** | [**DeclineGroupInviteRequest**](DeclineGroupInviteRequest.md)|  | [optional] 
+
+### Return type
+
+[**Success**](Success.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **deleteGroup**
-> Success deleteGroup(groupId)
+> Success deleteGroup(groupId, hardDelete)
 
 Delete Group
 
@@ -560,11 +710,12 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final bool hardDelete = true; // bool | 
 
 try {
-    final response = api.deleteGroup(groupId);
+    final response = api.deleteGroup(groupId, hardDelete);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->deleteGroup: $e\n');
 }
 ```
@@ -574,6 +725,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupId** | **String**| Must be a valid group ID. | 
+ **hardDelete** | **bool**|  | [optional] 
 
 ### Return type
 
@@ -611,7 +763,7 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.deleteGroupAnnouncement(groupId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->deleteGroupAnnouncement: $e\n');
 }
 ```
@@ -659,7 +811,7 @@ final String groupGalleryId = ggal_00000000-0000-0000-0000-000000000000; // Stri
 try {
     final response = api.deleteGroupGallery(groupId, groupGalleryId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->deleteGroupGallery: $e\n');
 }
 ```
@@ -709,7 +861,7 @@ final String groupGalleryImageId = ggim_00000000-0000-0000-0000-000000000000; //
 try {
     final response = api.deleteGroupGalleryImage(groupId, groupGalleryId, groupGalleryImageId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->deleteGroupGalleryImage: $e\n');
 }
 ```
@@ -758,7 +910,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 
 try {
     api.deleteGroupInvite(groupId, userId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->deleteGroupInvite: $e\n');
 }
 ```
@@ -807,7 +959,7 @@ final String notificationId = notificationId_example; // String | Must be a vali
 try {
     final response = api.deleteGroupPost(groupId, notificationId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->deleteGroupPost: $e\n');
 }
 ```
@@ -856,7 +1008,7 @@ final String groupRoleId = grol_00000000-0000-0000-0000-000000000000; // String 
 try {
     final response = api.deleteGroupRole(groupId, groupRoleId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->deleteGroupRole: $e\n');
 }
 ```
@@ -905,7 +1057,7 @@ final bool includeRoles = true; // bool | Include roles for the Group object. De
 try {
     final response = api.getGroup(groupId, includeRoles);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroup: $e\n');
 }
 ```
@@ -953,7 +1105,7 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.getGroupAnnouncements(groupId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupAnnouncements: $e\n');
 }
 ```
@@ -967,6 +1119,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GroupAnnouncement**](GroupAnnouncement.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getGroupAuditLogEntryTypes**
+> List<String> getGroupAuditLogEntryTypes(groupId)
+
+Get Group Audit Log Entry Types
+
+Returns a list of audit log entry types for which the group has entries.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getGroupsApi();
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+
+try {
+    final response = api.getGroupAuditLogEntryTypes(groupId);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling GroupsApi->getGroupAuditLogEntryTypes: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **String**| Must be a valid group ID. | 
+
+### Return type
+
+**List&lt;String&gt;**
 
 ### Authorization
 
@@ -1007,7 +1206,7 @@ final String targetIds = usr_00000000-0000-0000-0000-000000000000,usr_11111111-1
 try {
     final response = api.getGroupAuditLogs(groupId, n, offset, startDate, endDate, actorIds, eventTypes, targetIds);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupAuditLogs: $e\n');
 }
 ```
@@ -1063,7 +1262,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getGroupBans(groupId, n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupBans: $e\n');
 }
 ```
@@ -1116,7 +1315,7 @@ final bool approved = true; // bool | If specified, only returns images that hav
 try {
     final response = api.getGroupGalleryImages(groupId, groupGalleryId, n, offset, approved);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupGalleryImages: $e\n');
 }
 ```
@@ -1167,7 +1366,7 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.getGroupInstances(groupId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupInstances: $e\n');
 }
 ```
@@ -1216,7 +1415,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getGroupInvites(groupId, n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupInvites: $e\n');
 }
 ```
@@ -1266,7 +1465,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getGroupMember(groupId, userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupMember: $e\n');
 }
 ```
@@ -1318,7 +1517,7 @@ final String roleId = roleId_example; // String | Only returns members with a sp
 try {
     final response = api.getGroupMembers(groupId, n, offset, sort, roleId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupMembers: $e\n');
 }
 ```
@@ -1369,7 +1568,7 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.getGroupPermissions(groupId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupPermissions: $e\n');
 }
 ```
@@ -1419,7 +1618,7 @@ final bool publicOnly = true; // bool | See public posts only.
 try {
     final response = api.getGroupPosts(groupId, n, offset, publicOnly);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupPosts: $e\n');
 }
 ```
@@ -1472,7 +1671,7 @@ final bool blocked = true; // bool | See blocked join requests
 try {
     final response = api.getGroupRequests(groupId, n, offset, blocked);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupRequests: $e\n');
 }
 ```
@@ -1521,7 +1720,7 @@ final api = VrchatDartGenerated().getGroupsApi();
 try {
     final response = api.getGroupRoleTemplates();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupRoleTemplates: $e\n');
 }
 ```
@@ -1565,7 +1764,7 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.getGroupRoles(groupId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupRoles: $e\n');
 }
 ```
@@ -1591,8 +1790,106 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getGroupTransferability**
+> GroupTransferable getGroupTransferability(groupId, transferTargetId)
+
+Get Group Transferability
+
+Returns the transferability of the group to a given user.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getGroupsApi();
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final String transferTargetId = transferTargetId_example; // String | The UserID of the prospective transferee.
+
+try {
+    final response = api.getGroupTransferability(groupId, transferTargetId);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling GroupsApi->getGroupTransferability: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **String**| Must be a valid group ID. | 
+ **transferTargetId** | **String**| The UserID of the prospective transferee. | [optional] 
+
+### Return type
+
+[**GroupTransferable**](GroupTransferable.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **initiateOrAcceptGroupTransfer**
+> Success initiateOrAcceptGroupTransfer(groupId, transferGroupRequest)
+
+Initiate or Accept Group Transfer
+
+To initiate, must be logged in as the current owner and specify the transferTargetId in the body. To accept, must be logged in as the user targetted by a pending transfer, no body is required.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getGroupsApi();
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final TransferGroupRequest transferGroupRequest = ; // TransferGroupRequest | 
+
+try {
+    final response = api.initiateOrAcceptGroupTransfer(groupId, transferGroupRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling GroupsApi->initiateOrAcceptGroupTransfer: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **String**| Must be a valid group ID. | 
+ **transferGroupRequest** | [**TransferGroupRequest**](TransferGroupRequest.md)|  | [optional] 
+
+### Return type
+
+[**Success**](Success.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **joinGroup**
-> GroupMember joinGroup(groupId)
+> GroupMember joinGroup(groupId, confirmOverrideBlock, joinGroupRequest)
 
 Join Group
 
@@ -1608,11 +1905,13 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final bool confirmOverrideBlock = true; // bool | Manually override the failure that would occur if the user has blocked the group.
+final JoinGroupRequest joinGroupRequest = ; // JoinGroupRequest | 
 
 try {
-    final response = api.joinGroup(groupId);
+    final response = api.joinGroup(groupId, confirmOverrideBlock, joinGroupRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->joinGroup: $e\n');
 }
 ```
@@ -1622,6 +1921,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupId** | **String**| Must be a valid group ID. | 
+ **confirmOverrideBlock** | **bool**| Manually override the failure that would occur if the user has blocked the group. | [optional] 
+ **joinGroupRequest** | [**JoinGroupRequest**](JoinGroupRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -1633,17 +1934,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **kickGroupMember**
-> kickGroupMember(groupId, userId)
+> Success kickGroupMember(groupId, userId)
 
 Kick Group Member
 
-Kicks a Group Member from the Group. The current user must have the \"Remove Group Members\" permission.
+Kicks a Group Member from the Group. The current user must have the \"Remove Group Members\" permission. Also used for unblocking groups.
 
 ### Example
 ```dart
@@ -1658,8 +1959,9 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 final String userId = userId_example; // String | Must be a valid user ID.
 
 try {
-    api.kickGroupMember(groupId, userId);
-} catch on DioException (e) {
+    final response = api.kickGroupMember(groupId, userId);
+    print(response);
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->kickGroupMember: $e\n');
 }
 ```
@@ -1673,7 +1975,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Success**](Success.md)
 
 ### Authorization
 
@@ -1706,7 +2008,7 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 
 try {
     api.leaveGroup(groupId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->leaveGroup: $e\n');
 }
 ```
@@ -1755,7 +2057,7 @@ final String groupRoleId = grol_00000000-0000-0000-0000-000000000000; // String 
 try {
     final response = api.removeGroupMemberRole(groupId, userId, groupRoleId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->removeGroupMemberRole: $e\n');
 }
 ```
@@ -1805,7 +2107,7 @@ final RespondGroupJoinRequest respondGroupJoinRequest = ; // RespondGroupJoinReq
 
 try {
     api.respondGroupJoinRequest(groupId, userId, respondGroupJoinRequest);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->respondGroupJoinRequest: $e\n');
 }
 ```
@@ -1833,6 +2135,59 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **searchGroupMembers**
+> SearchGroupMembers200Response searchGroupMembers(groupId, query, n, offset)
+
+Search Group Members
+
+Search for members in the group by displayName.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getGroupsApi();
+final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final String query = query_example; // String | Filter for member displayName.
+final int n = 56; // int | The number of objects to return.
+final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
+
+try {
+    final response = api.searchGroupMembers(groupId, query, n, offset);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling GroupsApi->searchGroupMembers: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **String**| Must be a valid group ID. | 
+ **query** | **String**| Filter for member displayName. | 
+ **n** | **int**| The number of objects to return. | [optional] [default to 60]
+ **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
+
+### Return type
+
+[**SearchGroupMembers200Response**](SearchGroupMembers200Response.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **searchGroups**
 > List<LimitedGroup> searchGroups(query, offset, n)
 
@@ -1852,7 +2207,7 @@ final int n = 56; // int | The number of objects to return.
 try {
     final response = api.searchGroups(query, offset, n);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->searchGroups: $e\n');
 }
 ```
@@ -1902,7 +2257,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.unbanGroupMember(groupId, userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->unbanGroupMember: $e\n');
 }
 ```
@@ -1951,7 +2306,7 @@ final UpdateGroupRequest updateGroupRequest = ; // UpdateGroupRequest |
 try {
     final response = api.updateGroup(groupId, updateGroupRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->updateGroup: $e\n');
 }
 ```
@@ -2001,7 +2356,7 @@ final UpdateGroupGalleryRequest updateGroupGalleryRequest = ; // UpdateGroupGall
 try {
     final response = api.updateGroupGallery(groupId, groupGalleryId, updateGroupGalleryRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->updateGroupGallery: $e\n');
 }
 ```
@@ -2052,7 +2407,7 @@ final UpdateGroupMemberRequest updateGroupMemberRequest = ; // UpdateGroupMember
 try {
     final response = api.updateGroupMember(groupId, userId, updateGroupMemberRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->updateGroupMember: $e\n');
 }
 ```
@@ -2103,7 +2458,7 @@ final CreateGroupPostRequest createGroupPostRequest = ; // CreateGroupPostReques
 try {
     final response = api.updateGroupPost(groupId, notificationId, createGroupPostRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->updateGroupPost: $e\n');
 }
 ```
@@ -2153,7 +2508,7 @@ final UpdateGroupRepresentationRequest updateGroupRepresentationRequest = ; // U
 try {
     final response = api.updateGroupRepresentation(groupId, updateGroupRepresentationRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->updateGroupRepresentation: $e\n');
 }
 ```
@@ -2203,7 +2558,7 @@ final UpdateGroupRoleRequest updateGroupRoleRequest = ; // UpdateGroupRoleReques
 try {
     final response = api.updateGroupRole(groupId, groupRoleId, updateGroupRoleRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling GroupsApi->updateGroupRole: $e\n');
 }
 ```

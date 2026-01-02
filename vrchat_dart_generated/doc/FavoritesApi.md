@@ -40,7 +40,7 @@ final AddFavoriteRequest addFavoriteRequest = {"type":"avatar","favoriteId":"avt
 try {
     final response = api.addFavorite(addFavoriteRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FavoritesApi->addFavorite: $e\n');
 }
 ```
@@ -89,7 +89,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.clearFavoriteGroup(favoriteGroupType, favoriteGroupName, userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FavoritesApi->clearFavoriteGroup: $e\n');
 }
 ```
@@ -140,7 +140,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getFavoriteGroup(favoriteGroupType, favoriteGroupName, userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FavoritesApi->getFavoriteGroup: $e\n');
 }
 ```
@@ -192,7 +192,7 @@ final String ownerId = ownerId_example; // String | The owner of whoms favorite 
 try {
     final response = api.getFavoriteGroups(n, offset, userId, ownerId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FavoritesApi->getFavoriteGroups: $e\n');
 }
 ```
@@ -241,7 +241,7 @@ final api = VrchatDartGenerated().getFavoritesApi();
 try {
     final response = api.getFavoriteLimits();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FavoritesApi->getFavoriteLimits: $e\n');
 }
 ```
@@ -288,7 +288,7 @@ final String tag = tag_example; // String | Tags to include (comma-separated). A
 try {
     final response = api.getFavorites(n, offset, type, tag);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FavoritesApi->getFavorites: $e\n');
 }
 ```
@@ -338,7 +338,7 @@ final String favoriteId = favoriteId_example; // String | Must be a valid favori
 try {
     final response = api.removeFavorite(favoriteId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FavoritesApi->removeFavorite: $e\n');
 }
 ```
@@ -387,7 +387,7 @@ final UpdateFavoriteGroupRequest updateFavoriteGroupRequest = ; // UpdateFavorit
 
 try {
     api.updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FavoritesApi->updateFavoriteGroup: $e\n');
 }
 ```

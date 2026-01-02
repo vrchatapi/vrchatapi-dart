@@ -36,7 +36,7 @@ final String printId = prnt_0a0aa0a0-85ea-42eb-b2f7-4840d7f341fa; // String | Pr
 
 try {
     api.deletePrint(printId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling PrintsApi->deletePrint: $e\n');
 }
 ```
@@ -85,7 +85,7 @@ final String note = note_example; // String | The caption for the image.
 try {
     final response = api.editPrint(printId, image, note);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling PrintsApi->editPrint: $e\n');
 }
 ```
@@ -134,7 +134,7 @@ final String printId = prnt_0a0aa0a0-85ea-42eb-b2f7-4840d7f341fa; // String | Pr
 try {
     final response = api.getPrint(printId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling PrintsApi->getPrint: $e\n');
 }
 ```
@@ -181,7 +181,7 @@ final String userId = userId_example; // String | Must be a valid user ID.
 try {
     final response = api.getUserPrints(userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling PrintsApi->getUserPrints: $e\n');
 }
 ```
@@ -232,7 +232,7 @@ final String worldName = worldName_example; // String | The name of the world in
 try {
     final response = api.uploadPrint(image, timestamp, note, worldId, worldName);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling PrintsApi->uploadPrint: $e\n');
 }
 ```

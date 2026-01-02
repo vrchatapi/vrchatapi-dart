@@ -9,6 +9,7 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **acknowledgements** | **String** |  | [optional] 
+**activeAssetReviewId** | **String** | Only present for the avatar author on avatars under active review. | [optional] 
 **assetUrl** | **String** | Not present from general search `/avatars`, only on specific requests `/avatars/{avatarId}`. | [optional] 
 **assetUrlObject** | **Object** | Not present from general search `/avatars`, only on specific requests `/avatars/{avatarId}`. **Deprecation:** `Object` has unknown usage/fields, and is always empty. Use normal `Url` field instead. | [optional] 
 **authorId** | **String** | A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed. | 
@@ -23,6 +24,7 @@ Name | Type | Description | Notes
 **lock** | **bool** |  | [optional] 
 **lowestPrice** | **int** |  | [optional] 
 **name** | **String** |  | 
+**pendingUpload** | **bool** |  | [optional] [default to false]
 **performance** | [**AvatarPerformance**](AvatarPerformance.md) |  | 
 **productId** | **String** |  | [optional] 
 **publishedListings** | [**List&lt;AvatarPublishedListingsInner&gt;**](AvatarPublishedListingsInner.md) |  | [optional] 

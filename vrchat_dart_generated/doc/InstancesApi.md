@@ -41,7 +41,7 @@ final DateTime closedAt = 2013-10-20T19:20:30+01:00; // DateTime | The time afte
 try {
     final response = api.closeInstance(worldId, instanceId, hardClose, closedAt);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InstancesApi->closeInstance: $e\n');
 }
 ```
@@ -91,7 +91,7 @@ final CreateInstanceRequest createInstanceRequest = ; // CreateInstanceRequest |
 try {
     final response = api.createInstance(createInstanceRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InstancesApi->createInstance: $e\n');
 }
 ```
@@ -139,7 +139,7 @@ final String instanceId = instanceId_example; // String | Must be a valid instan
 try {
     final response = api.getInstance(worldId, instanceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InstancesApi->getInstance: $e\n');
 }
 ```
@@ -187,7 +187,7 @@ final String shortName = shortName_example; // String | Must be a valid instance
 try {
     final response = api.getInstanceByShortName(shortName);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InstancesApi->getInstanceByShortName: $e\n');
 }
 ```
@@ -235,7 +235,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getRecentLocations(n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InstancesApi->getRecentLocations: $e\n');
 }
 ```
@@ -284,7 +284,7 @@ final String instanceId = instanceId_example; // String | Must be a valid instan
 try {
     final response = api.getShortName(worldId, instanceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InstancesApi->getShortName: $e\n');
 }
 ```

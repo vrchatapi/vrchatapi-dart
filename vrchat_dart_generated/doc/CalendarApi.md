@@ -46,7 +46,7 @@ final CreateCalendarEventRequest createCalendarEventRequest = ; // CreateCalenda
 try {
     final response = api.createGroupCalendarEvent(groupId, createCalendarEventRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling CalendarApi->createGroupCalendarEvent: $e\n');
 }
 ```
@@ -95,7 +95,7 @@ final String calendarId = cal_00000000-0000-0000-0000-000000000000; // String | 
 try {
     final response = api.deleteGroupCalendarEvent(groupId, calendarId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling CalendarApi->deleteGroupCalendarEvent: $e\n');
 }
 ```
@@ -153,7 +153,7 @@ final String nextCursor = nextCursor_example; // String | Cursor returned from p
 try {
     final response = api.discoverCalendarEvents(scope, categories, tags, featuredResults, nonFeaturedResults, personalizedResults, minimumInterestCount, minimumRemainingMinutes, upcomingOffsetMinutes, n, nextCursor);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling CalendarApi->discoverCalendarEvents: $e\n');
 }
 ```
@@ -212,7 +212,7 @@ final FollowCalendarEventRequest followCalendarEventRequest = ; // FollowCalenda
 try {
     final response = api.followGroupCalendarEvent(groupId, calendarId, followCalendarEventRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling CalendarApi->followGroupCalendarEvent: $e\n');
 }
 ```
@@ -263,7 +263,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getCalendarEvents(date, n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling CalendarApi->getCalendarEvents: $e\n');
 }
 ```
@@ -314,7 +314,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getFeaturedCalendarEvents(date, n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling CalendarApi->getFeaturedCalendarEvents: $e\n');
 }
 ```
@@ -365,7 +365,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getFollowedCalendarEvents(date, n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling CalendarApi->getFollowedCalendarEvents: $e\n');
 }
 ```
@@ -415,7 +415,7 @@ final String calendarId = cal_00000000-0000-0000-0000-000000000000; // String | 
 try {
     final response = api.getGroupCalendarEvent(groupId, calendarId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling CalendarApi->getGroupCalendarEvent: $e\n');
 }
 ```
@@ -460,7 +460,7 @@ final String calendarId = cal_00000000-0000-0000-0000-000000000000; // String | 
 try {
     final response = api.getGroupCalendarEventICS(groupId, calendarId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling CalendarApi->getGroupCalendarEventICS: $e\n');
 }
 ```
@@ -511,7 +511,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getGroupCalendarEvents(groupId, date, n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling CalendarApi->getGroupCalendarEvents: $e\n');
 }
 ```
@@ -561,7 +561,7 @@ final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.getGroupNextCalendarEvent(groupId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling CalendarApi->getGroupNextCalendarEvent: $e\n');
 }
 ```
@@ -588,7 +588,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **searchCalendarEvents**
-> PaginatedCalendarEventList searchCalendarEvents(searchTerm, utcOffset, n, offset)
+> PaginatedCalendarEventList searchCalendarEvents(searchTerm, utcOffset, n, offset, isInternalVariant)
 
 Search for calendar events
 
@@ -607,11 +607,12 @@ final String searchTerm = game night; // String | Search term for calendar event
 final int utcOffset = 56; // int | The offset from UTC in hours of the client or authenticated user.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
+final bool isInternalVariant = false; // bool | Not quite sure what this actually does (exists on the website but doesn't seem to be used)
 
 try {
-    final response = api.searchCalendarEvents(searchTerm, utcOffset, n, offset);
+    final response = api.searchCalendarEvents(searchTerm, utcOffset, n, offset, isInternalVariant);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling CalendarApi->searchCalendarEvents: $e\n');
 }
 ```
@@ -624,6 +625,7 @@ Name | Type | Description  | Notes
  **utcOffset** | **int**| The offset from UTC in hours of the client or authenticated user. | [optional] 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
+ **isInternalVariant** | **bool**| Not quite sure what this actually does (exists on the website but doesn't seem to be used) | [optional] 
 
 ### Return type
 
@@ -663,7 +665,7 @@ final UpdateCalendarEventRequest updateCalendarEventRequest = ; // UpdateCalenda
 try {
     final response = api.updateGroupCalendarEvent(groupId, calendarId, updateCalendarEventRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling CalendarApi->updateGroupCalendarEvent: $e\n');
 }
 ```

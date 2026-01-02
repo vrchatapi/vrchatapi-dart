@@ -16,13 +16,17 @@ Method | HTTP request | Description
 [**downloadFileVersion**](FilesApi.md#downloadfileversion) | **GET** /file/{fileId}/{versionId} | Download File Version
 [**finishFileDataUpload**](FilesApi.md#finishfiledataupload) | **PUT** /file/{fileId}/{versionId}/{fileType}/finish | Finish FileData Upload
 [**getAdminAssetBundle**](FilesApi.md#getadminassetbundle) | **GET** /adminassetbundles/{adminAssetBundleId} | Get AdminAssetBundle
+[**getContentAgreementStatus**](FilesApi.md#getcontentagreementstatus) | **GET** /agreement | Get Content Agreement Status
 [**getFile**](FilesApi.md#getfile) | **GET** /file/{fileId} | Show File
 [**getFileAnalysis**](FilesApi.md#getfileanalysis) | **GET** /analysis/{fileId}/{versionId} | Get File Version Analysis
 [**getFileAnalysisSecurity**](FilesApi.md#getfileanalysissecurity) | **GET** /analysis/{fileId}/{versionId}/security | Get File Version Analysis Security
 [**getFileAnalysisStandard**](FilesApi.md#getfileanalysisstandard) | **GET** /analysis/{fileId}/{versionId}/standard | Get File Version Analysis Standard
 [**getFileDataUploadStatus**](FilesApi.md#getfiledatauploadstatus) | **GET** /file/{fileId}/{versionId}/{fileType}/status | Check FileData Upload Status
 [**getFiles**](FilesApi.md#getfiles) | **GET** /files | List Files
+[**setGroupGalleryFileOrder**](FilesApi.md#setgroupgalleryfileorder) | **PUT** /files/order | Set Group Gallery File Order
 [**startFileDataUpload**](FilesApi.md#startfiledataupload) | **PUT** /file/{fileId}/{versionId}/{fileType}/start | Start FileData Upload
+[**submitContentAgreement**](FilesApi.md#submitcontentagreement) | **POST** /agreement | Submit Content Agreement
+[**updateAssetReviewNotes**](FilesApi.md#updateassetreviewnotes) | **PUT** /assetReview/{assetReviewId}/notes | Update Asset Review Notes
 [**uploadGalleryImage**](FilesApi.md#uploadgalleryimage) | **POST** /gallery | Upload gallery image
 [**uploadIcon**](FilesApi.md#uploadicon) | **POST** /icon | Upload icon
 [**uploadImage**](FilesApi.md#uploadimage) | **POST** /file/image | Upload gallery image, icon, emoji or sticker
@@ -49,7 +53,7 @@ final CreateFileRequest createFileRequest = ; // CreateFileRequest |
 try {
     final response = api.createFile(createFileRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->createFile: $e\n');
 }
 ```
@@ -97,7 +101,7 @@ final CreateFileVersionRequest createFileVersionRequest = ; // CreateFileVersion
 try {
     final response = api.createFileVersion(fileId, createFileVersionRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->createFileVersion: $e\n');
 }
 ```
@@ -145,7 +149,7 @@ final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.deleteFile(fileId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->deleteFile: $e\n');
 }
 ```
@@ -193,7 +197,7 @@ final int versionId = 1; // int | Version ID of the asset.
 try {
     final response = api.deleteFileVersion(fileId, versionId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->deleteFileVersion: $e\n');
 }
 ```
@@ -242,7 +246,7 @@ final int versionId = 1; // int | Version ID of the asset.
 try {
     final response = api.downloadFileVersion(fileId, versionId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->downloadFileVersion: $e\n');
 }
 ```
@@ -293,7 +297,7 @@ final FinishFileDataUploadRequest finishFileDataUploadRequest = {"etags":["xxxxx
 try {
     final response = api.finishFileDataUpload(fileId, versionId, fileType, finishFileDataUploadRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->finishFileDataUpload: $e\n');
 }
 ```
@@ -343,7 +347,7 @@ final String adminAssetBundleId = aab_e159e72c-ce54-4fbe-8c37-96af02f6d18d; // S
 try {
     final response = api.getAdminAssetBundle(adminAssetBundleId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->getAdminAssetBundle: $e\n');
 }
 ```
@@ -357,6 +361,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AdminAssetBundle**](AdminAssetBundle.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getContentAgreementStatus**
+> AgreementStatus getContentAgreementStatus(agreementCode, contentId, version)
+
+Get Content Agreement Status
+
+Returns the agreement status of the currently authenticated user for the given agreementCode, contentId, and version.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getFilesApi();
+final AgreementCode agreementCode = ; // AgreementCode | The type of agreement (currently content.copyright.owned)
+final String contentId = avtr_c38a1615-5bf5-42b4-84eb-a8b6c37cbd11; // String | The id of the content being uploaded, such as a WorldID, AvatarID, or PropID
+final int version = 1; // int | The version of the agreement (currently 1)
+
+try {
+    final response = api.getContentAgreementStatus(agreementCode, contentId, version);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling FilesApi->getContentAgreementStatus: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **agreementCode** | [**AgreementCode**](.md)| The type of agreement (currently content.copyright.owned) | 
+ **contentId** | **String**| The id of the content being uploaded, such as a WorldID, AvatarID, or PropID | 
+ **version** | **int**| The version of the agreement (currently 1) | 
+
+### Return type
+
+[**AgreementStatus**](AgreementStatus.md)
 
 ### Authorization
 
@@ -390,7 +445,7 @@ final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Mus
 try {
     final response = api.getFile(fileId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->getFile: $e\n');
 }
 ```
@@ -438,7 +493,7 @@ final int versionId = 1; // int | Version ID of the asset.
 try {
     final response = api.getFileAnalysis(fileId, versionId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->getFileAnalysis: $e\n');
 }
 ```
@@ -487,7 +542,7 @@ final int versionId = 1; // int | Version ID of the asset.
 try {
     final response = api.getFileAnalysisSecurity(fileId, versionId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->getFileAnalysisSecurity: $e\n');
 }
 ```
@@ -536,7 +591,7 @@ final int versionId = 1; // int | Version ID of the asset.
 try {
     final response = api.getFileAnalysisStandard(fileId, versionId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->getFileAnalysisStandard: $e\n');
 }
 ```
@@ -586,7 +641,7 @@ final String fileType = file; // String | Type of file.
 try {
     final response = api.getFileDataUploadStatus(fileId, versionId, fileType);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->getFileDataUploadStatus: $e\n');
 }
 ```
@@ -638,7 +693,7 @@ final int offset = 56; // int | A zero-based offset from the default object sort
 try {
     final response = api.getFiles(tag, userId, n, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->getFiles: $e\n');
 }
 ```
@@ -667,6 +722,53 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **setGroupGalleryFileOrder**
+> GroupGalleryFileOrder setGroupGalleryFileOrder(groupGalleryFileOrderRequest)
+
+Set Group Gallery File Order
+
+Set the order of the files in a group gallery
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getFilesApi();
+final GroupGalleryFileOrderRequest groupGalleryFileOrderRequest = ; // GroupGalleryFileOrderRequest | 
+
+try {
+    final response = api.setGroupGalleryFileOrder(groupGalleryFileOrderRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling FilesApi->setGroupGalleryFileOrder: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupGalleryFileOrderRequest** | [**GroupGalleryFileOrderRequest**](GroupGalleryFileOrderRequest.md)|  | [optional] 
+
+### Return type
+
+[**GroupGalleryFileOrder**](GroupGalleryFileOrder.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **startFileDataUpload**
 > FileUploadURL startFileDataUpload(fileId, versionId, fileType, partNumber)
 
@@ -691,7 +793,7 @@ final int partNumber = 1; // int | The part number to start uploading. If not pr
 try {
     final response = api.startFileDataUpload(fileId, versionId, fileType, partNumber);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->startFileDataUpload: $e\n');
 }
 ```
@@ -720,6 +822,101 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **submitContentAgreement**
+> Agreement submitContentAgreement(agreementRequest)
+
+Submit Content Agreement
+
+Returns the agreement of the currently authenticated user for the given agreementCode, contentId, and version.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getFilesApi();
+final AgreementRequest agreementRequest = ; // AgreementRequest | 
+
+try {
+    final response = api.submitContentAgreement(agreementRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling FilesApi->submitContentAgreement: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **agreementRequest** | [**AgreementRequest**](AgreementRequest.md)|  | [optional] 
+
+### Return type
+
+[**Agreement**](Agreement.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateAssetReviewNotes**
+> updateAssetReviewNotes(assetReviewId, updateAssetReviewNotesRequest)
+
+Update Asset Review Notes
+
+Update notes regarding an asset review.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getFilesApi();
+final String assetReviewId = assetReviewId_example; // String | Must be an valid asset review ID.
+final UpdateAssetReviewNotesRequest updateAssetReviewNotesRequest = ; // UpdateAssetReviewNotesRequest | 
+
+try {
+    api.updateAssetReviewNotes(assetReviewId, updateAssetReviewNotesRequest);
+} on DioException catch (e) {
+    print('Exception when calling FilesApi->updateAssetReviewNotes: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **assetReviewId** | **String**| Must be an valid asset review ID. | 
+ **updateAssetReviewNotesRequest** | [**UpdateAssetReviewNotesRequest**](UpdateAssetReviewNotesRequest.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **uploadGalleryImage**
 > File uploadGalleryImage(file)
 
@@ -741,7 +938,7 @@ final MultipartFile file = BINARY_DATA_HERE; // MultipartFile | The binary blob 
 try {
     final response = api.uploadGalleryImage(file);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->uploadGalleryImage: $e\n');
 }
 ```
@@ -788,7 +985,7 @@ final MultipartFile file = BINARY_DATA_HERE; // MultipartFile | The binary blob 
 try {
     final response = api.uploadIcon(file);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->uploadIcon: $e\n');
 }
 ```
@@ -815,7 +1012,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **uploadImage**
-> File uploadImage(file, tag, animationStyle, frames, framesOverTime, maskTag)
+> File uploadImage(file, tag, animationStyle, frames, framesOverTime, loopStyle, maskTag)
 
 Upload gallery image, icon, emoji or sticker
 
@@ -831,16 +1028,17 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getFilesApi();
 final MultipartFile file = BINARY_DATA_HERE; // MultipartFile | The binary blob of the png file.
-final String tag = tag_example; // String | Needs to be either icon, gallery, sticker, emoji, or emojianimated
-final String animationStyle = animationStyle_example; // String | Animation style for sticker, required for emoji.
-final int frames = 56; // int | Required for emojianimated. Total number of frames to be animated (2-64)
-final int framesOverTime = 56; // int | Required for emojianimated. Animation frames per second (1-64)
-final String maskTag = maskTag_example; // String | Mask of the sticker, optional for emoji.
+final ImagePurpose tag = ; // ImagePurpose | 
+final ImageAnimationStyle animationStyle = ; // ImageAnimationStyle | 
+final int frames = 56; // int | Required for animated images. Total number of frames of the spritesheet to be animated.
+final int framesOverTime = 56; // int | Required for animated images. Animation frames per second.
+final ImageLoopStyle loopStyle = ; // ImageLoopStyle | 
+final ImageMask maskTag = ; // ImageMask | 
 
 try {
-    final response = api.uploadImage(file, tag, animationStyle, frames, framesOverTime, maskTag);
+    final response = api.uploadImage(file, tag, animationStyle, frames, framesOverTime, loopStyle, maskTag);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FilesApi->uploadImage: $e\n');
 }
 ```
@@ -850,11 +1048,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file** | **MultipartFile**| The binary blob of the png file. | 
- **tag** | **String**| Needs to be either icon, gallery, sticker, emoji, or emojianimated | 
- **animationStyle** | **String**| Animation style for sticker, required for emoji. | [optional] 
- **frames** | **int**| Required for emojianimated. Total number of frames to be animated (2-64) | [optional] 
- **framesOverTime** | **int**| Required for emojianimated. Animation frames per second (1-64) | [optional] 
- **maskTag** | **String**| Mask of the sticker, optional for emoji. | [optional] 
+ **tag** | [**ImagePurpose**](ImagePurpose.md)|  | 
+ **animationStyle** | [**ImageAnimationStyle**](ImageAnimationStyle.md)|  | [optional] 
+ **frames** | **int**| Required for animated images. Total number of frames of the spritesheet to be animated. | [optional] 
+ **framesOverTime** | **int**| Required for animated images. Animation frames per second. | [optional] 
+ **loopStyle** | [**ImageLoopStyle**](ImageLoopStyle.md)|  | [optional] 
+ **maskTag** | [**ImageMask**](ImageMask.md)|  | [optional] 
 
 ### Return type
 

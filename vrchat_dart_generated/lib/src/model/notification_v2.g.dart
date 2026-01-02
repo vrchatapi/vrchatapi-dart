@@ -46,7 +46,13 @@ NotificationV2 _$NotificationV2FromJson(
     canDelete: $checkedConvert('canDelete', (v) => v as bool),
     category: $checkedConvert('category', (v) => v as String),
     createdAt: $checkedConvert('createdAt', (v) => DateTime.parse(v as String)),
-    data: $checkedConvert('data', (v) => v as Object),
+    data: $checkedConvert('data', (v) => Map<String, String>.from(v as Map)),
+    details: $checkedConvert(
+      'details',
+      (v) => v == null
+          ? null
+          : NotificationV2DetailsBoop.fromJson(v as Map<String, dynamic>),
+    ),
     expiresAt: $checkedConvert('expiresAt', (v) => DateTime.parse(v as String)),
     expiryAfterSeen: $checkedConvert(
       'expiryAfterSeen',
@@ -96,6 +102,7 @@ Map<String, dynamic> _$NotificationV2ToJson(NotificationV2 instance) =>
       'category': instance.category,
       'createdAt': instance.createdAt.toIso8601String(),
       'data': instance.data,
+      'details': ?instance.details?.toJson(),
       'expiresAt': instance.expiresAt.toIso8601String(),
       'expiryAfterSeen': instance.expiryAfterSeen,
       'id': instance.id,
@@ -130,10 +137,13 @@ const _$NotificationV2TypeEnumMap = {
   NotificationV2Type.economyPeriodReceivedPeriodGift: 'economy.received.gift',
   NotificationV2Type.eventPeriodAnnouncement: 'event.announcement',
   NotificationV2Type.groupPeriodAnnouncement: 'group.announcement',
+  NotificationV2Type.groupPeriodEventPeriodCreated: 'group.event.created',
+  NotificationV2Type.groupPeriodEventPeriodStarting: 'group.event.starting',
   NotificationV2Type.groupPeriodInformative: 'group.informative',
   NotificationV2Type.groupPeriodInvite: 'group.invite',
   NotificationV2Type.groupPeriodJoinRequest: 'group.joinRequest',
   NotificationV2Type.groupPeriodPost: 'group.post',
+  NotificationV2Type.groupPeriodTransfer: 'group.transfer',
   NotificationV2Type.invitePeriodInstancePeriodContentGated:
       'invite.instance.contentGated',
   NotificationV2Type.moderationPeriodContentrestriction:

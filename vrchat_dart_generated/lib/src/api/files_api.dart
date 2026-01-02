@@ -11,6 +11,10 @@ import 'package:dio/dio.dart';
 
 import 'dart:typed_data';
 import 'package:vrchat_dart_generated/src/model/admin_asset_bundle.dart';
+import 'package:vrchat_dart_generated/src/model/agreement.dart';
+import 'package:vrchat_dart_generated/src/model/agreement_code.dart';
+import 'package:vrchat_dart_generated/src/model/agreement_request.dart';
+import 'package:vrchat_dart_generated/src/model/agreement_status.dart';
 import 'package:vrchat_dart_generated/src/model/create_file_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_file_version_request.dart';
 import 'package:vrchat_dart_generated/src/model/file.dart';
@@ -18,6 +22,13 @@ import 'package:vrchat_dart_generated/src/model/file_analysis.dart';
 import 'package:vrchat_dart_generated/src/model/file_upload_url.dart';
 import 'package:vrchat_dart_generated/src/model/file_version_upload_status.dart';
 import 'package:vrchat_dart_generated/src/model/finish_file_data_upload_request.dart';
+import 'package:vrchat_dart_generated/src/model/group_gallery_file_order.dart';
+import 'package:vrchat_dart_generated/src/model/group_gallery_file_order_request.dart';
+import 'package:vrchat_dart_generated/src/model/image_animation_style.dart';
+import 'package:vrchat_dart_generated/src/model/image_loop_style.dart';
+import 'package:vrchat_dart_generated/src/model/image_mask.dart';
+import 'package:vrchat_dart_generated/src/model/image_purpose.dart';
+import 'package:vrchat_dart_generated/src/model/update_asset_review_notes_request.dart';
 
 class FilesApi {
   final Dio _dio;
@@ -687,6 +698,99 @@ class FilesApi {
     );
   }
 
+  /// Get Content Agreement Status
+  /// Returns the agreement status of the currently authenticated user for the given agreementCode, contentId, and version.
+  ///
+  /// Parameters:
+  /// * [agreementCode] - The type of agreement (currently content.copyright.owned)
+  /// * [contentId] - The id of the content being uploaded, such as a WorldID, AvatarID, or PropID
+  /// * [version] - The version of the agreement (currently 1)
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [AgreementStatus] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<AgreementStatus>> getContentAgreementStatus({
+    required AgreementCode agreementCode,
+    required String contentId,
+    required int version,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/agreement';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      r'agreementCode': agreementCode,
+      r'contentId': contentId,
+      r'version': version,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    AgreementStatus? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<AgreementStatus, AgreementStatus>(
+              rawData,
+              'AgreementStatus',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<AgreementStatus>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// Show File
   /// Shows general information about the \&quot;File\&quot; object. Each File can have several \&quot;Version\&quot;&#39;s, and each Version can have multiple real files or \&quot;Data\&quot; blobs.
   ///
@@ -1258,6 +1362,103 @@ class FilesApi {
     );
   }
 
+  /// Set Group Gallery File Order
+  /// Set the order of the files in a group gallery
+  ///
+  /// Parameters:
+  /// * [groupGalleryFileOrderRequest]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [GroupGalleryFileOrder] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<GroupGalleryFileOrder>> setGroupGalleryFileOrder({
+    GroupGalleryFileOrderRequest? groupGalleryFileOrderRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/files/order';
+    final _options = Options(
+      method: r'PUT',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      _bodyData = jsonEncode(groupGalleryFileOrderRequest);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(_dio.options, _path),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    GroupGalleryFileOrder? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<GroupGalleryFileOrder, GroupGalleryFileOrder>(
+              rawData,
+              'GroupGalleryFileOrder',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<GroupGalleryFileOrder>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// Start FileData Upload
   /// Starts an upload of a specific FilePart. This endpoint will return an AWS URL which you can PUT data to. You need to call this and receive a new AWS API URL for each &#x60;partNumber&#x60;. Please see AWS&#39;s REST documentation on \&quot;PUT Object to S3\&quot; on how to upload. Once all parts has been uploaded, proceed to &#x60;/finish&#x60; endpoint.  **Note:** &#x60;nextPartNumber&#x60; seems like it is always ignored. Despite it returning 0, first partNumber is always 1.
   ///
@@ -1367,6 +1568,177 @@ class FilesApi {
       statusMessage: _response.statusMessage,
       extra: _response.extra,
     );
+  }
+
+  /// Submit Content Agreement
+  /// Returns the agreement of the currently authenticated user for the given agreementCode, contentId, and version.
+  ///
+  /// Parameters:
+  /// * [agreementRequest]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [Agreement] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<Agreement>> submitContentAgreement({
+    AgreementRequest? agreementRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/agreement';
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      _bodyData = jsonEncode(agreementRequest);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(_dio.options, _path),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    Agreement? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Agreement, Agreement>(
+              rawData,
+              'Agreement',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<Agreement>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Update Asset Review Notes
+  /// Update notes regarding an asset review.
+  ///
+  /// Parameters:
+  /// * [assetReviewId] - Must be an valid asset review ID.
+  /// * [updateAssetReviewNotesRequest]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<void>> updateAssetReviewNotes({
+    required String assetReviewId,
+    UpdateAssetReviewNotesRequest? updateAssetReviewNotesRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/assetReview/{assetReviewId}/notes'.replaceAll(
+      '{'
+      r'assetReviewId'
+      '}',
+      assetReviewId.toString(),
+    );
+    final _options = Options(
+      method: r'PUT',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      _bodyData = jsonEncode(updateAssetReviewNotesRequest);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(_dio.options, _path),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
   }
 
   /// Upload gallery image
@@ -1560,11 +1932,12 @@ class FilesApi {
   ///
   /// Parameters:
   /// * [file] - The binary blob of the png file.
-  /// * [tag] - Needs to be either icon, gallery, sticker, emoji, or emojianimated
-  /// * [animationStyle] - Animation style for sticker, required for emoji.
-  /// * [frames] - Required for emojianimated. Total number of frames to be animated (2-64)
-  /// * [framesOverTime] - Required for emojianimated. Animation frames per second (1-64)
-  /// * [maskTag] - Mask of the sticker, optional for emoji.
+  /// * [tag]
+  /// * [animationStyle]
+  /// * [frames] - Required for animated images. Total number of frames of the spritesheet to be animated.
+  /// * [framesOverTime] - Required for animated images. Animation frames per second.
+  /// * [loopStyle]
+  /// * [maskTag]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1576,11 +1949,12 @@ class FilesApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<File>> uploadImage({
     required MultipartFile file,
-    required String tag,
-    String? animationStyle,
+    required ImagePurpose tag,
+    ImageAnimationStyle? animationStyle,
     int? frames,
     int? framesOverTime,
-    String? maskTag,
+    ImageLoopStyle? loopStyle,
+    ImageMask? maskTag,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
