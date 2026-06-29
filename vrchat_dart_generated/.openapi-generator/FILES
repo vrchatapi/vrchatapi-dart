@@ -10,8 +10,6 @@ doc/APIConfigConstantsGROUPS.md
 doc/APIConfigConstantsINSTANCE.md
 doc/APIConfigConstantsINSTANCEPOPULATIONBRACKETS.md
 doc/APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED.md
-doc/APIConfigConstantsINSTANCEPOPULATIONBRACKETSFEW.md
-doc/APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY.md
 doc/APIConfigConstantsLANGUAGE.md
 doc/APIConfigDownloadURLList.md
 doc/APIConfigEvents.md
@@ -358,8 +356,6 @@ lib/src/model/api_config_constants_groups.dart
 lib/src/model/api_config_constants_instance.dart
 lib/src/model/api_config_constants_instancepopulationbrackets.dart
 lib/src/model/api_config_constants_instancepopulationbracketscrowded.dart
-lib/src/model/api_config_constants_instancepopulationbracketsfew.dart
-lib/src/model/api_config_constants_instancepopulationbracketsmany.dart
 lib/src/model/api_config_constants_language.dart
 lib/src/model/api_config_download_url_list.dart
 lib/src/model/api_config_events.dart
@@ -650,8 +646,6 @@ test/api_config_constants_groups_test.dart
 test/api_config_constants_instance_test.dart
 test/api_config_constants_instancepopulationbrackets_test.dart
 test/api_config_constants_instancepopulationbracketscrowded_test.dart
-test/api_config_constants_instancepopulationbracketsfew_test.dart
-test/api_config_constants_instancepopulationbracketsmany_test.dart
 test/api_config_constants_language_test.dart
 test/api_config_constants_test.dart
 test/api_config_download_url_list_test.dart

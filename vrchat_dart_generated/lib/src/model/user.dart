@@ -272,7 +272,6 @@ class User {
           other.travelingToLocation == travelingToLocation &&
           other.travelingToWorld == travelingToWorld &&
           other.userIcon == userIcon &&
-          // ignore: deprecated_member_use_from_same_package
           other.username == username &&
           other.worldId == worldId;
 
@@ -313,7 +312,6 @@ class User {
       travelingToLocation.hashCode +
       travelingToWorld.hashCode +
       userIcon.hashCode +
-      // ignore: deprecated_member_use_from_same_package
       username.hashCode +
       worldId.hashCode;
 

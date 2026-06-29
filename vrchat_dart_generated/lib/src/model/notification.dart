@@ -82,7 +82,6 @@ class Notification {
           other.receiverUserId == receiverUserId &&
           other.seen == seen &&
           other.senderUserId == senderUserId &&
-          // ignore: deprecated_member_use_from_same_package
           other.senderUsername == senderUsername &&
           other.type == type;
 
@@ -95,7 +94,6 @@ class Notification {
       receiverUserId.hashCode +
       seen.hashCode +
       senderUserId.hashCode +
-      // ignore: deprecated_member_use_from_same_package
       senderUsername.hashCode +
       type.hashCode;
 

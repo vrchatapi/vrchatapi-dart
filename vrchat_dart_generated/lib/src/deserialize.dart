@@ -8,8 +8,6 @@ import 'package:vrchat_dart_generated/src/model/api_config_constants_groups.dart
 import 'package:vrchat_dart_generated/src/model/api_config_constants_instance.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_constants_instancepopulationbrackets.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_constants_instancepopulationbracketscrowded.dart';
-import 'package:vrchat_dart_generated/src/model/api_config_constants_instancepopulationbracketsfew.dart';
-import 'package:vrchat_dart_generated/src/model/api_config_constants_instancepopulationbracketsmany.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_constants_language.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_download_url_list.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_events.dart';
@@ -266,7 +264,6 @@ ReturnType deserialize<ReturnType, BaseType>(
       return APIConfigAccessLogsUrls.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'APIConfigAnnouncement':
-      // ignore: deprecated_member_use_from_same_package
       return APIConfigAnnouncement.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'APIConfigAudioConfig':
@@ -291,16 +288,6 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED':
       return APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED.fromJson(
-            value as Map<String, dynamic>,
-          )
-          as ReturnType;
-    case 'APIConfigConstantsINSTANCEPOPULATIONBRACKETSFEW':
-      return APIConfigConstantsINSTANCEPOPULATIONBRACKETSFEW.fromJson(
-            value as Map<String, dynamic>,
-          )
-          as ReturnType;
-    case 'APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY':
-      return APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY.fromJson(
             value as Map<String, dynamic>,
           )
           as ReturnType;
@@ -373,7 +360,6 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'AvatarStyles':
       return AvatarStyles.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AvatarUnityPackageUrlObject':
-      // ignore: deprecated_member_use_from_same_package
       return AvatarUnityPackageUrlObject.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'Badge':

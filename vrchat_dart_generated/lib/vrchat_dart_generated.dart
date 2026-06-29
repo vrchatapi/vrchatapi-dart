@@ -38,8 +38,6 @@ export 'package:vrchat_dart_generated/src/model/api_config_constants_groups.dart
 export 'package:vrchat_dart_generated/src/model/api_config_constants_instance.dart';
 export 'package:vrchat_dart_generated/src/model/api_config_constants_instancepopulationbrackets.dart';
 export 'package:vrchat_dart_generated/src/model/api_config_constants_instancepopulationbracketscrowded.dart';
-export 'package:vrchat_dart_generated/src/model/api_config_constants_instancepopulationbracketsfew.dart';
-export 'package:vrchat_dart_generated/src/model/api_config_constants_instancepopulationbracketsmany.dart';
 export 'package:vrchat_dart_generated/src/model/api_config_constants_language.dart';
 export 'package:vrchat_dart_generated/src/model/api_config_download_url_list.dart';
 export 'package:vrchat_dart_generated/src/model/api_config_events.dart';

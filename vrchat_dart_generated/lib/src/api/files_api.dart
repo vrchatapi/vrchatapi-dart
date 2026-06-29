@@ -1786,7 +1786,7 @@ class FilesApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = FormData.fromMap({'file': file});
+      _bodyData = FormData.fromMap(<String, dynamic>{r'file': file});
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(_dio.options, _path),
@@ -1879,7 +1879,7 @@ class FilesApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = FormData.fromMap({'file': file});
+      _bodyData = FormData.fromMap(<String, dynamic>{r'file': file});
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(_dio.options, _path),
@@ -1984,11 +1984,14 @@ class FilesApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = FormData.fromMap({
-        'file': file,
-        'tag': tag,
-        if (animationStyle != null) 'animationStyle': animationStyle,
-        if (maskTag != null) 'maskTag': maskTag,
+      _bodyData = FormData.fromMap(<String, dynamic>{
+        if (animationStyle != null) r'animationStyle': animationStyle,
+        r'file': file,
+        if (frames != null) r'frames': frames,
+        if (framesOverTime != null) r'framesOverTime': framesOverTime,
+        if (loopStyle != null) r'loopStyle': loopStyle,
+        if (maskTag != null) r'maskTag': maskTag,
+        r'tag': tag,
       });
     } catch (error, stackTrace) {
       throw DioException(

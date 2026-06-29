@@ -281,7 +281,6 @@ class Instance {
           other.calendarEntryId == calendarEntryId &&
           other.canRequestInvite == canRequestInvite &&
           other.capacity == capacity &&
-          // ignore: deprecated_member_use_from_same_package
           other.clientNumber == clientNumber &&
           other.closedAt == closedAt &&
           other.contentSettings == contentSettings &&
@@ -329,7 +328,6 @@ class Instance {
       (calendarEntryId == null ? 0 : calendarEntryId.hashCode) +
       canRequestInvite.hashCode +
       capacity.hashCode +
-      // ignore: deprecated_member_use_from_same_package
       clientNumber.hashCode +
       (closedAt == null ? 0 : closedAt.hashCode) +
       contentSettings.hashCode +

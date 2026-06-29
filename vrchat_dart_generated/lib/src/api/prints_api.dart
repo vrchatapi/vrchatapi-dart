@@ -127,9 +127,9 @@ class PrintsApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = FormData.fromMap({
-        'image': image,
-        if (note != null) 'note': note,
+      _bodyData = FormData.fromMap(<String, dynamic>{
+        r'image': image,
+        if (note != null) r'note': note,
       });
     } catch (error, stackTrace) {
       throw DioException(
@@ -401,12 +401,12 @@ class PrintsApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = FormData.fromMap({
-        'image': image,
-        'timestamp': timestamp,
-        if (note != null) 'note': note,
-        if (worldId != null) 'worldId': worldId,
-        if (worldName != null) 'worldName': worldName,
+      _bodyData = FormData.fromMap(<String, dynamic>{
+        r'image': image,
+        if (note != null) r'note': note,
+        r'timestamp': timestamp,
+        if (worldId != null) r'worldId': worldId,
+        if (worldName != null) r'worldName': worldName,
       });
     } catch (error, stackTrace) {
       throw DioException(
