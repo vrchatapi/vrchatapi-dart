@@ -1,3 +1,7 @@
+## 4.0.2
+
+- Makes `StreamedCurrentUser.currentAvatar` optional
+
 ## 4.0.1
 
 - Makes `LimitedUser.currentAvatarImageUrl` optional

@@ -12,7 +12,7 @@ class StreamedCurrentUser {
   final String bio;
 
   /// The user's avatar id
-  final String currentAvatar;
+  final String? currentAvatar;
 
   /// The user's avatar image url
   final String currentAvatarImageUrl;
@@ -50,7 +50,7 @@ class StreamedCurrentUser {
   /// Create a [StreamedCurrentUser]
   const StreamedCurrentUser({
     required this.bio,
-    required this.currentAvatar,
+    this.currentAvatar,
     required this.currentAvatarImageUrl,
     required this.currentAvatarThumbnailImageUrl,
     required this.displayName,

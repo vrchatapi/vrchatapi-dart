@@ -11,7 +11,7 @@ part of 'streamed_current_user.dart';
 StreamedCurrentUser _$StreamedCurrentUserFromJson(Map<String, dynamic> json) =>
     StreamedCurrentUser(
       bio: json['bio'] as String,
-      currentAvatar: json['currentAvatar'] as String,
+      currentAvatar: json['currentAvatar'] as String?,
       currentAvatarImageUrl: json['currentAvatarImageUrl'] as String,
       currentAvatarThumbnailImageUrl:
           json['currentAvatarThumbnailImageUrl'] as String,
