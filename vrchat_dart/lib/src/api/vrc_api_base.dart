@@ -4,7 +4,7 @@ import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 import 'package:vrchat_dart/src/api/src/auth_api.dart';
 import 'package:vrchat_dart/src/streaming/vrc_streaming.dart';
 import 'package:vrchat_dart/src/api/vrc_api_native.dart'
-    if (dart.library.js) 'package:vrchat_dart/src/api/vrc_api_web.dart';
+    if (dart.library.js_interop) 'package:vrchat_dart/src/api/vrc_api_web.dart';
 import 'package:meta/meta.dart';
 
 /// Shared code between the web and native implementations
