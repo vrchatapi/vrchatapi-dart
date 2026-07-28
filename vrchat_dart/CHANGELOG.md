@@ -1,3 +1,7 @@
+## 4.0.3
+
+- Uses `dart.library.js_interop` for web conditional imports so the package is Wasm-ready
+
 ## 4.0.2
 
 - Makes `StreamedCurrentUser.currentAvatar` optional
