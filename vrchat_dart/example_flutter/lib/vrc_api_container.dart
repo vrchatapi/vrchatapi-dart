@@ -1,5 +1,5 @@
 import 'package:vrchat_dart_example_flutter/vrc_api_container_impl_native.dart'
-    if (dart.library.js) 'package:vrchat_dart_example_flutter/vrc_api_container_impl_web.dart';
+    if (dart.library.js_interop) 'package:vrchat_dart_example_flutter/vrc_api_container_impl_web.dart';
 import 'package:vrchat_dart/vrchat_dart.dart';
 
 /// Handle initializing the api between both native and web
