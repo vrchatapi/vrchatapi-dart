@@ -32,7 +32,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getPrintsApi();
-final String printId = prnt_0a0aa0a0-85ea-42eb-b2f7-4840d7f341fa; // String | Print ID.
+final String printId = printId_example; // String | Print ID.
 
 try {
     api.deletePrint(printId);
@@ -78,7 +78,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getPrintsApi();
-final String printId = prnt_0a0aa0a0-85ea-42eb-b2f7-4840d7f341fa; // String | Print ID.
+final String printId = printId_example; // String | Print ID.
 final MultipartFile image = BINARY_DATA_HERE; // MultipartFile | The binary blob of the png file.
 final String note = note_example; // String | The caption for the image.
 
@@ -129,7 +129,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getPrintsApi();
-final String printId = prnt_0a0aa0a0-85ea-42eb-b2f7-4840d7f341fa; // String | Print ID.
+final String printId = printId_example; // String | Print ID.
 
 try {
     final response = api.getPrint(printId);

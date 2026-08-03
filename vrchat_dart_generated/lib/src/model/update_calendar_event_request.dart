@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/calendar_event_recurrence.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -40,6 +41,8 @@ class UpdateCalendarEventRequest {
     this.parentId,
 
     this.platforms,
+
+    this.recurrence,
 
     this.roleIds,
 
@@ -99,6 +102,9 @@ class UpdateCalendarEventRequest {
   @JsonKey(name: r'platforms', required: false, includeIfNull: false)
   final List<String>? platforms;
 
+  @JsonKey(name: r'recurrence', required: false, includeIfNull: false)
+  final CalendarEventRecurrence? recurrence;
+
   @JsonKey(name: r'roleIds', required: false, includeIfNull: false)
   final List<String>? roleIds;
 
@@ -140,6 +146,7 @@ class UpdateCalendarEventRequest {
           other.languages == languages &&
           other.parentId == parentId &&
           other.platforms == platforms &&
+          other.recurrence == recurrence &&
           other.roleIds == roleIds &&
           other.sendCreationNotification == sendCreationNotification &&
           other.startsAt == startsAt &&
@@ -161,6 +168,7 @@ class UpdateCalendarEventRequest {
       languages.hashCode +
       parentId.hashCode +
       platforms.hashCode +
+      (recurrence == null ? 0 : recurrence.hashCode) +
       roleIds.hashCode +
       sendCreationNotification.hashCode +
       startsAt.hashCode +

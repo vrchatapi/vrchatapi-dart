@@ -157,8 +157,8 @@ Map<String, dynamic> _$LimitedUserInstanceToJson(
 };
 
 const _$AgeVerificationStatusEnumMap = {
-  AgeVerificationStatus.hidden: '18+',
-  AgeVerificationStatus.plus18: 'hidden',
+  AgeVerificationStatus.plus18: '18+',
+  AgeVerificationStatus.hidden: 'hidden',
   AgeVerificationStatus.verified: 'verified',
 };
 

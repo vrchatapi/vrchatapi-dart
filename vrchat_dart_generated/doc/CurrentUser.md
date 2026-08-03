@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **ageVerificationStatus** | [**AgeVerificationStatus**](AgeVerificationStatus.md) |  | 
 **ageVerified** | **bool** | `true` if, user is age verified (not 18+). | 
 **allowAvatarCopying** | **bool** |  | 
+**appleDetails** | **Object** |  | [optional] 
+**appleId** | **String** |  | [optional] 
 **authToken** | **String** | The auth token for NEWLY REGISTERED ACCOUNTS ONLY (/auth/register) | [optional] 
 **badges** | [**List&lt;Badge&gt;**](Badge.md) |   | [optional] 
 **bio** | **String** |  | 
@@ -38,9 +40,11 @@ Name | Type | Description | Notes
 **googleDetails** | **Object** |  | [optional] 
 **googleId** | **String** |  | [optional] 
 **hasBirthday** | **bool** |  | 
+**hasDiscordFriendsOptOut** | **bool** |  | [optional] 
 **hasEmail** | **bool** |  | 
 **hasLoggedInFromClient** | **bool** |  | 
 **hasPendingEmail** | **bool** |  | 
+**hasSharedConnectionsOptOut** | **bool** |  | [optional] 
 **hideContentFilterSettings** | **bool** |  | [optional] 
 **homeLocation** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | 
 **id** | **String** | A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed. | 
@@ -74,6 +78,8 @@ Name | Type | Description | Notes
 **steamDetails** | **Object** |  | 
 **steamId** | **String** |  | 
 **tags** | **List&lt;String&gt;** |  | 
+**twitchDetails** | **Object** |  | [optional] 
+**twitchId** | **String** |  | [optional] 
 **twoFactorAuthEnabled** | **bool** |  | 
 **twoFactorAuthEnabledDate** | [**DateTime**](DateTime.md) |  | [optional] 
 **unsubscribe** | **bool** |  | 

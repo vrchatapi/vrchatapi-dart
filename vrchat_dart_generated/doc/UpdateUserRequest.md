@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **currentPassword** | **String** |  | [optional] 
 **displayName** | **String** | MUST specify currentPassword as well to change display name | [optional] 
 **email** | **String** |  | [optional] 
+**hasDiscordFriendsOptOut** | **bool** | Opt out of the Discord Friend Connections feature | [optional] 
 **hasSharedConnectionsOptOut** | **bool** | Opt out of the Mutuals feature | [optional] 
 **isBoopingEnabled** | **bool** |  | [optional] 
 **password** | **String** | MUST specify currentPassword as well to change password | [optional] 

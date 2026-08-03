@@ -19,7 +19,10 @@ import 'package:vrchat_dart_generated/src/model/limited_user_groups.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user_search.dart';
 import 'package:vrchat_dart_generated/src/model/mutual_friend.dart';
 import 'package:vrchat_dart_generated/src/model/mutuals.dart';
+import 'package:vrchat_dart_generated/src/model/private_profile.dart';
+import 'package:vrchat_dart_generated/src/model/public_profile.dart';
 import 'package:vrchat_dart_generated/src/model/represented_group.dart';
+import 'package:vrchat_dart_generated/src/model/tutorial_status.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_badge_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_note_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_request.dart';
@@ -775,6 +778,180 @@ class UsersApi {
     );
   }
 
+  /// Get Private Profile
+  /// Get profile information visible to the currently authenticated user.
+  ///
+  /// Parameters:
+  /// * [userId] - Must be a valid user ID.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [PrivateProfile] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<PrivateProfile>> getPrivateProfile({
+    required String userId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/profile/{userId}/private'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    PrivateProfile? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<PrivateProfile, PrivateProfile>(
+              rawData,
+              'PrivateProfile',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<PrivateProfile>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Get Public Profile
+  /// Get a user&#39;s public profile information.
+  ///
+  /// Parameters:
+  /// * [userId] - Must be a valid user ID.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [PublicProfile] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<PublicProfile>> getPublicProfile({
+    required String userId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/profile/{userId}'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    PublicProfile? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<PublicProfile, PublicProfile>(
+              rawData,
+              'PublicProfile',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<PublicProfile>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// Get User by ID
   /// Get public user information about a specific user using their ID.
   ///
@@ -1042,7 +1219,7 @@ class UsersApi {
   ///
   /// Parameters:
   /// * [userId] - Must be a valid user ID.
-  /// * [contentId] - Filter for users' previously submitted feedback, e.g., a groupId, userId, avatarId, etc.
+  /// * [contentId] - Filter for particular content submitted, e.g., a groupId, userId, avatarId, etc.
   /// * [n] - The number of objects to return.
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -1057,7 +1234,7 @@ class UsersApi {
   @Deprecated('This operation has been deprecated')
   Future<Response<List<Feedback>>> getUserFeedback({
     required String userId,
-    bool? contentId,
+    String? contentId,
     int? n = 60,
     int? offset,
     CancelToken? cancelToken,
@@ -1747,6 +1924,93 @@ class UsersApi {
     }
 
     return Response<RepresentedGroup>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Get User Tutorial Status
+  /// Gets the status of completed or outstanding tutorials for the specified user.
+  ///
+  /// Parameters:
+  /// * [userId] - Must be a valid user ID.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [TutorialStatus] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<TutorialStatus>> getUserTutorialStatus({
+    required String userId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/users/{userId}/tutorial'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    TutorialStatus? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<TutorialStatus, TutorialStatus>(
+              rawData,
+              'TutorialStatus',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<TutorialStatus>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

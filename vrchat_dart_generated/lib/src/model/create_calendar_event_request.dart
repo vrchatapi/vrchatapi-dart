@@ -3,7 +3,9 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/calendar_event_recurrence.dart';
 import 'package:vrchat_dart_generated/src/model/calendar_event_category.dart';
+import 'package:vrchat_dart_generated/src/model/calendar_event_occurrence_kind.dart';
 import 'package:vrchat_dart_generated/src/model/calendar_event_access.dart';
 import 'package:vrchat_dart_generated/src/model/calendar_event_platform.dart';
 
@@ -42,9 +44,13 @@ class CreateCalendarEventRequest {
 
     this.languages,
 
+    this.occurrenceKind,
+
     this.parentId,
 
     this.platforms,
+
+    this.recurrence,
 
     this.roleIds,
 
@@ -101,11 +107,17 @@ class CreateCalendarEventRequest {
   @JsonKey(name: r'languages', required: false, includeIfNull: false)
   final List<String>? languages;
 
+  @JsonKey(name: r'occurrenceKind', required: false, includeIfNull: false)
+  final CalendarEventOccurrenceKind? occurrenceKind;
+
   @JsonKey(name: r'parentId', required: false, includeIfNull: false)
   final String? parentId;
 
   @JsonKey(name: r'platforms', required: false, includeIfNull: false)
   final List<CalendarEventPlatform>? platforms;
+
+  @JsonKey(name: r'recurrence', required: false, includeIfNull: false)
+  final CalendarEventRecurrence? recurrence;
 
   @JsonKey(name: r'roleIds', required: false, includeIfNull: false)
   final List<String>? roleIds;
@@ -147,8 +159,10 @@ class CreateCalendarEventRequest {
           other.imageId == imageId &&
           other.isDraft == isDraft &&
           other.languages == languages &&
+          other.occurrenceKind == occurrenceKind &&
           other.parentId == parentId &&
           other.platforms == platforms &&
+          other.recurrence == recurrence &&
           other.roleIds == roleIds &&
           other.sendCreationNotification == sendCreationNotification &&
           other.startsAt == startsAt &&
@@ -169,8 +183,10 @@ class CreateCalendarEventRequest {
       imageId.hashCode +
       isDraft.hashCode +
       languages.hashCode +
+      occurrenceKind.hashCode +
       parentId.hashCode +
       platforms.hashCode +
+      (recurrence == null ? 0 : recurrence.hashCode) +
       roleIds.hashCode +
       sendCreationNotification.hashCode +
       startsAt.hashCode +

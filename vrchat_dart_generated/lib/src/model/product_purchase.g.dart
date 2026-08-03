@@ -58,9 +58,17 @@ ProductPurchase _$ProductPurchaseFromJson(
     isGift: $checkedConvert('isGift', (v) => v as bool),
     isReceiver: $checkedConvert('isReceiver', (v) => v as bool),
     isSeller: $checkedConvert('isSeller', (v) => v as bool),
+    ledgerTransactionId: $checkedConvert(
+      'ledgerTransactionId',
+      (v) => (v as num?)?.toInt(),
+    ),
     listingCurrentlyAvailable: $checkedConvert(
       'listingCurrentlyAvailable',
       (v) => v as bool,
+    ),
+    listingDescription: $checkedConvert(
+      'listingDescription',
+      (v) => v as String?,
     ),
     listingDisplayName: $checkedConvert(
       'listingDisplayName',
@@ -75,7 +83,11 @@ ProductPurchase _$ProductPurchaseFromJson(
     ),
     products: $checkedConvert(
       'products',
-      (v) => (v as List<dynamic>).map((e) => e as Object).toList(),
+      (v) => (v as List<dynamic>)
+          .map(
+            (e) => ProductPurchaseProduct.fromJson(e as Map<String, dynamic>),
+          )
+          .toList(),
     ),
     purchaseActive: $checkedConvert('purchaseActive', (v) => v as bool),
     purchaseContext: $checkedConvert(
@@ -100,8 +112,9 @@ ProductPurchase _$ProductPurchaseFromJson(
     ),
     purchaseEndDate: $checkedConvert(
       'purchaseEndDate',
-      (v) => DateTime.parse(v as String),
+      (v) => v == null ? null : DateTime.parse(v as String),
     ),
+    purchaseFee: $checkedConvert('purchaseFee', (v) => (v as num?)?.toInt()),
     purchaseId: $checkedConvert('purchaseId', (v) => v as String),
     purchaseLatest: $checkedConvert('purchaseLatest', (v) => v as bool),
     purchasePrice: $checkedConvert('purchasePrice', (v) => (v as num).toInt()),
@@ -111,13 +124,17 @@ ProductPurchase _$ProductPurchaseFromJson(
     ),
     purchaseStartDate: $checkedConvert(
       'purchaseStartDate',
-      (v) => DateTime.parse(v as String),
+      (v) => v == null ? null : DateTime.parse(v as String),
     ),
     purchaseToken: $checkedConvert('purchaseToken', (v) => v),
     purchaseType: $checkedConvert('purchaseType', (v) => v as String),
     purchaseUnitPrice: $checkedConvert(
       'purchaseUnitPrice',
       (v) => (v as num).toInt(),
+    ),
+    purchaseValue: $checkedConvert(
+      'purchaseValue',
+      (v) => (v as num?)?.toInt(),
     ),
     receiverDisplayName: $checkedConvert(
       'receiverDisplayName',
@@ -143,28 +160,32 @@ Map<String, dynamic> _$ProductPurchaseToJson(ProductPurchase instance) =>
       'isGift': instance.isGift,
       'isReceiver': instance.isReceiver,
       'isSeller': instance.isSeller,
+      'ledgerTransactionId': ?instance.ledgerTransactionId,
       'listingCurrentlyAvailable': instance.listingCurrentlyAvailable,
+      'listingDescription': ?instance.listingDescription,
       'listingDisplayName': instance.listingDisplayName,
       'listingId': instance.listingId,
       'listingImageId': instance.listingImageId,
       'listingSubtitle': instance.listingSubtitle,
       'listingType': _$ProductListingTypeEnumMap[instance.listingType]!,
-      'products': instance.products,
+      'products': instance.products.map((e) => e.toJson()).toList(),
       'purchaseActive': instance.purchaseActive,
       'purchaseContext': instance.purchaseContext.toJson(),
       'purchaseCurrentStatus': instance.purchaseCurrentStatus,
       'purchaseDate': instance.purchaseDate.toIso8601String(),
       'purchaseDuration': ?instance.purchaseDuration,
       'purchaseDurationType': ?instance.purchaseDurationType,
-      'purchaseEndDate': instance.purchaseEndDate.toIso8601String(),
+      'purchaseEndDate': instance.purchaseEndDate?.toIso8601String(),
+      'purchaseFee': ?instance.purchaseFee,
       'purchaseId': instance.purchaseId,
       'purchaseLatest': instance.purchaseLatest,
       'purchasePrice': instance.purchasePrice,
       'purchaseQuantity': instance.purchaseQuantity,
-      'purchaseStartDate': instance.purchaseStartDate.toIso8601String(),
+      'purchaseStartDate': instance.purchaseStartDate?.toIso8601String(),
       'purchaseToken': instance.purchaseToken,
       'purchaseType': instance.purchaseType,
       'purchaseUnitPrice': instance.purchaseUnitPrice,
+      'purchaseValue': ?instance.purchaseValue,
       'receiverDisplayName': instance.receiverDisplayName,
       'receiverId': instance.receiverId,
       'recurrable': instance.recurrable,
@@ -177,6 +198,7 @@ Map<String, dynamic> _$ProductPurchaseToJson(ProductPurchase instance) =>
 
 const _$ProductListingTypeEnumMap = {
   ProductListingType.duration: 'duration',
+  ProductListingType.instant: 'instant',
   ProductListingType.permanent: 'permanent',
   ProductListingType.subscription: 'subscription',
 };

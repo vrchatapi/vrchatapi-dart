@@ -16,19 +16,35 @@ part 'product_purchase_purchase_context.g.dart';
 )
 class ProductPurchasePurchaseContext {
   /// Returns a new [ProductPurchasePurchaseContext] instance.
-  ProductPurchasePurchaseContext({this.locationType});
+  ProductPurchasePurchaseContext({
+    this.locationType,
+
+    this.worldId,
+
+    this.worldName,
+  });
 
   @JsonKey(name: r'locationType', required: false, includeIfNull: false)
   final String? locationType;
+
+  /// WorldID be \"offline\" on User profiles if you are not friends with that user.
+  @JsonKey(name: r'worldId', required: false, includeIfNull: false)
+  final String? worldId;
+
+  @JsonKey(name: r'worldName', required: false, includeIfNull: false)
+  final String? worldName;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is ProductPurchasePurchaseContext &&
-          other.locationType == locationType;
+          other.locationType == locationType &&
+          other.worldId == worldId &&
+          other.worldName == worldName;
 
   @override
-  int get hashCode => locationType.hashCode;
+  int get hashCode =>
+      locationType.hashCode + worldId.hashCode + worldName.hashCode;
 
   factory ProductPurchasePurchaseContext.fromJson(Map<String, dynamic> json) =>
       _$ProductPurchasePurchaseContextFromJson(json);

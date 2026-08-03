@@ -20,6 +20,8 @@ import 'package:vrchat_dart_generated/src/model/inventory_item_type.dart';
 import 'package:vrchat_dart_generated/src/model/inventory_spawn.dart';
 import 'package:vrchat_dart_generated/src/model/inventory_template.dart';
 import 'package:vrchat_dart_generated/src/model/ok_status.dart';
+import 'package:vrchat_dart_generated/src/model/reward_redemption_request.dart';
+import 'package:vrchat_dart_generated/src/model/reward_redemption_result.dart';
 import 'package:vrchat_dart_generated/src/model/share_inventory_item_direct_request.dart';
 import 'package:vrchat_dart_generated/src/model/success_flag.dart';
 import 'package:vrchat_dart_generated/src/model/update_inventory_item_request.dart';
@@ -849,6 +851,103 @@ class InventoryApi {
     }
 
     return Response<InventoryItem>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Redeem Reward
+  /// Redeem a reward for the currently logged in user.
+  ///
+  /// Parameters:
+  /// * [rewardRedemptionRequest]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [List<RewardRedemptionResult>] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<List<RewardRedemptionResult>>> redeemReward({
+    required RewardRedemptionRequest rewardRedemptionRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/reward/redeem';
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      _bodyData = jsonEncode(rewardRedemptionRequest);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(_dio.options, _path),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    List<RewardRedemptionResult>? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<RewardRedemptionResult>, RewardRedemptionResult>(
+              rawData,
+              'List<RewardRedemptionResult>',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<List<RewardRedemptionResult>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

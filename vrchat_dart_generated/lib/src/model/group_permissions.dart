@@ -24,6 +24,12 @@ enum GroupPermissions {
   group_galleries_manage(r'group-galleries-manage'),
   @JsonValue(r'group-instance-age-gated-create')
   group_instance_age_gated_create(r'group-instance-age-gated-create'),
+  @JsonValue(r'group-instance-announcement-create')
+  group_instance_announcement_create(r'group-instance-announcement-create'),
+  @JsonValue(r'group-instance-bypass-avatar-performance')
+  group_instance_bypass_avatar_performance(
+    r'group-instance-bypass-avatar-performance',
+  ),
   @JsonValue(r'group-instance-calendar-link')
   group_instance_calendar_link(r'group-instance-calendar-link'),
   @JsonValue(r'group-instance-join')

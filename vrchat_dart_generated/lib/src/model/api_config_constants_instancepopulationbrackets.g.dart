@@ -28,7 +28,7 @@ _$APIConfigConstantsINSTANCEPOPULATIONBRACKETSFromJson(
         'FEW',
         (v) => v == null
             ? null
-            : APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED.fromJson(
+            : APIConfigConstantsINSTANCEPOPULATIONBRACKETSFEW.fromJson(
                 v as Map<String, dynamic>,
               ),
       ),
@@ -36,7 +36,7 @@ _$APIConfigConstantsINSTANCEPOPULATIONBRACKETSFromJson(
         'MANY',
         (v) => v == null
             ? null
-            : APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED.fromJson(
+            : APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY.fromJson(
                 v as Map<String, dynamic>,
               ),
       ),

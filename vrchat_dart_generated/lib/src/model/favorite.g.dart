@@ -34,5 +34,6 @@ Map<String, dynamic> _$FavoriteToJson(Favorite instance) => <String, dynamic>{
 const _$FavoriteTypeEnumMap = {
   FavoriteType.avatar: 'avatar',
   FavoriteType.friend: 'friend',
+  FavoriteType.vrcPlusWorld: 'vrcPlusWorld',
   FavoriteType.world: 'world',
 };

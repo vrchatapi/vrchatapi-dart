@@ -18,6 +18,8 @@ Method | HTTP request | Description
 [**getMutualFriends**](UsersApi.md#getmutualfriends) | **GET** /users/{userId}/mutuals/friends | Get User Mutual Friends
 [**getMutualGroups**](UsersApi.md#getmutualgroups) | **GET** /users/{userId}/mutuals/groups | Get User Mutual Groups
 [**getMutuals**](UsersApi.md#getmutuals) | **GET** /users/{userId}/mutuals | Get User Mutuals
+[**getPrivateProfile**](UsersApi.md#getprivateprofile) | **GET** /profile/{userId}/private | Get Private Profile
+[**getPublicProfile**](UsersApi.md#getpublicprofile) | **GET** /profile/{userId} | Get Public Profile
 [**getUser**](UsersApi.md#getuser) | **GET** /users/{userId} | Get User by ID
 [**getUserAllGroupPermissions**](UsersApi.md#getuserallgrouppermissions) | **GET** /users/{userId}/groups/permissions | Get user&#39;s permissions for all joined groups.
 [**getUserByName**](UsersApi.md#getuserbyname) | **GET** /users/{username}/name | Get User by Username
@@ -29,6 +31,7 @@ Method | HTTP request | Description
 [**getUserNote**](UsersApi.md#getusernote) | **GET** /userNotes/{userNoteId} | Get User Note
 [**getUserNotes**](UsersApi.md#getusernotes) | **GET** /userNotes | Get User Notes
 [**getUserRepresentedGroup**](UsersApi.md#getuserrepresentedgroup) | **GET** /users/{userId}/groups/represented | Get user&#39;s current represented group
+[**getUserTutorialStatus**](UsersApi.md#getusertutorialstatus) | **GET** /users/{userId}/tutorial | Get User Tutorial Status
 [**removeTags**](UsersApi.md#removetags) | **POST** /users/{userId}/removeTags | Remove User Tags
 [**searchUsers**](UsersApi.md#searchusers) | **GET** /users | Search All Users
 [**updateBadge**](UsersApi.md#updatebadge) | **PUT** /users/{userId}/badges/{badgeId} | Update User Badge
@@ -470,6 +473,100 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getPrivateProfile**
+> PrivateProfile getPrivateProfile(userId)
+
+Get Private Profile
+
+Get profile information visible to the currently authenticated user.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getUsersApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+
+try {
+    final response = api.getPrivateProfile(userId);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling UsersApi->getPrivateProfile: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+
+### Return type
+
+[**PrivateProfile**](PrivateProfile.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getPublicProfile**
+> PublicProfile getPublicProfile(userId)
+
+Get Public Profile
+
+Get a user's public profile information.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getUsersApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+
+try {
+    final response = api.getPublicProfile(userId);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling UsersApi->getPublicProfile: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+
+### Return type
+
+[**PublicProfile**](PublicProfile.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getUser**
 > User getUser(userId)
 
@@ -630,7 +727,7 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getUsersApi();
 final String userId = userId_example; // String | Must be a valid user ID.
-final bool contentId = true; // bool | Filter for users' previously submitted feedback, e.g., a groupId, userId, avatarId, etc.
+final String contentId = contentId_example; // String | Filter for particular content submitted, e.g., a groupId, userId, avatarId, etc.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 
@@ -647,7 +744,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**| Must be a valid user ID. | 
- **contentId** | **bool**| Filter for users' previously submitted feedback, e.g., a groupId, userId, avatarId, etc. | [optional] 
+ **contentId** | **String**| Filter for particular content submitted, e.g., a groupId, userId, avatarId, etc. | [optional] 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
 
@@ -730,7 +827,7 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getUsersApi();
 final String userId = userId_example; // String | Must be a valid user ID.
-final String groupId = grp_00000000-0000-0000-0000-000000000000; // String | Must be a valid group ID.
+final String groupId = groupId_example; // String | Must be a valid group ID.
 
 try {
     final response = api.getUserGroupInstancesForGroup(userId, groupId);
@@ -987,6 +1084,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RepresentedGroup**](RepresentedGroup.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getUserTutorialStatus**
+> TutorialStatus getUserTutorialStatus(userId)
+
+Get User Tutorial Status
+
+Gets the status of completed or outstanding tutorials for the specified user.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getUsersApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+
+try {
+    final response = api.getUserTutorialStatus(userId);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling UsersApi->getUserTutorialStatus: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+
+### Return type
+
+[**TutorialStatus**](TutorialStatus.md)
 
 ### Authorization
 

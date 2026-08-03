@@ -35,7 +35,12 @@ ProductListing _$ProductListingFromJson(Map<String, dynamic> json) =>
       );
       final val = ProductListing(
         active: $checkedConvert('active', (v) => v as bool),
+        archived: $checkedConvert('archived', (v) => v as bool?),
         buyerRefundable: $checkedConvert('buyerRefundable', (v) => v as bool),
+        created: $checkedConvert(
+          'created',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
         description: $checkedConvert('description', (v) => v as String),
         displayName: $checkedConvert('displayName', (v) => v as String),
         duration: $checkedConvert('duration', (v) => (v as num?)?.toInt()),
@@ -81,6 +86,14 @@ ProductListing _$ProductListingFromJson(Map<String, dynamic> json) =>
           'products',
           (v) => (v as List<dynamic>).map((e) => e as Object).toList(),
         ),
+        purchaseCount: $checkedConvert(
+          'purchaseCount',
+          (v) => (v as num?)?.toInt(),
+        ),
+        purchaseCountQuantity: $checkedConvert(
+          'purchaseCountQuantity',
+          (v) => (v as num?)?.toInt(),
+        ),
         quantifiable: $checkedConvert('quantifiable', (v) => v as bool?),
         recurrable: $checkedConvert('recurrable', (v) => v as bool),
         refundable: $checkedConvert('refundable', (v) => v as bool),
@@ -100,6 +113,10 @@ ProductListing _$ProductListingFromJson(Map<String, dynamic> json) =>
           'tags',
           (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
         ),
+        updated: $checkedConvert(
+          'updated',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
         vrcPlusDiscountPrice: $checkedConvert(
           'vrcPlusDiscountPrice',
           (v) => (v as num?)?.toInt(),
@@ -116,7 +133,9 @@ Map<String, dynamic> _$ProductListingToJson(
   ProductListing instance,
 ) => <String, dynamic>{
   'active': instance.active,
+  'archived': ?instance.archived,
   'buyerRefundable': instance.buyerRefundable,
+  'created': ?instance.created?.toIso8601String(),
   'description': instance.description,
   'displayName': instance.displayName,
   'duration': ?instance.duration,
@@ -139,6 +158,8 @@ Map<String, dynamic> _$ProductListingToJson(
   'productIds': instance.productIds,
   'productType': _$ProductTypeEnumMap[instance.productType]!,
   'products': instance.products,
+  'purchaseCount': ?instance.purchaseCount,
+  'purchaseCountQuantity': ?instance.purchaseCountQuantity,
   'quantifiable': ?instance.quantifiable,
   'recurrable': instance.recurrable,
   'refundable': instance.refundable,
@@ -149,12 +170,14 @@ Map<String, dynamic> _$ProductListingToJson(
   'storeIds': instance.storeIds,
   'subtitle': ?instance.subtitle,
   'tags': ?instance.tags,
+  'updated': ?instance.updated?.toIso8601String(),
   'vrcPlusDiscountPrice': ?instance.vrcPlusDiscountPrice,
   'whenToExpire': ?instance.whenToExpire?.toIso8601String(),
 };
 
 const _$ProductListingTypeEnumMap = {
   ProductListingType.duration: 'duration',
+  ProductListingType.instant: 'instant',
   ProductListingType.permanent: 'permanent',
   ProductListingType.subscription: 'subscription',
 };

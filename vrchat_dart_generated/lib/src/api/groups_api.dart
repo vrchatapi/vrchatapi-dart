@@ -24,7 +24,6 @@ import 'package:vrchat_dart_generated/src/model/group_announcement.dart';
 import 'package:vrchat_dart_generated/src/model/group_gallery.dart';
 import 'package:vrchat_dart_generated/src/model/group_gallery_image.dart';
 import 'package:vrchat_dart_generated/src/model/group_instance.dart';
-import 'package:vrchat_dart_generated/src/model/group_limited_member.dart';
 import 'package:vrchat_dart_generated/src/model/group_member.dart';
 import 'package:vrchat_dart_generated/src/model/group_permission.dart';
 import 'package:vrchat_dart_generated/src/model/group_post.dart';
@@ -2663,7 +2662,7 @@ class GroupsApi {
   }
 
   /// Get Group Member
-  /// Returns a LimitedGroup Member.
+  /// Returns a GroupMember.
   ///
   /// Parameters:
   /// * [groupId] - Must be a valid group ID.
@@ -2675,9 +2674,9 @@ class GroupsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [GroupLimitedMember] as data
+  /// Returns a [Future] containing a [Response] with a [GroupMember] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GroupLimitedMember>> getGroupMember({
+  Future<Response<GroupMember>> getGroupMember({
     required String groupId,
     required String userId,
     CancelToken? cancelToken,
@@ -2725,15 +2724,15 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GroupLimitedMember? _responseData;
+    GroupMember? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GroupLimitedMember, GroupLimitedMember>(
+          : deserialize<GroupMember, GroupMember>(
               rawData,
-              'GroupLimitedMember',
+              'GroupMember',
               growable: true,
             );
     } catch (error, stackTrace) {
@@ -2746,7 +2745,7 @@ class GroupsApi {
       );
     }
 
-    return Response<GroupLimitedMember>(
+    return Response<GroupMember>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -3409,7 +3408,7 @@ class GroupsApi {
   }
 
   /// Initiate or Accept Group Transfer
-  /// To initiate, must be logged in as the current owner and specify the transferTargetId in the body. To accept, must be logged in as the user targetted by a pending transfer, no body is required.
+  /// To initiate, must be logged in as the current owner and specify the transferTargetId in the body. To accept, must be logged in as the user targeted by a pending transfer, no body is required.
   ///
   /// Parameters:
   /// * [groupId] - Must be a valid group ID.
@@ -4465,9 +4464,9 @@ class GroupsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [GroupLimitedMember] as data
+  /// Returns a [Future] containing a [Response] with a [GroupMember] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GroupLimitedMember>> updateGroupMember({
+  Future<Response<GroupMember>> updateGroupMember({
     required String groupId,
     required String userId,
     UpdateGroupMemberRequest? updateGroupMemberRequest,
@@ -4531,15 +4530,15 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GroupLimitedMember? _responseData;
+    GroupMember? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GroupLimitedMember, GroupLimitedMember>(
+          : deserialize<GroupMember, GroupMember>(
               rawData,
-              'GroupLimitedMember',
+              'GroupMember',
               growable: true,
             );
     } catch (error, stackTrace) {
@@ -4552,7 +4551,7 @@ class GroupsApi {
       );
     }
 
-    return Response<GroupLimitedMember>(
+    return Response<GroupMember>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

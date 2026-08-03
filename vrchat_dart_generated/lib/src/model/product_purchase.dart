@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/product_purchase_product.dart';
 import 'package:vrchat_dart_generated/src/model/product_purchase_purchase_context.dart';
 import 'package:vrchat_dart_generated/src/model/product_listing_type.dart';
 
@@ -33,7 +34,11 @@ class ProductPurchase {
 
     required this.isSeller,
 
+    this.ledgerTransactionId,
+
     required this.listingCurrentlyAvailable,
+
+    this.listingDescription,
 
     required this.listingDisplayName,
 
@@ -61,6 +66,8 @@ class ProductPurchase {
 
     required this.purchaseEndDate,
 
+    this.purchaseFee,
+
     required this.purchaseId,
 
     required this.purchaseLatest,
@@ -76,6 +83,8 @@ class ProductPurchase {
     required this.purchaseType,
 
     required this.purchaseUnitPrice,
+
+    this.purchaseValue,
 
     required this.receiverDisplayName,
 
@@ -116,12 +125,18 @@ class ProductPurchase {
   @JsonKey(name: r'isSeller', required: true, includeIfNull: false)
   final bool isSeller;
 
+  @JsonKey(name: r'ledgerTransactionId', required: false, includeIfNull: false)
+  final int? ledgerTransactionId;
+
   @JsonKey(
     name: r'listingCurrentlyAvailable',
     required: true,
     includeIfNull: false,
   )
   final bool listingCurrentlyAvailable;
+
+  @JsonKey(name: r'listingDescription', required: false, includeIfNull: false)
+  final String? listingDescription;
 
   @JsonKey(name: r'listingDisplayName', required: true, includeIfNull: false)
   final String listingDisplayName;
@@ -139,7 +154,7 @@ class ProductPurchase {
   final ProductListingType listingType;
 
   @JsonKey(name: r'products', required: true, includeIfNull: false)
-  final List<Object> products;
+  final List<ProductPurchaseProduct> products;
 
   @JsonKey(name: r'purchaseActive', required: true, includeIfNull: false)
   final bool purchaseActive;
@@ -159,8 +174,11 @@ class ProductPurchase {
   @JsonKey(name: r'purchaseDurationType', required: false, includeIfNull: false)
   final String? purchaseDurationType;
 
-  @JsonKey(name: r'purchaseEndDate', required: true, includeIfNull: false)
-  final DateTime purchaseEndDate;
+  @JsonKey(name: r'purchaseEndDate', required: true, includeIfNull: true)
+  final DateTime? purchaseEndDate;
+
+  @JsonKey(name: r'purchaseFee', required: false, includeIfNull: false)
+  final int? purchaseFee;
 
   @JsonKey(name: r'purchaseId', required: true, includeIfNull: false)
   final String purchaseId;
@@ -174,8 +192,8 @@ class ProductPurchase {
   @JsonKey(name: r'purchaseQuantity', required: true, includeIfNull: false)
   final int purchaseQuantity;
 
-  @JsonKey(name: r'purchaseStartDate', required: true, includeIfNull: false)
-  final DateTime purchaseStartDate;
+  @JsonKey(name: r'purchaseStartDate', required: true, includeIfNull: true)
+  final DateTime? purchaseStartDate;
 
   @JsonKey(name: r'purchaseToken', required: true, includeIfNull: true)
   final Object? purchaseToken;
@@ -185,6 +203,9 @@ class ProductPurchase {
 
   @JsonKey(name: r'purchaseUnitPrice', required: true, includeIfNull: false)
   final int purchaseUnitPrice;
+
+  @JsonKey(name: r'purchaseValue', required: false, includeIfNull: false)
+  final int? purchaseValue;
 
   @JsonKey(name: r'receiverDisplayName', required: true, includeIfNull: false)
   final String receiverDisplayName;
@@ -223,7 +244,9 @@ class ProductPurchase {
           other.isGift == isGift &&
           other.isReceiver == isReceiver &&
           other.isSeller == isSeller &&
+          other.ledgerTransactionId == ledgerTransactionId &&
           other.listingCurrentlyAvailable == listingCurrentlyAvailable &&
+          other.listingDescription == listingDescription &&
           other.listingDisplayName == listingDisplayName &&
           other.listingId == listingId &&
           other.listingImageId == listingImageId &&
@@ -237,6 +260,7 @@ class ProductPurchase {
           other.purchaseDuration == purchaseDuration &&
           other.purchaseDurationType == purchaseDurationType &&
           other.purchaseEndDate == purchaseEndDate &&
+          other.purchaseFee == purchaseFee &&
           other.purchaseId == purchaseId &&
           other.purchaseLatest == purchaseLatest &&
           other.purchasePrice == purchasePrice &&
@@ -245,6 +269,7 @@ class ProductPurchase {
           other.purchaseToken == purchaseToken &&
           other.purchaseType == purchaseType &&
           other.purchaseUnitPrice == purchaseUnitPrice &&
+          other.purchaseValue == purchaseValue &&
           other.receiverDisplayName == receiverDisplayName &&
           other.receiverId == receiverId &&
           other.recurrable == recurrable &&
@@ -263,7 +288,9 @@ class ProductPurchase {
       isGift.hashCode +
       isReceiver.hashCode +
       isSeller.hashCode +
+      ledgerTransactionId.hashCode +
       listingCurrentlyAvailable.hashCode +
+      listingDescription.hashCode +
       listingDisplayName.hashCode +
       listingId.hashCode +
       listingImageId.hashCode +
@@ -276,15 +303,17 @@ class ProductPurchase {
       purchaseDate.hashCode +
       purchaseDuration.hashCode +
       purchaseDurationType.hashCode +
-      purchaseEndDate.hashCode +
+      (purchaseEndDate == null ? 0 : purchaseEndDate.hashCode) +
+      purchaseFee.hashCode +
       purchaseId.hashCode +
       purchaseLatest.hashCode +
       purchasePrice.hashCode +
       purchaseQuantity.hashCode +
-      purchaseStartDate.hashCode +
+      (purchaseStartDate == null ? 0 : purchaseStartDate.hashCode) +
       (purchaseToken == null ? 0 : purchaseToken.hashCode) +
       purchaseType.hashCode +
       purchaseUnitPrice.hashCode +
+      purchaseValue.hashCode +
       receiverDisplayName.hashCode +
       receiverId.hashCode +
       recurrable.hashCode +

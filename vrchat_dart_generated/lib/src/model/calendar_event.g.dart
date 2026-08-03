@@ -68,6 +68,10 @@ CalendarEvent _$CalendarEventFromJson(
       'languages',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
+    occurrenceKind: $checkedConvert(
+      'occurrenceKind',
+      (v) => $enumDecodeNullable(_$CalendarEventOccurrenceKindEnumMap, v),
+    ),
     ownerId: $checkedConvert('ownerId', (v) => v as String?),
     platforms: $checkedConvert(
       'platforms',
@@ -75,10 +79,17 @@ CalendarEvent _$CalendarEventFromJson(
           ?.map((e) => $enumDecode(_$CalendarEventPlatformEnumMap, e))
           .toList(),
     ),
+    recurrence: $checkedConvert(
+      'recurrence',
+      (v) => v == null
+          ? null
+          : CalendarEventRecurrence.fromJson(v as Map<String, dynamic>),
+    ),
     roleIds: $checkedConvert(
       'roleIds',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
+    seriesId: $checkedConvert('seriesId', (v) => v as String?),
     startsAt: $checkedConvert('startsAt', (v) => DateTime.parse(v as String)),
     tags: $checkedConvert(
       'tags',
@@ -123,11 +134,15 @@ Map<String, dynamic> _$CalendarEventToJson(CalendarEvent instance) =>
       'interestedUserCount': ?instance.interestedUserCount,
       'isDraft': ?instance.isDraft,
       'languages': ?instance.languages,
+      'occurrenceKind':
+          ?_$CalendarEventOccurrenceKindEnumMap[instance.occurrenceKind],
       'ownerId': ?instance.ownerId,
       'platforms': ?instance.platforms
           ?.map((e) => _$CalendarEventPlatformEnumMap[e]!)
           .toList(),
+      'recurrence': ?instance.recurrence?.toJson(),
       'roleIds': ?instance.roleIds,
+      'seriesId': ?instance.seriesId,
       'startsAt': instance.startsAt.toIso8601String(),
       'tags': ?instance.tags,
       'title': instance.title,
@@ -156,6 +171,12 @@ const _$CalendarEventCategoryEnumMap = {
   CalendarEventCategory.performance: 'performance',
   CalendarEventCategory.roleplaying: 'roleplaying',
   CalendarEventCategory.wellness: 'wellness',
+};
+
+const _$CalendarEventOccurrenceKindEnumMap = {
+  CalendarEventOccurrenceKind.occurrence: 'occurrence',
+  CalendarEventOccurrenceKind.series: 'series',
+  CalendarEventOccurrenceKind.single: 'single',
 };
 
 const _$CalendarEventPlatformEnumMap = {

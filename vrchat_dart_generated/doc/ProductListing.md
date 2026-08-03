@@ -9,7 +9,9 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **bool** |  | 
+**archived** | **bool** |  | [optional] 
 **buyerRefundable** | **bool** |  | 
+**created** | [**DateTime**](DateTime.md) |  | [optional] 
 **description** | **String** |  | 
 **displayName** | **String** |  | 
 **duration** | **int** |  | [optional] 
@@ -30,6 +32,8 @@ Name | Type | Description | Notes
 **productIds** | **List&lt;String&gt;** |  | 
 **productType** | [**ProductType**](ProductType.md) |  | 
 **products** | **List&lt;Object&gt;** |  | 
+**purchaseCount** | **int** |  | [optional] 
+**purchaseCountQuantity** | **int** |  | [optional] 
 **quantifiable** | **bool** |  | [optional] 
 **recurrable** | **bool** |  | 
 **refundable** | **bool** |  | 
@@ -40,6 +44,7 @@ Name | Type | Description | Notes
 **storeIds** | **List&lt;String&gt;** |  | 
 **subtitle** | **String** |  | [optional] 
 **tags** | **List&lt;String&gt;** |  | [optional] 
+**updated** | [**DateTime**](DateTime.md) |  | [optional] 
 **vrcPlusDiscountPrice** | **int** |  | [optional] 
 **whenToExpire** | [**DateTime**](DateTime.md) |  | [optional] 
 

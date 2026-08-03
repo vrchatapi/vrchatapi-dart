@@ -19,6 +19,12 @@ part 'limited_user_search.g.dart';
 class LimitedUserSearch {
   /// Returns a new [LimitedUserSearch] instance.
   LimitedUserSearch({
+    this.bannerColor,
+
+    this.bannerType,
+
+    this.bannerUrl,
+
     this.bio,
 
     this.bioLinks,
@@ -33,11 +39,19 @@ class LimitedUserSearch {
 
     required this.displayName,
 
+    this.iconFrame,
+
+    this.iconUrl,
+
     required this.id,
 
     required this.isFriend,
 
     required this.lastPlatform,
+
+    this.nameplateEffect,
+
+    this.profileEffect,
 
     this.profilePicOverride,
 
@@ -51,6 +65,15 @@ class LimitedUserSearch {
 
     this.userIcon,
   });
+
+  @JsonKey(name: r'bannerColor', required: false, includeIfNull: false)
+  final String? bannerColor;
+
+  @JsonKey(name: r'bannerType', required: false, includeIfNull: false)
+  final String? bannerType;
+
+  @JsonKey(name: r'bannerUrl', required: false, includeIfNull: false)
+  final String? bannerUrl;
 
   @JsonKey(name: r'bio', required: false, includeIfNull: false)
   final String? bio;
@@ -80,6 +103,12 @@ class LimitedUserSearch {
   @JsonKey(name: r'displayName', required: true, includeIfNull: false)
   final String displayName;
 
+  @JsonKey(name: r'iconFrame', required: false, includeIfNull: false)
+  final String? iconFrame;
+
+  @JsonKey(name: r'iconUrl', required: false, includeIfNull: false)
+  final String? iconUrl;
+
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
@@ -90,6 +119,12 @@ class LimitedUserSearch {
   /// This is normally `android`, `ios`, `standalonewindows`, `web`, or the empty value ``, but also supposedly can be any random Unity version such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
   @JsonKey(name: r'last_platform', required: true, includeIfNull: false)
   final String lastPlatform;
+
+  @JsonKey(name: r'nameplateEffect', required: false, includeIfNull: false)
+  final String? nameplateEffect;
+
+  @JsonKey(name: r'profileEffect', required: false, includeIfNull: false)
+  final String? profileEffect;
 
   @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
   final String? profilePicOverride;
@@ -114,6 +149,9 @@ class LimitedUserSearch {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is LimitedUserSearch &&
+          other.bannerColor == bannerColor &&
+          other.bannerType == bannerType &&
+          other.bannerUrl == bannerUrl &&
           other.bio == bio &&
           other.bioLinks == bioLinks &&
           other.currentAvatarImageUrl == currentAvatarImageUrl &&
@@ -122,9 +160,13 @@ class LimitedUserSearch {
               currentAvatarThumbnailImageUrl &&
           other.developerType == developerType &&
           other.displayName == displayName &&
+          other.iconFrame == iconFrame &&
+          other.iconUrl == iconUrl &&
           other.id == id &&
           other.isFriend == isFriend &&
           other.lastPlatform == lastPlatform &&
+          other.nameplateEffect == nameplateEffect &&
+          other.profileEffect == profileEffect &&
           other.profilePicOverride == profilePicOverride &&
           other.pronouns == pronouns &&
           other.status == status &&
@@ -134,6 +176,9 @@ class LimitedUserSearch {
 
   @override
   int get hashCode =>
+      bannerColor.hashCode +
+      bannerType.hashCode +
+      bannerUrl.hashCode +
       bio.hashCode +
       bioLinks.hashCode +
       currentAvatarImageUrl.hashCode +
@@ -141,9 +186,13 @@ class LimitedUserSearch {
       currentAvatarThumbnailImageUrl.hashCode +
       developerType.hashCode +
       displayName.hashCode +
+      iconFrame.hashCode +
+      iconUrl.hashCode +
       id.hashCode +
       isFriend.hashCode +
       lastPlatform.hashCode +
+      nameplateEffect.hashCode +
+      profileEffect.hashCode +
       profilePicOverride.hashCode +
       pronouns.hashCode +
       status.hashCode +

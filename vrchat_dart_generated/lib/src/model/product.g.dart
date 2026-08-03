@@ -8,67 +8,75 @@ part of 'product.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Product _$ProductFromJson(Map<String, dynamic> json) =>
-    $checkedCreate('Product', json, ($checkedConvert) {
-      $checkKeys(
-        json,
-        requiredKeys: const [
-          'description',
-          'displayName',
-          'id',
-          'imageId',
-          'parentListings',
-          'productType',
-          'sellerDisplayName',
-          'sellerId',
-          'tags',
-        ],
-      );
-      final val = Product(
-        archived: $checkedConvert('archived', (v) => v as bool?),
-        created: $checkedConvert(
-          'created',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        description: $checkedConvert('description', (v) => v as String),
-        displayName: $checkedConvert('displayName', (v) => v as String),
-        groupAccess: $checkedConvert('groupAccess', (v) => v as bool? ?? false),
-        groupAccessRemove: $checkedConvert(
-          'groupAccessRemove',
-          (v) => v as bool? ?? false,
-        ),
-        groupId: $checkedConvert('groupId', (v) => v as String?),
-        groupRoleId: $checkedConvert('groupRoleId', (v) => v as String?),
-        id: $checkedConvert('id', (v) => v as String),
-        imageId: $checkedConvert('imageId', (v) => v as String),
-        parentListings: $checkedConvert(
-          'parentListings',
-          (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-        ),
-        productType: $checkedConvert(
-          'productType',
-          (v) => $enumDecode(_$ProductTypeEnumMap, v),
-        ),
-        sellerDisplayName: $checkedConvert(
-          'sellerDisplayName',
-          (v) => v as String,
-        ),
-        sellerId: $checkedConvert('sellerId', (v) => v as String),
-        tags: $checkedConvert(
-          'tags',
-          (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-        ),
-        updated: $checkedConvert(
-          'updated',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        useForSubscriberList: $checkedConvert(
-          'useForSubscriberList',
-          (v) => v as bool? ?? false,
-        ),
-      );
-      return val;
-    });
+Product _$ProductFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('Product', json, ($checkedConvert) {
+  $checkKeys(
+    json,
+    requiredKeys: const [
+      'description',
+      'displayName',
+      'id',
+      'imageId',
+      'parentListings',
+      'productType',
+      'sellerDisplayName',
+      'sellerId',
+      'tags',
+    ],
+  );
+  final val = Product(
+    archived: $checkedConvert('archived', (v) => v as bool?),
+    created: $checkedConvert(
+      'created',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    description: $checkedConvert('description', (v) => v as String),
+    displayName: $checkedConvert('displayName', (v) => v as String),
+    groupAccess: $checkedConvert('groupAccess', (v) => v as bool? ?? false),
+    groupAccessRemove: $checkedConvert(
+      'groupAccessRemove',
+      (v) => v as bool? ?? false,
+    ),
+    groupId: $checkedConvert('groupId', (v) => v as String?),
+    groupRoleId: $checkedConvert('groupRoleId', (v) => v as String?),
+    id: $checkedConvert('id', (v) => v as String),
+    imageId: $checkedConvert('imageId', (v) => v as String),
+    imageUrl: $checkedConvert('imageUrl', (v) => v as String?),
+    parentListings: $checkedConvert(
+      'parentListings',
+      (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+    ),
+    productType: $checkedConvert(
+      'productType',
+      (v) => $enumDecode(_$ProductTypeEnumMap, v),
+    ),
+    productTypeLabel: $checkedConvert('productTypeLabel', (v) => v as String?),
+    purchaseCount: $checkedConvert(
+      'purchaseCount',
+      (v) => (v as num?)?.toInt(),
+    ),
+    purchaseCountQuantity: $checkedConvert(
+      'purchaseCountQuantity',
+      (v) => (v as num?)?.toInt(),
+    ),
+    sellerDisplayName: $checkedConvert('sellerDisplayName', (v) => v as String),
+    sellerId: $checkedConvert('sellerId', (v) => v as String),
+    tags: $checkedConvert(
+      'tags',
+      (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+    ),
+    updated: $checkedConvert(
+      'updated',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    useForSubscriberList: $checkedConvert(
+      'useForSubscriberList',
+      (v) => v as bool? ?? false,
+    ),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
   'archived': ?instance.archived,
@@ -81,8 +89,12 @@ Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
   'groupRoleId': ?instance.groupRoleId,
   'id': instance.id,
   'imageId': instance.imageId,
+  'imageUrl': ?instance.imageUrl,
   'parentListings': instance.parentListings,
   'productType': _$ProductTypeEnumMap[instance.productType]!,
+  'productTypeLabel': ?instance.productTypeLabel,
+  'purchaseCount': ?instance.purchaseCount,
+  'purchaseCountQuantity': ?instance.purchaseCountQuantity,
   'sellerDisplayName': instance.sellerDisplayName,
   'sellerId': instance.sellerId,
   'tags': instance.tags,

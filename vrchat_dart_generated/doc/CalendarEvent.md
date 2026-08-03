@@ -25,9 +25,12 @@ Name | Type | Description | Notes
 **interestedUserCount** | **int** |  | [optional] 
 **isDraft** | **bool** |  | [optional] 
 **languages** | **List&lt;String&gt;** | Languages that might be spoken at this event | [optional] 
+**occurrenceKind** | [**CalendarEventOccurrenceKind**](CalendarEventOccurrenceKind.md) |  | [optional] 
 **ownerId** | **String** |  | [optional] 
 **platforms** | [**List&lt;CalendarEventPlatform&gt;**](CalendarEventPlatform.md) |  | [optional] 
+**recurrence** | [**CalendarEventRecurrence**](CalendarEventRecurrence.md) |  | [optional] 
 **roleIds** | **List&lt;String&gt;** | Group roles that may join this event | [optional] 
+**seriesId** | **String** | So far unused, always \"null\" | [optional] 
 **startsAt** | [**DateTime**](DateTime.md) |  | 
 **tags** | **List&lt;String&gt;** | Custom tags for this event | [optional] 
 **title** | **String** |  | 

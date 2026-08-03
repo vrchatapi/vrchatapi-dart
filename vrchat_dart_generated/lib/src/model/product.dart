@@ -38,9 +38,17 @@ class Product {
 
     required this.imageId,
 
+    this.imageUrl,
+
     required this.parentListings,
 
     required this.productType,
+
+    this.productTypeLabel,
+
+    this.purchaseCount,
+
+    this.purchaseCountQuantity,
 
     required this.sellerDisplayName,
 
@@ -83,11 +91,27 @@ class Product {
   @JsonKey(name: r'imageId', required: true, includeIfNull: false)
   final String imageId;
 
+  @JsonKey(name: r'imageUrl', required: false, includeIfNull: false)
+  final String? imageUrl;
+
   @JsonKey(name: r'parentListings', required: true, includeIfNull: false)
   final List<String> parentListings;
 
   @JsonKey(name: r'productType', required: true, includeIfNull: false)
   final ProductType productType;
+
+  @JsonKey(name: r'productTypeLabel', required: false, includeIfNull: false)
+  final String? productTypeLabel;
+
+  @JsonKey(name: r'purchaseCount', required: false, includeIfNull: false)
+  final int? purchaseCount;
+
+  @JsonKey(
+    name: r'purchaseCountQuantity',
+    required: false,
+    includeIfNull: false,
+  )
+  final int? purchaseCountQuantity;
 
   @JsonKey(name: r'sellerDisplayName', required: true, includeIfNull: false)
   final String sellerDisplayName;
@@ -118,8 +142,12 @@ class Product {
           other.groupRoleId == groupRoleId &&
           other.id == id &&
           other.imageId == imageId &&
+          other.imageUrl == imageUrl &&
           other.parentListings == parentListings &&
           other.productType == productType &&
+          other.productTypeLabel == productTypeLabel &&
+          other.purchaseCount == purchaseCount &&
+          other.purchaseCountQuantity == purchaseCountQuantity &&
           other.sellerDisplayName == sellerDisplayName &&
           other.sellerId == sellerId &&
           other.tags == tags &&
@@ -138,8 +166,12 @@ class Product {
       groupRoleId.hashCode +
       id.hashCode +
       imageId.hashCode +
+      (imageUrl == null ? 0 : imageUrl.hashCode) +
       parentListings.hashCode +
       productType.hashCode +
+      productTypeLabel.hashCode +
+      purchaseCount.hashCode +
+      purchaseCountQuantity.hashCode +
       sellerDisplayName.hashCode +
       sellerId.hashCode +
       tags.hashCode +

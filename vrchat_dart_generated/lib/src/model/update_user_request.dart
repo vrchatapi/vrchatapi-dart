@@ -35,6 +35,8 @@ class UpdateUserRequest {
 
     this.email,
 
+    this.hasDiscordFriendsOptOut,
+
     this.hasSharedConnectionsOptOut,
 
     this.isBoopingEnabled,
@@ -81,6 +83,14 @@ class UpdateUserRequest {
 
   @JsonKey(name: r'email', required: false, includeIfNull: false)
   final String? email;
+
+  /// Opt out of the Discord Friend Connections feature
+  @JsonKey(
+    name: r'hasDiscordFriendsOptOut',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? hasDiscordFriendsOptOut;
 
   /// Opt out of the Mutuals feature
   @JsonKey(
@@ -133,6 +143,7 @@ class UpdateUserRequest {
           other.currentPassword == currentPassword &&
           other.displayName == displayName &&
           other.email == email &&
+          other.hasDiscordFriendsOptOut == hasDiscordFriendsOptOut &&
           other.hasSharedConnectionsOptOut == hasSharedConnectionsOptOut &&
           other.isBoopingEnabled == isBoopingEnabled &&
           other.password == password &&
@@ -154,6 +165,7 @@ class UpdateUserRequest {
       currentPassword.hashCode +
       displayName.hashCode +
       email.hashCode +
+      hasDiscordFriendsOptOut.hashCode +
       hasSharedConnectionsOptOut.hashCode +
       isBoopingEnabled.hashCode +
       password.hashCode +
