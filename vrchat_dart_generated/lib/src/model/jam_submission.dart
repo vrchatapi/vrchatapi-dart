@@ -6,7 +6,7 @@
 
 import 'package:json_annotation/json_annotation.dart';
 
-part 'submission.g.dart';
+part 'jam_submission.g.dart';
 
 @JsonSerializable(
   checked: true,
@@ -14,9 +14,9 @@ part 'submission.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class Submission {
-  /// Returns a new [Submission] instance.
-  Submission({
+class JamSubmission {
+  /// Returns a new [JamSubmission] instance.
+  JamSubmission({
     required this.contentId,
 
     required this.createdAt,
@@ -59,7 +59,7 @@ class Submission {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is Submission &&
+      other is JamSubmission &&
           other.contentId == contentId &&
           other.createdAt == createdAt &&
           other.description == description &&
@@ -78,10 +78,10 @@ class Submission {
       ratingScore.hashCode +
       submitterId.hashCode;
 
-  factory Submission.fromJson(Map<String, dynamic> json) =>
-      _$SubmissionFromJson(json);
+  factory JamSubmission.fromJson(Map<String, dynamic> json) =>
+      _$JamSubmissionFromJson(json);
 
-  Map<String, dynamic> toJson() => _$SubmissionToJson(this);
+  Map<String, dynamic> toJson() => _$JamSubmissionToJson(this);
 
   @override
   String toString() {

@@ -82,7 +82,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFavoritesApi();
-final String favoriteGroupType = favoriteGroupType_example; // String | The type of group to fetch, must be a valid FavoriteType.
+final FavoriteType favoriteGroupType = ; // FavoriteType | The type of group to fetch, must be a valid FavoriteType.
 final String favoriteGroupName = favoriteGroupName_example; // String | The name of the group to fetch, must be a name of a FavoriteGroup.
 final String userId = userId_example; // String | Must be a valid user ID.
 
@@ -98,8 +98,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **favoriteGroupType** | **String**| The type of group to fetch, must be a valid FavoriteType. | 
- **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. | 
+ **favoriteGroupType** | [**FavoriteType**](.md)| The type of group to fetch, must be a valid FavoriteType. | 
+ **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. | [default to 'group_0']
  **userId** | **String**| Must be a valid user ID. | 
 
 ### Return type
@@ -133,7 +133,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFavoritesApi();
-final String favoriteGroupType = favoriteGroupType_example; // String | The type of group to fetch, must be a valid FavoriteType.
+final FavoriteType favoriteGroupType = ; // FavoriteType | The type of group to fetch, must be a valid FavoriteType.
 final String favoriteGroupName = favoriteGroupName_example; // String | The name of the group to fetch, must be a name of a FavoriteGroup.
 final String userId = userId_example; // String | Must be a valid user ID.
 
@@ -149,8 +149,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **favoriteGroupType** | **String**| The type of group to fetch, must be a valid FavoriteType. | 
- **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. | 
+ **favoriteGroupType** | [**FavoriteType**](.md)| The type of group to fetch, must be a valid FavoriteType. | 
+ **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. | [default to 'group_0']
  **userId** | **String**| Must be a valid user ID. | 
 
 ### Return type
@@ -187,7 +187,7 @@ final api = VrchatDartGenerated().getFavoritesApi();
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final String userId = userId_example; // String | Target user to see information on, admin-only.
-final String ownerId = ownerId_example; // String | The owner of whoms favorite groups to return. Must be a UserID.
+final String ownerId = ownerId_example; // String | The owner whose favorite groups to return. Must be a UserID.
 
 try {
     final response = api.getFavoriteGroups(n, offset, userId, ownerId);
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
  **userId** | **String**| Target user to see information on, admin-only. | [optional] 
- **ownerId** | **String**| The owner of whoms favorite groups to return. Must be a UserID. | [optional] 
+ **ownerId** | **String**| The owner whose favorite groups to return. Must be a UserID. | [optional] 
 
 ### Return type
 
@@ -380,7 +380,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFavoritesApi();
-final String favoriteGroupType = favoriteGroupType_example; // String | The type of group to fetch, must be a valid FavoriteType.
+final FavoriteType favoriteGroupType = ; // FavoriteType | The type of group to fetch, must be a valid FavoriteType.
 final String favoriteGroupName = favoriteGroupName_example; // String | The name of the group to fetch, must be a name of a FavoriteGroup.
 final String userId = userId_example; // String | Must be a valid user ID.
 final UpdateFavoriteGroupRequest updateFavoriteGroupRequest = ; // UpdateFavoriteGroupRequest | 
@@ -396,8 +396,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **favoriteGroupType** | **String**| The type of group to fetch, must be a valid FavoriteType. | 
- **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. | 
+ **favoriteGroupType** | [**FavoriteType**](.md)| The type of group to fetch, must be a valid FavoriteType. | 
+ **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. | [default to 'group_0']
  **userId** | **String**| Must be a valid user ID. | 
  **updateFavoriteGroupRequest** | [**UpdateFavoriteGroupRequest**](UpdateFavoriteGroupRequest.md)|  | [optional] 
 

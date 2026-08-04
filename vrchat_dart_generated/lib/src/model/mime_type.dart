@@ -12,6 +12,8 @@ enum MIMEType {
   applicationSlashOctetStream(r'application/octet-stream'),
   @JsonValue(r'application/x-avatar')
   applicationSlashXAvatar(r'application/x-avatar'),
+  @JsonValue(r'application/x-prop')
+  applicationSlashXProp(r'application/x-prop'),
   @JsonValue(r'application/x-rsync-delta')
   applicationSlashXRsyncDelta(r'application/x-rsync-delta'),
   @JsonValue(r'application/x-rsync-signature')

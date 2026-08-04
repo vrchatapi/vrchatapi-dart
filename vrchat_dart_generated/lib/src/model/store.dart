@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/product_listing.dart';
+import 'package:vrchat_dart_generated/src/model/store_context.dart';
 import 'package:vrchat_dart_generated/src/model/store_shelf.dart';
 import 'package:vrchat_dart_generated/src/model/store_type.dart';
 
@@ -20,6 +21,8 @@ part 'store.g.dart';
 class Store {
   /// Returns a new [Store] instance.
   Store({
+    this.created,
+
     required this.description,
 
     required this.displayName,
@@ -40,14 +43,23 @@ class Store {
 
     this.shelves,
 
+    this.storeContext,
+
     required this.storeId,
+
+    this.storeStatus,
 
     required this.storeType,
 
     required this.tags,
 
+    this.updated,
+
     this.worldId,
   });
+
+  @JsonKey(name: r'created', required: false, includeIfNull: false)
+  final DateTime? created;
 
   @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
@@ -84,14 +96,23 @@ class Store {
   @JsonKey(name: r'shelves', required: false, includeIfNull: false)
   final List<StoreShelf>? shelves;
 
+  @JsonKey(name: r'storeContext', required: false, includeIfNull: false)
+  final StoreContext? storeContext;
+
   @JsonKey(name: r'storeId', required: true, includeIfNull: false)
   final String storeId;
+
+  @JsonKey(name: r'storeStatus', required: false, includeIfNull: false)
+  final String? storeStatus;
 
   @JsonKey(name: r'storeType', required: true, includeIfNull: false)
   final StoreType storeType;
 
   @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
+
+  @JsonKey(name: r'updated', required: false, includeIfNull: false)
+  final DateTime? updated;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @JsonKey(name: r'worldId', required: false, includeIfNull: false)
@@ -101,6 +122,7 @@ class Store {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Store &&
+          other.created == created &&
           other.description == description &&
           other.displayName == displayName &&
           other.groupId == groupId &&
@@ -111,13 +133,17 @@ class Store {
           other.sellerId == sellerId &&
           other.shelfIds == shelfIds &&
           other.shelves == shelves &&
+          other.storeContext == storeContext &&
           other.storeId == storeId &&
+          other.storeStatus == storeStatus &&
           other.storeType == storeType &&
           other.tags == tags &&
+          other.updated == updated &&
           other.worldId == worldId;
 
   @override
   int get hashCode =>
+      created.hashCode +
       description.hashCode +
       displayName.hashCode +
       groupId.hashCode +
@@ -128,9 +154,12 @@ class Store {
       sellerId.hashCode +
       shelfIds.hashCode +
       shelves.hashCode +
+      storeContext.hashCode +
       storeId.hashCode +
+      storeStatus.hashCode +
       storeType.hashCode +
       tags.hashCode +
+      updated.hashCode +
       worldId.hashCode;
 
   factory Store.fromJson(Map<String, dynamic> json) => _$StoreFromJson(json);

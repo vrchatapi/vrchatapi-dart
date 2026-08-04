@@ -3,7 +3,9 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/calendar_event_recurrence.dart';
 import 'package:vrchat_dart_generated/src/model/calendar_event_category.dart';
+import 'package:vrchat_dart_generated/src/model/calendar_event_occurrence_kind.dart';
 import 'package:vrchat_dart_generated/src/model/calendar_event_access.dart';
 import 'package:vrchat_dart_generated/src/model/calendar_event_user_interest.dart';
 import 'package:vrchat_dart_generated/src/model/calendar_event_platform.dart';
@@ -55,11 +57,17 @@ class CalendarEvent {
 
     this.languages,
 
+    this.occurrenceKind,
+
     this.ownerId,
 
     this.platforms,
 
+    this.recurrence,
+
     this.roleIds,
+
+    this.seriesId,
 
     required this.startsAt,
 
@@ -136,15 +144,25 @@ class CalendarEvent {
   @JsonKey(name: r'languages', required: false, includeIfNull: false)
   final List<String>? languages;
 
+  @JsonKey(name: r'occurrenceKind', required: false, includeIfNull: false)
+  final CalendarEventOccurrenceKind? occurrenceKind;
+
   @JsonKey(name: r'ownerId', required: false, includeIfNull: false)
   final String? ownerId;
 
   @JsonKey(name: r'platforms', required: false, includeIfNull: false)
   final List<CalendarEventPlatform>? platforms;
 
+  @JsonKey(name: r'recurrence', required: false, includeIfNull: false)
+  final CalendarEventRecurrence? recurrence;
+
   /// Group roles that may join this event
   @JsonKey(name: r'roleIds', required: false, includeIfNull: false)
   final List<String>? roleIds;
+
+  /// So far unused, always \"null\"
+  @JsonKey(name: r'seriesId', required: false, includeIfNull: false)
+  final String? seriesId;
 
   @JsonKey(name: r'startsAt', required: true, includeIfNull: false)
   final DateTime startsAt;
@@ -189,9 +207,12 @@ class CalendarEvent {
           other.interestedUserCount == interestedUserCount &&
           other.isDraft == isDraft &&
           other.languages == languages &&
+          other.occurrenceKind == occurrenceKind &&
           other.ownerId == ownerId &&
           other.platforms == platforms &&
+          other.recurrence == recurrence &&
           other.roleIds == roleIds &&
+          other.seriesId == seriesId &&
           other.startsAt == startsAt &&
           other.tags == tags &&
           other.title == title &&
@@ -219,9 +240,12 @@ class CalendarEvent {
       interestedUserCount.hashCode +
       isDraft.hashCode +
       languages.hashCode +
+      occurrenceKind.hashCode +
       ownerId.hashCode +
       platforms.hashCode +
+      (recurrence == null ? 0 : recurrence.hashCode) +
       (roleIds == null ? 0 : roleIds.hashCode) +
+      (seriesId == null ? 0 : seriesId.hashCode) +
       startsAt.hashCode +
       tags.hashCode +
       title.hashCode +

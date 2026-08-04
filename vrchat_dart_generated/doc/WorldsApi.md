@@ -9,11 +9,13 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addWorldTags**](WorldsApi.md#addworldtags) | **POST** /worlds/{worldId}/addTags | Add World Tags
 [**checkUserPersistenceExists**](WorldsApi.md#checkuserpersistenceexists) | **GET** /users/{userId}/{worldId}/persist/exists | Check User Persistence Exists
 [**createWorld**](WorldsApi.md#createworld) | **POST** /worlds | Create World
 [**deleteAllUserPersistenceData**](WorldsApi.md#deletealluserpersistencedata) | **DELETE** /users/{userId}/persist | Delete All User Persistence Data
 [**deleteUserPersistence**](WorldsApi.md#deleteuserpersistence) | **DELETE** /users/{userId}/{worldId}/persist | Delete User Persistence
 [**deleteWorld**](WorldsApi.md#deleteworld) | **DELETE** /worlds/{worldId} | Delete World
+[**deleteWorldPlatform**](WorldsApi.md#deleteworldplatform) | **DELETE** /worlds/{worldId}/platform/{publishedPlatform} | Delete World Platform
 [**getActiveWorlds**](WorldsApi.md#getactiveworlds) | **GET** /worlds/active | List Active Worlds
 [**getFavoritedWorlds**](WorldsApi.md#getfavoritedworlds) | **GET** /worlds/favorites | List Favorited Worlds
 [**getRecentWorlds**](WorldsApi.md#getrecentworlds) | **GET** /worlds/recent | List Recent Worlds
@@ -22,10 +24,60 @@ Method | HTTP request | Description
 [**getWorldMetadata**](WorldsApi.md#getworldmetadata) | **GET** /worlds/{worldId}/metadata | Get World Metadata
 [**getWorldPublishStatus**](WorldsApi.md#getworldpublishstatus) | **GET** /worlds/{worldId}/publish | Get World Publish Status
 [**publishWorld**](WorldsApi.md#publishworld) | **PUT** /worlds/{worldId}/publish | Publish World
+[**removeWorldTags**](WorldsApi.md#removeworldtags) | **POST** /worlds/{worldId}/removeTags | Remove World Tags
 [**searchWorlds**](WorldsApi.md#searchworlds) | **GET** /worlds | Search All Worlds
 [**unpublishWorld**](WorldsApi.md#unpublishworld) | **DELETE** /worlds/{worldId}/publish | Unpublish World
 [**updateWorld**](WorldsApi.md#updateworld) | **PUT** /worlds/{worldId} | Update World
 
+
+# **addWorldTags**
+> World addWorldTags(worldId, changeWorldTagsRequest)
+
+Add World Tags
+
+Adds tags to the world's profile
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getWorldsApi();
+final String worldId = worldId_example; // String | Must be a valid world ID.
+final ChangeWorldTagsRequest changeWorldTagsRequest = ; // ChangeWorldTagsRequest | 
+
+try {
+    final response = api.addWorldTags(worldId, changeWorldTagsRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling WorldsApi->addWorldTags: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **worldId** | **String**| Must be a valid world ID. | 
+ **changeWorldTagsRequest** | [**ChangeWorldTagsRequest**](ChangeWorldTagsRequest.md)|  | 
+
+### Return type
+
+[**World**](World.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **checkUserPersistenceExists**
 > checkUserPersistenceExists(userId, worldId)
@@ -242,6 +294,54 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **worldId** | **String**| Must be a valid world ID. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteWorldPlatform**
+> deleteWorldPlatform(worldId, publishedPlatform)
+
+Delete World Platform
+
+Deletes a world platform.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getWorldsApi();
+final String worldId = worldId_example; // String | Must be a valid world ID.
+final String publishedPlatform = publishedPlatform_example; // String | A platform the world supports.
+
+try {
+    api.deleteWorldPlatform(worldId, publishedPlatform);
+} on DioException catch (e) {
+    print('Exception when calling WorldsApi->deleteWorldPlatform: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **worldId** | **String**| Must be a valid world ID. | 
+ **publishedPlatform** | **String**| A platform the world supports. | 
 
 ### Return type
 
@@ -573,10 +673,6 @@ Return a worlds custom metadata. This is currently believed to be unused. Metada
 ### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
-// TODO Configure API key authorization: authCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getWorldsApi();
 final String worldId = worldId_example; // String | Must be a valid world ID.
@@ -601,7 +697,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authCookie](../README.md#authCookie)
+No authorization required
 
 ### HTTP request headers
 
@@ -699,6 +795,55 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **removeWorldTags**
+> World removeWorldTags(worldId, changeWorldTagsRequest)
+
+Remove World Tags
+
+Removes tags from the world's profile
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getWorldsApi();
+final String worldId = worldId_example; // String | Must be a valid world ID.
+final ChangeWorldTagsRequest changeWorldTagsRequest = ; // ChangeWorldTagsRequest | 
+
+try {
+    final response = api.removeWorldTags(worldId, changeWorldTagsRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling WorldsApi->removeWorldTags: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **worldId** | **String**| Must be a valid world ID. | 
+ **changeWorldTagsRequest** | [**ChangeWorldTagsRequest**](ChangeWorldTagsRequest.md)|  | 
+
+### Return type
+
+[**World**](World.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

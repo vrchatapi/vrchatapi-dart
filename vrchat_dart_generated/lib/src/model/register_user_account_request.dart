@@ -60,7 +60,7 @@ class RegisterUserAccountRequest {
   @JsonKey(name: r'password', required: true, includeIfNull: false)
   final String password;
 
-  /// Whether to recieve promotional emails
+  /// Whether to receive promotional emails
   @JsonKey(name: r'subscribe', required: true, includeIfNull: false)
   final bool subscribe;
 

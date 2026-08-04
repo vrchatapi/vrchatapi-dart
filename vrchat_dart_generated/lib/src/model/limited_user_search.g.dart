@@ -8,74 +8,82 @@ part of 'limited_user_search.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-LimitedUserSearch _$LimitedUserSearchFromJson(Map<String, dynamic> json) =>
-    $checkedCreate('LimitedUserSearch', json, ($checkedConvert) {
-      $checkKeys(
-        json,
-        requiredKeys: const [
-          'currentAvatarImageUrl',
-          'currentAvatarTags',
-          'currentAvatarThumbnailImageUrl',
-          'developerType',
-          'displayName',
-          'id',
-          'isFriend',
-          'last_platform',
-          'status',
-          'statusDescription',
-          'tags',
-        ],
-      );
-      final val = LimitedUserSearch(
-        bio: $checkedConvert('bio', (v) => v as String?),
-        bioLinks: $checkedConvert(
-          'bioLinks',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-        ),
-        currentAvatarImageUrl: $checkedConvert(
-          'currentAvatarImageUrl',
-          (v) => v as String,
-        ),
-        currentAvatarTags: $checkedConvert(
-          'currentAvatarTags',
-          (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-        ),
-        currentAvatarThumbnailImageUrl: $checkedConvert(
-          'currentAvatarThumbnailImageUrl',
-          (v) => v as String,
-        ),
-        developerType: $checkedConvert(
-          'developerType',
-          (v) => $enumDecode(_$DeveloperTypeEnumMap, v),
-        ),
-        displayName: $checkedConvert('displayName', (v) => v as String),
-        id: $checkedConvert('id', (v) => v as String),
-        isFriend: $checkedConvert('isFriend', (v) => v as bool),
-        lastPlatform: $checkedConvert('last_platform', (v) => v as String),
-        profilePicOverride: $checkedConvert(
-          'profilePicOverride',
-          (v) => v as String?,
-        ),
-        pronouns: $checkedConvert('pronouns', (v) => v as String?),
-        status: $checkedConvert(
-          'status',
-          (v) => $enumDecode(_$UserStatusEnumMap, v),
-        ),
-        statusDescription: $checkedConvert(
-          'statusDescription',
-          (v) => v as String,
-        ),
-        tags: $checkedConvert(
-          'tags',
-          (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-        ),
-        userIcon: $checkedConvert('userIcon', (v) => v as String?),
-      );
-      return val;
-    }, fieldKeyMap: const {'lastPlatform': 'last_platform'});
+LimitedUserSearch _$LimitedUserSearchFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('LimitedUserSearch', json, ($checkedConvert) {
+  $checkKeys(
+    json,
+    requiredKeys: const [
+      'currentAvatarImageUrl',
+      'currentAvatarTags',
+      'currentAvatarThumbnailImageUrl',
+      'developerType',
+      'displayName',
+      'id',
+      'isFriend',
+      'last_platform',
+      'status',
+      'statusDescription',
+      'tags',
+    ],
+  );
+  final val = LimitedUserSearch(
+    bannerColor: $checkedConvert('bannerColor', (v) => v as String?),
+    bannerType: $checkedConvert('bannerType', (v) => v as String?),
+    bannerUrl: $checkedConvert('bannerUrl', (v) => v as String?),
+    bio: $checkedConvert('bio', (v) => v as String?),
+    bioLinks: $checkedConvert(
+      'bioLinks',
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+    ),
+    currentAvatarImageUrl: $checkedConvert(
+      'currentAvatarImageUrl',
+      (v) => v as String,
+    ),
+    currentAvatarTags: $checkedConvert(
+      'currentAvatarTags',
+      (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+    ),
+    currentAvatarThumbnailImageUrl: $checkedConvert(
+      'currentAvatarThumbnailImageUrl',
+      (v) => v as String,
+    ),
+    developerType: $checkedConvert(
+      'developerType',
+      (v) => $enumDecode(_$DeveloperTypeEnumMap, v),
+    ),
+    displayName: $checkedConvert('displayName', (v) => v as String),
+    iconFrame: $checkedConvert('iconFrame', (v) => v as String?),
+    iconUrl: $checkedConvert('iconUrl', (v) => v as String?),
+    id: $checkedConvert('id', (v) => v as String),
+    isFriend: $checkedConvert('isFriend', (v) => v as bool),
+    lastPlatform: $checkedConvert('last_platform', (v) => v as String),
+    nameplateEffect: $checkedConvert('nameplateEffect', (v) => v as String?),
+    profileEffect: $checkedConvert('profileEffect', (v) => v as String?),
+    profilePicOverride: $checkedConvert(
+      'profilePicOverride',
+      (v) => v as String?,
+    ),
+    pronouns: $checkedConvert('pronouns', (v) => v as String?),
+    status: $checkedConvert(
+      'status',
+      (v) => $enumDecode(_$UserStatusEnumMap, v),
+    ),
+    statusDescription: $checkedConvert('statusDescription', (v) => v as String),
+    tags: $checkedConvert(
+      'tags',
+      (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+    ),
+    userIcon: $checkedConvert('userIcon', (v) => v as String?),
+  );
+  return val;
+}, fieldKeyMap: const {'lastPlatform': 'last_platform'});
 
 Map<String, dynamic> _$LimitedUserSearchToJson(LimitedUserSearch instance) =>
     <String, dynamic>{
+      'bannerColor': ?instance.bannerColor,
+      'bannerType': ?instance.bannerType,
+      'bannerUrl': ?instance.bannerUrl,
       'bio': ?instance.bio,
       'bioLinks': ?instance.bioLinks,
       'currentAvatarImageUrl': instance.currentAvatarImageUrl,
@@ -83,9 +91,13 @@ Map<String, dynamic> _$LimitedUserSearchToJson(LimitedUserSearch instance) =>
       'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
       'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
       'displayName': instance.displayName,
+      'iconFrame': ?instance.iconFrame,
+      'iconUrl': ?instance.iconUrl,
       'id': instance.id,
       'isFriend': instance.isFriend,
       'last_platform': instance.lastPlatform,
+      'nameplateEffect': ?instance.nameplateEffect,
+      'profileEffect': ?instance.profileEffect,
       'profilePicOverride': ?instance.profilePicOverride,
       'pronouns': ?instance.pronouns,
       'status': _$UserStatusEnumMap[instance.status]!,

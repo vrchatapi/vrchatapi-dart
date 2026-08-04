@@ -9,11 +9,11 @@ import 'package:json_annotation/json_annotation.dart';
 enum AgeVerificationStatus {
   /// `verified` is obsolete.  User who have verified and are 18+ can switch to `plus18` status.
   @JsonValue(r'18+')
-  hidden(r'18+'),
+  plus18(r'18+'),
 
   /// `verified` is obsolete.  User who have verified and are 18+ can switch to `plus18` status.
   @JsonValue(r'hidden')
-  plus18(r'hidden'),
+  hidden(r'hidden'),
 
   /// `verified` is obsolete.  User who have verified and are 18+ can switch to `plus18` status.
   @JsonValue(r'verified')

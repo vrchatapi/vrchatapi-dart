@@ -23,7 +23,11 @@ class ProductListing {
   ProductListing({
     required this.active,
 
+    this.archived,
+
     required this.buyerRefundable,
+
+    this.created,
 
     required this.description,
 
@@ -65,6 +69,10 @@ class ProductListing {
 
     required this.products,
 
+    this.purchaseCount,
+
+    this.purchaseCountQuantity,
+
     this.quantifiable,
 
     required this.recurrable,
@@ -85,6 +93,8 @@ class ProductListing {
 
     this.tags,
 
+    this.updated,
+
     this.vrcPlusDiscountPrice,
 
     this.whenToExpire,
@@ -93,8 +103,14 @@ class ProductListing {
   @JsonKey(name: r'active', required: true, includeIfNull: false)
   final bool active;
 
+  @JsonKey(name: r'archived', required: false, includeIfNull: false)
+  final bool? archived;
+
   @JsonKey(name: r'buyerRefundable', required: true, includeIfNull: false)
   final bool buyerRefundable;
+
+  @JsonKey(name: r'created', required: false, includeIfNull: false)
+  final DateTime? created;
 
   @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
@@ -156,6 +172,16 @@ class ProductListing {
   @JsonKey(name: r'products', required: true, includeIfNull: false)
   final List<Object> products;
 
+  @JsonKey(name: r'purchaseCount', required: false, includeIfNull: false)
+  final int? purchaseCount;
+
+  @JsonKey(
+    name: r'purchaseCountQuantity',
+    required: false,
+    includeIfNull: false,
+  )
+  final int? purchaseCountQuantity;
+
   @JsonKey(name: r'quantifiable', required: false, includeIfNull: false)
   final bool? quantifiable;
 
@@ -186,6 +212,9 @@ class ProductListing {
   @JsonKey(name: r'tags', required: false, includeIfNull: false)
   final List<String>? tags;
 
+  @JsonKey(name: r'updated', required: false, includeIfNull: false)
+  final DateTime? updated;
+
   @JsonKey(name: r'vrcPlusDiscountPrice', required: false, includeIfNull: false)
   final int? vrcPlusDiscountPrice;
 
@@ -197,7 +226,9 @@ class ProductListing {
       identical(this, other) ||
       other is ProductListing &&
           other.active == active &&
+          other.archived == archived &&
           other.buyerRefundable == buyerRefundable &&
+          other.created == created &&
           other.description == description &&
           other.displayName == displayName &&
           other.duration == duration &&
@@ -218,6 +249,8 @@ class ProductListing {
           other.productIds == productIds &&
           other.productType == productType &&
           other.products == products &&
+          other.purchaseCount == purchaseCount &&
+          other.purchaseCountQuantity == purchaseCountQuantity &&
           other.quantifiable == quantifiable &&
           other.recurrable == recurrable &&
           other.refundable == refundable &&
@@ -228,13 +261,16 @@ class ProductListing {
           other.storeIds == storeIds &&
           other.subtitle == subtitle &&
           other.tags == tags &&
+          other.updated == updated &&
           other.vrcPlusDiscountPrice == vrcPlusDiscountPrice &&
           other.whenToExpire == whenToExpire;
 
   @override
   int get hashCode =>
       active.hashCode +
+      archived.hashCode +
       buyerRefundable.hashCode +
+      created.hashCode +
       description.hashCode +
       displayName.hashCode +
       (duration == null ? 0 : duration.hashCode) +
@@ -255,6 +291,8 @@ class ProductListing {
       productIds.hashCode +
       productType.hashCode +
       products.hashCode +
+      purchaseCount.hashCode +
+      purchaseCountQuantity.hashCode +
       quantifiable.hashCode +
       recurrable.hashCode +
       refundable.hashCode +
@@ -265,6 +303,7 @@ class ProductListing {
       storeIds.hashCode +
       subtitle.hashCode +
       tags.hashCode +
+      updated.hashCode +
       vrcPlusDiscountPrice.hashCode +
       (whenToExpire == null ? 0 : whenToExpire.hashCode);
 

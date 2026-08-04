@@ -27,9 +27,22 @@ EconomyAccount _$EconomyAccountFromJson(Map<String, dynamic> json) =>
           (v) => v == null ? null : DateTime.parse(v as String),
         ),
         accountId: $checkedConvert('accountId', (v) => v as String?),
+        accountSellerRegisteredOn: $checkedConvert(
+          'accountSellerRegisteredOn',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
+        accountSellerStatus: $checkedConvert(
+          'accountSellerStatus',
+          (v) => v as String?,
+        ),
         blocked: $checkedConvert('blocked', (v) => v as bool),
+        canEarn: $checkedConvert('canEarn', (v) => v as bool?),
+        canPayout: $checkedConvert('canPayout', (v) => v as bool?),
         canSpend: $checkedConvert('canSpend', (v) => v as bool),
+        skrillEmail: $checkedConvert('skrillEmail', (v) => v as String?),
         source_: $checkedConvert('source', (v) => v as String),
+        tiliaId: $checkedConvert('tiliaId', (v) => v as String?),
+        tiliaType: $checkedConvert('tiliaType', (v) => v as String?),
         userId: $checkedConvert('userId', (v) => v as String),
       );
       return val;
@@ -39,8 +52,16 @@ Map<String, dynamic> _$EconomyAccountToJson(EconomyAccount instance) =>
     <String, dynamic>{
       'accountActivatedOn': instance.accountActivatedOn?.toIso8601String(),
       'accountId': instance.accountId,
+      'accountSellerRegisteredOn': ?instance.accountSellerRegisteredOn
+          ?.toIso8601String(),
+      'accountSellerStatus': ?instance.accountSellerStatus,
       'blocked': instance.blocked,
+      'canEarn': ?instance.canEarn,
+      'canPayout': ?instance.canPayout,
       'canSpend': instance.canSpend,
+      'skrillEmail': ?instance.skrillEmail,
       'source': instance.source_,
+      'tiliaId': ?instance.tiliaId,
+      'tiliaType': ?instance.tiliaType,
       'userId': instance.userId,
     };

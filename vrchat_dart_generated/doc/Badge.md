@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **badgeImageUrl** | **String** | direct url to image | 
 **badgeName** | **String** |  | 
 **hidden** | **bool** | only present in CurrentUser badges | [optional] 
+**isQuantifiable** | **bool** |  | [optional] 
 **showcased** | **bool** |  | 
 **updatedAt** | [**DateTime**](DateTime.md) | only present in CurrentUser badges | [optional] 
 

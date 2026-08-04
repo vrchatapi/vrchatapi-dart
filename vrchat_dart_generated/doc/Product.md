@@ -18,8 +18,12 @@ Name | Type | Description | Notes
 **groupRoleId** | **String** |  | [optional] 
 **id** | **String** |  | 
 **imageId** | **String** |  | 
+**imageUrl** | **String** |  | [optional] 
 **parentListings** | **List&lt;String&gt;** |  | 
 **productType** | [**ProductType**](ProductType.md) |  | 
+**productTypeLabel** | **String** |  | [optional] 
+**purchaseCount** | **int** |  | [optional] 
+**purchaseCountQuantity** | **int** |  | [optional] 
 **sellerDisplayName** | **String** |  | 
 **sellerId** | **String** |  | 
 **tags** | **List&lt;String&gt;** |  | 

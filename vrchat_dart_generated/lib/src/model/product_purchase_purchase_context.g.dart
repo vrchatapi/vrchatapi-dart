@@ -13,10 +13,16 @@ ProductPurchasePurchaseContext _$ProductPurchasePurchaseContextFromJson(
 ) => $checkedCreate('ProductPurchasePurchaseContext', json, ($checkedConvert) {
   final val = ProductPurchasePurchaseContext(
     locationType: $checkedConvert('locationType', (v) => v as String?),
+    worldId: $checkedConvert('worldId', (v) => v as String?),
+    worldName: $checkedConvert('worldName', (v) => v as String?),
   );
   return val;
 });
 
 Map<String, dynamic> _$ProductPurchasePurchaseContextToJson(
   ProductPurchasePurchaseContext instance,
-) => <String, dynamic>{'locationType': ?instance.locationType};
+) => <String, dynamic>{
+  'locationType': ?instance.locationType,
+  'worldId': ?instance.worldId,
+  'worldName': ?instance.worldName,
+};

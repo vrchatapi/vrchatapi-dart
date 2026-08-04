@@ -10,6 +10,8 @@ enum FavoriteType {
   avatar(r'avatar'),
   @JsonValue(r'friend')
   friend(r'friend'),
+  @JsonValue(r'vrcPlusWorld')
+  vrcPlusWorld(r'vrcPlusWorld'),
   @JsonValue(r'world')
   world(r'world');
 

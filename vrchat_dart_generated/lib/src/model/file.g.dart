@@ -130,6 +130,7 @@ const _$MIMETypeEnumMap = {
   MIMEType.applicationSlashGzip: 'application/gzip',
   MIMEType.applicationSlashOctetStream: 'application/octet-stream',
   MIMEType.applicationSlashXAvatar: 'application/x-avatar',
+  MIMEType.applicationSlashXProp: 'application/x-prop',
   MIMEType.applicationSlashXRsyncDelta: 'application/x-rsync-delta',
   MIMEType.applicationSlashXRsyncSignature: 'application/x-rsync-signature',
   MIMEType.applicationSlashXWorld: 'application/x-world',

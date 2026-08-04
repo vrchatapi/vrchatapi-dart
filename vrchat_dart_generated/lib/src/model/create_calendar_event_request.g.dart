@@ -53,12 +53,22 @@ CreateCalendarEventRequest _$CreateCalendarEventRequestFromJson(
       'languages',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
+    occurrenceKind: $checkedConvert(
+      'occurrenceKind',
+      (v) => $enumDecodeNullable(_$CalendarEventOccurrenceKindEnumMap, v),
+    ),
     parentId: $checkedConvert('parentId', (v) => v as String?),
     platforms: $checkedConvert(
       'platforms',
       (v) => (v as List<dynamic>?)
           ?.map((e) => $enumDecode(_$CalendarEventPlatformEnumMap, e))
           .toList(),
+    ),
+    recurrence: $checkedConvert(
+      'recurrence',
+      (v) => v == null
+          ? null
+          : CalendarEventRecurrence.fromJson(v as Map<String, dynamic>),
     ),
     roleIds: $checkedConvert(
       'roleIds',
@@ -96,10 +106,13 @@ Map<String, dynamic> _$CreateCalendarEventRequestToJson(
   'imageId': ?instance.imageId,
   'isDraft': ?instance.isDraft,
   'languages': ?instance.languages,
+  'occurrenceKind':
+      ?_$CalendarEventOccurrenceKindEnumMap[instance.occurrenceKind],
   'parentId': ?instance.parentId,
   'platforms': ?instance.platforms
       ?.map((e) => _$CalendarEventPlatformEnumMap[e]!)
       .toList(),
+  'recurrence': ?instance.recurrence?.toJson(),
   'roleIds': ?instance.roleIds,
   'sendCreationNotification': instance.sendCreationNotification,
   'startsAt': instance.startsAt.toIso8601String(),
@@ -127,6 +140,12 @@ const _$CalendarEventCategoryEnumMap = {
   CalendarEventCategory.performance: 'performance',
   CalendarEventCategory.roleplaying: 'roleplaying',
   CalendarEventCategory.wellness: 'wellness',
+};
+
+const _$CalendarEventOccurrenceKindEnumMap = {
+  CalendarEventOccurrenceKind.occurrence: 'occurrence',
+  CalendarEventOccurrenceKind.series: 'series',
+  CalendarEventOccurrenceKind.single: 'single',
 };
 
 const _$CalendarEventPlatformEnumMap = {

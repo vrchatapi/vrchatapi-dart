@@ -13,8 +13,17 @@ PurchaseProductListingRequest _$PurchaseProductListingRequestFromJson(
 ) => $checkedCreate('PurchaseProductListingRequest', json, ($checkedConvert) {
   $checkKeys(json, requiredKeys: const ['listingId', 'quantity', 'totalPrice']);
   final val = PurchaseProductListingRequest(
+    contextData: $checkedConvert(
+      'contextData',
+      (v) => v == null
+          ? null
+          : PurchaseContextData.fromJson(v as Map<String, dynamic>),
+    ),
     listingId: $checkedConvert('listingId', (v) => v as String),
+    listingVariantId: $checkedConvert('listingVariantId', (v) => v as String?),
     quantity: $checkedConvert('quantity', (v) => (v as num?)?.toInt() ?? 1),
+    receiverId: $checkedConvert('receiverId', (v) => v as String?),
+    stackable: $checkedConvert('stackable', (v) => v as bool?),
     totalPrice: $checkedConvert('totalPrice', (v) => (v as num).toInt()),
   );
   return val;
@@ -23,7 +32,11 @@ PurchaseProductListingRequest _$PurchaseProductListingRequestFromJson(
 Map<String, dynamic> _$PurchaseProductListingRequestToJson(
   PurchaseProductListingRequest instance,
 ) => <String, dynamic>{
+  'contextData': ?instance.contextData?.toJson(),
   'listingId': instance.listingId,
+  'listingVariantId': ?instance.listingVariantId,
   'quantity': instance.quantity,
+  'receiverId': ?instance.receiverId,
+  'stackable': ?instance.stackable,
   'totalPrice': instance.totalPrice,
 };

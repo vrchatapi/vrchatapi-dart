@@ -34,6 +34,10 @@ UpdateUserRequest _$UpdateUserRequestFromJson(
     currentPassword: $checkedConvert('currentPassword', (v) => v as String?),
     displayName: $checkedConvert('displayName', (v) => v as String?),
     email: $checkedConvert('email', (v) => v as String?),
+    hasDiscordFriendsOptOut: $checkedConvert(
+      'hasDiscordFriendsOptOut',
+      (v) => v as bool?,
+    ),
     hasSharedConnectionsOptOut: $checkedConvert(
       'hasSharedConnectionsOptOut',
       (v) => v as bool?,
@@ -72,6 +76,7 @@ Map<String, dynamic> _$UpdateUserRequestToJson(UpdateUserRequest instance) =>
       'currentPassword': ?instance.currentPassword,
       'displayName': ?instance.displayName,
       'email': ?instance.email,
+      'hasDiscordFriendsOptOut': ?instance.hasDiscordFriendsOptOut,
       'hasSharedConnectionsOptOut': ?instance.hasSharedConnectionsOptOut,
       'isBoopingEnabled': ?instance.isBoopingEnabled,
       'password': ?instance.password,

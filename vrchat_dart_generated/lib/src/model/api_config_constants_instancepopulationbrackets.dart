@@ -4,6 +4,8 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/api_config_constants_instancepopulationbracketscrowded.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_constants_instancepopulationbracketsfew.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_constants_instancepopulationbracketsmany.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -29,10 +31,10 @@ class APIConfigConstantsINSTANCEPOPULATIONBRACKETS {
   final APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED? crowded;
 
   @JsonKey(name: r'FEW', required: false, includeIfNull: false)
-  final APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED? few;
+  final APIConfigConstantsINSTANCEPOPULATIONBRACKETSFEW? few;
 
   @JsonKey(name: r'MANY', required: false, includeIfNull: false)
-  final APIConfigConstantsINSTANCEPOPULATIONBRACKETSCROWDED? many;
+  final APIConfigConstantsINSTANCEPOPULATIONBRACKETSMANY? many;
 
   @override
   bool operator ==(Object other) =>

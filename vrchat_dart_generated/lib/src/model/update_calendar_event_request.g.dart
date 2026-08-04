@@ -42,6 +42,12 @@ UpdateCalendarEventRequest _$UpdateCalendarEventRequestFromJson(
       'platforms',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
+    recurrence: $checkedConvert(
+      'recurrence',
+      (v) => v == null
+          ? null
+          : CalendarEventRecurrence.fromJson(v as Map<String, dynamic>),
+    ),
     roleIds: $checkedConvert(
       'roleIds',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -82,6 +88,7 @@ Map<String, dynamic> _$UpdateCalendarEventRequestToJson(
   'languages': ?instance.languages,
   'parentId': ?instance.parentId,
   'platforms': ?instance.platforms,
+  'recurrence': ?instance.recurrence?.toJson(),
   'roleIds': ?instance.roleIds,
   'sendCreationNotification': ?instance.sendCreationNotification,
   'startsAt': ?instance.startsAt?.toIso8601String(),

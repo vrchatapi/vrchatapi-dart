@@ -10,6 +10,22 @@ part of 'group_member.dart';
 
 GroupMember _$GroupMemberFromJson(Map<String, dynamic> json) =>
     $checkedCreate('GroupMember', json, ($checkedConvert) {
+      $checkKeys(
+        json,
+        requiredKeys: const [
+          'groupId',
+          'id',
+          'isRepresenting',
+          'isSubscribedToAnnouncements',
+          'joinedAt',
+          'lastPostReadAt',
+          'mRoleIds',
+          'membershipStatus',
+          'roleIds',
+          'userId',
+          'visibility',
+        ],
+      );
       final val = GroupMember(
         acceptedByDisplayName: $checkedConvert(
           'acceptedByDisplayName',
@@ -24,12 +40,12 @@ GroupMember _$GroupMemberFromJson(Map<String, dynamic> json) =>
           'createdAt',
           (v) => v == null ? null : DateTime.parse(v as String),
         ),
-        groupId: $checkedConvert('groupId', (v) => v as String?),
+        groupId: $checkedConvert('groupId', (v) => v as String),
         hasJoinedFromPurchase: $checkedConvert(
           'hasJoinedFromPurchase',
           (v) => v as bool?,
         ),
-        id: $checkedConvert('id', (v) => v as String?),
+        id: $checkedConvert('id', (v) => v as String),
         isRepresenting: $checkedConvert(
           'isRepresenting',
           (v) => v as bool? ?? false,
@@ -52,16 +68,16 @@ GroupMember _$GroupMemberFromJson(Map<String, dynamic> json) =>
         ),
         mRoleIds: $checkedConvert(
           'mRoleIds',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+          (v) => (v as List<dynamic>).map((e) => e as String).toList(),
         ),
         managerNotes: $checkedConvert('managerNotes', (v) => v as String?),
         membershipStatus: $checkedConvert(
           'membershipStatus',
-          (v) => $enumDecodeNullable(_$GroupMemberStatusEnumMap, v),
+          (v) => $enumDecode(_$GroupMemberStatusEnumMap, v),
         ),
         roleIds: $checkedConvert(
           'roleIds',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+          (v) => (v as List<dynamic>).map((e) => e as String).toList(),
         ),
         user: $checkedConvert(
           'user',
@@ -69,8 +85,8 @@ GroupMember _$GroupMemberFromJson(Map<String, dynamic> json) =>
               ? null
               : GroupMemberLimitedUser.fromJson(v as Map<String, dynamic>),
         ),
-        userId: $checkedConvert('userId', (v) => v as String?),
-        visibility: $checkedConvert('visibility', (v) => v as String?),
+        userId: $checkedConvert('userId', (v) => v as String),
+        visibility: $checkedConvert('visibility', (v) => v as String),
       );
       return val;
     });
@@ -82,22 +98,22 @@ Map<String, dynamic> _$GroupMemberToJson(
   'acceptedById': ?instance.acceptedById,
   'bannedAt': ?instance.bannedAt?.toIso8601String(),
   'createdAt': ?instance.createdAt?.toIso8601String(),
-  'groupId': ?instance.groupId,
+  'groupId': instance.groupId,
   'hasJoinedFromPurchase': ?instance.hasJoinedFromPurchase,
-  'id': ?instance.id,
-  'isRepresenting': ?instance.isRepresenting,
-  'isSubscribedToAnnouncements': ?instance.isSubscribedToAnnouncements,
+  'id': instance.id,
+  'isRepresenting': instance.isRepresenting,
+  'isSubscribedToAnnouncements': instance.isSubscribedToAnnouncements,
   'isSubscribedToEventAnnouncements':
       ?instance.isSubscribedToEventAnnouncements,
-  'joinedAt': ?instance.joinedAt?.toIso8601String(),
-  'lastPostReadAt': ?instance.lastPostReadAt?.toIso8601String(),
-  'mRoleIds': ?instance.mRoleIds,
+  'joinedAt': instance.joinedAt?.toIso8601String(),
+  'lastPostReadAt': instance.lastPostReadAt?.toIso8601String(),
+  'mRoleIds': instance.mRoleIds,
   'managerNotes': ?instance.managerNotes,
-  'membershipStatus': ?_$GroupMemberStatusEnumMap[instance.membershipStatus],
-  'roleIds': ?instance.roleIds,
+  'membershipStatus': _$GroupMemberStatusEnumMap[instance.membershipStatus]!,
+  'roleIds': instance.roleIds,
   'user': ?instance.user?.toJson(),
-  'userId': ?instance.userId,
-  'visibility': ?instance.visibility,
+  'userId': instance.userId,
+  'visibility': instance.visibility,
 };
 
 const _$GroupMemberStatusEnumMap = {

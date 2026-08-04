@@ -29,6 +29,8 @@ class Badge {
 
     this.hidden,
 
+    this.isQuantifiable,
+
     required this.showcased,
 
     this.updatedAt,
@@ -55,6 +57,9 @@ class Badge {
   @JsonKey(name: r'hidden', required: false, includeIfNull: false)
   final bool? hidden;
 
+  @JsonKey(name: r'isQuantifiable', required: false, includeIfNull: false)
+  final bool? isQuantifiable;
+
   @JsonKey(name: r'showcased', required: true, includeIfNull: false)
   final bool showcased;
 
@@ -72,6 +77,7 @@ class Badge {
           other.badgeImageUrl == badgeImageUrl &&
           other.badgeName == badgeName &&
           other.hidden == hidden &&
+          other.isQuantifiable == isQuantifiable &&
           other.showcased == showcased &&
           other.updatedAt == updatedAt;
 
@@ -83,6 +89,7 @@ class Badge {
       badgeImageUrl.hashCode +
       badgeName.hashCode +
       (hidden == null ? 0 : hidden.hashCode) +
+      isQuantifiable.hashCode +
       showcased.hashCode +
       (updatedAt == null ? 0 : updatedAt.hashCode);
 

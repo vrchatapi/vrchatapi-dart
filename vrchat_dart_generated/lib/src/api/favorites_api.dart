@@ -13,6 +13,7 @@ import 'package:vrchat_dart_generated/src/model/add_favorite_request.dart';
 import 'package:vrchat_dart_generated/src/model/favorite.dart';
 import 'package:vrchat_dart_generated/src/model/favorite_group.dart';
 import 'package:vrchat_dart_generated/src/model/favorite_limits.dart';
+import 'package:vrchat_dart_generated/src/model/favorite_type.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
 import 'package:vrchat_dart_generated/src/model/update_favorite_group_request.dart';
 
@@ -135,7 +136,7 @@ class FavoritesApi {
   /// Returns a [Future] containing a [Response] with a [Success] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<Success>> clearFavoriteGroup({
-    required String favoriteGroupType,
+    required FavoriteType favoriteGroupType,
     required String favoriteGroupName,
     required String userId,
     CancelToken? cancelToken,
@@ -236,7 +237,7 @@ class FavoritesApi {
   /// Returns a [Future] containing a [Response] with a [FavoriteGroup] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<FavoriteGroup>> getFavoriteGroup({
-    required String favoriteGroupType,
+    required FavoriteType favoriteGroupType,
     required String favoriteGroupName,
     required String userId,
     CancelToken? cancelToken,
@@ -331,7 +332,7 @@ class FavoritesApi {
   /// * [n] - The number of objects to return.
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [userId] - Target user to see information on, admin-only.
-  /// * [ownerId] - The owner of whoms favorite groups to return. Must be a UserID.
+  /// * [ownerId] - The owner whose favorite groups to return. Must be a UserID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -697,7 +698,7 @@ class FavoritesApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> updateFavoriteGroup({
-    required String favoriteGroupType,
+    required FavoriteType favoriteGroupType,
     required String favoriteGroupName,
     required String userId,
     UpdateFavoriteGroupRequest? updateFavoriteGroupRequest,

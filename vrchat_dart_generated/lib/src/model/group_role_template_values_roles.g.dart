@@ -47,6 +47,10 @@ const _$GroupPermissionsEnumMap = {
   GroupPermissions.group_galleries_manage: 'group-galleries-manage',
   GroupPermissions.group_instance_age_gated_create:
       'group-instance-age-gated-create',
+  GroupPermissions.group_instance_announcement_create:
+      'group-instance-announcement-create',
+  GroupPermissions.group_instance_bypass_avatar_performance:
+      'group-instance-bypass-avatar-performance',
   GroupPermissions.group_instance_calendar_link: 'group-instance-calendar-link',
   GroupPermissions.group_instance_join: 'group-instance-join',
   GroupPermissions.group_instance_manage: 'group-instance-manage',

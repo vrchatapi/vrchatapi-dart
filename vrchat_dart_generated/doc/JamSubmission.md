@@ -1,4 +1,4 @@
-# vrchat_dart_generated.model.Submission
+# vrchat_dart_generated.model.JamSubmission
 
 ## Load the model package
 ```dart

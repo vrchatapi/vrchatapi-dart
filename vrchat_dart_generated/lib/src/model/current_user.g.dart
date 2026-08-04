@@ -97,6 +97,8 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'allowAvatarCopying',
         (v) => v as bool,
       ),
+      appleDetails: $checkedConvert('appleDetails', (v) => v),
+      appleId: $checkedConvert('appleId', (v) => v as String?),
       authToken: $checkedConvert('authToken', (v) => v as String?),
       badges: $checkedConvert(
         'badges',
@@ -156,12 +158,20 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
       googleDetails: $checkedConvert('googleDetails', (v) => v),
       googleId: $checkedConvert('googleId', (v) => v as String?),
       hasBirthday: $checkedConvert('hasBirthday', (v) => v as bool),
+      hasDiscordFriendsOptOut: $checkedConvert(
+        'hasDiscordFriendsOptOut',
+        (v) => v as bool?,
+      ),
       hasEmail: $checkedConvert('hasEmail', (v) => v as bool),
       hasLoggedInFromClient: $checkedConvert(
         'hasLoggedInFromClient',
         (v) => v as bool,
       ),
       hasPendingEmail: $checkedConvert('hasPendingEmail', (v) => v as bool),
+      hasSharedConnectionsOptOut: $checkedConvert(
+        'hasSharedConnectionsOptOut',
+        (v) => v as bool?,
+      ),
       hideContentFilterSettings: $checkedConvert(
         'hideContentFilterSettings',
         (v) => v as bool?,
@@ -265,6 +275,8 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'tags',
         (v) => (v as List<dynamic>).map((e) => e as String).toList(),
       ),
+      twitchDetails: $checkedConvert('twitchDetails', (v) => v),
+      twitchId: $checkedConvert('twitchId', (v) => v as String?),
       twoFactorAuthEnabled: $checkedConvert(
         'twoFactorAuthEnabled',
         (v) => v as bool,
@@ -318,6 +330,8 @@ Map<String, dynamic> _$CurrentUserToJson(
       _$AgeVerificationStatusEnumMap[instance.ageVerificationStatus]!,
   'ageVerified': instance.ageVerified,
   'allowAvatarCopying': instance.allowAvatarCopying,
+  'appleDetails': ?instance.appleDetails,
+  'appleId': ?instance.appleId,
   'authToken': ?instance.authToken,
   'badges': ?instance.badges?.map((e) => e.toJson()).toList(),
   'bio': instance.bio,
@@ -340,9 +354,11 @@ Map<String, dynamic> _$CurrentUserToJson(
   'googleDetails': ?instance.googleDetails,
   'googleId': ?instance.googleId,
   'hasBirthday': instance.hasBirthday,
+  'hasDiscordFriendsOptOut': ?instance.hasDiscordFriendsOptOut,
   'hasEmail': instance.hasEmail,
   'hasLoggedInFromClient': instance.hasLoggedInFromClient,
   'hasPendingEmail': instance.hasPendingEmail,
+  'hasSharedConnectionsOptOut': ?instance.hasSharedConnectionsOptOut,
   'hideContentFilterSettings': ?instance.hideContentFilterSettings,
   'homeLocation': instance.homeLocation,
   'id': instance.id,
@@ -378,6 +394,8 @@ Map<String, dynamic> _$CurrentUserToJson(
   'steamDetails': instance.steamDetails,
   'steamId': instance.steamId,
   'tags': instance.tags,
+  'twitchDetails': ?instance.twitchDetails,
+  'twitchId': ?instance.twitchId,
   'twoFactorAuthEnabled': instance.twoFactorAuthEnabled,
   'twoFactorAuthEnabledDate': ?instance.twoFactorAuthEnabledDate
       ?.toIso8601String(),
@@ -392,8 +410,8 @@ Map<String, dynamic> _$CurrentUserToJson(
 };
 
 const _$AgeVerificationStatusEnumMap = {
-  AgeVerificationStatus.hidden: '18+',
-  AgeVerificationStatus.plus18: 'hidden',
+  AgeVerificationStatus.plus18: '18+',
+  AgeVerificationStatus.hidden: 'hidden',
   AgeVerificationStatus.verified: 'verified',
 };
 

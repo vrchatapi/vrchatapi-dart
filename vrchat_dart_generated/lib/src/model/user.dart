@@ -30,6 +30,10 @@ class User {
 
     this.badges,
 
+    this.bannerType,
+
+    this.bannerUrl,
+
     required this.bio,
 
     required this.bioLinks,
@@ -50,9 +54,15 @@ class User {
 
     this.friendRequestStatus,
 
+    this.iconFrame,
+
+    this.iconUrl,
+
     required this.id,
 
     this.instanceId,
+
+    this.isEconomyCreator,
 
     required this.isFriend,
 
@@ -66,9 +76,13 @@ class User {
 
     this.location,
 
+    this.nameplateEffect,
+
     this.note,
 
     this.platform,
+
+    this.profileEffect,
 
     required this.profilePicOverride,
 
@@ -111,6 +125,12 @@ class User {
   @JsonKey(name: r'badges', required: false, includeIfNull: false)
   final List<Badge>? badges;
 
+  @JsonKey(name: r'bannerType', required: false, includeIfNull: false)
+  final String? bannerType;
+
+  @JsonKey(name: r'bannerUrl', required: false, includeIfNull: false)
+  final String? bannerUrl;
+
   @JsonKey(name: r'bio', required: true, includeIfNull: false)
   final String bio;
 
@@ -148,6 +168,12 @@ class User {
   @JsonKey(name: r'friendRequestStatus', required: false, includeIfNull: false)
   final String? friendRequestStatus;
 
+  @JsonKey(name: r'iconFrame', required: false, includeIfNull: false)
+  final String? iconFrame;
+
+  @JsonKey(name: r'iconUrl', required: false, includeIfNull: false)
+  final String? iconUrl;
+
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
@@ -155,6 +181,9 @@ class User {
   /// InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
   @JsonKey(name: r'instanceId', required: false, includeIfNull: false)
   final String? instanceId;
+
+  @JsonKey(name: r'isEconomyCreator', required: false, includeIfNull: false)
+  final bool? isEconomyCreator;
 
   /// Either their `friendKey`, or empty string if you are not friends. Unknown usage.
   @JsonKey(name: r'isFriend', required: true, includeIfNull: false)
@@ -179,11 +208,17 @@ class User {
   @JsonKey(name: r'location', required: false, includeIfNull: false)
   final String? location;
 
+  @JsonKey(name: r'nameplateEffect', required: false, includeIfNull: false)
+  final String? nameplateEffect;
+
   @JsonKey(name: r'note', required: false, includeIfNull: false)
   final String? note;
 
   @JsonKey(name: r'platform', required: false, includeIfNull: false)
   final String? platform;
+
+  @JsonKey(name: r'profileEffect', required: false, includeIfNull: false)
+  final String? profileEffect;
 
   @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
   final String profilePicOverride;
@@ -240,6 +275,8 @@ class User {
           other.ageVerified == ageVerified &&
           other.allowAvatarCopying == allowAvatarCopying &&
           other.badges == badges &&
+          other.bannerType == bannerType &&
+          other.bannerUrl == bannerUrl &&
           other.bio == bio &&
           other.bioLinks == bioLinks &&
           other.currentAvatarImageUrl == currentAvatarImageUrl &&
@@ -251,16 +288,21 @@ class User {
           other.displayName == displayName &&
           other.friendKey == friendKey &&
           other.friendRequestStatus == friendRequestStatus &&
+          other.iconFrame == iconFrame &&
+          other.iconUrl == iconUrl &&
           other.id == id &&
           other.instanceId == instanceId &&
+          other.isEconomyCreator == isEconomyCreator &&
           other.isFriend == isFriend &&
           other.lastActivity == lastActivity &&
           other.lastLogin == lastLogin &&
           other.lastMobile == lastMobile &&
           other.lastPlatform == lastPlatform &&
           other.location == location &&
+          other.nameplateEffect == nameplateEffect &&
           other.note == note &&
           other.platform == platform &&
+          other.profileEffect == profileEffect &&
           other.profilePicOverride == profilePicOverride &&
           other.profilePicOverrideThumbnail == profilePicOverrideThumbnail &&
           other.pronouns == pronouns &&
@@ -281,6 +323,8 @@ class User {
       ageVerified.hashCode +
       allowAvatarCopying.hashCode +
       badges.hashCode +
+      bannerType.hashCode +
+      bannerUrl.hashCode +
       bio.hashCode +
       bioLinks.hashCode +
       currentAvatarImageUrl.hashCode +
@@ -291,16 +335,21 @@ class User {
       displayName.hashCode +
       friendKey.hashCode +
       friendRequestStatus.hashCode +
+      iconFrame.hashCode +
+      iconUrl.hashCode +
       id.hashCode +
       instanceId.hashCode +
+      isEconomyCreator.hashCode +
       isFriend.hashCode +
       lastActivity.hashCode +
       lastLogin.hashCode +
       (lastMobile == null ? 0 : lastMobile.hashCode) +
       lastPlatform.hashCode +
       location.hashCode +
+      nameplateEffect.hashCode +
       note.hashCode +
       platform.hashCode +
+      profileEffect.hashCode +
       profilePicOverride.hashCode +
       profilePicOverrideThumbnail.hashCode +
       pronouns.hashCode +

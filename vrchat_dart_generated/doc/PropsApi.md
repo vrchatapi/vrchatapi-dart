@@ -82,7 +82,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getPropsApi();
-final String propId = prop_829ba6f6-b837-49d9-b9a9-056b82103b58; // String | Prop ID.
+final String propId = propId_example; // String | Prop ID.
 
 try {
     api.deleteProp(propId);
@@ -128,7 +128,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getPropsApi();
-final String propId = prop_829ba6f6-b837-49d9-b9a9-056b82103b58; // String | Prop ID.
+final String propId = propId_example; // String | Prop ID.
 
 try {
     final response = api.getProp(propId);
@@ -175,7 +175,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getPropsApi();
-final String propId = prop_829ba6f6-b837-49d9-b9a9-056b82103b58; // String | Prop ID.
+final String propId = propId_example; // String | Prop ID.
 
 try {
     final response = api.getPropPublishStatus(propId);
@@ -273,7 +273,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getPropsApi();
-final String propId = prop_829ba6f6-b837-49d9-b9a9-056b82103b58; // String | Prop ID.
+final String propId = propId_example; // String | Prop ID.
 
 try {
     final response = api.publishProp(propId);
@@ -320,7 +320,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getPropsApi();
-final String propId = prop_829ba6f6-b837-49d9-b9a9-056b82103b58; // String | Prop ID.
+final String propId = propId_example; // String | Prop ID.
 
 try {
     final response = api.unpublishProp(propId);
@@ -367,7 +367,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getPropsApi();
-final String propId = prop_829ba6f6-b837-49d9-b9a9-056b82103b58; // String | Prop ID.
+final String propId = propId_example; // String | Prop ID.
 final UpdatePropRequest updatePropRequest = ; // UpdatePropRequest | 
 
 try {

@@ -8,6 +8,8 @@ import 'package:json_annotation/json_annotation.dart';
 enum ProductListingType {
   @JsonValue(r'duration')
   duration(r'duration'),
+  @JsonValue(r'instant')
+  instant(r'instant'),
   @JsonValue(r'permanent')
   permanent(r'permanent'),
   @JsonValue(r'subscription')

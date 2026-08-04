@@ -32,6 +32,7 @@ Badge _$BadgeFromJson(Map<String, dynamic> json) => $checkedCreate(
       badgeImageUrl: $checkedConvert('badgeImageUrl', (v) => v as String),
       badgeName: $checkedConvert('badgeName', (v) => v as String),
       hidden: $checkedConvert('hidden', (v) => v as bool?),
+      isQuantifiable: $checkedConvert('isQuantifiable', (v) => v as bool?),
       showcased: $checkedConvert('showcased', (v) => v as bool),
       updatedAt: $checkedConvert(
         'updatedAt',
@@ -49,6 +50,7 @@ Map<String, dynamic> _$BadgeToJson(Badge instance) => <String, dynamic>{
   'badgeImageUrl': instance.badgeImageUrl,
   'badgeName': instance.badgeName,
   'hidden': ?instance.hidden,
+  'isQuantifiable': ?instance.isQuantifiable,
   'showcased': instance.showcased,
   'updatedAt': ?instance.updatedAt?.toIso8601String(),
 };

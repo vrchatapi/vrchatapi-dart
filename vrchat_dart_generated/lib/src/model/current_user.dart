@@ -43,6 +43,10 @@ class CurrentUser {
 
     required this.allowAvatarCopying,
 
+    this.appleDetails,
+
+    this.appleId,
+
     this.authToken,
 
     this.badges,
@@ -87,11 +91,15 @@ class CurrentUser {
 
     required this.hasBirthday,
 
+    this.hasDiscordFriendsOptOut,
+
     required this.hasEmail,
 
     required this.hasLoggedInFromClient,
 
     required this.hasPendingEmail,
+
+    this.hasSharedConnectionsOptOut,
 
     this.hideContentFilterSettings,
 
@@ -159,6 +167,10 @@ class CurrentUser {
 
     required this.tags,
 
+    this.twitchDetails,
+
+    this.twitchId,
+
     required this.twoFactorAuthEnabled,
 
     this.twoFactorAuthEnabledDate,
@@ -212,6 +224,12 @@ class CurrentUser {
 
   @JsonKey(name: r'allowAvatarCopying', required: true, includeIfNull: false)
   final bool allowAvatarCopying;
+
+  @JsonKey(name: r'appleDetails', required: false, includeIfNull: false)
+  final Object? appleDetails;
+
+  @JsonKey(name: r'appleId', required: false, includeIfNull: false)
+  final String? appleId;
 
   /// The auth token for NEWLY REGISTERED ACCOUNTS ONLY (/auth/register)
   @JsonKey(name: r'authToken', required: false, includeIfNull: false)
@@ -292,6 +310,13 @@ class CurrentUser {
   @JsonKey(name: r'hasBirthday', required: true, includeIfNull: false)
   final bool hasBirthday;
 
+  @JsonKey(
+    name: r'hasDiscordFriendsOptOut',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? hasDiscordFriendsOptOut;
+
   @JsonKey(name: r'hasEmail', required: true, includeIfNull: false)
   final bool hasEmail;
 
@@ -300,6 +325,13 @@ class CurrentUser {
 
   @JsonKey(name: r'hasPendingEmail', required: true, includeIfNull: false)
   final bool hasPendingEmail;
+
+  @JsonKey(
+    name: r'hasSharedConnectionsOptOut',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? hasSharedConnectionsOptOut;
 
   @JsonKey(
     name: r'hideContentFilterSettings',
@@ -420,6 +452,12 @@ class CurrentUser {
   @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 
+  @JsonKey(name: r'twitchDetails', required: false, includeIfNull: false)
+  final Object? twitchDetails;
+
+  @JsonKey(name: r'twitchId', required: false, includeIfNull: false)
+  final String? twitchId;
+
   @JsonKey(name: r'twoFactorAuthEnabled', required: true, includeIfNull: false)
   final bool twoFactorAuthEnabled;
 
@@ -468,6 +506,8 @@ class CurrentUser {
           other.ageVerificationStatus == ageVerificationStatus &&
           other.ageVerified == ageVerified &&
           other.allowAvatarCopying == allowAvatarCopying &&
+          other.appleDetails == appleDetails &&
+          other.appleId == appleId &&
           other.authToken == authToken &&
           other.badges == badges &&
           other.bio == bio &&
@@ -491,9 +531,11 @@ class CurrentUser {
           other.googleDetails == googleDetails &&
           other.googleId == googleId &&
           other.hasBirthday == hasBirthday &&
+          other.hasDiscordFriendsOptOut == hasDiscordFriendsOptOut &&
           other.hasEmail == hasEmail &&
           other.hasLoggedInFromClient == hasLoggedInFromClient &&
           other.hasPendingEmail == hasPendingEmail &&
+          other.hasSharedConnectionsOptOut == hasSharedConnectionsOptOut &&
           other.hideContentFilterSettings == hideContentFilterSettings &&
           other.homeLocation == homeLocation &&
           other.id == id &&
@@ -527,6 +569,8 @@ class CurrentUser {
           other.steamDetails == steamDetails &&
           other.steamId == steamId &&
           other.tags == tags &&
+          other.twitchDetails == twitchDetails &&
+          other.twitchId == twitchId &&
           other.twoFactorAuthEnabled == twoFactorAuthEnabled &&
           other.twoFactorAuthEnabledDate == twoFactorAuthEnabledDate &&
           other.unsubscribe == unsubscribe &&
@@ -548,6 +592,8 @@ class CurrentUser {
       ageVerificationStatus.hashCode +
       ageVerified.hashCode +
       allowAvatarCopying.hashCode +
+      appleDetails.hashCode +
+      appleId.hashCode +
       authToken.hashCode +
       badges.hashCode +
       bio.hashCode +
@@ -570,9 +616,11 @@ class CurrentUser {
       googleDetails.hashCode +
       googleId.hashCode +
       hasBirthday.hashCode +
+      hasDiscordFriendsOptOut.hashCode +
       hasEmail.hashCode +
       hasLoggedInFromClient.hashCode +
       hasPendingEmail.hashCode +
+      hasSharedConnectionsOptOut.hashCode +
       hideContentFilterSettings.hashCode +
       homeLocation.hashCode +
       id.hashCode +
@@ -606,6 +654,8 @@ class CurrentUser {
       steamDetails.hashCode +
       steamId.hashCode +
       tags.hashCode +
+      twitchDetails.hashCode +
+      twitchId.hashCode +
       twoFactorAuthEnabled.hashCode +
       (twoFactorAuthEnabledDate == null
           ? 0

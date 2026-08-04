@@ -95,7 +95,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFilesApi();
-final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Must be a valid file ID.
+final String fileId = fileId_example; // String | Must be a valid file ID.
 final CreateFileVersionRequest createFileVersionRequest = ; // CreateFileVersionRequest | 
 
 try {
@@ -144,7 +144,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFilesApi();
-final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Must be a valid file ID.
+final String fileId = fileId_example; // String | Must be a valid file ID.
 
 try {
     final response = api.deleteFile(fileId);
@@ -191,7 +191,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFilesApi();
-final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Must be a valid file ID.
+final String fileId = fileId_example; // String | Must be a valid file ID.
 final int versionId = 1; // int | Version ID of the asset.
 
 try {
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 Download File Version
 
-Downloads the file with the provided version number.  **Version Note:** Version 0 is always when the file was created. The real data is usually always located in version 1 and up.  **Extension Note:** Files are not guaranteed to have a file extensions. UnityPackage files tends to have it, images through this endpoint do not. You are responsible for appending file extension from the `extension` field when neccesary.
+Downloads the file with the provided version number.  **Version Note:** Version 0 is always when the file was created. The real data is usually always located in version 1 and up.  **Extension Note:** Files are not guaranteed to have a file extensions. UnityPackage files tends to have it, images through this endpoint do not. You are responsible for appending file extension from the `extension` field when necessary.
 
 ### Example
 ```dart
@@ -240,7 +240,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFilesApi();
-final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Must be a valid file ID.
+final String fileId = fileId_example; // String | Must be a valid file ID.
 final int versionId = 1; // int | Version ID of the asset.
 
 try {
@@ -289,7 +289,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFilesApi();
-final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Must be a valid file ID.
+final String fileId = fileId_example; // String | Must be a valid file ID.
 final int versionId = 1; // int | Version ID of the asset.
 final String fileType = file; // String | Type of file.
 final FinishFileDataUploadRequest finishFileDataUploadRequest = {"etags":["xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"],"maxParts":"0","nextPartNumber":"0"}; // FinishFileDataUploadRequest | Please see documentation on ETag's: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag's should NOT be present when uploading a `signature`.
@@ -440,7 +440,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFilesApi();
-final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Must be a valid file ID.
+final String fileId = fileId_example; // String | Must be a valid file ID.
 
 try {
     final response = api.getFile(fileId);
@@ -487,7 +487,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFilesApi();
-final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Must be a valid file ID.
+final String fileId = fileId_example; // String | Must be a valid file ID.
 final int versionId = 1; // int | Version ID of the asset.
 
 try {
@@ -536,7 +536,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFilesApi();
-final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Must be a valid file ID.
+final String fileId = fileId_example; // String | Must be a valid file ID.
 final int versionId = 1; // int | Version ID of the asset.
 
 try {
@@ -585,7 +585,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFilesApi();
-final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Must be a valid file ID.
+final String fileId = fileId_example; // String | Must be a valid file ID.
 final int versionId = 1; // int | Version ID of the asset.
 
 try {
@@ -634,7 +634,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFilesApi();
-final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Must be a valid file ID.
+final String fileId = fileId_example; // String | Must be a valid file ID.
 final int versionId = 1; // int | Version ID of the asset.
 final String fileType = file; // String | Type of file.
 
@@ -785,7 +785,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getFilesApi();
-final String fileId = file_00000000-0000-0000-0000-000000000000; // String | Must be a valid file ID.
+final String fileId = fileId_example; // String | Must be a valid file ID.
 final int versionId = 1; // int | Version ID of the asset.
 final String fileType = file; // String | Type of file.
 final int partNumber = 1; // int | The part number to start uploading. If not provided, the first part will be started.
