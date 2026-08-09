@@ -22,29 +22,18 @@ jobs:
           repository: vrchatapi/vrchatapi-dart
           ref: ${{ inputs.ref || github.ref }}
 
-      - uses: subosito/flutter-action@v2.23.0
-        with:
-          cache: true
+      - uses: dart-lang/setup-dart@v1.8.0
 
       - uses: actions/cache@v6
         with:
-          path: ${{ env.PUB_CACHE }}
-          key: pub-${{ hashFiles('**/pubspec.lock') }}
-          restore-keys: pub-
-
-      - uses: actions/cache@v6
-        with:
-          path: |
-            /home/linuxbrew/.linuxbrew
-            /home/linuxbrew/.cache/Homebrew
-          key: ${{ runner.os }}-brew-${{ hashFiles('**/Brewfile') }}
-          restore-keys: ${{ runner.os }}-brew-
-
-      - uses: Homebrew/actions/setup-homebrew@fd832223f9f99ebf0244dd20658680e5d4aca049
+          path: ~/.pub-cache
+          key: pub-${{ runner.os }}-${{ hashFiles('**/pubspec.yaml') }}
+          restore-keys: pub-${{ runner.os }}-
 
       - uses: vrchatapi/specification/.github/actions/setup@ci/modernise-actions
         with:
           bundle: openapi-legacy.yaml
+          generator: 7.24.0
 
       - run: |
           mkdir -p ../vrchatapi-specification/dist
