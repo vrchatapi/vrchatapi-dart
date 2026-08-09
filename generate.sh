@@ -15,7 +15,7 @@ dart pub get
 dart run tool/patch_input.dart "$@"
 cd ..
 
-./node_modules/@openapitools/openapi-generator-cli/main.js generate -g dart-dio -c generator-config.yaml
+openapi-generator generate -g dart-dio -c generator-config.yaml
 
 # We need to do a pub get in the output before patching it
 cd vrchat_dart_generated

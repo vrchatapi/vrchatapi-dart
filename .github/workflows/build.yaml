@@ -24,22 +24,33 @@ jobs:
 
       - uses: dart-lang/setup-dart@v1.8.0
 
-      - uses: actions/cache@v6
+      - id: pub
+        uses: actions/cache/restore@v6
         with:
           path: ~/.pub-cache
           key: pub-${{ runner.os }}-${{ hashFiles('**/pubspec.yaml') }}
           restore-keys: pub-${{ runner.os }}-
 
-      - uses: vrchatapi/specification/.github/actions/setup@ci/modernise-actions
+      - uses: vrchatapi/specification/.github/actions/generator@ci/modernise-actions
+
+      - uses: vrchatapi/specification/.github/actions/bundle@ci/modernise-actions
         with:
           bundle: openapi-legacy.yaml
-          generator: 7.24.0
 
       - run: |
           mkdir -p ../vrchatapi-specification/dist
           mv openapi-legacy.yaml ../vrchatapi-specification/dist/
 
-      - run: ./generate.sh local
+      - id: generate
+        run: ./generate.sh local
+
+      # Saved even when generation fails, so a broken build does not also pay a
+      # cold pub install every run.
+      - if: always() && steps.pub.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: ~/.pub-cache
+          key: pub-${{ runner.os }}-${{ hashFiles('**/pubspec.yaml') }}
 
       - run: dart analyze
         working-directory: vrchat_dart_generated
