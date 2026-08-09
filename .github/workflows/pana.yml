@@ -2,7 +2,7 @@ name: Package analysis
 on:
   push:
     branches:
-      - main
+      - '**'
   pull_request:
 
 concurrency:
