@@ -38,7 +38,7 @@ jobs:
 
       - uses: actions/upload-artifact@v7
         with:
-          name: generated-dart
+          name: dart-generated
           path: .
           include-hidden-files: true
 
@@ -48,7 +48,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v8
         with:
-          name: generated-dart
+          name: dart-generated
 
       - uses: dart-lang/setup-dart@v1.8.0
 
@@ -70,7 +70,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v8
         with:
-          name: generated-dart
+          name: dart-generated
 
       - uses: dart-lang/setup-dart@v1.8.0
 
