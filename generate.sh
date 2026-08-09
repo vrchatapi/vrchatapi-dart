@@ -22,6 +22,12 @@ cd vrchat_dart_generated
 dart pub get
 cd ..
 
+# openapi-generator can emit invalid Dart like r'you\'re' (escapes in raw
+# strings). Fix that before formatting, which fails on unparseable files.
+cd vrchat_dart
+dart run tool/fix_raw_string_escapes.dart
+cd ..
+
 # Format before patching since extra line breaks can break the patches
 dart format .
 cd vrchat_dart
