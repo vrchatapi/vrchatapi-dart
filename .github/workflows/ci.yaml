@@ -1,0 +1,84 @@
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+  workflow_call:
+    inputs:
+      ref:
+        description: Ref of this repository to build.
+        required: false
+        type: string
+        default: main
+
+name: CI
+
+jobs:
+  # Generated once here and handed to the checks below, so they neither repeat
+  # the generation nor disagree about what they are checking. The artifact name
+  # carries the language because a spec run shares one namespace across SDKs.
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          repository: vrchatapi/vrchatapi-dart
+          ref: ${{ inputs.ref || github.ref }}
+
+      - uses: dart-lang/setup-dart@v1.8.0
+
+      - uses: vrchatapi/specification/.github/actions/setup-generator@ci/modernise-actions
+
+      - uses: vrchatapi/specification/.github/actions/download@ci/modernise-actions
+        with:
+          bundle: openapi-legacy.yaml
+
+      - run: |
+          mkdir -p ../vrchatapi-specification/dist
+          mv openapi-legacy.yaml ../vrchatapi-specification/dist/
+
+      - run: ./generate.sh local
+
+      - uses: actions/upload-artifact@v5
+        with:
+          name: generated-dart
+          path: .
+
+  analyze:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: generated-dart
+
+      - uses: dart-lang/setup-dart@v1.8.0
+
+      - run: dart analyze
+        working-directory: vrchat_dart_generated
+
+  # Mirrors pana.yml, which checks the committed packages; this checks the ones
+  # a release would generate.
+  pana:
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package: [vrchat_dart, vrchat_dart_generated]
+    defaults:
+      run:
+        working-directory: ${{ matrix.package }}
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: generated-dart
+
+      - uses: dart-lang/setup-dart@v1.8.0
+
+      - run: dart pub get
+
+      - run: dart pub publish --dry-run
+
+      - run: |
+          dart pub global activate pana
+          pana --no-warning --exit-code-threshold 0
