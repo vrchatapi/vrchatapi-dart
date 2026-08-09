@@ -9,13 +9,13 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2
+      - uses: actions/checkout@v7
+      - uses: subosito/flutter-action@v2.23.0
         with:
           cache: true
 
       - name: Pub cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         env:
           cache-name: root
         with:
@@ -24,7 +24,7 @@ jobs:
           restore-keys: ${{ env.cache-name }}-
 
       - name: Homebrew cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: |
             /home/linuxbrew/.linuxbrew
@@ -37,7 +37,7 @@ jobs:
             ${{ runner.os }}-brew-
 
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@master
+        uses: Homebrew/actions/setup-homebrew@fd832223f9f99ebf0244dd20658680e5d4aca049
 
       - name: Generate
         run: ./generate.sh
@@ -53,7 +53,7 @@ jobs:
 
       - name: Create Pull Request
         if: steps.changelog.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           branch: ci/regenerate-from-spec
           commit-message: "Regenerated from spec"
