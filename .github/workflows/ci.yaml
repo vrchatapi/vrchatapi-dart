@@ -24,9 +24,9 @@ jobs:
 
       - uses: dart-lang/setup-dart@v1.8.0
 
-      - uses: vrchatapi/specification/.github/actions/setup-generator@ci/modernise-actions
+      - uses: vrchatapi/specification/.github/actions/setup-generator@main
 
-      - uses: vrchatapi/specification/.github/actions/download@ci/modernise-actions
+      - uses: vrchatapi/specification/.github/actions/download@main
         with:
           bundle: openapi-legacy.yaml
 
