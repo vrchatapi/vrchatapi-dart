@@ -23,21 +23,7 @@ jobs:
           key: ${{ env.cache-name }}-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: ${{ env.cache-name }}-
 
-      - name: Homebrew cache
-        uses: actions/cache@v6
-        with:
-          path: |
-            /home/linuxbrew/.linuxbrew
-            /home/linuxbrew/.linuxbrew/Library/Taps
-            /home/linuxbrew/.cache/Homebrew
-            /home/linuxbrew/.linuxbrew/Cellar
-            /home/linuxbrew/.linuxbrew/bin/brew
-          key: ${{ runner.os }}-brew-${{ hashFiles('**/Brewfile') }}
-          restore-keys: |
-            ${{ runner.os }}-brew-
-
-      - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@fd832223f9f99ebf0244dd20658680e5d4aca049
+      - uses: vrchatapi/specification/.github/actions/setup-generator@main
 
       - name: Generate
         run: ./generate.sh
