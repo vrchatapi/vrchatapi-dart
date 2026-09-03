@@ -34,7 +34,13 @@ Map<String, dynamic> _$InfoPushDataClickableToJson(
 
 const _$InfoPushDataClickableCommandEnumEnumMap = {
   InfoPushDataClickableCommandEnum.cannedWorldSearch: 'CannedWorldSearch',
+  InfoPushDataClickableCommandEnum.openAccountUpgrade: 'OpenAccountUpgrade',
+  InfoPushDataClickableCommandEnum.openAvatarsMenu: 'OpenAvatarsMenu',
+  InfoPushDataClickableCommandEnum.openHelpArticle: 'OpenHelpArticle',
+  InfoPushDataClickableCommandEnum.openListingDetails: 'OpenListingDetails',
   InfoPushDataClickableCommandEnum.openSafetyMenu: 'OpenSafetyMenu',
   InfoPushDataClickableCommandEnum.openURL: 'OpenURL',
   InfoPushDataClickableCommandEnum.openVRCPlusMenu: 'OpenVRCPlusMenu',
+  InfoPushDataClickableCommandEnum.openVRChatStore: 'OpenVRChatStore',
+  InfoPushDataClickableCommandEnum.openWorldDetails: 'OpenWorldDetails',
 };

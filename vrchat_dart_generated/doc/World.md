@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **defaultContentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  | [optional] 
 **description** | **String** |  | 
+**disabledPropAbilities** | **List&lt;Object&gt;** |  | [optional] 
 **favorites** | **int** |  | [optional] [default to 0]
 **featured** | **bool** |  | [default to false]
 **heat** | **int** |  | [default to 0]
@@ -32,6 +33,7 @@ Name | Type | Description | Notes
 **publicationDate** | **String** |  | 
 **recommendedCapacity** | **int** |  | 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | 
+**slimInstances** | **List&lt;Object&gt;** |  | [optional] 
 **storeId** | **String** |  | [optional] 
 **tags** | **List&lt;String&gt;** |   | 
 **thumbnailImageUrl** | **String** |  | 

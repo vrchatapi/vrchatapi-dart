@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **playerOrderFactor** | **int** | Unknown | 
 **slowUpdateFactorThreshold** | **int** | Unknown | 
 **useDirectPlayerSerialization** | **bool** | Unknown | 
+**useSparseRotationForPlayerSerialization** | **bool** |  | [optional] 
 **viewSegmentLength** | **int** | Unknown | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

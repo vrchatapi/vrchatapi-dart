@@ -47,6 +47,10 @@ class LimitedUserGroups {
 
     this.name,
 
+    this.nameplateId,
+
+    this.nameplateUrl,
+
     this.ownerId,
 
     this.privacy,
@@ -99,6 +103,12 @@ class LimitedUserGroups {
   @JsonKey(name: r'name', required: false, includeIfNull: false)
   final String? name;
 
+  @JsonKey(name: r'nameplateId', required: false, includeIfNull: false)
+  final Object? nameplateId;
+
+  @JsonKey(name: r'nameplateUrl', required: false, includeIfNull: false)
+  final Object? nameplateUrl;
+
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(name: r'ownerId', required: false, includeIfNull: false)
   final String? ownerId;
@@ -128,6 +138,8 @@ class LimitedUserGroups {
           other.memberVisibility == memberVisibility &&
           other.mutualGroup == mutualGroup &&
           other.name == name &&
+          other.nameplateId == nameplateId &&
+          other.nameplateUrl == nameplateUrl &&
           other.ownerId == ownerId &&
           other.privacy == privacy &&
           other.shortCode == shortCode;
@@ -149,6 +161,8 @@ class LimitedUserGroups {
       memberVisibility.hashCode +
       mutualGroup.hashCode +
       name.hashCode +
+      (nameplateId == null ? 0 : nameplateId.hashCode) +
+      (nameplateUrl == null ? 0 : nameplateUrl.hashCode) +
       ownerId.hashCode +
       privacy.hashCode +
       shortCode.hashCode;

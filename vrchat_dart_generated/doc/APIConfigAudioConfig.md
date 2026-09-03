@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **nearFieldILDNudge** | **num** | Unknown | 
 **nearFieldILDNudgeDistance** | **num** | Unknown | 
 **nearFieldILDNudgeEarRadius** | **num** | Unknown | 
+**nearFieldILDNudgeEarTranslate** | **num** |  | [optional] 
 **perEarDirectionalityEarRadius** | **num** | Unknown | 
 **perEarDirectionalityFadeDistance** | **num** | Unknown | 
 **perEarDirectionalityMaxScale** | **num** | Unknown | 
@@ -19,6 +20,7 @@ Name | Type | Description | Notes
 **trackingScaleMax** | **num** | Unknown | 
 **trackingScaleMin** | **num** | Unknown | 
 **trackingScaleMultiplier** | **num** | Unknown | 
+**useLegacyILDNudging** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

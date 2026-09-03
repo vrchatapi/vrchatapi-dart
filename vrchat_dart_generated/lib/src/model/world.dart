@@ -32,6 +32,8 @@ class World {
 
     required this.description,
 
+    this.disabledPropAbilities,
+
     this.favorites = 0,
 
     this.featured = false,
@@ -67,6 +69,8 @@ class World {
     required this.recommendedCapacity,
 
     required this.releaseStatus,
+
+    this.slimInstances,
 
     this.storeId,
 
@@ -109,6 +113,13 @@ class World {
 
   @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
+
+  @JsonKey(
+    name: r'disabledPropAbilities',
+    required: false,
+    includeIfNull: false,
+  )
+  final List<Object>? disabledPropAbilities;
 
   // minimum: 0
   @JsonKey(name: r'favorites', required: false, includeIfNull: false)
@@ -175,6 +186,9 @@ class World {
   @JsonKey(name: r'releaseStatus', required: true, includeIfNull: false)
   final ReleaseStatus releaseStatus;
 
+  @JsonKey(name: r'slimInstances', required: false, includeIfNull: false)
+  final List<Object>? slimInstances;
+
   @JsonKey(name: r'storeId', required: false, includeIfNull: false)
   final String? storeId;
 
@@ -216,6 +230,7 @@ class World {
           other.createdAt == createdAt &&
           other.defaultContentSettings == defaultContentSettings &&
           other.description == description &&
+          other.disabledPropAbilities == disabledPropAbilities &&
           other.favorites == favorites &&
           other.featured == featured &&
           other.heat == heat &&
@@ -234,6 +249,7 @@ class World {
           other.publicationDate == publicationDate &&
           other.recommendedCapacity == recommendedCapacity &&
           other.releaseStatus == releaseStatus &&
+          other.slimInstances == slimInstances &&
           other.storeId == storeId &&
           other.tags == tags &&
           other.thumbnailImageUrl == thumbnailImageUrl &&
@@ -252,6 +268,7 @@ class World {
       createdAt.hashCode +
       defaultContentSettings.hashCode +
       description.hashCode +
+      disabledPropAbilities.hashCode +
       favorites.hashCode +
       featured.hashCode +
       heat.hashCode +
@@ -270,6 +287,7 @@ class World {
       publicationDate.hashCode +
       recommendedCapacity.hashCode +
       releaseStatus.hashCode +
+      slimInstances.hashCode +
       storeId.hashCode +
       tags.hashCode +
       thumbnailImageUrl.hashCode +

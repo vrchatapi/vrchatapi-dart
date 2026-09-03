@@ -8,14 +8,19 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**bannerColor** | **String** |  | [optional] 
+**bannerType** | **String** |  | [optional] 
 **bio** | **String** |  | [optional] 
 **bioLinks** | **List&lt;String&gt;** |   | [optional] 
 **currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | [optional] 
 **currentAvatarTags** | **List&lt;String&gt;** |  | [optional] 
 **currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | [optional] 
 **developerType** | [**DeveloperType**](DeveloperType.md) |  | 
+**discordId** | **String** | https://discord.com/developers/docs/reference#snowflakes | [optional] 
 **displayName** | **String** |  | 
 **friendKey** | **String** |  | 
+**iconFrame** | **String** |  | [optional] 
+**iconUrl** | **String** |  | [optional] 
 **id** | **String** | A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed. | 
 **imageUrl** | **String** |  | 
 **isFriend** | **bool** |  | 
@@ -24,7 +29,9 @@ Name | Type | Description | Notes
 **lastMobile** | [**DateTime**](DateTime.md) |  | 
 **lastPlatform** | **String** | This is normally `android`, `ios`, `standalonewindows`, `web`, or the empty value ``, but also supposedly can be any random Unity version such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`. | 
 **location** | **String** |  | 
+**nameplateEffect** | **String** |  | [optional] 
 **platform** | **String** |  | 
+**profileEffect** | **String** |  | [optional] 
 **profilePicOverride** | **String** |  | [optional] 
 **profilePicOverrideThumbnail** | **String** |  | [optional] 
 **status** | [**UserStatus**](UserStatus.md) |  | 

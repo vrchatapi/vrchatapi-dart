@@ -31,6 +31,8 @@ class Avatar {
 
     this.assetUrlObject,
 
+    this.attribution,
+
     required this.authorId,
 
     required this.authorName,
@@ -98,6 +100,9 @@ class Avatar {
   /// Not present from general search `/avatars`, only on specific requests `/avatars/{avatarId}`. **Deprecation:** `Object` has unknown usage/fields, and is always empty. Use normal `Url` field instead.
   @JsonKey(name: r'assetUrlObject', required: false, includeIfNull: false)
   final Object? assetUrlObject;
+
+  @JsonKey(name: r'attribution', required: false, includeIfNull: false)
+  final Object? attribution;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(name: r'authorId', required: true, includeIfNull: false)
@@ -189,6 +194,7 @@ class Avatar {
           other.activeAssetReviewId == activeAssetReviewId &&
           other.assetUrl == assetUrl &&
           other.assetUrlObject == assetUrlObject &&
+          other.attribution == attribution &&
           other.authorId == authorId &&
           other.authorName == authorName &&
           other.createdAt == createdAt &&
@@ -222,6 +228,7 @@ class Avatar {
       activeAssetReviewId.hashCode +
       assetUrl.hashCode +
       assetUrlObject.hashCode +
+      (attribution == null ? 0 : attribution.hashCode) +
       authorId.hashCode +
       authorName.hashCode +
       createdAt.hashCode +

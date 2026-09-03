@@ -11,13 +11,13 @@ Name | Type | Description | Notes
 **authorId** | **String** | A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed. | 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **dropExpiryDate** | [**DateTime**](DateTime.md) |  | 
+**dropStatus** | **String** |  | [optional] 
 **endDropDate** | [**DateTime**](DateTime.md) |  | 
 **id** | **String** |  | 
 **isDisabled** | **bool** |  | 
 **name** | **String** |  | 
 **notificationDetails** | [**InventoryNotificationDetails**](InventoryNotificationDetails.md) |  | 
 **startDropDate** | [**DateTime**](DateTime.md) |  | 
-**status** | **String** |  | 
 **tags** | **List&lt;String&gt;** |  | 
 **targetGroup** | **String** |  | 
 **templateIds** | **List&lt;String&gt;** |  | 

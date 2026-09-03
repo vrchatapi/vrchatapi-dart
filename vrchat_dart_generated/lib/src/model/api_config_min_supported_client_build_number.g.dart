@@ -24,7 +24,6 @@ _$APIConfigMinSupportedClientBuildNumberFromJson(Map<String, dynamic> json) =>
             'GooglePlay',
             'PC',
             'PicoStore',
-            'QuestAppLab',
             'QuestStore',
             'TestFlight',
             'XRElite',
@@ -61,7 +60,9 @@ _$APIConfigMinSupportedClientBuildNumberFromJson(Map<String, dynamic> json) =>
           ),
           questAppLab: $checkedConvert(
             'QuestAppLab',
-            (v) => PlatformBuildInfo.fromJson(v as Map<String, dynamic>),
+            (v) => v == null
+                ? null
+                : PlatformBuildInfo.fromJson(v as Map<String, dynamic>),
           ),
           questStore: $checkedConvert(
             'QuestStore',
@@ -103,7 +104,7 @@ Map<String, dynamic> _$APIConfigMinSupportedClientBuildNumberToJson(
   'GooglePlay': instance.googlePlay.toJson(),
   'PC': instance.pc.toJson(),
   'PicoStore': instance.picoStore.toJson(),
-  'QuestAppLab': instance.questAppLab.toJson(),
+  'QuestAppLab': ?instance.questAppLab?.toJson(),
   'QuestStore': instance.questStore.toJson(),
   'TestFlight': instance.testFlight.toJson(),
   'XRElite': instance.xRElite.toJson(),

@@ -32,7 +32,7 @@ class APIConfigMinSupportedClientBuildNumber {
 
     required this.picoStore,
 
-    required this.questAppLab,
+    this.questAppLab,
 
     required this.questStore,
 
@@ -62,8 +62,8 @@ class APIConfigMinSupportedClientBuildNumber {
   @JsonKey(name: r'PicoStore', required: true, includeIfNull: false)
   final PlatformBuildInfo picoStore;
 
-  @JsonKey(name: r'QuestAppLab', required: true, includeIfNull: false)
-  final PlatformBuildInfo questAppLab;
+  @JsonKey(name: r'QuestAppLab', required: false, includeIfNull: false)
+  final PlatformBuildInfo? questAppLab;
 
   @JsonKey(name: r'QuestStore', required: true, includeIfNull: false)
   final PlatformBuildInfo questStore;

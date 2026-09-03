@@ -146,6 +146,7 @@ FileAnalysisAvatarStats _$FileAnalysisAvatarStatsFromJson(
       'physicsRigidbodies',
       (v) => (v as num).toInt(),
     ),
+    raycastCount: $checkedConvert('raycastCount', (v) => (v as num?)?.toInt()),
     skinnedMeshCount: $checkedConvert(
       'skinnedMeshCount',
       (v) => (v as num).toInt(),
@@ -221,6 +222,7 @@ Map<String, dynamic> _$FileAnalysisAvatarStatsToJson(
   'physBoneTransformCount': instance.physBoneTransformCount,
   'physicsColliders': instance.physicsColliders,
   'physicsRigidbodies': instance.physicsRigidbodies,
+  'raycastCount': ?instance.raycastCount,
   'skinnedMeshCount': instance.skinnedMeshCount,
   'skinnedMeshIndices': instance.skinnedMeshIndices,
   'skinnedMeshPolygons': instance.skinnedMeshPolygons,

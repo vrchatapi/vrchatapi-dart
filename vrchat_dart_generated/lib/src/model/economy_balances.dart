@@ -19,7 +19,7 @@ class EconomyBalances {
   EconomyBalances({
     required this.balance,
 
-    required this.earnings,
+    this.earnings,
 
     required this.standard,
   });
@@ -27,8 +27,8 @@ class EconomyBalances {
   @JsonKey(name: r'balance', required: true, includeIfNull: false)
   final int balance;
 
-  @JsonKey(name: r'earnings', required: true, includeIfNull: false)
-  final int earnings;
+  @JsonKey(name: r'earnings', required: false, includeIfNull: false)
+  final int? earnings;
 
   @JsonKey(name: r'standard', required: true, includeIfNull: false)
   final int standard;

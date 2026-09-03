@@ -17,7 +17,22 @@ part 'info_push_data_article_content.g.dart';
 )
 class InfoPushDataArticleContent {
   /// Returns a new [InfoPushDataArticleContent] instance.
-  InfoPushDataArticleContent({this.imageUrl, this.onPressed, this.text});
+  InfoPushDataArticleContent({
+    this.id,
+
+    this.imageUrl,
+
+    this.onPressed,
+
+    this.text,
+
+    this.title,
+
+    this.videoUrl,
+  });
+
+  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  final String? id;
 
   @JsonKey(name: r'imageUrl', required: false, includeIfNull: false)
   final String? imageUrl;
@@ -28,16 +43,31 @@ class InfoPushDataArticleContent {
   @JsonKey(name: r'text', required: false, includeIfNull: false)
   final String? text;
 
+  @JsonKey(name: r'title', required: false, includeIfNull: false)
+  final String? title;
+
+  @JsonKey(name: r'videoUrl', required: false, includeIfNull: false)
+  final String? videoUrl;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is InfoPushDataArticleContent &&
+          other.id == id &&
           other.imageUrl == imageUrl &&
           other.onPressed == onPressed &&
-          other.text == text;
+          other.text == text &&
+          other.title == title &&
+          other.videoUrl == videoUrl;
 
   @override
-  int get hashCode => imageUrl.hashCode + onPressed.hashCode + text.hashCode;
+  int get hashCode =>
+      id.hashCode +
+      imageUrl.hashCode +
+      onPressed.hashCode +
+      text.hashCode +
+      title.hashCode +
+      videoUrl.hashCode;
 
   factory InfoPushDataArticleContent.fromJson(Map<String, dynamic> json) =>
       _$InfoPushDataArticleContentFromJson(json);

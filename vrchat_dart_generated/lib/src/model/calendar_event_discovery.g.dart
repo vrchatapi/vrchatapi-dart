@@ -11,9 +11,9 @@ part of 'calendar_event_discovery.dart';
 CalendarEventDiscovery _$CalendarEventDiscoveryFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('CalendarEventDiscovery', json, ($checkedConvert) {
-  $checkKeys(json, requiredKeys: const ['nextCursor', 'results']);
+  $checkKeys(json, requiredKeys: const ['results']);
   final val = CalendarEventDiscovery(
-    nextCursor: $checkedConvert('nextCursor', (v) => v as String),
+    nextCursor: $checkedConvert('nextCursor', (v) => v as String?),
     results: $checkedConvert(
       'results',
       (v) => (v as List<dynamic>)
@@ -27,6 +27,6 @@ CalendarEventDiscovery _$CalendarEventDiscoveryFromJson(
 Map<String, dynamic> _$CalendarEventDiscoveryToJson(
   CalendarEventDiscovery instance,
 ) => <String, dynamic>{
-  'nextCursor': instance.nextCursor,
+  'nextCursor': ?instance.nextCursor,
   'results': instance.results.map((e) => e.toJson()).toList(),
 };

@@ -81,6 +81,8 @@ class FileAnalysisAvatarStats {
 
     required this.physicsRigidbodies,
 
+    this.raycastCount,
+
     required this.skinnedMeshCount,
 
     required this.skinnedMeshIndices,
@@ -226,6 +228,9 @@ class FileAnalysisAvatarStats {
   @JsonKey(name: r'physicsRigidbodies', required: true, includeIfNull: false)
   final int physicsRigidbodies;
 
+  @JsonKey(name: r'raycastCount', required: false, includeIfNull: false)
+  final int? raycastCount;
+
   @JsonKey(name: r'skinnedMeshCount', required: true, includeIfNull: false)
   final int skinnedMeshCount;
 
@@ -298,6 +303,7 @@ class FileAnalysisAvatarStats {
           other.physBoneTransformCount == physBoneTransformCount &&
           other.physicsColliders == physicsColliders &&
           other.physicsRigidbodies == physicsRigidbodies &&
+          other.raycastCount == raycastCount &&
           other.skinnedMeshCount == skinnedMeshCount &&
           other.skinnedMeshIndices == skinnedMeshIndices &&
           other.skinnedMeshPolygons == skinnedMeshPolygons &&
@@ -345,6 +351,7 @@ class FileAnalysisAvatarStats {
       physBoneTransformCount.hashCode +
       physicsColliders.hashCode +
       physicsRigidbodies.hashCode +
+      raycastCount.hashCode +
       skinnedMeshCount.hashCode +
       skinnedMeshIndices.hashCode +
       skinnedMeshPolygons.hashCode +

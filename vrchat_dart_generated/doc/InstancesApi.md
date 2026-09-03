@@ -13,6 +13,8 @@ Method | HTTP request | Description
 [**createInstance**](InstancesApi.md#createinstance) | **POST** /instances | Create Instance
 [**getInstance**](InstancesApi.md#getinstance) | **GET** /instances/{worldId}:{instanceId} | Get Instance
 [**getInstanceByShortName**](InstancesApi.md#getinstancebyshortname) | **GET** /instances/s/{shortName} | Get Instance By Short Name
+[**getInstanceCategories**](InstancesApi.md#getinstancecategories) | **GET** /instanceCategories | List Instance Categories
+[**getInstanceVibes**](InstancesApi.md#getinstancevibes) | **GET** /instanceVibes | List Instance Vibes
 [**getRecentLocations**](InstancesApi.md#getrecentlocations) | **GET** /instances/recent | List Recent Locations
 [**getShortName**](InstancesApi.md#getshortname) | **GET** /instances/{worldId}:{instanceId}/shortName | Get Instance Short Name
 
@@ -201,6 +203,92 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Instance**](Instance.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getInstanceCategories**
+> List<InstanceCategory> getInstanceCategories()
+
+List Instance Categories
+
+Returns the categories an instance can be listed under.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getInstancesApi();
+
+try {
+    final response = api.getInstanceCategories();
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling InstancesApi->getInstanceCategories: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;InstanceCategory&gt;**](InstanceCategory.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getInstanceVibes**
+> List<InstanceVibe> getInstanceVibes()
+
+List Instance Vibes
+
+Returns the vibes an instance can be tagged with.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getInstancesApi();
+
+try {
+    final response = api.getInstanceVibes();
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling InstancesApi->getInstanceVibes: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;InstanceVibe&gt;**](InstanceVibe.md)
 
 ### Authorization
 

@@ -13,11 +13,16 @@ Name | Type | Description | Notes
 **calendarEntryId** | **String** |  | [optional] 
 **canRequestInvite** | **bool** |  | [optional] [default to true]
 **capacity** | **int** |  | [optional] 
+**categoryId** | **String** |  | [optional] 
 **clientNumber** | **String** | Always returns \"unknown\". | 
 **closedAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **contentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  | [optional] 
+**creationLanguages** | **List&lt;Object&gt;** |  | [optional] 
 **creatorId** | **String** | A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed. | [optional] 
+**description** | **String** |  | [optional] 
+**disabledPropAbilities** | **List&lt;Object&gt;** |  | [optional] 
 **displayName** | **String** |  | [optional] 
+**dominantLanguage** | **String** |  | [optional] 
 **friends** | **String** | A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed. | [optional] 
 **full** | **bool** |  | [default to false]
 **gameServerVersion** | **int** |  | [optional] 
@@ -28,7 +33,11 @@ Name | Type | Description | Notes
 **id** | **String** | InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance. | 
 **instanceId** | **String** | InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance. | 
 **instancePersistenceEnabled** | **bool** |  | [optional] 
+**languageRatio** | **Map&lt;String, Object&gt;** |  | [optional] 
+**languages** | **List&lt;String&gt;** | The keys of languageRatio, ordered by their share of the instance. | [optional] 
+**languagesIso639** | **List&lt;String&gt;** |  | [optional] 
 **location** | **String** | Represents a unique location, consisting of a world identifier and an instance identifier, or \"offline\" if the user is not on your friends list. | 
+**minimumAvatarPerformance** | **String** |  | [optional] 
 **nUsers** | **int** |  | 
 **name** | **String** |  | 
 **nonce** | **String** |  | [optional] 
@@ -49,7 +58,9 @@ Name | Type | Description | Notes
 **tags** | **List&lt;String&gt;** | The tags array on Instances usually contain the language tags of the people in the instance.  | 
 **type** | [**InstanceType**](InstanceType.md) |  | 
 **userCount** | **int** |  | 
+**userIcons** | **List&lt;String&gt;** |  | [optional] 
 **users** | [**List&lt;LimitedUserInstance&gt;**](LimitedUserInstance.md) | The users field is present on instances created by the requesting user. | [optional] 
+**vibeIds** | **List&lt;String&gt;** |  | [optional] 
 **world** | [**World**](World.md) |  | 
 **worldId** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | 
 

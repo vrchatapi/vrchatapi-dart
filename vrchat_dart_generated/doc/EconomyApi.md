@@ -290,7 +290,7 @@ This endpoint does not need any parameter.
 
 Get Balance
 
-Gets the balance of a user
+Return the balance of a user.
 
 ### Example
 ```dart
@@ -337,7 +337,7 @@ Name | Type | Description  | Notes
 
 Get Balance Earnings
 
-Gets the balance of a user from earnings
+Return the user's balance from earnings.
 
 ### Example
 ```dart
@@ -470,7 +470,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEarningsMetrics**
-> EarningsMetrics getEarningsMetrics(sellerId, metricDateStart, metricDateEnd, groupByDuration)
+> EarningsMetrics getEarningsMetrics(metricDateStart, metricDateEnd, sellerId, groupByDuration)
 
 Get Earnings Metrics
 
@@ -485,13 +485,13 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getEconomyApi();
-final String sellerId = sellerId_example; // String | Seller to retrieve economy metrics for.
 final String metricDateStart = 2026-03-28T23:00:00.000Z; // String | Lower bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps.
 final String metricDateEnd = 2026-04-04T21:59:59.999Z; // String | Upper bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps.
+final String sellerId = sellerId_example; // String | Filter results by seller.
 final String groupByDuration = days; // String | Time bucket size for economy metrics. Observed values include `days` and `years`.
 
 try {
-    final response = api.getEarningsMetrics(sellerId, metricDateStart, metricDateEnd, groupByDuration);
+    final response = api.getEarningsMetrics(metricDateStart, metricDateEnd, sellerId, groupByDuration);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling EconomyApi->getEarningsMetrics: $e\n');
@@ -502,9 +502,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sellerId** | **String**| Seller to retrieve economy metrics for. | 
  **metricDateStart** | **String**| Lower bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. | [optional] 
  **metricDateEnd** | **String**| Upper bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps. | [optional] 
+ **sellerId** | **String**| Filter results by seller. | [optional] 
  **groupByDuration** | **String**| Time bucket size for economy metrics. Observed values include `days` and `years`. | [optional] 
 
 ### Return type
@@ -1174,7 +1174,7 @@ This endpoint does not need any parameter.
 
 Get Seller Eligibility
 
-Get the eligibility of the currently authenticated user to become a seller
+Return the current user's eligibility to become a seller.
 
 ### Example
 ```dart
@@ -1405,7 +1405,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSubscriptions**
-> List<Subscription> getSubscriptions()
+> List<Subscription> getSubscriptions(gifts, recurring)
 
 List Subscriptions
 
@@ -1420,9 +1420,11 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getEconomyApi();
+final bool gifts = true; // bool | Return giftable subscriptions instead of standard ones.
+final bool recurring = true; // bool | Return recurring subscriptions instead of standard ones.
 
 try {
-    final response = api.getSubscriptions();
+    final response = api.getSubscriptions(gifts, recurring);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling EconomyApi->getSubscriptions: $e\n');
@@ -1430,7 +1432,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **gifts** | **bool**| Return giftable subscriptions instead of standard ones. | [optional] 
+ **recurring** | **bool**| Return recurring subscriptions instead of standard ones. | [optional] 
 
 ### Return type
 
@@ -1452,7 +1458,7 @@ This endpoint does not need any parameter.
 
 Get Tilia Status
 
-Gets the status of Tilia integration
+Return the Tilia integration status.
 
 ### Example
 ```dart
@@ -1495,7 +1501,7 @@ This endpoint does not need any parameter.
 
 Get Tilia TOS Agreement Status
 
-Gets the status of the agreement of a user to the Tilia TOS
+Return the user's Tilia TOS agreement status.
 
 ### Example
 ```dart
@@ -1585,7 +1591,7 @@ This endpoint does not need any parameter.
 
 Get User Credits Eligibility
 
-Get the user's eligibility status for subscriptions based on available credits.
+Return the user's subscription credit eligibility.
 
 ### Example
 ```dart
@@ -1730,7 +1736,7 @@ Name | Type | Description  | Notes
 
 List Stores
 
-Lists stores, optionally filtered to a seller and adjusted for management views.
+List a seller's stores, adjusted for management views.
 
 ### Example
 ```dart
@@ -1741,7 +1747,7 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getEconomyApi();
-final String sellerId = sellerId_example; // String | Filter results by seller.
+final String sellerId = sellerId_example; // String | Seller to scope the results to.
 final bool managementPov = true; // bool | Return stores from the seller management point of view.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
@@ -1758,7 +1764,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sellerId** | **String**| Filter results by seller. | [optional] 
+ **sellerId** | **String**| Seller to scope the results to. | 
  **managementPov** | **bool**| Return stores from the seller management point of view. | [optional] 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
@@ -1981,7 +1987,7 @@ Name | Type | Description  | Notes
 
 Update Tilia TOS Agreement Status
 
-Updates the status of the agreement of a user to the Tilia TOS
+Update the user's Tilia TOS agreement status.
 
 ### Example
 ```dart

@@ -27,7 +27,7 @@ class JamSubmission {
 
     required this.jamId,
 
-    this.ratingScore,
+    required this.ratingsScore,
 
     required this.submitterId,
   });
@@ -48,9 +48,8 @@ class JamSubmission {
   @JsonKey(name: r'jamId', required: true, includeIfNull: false)
   final String jamId;
 
-  // minimum: 0
-  @JsonKey(name: r'ratingScore', required: false, includeIfNull: false)
-  final int? ratingScore;
+  @JsonKey(name: r'ratingsScore', required: true, includeIfNull: false)
+  final int ratingsScore;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(name: r'submitterId', required: true, includeIfNull: false)
@@ -65,7 +64,7 @@ class JamSubmission {
           other.description == description &&
           other.id == id &&
           other.jamId == jamId &&
-          other.ratingScore == ratingScore &&
+          other.ratingsScore == ratingsScore &&
           other.submitterId == submitterId;
 
   @override
@@ -75,7 +74,7 @@ class JamSubmission {
       description.hashCode +
       id.hashCode +
       jamId.hashCode +
-      ratingScore.hashCode +
+      ratingsScore.hashCode +
       submitterId.hashCode;
 
   factory JamSubmission.fromJson(Map<String, dynamic> json) =>

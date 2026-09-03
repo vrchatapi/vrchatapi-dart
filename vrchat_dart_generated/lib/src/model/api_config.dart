@@ -11,8 +11,12 @@ import 'package:vrchat_dart_generated/src/model/api_config_constants.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_offline_analysis.dart';
 import 'package:vrchat_dart_generated/src/model/report_category.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_announcement.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_loading_screen_weights.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_events.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_ios_version.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_low_memory_go_home_timeout_value.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_profile_defaults.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_event_shelf_campaign.dart';
 import 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_audio_config.dart';
 import 'package:vrchat_dart_generated/src/model/report_reason.dart';
@@ -76,6 +80,8 @@ class APIConfig {
 
     this.clientDisconnectTimeout = 30000,
 
+    this.clientMaxDatagrams,
+
     this.clientNetDispatchThread = false,
 
     this.clientNetDispatchThreadMobile = true,
@@ -101,6 +107,8 @@ class APIConfig {
     this.clientReservedPlayerBPS = 7168,
 
     this.clientSentCountAllowance = 15,
+
+    this.clientUseAck2,
 
     required this.constants,
 
@@ -170,7 +178,7 @@ class APIConfig {
 
     required this.economyLedgerBackfill,
 
-    required this.economyLedgerMigrationStop,
+    this.economyLedgerMigrationStop,
 
     required this.economyLedgerMode,
 
@@ -182,14 +190,24 @@ class APIConfig {
 
     this.economyState = 1,
 
+    this.enableVRCPlusWorldLists,
+
+    this.eventShelfCampaigns,
+
     required this.events,
 
     this.forceUseLatestWorld = true,
 
     required this.giftDisplayType,
 
+    this.globalCacheVersion,
+
+    this.globalCacheVersionDefault,
+
     this.googleApiClientId =
         '827942544393-r2ouvckvouldn9dg9uruseje575e878f.apps.googleusercontent.com',
+
+    this.googleApiUnityClientId,
 
     required this.homeWorldId,
 
@@ -205,9 +223,15 @@ class APIConfig {
 
     required this.jobsEmail,
 
+    this.loadingScreenWeights,
+
+    this.lowMemoryGoHomeTimeout,
+
     this.maxUserEmoji = 18,
 
     this.maxUserStickers = 18,
+
+    this.maximumUnityVersionForUploads,
 
     required this.minSupportedClientBuildNumber,
 
@@ -225,9 +249,19 @@ class APIConfig {
 
     required this.playerUrlResolverSha1,
 
+    this.playerUrlResolverSha1GfnOverride,
+
     required this.playerUrlResolverVersion,
 
+    this.playerUrlResolverVersionGfnOverride,
+
+    this.profileDefaults,
+
+    this.propComponentList,
+
     required this.publicKey,
+
+    this.questMinimumLowMemoryThreshold,
 
     required this.reportCategories,
 
@@ -275,6 +309,10 @@ class APIConfig {
     this.useReliableUdpForVoice = false,
 
     required this.viveWindowsUrl,
+
+    this.voiceMaxPlaybackSourcesMobile,
+
+    this.voiceMaxPlaybackSourcesPC,
 
     this.websocketMaxFriendsRefreshDelay = 900,
 
@@ -415,6 +453,9 @@ class APIConfig {
   )
   final int clientDisconnectTimeout;
 
+  @JsonKey(name: r'clientMaxDatagrams', required: false, includeIfNull: false)
+  final int? clientMaxDatagrams;
+
   /// Unknown
   @JsonKey(
     name: r'clientNetDispatchThread',
@@ -498,6 +539,9 @@ class APIConfig {
     includeIfNull: false,
   )
   final int clientSentCountAllowance;
+
+  @JsonKey(name: r'clientUseAck2', required: false, includeIfNull: false)
+  final bool? clientUseAck2;
 
   @JsonKey(name: r'constants', required: true, includeIfNull: false)
   final APIConfigConstants constants;
@@ -646,10 +690,10 @@ class APIConfig {
   /// Unknown
   @JsonKey(
     name: r'economyLedgerMigrationStop',
-    required: true,
+    required: false,
     includeIfNull: false,
   )
-  final String economyLedgerMigrationStop;
+  final String? economyLedgerMigrationStop;
 
   /// Unknown
   @JsonKey(name: r'economyLedgerMode', required: true, includeIfNull: false)
@@ -675,6 +719,16 @@ class APIConfig {
   @JsonKey(name: r'economyState', required: true, includeIfNull: false)
   final int economyState;
 
+  @JsonKey(
+    name: r'enableVRCPlusWorldLists',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? enableVRCPlusWorldLists;
+
+  @JsonKey(name: r'eventShelfCampaigns', required: false, includeIfNull: false)
+  final List<APIConfigEventShelfCampaign>? eventShelfCampaigns;
+
   @JsonKey(name: r'events', required: true, includeIfNull: false)
   final APIConfigEvents events;
 
@@ -686,6 +740,16 @@ class APIConfig {
   @JsonKey(name: r'giftDisplayType', required: true, includeIfNull: false)
   final String giftDisplayType;
 
+  @JsonKey(name: r'globalCacheVersion', required: false, includeIfNull: false)
+  final int? globalCacheVersion;
+
+  @JsonKey(
+    name: r'globalCacheVersionDefault',
+    required: false,
+    includeIfNull: false,
+  )
+  final int? globalCacheVersionDefault;
+
   /// Unknown
   @JsonKey(
     defaultValue:
@@ -695,6 +759,13 @@ class APIConfig {
     includeIfNull: false,
   )
   final String googleApiClientId;
+
+  @JsonKey(
+    name: r'googleApiUnityClientId',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? googleApiUnityClientId;
 
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @JsonKey(name: r'homeWorldId', required: true, includeIfNull: false)
@@ -727,6 +798,19 @@ class APIConfig {
   @JsonKey(name: r'jobsEmail', required: true, includeIfNull: false)
   final String jobsEmail;
 
+  /// Relative weight of each info-push category on the loading screen, per audience.
+  @JsonKey(name: r'loadingScreenWeights', required: false, includeIfNull: false)
+  final Map<String, APIConfigLoadingScreenWeights>? loadingScreenWeights;
+
+  /// Low-memory timeout, keyed by platform.
+  @JsonKey(
+    name: r'lowMemoryGoHomeTimeout',
+    required: false,
+    includeIfNull: false,
+  )
+  final Map<String, APIConfigLowMemoryGoHomeTimeoutValue>?
+  lowMemoryGoHomeTimeout;
+
   /// The maximum number of custom emoji each user may have at a given time.
   @JsonKey(name: r'maxUserEmoji', required: true, includeIfNull: false)
   final int maxUserEmoji;
@@ -734,6 +818,13 @@ class APIConfig {
   /// The maximum number of custom stickers each user may have at a given time.
   @JsonKey(name: r'maxUserStickers', required: true, includeIfNull: false)
   final int maxUserStickers;
+
+  @JsonKey(
+    name: r'maximumUnityVersionForUploads',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? maximumUnityVersionForUploads;
 
   @JsonKey(
     name: r'minSupportedClientBuildNumber',
@@ -785,6 +876,14 @@ class APIConfig {
   )
   final String playerUrlResolverSha1;
 
+  /// Overrides `player-url-resolver-sha1` on GeForce Now.
+  @JsonKey(
+    name: r'player-url-resolver-sha1-gfn-override',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? playerUrlResolverSha1GfnOverride;
+
   /// Currently used youtube-dl.exe version
   @JsonKey(
     name: r'player-url-resolver-version',
@@ -793,9 +892,32 @@ class APIConfig {
   )
   final String playerUrlResolverVersion;
 
+  /// Overrides `player-url-resolver-version` on GeForce Now.
+  @JsonKey(
+    name: r'player-url-resolver-version-gfn-override',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? playerUrlResolverVersionGfnOverride;
+
+  @JsonKey(name: r'profileDefaults', required: false, includeIfNull: false)
+  final APIConfigProfileDefaults? profileDefaults;
+
+  /// SDK3 component type names.
+  @JsonKey(name: r'propComponentList', required: false, includeIfNull: false)
+  final List<String>? propComponentList;
+
   /// Public key, hex encoded
   @JsonKey(name: r'publicKey', required: true, includeIfNull: false)
   final String publicKey;
+
+  /// Low-memory threshold, keyed by platform.
+  @JsonKey(
+    name: r'questMinimumLowMemoryThreshold',
+    required: false,
+    includeIfNull: false,
+  )
+  final Map<String, int>? questMinimumLowMemoryThreshold;
 
   /// Categories available for reporting objectionable content
   @JsonKey(name: r'reportCategories', required: true, includeIfNull: false)
@@ -910,6 +1032,20 @@ class APIConfig {
   @JsonKey(name: r'viveWindowsUrl', required: true, includeIfNull: false)
   final String viveWindowsUrl;
 
+  @JsonKey(
+    name: r'voiceMaxPlaybackSourcesMobile',
+    required: false,
+    includeIfNull: false,
+  )
+  final int? voiceMaxPlaybackSourcesMobile;
+
+  @JsonKey(
+    name: r'voiceMaxPlaybackSourcesPC',
+    required: false,
+    includeIfNull: false,
+  )
+  final int? voiceMaxPlaybackSourcesPC;
+
   /// Unknown
   @JsonKey(
     name: r'websocketMaxFriendsRefreshDelay',
@@ -967,6 +1103,7 @@ class APIConfig {
           other.clientApiKey == clientApiKey &&
           other.clientBPSCeiling == clientBPSCeiling &&
           other.clientDisconnectTimeout == clientDisconnectTimeout &&
+          other.clientMaxDatagrams == clientMaxDatagrams &&
           other.clientNetDispatchThread == clientNetDispatchThread &&
           other.clientNetDispatchThreadMobile ==
               clientNetDispatchThreadMobile &&
@@ -981,6 +1118,7 @@ class APIConfig {
           other.clientQR == clientQR &&
           other.clientReservedPlayerBPS == clientReservedPlayerBPS &&
           other.clientSentCountAllowance == clientSentCountAllowance &&
+          other.clientUseAck2 == clientUseAck2 &&
           other.constants == constants &&
           other.contactEmail == contactEmail &&
           other.copyrightEmail == copyrightEmail &&
@@ -1022,10 +1160,15 @@ class APIConfig {
           other.economyPauseStart == economyPauseStart &&
           other.economyPurchaseRepairEnabled == economyPurchaseRepairEnabled &&
           other.economyState == economyState &&
+          other.enableVRCPlusWorldLists == enableVRCPlusWorldLists &&
+          other.eventShelfCampaigns == eventShelfCampaigns &&
           other.events == events &&
           other.forceUseLatestWorld == forceUseLatestWorld &&
           other.giftDisplayType == giftDisplayType &&
+          other.globalCacheVersion == globalCacheVersion &&
+          other.globalCacheVersionDefault == globalCacheVersionDefault &&
           other.googleApiClientId == googleApiClientId &&
+          other.googleApiUnityClientId == googleApiUnityClientId &&
           other.homeWorldId == homeWorldId &&
           other.homepageRedirectTarget == homepageRedirectTarget &&
           other.hubWorldId == hubWorldId &&
@@ -1033,8 +1176,12 @@ class APIConfig {
           other.iosAppVersion == iosAppVersion &&
           other.iosVersion == iosVersion &&
           other.jobsEmail == jobsEmail &&
+          other.loadingScreenWeights == loadingScreenWeights &&
+          other.lowMemoryGoHomeTimeout == lowMemoryGoHomeTimeout &&
           other.maxUserEmoji == maxUserEmoji &&
           other.maxUserStickers == maxUserStickers &&
+          other.maximumUnityVersionForUploads ==
+              maximumUnityVersionForUploads &&
           other.minSupportedClientBuildNumber ==
               minSupportedClientBuildNumber &&
           other.minimumUnityVersionForUploads ==
@@ -1046,8 +1193,16 @@ class APIConfig {
           other.photonNameserverOverrides == photonNameserverOverrides &&
           other.photonPublicKeys == photonPublicKeys &&
           other.playerUrlResolverSha1 == playerUrlResolverSha1 &&
+          other.playerUrlResolverSha1GfnOverride ==
+              playerUrlResolverSha1GfnOverride &&
           other.playerUrlResolverVersion == playerUrlResolverVersion &&
+          other.playerUrlResolverVersionGfnOverride ==
+              playerUrlResolverVersionGfnOverride &&
+          other.profileDefaults == profileDefaults &&
+          other.propComponentList == propComponentList &&
           other.publicKey == publicKey &&
+          other.questMinimumLowMemoryThreshold ==
+              questMinimumLowMemoryThreshold &&
           other.reportCategories == reportCategories &&
           other.reportFormUrl == reportFormUrl &&
           other.reportOptions == reportOptions &&
@@ -1073,6 +1228,9 @@ class APIConfig {
           other.urlList == urlList &&
           other.useReliableUdpForVoice == useReliableUdpForVoice &&
           other.viveWindowsUrl == viveWindowsUrl &&
+          other.voiceMaxPlaybackSourcesMobile ==
+              voiceMaxPlaybackSourcesMobile &&
+          other.voiceMaxPlaybackSourcesPC == voiceMaxPlaybackSourcesPC &&
           other.websocketMaxFriendsRefreshDelay ==
               websocketMaxFriendsRefreshDelay &&
           other.websocketQuickReconnectTime == websocketQuickReconnectTime &&
@@ -1104,6 +1262,7 @@ class APIConfig {
       clientApiKey.hashCode +
       clientBPSCeiling.hashCode +
       clientDisconnectTimeout.hashCode +
+      clientMaxDatagrams.hashCode +
       clientNetDispatchThread.hashCode +
       clientNetDispatchThreadMobile.hashCode +
       clientNetInThread.hashCode +
@@ -1117,6 +1276,7 @@ class APIConfig {
       clientQR.hashCode +
       clientReservedPlayerBPS.hashCode +
       clientSentCountAllowance.hashCode +
+      clientUseAck2.hashCode +
       constants.hashCode +
       contactEmail.hashCode +
       copyrightEmail.hashCode +
@@ -1157,10 +1317,15 @@ class APIConfig {
       economyPauseStart.hashCode +
       economyPurchaseRepairEnabled.hashCode +
       economyState.hashCode +
+      enableVRCPlusWorldLists.hashCode +
+      eventShelfCampaigns.hashCode +
       events.hashCode +
       forceUseLatestWorld.hashCode +
       giftDisplayType.hashCode +
+      globalCacheVersion.hashCode +
+      globalCacheVersionDefault.hashCode +
       googleApiClientId.hashCode +
+      googleApiUnityClientId.hashCode +
       homeWorldId.hashCode +
       homepageRedirectTarget.hashCode +
       hubWorldId.hashCode +
@@ -1168,8 +1333,11 @@ class APIConfig {
       iosAppVersion.hashCode +
       iosVersion.hashCode +
       jobsEmail.hashCode +
+      loadingScreenWeights.hashCode +
+      lowMemoryGoHomeTimeout.hashCode +
       maxUserEmoji.hashCode +
       maxUserStickers.hashCode +
+      maximumUnityVersionForUploads.hashCode +
       minSupportedClientBuildNumber.hashCode +
       minimumUnityVersionForUploads.hashCode +
       moderationEmail.hashCode +
@@ -1178,8 +1346,13 @@ class APIConfig {
       photonNameserverOverrides.hashCode +
       photonPublicKeys.hashCode +
       playerUrlResolverSha1.hashCode +
+      playerUrlResolverSha1GfnOverride.hashCode +
       playerUrlResolverVersion.hashCode +
+      playerUrlResolverVersionGfnOverride.hashCode +
+      profileDefaults.hashCode +
+      propComponentList.hashCode +
       publicKey.hashCode +
+      questMinimumLowMemoryThreshold.hashCode +
       reportCategories.hashCode +
       reportFormUrl.hashCode +
       reportOptions.hashCode +
@@ -1203,6 +1376,8 @@ class APIConfig {
       urlList.hashCode +
       useReliableUdpForVoice.hashCode +
       viveWindowsUrl.hashCode +
+      voiceMaxPlaybackSourcesMobile.hashCode +
+      voiceMaxPlaybackSourcesPC.hashCode +
       websocketMaxFriendsRefreshDelay.hashCode +
       websocketQuickReconnectTime.hashCode +
       websocketReconnectMaxDelay.hashCode +

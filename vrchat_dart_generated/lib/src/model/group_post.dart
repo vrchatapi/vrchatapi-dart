@@ -32,7 +32,7 @@ class GroupPost {
 
     this.imageUrl,
 
-    this.roleId,
+    this.roleIds,
 
     this.text,
 
@@ -67,8 +67,8 @@ class GroupPost {
   final String? imageUrl;
 
   ///
-  @JsonKey(name: r'roleId', required: false, includeIfNull: false)
-  final List<String>? roleId;
+  @JsonKey(name: r'roleIds', required: false, includeIfNull: false)
+  final List<String>? roleIds;
 
   @JsonKey(name: r'text', required: false, includeIfNull: false)
   final String? text;
@@ -93,7 +93,7 @@ class GroupPost {
           other.id == id &&
           other.imageId == imageId &&
           other.imageUrl == imageUrl &&
-          other.roleId == roleId &&
+          other.roleIds == roleIds &&
           other.text == text &&
           other.title == title &&
           other.updatedAt == updatedAt &&
@@ -108,7 +108,7 @@ class GroupPost {
       id.hashCode +
       imageId.hashCode +
       (imageUrl == null ? 0 : imageUrl.hashCode) +
-      roleId.hashCode +
+      roleIds.hashCode +
       text.hashCode +
       title.hashCode +
       updatedAt.hashCode +

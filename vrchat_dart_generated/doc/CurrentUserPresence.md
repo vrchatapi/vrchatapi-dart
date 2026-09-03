@@ -8,16 +8,21 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**avatarImageUrl** | **String** |  | [optional] 
 **avatarThumbnail** | **String** |  | [optional] 
+**banner** | **String** |  | [optional] 
 **currentAvatarTags** | **List&lt;String&gt;** |  | [optional] 
 **debugflag** | **String** |  | [optional] 
 **displayName** | **String** |  | [optional] 
 **groups** | **List&lt;String&gt;** |  | [optional] 
+**iconFrame** | **String** |  | [optional] 
 **id** | **String** | A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed. | [optional] 
 **instance** | **String** |  | [optional] 
 **instanceType** | **String** | either an InstanceType or an empty string | [optional] 
 **isRejoining** | **String** |  | [optional] 
+**nameplateEffect** | **String** |  | [optional] 
 **platform** | **String** | This is normally `android`, `ios`, `standalonewindows`, `web`, or the empty value ``, but also supposedly can be any random Unity version such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`. | [optional] 
+**profileEffect** | **String** |  | [optional] 
 **profilePicOverride** | **String** |  | [optional] 
 **status** | **String** | either a UserStatus or empty string | [optional] 
 **travelingToInstance** | **String** |  | [optional] 

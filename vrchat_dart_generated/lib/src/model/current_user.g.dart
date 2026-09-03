@@ -106,10 +106,16 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
             ?.map((e) => Badge.fromJson(e as Map<String, dynamic>))
             .toList(),
       ),
+      bannerColor: $checkedConvert('bannerColor', (v) => v as String?),
+      bannerType: $checkedConvert('bannerType', (v) => v as String?),
       bio: $checkedConvert('bio', (v) => v as String),
       bioLinks: $checkedConvert(
         'bioLinks',
         (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+      ),
+      completedTutorials: $checkedConvert(
+        'completedTutorials',
+        (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
       ),
       contentFilters: $checkedConvert(
         'contentFilters',
@@ -151,6 +157,10 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => (v as List<dynamic>).map((e) => e as String).toList(),
       ),
       friendKey: $checkedConvert('friendKey', (v) => v as String),
+      friendRequestStatus: $checkedConvert(
+        'friendRequestStatus',
+        (v) => v as String?,
+      ),
       friends: $checkedConvert(
         'friends',
         (v) => (v as List<dynamic>).map((e) => e as String).toList(),
@@ -177,13 +187,21 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => v as bool?,
       ),
       homeLocation: $checkedConvert('homeLocation', (v) => v as String),
+      iconFrame: $checkedConvert('iconFrame', (v) => v as String?),
+      iconUrl: $checkedConvert('iconUrl', (v) => v as String?),
       id: $checkedConvert('id', (v) => v as String),
+      instanceId: $checkedConvert('instanceId', (v) => v as String?),
       isAdult: $checkedConvert('isAdult', (v) => v as bool),
       isBoopingEnabled: $checkedConvert(
         'isBoopingEnabled',
         (v) => v as bool? ?? true,
       ),
+      isEconomyCreator: $checkedConvert(
+        'isEconomyCreator',
+        (v) => v as bool? ?? false,
+      ),
       isFriend: $checkedConvert('isFriend', (v) => v as bool? ?? false),
+      isTemporary: $checkedConvert('isTemporary', (v) => v as bool? ?? false),
       lastActivity: $checkedConvert(
         'last_activity',
         (v) => v == null ? null : DateTime.parse(v as String),
@@ -197,6 +215,9 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => v == null ? null : DateTime.parse(v as String),
       ),
       lastPlatform: $checkedConvert('last_platform', (v) => v as String),
+      location: $checkedConvert('location', (v) => v as String?),
+      nameplateEffect: $checkedConvert('nameplateEffect', (v) => v as String?),
+      note: $checkedConvert('note', (v) => v as String?),
       obfuscatedEmail: $checkedConvert('obfuscatedEmail', (v) => v as String),
       obfuscatedPendingEmail: $checkedConvert(
         'obfuscatedPendingEmail',
@@ -217,7 +238,12 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
             .map((e) => PastDisplayName.fromJson(e as Map<String, dynamic>))
             .toList(),
       ),
+      personalizationOptOut: $checkedConvert(
+        'personalizationOptOut',
+        (v) => v as bool?,
+      ),
       picoId: $checkedConvert('picoId', (v) => v as String?),
+      platform: $checkedConvert('platform', (v) => v as String?),
       platformHistory: $checkedConvert(
         'platform_history',
         (v) => (v as List<dynamic>?)
@@ -234,6 +260,7 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
             ? null
             : CurrentUserPresence.fromJson(v as Map<String, dynamic>),
       ),
+      profileEffect: $checkedConvert('profileEffect', (v) => v as String?),
       profilePicOverride: $checkedConvert(
         'profilePicOverride',
         (v) => v as String,
@@ -275,6 +302,19 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'tags',
         (v) => (v as List<dynamic>).map((e) => e as String).toList(),
       ),
+      temporaryExpiryDate: $checkedConvert('temporaryExpiryDate', (v) => v),
+      travelingToInstance: $checkedConvert(
+        'travelingToInstance',
+        (v) => v as String?,
+      ),
+      travelingToLocation: $checkedConvert(
+        'travelingToLocation',
+        (v) => v as String?,
+      ),
+      travelingToWorld: $checkedConvert(
+        'travelingToWorld',
+        (v) => v as String?,
+      ),
       twitchDetails: $checkedConvert('twitchDetails', (v) => v),
       twitchId: $checkedConvert('twitchId', (v) => v as String?),
       twoFactorAuthEnabled: $checkedConvert(
@@ -302,6 +342,7 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => v as bool,
       ),
       viveId: $checkedConvert('viveId', (v) => v as String?),
+      worldId: $checkedConvert('worldId', (v) => v as String?),
     );
     return val;
   },
@@ -334,8 +375,11 @@ Map<String, dynamic> _$CurrentUserToJson(
   'appleId': ?instance.appleId,
   'authToken': ?instance.authToken,
   'badges': ?instance.badges?.map((e) => e.toJson()).toList(),
+  'bannerColor': ?instance.bannerColor,
+  'bannerType': ?instance.bannerType,
   'bio': instance.bio,
   'bioLinks': instance.bioLinks,
+  'completedTutorials': ?instance.completedTutorials,
   'contentFilters': ?instance.contentFilters,
   'currentAvatar': instance.currentAvatar,
   'currentAvatarImageUrl': instance.currentAvatarImageUrl,
@@ -350,6 +394,7 @@ Map<String, dynamic> _$CurrentUserToJson(
   'fallbackAvatar': ?instance.fallbackAvatar,
   'friendGroupNames': instance.friendGroupNames,
   'friendKey': instance.friendKey,
+  'friendRequestStatus': ?instance.friendRequestStatus,
   'friends': instance.friends,
   'googleDetails': ?instance.googleDetails,
   'googleId': ?instance.googleId,
@@ -361,25 +406,36 @@ Map<String, dynamic> _$CurrentUserToJson(
   'hasSharedConnectionsOptOut': ?instance.hasSharedConnectionsOptOut,
   'hideContentFilterSettings': ?instance.hideContentFilterSettings,
   'homeLocation': instance.homeLocation,
+  'iconFrame': ?instance.iconFrame,
+  'iconUrl': ?instance.iconUrl,
   'id': instance.id,
+  'instanceId': ?instance.instanceId,
   'isAdult': instance.isAdult,
   'isBoopingEnabled': ?instance.isBoopingEnabled,
+  'isEconomyCreator': ?instance.isEconomyCreator,
   'isFriend': instance.isFriend,
+  'isTemporary': ?instance.isTemporary,
   'last_activity': ?instance.lastActivity?.toIso8601String(),
   'last_login': instance.lastLogin.toIso8601String(),
   'last_mobile': instance.lastMobile?.toIso8601String(),
   'last_platform': instance.lastPlatform,
+  'location': ?instance.location,
+  'nameplateEffect': ?instance.nameplateEffect,
+  'note': ?instance.note,
   'obfuscatedEmail': instance.obfuscatedEmail,
   'obfuscatedPendingEmail': instance.obfuscatedPendingEmail,
   'oculusId': instance.oculusId,
   'offlineFriends': ?instance.offlineFriends,
   'onlineFriends': ?instance.onlineFriends,
   'pastDisplayNames': instance.pastDisplayNames.map((e) => e.toJson()).toList(),
+  'personalizationOptOut': ?instance.personalizationOptOut,
   'picoId': ?instance.picoId,
+  'platform': ?instance.platform,
   'platform_history': ?instance.platformHistory
       ?.map((e) => e.toJson())
       .toList(),
   'presence': ?instance.presence?.toJson(),
+  'profileEffect': ?instance.profileEffect,
   'profilePicOverride': instance.profilePicOverride,
   'profilePicOverrideThumbnail': instance.profilePicOverrideThumbnail,
   'pronouns': instance.pronouns,
@@ -394,6 +450,10 @@ Map<String, dynamic> _$CurrentUserToJson(
   'steamDetails': instance.steamDetails,
   'steamId': instance.steamId,
   'tags': instance.tags,
+  'temporaryExpiryDate': ?instance.temporaryExpiryDate,
+  'travelingToInstance': ?instance.travelingToInstance,
+  'travelingToLocation': ?instance.travelingToLocation,
+  'travelingToWorld': ?instance.travelingToWorld,
   'twitchDetails': ?instance.twitchDetails,
   'twitchId': ?instance.twitchId,
   'twoFactorAuthEnabled': instance.twoFactorAuthEnabled,
@@ -407,6 +467,7 @@ Map<String, dynamic> _$CurrentUserToJson(
   'username': ?instance.username,
   'usesGeneratedPassword': instance.usesGeneratedPassword,
   'viveId': ?instance.viveId,
+  'worldId': ?instance.worldId,
 };
 
 const _$AgeVerificationStatusEnumMap = {

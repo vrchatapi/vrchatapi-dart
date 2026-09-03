@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **capacity** | **int** |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **defaultContentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  | [optional] 
+**disabledPropAbilities** | **List&lt;Object&gt;** |  | [optional] 
 **favorites** | **int** |  | [default to 0]
 **heat** | **int** |  | [default to 0]
 **id** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | 

@@ -46,6 +46,7 @@ Instance _$InstanceFromJson(
       (v) => v as bool? ?? true,
     ),
     capacity: $checkedConvert('capacity', (v) => (v as num?)?.toInt()),
+    categoryId: $checkedConvert('categoryId', (v) => v as String?),
     clientNumber: $checkedConvert('clientNumber', (v) => v as String),
     closedAt: $checkedConvert(
       'closedAt',
@@ -57,8 +58,18 @@ Instance _$InstanceFromJson(
           ? null
           : InstanceContentSettings.fromJson(v as Map<String, dynamic>),
     ),
+    creationLanguages: $checkedConvert(
+      'creationLanguages',
+      (v) => (v as List<dynamic>?)?.map((e) => e as Object).toList(),
+    ),
     creatorId: $checkedConvert('creatorId', (v) => v as String?),
+    description: $checkedConvert('description', (v) => v as String?),
+    disabledPropAbilities: $checkedConvert(
+      'disabledPropAbilities',
+      (v) => (v as List<dynamic>?)?.map((e) => e as Object).toList(),
+    ),
     displayName: $checkedConvert('displayName', (v) => v as String?),
+    dominantLanguage: $checkedConvert('dominantLanguage', (v) => v as String?),
     friends: $checkedConvert('friends', (v) => v as String?),
     full: $checkedConvert('full', (v) => v as bool? ?? false),
     gameServerVersion: $checkedConvert(
@@ -78,7 +89,24 @@ Instance _$InstanceFromJson(
       'instancePersistenceEnabled',
       (v) => v as bool?,
     ),
+    languageRatio: $checkedConvert(
+      'languageRatio',
+      (v) =>
+          (v as Map<String, dynamic>?)?.map((k, e) => MapEntry(k, e as Object)),
+    ),
+    languages: $checkedConvert(
+      'languages',
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+    ),
+    languagesIso639: $checkedConvert(
+      'languagesIso639',
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+    ),
     location: $checkedConvert('location', (v) => v as String),
+    minimumAvatarPerformance: $checkedConvert(
+      'minimumAvatarPerformance',
+      (v) => v as String?,
+    ),
     nUsers: $checkedConvert('n_users', (v) => (v as num).toInt()),
     name: $checkedConvert('name', (v) => v as String),
     nonce: $checkedConvert('nonce', (v) => v as String?),
@@ -117,11 +145,19 @@ Instance _$InstanceFromJson(
     ),
     type: $checkedConvert('type', (v) => $enumDecode(_$InstanceTypeEnumMap, v)),
     userCount: $checkedConvert('userCount', (v) => (v as num).toInt()),
+    userIcons: $checkedConvert(
+      'userIcons',
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+    ),
     users: $checkedConvert(
       'users',
       (v) => (v as List<dynamic>?)
           ?.map((e) => LimitedUserInstance.fromJson(e as Map<String, dynamic>))
           .toList(),
+    ),
+    vibeIds: $checkedConvert(
+      'vibeIds',
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
     world: $checkedConvert(
       'world',
@@ -138,11 +174,16 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
   'calendarEntryId': ?instance.calendarEntryId,
   'canRequestInvite': ?instance.canRequestInvite,
   'capacity': ?instance.capacity,
+  'categoryId': ?instance.categoryId,
   'clientNumber': instance.clientNumber,
   'closedAt': ?instance.closedAt?.toIso8601String(),
   'contentSettings': ?instance.contentSettings?.toJson(),
+  'creationLanguages': ?instance.creationLanguages,
   'creatorId': ?instance.creatorId,
+  'description': ?instance.description,
+  'disabledPropAbilities': ?instance.disabledPropAbilities,
   'displayName': ?instance.displayName,
+  'dominantLanguage': ?instance.dominantLanguage,
   'friends': ?instance.friends,
   'full': instance.full,
   'gameServerVersion': ?instance.gameServerVersion,
@@ -153,7 +194,11 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
   'id': instance.id,
   'instanceId': instance.instanceId,
   'instancePersistenceEnabled': ?instance.instancePersistenceEnabled,
+  'languageRatio': ?instance.languageRatio,
+  'languages': ?instance.languages,
+  'languagesIso639': ?instance.languagesIso639,
   'location': instance.location,
+  'minimumAvatarPerformance': ?instance.minimumAvatarPerformance,
   'n_users': instance.nUsers,
   'name': instance.name,
   'nonce': ?instance.nonce,
@@ -174,7 +219,9 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
   'tags': instance.tags,
   'type': _$InstanceTypeEnumMap[instance.type]!,
   'userCount': instance.userCount,
+  'userIcons': ?instance.userIcons,
   'users': ?instance.users?.map((e) => e.toJson()).toList(),
+  'vibeIds': ?instance.vibeIds,
   'world': instance.world.toJson(),
   'worldId': instance.worldId,
 };

@@ -8,6 +8,8 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**acquisition** | **String** |  | [optional] 
+**attribution** | **Object** |  | [optional] 
 **collections** | **List&lt;String&gt;** |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **defaultAttributes** | [**Map&lt;String, InventoryDefaultAttributesValue&gt;**](InventoryDefaultAttributesValue.md) |  | 
@@ -23,6 +25,7 @@ Name | Type | Description | Notes
 **isSeen** | **bool** |  | 
 **itemType** | [**InventoryItemType**](InventoryItemType.md) |  | 
 **itemTypeLabel** | **String** |  | 
+**lastEquipped** | **Map&lt;String, Object&gt;** |  | [optional] 
 **metadata** | [**InventoryMetadata**](InventoryMetadata.md) |  | 
 **name** | **String** |  | 
 **quantifiable** | **bool** |  | 

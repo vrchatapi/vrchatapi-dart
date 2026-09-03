@@ -6,6 +6,7 @@
 import 'package:vrchat_dart_generated/src/model/product_type.dart';
 import 'package:vrchat_dart_generated/src/model/product.dart';
 import 'package:vrchat_dart_generated/src/model/product_listing_variant.dart';
+import 'package:vrchat_dart_generated/src/model/product_listing_attribution.dart';
 import 'package:vrchat_dart_generated/src/model/product_listing_type.dart';
 
 import 'package:json_annotation/json_annotation.dart';
@@ -25,7 +26,13 @@ class ProductListing {
 
     this.archived,
 
+    this.attribution,
+
     required this.buyerRefundable,
+
+    this.collabUserDisplayName,
+
+    this.collabUserId,
 
     this.created,
 
@@ -44,6 +51,10 @@ class ProductListing {
     this.groupName,
 
     required this.hasAvatar,
+
+    this.hasCompanion,
+
+    this.hasInventory,
 
     required this.hasUdon,
 
@@ -66,6 +77,8 @@ class ProductListing {
     required this.productIds,
 
     required this.productType,
+
+    this.productTypes,
 
     required this.products,
 
@@ -106,8 +119,22 @@ class ProductListing {
   @JsonKey(name: r'archived', required: false, includeIfNull: false)
   final bool? archived;
 
+  @JsonKey(name: r'attribution', required: false, includeIfNull: false)
+  final ProductListingAttribution? attribution;
+
   @JsonKey(name: r'buyerRefundable', required: true, includeIfNull: false)
   final bool buyerRefundable;
+
+  @JsonKey(
+    name: r'collabUserDisplayName',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? collabUserDisplayName;
+
+  /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
+  @JsonKey(name: r'collabUserId', required: false, includeIfNull: false)
+  final String? collabUserId;
 
   @JsonKey(name: r'created', required: false, includeIfNull: false)
   final DateTime? created;
@@ -135,6 +162,12 @@ class ProductListing {
 
   @JsonKey(name: r'hasAvatar', required: true, includeIfNull: false)
   final bool hasAvatar;
+
+  @JsonKey(name: r'hasCompanion', required: false, includeIfNull: false)
+  final bool? hasCompanion;
+
+  @JsonKey(name: r'hasInventory', required: false, includeIfNull: false)
+  final bool? hasInventory;
 
   @JsonKey(name: r'hasUdon', required: true, includeIfNull: false)
   final bool hasUdon;
@@ -169,8 +202,12 @@ class ProductListing {
   @JsonKey(name: r'productType', required: true, includeIfNull: false)
   final ProductType productType;
 
+  @JsonKey(name: r'productTypes', required: false, includeIfNull: false)
+  final List<String>? productTypes;
+
+  /// Product ids. The products themselves arrive in `hydratedProducts`.
   @JsonKey(name: r'products', required: true, includeIfNull: false)
-  final List<Object> products;
+  final List<String> products;
 
   @JsonKey(name: r'purchaseCount', required: false, includeIfNull: false)
   final int? purchaseCount;
@@ -227,7 +264,10 @@ class ProductListing {
       other is ProductListing &&
           other.active == active &&
           other.archived == archived &&
+          other.attribution == attribution &&
           other.buyerRefundable == buyerRefundable &&
+          other.collabUserDisplayName == collabUserDisplayName &&
+          other.collabUserId == collabUserId &&
           other.created == created &&
           other.description == description &&
           other.displayName == displayName &&
@@ -237,6 +277,8 @@ class ProductListing {
           other.groupId == groupId &&
           other.groupName == groupName &&
           other.hasAvatar == hasAvatar &&
+          other.hasCompanion == hasCompanion &&
+          other.hasInventory == hasInventory &&
           other.hasUdon == hasUdon &&
           other.hydratedProducts == hydratedProducts &&
           other.id == id &&
@@ -248,6 +290,7 @@ class ProductListing {
           other.priceTokens == priceTokens &&
           other.productIds == productIds &&
           other.productType == productType &&
+          other.productTypes == productTypes &&
           other.products == products &&
           other.purchaseCount == purchaseCount &&
           other.purchaseCountQuantity == purchaseCountQuantity &&
@@ -269,7 +312,10 @@ class ProductListing {
   int get hashCode =>
       active.hashCode +
       archived.hashCode +
+      attribution.hashCode +
       buyerRefundable.hashCode +
+      (collabUserDisplayName == null ? 0 : collabUserDisplayName.hashCode) +
+      collabUserId.hashCode +
       created.hashCode +
       description.hashCode +
       displayName.hashCode +
@@ -279,6 +325,8 @@ class ProductListing {
       groupId.hashCode +
       (groupName == null ? 0 : groupName.hashCode) +
       hasAvatar.hashCode +
+      hasCompanion.hashCode +
+      hasInventory.hashCode +
       hasUdon.hashCode +
       hydratedProducts.hashCode +
       id.hashCode +
@@ -290,6 +338,7 @@ class ProductListing {
       priceTokens.hashCode +
       productIds.hashCode +
       productType.hashCode +
+      productTypes.hashCode +
       products.hashCode +
       purchaseCount.hashCode +
       purchaseCountQuantity.hashCode +

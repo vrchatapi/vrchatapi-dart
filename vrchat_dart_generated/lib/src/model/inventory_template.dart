@@ -20,6 +20,8 @@ part 'inventory_template.g.dart';
 class InventoryTemplate {
   /// Returns a new [InventoryTemplate] instance.
   InventoryTemplate({
+    this.attribution,
+
     required this.authorId,
 
     required this.collections,
@@ -29,6 +31,8 @@ class InventoryTemplate {
     required this.defaultAttributes,
 
     required this.description,
+
+    this.dropStatus,
 
     required this.equipSlots,
 
@@ -48,7 +52,7 @@ class InventoryTemplate {
 
     this.notificationDetails,
 
-    required this.status,
+    this.status,
 
     required this.tags,
 
@@ -56,6 +60,9 @@ class InventoryTemplate {
 
     required this.validateUserAttributes,
   });
+
+  @JsonKey(name: r'attribution', required: false, includeIfNull: false)
+  final Object? attribution;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(name: r'authorId', required: true, includeIfNull: false)
@@ -72,6 +79,9 @@ class InventoryTemplate {
 
   @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
+
+  @JsonKey(name: r'dropStatus', required: false, includeIfNull: false)
+  final String? dropStatus;
 
   @JsonKey(name: r'equipSlots', required: true, includeIfNull: false)
   final List<String> equipSlots;
@@ -100,8 +110,8 @@ class InventoryTemplate {
   @JsonKey(name: r'notificationDetails', required: false, includeIfNull: false)
   final InventoryNotificationDetails? notificationDetails;
 
-  @JsonKey(name: r'status', required: true, includeIfNull: false)
-  final String status;
+  @JsonKey(name: r'status', required: false, includeIfNull: false)
+  final String? status;
 
   @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
@@ -120,11 +130,13 @@ class InventoryTemplate {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is InventoryTemplate &&
+          other.attribution == attribution &&
           other.authorId == authorId &&
           other.collections == collections &&
           other.createdAt == createdAt &&
           other.defaultAttributes == defaultAttributes &&
           other.description == description &&
+          other.dropStatus == dropStatus &&
           other.equipSlots == equipSlots &&
           other.flags == flags &&
           other.id == id &&
@@ -141,11 +153,13 @@ class InventoryTemplate {
 
   @override
   int get hashCode =>
+      (attribution == null ? 0 : attribution.hashCode) +
       authorId.hashCode +
       collections.hashCode +
       createdAt.hashCode +
       defaultAttributes.hashCode +
       description.hashCode +
+      dropStatus.hashCode +
       equipSlots.hashCode +
       flags.hashCode +
       id.hashCode +

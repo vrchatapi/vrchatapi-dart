@@ -51,9 +51,15 @@ class CurrentUser {
 
     this.badges,
 
+    this.bannerColor,
+
+    this.bannerType,
+
     required this.bio,
 
     required this.bioLinks,
+
+    this.completedTutorials,
 
     this.contentFilters,
 
@@ -83,6 +89,8 @@ class CurrentUser {
 
     required this.friendKey,
 
+    this.friendRequestStatus,
+
     required this.friends,
 
     this.googleDetails,
@@ -105,13 +113,23 @@ class CurrentUser {
 
     required this.homeLocation,
 
+    this.iconFrame,
+
+    this.iconUrl,
+
     required this.id,
+
+    this.instanceId,
 
     required this.isAdult,
 
     this.isBoopingEnabled = true,
 
+    this.isEconomyCreator = false,
+
     this.isFriend = false,
+
+    this.isTemporary = false,
 
     this.lastActivity,
 
@@ -120,6 +138,12 @@ class CurrentUser {
     required this.lastMobile,
 
     required this.lastPlatform,
+
+    this.location,
+
+    this.nameplateEffect,
+
+    this.note,
 
     required this.obfuscatedEmail,
 
@@ -133,11 +157,17 @@ class CurrentUser {
 
     required this.pastDisplayNames,
 
+    this.personalizationOptOut,
+
     this.picoId,
+
+    this.platform,
 
     this.platformHistory,
 
     this.presence,
+
+    this.profileEffect,
 
     required this.profilePicOverride,
 
@@ -167,6 +197,14 @@ class CurrentUser {
 
     required this.tags,
 
+    this.temporaryExpiryDate,
+
+    this.travelingToInstance,
+
+    this.travelingToLocation,
+
+    this.travelingToWorld,
+
     this.twitchDetails,
 
     this.twitchId,
@@ -190,6 +228,8 @@ class CurrentUser {
     required this.usesGeneratedPassword,
 
     this.viveId,
+
+    this.worldId,
   });
 
   // minimum: 0
@@ -239,12 +279,21 @@ class CurrentUser {
   @JsonKey(name: r'badges', required: false, includeIfNull: false)
   final List<Badge>? badges;
 
+  @JsonKey(name: r'bannerColor', required: false, includeIfNull: false)
+  final String? bannerColor;
+
+  @JsonKey(name: r'bannerType', required: false, includeIfNull: false)
+  final String? bannerType;
+
   @JsonKey(name: r'bio', required: true, includeIfNull: false)
   final String bio;
 
   ///
   @JsonKey(name: r'bioLinks', required: true, includeIfNull: false)
   final List<String> bioLinks;
+
+  @JsonKey(name: r'completedTutorials', required: false, includeIfNull: false)
+  final List<String>? completedTutorials;
 
   /// These tags begin with `content_` and control content gating
   @JsonKey(name: r'contentFilters', required: false, includeIfNull: false)
@@ -298,6 +347,10 @@ class CurrentUser {
   @JsonKey(name: r'friendKey', required: true, includeIfNull: false)
   final String friendKey;
 
+  /// State of a friend request between the caller and this user. VRChat sends the string `\"null\"`, not JSON `null`.
+  @JsonKey(name: r'friendRequestStatus', required: false, includeIfNull: false)
+  final String? friendRequestStatus;
+
   @JsonKey(name: r'friends', required: true, includeIfNull: false)
   final List<String> friends;
 
@@ -344,9 +397,19 @@ class CurrentUser {
   @JsonKey(name: r'homeLocation', required: true, includeIfNull: false)
   final String homeLocation;
 
+  @JsonKey(name: r'iconFrame', required: false, includeIfNull: false)
+  final String? iconFrame;
+
+  @JsonKey(name: r'iconUrl', required: false, includeIfNull: false)
+  final String? iconUrl;
+
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
+
+  /// InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance.
+  @JsonKey(name: r'instanceId', required: false, includeIfNull: false)
+  final String? instanceId;
 
   @JsonKey(name: r'isAdult', required: true, includeIfNull: false)
   final bool isAdult;
@@ -354,8 +417,14 @@ class CurrentUser {
   @JsonKey(name: r'isBoopingEnabled', required: false, includeIfNull: false)
   final bool? isBoopingEnabled;
 
+  @JsonKey(name: r'isEconomyCreator', required: false, includeIfNull: false)
+  final bool? isEconomyCreator;
+
   @JsonKey(name: r'isFriend', required: true, includeIfNull: false)
   final bool isFriend;
+
+  @JsonKey(name: r'isTemporary', required: false, includeIfNull: false)
+  final bool? isTemporary;
 
   @JsonKey(name: r'last_activity', required: false, includeIfNull: false)
   final DateTime? lastActivity;
@@ -369,6 +438,16 @@ class CurrentUser {
   /// This is normally `android`, `ios`, `standalonewindows`, `web`, or the empty value ``, but also supposedly can be any random Unity version such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
   @JsonKey(name: r'last_platform', required: true, includeIfNull: false)
   final String lastPlatform;
+
+  /// Represents a unique location, consisting of a world identifier and an instance identifier, or \"offline\" if the user is not on your friends list.
+  @JsonKey(name: r'location', required: false, includeIfNull: false)
+  final String? location;
+
+  @JsonKey(name: r'nameplateEffect', required: false, includeIfNull: false)
+  final String? nameplateEffect;
+
+  @JsonKey(name: r'note', required: false, includeIfNull: false)
+  final String? note;
 
   @JsonKey(name: r'obfuscatedEmail', required: true, includeIfNull: false)
   final String obfuscatedEmail;
@@ -393,14 +472,27 @@ class CurrentUser {
   @JsonKey(name: r'pastDisplayNames', required: true, includeIfNull: false)
   final List<PastDisplayName> pastDisplayNames;
 
+  @JsonKey(
+    name: r'personalizationOptOut',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? personalizationOptOut;
+
   @JsonKey(name: r'picoId', required: false, includeIfNull: false)
   final String? picoId;
+
+  @JsonKey(name: r'platform', required: false, includeIfNull: false)
+  final String? platform;
 
   @JsonKey(name: r'platform_history', required: false, includeIfNull: false)
   final List<CurrentUserPlatformHistoryInner>? platformHistory;
 
   @JsonKey(name: r'presence', required: false, includeIfNull: false)
   final CurrentUserPresence? presence;
+
+  @JsonKey(name: r'profileEffect', required: false, includeIfNull: false)
+  final String? profileEffect;
 
   @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
   final String profilePicOverride;
@@ -452,6 +544,18 @@ class CurrentUser {
   @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 
+  @JsonKey(name: r'temporaryExpiryDate', required: false, includeIfNull: false)
+  final Object? temporaryExpiryDate;
+
+  @JsonKey(name: r'travelingToInstance', required: false, includeIfNull: false)
+  final String? travelingToInstance;
+
+  @JsonKey(name: r'travelingToLocation', required: false, includeIfNull: false)
+  final String? travelingToLocation;
+
+  @JsonKey(name: r'travelingToWorld', required: false, includeIfNull: false)
+  final String? travelingToWorld;
+
   @JsonKey(name: r'twitchDetails', required: false, includeIfNull: false)
   final Object? twitchDetails;
 
@@ -483,8 +587,7 @@ class CurrentUser {
   @JsonKey(name: r'userLanguageCode', required: false, includeIfNull: false)
   final String? userLanguageCode;
 
-  /// -| **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
-  @Deprecated('username has been deprecated')
+  /// Your own unique name, used during login. Distinct from `displayName`, and never returned for another user.
   @JsonKey(name: r'username', required: false, includeIfNull: false)
   final String? username;
 
@@ -493,6 +596,10 @@ class CurrentUser {
 
   @JsonKey(name: r'viveId', required: false, includeIfNull: false)
   final String? viveId;
+
+  /// WorldID be \"offline\" on User profiles if you are not friends with that user.
+  @JsonKey(name: r'worldId', required: false, includeIfNull: false)
+  final String? worldId;
 
   @override
   bool operator ==(Object other) =>
@@ -510,8 +617,11 @@ class CurrentUser {
           other.appleId == appleId &&
           other.authToken == authToken &&
           other.badges == badges &&
+          other.bannerColor == bannerColor &&
+          other.bannerType == bannerType &&
           other.bio == bio &&
           other.bioLinks == bioLinks &&
+          other.completedTutorials == completedTutorials &&
           other.contentFilters == contentFilters &&
           other.currentAvatar == currentAvatar &&
           other.currentAvatarImageUrl == currentAvatarImageUrl &&
@@ -527,6 +637,7 @@ class CurrentUser {
           other.fallbackAvatar == fallbackAvatar &&
           other.friendGroupNames == friendGroupNames &&
           other.friendKey == friendKey &&
+          other.friendRequestStatus == friendRequestStatus &&
           other.friends == friends &&
           other.googleDetails == googleDetails &&
           other.googleId == googleId &&
@@ -538,23 +649,34 @@ class CurrentUser {
           other.hasSharedConnectionsOptOut == hasSharedConnectionsOptOut &&
           other.hideContentFilterSettings == hideContentFilterSettings &&
           other.homeLocation == homeLocation &&
+          other.iconFrame == iconFrame &&
+          other.iconUrl == iconUrl &&
           other.id == id &&
+          other.instanceId == instanceId &&
           other.isAdult == isAdult &&
           other.isBoopingEnabled == isBoopingEnabled &&
+          other.isEconomyCreator == isEconomyCreator &&
           other.isFriend == isFriend &&
+          other.isTemporary == isTemporary &&
           other.lastActivity == lastActivity &&
           other.lastLogin == lastLogin &&
           other.lastMobile == lastMobile &&
           other.lastPlatform == lastPlatform &&
+          other.location == location &&
+          other.nameplateEffect == nameplateEffect &&
+          other.note == note &&
           other.obfuscatedEmail == obfuscatedEmail &&
           other.obfuscatedPendingEmail == obfuscatedPendingEmail &&
           other.oculusId == oculusId &&
           other.offlineFriends == offlineFriends &&
           other.onlineFriends == onlineFriends &&
           other.pastDisplayNames == pastDisplayNames &&
+          other.personalizationOptOut == personalizationOptOut &&
           other.picoId == picoId &&
+          other.platform == platform &&
           other.platformHistory == platformHistory &&
           other.presence == presence &&
+          other.profileEffect == profileEffect &&
           other.profilePicOverride == profilePicOverride &&
           other.profilePicOverrideThumbnail == profilePicOverrideThumbnail &&
           other.pronouns == pronouns &&
@@ -569,6 +691,10 @@ class CurrentUser {
           other.steamDetails == steamDetails &&
           other.steamId == steamId &&
           other.tags == tags &&
+          other.temporaryExpiryDate == temporaryExpiryDate &&
+          other.travelingToInstance == travelingToInstance &&
+          other.travelingToLocation == travelingToLocation &&
+          other.travelingToWorld == travelingToWorld &&
           other.twitchDetails == twitchDetails &&
           other.twitchId == twitchId &&
           other.twoFactorAuthEnabled == twoFactorAuthEnabled &&
@@ -580,7 +706,8 @@ class CurrentUser {
           other.userLanguageCode == userLanguageCode &&
           other.username == username &&
           other.usesGeneratedPassword == usesGeneratedPassword &&
-          other.viveId == viveId;
+          other.viveId == viveId &&
+          other.worldId == worldId;
 
   @override
   int get hashCode =>
@@ -596,8 +723,11 @@ class CurrentUser {
       appleId.hashCode +
       authToken.hashCode +
       badges.hashCode +
+      bannerColor.hashCode +
+      bannerType.hashCode +
       bio.hashCode +
       bioLinks.hashCode +
+      completedTutorials.hashCode +
       contentFilters.hashCode +
       currentAvatar.hashCode +
       currentAvatarImageUrl.hashCode +
@@ -612,6 +742,7 @@ class CurrentUser {
       fallbackAvatar.hashCode +
       friendGroupNames.hashCode +
       friendKey.hashCode +
+      friendRequestStatus.hashCode +
       friends.hashCode +
       googleDetails.hashCode +
       googleId.hashCode +
@@ -623,23 +754,34 @@ class CurrentUser {
       hasSharedConnectionsOptOut.hashCode +
       hideContentFilterSettings.hashCode +
       homeLocation.hashCode +
+      iconFrame.hashCode +
+      iconUrl.hashCode +
       id.hashCode +
+      instanceId.hashCode +
       isAdult.hashCode +
       isBoopingEnabled.hashCode +
+      isEconomyCreator.hashCode +
       isFriend.hashCode +
+      isTemporary.hashCode +
       lastActivity.hashCode +
       lastLogin.hashCode +
       (lastMobile == null ? 0 : lastMobile.hashCode) +
       lastPlatform.hashCode +
+      location.hashCode +
+      nameplateEffect.hashCode +
+      note.hashCode +
       obfuscatedEmail.hashCode +
       obfuscatedPendingEmail.hashCode +
       oculusId.hashCode +
       offlineFriends.hashCode +
       onlineFriends.hashCode +
       pastDisplayNames.hashCode +
+      personalizationOptOut.hashCode +
       picoId.hashCode +
+      platform.hashCode +
       platformHistory.hashCode +
       presence.hashCode +
+      profileEffect.hashCode +
       profilePicOverride.hashCode +
       profilePicOverrideThumbnail.hashCode +
       pronouns.hashCode +
@@ -654,6 +796,10 @@ class CurrentUser {
       steamDetails.hashCode +
       steamId.hashCode +
       tags.hashCode +
+      (temporaryExpiryDate == null ? 0 : temporaryExpiryDate.hashCode) +
+      travelingToInstance.hashCode +
+      travelingToLocation.hashCode +
+      travelingToWorld.hashCode +
       twitchDetails.hashCode +
       twitchId.hashCode +
       twoFactorAuthEnabled.hashCode +
@@ -667,7 +813,8 @@ class CurrentUser {
       (userLanguageCode == null ? 0 : userLanguageCode.hashCode) +
       username.hashCode +
       usesGeneratedPassword.hashCode +
-      viveId.hashCode;
+      viveId.hashCode +
+      worldId.hashCode;
 
   factory CurrentUser.fromJson(Map<String, dynamic> json) =>
       _$CurrentUserFromJson(json);

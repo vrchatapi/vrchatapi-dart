@@ -17,6 +17,10 @@ PrivateProfile _$PrivateProfileFromJson(Map<String, dynamic> json) =>
               ? null
               : PrivateProfileActivity.fromJson(v as Map<String, dynamic>),
         ),
+        friendRequestStatus: $checkedConvert(
+          'friendRequestStatus',
+          (v) => v as String?,
+        ),
         id: $checkedConvert('id', (v) => v as String?),
         isFriend: $checkedConvert('isFriend', (v) => v as bool?),
         note: $checkedConvert('note', (v) => v as String?),
@@ -35,6 +39,7 @@ PrivateProfile _$PrivateProfileFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$PrivateProfileToJson(PrivateProfile instance) =>
     <String, dynamic>{
       'activity': ?instance.activity?.toJson(),
+      'friendRequestStatus': ?instance.friendRequestStatus,
       'id': ?instance.id,
       'isFriend': ?instance.isFriend,
       'note': ?instance.note,

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **data** | **Map&lt;String, String&gt;** |  | 
 **details** | [**NotificationV2DetailsBoop**](NotificationV2DetailsBoop.md) |  | [optional] 
+**displayData** | **Object** |  | [optional] 
 **expiresAt** | [**DateTime**](DateTime.md) |  | 
 **expiryAfterSeen** | **int** |  | 
 **id** | **String** |  | 

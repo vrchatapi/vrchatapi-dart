@@ -71,7 +71,6 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         'downloadUrls',
         'dynamicWorldRows',
         'economyLedgerBackfill',
-        'economyLedgerMigrationStop',
         'economyLedgerMode',
         'economyPauseEnd',
         'economyPauseStart',
@@ -216,6 +215,10 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         'clientDisconnectTimeout',
         (v) => (v as num?)?.toInt() ?? 30000,
       ),
+      clientMaxDatagrams: $checkedConvert(
+        'clientMaxDatagrams',
+        (v) => (v as num?)?.toInt(),
+      ),
       clientNetDispatchThread: $checkedConvert(
         'clientNetDispatchThread',
         (v) => v as bool? ?? false,
@@ -265,6 +268,7 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         'clientSentCountAllowance',
         (v) => (v as num?)?.toInt() ?? 15,
       ),
+      clientUseAck2: $checkedConvert('clientUseAck2', (v) => v as bool?),
       constants: $checkedConvert(
         'constants',
         (v) => APIConfigConstants.fromJson(v as Map<String, dynamic>),
@@ -378,7 +382,7 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
       ),
       economyLedgerMigrationStop: $checkedConvert(
         'economyLedgerMigrationStop',
-        (v) => v as String,
+        (v) => v as String?,
       ),
       economyLedgerMode: $checkedConvert(
         'economyLedgerMode',
@@ -400,6 +404,20 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         'economyState',
         (v) => (v as num?)?.toInt() ?? 1,
       ),
+      enableVRCPlusWorldLists: $checkedConvert(
+        'enableVRCPlusWorldLists',
+        (v) => v as bool?,
+      ),
+      eventShelfCampaigns: $checkedConvert(
+        'eventShelfCampaigns',
+        (v) => (v as List<dynamic>?)
+            ?.map(
+              (e) => APIConfigEventShelfCampaign.fromJson(
+                e as Map<String, dynamic>,
+              ),
+            )
+            .toList(),
+      ),
       events: $checkedConvert(
         'events',
         (v) => APIConfigEvents.fromJson(v as Map<String, dynamic>),
@@ -409,11 +427,23 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => v as bool? ?? true,
       ),
       giftDisplayType: $checkedConvert('giftDisplayType', (v) => v as String),
+      globalCacheVersion: $checkedConvert(
+        'globalCacheVersion',
+        (v) => (v as num?)?.toInt(),
+      ),
+      globalCacheVersionDefault: $checkedConvert(
+        'globalCacheVersionDefault',
+        (v) => (v as num?)?.toInt(),
+      ),
       googleApiClientId: $checkedConvert(
         'googleApiClientId',
         (v) =>
             v as String? ??
             '827942544393-r2ouvckvouldn9dg9uruseje575e878f.apps.googleusercontent.com',
+      ),
+      googleApiUnityClientId: $checkedConvert(
+        'googleApiUnityClientId',
+        (v) => v as String?,
       ),
       homeWorldId: $checkedConvert('homeWorldId', (v) => v as String),
       homepageRedirectTarget: $checkedConvert(
@@ -434,6 +464,26 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => APIConfigIosVersion.fromJson(v as Map<String, dynamic>),
       ),
       jobsEmail: $checkedConvert('jobsEmail', (v) => v as String),
+      loadingScreenWeights: $checkedConvert(
+        'loadingScreenWeights',
+        (v) => (v as Map<String, dynamic>?)?.map(
+          (k, e) => MapEntry(
+            k,
+            APIConfigLoadingScreenWeights.fromJson(e as Map<String, dynamic>),
+          ),
+        ),
+      ),
+      lowMemoryGoHomeTimeout: $checkedConvert(
+        'lowMemoryGoHomeTimeout',
+        (v) => (v as Map<String, dynamic>?)?.map(
+          (k, e) => MapEntry(
+            k,
+            APIConfigLowMemoryGoHomeTimeoutValue.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          ),
+        ),
+      ),
       maxUserEmoji: $checkedConvert(
         'maxUserEmoji',
         (v) => (v as num?)?.toInt() ?? 18,
@@ -441,6 +491,10 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
       maxUserStickers: $checkedConvert(
         'maxUserStickers',
         (v) => (v as num?)?.toInt() ?? 18,
+      ),
+      maximumUnityVersionForUploads: $checkedConvert(
+        'maximumUnityVersionForUploads',
+        (v) => v as String?,
       ),
       minSupportedClientBuildNumber: $checkedConvert(
         'minSupportedClientBuildNumber',
@@ -473,11 +527,35 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         'player-url-resolver-sha1',
         (v) => v as String,
       ),
+      playerUrlResolverSha1GfnOverride: $checkedConvert(
+        'player-url-resolver-sha1-gfn-override',
+        (v) => v as String?,
+      ),
       playerUrlResolverVersion: $checkedConvert(
         'player-url-resolver-version',
         (v) => v as String,
       ),
+      playerUrlResolverVersionGfnOverride: $checkedConvert(
+        'player-url-resolver-version-gfn-override',
+        (v) => v as String?,
+      ),
+      profileDefaults: $checkedConvert(
+        'profileDefaults',
+        (v) => v == null
+            ? null
+            : APIConfigProfileDefaults.fromJson(v as Map<String, dynamic>),
+      ),
+      propComponentList: $checkedConvert(
+        'propComponentList',
+        (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+      ),
       publicKey: $checkedConvert('publicKey', (v) => v as String),
+      questMinimumLowMemoryThreshold: $checkedConvert(
+        'questMinimumLowMemoryThreshold',
+        (v) => (v as Map<String, dynamic>?)?.map(
+          (k, e) => MapEntry(k, (e as num).toInt()),
+        ),
+      ),
       reportCategories: $checkedConvert(
         'reportCategories',
         (v) => (v as Map<String, dynamic>).map(
@@ -564,6 +642,14 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => v as bool? ?? false,
       ),
       viveWindowsUrl: $checkedConvert('viveWindowsUrl', (v) => v as String),
+      voiceMaxPlaybackSourcesMobile: $checkedConvert(
+        'voiceMaxPlaybackSourcesMobile',
+        (v) => (v as num?)?.toInt(),
+      ),
+      voiceMaxPlaybackSourcesPC: $checkedConvert(
+        'voiceMaxPlaybackSourcesPC',
+        (v) => (v as num?)?.toInt(),
+      ),
       websocketMaxFriendsRefreshDelay: $checkedConvert(
         'websocketMaxFriendsRefreshDelay',
         (v) => (v as num?)?.toInt() ?? 900,
@@ -593,7 +679,10 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
     'analyticsSegmentNewUISalt': 'analyticsSegment_NewUI_Salt',
     'disCountdown': 'dis-countdown',
     'playerUrlResolverSha1': 'player-url-resolver-sha1',
+    'playerUrlResolverSha1GfnOverride': 'player-url-resolver-sha1-gfn-override',
     'playerUrlResolverVersion': 'player-url-resolver-version',
+    'playerUrlResolverVersionGfnOverride':
+        'player-url-resolver-version-gfn-override',
   },
 );
 
@@ -621,6 +710,7 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
   'clientApiKey': instance.clientApiKey,
   'clientBPSCeiling': instance.clientBPSCeiling,
   'clientDisconnectTimeout': instance.clientDisconnectTimeout,
+  'clientMaxDatagrams': ?instance.clientMaxDatagrams,
   'clientNetDispatchThread': ?instance.clientNetDispatchThread,
   'clientNetDispatchThreadMobile': instance.clientNetDispatchThreadMobile,
   'clientNetInThread': ?instance.clientNetInThread,
@@ -634,6 +724,7 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
   'clientQR': ?instance.clientQR,
   'clientReservedPlayerBPS': instance.clientReservedPlayerBPS,
   'clientSentCountAllowance': instance.clientSentCountAllowance,
+  'clientUseAck2': ?instance.clientUseAck2,
   'constants': instance.constants.toJson(),
   'contactEmail': instance.contactEmail,
   'copyrightEmail': instance.copyrightEmail,
@@ -668,16 +759,23 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
   'downloadUrls': instance.downloadUrls.toJson(),
   'dynamicWorldRows': instance.dynamicWorldRows.map((e) => e.toJson()).toList(),
   'economyLedgerBackfill': instance.economyLedgerBackfill,
-  'economyLedgerMigrationStop': instance.economyLedgerMigrationStop,
+  'economyLedgerMigrationStop': ?instance.economyLedgerMigrationStop,
   'economyLedgerMode': instance.economyLedgerMode,
   'economyPauseEnd': instance.economyPauseEnd.toIso8601String(),
   'economyPauseStart': instance.economyPauseStart.toIso8601String(),
   'economyPurchaseRepairEnabled': instance.economyPurchaseRepairEnabled,
   'economyState': instance.economyState,
+  'enableVRCPlusWorldLists': ?instance.enableVRCPlusWorldLists,
+  'eventShelfCampaigns': ?instance.eventShelfCampaigns
+      ?.map((e) => e.toJson())
+      .toList(),
   'events': instance.events.toJson(),
   'forceUseLatestWorld': instance.forceUseLatestWorld,
   'giftDisplayType': instance.giftDisplayType,
+  'globalCacheVersion': ?instance.globalCacheVersion,
+  'globalCacheVersionDefault': ?instance.globalCacheVersionDefault,
   'googleApiClientId': instance.googleApiClientId,
+  'googleApiUnityClientId': ?instance.googleApiUnityClientId,
   'homeWorldId': instance.homeWorldId,
   'homepageRedirectTarget': instance.homepageRedirectTarget,
   'hubWorldId': instance.hubWorldId,
@@ -685,8 +783,15 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
   'iosAppVersion': instance.iosAppVersion,
   'iosVersion': instance.iosVersion.toJson(),
   'jobsEmail': instance.jobsEmail,
+  'loadingScreenWeights': ?instance.loadingScreenWeights?.map(
+    (k, e) => MapEntry(k, e.toJson()),
+  ),
+  'lowMemoryGoHomeTimeout': ?instance.lowMemoryGoHomeTimeout?.map(
+    (k, e) => MapEntry(k, e.toJson()),
+  ),
   'maxUserEmoji': instance.maxUserEmoji,
   'maxUserStickers': instance.maxUserStickers,
+  'maximumUnityVersionForUploads': ?instance.maximumUnityVersionForUploads,
   'minSupportedClientBuildNumber': instance.minSupportedClientBuildNumber
       .toJson(),
   'minimumUnityVersionForUploads': instance.minimumUnityVersionForUploads,
@@ -697,8 +802,15 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
   'photonNameserverOverrides': instance.photonNameserverOverrides,
   'photonPublicKeys': instance.photonPublicKeys,
   'player-url-resolver-sha1': instance.playerUrlResolverSha1,
+  'player-url-resolver-sha1-gfn-override':
+      ?instance.playerUrlResolverSha1GfnOverride,
   'player-url-resolver-version': instance.playerUrlResolverVersion,
+  'player-url-resolver-version-gfn-override':
+      ?instance.playerUrlResolverVersionGfnOverride,
+  'profileDefaults': ?instance.profileDefaults?.toJson(),
+  'propComponentList': ?instance.propComponentList,
   'publicKey': instance.publicKey,
+  'questMinimumLowMemoryThreshold': ?instance.questMinimumLowMemoryThreshold,
   'reportCategories': instance.reportCategories.map(
     (k, e) => MapEntry(k, e.toJson()),
   ),
@@ -726,6 +838,8 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
   'urlList': instance.urlList,
   'useReliableUdpForVoice': instance.useReliableUdpForVoice,
   'viveWindowsUrl': instance.viveWindowsUrl,
+  'voiceMaxPlaybackSourcesMobile': ?instance.voiceMaxPlaybackSourcesMobile,
+  'voiceMaxPlaybackSourcesPC': ?instance.voiceMaxPlaybackSourcesPC,
   'websocketMaxFriendsRefreshDelay': instance.websocketMaxFriendsRefreshDelay,
   'websocketQuickReconnectTime': instance.websocketQuickReconnectTime,
   'websocketReconnectMaxDelay': instance.websocketReconnectMaxDelay,

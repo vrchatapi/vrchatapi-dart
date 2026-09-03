@@ -30,11 +30,17 @@ class UpdateWorldRequest {
 
     this.description,
 
+    this.disabledPropAbilities,
+
     this.imageUrl,
 
     this.name,
 
     this.platform,
+
+    this.previewYoutubeId,
+
+    this.recommendedCapacity,
 
     this.releaseStatus,
 
@@ -43,6 +49,8 @@ class UpdateWorldRequest {
     this.unityPackageUrl,
 
     this.unityVersion = '5.3.4p1',
+
+    this.urlList,
   });
 
   @JsonKey(name: r'assetUrl', required: false, includeIfNull: false)
@@ -66,6 +74,13 @@ class UpdateWorldRequest {
   @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;
 
+  @JsonKey(
+    name: r'disabledPropAbilities',
+    required: false,
+    includeIfNull: false,
+  )
+  final List<String>? disabledPropAbilities;
+
   @JsonKey(name: r'imageUrl', required: false, includeIfNull: false)
   final String? imageUrl;
 
@@ -75,6 +90,12 @@ class UpdateWorldRequest {
   /// This is normally `android`, `ios`, `standalonewindows`, `web`, or the empty value ``, but also supposedly can be any random Unity version such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
   @JsonKey(name: r'platform', required: false, includeIfNull: false)
   final String? platform;
+
+  @JsonKey(name: r'previewYoutubeId', required: false, includeIfNull: false)
+  final String? previewYoutubeId;
+
+  @JsonKey(name: r'recommendedCapacity', required: false, includeIfNull: false)
+  final int? recommendedCapacity;
 
   @JsonKey(name: r'releaseStatus', required: false, includeIfNull: false)
   final ReleaseStatus? releaseStatus;
@@ -89,6 +110,9 @@ class UpdateWorldRequest {
   @JsonKey(name: r'unityVersion', required: false, includeIfNull: false)
   final String? unityVersion;
 
+  @JsonKey(name: r'urlList', required: false, includeIfNull: false)
+  final List<String>? urlList;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -99,13 +123,17 @@ class UpdateWorldRequest {
           other.authorName == authorName &&
           other.capacity == capacity &&
           other.description == description &&
+          other.disabledPropAbilities == disabledPropAbilities &&
           other.imageUrl == imageUrl &&
           other.name == name &&
           other.platform == platform &&
+          other.previewYoutubeId == previewYoutubeId &&
+          other.recommendedCapacity == recommendedCapacity &&
           other.releaseStatus == releaseStatus &&
           other.tags == tags &&
           other.unityPackageUrl == unityPackageUrl &&
-          other.unityVersion == unityVersion;
+          other.unityVersion == unityVersion &&
+          other.urlList == urlList;
 
   @override
   int get hashCode =>
@@ -115,13 +143,17 @@ class UpdateWorldRequest {
       authorName.hashCode +
       capacity.hashCode +
       description.hashCode +
+      disabledPropAbilities.hashCode +
       imageUrl.hashCode +
       name.hashCode +
       platform.hashCode +
+      (previewYoutubeId == null ? 0 : previewYoutubeId.hashCode) +
+      recommendedCapacity.hashCode +
       releaseStatus.hashCode +
       tags.hashCode +
       unityPackageUrl.hashCode +
-      unityVersion.hashCode;
+      unityVersion.hashCode +
+      urlList.hashCode;
 
   factory UpdateWorldRequest.fromJson(Map<String, dynamic> json) =>
       _$UpdateWorldRequestFromJson(json);

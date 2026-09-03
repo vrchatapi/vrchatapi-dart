@@ -40,6 +40,7 @@ Name | Type | Description | Notes
 **physBoneTransformCount** | **int** |  | 
 **physicsColliders** | **int** |  | 
 **physicsRigidbodies** | **int** |  | 
+**raycastCount** | **int** |  | [optional] 
 **skinnedMeshCount** | **int** |  | 
 **skinnedMeshIndices** | **int** |  | 
 **skinnedMeshPolygons** | **int** |  | 

@@ -14,13 +14,17 @@ Name | Type | Description | Notes
 **authorName** | **String** |  | [optional] 
 **capacity** | **int** |  | [optional] 
 **description** | **String** |  | [optional] 
+**disabledPropAbilities** | **List&lt;String&gt;** |  | [optional] 
 **imageUrl** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **platform** | **String** | This is normally `android`, `ios`, `standalonewindows`, `web`, or the empty value ``, but also supposedly can be any random Unity version such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`. | [optional] 
+**previewYoutubeId** | **String** |  | [optional] 
+**recommendedCapacity** | **int** |  | [optional] 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | [optional] 
 **tags** | **List&lt;String&gt;** |   | [optional] 
 **unityPackageUrl** | **String** |  | [optional] 
 **unityVersion** | **String** |  | [optional] [default to '5.3.4p1']
+**urlList** | **List&lt;String&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

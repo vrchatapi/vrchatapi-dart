@@ -32,6 +32,8 @@ class FavoritedWorld {
 
     this.description,
 
+    this.disabledPropAbilities,
+
     required this.favoriteGroup,
 
     required this.favoriteId,
@@ -103,6 +105,13 @@ class FavoritedWorld {
 
   @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;
+
+  @JsonKey(
+    name: r'disabledPropAbilities',
+    required: false,
+    includeIfNull: false,
+  )
+  final List<Object>? disabledPropAbilities;
 
   @JsonKey(name: r'favoriteGroup', required: true, includeIfNull: false)
   final String favoriteGroup;
@@ -195,6 +204,7 @@ class FavoritedWorld {
           other.createdAt == createdAt &&
           other.defaultContentSettings == defaultContentSettings &&
           other.description == description &&
+          other.disabledPropAbilities == disabledPropAbilities &&
           other.favoriteGroup == favoriteGroup &&
           other.favoriteId == favoriteId &&
           other.favorites == favorites &&
@@ -228,6 +238,7 @@ class FavoritedWorld {
       createdAt.hashCode +
       defaultContentSettings.hashCode +
       description.hashCode +
+      disabledPropAbilities.hashCode +
       favoriteGroup.hashCode +
       favoriteId.hashCode +
       favorites.hashCode +

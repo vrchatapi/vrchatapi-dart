@@ -22,6 +22,10 @@ part 'inventory_item.g.dart';
 class InventoryItem {
   /// Returns a new [InventoryItem] instance.
   InventoryItem({
+    this.acquisition,
+
+    this.attribution,
+
     required this.collections,
 
     required this.createdAt,
@@ -52,6 +56,8 @@ class InventoryItem {
 
     required this.itemTypeLabel,
 
+    this.lastEquipped,
+
     required this.metadata,
 
     required this.name,
@@ -72,6 +78,12 @@ class InventoryItem {
 
     required this.validateUserAttributes,
   });
+
+  @JsonKey(name: r'acquisition', required: false, includeIfNull: false)
+  final String? acquisition;
+
+  @JsonKey(name: r'attribution', required: false, includeIfNull: false)
+  final Object? attribution;
 
   @JsonKey(name: r'collections', required: true, includeIfNull: false)
   final List<String> collections;
@@ -119,6 +131,9 @@ class InventoryItem {
   @JsonKey(name: r'itemTypeLabel', required: true, includeIfNull: false)
   final String itemTypeLabel;
 
+  @JsonKey(name: r'last_equipped', required: false, includeIfNull: false)
+  final Map<String, Object>? lastEquipped;
+
   @JsonKey(name: r'metadata', required: true, includeIfNull: false)
   final InventoryMetadata metadata;
 
@@ -157,6 +172,8 @@ class InventoryItem {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is InventoryItem &&
+          other.acquisition == acquisition &&
+          other.attribution == attribution &&
           other.collections == collections &&
           other.createdAt == createdAt &&
           other.defaultAttributes == defaultAttributes &&
@@ -172,6 +189,7 @@ class InventoryItem {
           other.isSeen == isSeen &&
           other.itemType == itemType &&
           other.itemTypeLabel == itemTypeLabel &&
+          other.lastEquipped == lastEquipped &&
           other.metadata == metadata &&
           other.name == name &&
           other.quantifiable == quantifiable &&
@@ -185,6 +203,8 @@ class InventoryItem {
 
   @override
   int get hashCode =>
+      acquisition.hashCode +
+      (attribution == null ? 0 : attribution.hashCode) +
       collections.hashCode +
       createdAt.hashCode +
       defaultAttributes.hashCode +
@@ -200,6 +220,7 @@ class InventoryItem {
       isSeen.hashCode +
       itemType.hashCode +
       itemTypeLabel.hashCode +
+      lastEquipped.hashCode +
       metadata.hashCode +
       name.hashCode +
       quantifiable.hashCode +

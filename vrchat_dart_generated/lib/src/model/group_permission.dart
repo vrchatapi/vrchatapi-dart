@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/group_permissions.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -19,6 +20,8 @@ class GroupPermission {
   GroupPermission({
     this.allowedToAdd = false,
 
+    this.dependsOn,
+
     this.displayName,
 
     this.help,
@@ -31,6 +34,10 @@ class GroupPermission {
   /// Whether the user is allowed to add this permission to a role.
   @JsonKey(name: r'allowedToAdd', required: false, includeIfNull: false)
   final bool? allowedToAdd;
+
+  /// Other permission names this one is listed against.
+  @JsonKey(name: r'dependsOn', required: false, includeIfNull: false)
+  final List<GroupPermissions>? dependsOn;
 
   /// The display name of the permission.
   @JsonKey(name: r'displayName', required: false, includeIfNull: false)
@@ -57,6 +64,7 @@ class GroupPermission {
       identical(this, other) ||
       other is GroupPermission &&
           other.allowedToAdd == allowedToAdd &&
+          other.dependsOn == dependsOn &&
           other.displayName == displayName &&
           other.help == help &&
           other.isManagementPermission == isManagementPermission &&
@@ -65,6 +73,7 @@ class GroupPermission {
   @override
   int get hashCode =>
       allowedToAdd.hashCode +
+      dependsOn.hashCode +
       displayName.hashCode +
       help.hashCode +
       isManagementPermission.hashCode +

@@ -20,8 +20,11 @@ Name | Type | Description | Notes
 **appleId** | **String** |  | [optional] 
 **authToken** | **String** | The auth token for NEWLY REGISTERED ACCOUNTS ONLY (/auth/register) | [optional] 
 **badges** | [**List&lt;Badge&gt;**](Badge.md) |   | [optional] 
+**bannerColor** | **String** |  | [optional] 
+**bannerType** | **String** |  | [optional] 
 **bio** | **String** |  | 
 **bioLinks** | **List&lt;String&gt;** |   | 
+**completedTutorials** | **List&lt;String&gt;** |  | [optional] 
 **contentFilters** | **List&lt;String&gt;** | These tags begin with `content_` and control content gating | [optional] 
 **currentAvatar** | **String** |  | 
 **currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
@@ -36,6 +39,7 @@ Name | Type | Description | Notes
 **fallbackAvatar** | **String** |  | [optional] 
 **friendGroupNames** | **List&lt;String&gt;** | Always empty array. | 
 **friendKey** | **String** |  | 
+**friendRequestStatus** | **String** | State of a friend request between the caller and this user. VRChat sends the string `\"null\"`, not JSON `null`. | [optional] 
 **friends** | **List&lt;String&gt;** |  | 
 **googleDetails** | **Object** |  | [optional] 
 **googleId** | **String** |  | [optional] 
@@ -47,23 +51,34 @@ Name | Type | Description | Notes
 **hasSharedConnectionsOptOut** | **bool** |  | [optional] 
 **hideContentFilterSettings** | **bool** |  | [optional] 
 **homeLocation** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | 
+**iconFrame** | **String** |  | [optional] 
+**iconUrl** | **String** |  | [optional] 
 **id** | **String** | A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed. | 
+**instanceId** | **String** | InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance. | [optional] 
 **isAdult** | **bool** |  | 
 **isBoopingEnabled** | **bool** |  | [optional] [default to true]
+**isEconomyCreator** | **bool** |  | [optional] [default to false]
 **isFriend** | **bool** |  | [default to false]
+**isTemporary** | **bool** |  | [optional] [default to false]
 **lastActivity** | [**DateTime**](DateTime.md) |  | [optional] 
 **lastLogin** | [**DateTime**](DateTime.md) |  | 
 **lastMobile** | [**DateTime**](DateTime.md) |  | 
 **lastPlatform** | **String** | This is normally `android`, `ios`, `standalonewindows`, `web`, or the empty value ``, but also supposedly can be any random Unity version such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`. | 
+**location** | **String** | Represents a unique location, consisting of a world identifier and an instance identifier, or \"offline\" if the user is not on your friends list. | [optional] 
+**nameplateEffect** | **String** |  | [optional] 
+**note** | **String** |  | [optional] 
 **obfuscatedEmail** | **String** |  | 
 **obfuscatedPendingEmail** | **String** |  | 
 **oculusId** | **String** |  | 
 **offlineFriends** | **List&lt;String&gt;** |  | [optional] 
 **onlineFriends** | **List&lt;String&gt;** |  | [optional] 
 **pastDisplayNames** | [**List&lt;PastDisplayName&gt;**](PastDisplayName.md) |   | 
+**personalizationOptOut** | **bool** |  | [optional] 
 **picoId** | **String** |  | [optional] 
+**platform** | **String** |  | [optional] 
 **platformHistory** | [**List&lt;CurrentUserPlatformHistoryInner&gt;**](CurrentUserPlatformHistoryInner.md) |  | [optional] 
 **presence** | [**CurrentUserPresence**](CurrentUserPresence.md) |  | [optional] 
+**profileEffect** | **String** |  | [optional] 
 **profilePicOverride** | **String** |  | 
 **profilePicOverrideThumbnail** | **String** |  | 
 **pronouns** | **String** |  | 
@@ -78,6 +93,10 @@ Name | Type | Description | Notes
 **steamDetails** | **Object** |  | 
 **steamId** | **String** |  | 
 **tags** | **List&lt;String&gt;** |  | 
+**temporaryExpiryDate** | **Object** |  | [optional] 
+**travelingToInstance** | **String** |  | [optional] 
+**travelingToLocation** | **String** |  | [optional] 
+**travelingToWorld** | **String** |  | [optional] 
 **twitchDetails** | **Object** |  | [optional] 
 **twitchId** | **String** |  | [optional] 
 **twoFactorAuthEnabled** | **bool** |  | 
@@ -87,9 +106,10 @@ Name | Type | Description | Notes
 **userIcon** | **String** |  | 
 **userLanguage** | **String** |  | [optional] 
 **userLanguageCode** | **String** |  | [optional] 
-**username** | **String** | -| **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429). | [optional] 
+**username** | **String** | Your own unique name, used during login. Distinct from `displayName`, and never returned for another user. | [optional] 
 **usesGeneratedPassword** | **bool** |  | 
 **viveId** | **String** |  | [optional] 
+**worldId** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

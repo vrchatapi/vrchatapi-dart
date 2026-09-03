@@ -17,7 +17,11 @@ part 'current_user_presence.g.dart';
 class CurrentUserPresence {
   /// Returns a new [CurrentUserPresence] instance.
   CurrentUserPresence({
+    this.avatarImageUrl,
+
     this.avatarThumbnail,
+
+    this.banner,
 
     this.currentAvatarTags,
 
@@ -27,6 +31,8 @@ class CurrentUserPresence {
 
     this.groups,
 
+    this.iconFrame,
+
     this.id,
 
     this.instance,
@@ -35,7 +41,11 @@ class CurrentUserPresence {
 
     this.isRejoining,
 
+    this.nameplateEffect,
+
     this.platform,
+
+    this.profileEffect,
 
     this.profilePicOverride,
 
@@ -50,8 +60,14 @@ class CurrentUserPresence {
     this.world,
   });
 
+  @JsonKey(name: r'avatarImageUrl', required: false, includeIfNull: false)
+  final String? avatarImageUrl;
+
   @JsonKey(name: r'avatarThumbnail', required: false, includeIfNull: false)
   final String? avatarThumbnail;
+
+  @JsonKey(name: r'banner', required: false, includeIfNull: false)
+  final String? banner;
 
   @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
   final List<String>? currentAvatarTags;
@@ -64,6 +80,9 @@ class CurrentUserPresence {
 
   @JsonKey(name: r'groups', required: false, includeIfNull: false)
   final List<String>? groups;
+
+  @JsonKey(name: r'iconFrame', required: false, includeIfNull: false)
+  final String? iconFrame;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(name: r'id', required: false, includeIfNull: false)
@@ -79,9 +98,15 @@ class CurrentUserPresence {
   @JsonKey(name: r'isRejoining', required: false, includeIfNull: false)
   final String? isRejoining;
 
+  @JsonKey(name: r'nameplateEffect', required: false, includeIfNull: false)
+  final String? nameplateEffect;
+
   /// This is normally `android`, `ios`, `standalonewindows`, `web`, or the empty value ``, but also supposedly can be any random Unity version such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
   @JsonKey(name: r'platform', required: false, includeIfNull: false)
   final String? platform;
+
+  @JsonKey(name: r'profileEffect', required: false, includeIfNull: false)
+  final String? profileEffect;
 
   @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
   final String? profilePicOverride;
@@ -108,16 +133,21 @@ class CurrentUserPresence {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is CurrentUserPresence &&
+          other.avatarImageUrl == avatarImageUrl &&
           other.avatarThumbnail == avatarThumbnail &&
+          other.banner == banner &&
           other.currentAvatarTags == currentAvatarTags &&
           other.debugflag == debugflag &&
           other.displayName == displayName &&
           other.groups == groups &&
+          other.iconFrame == iconFrame &&
           other.id == id &&
           other.instance == instance &&
           other.instanceType == instanceType &&
           other.isRejoining == isRejoining &&
+          other.nameplateEffect == nameplateEffect &&
           other.platform == platform &&
+          other.profileEffect == profileEffect &&
           other.profilePicOverride == profilePicOverride &&
           other.status == status &&
           other.travelingToInstance == travelingToInstance &&
@@ -127,16 +157,21 @@ class CurrentUserPresence {
 
   @override
   int get hashCode =>
+      avatarImageUrl.hashCode +
       (avatarThumbnail == null ? 0 : avatarThumbnail.hashCode) +
+      banner.hashCode +
       currentAvatarTags.hashCode +
       debugflag.hashCode +
       displayName.hashCode +
       (groups == null ? 0 : groups.hashCode) +
+      iconFrame.hashCode +
       id.hashCode +
       (instance == null ? 0 : instance.hashCode) +
       (instanceType == null ? 0 : instanceType.hashCode) +
       (isRejoining == null ? 0 : isRejoining.hashCode) +
+      nameplateEffect.hashCode +
       platform.hashCode +
+      profileEffect.hashCode +
       (profilePicOverride == null ? 0 : profilePicOverride.hashCode) +
       (status == null ? 0 : status.hashCode) +
       (travelingToInstance == null ? 0 : travelingToInstance.hashCode) +

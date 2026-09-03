@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **basePermissions** | [**List&lt;GroupPermissions&gt;**](GroupPermissions.md) |  | 
 **description** | **String** |  | 
 **name** | **String** |  | 
-**roles** | [**GroupRoleTemplateValuesRoles**](GroupRoleTemplateValuesRoles.md) |  | 
+**roles** | [**List&lt;GroupRoleTemplateRole&gt;**](GroupRoleTemplateRole.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

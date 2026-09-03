@@ -25,6 +25,8 @@ class APIConfigAudioConfig {
 
     required this.nearFieldILDNudgeEarRadius,
 
+    this.nearFieldILDNudgeEarTranslate,
+
     required this.perEarDirectionalityEarRadius,
 
     required this.perEarDirectionalityFadeDistance,
@@ -38,6 +40,8 @@ class APIConfigAudioConfig {
     required this.trackingScaleMin,
 
     required this.trackingScaleMultiplier,
+
+    this.useLegacyILDNudging,
   });
 
   /// Unknown
@@ -63,6 +67,13 @@ class APIConfigAudioConfig {
     includeIfNull: false,
   )
   final num nearFieldILDNudgeEarRadius;
+
+  @JsonKey(
+    name: r'nearFieldILDNudgeEarTranslate',
+    required: false,
+    includeIfNull: false,
+  )
+  final num? nearFieldILDNudgeEarTranslate;
 
   /// Unknown
   @JsonKey(
@@ -112,6 +123,9 @@ class APIConfigAudioConfig {
   )
   final num trackingScaleMultiplier;
 
+  @JsonKey(name: r'useLegacyILDNudging', required: false, includeIfNull: false)
+  final bool? useLegacyILDNudging;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -120,6 +134,8 @@ class APIConfigAudioConfig {
           other.nearFieldILDNudge == nearFieldILDNudge &&
           other.nearFieldILDNudgeDistance == nearFieldILDNudgeDistance &&
           other.nearFieldILDNudgeEarRadius == nearFieldILDNudgeEarRadius &&
+          other.nearFieldILDNudgeEarTranslate ==
+              nearFieldILDNudgeEarTranslate &&
           other.perEarDirectionalityEarRadius ==
               perEarDirectionalityEarRadius &&
           other.perEarDirectionalityFadeDistance ==
@@ -128,7 +144,8 @@ class APIConfigAudioConfig {
           other.perEarDirectionalityPCFactor == perEarDirectionalityPCFactor &&
           other.trackingScaleMax == trackingScaleMax &&
           other.trackingScaleMin == trackingScaleMin &&
-          other.trackingScaleMultiplier == trackingScaleMultiplier;
+          other.trackingScaleMultiplier == trackingScaleMultiplier &&
+          other.useLegacyILDNudging == useLegacyILDNudging;
 
   @override
   int get hashCode =>
@@ -136,13 +153,15 @@ class APIConfigAudioConfig {
       nearFieldILDNudge.hashCode +
       nearFieldILDNudgeDistance.hashCode +
       nearFieldILDNudgeEarRadius.hashCode +
+      nearFieldILDNudgeEarTranslate.hashCode +
       perEarDirectionalityEarRadius.hashCode +
       perEarDirectionalityFadeDistance.hashCode +
       perEarDirectionalityMaxScale.hashCode +
       perEarDirectionalityPCFactor.hashCode +
       trackingScaleMax.hashCode +
       trackingScaleMin.hashCode +
-      trackingScaleMultiplier.hashCode;
+      trackingScaleMultiplier.hashCode +
+      useLegacyILDNudging.hashCode;
 
   factory APIConfigAudioConfig.fromJson(Map<String, dynamic> json) =>
       _$APIConfigAudioConfigFromJson(json);

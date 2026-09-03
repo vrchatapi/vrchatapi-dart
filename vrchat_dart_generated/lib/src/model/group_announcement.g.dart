@@ -16,16 +16,22 @@ GroupAnnouncement _$GroupAnnouncementFromJson(Map<String, dynamic> json) =>
           'createdAt',
           (v) => v == null ? null : DateTime.parse(v as String),
         ),
+        editorId: $checkedConvert('editorId', (v) => v as String?),
         groupId: $checkedConvert('groupId', (v) => v as String?),
         id: $checkedConvert('id', (v) => v as String?),
         imageId: $checkedConvert('imageId', (v) => v as String?),
         imageUrl: $checkedConvert('imageUrl', (v) => v as String?),
+        roleIds: $checkedConvert(
+          'roleIds',
+          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+        ),
         text: $checkedConvert('text', (v) => v as String?),
         title: $checkedConvert('title', (v) => v as String?),
         updatedAt: $checkedConvert(
           'updatedAt',
           (v) => v == null ? null : DateTime.parse(v as String),
         ),
+        visibility: $checkedConvert('visibility', (v) => v as String?),
       );
       return val;
     });
@@ -34,11 +40,14 @@ Map<String, dynamic> _$GroupAnnouncementToJson(GroupAnnouncement instance) =>
     <String, dynamic>{
       'authorId': ?instance.authorId,
       'createdAt': ?instance.createdAt?.toIso8601String(),
+      'editorId': ?instance.editorId,
       'groupId': ?instance.groupId,
       'id': ?instance.id,
       'imageId': ?instance.imageId,
       'imageUrl': ?instance.imageUrl,
+      'roleIds': ?instance.roleIds,
       'text': ?instance.text,
       'title': ?instance.title,
       'updatedAt': ?instance.updatedAt?.toIso8601String(),
+      'visibility': ?instance.visibility,
     };
