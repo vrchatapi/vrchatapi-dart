@@ -12,10 +12,14 @@ import 'package:vrchat_dart_generated/src/model/api_config_constants_instancepop
 import 'package:vrchat_dart_generated/src/model/api_config_constants_instancepopulationbracketsmany.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_constants_language.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_download_url_list.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_event_shelf_campaign.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_events.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_ios_version.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_loading_screen_weights.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_low_memory_go_home_timeout_value.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_min_supported_client_build_number.dart';
 import 'package:vrchat_dart_generated/src/model/api_config_offline_analysis.dart';
+import 'package:vrchat_dart_generated/src/model/api_config_profile_defaults.dart';
 import 'package:vrchat_dart_generated/src/model/api_health.dart';
 import 'package:vrchat_dart_generated/src/model/account_deletion_log.dart';
 import 'package:vrchat_dart_generated/src/model/add_favorite_request.dart';
@@ -36,6 +40,7 @@ import 'package:vrchat_dart_generated/src/model/avatar_unity_package_url_object.
 import 'package:vrchat_dart_generated/src/model/badge.dart';
 import 'package:vrchat_dart_generated/src/model/balance.dart';
 import 'package:vrchat_dart_generated/src/model/ban_group_member_request.dart';
+import 'package:vrchat_dart_generated/src/model/bare_error.dart';
 import 'package:vrchat_dart_generated/src/model/boop_request.dart';
 import 'package:vrchat_dart_generated/src/model/calendar_event.dart';
 import 'package:vrchat_dart_generated/src/model/calendar_event_discovery.dart';
@@ -110,19 +115,27 @@ import 'package:vrchat_dart_generated/src/model/group_my_member.dart';
 import 'package:vrchat_dart_generated/src/model/group_permission.dart';
 import 'package:vrchat_dart_generated/src/model/group_post.dart';
 import 'package:vrchat_dart_generated/src/model/group_role.dart';
+import 'package:vrchat_dart_generated/src/model/group_role_template_role.dart';
 import 'package:vrchat_dart_generated/src/model/group_role_template_values.dart';
-import 'package:vrchat_dart_generated/src/model/group_role_template_values_roles.dart';
 import 'package:vrchat_dart_generated/src/model/group_transferable.dart';
 import 'package:vrchat_dart_generated/src/model/group_transferable_requirements.dart';
 import 'package:vrchat_dart_generated/src/model/info_push.dart';
 import 'package:vrchat_dart_generated/src/model/info_push_data.dart';
 import 'package:vrchat_dart_generated/src/model/info_push_data_article.dart';
 import 'package:vrchat_dart_generated/src/model/info_push_data_article_content.dart';
+import 'package:vrchat_dart_generated/src/model/info_push_data_category.dart';
 import 'package:vrchat_dart_generated/src/model/info_push_data_clickable.dart';
+import 'package:vrchat_dart_generated/src/model/info_push_data_domain_list_inner.dart';
+import 'package:vrchat_dart_generated/src/model/info_push_data_search.dart';
+import 'package:vrchat_dart_generated/src/model/info_push_embedded_link.dart';
+import 'package:vrchat_dart_generated/src/model/info_push_experiment.dart';
+import 'package:vrchat_dart_generated/src/model/info_push_ips_query.dart';
 import 'package:vrchat_dart_generated/src/model/instance.dart';
+import 'package:vrchat_dart_generated/src/model/instance_category.dart';
 import 'package:vrchat_dart_generated/src/model/instance_content_settings.dart';
 import 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
 import 'package:vrchat_dart_generated/src/model/instance_short_name_response.dart';
+import 'package:vrchat_dart_generated/src/model/instance_vibe.dart';
 import 'package:vrchat_dart_generated/src/model/inventory.dart';
 import 'package:vrchat_dart_generated/src/model/inventory_consumption_results.dart';
 import 'package:vrchat_dart_generated/src/model/inventory_default_attributes_value.dart';
@@ -163,6 +176,7 @@ import 'package:vrchat_dart_generated/src/model/notification_detail_vote_to_kick
 import 'package:vrchat_dart_generated/src/model/notification_v2.dart';
 import 'package:vrchat_dart_generated/src/model/notification_v2_details_boop.dart';
 import 'package:vrchat_dart_generated/src/model/notification_v2_response.dart';
+import 'package:vrchat_dart_generated/src/model/o_auth_redirect_code.dart';
 import 'package:vrchat_dart_generated/src/model/ok_status.dart';
 import 'package:vrchat_dart_generated/src/model/ok_status2.dart';
 import 'package:vrchat_dart_generated/src/model/paginated_calendar_event_list.dart';
@@ -181,6 +195,8 @@ import 'package:vrchat_dart_generated/src/model/private_profile.dart';
 import 'package:vrchat_dart_generated/src/model/private_profile_activity.dart';
 import 'package:vrchat_dart_generated/src/model/product.dart';
 import 'package:vrchat_dart_generated/src/model/product_listing.dart';
+import 'package:vrchat_dart_generated/src/model/product_listing_attribution.dart';
+import 'package:vrchat_dart_generated/src/model/product_listing_attribution_creator.dart';
 import 'package:vrchat_dart_generated/src/model/product_listing_variant.dart';
 import 'package:vrchat_dart_generated/src/model/product_purchase.dart';
 import 'package:vrchat_dart_generated/src/model/product_purchase_history.dart';
@@ -207,12 +223,14 @@ import 'package:vrchat_dart_generated/src/model/reward_redemption.dart';
 import 'package:vrchat_dart_generated/src/model/reward_redemption_data.dart';
 import 'package:vrchat_dart_generated/src/model/reward_redemption_request.dart';
 import 'package:vrchat_dart_generated/src/model/reward_redemption_result.dart';
+import 'package:vrchat_dart_generated/src/model/route_not_implemented.dart';
 import 'package:vrchat_dart_generated/src/model/search_group_members200_response.dart';
 import 'package:vrchat_dart_generated/src/model/seller_eligibility.dart';
 import 'package:vrchat_dart_generated/src/model/sent_notification.dart';
 import 'package:vrchat_dart_generated/src/model/service_queue_stats.dart';
 import 'package:vrchat_dart_generated/src/model/service_status.dart';
 import 'package:vrchat_dart_generated/src/model/share_inventory_item_direct_request.dart';
+import 'package:vrchat_dart_generated/src/model/sso_token.dart';
 import 'package:vrchat_dart_generated/src/model/store.dart';
 import 'package:vrchat_dart_generated/src/model/store_context.dart';
 import 'package:vrchat_dart_generated/src/model/store_shelf.dart';
@@ -340,11 +358,24 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'APIConfigDownloadURLList':
       return APIConfigDownloadURLList.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'APIConfigEventShelfCampaign':
+      return APIConfigEventShelfCampaign.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'APIConfigEvents':
       return APIConfigEvents.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'APIConfigIosVersion':
       return APIConfigIosVersion.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'APIConfigLoadingScreenWeights':
+      return APIConfigLoadingScreenWeights.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'APIConfigLowMemoryGoHomeTimeoutValue':
+      return APIConfigLowMemoryGoHomeTimeoutValue.fromJson(
+            value as Map<String, dynamic>,
+          )
           as ReturnType;
     case 'APIConfigMinSupportedClientBuildNumber':
       return APIConfigMinSupportedClientBuildNumber.fromJson(
@@ -353,6 +384,9 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'APIConfigOfflineAnalysis':
       return APIConfigOfflineAnalysis.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'APIConfigProfileDefaults':
+      return APIConfigProfileDefaults.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'APIHealth':
       return APIHealth.fromJson(value as Map<String, dynamic>) as ReturnType;
@@ -412,6 +446,8 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'BanGroupMemberRequest':
       return BanGroupMemberRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'BareError':
+      return BareError.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'BoopRequest':
       return BoopRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CalendarDayOfWeek':
@@ -651,13 +687,11 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'GroupRole':
       return GroupRole.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'GroupRoleTemplate':
+    case 'GroupRoleTemplateRole':
+      return GroupRoleTemplateRole.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'GroupRoleTemplateValues':
       return GroupRoleTemplateValues.fromJson(value as Map<String, dynamic>)
-          as ReturnType;
-    case 'GroupRoleTemplateValuesRoles':
-      return GroupRoleTemplateValuesRoles.fromJson(
-            value as Map<String, dynamic>,
-          )
           as ReturnType;
     case 'GroupSearchSort':
     case 'GroupTransferable':
@@ -683,11 +717,32 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'InfoPushDataArticleContent':
       return InfoPushDataArticleContent.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'InfoPushDataCategory':
+      return InfoPushDataCategory.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'InfoPushDataClickable':
       return InfoPushDataClickable.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'InfoPushDataDomainListInner':
+      return InfoPushDataDomainListInner.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'InfoPushDataSearch':
+      return InfoPushDataSearch.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'InfoPushEmbeddedLink':
+      return InfoPushEmbeddedLink.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'InfoPushExperiment':
+      return InfoPushExperiment.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'InfoPushIpsQuery':
+      return InfoPushIpsQuery.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'Instance':
       return Instance.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'InstanceCategory':
+      return InstanceCategory.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'InstanceContentSettings':
       return InstanceContentSettings.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -699,6 +754,8 @@ ReturnType deserialize<ReturnType, BaseType>(
       return InstanceShortNameResponse.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'InstanceType':
+    case 'InstanceVibe':
+      return InstanceVibe.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Inventory':
       return Inventory.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'InventoryConsumptionResults':
@@ -833,6 +890,9 @@ ReturnType deserialize<ReturnType, BaseType>(
       return NotificationV2Response.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'NotificationV2Type':
+    case 'OAuthRedirectCode':
+      return OAuthRedirectCode.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'OkStatus':
       return OkStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'OkStatus2':
@@ -888,6 +948,14 @@ ReturnType deserialize<ReturnType, BaseType>(
       return Product.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'ProductListing':
       return ProductListing.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'ProductListingAttribution':
+      return ProductListingAttribution.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'ProductListingAttributionCreator':
+      return ProductListingAttributionCreator.fromJson(
+            value as Map<String, dynamic>,
+          )
           as ReturnType;
     case 'ProductListingType':
     case 'ProductListingVariant':
@@ -974,6 +1042,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'RewardRedemptionResult':
       return RewardRedemptionResult.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'RouteNotImplemented':
+      return RouteNotImplemented.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'SearchGroupMembers200Response':
       return SearchGroupMembers200Response.fromJson(
             value as Map<String, dynamic>,
@@ -998,6 +1069,9 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'SortOption':
     case 'SortOptionProductPurchase':
+    case 'SsoProvider':
+    case 'SsoToken':
+      return SsoToken.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Store':
       return Store.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'StoreContext':

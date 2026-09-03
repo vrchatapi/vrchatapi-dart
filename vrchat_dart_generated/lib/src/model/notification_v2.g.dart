@@ -53,6 +53,7 @@ NotificationV2 _$NotificationV2FromJson(
           ? null
           : NotificationV2DetailsBoop.fromJson(v as Map<String, dynamic>),
     ),
+    displayData: $checkedConvert('displayData', (v) => v),
     expiresAt: $checkedConvert('expiresAt', (v) => DateTime.parse(v as String)),
     expiryAfterSeen: $checkedConvert(
       'expiryAfterSeen',
@@ -62,8 +63,8 @@ NotificationV2 _$NotificationV2FromJson(
     ignoreDND: $checkedConvert('ignoreDND', (v) => v as bool),
     imageUrl: $checkedConvert('imageUrl', (v) => v as String?),
     isSystem: $checkedConvert('isSystem', (v) => v as bool),
-    link: $checkedConvert('link', (v) => v as String),
-    linkText: $checkedConvert('linkText', (v) => v as String),
+    link: $checkedConvert('link', (v) => v as String?),
+    linkText: $checkedConvert('linkText', (v) => v as String?),
     linkTextKey: $checkedConvert('linkTextKey', (v) => v as String?),
     message: $checkedConvert('message', (v) => v as String),
     messageKey: $checkedConvert('messageKey', (v) => v as String?),
@@ -103,6 +104,7 @@ Map<String, dynamic> _$NotificationV2ToJson(NotificationV2 instance) =>
       'createdAt': instance.createdAt.toIso8601String(),
       'data': instance.data,
       'details': ?instance.details?.toJson(),
+      'displayData': ?instance.displayData,
       'expiresAt': instance.expiresAt.toIso8601String(),
       'expiryAfterSeen': instance.expiryAfterSeen,
       'id': instance.id,

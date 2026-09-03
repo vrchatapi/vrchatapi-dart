@@ -1012,7 +1012,7 @@ class CalendarApi {
   }
 
   /// Get next calendar event
-  /// Get the closest future calendar event scheduled for a group
+  /// Return the closest future calendar event scheduled for a group. A group with no future scheduled events answers 404.
   ///
   /// Parameters:
   /// * [groupId] - Must be a valid group ID.

@@ -41,6 +41,8 @@ InventoryItem _$InventoryItemFromJson(Map<String, dynamic> json) =>
           ],
         );
         final val = InventoryItem(
+          acquisition: $checkedConvert('acquisition', (v) => v as String?),
+          attribution: $checkedConvert('attribution', (v) => v),
           collections: $checkedConvert(
             'collections',
             (v) => (v as List<dynamic>).map((e) => e as String).toList(),
@@ -89,6 +91,12 @@ InventoryItem _$InventoryItemFromJson(Map<String, dynamic> json) =>
             (v) => $enumDecode(_$InventoryItemTypeEnumMap, v),
           ),
           itemTypeLabel: $checkedConvert('itemTypeLabel', (v) => v as String),
+          lastEquipped: $checkedConvert(
+            'last_equipped',
+            (v) => (v as Map<String, dynamic>?)?.map(
+              (k, e) => MapEntry(k, e as Object),
+            ),
+          ),
           metadata: $checkedConvert(
             'metadata',
             (v) => InventoryMetadata.fromJson(v as Map<String, dynamic>),
@@ -125,6 +133,7 @@ InventoryItem _$InventoryItemFromJson(Map<String, dynamic> json) =>
       },
       fieldKeyMap: const {
         'createdAt': 'created_at',
+        'lastEquipped': 'last_equipped',
         'templateCreatedAt': 'template_created_at',
         'templateUpdatedAt': 'template_updated_at',
         'updatedAt': 'updated_at',
@@ -133,6 +142,8 @@ InventoryItem _$InventoryItemFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$InventoryItemToJson(InventoryItem instance) =>
     <String, dynamic>{
+      'acquisition': ?instance.acquisition,
+      'attribution': ?instance.attribution,
       'collections': instance.collections,
       'created_at': instance.createdAt.toIso8601String(),
       'defaultAttributes': instance.defaultAttributes.map(
@@ -152,6 +163,7 @@ Map<String, dynamic> _$InventoryItemToJson(InventoryItem instance) =>
       'isSeen': instance.isSeen,
       'itemType': _$InventoryItemTypeEnumMap[instance.itemType]!,
       'itemTypeLabel': instance.itemTypeLabel,
+      'last_equipped': ?instance.lastEquipped,
       'metadata': instance.metadata.toJson(),
       'name': instance.name,
       'quantifiable': instance.quantifiable,

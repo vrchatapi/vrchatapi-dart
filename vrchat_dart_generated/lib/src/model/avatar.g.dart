@@ -8,126 +8,113 @@ part of 'avatar.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Avatar _$AvatarFromJson(Map<String, dynamic> json) => $checkedCreate(
-  'Avatar',
-  json,
-  ($checkedConvert) {
-    $checkKeys(
-      json,
-      requiredKeys: const [
-        'authorId',
-        'authorName',
-        'created_at',
-        'description',
-        'featured',
-        'id',
-        'imageUrl',
-        'listingDate',
-        'name',
-        'performance',
-        'releaseStatus',
-        'styles',
-        'tags',
-        'thumbnailImageUrl',
-        'unityPackageUrl',
-        'unityPackageUrlObject',
-        'unityPackages',
-        'updated_at',
-        'version',
-      ],
-    );
-    final val = Avatar(
-      acknowledgements: $checkedConvert(
-        'acknowledgements',
-        (v) => v as String?,
-      ),
-      activeAssetReviewId: $checkedConvert(
-        'activeAssetReviewId',
-        (v) => v as String?,
-      ),
-      assetUrl: $checkedConvert('assetUrl', (v) => v as String?),
-      assetUrlObject: $checkedConvert('assetUrlObject', (v) => v),
-      authorId: $checkedConvert('authorId', (v) => v as String),
-      authorName: $checkedConvert('authorName', (v) => v as String),
-      createdAt: $checkedConvert(
-        'created_at',
-        (v) => DateTime.parse(v as String),
-      ),
-      description: $checkedConvert('description', (v) => v as String),
-      featured: $checkedConvert('featured', (v) => v as bool? ?? false),
-      highestPrice: $checkedConvert(
-        'highestPrice',
-        (v) => (v as num?)?.toInt(),
-      ),
-      id: $checkedConvert('id', (v) => v as String),
-      imageUrl: $checkedConvert('imageUrl', (v) => v as String),
-      listingDate: $checkedConvert('listingDate', (v) => v as String?),
-      lock: $checkedConvert('lock', (v) => v as bool?),
-      lowestPrice: $checkedConvert('lowestPrice', (v) => (v as num?)?.toInt()),
-      name: $checkedConvert('name', (v) => v as String),
-      pendingUpload: $checkedConvert(
-        'pendingUpload',
-        (v) => v as bool? ?? false,
-      ),
-      performance: $checkedConvert(
-        'performance',
-        (v) => AvatarPerformance.fromJson(v as Map<String, dynamic>),
-      ),
-      productId: $checkedConvert('productId', (v) => v as String?),
-      publishedListings: $checkedConvert(
-        'publishedListings',
-        (v) => (v as List<dynamic>?)
-            ?.map(
-              (e) => AvatarPublishedListingsInner.fromJson(
-                e as Map<String, dynamic>,
-              ),
-            )
-            .toList(),
-      ),
-      releaseStatus: $checkedConvert(
-        'releaseStatus',
-        (v) => $enumDecode(_$ReleaseStatusEnumMap, v),
-      ),
-      searchable: $checkedConvert('searchable', (v) => v as bool? ?? false),
-      styles: $checkedConvert(
-        'styles',
-        (v) => AvatarStyles.fromJson(v as Map<String, dynamic>),
-      ),
-      tags: $checkedConvert(
-        'tags',
-        (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-      ),
-      thumbnailImageUrl: $checkedConvert(
-        'thumbnailImageUrl',
-        (v) => v as String,
-      ),
-      unityPackageUrl: $checkedConvert('unityPackageUrl', (v) => v as String),
-      unityPackageUrlObject: $checkedConvert(
-        'unityPackageUrlObject',
-        (v) => AvatarUnityPackageUrlObject.fromJson(v as Map<String, dynamic>),
-      ),
-      unityPackages: $checkedConvert(
-        'unityPackages',
-        (v) => (v as List<dynamic>)
-            .map((e) => UnityPackage.fromJson(e as Map<String, dynamic>))
-            .toSet(),
-      ),
-      updatedAt: $checkedConvert(
-        'updated_at',
-        (v) => DateTime.parse(v as String),
-      ),
-      version: $checkedConvert('version', (v) => (v as num?)?.toInt() ?? 0),
-    );
-    return val;
-  },
-  fieldKeyMap: const {'createdAt': 'created_at', 'updatedAt': 'updated_at'},
-);
+Avatar _$AvatarFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('Avatar', json, ($checkedConvert) {
+  $checkKeys(
+    json,
+    requiredKeys: const [
+      'authorId',
+      'authorName',
+      'created_at',
+      'description',
+      'featured',
+      'id',
+      'imageUrl',
+      'listingDate',
+      'name',
+      'performance',
+      'releaseStatus',
+      'styles',
+      'tags',
+      'thumbnailImageUrl',
+      'unityPackageUrl',
+      'unityPackageUrlObject',
+      'unityPackages',
+      'updated_at',
+      'version',
+    ],
+  );
+  final val = Avatar(
+    acknowledgements: $checkedConvert('acknowledgements', (v) => v as String?),
+    activeAssetReviewId: $checkedConvert(
+      'activeAssetReviewId',
+      (v) => v as String?,
+    ),
+    assetUrl: $checkedConvert('assetUrl', (v) => v as String?),
+    assetUrlObject: $checkedConvert('assetUrlObject', (v) => v),
+    attribution: $checkedConvert('attribution', (v) => v),
+    authorId: $checkedConvert('authorId', (v) => v as String),
+    authorName: $checkedConvert('authorName', (v) => v as String),
+    createdAt: $checkedConvert(
+      'created_at',
+      (v) => DateTime.parse(v as String),
+    ),
+    description: $checkedConvert('description', (v) => v as String),
+    featured: $checkedConvert('featured', (v) => v as bool? ?? false),
+    highestPrice: $checkedConvert('highestPrice', (v) => (v as num?)?.toInt()),
+    id: $checkedConvert('id', (v) => v as String),
+    imageUrl: $checkedConvert('imageUrl', (v) => v as String),
+    listingDate: $checkedConvert('listingDate', (v) => v as String?),
+    lock: $checkedConvert('lock', (v) => v as bool?),
+    lowestPrice: $checkedConvert('lowestPrice', (v) => (v as num?)?.toInt()),
+    name: $checkedConvert('name', (v) => v as String),
+    pendingUpload: $checkedConvert('pendingUpload', (v) => v as bool? ?? false),
+    performance: $checkedConvert(
+      'performance',
+      (v) => AvatarPerformance.fromJson(v as Map<String, dynamic>),
+    ),
+    productId: $checkedConvert('productId', (v) => v as String?),
+    publishedListings: $checkedConvert(
+      'publishedListings',
+      (v) => (v as List<dynamic>?)
+          ?.map(
+            (e) => AvatarPublishedListingsInner.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
+          .toList(),
+    ),
+    releaseStatus: $checkedConvert(
+      'releaseStatus',
+      (v) => $enumDecode(_$ReleaseStatusEnumMap, v),
+    ),
+    searchable: $checkedConvert('searchable', (v) => v as bool? ?? false),
+    styles: $checkedConvert(
+      'styles',
+      (v) => AvatarStyles.fromJson(v as Map<String, dynamic>),
+    ),
+    tags: $checkedConvert(
+      'tags',
+      (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+    ),
+    thumbnailImageUrl: $checkedConvert('thumbnailImageUrl', (v) => v as String),
+    unityPackageUrl: $checkedConvert('unityPackageUrl', (v) => v as String),
+    unityPackageUrlObject: $checkedConvert(
+      'unityPackageUrlObject',
+      (v) => AvatarUnityPackageUrlObject.fromJson(v as Map<String, dynamic>),
+    ),
+    unityPackages: $checkedConvert(
+      'unityPackages',
+      (v) => (v as List<dynamic>)
+          .map((e) => UnityPackage.fromJson(e as Map<String, dynamic>))
+          .toSet(),
+    ),
+    updatedAt: $checkedConvert(
+      'updated_at',
+      (v) => DateTime.parse(v as String),
+    ),
+    version: $checkedConvert('version', (v) => (v as num?)?.toInt() ?? 0),
+  );
+  return val;
+}, fieldKeyMap: const {'createdAt': 'created_at', 'updatedAt': 'updated_at'});
 
 Map<String, dynamic> _$AvatarToJson(Avatar instance) => <String, dynamic>{
   'acknowledgements': ?instance.acknowledgements,
   'activeAssetReviewId': ?instance.activeAssetReviewId,
   'assetUrl': ?instance.assetUrl,
   'assetUrlObject': ?instance.assetUrlObject,
+  'attribution': ?instance.attribution,
   'authorId': instance.authorId,
   'authorName': instance.authorName,
   'created_at': instance.createdAt.toIso8601String(),

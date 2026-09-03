@@ -10,9 +10,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ageGate** | **bool** |  | [optional] [default to false]
 **calendarEntryId** | **String** |  | [optional] 
-**canRequestInvite** | **bool** | Only applies to invite type instances to make them invite+ | [optional] [default to false]
+**canRequestInvite** | **bool** | Makes a private instance invite+. A friends instance is rejected. | [optional] [default to false]
+**categoryId** | **String** |  | [optional] 
 **closedAt** | [**DateTime**](DateTime.md) | The time after which users won't be allowed to join the instance. This doesn't work for public instances. | [optional] 
 **contentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  | [optional] 
+**description** | **String** |  | [optional] 
 **displayName** | **String** |  | [optional] 
 **groupAccessType** | [**GroupAccessType**](GroupAccessType.md) |  | [optional] 
 **hardClose** | **bool** | Currently unused, but will eventually be a flag to set if the closing of the instance should kick people. | [optional] [default to false]
@@ -24,6 +26,7 @@ Name | Type | Description | Notes
 **region** | [**InstanceRegion**](InstanceRegion.md) |  | 
 **roleIds** | **List&lt;String&gt;** | Group roleIds that are allowed to join if the type is \"group\" and groupAccessType is \"member\" | [optional] 
 **type** | [**InstanceType**](InstanceType.md) |  | 
+**vibeIds** | **List&lt;String&gt;** |  | [optional] 
 **worldId** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

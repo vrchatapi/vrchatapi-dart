@@ -59,6 +59,10 @@ APIConfigEvents _$APIConfigEventsFromJson(
       'useDirectPlayerSerialization',
       (v) => v as bool,
     ),
+    useSparseRotationForPlayerSerialization: $checkedConvert(
+      'useSparseRotationForPlayerSerialization',
+      (v) => v as bool?,
+    ),
     viewSegmentLength: $checkedConvert(
       'viewSegmentLength',
       (v) => (v as num).toInt(),
@@ -79,5 +83,7 @@ Map<String, dynamic> _$APIConfigEventsToJson(APIConfigEvents instance) =>
       'playerOrderFactor': instance.playerOrderFactor,
       'slowUpdateFactorThreshold': instance.slowUpdateFactorThreshold,
       'useDirectPlayerSerialization': instance.useDirectPlayerSerialization,
+      'useSparseRotationForPlayerSerialization':
+          ?instance.useSparseRotationForPlayerSerialization,
       'viewSegmentLength': instance.viewSegmentLength,
     };

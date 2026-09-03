@@ -12,6 +12,7 @@ InfoPushDataArticleContent _$InfoPushDataArticleContentFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('InfoPushDataArticleContent', json, ($checkedConvert) {
   final val = InfoPushDataArticleContent(
+    id: $checkedConvert('id', (v) => v as String?),
     imageUrl: $checkedConvert('imageUrl', (v) => v as String?),
     onPressed: $checkedConvert(
       'onPressed',
@@ -20,6 +21,8 @@ InfoPushDataArticleContent _$InfoPushDataArticleContentFromJson(
           : InfoPushDataClickable.fromJson(v as Map<String, dynamic>),
     ),
     text: $checkedConvert('text', (v) => v as String?),
+    title: $checkedConvert('title', (v) => v as String?),
+    videoUrl: $checkedConvert('videoUrl', (v) => v as String?),
   );
   return val;
 });
@@ -27,7 +30,10 @@ InfoPushDataArticleContent _$InfoPushDataArticleContentFromJson(
 Map<String, dynamic> _$InfoPushDataArticleContentToJson(
   InfoPushDataArticleContent instance,
 ) => <String, dynamic>{
+  'id': ?instance.id,
   'imageUrl': ?instance.imageUrl,
   'onPressed': ?instance.onPressed?.toJson(),
   'text': ?instance.text,
+  'title': ?instance.title,
+  'videoUrl': ?instance.videoUrl,
 };

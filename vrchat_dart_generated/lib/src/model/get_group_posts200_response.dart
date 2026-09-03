@@ -17,18 +17,23 @@ part 'get_group_posts200_response.g.dart';
 )
 class GetGroupPosts200Response {
   /// Returns a new [GetGroupPosts200Response] instance.
-  GetGroupPosts200Response({this.posts});
+  GetGroupPosts200Response({this.posts, this.total});
 
   @JsonKey(name: r'posts', required: false, includeIfNull: false)
   final List<GroupPost>? posts;
 
+  @JsonKey(name: r'total', required: false, includeIfNull: false)
+  final int? total;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is GetGroupPosts200Response && other.posts == posts;
+      other is GetGroupPosts200Response &&
+          other.posts == posts &&
+          other.total == total;
 
   @override
-  int get hashCode => posts.hashCode;
+  int get hashCode => posts.hashCode + total.hashCode;
 
   factory GetGroupPosts200Response.fromJson(Map<String, dynamic> json) =>
       _$GetGroupPosts200ResponseFromJson(json);

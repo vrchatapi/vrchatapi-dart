@@ -18,6 +18,7 @@ GetGroupPosts200Response _$GetGroupPosts200ResponseFromJson(
           ?.map((e) => GroupPost.fromJson(e as Map<String, dynamic>))
           .toList(),
     ),
+    total: $checkedConvert('total', (v) => (v as num?)?.toInt()),
   );
   return val;
 });
@@ -26,4 +27,5 @@ Map<String, dynamic> _$GetGroupPosts200ResponseToJson(
   GetGroupPosts200Response instance,
 ) => <String, dynamic>{
   'posts': ?instance.posts?.map((e) => e.toJson()).toList(),
+  'total': ?instance.total,
 };

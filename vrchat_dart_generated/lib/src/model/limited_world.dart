@@ -30,6 +30,8 @@ class LimitedWorld {
 
     this.defaultContentSettings,
 
+    this.disabledPropAbilities,
+
     this.favorites = 0,
 
     this.heat = 0,
@@ -90,6 +92,13 @@ class LimitedWorld {
     includeIfNull: false,
   )
   final InstanceContentSettings? defaultContentSettings;
+
+  @JsonKey(
+    name: r'disabledPropAbilities',
+    required: false,
+    includeIfNull: false,
+  )
+  final List<Object>? disabledPropAbilities;
 
   // minimum: 0
   @JsonKey(name: r'favorites', required: true, includeIfNull: false)
@@ -168,6 +177,7 @@ class LimitedWorld {
           other.capacity == capacity &&
           other.createdAt == createdAt &&
           other.defaultContentSettings == defaultContentSettings &&
+          other.disabledPropAbilities == disabledPropAbilities &&
           other.favorites == favorites &&
           other.heat == heat &&
           other.id == id &&
@@ -196,6 +206,7 @@ class LimitedWorld {
       capacity.hashCode +
       createdAt.hashCode +
       defaultContentSettings.hashCode +
+      disabledPropAbilities.hashCode +
       favorites.hashCode +
       heat.hashCode +
       id.hashCode +

@@ -253,7 +253,7 @@ class PropsApi {
   }
 
   /// Get Prop Publish Status
-  /// Returns a PropPublishStatus object.
+  /// Return the PropPublishStatus object. &#x60;/props/{propId}&#x60; is still served.
   ///
   /// Parameters:
   /// * [propId] - Prop ID.
@@ -266,6 +266,7 @@ class PropsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [PropPublishStatus] as data
   /// Throws [DioException] if API call or serialization fails
+  @Deprecated('This operation has been deprecated')
   Future<Response<PropPublishStatus>> getPropPublishStatus({
     required String propId,
     CancelToken? cancelToken,
@@ -433,7 +434,7 @@ class PropsApi {
   }
 
   /// Publish Prop
-  /// Publish a Prop and return the updated PropPublishStatus object.
+  /// Publish a prop and return the updated PropPublishStatus object. &#x60;/props/{propId}&#x60; is still served.
   ///
   /// Parameters:
   /// * [propId] - Prop ID.
@@ -446,6 +447,7 @@ class PropsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [PropPublishStatus] as data
   /// Throws [DioException] if API call or serialization fails
+  @Deprecated('This operation has been deprecated')
   Future<Response<PropPublishStatus>> publishProp({
     required String propId,
     CancelToken? cancelToken,
@@ -520,7 +522,7 @@ class PropsApi {
   }
 
   /// Unpublish Prop
-  /// Unpublish a Prop and return the updated PropPublishStatus object.
+  /// Unpublish a prop and return the updated PropPublishStatus object. &#x60;/props/{propId}&#x60; is still served.
   ///
   /// Parameters:
   /// * [propId] - Prop ID.
@@ -533,6 +535,7 @@ class PropsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [PropPublishStatus] as data
   /// Throws [DioException] if API call or serialization fails
+  @Deprecated('This operation has been deprecated')
   Future<Response<PropPublishStatus>> unpublishProp({
     required String propId,
     CancelToken? cancelToken,

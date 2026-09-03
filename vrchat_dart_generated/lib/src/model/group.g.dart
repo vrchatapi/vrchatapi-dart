@@ -81,6 +81,8 @@ Group _$GroupFromJson(
           v == null ? null : GroupMyMember.fromJson(v as Map<String, dynamic>),
     ),
     name: $checkedConvert('name', (v) => v as String?),
+    nameplateId: $checkedConvert('nameplateId', (v) => v),
+    nameplateUrl: $checkedConvert('nameplateUrl', (v) => v),
     onlineMemberCount: $checkedConvert(
       'onlineMemberCount',
       (v) => (v as num?)?.toInt(),
@@ -136,6 +138,8 @@ Map<String, dynamic> _$GroupToJson(Group instance) => <String, dynamic>{
   'membershipStatus': ?_$GroupMemberStatusEnumMap[instance.membershipStatus],
   'myMember': ?instance.myMember?.toJson(),
   'name': ?instance.name,
+  'nameplateId': ?instance.nameplateId,
+  'nameplateUrl': ?instance.nameplateUrl,
   'onlineMemberCount': ?instance.onlineMemberCount,
   'ownerId': ?instance.ownerId,
   'privacy': ?_$GroupPrivacyEnumMap[instance.privacy],

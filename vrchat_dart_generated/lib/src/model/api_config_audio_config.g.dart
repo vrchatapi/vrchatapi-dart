@@ -38,6 +38,10 @@ APIConfigAudioConfig _$APIConfigAudioConfigFromJson(
       'nearFieldILDNudgeEarRadius',
       (v) => v as num,
     ),
+    nearFieldILDNudgeEarTranslate: $checkedConvert(
+      'nearFieldILDNudgeEarTranslate',
+      (v) => v as num?,
+    ),
     perEarDirectionalityEarRadius: $checkedConvert(
       'perEarDirectionalityEarRadius',
       (v) => v as num,
@@ -60,6 +64,10 @@ APIConfigAudioConfig _$APIConfigAudioConfigFromJson(
       'trackingScaleMultiplier',
       (v) => v as num,
     ),
+    useLegacyILDNudging: $checkedConvert(
+      'useLegacyILDNudging',
+      (v) => v as bool?,
+    ),
   );
   return val;
 });
@@ -71,6 +79,7 @@ Map<String, dynamic> _$APIConfigAudioConfigToJson(
   'nearFieldILDNudge': instance.nearFieldILDNudge,
   'nearFieldILDNudgeDistance': instance.nearFieldILDNudgeDistance,
   'nearFieldILDNudgeEarRadius': instance.nearFieldILDNudgeEarRadius,
+  'nearFieldILDNudgeEarTranslate': ?instance.nearFieldILDNudgeEarTranslate,
   'perEarDirectionalityEarRadius': instance.perEarDirectionalityEarRadius,
   'perEarDirectionalityFadeDistance': instance.perEarDirectionalityFadeDistance,
   'perEarDirectionalityMaxScale': instance.perEarDirectionalityMaxScale,
@@ -78,4 +87,5 @@ Map<String, dynamic> _$APIConfigAudioConfigToJson(
   'trackingScaleMax': instance.trackingScaleMax,
   'trackingScaleMin': instance.trackingScaleMin,
   'trackingScaleMultiplier': instance.trackingScaleMultiplier,
+  'useLegacyILDNudging': ?instance.useLegacyILDNudging,
 };

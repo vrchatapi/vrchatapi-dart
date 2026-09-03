@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **isDraft** | **bool** |  | [optional] 
 **languages** | **List&lt;String&gt;** | Languages that might be spoken at this event | [optional] 
 **occurrenceKind** | [**CalendarEventOccurrenceKind**](CalendarEventOccurrenceKind.md) |  | [optional] 
+**occurrenceModified** | **bool** |  | [optional] 
 **ownerId** | **String** |  | [optional] 
 **platforms** | [**List&lt;CalendarEventPlatform&gt;**](CalendarEventPlatform.md) |  | [optional] 
 **recurrence** | [**CalendarEventRecurrence**](CalendarEventRecurrence.md) |  | [optional] 

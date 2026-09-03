@@ -21,6 +21,8 @@ class PrivateProfile {
   PrivateProfile({
     this.activity,
 
+    this.friendRequestStatus,
+
     this.id,
 
     this.isFriend,
@@ -34,6 +36,10 @@ class PrivateProfile {
 
   @JsonKey(name: r'activity', required: false, includeIfNull: false)
   final PrivateProfileActivity? activity;
+
+  /// State of a friend request between the caller and this user. VRChat sends the string `\"null\"`, not JSON `null`.
+  @JsonKey(name: r'friendRequestStatus', required: false, includeIfNull: false)
+  final String? friendRequestStatus;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(name: r'id', required: false, includeIfNull: false)
@@ -56,6 +62,7 @@ class PrivateProfile {
       identical(this, other) ||
       other is PrivateProfile &&
           other.activity == activity &&
+          other.friendRequestStatus == friendRequestStatus &&
           other.id == id &&
           other.isFriend == isFriend &&
           other.note == note &&
@@ -65,9 +72,10 @@ class PrivateProfile {
   @override
   int get hashCode =>
       activity.hashCode +
+      friendRequestStatus.hashCode +
       id.hashCode +
       isFriend.hashCode +
-      note.hashCode +
+      (note == null ? 0 : note.hashCode) +
       status.hashCode +
       statusDescription.hashCode;
 

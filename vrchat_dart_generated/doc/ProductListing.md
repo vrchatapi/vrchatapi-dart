@@ -10,7 +10,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **bool** |  | 
 **archived** | **bool** |  | [optional] 
+**attribution** | [**ProductListingAttribution**](ProductListingAttribution.md) |  | [optional] 
 **buyerRefundable** | **bool** |  | 
+**collabUserDisplayName** | **String** |  | [optional] 
+**collabUserId** | **String** | A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed. | [optional] 
 **created** | [**DateTime**](DateTime.md) |  | [optional] 
 **description** | **String** |  | 
 **displayName** | **String** |  | 
@@ -20,6 +23,8 @@ Name | Type | Description | Notes
 **groupId** | **String** |  | [optional] 
 **groupName** | **String** |  | [optional] 
 **hasAvatar** | **bool** |  | 
+**hasCompanion** | **bool** |  | [optional] 
+**hasInventory** | **bool** |  | [optional] 
 **hasUdon** | **bool** |  | 
 **hydratedProducts** | [**List&lt;Product&gt;**](Product.md) |  | [optional] 
 **id** | **String** |  | 
@@ -31,7 +36,8 @@ Name | Type | Description | Notes
 **priceTokens** | **int** |  | 
 **productIds** | **List&lt;String&gt;** |  | 
 **productType** | [**ProductType**](ProductType.md) |  | 
-**products** | **List&lt;Object&gt;** |  | 
+**productTypes** | **List&lt;String&gt;** |  | [optional] 
+**products** | **List&lt;String&gt;** | Product ids. The products themselves arrive in `hydratedProducts`. | 
 **purchaseCount** | **int** |  | [optional] 
 **purchaseCountQuantity** | **int** |  | [optional] 
 **quantifiable** | **bool** |  | [optional] 

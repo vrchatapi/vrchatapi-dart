@@ -1,4 +1,4 @@
-# vrchat_dart_generated.model.GroupRoleTemplateValuesRoles
+# vrchat_dart_generated.model.InfoPushExperiment
 
 ## Load the model package
 ```dart
@@ -8,10 +8,8 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | [optional] 
-**description** | **String** |  | [optional] 
-**basePermissions** | [**List&lt;GroupPermissions&gt;**](GroupPermissions.md) |  | [optional] 
-**isAddedOnJoin** | **bool** |  | [optional] [default to false]
+**key** | **String** |  | [optional] 
+**variant** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

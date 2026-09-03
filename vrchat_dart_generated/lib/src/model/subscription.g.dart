@@ -24,7 +24,12 @@ Subscription _$SubscriptionFromJson(Map<String, dynamic> json) =>
       final val = Subscription(
         amount: $checkedConvert('amount', (v) => v as num),
         appleProductId: $checkedConvert('appleProductId', (v) => v as String?),
+        bulkSize: $checkedConvert('bulkSize', (v) => (v as num?)?.toInt()),
         description: $checkedConvert('description', (v) => v as String),
+        discountPercentage: $checkedConvert(
+          'discountPercentage',
+          (v) => (v as num?)?.toInt(),
+        ),
         googlePlanId: $checkedConvert('googlePlanId', (v) => v as String?),
         googleProductId: $checkedConvert(
           'googleProductId',
@@ -36,6 +41,7 @@ Subscription _$SubscriptionFromJson(Map<String, dynamic> json) =>
           'period',
           (v) => $enumDecode(_$SubscriptionPeriodEnumMap, v),
         ),
+        periodAmount: $checkedConvert('periodAmount', (v) => v),
         picoSku: $checkedConvert('picoSku', (v) => v as String?),
         steamItemId: $checkedConvert('steamItemId', (v) => v as String),
         tier: $checkedConvert('tier', (v) => (v as num).toInt()),
@@ -47,12 +53,15 @@ Map<String, dynamic> _$SubscriptionToJson(Subscription instance) =>
     <String, dynamic>{
       'amount': instance.amount,
       'appleProductId': ?instance.appleProductId,
+      'bulkSize': ?instance.bulkSize,
       'description': instance.description,
+      'discountPercentage': ?instance.discountPercentage,
       'googlePlanId': ?instance.googlePlanId,
       'googleProductId': ?instance.googleProductId,
       'id': instance.id,
       'oculusSku': ?instance.oculusSku,
       'period': _$SubscriptionPeriodEnumMap[instance.period]!,
+      'periodAmount': ?instance.periodAmount,
       'picoSku': ?instance.picoSku,
       'steamItemId': instance.steamItemId,
       'tier': instance.tier,

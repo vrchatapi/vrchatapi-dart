@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 Get Prop Publish Status
 
-Returns a PropPublishStatus object.
+Return the PropPublishStatus object. `/props/{propId}` is still served.
 
 ### Example
 ```dart
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 
 Publish Prop
 
-Publish a Prop and return the updated PropPublishStatus object.
+Publish a prop and return the updated PropPublishStatus object. `/props/{propId}` is still served.
 
 ### Example
 ```dart
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 Unpublish Prop
 
-Unpublish a Prop and return the updated PropPublishStatus object.
+Unpublish a prop and return the updated PropPublishStatus object. `/props/{propId}` is still served.
 
 ### Example
 ```dart

@@ -18,6 +18,8 @@ part 'jam.g.dart';
 class Jam {
   /// Returns a new [Jam] instance.
   Jam({
+    this.createdAt,
+
     required this.description,
 
     required this.id,
@@ -36,8 +38,13 @@ class Jam {
 
     required this.title,
 
+    required this.type,
+
     required this.updatedAt,
   });
+
+  @JsonKey(name: r'created_at', required: false, includeIfNull: false)
+  final DateTime? createdAt;
 
   @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
@@ -75,6 +82,9 @@ class Jam {
   @JsonKey(name: r'title', required: true, includeIfNull: false)
   final String title;
 
+  @JsonKey(name: r'type', required: true, includeIfNull: false)
+  final String type;
+
   @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
   final DateTime updatedAt;
 
@@ -82,6 +92,7 @@ class Jam {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Jam &&
+          other.createdAt == createdAt &&
           other.description == description &&
           other.id == id &&
           other.isVisible == isVisible &&
@@ -91,10 +102,12 @@ class Jam {
           other.submissionContentGateDate == submissionContentGateDate &&
           other.submissionContentGated == submissionContentGated &&
           other.title == title &&
+          other.type == type &&
           other.updatedAt == updatedAt;
 
   @override
   int get hashCode =>
+      createdAt.hashCode +
       description.hashCode +
       id.hashCode +
       isVisible.hashCode +
@@ -106,6 +119,7 @@ class Jam {
           : submissionContentGateDate.hashCode) +
       submissionContentGated.hashCode +
       title.hashCode +
+      type.hashCode +
       updatedAt.hashCode;
 
   factory Jam.fromJson(Map<String, dynamic> json) => _$JamFromJson(json);

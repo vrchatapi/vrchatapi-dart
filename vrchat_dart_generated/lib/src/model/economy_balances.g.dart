@@ -10,10 +10,10 @@ part of 'economy_balances.dart';
 
 EconomyBalances _$EconomyBalancesFromJson(Map<String, dynamic> json) =>
     $checkedCreate('EconomyBalances', json, ($checkedConvert) {
-      $checkKeys(json, requiredKeys: const ['balance', 'earnings', 'standard']);
+      $checkKeys(json, requiredKeys: const ['balance', 'standard']);
       final val = EconomyBalances(
         balance: $checkedConvert('balance', (v) => (v as num).toInt()),
-        earnings: $checkedConvert('earnings', (v) => (v as num).toInt()),
+        earnings: $checkedConvert('earnings', (v) => (v as num?)?.toInt()),
         standard: $checkedConvert('standard', (v) => (v as num).toInt()),
       );
       return val;
@@ -22,6 +22,6 @@ EconomyBalances _$EconomyBalancesFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$EconomyBalancesToJson(EconomyBalances instance) =>
     <String, dynamic>{
       'balance': instance.balance,
-      'earnings': instance.earnings,
+      'earnings': ?instance.earnings,
       'standard': instance.standard,
     };

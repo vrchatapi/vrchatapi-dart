@@ -56,8 +56,7 @@ class SentNotification {
   @JsonKey(name: r'senderUserId', required: true, includeIfNull: false)
   final String senderUserId;
 
-  /// -| **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
-  @Deprecated('senderUsername has been deprecated')
+  /// The name of the user who sent the notification.
   @JsonKey(name: r'senderUsername', required: false, includeIfNull: false)
   final String? senderUsername;
 

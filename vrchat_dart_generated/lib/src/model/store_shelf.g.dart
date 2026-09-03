@@ -43,8 +43,17 @@ StoreShelf _$StoreShelfFromJson(
           ?.map((e) => ProductListing.fromJson(e as Map<String, dynamic>))
           .toList(),
     ),
+    shelfBackgroundImageId: $checkedConvert(
+      'shelfBackgroundImageId',
+      (v) => v as String?,
+    ),
     shelfDescription: $checkedConvert('shelfDescription', (v) => v as String),
+    shelfIconImageId: $checkedConvert('shelfIconImageId', (v) => v as String?),
     shelfLayout: $checkedConvert('shelfLayout', (v) => v as String),
+    shelfTabBackgroundImageId: $checkedConvert(
+      'shelfTabBackgroundImageId',
+      (v) => v as String?,
+    ),
     shelfTitle: $checkedConvert('shelfTitle', (v) => v as String),
     updatedAt: $checkedConvert('updatedAt', (v) => DateTime.parse(v as String)),
   );
@@ -58,8 +67,11 @@ Map<String, dynamic> _$StoreShelfToJson(StoreShelf instance) =>
       'id': instance.id,
       'listingIds': instance.listingIds,
       'listings': ?instance.listings?.map((e) => e.toJson()).toList(),
+      'shelfBackgroundImageId': ?instance.shelfBackgroundImageId,
       'shelfDescription': instance.shelfDescription,
+      'shelfIconImageId': ?instance.shelfIconImageId,
       'shelfLayout': instance.shelfLayout,
+      'shelfTabBackgroundImageId': ?instance.shelfTabBackgroundImageId,
       'shelfTitle': instance.shelfTitle,
       'updatedAt': instance.updatedAt.toIso8601String(),
     };

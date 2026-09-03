@@ -22,7 +22,11 @@ class Subscription {
 
     this.appleProductId,
 
+    this.bulkSize,
+
     required this.description,
+
+    this.discountPercentage,
 
     this.googlePlanId,
 
@@ -33,6 +37,8 @@ class Subscription {
     this.oculusSku,
 
     required this.period,
+
+    this.periodAmount,
 
     this.picoSku,
 
@@ -47,8 +53,16 @@ class Subscription {
   @JsonKey(name: r'appleProductId', required: false, includeIfNull: false)
   final String? appleProductId;
 
+  /// How many subscriptions a gifted bundle grants.
+  @JsonKey(name: r'bulkSize', required: false, includeIfNull: false)
+  final int? bulkSize;
+
   @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
+
+  /// Discount applied to a gifted bundle.
+  @JsonKey(name: r'discountPercentage', required: false, includeIfNull: false)
+  final int? discountPercentage;
 
   @JsonKey(name: r'googlePlanId', required: false, includeIfNull: false)
   final String? googlePlanId;
@@ -65,6 +79,9 @@ class Subscription {
   @JsonKey(name: r'period', required: true, includeIfNull: false)
   final SubscriptionPeriod period;
 
+  @JsonKey(name: r'periodAmount', required: false, includeIfNull: false)
+  final Object? periodAmount;
+
   @JsonKey(name: r'picoSku', required: false, includeIfNull: false)
   final String? picoSku;
 
@@ -80,12 +97,15 @@ class Subscription {
       other is Subscription &&
           other.amount == amount &&
           other.appleProductId == appleProductId &&
+          other.bulkSize == bulkSize &&
           other.description == description &&
+          other.discountPercentage == discountPercentage &&
           other.googlePlanId == googlePlanId &&
           other.googleProductId == googleProductId &&
           other.id == id &&
           other.oculusSku == oculusSku &&
           other.period == period &&
+          other.periodAmount == periodAmount &&
           other.picoSku == picoSku &&
           other.steamItemId == steamItemId &&
           other.tier == tier;
@@ -94,12 +114,15 @@ class Subscription {
   int get hashCode =>
       amount.hashCode +
       appleProductId.hashCode +
+      bulkSize.hashCode +
       description.hashCode +
+      discountPercentage.hashCode +
       googlePlanId.hashCode +
       googleProductId.hashCode +
       id.hashCode +
       oculusSku.hashCode +
       period.hashCode +
+      (periodAmount == null ? 0 : periodAmount.hashCode) +
       picoSku.hashCode +
       steamItemId.hashCode +
       tier.hashCode;

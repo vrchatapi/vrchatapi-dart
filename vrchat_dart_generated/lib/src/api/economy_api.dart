@@ -501,7 +501,7 @@ class EconomyApi {
   }
 
   /// Get Balance
-  /// Gets the balance of a user
+  /// Return the balance of a user.
   ///
   /// Parameters:
   /// * [userId] - Must be a valid user ID.
@@ -584,7 +584,7 @@ class EconomyApi {
   }
 
   /// Get Balance Earnings
-  /// Gets the balance of a user from earnings
+  /// Return the user&#39;s balance from earnings.
   ///
   /// Parameters:
   /// * [userId] - Must be a valid user ID.
@@ -597,6 +597,7 @@ class EconomyApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Balance] as data
   /// Throws [DioException] if API call or serialization fails
+  @Deprecated('This operation has been deprecated')
   Future<Response<Balance>> getBalanceEarnings({
     required String userId,
     CancelToken? cancelToken,
@@ -837,9 +838,9 @@ class EconomyApi {
   /// Gets earnings totals and breakdown metrics for the currently authenticated user.
   ///
   /// Parameters:
-  /// * [sellerId] - Seller to retrieve economy metrics for.
   /// * [metricDateStart] - Lower bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps.
   /// * [metricDateEnd] - Upper bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps.
+  /// * [sellerId] - Filter results by seller.
   /// * [groupByDuration] - Time bucket size for economy metrics. Observed values include `days` and `years`.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -851,9 +852,9 @@ class EconomyApi {
   /// Returns a [Future] containing a [Response] with a [EarningsMetrics] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<EarningsMetrics>> getEarningsMetrics({
-    required String sellerId,
     String? metricDateStart,
     String? metricDateEnd,
+    String? sellerId,
     String? groupByDuration,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -883,7 +884,7 @@ class EconomyApi {
     final _queryParameters = <String, dynamic>{
       if (metricDateStart != null) r'metricDateStart': metricDateStart,
       if (metricDateEnd != null) r'metricDateEnd': metricDateEnd,
-      r'sellerId': sellerId,
+      if (sellerId != null) r'sellerId': sellerId,
       if (groupByDuration != null) r'groupByDuration': groupByDuration,
     };
 
@@ -2127,7 +2128,7 @@ class EconomyApi {
   }
 
   /// Get Seller Eligibility
-  /// Get the eligibility of the currently authenticated user to become a seller
+  /// Return the current user&#39;s eligibility to become a seller.
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -2139,6 +2140,7 @@ class EconomyApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SellerEligibility] as data
   /// Throws [DioException] if API call or serialization fails
+  @Deprecated('This operation has been deprecated')
   Future<Response<SellerEligibility>> getSellerEligibility({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -2220,7 +2222,6 @@ class EconomyApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Transaction] as data
   /// Throws [DioException] if API call or serialization fails
-  @Deprecated('This operation has been deprecated')
   Future<Response<Transaction>> getSteamTransaction({
     required String transactionId,
     CancelToken? cancelToken,
@@ -2560,6 +2561,8 @@ class EconomyApi {
   /// List all existing Subscriptions. For example, \&quot;vrchatplus-monthly\&quot; and \&quot;vrchatplus-yearly\&quot;.
   ///
   /// Parameters:
+  /// * [gifts] - Return giftable subscriptions instead of standard ones.
+  /// * [recurring] - Return recurring subscriptions instead of standard ones.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -2570,6 +2573,8 @@ class EconomyApi {
   /// Returns a [Future] containing a [Response] with a [List<Subscription>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<Subscription>>> getSubscriptions({
+    bool? gifts,
+    bool? recurring,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -2595,9 +2600,15 @@ class EconomyApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (gifts != null) r'gifts': gifts,
+      if (recurring != null) r'recurring': recurring,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -2637,7 +2648,7 @@ class EconomyApi {
   }
 
   /// Get Tilia Status
-  /// Gets the status of Tilia integration
+  /// Return the Tilia integration status.
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -2649,6 +2660,7 @@ class EconomyApi {
   ///
   /// Returns a [Future] containing a [Response] with a [TiliaStatus] as data
   /// Throws [DioException] if API call or serialization fails
+  @Deprecated('This operation has been deprecated')
   Future<Response<TiliaStatus>> getTiliaStatus({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -2717,7 +2729,7 @@ class EconomyApi {
   }
 
   /// Get Tilia TOS Agreement Status
-  /// Gets the status of the agreement of a user to the Tilia TOS
+  /// Return the user&#39;s Tilia TOS agreement status.
   ///
   /// Parameters:
   /// * [userId] - Must be a valid user ID.
@@ -2730,6 +2742,7 @@ class EconomyApi {
   ///
   /// Returns a [Future] containing a [Response] with a [TiliaTOS] as data
   /// Throws [DioException] if API call or serialization fails
+  @Deprecated('This operation has been deprecated')
   Future<Response<TiliaTOS>> getTiliaTos({
     required String userId,
     CancelToken? cancelToken,
@@ -2884,7 +2897,7 @@ class EconomyApi {
   }
 
   /// Get User Credits Eligibility
-  /// Get the user&#39;s eligibility status for subscriptions based on available credits.
+  /// Return the user&#39;s subscription credit eligibility.
   ///
   /// Parameters:
   /// * [userId] - Must be a valid user ID.
@@ -2898,6 +2911,7 @@ class EconomyApi {
   ///
   /// Returns a [Future] containing a [Response] with a [UserCreditsEligible] as data
   /// Throws [DioException] if API call or serialization fails
+  @Deprecated('This operation has been deprecated')
   Future<Response<UserCreditsEligible>> getUserCreditsEligible({
     required String userId,
     required String subscriptionId,
@@ -3159,10 +3173,10 @@ class EconomyApi {
   }
 
   /// List Stores
-  /// Lists stores, optionally filtered to a seller and adjusted for management views.
+  /// List a seller&#39;s stores, adjusted for management views.
   ///
   /// Parameters:
-  /// * [sellerId] - Filter results by seller.
+  /// * [sellerId] - Seller to scope the results to.
   /// * [managementPov] - Return stores from the seller management point of view.
   /// * [n] - The number of objects to return.
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
@@ -3176,7 +3190,7 @@ class EconomyApi {
   /// Returns a [Future] containing a [Response] with a [List<Store>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<Store>>> listStores({
-    String? sellerId,
+    required String sellerId,
     bool? managementPov,
     int? n = 60,
     int? offset,
@@ -3206,7 +3220,7 @@ class EconomyApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (sellerId != null) r'sellerId': sellerId,
+      r'sellerId': sellerId,
       if (managementPov != null) r'managementPov': managementPov,
       if (n != null) r'n': n,
       if (offset != null) r'offset': offset,
@@ -3664,7 +3678,7 @@ class EconomyApi {
   }
 
   /// Update Tilia TOS Agreement Status
-  /// Updates the status of the agreement of a user to the Tilia TOS
+  /// Update the user&#39;s Tilia TOS agreement status.
   ///
   /// Parameters:
   /// * [userId] - Must be a valid user ID.
@@ -3678,6 +3692,7 @@ class EconomyApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Object] as data
   /// Throws [DioException] if API call or serialization fails
+  @Deprecated('This operation has been deprecated')
   Future<Response<Object>> updateTiliaTos({
     required String userId,
     UpdateTiliaTOSRequest? updateTiliaTOSRequest,

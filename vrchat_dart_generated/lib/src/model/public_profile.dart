@@ -178,7 +178,7 @@ class PublicProfile {
       nameplateEffect.hashCode +
       profileEffect.hashCode +
       pronouns.hashCode +
-      (representedGroup == null ? 0 : representedGroup.hashCode) +
+      representedGroup.hashCode +
       themeId.hashCode +
       trustTags.hashCode;
 

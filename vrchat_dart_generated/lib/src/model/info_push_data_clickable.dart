@@ -49,12 +49,24 @@ class InfoPushDataClickable {
 enum InfoPushDataClickableCommandEnum {
   @JsonValue(r'CannedWorldSearch')
   cannedWorldSearch(r'CannedWorldSearch'),
+  @JsonValue(r'OpenAccountUpgrade')
+  openAccountUpgrade(r'OpenAccountUpgrade'),
+  @JsonValue(r'OpenAvatarsMenu')
+  openAvatarsMenu(r'OpenAvatarsMenu'),
+  @JsonValue(r'OpenHelpArticle')
+  openHelpArticle(r'OpenHelpArticle'),
+  @JsonValue(r'OpenListingDetails')
+  openListingDetails(r'OpenListingDetails'),
   @JsonValue(r'OpenSafetyMenu')
   openSafetyMenu(r'OpenSafetyMenu'),
   @JsonValue(r'OpenURL')
   openURL(r'OpenURL'),
   @JsonValue(r'OpenVRCPlusMenu')
-  openVRCPlusMenu(r'OpenVRCPlusMenu');
+  openVRCPlusMenu(r'OpenVRCPlusMenu'),
+  @JsonValue(r'OpenVRChatStore')
+  openVRChatStore(r'OpenVRChatStore'),
+  @JsonValue(r'OpenWorldDetails')
+  openWorldDetails(r'OpenWorldDetails');
 
   const InfoPushDataClickableCommandEnum(this.value);
 

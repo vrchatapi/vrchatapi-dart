@@ -12,6 +12,10 @@ ReportReason _$ReportReasonFromJson(Map<String, dynamic> json) =>
     $checkedCreate('ReportReason', json, ($checkedConvert) {
       $checkKeys(json, requiredKeys: const ['text', 'tooltip']);
       final val = ReportReason(
+        policy: $checkedConvert(
+          'policy',
+          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+        ),
         text: $checkedConvert('text', (v) => v as String),
         tooltip: $checkedConvert('tooltip', (v) => v as String),
       );
@@ -19,4 +23,8 @@ ReportReason _$ReportReasonFromJson(Map<String, dynamic> json) =>
     });
 
 Map<String, dynamic> _$ReportReasonToJson(ReportReason instance) =>
-    <String, dynamic>{'text': instance.text, 'tooltip': instance.tooltip};
+    <String, dynamic>{
+      'policy': ?instance.policy,
+      'text': instance.text,
+      'tooltip': instance.tooltip,
+    };

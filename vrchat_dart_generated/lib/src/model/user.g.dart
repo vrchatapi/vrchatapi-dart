@@ -43,6 +43,22 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
       ],
     );
     final val = User(
+      acceptedPrivacyVersion: $checkedConvert(
+        'acceptedPrivacyVersion',
+        (v) => (v as num?)?.toInt(),
+      ),
+      acceptedTOSVersion: $checkedConvert(
+        'acceptedTOSVersion',
+        (v) => (v as num?)?.toInt(),
+      ),
+      accountDeletionDate: $checkedConvert(
+        'accountDeletionDate',
+        (v) => v as String?,
+      ),
+      accountDeletionLog: $checkedConvert(
+        'accountDeletionLog',
+        (v) => (v as List<dynamic>?)?.map((e) => e as Object).toList(),
+      ),
       ageVerificationStatus: $checkedConvert(
         'ageVerificationStatus',
         (v) => $enumDecode(_$AgeVerificationStatusEnumMap, v),
@@ -52,12 +68,19 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'allowAvatarCopying',
         (v) => v as bool? ?? true,
       ),
+      appleDetails: $checkedConvert(
+        'appleDetails',
+        (v) => (v as Map<String, dynamic>?)?.map(
+          (k, e) => MapEntry(k, e as Object),
+        ),
+      ),
       badges: $checkedConvert(
         'badges',
         (v) => (v as List<dynamic>?)
             ?.map((e) => Badge.fromJson(e as Map<String, dynamic>))
             .toList(),
       ),
+      bannerColor: $checkedConvert('bannerColor', (v) => v as String?),
       bannerType: $checkedConvert('bannerType', (v) => v as String?),
       bannerUrl: $checkedConvert('bannerUrl', (v) => v as String?),
       bio: $checkedConvert('bio', (v) => v as String),
@@ -144,7 +167,6 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => v as String?,
       ),
       userIcon: $checkedConvert('userIcon', (v) => v as String),
-      username: $checkedConvert('username', (v) => v as String?),
       worldId: $checkedConvert('worldId', (v) => v as String?),
     );
     return val;
@@ -159,11 +181,17 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
 );
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
+  'acceptedPrivacyVersion': ?instance.acceptedPrivacyVersion,
+  'acceptedTOSVersion': ?instance.acceptedTOSVersion,
+  'accountDeletionDate': ?instance.accountDeletionDate,
+  'accountDeletionLog': ?instance.accountDeletionLog,
   'ageVerificationStatus':
       _$AgeVerificationStatusEnumMap[instance.ageVerificationStatus]!,
   'ageVerified': instance.ageVerified,
   'allowAvatarCopying': instance.allowAvatarCopying,
+  'appleDetails': ?instance.appleDetails,
   'badges': ?instance.badges?.map((e) => e.toJson()).toList(),
+  'bannerColor': ?instance.bannerColor,
   'bannerType': ?instance.bannerType,
   'bannerUrl': ?instance.bannerUrl,
   'bio': instance.bio,
@@ -202,7 +230,6 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
   'travelingToLocation': ?instance.travelingToLocation,
   'travelingToWorld': ?instance.travelingToWorld,
   'userIcon': instance.userIcon,
-  'username': ?instance.username,
   'worldId': ?instance.worldId,
 };
 

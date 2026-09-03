@@ -21,8 +21,8 @@ GroupPost _$GroupPostFromJson(Map<String, dynamic> json) =>
         id: $checkedConvert('id', (v) => v as String?),
         imageId: $checkedConvert('imageId', (v) => v as String?),
         imageUrl: $checkedConvert('imageUrl', (v) => v as String?),
-        roleId: $checkedConvert(
-          'roleId',
+        roleIds: $checkedConvert(
+          'roleIds',
           (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
         ),
         text: $checkedConvert('text', (v) => v as String?),
@@ -47,7 +47,7 @@ Map<String, dynamic> _$GroupPostToJson(GroupPost instance) => <String, dynamic>{
   'id': ?instance.id,
   'imageId': ?instance.imageId,
   'imageUrl': ?instance.imageUrl,
-  'roleId': ?instance.roleId,
+  'roleIds': ?instance.roleIds,
   'text': ?instance.text,
   'title': ?instance.title,
   'updatedAt': ?instance.updatedAt?.toIso8601String(),

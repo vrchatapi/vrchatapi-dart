@@ -27,9 +27,13 @@ class CreateInstanceRequest {
 
     this.canRequestInvite = false,
 
+    this.categoryId,
+
     this.closedAt,
 
     this.contentSettings,
+
+    this.description,
 
     this.displayName,
 
@@ -53,6 +57,8 @@ class CreateInstanceRequest {
 
     required this.type,
 
+    this.vibeIds,
+
     required this.worldId,
   });
 
@@ -62,9 +68,12 @@ class CreateInstanceRequest {
   @JsonKey(name: r'calendarEntryId', required: false, includeIfNull: false)
   final String? calendarEntryId;
 
-  /// Only applies to invite type instances to make them invite+
+  /// Makes a private instance invite+. A friends instance is rejected.
   @JsonKey(name: r'canRequestInvite', required: false, includeIfNull: false)
   final bool? canRequestInvite;
+
+  @JsonKey(name: r'categoryId', required: false, includeIfNull: false)
+  final String? categoryId;
 
   /// The time after which users won't be allowed to join the instance. This doesn't work for public instances.
   @JsonKey(name: r'closedAt', required: false, includeIfNull: false)
@@ -72,6 +81,9 @@ class CreateInstanceRequest {
 
   @JsonKey(name: r'contentSettings', required: false, includeIfNull: false)
   final InstanceContentSettings? contentSettings;
+
+  @JsonKey(name: r'description', required: false, includeIfNull: false)
+  final String? description;
 
   @JsonKey(name: r'displayName', required: false, includeIfNull: false)
   final String? displayName;
@@ -117,6 +129,9 @@ class CreateInstanceRequest {
   @JsonKey(name: r'type', required: true, includeIfNull: false)
   final InstanceType type;
 
+  @JsonKey(name: r'vibeIds', required: false, includeIfNull: false)
+  final List<String>? vibeIds;
+
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @JsonKey(name: r'worldId', required: true, includeIfNull: false)
   final String worldId;
@@ -128,8 +143,10 @@ class CreateInstanceRequest {
           other.ageGate == ageGate &&
           other.calendarEntryId == calendarEntryId &&
           other.canRequestInvite == canRequestInvite &&
+          other.categoryId == categoryId &&
           other.closedAt == closedAt &&
           other.contentSettings == contentSettings &&
+          other.description == description &&
           other.displayName == displayName &&
           other.groupAccessType == groupAccessType &&
           other.hardClose == hardClose &&
@@ -141,6 +158,7 @@ class CreateInstanceRequest {
           other.region == region &&
           other.roleIds == roleIds &&
           other.type == type &&
+          other.vibeIds == vibeIds &&
           other.worldId == worldId;
 
   @override
@@ -148,9 +166,11 @@ class CreateInstanceRequest {
       ageGate.hashCode +
       calendarEntryId.hashCode +
       canRequestInvite.hashCode +
+      categoryId.hashCode +
       closedAt.hashCode +
       contentSettings.hashCode +
-      (displayName == null ? 0 : displayName.hashCode) +
+      description.hashCode +
+      displayName.hashCode +
       groupAccessType.hashCode +
       hardClose.hashCode +
       (instancePersistenceEnabled == null
@@ -165,6 +185,7 @@ class CreateInstanceRequest {
       region.hashCode +
       roleIds.hashCode +
       type.hashCode +
+      vibeIds.hashCode +
       worldId.hashCode;
 
   factory CreateInstanceRequest.fromJson(Map<String, dynamic> json) =>

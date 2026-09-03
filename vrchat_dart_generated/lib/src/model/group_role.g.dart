@@ -15,9 +15,14 @@ GroupRole _$GroupRoleFromJson(Map<String, dynamic> json) =>
           'createdAt',
           (v) => v == null ? null : DateTime.parse(v as String),
         ),
+        defaultRole: $checkedConvert('defaultRole', (v) => v as bool? ?? false),
         description: $checkedConvert('description', (v) => v as String?),
         groupId: $checkedConvert('groupId', (v) => v as String?),
         id: $checkedConvert('id', (v) => v as String?),
+        isAddedOnJoin: $checkedConvert(
+          'isAddedOnJoin',
+          (v) => v as bool? ?? false,
+        ),
         isManagementRole: $checkedConvert(
           'isManagementRole',
           (v) => v as bool? ?? false,
@@ -52,9 +57,11 @@ GroupRole _$GroupRoleFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$GroupRoleToJson(GroupRole instance) => <String, dynamic>{
   'createdAt': ?instance.createdAt?.toIso8601String(),
+  'defaultRole': ?instance.defaultRole,
   'description': ?instance.description,
   'groupId': ?instance.groupId,
   'id': ?instance.id,
+  'isAddedOnJoin': ?instance.isAddedOnJoin,
   'isManagementRole': ?instance.isManagementRole,
   'isSelfAssignable': ?instance.isSelfAssignable,
   'name': ?instance.name,

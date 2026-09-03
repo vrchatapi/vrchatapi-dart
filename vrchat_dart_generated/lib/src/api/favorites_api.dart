@@ -331,8 +331,9 @@ class FavoritesApi {
   /// Parameters:
   /// * [n] - The number of objects to return.
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
+  /// * [type] - Filter to a single favorite group type.
   /// * [userId] - Target user to see information on, admin-only.
-  /// * [ownerId] - The owner whose favorite groups to return. Must be a UserID.
+  /// * [ownerId] - The user whose favorite groups to return. Must be a user ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -345,6 +346,7 @@ class FavoritesApi {
   Future<Response<List<FavoriteGroup>>> getFavoriteGroups({
     int? n = 60,
     int? offset,
+    FavoriteType? type,
     String? userId,
     String? ownerId,
     CancelToken? cancelToken,
@@ -375,6 +377,7 @@ class FavoritesApi {
     final _queryParameters = <String, dynamic>{
       if (n != null) r'n': n,
       if (offset != null) r'offset': offset,
+      if (type != null) r'type': type,
       if (userId != null) r'userId': userId,
       if (ownerId != null) r'ownerId': ownerId,
     };

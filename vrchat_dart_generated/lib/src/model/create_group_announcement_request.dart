@@ -21,7 +21,7 @@ class CreateGroupAnnouncementRequest {
 
     this.sendNotification = false,
 
-    this.text,
+    required this.text,
 
     required this.title,
   });
@@ -34,8 +34,8 @@ class CreateGroupAnnouncementRequest {
   final bool? sendNotification;
 
   /// Announcement text
-  @JsonKey(name: r'text', required: false, includeIfNull: false)
-  final String? text;
+  @JsonKey(name: r'text', required: true, includeIfNull: false)
+  final String text;
 
   /// Announcement title
   @JsonKey(name: r'title', required: true, includeIfNull: false)

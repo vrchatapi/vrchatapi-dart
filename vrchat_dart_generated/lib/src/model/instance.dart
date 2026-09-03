@@ -35,15 +35,25 @@ class Instance {
 
     this.capacity,
 
+    this.categoryId,
+
     required this.clientNumber,
 
     this.closedAt,
 
     this.contentSettings,
 
+    this.creationLanguages,
+
     this.creatorId,
 
+    this.description,
+
+    this.disabledPropAbilities,
+
     this.displayName,
+
+    this.dominantLanguage,
 
     this.friends,
 
@@ -65,7 +75,15 @@ class Instance {
 
     this.instancePersistenceEnabled,
 
+    this.languageRatio,
+
+    this.languages,
+
+    this.languagesIso639,
+
     required this.location,
+
+    this.minimumAvatarPerformance,
 
     required this.nUsers,
 
@@ -107,7 +125,11 @@ class Instance {
 
     required this.userCount,
 
+    this.userIcons,
+
     this.users,
+
+    this.vibeIds,
 
     required this.world,
 
@@ -130,6 +152,9 @@ class Instance {
   @JsonKey(name: r'capacity', required: false, includeIfNull: false)
   final int? capacity;
 
+  @JsonKey(name: r'categoryId', required: false, includeIfNull: false)
+  final String? categoryId;
+
   /// Always returns \"unknown\".
   @Deprecated('clientNumber has been deprecated')
   @JsonKey(name: r'clientNumber', required: true, includeIfNull: false)
@@ -141,12 +166,28 @@ class Instance {
   @JsonKey(name: r'contentSettings', required: false, includeIfNull: false)
   final InstanceContentSettings? contentSettings;
 
+  @JsonKey(name: r'creationLanguages', required: false, includeIfNull: false)
+  final List<Object>? creationLanguages;
+
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(name: r'creatorId', required: false, includeIfNull: false)
   final String? creatorId;
 
+  @JsonKey(name: r'description', required: false, includeIfNull: false)
+  final String? description;
+
+  @JsonKey(
+    name: r'disabledPropAbilities',
+    required: false,
+    includeIfNull: false,
+  )
+  final List<Object>? disabledPropAbilities;
+
   @JsonKey(name: r'displayName', required: false, includeIfNull: false)
   final String? displayName;
+
+  @JsonKey(name: r'dominantLanguage', required: false, includeIfNull: false)
+  final String? dominantLanguage;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(name: r'friends', required: false, includeIfNull: false)
@@ -186,9 +227,26 @@ class Instance {
   )
   final bool? instancePersistenceEnabled;
 
+  @JsonKey(name: r'languageRatio', required: false, includeIfNull: false)
+  final Map<String, Object>? languageRatio;
+
+  /// The keys of languageRatio, ordered by their share of the instance.
+  @JsonKey(name: r'languages', required: false, includeIfNull: false)
+  final List<String>? languages;
+
+  @JsonKey(name: r'languagesIso639', required: false, includeIfNull: false)
+  final List<String>? languagesIso639;
+
   /// Represents a unique location, consisting of a world identifier and an instance identifier, or \"offline\" if the user is not on your friends list.
   @JsonKey(name: r'location', required: true, includeIfNull: false)
   final String location;
+
+  @JsonKey(
+    name: r'minimumAvatarPerformance',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? minimumAvatarPerformance;
 
   // minimum: 0
   @JsonKey(name: r'n_users', required: true, includeIfNull: false)
@@ -261,9 +319,15 @@ class Instance {
   @JsonKey(name: r'userCount', required: true, includeIfNull: false)
   final int userCount;
 
+  @JsonKey(name: r'userIcons', required: false, includeIfNull: false)
+  final List<String>? userIcons;
+
   /// The users field is present on instances created by the requesting user.
   @JsonKey(name: r'users', required: false, includeIfNull: false)
   final List<LimitedUserInstance>? users;
+
+  @JsonKey(name: r'vibeIds', required: false, includeIfNull: false)
+  final List<String>? vibeIds;
 
   @JsonKey(name: r'world', required: true, includeIfNull: false)
   final World world;
@@ -281,11 +345,16 @@ class Instance {
           other.calendarEntryId == calendarEntryId &&
           other.canRequestInvite == canRequestInvite &&
           other.capacity == capacity &&
+          other.categoryId == categoryId &&
           other.clientNumber == clientNumber &&
           other.closedAt == closedAt &&
           other.contentSettings == contentSettings &&
+          other.creationLanguages == creationLanguages &&
           other.creatorId == creatorId &&
+          other.description == description &&
+          other.disabledPropAbilities == disabledPropAbilities &&
           other.displayName == displayName &&
+          other.dominantLanguage == dominantLanguage &&
           other.friends == friends &&
           other.full == full &&
           other.gameServerVersion == gameServerVersion &&
@@ -296,7 +365,11 @@ class Instance {
           other.id == id &&
           other.instanceId == instanceId &&
           other.instancePersistenceEnabled == instancePersistenceEnabled &&
+          other.languageRatio == languageRatio &&
+          other.languages == languages &&
+          other.languagesIso639 == languagesIso639 &&
           other.location == location &&
+          other.minimumAvatarPerformance == minimumAvatarPerformance &&
           other.nUsers == nUsers &&
           other.name == name &&
           other.nonce == nonce &&
@@ -317,7 +390,9 @@ class Instance {
           other.tags == tags &&
           other.type == type &&
           other.userCount == userCount &&
+          other.userIcons == userIcons &&
           other.users == users &&
+          other.vibeIds == vibeIds &&
           other.world == world &&
           other.worldId == worldId;
 
@@ -328,11 +403,16 @@ class Instance {
       (calendarEntryId == null ? 0 : calendarEntryId.hashCode) +
       canRequestInvite.hashCode +
       capacity.hashCode +
+      categoryId.hashCode +
       clientNumber.hashCode +
       (closedAt == null ? 0 : closedAt.hashCode) +
       contentSettings.hashCode +
+      creationLanguages.hashCode +
       creatorId.hashCode +
+      (description == null ? 0 : description.hashCode) +
+      disabledPropAbilities.hashCode +
       (displayName == null ? 0 : displayName.hashCode) +
+      dominantLanguage.hashCode +
       friends.hashCode +
       full.hashCode +
       (gameServerVersion == null ? 0 : gameServerVersion.hashCode) +
@@ -345,7 +425,13 @@ class Instance {
       (instancePersistenceEnabled == null
           ? 0
           : instancePersistenceEnabled.hashCode) +
+      languageRatio.hashCode +
+      languages.hashCode +
+      languagesIso639.hashCode +
       location.hashCode +
+      (minimumAvatarPerformance == null
+          ? 0
+          : minimumAvatarPerformance.hashCode) +
       nUsers.hashCode +
       name.hashCode +
       nonce.hashCode +
@@ -368,7 +454,9 @@ class Instance {
       tags.hashCode +
       type.hashCode +
       userCount.hashCode +
+      userIcons.hashCode +
       users.hashCode +
+      vibeIds.hashCode +
       world.hashCode +
       worldId.hashCode;
 

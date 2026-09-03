@@ -1074,7 +1074,6 @@ class WorldsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [WorldMetadata] as data
   /// Throws [DioException] if API call or serialization fails
-  @Deprecated('This operation has been deprecated')
   Future<Response<WorldMetadata>> getWorldMetadata({
     required String worldId,
     CancelToken? cancelToken,
@@ -1283,7 +1282,7 @@ class WorldsApi {
   }
 
   /// Remove World Tags
-  /// Removes tags from the world&#39;s profile
+  /// Remove tags from the world&#39;s profile.  The path is &#x60;deleteTags&#x60;, not &#x60;removeTags&#x60; as the user equivalent uses.
   ///
   /// Parameters:
   /// * [worldId] - Must be a valid world ID.
@@ -1307,7 +1306,7 @@ class WorldsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/worlds/{worldId}/removeTags'.replaceAll(
+    final _path = r'/worlds/{worldId}/deleteTags'.replaceAll(
       '{'
       r'worldId'
       '}',

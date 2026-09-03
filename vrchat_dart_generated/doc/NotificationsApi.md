@@ -205,7 +205,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteNotification**
-> Notification deleteNotification(notificationId)
+> Success deleteNotification(notificationId)
 
 Delete Notification
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Notification**](Notification.md)
+[**Success**](Success.md)
 
 ### Authorization
 

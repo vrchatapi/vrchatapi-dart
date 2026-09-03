@@ -59,6 +59,8 @@ class CalendarEvent {
 
     this.occurrenceKind,
 
+    this.occurrenceModified,
+
     this.ownerId,
 
     this.platforms,
@@ -147,6 +149,9 @@ class CalendarEvent {
   @JsonKey(name: r'occurrenceKind', required: false, includeIfNull: false)
   final CalendarEventOccurrenceKind? occurrenceKind;
 
+  @JsonKey(name: r'occurrenceModified', required: false, includeIfNull: false)
+  final bool? occurrenceModified;
+
   @JsonKey(name: r'ownerId', required: false, includeIfNull: false)
   final String? ownerId;
 
@@ -208,6 +213,7 @@ class CalendarEvent {
           other.isDraft == isDraft &&
           other.languages == languages &&
           other.occurrenceKind == occurrenceKind &&
+          other.occurrenceModified == occurrenceModified &&
           other.ownerId == ownerId &&
           other.platforms == platforms &&
           other.recurrence == recurrence &&
@@ -241,6 +247,7 @@ class CalendarEvent {
       isDraft.hashCode +
       languages.hashCode +
       occurrenceKind.hashCode +
+      (occurrenceModified == null ? 0 : occurrenceModified.hashCode) +
       ownerId.hashCode +
       platforms.hashCode +
       (recurrence == null ? 0 : recurrence.hashCode) +

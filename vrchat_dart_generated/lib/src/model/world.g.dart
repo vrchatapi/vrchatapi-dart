@@ -8,132 +8,128 @@ part of 'world.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-World _$WorldFromJson(Map<String, dynamic> json) => $checkedCreate(
-  'World',
-  json,
-  ($checkedConvert) {
-    $checkKeys(
-      json,
-      requiredKeys: const [
-        'authorId',
-        'authorName',
-        'capacity',
-        'created_at',
-        'description',
-        'featured',
-        'heat',
-        'id',
-        'imageUrl',
-        'labsPublicationDate',
-        'name',
-        'organization',
-        'popularity',
-        'publicationDate',
-        'recommendedCapacity',
-        'releaseStatus',
-        'tags',
-        'thumbnailImageUrl',
-        'updated_at',
-        'version',
-        'visits',
-      ],
-    );
-    final val = World(
-      authorId: $checkedConvert('authorId', (v) => v as String),
-      authorName: $checkedConvert('authorName', (v) => v as String),
-      capacity: $checkedConvert('capacity', (v) => (v as num).toInt()),
-      createdAt: $checkedConvert(
-        'created_at',
-        (v) => DateTime.parse(v as String),
-      ),
-      defaultContentSettings: $checkedConvert(
-        'defaultContentSettings',
-        (v) => v == null
-            ? null
-            : InstanceContentSettings.fromJson(v as Map<String, dynamic>),
-      ),
-      description: $checkedConvert('description', (v) => v as String),
-      favorites: $checkedConvert('favorites', (v) => (v as num?)?.toInt() ?? 0),
-      featured: $checkedConvert('featured', (v) => v as bool? ?? false),
-      heat: $checkedConvert('heat', (v) => (v as num?)?.toInt() ?? 0),
-      id: $checkedConvert('id', (v) => v as String),
-      imageUrl: $checkedConvert('imageUrl', (v) => v as String),
-      instances: $checkedConvert(
-        'instances',
-        (v) => (v as List<dynamic>?)
-            ?.map((e) => (e as List<dynamic>).map((e) => e as Object).toList())
-            .toList(),
-      ),
-      labsPublicationDate: $checkedConvert(
-        'labsPublicationDate',
-        (v) => v as String,
-      ),
-      name: $checkedConvert('name', (v) => v as String),
-      namespace: $checkedConvert('namespace', (v) => v as String?),
-      occupants: $checkedConvert('occupants', (v) => (v as num?)?.toInt() ?? 0),
-      organization: $checkedConvert(
-        'organization',
-        (v) => v as String? ?? 'vrchat',
-      ),
-      popularity: $checkedConvert(
-        'popularity',
-        (v) => (v as num?)?.toInt() ?? 0,
-      ),
-      previewYoutubeId: $checkedConvert(
-        'previewYoutubeId',
-        (v) => v as String?,
-      ),
-      privateOccupants: $checkedConvert(
-        'privateOccupants',
-        (v) => (v as num?)?.toInt() ?? 0,
-      ),
-      publicOccupants: $checkedConvert(
-        'publicOccupants',
-        (v) => (v as num?)?.toInt() ?? 0,
-      ),
-      publicationDate: $checkedConvert('publicationDate', (v) => v as String),
-      recommendedCapacity: $checkedConvert(
-        'recommendedCapacity',
-        (v) => (v as num).toInt(),
-      ),
-      releaseStatus: $checkedConvert(
-        'releaseStatus',
-        (v) => $enumDecode(_$ReleaseStatusEnumMap, v),
-      ),
-      storeId: $checkedConvert('storeId', (v) => v as String?),
-      tags: $checkedConvert(
-        'tags',
-        (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-      ),
-      thumbnailImageUrl: $checkedConvert(
-        'thumbnailImageUrl',
-        (v) => v as String,
-      ),
-      udonProducts: $checkedConvert(
-        'udonProducts',
-        (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-      ),
-      unityPackages: $checkedConvert(
-        'unityPackages',
-        (v) => (v as List<dynamic>?)
-            ?.map((e) => UnityPackage.fromJson(e as Map<String, dynamic>))
-            .toList(),
-      ),
-      updatedAt: $checkedConvert(
-        'updated_at',
-        (v) => DateTime.parse(v as String),
-      ),
-      urlList: $checkedConvert(
-        'urlList',
-        (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-      ),
-      version: $checkedConvert('version', (v) => (v as num?)?.toInt() ?? 0),
-      visits: $checkedConvert('visits', (v) => (v as num?)?.toInt() ?? 0),
-    );
-    return val;
-  },
-  fieldKeyMap: const {'createdAt': 'created_at', 'updatedAt': 'updated_at'},
-);
+World _$WorldFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('World', json, ($checkedConvert) {
+  $checkKeys(
+    json,
+    requiredKeys: const [
+      'authorId',
+      'authorName',
+      'capacity',
+      'created_at',
+      'description',
+      'featured',
+      'heat',
+      'id',
+      'imageUrl',
+      'labsPublicationDate',
+      'name',
+      'organization',
+      'popularity',
+      'publicationDate',
+      'recommendedCapacity',
+      'releaseStatus',
+      'tags',
+      'thumbnailImageUrl',
+      'updated_at',
+      'version',
+      'visits',
+    ],
+  );
+  final val = World(
+    authorId: $checkedConvert('authorId', (v) => v as String),
+    authorName: $checkedConvert('authorName', (v) => v as String),
+    capacity: $checkedConvert('capacity', (v) => (v as num).toInt()),
+    createdAt: $checkedConvert(
+      'created_at',
+      (v) => DateTime.parse(v as String),
+    ),
+    defaultContentSettings: $checkedConvert(
+      'defaultContentSettings',
+      (v) => v == null
+          ? null
+          : InstanceContentSettings.fromJson(v as Map<String, dynamic>),
+    ),
+    description: $checkedConvert('description', (v) => v as String),
+    disabledPropAbilities: $checkedConvert(
+      'disabledPropAbilities',
+      (v) => (v as List<dynamic>?)?.map((e) => e as Object).toList(),
+    ),
+    favorites: $checkedConvert('favorites', (v) => (v as num?)?.toInt() ?? 0),
+    featured: $checkedConvert('featured', (v) => v as bool? ?? false),
+    heat: $checkedConvert('heat', (v) => (v as num?)?.toInt() ?? 0),
+    id: $checkedConvert('id', (v) => v as String),
+    imageUrl: $checkedConvert('imageUrl', (v) => v as String),
+    instances: $checkedConvert(
+      'instances',
+      (v) => (v as List<dynamic>?)
+          ?.map((e) => (e as List<dynamic>).map((e) => e as Object).toList())
+          .toList(),
+    ),
+    labsPublicationDate: $checkedConvert(
+      'labsPublicationDate',
+      (v) => v as String,
+    ),
+    name: $checkedConvert('name', (v) => v as String),
+    namespace: $checkedConvert('namespace', (v) => v as String?),
+    occupants: $checkedConvert('occupants', (v) => (v as num?)?.toInt() ?? 0),
+    organization: $checkedConvert(
+      'organization',
+      (v) => v as String? ?? 'vrchat',
+    ),
+    popularity: $checkedConvert('popularity', (v) => (v as num?)?.toInt() ?? 0),
+    previewYoutubeId: $checkedConvert('previewYoutubeId', (v) => v as String?),
+    privateOccupants: $checkedConvert(
+      'privateOccupants',
+      (v) => (v as num?)?.toInt() ?? 0,
+    ),
+    publicOccupants: $checkedConvert(
+      'publicOccupants',
+      (v) => (v as num?)?.toInt() ?? 0,
+    ),
+    publicationDate: $checkedConvert('publicationDate', (v) => v as String),
+    recommendedCapacity: $checkedConvert(
+      'recommendedCapacity',
+      (v) => (v as num).toInt(),
+    ),
+    releaseStatus: $checkedConvert(
+      'releaseStatus',
+      (v) => $enumDecode(_$ReleaseStatusEnumMap, v),
+    ),
+    slimInstances: $checkedConvert(
+      'slimInstances',
+      (v) => (v as List<dynamic>?)?.map((e) => e as Object).toList(),
+    ),
+    storeId: $checkedConvert('storeId', (v) => v as String?),
+    tags: $checkedConvert(
+      'tags',
+      (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+    ),
+    thumbnailImageUrl: $checkedConvert('thumbnailImageUrl', (v) => v as String),
+    udonProducts: $checkedConvert(
+      'udonProducts',
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+    ),
+    unityPackages: $checkedConvert(
+      'unityPackages',
+      (v) => (v as List<dynamic>?)
+          ?.map((e) => UnityPackage.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    ),
+    updatedAt: $checkedConvert(
+      'updated_at',
+      (v) => DateTime.parse(v as String),
+    ),
+    urlList: $checkedConvert(
+      'urlList',
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+    ),
+    version: $checkedConvert('version', (v) => (v as num?)?.toInt() ?? 0),
+    visits: $checkedConvert('visits', (v) => (v as num?)?.toInt() ?? 0),
+  );
+  return val;
+}, fieldKeyMap: const {'createdAt': 'created_at', 'updatedAt': 'updated_at'});
 
 Map<String, dynamic> _$WorldToJson(World instance) => <String, dynamic>{
   'authorId': instance.authorId,
@@ -142,6 +138,7 @@ Map<String, dynamic> _$WorldToJson(World instance) => <String, dynamic>{
   'created_at': instance.createdAt.toIso8601String(),
   'defaultContentSettings': ?instance.defaultContentSettings?.toJson(),
   'description': instance.description,
+  'disabledPropAbilities': ?instance.disabledPropAbilities,
   'favorites': ?instance.favorites,
   'featured': instance.featured,
   'heat': instance.heat,
@@ -160,6 +157,7 @@ Map<String, dynamic> _$WorldToJson(World instance) => <String, dynamic>{
   'publicationDate': instance.publicationDate,
   'recommendedCapacity': instance.recommendedCapacity,
   'releaseStatus': _$ReleaseStatusEnumMap[instance.releaseStatus]!,
+  'slimInstances': ?instance.slimInstances,
   'storeId': ?instance.storeId,
   'tags': instance.tags,
   'thumbnailImageUrl': instance.thumbnailImageUrl,

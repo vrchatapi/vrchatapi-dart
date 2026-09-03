@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **googlePlay** | [**PlatformBuildInfo**](PlatformBuildInfo.md) |  | 
 **PC** | [**PlatformBuildInfo**](PlatformBuildInfo.md) |  | 
 **picoStore** | [**PlatformBuildInfo**](PlatformBuildInfo.md) |  | 
-**questAppLab** | [**PlatformBuildInfo**](PlatformBuildInfo.md) |  | 
+**questAppLab** | [**PlatformBuildInfo**](PlatformBuildInfo.md) |  | [optional] 
 **questStore** | [**PlatformBuildInfo**](PlatformBuildInfo.md) |  | 
 **testFlight** | [**PlatformBuildInfo**](PlatformBuildInfo.md) |  | 
 **xRElite** | [**PlatformBuildInfo**](PlatformBuildInfo.md) |  | 

@@ -72,6 +72,10 @@ CalendarEvent _$CalendarEventFromJson(
       'occurrenceKind',
       (v) => $enumDecodeNullable(_$CalendarEventOccurrenceKindEnumMap, v),
     ),
+    occurrenceModified: $checkedConvert(
+      'occurrenceModified',
+      (v) => v as bool?,
+    ),
     ownerId: $checkedConvert('ownerId', (v) => v as String?),
     platforms: $checkedConvert(
       'platforms',
@@ -136,6 +140,7 @@ Map<String, dynamic> _$CalendarEventToJson(CalendarEvent instance) =>
       'languages': ?instance.languages,
       'occurrenceKind':
           ?_$CalendarEventOccurrenceKindEnumMap[instance.occurrenceKind],
+      'occurrenceModified': ?instance.occurrenceModified,
       'ownerId': ?instance.ownerId,
       'platforms': ?instance.platforms
           ?.map((e) => _$CalendarEventPlatformEnumMap[e]!)

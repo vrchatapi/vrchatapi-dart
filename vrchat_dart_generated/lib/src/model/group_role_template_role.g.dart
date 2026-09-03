@@ -2,38 +2,39 @@
 
 // ignore_for_file: deprecated_member_use_from_same_package
 
-part of 'group_role_template_values_roles.dart';
+part of 'group_role_template_role.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-GroupRoleTemplateValuesRoles _$GroupRoleTemplateValuesRolesFromJson(
+GroupRoleTemplateRole _$GroupRoleTemplateRoleFromJson(
   Map<String, dynamic> json,
-) => $checkedCreate('GroupRoleTemplateValuesRoles', json, ($checkedConvert) {
-  final val = GroupRoleTemplateValuesRoles(
-    name: $checkedConvert('name', (v) => v as String?),
-    description: $checkedConvert('description', (v) => v as String?),
-    basePermissions: $checkedConvert(
-      'basePermissions',
-      (v) => (v as List<dynamic>?)
-          ?.map((e) => $enumDecode(_$GroupPermissionsEnumMap, e))
+) => $checkedCreate('GroupRoleTemplateRole', json, ($checkedConvert) {
+  $checkKeys(json, requiredKeys: const ['description', 'name', 'permissions']);
+  final val = GroupRoleTemplateRole(
+    description: $checkedConvert('description', (v) => v as String),
+    isAddedOnJoin: $checkedConvert('isAddedOnJoin', (v) => v as bool? ?? false),
+    name: $checkedConvert('name', (v) => v as String),
+    permissions: $checkedConvert(
+      'permissions',
+      (v) => (v as List<dynamic>)
+          .map((e) => $enumDecode(_$GroupPermissionsEnumMap, e))
           .toList(),
     ),
-    isAddedOnJoin: $checkedConvert('isAddedOnJoin', (v) => v as bool? ?? false),
   );
   return val;
 });
 
-Map<String, dynamic> _$GroupRoleTemplateValuesRolesToJson(
-  GroupRoleTemplateValuesRoles instance,
+Map<String, dynamic> _$GroupRoleTemplateRoleToJson(
+  GroupRoleTemplateRole instance,
 ) => <String, dynamic>{
-  'name': ?instance.name,
-  'description': ?instance.description,
-  'basePermissions': ?instance.basePermissions
-      ?.map((e) => _$GroupPermissionsEnumMap[e]!)
-      .toList(),
+  'description': instance.description,
   'isAddedOnJoin': ?instance.isAddedOnJoin,
+  'name': instance.name,
+  'permissions': instance.permissions
+      .map((e) => _$GroupPermissionsEnumMap[e]!)
+      .toList(),
 };
 
 const _$GroupPermissionsEnumMap = {

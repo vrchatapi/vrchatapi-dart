@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/info_push_experiment.dart';
 import 'package:vrchat_dart_generated/src/model/info_push_data.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
 
@@ -19,11 +20,15 @@ part 'info_push.g.dart';
 class InfoPush {
   /// Returns a new [InfoPush] instance.
   InfoPush({
+    this.clientMinVersion,
+
     required this.createdAt,
 
     required this.data,
 
     this.endDate,
+
+    this.experiment,
 
     required this.hash,
 
@@ -33,7 +38,11 @@ class InfoPush {
 
     required this.priority,
 
+    this.regions,
+
     required this.releaseStatus,
+
+    this.requireClientTags,
 
     this.startDate,
 
@@ -41,6 +50,9 @@ class InfoPush {
 
     required this.updatedAt,
   });
+
+  @JsonKey(name: r'clientMinVersion', required: false, includeIfNull: false)
+  final Object? clientMinVersion;
 
   @JsonKey(name: r'createdAt', required: true, includeIfNull: false)
   final DateTime createdAt;
@@ -50,6 +62,9 @@ class InfoPush {
 
   @JsonKey(name: r'endDate', required: false, includeIfNull: false)
   final DateTime? endDate;
+
+  @JsonKey(name: r'experiment', required: false, includeIfNull: false)
+  final InfoPushExperiment? experiment;
 
   /// Unknown usage, MD5
   @JsonKey(name: r'hash', required: true, includeIfNull: false)
@@ -64,8 +79,14 @@ class InfoPush {
   @JsonKey(name: r'priority', required: true, includeIfNull: false)
   final int priority;
 
+  @JsonKey(name: r'regions', required: false, includeIfNull: false)
+  final List<String>? regions;
+
   @JsonKey(name: r'releaseStatus', required: true, includeIfNull: false)
   final ReleaseStatus releaseStatus;
+
+  @JsonKey(name: r'requireClientTags', required: false, includeIfNull: false)
+  final List<String>? requireClientTags;
 
   ///
   @JsonKey(name: r'startDate', required: false, includeIfNull: false)
@@ -82,29 +103,37 @@ class InfoPush {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is InfoPush &&
+          other.clientMinVersion == clientMinVersion &&
           other.createdAt == createdAt &&
           other.data == data &&
           other.endDate == endDate &&
+          other.experiment == experiment &&
           other.hash == hash &&
           other.id == id &&
           other.isEnabled == isEnabled &&
           other.priority == priority &&
+          other.regions == regions &&
           other.releaseStatus == releaseStatus &&
+          other.requireClientTags == requireClientTags &&
           other.startDate == startDate &&
           other.tags == tags &&
           other.updatedAt == updatedAt;
 
   @override
   int get hashCode =>
+      (clientMinVersion == null ? 0 : clientMinVersion.hashCode) +
       createdAt.hashCode +
       data.hashCode +
-      endDate.hashCode +
+      (endDate == null ? 0 : endDate.hashCode) +
+      experiment.hashCode +
       hash.hashCode +
       id.hashCode +
       isEnabled.hashCode +
       priority.hashCode +
+      regions.hashCode +
       releaseStatus.hashCode +
-      startDate.hashCode +
+      requireClientTags.hashCode +
+      (startDate == null ? 0 : startDate.hashCode) +
       tags.hashCode +
       updatedAt.hashCode;
 

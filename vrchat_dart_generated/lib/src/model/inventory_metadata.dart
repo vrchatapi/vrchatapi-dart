@@ -32,6 +32,8 @@ class InventoryMetadata {
     this.maskTag,
 
     this.propId,
+
+    this.propKind,
   });
 
   @JsonKey(name: r'animated', required: false, includeIfNull: false)
@@ -63,6 +65,9 @@ class InventoryMetadata {
   @JsonKey(name: r'propId', required: false, includeIfNull: false)
   final String? propId;
 
+  @JsonKey(name: r'propKind', required: false, includeIfNull: false)
+  final int? propKind;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -74,7 +79,8 @@ class InventoryMetadata {
           other.imageUrl == imageUrl &&
           other.inventoryItemsToInstantiate == inventoryItemsToInstantiate &&
           other.maskTag == maskTag &&
-          other.propId == propId;
+          other.propId == propId &&
+          other.propKind == propKind;
 
   @override
   int get hashCode =>
@@ -85,7 +91,8 @@ class InventoryMetadata {
       imageUrl.hashCode +
       inventoryItemsToInstantiate.hashCode +
       maskTag.hashCode +
-      propId.hashCode;
+      propId.hashCode +
+      propKind.hashCode;
 
   factory InventoryMetadata.fromJson(Map<String, dynamic> json) =>
       _$InventoryMetadataFromJson(json);

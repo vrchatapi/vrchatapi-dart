@@ -71,6 +71,10 @@ class Group {
 
     this.name,
 
+    this.nameplateId,
+
+    this.nameplateUrl,
+
     this.onlineMemberCount,
 
     this.ownerId,
@@ -174,6 +178,12 @@ class Group {
   @JsonKey(name: r'name', required: false, includeIfNull: false)
   final String? name;
 
+  @JsonKey(name: r'nameplateId', required: false, includeIfNull: false)
+  final Object? nameplateId;
+
+  @JsonKey(name: r'nameplateUrl', required: false, includeIfNull: false)
+  final Object? nameplateUrl;
+
   @JsonKey(name: r'onlineMemberCount', required: false, includeIfNull: false)
   final int? onlineMemberCount;
 
@@ -233,6 +243,8 @@ class Group {
           other.membershipStatus == membershipStatus &&
           other.myMember == myMember &&
           other.name == name &&
+          other.nameplateId == nameplateId &&
+          other.nameplateUrl == nameplateUrl &&
           other.onlineMemberCount == onlineMemberCount &&
           other.ownerId == ownerId &&
           other.privacy == privacy &&
@@ -269,6 +281,8 @@ class Group {
       membershipStatus.hashCode +
       myMember.hashCode +
       name.hashCode +
+      (nameplateId == null ? 0 : nameplateId.hashCode) +
+      (nameplateUrl == null ? 0 : nameplateUrl.hashCode) +
       onlineMemberCount.hashCode +
       ownerId.hashCode +
       privacy.hashCode +

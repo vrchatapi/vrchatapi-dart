@@ -36,7 +36,18 @@ ProductListing _$ProductListingFromJson(Map<String, dynamic> json) =>
       final val = ProductListing(
         active: $checkedConvert('active', (v) => v as bool),
         archived: $checkedConvert('archived', (v) => v as bool?),
+        attribution: $checkedConvert(
+          'attribution',
+          (v) => v == null
+              ? null
+              : ProductListingAttribution.fromJson(v as Map<String, dynamic>),
+        ),
         buyerRefundable: $checkedConvert('buyerRefundable', (v) => v as bool),
+        collabUserDisplayName: $checkedConvert(
+          'collabUserDisplayName',
+          (v) => v as String?,
+        ),
+        collabUserId: $checkedConvert('collabUserId', (v) => v as String?),
         created: $checkedConvert(
           'created',
           (v) => v == null ? null : DateTime.parse(v as String),
@@ -49,6 +60,8 @@ ProductListing _$ProductListingFromJson(Map<String, dynamic> json) =>
         groupId: $checkedConvert('groupId', (v) => v as String?),
         groupName: $checkedConvert('groupName', (v) => v as String?),
         hasAvatar: $checkedConvert('hasAvatar', (v) => v as bool),
+        hasCompanion: $checkedConvert('hasCompanion', (v) => v as bool?),
+        hasInventory: $checkedConvert('hasInventory', (v) => v as bool?),
         hasUdon: $checkedConvert('hasUdon', (v) => v as bool),
         hydratedProducts: $checkedConvert(
           'hydratedProducts',
@@ -82,9 +95,13 @@ ProductListing _$ProductListingFromJson(Map<String, dynamic> json) =>
           'productType',
           (v) => $enumDecode(_$ProductTypeEnumMap, v),
         ),
+        productTypes: $checkedConvert(
+          'productTypes',
+          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+        ),
         products: $checkedConvert(
           'products',
-          (v) => (v as List<dynamic>).map((e) => e as Object).toList(),
+          (v) => (v as List<dynamic>).map((e) => e as String).toList(),
         ),
         purchaseCount: $checkedConvert(
           'purchaseCount',
@@ -134,7 +151,10 @@ Map<String, dynamic> _$ProductListingToJson(
 ) => <String, dynamic>{
   'active': instance.active,
   'archived': ?instance.archived,
+  'attribution': ?instance.attribution?.toJson(),
   'buyerRefundable': instance.buyerRefundable,
+  'collabUserDisplayName': ?instance.collabUserDisplayName,
+  'collabUserId': ?instance.collabUserId,
   'created': ?instance.created?.toIso8601String(),
   'description': instance.description,
   'displayName': instance.displayName,
@@ -144,6 +164,8 @@ Map<String, dynamic> _$ProductListingToJson(
   'groupId': ?instance.groupId,
   'groupName': ?instance.groupName,
   'hasAvatar': instance.hasAvatar,
+  'hasCompanion': ?instance.hasCompanion,
+  'hasInventory': ?instance.hasInventory,
   'hasUdon': instance.hasUdon,
   'hydratedProducts': ?instance.hydratedProducts
       ?.map((e) => e.toJson())
@@ -157,6 +179,7 @@ Map<String, dynamic> _$ProductListingToJson(
   'priceTokens': instance.priceTokens,
   'productIds': instance.productIds,
   'productType': _$ProductTypeEnumMap[instance.productType]!,
+  'productTypes': ?instance.productTypes,
   'products': instance.products,
   'purchaseCount': ?instance.purchaseCount,
   'purchaseCountQuantity': ?instance.purchaseCountQuantity,

@@ -354,9 +354,9 @@ class NotificationsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Notification] as data
+  /// Returns a [Future] containing a [Response] with a [Success] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Notification>> deleteNotification({
+  Future<Response<Success>> deleteNotification({
     required String notificationId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -396,17 +396,13 @@ class NotificationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Notification? _responseData;
+    Success? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Notification, Notification>(
-              rawData,
-              'Notification',
-              growable: true,
-            );
+          : deserialize<Success, Success>(rawData, 'Success', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -417,7 +413,7 @@ class NotificationsApi {
       );
     }
 
-    return Response<Notification>(
+    return Response<Success>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

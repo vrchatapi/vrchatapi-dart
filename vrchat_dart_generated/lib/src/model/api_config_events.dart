@@ -37,6 +37,8 @@ class APIConfigEvents {
 
     required this.useDirectPlayerSerialization,
 
+    this.useSparseRotationForPlayerSerialization,
+
     required this.viewSegmentLength,
   });
 
@@ -88,6 +90,13 @@ class APIConfigEvents {
   )
   final bool useDirectPlayerSerialization;
 
+  @JsonKey(
+    name: r'useSparseRotationForPlayerSerialization',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? useSparseRotationForPlayerSerialization;
+
   /// Unknown
   @JsonKey(name: r'viewSegmentLength', required: true, includeIfNull: false)
   final int viewSegmentLength;
@@ -106,6 +115,8 @@ class APIConfigEvents {
           other.playerOrderFactor == playerOrderFactor &&
           other.slowUpdateFactorThreshold == slowUpdateFactorThreshold &&
           other.useDirectPlayerSerialization == useDirectPlayerSerialization &&
+          other.useSparseRotationForPlayerSerialization ==
+              useSparseRotationForPlayerSerialization &&
           other.viewSegmentLength == viewSegmentLength;
 
   @override
@@ -120,6 +131,7 @@ class APIConfigEvents {
       playerOrderFactor.hashCode +
       slowUpdateFactorThreshold.hashCode +
       useDirectPlayerSerialization.hashCode +
+      useSparseRotationForPlayerSerialization.hashCode +
       viewSegmentLength.hashCode;
 
   factory APIConfigEvents.fromJson(Map<String, dynamic> json) =>

@@ -10,24 +10,19 @@ part of 'api_config_constants_instance.dart';
 
 APIConfigConstantsINSTANCE _$APIConfigConstantsINSTANCEFromJson(
   Map<String, dynamic> json,
-) => $checkedCreate(
-  'APIConfigConstantsINSTANCE',
-  json,
-  ($checkedConvert) {
-    final val = APIConfigConstantsINSTANCE(
-      populationBrackets: $checkedConvert(
-        'POPULATION_BRACKETS',
-        (v) => v == null
-            ? null
-            : APIConfigConstantsINSTANCEPOPULATIONBRACKETS.fromJson(
-                v as Map<String, dynamic>,
-              ),
-      ),
-    );
-    return val;
-  },
-  fieldKeyMap: const {'populationBrackets': 'POPULATION_BRACKETS'},
-);
+) => $checkedCreate('APIConfigConstantsINSTANCE', json, ($checkedConvert) {
+  final val = APIConfigConstantsINSTANCE(
+    populationBrackets: $checkedConvert(
+      'POPULATION_BRACKETS',
+      (v) => v == null
+          ? null
+          : APIConfigConstantsINSTANCEPOPULATIONBRACKETS.fromJson(
+              v as Map<String, dynamic>,
+            ),
+    ),
+  );
+  return val;
+}, fieldKeyMap: const {'populationBrackets': 'POPULATION_BRACKETS'});
 
 Map<String, dynamic> _$APIConfigConstantsINSTANCEToJson(
   APIConfigConstantsINSTANCE instance,

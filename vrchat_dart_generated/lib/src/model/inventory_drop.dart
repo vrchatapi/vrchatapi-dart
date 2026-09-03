@@ -24,6 +24,8 @@ class InventoryDrop {
 
     required this.dropExpiryDate,
 
+    this.dropStatus,
+
     required this.endDropDate,
 
     required this.id,
@@ -35,8 +37,6 @@ class InventoryDrop {
     required this.notificationDetails,
 
     required this.startDropDate,
-
-    required this.status,
 
     required this.tags,
 
@@ -57,6 +57,9 @@ class InventoryDrop {
   @JsonKey(name: r'dropExpiryDate', required: true, includeIfNull: true)
   final DateTime? dropExpiryDate;
 
+  @JsonKey(name: r'dropStatus', required: false, includeIfNull: false)
+  final String? dropStatus;
+
   @JsonKey(name: r'endDropDate', required: true, includeIfNull: false)
   final DateTime endDropDate;
 
@@ -74,9 +77,6 @@ class InventoryDrop {
 
   @JsonKey(name: r'startDropDate', required: true, includeIfNull: false)
   final DateTime startDropDate;
-
-  @JsonKey(name: r'status', required: true, includeIfNull: false)
-  final String status;
 
   @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
@@ -97,13 +97,13 @@ class InventoryDrop {
           other.authorId == authorId &&
           other.createdAt == createdAt &&
           other.dropExpiryDate == dropExpiryDate &&
+          other.dropStatus == dropStatus &&
           other.endDropDate == endDropDate &&
           other.id == id &&
           other.isDisabled == isDisabled &&
           other.name == name &&
           other.notificationDetails == notificationDetails &&
           other.startDropDate == startDropDate &&
-          other.status == status &&
           other.tags == tags &&
           other.targetGroup == targetGroup &&
           other.templateIds == templateIds &&
@@ -114,13 +114,13 @@ class InventoryDrop {
       authorId.hashCode +
       createdAt.hashCode +
       (dropExpiryDate == null ? 0 : dropExpiryDate.hashCode) +
+      dropStatus.hashCode +
       endDropDate.hashCode +
       id.hashCode +
       isDisabled.hashCode +
       name.hashCode +
       notificationDetails.hashCode +
       startDropDate.hashCode +
-      status.hashCode +
       tags.hashCode +
       targetGroup.hashCode +
       templateIds.hashCode +

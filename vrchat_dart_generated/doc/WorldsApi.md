@@ -24,7 +24,7 @@ Method | HTTP request | Description
 [**getWorldMetadata**](WorldsApi.md#getworldmetadata) | **GET** /worlds/{worldId}/metadata | Get World Metadata
 [**getWorldPublishStatus**](WorldsApi.md#getworldpublishstatus) | **GET** /worlds/{worldId}/publish | Get World Publish Status
 [**publishWorld**](WorldsApi.md#publishworld) | **PUT** /worlds/{worldId}/publish | Publish World
-[**removeWorldTags**](WorldsApi.md#removeworldtags) | **POST** /worlds/{worldId}/removeTags | Remove World Tags
+[**removeWorldTags**](WorldsApi.md#removeworldtags) | **POST** /worlds/{worldId}/deleteTags | Remove World Tags
 [**searchWorlds**](WorldsApi.md#searchworlds) | **GET** /worlds | Search All Worlds
 [**unpublishWorld**](WorldsApi.md#unpublishworld) | **DELETE** /worlds/{worldId}/publish | Unpublish World
 [**updateWorld**](WorldsApi.md#updateworld) | **PUT** /worlds/{worldId} | Update World
@@ -804,7 +804,7 @@ void (empty response body)
 
 Remove World Tags
 
-Removes tags from the world's profile
+Remove tags from the world's profile.  The path is `deleteTags`, not `removeTags` as the user equivalent uses.
 
 ### Example
 ```dart

@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **clientApiKey** | **String** | apiKey to be used for all other requests | 
 **clientBPSCeiling** | **int** | Unknown | [default to 18432]
 **clientDisconnectTimeout** | **int** | Unknown | [default to 30000]
+**clientMaxDatagrams** | **int** |  | [optional] 
 **clientNetDispatchThread** | **bool** | Unknown | [optional] [default to false]
 **clientNetDispatchThreadMobile** | **bool** | Unknown | [default to true]
 **clientNetInThread** | **bool** | Unknown | [optional] [default to false]
@@ -44,6 +45,7 @@ Name | Type | Description | Notes
 **clientQR** | **int** | Unknown | [optional] [default to 1]
 **clientReservedPlayerBPS** | **int** | Unknown | [default to 7168]
 **clientSentCountAllowance** | **int** | Unknown | [default to 15]
+**clientUseAck2** | **bool** |  | [optional] 
 **constants** | [**APIConfigConstants**](APIConfigConstants.md) |  | 
 **contactEmail** | **String** | VRChat's contact email | 
 **copyrightEmail** | **String** | VRChat's copyright-issues-related email | 
@@ -78,16 +80,21 @@ Name | Type | Description | Notes
 **downloadUrls** | [**APIConfigDownloadURLList**](APIConfigDownloadURLList.md) |  | 
 **dynamicWorldRows** | [**Set&lt;DynamicContentRow&gt;**](DynamicContentRow.md) | Array of DynamicWorldRow objects, used by the game to display the list of world rows | 
 **economyLedgerBackfill** | **bool** | Unknown | 
-**economyLedgerMigrationStop** | **String** | Unknown | 
+**economyLedgerMigrationStop** | **String** | Unknown | [optional] 
 **economyLedgerMode** | **String** | Unknown | 
 **economyPauseEnd** | [**DateTime**](DateTime.md) | Unknown | 
 **economyPauseStart** | [**DateTime**](DateTime.md) | Unknown | 
 **economyPurchaseRepairEnabled** | **bool** | Unknown | 
 **economyState** | **int** | Unknown | [default to 1]
+**enableVRCPlusWorldLists** | **bool** |  | [optional] 
+**eventShelfCampaigns** | [**List&lt;APIConfigEventShelfCampaign&gt;**](APIConfigEventShelfCampaign.md) |  | [optional] 
 **events** | [**APIConfigEvents**](APIConfigEvents.md) |  | 
 **forceUseLatestWorld** | **bool** | Unknown | [default to true]
 **giftDisplayType** | **String** | Display type of gifts | 
+**globalCacheVersion** | **int** |  | [optional] 
+**globalCacheVersionDefault** | **int** |  | [optional] 
 **googleApiClientId** | **String** | Unknown | [default to '827942544393-r2ouvckvouldn9dg9uruseje575e878f.apps.googleusercontent.com']
+**googleApiUnityClientId** | **String** |  | [optional] 
 **homeWorldId** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | 
 **homepageRedirectTarget** | **String** | Redirect target if you try to open the base API domain in your browser | [default to 'https://hello.vrchat.com']
 **hubWorldId** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | 
@@ -95,8 +102,11 @@ Name | Type | Description | Notes
 **iosAppVersion** | **List&lt;String&gt;** | Current app version for iOS | 
 **iosVersion** | [**APIConfigIosVersion**](APIConfigIosVersion.md) |  | 
 **jobsEmail** | **String** | VRChat's job application email | 
+**loadingScreenWeights** | [**Map&lt;String, APIConfigLoadingScreenWeights&gt;**](APIConfigLoadingScreenWeights.md) | Relative weight of each info-push category on the loading screen, per audience. | [optional] 
+**lowMemoryGoHomeTimeout** | [**Map&lt;String, APIConfigLowMemoryGoHomeTimeoutValue&gt;**](APIConfigLowMemoryGoHomeTimeoutValue.md) | Low-memory timeout, keyed by platform. | [optional] 
 **maxUserEmoji** | **int** | The maximum number of custom emoji each user may have at a given time. | [default to 18]
 **maxUserStickers** | **int** | The maximum number of custom stickers each user may have at a given time. | [default to 18]
+**maximumUnityVersionForUploads** | **String** |  | [optional] 
 **minSupportedClientBuildNumber** | [**APIConfigMinSupportedClientBuildNumber**](APIConfigMinSupportedClientBuildNumber.md) |  | 
 **minimumUnityVersionForUploads** | **String** | Minimum Unity version required for uploading assets | [default to '2019.0.0f1']
 **moderationEmail** | **String** | VRChat's moderation related email | 
@@ -105,8 +115,13 @@ Name | Type | Description | Notes
 **photonNameserverOverrides** | **List&lt;String&gt;** | Unknown | 
 **photonPublicKeys** | **List&lt;String&gt;** | Unknown | 
 **playerUrlResolverSha1** | **String** | Currently used youtube-dl.exe hash in SHA1-delimited format | 
+**playerUrlResolverSha1GfnOverride** | **String** | Overrides `player-url-resolver-sha1` on GeForce Now. | [optional] 
 **playerUrlResolverVersion** | **String** | Currently used youtube-dl.exe version | 
+**playerUrlResolverVersionGfnOverride** | **String** | Overrides `player-url-resolver-version` on GeForce Now. | [optional] 
+**profileDefaults** | [**APIConfigProfileDefaults**](APIConfigProfileDefaults.md) |  | [optional] 
+**propComponentList** | **List&lt;String&gt;** | SDK3 component type names. | [optional] 
 **publicKey** | **String** | Public key, hex encoded | 
+**questMinimumLowMemoryThreshold** | **Map&lt;String, int&gt;** | Low-memory threshold, keyed by platform. | [optional] 
 **reportCategories** | [**Map&lt;String, ReportCategory&gt;**](ReportCategory.md) | Categories available for reporting objectionable content | 
 **reportFormUrl** | **String** | URL to the report form | [default to 'https://help.vrchat.com/hc/en-us/requests/new?ticket_form_id=1500000182242&tf_360056455174=user_report&tf_360057451993={userId}&tf_1500001445142={reportedId}&tf_subject={reason} {category} By {contentType} {reportedName}&tf_description={description}']
 **reportOptions** | [**Map&lt;String, Map&lt;String, List&lt;String&gt;&gt;&gt;**](Map.md) | Options for reporting content. Select a key+value from this mapping as the `type` of the report. Select one key+value from the object at reportOptions[type] as the `category` of the report. reportCategories[category] contains user-facing text to display for all possible categories. Select one value from the array at reportOptions[type][category] as the `reason` of the report. reportReasons[reason] contains user-facing text to display for all possible categories. | 
@@ -130,6 +145,8 @@ Name | Type | Description | Notes
 **urlList** | **List&lt;String&gt;** | List of allowed URLs that bypass the \"Allow untrusted URL's\" setting in-game | 
 **useReliableUdpForVoice** | **bool** | Unknown | [default to false]
 **viveWindowsUrl** | **String** | Download link for game on the Steam website. | 
+**voiceMaxPlaybackSourcesMobile** | **int** |  | [optional] 
+**voiceMaxPlaybackSourcesPC** | **int** |  | [optional] 
 **websocketMaxFriendsRefreshDelay** | **int** | Unknown | [default to 900]
 **websocketQuickReconnectTime** | **int** | Unknown | [default to 2]
 **websocketReconnectMaxDelay** | **int** | Unknown | [default to 2]

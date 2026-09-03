@@ -18,6 +18,7 @@ JamSubmission _$JamSubmissionFromJson(Map<String, dynamic> json) =>
           'description',
           'id',
           'jamId',
+          'ratingsScore',
           'submitterId',
         ],
       );
@@ -30,9 +31,9 @@ JamSubmission _$JamSubmissionFromJson(Map<String, dynamic> json) =>
         description: $checkedConvert('description', (v) => v as String),
         id: $checkedConvert('id', (v) => v as String),
         jamId: $checkedConvert('jamId', (v) => v as String),
-        ratingScore: $checkedConvert(
-          'ratingScore',
-          (v) => (v as num?)?.toInt(),
+        ratingsScore: $checkedConvert(
+          'ratingsScore',
+          (v) => (v as num).toInt(),
         ),
         submitterId: $checkedConvert('submitterId', (v) => v as String),
       );
@@ -46,6 +47,6 @@ Map<String, dynamic> _$JamSubmissionToJson(JamSubmission instance) =>
       'description': instance.description,
       'id': instance.id,
       'jamId': instance.jamId,
-      'ratingScore': ?instance.ratingScore,
+      'ratingsScore': instance.ratingsScore,
       'submitterId': instance.submitterId,
     };

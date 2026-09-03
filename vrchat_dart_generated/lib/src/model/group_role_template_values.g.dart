@@ -26,7 +26,9 @@ GroupRoleTemplateValues _$GroupRoleTemplateValuesFromJson(
     name: $checkedConvert('name', (v) => v as String),
     roles: $checkedConvert(
       'roles',
-      (v) => GroupRoleTemplateValuesRoles.fromJson(v as Map<String, dynamic>),
+      (v) => (v as List<dynamic>)
+          .map((e) => GroupRoleTemplateRole.fromJson(e as Map<String, dynamic>))
+          .toList(),
     ),
   );
   return val;
@@ -40,7 +42,7 @@ Map<String, dynamic> _$GroupRoleTemplateValuesToJson(
       .toList(),
   'description': instance.description,
   'name': instance.name,
-  'roles': instance.roles.toJson(),
+  'roles': instance.roles.map((e) => e.toJson()).toList(),
 };
 
 const _$GroupPermissionsEnumMap = {

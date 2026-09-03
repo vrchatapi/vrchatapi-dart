@@ -16,7 +16,10 @@ part 'report_reason.g.dart';
 )
 class ReportReason {
   /// Returns a new [ReportReason] instance.
-  ReportReason({required this.text, required this.tooltip});
+  ReportReason({this.policy, required this.text, required this.tooltip});
+
+  @JsonKey(name: r'policy', required: false, includeIfNull: false)
+  final List<String>? policy;
 
   /// The label or name of the report reason
   @JsonKey(name: r'text', required: true, includeIfNull: false)
@@ -29,10 +32,13 @@ class ReportReason {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is ReportReason && other.text == text && other.tooltip == tooltip;
+      other is ReportReason &&
+          other.policy == policy &&
+          other.text == text &&
+          other.tooltip == tooltip;
 
   @override
-  int get hashCode => text.hashCode + tooltip.hashCode;
+  int get hashCode => policy.hashCode + text.hashCode + tooltip.hashCode;
 
   factory ReportReason.fromJson(Map<String, dynamic> json) =>
       _$ReportReasonFromJson(json);

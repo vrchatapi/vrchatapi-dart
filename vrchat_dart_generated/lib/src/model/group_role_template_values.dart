@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:vrchat_dart_generated/src/model/group_role_template_values_roles.dart';
+import 'package:vrchat_dart_generated/src/model/group_role_template_role.dart';
 import 'package:vrchat_dart_generated/src/model/group_permissions.dart';
 
 import 'package:json_annotation/json_annotation.dart';
@@ -38,7 +38,7 @@ class GroupRoleTemplateValues {
   final String name;
 
   @JsonKey(name: r'roles', required: true, includeIfNull: false)
-  final GroupRoleTemplateValuesRoles roles;
+  final List<GroupRoleTemplateRole> roles;
 
   @override
   bool operator ==(Object other) =>

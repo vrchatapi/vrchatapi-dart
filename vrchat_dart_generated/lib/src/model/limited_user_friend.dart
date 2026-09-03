@@ -19,6 +19,10 @@ part 'limited_user_friend.g.dart';
 class LimitedUserFriend {
   /// Returns a new [LimitedUserFriend] instance.
   LimitedUserFriend({
+    this.bannerColor,
+
+    this.bannerType,
+
     this.bio,
 
     this.bioLinks,
@@ -31,9 +35,15 @@ class LimitedUserFriend {
 
     required this.developerType,
 
+    this.discordId,
+
     required this.displayName,
 
     required this.friendKey,
+
+    this.iconFrame,
+
+    this.iconUrl,
 
     required this.id,
 
@@ -51,7 +61,11 @@ class LimitedUserFriend {
 
     required this.location,
 
+    this.nameplateEffect,
+
     required this.platform,
+
+    this.profileEffect,
 
     this.profilePicOverride,
 
@@ -65,6 +79,12 @@ class LimitedUserFriend {
 
     this.userIcon,
   });
+
+  @JsonKey(name: r'bannerColor', required: false, includeIfNull: false)
+  final String? bannerColor;
+
+  @JsonKey(name: r'bannerType', required: false, includeIfNull: false)
+  final String? bannerType;
 
   @JsonKey(name: r'bio', required: false, includeIfNull: false)
   final String? bio;
@@ -95,11 +115,21 @@ class LimitedUserFriend {
   @JsonKey(name: r'developerType', required: true, includeIfNull: false)
   final DeveloperType developerType;
 
+  /// https://discord.com/developers/docs/reference#snowflakes
+  @JsonKey(name: r'discordId', required: false, includeIfNull: false)
+  final String? discordId;
+
   @JsonKey(name: r'displayName', required: true, includeIfNull: false)
   final String displayName;
 
   @JsonKey(name: r'friendKey', required: true, includeIfNull: false)
   final String friendKey;
+
+  @JsonKey(name: r'iconFrame', required: false, includeIfNull: false)
+  final String? iconFrame;
+
+  @JsonKey(name: r'iconUrl', required: false, includeIfNull: false)
+  final String? iconUrl;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(name: r'id', required: true, includeIfNull: false)
@@ -127,8 +157,14 @@ class LimitedUserFriend {
   @JsonKey(name: r'location', required: true, includeIfNull: false)
   final String location;
 
+  @JsonKey(name: r'nameplateEffect', required: false, includeIfNull: false)
+  final String? nameplateEffect;
+
   @JsonKey(name: r'platform', required: true, includeIfNull: false)
   final String platform;
+
+  @JsonKey(name: r'profileEffect', required: false, includeIfNull: false)
+  final String? profileEffect;
 
   @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
   final String? profilePicOverride;
@@ -157,6 +193,8 @@ class LimitedUserFriend {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is LimitedUserFriend &&
+          other.bannerColor == bannerColor &&
+          other.bannerType == bannerType &&
           other.bio == bio &&
           other.bioLinks == bioLinks &&
           other.currentAvatarImageUrl == currentAvatarImageUrl &&
@@ -164,8 +202,11 @@ class LimitedUserFriend {
           other.currentAvatarThumbnailImageUrl ==
               currentAvatarThumbnailImageUrl &&
           other.developerType == developerType &&
+          other.discordId == discordId &&
           other.displayName == displayName &&
           other.friendKey == friendKey &&
+          other.iconFrame == iconFrame &&
+          other.iconUrl == iconUrl &&
           other.id == id &&
           other.imageUrl == imageUrl &&
           other.isFriend == isFriend &&
@@ -174,7 +215,9 @@ class LimitedUserFriend {
           other.lastMobile == lastMobile &&
           other.lastPlatform == lastPlatform &&
           other.location == location &&
+          other.nameplateEffect == nameplateEffect &&
           other.platform == platform &&
+          other.profileEffect == profileEffect &&
           other.profilePicOverride == profilePicOverride &&
           other.profilePicOverrideThumbnail == profilePicOverrideThumbnail &&
           other.status == status &&
@@ -184,14 +227,19 @@ class LimitedUserFriend {
 
   @override
   int get hashCode =>
+      bannerColor.hashCode +
+      bannerType.hashCode +
       bio.hashCode +
       bioLinks.hashCode +
       currentAvatarImageUrl.hashCode +
       currentAvatarTags.hashCode +
       currentAvatarThumbnailImageUrl.hashCode +
       developerType.hashCode +
+      discordId.hashCode +
       displayName.hashCode +
       friendKey.hashCode +
+      iconFrame.hashCode +
+      iconUrl.hashCode +
       id.hashCode +
       imageUrl.hashCode +
       isFriend.hashCode +
@@ -200,7 +248,9 @@ class LimitedUserFriend {
       (lastMobile == null ? 0 : lastMobile.hashCode) +
       lastPlatform.hashCode +
       location.hashCode +
+      nameplateEffect.hashCode +
       platform.hashCode +
+      profileEffect.hashCode +
       profilePicOverride.hashCode +
       profilePicOverrideThumbnail.hashCode +
       status.hashCode +

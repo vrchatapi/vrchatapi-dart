@@ -28,9 +28,15 @@ class StoreShelf {
 
     this.listings,
 
+    this.shelfBackgroundImageId,
+
     required this.shelfDescription,
 
+    this.shelfIconImageId,
+
     required this.shelfLayout,
+
+    this.shelfTabBackgroundImageId,
 
     required this.shelfTitle,
 
@@ -52,11 +58,28 @@ class StoreShelf {
   @JsonKey(name: r'listings', required: false, includeIfNull: false)
   final List<ProductListing>? listings;
 
+  @JsonKey(
+    name: r'shelfBackgroundImageId',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? shelfBackgroundImageId;
+
   @JsonKey(name: r'shelfDescription', required: true, includeIfNull: false)
   final String shelfDescription;
 
+  @JsonKey(name: r'shelfIconImageId', required: false, includeIfNull: false)
+  final String? shelfIconImageId;
+
   @JsonKey(name: r'shelfLayout', required: true, includeIfNull: false)
   final String shelfLayout;
+
+  @JsonKey(
+    name: r'shelfTabBackgroundImageId',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? shelfTabBackgroundImageId;
 
   @JsonKey(name: r'shelfTitle', required: true, includeIfNull: false)
   final String shelfTitle;
@@ -73,8 +96,11 @@ class StoreShelf {
           other.id == id &&
           other.listingIds == listingIds &&
           other.listings == listings &&
+          other.shelfBackgroundImageId == shelfBackgroundImageId &&
           other.shelfDescription == shelfDescription &&
+          other.shelfIconImageId == shelfIconImageId &&
           other.shelfLayout == shelfLayout &&
+          other.shelfTabBackgroundImageId == shelfTabBackgroundImageId &&
           other.shelfTitle == shelfTitle &&
           other.updatedAt == updatedAt;
 
@@ -85,8 +111,11 @@ class StoreShelf {
       id.hashCode +
       listingIds.hashCode +
       listings.hashCode +
+      shelfBackgroundImageId.hashCode +
       shelfDescription.hashCode +
+      shelfIconImageId.hashCode +
       shelfLayout.hashCode +
+      shelfTabBackgroundImageId.hashCode +
       shelfTitle.hashCode +
       updatedAt.hashCode;
 

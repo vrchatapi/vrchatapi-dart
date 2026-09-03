@@ -22,6 +22,7 @@ InventoryMetadata _$InventoryMetadataFromJson(Map<String, dynamic> json) =>
         ),
         maskTag: $checkedConvert('maskTag', (v) => v as String?),
         propId: $checkedConvert('propId', (v) => v as String?),
+        propKind: $checkedConvert('propKind', (v) => (v as num?)?.toInt()),
       );
       return val;
     });
@@ -36,4 +37,5 @@ Map<String, dynamic> _$InventoryMetadataToJson(InventoryMetadata instance) =>
       'inventoryItemsToInstantiate': ?instance.inventoryItemsToInstantiate,
       'maskTag': ?instance.maskTag,
       'propId': ?instance.propId,
+      'propKind': ?instance.propKind,
     };

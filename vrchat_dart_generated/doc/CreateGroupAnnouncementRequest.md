@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **imageId** | **String** |  | [optional] 
 **sendNotification** | **bool** | Send notification to group members. | [optional] [default to false]
-**text** | **String** | Announcement text | [optional] 
+**text** | **String** | Announcement text | 
 **title** | **String** | Announcement title | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

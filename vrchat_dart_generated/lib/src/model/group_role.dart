@@ -20,11 +20,15 @@ class GroupRole {
   GroupRole({
     this.createdAt,
 
+    this.defaultRole = false,
+
     this.description,
 
     this.groupId,
 
     this.id,
+
+    this.isAddedOnJoin = false,
 
     this.isManagementRole = false,
 
@@ -46,6 +50,9 @@ class GroupRole {
   @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
   final DateTime? createdAt;
 
+  @JsonKey(name: r'defaultRole', required: false, includeIfNull: false)
+  final bool? defaultRole;
+
   @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;
 
@@ -54,6 +61,9 @@ class GroupRole {
 
   @JsonKey(name: r'id', required: false, includeIfNull: false)
   final String? id;
+
+  @JsonKey(name: r'isAddedOnJoin', required: false, includeIfNull: false)
+  final bool? isAddedOnJoin;
 
   @JsonKey(name: r'isManagementRole', required: false, includeIfNull: false)
   final bool? isManagementRole;
@@ -84,9 +94,11 @@ class GroupRole {
       identical(this, other) ||
       other is GroupRole &&
           other.createdAt == createdAt &&
+          other.defaultRole == defaultRole &&
           other.description == description &&
           other.groupId == groupId &&
           other.id == id &&
+          other.isAddedOnJoin == isAddedOnJoin &&
           other.isManagementRole == isManagementRole &&
           other.isSelfAssignable == isSelfAssignable &&
           other.name == name &&
@@ -99,9 +111,11 @@ class GroupRole {
   @override
   int get hashCode =>
       createdAt.hashCode +
+      defaultRole.hashCode +
       description.hashCode +
       groupId.hashCode +
       id.hashCode +
+      isAddedOnJoin.hashCode +
       isManagementRole.hashCode +
       isSelfAssignable.hashCode +
       name.hashCode +

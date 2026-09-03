@@ -19,6 +19,7 @@ CreateInstanceRequest _$CreateInstanceRequestFromJson(
       'canRequestInvite',
       (v) => v as bool? ?? false,
     ),
+    categoryId: $checkedConvert('categoryId', (v) => v as String?),
     closedAt: $checkedConvert(
       'closedAt',
       (v) => v == null ? null : DateTime.parse(v as String),
@@ -29,6 +30,7 @@ CreateInstanceRequest _$CreateInstanceRequestFromJson(
           ? null
           : InstanceContentSettings.fromJson(v as Map<String, dynamic>),
     ),
+    description: $checkedConvert('description', (v) => v as String?),
     displayName: $checkedConvert('displayName', (v) => v as String?),
     groupAccessType: $checkedConvert(
       'groupAccessType',
@@ -55,6 +57,10 @@ CreateInstanceRequest _$CreateInstanceRequestFromJson(
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
     type: $checkedConvert('type', (v) => $enumDecode(_$InstanceTypeEnumMap, v)),
+    vibeIds: $checkedConvert(
+      'vibeIds',
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+    ),
     worldId: $checkedConvert('worldId', (v) => v as String),
   );
   return val;
@@ -66,8 +72,10 @@ Map<String, dynamic> _$CreateInstanceRequestToJson(
   'ageGate': ?instance.ageGate,
   'calendarEntryId': ?instance.calendarEntryId,
   'canRequestInvite': ?instance.canRequestInvite,
+  'categoryId': ?instance.categoryId,
   'closedAt': ?instance.closedAt?.toIso8601String(),
   'contentSettings': ?instance.contentSettings?.toJson(),
+  'description': ?instance.description,
   'displayName': ?instance.displayName,
   'groupAccessType': ?_$GroupAccessTypeEnumMap[instance.groupAccessType],
   'hardClose': ?instance.hardClose,
@@ -79,6 +87,7 @@ Map<String, dynamic> _$CreateInstanceRequestToJson(
   'region': _$InstanceRegionEnumMap[instance.region]!,
   'roleIds': ?instance.roleIds,
   'type': _$InstanceTypeEnumMap[instance.type]!,
+  'vibeIds': ?instance.vibeIds,
   'worldId': instance.worldId,
 };
 

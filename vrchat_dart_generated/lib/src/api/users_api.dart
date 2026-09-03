@@ -1131,7 +1131,7 @@ class UsersApi {
   }
 
   /// Get User by Username
-  /// ~~Get public user information about a specific user using their name.~~  **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429). This endpoint now require Admin Credentials.
+  /// Get public user information about a specific user using their name.  VRChat no longer returns the usernames of other users, and this endpoint now requires admin credentials. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
   ///
   /// Parameters:
   /// * [username] - Username of the user
@@ -1231,7 +1231,6 @@ class UsersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [List<Feedback>] as data
   /// Throws [DioException] if API call or serialization fails
-  @Deprecated('This operation has been deprecated')
   Future<Response<List<Feedback>>> getUserFeedback({
     required String userId,
     String? contentId,

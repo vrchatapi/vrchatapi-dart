@@ -22,13 +22,25 @@ part 'user.g.dart';
 class User {
   /// Returns a new [User] instance.
   User({
+    this.acceptedPrivacyVersion,
+
+    this.acceptedTOSVersion,
+
+    this.accountDeletionDate,
+
+    this.accountDeletionLog,
+
     required this.ageVerificationStatus,
 
     required this.ageVerified,
 
     this.allowAvatarCopying = true,
 
+    this.appleDetails,
+
     this.badges,
+
+    this.bannerColor,
 
     this.bannerType,
 
@@ -106,10 +118,24 @@ class User {
 
     required this.userIcon,
 
-    this.username,
-
     this.worldId,
   });
+
+  @JsonKey(
+    name: r'acceptedPrivacyVersion',
+    required: false,
+    includeIfNull: false,
+  )
+  final int? acceptedPrivacyVersion;
+
+  @JsonKey(name: r'acceptedTOSVersion', required: false, includeIfNull: false)
+  final int? acceptedTOSVersion;
+
+  @JsonKey(name: r'accountDeletionDate', required: false, includeIfNull: false)
+  final String? accountDeletionDate;
+
+  @JsonKey(name: r'accountDeletionLog', required: false, includeIfNull: false)
+  final List<Object>? accountDeletionLog;
 
   @JsonKey(name: r'ageVerificationStatus', required: true, includeIfNull: false)
   final AgeVerificationStatus ageVerificationStatus;
@@ -121,9 +147,15 @@ class User {
   @JsonKey(name: r'allowAvatarCopying', required: true, includeIfNull: false)
   final bool allowAvatarCopying;
 
+  @JsonKey(name: r'appleDetails', required: false, includeIfNull: false)
+  final Map<String, Object>? appleDetails;
+
   ///
   @JsonKey(name: r'badges', required: false, includeIfNull: false)
   final List<Badge>? badges;
+
+  @JsonKey(name: r'bannerColor', required: false, includeIfNull: false)
+  final String? bannerColor;
 
   @JsonKey(name: r'bannerType', required: false, includeIfNull: false)
   final String? bannerType;
@@ -165,6 +197,7 @@ class User {
   @JsonKey(name: r'friendKey', required: true, includeIfNull: false)
   final String friendKey;
 
+  /// State of a friend request between the caller and this user. VRChat sends the string `\"null\"`, not JSON `null`.
   @JsonKey(name: r'friendRequestStatus', required: false, includeIfNull: false)
   final String? friendRequestStatus;
 
@@ -258,11 +291,6 @@ class User {
   @JsonKey(name: r'userIcon', required: true, includeIfNull: false)
   final String userIcon;
 
-  /// -| A users unique name, used during login. This is different from `displayName` which is what shows up in-game. A users `username` can never be changed.' **DEPRECATED:** VRChat API no longer return usernames of other users. [See issue by Tupper for more information](https://github.com/pypy-vrc/VRCX/issues/429).
-  @Deprecated('username has been deprecated')
-  @JsonKey(name: r'username', required: false, includeIfNull: false)
-  final String? username;
-
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @JsonKey(name: r'worldId', required: false, includeIfNull: false)
   final String? worldId;
@@ -271,10 +299,16 @@ class User {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is User &&
+          other.acceptedPrivacyVersion == acceptedPrivacyVersion &&
+          other.acceptedTOSVersion == acceptedTOSVersion &&
+          other.accountDeletionDate == accountDeletionDate &&
+          other.accountDeletionLog == accountDeletionLog &&
           other.ageVerificationStatus == ageVerificationStatus &&
           other.ageVerified == ageVerified &&
           other.allowAvatarCopying == allowAvatarCopying &&
+          other.appleDetails == appleDetails &&
           other.badges == badges &&
+          other.bannerColor == bannerColor &&
           other.bannerType == bannerType &&
           other.bannerUrl == bannerUrl &&
           other.bio == bio &&
@@ -314,15 +348,20 @@ class User {
           other.travelingToLocation == travelingToLocation &&
           other.travelingToWorld == travelingToWorld &&
           other.userIcon == userIcon &&
-          other.username == username &&
           other.worldId == worldId;
 
   @override
   int get hashCode =>
+      acceptedPrivacyVersion.hashCode +
+      acceptedTOSVersion.hashCode +
+      (accountDeletionDate == null ? 0 : accountDeletionDate.hashCode) +
+      (accountDeletionLog == null ? 0 : accountDeletionLog.hashCode) +
       ageVerificationStatus.hashCode +
       ageVerified.hashCode +
       allowAvatarCopying.hashCode +
+      appleDetails.hashCode +
       badges.hashCode +
+      bannerColor.hashCode +
       bannerType.hashCode +
       bannerUrl.hashCode +
       bio.hashCode +
@@ -361,7 +400,6 @@ class User {
       travelingToLocation.hashCode +
       travelingToWorld.hashCode +
       userIcon.hashCode +
-      username.hashCode +
       worldId.hashCode;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);

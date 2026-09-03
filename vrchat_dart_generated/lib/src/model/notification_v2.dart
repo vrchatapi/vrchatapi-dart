@@ -30,6 +30,8 @@ class NotificationV2 {
 
     this.details,
 
+    this.displayData,
+
     required this.expiresAt,
 
     required this.expiryAfterSeen,
@@ -92,6 +94,9 @@ class NotificationV2 {
   @JsonKey(name: r'details', required: false, includeIfNull: false)
   final NotificationV2DetailsBoop? details;
 
+  @JsonKey(name: r'displayData', required: false, includeIfNull: false)
+  final Object? displayData;
+
   @JsonKey(name: r'expiresAt', required: true, includeIfNull: false)
   final DateTime expiresAt;
 
@@ -110,11 +115,11 @@ class NotificationV2 {
   @JsonKey(name: r'isSystem', required: true, includeIfNull: false)
   final bool isSystem;
 
-  @JsonKey(name: r'link', required: true, includeIfNull: false)
-  final String link;
+  @JsonKey(name: r'link', required: true, includeIfNull: true)
+  final String? link;
 
-  @JsonKey(name: r'linkText', required: true, includeIfNull: false)
-  final String linkText;
+  @JsonKey(name: r'linkText', required: true, includeIfNull: true)
+  final String? linkText;
 
   @JsonKey(name: r'linkTextKey', required: true, includeIfNull: true)
   final String? linkTextKey;
@@ -172,6 +177,7 @@ class NotificationV2 {
           other.createdAt == createdAt &&
           other.data == data &&
           other.details == details &&
+          other.displayData == displayData &&
           other.expiresAt == expiresAt &&
           other.expiryAfterSeen == expiryAfterSeen &&
           other.id == id &&
@@ -203,14 +209,15 @@ class NotificationV2 {
       createdAt.hashCode +
       data.hashCode +
       details.hashCode +
+      (displayData == null ? 0 : displayData.hashCode) +
       expiresAt.hashCode +
       (expiryAfterSeen == null ? 0 : expiryAfterSeen.hashCode) +
       id.hashCode +
       ignoreDND.hashCode +
       (imageUrl == null ? 0 : imageUrl.hashCode) +
       isSystem.hashCode +
-      link.hashCode +
-      linkText.hashCode +
+      (link == null ? 0 : link.hashCode) +
+      (linkText == null ? 0 : linkText.hashCode) +
       (linkTextKey == null ? 0 : linkTextKey.hashCode) +
       message.hashCode +
       (messageKey == null ? 0 : messageKey.hashCode) +

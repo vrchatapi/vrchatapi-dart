@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **defaultContentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  | [optional] 
 **description** | **String** |  | [optional] 
+**disabledPropAbilities** | **List&lt;Object&gt;** |  | [optional] 
 **favoriteGroup** | **String** |  | 
 **favoriteId** | **String** |  | 
 **favorites** | **int** |  | [optional] [default to 0]

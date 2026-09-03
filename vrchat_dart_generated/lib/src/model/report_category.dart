@@ -19,6 +19,10 @@ class ReportCategory {
   ReportCategory({
     this.description,
 
+    this.ipsArticle,
+
+    this.order,
+
     required this.text,
 
     this.title,
@@ -29,6 +33,12 @@ class ReportCategory {
   /// The description of the report category
   @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;
+
+  @JsonKey(name: r'ipsArticle', required: false, includeIfNull: false)
+  final String? ipsArticle;
+
+  @JsonKey(name: r'order', required: false, includeIfNull: false)
+  final int? order;
 
   /// The label of the report category
   @JsonKey(name: r'text', required: true, includeIfNull: false)
@@ -47,13 +57,20 @@ class ReportCategory {
       identical(this, other) ||
       other is ReportCategory &&
           other.description == description &&
+          other.ipsArticle == ipsArticle &&
+          other.order == order &&
           other.text == text &&
           other.title == title &&
           other.tooltip == tooltip;
 
   @override
   int get hashCode =>
-      description.hashCode + text.hashCode + title.hashCode + tooltip.hashCode;
+      description.hashCode +
+      ipsArticle.hashCode +
+      order.hashCode +
+      text.hashCode +
+      title.hashCode +
+      tooltip.hashCode;
 
   factory ReportCategory.fromJson(Map<String, dynamic> json) =>
       _$ReportCategoryFromJson(json);

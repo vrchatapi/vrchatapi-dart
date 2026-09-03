@@ -9,9 +9,11 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**defaultRole** | **bool** |  | [optional] [default to false]
 **description** | **String** |  | [optional] 
 **groupId** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 
+**isAddedOnJoin** | **bool** |  | [optional] [default to false]
 **isManagementRole** | **bool** |  | [optional] [default to false]
 **isSelfAssignable** | **bool** |  | [optional] [default to false]
 **name** | **String** |  | [optional] 

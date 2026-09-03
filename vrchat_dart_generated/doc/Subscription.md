@@ -10,12 +10,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **num** |  | 
 **appleProductId** | **String** |  | [optional] 
+**bulkSize** | **int** | How many subscriptions a gifted bundle grants. | [optional] 
 **description** | **String** |  | 
+**discountPercentage** | **int** | Discount applied to a gifted bundle. | [optional] 
 **googlePlanId** | **String** |  | [optional] 
 **googleProductId** | **String** |  | [optional] 
 **id** | **String** |  | 
 **oculusSku** | **String** |  | [optional] 
 **period** | [**SubscriptionPeriod**](SubscriptionPeriod.md) |  | 
+**periodAmount** | **Object** |  | [optional] 
 **picoSku** | **String** |  | [optional] 
 **steamItemId** | **String** |  | 
 **tier** | **int** |  | 

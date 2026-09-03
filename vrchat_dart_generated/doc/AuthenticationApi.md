@@ -21,7 +21,9 @@ Method | HTTP request | Description
 [**getCurrentUser**](AuthenticationApi.md#getcurrentuser) | **GET** /auth/user | Login and/or Get Current User Info
 [**getGlobalAvatarModerations**](AuthenticationApi.md#getglobalavatarmoderations) | **GET** /auth/user/avatarmoderations | Get Global Avatar Moderations
 [**getModerationReports**](AuthenticationApi.md#getmoderationreports) | **GET** /moderationReports | Get Moderation Reports
+[**getOAuthRedirectCode**](AuthenticationApi.md#getoauthredirectcode) | **GET** /oauth/redirectCode | Get OAuth Redirect Code
 [**getRecoveryCodes**](AuthenticationApi.md#getrecoverycodes) | **GET** /auth/user/twofactorauth/otp | Get 2FA Recovery codes
+[**getSsoToken**](AuthenticationApi.md#getssotoken) | **GET** /sso/{provider} | Get SSO Token
 [**logout**](AuthenticationApi.md#logout) | **PUT** /logout | Logout
 [**registerUserAccount**](AuthenticationApi.md#registeruseraccount) | **POST** /auth/register | Register User Account
 [**resendEmailConfirmation**](AuthenticationApi.md#resendemailconfirmation) | **POST** /auth/user/resendEmail | Resend Email Confirmation
@@ -594,6 +596,49 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getOAuthRedirectCode**
+> OAuthRedirectCode getOAuthRedirectCode()
+
+Get OAuth Redirect Code
+
+Generate a short-lived OAuth redirect code for the current session.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+
+try {
+    final response = api.getOAuthRedirectCode();
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling AuthenticationApi->getOAuthRedirectCode: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**OAuthRedirectCode**](OAuthRedirectCode.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getRecoveryCodes**
 > TwoFactorRecoveryCodes getRecoveryCodes()
 
@@ -625,6 +670,53 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**TwoFactorRecoveryCodes**](TwoFactorRecoveryCodes.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getSsoToken**
+> SsoToken getSsoToken(provider)
+
+Get SSO Token
+
+Generate a token for the specified third-party service.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+final SsoProvider provider = ; // SsoProvider | The third-party service to mint a token for.
+
+try {
+    final response = api.getSsoToken(provider);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling AuthenticationApi->getSsoToken: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **provider** | [**SsoProvider**](.md)| The third-party service to mint a token for. | 
+
+### Return type
+
+[**SsoToken**](SsoToken.md)
 
 ### Authorization
 
@@ -685,7 +777,7 @@ This endpoint does not need any parameter.
 
 Register User Account
 
-~~Register a new user account.~~  **DEPRECATED:** Automated creation of accounts has no legitimate public third-party use case, and would be in violation of ToS §13.2: *By using the Platform, you agree not to: i. [...] use the Platform in a manner inconsistent with individual human usage* This endpoint is documented in the interest of completeness
+Register a new user account.  Automated creation of accounts has no legitimate public third-party use case, and would violate ToS §13.2: *By using the Platform, you agree not to: i. [...] use the Platform in a manner inconsistent with individual human usage* This endpoint is documented in the interest of completeness.
 
 ### Example
 ```dart

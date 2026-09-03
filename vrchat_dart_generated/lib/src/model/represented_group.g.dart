@@ -28,6 +28,8 @@ RepresentedGroup _$RepresentedGroupFromJson(Map<String, dynamic> json) =>
           (v) => $enumDecodeNullable(_$GroupUserVisibilityEnumMap, v),
         ),
         name: $checkedConvert('name', (v) => v as String?),
+        nameplateId: $checkedConvert('nameplateId', (v) => v),
+        nameplateUrl: $checkedConvert('nameplateUrl', (v) => v),
         ownerId: $checkedConvert('ownerId', (v) => v as String?),
         privacy: $checkedConvert(
           'privacy',
@@ -52,6 +54,8 @@ Map<String, dynamic> _$RepresentedGroupToJson(
   'memberCount': ?instance.memberCount,
   'memberVisibility': ?_$GroupUserVisibilityEnumMap[instance.memberVisibility],
   'name': ?instance.name,
+  'nameplateId': ?instance.nameplateId,
+  'nameplateUrl': ?instance.nameplateUrl,
   'ownerId': ?instance.ownerId,
   'privacy': ?_$GroupPrivacyEnumMap[instance.privacy],
   'shortCode': ?instance.shortCode,

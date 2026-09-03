@@ -9,6 +9,7 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allowedToAdd** | **bool** | Whether the user is allowed to add this permission to a role. | [optional] [default to false]
+**dependsOn** | [**List&lt;GroupPermissions&gt;**](GroupPermissions.md) | Other permission names this one is listed against. | [optional] 
 **displayName** | **String** | The display name of the permission. | [optional] 
 **help** | **String** | Human-readable description of the permission. | [optional] 
 **isManagementPermission** | **bool** | Whether this permission is a \"management\" permission. | [optional] [default to false]

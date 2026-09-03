@@ -10,108 +10,98 @@ part of 'limited_world.dart';
 
 LimitedWorld _$LimitedWorldFromJson(
   Map<String, dynamic> json,
-) => $checkedCreate(
-  'LimitedWorld',
-  json,
-  ($checkedConvert) {
-    $checkKeys(
-      json,
-      requiredKeys: const [
-        'authorId',
-        'authorName',
-        'capacity',
-        'created_at',
-        'favorites',
-        'heat',
-        'id',
-        'imageUrl',
-        'labsPublicationDate',
-        'name',
-        'occupants',
-        'organization',
-        'popularity',
-        'publicationDate',
-        'releaseStatus',
-        'tags',
-        'thumbnailImageUrl',
-        'unityPackages',
-        'updated_at',
-      ],
-    );
-    final val = LimitedWorld(
-      authorId: $checkedConvert('authorId', (v) => v as String),
-      authorName: $checkedConvert('authorName', (v) => v as String),
-      capacity: $checkedConvert('capacity', (v) => (v as num).toInt()),
-      createdAt: $checkedConvert(
-        'created_at',
-        (v) => DateTime.parse(v as String),
-      ),
-      defaultContentSettings: $checkedConvert(
-        'defaultContentSettings',
-        (v) => v == null
-            ? null
-            : InstanceContentSettings.fromJson(v as Map<String, dynamic>),
-      ),
-      favorites: $checkedConvert('favorites', (v) => (v as num?)?.toInt() ?? 0),
-      heat: $checkedConvert('heat', (v) => (v as num?)?.toInt() ?? 0),
-      id: $checkedConvert('id', (v) => v as String),
-      imageUrl: $checkedConvert('imageUrl', (v) => v as String),
-      labsPublicationDate: $checkedConvert(
-        'labsPublicationDate',
-        (v) => v as String,
-      ),
-      name: $checkedConvert('name', (v) => v as String),
-      occupants: $checkedConvert('occupants', (v) => (v as num?)?.toInt() ?? 0),
-      organization: $checkedConvert(
-        'organization',
-        (v) => v as String? ?? 'vrchat',
-      ),
-      popularity: $checkedConvert(
-        'popularity',
-        (v) => (v as num?)?.toInt() ?? 0,
-      ),
-      previewYoutubeId: $checkedConvert(
-        'previewYoutubeId',
-        (v) => v as String?,
-      ),
-      publicationDate: $checkedConvert('publicationDate', (v) => v as String),
-      recommendedCapacity: $checkedConvert(
-        'recommendedCapacity',
-        (v) => (v as num?)?.toInt(),
-      ),
-      releaseStatus: $checkedConvert(
-        'releaseStatus',
-        (v) => $enumDecode(_$ReleaseStatusEnumMap, v),
-      ),
-      storeId: $checkedConvert('storeId', (v) => v as String?),
-      tags: $checkedConvert(
-        'tags',
-        (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-      ),
-      thumbnailImageUrl: $checkedConvert(
-        'thumbnailImageUrl',
-        (v) => v as String,
-      ),
-      udonProducts: $checkedConvert(
-        'udonProducts',
-        (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-      ),
-      unityPackages: $checkedConvert(
-        'unityPackages',
-        (v) => (v as List<dynamic>)
-            .map((e) => LimitedUnityPackage.fromJson(e as Map<String, dynamic>))
-            .toList(),
-      ),
-      updatedAt: $checkedConvert(
-        'updated_at',
-        (v) => DateTime.parse(v as String),
-      ),
-      visits: $checkedConvert('visits', (v) => (v as num?)?.toInt() ?? 0),
-    );
-    return val;
-  },
-  fieldKeyMap: const {'createdAt': 'created_at', 'updatedAt': 'updated_at'},
-);
+) => $checkedCreate('LimitedWorld', json, ($checkedConvert) {
+  $checkKeys(
+    json,
+    requiredKeys: const [
+      'authorId',
+      'authorName',
+      'capacity',
+      'created_at',
+      'favorites',
+      'heat',
+      'id',
+      'imageUrl',
+      'labsPublicationDate',
+      'name',
+      'occupants',
+      'organization',
+      'popularity',
+      'publicationDate',
+      'releaseStatus',
+      'tags',
+      'thumbnailImageUrl',
+      'unityPackages',
+      'updated_at',
+    ],
+  );
+  final val = LimitedWorld(
+    authorId: $checkedConvert('authorId', (v) => v as String),
+    authorName: $checkedConvert('authorName', (v) => v as String),
+    capacity: $checkedConvert('capacity', (v) => (v as num).toInt()),
+    createdAt: $checkedConvert(
+      'created_at',
+      (v) => DateTime.parse(v as String),
+    ),
+    defaultContentSettings: $checkedConvert(
+      'defaultContentSettings',
+      (v) => v == null
+          ? null
+          : InstanceContentSettings.fromJson(v as Map<String, dynamic>),
+    ),
+    disabledPropAbilities: $checkedConvert(
+      'disabledPropAbilities',
+      (v) => (v as List<dynamic>?)?.map((e) => e as Object).toList(),
+    ),
+    favorites: $checkedConvert('favorites', (v) => (v as num?)?.toInt() ?? 0),
+    heat: $checkedConvert('heat', (v) => (v as num?)?.toInt() ?? 0),
+    id: $checkedConvert('id', (v) => v as String),
+    imageUrl: $checkedConvert('imageUrl', (v) => v as String),
+    labsPublicationDate: $checkedConvert(
+      'labsPublicationDate',
+      (v) => v as String,
+    ),
+    name: $checkedConvert('name', (v) => v as String),
+    occupants: $checkedConvert('occupants', (v) => (v as num?)?.toInt() ?? 0),
+    organization: $checkedConvert(
+      'organization',
+      (v) => v as String? ?? 'vrchat',
+    ),
+    popularity: $checkedConvert('popularity', (v) => (v as num?)?.toInt() ?? 0),
+    previewYoutubeId: $checkedConvert('previewYoutubeId', (v) => v as String?),
+    publicationDate: $checkedConvert('publicationDate', (v) => v as String),
+    recommendedCapacity: $checkedConvert(
+      'recommendedCapacity',
+      (v) => (v as num?)?.toInt(),
+    ),
+    releaseStatus: $checkedConvert(
+      'releaseStatus',
+      (v) => $enumDecode(_$ReleaseStatusEnumMap, v),
+    ),
+    storeId: $checkedConvert('storeId', (v) => v as String?),
+    tags: $checkedConvert(
+      'tags',
+      (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+    ),
+    thumbnailImageUrl: $checkedConvert('thumbnailImageUrl', (v) => v as String),
+    udonProducts: $checkedConvert(
+      'udonProducts',
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+    ),
+    unityPackages: $checkedConvert(
+      'unityPackages',
+      (v) => (v as List<dynamic>)
+          .map((e) => LimitedUnityPackage.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    ),
+    updatedAt: $checkedConvert(
+      'updated_at',
+      (v) => DateTime.parse(v as String),
+    ),
+    visits: $checkedConvert('visits', (v) => (v as num?)?.toInt() ?? 0),
+  );
+  return val;
+}, fieldKeyMap: const {'createdAt': 'created_at', 'updatedAt': 'updated_at'});
 
 Map<String, dynamic> _$LimitedWorldToJson(LimitedWorld instance) =>
     <String, dynamic>{
@@ -120,6 +110,7 @@ Map<String, dynamic> _$LimitedWorldToJson(LimitedWorld instance) =>
       'capacity': instance.capacity,
       'created_at': instance.createdAt.toIso8601String(),
       'defaultContentSettings': ?instance.defaultContentSettings?.toJson(),
+      'disabledPropAbilities': ?instance.disabledPropAbilities,
       'favorites': instance.favorites,
       'heat': instance.heat,
       'id': instance.id,
