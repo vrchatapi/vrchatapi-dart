@@ -19,8 +19,12 @@ void main() {
 
 String fixRawStringEscapes(String source) {
   return source.replaceAllMapped(RegExp(r"r'((?:[^'\\]|\\.)*)'"), (match) {
-    final inner = match[1]!;
-    if (!inner.contains(r"\'")) return match[0]!;
+    final inner = match[1];
+    final full = match[0];
+    if (inner == null || full == null) {
+      throw StateError('This should never happen');
+    }
+    if (!inner.contains(r"\'")) return full;
 
     final unescaped = inner.replaceAll(r"\'", "'");
     if (!unescaped.contains('"')) {
