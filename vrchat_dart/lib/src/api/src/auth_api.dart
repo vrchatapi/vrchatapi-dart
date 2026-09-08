@@ -73,7 +73,7 @@ class AuthApi {
     if (failure != null) return (null, failure);
 
     // Call the login function to set the [currentUser]
-    return login();
+    return await login();
   }
 
   /// Logout
