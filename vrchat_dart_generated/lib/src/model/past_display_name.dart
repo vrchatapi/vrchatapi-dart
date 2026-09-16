@@ -16,10 +16,19 @@ part 'past_display_name.g.dart';
 )
 class PastDisplayName {
   /// Returns a new [PastDisplayName] instance.
-  PastDisplayName({required this.displayName, required this.updatedAt});
+  PastDisplayName({
+    required this.displayName,
+
+    required this.reverted,
+
+    required this.updatedAt,
+  });
 
   @JsonKey(name: r'displayName', required: true, includeIfNull: false)
   final String displayName;
+
+  @JsonKey(name: r'reverted', required: true, includeIfNull: false)
+  final bool reverted;
 
   @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
   final DateTime updatedAt;
@@ -29,10 +38,12 @@ class PastDisplayName {
       identical(this, other) ||
       other is PastDisplayName &&
           other.displayName == displayName &&
+          other.reverted == reverted &&
           other.updatedAt == updatedAt;
 
   @override
-  int get hashCode => displayName.hashCode + updatedAt.hashCode;
+  int get hashCode =>
+      displayName.hashCode + reverted.hashCode + updatedAt.hashCode;
 
   factory PastDisplayName.fromJson(Map<String, dynamic> json) =>
       _$PastDisplayNameFromJson(json);

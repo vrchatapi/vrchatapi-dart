@@ -18,6 +18,7 @@ import 'package:vrchat_dart_generated/src/model/create_group_post_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_group_role_request.dart';
 import 'package:vrchat_dart_generated/src/model/decline_group_invite_request.dart';
+import 'package:vrchat_dart_generated/src/model/get_group_gallery_images200_response.dart';
 import 'package:vrchat_dart_generated/src/model/get_group_posts200_response.dart';
 import 'package:vrchat_dart_generated/src/model/group.dart';
 import 'package:vrchat_dart_generated/src/model/group_announcement.dart';
@@ -1902,6 +1903,7 @@ class GroupsApi {
   /// Parameters:
   /// * [groupId] - Must be a valid group ID.
   /// * [includeRoles] - Include roles for the Group object. Defaults to false.
+  /// * [purpose]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1914,6 +1916,7 @@ class GroupsApi {
   Future<Response<Group>> getGroup({
     required String groupId,
     bool? includeRoles,
+    String? purpose,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1946,6 +1949,7 @@ class GroupsApi {
 
     final _queryParameters = <String, dynamic>{
       if (includeRoles != null) r'includeRoles': includeRoles,
+      if (purpose != null) r'purpose': purpose,
     };
 
     final _response = await _dio.request<Object>(
@@ -2376,6 +2380,7 @@ class GroupsApi {
   /// * [groupGalleryId] - Must be a valid group gallery ID.
   /// * [n] - The number of objects to return.
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
+  /// * [v] - Response version. `2` wraps the images in a paginated object.
   /// * [approved] - If specified, only returns images that have been approved or not approved.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -2384,13 +2389,14 @@ class GroupsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<GroupGalleryImage>] as data
+  /// Returns a [Future] containing a [Response] with a [GetGroupGalleryImages200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<GroupGalleryImage>>> getGroupGalleryImages({
+  Future<Response<GetGroupGalleryImages200Response>> getGroupGalleryImages({
     required String groupId,
     required String groupGalleryId,
     int? n = 60,
     int? offset,
+    int? v,
     bool? approved,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -2432,6 +2438,7 @@ class GroupsApi {
     final _queryParameters = <String, dynamic>{
       if (n != null) r'n': n,
       if (offset != null) r'offset': offset,
+      if (v != null) r'v': v,
       if (approved != null) r'approved': approved,
     };
 
@@ -2444,17 +2451,16 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<GroupGalleryImage>? _responseData;
+    GetGroupGalleryImages200Response? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<GroupGalleryImage>, GroupGalleryImage>(
-              rawData,
-              'List<GroupGalleryImage>',
-              growable: true,
-            );
+          : deserialize<
+              GetGroupGalleryImages200Response,
+              GetGroupGalleryImages200Response
+            >(rawData, 'GetGroupGalleryImages200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2465,7 +2471,7 @@ class GroupsApi {
       );
     }
 
-    return Response<List<GroupGalleryImage>>(
+    return Response<GetGroupGalleryImages200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

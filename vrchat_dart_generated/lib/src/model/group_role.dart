@@ -40,6 +40,8 @@ class GroupRole {
 
     this.permissions,
 
+    this.productId,
+
     this.requiresPurchase = false,
 
     this.requiresTwoFactor = false,
@@ -80,6 +82,9 @@ class GroupRole {
   @JsonKey(name: r'permissions', required: false, includeIfNull: false)
   final List<GroupPermissions>? permissions;
 
+  @JsonKey(name: r'productId', required: false, includeIfNull: false)
+  final String? productId;
+
   @JsonKey(name: r'requiresPurchase', required: false, includeIfNull: false)
   final bool? requiresPurchase;
 
@@ -104,6 +109,7 @@ class GroupRole {
           other.name == name &&
           other.order == order &&
           other.permissions == permissions &&
+          other.productId == productId &&
           other.requiresPurchase == requiresPurchase &&
           other.requiresTwoFactor == requiresTwoFactor &&
           other.updatedAt == updatedAt;
@@ -121,6 +127,7 @@ class GroupRole {
       name.hashCode +
       order.hashCode +
       permissions.hashCode +
+      productId.hashCode +
       requiresPurchase.hashCode +
       requiresTwoFactor.hashCode +
       updatedAt.hashCode;

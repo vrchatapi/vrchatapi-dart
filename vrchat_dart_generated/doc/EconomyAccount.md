@@ -9,13 +9,14 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accountActivatedOn** | [**DateTime**](DateTime.md) |  | 
-**accountId** | **String** |  | 
+**accountId** | **int** |  | 
 **accountSellerRegisteredOn** | [**DateTime**](DateTime.md) |  | [optional] 
 **accountSellerStatus** | **String** |  | [optional] 
 **blocked** | **bool** |  | 
 **canEarn** | **bool** |  | [optional] 
 **canPayout** | **bool** |  | [optional] 
 **canSpend** | **bool** |  | 
+**limits** | [**EconomyAccountLimits**](EconomyAccountLimits.md) |  | [optional] 
 **skrillEmail** | **String** |  | [optional] 
 **source_** | **String** |  | 
 **tiliaId** | **String** |  | [optional] 

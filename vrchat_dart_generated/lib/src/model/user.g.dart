@@ -18,11 +18,6 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'ageVerificationStatus',
         'ageVerified',
         'allowAvatarCopying',
-        'bio',
-        'bioLinks',
-        'currentAvatarImageUrl',
-        'currentAvatarTags',
-        'currentAvatarThumbnailImageUrl',
         'date_joined',
         'developerType',
         'displayName',
@@ -32,14 +27,11 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'last_activity',
         'last_login',
         'last_platform',
-        'profilePicOverride',
-        'profilePicOverrideThumbnail',
         'pronouns',
         'state',
         'status',
         'statusDescription',
         'tags',
-        'userIcon',
       ],
     );
     final val = User(
@@ -74,32 +66,9 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
           (k, e) => MapEntry(k, e as Object),
         ),
       ),
-      badges: $checkedConvert(
-        'badges',
-        (v) => (v as List<dynamic>?)
-            ?.map((e) => Badge.fromJson(e as Map<String, dynamic>))
-            .toList(),
-      ),
       bannerColor: $checkedConvert('bannerColor', (v) => v as String?),
       bannerType: $checkedConvert('bannerType', (v) => v as String?),
       bannerUrl: $checkedConvert('bannerUrl', (v) => v as String?),
-      bio: $checkedConvert('bio', (v) => v as String),
-      bioLinks: $checkedConvert(
-        'bioLinks',
-        (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-      ),
-      currentAvatarImageUrl: $checkedConvert(
-        'currentAvatarImageUrl',
-        (v) => v as String,
-      ),
-      currentAvatarTags: $checkedConvert(
-        'currentAvatarTags',
-        (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-      ),
-      currentAvatarThumbnailImageUrl: $checkedConvert(
-        'currentAvatarThumbnailImageUrl',
-        (v) => v as String,
-      ),
       dateJoined: $checkedConvert(
         'date_joined',
         (v) => DateTime.parse(v as String),
@@ -129,14 +98,6 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
       note: $checkedConvert('note', (v) => v as String?),
       platform: $checkedConvert('platform', (v) => v as String?),
       profileEffect: $checkedConvert('profileEffect', (v) => v as String?),
-      profilePicOverride: $checkedConvert(
-        'profilePicOverride',
-        (v) => v as String,
-      ),
-      profilePicOverrideThumbnail: $checkedConvert(
-        'profilePicOverrideThumbnail',
-        (v) => v as String,
-      ),
       pronouns: $checkedConvert('pronouns', (v) => v as String),
       state: $checkedConvert(
         'state',
@@ -166,7 +127,6 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'travelingToWorld',
         (v) => v as String?,
       ),
-      userIcon: $checkedConvert('userIcon', (v) => v as String),
       worldId: $checkedConvert('worldId', (v) => v as String?),
     );
     return val;
@@ -190,15 +150,9 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
   'ageVerified': instance.ageVerified,
   'allowAvatarCopying': instance.allowAvatarCopying,
   'appleDetails': ?instance.appleDetails,
-  'badges': ?instance.badges?.map((e) => e.toJson()).toList(),
   'bannerColor': ?instance.bannerColor,
   'bannerType': ?instance.bannerType,
   'bannerUrl': ?instance.bannerUrl,
-  'bio': instance.bio,
-  'bioLinks': instance.bioLinks,
-  'currentAvatarImageUrl': instance.currentAvatarImageUrl,
-  'currentAvatarTags': instance.currentAvatarTags,
-  'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
   'date_joined': instance.dateJoined.toIso8601String(),
   'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
   'displayName': instance.displayName,
@@ -219,8 +173,6 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
   'note': ?instance.note,
   'platform': ?instance.platform,
   'profileEffect': ?instance.profileEffect,
-  'profilePicOverride': instance.profilePicOverride,
-  'profilePicOverrideThumbnail': instance.profilePicOverrideThumbnail,
   'pronouns': instance.pronouns,
   'state': _$UserStateEnumMap[instance.state]!,
   'status': _$UserStatusEnumMap[instance.status]!,
@@ -229,7 +181,6 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
   'travelingToInstance': ?instance.travelingToInstance,
   'travelingToLocation': ?instance.travelingToLocation,
   'travelingToWorld': ?instance.travelingToWorld,
-  'userIcon': instance.userIcon,
   'worldId': ?instance.worldId,
 };
 

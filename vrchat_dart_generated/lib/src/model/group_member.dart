@@ -39,15 +39,15 @@ class GroupMember {
 
     this.isSubscribedToEventAnnouncements,
 
-    required this.joinedAt,
+    this.joinedAt,
 
-    required this.lastPostReadAt,
+    this.lastPostReadAt,
 
     required this.mRoleIds,
 
     this.managerNotes,
 
-    required this.membershipStatus,
+    this.membershipStatus,
 
     required this.roleIds,
 
@@ -55,7 +55,7 @@ class GroupMember {
 
     required this.userId,
 
-    required this.visibility,
+    this.visibility,
   });
 
   /// Only missing when explicitly fetching own user.
@@ -98,10 +98,10 @@ class GroupMember {
 
   @JsonKey(
     name: r'isSubscribedToAnnouncements',
-    required: true,
+    required: false,
     includeIfNull: false,
   )
-  final bool isSubscribedToAnnouncements;
+  final bool? isSubscribedToAnnouncements;
 
   /// Only missing when explicitly fetching own user.
   @JsonKey(
@@ -111,10 +111,10 @@ class GroupMember {
   )
   final bool? isSubscribedToEventAnnouncements;
 
-  @JsonKey(name: r'joinedAt', required: true, includeIfNull: true)
+  @JsonKey(name: r'joinedAt', required: false, includeIfNull: false)
   final DateTime? joinedAt;
 
-  @JsonKey(name: r'lastPostReadAt', required: true, includeIfNull: true)
+  @JsonKey(name: r'lastPostReadAt', required: false, includeIfNull: false)
   final DateTime? lastPostReadAt;
 
   @JsonKey(name: r'mRoleIds', required: true, includeIfNull: false)
@@ -124,8 +124,8 @@ class GroupMember {
   @JsonKey(name: r'managerNotes', required: false, includeIfNull: false)
   final String? managerNotes;
 
-  @JsonKey(name: r'membershipStatus', required: true, includeIfNull: false)
-  final GroupMemberStatus membershipStatus;
+  @JsonKey(name: r'membershipStatus', required: false, includeIfNull: false)
+  final GroupMemberStatus? membershipStatus;
 
   @JsonKey(name: r'roleIds', required: true, includeIfNull: false)
   final List<String> roleIds;
@@ -137,8 +137,8 @@ class GroupMember {
   @JsonKey(name: r'userId', required: true, includeIfNull: false)
   final String userId;
 
-  @JsonKey(name: r'visibility', required: true, includeIfNull: false)
-  final String visibility;
+  @JsonKey(name: r'visibility', required: false, includeIfNull: false)
+  final String? visibility;
 
   @override
   bool operator ==(Object other) =>

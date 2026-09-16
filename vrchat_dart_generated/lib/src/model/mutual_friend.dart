@@ -18,17 +18,11 @@ part 'mutual_friend.g.dart';
 class MutualFriend {
   /// Returns a new [MutualFriend] instance.
   MutualFriend({
-    this.avatarThumbnail,
-
     this.bannerColor,
 
     this.bannerType,
 
-    required this.currentAvatarImageUrl,
-
-    this.currentAvatarTags,
-
-    this.currentAvatarThumbnailImageUrl,
+    this.bannerUrl,
 
     required this.displayName,
 
@@ -38,22 +32,14 @@ class MutualFriend {
 
     required this.id,
 
-    required this.imageUrl,
-
     this.nameplateEffect,
 
     this.profileEffect,
-
-    this.profilePicOverride,
 
     required this.status,
 
     required this.statusDescription,
   });
-
-  /// When profilePicOverride is not empty, use it instead.
-  @JsonKey(name: r'avatarThumbnail', required: false, includeIfNull: false)
-  final String? avatarThumbnail;
 
   /// Hex colour without a leading `#`.
   @JsonKey(name: r'bannerColor', required: false, includeIfNull: false)
@@ -62,20 +48,8 @@ class MutualFriend {
   @JsonKey(name: r'bannerType', required: false, includeIfNull: false)
   final String? bannerType;
 
-  /// When profilePicOverride is not empty, use it instead.
-  @JsonKey(name: r'currentAvatarImageUrl', required: true, includeIfNull: false)
-  final String currentAvatarImageUrl;
-
-  @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
-  final List<String>? currentAvatarTags;
-
-  /// When profilePicOverride is not empty, use it instead.
-  @JsonKey(
-    name: r'currentAvatarThumbnailImageUrl',
-    required: false,
-    includeIfNull: false,
-  )
-  final String? currentAvatarThumbnailImageUrl;
+  @JsonKey(name: r'bannerUrl', required: false, includeIfNull: false)
+  final String? bannerUrl;
 
   @JsonKey(name: r'displayName', required: true, includeIfNull: false)
   final String displayName;
@@ -90,17 +64,11 @@ class MutualFriend {
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(name: r'imageUrl', required: true, includeIfNull: false)
-  final String imageUrl;
-
   @JsonKey(name: r'nameplateEffect', required: false, includeIfNull: false)
   final String? nameplateEffect;
 
   @JsonKey(name: r'profileEffect', required: false, includeIfNull: false)
   final String? profileEffect;
-
-  @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
-  final String? profilePicOverride;
 
   @JsonKey(name: r'status', required: true, includeIfNull: false)
   final UserStatus status;
@@ -112,40 +80,29 @@ class MutualFriend {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is MutualFriend &&
-          other.avatarThumbnail == avatarThumbnail &&
           other.bannerColor == bannerColor &&
           other.bannerType == bannerType &&
-          other.currentAvatarImageUrl == currentAvatarImageUrl &&
-          other.currentAvatarTags == currentAvatarTags &&
-          other.currentAvatarThumbnailImageUrl ==
-              currentAvatarThumbnailImageUrl &&
+          other.bannerUrl == bannerUrl &&
           other.displayName == displayName &&
           other.iconFrame == iconFrame &&
           other.iconUrl == iconUrl &&
           other.id == id &&
-          other.imageUrl == imageUrl &&
           other.nameplateEffect == nameplateEffect &&
           other.profileEffect == profileEffect &&
-          other.profilePicOverride == profilePicOverride &&
           other.status == status &&
           other.statusDescription == statusDescription;
 
   @override
   int get hashCode =>
-      avatarThumbnail.hashCode +
       bannerColor.hashCode +
       bannerType.hashCode +
-      currentAvatarImageUrl.hashCode +
-      currentAvatarTags.hashCode +
-      currentAvatarThumbnailImageUrl.hashCode +
+      bannerUrl.hashCode +
       displayName.hashCode +
       iconFrame.hashCode +
       iconUrl.hashCode +
       id.hashCode +
-      imageUrl.hashCode +
       nameplateEffect.hashCode +
       profileEffect.hashCode +
-      profilePicOverride.hashCode +
       status.hashCode +
       statusDescription.hashCode;
 

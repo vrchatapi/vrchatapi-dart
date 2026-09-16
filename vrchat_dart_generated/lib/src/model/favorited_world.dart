@@ -34,9 +34,9 @@ class FavoritedWorld {
 
     this.disabledPropAbilities,
 
-    required this.favoriteGroup,
+    this.favoriteGroup,
 
-    required this.favoriteId,
+    this.favoriteId,
 
     this.favorites = 0,
 
@@ -47,6 +47,8 @@ class FavoritedWorld {
     required this.id,
 
     required this.imageUrl,
+
+    this.isHypeTrainEligible,
 
     this.labsPublicationDate,
 
@@ -65,6 +67,8 @@ class FavoritedWorld {
     this.recommendedCapacity,
 
     required this.releaseStatus,
+
+    this.storeId,
 
     this.tags,
 
@@ -113,11 +117,11 @@ class FavoritedWorld {
   )
   final List<Object>? disabledPropAbilities;
 
-  @JsonKey(name: r'favoriteGroup', required: true, includeIfNull: false)
-  final String favoriteGroup;
+  @JsonKey(name: r'favoriteGroup', required: false, includeIfNull: false)
+  final String? favoriteGroup;
 
-  @JsonKey(name: r'favoriteId', required: true, includeIfNull: false)
-  final String favoriteId;
+  @JsonKey(name: r'favoriteId', required: false, includeIfNull: false)
+  final String? favoriteId;
 
   // minimum: 0
   @JsonKey(name: r'favorites', required: false, includeIfNull: false)
@@ -137,6 +141,9 @@ class FavoritedWorld {
   @JsonKey(name: r'imageUrl', required: true, includeIfNull: false)
   final String imageUrl;
 
+  @JsonKey(name: r'isHypeTrainEligible', required: false, includeIfNull: false)
+  final bool? isHypeTrainEligible;
+
   @JsonKey(name: r'labsPublicationDate', required: false, includeIfNull: false)
   final String? labsPublicationDate;
 
@@ -144,8 +151,8 @@ class FavoritedWorld {
   final String name;
 
   // minimum: 0
-  @JsonKey(name: r'occupants', required: true, includeIfNull: false)
-  final int occupants;
+  @JsonKey(name: r'occupants', required: false, includeIfNull: false)
+  final int? occupants;
 
   @JsonKey(name: r'organization', required: false, includeIfNull: false)
   final String? organization;
@@ -165,6 +172,9 @@ class FavoritedWorld {
 
   @JsonKey(name: r'releaseStatus', required: true, includeIfNull: false)
   final ReleaseStatus releaseStatus;
+
+  @JsonKey(name: r'storeId', required: false, includeIfNull: false)
+  final String? storeId;
 
   ///
   @JsonKey(name: r'tags', required: false, includeIfNull: false)
@@ -212,6 +222,7 @@ class FavoritedWorld {
           other.heat == heat &&
           other.id == id &&
           other.imageUrl == imageUrl &&
+          other.isHypeTrainEligible == isHypeTrainEligible &&
           other.labsPublicationDate == labsPublicationDate &&
           other.name == name &&
           other.occupants == occupants &&
@@ -221,6 +232,7 @@ class FavoritedWorld {
           other.publicationDate == publicationDate &&
           other.recommendedCapacity == recommendedCapacity &&
           other.releaseStatus == releaseStatus &&
+          other.storeId == storeId &&
           other.tags == tags &&
           other.thumbnailImageUrl == thumbnailImageUrl &&
           other.udonProducts == udonProducts &&
@@ -246,6 +258,7 @@ class FavoritedWorld {
       heat.hashCode +
       id.hashCode +
       imageUrl.hashCode +
+      isHypeTrainEligible.hashCode +
       labsPublicationDate.hashCode +
       name.hashCode +
       occupants.hashCode +
@@ -255,6 +268,7 @@ class FavoritedWorld {
       publicationDate.hashCode +
       recommendedCapacity.hashCode +
       releaseStatus.hashCode +
+      storeId.hashCode +
       tags.hashCode +
       thumbnailImageUrl.hashCode +
       udonProducts.hashCode +

@@ -87,6 +87,8 @@ class Group {
 
     this.shortCode,
 
+    this.storeId,
+
     this.tags,
 
     this.transferTargetId,
@@ -204,6 +206,9 @@ class Group {
   @JsonKey(name: r'shortCode', required: false, includeIfNull: false)
   final String? shortCode;
 
+  @JsonKey(name: r'storeId', required: false, includeIfNull: false)
+  final String? storeId;
+
   @JsonKey(name: r'tags', required: false, includeIfNull: false)
   final List<String>? tags;
 
@@ -251,6 +256,7 @@ class Group {
           other.roles == roles &&
           other.rules == rules &&
           other.shortCode == shortCode &&
+          other.storeId == storeId &&
           other.tags == tags &&
           other.transferTargetId == transferTargetId &&
           other.updatedAt == updatedAt;
@@ -289,6 +295,7 @@ class Group {
       (roles == null ? 0 : roles.hashCode) +
       (rules == null ? 0 : rules.hashCode) +
       shortCode.hashCode +
+      storeId.hashCode +
       tags.hashCode +
       transferTargetId.hashCode +
       updatedAt.hashCode;

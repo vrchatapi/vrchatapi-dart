@@ -66,7 +66,11 @@ enum InfoPushDataClickableCommandEnum {
   @JsonValue(r'OpenVRChatStore')
   openVRChatStore(r'OpenVRChatStore'),
   @JsonValue(r'OpenWorldDetails')
-  openWorldDetails(r'OpenWorldDetails');
+  openWorldDetails(r'OpenWorldDetails'),
+  @JsonValue(r'OpenWorldsMenu')
+  openWorldsMenu(r'OpenWorldsMenu'),
+  @JsonValue(r'scrollToShelf')
+  scrollToShelf(r'scrollToShelf');
 
   const InfoPushDataClickableCommandEnum(this.value);
 

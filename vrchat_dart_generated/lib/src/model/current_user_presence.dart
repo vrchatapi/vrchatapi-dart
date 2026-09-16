@@ -23,6 +23,12 @@ class CurrentUserPresence {
 
     this.banner,
 
+    this.bannerColor,
+
+    this.bannerType,
+
+    this.bannerUrl,
+
     this.currentAvatarTags,
 
     this.debugflag,
@@ -32,6 +38,8 @@ class CurrentUserPresence {
     this.groups,
 
     this.iconFrame,
+
+    this.iconUrl,
 
     this.id,
 
@@ -69,8 +77,17 @@ class CurrentUserPresence {
   @JsonKey(name: r'banner', required: false, includeIfNull: false)
   final String? banner;
 
+  @JsonKey(name: r'bannerColor', required: false, includeIfNull: false)
+  final String? bannerColor;
+
+  @JsonKey(name: r'bannerType', required: false, includeIfNull: false)
+  final String? bannerType;
+
+  @JsonKey(name: r'bannerUrl', required: false, includeIfNull: false)
+  final String? bannerUrl;
+
   @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
-  final List<String>? currentAvatarTags;
+  final String? currentAvatarTags;
 
   @JsonKey(name: r'debugflag', required: false, includeIfNull: false)
   final String? debugflag;
@@ -83,6 +100,9 @@ class CurrentUserPresence {
 
   @JsonKey(name: r'iconFrame', required: false, includeIfNull: false)
   final String? iconFrame;
+
+  @JsonKey(name: r'iconUrl', required: false, includeIfNull: false)
+  final String? iconUrl;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(name: r'id', required: false, includeIfNull: false)
@@ -136,11 +156,15 @@ class CurrentUserPresence {
           other.avatarImageUrl == avatarImageUrl &&
           other.avatarThumbnail == avatarThumbnail &&
           other.banner == banner &&
+          other.bannerColor == bannerColor &&
+          other.bannerType == bannerType &&
+          other.bannerUrl == bannerUrl &&
           other.currentAvatarTags == currentAvatarTags &&
           other.debugflag == debugflag &&
           other.displayName == displayName &&
           other.groups == groups &&
           other.iconFrame == iconFrame &&
+          other.iconUrl == iconUrl &&
           other.id == id &&
           other.instance == instance &&
           other.instanceType == instanceType &&
@@ -160,11 +184,15 @@ class CurrentUserPresence {
       avatarImageUrl.hashCode +
       (avatarThumbnail == null ? 0 : avatarThumbnail.hashCode) +
       banner.hashCode +
+      bannerColor.hashCode +
+      bannerType.hashCode +
+      bannerUrl.hashCode +
       currentAvatarTags.hashCode +
       debugflag.hashCode +
       displayName.hashCode +
       (groups == null ? 0 : groups.hashCode) +
       iconFrame.hashCode +
+      iconUrl.hashCode +
       id.hashCode +
       (instance == null ? 0 : instance.hashCode) +
       (instanceType == null ? 0 : instanceType.hashCode) +

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **bannersTag** | **String** |  | [optional] 
 **categories** | **List&lt;String&gt;** |  | [optional] 
 **featuredResults** | **String** |  | [optional] 
+**groupPool** | **String** |  | [optional] 
 **index** | **int** |  | [optional] 
 **marketplace** | **String** |  | [optional] 
 **maxPrice** | **int** |  | [optional] 
@@ -40,6 +41,7 @@ Name | Type | Description | Notes
 **tags** | **List&lt;String&gt;** |  | [optional] 
 **type** | **String** | Type is not present if it is a world. | [optional] 
 **upcomingOffsetMinutes** | **int** |  | [optional] 
+**worldPool** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

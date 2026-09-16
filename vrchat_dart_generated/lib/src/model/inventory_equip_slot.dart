@@ -10,8 +10,14 @@ enum InventoryEquipSlot {
   empty(r''),
   @JsonValue(r'drone')
   drone(r'drone'),
+  @JsonValue(r'iconFrame')
+  iconFrame(r'iconFrame'),
+  @JsonValue(r'nameplateEffect')
+  nameplateEffect(r'nameplateEffect'),
   @JsonValue(r'portal')
   portal(r'portal'),
+  @JsonValue(r'profileEffect')
+  profileEffect(r'profileEffect'),
   @JsonValue(r'warp')
   warp(r'warp');
 

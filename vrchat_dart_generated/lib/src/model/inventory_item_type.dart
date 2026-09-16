@@ -12,8 +12,14 @@ enum InventoryItemType {
   droneskin(r'droneskin'),
   @JsonValue(r'emoji')
   emoji(r'emoji'),
+  @JsonValue(r'iconFrame')
+  iconFrame(r'iconFrame'),
+  @JsonValue(r'nameplateEffect')
+  nameplateEffect(r'nameplateEffect'),
   @JsonValue(r'portalskin')
   portalskin(r'portalskin'),
+  @JsonValue(r'profileEffect')
+  profileEffect(r'profileEffect'),
   @JsonValue(r'prop')
   prop(r'prop'),
   @JsonValue(r'sticker')

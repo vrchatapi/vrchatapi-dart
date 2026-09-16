@@ -10,11 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bannerColor** | **String** |  | [optional] 
 **bannerType** | **String** |  | [optional] 
-**bio** | **String** |  | [optional] 
-**bioLinks** | **List&lt;String&gt;** |   | [optional] 
-**currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | [optional] 
-**currentAvatarTags** | **List&lt;String&gt;** |  | [optional] 
-**currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | [optional] 
+**bannerUrl** | **String** |  | [optional] 
 **developerType** | [**DeveloperType**](DeveloperType.md) |  | 
 **discordId** | **String** | https://discord.com/developers/docs/reference#snowflakes | [optional] 
 **displayName** | **String** |  | 
@@ -22,7 +18,6 @@ Name | Type | Description | Notes
 **iconFrame** | **String** |  | [optional] 
 **iconUrl** | **String** |  | [optional] 
 **id** | **String** | A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed. | 
-**imageUrl** | **String** |  | 
 **isFriend** | **bool** |  | 
 **lastActivity** | [**DateTime**](DateTime.md) |  | 
 **lastLogin** | [**DateTime**](DateTime.md) |  | 
@@ -32,12 +27,9 @@ Name | Type | Description | Notes
 **nameplateEffect** | **String** |  | [optional] 
 **platform** | **String** |  | 
 **profileEffect** | **String** |  | [optional] 
-**profilePicOverride** | **String** |  | [optional] 
-**profilePicOverrideThumbnail** | **String** |  | [optional] 
 **status** | [**UserStatus**](UserStatus.md) |  | 
 **statusDescription** | **String** |  | 
 **tags** | **List&lt;String&gt;** | <- Always empty. | 
-**userIcon** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

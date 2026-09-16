@@ -20,12 +20,15 @@ Method | HTTP request | Description
 [**getCurrentSubscriptions**](EconomyApi.md#getcurrentsubscriptions) | **GET** /auth/user/subscription | Get Current Subscriptions
 [**getEarningsMetrics**](EconomyApi.md#getearningsmetrics) | **GET** /economy/metrics/earnings | Get Earnings Metrics
 [**getEconomyAccount**](EconomyApi.md#geteconomyaccount) | **GET** /user/{userId}/economy/account | Get Economy Account
+[**getEconomyBalance**](EconomyApi.md#geteconomybalance) | **GET** /user/{userId}/economy/balance | Get Economy Balance
 [**getEconomyBalances**](EconomyApi.md#geteconomybalances) | **GET** /user/{userId}/economy/balances | Get Economy Balances
 [**getEconomyPayoutStatus**](EconomyApi.md#geteconomypayoutstatus) | **GET** /user/{userId}/economy/payouts/status | Get Economy Payout Status
 [**getEconomyPayouts**](EconomyApi.md#geteconomypayouts) | **GET** /user/{userId}/economy/payouts/list | Get Economy Payouts
+[**getEconomyStatus**](EconomyApi.md#geteconomystatus) | **GET** /economy/status | Get Economy Status
 [**getLicenseGroup**](EconomyApi.md#getlicensegroup) | **GET** /licenseGroups/{licenseGroupId} | Get License Group
 [**getProductListing**](EconomyApi.md#getproductlisting) | **GET** /listing/{productId} | Get Product Listing
 [**getProductListingAlternate**](EconomyApi.md#getproductlistingalternate) | **GET** /products/{productId} | Get Product Listing (alternate)
+[**getProductListingProducts**](EconomyApi.md#getproductlistingproducts) | **GET** /listing/{productId}/products | Get Product Listing Products
 [**getProductListings**](EconomyApi.md#getproductlistings) | **GET** /user/{userId}/listings | Get User Product Listings
 [**getProductPurchase**](EconomyApi.md#getproductpurchase) | **GET** /economy/purchases/{productPurchaseId} | Get Product Purchase
 [**getProductPurchaseHistory**](EconomyApi.md#getproductpurchasehistory) | **GET** /user/{userId}/economy/transactions | Get Product Purchase History
@@ -523,7 +526,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEconomyAccount**
-> EconomyAccount getEconomyAccount(userId)
+> EconomyAccount getEconomyAccount(userId, getLimits)
 
 Get Economy Account
 
@@ -539,9 +542,10 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getEconomyApi();
 final String userId = userId_example; // String | Must be a valid user ID.
+final bool getLimits = true; // bool | Include the account's spending limits in the response.
 
 try {
-    final response = api.getEconomyAccount(userId);
+    final response = api.getEconomyAccount(userId, getLimits);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling EconomyApi->getEconomyAccount: $e\n');
@@ -553,10 +557,58 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**| Must be a valid user ID. | 
+ **getLimits** | **bool**| Include the account's spending limits in the response. | [optional] 
 
 ### Return type
 
 [**EconomyAccount**](EconomyAccount.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getEconomyBalance**
+> Balance getEconomyBalance(userId)
+
+Get Economy Balance
+
+Return the balance of a user's economy account.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getEconomyApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+
+try {
+    final response = api.getEconomyBalance(userId);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling EconomyApi->getEconomyBalance: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+
+### Return type
+
+[**Balance**](Balance.md)
 
 ### Authorization
 
@@ -710,6 +762,49 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getEconomyStatus**
+> EconomyStatus getEconomyStatus()
+
+Get Economy Status
+
+Get whether the economy is accepting requests.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getEconomyApi();
+
+try {
+    final response = api.getEconomyStatus();
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling EconomyApi->getEconomyStatus: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**EconomyStatus**](EconomyStatus.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getLicenseGroup**
 > LicenseGroup getLicenseGroup(licenseGroupId)
 
@@ -841,6 +936,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ProductListing**](ProductListing.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getProductListingProducts**
+> List<Product> getProductListingProducts(productId)
+
+Get Product Listing Products
+
+List the products a listing sells.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getEconomyApi();
+final String productId = productId_example; // String | Must be a valid product ID.
+
+try {
+    final response = api.getProductListingProducts(productId);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling EconomyApi->getProductListingProducts: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **String**| Must be a valid product ID. | 
+
+### Return type
+
+[**List&lt;Product&gt;**](Product.md)
 
 ### Authorization
 
@@ -1068,7 +1210,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getProductPurchases**
-> List<ProductPurchase> getProductPurchases(buyerId, sellerId, n, offset, mostRecent, sort, order)
+> List<ProductPurchase> getProductPurchases(active, buyerId, receiverId, sellerId, n, offset, mostRecent, sort, order)
 
 Get Product Purchases
 
@@ -1083,7 +1225,9 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getEconomyApi();
+final bool active = true; // bool | Filter for users' listings and inventory bundles.
 final String buyerId = buyerId_example; // String | Must be a valid user ID.
+final String receiverId = receiverId_example; // String | Must be a valid user ID.
 final String sellerId = sellerId_example; // String | Filter results by seller.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
@@ -1092,7 +1236,7 @@ final SortOptionProductPurchase sort = ; // SortOptionProductPurchase | The sort
 final OrderOptionShort order = ; // OrderOptionShort | Result ordering
 
 try {
-    final response = api.getProductPurchases(buyerId, sellerId, n, offset, mostRecent, sort, order);
+    final response = api.getProductPurchases(active, buyerId, receiverId, sellerId, n, offset, mostRecent, sort, order);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling EconomyApi->getProductPurchases: $e\n');
@@ -1103,7 +1247,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **buyerId** | **String**| Must be a valid user ID. | 
+ **active** | **bool**| Filter for users' listings and inventory bundles. | [optional] 
+ **buyerId** | **String**| Must be a valid user ID. | [optional] 
+ **receiverId** | **String**| Must be a valid user ID. | [optional] 
  **sellerId** | **String**| Filter results by seller. | [optional] 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
@@ -1127,7 +1273,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getRecentSubscription**
-> UserSubscription getRecentSubscription()
+> UserSubscription getRecentSubscription(userId)
 
 Get Recent Subscription
 
@@ -1142,9 +1288,10 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getEconomyApi();
+final String userId = userId_example; // String | Filter by UserID.
 
 try {
-    final response = api.getRecentSubscription();
+    final response = api.getRecentSubscription(userId);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling EconomyApi->getRecentSubscription: $e\n');
@@ -1152,7 +1299,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Filter by UserID. | [optional] 
 
 ### Return type
 
@@ -1303,7 +1453,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getStore**
-> Store getStore(storeId, hydrateListings, hydrateProducts)
+> Store getStore(storeId, hydrateContext, hydrateListings, hydrateProducts)
 
 Get Store
 
@@ -1319,11 +1469,12 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getEconomyApi();
 final String storeId = storeId_example; // String | 
+final bool hydrateContext = true; // bool | 
 final bool hydrateListings = true; // bool | Listings fields will be populated.
 final bool hydrateProducts = true; // bool | Products fields will be populated.
 
 try {
-    final response = api.getStore(storeId, hydrateListings, hydrateProducts);
+    final response = api.getStore(storeId, hydrateContext, hydrateListings, hydrateProducts);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling EconomyApi->getStore: $e\n');
@@ -1335,6 +1486,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **storeId** | **String**|  | 
+ **hydrateContext** | **bool**|  | [optional] 
  **hydrateListings** | **bool**| Listings fields will be populated. | [optional] 
  **hydrateProducts** | **bool**| Products fields will be populated. | [optional] 
 

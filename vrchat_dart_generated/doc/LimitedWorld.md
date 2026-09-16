@@ -18,10 +18,12 @@ Name | Type | Description | Notes
 **heat** | **int** |  | [default to 0]
 **id** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | 
 **imageUrl** | **String** |  | 
+**isHypeTrainEligible** | **bool** |  | [optional] 
 **labsPublicationDate** | **String** |  | 
 **name** | **String** |  | 
 **occupants** | **int** |  | [default to 0]
 **organization** | **String** |  | [default to 'vrchat']
+**pendingUpload** | **bool** |  | [optional] 
 **popularity** | **int** |  | [default to 0]
 **previewYoutubeId** | **String** |  | [optional] 
 **publicationDate** | **String** |  | 

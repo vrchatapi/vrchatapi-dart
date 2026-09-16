@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**checkUserPersistenceExists**](UsersApi.md#checkuserpersistenceexists) | **GET** /users/{userId}/{worldId}/persist/exists | Check User Persistence Exists
 [**deleteAllUserPersistenceData**](UsersApi.md#deletealluserpersistencedata) | **DELETE** /users/{userId}/persist | Delete All User Persistence Data
 [**deleteUserPersistence**](UsersApi.md#deleteuserpersistence) | **DELETE** /users/{userId}/{worldId}/persist | Delete User Persistence
+[**getAgeVerificationStatus**](UsersApi.md#getageverificationstatus) | **GET** /ageVerification/status | Get Age Verification Status
 [**getBlockedGroups**](UsersApi.md#getblockedgroups) | **GET** /users/{userId}/groups/userblocked | Get User Group Blocks
 [**getInvitedGroups**](UsersApi.md#getinvitedgroups) | **GET** /users/{userId}/groups/invited | Get User Group Invited
 [**getMutualFriends**](UsersApi.md#getmutualfriends) | **GET** /users/{userId}/mutuals/friends | Get User Mutual Friends
@@ -23,6 +24,7 @@ Method | HTTP request | Description
 [**getUser**](UsersApi.md#getuser) | **GET** /users/{userId} | Get User by ID
 [**getUserAllGroupPermissions**](UsersApi.md#getuserallgrouppermissions) | **GET** /users/{userId}/groups/permissions | Get user&#39;s permissions for all joined groups.
 [**getUserByName**](UsersApi.md#getuserbyname) | **GET** /users/{username}/name | Get User by Username
+[**getUserClientConfig**](UsersApi.md#getuserclientconfig) | **GET** /users/{userId}/clientConfig | Get User Client Config
 [**getUserFeedback**](UsersApi.md#getuserfeedback) | **GET** /users/{userId}/feedback | Get User Feedback
 [**getUserGroupInstances**](UsersApi.md#getusergroupinstances) | **GET** /users/{userId}/instances/groups | Get User Group Instances
 [**getUserGroupInstancesForGroup**](UsersApi.md#getusergroupinstancesforgroup) | **GET** /users/{userId}/instances/groups/{groupId} | Get User Group Instances for a specific Group
@@ -35,7 +37,9 @@ Method | HTTP request | Description
 [**removeTags**](UsersApi.md#removetags) | **POST** /users/{userId}/removeTags | Remove User Tags
 [**searchUsers**](UsersApi.md#searchusers) | **GET** /users | Search All Users
 [**updateBadge**](UsersApi.md#updatebadge) | **PUT** /users/{userId}/badges/{badgeId} | Update User Badge
+[**updateProfile**](UsersApi.md#updateprofile) | **PUT** /profile/{userId} | Update Profile
 [**updateUser**](UsersApi.md#updateuser) | **PUT** /users/{userId} | Update User Info
+[**updateUserClientConfig**](UsersApi.md#updateuserclientconfig) | **PUT** /users/{userId}/clientConfig | Update User Client Config
 [**updateUserNote**](UsersApi.md#updateusernote) | **POST** /userNotes | Update User Note
 
 
@@ -218,6 +222,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAgeVerificationStatus**
+> AgeVerificationStatusResult getAgeVerificationStatus()
+
+Get Age Verification Status
+
+Get the currently authenticated user's age verification status.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getUsersApi();
+
+try {
+    final response = api.getAgeVerificationStatus();
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling UsersApi->getAgeVerificationStatus: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**AgeVerificationStatusResult**](AgeVerificationStatusResult.md)
 
 ### Authorization
 
@@ -521,7 +568,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPublicProfile**
-> PublicProfile getPublicProfile(userId)
+> PublicProfile getPublicProfile(userId, asSelf, withGroupsAndWorlds)
 
 Get Public Profile
 
@@ -537,9 +584,11 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getUsersApi();
 final String userId = userId_example; // String | Must be a valid user ID.
+final bool asSelf = true; // bool | Include the properties VRChat shows a user on their own profile. Ignored for any other user.
+final bool withGroupsAndWorlds = true; // bool | Include `groups`, `publicWorlds`, `totalPublicWorldsCount` and `worldFavoriteLists` in the response.
 
 try {
-    final response = api.getPublicProfile(userId);
+    final response = api.getPublicProfile(userId, asSelf, withGroupsAndWorlds);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling UsersApi->getPublicProfile: $e\n');
@@ -551,6 +600,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**| Must be a valid user ID. | 
+ **asSelf** | **bool**| Include the properties VRChat shows a user on their own profile. Ignored for any other user. | [optional] 
+ **withGroupsAndWorlds** | **bool**| Include `groups`, `publicWorlds`, `totalPublicWorldsCount` and `worldFavoriteLists` in the response. | [optional] 
 
 ### Return type
 
@@ -698,6 +749,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**User**](User.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getUserClientConfig**
+> UserClientConfig getUserClientConfig(userId)
+
+Get User Client Config
+
+Get the client settings VRChat stores against a user.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getUsersApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+
+try {
+    final response = api.getUserClientConfig(userId);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling UsersApi->getUserClientConfig: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+
+### Return type
+
+[**UserClientConfig**](UserClientConfig.md)
 
 ### Authorization
 
@@ -1297,6 +1395,55 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **updateProfile**
+> PublicProfile updateProfile(userId, updateProfileRequest)
+
+Update Profile
+
+Update a user's profile. `pronouns`, `status` and `statusDescription` are written through `updateUser` instead.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getUsersApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+final UpdateProfileRequest updateProfileRequest = ; // UpdateProfileRequest | 
+
+try {
+    final response = api.updateProfile(userId, updateProfileRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling UsersApi->updateProfile: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+ **updateProfileRequest** | [**UpdateProfileRequest**](UpdateProfileRequest.md)|  | [optional] 
+
+### Return type
+
+[**PublicProfile**](PublicProfile.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **updateUser**
 > CurrentUser updateUser(userId, updateUserRequest)
 
@@ -1334,6 +1481,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CurrentUser**](CurrentUser.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateUserClientConfig**
+> UserClientConfig updateUserClientConfig(userId, updateUserClientConfigRequest)
+
+Update User Client Config
+
+Update the client settings VRChat stores against a user.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getUsersApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+final UpdateUserClientConfigRequest updateUserClientConfigRequest = ; // UpdateUserClientConfigRequest | 
+
+try {
+    final response = api.updateUserClientConfig(userId, updateUserClientConfigRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling UsersApi->updateUserClientConfig: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+ **updateUserClientConfigRequest** | [**UpdateUserClientConfigRequest**](UpdateUserClientConfigRequest.md)|  | [optional] 
+
+### Return type
+
+[**UserClientConfig**](UserClientConfig.md)
 
 ### Authorization
 

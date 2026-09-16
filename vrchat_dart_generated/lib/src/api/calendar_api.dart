@@ -919,6 +919,9 @@ class CalendarApi {
   /// * [date] - The month to search in.
   /// * [n] - The number of objects to return.
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
+  /// * [limit] - The maximum number of entries to get.
+  /// * [after] - Only return events starting after this date.
+  /// * [sort]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -933,6 +936,9 @@ class CalendarApi {
     DateTime? date,
     int? n = 60,
     int? offset,
+    int? limit,
+    DateTime? after,
+    String? sort,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -967,6 +973,9 @@ class CalendarApi {
       if (date != null) r'date': date,
       if (n != null) r'n': n,
       if (offset != null) r'offset': offset,
+      if (limit != null) r'limit': limit,
+      if (after != null) r'after': after,
+      if (sort != null) r'sort': sort,
     };
 
     final _response = await _dio.request<Object>(

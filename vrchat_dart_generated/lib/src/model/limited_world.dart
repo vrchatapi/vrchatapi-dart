@@ -40,6 +40,8 @@ class LimitedWorld {
 
     required this.imageUrl,
 
+    this.isHypeTrainEligible,
+
     required this.labsPublicationDate,
 
     required this.name,
@@ -47,6 +49,8 @@ class LimitedWorld {
     this.occupants = 0,
 
     this.organization = 'vrchat',
+
+    this.pendingUpload,
 
     this.popularity = 0,
 
@@ -115,6 +119,9 @@ class LimitedWorld {
   @JsonKey(name: r'imageUrl', required: true, includeIfNull: false)
   final String imageUrl;
 
+  @JsonKey(name: r'isHypeTrainEligible', required: false, includeIfNull: false)
+  final bool? isHypeTrainEligible;
+
   @JsonKey(name: r'labsPublicationDate', required: true, includeIfNull: false)
   final String labsPublicationDate;
 
@@ -127,6 +134,9 @@ class LimitedWorld {
 
   @JsonKey(name: r'organization', required: true, includeIfNull: false)
   final String organization;
+
+  @JsonKey(name: r'pendingUpload', required: false, includeIfNull: false)
+  final bool? pendingUpload;
 
   // minimum: 0
   @JsonKey(name: r'popularity', required: true, includeIfNull: false)
@@ -182,10 +192,12 @@ class LimitedWorld {
           other.heat == heat &&
           other.id == id &&
           other.imageUrl == imageUrl &&
+          other.isHypeTrainEligible == isHypeTrainEligible &&
           other.labsPublicationDate == labsPublicationDate &&
           other.name == name &&
           other.occupants == occupants &&
           other.organization == organization &&
+          other.pendingUpload == pendingUpload &&
           other.popularity == popularity &&
           other.previewYoutubeId == previewYoutubeId &&
           other.publicationDate == publicationDate &&
@@ -211,10 +223,12 @@ class LimitedWorld {
       heat.hashCode +
       id.hashCode +
       imageUrl.hashCode +
+      isHypeTrainEligible.hashCode +
       labsPublicationDate.hashCode +
       name.hashCode +
       occupants.hashCode +
       organization.hashCode +
+      pendingUpload.hashCode +
       popularity.hashCode +
       (previewYoutubeId == null ? 0 : previewYoutubeId.hashCode) +
       publicationDate.hashCode +

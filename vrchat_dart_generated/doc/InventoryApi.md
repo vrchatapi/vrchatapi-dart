@@ -12,11 +12,13 @@ Method | HTTP request | Description
 [**consumeOwnInventoryItem**](InventoryApi.md#consumeowninventoryitem) | **PUT** /inventory/{inventoryItemId}/consume | Consume Own Inventory Item
 [**deleteOwnInventoryItem**](InventoryApi.md#deleteowninventoryitem) | **DELETE** /inventory/{inventoryItemId} | Delete Own Inventory Item
 [**equipOwnInventoryItem**](InventoryApi.md#equipowninventoryitem) | **PUT** /inventory/{inventoryItemId}/equip | Equip Own Inventory Item
+[**getCosmeticIndex**](InventoryApi.md#getcosmeticindex) | **GET** /cosmetics/index/{itemType} | List Cosmetics
 [**getInventory**](InventoryApi.md#getinventory) | **GET** /inventory | Get Inventory
 [**getInventoryCollections**](InventoryApi.md#getinventorycollections) | **GET** /inventory/collections | List Inventory Collections
 [**getInventoryDrops**](InventoryApi.md#getinventorydrops) | **GET** /inventory/drops | List Inventory Drops
 [**getInventoryTemplate**](InventoryApi.md#getinventorytemplate) | **GET** /inventory/template/{inventoryTemplateId} | Get Inventory Template
 [**getOwnInventoryItem**](InventoryApi.md#getowninventoryitem) | **GET** /inventory/{inventoryItemId} | Get Own Inventory Item
+[**getUserCosmetics**](InventoryApi.md#getusercosmetics) | **GET** /user/{userId}/cosmetics | List User Cosmetics
 [**getUserInventoryItem**](InventoryApi.md#getuserinventoryitem) | **GET** /user/{userId}/inventory/{inventoryItemId} | Get User Inventory Item
 [**redeemReward**](InventoryApi.md#redeemreward) | **POST** /reward/redeem | Redeem Reward
 [**shareInventoryItemDirect**](InventoryApi.md#shareinventoryitemdirect) | **POST** /inventory/cloning/direct | Share Inventory Item Direct
@@ -169,8 +171,55 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getCosmeticIndex**
+> List<InventoryTemplate> getCosmeticIndex(itemType)
+
+List Cosmetics
+
+List every cosmetic of a kind that VRChat has published, whether or not the caller owns it.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getInventoryApi();
+final String itemType = itemType_example; // String | The kind of cosmetic to list.
+
+try {
+    final response = api.getCosmeticIndex(itemType);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling InventoryApi->getCosmeticIndex: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **itemType** | **String**| The kind of cosmetic to list. | 
+
+### Return type
+
+[**List&lt;InventoryTemplate&gt;**](InventoryTemplate.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getInventory**
-> Inventory getInventory(n, offset, holderId, equipSlot, order, tags, types, flags, notTypes, notFlags, archived)
+> Inventory getInventory(n, offset, holderId, equipSlot, order, tags, types, flags, notTypes, notFlags, archived, seen, isNavBar)
 
 Get Inventory
 
@@ -196,9 +245,11 @@ final InventoryFlag flags = ; // InventoryFlag | Filter flags for inventory retr
 final InventoryItemType notTypes = ; // InventoryItemType | Filter out types for inventory retrieval (comma-separated).
 final InventoryFlag notFlags = ; // InventoryFlag | Filter out flags for inventory retrieval (comma-separated).
 final bool archived = true; // bool | Filter archived status for inventory retrieval.
+final bool seen = true; // bool | 
+final bool isNavBar = true; // bool | 
 
 try {
-    final response = api.getInventory(n, offset, holderId, equipSlot, order, tags, types, flags, notTypes, notFlags, archived);
+    final response = api.getInventory(n, offset, holderId, equipSlot, order, tags, types, flags, notTypes, notFlags, archived, seen, isNavBar);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling InventoryApi->getInventory: $e\n');
@@ -220,6 +271,8 @@ Name | Type | Description  | Notes
  **notTypes** | [**InventoryItemType**](.md)| Filter out types for inventory retrieval (comma-separated). | [optional] 
  **notFlags** | [**InventoryFlag**](.md)| Filter out flags for inventory retrieval (comma-separated). | [optional] 
  **archived** | **bool**| Filter archived status for inventory retrieval. | [optional] 
+ **seen** | **bool**|  | [optional] 
+ **isNavBar** | **bool**|  | [optional] 
 
 ### Return type
 
@@ -408,6 +461,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InventoryItem**](InventoryItem.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getUserCosmetics**
+> List<UserCosmetic> getUserCosmetics(userId)
+
+List User Cosmetics
+
+List the cosmetics a user holds.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getInventoryApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+
+try {
+    final response = api.getUserCosmetics(userId);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling InventoryApi->getUserCosmetics: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+
+### Return type
+
+[**List&lt;UserCosmetic&gt;**](UserCosmetic.md)
 
 ### Authorization
 

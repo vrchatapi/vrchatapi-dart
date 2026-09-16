@@ -23,15 +23,7 @@ class LimitedUserFriend {
 
     this.bannerType,
 
-    this.bio,
-
-    this.bioLinks,
-
-    this.currentAvatarImageUrl,
-
-    this.currentAvatarTags,
-
-    this.currentAvatarThumbnailImageUrl,
+    this.bannerUrl,
 
     required this.developerType,
 
@@ -46,8 +38,6 @@ class LimitedUserFriend {
     this.iconUrl,
 
     required this.id,
-
-    required this.imageUrl,
 
     required this.isFriend,
 
@@ -67,17 +57,11 @@ class LimitedUserFriend {
 
     this.profileEffect,
 
-    this.profilePicOverride,
-
-    this.profilePicOverrideThumbnail,
-
     required this.status,
 
     required this.statusDescription,
 
     required this.tags,
-
-    this.userIcon,
   });
 
   @JsonKey(name: r'bannerColor', required: false, includeIfNull: false)
@@ -86,31 +70,8 @@ class LimitedUserFriend {
   @JsonKey(name: r'bannerType', required: false, includeIfNull: false)
   final String? bannerType;
 
-  @JsonKey(name: r'bio', required: false, includeIfNull: false)
-  final String? bio;
-
-  ///
-  @JsonKey(name: r'bioLinks', required: false, includeIfNull: false)
-  final List<String>? bioLinks;
-
-  /// When profilePicOverride is not empty, use it instead.
-  @JsonKey(
-    name: r'currentAvatarImageUrl',
-    required: false,
-    includeIfNull: false,
-  )
-  final String? currentAvatarImageUrl;
-
-  @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
-  final List<String>? currentAvatarTags;
-
-  /// When profilePicOverride is not empty, use it instead.
-  @JsonKey(
-    name: r'currentAvatarThumbnailImageUrl',
-    required: false,
-    includeIfNull: false,
-  )
-  final String? currentAvatarThumbnailImageUrl;
+  @JsonKey(name: r'bannerUrl', required: false, includeIfNull: false)
+  final String? bannerUrl;
 
   @JsonKey(name: r'developerType', required: true, includeIfNull: false)
   final DeveloperType developerType;
@@ -134,9 +95,6 @@ class LimitedUserFriend {
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
-
-  @JsonKey(name: r'imageUrl', required: true, includeIfNull: false)
-  final String imageUrl;
 
   @JsonKey(name: r'isFriend', required: true, includeIfNull: false)
   final bool isFriend;
@@ -166,16 +124,6 @@ class LimitedUserFriend {
   @JsonKey(name: r'profileEffect', required: false, includeIfNull: false)
   final String? profileEffect;
 
-  @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
-  final String? profilePicOverride;
-
-  @JsonKey(
-    name: r'profilePicOverrideThumbnail',
-    required: false,
-    includeIfNull: false,
-  )
-  final String? profilePicOverrideThumbnail;
-
   @JsonKey(name: r'status', required: true, includeIfNull: false)
   final UserStatus status;
 
@@ -186,21 +134,13 @@ class LimitedUserFriend {
   @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 
-  @JsonKey(name: r'userIcon', required: false, includeIfNull: false)
-  final String? userIcon;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is LimitedUserFriend &&
           other.bannerColor == bannerColor &&
           other.bannerType == bannerType &&
-          other.bio == bio &&
-          other.bioLinks == bioLinks &&
-          other.currentAvatarImageUrl == currentAvatarImageUrl &&
-          other.currentAvatarTags == currentAvatarTags &&
-          other.currentAvatarThumbnailImageUrl ==
-              currentAvatarThumbnailImageUrl &&
+          other.bannerUrl == bannerUrl &&
           other.developerType == developerType &&
           other.discordId == discordId &&
           other.displayName == displayName &&
@@ -208,7 +148,6 @@ class LimitedUserFriend {
           other.iconFrame == iconFrame &&
           other.iconUrl == iconUrl &&
           other.id == id &&
-          other.imageUrl == imageUrl &&
           other.isFriend == isFriend &&
           other.lastActivity == lastActivity &&
           other.lastLogin == lastLogin &&
@@ -218,22 +157,15 @@ class LimitedUserFriend {
           other.nameplateEffect == nameplateEffect &&
           other.platform == platform &&
           other.profileEffect == profileEffect &&
-          other.profilePicOverride == profilePicOverride &&
-          other.profilePicOverrideThumbnail == profilePicOverrideThumbnail &&
           other.status == status &&
           other.statusDescription == statusDescription &&
-          other.tags == tags &&
-          other.userIcon == userIcon;
+          other.tags == tags;
 
   @override
   int get hashCode =>
       bannerColor.hashCode +
       bannerType.hashCode +
-      bio.hashCode +
-      bioLinks.hashCode +
-      currentAvatarImageUrl.hashCode +
-      currentAvatarTags.hashCode +
-      currentAvatarThumbnailImageUrl.hashCode +
+      bannerUrl.hashCode +
       developerType.hashCode +
       discordId.hashCode +
       displayName.hashCode +
@@ -241,7 +173,6 @@ class LimitedUserFriend {
       iconFrame.hashCode +
       iconUrl.hashCode +
       id.hashCode +
-      imageUrl.hashCode +
       isFriend.hashCode +
       (lastActivity == null ? 0 : lastActivity.hashCode) +
       (lastLogin == null ? 0 : lastLogin.hashCode) +
@@ -251,12 +182,9 @@ class LimitedUserFriend {
       nameplateEffect.hashCode +
       platform.hashCode +
       profileEffect.hashCode +
-      profilePicOverride.hashCode +
-      profilePicOverrideThumbnail.hashCode +
       status.hashCode +
       statusDescription.hashCode +
-      tags.hashCode +
-      userIcon.hashCode;
+      tags.hashCode;
 
   factory LimitedUserFriend.fromJson(Map<String, dynamic> json) =>
       _$LimitedUserFriendFromJson(json);

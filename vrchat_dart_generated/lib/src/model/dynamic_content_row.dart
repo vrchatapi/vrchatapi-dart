@@ -29,6 +29,8 @@ class DynamicContentRow {
 
     this.featuredResults,
 
+    this.groupPool,
+
     this.index,
 
     this.marketplace,
@@ -80,6 +82,8 @@ class DynamicContentRow {
     this.type,
 
     this.upcomingOffsetMinutes,
+
+    this.worldPool,
   });
 
   @JsonKey(name: r'anyStyle', required: false, includeIfNull: false)
@@ -99,6 +103,9 @@ class DynamicContentRow {
 
   @JsonKey(name: r'featuredResults', required: false, includeIfNull: false)
   final String? featuredResults;
+
+  @JsonKey(name: r'groupPool', required: false, includeIfNull: false)
+  final String? groupPool;
 
   // minimum: 0
   @JsonKey(name: r'index', required: false, includeIfNull: false)
@@ -190,6 +197,9 @@ class DynamicContentRow {
   )
   final int? upcomingOffsetMinutes;
 
+  @JsonKey(name: r'worldPool', required: false, includeIfNull: false)
+  final String? worldPool;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -200,6 +210,7 @@ class DynamicContentRow {
           other.bannersTag == bannersTag &&
           other.categories == categories &&
           other.featuredResults == featuredResults &&
+          other.groupPool == groupPool &&
           other.index == index &&
           other.marketplace == marketplace &&
           other.maxPrice == maxPrice &&
@@ -225,7 +236,8 @@ class DynamicContentRow {
           other.tag == tag &&
           other.tags == tags &&
           other.type == type &&
-          other.upcomingOffsetMinutes == upcomingOffsetMinutes;
+          other.upcomingOffsetMinutes == upcomingOffsetMinutes &&
+          other.worldPool == worldPool;
 
   @override
   int get hashCode =>
@@ -235,6 +247,7 @@ class DynamicContentRow {
       bannersTag.hashCode +
       categories.hashCode +
       featuredResults.hashCode +
+      groupPool.hashCode +
       index.hashCode +
       marketplace.hashCode +
       maxPrice.hashCode +
@@ -260,7 +273,8 @@ class DynamicContentRow {
       (tag == null ? 0 : tag.hashCode) +
       (tags == null ? 0 : tags.hashCode) +
       type.hashCode +
-      upcomingOffsetMinutes.hashCode;
+      upcomingOffsetMinutes.hashCode +
+      worldPool.hashCode;
 
   factory DynamicContentRow.fromJson(Map<String, dynamic> json) =>
       _$DynamicContentRowFromJson(json);

@@ -488,7 +488,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getGroupCalendarEvents**
-> PaginatedCalendarEventList getGroupCalendarEvents(groupId, date, n, offset)
+> PaginatedCalendarEventList getGroupCalendarEvents(groupId, date, n, offset, limit, after, sort)
 
 List a group's calendar events
 
@@ -507,9 +507,12 @@ final String groupId = groupId_example; // String | Must be a valid group ID.
 final DateTime date = 2013-10-20T19:20:30+01:00; // DateTime | The month to search in.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
+final int limit = 100; // int | The maximum number of entries to get.
+final DateTime after = 2013-10-20T19:20:30+01:00; // DateTime | Only return events starting after this date.
+final String sort = startTime_ascending; // String | 
 
 try {
-    final response = api.getGroupCalendarEvents(groupId, date, n, offset);
+    final response = api.getGroupCalendarEvents(groupId, date, n, offset, limit, after, sort);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling CalendarApi->getGroupCalendarEvents: $e\n');
@@ -524,6 +527,9 @@ Name | Type | Description  | Notes
  **date** | **DateTime**| The month to search in. | [optional] 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
+ **limit** | **int**| The maximum number of entries to get. | [optional] 
+ **after** | **DateTime**| Only return events starting after this date. | [optional] 
+ **sort** | **String**|  | [optional] 
 
 ### Return type
 

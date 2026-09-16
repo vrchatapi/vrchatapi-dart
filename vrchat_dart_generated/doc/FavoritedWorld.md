@@ -15,22 +15,24 @@ Name | Type | Description | Notes
 **defaultContentSettings** | [**InstanceContentSettings**](InstanceContentSettings.md) |  | [optional] 
 **description** | **String** |  | [optional] 
 **disabledPropAbilities** | **List&lt;Object&gt;** |  | [optional] 
-**favoriteGroup** | **String** |  | 
-**favoriteId** | **String** |  | 
+**favoriteGroup** | **String** |  | [optional] 
+**favoriteId** | **String** |  | [optional] 
 **favorites** | **int** |  | [optional] [default to 0]
 **featured** | **bool** |  | [optional] [default to false]
 **heat** | **int** |  | [optional] [default to 0]
 **id** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | 
 **imageUrl** | **String** |  | 
+**isHypeTrainEligible** | **bool** |  | [optional] 
 **labsPublicationDate** | **String** |  | [optional] 
 **name** | **String** |  | 
-**occupants** | **int** |  | [default to 0]
+**occupants** | **int** |  | [optional] [default to 0]
 **organization** | **String** |  | [optional] [default to 'vrchat']
 **popularity** | **int** |  | [optional] [default to 0]
 **previewYoutubeId** | **String** |  | [optional] 
 **publicationDate** | **String** |  | [optional] 
 **recommendedCapacity** | **int** |  | [optional] 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | 
+**storeId** | **String** |  | [optional] 
 **tags** | **List&lt;String&gt;** |   | [optional] 
 **thumbnailImageUrl** | **String** |  | 
 **udonProducts** | **List&lt;String&gt;** |  | [optional] 

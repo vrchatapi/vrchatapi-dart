@@ -9,8 +9,6 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **acceptedTOSVersion** | **int** |  | [optional] 
-**bio** | **String** |  | [optional] 
-**bioLinks** | **List&lt;String&gt;** |  | [optional] 
 **birthday** | [**DateTime**](DateTime.md) |  | [optional] 
 **contentFilters** | [**List&lt;ContentFilter&gt;**](ContentFilter.md) | These tags begin with `content_` and control content gating | [optional] 
 **currentPassword** | **String** |  | [optional] 
@@ -26,7 +24,6 @@ Name | Type | Description | Notes
 **statusDescription** | **String** |  | [optional] 
 **tags** | **List&lt;String&gt;** |   | [optional] 
 **unsubscribe** | **bool** |  | [optional] 
-**userIcon** | **String** | MUST be a valid VRChat /file/ url. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

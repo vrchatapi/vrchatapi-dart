@@ -19,11 +19,9 @@ Name | Type | Description | Notes
 **appleDetails** | **Object** |  | [optional] 
 **appleId** | **String** |  | [optional] 
 **authToken** | **String** | The auth token for NEWLY REGISTERED ACCOUNTS ONLY (/auth/register) | [optional] 
-**badges** | [**List&lt;Badge&gt;**](Badge.md) |   | [optional] 
 **bannerColor** | **String** |  | [optional] 
 **bannerType** | **String** |  | [optional] 
-**bio** | **String** |  | 
-**bioLinks** | **List&lt;String&gt;** |   | 
+**bannerUrl** | **String** |  | [optional] 
 **completedTutorials** | **List&lt;String&gt;** |  | [optional] 
 **contentFilters** | **List&lt;String&gt;** | These tags begin with `content_` and control content gating | [optional] 
 **currentAvatar** | **String** |  | 
@@ -79,8 +77,6 @@ Name | Type | Description | Notes
 **platformHistory** | [**List&lt;CurrentUserPlatformHistoryInner&gt;**](CurrentUserPlatformHistoryInner.md) |  | [optional] 
 **presence** | [**CurrentUserPresence**](CurrentUserPresence.md) |  | [optional] 
 **profileEffect** | **String** |  | [optional] 
-**profilePicOverride** | **String** |  | 
-**profilePicOverrideThumbnail** | **String** |  | 
 **pronouns** | **String** |  | 
 **pronounsHistory** | **List&lt;String&gt;** |  | 
 **queuedInstance** | **String** |  | [optional] 
@@ -103,7 +99,6 @@ Name | Type | Description | Notes
 **twoFactorAuthEnabledDate** | [**DateTime**](DateTime.md) |  | [optional] 
 **unsubscribe** | **bool** |  | 
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**userIcon** | **String** |  | 
 **userLanguage** | **String** |  | [optional] 
 **userLanguageCode** | **String** |  | [optional] 
 **username** | **String** | Your own unique name, used during login. Distinct from `displayName`, and never returned for another user. | [optional] 

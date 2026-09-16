@@ -179,7 +179,10 @@ Map<String, dynamic> _$InventoryItemToJson(InventoryItem instance) =>
 const _$InventoryEquipSlotEnumMap = {
   InventoryEquipSlot.empty: '',
   InventoryEquipSlot.drone: 'drone',
+  InventoryEquipSlot.iconFrame: 'iconFrame',
+  InventoryEquipSlot.nameplateEffect: 'nameplateEffect',
   InventoryEquipSlot.portal: 'portal',
+  InventoryEquipSlot.profileEffect: 'profileEffect',
   InventoryEquipSlot.warp: 'warp',
 };
 
@@ -187,7 +190,10 @@ const _$InventoryItemTypeEnumMap = {
   InventoryItemType.bundle: 'bundle',
   InventoryItemType.droneskin: 'droneskin',
   InventoryItemType.emoji: 'emoji',
+  InventoryItemType.iconFrame: 'iconFrame',
+  InventoryItemType.nameplateEffect: 'nameplateEffect',
   InventoryItemType.portalskin: 'portalskin',
+  InventoryItemType.profileEffect: 'profileEffect',
   InventoryItemType.prop: 'prop',
   InventoryItemType.sticker: 'sticker',
   InventoryItemType.warpeffect: 'warpeffect',

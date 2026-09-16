@@ -26,7 +26,7 @@ EconomyAccount _$EconomyAccountFromJson(Map<String, dynamic> json) =>
           'accountActivatedOn',
           (v) => v == null ? null : DateTime.parse(v as String),
         ),
-        accountId: $checkedConvert('accountId', (v) => v as String?),
+        accountId: $checkedConvert('accountId', (v) => (v as num?)?.toInt()),
         accountSellerRegisteredOn: $checkedConvert(
           'accountSellerRegisteredOn',
           (v) => v == null ? null : DateTime.parse(v as String),
@@ -39,6 +39,12 @@ EconomyAccount _$EconomyAccountFromJson(Map<String, dynamic> json) =>
         canEarn: $checkedConvert('canEarn', (v) => v as bool?),
         canPayout: $checkedConvert('canPayout', (v) => v as bool?),
         canSpend: $checkedConvert('canSpend', (v) => v as bool),
+        limits: $checkedConvert(
+          'limits',
+          (v) => v == null
+              ? null
+              : EconomyAccountLimits.fromJson(v as Map<String, dynamic>),
+        ),
         skrillEmail: $checkedConvert('skrillEmail', (v) => v as String?),
         source_: $checkedConvert('source', (v) => v as String),
         tiliaId: $checkedConvert('tiliaId', (v) => v as String?),
@@ -59,6 +65,7 @@ Map<String, dynamic> _$EconomyAccountToJson(EconomyAccount instance) =>
       'canEarn': ?instance.canEarn,
       'canPayout': ?instance.canPayout,
       'canSpend': instance.canSpend,
+      'limits': ?instance.limits?.toJson(),
       'skrillEmail': ?instance.skrillEmail,
       'source': instance.source_,
       'tiliaId': ?instance.tiliaId,

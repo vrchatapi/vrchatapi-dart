@@ -12,31 +12,10 @@ UserNoteTargetUser _$UserNoteTargetUserFromJson(Map<String, dynamic> json) =>
     $checkedCreate('UserNoteTargetUser', json, ($checkedConvert) {
       final val = UserNoteTargetUser(
         id: $checkedConvert('id', (v) => v as String?),
-        currentAvatarTags: $checkedConvert(
-          'currentAvatarTags',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-        ),
-        currentAvatarThumbnailImageUrl: $checkedConvert(
-          'currentAvatarThumbnailImageUrl',
-          (v) => v as String?,
-        ),
         displayName: $checkedConvert('displayName', (v) => v as String?),
-        profilePicOverride: $checkedConvert(
-          'profilePicOverride',
-          (v) => v as String?,
-        ),
-        userIcon: $checkedConvert('userIcon', (v) => v as String?),
       );
       return val;
     });
 
-Map<String, dynamic> _$UserNoteTargetUserToJson(
-  UserNoteTargetUser instance,
-) => <String, dynamic>{
-  'id': ?instance.id,
-  'currentAvatarTags': ?instance.currentAvatarTags,
-  'currentAvatarThumbnailImageUrl': ?instance.currentAvatarThumbnailImageUrl,
-  'displayName': ?instance.displayName,
-  'profilePicOverride': ?instance.profilePicOverride,
-  'userIcon': ?instance.userIcon,
-};
+Map<String, dynamic> _$UserNoteTargetUserToJson(UserNoteTargetUser instance) =>
+    <String, dynamic>{'id': ?instance.id, 'displayName': ?instance.displayName};

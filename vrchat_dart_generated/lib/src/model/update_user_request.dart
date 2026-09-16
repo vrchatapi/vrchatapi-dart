@@ -21,10 +21,6 @@ class UpdateUserRequest {
   UpdateUserRequest({
     this.acceptedTOSVersion,
 
-    this.bio,
-
-    this.bioLinks,
-
     this.birthday,
 
     this.contentFilters,
@@ -54,18 +50,10 @@ class UpdateUserRequest {
     this.tags,
 
     this.unsubscribe,
-
-    this.userIcon,
   });
 
   @JsonKey(name: r'acceptedTOSVersion', required: false, includeIfNull: false)
   final int? acceptedTOSVersion;
-
-  @JsonKey(name: r'bio', required: false, includeIfNull: false)
-  final String? bio;
-
-  @JsonKey(name: r'bioLinks', required: false, includeIfNull: false)
-  final List<String>? bioLinks;
 
   @JsonKey(name: r'birthday', required: false, includeIfNull: false)
   final DateTime? birthday;
@@ -127,17 +115,11 @@ class UpdateUserRequest {
   @JsonKey(name: r'unsubscribe', required: false, includeIfNull: false)
   final bool? unsubscribe;
 
-  /// MUST be a valid VRChat /file/ url.
-  @JsonKey(name: r'userIcon', required: false, includeIfNull: false)
-  final String? userIcon;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is UpdateUserRequest &&
           other.acceptedTOSVersion == acceptedTOSVersion &&
-          other.bio == bio &&
-          other.bioLinks == bioLinks &&
           other.birthday == birthday &&
           other.contentFilters == contentFilters &&
           other.currentPassword == currentPassword &&
@@ -152,14 +134,11 @@ class UpdateUserRequest {
           other.status == status &&
           other.statusDescription == statusDescription &&
           other.tags == tags &&
-          other.unsubscribe == unsubscribe &&
-          other.userIcon == userIcon;
+          other.unsubscribe == unsubscribe;
 
   @override
   int get hashCode =>
       acceptedTOSVersion.hashCode +
-      bio.hashCode +
-      bioLinks.hashCode +
       birthday.hashCode +
       contentFilters.hashCode +
       currentPassword.hashCode +
@@ -174,8 +153,7 @@ class UpdateUserRequest {
       status.hashCode +
       statusDescription.hashCode +
       tags.hashCode +
-      unsubscribe.hashCode +
-      userIcon.hashCode;
+      unsubscribe.hashCode;
 
   factory UpdateUserRequest.fromJson(Map<String, dynamic> json) =>
       _$UpdateUserRequestFromJson(json);

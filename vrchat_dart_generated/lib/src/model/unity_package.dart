@@ -128,7 +128,7 @@ class UnityPackage {
       (assetUrl == null ? 0 : assetUrl.hashCode) +
       assetUrlObject.hashCode +
       assetVersion.hashCode +
-      createdAt.hashCode +
+      (createdAt == null ? 0 : createdAt.hashCode) +
       id.hashCode +
       (impostorUrl == null ? 0 : impostorUrl.hashCode) +
       impostorizerVersion.hashCode +

@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **listProps**
-> List<Prop> listProps(authorId, n, offset)
+> List<Prop> listProps(n, offset, authorId)
 
 List Props
 
@@ -222,12 +222,12 @@ import 'package:vrchat_dart_generated/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getPropsApi();
-final String authorId = authorId_example; // String | Must be a valid user ID.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
+final String authorId = authorId_example; // String | Must be a valid user ID.
 
 try {
-    final response = api.listProps(authorId, n, offset);
+    final response = api.listProps(n, offset, authorId);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling PropsApi->listProps: $e\n');
@@ -238,9 +238,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorId** | **String**| Must be a valid user ID. | 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
+ **authorId** | **String**| Must be a valid user ID. | [optional] 
 
 ### Return type
 

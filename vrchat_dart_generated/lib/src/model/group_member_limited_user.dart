@@ -17,33 +17,39 @@ part 'group_member_limited_user.g.dart';
 class GroupMemberLimitedUser {
   /// Returns a new [GroupMemberLimitedUser] instance.
   GroupMemberLimitedUser({
-    this.currentAvatarTags,
+    this.bannerColor,
 
-    this.currentAvatarThumbnailImageUrl,
+    this.bannerType,
+
+    this.bannerUrl,
 
     this.displayName,
+
+    this.iconFrame,
 
     this.iconUrl,
 
     this.id,
 
-    this.profilePicOverride,
+    this.nameplateEffect,
 
-    this.thumbnailUrl,
+    this.profileEffect,
   });
 
-  @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
-  final List<String>? currentAvatarTags;
+  @JsonKey(name: r'bannerColor', required: false, includeIfNull: false)
+  final String? bannerColor;
 
-  @JsonKey(
-    name: r'currentAvatarThumbnailImageUrl',
-    required: false,
-    includeIfNull: false,
-  )
-  final String? currentAvatarThumbnailImageUrl;
+  @JsonKey(name: r'bannerType', required: false, includeIfNull: false)
+  final String? bannerType;
+
+  @JsonKey(name: r'bannerUrl', required: false, includeIfNull: false)
+  final String? bannerUrl;
 
   @JsonKey(name: r'displayName', required: false, includeIfNull: false)
   final String? displayName;
+
+  @JsonKey(name: r'iconFrame', required: false, includeIfNull: false)
+  final String? iconFrame;
 
   @JsonKey(name: r'iconUrl', required: false, includeIfNull: false)
   final String? iconUrl;
@@ -52,36 +58,37 @@ class GroupMemberLimitedUser {
   @JsonKey(name: r'id', required: false, includeIfNull: false)
   final String? id;
 
-  @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
-  final String? profilePicOverride;
+  @JsonKey(name: r'nameplateEffect', required: false, includeIfNull: false)
+  final String? nameplateEffect;
 
-  @JsonKey(name: r'thumbnailUrl', required: false, includeIfNull: false)
-  final String? thumbnailUrl;
+  @JsonKey(name: r'profileEffect', required: false, includeIfNull: false)
+  final String? profileEffect;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is GroupMemberLimitedUser &&
-          other.currentAvatarTags == currentAvatarTags &&
-          other.currentAvatarThumbnailImageUrl ==
-              currentAvatarThumbnailImageUrl &&
+          other.bannerColor == bannerColor &&
+          other.bannerType == bannerType &&
+          other.bannerUrl == bannerUrl &&
           other.displayName == displayName &&
+          other.iconFrame == iconFrame &&
           other.iconUrl == iconUrl &&
           other.id == id &&
-          other.profilePicOverride == profilePicOverride &&
-          other.thumbnailUrl == thumbnailUrl;
+          other.nameplateEffect == nameplateEffect &&
+          other.profileEffect == profileEffect;
 
   @override
   int get hashCode =>
-      currentAvatarTags.hashCode +
-      (currentAvatarThumbnailImageUrl == null
-          ? 0
-          : currentAvatarThumbnailImageUrl.hashCode) +
+      bannerColor.hashCode +
+      bannerType.hashCode +
+      bannerUrl.hashCode +
       displayName.hashCode +
+      iconFrame.hashCode +
       iconUrl.hashCode +
       id.hashCode +
-      profilePicOverride.hashCode +
-      (thumbnailUrl == null ? 0 : thumbnailUrl.hashCode);
+      nameplateEffect.hashCode +
+      profileEffect.hashCode;
 
   factory GroupMemberLimitedUser.fromJson(Map<String, dynamic> json) =>
       _$GroupMemberLimitedUserFromJson(json);

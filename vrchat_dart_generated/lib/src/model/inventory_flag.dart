@@ -14,6 +14,10 @@ enum InventoryFlag {
   consumable(r'consumable'),
   @JsonValue(r'equippable')
   equippable(r'equippable'),
+  @JsonValue(r'global')
+  global(r'global'),
+  @JsonValue(r'global_visible')
+  globalVisible(r'global_visible'),
   @JsonValue(r'instantiatable')
   instantiatable(r'instantiatable'),
   @JsonValue(r'trashable')
@@ -21,7 +25,9 @@ enum InventoryFlag {
   @JsonValue(r'ugc')
   ugc(r'ugc'),
   @JsonValue(r'unique')
-  unique(r'unique');
+  unique(r'unique'),
+  @JsonValue(r'vrc_plus_exclusive')
+  vrcPlusExclusive(r'vrc_plus_exclusive');
 
   const InventoryFlag(this.value);
 

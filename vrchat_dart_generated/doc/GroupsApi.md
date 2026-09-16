@@ -1036,7 +1036,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getGroup**
-> Group getGroup(groupId, includeRoles)
+> Group getGroup(groupId, includeRoles, purpose)
 
 Get Group by ID
 
@@ -1053,9 +1053,10 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getGroupsApi();
 final String groupId = groupId_example; // String | Must be a valid group ID.
 final bool includeRoles = true; // bool | Include roles for the Group object. Defaults to false.
+final String purpose = purpose_example; // String | 
 
 try {
-    final response = api.getGroup(groupId, includeRoles);
+    final response = api.getGroup(groupId, includeRoles, purpose);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroup: $e\n');
@@ -1068,6 +1069,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupId** | **String**| Must be a valid group ID. | 
  **includeRoles** | **bool**| Include roles for the Group object. Defaults to false. | [optional] 
+ **purpose** | **String**|  | [optional] 
 
 ### Return type
 
@@ -1291,7 +1293,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getGroupGalleryImages**
-> List<GroupGalleryImage> getGroupGalleryImages(groupId, groupGalleryId, n, offset, approved)
+> GetGroupGalleryImages200Response getGroupGalleryImages(groupId, groupGalleryId, n, offset, v, approved)
 
 Get Group Gallery Images
 
@@ -1310,10 +1312,11 @@ final String groupId = groupId_example; // String | Must be a valid group ID.
 final String groupGalleryId = groupGalleryId_example; // String | Must be a valid group gallery ID.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
+final int v = 56; // int | Response version. `2` wraps the images in a paginated object.
 final bool approved = true; // bool | If specified, only returns images that have been approved or not approved.
 
 try {
-    final response = api.getGroupGalleryImages(groupId, groupGalleryId, n, offset, approved);
+    final response = api.getGroupGalleryImages(groupId, groupGalleryId, n, offset, v, approved);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling GroupsApi->getGroupGalleryImages: $e\n');
@@ -1328,11 +1331,12 @@ Name | Type | Description  | Notes
  **groupGalleryId** | **String**| Must be a valid group gallery ID. | 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
+ **v** | **int**| Response version. `2` wraps the images in a paginated object. | [optional] 
  **approved** | **bool**| If specified, only returns images that have been approved or not approved. | [optional] 
 
 ### Return type
 
-[**List&lt;GroupGalleryImage&gt;**](GroupGalleryImage.md)
+[**GetGroupGalleryImages200Response**](GetGroupGalleryImages200Response.md)
 
 ### Authorization
 

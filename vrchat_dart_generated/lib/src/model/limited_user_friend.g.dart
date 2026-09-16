@@ -20,7 +20,6 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
             'displayName',
             'friendKey',
             'id',
-            'imageUrl',
             'isFriend',
             'last_activity',
             'last_login',
@@ -36,23 +35,7 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
         final val = LimitedUserFriend(
           bannerColor: $checkedConvert('bannerColor', (v) => v as String?),
           bannerType: $checkedConvert('bannerType', (v) => v as String?),
-          bio: $checkedConvert('bio', (v) => v as String?),
-          bioLinks: $checkedConvert(
-            'bioLinks',
-            (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-          ),
-          currentAvatarImageUrl: $checkedConvert(
-            'currentAvatarImageUrl',
-            (v) => v as String?,
-          ),
-          currentAvatarTags: $checkedConvert(
-            'currentAvatarTags',
-            (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-          ),
-          currentAvatarThumbnailImageUrl: $checkedConvert(
-            'currentAvatarThumbnailImageUrl',
-            (v) => v as String?,
-          ),
+          bannerUrl: $checkedConvert('bannerUrl', (v) => v as String?),
           developerType: $checkedConvert(
             'developerType',
             (v) => $enumDecode(_$DeveloperTypeEnumMap, v),
@@ -63,7 +46,6 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
           iconFrame: $checkedConvert('iconFrame', (v) => v as String?),
           iconUrl: $checkedConvert('iconUrl', (v) => v as String?),
           id: $checkedConvert('id', (v) => v as String),
-          imageUrl: $checkedConvert('imageUrl', (v) => v as String),
           isFriend: $checkedConvert('isFriend', (v) => v as bool),
           lastActivity: $checkedConvert(
             'last_activity',
@@ -85,14 +67,6 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
           ),
           platform: $checkedConvert('platform', (v) => v as String),
           profileEffect: $checkedConvert('profileEffect', (v) => v as String?),
-          profilePicOverride: $checkedConvert(
-            'profilePicOverride',
-            (v) => v as String?,
-          ),
-          profilePicOverrideThumbnail: $checkedConvert(
-            'profilePicOverrideThumbnail',
-            (v) => v as String?,
-          ),
           status: $checkedConvert(
             'status',
             (v) => $enumDecode(_$UserStatusEnumMap, v),
@@ -105,7 +79,6 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
             'tags',
             (v) => (v as List<dynamic>).map((e) => e as String).toList(),
           ),
-          userIcon: $checkedConvert('userIcon', (v) => v as String?),
         );
         return val;
       },
@@ -117,40 +90,31 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$LimitedUserFriendToJson(
-  LimitedUserFriend instance,
-) => <String, dynamic>{
-  'bannerColor': ?instance.bannerColor,
-  'bannerType': ?instance.bannerType,
-  'bio': ?instance.bio,
-  'bioLinks': ?instance.bioLinks,
-  'currentAvatarImageUrl': ?instance.currentAvatarImageUrl,
-  'currentAvatarTags': ?instance.currentAvatarTags,
-  'currentAvatarThumbnailImageUrl': ?instance.currentAvatarThumbnailImageUrl,
-  'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
-  'discordId': ?instance.discordId,
-  'displayName': instance.displayName,
-  'friendKey': instance.friendKey,
-  'iconFrame': ?instance.iconFrame,
-  'iconUrl': ?instance.iconUrl,
-  'id': instance.id,
-  'imageUrl': instance.imageUrl,
-  'isFriend': instance.isFriend,
-  'last_activity': instance.lastActivity?.toIso8601String(),
-  'last_login': instance.lastLogin?.toIso8601String(),
-  'last_mobile': instance.lastMobile?.toIso8601String(),
-  'last_platform': instance.lastPlatform,
-  'location': instance.location,
-  'nameplateEffect': ?instance.nameplateEffect,
-  'platform': instance.platform,
-  'profileEffect': ?instance.profileEffect,
-  'profilePicOverride': ?instance.profilePicOverride,
-  'profilePicOverrideThumbnail': ?instance.profilePicOverrideThumbnail,
-  'status': _$UserStatusEnumMap[instance.status]!,
-  'statusDescription': instance.statusDescription,
-  'tags': instance.tags,
-  'userIcon': ?instance.userIcon,
-};
+Map<String, dynamic> _$LimitedUserFriendToJson(LimitedUserFriend instance) =>
+    <String, dynamic>{
+      'bannerColor': ?instance.bannerColor,
+      'bannerType': ?instance.bannerType,
+      'bannerUrl': ?instance.bannerUrl,
+      'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
+      'discordId': ?instance.discordId,
+      'displayName': instance.displayName,
+      'friendKey': instance.friendKey,
+      'iconFrame': ?instance.iconFrame,
+      'iconUrl': ?instance.iconUrl,
+      'id': instance.id,
+      'isFriend': instance.isFriend,
+      'last_activity': instance.lastActivity?.toIso8601String(),
+      'last_login': instance.lastLogin?.toIso8601String(),
+      'last_mobile': instance.lastMobile?.toIso8601String(),
+      'last_platform': instance.lastPlatform,
+      'location': instance.location,
+      'nameplateEffect': ?instance.nameplateEffect,
+      'platform': instance.platform,
+      'profileEffect': ?instance.profileEffect,
+      'status': _$UserStatusEnumMap[instance.status]!,
+      'statusDescription': instance.statusDescription,
+      'tags': instance.tags,
+    };
 
 const _$DeveloperTypeEnumMap = {
   DeveloperType.internal: 'internal',

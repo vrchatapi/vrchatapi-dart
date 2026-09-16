@@ -43,4 +43,6 @@ const _$InfoPushDataClickableCommandEnumEnumMap = {
   InfoPushDataClickableCommandEnum.openVRCPlusMenu: 'OpenVRCPlusMenu',
   InfoPushDataClickableCommandEnum.openVRChatStore: 'OpenVRChatStore',
   InfoPushDataClickableCommandEnum.openWorldDetails: 'OpenWorldDetails',
+  InfoPushDataClickableCommandEnum.openWorldsMenu: 'OpenWorldsMenu',
+  InfoPushDataClickableCommandEnum.scrollToShelf: 'scrollToShelf',
 };

@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/economy_account_limits.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -33,6 +34,8 @@ class EconomyAccount {
 
     required this.canSpend,
 
+    this.limits,
+
     this.skrillEmail,
 
     required this.source_,
@@ -48,7 +51,7 @@ class EconomyAccount {
   final DateTime? accountActivatedOn;
 
   @JsonKey(name: r'accountId', required: true, includeIfNull: true)
-  final String? accountId;
+  final int? accountId;
 
   @JsonKey(
     name: r'accountSellerRegisteredOn',
@@ -71,6 +74,9 @@ class EconomyAccount {
 
   @JsonKey(name: r'canSpend', required: true, includeIfNull: false)
   final bool canSpend;
+
+  @JsonKey(name: r'limits', required: false, includeIfNull: false)
+  final EconomyAccountLimits? limits;
 
   @JsonKey(name: r'skrillEmail', required: false, includeIfNull: false)
   final String? skrillEmail;
@@ -100,6 +106,7 @@ class EconomyAccount {
           other.canEarn == canEarn &&
           other.canPayout == canPayout &&
           other.canSpend == canSpend &&
+          other.limits == limits &&
           other.skrillEmail == skrillEmail &&
           other.source_ == source_ &&
           other.tiliaId == tiliaId &&
@@ -118,6 +125,7 @@ class EconomyAccount {
       canEarn.hashCode +
       canPayout.hashCode +
       canSpend.hashCode +
+      limits.hashCode +
       (skrillEmail == null ? 0 : skrillEmail.hashCode) +
       source_.hashCode +
       (tiliaId == null ? 0 : tiliaId.hashCode) +

@@ -30,11 +30,19 @@ class StoreShelf {
 
     this.shelfBackgroundImageId,
 
+    this.shelfClientBannerImageId,
+
     required this.shelfDescription,
 
     this.shelfIconImageId,
 
     required this.shelfLayout,
+
+    this.shelfMobileHeroBannerImageId,
+
+    this.shelfMobileLogoImageId,
+
+    this.shelfMobileSecondaryBannerImageId,
 
     this.shelfTabBackgroundImageId,
 
@@ -65,6 +73,13 @@ class StoreShelf {
   )
   final String? shelfBackgroundImageId;
 
+  @JsonKey(
+    name: r'shelfClientBannerImageId',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? shelfClientBannerImageId;
+
   @JsonKey(name: r'shelfDescription', required: true, includeIfNull: false)
   final String shelfDescription;
 
@@ -73,6 +88,27 @@ class StoreShelf {
 
   @JsonKey(name: r'shelfLayout', required: true, includeIfNull: false)
   final String shelfLayout;
+
+  @JsonKey(
+    name: r'shelfMobileHeroBannerImageId',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? shelfMobileHeroBannerImageId;
+
+  @JsonKey(
+    name: r'shelfMobileLogoImageId',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? shelfMobileLogoImageId;
+
+  @JsonKey(
+    name: r'shelfMobileSecondaryBannerImageId',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? shelfMobileSecondaryBannerImageId;
 
   @JsonKey(
     name: r'shelfTabBackgroundImageId',
@@ -97,9 +133,14 @@ class StoreShelf {
           other.listingIds == listingIds &&
           other.listings == listings &&
           other.shelfBackgroundImageId == shelfBackgroundImageId &&
+          other.shelfClientBannerImageId == shelfClientBannerImageId &&
           other.shelfDescription == shelfDescription &&
           other.shelfIconImageId == shelfIconImageId &&
           other.shelfLayout == shelfLayout &&
+          other.shelfMobileHeroBannerImageId == shelfMobileHeroBannerImageId &&
+          other.shelfMobileLogoImageId == shelfMobileLogoImageId &&
+          other.shelfMobileSecondaryBannerImageId ==
+              shelfMobileSecondaryBannerImageId &&
           other.shelfTabBackgroundImageId == shelfTabBackgroundImageId &&
           other.shelfTitle == shelfTitle &&
           other.updatedAt == updatedAt;
@@ -112,9 +153,13 @@ class StoreShelf {
       listingIds.hashCode +
       listings.hashCode +
       shelfBackgroundImageId.hashCode +
+      shelfClientBannerImageId.hashCode +
       shelfDescription.hashCode +
       shelfIconImageId.hashCode +
       shelfLayout.hashCode +
+      shelfMobileHeroBannerImageId.hashCode +
+      shelfMobileLogoImageId.hashCode +
+      shelfMobileSecondaryBannerImageId.hashCode +
       shelfTabBackgroundImageId.hashCode +
       shelfTitle.hashCode +
       updatedAt.hashCode;

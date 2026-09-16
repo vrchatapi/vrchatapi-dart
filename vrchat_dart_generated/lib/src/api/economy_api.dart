@@ -17,6 +17,7 @@ import 'package:vrchat_dart_generated/src/model/economy_account.dart';
 import 'package:vrchat_dart_generated/src/model/economy_balances.dart';
 import 'package:vrchat_dart_generated/src/model/economy_payout_list.dart';
 import 'package:vrchat_dart_generated/src/model/economy_payout_status.dart';
+import 'package:vrchat_dart_generated/src/model/economy_status.dart';
 import 'package:vrchat_dart_generated/src/model/license.dart';
 import 'package:vrchat_dart_generated/src/model/license_group.dart';
 import 'package:vrchat_dart_generated/src/model/order_option_short.dart';
@@ -935,6 +936,7 @@ class EconomyApi {
   ///
   /// Parameters:
   /// * [userId] - Must be a valid user ID.
+  /// * [getLimits] - Include the account's spending limits in the response.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -946,6 +948,7 @@ class EconomyApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<EconomyAccount>> getEconomyAccount({
     required String userId,
+    bool? getLimits,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -976,9 +979,14 @@ class EconomyApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (getLimits != null) r'getLimits': getLimits,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -1006,6 +1014,89 @@ class EconomyApi {
     }
 
     return Response<EconomyAccount>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Get Economy Balance
+  /// Return the balance of a user&#39;s economy account.
+  ///
+  /// Parameters:
+  /// * [userId] - Must be a valid user ID.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [Balance] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<Balance>> getEconomyBalance({
+    required String userId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/user/{userId}/economy/balance'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    Balance? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Balance, Balance>(rawData, 'Balance', growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<Balance>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1278,6 +1369,86 @@ class EconomyApi {
     );
   }
 
+  /// Get Economy Status
+  /// Get whether the economy is accepting requests.
+  ///
+  /// Parameters:
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [EconomyStatus] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<EconomyStatus>> getEconomyStatus({
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/economy/status';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    EconomyStatus? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<EconomyStatus, EconomyStatus>(
+              rawData,
+              'EconomyStatus',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<EconomyStatus>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// Get License Group
   /// Get a single License Group by given ID.
   ///
@@ -1536,6 +1707,93 @@ class EconomyApi {
     }
 
     return Response<ProductListing>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Get Product Listing Products
+  /// List the products a listing sells.
+  ///
+  /// Parameters:
+  /// * [productId] - Must be a valid product ID.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [List<Product>] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<List<Product>>> getProductListingProducts({
+    required String productId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/listing/{productId}/products'.replaceAll(
+      '{'
+      r'productId'
+      '}',
+      productId.toString(),
+    );
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    List<Product>? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<Product>, Product>(
+              rawData,
+              'List<Product>',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<List<Product>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1946,7 +2204,9 @@ class EconomyApi {
   /// Gets product purchases
   ///
   /// Parameters:
+  /// * [active] - Filter for users' listings and inventory bundles.
   /// * [buyerId] - Must be a valid user ID.
+  /// * [receiverId] - Must be a valid user ID.
   /// * [sellerId] - Filter results by seller.
   /// * [n] - The number of objects to return.
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
@@ -1963,7 +2223,9 @@ class EconomyApi {
   /// Returns a [Future] containing a [Response] with a [List<ProductPurchase>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<ProductPurchase>>> getProductPurchases({
-    required String buyerId,
+    bool? active,
+    String? buyerId,
+    String? receiverId,
     String? sellerId,
     int? n = 60,
     int? offset,
@@ -1996,7 +2258,9 @@ class EconomyApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'buyerId': buyerId,
+      if (active != null) r'active': active,
+      if (buyerId != null) r'buyerId': buyerId,
+      if (receiverId != null) r'receiverId': receiverId,
       if (sellerId != null) r'sellerId': sellerId,
       if (n != null) r'n': n,
       if (offset != null) r'offset': offset,
@@ -2051,6 +2315,7 @@ class EconomyApi {
   /// Get the most recent user subscription.
   ///
   /// Parameters:
+  /// * [userId] - Filter by UserID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -2061,6 +2326,7 @@ class EconomyApi {
   /// Returns a [Future] containing a [Response] with a [UserSubscription] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UserSubscription>> getRecentSubscription({
+    String? userId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -2086,9 +2352,14 @@ class EconomyApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (userId != null) r'userId': userId,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -2380,6 +2651,7 @@ class EconomyApi {
   ///
   /// Parameters:
   /// * [storeId]
+  /// * [hydrateContext]
   /// * [hydrateListings] - Listings fields will be populated.
   /// * [hydrateProducts] - Products fields will be populated.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -2393,6 +2665,7 @@ class EconomyApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<Store>> getStore({
     required String storeId,
+    bool? hydrateContext,
     bool? hydrateListings,
     bool? hydrateProducts,
     CancelToken? cancelToken,
@@ -2422,6 +2695,7 @@ class EconomyApi {
 
     final _queryParameters = <String, dynamic>{
       r'storeId': storeId,
+      if (hydrateContext != null) r'hydrateContext': hydrateContext,
       if (hydrateListings != null) r'hydrateListings': hydrateListings,
       if (hydrateProducts != null) r'hydrateProducts': hydrateProducts,
     };

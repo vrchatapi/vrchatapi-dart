@@ -90,7 +90,7 @@ class ProductListing {
 
     required this.recurrable,
 
-    required this.refundable,
+    this.refundable,
 
     required this.sellerDisplayName,
 
@@ -100,7 +100,7 @@ class ProductListing {
 
     required this.stackable,
 
-    required this.storeIds,
+    this.storeIds,
 
     this.subtitle,
 
@@ -225,8 +225,8 @@ class ProductListing {
   @JsonKey(name: r'recurrable', required: true, includeIfNull: false)
   final bool recurrable;
 
-  @JsonKey(name: r'refundable', required: true, includeIfNull: false)
-  final bool refundable;
+  @JsonKey(name: r'refundable', required: false, includeIfNull: false)
+  final bool? refundable;
 
   @JsonKey(name: r'sellerDisplayName', required: true, includeIfNull: false)
   final String sellerDisplayName;
@@ -240,8 +240,8 @@ class ProductListing {
   @JsonKey(name: r'stackable', required: true, includeIfNull: false)
   final bool stackable;
 
-  @JsonKey(name: r'storeIds', required: true, includeIfNull: false)
-  final List<String> storeIds;
+  @JsonKey(name: r'storeIds', required: false, includeIfNull: false)
+  final List<String>? storeIds;
 
   @JsonKey(name: r'subtitle', required: false, includeIfNull: false)
   final String? subtitle;
