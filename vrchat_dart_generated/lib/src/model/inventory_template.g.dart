@@ -55,6 +55,10 @@ InventoryTemplate _$InventoryTemplateFromJson(
     ),
     id: $checkedConvert('id', (v) => v as String),
     imageUrl: $checkedConvert('imageUrl', (v) => v as String),
+    initialToggleState: $checkedConvert(
+      'initialToggleState',
+      (v) => v as bool?,
+    ),
     itemType: $checkedConvert(
       'itemType',
       (v) => $enumDecode(_$InventoryItemTypeEnumMap, v),
@@ -72,6 +76,11 @@ InventoryTemplate _$InventoryTemplateFromJson(
       (v) => v == null
           ? null
           : InventoryNotificationDetails.fromJson(v as Map<String, dynamic>),
+    ),
+    productId: $checkedConvert('productId', (v) => v as String?),
+    publishedListings: $checkedConvert(
+      'publishedListings',
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
     status: $checkedConvert('status', (v) => v as String?),
     tags: $checkedConvert(
@@ -103,11 +112,14 @@ Map<String, dynamic> _$InventoryTemplateToJson(InventoryTemplate instance) =>
       'flags': instance.flags,
       'id': instance.id,
       'imageUrl': instance.imageUrl,
+      'initialToggleState': ?instance.initialToggleState,
       'itemType': _$InventoryItemTypeEnumMap[instance.itemType]!,
       'itemTypeLabel': instance.itemTypeLabel,
       'metadata': ?instance.metadata?.toJson(),
       'name': instance.name,
       'notificationDetails': ?instance.notificationDetails?.toJson(),
+      'productId': ?instance.productId,
+      'publishedListings': ?instance.publishedListings,
       'status': ?instance.status,
       'tags': instance.tags,
       'updated_at': instance.updatedAt.toIso8601String(),
@@ -118,7 +130,10 @@ const _$InventoryItemTypeEnumMap = {
   InventoryItemType.bundle: 'bundle',
   InventoryItemType.droneskin: 'droneskin',
   InventoryItemType.emoji: 'emoji',
+  InventoryItemType.iconFrame: 'iconFrame',
+  InventoryItemType.nameplateEffect: 'nameplateEffect',
   InventoryItemType.portalskin: 'portalskin',
+  InventoryItemType.profileEffect: 'profileEffect',
   InventoryItemType.prop: 'prop',
   InventoryItemType.sticker: 'sticker',
   InventoryItemType.warpeffect: 'warpeffect',

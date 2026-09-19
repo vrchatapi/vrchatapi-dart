@@ -17,7 +17,16 @@ part 'product_listing_attribution.g.dart';
 )
 class ProductListingAttribution {
   /// Returns a new [ProductListingAttribution] instance.
-  ProductListingAttribution({this.creator, this.publisher});
+  ProductListingAttribution({
+    this.collaborationId,
+
+    this.creator,
+
+    this.publisher,
+  });
+
+  @JsonKey(name: r'collaborationId', required: false, includeIfNull: false)
+  final String? collaborationId;
 
   @JsonKey(name: r'creator', required: false, includeIfNull: false)
   final ProductListingAttributionCreator? creator;
@@ -29,11 +38,13 @@ class ProductListingAttribution {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is ProductListingAttribution &&
+          other.collaborationId == collaborationId &&
           other.creator == creator &&
           other.publisher == publisher;
 
   @override
-  int get hashCode => creator.hashCode + publisher.hashCode;
+  int get hashCode =>
+      collaborationId.hashCode + creator.hashCode + publisher.hashCode;
 
   factory ProductListingAttribution.fromJson(Map<String, dynamic> json) =>
       _$ProductListingAttributionFromJson(json);

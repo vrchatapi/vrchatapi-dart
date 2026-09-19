@@ -28,6 +28,7 @@ DynamicContentRow _$DynamicContentRowFromJson(
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
     featuredResults: $checkedConvert('featuredResults', (v) => v as String?),
+    groupPool: $checkedConvert('groupPool', (v) => v as String?),
     index: $checkedConvert('index', (v) => (v as num?)?.toInt()),
     marketplace: $checkedConvert('marketplace', (v) => v as String?),
     maxPrice: $checkedConvert('maxPrice', (v) => (v as num?)?.toInt()),
@@ -79,6 +80,7 @@ DynamicContentRow _$DynamicContentRowFromJson(
       'upcomingOffsetMinutes',
       (v) => (v as num?)?.toInt(),
     ),
+    worldPool: $checkedConvert('worldPool', (v) => v as String?),
   );
   return val;
 });
@@ -91,6 +93,7 @@ Map<String, dynamic> _$DynamicContentRowToJson(DynamicContentRow instance) =>
       'bannersTag': ?instance.bannersTag,
       'categories': ?instance.categories,
       'featuredResults': ?instance.featuredResults,
+      'groupPool': ?instance.groupPool,
       'index': ?instance.index,
       'marketplace': ?instance.marketplace,
       'maxPrice': ?instance.maxPrice,
@@ -117,4 +120,5 @@ Map<String, dynamic> _$DynamicContentRowToJson(DynamicContentRow instance) =>
       'tags': ?instance.tags,
       'type': ?instance.type,
       'upcomingOffsetMinutes': ?instance.upcomingOffsetMinutes,
+      'worldPool': ?instance.worldPool,
     };

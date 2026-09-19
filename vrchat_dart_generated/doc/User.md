@@ -16,15 +16,9 @@ Name | Type | Description | Notes
 **ageVerified** | **bool** | `true` if, user is age verified (not 18+). | 
 **allowAvatarCopying** | **bool** |  | [default to true]
 **appleDetails** | **Map&lt;String, Object&gt;** |  | [optional] 
-**badges** | [**List&lt;Badge&gt;**](Badge.md) |   | [optional] 
 **bannerColor** | **String** |  | [optional] 
 **bannerType** | **String** |  | [optional] 
 **bannerUrl** | **String** |  | [optional] 
-**bio** | **String** |  | 
-**bioLinks** | **List&lt;String&gt;** |  | 
-**currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
-**currentAvatarTags** | **List&lt;String&gt;** |  | 
-**currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
 **dateJoined** | [**DateTime**](DateTime.md) |  | 
 **developerType** | [**DeveloperType**](DeveloperType.md) |  | 
 **displayName** | **String** | A users visual display name. This is what shows up in-game, and can different from their `username`. Changing display name is restricted to a cooldown period. | 
@@ -45,8 +39,6 @@ Name | Type | Description | Notes
 **note** | **String** |  | [optional] 
 **platform** | **String** |  | [optional] 
 **profileEffect** | **String** |  | [optional] 
-**profilePicOverride** | **String** |  | 
-**profilePicOverrideThumbnail** | **String** |  | 
 **pronouns** | **String** |  | 
 **state** | [**UserState**](UserState.md) |  | 
 **status** | [**UserStatus**](UserStatus.md) |  | 
@@ -55,7 +47,6 @@ Name | Type | Description | Notes
 **travelingToInstance** | **String** |  | [optional] 
 **travelingToLocation** | **String** |  | [optional] 
 **travelingToWorld** | **String** |  | [optional] 
-**userIcon** | **String** |  | 
 **worldId** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -48,6 +48,8 @@ class InfoPushData {
 
     this.finalName,
 
+    this.hoverToJoin,
+
     this.iconImageUrl,
 
     this.imageUrl,
@@ -123,6 +125,9 @@ class InfoPushData {
   @JsonKey(name: r'finalName', required: false, includeIfNull: false)
   final String? finalName;
 
+  @JsonKey(name: r'hoverToJoin', required: false, includeIfNull: false)
+  final bool? hoverToJoin;
+
   @JsonKey(name: r'iconImageUrl', required: false, includeIfNull: false)
   final String? iconImageUrl;
 
@@ -191,6 +196,7 @@ class InfoPushData {
           other.domainList == domainList &&
           other.featuredAvatarCategoryId == featuredAvatarCategoryId &&
           other.finalName == finalName &&
+          other.hoverToJoin == hoverToJoin &&
           other.iconImageUrl == iconImageUrl &&
           other.imageUrl == imageUrl &&
           other.ipsQuery == ipsQuery &&
@@ -223,6 +229,7 @@ class InfoPushData {
       domainList.hashCode +
       featuredAvatarCategoryId.hashCode +
       finalName.hashCode +
+      hoverToJoin.hashCode +
       iconImageUrl.hashCode +
       (imageUrl == null ? 0 : imageUrl.hashCode) +
       ipsQuery.hashCode +

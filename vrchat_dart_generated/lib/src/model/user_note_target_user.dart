@@ -16,63 +16,23 @@ part 'user_note_target_user.g.dart';
 )
 class UserNoteTargetUser {
   /// Returns a new [UserNoteTargetUser] instance.
-  UserNoteTargetUser({
-    this.id,
-
-    this.currentAvatarTags,
-
-    this.currentAvatarThumbnailImageUrl,
-
-    this.displayName,
-
-    this.profilePicOverride,
-
-    this.userIcon,
-  });
+  UserNoteTargetUser({this.id, this.displayName});
 
   @JsonKey(name: r'id', required: false, includeIfNull: false)
   final String? id;
 
-  @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
-  final List<String>? currentAvatarTags;
-
-  /// When profilePicOverride is not empty, use it instead.
-  @JsonKey(
-    name: r'currentAvatarThumbnailImageUrl',
-    required: false,
-    includeIfNull: false,
-  )
-  final String? currentAvatarThumbnailImageUrl;
-
   @JsonKey(name: r'displayName', required: false, includeIfNull: false)
   final String? displayName;
-
-  @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
-  final String? profilePicOverride;
-
-  @JsonKey(name: r'userIcon', required: false, includeIfNull: false)
-  final String? userIcon;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is UserNoteTargetUser &&
           other.id == id &&
-          other.currentAvatarTags == currentAvatarTags &&
-          other.currentAvatarThumbnailImageUrl ==
-              currentAvatarThumbnailImageUrl &&
-          other.displayName == displayName &&
-          other.profilePicOverride == profilePicOverride &&
-          other.userIcon == userIcon;
+          other.displayName == displayName;
 
   @override
-  int get hashCode =>
-      id.hashCode +
-      currentAvatarTags.hashCode +
-      currentAvatarThumbnailImageUrl.hashCode +
-      displayName.hashCode +
-      (profilePicOverride == null ? 0 : profilePicOverride.hashCode) +
-      userIcon.hashCode;
+  int get hashCode => id.hashCode + displayName.hashCode;
 
   factory UserNoteTargetUser.fromJson(Map<String, dynamic> json) =>
       _$UserNoteTargetUserFromJson(json);

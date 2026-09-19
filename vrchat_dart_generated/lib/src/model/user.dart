@@ -5,7 +5,6 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/developer_type.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
-import 'package:vrchat_dart_generated/src/model/badge.dart';
 import 'package:vrchat_dart_generated/src/model/age_verification_status.dart';
 import 'package:vrchat_dart_generated/src/model/user_state.dart';
 
@@ -38,23 +37,11 @@ class User {
 
     this.appleDetails,
 
-    this.badges,
-
     this.bannerColor,
 
     this.bannerType,
 
     this.bannerUrl,
-
-    required this.bio,
-
-    required this.bioLinks,
-
-    required this.currentAvatarImageUrl,
-
-    required this.currentAvatarTags,
-
-    required this.currentAvatarThumbnailImageUrl,
 
     required this.dateJoined,
 
@@ -96,10 +83,6 @@ class User {
 
     this.profileEffect,
 
-    required this.profilePicOverride,
-
-    required this.profilePicOverrideThumbnail,
-
     required this.pronouns,
 
     required this.state,
@@ -115,8 +98,6 @@ class User {
     this.travelingToLocation,
 
     this.travelingToWorld,
-
-    required this.userIcon,
 
     this.worldId,
   });
@@ -150,10 +131,6 @@ class User {
   @JsonKey(name: r'appleDetails', required: false, includeIfNull: false)
   final Map<String, Object>? appleDetails;
 
-  ///
-  @JsonKey(name: r'badges', required: false, includeIfNull: false)
-  final List<Badge>? badges;
-
   @JsonKey(name: r'bannerColor', required: false, includeIfNull: false)
   final String? bannerColor;
 
@@ -162,27 +139,6 @@ class User {
 
   @JsonKey(name: r'bannerUrl', required: false, includeIfNull: false)
   final String? bannerUrl;
-
-  @JsonKey(name: r'bio', required: true, includeIfNull: false)
-  final String bio;
-
-  @JsonKey(name: r'bioLinks', required: true, includeIfNull: false)
-  final List<String> bioLinks;
-
-  /// When profilePicOverride is not empty, use it instead.
-  @JsonKey(name: r'currentAvatarImageUrl', required: true, includeIfNull: false)
-  final String currentAvatarImageUrl;
-
-  @JsonKey(name: r'currentAvatarTags', required: true, includeIfNull: false)
-  final List<String> currentAvatarTags;
-
-  /// When profilePicOverride is not empty, use it instead.
-  @JsonKey(
-    name: r'currentAvatarThumbnailImageUrl',
-    required: true,
-    includeIfNull: false,
-  )
-  final String currentAvatarThumbnailImageUrl;
 
   @JsonKey(name: r'date_joined', required: true, includeIfNull: false)
   final DateTime dateJoined;
@@ -253,16 +209,6 @@ class User {
   @JsonKey(name: r'profileEffect', required: false, includeIfNull: false)
   final String? profileEffect;
 
-  @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
-  final String profilePicOverride;
-
-  @JsonKey(
-    name: r'profilePicOverrideThumbnail',
-    required: true,
-    includeIfNull: false,
-  )
-  final String profilePicOverrideThumbnail;
-
   @JsonKey(name: r'pronouns', required: true, includeIfNull: false)
   final String pronouns;
 
@@ -288,9 +234,6 @@ class User {
   @JsonKey(name: r'travelingToWorld', required: false, includeIfNull: false)
   final String? travelingToWorld;
 
-  @JsonKey(name: r'userIcon', required: true, includeIfNull: false)
-  final String userIcon;
-
   /// WorldID be \"offline\" on User profiles if you are not friends with that user.
   @JsonKey(name: r'worldId', required: false, includeIfNull: false)
   final String? worldId;
@@ -307,16 +250,9 @@ class User {
           other.ageVerified == ageVerified &&
           other.allowAvatarCopying == allowAvatarCopying &&
           other.appleDetails == appleDetails &&
-          other.badges == badges &&
           other.bannerColor == bannerColor &&
           other.bannerType == bannerType &&
           other.bannerUrl == bannerUrl &&
-          other.bio == bio &&
-          other.bioLinks == bioLinks &&
-          other.currentAvatarImageUrl == currentAvatarImageUrl &&
-          other.currentAvatarTags == currentAvatarTags &&
-          other.currentAvatarThumbnailImageUrl ==
-              currentAvatarThumbnailImageUrl &&
           other.dateJoined == dateJoined &&
           other.developerType == developerType &&
           other.displayName == displayName &&
@@ -337,8 +273,6 @@ class User {
           other.note == note &&
           other.platform == platform &&
           other.profileEffect == profileEffect &&
-          other.profilePicOverride == profilePicOverride &&
-          other.profilePicOverrideThumbnail == profilePicOverrideThumbnail &&
           other.pronouns == pronouns &&
           other.state == state &&
           other.status == status &&
@@ -347,7 +281,6 @@ class User {
           other.travelingToInstance == travelingToInstance &&
           other.travelingToLocation == travelingToLocation &&
           other.travelingToWorld == travelingToWorld &&
-          other.userIcon == userIcon &&
           other.worldId == worldId;
 
   @override
@@ -360,15 +293,9 @@ class User {
       ageVerified.hashCode +
       allowAvatarCopying.hashCode +
       appleDetails.hashCode +
-      badges.hashCode +
       bannerColor.hashCode +
       bannerType.hashCode +
       bannerUrl.hashCode +
-      bio.hashCode +
-      bioLinks.hashCode +
-      currentAvatarImageUrl.hashCode +
-      currentAvatarTags.hashCode +
-      currentAvatarThumbnailImageUrl.hashCode +
       dateJoined.hashCode +
       developerType.hashCode +
       displayName.hashCode +
@@ -389,8 +316,6 @@ class User {
       note.hashCode +
       platform.hashCode +
       profileEffect.hashCode +
-      profilePicOverride.hashCode +
-      profilePicOverrideThumbnail.hashCode +
       pronouns.hashCode +
       state.hashCode +
       status.hashCode +
@@ -399,7 +324,6 @@ class User {
       travelingToInstance.hashCode +
       travelingToLocation.hashCode +
       travelingToWorld.hashCode +
-      userIcon.hashCode +
       worldId.hashCode;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);

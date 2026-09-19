@@ -176,7 +176,7 @@ class APIConfig {
 
     required this.dynamicWorldRows,
 
-    required this.economyLedgerBackfill,
+    this.economyLedgerBackfill,
 
     this.economyLedgerMigrationStop,
 
@@ -684,8 +684,12 @@ class APIConfig {
   final Set<DynamicContentRow> dynamicWorldRows;
 
   /// Unknown
-  @JsonKey(name: r'economyLedgerBackfill', required: true, includeIfNull: false)
-  final bool economyLedgerBackfill;
+  @JsonKey(
+    name: r'economyLedgerBackfill',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? economyLedgerBackfill;
 
   /// Unknown
   @JsonKey(

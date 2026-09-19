@@ -46,6 +46,8 @@ class World {
 
     this.instances,
 
+    this.isHypeTrainEligible,
+
     required this.labsPublicationDate,
 
     required this.name,
@@ -143,6 +145,9 @@ class World {
   @JsonKey(name: r'instances', required: false, includeIfNull: false)
   final List<List<Object>>? instances;
 
+  @JsonKey(name: r'isHypeTrainEligible', required: false, includeIfNull: false)
+  final bool? isHypeTrainEligible;
+
   @JsonKey(name: r'labsPublicationDate', required: true, includeIfNull: false)
   final String labsPublicationDate;
 
@@ -237,6 +242,7 @@ class World {
           other.id == id &&
           other.imageUrl == imageUrl &&
           other.instances == instances &&
+          other.isHypeTrainEligible == isHypeTrainEligible &&
           other.labsPublicationDate == labsPublicationDate &&
           other.name == name &&
           other.namespace == namespace &&
@@ -275,6 +281,7 @@ class World {
       id.hashCode +
       imageUrl.hashCode +
       instances.hashCode +
+      isHypeTrainEligible.hashCode +
       labsPublicationDate.hashCode +
       name.hashCode +
       namespace.hashCode +

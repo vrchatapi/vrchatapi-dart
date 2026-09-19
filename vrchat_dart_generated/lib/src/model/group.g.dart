@@ -100,6 +100,7 @@ Group _$GroupFromJson(
     ),
     rules: $checkedConvert('rules', (v) => v as String?),
     shortCode: $checkedConvert('shortCode', (v) => v as String?),
+    storeId: $checkedConvert('storeId', (v) => v as String?),
     tags: $checkedConvert(
       'tags',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -146,6 +147,7 @@ Map<String, dynamic> _$GroupToJson(Group instance) => <String, dynamic>{
   'roles': ?instance.roles?.map((e) => e.toJson()).toList(),
   'rules': ?instance.rules,
   'shortCode': ?instance.shortCode,
+  'storeId': ?instance.storeId,
   'tags': ?instance.tags,
   'transferTargetId': ?instance.transferTargetId,
   'updatedAt': ?instance.updatedAt?.toIso8601String(),

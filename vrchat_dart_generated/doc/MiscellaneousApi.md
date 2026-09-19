@@ -10,9 +10,12 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getAssignedPermissions**](MiscellaneousApi.md#getassignedpermissions) | **GET** /auth/permissions | Get Assigned Permissions
+[**getBeta**](MiscellaneousApi.md#getbeta) | **GET** /beta/{betaName} | Get Beta Program
+[**getBetaRegistration**](MiscellaneousApi.md#getbetaregistration) | **GET** /beta/{betaName}/register | Get Beta Registration
 [**getCSS**](MiscellaneousApi.md#getcss) | **GET** /css/app.css | Download CSS
 [**getConfig**](MiscellaneousApi.md#getconfig) | **GET** /config | Fetch API Config
 [**getCurrentOnlineUsers**](MiscellaneousApi.md#getcurrentonlineusers) | **GET** /visits | Current Online Users
+[**getFrontendBranches**](MiscellaneousApi.md#getfrontendbranches) | **GET** /frontend/branches | List Frontend Branches
 [**getHealth**](MiscellaneousApi.md#gethealth) | **GET** /health | Check API Health
 [**getInfoPush**](MiscellaneousApi.md#getinfopush) | **GET** /infoPush | Show Information Notices
 [**getJavaScript**](MiscellaneousApi.md#getjavascript) | **GET** /js/app.js | Download JavaScript
@@ -51,6 +54,95 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**List&lt;Permission&gt;**](Permission.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getBeta**
+> Beta getBeta(betaName)
+
+Get Beta Program
+
+Get a beta program and the fields a registration must supply.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+
+final api = VrchatDartGenerated().getMiscellaneousApi();
+final String betaName = ios-closed-beta; // String | The name of a beta program.
+
+try {
+    final response = api.getBeta(betaName);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling MiscellaneousApi->getBeta: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **betaName** | **String**| The name of a beta program. | 
+
+### Return type
+
+[**Beta**](Beta.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getBetaRegistration**
+> getBetaRegistration(betaName)
+
+Get Beta Registration
+
+Get the currently authenticated user's registration for a beta program.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getMiscellaneousApi();
+final String betaName = ios-closed-beta; // String | The name of a beta program.
+
+try {
+    api.getBetaRegistration(betaName);
+} on DioException catch (e) {
+    print('Exception when calling MiscellaneousApi->getBetaRegistration: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **betaName** | **String**| The name of a beta program. | 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
@@ -178,6 +270,49 @@ This endpoint does not need any parameter.
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getFrontendBranches**
+> List<Object> getFrontendBranches()
+
+List Frontend Branches
+
+List the frontend branches the currently authenticated user may switch to.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getMiscellaneousApi();
+
+try {
+    final response = api.getFrontendBranches();
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling MiscellaneousApi->getFrontendBranches: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**List&lt;Object&gt;**
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 

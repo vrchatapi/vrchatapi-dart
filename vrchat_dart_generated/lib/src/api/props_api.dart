@@ -344,9 +344,9 @@ class PropsApi {
   /// Returns a list Prop objects.
   ///
   /// Parameters:
-  /// * [authorId] - Must be a valid user ID.
   /// * [n] - The number of objects to return.
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
+  /// * [authorId] - Must be a valid user ID.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -357,9 +357,9 @@ class PropsApi {
   /// Returns a [Future] containing a [Response] with a [List<Prop>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<Prop>>> listProps({
-    required String authorId,
     int? n = 60,
     int? offset,
+    String? authorId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -388,7 +388,7 @@ class PropsApi {
     final _queryParameters = <String, dynamic>{
       if (n != null) r'n': n,
       if (offset != null) r'offset': offset,
-      r'authorId': authorId,
+      if (authorId != null) r'authorId': authorId,
     };
 
     final _response = await _dio.request<Object>(

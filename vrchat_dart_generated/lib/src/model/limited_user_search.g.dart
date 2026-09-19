@@ -14,9 +14,6 @@ LimitedUserSearch _$LimitedUserSearchFromJson(
   $checkKeys(
     json,
     requiredKeys: const [
-      'currentAvatarImageUrl',
-      'currentAvatarTags',
-      'currentAvatarThumbnailImageUrl',
       'developerType',
       'displayName',
       'id',
@@ -31,23 +28,6 @@ LimitedUserSearch _$LimitedUserSearchFromJson(
     bannerColor: $checkedConvert('bannerColor', (v) => v as String?),
     bannerType: $checkedConvert('bannerType', (v) => v as String?),
     bannerUrl: $checkedConvert('bannerUrl', (v) => v as String?),
-    bio: $checkedConvert('bio', (v) => v as String?),
-    bioLinks: $checkedConvert(
-      'bioLinks',
-      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-    ),
-    currentAvatarImageUrl: $checkedConvert(
-      'currentAvatarImageUrl',
-      (v) => v as String,
-    ),
-    currentAvatarTags: $checkedConvert(
-      'currentAvatarTags',
-      (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-    ),
-    currentAvatarThumbnailImageUrl: $checkedConvert(
-      'currentAvatarThumbnailImageUrl',
-      (v) => v as String,
-    ),
     developerType: $checkedConvert(
       'developerType',
       (v) => $enumDecode(_$DeveloperTypeEnumMap, v),
@@ -60,10 +40,6 @@ LimitedUserSearch _$LimitedUserSearchFromJson(
     lastPlatform: $checkedConvert('last_platform', (v) => v as String),
     nameplateEffect: $checkedConvert('nameplateEffect', (v) => v as String?),
     profileEffect: $checkedConvert('profileEffect', (v) => v as String?),
-    profilePicOverride: $checkedConvert(
-      'profilePicOverride',
-      (v) => v as String?,
-    ),
     pronouns: $checkedConvert('pronouns', (v) => v as String?),
     status: $checkedConvert(
       'status',
@@ -74,7 +50,6 @@ LimitedUserSearch _$LimitedUserSearchFromJson(
       'tags',
       (v) => (v as List<dynamic>).map((e) => e as String).toList(),
     ),
-    userIcon: $checkedConvert('userIcon', (v) => v as String?),
   );
   return val;
 }, fieldKeyMap: const {'lastPlatform': 'last_platform'});
@@ -84,11 +59,6 @@ Map<String, dynamic> _$LimitedUserSearchToJson(LimitedUserSearch instance) =>
       'bannerColor': ?instance.bannerColor,
       'bannerType': ?instance.bannerType,
       'bannerUrl': ?instance.bannerUrl,
-      'bio': ?instance.bio,
-      'bioLinks': ?instance.bioLinks,
-      'currentAvatarImageUrl': instance.currentAvatarImageUrl,
-      'currentAvatarTags': instance.currentAvatarTags,
-      'currentAvatarThumbnailImageUrl': instance.currentAvatarThumbnailImageUrl,
       'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
       'displayName': instance.displayName,
       'iconFrame': ?instance.iconFrame,
@@ -98,12 +68,10 @@ Map<String, dynamic> _$LimitedUserSearchToJson(LimitedUserSearch instance) =>
       'last_platform': instance.lastPlatform,
       'nameplateEffect': ?instance.nameplateEffect,
       'profileEffect': ?instance.profileEffect,
-      'profilePicOverride': ?instance.profilePicOverride,
       'pronouns': ?instance.pronouns,
       'status': _$UserStatusEnumMap[instance.status]!,
       'statusDescription': instance.statusDescription,
       'tags': instance.tags,
-      'userIcon': ?instance.userIcon,
     };
 
 const _$DeveloperTypeEnumMap = {

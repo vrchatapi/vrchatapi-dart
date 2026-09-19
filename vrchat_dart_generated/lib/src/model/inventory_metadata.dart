@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/inventory_asset.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -23,7 +24,13 @@ class InventoryMetadata {
 
     this.assetBundleId,
 
+    this.assets,
+
     this.fileId,
+
+    this.gradientEnd,
+
+    this.gradientStart,
 
     this.imageUrl,
 
@@ -34,6 +41,8 @@ class InventoryMetadata {
     this.propId,
 
     this.propKind,
+
+    this.viewfinderBundleId,
   });
 
   @JsonKey(name: r'animated', required: false, includeIfNull: false)
@@ -45,8 +54,19 @@ class InventoryMetadata {
   @JsonKey(name: r'assetBundleId', required: false, includeIfNull: false)
   final String? assetBundleId;
 
+  @JsonKey(name: r'assets', required: false, includeIfNull: false)
+  final List<InventoryAsset>? assets;
+
   @JsonKey(name: r'fileId', required: false, includeIfNull: false)
   final String? fileId;
+
+  /// Hex colour without a leading `#`.
+  @JsonKey(name: r'gradientEnd', required: false, includeIfNull: false)
+  final String? gradientEnd;
+
+  /// Hex colour without a leading `#`.
+  @JsonKey(name: r'gradientStart', required: false, includeIfNull: false)
+  final String? gradientStart;
 
   @JsonKey(name: r'imageUrl', required: false, includeIfNull: false)
   final String? imageUrl;
@@ -68,6 +88,9 @@ class InventoryMetadata {
   @JsonKey(name: r'propKind', required: false, includeIfNull: false)
   final int? propKind;
 
+  @JsonKey(name: r'viewfinderBundleId', required: false, includeIfNull: false)
+  final String? viewfinderBundleId;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -75,24 +98,32 @@ class InventoryMetadata {
           other.animated == animated &&
           other.animationStyle == animationStyle &&
           other.assetBundleId == assetBundleId &&
+          other.assets == assets &&
           other.fileId == fileId &&
+          other.gradientEnd == gradientEnd &&
+          other.gradientStart == gradientStart &&
           other.imageUrl == imageUrl &&
           other.inventoryItemsToInstantiate == inventoryItemsToInstantiate &&
           other.maskTag == maskTag &&
           other.propId == propId &&
-          other.propKind == propKind;
+          other.propKind == propKind &&
+          other.viewfinderBundleId == viewfinderBundleId;
 
   @override
   int get hashCode =>
       animated.hashCode +
       animationStyle.hashCode +
       assetBundleId.hashCode +
+      assets.hashCode +
       fileId.hashCode +
+      gradientEnd.hashCode +
+      gradientStart.hashCode +
       imageUrl.hashCode +
       inventoryItemsToInstantiate.hashCode +
       maskTag.hashCode +
       propId.hashCode +
-      propKind.hashCode;
+      propKind.hashCode +
+      viewfinderBundleId.hashCode;
 
   factory InventoryMetadata.fromJson(Map<String, dynamic> json) =>
       _$InventoryMetadataFromJson(json);

@@ -12,7 +12,9 @@ Method | HTTP request | Description
 [**addFavorite**](FavoritesApi.md#addfavorite) | **POST** /favorites | Add Favorite
 [**clearFavoriteGroup**](FavoritesApi.md#clearfavoritegroup) | **DELETE** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Clear Favorite Group
 [**getFavoriteGroup**](FavoritesApi.md#getfavoritegroup) | **GET** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Show Favorite Group
+[**getFavoriteGroupContents**](FavoritesApi.md#getfavoritegroupcontents) | **GET** /favorites/groups/{favoriteGroupType}/{favoriteGroupName} | List Favorite Group Contents
 [**getFavoriteGroups**](FavoritesApi.md#getfavoritegroups) | **GET** /favorite/groups | List Favorite Groups
+[**getFavoriteGroupsByType**](FavoritesApi.md#getfavoritegroupsbytype) | **GET** /favorites/groups/{favoriteGroupType} | List Favorite Groups By Type
 [**getFavoriteLimits**](FavoritesApi.md#getfavoritelimits) | **GET** /auth/user/favoritelimits | Get Favorite Limits
 [**getFavorites**](FavoritesApi.md#getfavorites) | **GET** /favorites | List Favorites
 [**removeFavorite**](FavoritesApi.md#removefavorite) | **DELETE** /favorites/{favoriteId} | Remove Favorite
@@ -168,6 +170,57 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getFavoriteGroupContents**
+> FavoriteGroupContents getFavoriteGroupContents(favoriteGroupType, favoriteGroupName, ownerId)
+
+List Favorite Group Contents
+
+List the favorites in a group, each alongside the object it points at.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getFavoritesApi();
+final FavoriteType favoriteGroupType = ; // FavoriteType | The type of group to fetch, must be a valid FavoriteType.
+final String favoriteGroupName = favoriteGroupName_example; // String | The name of the group to fetch, must be a name of a FavoriteGroup.
+final String ownerId = ownerId_example; // String | The user whose favorite group to return. Must be a user ID.
+
+try {
+    final response = api.getFavoriteGroupContents(favoriteGroupType, favoriteGroupName, ownerId);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling FavoritesApi->getFavoriteGroupContents: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **favoriteGroupType** | [**FavoriteType**](.md)| The type of group to fetch, must be a valid FavoriteType. | 
+ **favoriteGroupName** | **String**| The name of the group to fetch, must be a name of a FavoriteGroup. | [default to 'group_0']
+ **ownerId** | **String**| The user whose favorite group to return. Must be a user ID. | [optional] 
+
+### Return type
+
+[**FavoriteGroupContents**](FavoriteGroupContents.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getFavoriteGroups**
 > List<FavoriteGroup> getFavoriteGroups(n, offset, type, userId, ownerId)
 
@@ -211,6 +264,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List&lt;FavoriteGroup&gt;**](FavoriteGroup.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getFavoriteGroupsByType**
+> FavoriteGroupList getFavoriteGroupsByType(favoriteGroupType, ownerId)
+
+List Favorite Groups By Type
+
+List a user's favorite groups of one type.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getFavoritesApi();
+final FavoriteType favoriteGroupType = ; // FavoriteType | The type of group to fetch, must be a valid FavoriteType.
+final String ownerId = ownerId_example; // String | The user whose favorite groups to return. Must be a user ID.
+
+try {
+    final response = api.getFavoriteGroupsByType(favoriteGroupType, ownerId);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling FavoritesApi->getFavoriteGroupsByType: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **favoriteGroupType** | [**FavoriteType**](.md)| The type of group to fetch, must be a valid FavoriteType. | 
+ **ownerId** | **String**| The user whose favorite groups to return. Must be a user ID. | [optional] 
+
+### Return type
+
+[**FavoriteGroupList**](FavoriteGroupList.md)
 
 ### Authorization
 

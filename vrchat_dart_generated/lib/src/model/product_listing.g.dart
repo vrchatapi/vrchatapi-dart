@@ -26,11 +26,9 @@ ProductListing _$ProductListingFromJson(Map<String, dynamic> json) =>
           'productType',
           'products',
           'recurrable',
-          'refundable',
           'sellerDisplayName',
           'sellerId',
           'stackable',
-          'storeIds',
         ],
       );
       final val = ProductListing(
@@ -113,7 +111,7 @@ ProductListing _$ProductListingFromJson(Map<String, dynamic> json) =>
         ),
         quantifiable: $checkedConvert('quantifiable', (v) => v as bool?),
         recurrable: $checkedConvert('recurrable', (v) => v as bool),
-        refundable: $checkedConvert('refundable', (v) => v as bool),
+        refundable: $checkedConvert('refundable', (v) => v as bool?),
         sellerDisplayName: $checkedConvert(
           'sellerDisplayName',
           (v) => v as String,
@@ -123,7 +121,7 @@ ProductListing _$ProductListingFromJson(Map<String, dynamic> json) =>
         stackable: $checkedConvert('stackable', (v) => v as bool),
         storeIds: $checkedConvert(
           'storeIds',
-          (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
         ),
         subtitle: $checkedConvert('subtitle', (v) => v as String?),
         tags: $checkedConvert(
@@ -185,12 +183,12 @@ Map<String, dynamic> _$ProductListingToJson(
   'purchaseCountQuantity': ?instance.purchaseCountQuantity,
   'quantifiable': ?instance.quantifiable,
   'recurrable': instance.recurrable,
-  'refundable': instance.refundable,
+  'refundable': ?instance.refundable,
   'sellerDisplayName': instance.sellerDisplayName,
   'sellerId': instance.sellerId,
   'soldByVrc': ?instance.soldByVrc,
   'stackable': instance.stackable,
-  'storeIds': instance.storeIds,
+  'storeIds': ?instance.storeIds,
   'subtitle': ?instance.subtitle,
   'tags': ?instance.tags,
   'updated': ?instance.updated?.toIso8601String(),

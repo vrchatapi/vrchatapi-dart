@@ -1,3 +1,7 @@
+## 4.0.4
+
+- Allows `LimitedUser` to deserialize when `currentAvatarImageUrl` is absent
+
 ## 4.0.3
 
 - Uses `dart.library.js_interop` for web conditional imports so the package is Wasm-ready

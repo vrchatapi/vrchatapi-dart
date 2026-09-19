@@ -25,16 +25,6 @@ class LimitedUserSearch {
 
     this.bannerUrl,
 
-    this.bio,
-
-    this.bioLinks,
-
-    required this.currentAvatarImageUrl,
-
-    required this.currentAvatarTags,
-
-    required this.currentAvatarThumbnailImageUrl,
-
     required this.developerType,
 
     required this.displayName,
@@ -53,8 +43,6 @@ class LimitedUserSearch {
 
     this.profileEffect,
 
-    this.profilePicOverride,
-
     this.pronouns,
 
     required this.status,
@@ -62,8 +50,6 @@ class LimitedUserSearch {
     required this.statusDescription,
 
     required this.tags,
-
-    this.userIcon,
   });
 
   @JsonKey(name: r'bannerColor', required: false, includeIfNull: false)
@@ -74,28 +60,6 @@ class LimitedUserSearch {
 
   @JsonKey(name: r'bannerUrl', required: false, includeIfNull: false)
   final String? bannerUrl;
-
-  @JsonKey(name: r'bio', required: false, includeIfNull: false)
-  final String? bio;
-
-  ///
-  @JsonKey(name: r'bioLinks', required: false, includeIfNull: false)
-  final List<String>? bioLinks;
-
-  /// When profilePicOverride is not empty, use it instead.
-  @JsonKey(name: r'currentAvatarImageUrl', required: true, includeIfNull: false)
-  final String currentAvatarImageUrl;
-
-  @JsonKey(name: r'currentAvatarTags', required: true, includeIfNull: false)
-  final List<String> currentAvatarTags;
-
-  /// When profilePicOverride is not empty, use it instead.
-  @JsonKey(
-    name: r'currentAvatarThumbnailImageUrl',
-    required: true,
-    includeIfNull: false,
-  )
-  final String currentAvatarThumbnailImageUrl;
 
   @JsonKey(name: r'developerType', required: true, includeIfNull: false)
   final DeveloperType developerType;
@@ -126,9 +90,6 @@ class LimitedUserSearch {
   @JsonKey(name: r'profileEffect', required: false, includeIfNull: false)
   final String? profileEffect;
 
-  @JsonKey(name: r'profilePicOverride', required: false, includeIfNull: false)
-  final String? profilePicOverride;
-
   @JsonKey(name: r'pronouns', required: false, includeIfNull: false)
   final String? pronouns;
 
@@ -142,9 +103,6 @@ class LimitedUserSearch {
   @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 
-  @JsonKey(name: r'userIcon', required: false, includeIfNull: false)
-  final String? userIcon;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -152,12 +110,6 @@ class LimitedUserSearch {
           other.bannerColor == bannerColor &&
           other.bannerType == bannerType &&
           other.bannerUrl == bannerUrl &&
-          other.bio == bio &&
-          other.bioLinks == bioLinks &&
-          other.currentAvatarImageUrl == currentAvatarImageUrl &&
-          other.currentAvatarTags == currentAvatarTags &&
-          other.currentAvatarThumbnailImageUrl ==
-              currentAvatarThumbnailImageUrl &&
           other.developerType == developerType &&
           other.displayName == displayName &&
           other.iconFrame == iconFrame &&
@@ -167,23 +119,16 @@ class LimitedUserSearch {
           other.lastPlatform == lastPlatform &&
           other.nameplateEffect == nameplateEffect &&
           other.profileEffect == profileEffect &&
-          other.profilePicOverride == profilePicOverride &&
           other.pronouns == pronouns &&
           other.status == status &&
           other.statusDescription == statusDescription &&
-          other.tags == tags &&
-          other.userIcon == userIcon;
+          other.tags == tags;
 
   @override
   int get hashCode =>
       bannerColor.hashCode +
       bannerType.hashCode +
       bannerUrl.hashCode +
-      bio.hashCode +
-      bioLinks.hashCode +
-      currentAvatarImageUrl.hashCode +
-      currentAvatarTags.hashCode +
-      currentAvatarThumbnailImageUrl.hashCode +
       developerType.hashCode +
       displayName.hashCode +
       iconFrame.hashCode +
@@ -193,12 +138,10 @@ class LimitedUserSearch {
       lastPlatform.hashCode +
       nameplateEffect.hashCode +
       profileEffect.hashCode +
-      profilePicOverride.hashCode +
       pronouns.hashCode +
       status.hashCode +
       statusDescription.hashCode +
-      tags.hashCode +
-      userIcon.hashCode;
+      tags.hashCode;
 
   factory LimitedUserSearch.fromJson(Map<String, dynamic> json) =>
       _$LimitedUserSearchFromJson(json);

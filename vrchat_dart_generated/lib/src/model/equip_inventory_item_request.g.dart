@@ -30,6 +30,9 @@ Map<String, dynamic> _$EquipInventoryItemRequestToJson(
 const _$InventoryEquipSlotEnumMap = {
   InventoryEquipSlot.empty: '',
   InventoryEquipSlot.drone: 'drone',
+  InventoryEquipSlot.iconFrame: 'iconFrame',
+  InventoryEquipSlot.nameplateEffect: 'nameplateEffect',
   InventoryEquipSlot.portal: 'portal',
+  InventoryEquipSlot.profileEffect: 'profileEffect',
   InventoryEquipSlot.warp: 'warp',
 };

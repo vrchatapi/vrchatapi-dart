@@ -25,6 +25,7 @@ import 'package:vrchat_dart_generated/src/model/reward_redemption_result.dart';
 import 'package:vrchat_dart_generated/src/model/share_inventory_item_direct_request.dart';
 import 'package:vrchat_dart_generated/src/model/success_flag.dart';
 import 'package:vrchat_dart_generated/src/model/update_inventory_item_request.dart';
+import 'package:vrchat_dart_generated/src/model/user_cosmetic.dart';
 
 class InventoryApi {
   final Dio _dio;
@@ -308,6 +309,93 @@ class InventoryApi {
     );
   }
 
+  /// List Cosmetics
+  /// List every cosmetic of a kind that VRChat has published, whether or not the caller owns it.
+  ///
+  /// Parameters:
+  /// * [itemType] - The kind of cosmetic to list.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [List<InventoryTemplate>] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<List<InventoryTemplate>>> getCosmeticIndex({
+    required String itemType,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/cosmetics/index/{itemType}'.replaceAll(
+      '{'
+      r'itemType'
+      '}',
+      itemType.toString(),
+    );
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    List<InventoryTemplate>? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<InventoryTemplate>, InventoryTemplate>(
+              rawData,
+              'List<InventoryTemplate>',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<List<InventoryTemplate>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// Get Inventory
   /// Returns an Inventory object.
   ///
@@ -323,6 +411,8 @@ class InventoryApi {
   /// * [notTypes] - Filter out types for inventory retrieval (comma-separated).
   /// * [notFlags] - Filter out flags for inventory retrieval (comma-separated).
   /// * [archived] - Filter archived status for inventory retrieval.
+  /// * [seen]
+  /// * [isNavBar]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -344,6 +434,8 @@ class InventoryApi {
     InventoryItemType? notTypes,
     InventoryFlag? notFlags,
     bool? archived,
+    bool? seen,
+    bool? isNavBar,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -381,6 +473,8 @@ class InventoryApi {
       if (notTypes != null) r'notTypes': notTypes,
       if (notFlags != null) r'notFlags': notFlags,
       if (archived != null) r'archived': archived,
+      if (seen != null) r'seen': seen,
+      if (isNavBar != null) r'isNavBar': isNavBar,
     };
 
     final _response = await _dio.request<Object>(
@@ -755,6 +849,93 @@ class InventoryApi {
     }
 
     return Response<InventoryItem>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// List User Cosmetics
+  /// List the cosmetics a user holds.
+  ///
+  /// Parameters:
+  /// * [userId] - Must be a valid user ID.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [List<UserCosmetic>] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<List<UserCosmetic>>> getUserCosmetics({
+    required String userId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/user/{userId}/cosmetics'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    List<UserCosmetic>? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<UserCosmetic>, UserCosmetic>(
+              rawData,
+              'List<UserCosmetic>',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<List<UserCosmetic>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

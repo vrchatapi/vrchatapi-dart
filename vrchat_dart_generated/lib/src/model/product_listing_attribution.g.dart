@@ -12,6 +12,7 @@ ProductListingAttribution _$ProductListingAttributionFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('ProductListingAttribution', json, ($checkedConvert) {
   final val = ProductListingAttribution(
+    collaborationId: $checkedConvert('collaborationId', (v) => v as String?),
     creator: $checkedConvert(
       'creator',
       (v) => v == null
@@ -35,6 +36,7 @@ ProductListingAttribution _$ProductListingAttributionFromJson(
 Map<String, dynamic> _$ProductListingAttributionToJson(
   ProductListingAttribution instance,
 ) => <String, dynamic>{
+  'collaborationId': ?instance.collaborationId,
   'creator': ?instance.creator?.toJson(),
   'publisher': ?instance.publisher?.toJson(),
 };

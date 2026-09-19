@@ -67,6 +67,10 @@ World _$WorldFromJson(
           ?.map((e) => (e as List<dynamic>).map((e) => e as Object).toList())
           .toList(),
     ),
+    isHypeTrainEligible: $checkedConvert(
+      'isHypeTrainEligible',
+      (v) => v as bool?,
+    ),
     labsPublicationDate: $checkedConvert(
       'labsPublicationDate',
       (v) => v as String,
@@ -145,6 +149,7 @@ Map<String, dynamic> _$WorldToJson(World instance) => <String, dynamic>{
   'id': instance.id,
   'imageUrl': instance.imageUrl,
   'instances': ?instance.instances,
+  'isHypeTrainEligible': ?instance.isHypeTrainEligible,
   'labsPublicationDate': instance.labsPublicationDate,
   'name': instance.name,
   'namespace': ?instance.namespace,

@@ -42,12 +42,12 @@ Name | Type | Description | Notes
 **purchaseCountQuantity** | **int** |  | [optional] 
 **quantifiable** | **bool** |  | [optional] 
 **recurrable** | **bool** |  | 
-**refundable** | **bool** |  | 
+**refundable** | **bool** |  | [optional] 
 **sellerDisplayName** | **String** |  | 
 **sellerId** | **String** |  | 
 **soldByVrc** | **bool** |  | [optional] 
 **stackable** | **bool** |  | 
-**storeIds** | **List&lt;String&gt;** |  | 
+**storeIds** | **List&lt;String&gt;** |  | [optional] 
 **subtitle** | **String** |  | [optional] 
 **tags** | **List&lt;String&gt;** |  | [optional] 
 **updated** | [**DateTime**](DateTime.md) |  | [optional] 

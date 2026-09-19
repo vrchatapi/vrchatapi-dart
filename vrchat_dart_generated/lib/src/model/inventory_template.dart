@@ -42,6 +42,8 @@ class InventoryTemplate {
 
     required this.imageUrl,
 
+    this.initialToggleState,
+
     required this.itemType,
 
     required this.itemTypeLabel,
@@ -51,6 +53,10 @@ class InventoryTemplate {
     required this.name,
 
     this.notificationDetails,
+
+    this.productId,
+
+    this.publishedListings,
 
     this.status,
 
@@ -95,6 +101,9 @@ class InventoryTemplate {
   @JsonKey(name: r'imageUrl', required: true, includeIfNull: false)
   final String imageUrl;
 
+  @JsonKey(name: r'initialToggleState', required: false, includeIfNull: false)
+  final bool? initialToggleState;
+
   @JsonKey(name: r'itemType', required: true, includeIfNull: false)
   final InventoryItemType itemType;
 
@@ -109,6 +118,12 @@ class InventoryTemplate {
 
   @JsonKey(name: r'notificationDetails', required: false, includeIfNull: false)
   final InventoryNotificationDetails? notificationDetails;
+
+  @JsonKey(name: r'productId', required: false, includeIfNull: false)
+  final String? productId;
+
+  @JsonKey(name: r'publishedListings', required: false, includeIfNull: false)
+  final List<String>? publishedListings;
 
   @JsonKey(name: r'status', required: false, includeIfNull: false)
   final String? status;
@@ -141,11 +156,14 @@ class InventoryTemplate {
           other.flags == flags &&
           other.id == id &&
           other.imageUrl == imageUrl &&
+          other.initialToggleState == initialToggleState &&
           other.itemType == itemType &&
           other.itemTypeLabel == itemTypeLabel &&
           other.metadata == metadata &&
           other.name == name &&
           other.notificationDetails == notificationDetails &&
+          other.productId == productId &&
+          other.publishedListings == publishedListings &&
           other.status == status &&
           other.tags == tags &&
           other.updatedAt == updatedAt &&
@@ -164,11 +182,14 @@ class InventoryTemplate {
       flags.hashCode +
       id.hashCode +
       imageUrl.hashCode +
+      initialToggleState.hashCode +
       itemType.hashCode +
       itemTypeLabel.hashCode +
       metadata.hashCode +
       name.hashCode +
       notificationDetails.hashCode +
+      productId.hashCode +
+      publishedListings.hashCode +
       status.hashCode +
       tags.hashCode +
       updatedAt.hashCode +

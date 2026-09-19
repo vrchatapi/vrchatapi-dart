@@ -10,9 +10,13 @@ part of 'past_display_name.dart';
 
 PastDisplayName _$PastDisplayNameFromJson(Map<String, dynamic> json) =>
     $checkedCreate('PastDisplayName', json, ($checkedConvert) {
-      $checkKeys(json, requiredKeys: const ['displayName', 'updated_at']);
+      $checkKeys(
+        json,
+        requiredKeys: const ['displayName', 'reverted', 'updated_at'],
+      );
       final val = PastDisplayName(
         displayName: $checkedConvert('displayName', (v) => v as String),
+        reverted: $checkedConvert('reverted', (v) => v as bool),
         updatedAt: $checkedConvert(
           'updated_at',
           (v) => DateTime.parse(v as String),
@@ -24,5 +28,6 @@ PastDisplayName _$PastDisplayNameFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$PastDisplayNameToJson(PastDisplayName instance) =>
     <String, dynamic>{
       'displayName': instance.displayName,
+      'reverted': instance.reverted,
       'updated_at': instance.updatedAt.toIso8601String(),
     };

@@ -26,6 +26,7 @@ import 'package:vrchat_dart_generated/src/model/add_favorite_request.dart';
 import 'package:vrchat_dart_generated/src/model/add_group_gallery_image_request.dart';
 import 'package:vrchat_dart_generated/src/model/admin_asset_bundle.dart';
 import 'package:vrchat_dart_generated/src/model/admin_unity_package.dart';
+import 'package:vrchat_dart_generated/src/model/age_verification_status_result.dart';
 import 'package:vrchat_dart_generated/src/model/agreement.dart';
 import 'package:vrchat_dart_generated/src/model/agreement_request.dart';
 import 'package:vrchat_dart_generated/src/model/agreement_status.dart';
@@ -41,6 +42,9 @@ import 'package:vrchat_dart_generated/src/model/badge.dart';
 import 'package:vrchat_dart_generated/src/model/balance.dart';
 import 'package:vrchat_dart_generated/src/model/ban_group_member_request.dart';
 import 'package:vrchat_dart_generated/src/model/bare_error.dart';
+import 'package:vrchat_dart_generated/src/model/beta.dart';
+import 'package:vrchat_dart_generated/src/model/beta_registration_not_found_error.dart';
+import 'package:vrchat_dart_generated/src/model/beta_user_field.dart';
 import 'package:vrchat_dart_generated/src/model/boop_request.dart';
 import 'package:vrchat_dart_generated/src/model/calendar_event.dart';
 import 'package:vrchat_dart_generated/src/model/calendar_event_discovery.dart';
@@ -76,16 +80,23 @@ import 'package:vrchat_dart_generated/src/model/dynamic_content_row.dart';
 import 'package:vrchat_dart_generated/src/model/earnings_metrics.dart';
 import 'package:vrchat_dart_generated/src/model/earnings_metrics_totals.dart';
 import 'package:vrchat_dart_generated/src/model/economy_account.dart';
+import 'package:vrchat_dart_generated/src/model/economy_account_limits.dart';
 import 'package:vrchat_dart_generated/src/model/economy_balances.dart';
 import 'package:vrchat_dart_generated/src/model/economy_payout.dart';
 import 'package:vrchat_dart_generated/src/model/economy_payout_eligibility.dart';
 import 'package:vrchat_dart_generated/src/model/economy_payout_list.dart';
 import 'package:vrchat_dart_generated/src/model/economy_payout_status.dart';
+import 'package:vrchat_dart_generated/src/model/economy_status.dart';
 import 'package:vrchat_dart_generated/src/model/equip_inventory_item_request.dart';
 import 'package:vrchat_dart_generated/src/model/error.dart';
 import 'package:vrchat_dart_generated/src/model/favorite.dart';
 import 'package:vrchat_dart_generated/src/model/favorite_group.dart';
+import 'package:vrchat_dart_generated/src/model/favorite_group_contents.dart';
+import 'package:vrchat_dart_generated/src/model/favorite_group_contents_entry.dart';
+import 'package:vrchat_dart_generated/src/model/favorite_group_contents_entry_world.dart';
 import 'package:vrchat_dart_generated/src/model/favorite_group_limits.dart';
+import 'package:vrchat_dart_generated/src/model/favorite_group_list.dart';
+import 'package:vrchat_dart_generated/src/model/favorite_group_summary.dart';
 import 'package:vrchat_dart_generated/src/model/favorite_limits.dart';
 import 'package:vrchat_dart_generated/src/model/favorited_world.dart';
 import 'package:vrchat_dart_generated/src/model/feedback.dart';
@@ -99,6 +110,7 @@ import 'package:vrchat_dart_generated/src/model/file_version_upload_status.dart'
 import 'package:vrchat_dart_generated/src/model/finish_file_data_upload_request.dart';
 import 'package:vrchat_dart_generated/src/model/follow_calendar_event_request.dart';
 import 'package:vrchat_dart_generated/src/model/friend_status.dart';
+import 'package:vrchat_dart_generated/src/model/get_group_gallery_images200_response.dart';
 import 'package:vrchat_dart_generated/src/model/get_group_posts200_response.dart';
 import 'package:vrchat_dart_generated/src/model/get_user_group_instances200_response.dart';
 import 'package:vrchat_dart_generated/src/model/group.dart';
@@ -108,6 +120,7 @@ import 'package:vrchat_dart_generated/src/model/group_gallery.dart';
 import 'package:vrchat_dart_generated/src/model/group_gallery_file_order.dart';
 import 'package:vrchat_dart_generated/src/model/group_gallery_file_order_request.dart';
 import 'package:vrchat_dart_generated/src/model/group_gallery_image.dart';
+import 'package:vrchat_dart_generated/src/model/group_gallery_image_list.dart';
 import 'package:vrchat_dart_generated/src/model/group_instance.dart';
 import 'package:vrchat_dart_generated/src/model/group_member.dart';
 import 'package:vrchat_dart_generated/src/model/group_member_limited_user.dart';
@@ -137,6 +150,7 @@ import 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
 import 'package:vrchat_dart_generated/src/model/instance_short_name_response.dart';
 import 'package:vrchat_dart_generated/src/model/instance_vibe.dart';
 import 'package:vrchat_dart_generated/src/model/inventory.dart';
+import 'package:vrchat_dart_generated/src/model/inventory_asset.dart';
 import 'package:vrchat_dart_generated/src/model/inventory_consumption_results.dart';
 import 'package:vrchat_dart_generated/src/model/inventory_default_attributes_value.dart';
 import 'package:vrchat_dart_generated/src/model/inventory_default_attributes_value_validator.dart';
@@ -203,6 +217,8 @@ import 'package:vrchat_dart_generated/src/model/product_purchase_history.dart';
 import 'package:vrchat_dart_generated/src/model/product_purchase_product.dart';
 import 'package:vrchat_dart_generated/src/model/product_purchase_purchase_context.dart';
 import 'package:vrchat_dart_generated/src/model/product_purchase_record.dart';
+import 'package:vrchat_dart_generated/src/model/profile_group.dart';
+import 'package:vrchat_dart_generated/src/model/profile_groups.dart';
 import 'package:vrchat_dart_generated/src/model/profile_represented_group.dart';
 import 'package:vrchat_dart_generated/src/model/prop.dart';
 import 'package:vrchat_dart_generated/src/model/prop_publish_status.dart';
@@ -253,6 +269,7 @@ import 'package:vrchat_dart_generated/src/model/two_factor_auth_code.dart';
 import 'package:vrchat_dart_generated/src/model/two_factor_email_code.dart';
 import 'package:vrchat_dart_generated/src/model/two_factor_recovery_codes.dart';
 import 'package:vrchat_dart_generated/src/model/two_factor_recovery_codes_otp_inner.dart';
+import 'package:vrchat_dart_generated/src/model/unavailable_world.dart';
 import 'package:vrchat_dart_generated/src/model/unity_package.dart';
 import 'package:vrchat_dart_generated/src/model/update_asset_review_notes_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_avatar_request.dart';
@@ -267,13 +284,17 @@ import 'package:vrchat_dart_generated/src/model/update_inventory_item_request.da
 import 'package:vrchat_dart_generated/src/model/update_invite_message_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_listing_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_product_request.dart';
+import 'package:vrchat_dart_generated/src/model/update_profile_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_prop_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_tilia_tos_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_badge_request.dart';
+import 'package:vrchat_dart_generated/src/model/update_user_client_config_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_note_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_world_request.dart';
 import 'package:vrchat_dart_generated/src/model/user.dart';
+import 'package:vrchat_dart_generated/src/model/user_client_config.dart';
+import 'package:vrchat_dart_generated/src/model/user_cosmetic.dart';
 import 'package:vrchat_dart_generated/src/model/user_credits_eligible.dart';
 import 'package:vrchat_dart_generated/src/model/user_exists.dart';
 import 'package:vrchat_dart_generated/src/model/user_note.dart';
@@ -284,6 +305,7 @@ import 'package:vrchat_dart_generated/src/model/verify2_fa_email_code_result.dar
 import 'package:vrchat_dart_generated/src/model/verify2_fa_result.dart';
 import 'package:vrchat_dart_generated/src/model/verify_auth_token_result.dart';
 import 'package:vrchat_dart_generated/src/model/world.dart';
+import 'package:vrchat_dart_generated/src/model/world_favorite_list.dart';
 import 'package:vrchat_dart_generated/src/model/world_metadata.dart';
 import 'package:vrchat_dart_generated/src/model/world_publish_status.dart';
 
@@ -406,6 +428,9 @@ ReturnType deserialize<ReturnType, BaseType>(
       return AdminUnityPackage.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'AgeVerificationStatus':
+    case 'AgeVerificationStatusResult':
+      return AgeVerificationStatusResult.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'Agreement':
       return Agreement.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AgreementCode':
@@ -448,6 +473,16 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'BareError':
       return BareError.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'Beta':
+      return Beta.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'BetaRegistrationNotFoundError':
+      return BetaRegistrationNotFoundError.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'BetaUserField':
+      return BetaUserField.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'BoopRequest':
       return BoopRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CalendarDayOfWeek':
@@ -568,6 +603,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'EconomyAccount':
       return EconomyAccount.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'EconomyAccountLimits':
+      return EconomyAccountLimits.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'EconomyBalances':
       return EconomyBalances.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -583,6 +621,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'EconomyPayoutStatus':
       return EconomyPayoutStatus.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'EconomyStatus':
+      return EconomyStatus.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'EquipInventoryItemRequest':
       return EquipInventoryItemRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -593,8 +634,25 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'FavoriteGroup':
       return FavoriteGroup.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'FavoriteGroupContents':
+      return FavoriteGroupContents.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'FavoriteGroupContentsEntry':
+      return FavoriteGroupContentsEntry.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'FavoriteGroupContentsEntryWorld':
+      return FavoriteGroupContentsEntryWorld.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'FavoriteGroupLimits':
       return FavoriteGroupLimits.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'FavoriteGroupList':
+      return FavoriteGroupList.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'FavoriteGroupSummary':
+      return FavoriteGroupSummary.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'FavoriteGroupVisibility':
     case 'FavoriteLimits':
@@ -632,6 +690,11 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'FriendStatus':
       return FriendStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'GetGroupGalleryImages200Response':
+      return GetGroupGalleryImages200Response.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'GetGroupPosts200Response':
       return GetGroupPosts200Response.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -661,6 +724,9 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'GroupGalleryImage':
       return GroupGalleryImage.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'GroupGalleryImageList':
+      return GroupGalleryImageList.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'GroupInstance':
       return GroupInstance.fromJson(value as Map<String, dynamic>)
@@ -758,6 +824,9 @@ ReturnType deserialize<ReturnType, BaseType>(
       return InstanceVibe.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Inventory':
       return Inventory.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'InventoryAsset':
+      return InventoryAsset.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'InventoryConsumptionResults':
       return InventoryConsumptionResults.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -980,6 +1049,11 @@ ReturnType deserialize<ReturnType, BaseType>(
       return ProductPurchaseRecord.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'ProductType':
+    case 'ProfileGroup':
+      return ProfileGroup.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'ProfileGroups':
+      return ProfileGroups.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'ProfileRepresentedGroup':
       return ProfileRepresentedGroup.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -1137,6 +1211,9 @@ ReturnType deserialize<ReturnType, BaseType>(
             value as Map<String, dynamic>,
           )
           as ReturnType;
+    case 'UnavailableWorld':
+      return UnavailableWorld.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'UnityPackage':
       return UnityPackage.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'UpdateAssetReviewNotesRequest':
@@ -1182,6 +1259,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'UpdateProductRequest':
       return UpdateProductRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'UpdateProfileRequest':
+      return UpdateProfileRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'UpdatePropRequest':
       return UpdatePropRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -1190,6 +1270,11 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'UpdateUserBadgeRequest':
       return UpdateUserBadgeRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'UpdateUserClientConfigRequest':
+      return UpdateUserClientConfigRequest.fromJson(
+            value as Map<String, dynamic>,
+          )
           as ReturnType;
     case 'UpdateUserNoteRequest':
       return UpdateUserNoteRequest.fromJson(value as Map<String, dynamic>)
@@ -1202,6 +1287,11 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'User':
       return User.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'UserClientConfig':
+      return UserClientConfig.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'UserCosmetic':
+      return UserCosmetic.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'UserCreditsEligible':
       return UserCreditsEligible.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -1231,6 +1321,9 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'World':
       return World.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'WorldFavoriteList':
+      return WorldFavoriteList.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'WorldMetadata':
       return WorldMetadata.fromJson(value as Map<String, dynamic>)
           as ReturnType;

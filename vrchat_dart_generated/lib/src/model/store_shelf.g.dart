@@ -47,9 +47,25 @@ StoreShelf _$StoreShelfFromJson(
       'shelfBackgroundImageId',
       (v) => v as String?,
     ),
+    shelfClientBannerImageId: $checkedConvert(
+      'shelfClientBannerImageId',
+      (v) => v as String?,
+    ),
     shelfDescription: $checkedConvert('shelfDescription', (v) => v as String),
     shelfIconImageId: $checkedConvert('shelfIconImageId', (v) => v as String?),
     shelfLayout: $checkedConvert('shelfLayout', (v) => v as String),
+    shelfMobileHeroBannerImageId: $checkedConvert(
+      'shelfMobileHeroBannerImageId',
+      (v) => v as String?,
+    ),
+    shelfMobileLogoImageId: $checkedConvert(
+      'shelfMobileLogoImageId',
+      (v) => v as String?,
+    ),
+    shelfMobileSecondaryBannerImageId: $checkedConvert(
+      'shelfMobileSecondaryBannerImageId',
+      (v) => v as String?,
+    ),
     shelfTabBackgroundImageId: $checkedConvert(
       'shelfTabBackgroundImageId',
       (v) => v as String?,
@@ -68,9 +84,14 @@ Map<String, dynamic> _$StoreShelfToJson(StoreShelf instance) =>
       'listingIds': instance.listingIds,
       'listings': ?instance.listings?.map((e) => e.toJson()).toList(),
       'shelfBackgroundImageId': ?instance.shelfBackgroundImageId,
+      'shelfClientBannerImageId': ?instance.shelfClientBannerImageId,
       'shelfDescription': instance.shelfDescription,
       'shelfIconImageId': ?instance.shelfIconImageId,
       'shelfLayout': instance.shelfLayout,
+      'shelfMobileHeroBannerImageId': ?instance.shelfMobileHeroBannerImageId,
+      'shelfMobileLogoImageId': ?instance.shelfMobileLogoImageId,
+      'shelfMobileSecondaryBannerImageId':
+          ?instance.shelfMobileSecondaryBannerImageId,
       'shelfTabBackgroundImageId': ?instance.shelfTabBackgroundImageId,
       'shelfTitle': instance.shelfTitle,
       'updatedAt': instance.updatedAt.toIso8601String(),

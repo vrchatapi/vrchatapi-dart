@@ -8,6 +8,7 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**collaborationId** | **String** |  | [optional] 
 **creator** | [**ProductListingAttributionCreator**](ProductListingAttributionCreator.md) |  | [optional] 
 **publisher** | [**ProductListingAttributionCreator**](ProductListingAttributionCreator.md) |  | [optional] 
 

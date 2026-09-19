@@ -10,7 +10,6 @@ import 'package:vrchat_dart_generated/src/model/past_display_name.dart';
 import 'package:vrchat_dart_generated/src/model/current_user_presence.dart';
 import 'package:vrchat_dart_generated/src/model/discord_details.dart';
 import 'package:vrchat_dart_generated/src/model/account_deletion_log.dart';
-import 'package:vrchat_dart_generated/src/model/badge.dart';
 import 'package:vrchat_dart_generated/src/model/age_verification_status.dart';
 import 'package:vrchat_dart_generated/src/model/user_state.dart';
 
@@ -49,15 +48,11 @@ class CurrentUser {
 
     this.authToken,
 
-    this.badges,
-
     this.bannerColor,
 
     this.bannerType,
 
-    required this.bio,
-
-    required this.bioLinks,
+    this.bannerUrl,
 
     this.completedTutorials,
 
@@ -169,10 +164,6 @@ class CurrentUser {
 
     this.profileEffect,
 
-    required this.profilePicOverride,
-
-    required this.profilePicOverrideThumbnail,
-
     required this.pronouns,
 
     required this.pronounsHistory,
@@ -216,8 +207,6 @@ class CurrentUser {
     required this.unsubscribe,
 
     this.updatedAt,
-
-    required this.userIcon,
 
     this.userLanguage,
 
@@ -275,22 +264,14 @@ class CurrentUser {
   @JsonKey(name: r'authToken', required: false, includeIfNull: false)
   final String? authToken;
 
-  ///
-  @JsonKey(name: r'badges', required: false, includeIfNull: false)
-  final List<Badge>? badges;
-
   @JsonKey(name: r'bannerColor', required: false, includeIfNull: false)
   final String? bannerColor;
 
   @JsonKey(name: r'bannerType', required: false, includeIfNull: false)
   final String? bannerType;
 
-  @JsonKey(name: r'bio', required: true, includeIfNull: false)
-  final String bio;
-
-  ///
-  @JsonKey(name: r'bioLinks', required: true, includeIfNull: false)
-  final List<String> bioLinks;
+  @JsonKey(name: r'bannerUrl', required: false, includeIfNull: false)
+  final String? bannerUrl;
 
   @JsonKey(name: r'completedTutorials', required: false, includeIfNull: false)
   final List<String>? completedTutorials;
@@ -494,16 +475,6 @@ class CurrentUser {
   @JsonKey(name: r'profileEffect', required: false, includeIfNull: false)
   final String? profileEffect;
 
-  @JsonKey(name: r'profilePicOverride', required: true, includeIfNull: false)
-  final String profilePicOverride;
-
-  @JsonKey(
-    name: r'profilePicOverrideThumbnail',
-    required: true,
-    includeIfNull: false,
-  )
-  final String profilePicOverrideThumbnail;
-
   @JsonKey(name: r'pronouns', required: true, includeIfNull: false)
   final String pronouns;
 
@@ -578,9 +549,6 @@ class CurrentUser {
   @JsonKey(name: r'updated_at', required: false, includeIfNull: false)
   final DateTime? updatedAt;
 
-  @JsonKey(name: r'userIcon', required: true, includeIfNull: false)
-  final String userIcon;
-
   @JsonKey(name: r'userLanguage', required: false, includeIfNull: false)
   final String? userLanguage;
 
@@ -616,11 +584,9 @@ class CurrentUser {
           other.appleDetails == appleDetails &&
           other.appleId == appleId &&
           other.authToken == authToken &&
-          other.badges == badges &&
           other.bannerColor == bannerColor &&
           other.bannerType == bannerType &&
-          other.bio == bio &&
-          other.bioLinks == bioLinks &&
+          other.bannerUrl == bannerUrl &&
           other.completedTutorials == completedTutorials &&
           other.contentFilters == contentFilters &&
           other.currentAvatar == currentAvatar &&
@@ -677,8 +643,6 @@ class CurrentUser {
           other.platformHistory == platformHistory &&
           other.presence == presence &&
           other.profileEffect == profileEffect &&
-          other.profilePicOverride == profilePicOverride &&
-          other.profilePicOverrideThumbnail == profilePicOverrideThumbnail &&
           other.pronouns == pronouns &&
           other.pronounsHistory == pronounsHistory &&
           other.queuedInstance == queuedInstance &&
@@ -701,7 +665,6 @@ class CurrentUser {
           other.twoFactorAuthEnabledDate == twoFactorAuthEnabledDate &&
           other.unsubscribe == unsubscribe &&
           other.updatedAt == updatedAt &&
-          other.userIcon == userIcon &&
           other.userLanguage == userLanguage &&
           other.userLanguageCode == userLanguageCode &&
           other.username == username &&
@@ -722,11 +685,9 @@ class CurrentUser {
       appleDetails.hashCode +
       appleId.hashCode +
       authToken.hashCode +
-      badges.hashCode +
       bannerColor.hashCode +
       bannerType.hashCode +
-      bio.hashCode +
-      bioLinks.hashCode +
+      bannerUrl.hashCode +
       completedTutorials.hashCode +
       contentFilters.hashCode +
       currentAvatar.hashCode +
@@ -782,8 +743,6 @@ class CurrentUser {
       platformHistory.hashCode +
       presence.hashCode +
       profileEffect.hashCode +
-      profilePicOverride.hashCode +
-      profilePicOverrideThumbnail.hashCode +
       pronouns.hashCode +
       pronounsHistory.hashCode +
       (queuedInstance == null ? 0 : queuedInstance.hashCode) +
@@ -808,7 +767,6 @@ class CurrentUser {
           : twoFactorAuthEnabledDate.hashCode) +
       unsubscribe.hashCode +
       updatedAt.hashCode +
-      userIcon.hashCode +
       (userLanguage == null ? 0 : userLanguage.hashCode) +
       (userLanguageCode == null ? 0 : userLanguageCode.hashCode) +
       username.hashCode +

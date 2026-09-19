@@ -50,6 +50,7 @@ InfoPushData _$InfoPushDataFromJson(
       (v) => v as String?,
     ),
     finalName: $checkedConvert('finalName', (v) => v as String?),
+    hoverToJoin: $checkedConvert('hoverToJoin', (v) => v as bool?),
     iconImageUrl: $checkedConvert('iconImageUrl', (v) => v as String?),
     imageUrl: $checkedConvert('imageUrl', (v) => v as String?),
     ipsQuery: $checkedConvert(
@@ -109,6 +110,7 @@ Map<String, dynamic> _$InfoPushDataToJson(InfoPushData instance) =>
       'domainList': ?instance.domainList?.map((e) => e.toJson()).toList(),
       'featuredAvatarCategoryId': ?instance.featuredAvatarCategoryId,
       'finalName': ?instance.finalName,
+      'hoverToJoin': ?instance.hoverToJoin,
       'iconImageUrl': ?instance.iconImageUrl,
       'imageUrl': ?instance.imageUrl,
       'ipsQuery': ?instance.ipsQuery?.toJson(),

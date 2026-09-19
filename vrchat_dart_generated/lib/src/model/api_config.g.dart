@@ -70,7 +70,6 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
         'downloadLinkWindows',
         'downloadUrls',
         'dynamicWorldRows',
-        'economyLedgerBackfill',
         'economyLedgerMode',
         'economyPauseEnd',
         'economyPauseStart',
@@ -378,7 +377,7 @@ APIConfig _$APIConfigFromJson(Map<String, dynamic> json) => $checkedCreate(
       ),
       economyLedgerBackfill: $checkedConvert(
         'economyLedgerBackfill',
-        (v) => v as bool,
+        (v) => v as bool?,
       ),
       economyLedgerMigrationStop: $checkedConvert(
         'economyLedgerMigrationStop',
@@ -758,7 +757,7 @@ Map<String, dynamic> _$APIConfigToJson(APIConfig instance) => <String, dynamic>{
   'downloadLinkWindows': instance.downloadLinkWindows,
   'downloadUrls': instance.downloadUrls.toJson(),
   'dynamicWorldRows': instance.dynamicWorldRows.map((e) => e.toJson()).toList(),
-  'economyLedgerBackfill': instance.economyLedgerBackfill,
+  'economyLedgerBackfill': ?instance.economyLedgerBackfill,
   'economyLedgerMigrationStop': ?instance.economyLedgerMigrationStop,
   'economyLedgerMode': instance.economyLedgerMode,
   'economyPauseEnd': instance.economyPauseEnd.toIso8601String(),

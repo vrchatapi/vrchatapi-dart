@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **domainList** | [**List&lt;InfoPushDataDomainListInner&gt;**](InfoPushDataDomainListInner.md) |  | [optional] 
 **featuredAvatarCategoryId** | **String** |  | [optional] 
 **finalName** | **String** |  | [optional] 
+**hoverToJoin** | **bool** |  | [optional] 
 **iconImageUrl** | **String** |  | [optional] 
 **imageUrl** | **String** |  | [optional] 
 **ipsQuery** | [**InfoPushIpsQuery**](InfoPushIpsQuery.md) |  | [optional] 

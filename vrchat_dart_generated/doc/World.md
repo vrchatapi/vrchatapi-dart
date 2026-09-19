@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **id** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | 
 **imageUrl** | **String** |  | 
 **instances** | [**List&lt;List&lt;Object&gt;&gt;**](List.md) | Will always be an empty list when unauthenticated. | [optional] 
+**isHypeTrainEligible** | **bool** |  | [optional] 
 **labsPublicationDate** | **String** |  | 
 **name** | **String** |  | 
 **namespace** | **String** |  | [optional] 

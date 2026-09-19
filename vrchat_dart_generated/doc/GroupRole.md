@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **order** | **int** |  | [optional] 
 **permissions** | [**List&lt;GroupPermissions&gt;**](GroupPermissions.md) |  | [optional] 
+**productId** | **String** |  | [optional] 
 **requiresPurchase** | **bool** |  | [optional] [default to false]
 **requiresTwoFactor** | **bool** |  | [optional] [default to false]
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] 

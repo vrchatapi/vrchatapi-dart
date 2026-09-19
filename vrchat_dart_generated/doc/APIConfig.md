@@ -79,7 +79,7 @@ Name | Type | Description | Notes
 **downloadLinkWindows** | **String** | Download link for game on the Oculus Rift website. | 
 **downloadUrls** | [**APIConfigDownloadURLList**](APIConfigDownloadURLList.md) |  | 
 **dynamicWorldRows** | [**Set&lt;DynamicContentRow&gt;**](DynamicContentRow.md) | Array of DynamicWorldRow objects, used by the game to display the list of world rows | 
-**economyLedgerBackfill** | **bool** | Unknown | 
+**economyLedgerBackfill** | **bool** | Unknown | [optional] 
 **economyLedgerMigrationStop** | **String** | Unknown | [optional] 
 **economyLedgerMode** | **String** | Unknown | 
 **economyPauseEnd** | [**DateTime**](DateTime.md) | Unknown | 

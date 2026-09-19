@@ -12,22 +12,15 @@ GroupMemberLimitedUser _$GroupMemberLimitedUserFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('GroupMemberLimitedUser', json, ($checkedConvert) {
   final val = GroupMemberLimitedUser(
-    currentAvatarTags: $checkedConvert(
-      'currentAvatarTags',
-      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-    ),
-    currentAvatarThumbnailImageUrl: $checkedConvert(
-      'currentAvatarThumbnailImageUrl',
-      (v) => v as String?,
-    ),
+    bannerColor: $checkedConvert('bannerColor', (v) => v as String?),
+    bannerType: $checkedConvert('bannerType', (v) => v as String?),
+    bannerUrl: $checkedConvert('bannerUrl', (v) => v as String?),
     displayName: $checkedConvert('displayName', (v) => v as String?),
+    iconFrame: $checkedConvert('iconFrame', (v) => v as String?),
     iconUrl: $checkedConvert('iconUrl', (v) => v as String?),
     id: $checkedConvert('id', (v) => v as String?),
-    profilePicOverride: $checkedConvert(
-      'profilePicOverride',
-      (v) => v as String?,
-    ),
-    thumbnailUrl: $checkedConvert('thumbnailUrl', (v) => v as String?),
+    nameplateEffect: $checkedConvert('nameplateEffect', (v) => v as String?),
+    profileEffect: $checkedConvert('profileEffect', (v) => v as String?),
   );
   return val;
 });
@@ -35,11 +28,13 @@ GroupMemberLimitedUser _$GroupMemberLimitedUserFromJson(
 Map<String, dynamic> _$GroupMemberLimitedUserToJson(
   GroupMemberLimitedUser instance,
 ) => <String, dynamic>{
-  'currentAvatarTags': ?instance.currentAvatarTags,
-  'currentAvatarThumbnailImageUrl': ?instance.currentAvatarThumbnailImageUrl,
+  'bannerColor': ?instance.bannerColor,
+  'bannerType': ?instance.bannerType,
+  'bannerUrl': ?instance.bannerUrl,
   'displayName': ?instance.displayName,
+  'iconFrame': ?instance.iconFrame,
   'iconUrl': ?instance.iconUrl,
   'id': ?instance.id,
-  'profilePicOverride': ?instance.profilePicOverride,
-  'thumbnailUrl': ?instance.thumbnailUrl,
+  'nameplateEffect': ?instance.nameplateEffect,
+  'profileEffect': ?instance.profileEffect,
 };

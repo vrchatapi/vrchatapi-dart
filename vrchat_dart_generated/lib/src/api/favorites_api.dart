@@ -12,6 +12,8 @@ import 'package:dio/dio.dart';
 import 'package:vrchat_dart_generated/src/model/add_favorite_request.dart';
 import 'package:vrchat_dart_generated/src/model/favorite.dart';
 import 'package:vrchat_dart_generated/src/model/favorite_group.dart';
+import 'package:vrchat_dart_generated/src/model/favorite_group_contents.dart';
+import 'package:vrchat_dart_generated/src/model/favorite_group_list.dart';
 import 'package:vrchat_dart_generated/src/model/favorite_limits.dart';
 import 'package:vrchat_dart_generated/src/model/favorite_type.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
@@ -325,6 +327,109 @@ class FavoritesApi {
     );
   }
 
+  /// List Favorite Group Contents
+  /// List the favorites in a group, each alongside the object it points at.
+  ///
+  /// Parameters:
+  /// * [favoriteGroupType] - The type of group to fetch, must be a valid FavoriteType.
+  /// * [favoriteGroupName] - The name of the group to fetch, must be a name of a FavoriteGroup.
+  /// * [ownerId] - The user whose favorite group to return. Must be a user ID.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [FavoriteGroupContents] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<FavoriteGroupContents>> getFavoriteGroupContents({
+    required FavoriteType favoriteGroupType,
+    required String favoriteGroupName,
+    String? ownerId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/favorites/groups/{favoriteGroupType}/{favoriteGroupName}'
+        .replaceAll(
+          '{'
+          r'favoriteGroupType'
+          '}',
+          favoriteGroupType.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'favoriteGroupName'
+          '}',
+          favoriteGroupName.toString(),
+        );
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (ownerId != null) r'ownerId': ownerId,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    FavoriteGroupContents? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<FavoriteGroupContents, FavoriteGroupContents>(
+              rawData,
+              'FavoriteGroupContents',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<FavoriteGroupContents>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// List Favorite Groups
   /// Return a list of favorite groups owned by a user. Returns the same information as &#x60;getFavoriteGroups&#x60;.
   ///
@@ -413,6 +518,100 @@ class FavoritesApi {
     }
 
     return Response<List<FavoriteGroup>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// List Favorite Groups By Type
+  /// List a user&#39;s favorite groups of one type.
+  ///
+  /// Parameters:
+  /// * [favoriteGroupType] - The type of group to fetch, must be a valid FavoriteType.
+  /// * [ownerId] - The user whose favorite groups to return. Must be a user ID.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [FavoriteGroupList] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<FavoriteGroupList>> getFavoriteGroupsByType({
+    required FavoriteType favoriteGroupType,
+    String? ownerId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/favorites/groups/{favoriteGroupType}'.replaceAll(
+      '{'
+      r'favoriteGroupType'
+      '}',
+      favoriteGroupType.toString(),
+    );
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (ownerId != null) r'ownerId': ownerId,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    FavoriteGroupList? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<FavoriteGroupList, FavoriteGroupList>(
+              rawData,
+              'FavoriteGroupList',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<FavoriteGroupList>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

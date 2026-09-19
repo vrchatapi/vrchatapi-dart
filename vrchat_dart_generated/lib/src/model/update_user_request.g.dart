@@ -16,11 +16,6 @@ UpdateUserRequest _$UpdateUserRequestFromJson(
       'acceptedTOSVersion',
       (v) => (v as num?)?.toInt(),
     ),
-    bio: $checkedConvert('bio', (v) => v as String?),
-    bioLinks: $checkedConvert(
-      'bioLinks',
-      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-    ),
     birthday: $checkedConvert(
       'birthday',
       (v) => v == null ? null : DateTime.parse(v as String),
@@ -59,7 +54,6 @@ UpdateUserRequest _$UpdateUserRequestFromJson(
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
     ),
     unsubscribe: $checkedConvert('unsubscribe', (v) => v as bool?),
-    userIcon: $checkedConvert('userIcon', (v) => v as String?),
   );
   return val;
 });
@@ -67,8 +61,6 @@ UpdateUserRequest _$UpdateUserRequestFromJson(
 Map<String, dynamic> _$UpdateUserRequestToJson(UpdateUserRequest instance) =>
     <String, dynamic>{
       'acceptedTOSVersion': ?instance.acceptedTOSVersion,
-      'bio': ?instance.bio,
-      'bioLinks': ?instance.bioLinks,
       'birthday': ?instance.birthday?.toIso8601String(),
       'contentFilters': ?instance.contentFilters
           ?.map((e) => _$ContentFilterEnumMap[e]!)
@@ -86,7 +78,6 @@ Map<String, dynamic> _$UpdateUserRequestToJson(UpdateUserRequest instance) =>
       'statusDescription': ?instance.statusDescription,
       'tags': ?instance.tags,
       'unsubscribe': ?instance.unsubscribe,
-      'userIcon': ?instance.userIcon,
     };
 
 const _$ContentFilterEnumMap = {

@@ -39,6 +39,7 @@ GroupRole _$GroupRoleFromJson(Map<String, dynamic> json) =>
               ?.map((e) => $enumDecode(_$GroupPermissionsEnumMap, e))
               .toList(),
         ),
+        productId: $checkedConvert('productId', (v) => v as String?),
         requiresPurchase: $checkedConvert(
           'requiresPurchase',
           (v) => v as bool? ?? false,
@@ -69,6 +70,7 @@ Map<String, dynamic> _$GroupRoleToJson(GroupRole instance) => <String, dynamic>{
   'permissions': ?instance.permissions
       ?.map((e) => _$GroupPermissionsEnumMap[e]!)
       .toList(),
+  'productId': ?instance.productId,
   'requiresPurchase': ?instance.requiresPurchase,
   'requiresTwoFactor': ?instance.requiresTwoFactor,
   'updatedAt': ?instance.updatedAt?.toIso8601String(),
