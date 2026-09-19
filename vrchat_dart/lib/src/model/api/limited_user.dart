@@ -20,7 +20,6 @@ class LimitedUser {
   /// Returns a new [LimitedUser] instance.
   const LimitedUser({
     // Common required fields (present and required in all variants)
-    required this.currentAvatarImageUrl,
     required this.developerType,
     required this.displayName,
     required this.id,
@@ -33,6 +32,7 @@ class LimitedUser {
     // Common optional fields (present in all but optional)
     this.bio,
     this.bioLinks,
+    this.currentAvatarImageUrl,
     this.currentAvatarThumbnailImageUrl,
     this.currentAvatarTags,
     this.profilePicOverride,
@@ -56,10 +56,6 @@ class LimitedUser {
   });
 
   // Common required fields
-
-  /// When profilePicOverride is not empty, use it instead.
-  @JsonKey(name: r'currentAvatarImageUrl', required: true, includeIfNull: false)
-  final String? currentAvatarImageUrl;
 
   /// The developer type of the user.
   @JsonKey(name: r'developerType', required: true, includeIfNull: false)
@@ -102,6 +98,14 @@ class LimitedUser {
   final String? userIcon;
 
   // Common optional fields
+
+  /// When profilePicOverride is not empty, use it instead.
+  @JsonKey(
+    name: r'currentAvatarImageUrl',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? currentAvatarImageUrl;
 
   /// The user's biography.
   @JsonKey(name: r'bio', required: false, includeIfNull: false)

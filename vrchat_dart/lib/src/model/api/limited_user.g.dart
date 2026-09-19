@@ -15,7 +15,6 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
     $checkKeys(
       json,
       requiredKeys: const [
-        'currentAvatarImageUrl',
         'developerType',
         'displayName',
         'id',
@@ -27,10 +26,6 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
       ],
     );
     final val = LimitedUser(
-      currentAvatarImageUrl: $checkedConvert(
-        'currentAvatarImageUrl',
-        (v) => v as String?,
-      ),
       developerType: $checkedConvert(
         'developerType',
         (v) => $enumDecode(_$DeveloperTypeEnumMap, v),
@@ -55,6 +50,10 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
       bioLinks: $checkedConvert(
         'bioLinks',
         (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+      ),
+      currentAvatarImageUrl: $checkedConvert(
+        'currentAvatarImageUrl',
+        (v) => v as String?,
       ),
       currentAvatarThumbnailImageUrl: $checkedConvert(
         'currentAvatarThumbnailImageUrl',
@@ -122,7 +121,6 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
 Map<String, dynamic> _$LimitedUserToJson(
   LimitedUser instance,
 ) => <String, dynamic>{
-  'currentAvatarImageUrl': ?instance.currentAvatarImageUrl,
   'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
   'displayName': instance.displayName,
   'id': instance.id,
@@ -133,6 +131,7 @@ Map<String, dynamic> _$LimitedUserToJson(
   'statusDescription': instance.statusDescription,
   'tags': instance.tags,
   'userIcon': ?instance.userIcon,
+  'currentAvatarImageUrl': ?instance.currentAvatarImageUrl,
   'bio': ?instance.bio,
   'bioLinks': ?instance.bioLinks,
   'currentAvatarThumbnailImageUrl': ?instance.currentAvatarThumbnailImageUrl,
