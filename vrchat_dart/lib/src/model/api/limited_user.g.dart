@@ -82,6 +82,7 @@ LimitedUser _$LimitedUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => v == null ? null : DateTime.parse(v as String),
       ),
       friendKey: $checkedConvert('friendKey', (v) => v as String?),
+      iconUrl: $checkedConvert('iconUrl', (v) => v as String?),
       imageUrl: $checkedConvert('imageUrl', (v) => v as String?),
       location: $checkedConvert('location', (v) => v as String?),
       lastLogin: $checkedConvert(
@@ -142,6 +143,7 @@ Map<String, dynamic> _$LimitedUserToJson(
   'allowAvatarCopying': ?instance.allowAvatarCopying,
   'date_joined': instance.dateJoined?.toIso8601String(),
   'friendKey': ?instance.friendKey,
+  'iconUrl': ?instance.iconUrl,
   'imageUrl': ?instance.imageUrl,
   'location': ?instance.location,
   'last_login': instance.lastLogin?.toIso8601String(),

@@ -32,25 +32,26 @@ class LimitedUser {
     // Common optional fields (present in all but optional)
     this.bio,
     this.bioLinks,
-    this.currentAvatarImageUrl,
-    this.currentAvatarThumbnailImageUrl,
-    this.currentAvatarTags,
-    this.profilePicOverride,
-    this.userIcon,
 
     // Fields from specific variants
     this.ageVerificationStatus,
     this.ageVerified,
     this.allowAvatarCopying,
+    this.currentAvatarImageUrl,
+    this.currentAvatarThumbnailImageUrl,
+    this.currentAvatarTags,
     this.dateJoined,
     this.friendKey,
+    this.iconUrl,
     this.imageUrl,
     this.location,
     this.lastLogin,
     this.lastActivity,
     this.lastMobile,
     this.platform,
+    this.profilePicOverride,
     this.profilePicOverrideThumbnail,
+    this.userIcon,
     this.pronouns,
     this.state,
   });
@@ -153,6 +154,10 @@ class LimitedUser {
   @JsonKey(name: r'friendKey', required: false, includeIfNull: false)
   final String? friendKey;
 
+  /// The user's icon URL.
+  @JsonKey(name: r'iconUrl', required: false, includeIfNull: false)
+  final String? iconUrl;
+
   /// The user's image URL.
   @JsonKey(name: r'imageUrl', required: false, includeIfNull: false)
   final String? imageUrl;
@@ -218,6 +223,7 @@ class LimitedUser {
           other.allowAvatarCopying == allowAvatarCopying &&
           other.dateJoined == dateJoined &&
           other.friendKey == friendKey &&
+          other.iconUrl == iconUrl &&
           other.imageUrl == imageUrl &&
           other.location == location &&
           other.lastLogin == lastLogin &&
@@ -250,6 +256,7 @@ class LimitedUser {
       (allowAvatarCopying?.hashCode ?? 0) +
       (dateJoined?.hashCode ?? 0) +
       (friendKey?.hashCode ?? 0) +
+      (iconUrl?.hashCode ?? 0) +
       (imageUrl?.hashCode ?? 0) +
       (location?.hashCode ?? 0) +
       (lastLogin?.hashCode ?? 0) +

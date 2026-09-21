@@ -9,7 +9,7 @@ part 'streamed_current_user.g.dart';
 @JsonSerializable()
 class StreamedCurrentUser {
   /// The user's bio
-  final String bio;
+  final String? bio;
 
   /// The user's avatar id
   final String? currentAvatar;
@@ -24,13 +24,13 @@ class StreamedCurrentUser {
   final String displayName;
 
   /// The user's fallbackAvatar
-  final String fallbackAvatar;
+  final String? fallbackAvatar;
 
   /// The user's id
   final String id;
 
-  /// The user's profile pic override
-  final String profilePicOverride;
+  /// The user's icon URL
+  final String? iconUrl;
 
   /// The user's status
   final UserStatus status;
@@ -41,27 +41,23 @@ class StreamedCurrentUser {
   /// The user's tags
   final List<String> tags;
 
-  /// The user's icon
-  final String userIcon;
-
   /// The user's username
-  final String username;
+  final String? username;
 
   /// Create a [StreamedCurrentUser]
   const StreamedCurrentUser({
-    required this.bio,
+    this.bio,
     this.currentAvatar,
     required this.currentAvatarImageUrl,
     required this.currentAvatarThumbnailImageUrl,
     required this.displayName,
-    required this.fallbackAvatar,
+    this.fallbackAvatar,
     required this.id,
-    required this.profilePicOverride,
+    this.iconUrl,
     required this.status,
     required this.statusDescription,
     required this.tags,
-    required this.userIcon,
-    required this.username,
+    this.username,
   });
 
   /// Create a [StreamedCurrentUser] from json

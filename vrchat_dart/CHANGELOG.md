@@ -1,3 +1,9 @@
+## 4.0.5
+
+- Makes `StreamedCurrentUser` fields `bio`, `fallbackAvatar`, and `username` optional
+- Replaces `StreamedCurrentUser.userIcon` and `profilePicOverride` with `iconUrl`
+- Adds `LimitedUser.iconUrl`
+
 ## 4.0.4
 
 - Allows `LimitedUser` to deserialize when `currentAvatarImageUrl` is absent
