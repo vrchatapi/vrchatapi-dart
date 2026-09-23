@@ -28,11 +28,11 @@ jobs:
 
       - uses: vrchatapi/specification/.github/actions/download@main
         with:
-          bundle: openapi-legacy.yaml
+          bundle: openapi-3.0.yaml
 
       - run: |
           mkdir -p ../vrchatapi-specification/dist
-          mv openapi-legacy.yaml ../vrchatapi-specification/dist/
+          mv openapi-3.0.yaml ../vrchatapi-specification/dist/
 
       - run: ./generate.sh local
 
