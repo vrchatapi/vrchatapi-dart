@@ -21,15 +21,11 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: ${{ inputs.artifact }}
-
       - if: ${{ !inputs.artifact }}
         uses: actions/checkout@v7
-
       - uses: dart-lang/setup-dart@v1.8.0
-
       - run: dart pub get
         working-directory: vrchat_dart_generated
-
       - run: dart analyze
         working-directory: vrchat_dart_generated
 
@@ -46,16 +42,11 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: ${{ inputs.artifact }}
-
       - if: ${{ !inputs.artifact }}
         uses: actions/checkout@v7
-
       - uses: dart-lang/setup-dart@v1.8.0
-
       - run: dart pub get
-
       - run: dart pub publish --dry-run
-
       - run: |
           dart pub global activate pana
           pana --no-warning --exit-code-threshold 0

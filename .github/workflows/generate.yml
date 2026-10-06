@@ -24,15 +24,12 @@ jobs:
           restore-keys: ${{ env.cache-name }}-
 
       - uses: vrchatapi/specification/.github/actions/setup-generator@main
-
       - uses: vrchatapi/specification/.github/actions/download@main
         with:
           bundle: openapi-3.0.yaml
-
       - run: |
           mkdir -p ../vrchatapi-specification/dist
           mv openapi-3.0.yaml ../vrchatapi-specification/dist/
-
       - name: Generate
         run: ./generate.sh local
 
