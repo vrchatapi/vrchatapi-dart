@@ -45,10 +45,7 @@ extension UserResponseExtension on UserResponse {
 
   /// Convert a [UserResponse] to a [CurrentUser]
   CurrentUser toCurrentUser() {
-    return CurrentUser.fromJson({
-      ...toJson(),
-      'last_mobile': lastMobile,
-    });
+    return CurrentUser.fromJson({...toJson(), 'last_mobile': lastMobile});
   }
 
   /// Convert a [UserResponse] to a [LimitedUser]

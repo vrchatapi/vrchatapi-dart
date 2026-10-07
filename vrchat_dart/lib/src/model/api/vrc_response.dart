@@ -1,8 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:dio_response_validator/dio_response_validator.dart';
 import 'package:meta/meta.dart';
-import 'package:vrchat_dart_generated/vrchat_dart_generated.dart'
-    hide Response;
+import 'package:vrchat_dart_generated/vrchat_dart_generated.dart' hide Response;
 
 /// A response from the auth API
 @immutable
