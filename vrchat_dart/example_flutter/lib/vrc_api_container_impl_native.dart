@@ -1,5 +1,3 @@
-import 'package:package_info_plus/package_info_plus.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:vrchat_dart/vrchat_dart.dart';
 import 'package:vrchat_dart_example_flutter/vrc_api_container_impl_base.dart';
 
@@ -7,14 +5,15 @@ import 'package:vrchat_dart_example_flutter/vrc_api_container_impl_base.dart';
 class VrcApiContainerImpl extends VrcApiContainerImplBase {
   @override
   Future<VrchatDart> create() async {
-    final packageInfo = await PackageInfo.fromPlatform();
-    final appDocDir = await getApplicationDocumentsDirectory();
-    final appDocPath = appDocDir.path;
+    // In a real app, use package_info_plus.
+    const version = '0.0.0';
+    // In a real app, use path_provider.
+    const appDocPath = 'path/to/application/documents';
 
     return VrchatDart(
-      userAgent: VrchatUserAgent(
+      userAgent: const VrchatUserAgent(
         applicationName: 'vrchat_dart_example',
-        version: packageInfo.version,
+        version: version,
         contactInfo: 'TODO',
       ),
       cookiePath: appDocPath,

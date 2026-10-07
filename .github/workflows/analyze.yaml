@@ -42,7 +42,11 @@ jobs:
           path: ${{ env.PUB_CACHE }}
           key: ${{ env.cache-name }}-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: ${{ env.cache-name }}-
-      - run: dart pub get
+      - run: |
+          dart pub get
+          if [ -d example_flutter ]; then
+            dart pub get --directory=example_flutter
+          fi
       - run: dart analyze --fatal-infos
       - run: dart pub publish --dry-run
       - run: |
