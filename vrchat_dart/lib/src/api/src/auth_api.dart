@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:dio_response_validator/dio_response_validator.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
+import 'package:vrchat_dart/src/convenience/user_extensions.dart';
 import 'package:vrchat_dart/src/model/api/vrc_response.dart';
 
 /// Auth convenience methods
@@ -35,18 +36,7 @@ class AuthApi {
         .validateVrc();
 
     if (success != null) {
-      final twoFactorAuthTypes = success.data.requiresTwoFactorAuth;
-      if (twoFactorAuthTypes != null && twoFactorAuthTypes.isNotEmpty) {
-        return (
-          ValidResponse(
-            AuthResponse(twoFactorAuthTypes: twoFactorAuthTypes),
-            success.response,
-          ),
-          null,
-        );
-      }
-
-      _currentUser = CurrentUser.fromJson(success.data.toJson());
+      _currentUser = success.data.toCurrentUser();
       return (ValidResponse(AuthResponse(), success.response), null);
     } else if (failure != null) {
       final response = failure.response;
