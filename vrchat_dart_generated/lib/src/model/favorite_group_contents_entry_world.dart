@@ -54,7 +54,7 @@ class FavoriteGroupContentsEntryWorld {
 
     required this.name,
 
-    required this.occupants,
+    this.occupants,
 
     this.organization = 'vrchat',
 
@@ -66,7 +66,7 @@ class FavoriteGroupContentsEntryWorld {
 
     this.recommendedCapacity,
 
-    required this.releaseStatus,
+    this.releaseStatus,
 
     this.storeId,
 
@@ -86,7 +86,7 @@ class FavoriteGroupContentsEntryWorld {
 
     this.visits = 0,
 
-    required this.isSecure,
+    this.isSecure,
   });
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
@@ -152,8 +152,8 @@ class FavoriteGroupContentsEntryWorld {
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
-  @JsonKey(name: r'occupants', required: true, includeIfNull: false)
-  final int occupants;
+  @JsonKey(name: r'occupants', required: false, includeIfNull: false)
+  final int? occupants;
 
   @JsonKey(name: r'organization', required: false, includeIfNull: false)
   final String? organization;
@@ -171,13 +171,12 @@ class FavoriteGroupContentsEntryWorld {
   @JsonKey(name: r'recommendedCapacity', required: false, includeIfNull: false)
   final int? recommendedCapacity;
 
-  @JsonKey(name: r'releaseStatus', required: true, includeIfNull: false)
-  final ReleaseStatus releaseStatus;
+  @JsonKey(name: r'releaseStatus', required: false, includeIfNull: false)
+  final ReleaseStatus? releaseStatus;
 
   @JsonKey(name: r'storeId', required: false, includeIfNull: false)
   final String? storeId;
 
-  ///
   @JsonKey(name: r'tags', required: false, includeIfNull: false)
   final List<String>? tags;
 
@@ -187,7 +186,6 @@ class FavoriteGroupContentsEntryWorld {
   @JsonKey(name: r'udonProducts', required: false, includeIfNull: false)
   final List<String>? udonProducts;
 
-  ///
   @JsonKey(name: r'unityPackages', required: false, includeIfNull: false)
   final List<UnityPackage>? unityPackages;
 
@@ -205,8 +203,8 @@ class FavoriteGroupContentsEntryWorld {
   @JsonKey(name: r'visits', required: false, includeIfNull: false)
   final int? visits;
 
-  @JsonKey(name: r'isSecure', required: true, includeIfNull: false)
-  final bool isSecure;
+  @JsonKey(name: r'isSecure', required: false, includeIfNull: false)
+  final bool? isSecure;
 
   @override
   bool operator ==(Object other) =>

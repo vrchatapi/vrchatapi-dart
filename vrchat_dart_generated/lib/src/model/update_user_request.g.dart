@@ -16,6 +16,10 @@ UpdateUserRequest _$UpdateUserRequestFromJson(
       'acceptedTOSVersion',
       (v) => (v as num?)?.toInt(),
     ),
+    allowWorldsToCountFriendsInInstance: $checkedConvert(
+      'allowWorldsToCountFriendsInInstance',
+      (v) => v as bool?,
+    ),
     birthday: $checkedConvert(
       'birthday',
       (v) => v == null ? null : DateTime.parse(v as String),
@@ -61,6 +65,8 @@ UpdateUserRequest _$UpdateUserRequestFromJson(
 Map<String, dynamic> _$UpdateUserRequestToJson(UpdateUserRequest instance) =>
     <String, dynamic>{
       'acceptedTOSVersion': ?instance.acceptedTOSVersion,
+      'allowWorldsToCountFriendsInInstance':
+          ?instance.allowWorldsToCountFriendsInInstance,
       'birthday': ?instance.birthday?.toIso8601String(),
       'contentFilters': ?instance.contentFilters
           ?.map((e) => _$ContentFilterEnumMap[e]!)

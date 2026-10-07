@@ -48,7 +48,7 @@ class UpdateProfileRequest {
   @JsonKey(name: r'backgroundType', required: false, includeIfNull: false)
   final UpdateProfileRequestBackgroundTypeEnum? backgroundType;
 
-  /// Hex colour without a leading `#`.
+  /// Six hexadecimal digits, without a leading `#`. May be empty.
   @JsonKey(name: r'bannerColor', required: false, includeIfNull: false)
   final String? bannerColor;
 

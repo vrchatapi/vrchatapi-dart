@@ -27,6 +27,7 @@ UpdateGroupRequest _$UpdateGroupRequestFromJson(Map<String, dynamic> json) =>
           (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
         ),
         name: $checkedConvert('name', (v) => v as String?),
+        nameplateId: $checkedConvert('nameplateId', (v) => v as String?),
         rules: $checkedConvert('rules', (v) => v as String?),
         shortCode: $checkedConvert('shortCode', (v) => v as String?),
         tags: $checkedConvert(
@@ -46,6 +47,7 @@ Map<String, dynamic> _$UpdateGroupRequestToJson(UpdateGroupRequest instance) =>
       'languages': ?instance.languages,
       'links': ?instance.links,
       'name': ?instance.name,
+      'nameplateId': ?instance.nameplateId,
       'rules': ?instance.rules,
       'shortCode': ?instance.shortCode,
       'tags': ?instance.tags,

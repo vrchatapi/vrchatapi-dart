@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateFavoriteGroup**
-> updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest)
+> Object updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest)
 
 Update Favorite Group
 
@@ -490,7 +490,8 @@ final String userId = userId_example; // String | Must be a valid user ID.
 final UpdateFavoriteGroupRequest updateFavoriteGroupRequest = ; // UpdateFavoriteGroupRequest | 
 
 try {
-    api.updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest);
+    final response = api.updateFavoriteGroup(favoriteGroupType, favoriteGroupName, userId, updateFavoriteGroupRequest);
+    print(response);
 } on DioException catch (e) {
     print('Exception when calling FavoritesApi->updateFavoriteGroup: $e\n');
 }
@@ -507,7 +508,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**Object**
 
 ### Authorization
 
@@ -516,7 +517,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -139,8 +139,8 @@ class DynamicContentRow {
   @JsonKey(name: r'n', required: false, includeIfNull: false)
   final int? n;
 
-  @JsonKey(name: r'name', required: true, includeIfNull: false)
-  final String name;
+  @JsonKey(name: r'name', required: true, includeIfNull: true)
+  final Object? name;
 
   @JsonKey(name: r'nonFeaturedResults', required: false, includeIfNull: false)
   final String? nonFeaturedResults;
@@ -154,7 +154,7 @@ class DynamicContentRow {
   @JsonKey(name: r'personalizedResults', required: false, includeIfNull: false)
   final String? personalizedResults;
 
-  /// This is normally `android`, `ios`, `standalonewindows`, `web`, or the empty value ``, but also supposedly can be any random Unity version such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`.
+  /// Usually \"ThisPlatformSupported\", but can also be other values such as \"all\" or platform specific identifiers.
   @JsonKey(name: r'platform', required: true, includeIfNull: false)
   final String platform;
 
@@ -165,7 +165,7 @@ class DynamicContentRow {
   final String? scope;
 
   @JsonKey(name: r'shortName', required: false, includeIfNull: false)
-  final String? shortName;
+  final Object? shortName;
 
   @JsonKey(name: r'sortHeading', required: false, includeIfNull: false)
   final String? sortHeading;
@@ -257,7 +257,7 @@ class DynamicContentRow {
       minimumRemainingMinutes.hashCode +
       mode.hashCode +
       n.hashCode +
-      name.hashCode +
+      (name == null ? 0 : name.hashCode) +
       nonFeaturedResults.hashCode +
       (notag == null ? 0 : notag.hashCode) +
       params.hashCode +

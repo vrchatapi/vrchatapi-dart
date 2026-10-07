@@ -5,7 +5,6 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/transaction_status.dart';
 import 'package:vrchat_dart_generated/src/model/transaction_steam_info.dart';
-import 'package:vrchat_dart_generated/src/model/transaction_agreement.dart';
 import 'package:vrchat_dart_generated/src/model/subscription.dart';
 
 import 'package:json_annotation/json_annotation.dart';
@@ -49,7 +48,7 @@ class Transaction {
   });
 
   @JsonKey(name: r'agreement', required: false, includeIfNull: false)
-  final TransactionAgreement? agreement;
+  final Object? agreement;
 
   @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
@@ -108,7 +107,7 @@ class Transaction {
 
   @override
   int get hashCode =>
-      agreement.hashCode +
+      (agreement == null ? 0 : agreement.hashCode) +
       createdAt.hashCode +
       (error == null ? 0 : error.hashCode) +
       id.hashCode +

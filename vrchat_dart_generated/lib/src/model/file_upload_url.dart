@@ -18,7 +18,6 @@ class FileUploadURL {
   /// Returns a new [FileUploadURL] instance.
   FileUploadURL({required this.url});
 
-  ///
   @JsonKey(name: r'url', required: true, includeIfNull: false)
   final String url;
 

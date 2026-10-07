@@ -23,7 +23,7 @@ InfoPushDataCategory _$InfoPushDataCategoryFromJson(
           : InfoPushIpsQuery.fromJson(v as Map<String, dynamic>),
     ),
     maxCells: $checkedConvert('maxCells', (v) => (v as num?)?.toInt()),
-    name: $checkedConvert('name', (v) => v as String?),
+    name: $checkedConvert('name', (v) => v),
     type: $checkedConvert('type', (v) => v as String?),
   );
   return val;

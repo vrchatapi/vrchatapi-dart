@@ -11,6 +11,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addTags**](UsersApi.md#addtags) | **POST** /users/{userId}/addTags | Add User Tags
 [**checkUserPersistenceExists**](UsersApi.md#checkuserpersistenceexists) | **GET** /users/{userId}/{worldId}/persist/exists | Check User Persistence Exists
+[**clearUserTutorials**](UsersApi.md#clearusertutorials) | **DELETE** /users/{userId}/tutorial | Clear User Tutorials
+[**completeUserTutorial**](UsersApi.md#completeusertutorial) | **POST** /users/{userId}/tutorial | Complete User Tutorial
 [**deleteAllUserPersistenceData**](UsersApi.md#deletealluserpersistencedata) | **DELETE** /users/{userId}/persist | Delete All User Persistence Data
 [**deleteUserPersistence**](UsersApi.md#deleteuserpersistence) | **DELETE** /users/{userId}/{worldId}/persist | Delete User Persistence
 [**getAgeVerificationStatus**](UsersApi.md#getageverificationstatus) | **GET** /ageVerification/status | Get Age Verification Status
@@ -128,6 +130,108 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **clearUserTutorials**
+> CurrentUser clearUserTutorials(userId, xPlatform, xStore)
+
+Clear User Tutorials
+
+Clears every tutorial the user completed on a platform, whatever `X-Platform` and `X-Store` name, and returns the current user. Tutorials of other kinds, such as `platform-agnostic:custom:onboarding-tutorial-world:v1`, stay completed.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getUsersApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+final String xPlatform = standalonewindows; // String | The platform the tutorial belongs to. `standalonewindows`, `android` and `ios` are kept; any other value is recorded as `null`.
+final String xStore = steam; // String | The store the tutorial belongs to, recorded as sent.
+
+try {
+    final response = api.clearUserTutorials(userId, xPlatform, xStore);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling UsersApi->clearUserTutorials: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+ **xPlatform** | **String**| The platform the tutorial belongs to. `standalonewindows`, `android` and `ios` are kept; any other value is recorded as `null`. | [optional] 
+ **xStore** | **String**| The store the tutorial belongs to, recorded as sent. | [optional] 
+
+### Return type
+
+[**CurrentUser**](CurrentUser.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **completeUserTutorial**
+> CurrentUser completeUserTutorial(userId, xPlatform, xStore)
+
+Complete User Tutorial
+
+Marks the tutorial named by `X-Platform` and `X-Store` completed, and returns the current user.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getUsersApi();
+final String userId = userId_example; // String | Must be a valid user ID.
+final String xPlatform = standalonewindows; // String | The platform the tutorial belongs to. `standalonewindows`, `android` and `ios` are kept; any other value is recorded as `null`.
+final String xStore = steam; // String | The store the tutorial belongs to, recorded as sent.
+
+try {
+    final response = api.completeUserTutorial(userId, xPlatform, xStore);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling UsersApi->completeUserTutorial: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| Must be a valid user ID. | 
+ **xPlatform** | **String**| The platform the tutorial belongs to. `standalonewindows`, `android` and `ios` are kept; any other value is recorded as `null`. | [optional] 
+ **xStore** | **String**| The store the tutorial belongs to, recorded as sent. | [optional] 
+
+### Return type
+
+[**CurrentUser**](CurrentUser.md)
 
 ### Authorization
 
@@ -619,7 +723,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUser**
-> User getUser(userId)
+> UserResponse getUser(userId)
 
 Get User by ID
 
@@ -652,7 +756,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**User**](User.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -715,7 +819,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserByName**
-> User getUserByName(username)
+> UserResponse getUserByName(username)
 
 Get User by Username
 
@@ -748,7 +852,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**User**](User.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -862,7 +966,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserGroupInstances**
-> GetUserGroupInstances200Response getUserGroupInstances(userId)
+> UserGroupInstanceListResponse getUserGroupInstances(userId)
 
 Get User Group Instances
 
@@ -895,7 +999,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetUserGroupInstances200Response**](GetUserGroupInstances200Response.md)
+[**UserGroupInstanceListResponse**](UserGroupInstanceListResponse.md)
 
 ### Authorization
 
@@ -909,7 +1013,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserGroupInstancesForGroup**
-> GetUserGroupInstances200Response getUserGroupInstancesForGroup(userId, groupId)
+> UserGroupInstanceListResponse getUserGroupInstancesForGroup(userId, groupId)
 
 Get User Group Instances for a specific Group
 
@@ -944,7 +1048,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetUserGroupInstances200Response**](GetUserGroupInstances200Response.md)
+[**UserGroupInstanceListResponse**](UserGroupInstanceListResponse.md)
 
 ### Authorization
 
@@ -1195,11 +1299,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserTutorialStatus**
-> TutorialStatus getUserTutorialStatus(userId)
+> TutorialStatus getUserTutorialStatus(userId, xPlatform, xStore)
 
 Get User Tutorial Status
 
-Gets the status of completed or outstanding tutorials for the specified user.
+Gets the status of completed or outstanding tutorials for the specified user. `tutorialKey` and `completed` describe the tutorial named by `X-Platform` and `X-Store`.
 
 ### Example
 ```dart
@@ -1211,9 +1315,11 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getUsersApi();
 final String userId = userId_example; // String | Must be a valid user ID.
+final String xPlatform = standalonewindows; // String | The platform the tutorial belongs to. `standalonewindows`, `android` and `ios` are kept; any other value is recorded as `null`.
+final String xStore = steam; // String | The store the tutorial belongs to, recorded as sent.
 
 try {
-    final response = api.getUserTutorialStatus(userId);
+    final response = api.getUserTutorialStatus(userId, xPlatform, xStore);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling UsersApi->getUserTutorialStatus: $e\n');
@@ -1225,6 +1331,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**| Must be a valid user ID. | 
+ **xPlatform** | **String**| The platform the tutorial belongs to. `standalonewindows`, `android` and `ios` are kept; any other value is recorded as `null`. | [optional] 
+ **xStore** | **String**| The store the tutorial belongs to, recorded as sent. | [optional] 
 
 ### Return type
 
@@ -1543,7 +1651,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateUserNote**
-> UserNote updateUserNote(updateUserNoteRequest)
+> Object updateUserNote(updateUserNoteRequest)
 
 Update User Note
 
@@ -1576,7 +1684,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserNote**](UserNote.md)
+**Object**
 
 ### Authorization
 

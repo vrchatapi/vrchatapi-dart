@@ -165,7 +165,6 @@ class CalendarEvent {
   @JsonKey(name: r'roleIds', required: false, includeIfNull: false)
   final List<String>? roleIds;
 
-  /// So far unused, always \"null\"
   @JsonKey(name: r'seriesId', required: false, includeIfNull: false)
   final String? seriesId;
 
@@ -242,17 +241,17 @@ class CalendarEvent {
       hostEarlyJoinMinutes.hashCode +
       id.hashCode +
       imageId.hashCode +
-      (imageUrl == null ? 0 : imageUrl.hashCode) +
+      imageUrl.hashCode +
       interestedUserCount.hashCode +
       isDraft.hashCode +
       languages.hashCode +
       occurrenceKind.hashCode +
-      (occurrenceModified == null ? 0 : occurrenceModified.hashCode) +
+      occurrenceModified.hashCode +
       ownerId.hashCode +
       platforms.hashCode +
-      (recurrence == null ? 0 : recurrence.hashCode) +
+      recurrence.hashCode +
       (roleIds == null ? 0 : roleIds.hashCode) +
-      (seriesId == null ? 0 : seriesId.hashCode) +
+      seriesId.hashCode +
       startsAt.hashCode +
       tags.hashCode +
       title.hashCode +

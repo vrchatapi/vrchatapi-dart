@@ -46,7 +46,10 @@ NotificationV2 _$NotificationV2FromJson(
     canDelete: $checkedConvert('canDelete', (v) => v as bool),
     category: $checkedConvert('category', (v) => v as String),
     createdAt: $checkedConvert('createdAt', (v) => DateTime.parse(v as String)),
-    data: $checkedConvert('data', (v) => Map<String, String>.from(v as Map)),
+    data: $checkedConvert(
+      'data',
+      (v) => NotificationV2Data.fromJson(v as Map<String, dynamic>),
+    ),
     details: $checkedConvert(
       'details',
       (v) => v == null
@@ -102,7 +105,7 @@ Map<String, dynamic> _$NotificationV2ToJson(NotificationV2 instance) =>
       'canDelete': instance.canDelete,
       'category': instance.category,
       'createdAt': instance.createdAt.toIso8601String(),
-      'data': instance.data,
+      'data': instance.data.toJson(),
       'details': ?instance.details?.toJson(),
       'displayData': ?instance.displayData,
       'expiresAt': instance.expiresAt.toIso8601String(),

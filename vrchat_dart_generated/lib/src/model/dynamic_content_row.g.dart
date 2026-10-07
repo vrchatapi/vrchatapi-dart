@@ -44,7 +44,7 @@ DynamicContentRow _$DynamicContentRowFromJson(
     ),
     mode: $checkedConvert('mode', (v) => v as String?),
     n: $checkedConvert('n', (v) => (v as num?)?.toInt()),
-    name: $checkedConvert('name', (v) => v as String),
+    name: $checkedConvert('name', (v) => v),
     nonFeaturedResults: $checkedConvert(
       'nonFeaturedResults',
       (v) => v as String?,
@@ -65,7 +65,7 @@ DynamicContentRow _$DynamicContentRowFromJson(
     platform: $checkedConvert('platform', (v) => v as String),
     region: $checkedConvert('region', (v) => v as String?),
     scope: $checkedConvert('scope', (v) => v as String?),
-    shortName: $checkedConvert('shortName', (v) => v as String?),
+    shortName: $checkedConvert('shortName', (v) => v),
     sortHeading: $checkedConvert('sortHeading', (v) => v as String?),
     sortOrder: $checkedConvert('sortOrder', (v) => v as String?),
     sortOwnership: $checkedConvert('sortOwnership', (v) => v as String?),

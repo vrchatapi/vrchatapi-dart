@@ -12,10 +12,7 @@ Method | HTTP request | Description
 [**createProp**](PropsApi.md#createprop) | **POST** /props | Create Prop
 [**deleteProp**](PropsApi.md#deleteprop) | **DELETE** /props/{propId} | Delete Prop
 [**getProp**](PropsApi.md#getprop) | **GET** /props/{propId} | Get Prop
-[**getPropPublishStatus**](PropsApi.md#getproppublishstatus) | **GET** /props/{propId}/publish | Get Prop Publish Status
 [**listProps**](PropsApi.md#listprops) | **GET** /props | List Props
-[**publishProp**](PropsApi.md#publishprop) | **PUT** /props/{propId}/publish | Publish Prop
-[**unpublishProp**](PropsApi.md#unpublishprop) | **DELETE** /props/{propId}/publish | Unpublish Prop
 [**updateProp**](PropsApi.md#updateprop) | **PUT** /props/{propId} | Update Prop
 
 
@@ -159,53 +156,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getPropPublishStatus**
-> PropPublishStatus getPropPublishStatus(propId)
-
-Get Prop Publish Status
-
-Return the PropPublishStatus object. `/props/{propId}` is still served.
-
-### Example
-```dart
-import 'package:vrchat_dart_generated/api.dart';
-// TODO Configure API key authorization: authCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-
-final api = VrchatDartGenerated().getPropsApi();
-final String propId = propId_example; // String | Prop ID.
-
-try {
-    final response = api.getPropPublishStatus(propId);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling PropsApi->getPropPublishStatus: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **propId** | **String**| Prop ID. | 
-
-### Return type
-
-[**PropPublishStatus**](PropPublishStatus.md)
-
-### Authorization
-
-[authCookie](../README.md#authCookie)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **listProps**
 > List<Prop> listProps(n, offset, authorId)
 
@@ -245,100 +195,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List&lt;Prop&gt;**](Prop.md)
-
-### Authorization
-
-[authCookie](../README.md#authCookie)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **publishProp**
-> PropPublishStatus publishProp(propId)
-
-Publish Prop
-
-Publish a prop and return the updated PropPublishStatus object. `/props/{propId}` is still served.
-
-### Example
-```dart
-import 'package:vrchat_dart_generated/api.dart';
-// TODO Configure API key authorization: authCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-
-final api = VrchatDartGenerated().getPropsApi();
-final String propId = propId_example; // String | Prop ID.
-
-try {
-    final response = api.publishProp(propId);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling PropsApi->publishProp: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **propId** | **String**| Prop ID. | 
-
-### Return type
-
-[**PropPublishStatus**](PropPublishStatus.md)
-
-### Authorization
-
-[authCookie](../README.md#authCookie)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **unpublishProp**
-> PropPublishStatus unpublishProp(propId)
-
-Unpublish Prop
-
-Unpublish a prop and return the updated PropPublishStatus object. `/props/{propId}` is still served.
-
-### Example
-```dart
-import 'package:vrchat_dart_generated/api.dart';
-// TODO Configure API key authorization: authCookie
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
-
-final api = VrchatDartGenerated().getPropsApi();
-final String propId = propId_example; // String | Prop ID.
-
-try {
-    final response = api.unpublishProp(propId);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling PropsApi->unpublishProp: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **propId** | **String**| Prop ID. | 
-
-### Return type
-
-[**PropPublishStatus**](PropPublishStatus.md)
 
 ### Authorization
 

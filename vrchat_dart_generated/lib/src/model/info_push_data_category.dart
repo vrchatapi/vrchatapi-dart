@@ -39,7 +39,7 @@ class InfoPushDataCategory {
   final int? maxCells;
 
   @JsonKey(name: r'name', required: false, includeIfNull: false)
-  final String? name;
+  final Object? name;
 
   @JsonKey(name: r'type', required: false, includeIfNull: false)
   final String? type;
@@ -59,7 +59,7 @@ class InfoPushDataCategory {
       ids.hashCode +
       ipsQuery.hashCode +
       maxCells.hashCode +
-      name.hashCode +
+      (name == null ? 0 : name.hashCode) +
       type.hashCode;
 
   factory InfoPushDataCategory.fromJson(Map<String, dynamic> json) =>

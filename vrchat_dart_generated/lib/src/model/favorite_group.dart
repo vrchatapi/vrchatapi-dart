@@ -52,7 +52,6 @@ class FavoriteGroup {
   @JsonKey(name: r'ownerId', required: true, includeIfNull: false)
   final String ownerId;
 
-  ///
   @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 

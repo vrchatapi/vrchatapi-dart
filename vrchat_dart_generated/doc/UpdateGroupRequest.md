@@ -15,9 +15,10 @@ Name | Type | Description | Notes
 **languages** | **List&lt;String&gt;** | 3 letter language code | [optional] 
 **links** | **List&lt;String&gt;** |  | [optional] 
 **name** | **String** |  | [optional] 
+**nameplateId** | **String** |  | [optional] 
 **rules** | **String** |  | [optional] 
 **shortCode** | **String** |  | [optional] 
-**tags** | **List&lt;String&gt;** |   | [optional] 
+**tags** | **List&lt;String&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

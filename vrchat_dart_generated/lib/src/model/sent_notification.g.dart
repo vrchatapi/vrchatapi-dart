@@ -29,7 +29,7 @@ SentNotification _$SentNotificationFromJson(Map<String, dynamic> json) =>
         ),
         details: $checkedConvert(
           'details',
-          (v) => Map<String, String>.from(v as Map),
+          (v) => SentNotificationDetails.fromJson(v as Map<String, dynamic>),
         ),
         id: $checkedConvert('id', (v) => v as String),
         message: $checkedConvert('message', (v) => v as String),
@@ -47,7 +47,7 @@ SentNotification _$SentNotificationFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$SentNotificationToJson(SentNotification instance) =>
     <String, dynamic>{
       'created_at': instance.createdAt.toIso8601String(),
-      'details': instance.details,
+      'details': instance.details.toJson(),
       'id': instance.id,
       'message': instance.message,
       'receiverUserId': instance.receiverUserId,

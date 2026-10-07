@@ -9,6 +9,7 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **acceptedTOSVersion** | **int** |  | [optional] 
+**allowWorldsToCountFriendsInInstance** | **bool** | The \"Allow Worlds to Count Friends in Instance\" setting, introduced under [Udon Methods for Friend Info](https://ask.vrchat.com/t/developer-update-24-september-2026/48972#p-90922-udon-methods-for-friend-info-13) in the Developer Update of September 24, 2026. | [optional] 
 **birthday** | [**DateTime**](DateTime.md) |  | [optional] 
 **contentFilters** | [**List&lt;ContentFilter&gt;**](ContentFilter.md) | These tags begin with `content_` and control content gating | [optional] 
 **currentPassword** | **String** |  | [optional] 
@@ -22,7 +23,7 @@ Name | Type | Description | Notes
 **revertDisplayName** | **bool** | MUST specify currentPassword as well to revert display name | [optional] 
 **status** | [**UserStatus**](UserStatus.md) |  | [optional] 
 **statusDescription** | **String** |  | [optional] 
-**tags** | **List&lt;String&gt;** |   | [optional] 
+**tags** | **List&lt;String&gt;** |  | [optional] 
 **unsubscribe** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

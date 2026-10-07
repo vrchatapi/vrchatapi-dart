@@ -66,7 +66,6 @@ class GroupPost {
   @JsonKey(name: r'imageUrl', required: false, includeIfNull: false)
   final String? imageUrl;
 
-  ///
   @JsonKey(name: r'roleIds', required: false, includeIfNull: false)
   final List<String>? roleIds;
 

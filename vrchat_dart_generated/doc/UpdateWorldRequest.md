@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **previewYoutubeId** | **String** |  | [optional] 
 **recommendedCapacity** | **int** |  | [optional] 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | [optional] 
-**tags** | **List&lt;String&gt;** |   | [optional] 
+**tags** | **List&lt;String&gt;** |  | [optional] 
 **unityPackageUrl** | **String** |  | [optional] 
 **unityVersion** | **String** |  | [optional] [default to '5.3.4p1']
 **urlList** | **List&lt;String&gt;** |  | [optional] 

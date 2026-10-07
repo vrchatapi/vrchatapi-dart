@@ -14,7 +14,9 @@ import 'package:vrchat_dart_generated/src/model/avatar_moderation_created.dart';
 import 'package:vrchat_dart_generated/src/model/avatar_moderation_type.dart';
 import 'package:vrchat_dart_generated/src/model/create_avatar_moderation_request.dart';
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
+import 'package:vrchat_dart_generated/src/model/current_user_login_response.dart';
 import 'package:vrchat_dart_generated/src/model/disable2_fa_result.dart';
+import 'package:vrchat_dart_generated/src/model/interests_and_preferences.dart';
 import 'package:vrchat_dart_generated/src/model/moderation_report.dart';
 import 'package:vrchat_dart_generated/src/model/o_auth_redirect_code.dart';
 import 'package:vrchat_dart_generated/src/model/ok_status2.dart';
@@ -152,7 +154,17 @@ class AuthenticationApi {
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{...?headers},
-      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
       validateStatus: validateStatus,
     );
 
@@ -787,9 +799,9 @@ class AuthenticationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [CurrentUser] as data
+  /// Returns a [Future] containing a [Response] with a [CurrentUserLoginResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CurrentUser>> getCurrentUser({
+  Future<Response<CurrentUserLoginResponse>> getCurrentUser({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -830,15 +842,15 @@ class AuthenticationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    CurrentUser? _responseData;
+    CurrentUserLoginResponse? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<CurrentUser, CurrentUser>(
+          : deserialize<CurrentUserLoginResponse, CurrentUserLoginResponse>(
               rawData,
-              'CurrentUser',
+              'CurrentUserLoginResponse',
               growable: true,
             );
     } catch (error, stackTrace) {
@@ -851,7 +863,7 @@ class AuthenticationApi {
       );
     }
 
-    return Response<CurrentUser>(
+    return Response<CurrentUserLoginResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -932,6 +944,86 @@ class AuthenticationApi {
     }
 
     return Response<List<AvatarModeration>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Get Interests and Preferences
+  /// Returns the interests and preferences the current user has turned on.
+  ///
+  /// Parameters:
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [InterestsAndPreferences] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<InterestsAndPreferences>> getInterestsAndPreferences({
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/auth/user/interestsAndPreferences';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    InterestsAndPreferences? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<InterestsAndPreferences, InterestsAndPreferences>(
+              rawData,
+              'InterestsAndPreferences',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<InterestsAndPreferences>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1376,10 +1468,10 @@ class AuthenticationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [CurrentUser] as data
+  /// Returns a [Future] containing a [Response] with a [CurrentUserLoginResponse] as data
   /// Throws [DioException] if API call or serialization fails
   @Deprecated('This operation has been deprecated')
-  Future<Response<CurrentUser>> registerUserAccount({
+  Future<Response<CurrentUserLoginResponse>> registerUserAccount({
     required RegisterUserAccountRequest registerUserAccountRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1419,15 +1511,15 @@ class AuthenticationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    CurrentUser? _responseData;
+    CurrentUserLoginResponse? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<CurrentUser, CurrentUser>(
+          : deserialize<CurrentUserLoginResponse, CurrentUserLoginResponse>(
               rawData,
-              'CurrentUser',
+              'CurrentUserLoginResponse',
               growable: true,
             );
     } catch (error, stackTrace) {
@@ -1440,7 +1532,7 @@ class AuthenticationApi {
       );
     }
 
-    return Response<CurrentUser>(
+    return Response<CurrentUserLoginResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1614,6 +1706,99 @@ class AuthenticationApi {
     }
 
     return Response<ModerationReport>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Update Interests and Preferences
+  /// Turns interests and preferences on with &#x60;true&#x60; and off with &#x60;false&#x60;. A key the body leaves out keeps its value.
+  ///
+  /// Parameters:
+  /// * [interestsAndPreferences]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [Success] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<Success>> updateInterestsAndPreferences({
+    required InterestsAndPreferences interestsAndPreferences,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/auth/user/interestsAndPreferences';
+    final _options = Options(
+      method: r'PUT',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      _bodyData = jsonEncode(interestsAndPreferences);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(_dio.options, _path),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    Success? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Success, Success>(rawData, 'Success', growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<Success>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

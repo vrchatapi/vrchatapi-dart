@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **imageUrl** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | [optional] 
-**tags** | **List&lt;String&gt;** |   | [optional] 
+**tags** | **List&lt;String&gt;** |  | [optional] 
 **unityPackageUrl** | **String** |  | [optional] 
 **unityVersion** | **String** |  | [optional] [default to '5.3.4p1']
 **version** | **int** |  | [optional] [default to 1]
