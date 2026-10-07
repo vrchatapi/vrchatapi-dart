@@ -2,7 +2,6 @@
 
 - Updates `vrchat_dart_generated` to 1.22.0
 - Adds conversions from `UserResponse` and `CurrentUserLoginResponse`
-- Treats a two-factor challenge as a successful login response
 - Uses the generated `TwoFactorAuthType`
 
 ## 4.0.5
