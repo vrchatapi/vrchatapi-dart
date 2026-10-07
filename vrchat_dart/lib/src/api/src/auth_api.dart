@@ -1,6 +1,11 @@
+// Newer generated clients export TwoFactorAuthType, which clashes with ours.
+// ignore_for_file: undefined_hidden_name
+
 import 'dart:convert';
+
 import 'package:dio_response_validator/dio_response_validator.dart';
-import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
+import 'package:vrchat_dart_generated/vrchat_dart_generated.dart'
+    hide TwoFactorAuthType;
 import 'package:vrchat_dart/src/model/api/vrc_response.dart';
 
 /// Auth convenience methods
@@ -34,7 +39,24 @@ class AuthApi {
         .validateVrc();
 
     if (success != null) {
-      _currentUser = success.data;
+      final json = success.data.toJson();
+      final twoFactorAuth = json['requiresTwoFactorAuth'];
+      if (twoFactorAuth is List && twoFactorAuth.isNotEmpty) {
+        return (
+          ValidResponse(
+            AuthResponse(
+              twoFactorAuthTypes: [
+                for (final type in twoFactorAuth)
+                  TwoFactorAuthType.values.byName(type as String),
+              ],
+            ),
+            success.response,
+          ),
+          null,
+        );
+      }
+
+      _currentUser = CurrentUser.fromJson(json);
       return (ValidResponse(AuthResponse(), success.response), null);
     } else if (failure != null) {
       final response = failure.response;

@@ -99,8 +99,8 @@ void main() async {
     return;
   }
 
-  // Convenience method to help with storing user objects from different endpoints together
-  final limitedTupper = tupperSuccess.data.toLimitedUser();
+  // getUser is a User on older specs and a UserResponse on newer ones.
+  final limitedTupper = _limitedUserFromJson(tupperSuccess.data.toJson());
   final friendsAndTupper = [
     limitedTupper,
     ...friendsSuccess.data.map((e) => e.toLimitedUser()),
@@ -138,6 +138,19 @@ void main() async {
   // Listen for updates
   api.streaming.vrcEventStream.listen(handleVrcEvent);
   api.streaming.start();
+}
+
+LimitedUser _limitedUserFromJson(Map<String, dynamic> json) {
+  String? date(Object? value) {
+    if (value is! String || value.isEmpty) return null;
+    return DateTime.tryParse(value)?.toIso8601String();
+  }
+
+  return LimitedUser.fromJson({
+    ...json,
+    'last_login': date(json['last_login']),
+    'last_activity': date(json['last_activity']),
+  });
 }
 
 void handleVrcEvent(VrcStreamingEvent event) {
