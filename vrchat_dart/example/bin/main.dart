@@ -1,27 +1,33 @@
 import 'dart:convert';
-import 'dart:io';
+import 'dart:io' as io;
 
 import 'package:otp/otp.dart';
 import 'package:vrchat_dart/vrchat_dart.dart';
 
-/// Create the file `lib/credentials.dart` with the fields required to make
-/// this file happy
-import 'credentials.dart';
-
 const tupperUid = 'usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469';
 
 void main() async {
+  // Create `bin/credentials.json` with username, password, contactInfo, and
+  // otpSecret.
+  final credentials = _credentialsFromJson(
+    jsonDecode(
+      await io.File.fromUri(
+        io.Platform.script.resolve('credentials.json'),
+      ).readAsString(),
+    ) as Map<String, dynamic>,
+  );
+
   final api = VrchatDart(
     userAgent: VrchatUserAgent(
       applicationName: 'vrchat_dart_example',
       version: '0.0.0',
-      contactInfo: Credentials.contactInfo,
+      contactInfo: credentials.contactInfo,
     ),
   );
 
   final (loginSuccess, loginFailure) = await api.auth.login(
-    username: Credentials.username,
-    password: Credentials.password,
+    username: credentials.username,
+    password: credentials.password,
   );
 
   if (loginSuccess == null) {
@@ -44,7 +50,7 @@ void main() async {
     // scripts. To get around this, enable 2FA on your account and generate
     // codes in your script.
     final code = OTP.generateTOTPCodeString(
-      Credentials.otpSecret,
+      credentials.otpSecret,
       DateTime.timestamp().millisecondsSinceEpoch,
       algorithm: Algorithm.SHA1,
       isGoogle: true,
@@ -125,11 +131,25 @@ void main() async {
   print(worldSuccess.data.name);
 
   // Do not start websocket streaming if this code is running in CI
-  if (Platform.environment.containsKey('GITHUB_ACTIONS')) return;
+  if (io.Platform.environment.containsKey('GITHUB_ACTIONS')) return;
 
   // Listen for updates
   api.streaming.vrcEventStream.listen(handleVrcEvent);
   api.streaming.start();
+}
+
+({
+  String username,
+  String password,
+  String contactInfo,
+  String otpSecret,
+}) _credentialsFromJson(Map<String, dynamic> json) {
+  return (
+    username: json['username'] as String,
+    password: json['password'] as String,
+    contactInfo: json['contactInfo'] as String,
+    otpSecret: json['otpSecret'] as String,
+  );
 }
 
 void handleVrcEvent(VrcStreamingEvent event) {

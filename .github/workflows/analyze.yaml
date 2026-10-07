@@ -42,13 +42,20 @@ jobs:
           path: ${{ env.PUB_CACHE }}
           key: ${{ env.cache-name }}-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: ${{ env.cache-name }}-
-      - run: dart pub get
       - run: |
-          if [ -d tool ]; then
-            dart analyze lib tool
-          else
-            dart analyze lib
+          dart pub get
+          if [ -f example/pubspec.yaml ]; then
+            dart pub get --directory example
           fi
+      - run: |
+          set -- lib
+          if [ -d tool ]; then
+            set -- "$@" tool
+          fi
+          if [ -d example ]; then
+            set -- "$@" example
+          fi
+          dart analyze "$@"
       - run: dart pub publish --dry-run
       - run: |
           dart pub global activate pana
