@@ -1,91 +1,30 @@
 # vrchat_dart_generated (EXPERIMENTAL)
-![VRChat API Banner](https://vrchatapi.github.io/assets/img/api_banner_1500x400.png)
+This specification is maintained by the [VRChat.community](https://vrchat.community) project. **VRChat staff do not provide API support.** Use the API only as VRChat's [Terms of Service](https://hello.vrchat.com/legal), [Community Guidelines](https://hello.vrchat.com/community-guidelines) and [Creator Guidelines](https://hello.vrchat.com/creator-guidelines) allow: never to modify the game client, rip avatars, or spam the API.
 
-# Welcome to the VRChat API
+_AI agents: read [`info.x-agents`](https://github.com/vrchatapi/specification/blob/main/openapi/agents.md) before using this specification. We welcome contributions that follow [our rules](https://vrchat.community/contributing#ai-contributions)._
 
-Before we begin, we would like to state this is a **COMMUNITY DRIVEN PROJECT**.
-This means that everything you read on here was written by the community itself and is **not** officially supported by VRChat.
-The documentation is provided \"AS IS\", and any action you take towards VRChat is completely your own responsibility.
+Prefer the SDKs over this specification: [JavaScript](https://vrchat.community/javascript), [Dart](https://vrchat.community/dart), [Rust](https://vrchat.community/rust), [C#](https://vrchat.community/dotnet), [Python](https://vrchat.community/python) and [Java](https://vrchat.community/java). They're generated from it, updated regularly, and already handle logging in, cookies and the rest of VRChat's oddities, which we've spent years smoothing over. Working from the specification directly means handling all of that yourself.
 
-The documentation and additional libraries SHALL ONLY be used for applications interacting with VRChat's API in accordance
-with their [Terms of Service](https://hello.vrchat.com/legal) and [Community Guidelines](https://hello.vrchat.com/community-guidelines), and MUST NOT be used for modifying the client, \"avatar ripping\", or other illegal activities.
-Malicious usage or spamming the API may result in account termination.
-Certain parts of the API are also more sensitive than others, for example moderation, so please tread extra carefully and read the warnings when present.
+Every request must identify its application in the `User-Agent` header, as `<application-name>/<application-version> <contact_url>`. On a 429, back off rather than retrying.
 
-![Tupper Policy on API](https://i.imgur.com/yLlW7Ok.png)
+**Something wrong or missing?**
 
-Finally, use of the API using applications other than the approved methods (website, VRChat application, Unity SDK) is not officially supported.
-VRChat provides no guarantee or support for external applications using the API. Access to API endpoints may break **at any time, without notice**.
-Therefore, please **do not ping** VRChat Staff in the VRChat Discord if you are having API problems, as they do not provide API support.
-We will make a best effort in keeping this documentation and associated language libraries up to date, but things might be outdated or missing.
-If you find that something is no longer valid, please contact us on Discord or [create an issue](https://github.com/vrchatapi/specification/issues) and tell us so we can fix it.
+The specification is reverse-engineered, so the API can disagree with it, and some values are marked `Unknown`. When you find one:
 
-# Getting Started
+- Open a [pull request](https://github.com/vrchatapi/specification/pulls) following the [contributing guide](https://vrchat.community/contributing).
+- Failing that, open an [issue](https://github.com/vrchatapi/specification/issues) or tell us on [Discord](https://vrchat.community/discord).
+- Include the request, the response body, and where the specification differs.
+- Send it upstream rather than patching around it. Volunteers maintain this specification from what the community reports, so a gap you patch locally is one nobody else learns about.
 
-The VRChat API can be used to programmatically retrieve or update information regarding your profile, friends, avatars, worlds and more.
-The API consists of two parts, \"Photon\" which is only used in-game, and the \"Web API\" which is used by both the game and the website.
-This documentation focuses only on the Web API.
+Consider pinning to the OpenAPI version your tools support. Every release publishes the specification as OpenAPI 3.2, 3.1 and 3.0, in JSON and YAML, and `info.x-links` links them, the [latest release](https://github.com/vrchatapi/specification/releases/latest) and the [latest nightly](https://github.com/vrchatapi/specification/releases/tag/nightly).
 
-The API is designed around the REST ideology, providing semi-simple and usually predictable URIs to access and modify objects.
-Requests support standard HTTP methods like GET, PUT, POST, and DELETE and standard status codes.
-Response bodies are always UTF-8 encoded JSON objects, unless explicitly documented otherwise.
-
-<div class=\"callout callout-error\">
-  <strong>🛑 Warning! Do not touch Photon!</strong><br>
-  Photon is only used by the in-game client and should <b>not</b> be touched. Doing so may result in permanent account termination.
-</div>
-
-<div class=\"callout callout-info\">
-  <strong>ℹ️ Authentication</strong><br>
-  Read <a href=\"#tag--authentication\">Authentication</a> for how to log in.
-</div>
-
-# Using the API
-
-For simply exploring what the API can do it is strongly recommended to download [Insomnia](https://insomnia.rest/download), a free and open-source
-API client that's great for sending requests to the API in an orderly fashion.
-Insomnia allows you to send data in the format that's required for VRChat's API.
-It is also possible to try out the API in your browser, by first logging in at [vrchat.com/home](https://vrchat.com/home/) and then going to
-[vrchat.com/api/1/auth/user](https://vrchat.com/api/1/auth/user), but the information will be much harder to work with.
-
-For more permanent operation such as software development it is instead recommended to use one of the existing language SDKs.
-This community project maintains API libraries in several languages, which allows you to interact with the API with simple function calls
-rather than having to implement the HTTP protocol yourself. Most of these libraries are automatically generated from the API specification,
-sometimes with additional helpful wrapper code to make usage easier. This allows them to be almost automatically updated and expanded upon
-as soon as a new feature is introduced in the specification itself. The libraries can be found on [GitHub](https://github.com/vrchatapi) or following:
-
-* [NodeJS (JavaScript)](https://www.npmjs.com/package/vrchat)
-* [Dart](https://pub.dev/packages/vrchat_dart)
-* [Rust](https://crates.io/crates/vrchatapi)
-* [C#](https://github.com/vrchatapi/vrchatapi-csharp)
-* [Python](https://github.com/vrchatapi/vrchatapi-python)
-
-# Pagination
-
-Most endpoints enforce pagination, meaning they will only return 10 entries by default, and never more than 100.<br>
-Using both the limit and offset parameters allows you to easily paginate through a large number of objects.
-
-| Query Parameter | Type | Description |
-| ----------|--|------- |
-| `n` | integer  | The number of objects to return. This value often defaults to 10. Highest limit is always 100.|
-| `offset` | integer  | A zero-based offset from the default object sorting.|
-
-If a request returns fewer objects than the `limit` parameter, there are no more items available to return.
-
-# Contribution
-
-Do you want to get involved in the documentation effort? Do you want to help improve one of the language API libraries?
-This project is an [OPEN Open Source Project](https://openopensource.org)! This means that individuals making significant and valuable contributions are given
-commit-access to the project. It also means we are very open and welcoming of new people making contributions, unlike some more guarded open-source projects.
-
-[![Discord](https://img.shields.io/static/v1?label=vrchatapi&message=discord&color=blueviolet&style=for-the-badge)](https://discord.gg/qjZE9C9fkB)
 
 This Dart package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: 1.21.0
+- API version: 1.21.1-nightly.83
 - Generator version: 7.24.0
 - Build package: org.openapitools.codegen.languages.DartDioClientCodegen
-For more information, please visit [https://github.com/VRChatAPI](https://github.com/VRChatAPI)
+For more information, please visit [https://vrchat.community](https://vrchat.community)
 
 ## Requirements
 
@@ -156,6 +95,7 @@ Class | Method | HTTP request | Description
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**enable2FA**](doc/AuthenticationApi.md#enable2fa) | **POST** /auth/twofactorauth/totp/pending | Enable time-based 2FA codes
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**getCurrentUser**](doc/AuthenticationApi.md#getcurrentuser) | **GET** /auth/user | Login and/or Get Current User Info
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**getGlobalAvatarModerations**](doc/AuthenticationApi.md#getglobalavatarmoderations) | **GET** /auth/user/avatarmoderations | Get Global Avatar Moderations
+[*AuthenticationApi*](doc/AuthenticationApi.md) | [**getInterestsAndPreferences**](doc/AuthenticationApi.md#getinterestsandpreferences) | **GET** /auth/user/interestsAndPreferences | Get Interests and Preferences
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**getModerationReports**](doc/AuthenticationApi.md#getmoderationreports) | **GET** /moderationReports | Get Moderation Reports
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**getOAuthRedirectCode**](doc/AuthenticationApi.md#getoauthredirectcode) | **GET** /oauth/redirectCode | Get OAuth Redirect Code
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**getRecoveryCodes**](doc/AuthenticationApi.md#getrecoverycodes) | **GET** /auth/user/twofactorauth/otp | Get 2FA Recovery codes
@@ -164,6 +104,7 @@ Class | Method | HTTP request | Description
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**registerUserAccount**](doc/AuthenticationApi.md#registeruseraccount) | **POST** /auth/register | Register User Account
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**resendEmailConfirmation**](doc/AuthenticationApi.md#resendemailconfirmation) | **POST** /auth/user/resendEmail | Resend Email Confirmation
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**submitModerationReport**](doc/AuthenticationApi.md#submitmoderationreport) | **POST** /moderationReports | Submit Moderation Report
+[*AuthenticationApi*](doc/AuthenticationApi.md) | [**updateInterestsAndPreferences**](doc/AuthenticationApi.md#updateinterestsandpreferences) | **PUT** /auth/user/interestsAndPreferences | Update Interests and Preferences
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**verify2FA**](doc/AuthenticationApi.md#verify2fa) | **POST** /auth/twofactorauth/totp/verify | Verify 2FA code
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**verify2FAEmailCode**](doc/AuthenticationApi.md#verify2faemailcode) | **POST** /auth/twofactorauth/emailotp/verify | Verify 2FA email code
 [*AuthenticationApi*](doc/AuthenticationApi.md) | [**verifyAuthToken**](doc/AuthenticationApi.md#verifyauthtoken) | **GET** /auth | Verify Auth Token
@@ -197,22 +138,12 @@ Class | Method | HTTP request | Description
 [*CalendarApi*](doc/CalendarApi.md) | [**getGroupNextCalendarEvent**](doc/CalendarApi.md#getgroupnextcalendarevent) | **GET** /calendar/{groupId}/next | Get next calendar event
 [*CalendarApi*](doc/CalendarApi.md) | [**searchCalendarEvents**](doc/CalendarApi.md#searchcalendarevents) | **GET** /calendar/search | Search for calendar events
 [*CalendarApi*](doc/CalendarApi.md) | [**updateGroupCalendarEvent**](doc/CalendarApi.md#updategroupcalendarevent) | **PUT** /calendar/{groupId}/{calendarId}/event | Update a calendar event
-[*DeprecatedApi*](doc/DeprecatedApi.md) | [**getBalanceEarnings**](doc/DeprecatedApi.md#getbalanceearnings) | **GET** /user/{userId}/balance/earnings | Get Balance Earnings
-[*DeprecatedApi*](doc/DeprecatedApi.md) | [**getPropPublishStatus**](doc/DeprecatedApi.md#getproppublishstatus) | **GET** /props/{propId}/publish | Get Prop Publish Status
-[*DeprecatedApi*](doc/DeprecatedApi.md) | [**getSellerEligibility**](doc/DeprecatedApi.md#getsellereligibility) | **GET** /economy/seller/eligibility | Get Seller Eligibility
-[*DeprecatedApi*](doc/DeprecatedApi.md) | [**getTiliaStatus**](doc/DeprecatedApi.md#gettiliastatus) | **GET** /tilia/status | Get Tilia Status
-[*DeprecatedApi*](doc/DeprecatedApi.md) | [**getTiliaTos**](doc/DeprecatedApi.md#gettiliatos) | **GET** /user/{userId}/tilia/tos | Get Tilia TOS Agreement Status
-[*DeprecatedApi*](doc/DeprecatedApi.md) | [**getUserCreditsEligible**](doc/DeprecatedApi.md#getusercreditseligible) | **GET** /users/{userId}/credits/eligible | Get User Credits Eligibility
-[*DeprecatedApi*](doc/DeprecatedApi.md) | [**publishProp**](doc/DeprecatedApi.md#publishprop) | **PUT** /props/{propId}/publish | Publish Prop
-[*DeprecatedApi*](doc/DeprecatedApi.md) | [**unpublishProp**](doc/DeprecatedApi.md#unpublishprop) | **DELETE** /props/{propId}/publish | Unpublish Prop
-[*DeprecatedApi*](doc/DeprecatedApi.md) | [**updateTiliaTos**](doc/DeprecatedApi.md#updatetiliatos) | **PUT** /user/{userId}/tilia/tos | Update Tilia TOS Agreement Status
 [*EconomyApi*](doc/EconomyApi.md) | [**createProduct**](doc/EconomyApi.md#createproduct) | **POST** /products | Create Product
 [*EconomyApi*](doc/EconomyApi.md) | [**createProductListingDirect**](doc/EconomyApi.md#createproductlistingdirect) | **POST** /listing | Create Product Listing
 [*EconomyApi*](doc/EconomyApi.md) | [**deleteProduct**](doc/EconomyApi.md#deleteproduct) | **DELETE** /products/{productId} | Delete Product
 [*EconomyApi*](doc/EconomyApi.md) | [**deleteProductListingDirect**](doc/EconomyApi.md#deleteproductlistingdirect) | **DELETE** /listing/{productId} | Delete Product Listing
 [*EconomyApi*](doc/EconomyApi.md) | [**getActiveLicenses**](doc/EconomyApi.md#getactivelicenses) | **GET** /economy/licenses/active | Get Active Licenses
 [*EconomyApi*](doc/EconomyApi.md) | [**getBalance**](doc/EconomyApi.md#getbalance) | **GET** /user/{userId}/balance | Get Balance
-[*EconomyApi*](doc/EconomyApi.md) | [**getBalanceEarnings**](doc/EconomyApi.md#getbalanceearnings) | **GET** /user/{userId}/balance/earnings | Get Balance Earnings
 [*EconomyApi*](doc/EconomyApi.md) | [**getBulkGiftPurchases**](doc/EconomyApi.md#getbulkgiftpurchases) | **GET** /user/bulk/gift/purchases | Get Bulk Gift Purchases
 [*EconomyApi*](doc/EconomyApi.md) | [**getCurrentSubscriptions**](doc/EconomyApi.md#getcurrentsubscriptions) | **GET** /auth/user/subscription | Get Current Subscriptions
 [*EconomyApi*](doc/EconomyApi.md) | [**getEarningsMetrics**](doc/EconomyApi.md#getearningsmetrics) | **GET** /economy/metrics/earnings | Get Earnings Metrics
@@ -232,16 +163,12 @@ Class | Method | HTTP request | Description
 [*EconomyApi*](doc/EconomyApi.md) | [**getProductPurchaseStacks**](doc/EconomyApi.md#getproductpurchasestacks) | **GET** /economy/purchases/{productPurchaseId}/stacks | Get Product Purchase Stacks
 [*EconomyApi*](doc/EconomyApi.md) | [**getProductPurchases**](doc/EconomyApi.md#getproductpurchases) | **GET** /economy/purchases | Get Product Purchases
 [*EconomyApi*](doc/EconomyApi.md) | [**getRecentSubscription**](doc/EconomyApi.md#getrecentsubscription) | **GET** /user/subscription/recent | Get Recent Subscription
-[*EconomyApi*](doc/EconomyApi.md) | [**getSellerEligibility**](doc/EconomyApi.md#getsellereligibility) | **GET** /economy/seller/eligibility | Get Seller Eligibility
 [*EconomyApi*](doc/EconomyApi.md) | [**getSteamTransaction**](doc/EconomyApi.md#getsteamtransaction) | **GET** /Steam/transactions/{transactionId} | Get Steam Transaction
 [*EconomyApi*](doc/EconomyApi.md) | [**getSteamTransactions**](doc/EconomyApi.md#getsteamtransactions) | **GET** /Steam/transactions | List Steam Transactions
 [*EconomyApi*](doc/EconomyApi.md) | [**getStore**](doc/EconomyApi.md#getstore) | **GET** /economy/store | Get Store
 [*EconomyApi*](doc/EconomyApi.md) | [**getStoreShelves**](doc/EconomyApi.md#getstoreshelves) | **GET** /economy/store/shelves | Get Store Shelves
 [*EconomyApi*](doc/EconomyApi.md) | [**getSubscriptions**](doc/EconomyApi.md#getsubscriptions) | **GET** /subscriptions | List Subscriptions
-[*EconomyApi*](doc/EconomyApi.md) | [**getTiliaStatus**](doc/EconomyApi.md#gettiliastatus) | **GET** /tilia/status | Get Tilia Status
-[*EconomyApi*](doc/EconomyApi.md) | [**getTiliaTos**](doc/EconomyApi.md#gettiliatos) | **GET** /user/{userId}/tilia/tos | Get Tilia TOS Agreement Status
 [*EconomyApi*](doc/EconomyApi.md) | [**getTokenBundles**](doc/EconomyApi.md#gettokenbundles) | **GET** /tokenBundles | List Token Bundles
-[*EconomyApi*](doc/EconomyApi.md) | [**getUserCreditsEligible**](doc/EconomyApi.md#getusercreditseligible) | **GET** /users/{userId}/credits/eligible | Get User Credits Eligibility
 [*EconomyApi*](doc/EconomyApi.md) | [**getUserSubscriptionEligible**](doc/EconomyApi.md#getusersubscriptioneligible) | **GET** /users/{userId}/subscription/eligible | Get User Subscription Eligibility
 [*EconomyApi*](doc/EconomyApi.md) | [**getUserTiliaKyc**](doc/EconomyApi.md#getusertiliakyc) | **GET** /user/{userId}/tilia/kyc | Get User Tilia KYC
 [*EconomyApi*](doc/EconomyApi.md) | [**listStores**](doc/EconomyApi.md#liststores) | **GET** /economy/stores | List Stores
@@ -249,7 +176,6 @@ Class | Method | HTTP request | Description
 [*EconomyApi*](doc/EconomyApi.md) | [**purchaseProductListing**](doc/EconomyApi.md#purchaseproductlisting) | **POST** /economy/purchase/listing | Purchase Product Listing
 [*EconomyApi*](doc/EconomyApi.md) | [**updateProduct**](doc/EconomyApi.md#updateproduct) | **PUT** /products/{productId} | Update Product
 [*EconomyApi*](doc/EconomyApi.md) | [**updateProductListingDirect**](doc/EconomyApi.md#updateproductlistingdirect) | **PUT** /listing/{productId} | Update Product Listing
-[*EconomyApi*](doc/EconomyApi.md) | [**updateTiliaTos**](doc/EconomyApi.md#updatetiliatos) | **PUT** /user/{userId}/tilia/tos | Update Tilia TOS Agreement Status
 [*FavoritesApi*](doc/FavoritesApi.md) | [**addFavorite**](doc/FavoritesApi.md#addfavorite) | **POST** /favorites | Add Favorite
 [*FavoritesApi*](doc/FavoritesApi.md) | [**clearFavoriteGroup**](doc/FavoritesApi.md#clearfavoritegroup) | **DELETE** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Clear Favorite Group
 [*FavoritesApi*](doc/FavoritesApi.md) | [**getFavoriteGroup**](doc/FavoritesApi.md#getfavoritegroup) | **GET** /favorite/group/{favoriteGroupType}/{favoriteGroupName}/{userId} | Show Favorite Group
@@ -349,7 +275,7 @@ Class | Method | HTTP request | Description
 [*InventoryApi*](doc/InventoryApi.md) | [**consumeOwnInventoryItem**](doc/InventoryApi.md#consumeowninventoryitem) | **PUT** /inventory/{inventoryItemId}/consume | Consume Own Inventory Item
 [*InventoryApi*](doc/InventoryApi.md) | [**deleteOwnInventoryItem**](doc/InventoryApi.md#deleteowninventoryitem) | **DELETE** /inventory/{inventoryItemId} | Delete Own Inventory Item
 [*InventoryApi*](doc/InventoryApi.md) | [**equipOwnInventoryItem**](doc/InventoryApi.md#equipowninventoryitem) | **PUT** /inventory/{inventoryItemId}/equip | Equip Own Inventory Item
-[*InventoryApi*](doc/InventoryApi.md) | [**getCosmeticIndex**](doc/InventoryApi.md#getcosmeticindex) | **GET** /cosmetics/index/{itemType} | List Cosmetics
+[*InventoryApi*](doc/InventoryApi.md) | [**getCosmetics**](doc/InventoryApi.md#getcosmetics) | **GET** /cosmetics/index/{itemType} | List Cosmetics
 [*InventoryApi*](doc/InventoryApi.md) | [**getInventory**](doc/InventoryApi.md#getinventory) | **GET** /inventory | Get Inventory
 [*InventoryApi*](doc/InventoryApi.md) | [**getInventoryCollections**](doc/InventoryApi.md#getinventorycollections) | **GET** /inventory/collections | List Inventory Collections
 [*InventoryApi*](doc/InventoryApi.md) | [**getInventoryDrops**](doc/InventoryApi.md#getinventorydrops) | **GET** /inventory/drops | List Inventory Drops
@@ -416,13 +342,12 @@ Class | Method | HTTP request | Description
 [*PropsApi*](doc/PropsApi.md) | [**createProp**](doc/PropsApi.md#createprop) | **POST** /props | Create Prop
 [*PropsApi*](doc/PropsApi.md) | [**deleteProp**](doc/PropsApi.md#deleteprop) | **DELETE** /props/{propId} | Delete Prop
 [*PropsApi*](doc/PropsApi.md) | [**getProp**](doc/PropsApi.md#getprop) | **GET** /props/{propId} | Get Prop
-[*PropsApi*](doc/PropsApi.md) | [**getPropPublishStatus**](doc/PropsApi.md#getproppublishstatus) | **GET** /props/{propId}/publish | Get Prop Publish Status
 [*PropsApi*](doc/PropsApi.md) | [**listProps**](doc/PropsApi.md#listprops) | **GET** /props | List Props
-[*PropsApi*](doc/PropsApi.md) | [**publishProp**](doc/PropsApi.md#publishprop) | **PUT** /props/{propId}/publish | Publish Prop
-[*PropsApi*](doc/PropsApi.md) | [**unpublishProp**](doc/PropsApi.md#unpublishprop) | **DELETE** /props/{propId}/publish | Unpublish Prop
 [*PropsApi*](doc/PropsApi.md) | [**updateProp**](doc/PropsApi.md#updateprop) | **PUT** /props/{propId} | Update Prop
 [*UsersApi*](doc/UsersApi.md) | [**addTags**](doc/UsersApi.md#addtags) | **POST** /users/{userId}/addTags | Add User Tags
 [*UsersApi*](doc/UsersApi.md) | [**checkUserPersistenceExists**](doc/UsersApi.md#checkuserpersistenceexists) | **GET** /users/{userId}/{worldId}/persist/exists | Check User Persistence Exists
+[*UsersApi*](doc/UsersApi.md) | [**clearUserTutorials**](doc/UsersApi.md#clearusertutorials) | **DELETE** /users/{userId}/tutorial | Clear User Tutorials
+[*UsersApi*](doc/UsersApi.md) | [**completeUserTutorial**](doc/UsersApi.md#completeusertutorial) | **POST** /users/{userId}/tutorial | Complete User Tutorial
 [*UsersApi*](doc/UsersApi.md) | [**deleteAllUserPersistenceData**](doc/UsersApi.md#deletealluserpersistencedata) | **DELETE** /users/{userId}/persist | Delete All User Persistence Data
 [*UsersApi*](doc/UsersApi.md) | [**deleteUserPersistence**](doc/UsersApi.md#deleteuserpersistence) | **DELETE** /users/{userId}/{worldId}/persist | Delete User Persistence
 [*UsersApi*](doc/UsersApi.md) | [**getAgeVerificationStatus**](doc/UsersApi.md#getageverificationstatus) | **GET** /ageVerification/status | Get Age Verification Status
@@ -562,7 +487,7 @@ Class | Method | HTTP request | Description
  - [CreatePropRequest](doc/CreatePropRequest.md)
  - [CreateWorldRequest](doc/CreateWorldRequest.md)
  - [CurrentUser](doc/CurrentUser.md)
- - [CurrentUserPlatformHistoryInner](doc/CurrentUserPlatformHistoryInner.md)
+ - [CurrentUserLoginResponse](doc/CurrentUserLoginResponse.md)
  - [CurrentUserPresence](doc/CurrentUserPresence.md)
  - [DeclineGroupInviteRequest](doc/DeclineGroupInviteRequest.md)
  - [DeveloperType](doc/DeveloperType.md)
@@ -605,13 +530,74 @@ Class | Method | HTTP request | Description
  - [FinishFileDataUploadRequest](doc/FinishFileDataUploadRequest.md)
  - [FollowCalendarEventRequest](doc/FollowCalendarEventRequest.md)
  - [FriendStatus](doc/FriendStatus.md)
- - [GetGroupGalleryImages200Response](doc/GetGroupGalleryImages200Response.md)
- - [GetGroupPosts200Response](doc/GetGroupPosts200Response.md)
- - [GetUserGroupInstances200Response](doc/GetUserGroupInstances200Response.md)
  - [Group](doc/Group.md)
  - [GroupAccessType](doc/GroupAccessType.md)
  - [GroupAnnouncement](doc/GroupAnnouncement.md)
  - [GroupAuditLogEntry](doc/GroupAuditLogEntry.md)
+ - [GroupAuditLogEntryBase](doc/GroupAuditLogEntryBase.md)
+ - [GroupAuditLogEntryBooleanChange](doc/GroupAuditLogEntryBooleanChange.md)
+ - [GroupAuditLogEntryDataGroupAnnouncement](doc/GroupAuditLogEntryDataGroupAnnouncement.md)
+ - [GroupAuditLogEntryDataGroupCalendarEventCreate](doc/GroupAuditLogEntryDataGroupCalendarEventCreate.md)
+ - [GroupAuditLogEntryDataGroupCalendarEventDelete](doc/GroupAuditLogEntryDataGroupCalendarEventDelete.md)
+ - [GroupAuditLogEntryDataGroupGalleryCreate](doc/GroupAuditLogEntryDataGroupGalleryCreate.md)
+ - [GroupAuditLogEntryDataGroupGalleryDelete](doc/GroupAuditLogEntryDataGroupGalleryDelete.md)
+ - [GroupAuditLogEntryDataGroupGalleryUpdate](doc/GroupAuditLogEntryDataGroupGalleryUpdate.md)
+ - [GroupAuditLogEntryDataGroupInstanceAnnouncement](doc/GroupAuditLogEntryDataGroupInstanceAnnouncement.md)
+ - [GroupAuditLogEntryDataGroupInstanceClose](doc/GroupAuditLogEntryDataGroupInstanceClose.md)
+ - [GroupAuditLogEntryDataGroupInstanceCreate](doc/GroupAuditLogEntryDataGroupInstanceCreate.md)
+ - [GroupAuditLogEntryDataGroupInstanceModeration](doc/GroupAuditLogEntryDataGroupInstanceModeration.md)
+ - [GroupAuditLogEntryDataGroupMemberRole](doc/GroupAuditLogEntryDataGroupMemberRole.md)
+ - [GroupAuditLogEntryDataGroupMemberUserUpdate](doc/GroupAuditLogEntryDataGroupMemberUserUpdate.md)
+ - [GroupAuditLogEntryDataGroupPost](doc/GroupAuditLogEntryDataGroupPost.md)
+ - [GroupAuditLogEntryDataGroupPostCreate](doc/GroupAuditLogEntryDataGroupPostCreate.md)
+ - [GroupAuditLogEntryDataGroupPostDelete](doc/GroupAuditLogEntryDataGroupPostDelete.md)
+ - [GroupAuditLogEntryDataGroupPostUpdate](doc/GroupAuditLogEntryDataGroupPostUpdate.md)
+ - [GroupAuditLogEntryDataGroupRole](doc/GroupAuditLogEntryDataGroupRole.md)
+ - [GroupAuditLogEntryDataGroupRoleCreate](doc/GroupAuditLogEntryDataGroupRoleCreate.md)
+ - [GroupAuditLogEntryDataGroupRoleDelete](doc/GroupAuditLogEntryDataGroupRoleDelete.md)
+ - [GroupAuditLogEntryDataGroupRoleUpdate](doc/GroupAuditLogEntryDataGroupRoleUpdate.md)
+ - [GroupAuditLogEntryDataGroupUpdate](doc/GroupAuditLogEntryDataGroupUpdate.md)
+ - [GroupAuditLogEntryEvent](doc/GroupAuditLogEntryEvent.md)
+ - [GroupAuditLogEntryEventData](doc/GroupAuditLogEntryEventData.md)
+ - [GroupAuditLogEntryFileIDChange](doc/GroupAuditLogEntryFileIDChange.md)
+ - [GroupAuditLogEntryGroupAnnouncement](doc/GroupAuditLogEntryGroupAnnouncement.md)
+ - [GroupAuditLogEntryGroupCalendarEventCreate](doc/GroupAuditLogEntryGroupCalendarEventCreate.md)
+ - [GroupAuditLogEntryGroupCalendarEventDelete](doc/GroupAuditLogEntryGroupCalendarEventDelete.md)
+ - [GroupAuditLogEntryGroupGalleryCreate](doc/GroupAuditLogEntryGroupGalleryCreate.md)
+ - [GroupAuditLogEntryGroupGalleryDelete](doc/GroupAuditLogEntryGroupGalleryDelete.md)
+ - [GroupAuditLogEntryGroupGalleryUpdate](doc/GroupAuditLogEntryGroupGalleryUpdate.md)
+ - [GroupAuditLogEntryGroupInstanceAnnouncement](doc/GroupAuditLogEntryGroupInstanceAnnouncement.md)
+ - [GroupAuditLogEntryGroupInstanceClose](doc/GroupAuditLogEntryGroupInstanceClose.md)
+ - [GroupAuditLogEntryGroupInstanceCreate](doc/GroupAuditLogEntryGroupInstanceCreate.md)
+ - [GroupAuditLogEntryGroupInstanceKick](doc/GroupAuditLogEntryGroupInstanceKick.md)
+ - [GroupAuditLogEntryGroupInstanceWarn](doc/GroupAuditLogEntryGroupInstanceWarn.md)
+ - [GroupAuditLogEntryGroupInviteCancel](doc/GroupAuditLogEntryGroupInviteCancel.md)
+ - [GroupAuditLogEntryGroupInviteCreate](doc/GroupAuditLogEntryGroupInviteCreate.md)
+ - [GroupAuditLogEntryGroupMemberJoin](doc/GroupAuditLogEntryGroupMemberJoin.md)
+ - [GroupAuditLogEntryGroupMemberLeave](doc/GroupAuditLogEntryGroupMemberLeave.md)
+ - [GroupAuditLogEntryGroupMemberRemove](doc/GroupAuditLogEntryGroupMemberRemove.md)
+ - [GroupAuditLogEntryGroupMemberRoleAssign](doc/GroupAuditLogEntryGroupMemberRoleAssign.md)
+ - [GroupAuditLogEntryGroupMemberRoleUnassign](doc/GroupAuditLogEntryGroupMemberRoleUnassign.md)
+ - [GroupAuditLogEntryGroupMemberUserUpdate](doc/GroupAuditLogEntryGroupMemberUserUpdate.md)
+ - [GroupAuditLogEntryGroupPostCreate](doc/GroupAuditLogEntryGroupPostCreate.md)
+ - [GroupAuditLogEntryGroupPostDelete](doc/GroupAuditLogEntryGroupPostDelete.md)
+ - [GroupAuditLogEntryGroupPostUpdate](doc/GroupAuditLogEntryGroupPostUpdate.md)
+ - [GroupAuditLogEntryGroupRequestBlock](doc/GroupAuditLogEntryGroupRequestBlock.md)
+ - [GroupAuditLogEntryGroupRequestCreate](doc/GroupAuditLogEntryGroupRequestCreate.md)
+ - [GroupAuditLogEntryGroupRequestReject](doc/GroupAuditLogEntryGroupRequestReject.md)
+ - [GroupAuditLogEntryGroupRequestWithdraw](doc/GroupAuditLogEntryGroupRequestWithdraw.md)
+ - [GroupAuditLogEntryGroupRoleCreate](doc/GroupAuditLogEntryGroupRoleCreate.md)
+ - [GroupAuditLogEntryGroupRoleDelete](doc/GroupAuditLogEntryGroupRoleDelete.md)
+ - [GroupAuditLogEntryGroupRoleUpdate](doc/GroupAuditLogEntryGroupRoleUpdate.md)
+ - [GroupAuditLogEntryGroupUpdate](doc/GroupAuditLogEntryGroupUpdate.md)
+ - [GroupAuditLogEntryGroupUserBan](doc/GroupAuditLogEntryGroupUserBan.md)
+ - [GroupAuditLogEntryGroupUserUnban](doc/GroupAuditLogEntryGroupUserUnban.md)
+ - [GroupAuditLogEntryIntegerChange](doc/GroupAuditLogEntryIntegerChange.md)
+ - [GroupAuditLogEntryJoinStateChange](doc/GroupAuditLogEntryJoinStateChange.md)
+ - [GroupAuditLogEntryStringChange](doc/GroupAuditLogEntryStringChange.md)
+ - [GroupAuditLogEntryStringListChange](doc/GroupAuditLogEntryStringListChange.md)
+ - [GroupAuditLogEntryUnknown](doc/GroupAuditLogEntryUnknown.md)
+ - [GroupAuditLogEntryUserIdChange](doc/GroupAuditLogEntryUserIdChange.md)
  - [GroupGallery](doc/GroupGallery.md)
  - [GroupGalleryFileOrder](doc/GroupGalleryFileOrder.md)
  - [GroupGalleryFileOrderRequest](doc/GroupGalleryFileOrderRequest.md)
@@ -622,12 +608,14 @@ Class | Method | HTTP request | Description
  - [GroupJoinState](doc/GroupJoinState.md)
  - [GroupMember](doc/GroupMember.md)
  - [GroupMemberLimitedUser](doc/GroupMemberLimitedUser.md)
+ - [GroupMemberSearchResponse](doc/GroupMemberSearchResponse.md)
  - [GroupMemberStatus](doc/GroupMemberStatus.md)
  - [GroupMyMember](doc/GroupMyMember.md)
  - [GroupPermission](doc/GroupPermission.md)
  - [GroupPermissions](doc/GroupPermissions.md)
  - [GroupPost](doc/GroupPost.md)
  - [GroupPostVisibility](doc/GroupPostVisibility.md)
+ - [GroupPostsResponse](doc/GroupPostsResponse.md)
  - [GroupPrivacy](doc/GroupPrivacy.md)
  - [GroupRole](doc/GroupRole.md)
  - [GroupRoleTemplate](doc/GroupRoleTemplate.md)
@@ -645,9 +633,18 @@ Class | Method | HTTP request | Description
  - [InfoPushData](doc/InfoPushData.md)
  - [InfoPushDataArticle](doc/InfoPushDataArticle.md)
  - [InfoPushDataArticleContent](doc/InfoPushDataArticleContent.md)
+ - [InfoPushDataCallToAction](doc/InfoPushDataCallToAction.md)
  - [InfoPushDataCategory](doc/InfoPushDataCategory.md)
  - [InfoPushDataClickable](doc/InfoPushDataClickable.md)
+ - [InfoPushDataContentSource](doc/InfoPushDataContentSource.md)
+ - [InfoPushDataContentSourcePagination](doc/InfoPushDataContentSourcePagination.md)
+ - [InfoPushDataControl](doc/InfoPushDataControl.md)
+ - [InfoPushDataControlOption](doc/InfoPushDataControlOption.md)
+ - [InfoPushDataDeliveryBehavior](doc/InfoPushDataDeliveryBehavior.md)
  - [InfoPushDataDomainListInner](doc/InfoPushDataDomainListInner.md)
+ - [InfoPushDataPresentation](doc/InfoPushDataPresentation.md)
+ - [InfoPushDataPromotion](doc/InfoPushDataPromotion.md)
+ - [InfoPushDataPromotionNotification](doc/InfoPushDataPromotionNotification.md)
  - [InfoPushDataSearch](doc/InfoPushDataSearch.md)
  - [InfoPushEmbeddedLink](doc/InfoPushEmbeddedLink.md)
  - [InfoPushExperiment](doc/InfoPushExperiment.md)
@@ -660,6 +657,7 @@ Class | Method | HTTP request | Description
  - [InstanceShortNameResponse](doc/InstanceShortNameResponse.md)
  - [InstanceType](doc/InstanceType.md)
  - [InstanceVibe](doc/InstanceVibe.md)
+ - [InterestsAndPreferences](doc/InterestsAndPreferences.md)
  - [Inventory](doc/Inventory.md)
  - [InventoryAsset](doc/InventoryAsset.md)
  - [InventoryConsumptionResults](doc/InventoryConsumptionResults.md)
@@ -694,12 +692,14 @@ Class | Method | HTTP request | Description
  - [LimitedUserInstance](doc/LimitedUserInstance.md)
  - [LimitedUserSearch](doc/LimitedUserSearch.md)
  - [LimitedWorld](doc/LimitedWorld.md)
+ - [LocalizedString](doc/LocalizedString.md)
  - [MIMEType](doc/MIMEType.md)
  - [ModerateUserRequest](doc/ModerateUserRequest.md)
  - [ModerationReport](doc/ModerationReport.md)
  - [MutualFriend](doc/MutualFriend.md)
  - [Mutuals](doc/Mutuals.md)
  - [Notification](doc/Notification.md)
+ - [NotificationDetailBoop](doc/NotificationDetailBoop.md)
  - [NotificationDetailInvite](doc/NotificationDetailInvite.md)
  - [NotificationDetailInviteResponse](doc/NotificationDetailInviteResponse.md)
  - [NotificationDetailRequestInvite](doc/NotificationDetailRequestInvite.md)
@@ -707,6 +707,13 @@ Class | Method | HTTP request | Description
  - [NotificationDetailVoteToKick](doc/NotificationDetailVoteToKick.md)
  - [NotificationType](doc/NotificationType.md)
  - [NotificationV2](doc/NotificationV2.md)
+ - [NotificationV2Data](doc/NotificationV2Data.md)
+ - [NotificationV2DataBadgeEarned](doc/NotificationV2DataBadgeEarned.md)
+ - [NotificationV2DataBoop](doc/NotificationV2DataBoop.md)
+ - [NotificationV2DataEventAnnouncement](doc/NotificationV2DataEventAnnouncement.md)
+ - [NotificationV2DataGroupAnnouncement](doc/NotificationV2DataGroupAnnouncement.md)
+ - [NotificationV2DataGroupInformative](doc/NotificationV2DataGroupInformative.md)
+ - [NotificationV2DataGroupTransfer](doc/NotificationV2DataGroupTransfer.md)
  - [NotificationV2DetailsBoop](doc/NotificationV2DetailsBoop.md)
  - [NotificationV2Response](doc/NotificationV2Response.md)
  - [NotificationV2Type](doc/NotificationV2Type.md)
@@ -725,6 +732,7 @@ Class | Method | HTTP request | Description
  - [Permission](doc/Permission.md)
  - [PermissionData](doc/PermissionData.md)
  - [PlatformBuildInfo](doc/PlatformBuildInfo.md)
+ - [PlatformHistoryEntry](doc/PlatformHistoryEntry.md)
  - [PlayerModeration](doc/PlayerModeration.md)
  - [PlayerModerationType](doc/PlayerModerationType.md)
  - [Print](doc/Print.md)
@@ -760,6 +768,7 @@ Class | Method | HTTP request | Description
  - [ReportReason](doc/ReportReason.md)
  - [RepresentedGroup](doc/RepresentedGroup.md)
  - [RequestInviteRequest](doc/RequestInviteRequest.md)
+ - [RequiresTwoFactorAuth](doc/RequiresTwoFactorAuth.md)
  - [RespondGroupJoinRequest](doc/RespondGroupJoinRequest.md)
  - [RespondNotificationV2Request](doc/RespondNotificationV2Request.md)
  - [Response](doc/Response.md)
@@ -769,9 +778,9 @@ Class | Method | HTTP request | Description
  - [RewardRedemptionRequest](doc/RewardRedemptionRequest.md)
  - [RewardRedemptionResult](doc/RewardRedemptionResult.md)
  - [RouteNotImplemented](doc/RouteNotImplemented.md)
- - [SearchGroupMembers200Response](doc/SearchGroupMembers200Response.md)
  - [SellerEligibility](doc/SellerEligibility.md)
  - [SentNotification](doc/SentNotification.md)
+ - [SentNotificationDetails](doc/SentNotificationDetails.md)
  - [ServiceQueueStats](doc/ServiceQueueStats.md)
  - [ServiceStatus](doc/ServiceStatus.md)
  - [ShareInventoryItemDirectRequest](doc/ShareInventoryItemDirectRequest.md)
@@ -802,6 +811,7 @@ Class | Method | HTTP request | Description
  - [TransferGroupRequest](doc/TransferGroupRequest.md)
  - [TutorialStatus](doc/TutorialStatus.md)
  - [TwoFactorAuthCode](doc/TwoFactorAuthCode.md)
+ - [TwoFactorAuthType](doc/TwoFactorAuthType.md)
  - [TwoFactorEmailCode](doc/TwoFactorEmailCode.md)
  - [TwoFactorRecoveryCodes](doc/TwoFactorRecoveryCodes.md)
  - [TwoFactorRecoveryCodesOtpInner](doc/TwoFactorRecoveryCodesOtpInner.md)
@@ -833,8 +843,10 @@ Class | Method | HTTP request | Description
  - [UserCosmetic](doc/UserCosmetic.md)
  - [UserCreditsEligible](doc/UserCreditsEligible.md)
  - [UserExists](doc/UserExists.md)
+ - [UserGroupInstanceListResponse](doc/UserGroupInstanceListResponse.md)
  - [UserNote](doc/UserNote.md)
  - [UserNoteTargetUser](doc/UserNoteTargetUser.md)
+ - [UserResponse](doc/UserResponse.md)
  - [UserState](doc/UserState.md)
  - [UserStatus](doc/UserStatus.md)
  - [UserSubscription](doc/UserSubscription.md)
@@ -871,5 +883,5 @@ Authentication schemes defined for the API:
 
 ## Author
 
-vrchatapi.lpv0t@aries.fyi
+
 

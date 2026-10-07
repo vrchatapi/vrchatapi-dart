@@ -183,7 +183,7 @@ class GroupMember {
       (managerNotes == null ? 0 : managerNotes.hashCode) +
       membershipStatus.hashCode +
       roleIds.hashCode +
-      (user == null ? 0 : user.hashCode) +
+      user.hashCode +
       userId.hashCode +
       visibility.hashCode;
 

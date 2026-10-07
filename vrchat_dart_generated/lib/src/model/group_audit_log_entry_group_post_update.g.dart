@@ -1,0 +1,49 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+// ignore_for_file: deprecated_member_use_from_same_package
+
+part of 'group_audit_log_entry_group_post_update.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+GroupAuditLogEntryGroupPostUpdate _$GroupAuditLogEntryGroupPostUpdateFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('GroupAuditLogEntryGroupPostUpdate', json, (
+  $checkedConvert,
+) {
+  $checkKeys(json, requiredKeys: const ['data', 'eventType', 'targetId']);
+  final val = GroupAuditLogEntryGroupPostUpdate(
+    data: $checkedConvert(
+      'data',
+      (v) => GroupAuditLogEntryDataGroupPostUpdate.fromJson(
+        v as Map<String, dynamic>,
+      ),
+    ),
+    eventType: $checkedConvert(
+      'eventType',
+      (v) => $enumDecode(
+        _$GroupAuditLogEntryGroupPostUpdateEventTypeEnumEnumMap,
+        v,
+      ),
+    ),
+    targetId: $checkedConvert('targetId', (v) => v as String),
+  );
+  return val;
+});
+
+Map<String, dynamic> _$GroupAuditLogEntryGroupPostUpdateToJson(
+  GroupAuditLogEntryGroupPostUpdate instance,
+) => <String, dynamic>{
+  'data': instance.data.toJson(),
+  'eventType':
+      _$GroupAuditLogEntryGroupPostUpdateEventTypeEnumEnumMap[instance
+          .eventType]!,
+  'targetId': instance.targetId,
+};
+
+const _$GroupAuditLogEntryGroupPostUpdateEventTypeEnumEnumMap = {
+  GroupAuditLogEntryGroupPostUpdateEventTypeEnum.groupPeriodPostPeriodUpdate:
+      'group.post.update',
+};

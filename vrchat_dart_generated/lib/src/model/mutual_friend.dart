@@ -41,7 +41,7 @@ class MutualFriend {
     required this.statusDescription,
   });
 
-  /// Hex colour without a leading `#`.
+  /// Six hexadecimal digits, without a leading `#`. May be empty.
   @JsonKey(name: r'bannerColor', required: false, includeIfNull: false)
   final String? bannerColor;
 

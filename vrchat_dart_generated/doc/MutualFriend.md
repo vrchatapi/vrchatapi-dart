@@ -8,7 +8,7 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bannerColor** | **String** | Hex colour without a leading `#`. | [optional] 
+**bannerColor** | **String** | Six hexadecimal digits, without a leading `#`. May be empty. | [optional] 
 **bannerType** | **String** |  | [optional] 
 **bannerUrl** | **String** |  | [optional] 
 **displayName** | **String** |  | 

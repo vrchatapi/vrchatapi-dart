@@ -43,11 +43,9 @@ class PrivateProfileActivity {
   @JsonKey(name: r'instanceId', required: false, includeIfNull: false)
   final String? instanceId;
 
-  /// Either a date-time or an empty string.
   @JsonKey(name: r'last_activity', required: false, includeIfNull: false)
   final String? lastActivity;
 
-  /// Either a date-time or an empty string.
   @JsonKey(name: r'last_login', required: false, includeIfNull: false)
   final String? lastLogin;
 

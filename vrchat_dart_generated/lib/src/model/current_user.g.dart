@@ -79,6 +79,7 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
             ?.map((e) => AccountDeletionLog.fromJson(e as Map<String, dynamic>))
             .toList(),
       ),
+      accountStanding: $checkedConvert('accountStanding', (v) => v as String?),
       activeFriends: $checkedConvert(
         'activeFriends',
         (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -91,6 +92,10 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
       allowAvatarCopying: $checkedConvert(
         'allowAvatarCopying',
         (v) => v as bool,
+      ),
+      allowWorldsToCountFriendsInInstance: $checkedConvert(
+        'allowWorldsToCountFriendsInInstance',
+        (v) => v as bool?,
       ),
       appleDetails: $checkedConvert('appleDetails', (v) => v),
       appleId: $checkedConvert('appleId', (v) => v as String?),
@@ -233,9 +238,7 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'platform_history',
         (v) => (v as List<dynamic>?)
             ?.map(
-              (e) => CurrentUserPlatformHistoryInner.fromJson(
-                e as Map<String, dynamic>,
-              ),
+              (e) => PlatformHistoryEntry.fromJson(e as Map<String, dynamic>),
             )
             .toList(),
       ),
@@ -342,11 +345,14 @@ Map<String, dynamic> _$CurrentUserToJson(
   'accountDeletionLog': ?instance.accountDeletionLog
       ?.map((e) => e.toJson())
       .toList(),
+  'accountStanding': ?instance.accountStanding,
   'activeFriends': ?instance.activeFriends,
   'ageVerificationStatus':
       _$AgeVerificationStatusEnumMap[instance.ageVerificationStatus]!,
   'ageVerified': instance.ageVerified,
   'allowAvatarCopying': instance.allowAvatarCopying,
+  'allowWorldsToCountFriendsInInstance':
+      ?instance.allowWorldsToCountFriendsInInstance,
   'appleDetails': ?instance.appleDetails,
   'appleId': ?instance.appleId,
   'authToken': ?instance.authToken,

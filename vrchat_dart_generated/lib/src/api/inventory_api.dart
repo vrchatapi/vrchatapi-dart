@@ -323,7 +323,7 @@ class InventoryApi {
   ///
   /// Returns a [Future] containing a [Response] with a [List<InventoryTemplate>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<InventoryTemplate>>> getCosmeticIndex({
+  Future<Response<List<InventoryTemplate>>> getCosmetics({
     required String itemType,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

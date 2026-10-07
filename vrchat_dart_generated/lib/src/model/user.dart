@@ -47,6 +47,8 @@ class User {
 
     required this.developerType,
 
+    this.discordId,
+
     required this.displayName,
 
     required this.friendKey,
@@ -128,9 +130,11 @@ class User {
   @JsonKey(name: r'allowAvatarCopying', required: true, includeIfNull: false)
   final bool allowAvatarCopying;
 
+  /// Details of an account on another service linked to this one.
   @JsonKey(name: r'appleDetails', required: false, includeIfNull: false)
-  final Map<String, Object>? appleDetails;
+  final Object? appleDetails;
 
+  /// Six hexadecimal digits, without a leading `#`. May be empty.
   @JsonKey(name: r'bannerColor', required: false, includeIfNull: false)
   final String? bannerColor;
 
@@ -145,6 +149,9 @@ class User {
 
   @JsonKey(name: r'developerType', required: true, includeIfNull: false)
   final DeveloperType developerType;
+
+  @JsonKey(name: r'discordId', required: false, includeIfNull: false)
+  final String? discordId;
 
   /// A users visual display name. This is what shows up in-game, and can different from their `username`. Changing display name is restricted to a cooldown period.
   @JsonKey(name: r'displayName', required: true, includeIfNull: false)
@@ -178,11 +185,9 @@ class User {
   @JsonKey(name: r'isFriend', required: true, includeIfNull: false)
   final bool isFriend;
 
-  /// Either a date-time or empty string.
   @JsonKey(name: r'last_activity', required: true, includeIfNull: false)
   final String lastActivity;
 
-  /// Either a date-time or empty string.
   @JsonKey(name: r'last_login', required: true, includeIfNull: false)
   final String lastLogin;
 
@@ -221,7 +226,6 @@ class User {
   @JsonKey(name: r'statusDescription', required: true, includeIfNull: false)
   final String statusDescription;
 
-  ///
   @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 
@@ -255,6 +259,7 @@ class User {
           other.bannerUrl == bannerUrl &&
           other.dateJoined == dateJoined &&
           other.developerType == developerType &&
+          other.discordId == discordId &&
           other.displayName == displayName &&
           other.friendKey == friendKey &&
           other.friendRequestStatus == friendRequestStatus &&
@@ -298,6 +303,7 @@ class User {
       bannerUrl.hashCode +
       dateJoined.hashCode +
       developerType.hashCode +
+      discordId.hashCode +
       displayName.hashCode +
       friendKey.hashCode +
       friendRequestStatus.hashCode +

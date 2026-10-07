@@ -8,9 +8,10 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bannerColor** | **String** |  | [optional] 
+**bannerColor** | **String** | Six hexadecimal digits, without a leading `#`. May be empty. | [optional] 
 **bannerType** | **String** |  | [optional] 
 **bannerUrl** | **String** |  | [optional] 
+**currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | [optional] 
 **developerType** | [**DeveloperType**](DeveloperType.md) |  | 
 **discordId** | **String** | https://discord.com/developers/docs/reference#snowflakes | [optional] 
 **displayName** | **String** |  | 

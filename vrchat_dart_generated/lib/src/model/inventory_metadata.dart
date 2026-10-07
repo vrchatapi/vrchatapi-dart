@@ -60,11 +60,11 @@ class InventoryMetadata {
   @JsonKey(name: r'fileId', required: false, includeIfNull: false)
   final String? fileId;
 
-  /// Hex colour without a leading `#`.
+  /// Six hexadecimal digits, without a leading `#`. May be empty.
   @JsonKey(name: r'gradientEnd', required: false, includeIfNull: false)
   final String? gradientEnd;
 
-  /// Hex colour without a leading `#`.
+  /// Six hexadecimal digits, without a leading `#`. May be empty.
   @JsonKey(name: r'gradientStart', required: false, includeIfNull: false)
   final String? gradientStart;
 

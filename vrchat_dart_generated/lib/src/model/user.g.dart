@@ -60,12 +60,7 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'allowAvatarCopying',
         (v) => v as bool? ?? true,
       ),
-      appleDetails: $checkedConvert(
-        'appleDetails',
-        (v) => (v as Map<String, dynamic>?)?.map(
-          (k, e) => MapEntry(k, e as Object),
-        ),
-      ),
+      appleDetails: $checkedConvert('appleDetails', (v) => v),
       bannerColor: $checkedConvert('bannerColor', (v) => v as String?),
       bannerType: $checkedConvert('bannerType', (v) => v as String?),
       bannerUrl: $checkedConvert('bannerUrl', (v) => v as String?),
@@ -77,6 +72,7 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'developerType',
         (v) => $enumDecode(_$DeveloperTypeEnumMap, v),
       ),
+      discordId: $checkedConvert('discordId', (v) => v as String?),
       displayName: $checkedConvert('displayName', (v) => v as String),
       friendKey: $checkedConvert('friendKey', (v) => v as String),
       friendRequestStatus: $checkedConvert(
@@ -155,6 +151,7 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
   'bannerUrl': ?instance.bannerUrl,
   'date_joined': instance.dateJoined.toIso8601String(),
   'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
+  'discordId': ?instance.discordId,
   'displayName': instance.displayName,
   'friendKey': instance.friendKey,
   'friendRequestStatus': ?instance.friendRequestStatus,

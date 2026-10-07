@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **platforms** | [**List&lt;CalendarEventPlatform&gt;**](CalendarEventPlatform.md) |  | [optional] 
 **recurrence** | [**CalendarEventRecurrence**](CalendarEventRecurrence.md) |  | [optional] 
 **roleIds** | **List&lt;String&gt;** | Group roles that may join this event | [optional] 
-**seriesId** | **String** | So far unused, always \"null\" | [optional] 
+**seriesId** | **String** |  | [optional] 
 **startsAt** | [**DateTime**](DateTime.md) |  | 
 **tags** | **List&lt;String&gt;** | Custom tags for this event | [optional] 
 **title** | **String** |  | 

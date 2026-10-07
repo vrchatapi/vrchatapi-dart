@@ -1,0 +1,76 @@
+# vrchat_dart_generated.model.GroupAuditLogEntryEventData
+
+## Load the model package
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**authorId** | **String** | A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed. | [optional] 
+**imageId** | **String** |  | [optional] 
+**sendNotification** | **bool** |  | [optional] 
+**text** | **Object** |  | [optional] 
+**title** | **Object** |  | [optional] 
+**accessType** | [**CalendarEventAccess**](CalendarEventAccess.md) |  | [optional] 
+**description** | **Object** |  | [optional] 
+**type** | **String** | The type of calendar entry. | [optional] 
+**category** | **String** | The category of the event. | [optional] 
+**closeInstanceAfterEndMinutes** | **int** | Minutes after the event ends to close the instance. | [optional] 
+**createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**deletedAt** | [**DateTime**](DateTime.md) | The deletion timestamp. | [optional] 
+**durationInMs** | **int** | The duration of the event in milliseconds. | [optional] 
+**endsAt** | [**DateTime**](DateTime.md) | The end timestamp. | [optional] 
+**featured** | **bool** | Whether the event is featured. | [optional] 
+**guestEarlyJoinMinutes** | **int** | Minutes before the start that guests can join. | [optional] 
+**hostEarlyJoinMinutes** | **int** | Minutes before the start that hosts can join. | [optional] 
+**interestedUserCount** | **int** | The number of interested users. | [optional] 
+**isDraft** | **bool** | Whether the event is a draft. | [optional] 
+**languages** | **Object** |  | [optional] 
+**occurrenceKind** | [**CalendarEventOccurrenceKind**](CalendarEventOccurrenceKind.md) |  | [optional] 
+**occurrenceModified** | **String** |  | [optional] 
+**ownerId** | **String** |  | [optional] 
+**platforms** | **List&lt;String&gt;** | The supported platforms. | [optional] 
+**recurrence** | [**CalendarEventRecurrence**](CalendarEventRecurrence.md) |  | [optional] 
+**roleIds** | **List&lt;String&gt;** |  | [optional] 
+**seriesId** | **String** | The ID of the recurring series the event belongs to. | [optional] 
+**shortCode** | **Object** |  | [optional] 
+**startsAt** | [**DateTime**](DateTime.md) | The start timestamp. | [optional] 
+**tags** | **Object** |  | [optional] 
+**updatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**usesInstanceOverflow** | **bool** | Whether the event uses instance overflow. | [optional] 
+**membersOnly** | **Object** |  | [optional] 
+**name** | **Object** |  | [optional] 
+**roleIdsToAutoApprove** | **List&lt;String&gt;** | The role IDs whose submissions are approved automatically. | [optional] 
+**roleIdsToManage** | **List&lt;String&gt;** | The role IDs that can manage the gallery. | [optional] 
+**roleIdsToSubmit** | **List&lt;String&gt;** | The role IDs that can submit to the gallery. | [optional] 
+**roleIdsToView** | **List&lt;String&gt;** | The role IDs that can view the gallery. | [optional] 
+**message** | **String** | The announcement message. | [optional] 
+**groupAccessType** | [**GroupAccessType**](GroupAccessType.md) |  | [optional] 
+**calendarEntryId** | **String** |  | [optional] 
+**location** | **String** | Represents a unique location, consisting of a world identifier and an instance identifier, or \"offline\" if the user is not on your friends list. | [optional] 
+**roleId** | **String** |  | [optional] 
+**roleName** | **String** | The name of the role that was assigned or unassigned. | [optional] 
+**managerNotes** | [**GroupAuditLogEntryStringChange**](GroupAuditLogEntryStringChange.md) |  | [optional] 
+**editorId** | **Object** |  | [optional] 
+**imageUrl** | **String** | The URL of the post image. | [optional] 
+**groupId** | **String** |  | [optional] 
+**lastUpdatedByUserId** | **String** | A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed. | [optional] 
+**defaultRole** | **bool** | Whether the role is the group's default role. | [optional] 
+**isManagementRole** | **bool** | Whether the role is a management role. | [optional] 
+**isAddedOnJoin** | [**GroupAuditLogEntryBooleanChange**](GroupAuditLogEntryBooleanChange.md) |  | [optional] 
+**isSelfAssignable** | [**GroupAuditLogEntryBooleanChange**](GroupAuditLogEntryBooleanChange.md) |  | [optional] 
+**order** | [**GroupAuditLogEntryIntegerChange**](GroupAuditLogEntryIntegerChange.md) |  | [optional] 
+**permissions** | [**GroupAuditLogEntryStringListChange**](GroupAuditLogEntryStringListChange.md) |  | [optional] 
+**allowGroupJoinPrompt** | [**GroupAuditLogEntryBooleanChange**](GroupAuditLogEntryBooleanChange.md) |  | [optional] 
+**bannerId** | [**GroupAuditLogEntryFileIDChange**](GroupAuditLogEntryFileIDChange.md) |  | [optional] 
+**iconId** | [**GroupAuditLogEntryFileIDChange**](GroupAuditLogEntryFileIDChange.md) |  | [optional] 
+**joinState** | [**GroupAuditLogEntryJoinStateChange**](GroupAuditLogEntryJoinStateChange.md) |  | [optional] 
+**links** | [**GroupAuditLogEntryStringListChange**](GroupAuditLogEntryStringListChange.md) |  | [optional] 
+**nameplateId** | [**GroupAuditLogEntryFileIDChange**](GroupAuditLogEntryFileIDChange.md) |  | [optional] 
+**rules** | [**GroupAuditLogEntryStringChange**](GroupAuditLogEntryStringChange.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

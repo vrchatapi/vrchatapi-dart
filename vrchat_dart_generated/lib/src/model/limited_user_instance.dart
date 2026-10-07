@@ -89,7 +89,6 @@ class LimitedUserInstance {
   @JsonKey(name: r'bio', required: false, includeIfNull: false)
   final String? bio;
 
-  ///
   @JsonKey(name: r'bioLinks', required: false, includeIfNull: false)
   final List<String>? bioLinks;
 

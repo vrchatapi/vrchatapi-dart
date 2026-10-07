@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **ids** | **List&lt;String&gt;** |  | [optional] 
 **ipsQuery** | [**InfoPushIpsQuery**](InfoPushIpsQuery.md) |  | [optional] 
 **maxCells** | **int** |  | [optional] 
-**name** | **String** |  | [optional] 
+**name** | **Object** |  | [optional] 
 **type** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -197,7 +197,6 @@ class World {
   @JsonKey(name: r'storeId', required: false, includeIfNull: false)
   final String? storeId;
 
-  ///
   @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 

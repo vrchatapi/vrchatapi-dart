@@ -78,7 +78,6 @@ class CreateAvatarRequest {
   @JsonKey(name: r'releaseStatus', required: false, includeIfNull: false)
   final ReleaseStatus? releaseStatus;
 
-  ///
   @JsonKey(name: r'tags', required: false, includeIfNull: false)
   final List<String>? tags;
 

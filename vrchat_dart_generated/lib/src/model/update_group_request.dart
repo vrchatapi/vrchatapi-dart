@@ -32,6 +32,8 @@ class UpdateGroupRequest {
 
     this.name,
 
+    this.nameplateId,
+
     this.rules,
 
     this.shortCode,
@@ -61,13 +63,15 @@ class UpdateGroupRequest {
   @JsonKey(name: r'name', required: false, includeIfNull: false)
   final String? name;
 
+  @JsonKey(name: r'nameplateId', required: false, includeIfNull: false)
+  final String? nameplateId;
+
   @JsonKey(name: r'rules', required: false, includeIfNull: false)
   final String? rules;
 
   @JsonKey(name: r'shortCode', required: false, includeIfNull: false)
   final String? shortCode;
 
-  ///
   @JsonKey(name: r'tags', required: false, includeIfNull: false)
   final List<String>? tags;
 
@@ -82,6 +86,7 @@ class UpdateGroupRequest {
           other.languages == languages &&
           other.links == links &&
           other.name == name &&
+          other.nameplateId == nameplateId &&
           other.rules == rules &&
           other.shortCode == shortCode &&
           other.tags == tags;
@@ -95,6 +100,7 @@ class UpdateGroupRequest {
       languages.hashCode +
       links.hashCode +
       name.hashCode +
+      (nameplateId == null ? 0 : nameplateId.hashCode) +
       rules.hashCode +
       shortCode.hashCode +
       tags.hashCode;

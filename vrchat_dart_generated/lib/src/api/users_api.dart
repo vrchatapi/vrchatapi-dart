@@ -13,7 +13,6 @@ import 'package:vrchat_dart_generated/src/model/age_verification_status_result.d
 import 'package:vrchat_dart_generated/src/model/change_user_tags_request.dart';
 import 'package:vrchat_dart_generated/src/model/current_user.dart';
 import 'package:vrchat_dart_generated/src/model/feedback.dart';
-import 'package:vrchat_dart_generated/src/model/get_user_group_instances200_response.dart';
 import 'package:vrchat_dart_generated/src/model/group.dart';
 import 'package:vrchat_dart_generated/src/model/group_permissions.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user_groups.dart';
@@ -29,9 +28,10 @@ import 'package:vrchat_dart_generated/src/model/update_user_badge_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_client_config_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_note_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_user_request.dart';
-import 'package:vrchat_dart_generated/src/model/user.dart';
 import 'package:vrchat_dart_generated/src/model/user_client_config.dart';
+import 'package:vrchat_dart_generated/src/model/user_group_instance_list_response.dart';
 import 'package:vrchat_dart_generated/src/model/user_note.dart';
+import 'package:vrchat_dart_generated/src/model/user_response.dart';
 
 class UsersApi {
   final Dio _dio;
@@ -206,6 +206,196 @@ class UsersApi {
     );
 
     return _response;
+  }
+
+  /// Clear User Tutorials
+  /// Clears every tutorial the user completed on a platform, whatever &#x60;X-Platform&#x60; and &#x60;X-Store&#x60; name, and returns the current user. Tutorials of other kinds, such as &#x60;platform-agnostic:custom:onboarding-tutorial-world:v1&#x60;, stay completed.
+  ///
+  /// Parameters:
+  /// * [userId] - Must be a valid user ID.
+  /// * [xPlatform] - The platform the tutorial belongs to. `standalonewindows`, `android` and `ios` are kept; any other value is recorded as `null`.
+  /// * [xStore] - The store the tutorial belongs to, recorded as sent.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [CurrentUser] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<CurrentUser>> clearUserTutorials({
+    required String userId,
+    String? xPlatform,
+    String? xStore,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/users/{userId}/tutorial'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
+    final _options = Options(
+      method: r'DELETE',
+      headers: <String, dynamic>{
+        if (xPlatform != null) r'X-Platform': xPlatform,
+        if (xStore != null) r'X-Store': xStore,
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    CurrentUser? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<CurrentUser, CurrentUser>(
+              rawData,
+              'CurrentUser',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<CurrentUser>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Complete User Tutorial
+  /// Marks the tutorial named by &#x60;X-Platform&#x60; and &#x60;X-Store&#x60; completed, and returns the current user.
+  ///
+  /// Parameters:
+  /// * [userId] - Must be a valid user ID.
+  /// * [xPlatform] - The platform the tutorial belongs to. `standalonewindows`, `android` and `ios` are kept; any other value is recorded as `null`.
+  /// * [xStore] - The store the tutorial belongs to, recorded as sent.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [CurrentUser] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<CurrentUser>> completeUserTutorial({
+    required String userId,
+    String? xPlatform,
+    String? xStore,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/users/{userId}/tutorial'.replaceAll(
+      '{'
+      r'userId'
+      '}',
+      userId.toString(),
+    );
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        if (xPlatform != null) r'X-Platform': xPlatform,
+        if (xStore != null) r'X-Store': xStore,
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    CurrentUser? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<CurrentUser, CurrentUser>(
+              rawData,
+              'CurrentUser',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<CurrentUser>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Delete All User Persistence Data
@@ -1058,9 +1248,9 @@ class UsersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [User] as data
+  /// Returns a [Future] containing a [Response] with a [UserResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<User>> getUser({
+  Future<Response<UserResponse>> getUser({
     required String userId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1100,13 +1290,17 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    User? _responseData;
+    UserResponse? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<User, User>(rawData, 'User', growable: true);
+          : deserialize<UserResponse, UserResponse>(
+              rawData,
+              'UserResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1117,7 +1311,7 @@ class UsersApi {
       );
     }
 
-    return Response<User>(
+    return Response<UserResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1236,10 +1430,10 @@ class UsersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [User] as data
+  /// Returns a [Future] containing a [Response] with a [UserResponse] as data
   /// Throws [DioException] if API call or serialization fails
   @Deprecated('This operation has been deprecated')
-  Future<Response<User>> getUserByName({
+  Future<Response<UserResponse>> getUserByName({
     required String username,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1279,13 +1473,17 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    User? _responseData;
+    UserResponse? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<User, User>(rawData, 'User', growable: true);
+          : deserialize<UserResponse, UserResponse>(
+              rawData,
+              'UserResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1296,7 +1494,7 @@ class UsersApi {
       );
     }
 
-    return Response<User>(
+    return Response<UserResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1507,9 +1705,9 @@ class UsersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [GetUserGroupInstances200Response] as data
+  /// Returns a [Future] containing a [Response] with a [UserGroupInstanceListResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GetUserGroupInstances200Response>> getUserGroupInstances({
+  Future<Response<UserGroupInstanceListResponse>> getUserGroupInstances({
     required String userId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1549,16 +1747,16 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GetUserGroupInstances200Response? _responseData;
+    UserGroupInstanceListResponse? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
           : deserialize<
-              GetUserGroupInstances200Response,
-              GetUserGroupInstances200Response
-            >(rawData, 'GetUserGroupInstances200Response', growable: true);
+              UserGroupInstanceListResponse,
+              UserGroupInstanceListResponse
+            >(rawData, 'UserGroupInstanceListResponse', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1569,7 +1767,7 @@ class UsersApi {
       );
     }
 
-    return Response<GetUserGroupInstances200Response>(
+    return Response<UserGroupInstanceListResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1594,9 +1792,9 @@ class UsersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [GetUserGroupInstances200Response] as data
+  /// Returns a [Future] containing a [Response] with a [UserGroupInstanceListResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GetUserGroupInstances200Response>>
+  Future<Response<UserGroupInstanceListResponse>>
   getUserGroupInstancesForGroup({
     required String userId,
     required String groupId,
@@ -1645,16 +1843,16 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GetUserGroupInstances200Response? _responseData;
+    UserGroupInstanceListResponse? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
           : deserialize<
-              GetUserGroupInstances200Response,
-              GetUserGroupInstances200Response
-            >(rawData, 'GetUserGroupInstances200Response', growable: true);
+              UserGroupInstanceListResponse,
+              UserGroupInstanceListResponse
+            >(rawData, 'UserGroupInstanceListResponse', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1665,7 +1863,7 @@ class UsersApi {
       );
     }
 
-    return Response<GetUserGroupInstances200Response>(
+    return Response<UserGroupInstanceListResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -2116,10 +2314,12 @@ class UsersApi {
   }
 
   /// Get User Tutorial Status
-  /// Gets the status of completed or outstanding tutorials for the specified user.
+  /// Gets the status of completed or outstanding tutorials for the specified user. &#x60;tutorialKey&#x60; and &#x60;completed&#x60; describe the tutorial named by &#x60;X-Platform&#x60; and &#x60;X-Store&#x60;.
   ///
   /// Parameters:
   /// * [userId] - Must be a valid user ID.
+  /// * [xPlatform] - The platform the tutorial belongs to. `standalonewindows`, `android` and `ios` are kept; any other value is recorded as `null`.
+  /// * [xStore] - The store the tutorial belongs to, recorded as sent.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -2131,6 +2331,8 @@ class UsersApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<TutorialStatus>> getUserTutorialStatus({
     required String userId,
+    String? xPlatform,
+    String? xStore,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -2146,7 +2348,11 @@ class UsersApi {
     );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        if (xPlatform != null) r'X-Platform': xPlatform,
+        if (xStore != null) r'X-Store': xStore,
+        ...?headers,
+      },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -2812,9 +3018,9 @@ class UsersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [UserNote] as data
+  /// Returns a [Future] containing a [Response] with a [Object] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<UserNote>> updateUserNote({
+  Future<Response<Object>> updateUserNote({
     required UpdateUserNoteRequest updateUserNoteRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -2864,17 +3070,13 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    UserNote? _responseData;
+    Object? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<UserNote, UserNote>(
-              rawData,
-              'UserNote',
-              growable: true,
-            );
+          : deserialize<Object, Object>(rawData, 'Object', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2885,7 +3087,7 @@ class UsersApi {
       );
     }
 
-    return Response<UserNote>(
+    return Response<Object>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

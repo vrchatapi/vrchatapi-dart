@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **ageVerified** | **bool** | `true` if, user is age verified (not 18+). | 
 **allowAvatarCopying** | **bool** |  | 
 **bio** | **String** |  | [optional] 
-**bioLinks** | **List&lt;String&gt;** |   | [optional] 
+**bioLinks** | **List&lt;String&gt;** |  | [optional] 
 **currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 
 **currentAvatarTags** | **List&lt;String&gt;** |  | 
 **currentAvatarThumbnailImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | 

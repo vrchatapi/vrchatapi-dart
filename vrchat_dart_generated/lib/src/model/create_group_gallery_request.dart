@@ -44,19 +44,15 @@ class CreateGroupGalleryRequest {
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
-  ///
   @JsonKey(name: r'roleIdsToAutoApprove', required: false, includeIfNull: false)
   final List<String>? roleIdsToAutoApprove;
 
-  ///
   @JsonKey(name: r'roleIdsToManage', required: false, includeIfNull: false)
   final List<String>? roleIdsToManage;
 
-  ///
   @JsonKey(name: r'roleIdsToSubmit', required: false, includeIfNull: false)
   final List<String>? roleIdsToSubmit;
 
-  ///
   @JsonKey(name: r'roleIdsToView', required: false, includeIfNull: false)
   final List<String>? roleIdsToView;
 

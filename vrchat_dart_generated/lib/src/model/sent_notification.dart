@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/notification_type.dart';
+import 'package:vrchat_dart_generated/src/model/sent_notification_details.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -39,12 +40,11 @@ class SentNotification {
   final DateTime createdAt;
 
   @JsonKey(name: r'details', required: true, includeIfNull: false)
-  final Map<String, String> details;
+  final SentNotificationDetails details;
 
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  ///
   @JsonKey(name: r'message', required: true, includeIfNull: false)
   final String message;
 

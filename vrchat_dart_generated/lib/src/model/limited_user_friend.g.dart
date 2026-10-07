@@ -36,6 +36,10 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
           bannerColor: $checkedConvert('bannerColor', (v) => v as String?),
           bannerType: $checkedConvert('bannerType', (v) => v as String?),
           bannerUrl: $checkedConvert('bannerUrl', (v) => v as String?),
+          currentAvatarImageUrl: $checkedConvert(
+            'currentAvatarImageUrl',
+            (v) => v as String?,
+          ),
           developerType: $checkedConvert(
             'developerType',
             (v) => $enumDecode(_$DeveloperTypeEnumMap, v),
@@ -95,6 +99,7 @@ Map<String, dynamic> _$LimitedUserFriendToJson(LimitedUserFriend instance) =>
       'bannerColor': ?instance.bannerColor,
       'bannerType': ?instance.bannerType,
       'bannerUrl': ?instance.bannerUrl,
+      'currentAvatarImageUrl': ?instance.currentAvatarImageUrl,
       'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
       'discordId': ?instance.discordId,
       'displayName': instance.displayName,

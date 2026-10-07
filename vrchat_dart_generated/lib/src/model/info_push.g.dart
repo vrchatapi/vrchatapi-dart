@@ -66,6 +66,7 @@ InfoPush _$InfoPushFromJson(
       'tags',
       (v) => (v as List<dynamic>).map((e) => e as String).toList(),
     ),
+    type: $checkedConvert('type', (v) => v as String?),
     updatedAt: $checkedConvert('updatedAt', (v) => DateTime.parse(v as String)),
   );
   return val;
@@ -86,6 +87,7 @@ Map<String, dynamic> _$InfoPushToJson(InfoPush instance) => <String, dynamic>{
   'requireClientTags': ?instance.requireClientTags,
   'startDate': ?instance.startDate?.toIso8601String(),
   'tags': instance.tags,
+  'type': ?instance.type,
   'updatedAt': instance.updatedAt.toIso8601String(),
 };
 

@@ -30,10 +30,10 @@ Name | Type | Description | Notes
 **recommendedCapacity** | **int** |  | [optional] 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | 
 **storeId** | **String** |  | [optional] 
-**tags** | **List&lt;String&gt;** |   | 
+**tags** | **List&lt;String&gt;** |  | 
 **thumbnailImageUrl** | **String** |  | 
 **udonProducts** | **List&lt;String&gt;** |  | [optional] 
-**unityPackages** | [**List&lt;LimitedUnityPackage&gt;**](LimitedUnityPackage.md) |   | 
+**unityPackages** | [**List&lt;LimitedUnityPackage&gt;**](LimitedUnityPackage.md) |  | 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
 **visits** | **int** |  | [optional] [default to 0]
 

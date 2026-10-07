@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **backgroundTextureId** | **String** |  | [optional] 
 **backgroundType** | **String** |  | [optional] 
-**bannerColor** | **String** | Hex colour without a leading `#`. | [optional] 
+**bannerColor** | **String** | Six hexadecimal digits, without a leading `#`. May be empty. | [optional] 
 **bannerType** | **String** |  | [optional] 
 **bio** | **String** |  | [optional] 
 **bioLinks** | **List&lt;String&gt;** |  | [optional] 

@@ -53,6 +53,8 @@ class Instance {
 
     this.displayName,
 
+    this.displayVibeId,
+
     this.dominantLanguage,
 
     this.friends,
@@ -185,6 +187,9 @@ class Instance {
 
   @JsonKey(name: r'displayName', required: false, includeIfNull: false)
   final String? displayName;
+
+  @JsonKey(name: r'displayVibeId', required: false, includeIfNull: false)
+  final String? displayVibeId;
 
   @JsonKey(name: r'dominantLanguage', required: false, includeIfNull: false)
   final String? dominantLanguage;
@@ -354,6 +359,7 @@ class Instance {
           other.description == description &&
           other.disabledPropAbilities == disabledPropAbilities &&
           other.displayName == displayName &&
+          other.displayVibeId == displayVibeId &&
           other.dominantLanguage == dominantLanguage &&
           other.friends == friends &&
           other.full == full &&
@@ -412,6 +418,7 @@ class Instance {
       (description == null ? 0 : description.hashCode) +
       disabledPropAbilities.hashCode +
       (displayName == null ? 0 : displayName.hashCode) +
+      displayVibeId.hashCode +
       dominantLanguage.hashCode +
       friends.hashCode +
       full.hashCode +

@@ -35,7 +35,7 @@ class TutorialStatus {
   @JsonKey(name: r'completedTutorials', required: true, includeIfNull: false)
   final List<String> completedTutorials;
 
-  /// The ID of a tutorial, in the format `{platform}:{tutorial}:{version}`. `undefined:undefined:v1` is used as a null-ish or sentinel value.
+  /// The ID of a tutorial. A platform tutorial is `{platform}:{store}:v1`, taken from the `X-Platform` and `X-Store` headers, with `undefined` for a header the request left out. Other tutorials take a longer form, such as `platform-agnostic:custom:onboarding-tutorial-world:v1`.
   @JsonKey(name: r'tutorialKey', required: true, includeIfNull: false)
   final String tutorialKey;
 

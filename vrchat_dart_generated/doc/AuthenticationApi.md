@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**enable2FA**](AuthenticationApi.md#enable2fa) | **POST** /auth/twofactorauth/totp/pending | Enable time-based 2FA codes
 [**getCurrentUser**](AuthenticationApi.md#getcurrentuser) | **GET** /auth/user | Login and/or Get Current User Info
 [**getGlobalAvatarModerations**](AuthenticationApi.md#getglobalavatarmoderations) | **GET** /auth/user/avatarmoderations | Get Global Avatar Moderations
+[**getInterestsAndPreferences**](AuthenticationApi.md#getinterestsandpreferences) | **GET** /auth/user/interestsAndPreferences | Get Interests and Preferences
 [**getModerationReports**](AuthenticationApi.md#getmoderationreports) | **GET** /moderationReports | Get Moderation Reports
 [**getOAuthRedirectCode**](AuthenticationApi.md#getoauthredirectcode) | **GET** /oauth/redirectCode | Get OAuth Redirect Code
 [**getRecoveryCodes**](AuthenticationApi.md#getrecoverycodes) | **GET** /auth/user/twofactorauth/otp | Get 2FA Recovery codes
@@ -28,6 +29,7 @@ Method | HTTP request | Description
 [**registerUserAccount**](AuthenticationApi.md#registeruseraccount) | **POST** /auth/register | Register User Account
 [**resendEmailConfirmation**](AuthenticationApi.md#resendemailconfirmation) | **POST** /auth/user/resendEmail | Resend Email Confirmation
 [**submitModerationReport**](AuthenticationApi.md#submitmoderationreport) | **POST** /moderationReports | Submit Moderation Report
+[**updateInterestsAndPreferences**](AuthenticationApi.md#updateinterestsandpreferences) | **PUT** /auth/user/interestsAndPreferences | Update Interests and Preferences
 [**verify2FA**](AuthenticationApi.md#verify2fa) | **POST** /auth/twofactorauth/totp/verify | Verify 2FA code
 [**verify2FAEmailCode**](AuthenticationApi.md#verify2faemailcode) | **POST** /auth/twofactorauth/emailotp/verify | Verify 2FA email code
 [**verifyAuthToken**](AuthenticationApi.md#verifyauthtoken) | **GET** /auth | Verify Auth Token
@@ -89,6 +91,10 @@ Checks if a user by a given `username`, `displayName` or `email` exist. This is 
 ### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getAuthenticationApi();
 final String email = email_example; // String | Filter by email.
@@ -119,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 
@@ -449,7 +455,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCurrentUser**
-> CurrentUser getCurrentUser()
+> CurrentUserLoginResponse getCurrentUser()
 
 Login and/or Get Current User Info
 
@@ -485,7 +491,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**CurrentUser**](CurrentUser.md)
+[**CurrentUserLoginResponse**](CurrentUserLoginResponse.md)
 
 ### Authorization
 
@@ -529,6 +535,49 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**List&lt;AvatarModeration&gt;**](AvatarModeration.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getInterestsAndPreferences**
+> InterestsAndPreferences getInterestsAndPreferences()
+
+Get Interests and Preferences
+
+Returns the interests and preferences the current user has turned on.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+
+try {
+    final response = api.getInterestsAndPreferences();
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling AuthenticationApi->getInterestsAndPreferences: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**InterestsAndPreferences**](InterestsAndPreferences.md)
 
 ### Authorization
 
@@ -773,7 +822,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **registerUserAccount**
-> CurrentUser registerUserAccount(registerUserAccountRequest)
+> CurrentUserLoginResponse registerUserAccount(registerUserAccountRequest)
 
 Register User Account
 
@@ -802,7 +851,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CurrentUser**](CurrentUser.md)
+[**CurrentUserLoginResponse**](CurrentUserLoginResponse.md)
 
 ### Authorization
 
@@ -893,6 +942,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ModerationReport**](ModerationReport.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateInterestsAndPreferences**
+> Success updateInterestsAndPreferences(interestsAndPreferences)
+
+Update Interests and Preferences
+
+Turns interests and preferences on with `true` and off with `false`. A key the body leaves out keeps its value.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+final InterestsAndPreferences interestsAndPreferences = ; // InterestsAndPreferences | 
+
+try {
+    final response = api.updateInterestsAndPreferences(interestsAndPreferences);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling AuthenticationApi->updateInterestsAndPreferences: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **interestsAndPreferences** | [**InterestsAndPreferences**](InterestsAndPreferences.md)|  | 
+
+### Return type
+
+[**Success**](Success.md)
 
 ### Authorization
 

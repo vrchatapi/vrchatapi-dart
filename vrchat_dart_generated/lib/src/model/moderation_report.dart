@@ -25,6 +25,8 @@ class ModerationReport {
 
     required this.contentThumbnailImageUrl,
 
+    required this.created,
+
     required this.description,
 
     required this.evidenceRequired,
@@ -55,12 +57,15 @@ class ModerationReport {
   )
   final String? contentThumbnailImageUrl;
 
-  /// The subjective reason for the report
-  @JsonKey(name: r'description', required: true, includeIfNull: false)
-  final String description;
+  @JsonKey(name: r'created', required: true, includeIfNull: false)
+  final DateTime created;
 
-  @JsonKey(name: r'evidenceRequired', required: true, includeIfNull: false)
-  final bool evidenceRequired;
+  /// The subjective reason for the report
+  @JsonKey(name: r'description', required: true, includeIfNull: true)
+  final String? description;
+
+  @JsonKey(name: r'evidenceRequired', required: true, includeIfNull: true)
+  final bool? evidenceRequired;
 
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
@@ -84,6 +89,7 @@ class ModerationReport {
           other.contentId == contentId &&
           other.contentName == contentName &&
           other.contentThumbnailImageUrl == contentThumbnailImageUrl &&
+          other.created == created &&
           other.description == description &&
           other.evidenceRequired == evidenceRequired &&
           other.id == id &&
@@ -99,8 +105,9 @@ class ModerationReport {
       (contentThumbnailImageUrl == null
           ? 0
           : contentThumbnailImageUrl.hashCode) +
-      description.hashCode +
-      evidenceRequired.hashCode +
+      created.hashCode +
+      (description == null ? 0 : description.hashCode) +
+      (evidenceRequired == null ? 0 : evidenceRequired.hashCode) +
       id.hashCode +
       reason.hashCode +
       supportRequired.hashCode +

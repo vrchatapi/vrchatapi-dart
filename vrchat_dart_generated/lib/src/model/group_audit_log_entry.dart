@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_event_data.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -17,56 +18,55 @@ part 'group_audit_log_entry.g.dart';
 class GroupAuditLogEntry {
   /// Returns a new [GroupAuditLogEntry] instance.
   GroupAuditLogEntry({
-    this.actorDisplayName,
+    required this.actorDisplayName,
 
-    this.actorId,
+    required this.actorId,
 
-    this.createdAt,
+    required this.createdAt,
 
-    this.data,
+    required this.description,
 
-    this.description,
+    required this.eventType,
 
-    this.eventType = 'group.update',
+    required this.groupId,
 
-    this.groupId,
+    required this.id,
 
-    this.id,
+    required this.data,
 
-    this.targetId,
+    required this.targetId,
   });
 
-  @JsonKey(name: r'actorDisplayName', required: false, includeIfNull: false)
-  final String? actorDisplayName;
+  /// The display name of the user who performed the action.
+  @JsonKey(name: r'actorDisplayName', required: true, includeIfNull: false)
+  final String actorDisplayName;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
-  @JsonKey(name: r'actorId', required: false, includeIfNull: false)
-  final String? actorId;
+  @JsonKey(name: r'actorId', required: true, includeIfNull: false)
+  final String actorId;
 
-  @JsonKey(name: r'created_at', required: false, includeIfNull: false)
-  final DateTime? createdAt;
-
-  /// The data associated with the event. The format of this data is dependent on the event type.
-  @JsonKey(name: r'data', required: false, includeIfNull: false)
-  final Object? data;
+  /// When the action was performed.
+  @JsonKey(name: r'created_at', required: true, includeIfNull: false)
+  final DateTime createdAt;
 
   /// A human-readable description of the event.
-  @JsonKey(name: r'description', required: false, includeIfNull: false)
-  final String? description;
+  @JsonKey(name: r'description', required: true, includeIfNull: false)
+  final String description;
 
-  /// The type of event that occurred. This is a string that is prefixed with the type of object that the event occurred on. For example, a group role update event would be prefixed with `group.role`.
-  @JsonKey(name: r'eventType', required: false, includeIfNull: false)
-  final String? eventType;
+  @JsonKey(name: r'eventType', required: true, includeIfNull: false)
+  final String eventType;
 
-  @JsonKey(name: r'groupId', required: false, includeIfNull: false)
-  final String? groupId;
+  @JsonKey(name: r'groupId', required: true, includeIfNull: false)
+  final String groupId;
 
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
-  final String? id;
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
 
-  /// Typically a UserID, GroupID, GroupRoleID, or Location, but could be other types of IDs.
-  @JsonKey(name: r'targetId', required: false, includeIfNull: false)
-  final String? targetId;
+  @JsonKey(name: r'data', required: true, includeIfNull: false)
+  final GroupAuditLogEntryEventData data;
+
+  @JsonKey(name: r'targetId', required: true, includeIfNull: false)
+  final String targetId;
 
   @override
   bool operator ==(Object other) =>
@@ -75,11 +75,11 @@ class GroupAuditLogEntry {
           other.actorDisplayName == actorDisplayName &&
           other.actorId == actorId &&
           other.createdAt == createdAt &&
-          other.data == data &&
           other.description == description &&
           other.eventType == eventType &&
           other.groupId == groupId &&
           other.id == id &&
+          other.data == data &&
           other.targetId == targetId;
 
   @override
@@ -87,11 +87,11 @@ class GroupAuditLogEntry {
       actorDisplayName.hashCode +
       actorId.hashCode +
       createdAt.hashCode +
-      data.hashCode +
       description.hashCode +
       eventType.hashCode +
       groupId.hashCode +
       id.hashCode +
+      data.hashCode +
       targetId.hashCode;
 
   factory GroupAuditLogEntry.fromJson(Map<String, dynamic> json) =>
