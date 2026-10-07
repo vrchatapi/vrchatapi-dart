@@ -4,12 +4,14 @@ import 'dart:io' as io;
 import 'package:otp/otp.dart';
 import 'package:vrchat_dart/vrchat_dart.dart';
 
+import 'credentials.dart';
+
 const tupperUid = 'usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469';
 
 void main() async {
   // Create `bin/credentials.json` with username, password, contactInfo, and
   // otpSecret.
-  final credentials = _credentialsFromJson(
+  final credentials = Credentials.fromJson(
     jsonDecode(
       await io.File.fromUri(
         io.Platform.script.resolve('credentials.json'),
@@ -136,20 +138,6 @@ void main() async {
   // Listen for updates
   api.streaming.vrcEventStream.listen(handleVrcEvent);
   api.streaming.start();
-}
-
-({
-  String username,
-  String password,
-  String contactInfo,
-  String otpSecret,
-}) _credentialsFromJson(Map<String, dynamic> json) {
-  return (
-    username: json['username'] as String,
-    password: json['password'] as String,
-    contactInfo: json['contactInfo'] as String,
-    otpSecret: json['otpSecret'] as String,
-  );
 }
 
 void handleVrcEvent(VrcStreamingEvent event) {
