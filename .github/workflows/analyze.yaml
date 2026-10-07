@@ -47,8 +47,6 @@ jobs:
           key: ${{ env.cache-name }}-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: ${{ env.cache-name }}-
       - run: dart pub get
-      - if: matrix.package == 'vrchat_dart'
-        run: dart pub get --directory example
       - run: dart analyze ${{ matrix.analyze }}
       - run: dart pub publish --dry-run
       - run: |
