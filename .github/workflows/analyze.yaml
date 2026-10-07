@@ -1,0 +1,54 @@
+name: Analyze
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_call:
+    inputs:
+      artifact:
+        description: Artifact to analyze instead of checking out the repository.
+        required: false
+        type: string
+        default: ''
+
+concurrency:
+  group: ${{ github.repository == 'vrchatapi/vrchatapi-dart' && format('{0}-{1}', github.workflow, github.ref) || format('analyze-{0}', github.run_id) }}
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package: [vrchat_dart, vrchat_dart_generated]
+    defaults:
+      run:
+        working-directory: ${{ matrix.package }}
+    steps:
+      - if: ${{ inputs.artifact }}
+        uses: actions/download-artifact@v8
+        with:
+          name: ${{ inputs.artifact }}
+      - if: ${{ !inputs.artifact }}
+        uses: actions/checkout@v7
+      - uses: dart-lang/setup-dart@v1.8.0
+      - name: Pub cache
+        uses: actions/cache@v6
+        env:
+          cache-name: ${{ matrix.package }}
+        with:
+          path: ${{ env.PUB_CACHE }}
+          key: ${{ env.cache-name }}-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: ${{ env.cache-name }}-
+      - run: |
+          dart pub get
+          if [ -d example_flutter ]; then
+            dart pub get --directory=example_flutter
+          fi
+      - run: dart analyze --fatal-infos
+      - run: dart pub publish --dry-run
+      - run: |
+          dart pub global activate pana
+          pana --no-warning --exit-code-threshold 0

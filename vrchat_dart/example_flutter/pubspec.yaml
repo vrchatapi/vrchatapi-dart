@@ -5,14 +5,8 @@ environment:
   sdk: ^3.0.0
 
 dependencies:
-  flutter:
-    sdk: flutter
-
   vrchat_dart:
     path: ../
-
-  path_provider: ^2.0.11
-  package_info_plus: ^10.2.1
 
 dev_dependencies:
   rexios_lints: ^19.0.0

@@ -78,4 +78,4 @@ build/
 .cookies/
 
 # Credentials
-credentials.dart
+credentials.json

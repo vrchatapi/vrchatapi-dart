@@ -1,8 +1,6 @@
+name: CI
+
 on:
-  push:
-    branches:
-      - '**'
-  pull_request:
   workflow_call:
     inputs:
       ref:
@@ -10,8 +8,6 @@ on:
         required: false
         type: string
         default: main
-
-name: CI
 
 jobs:
   generate:
@@ -21,21 +17,15 @@ jobs:
         with:
           repository: vrchatapi/vrchatapi-dart
           ref: ${{ inputs.ref || github.ref }}
-
       - uses: dart-lang/setup-dart@v1.8.0
-
       - uses: vrchatapi/specification/.github/actions/setup-generator@main
-
       - uses: vrchatapi/specification/.github/actions/download@main
         with:
           bundle: openapi-3.0.yaml
-
       - run: |
           mkdir -p ../vrchatapi-specification/dist
           mv openapi-3.0.yaml ../vrchatapi-specification/dist/
-
       - run: ./generate.sh local
-
       - uses: actions/upload-artifact@v7
         with:
           name: dart-generated
@@ -46,40 +36,6 @@ jobs:
 
   analyze:
     needs: generate
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v8
-        with:
-          name: dart-generated
-
-      - uses: dart-lang/setup-dart@v1.8.0
-
-      - run: dart pub get
-        working-directory: vrchat_dart_generated
-
-      - run: dart analyze
-        working-directory: vrchat_dart_generated
-
-  pana:
-    needs: generate
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        package: [vrchat_dart, vrchat_dart_generated]
-    defaults:
-      run:
-        working-directory: ${{ matrix.package }}
-    steps:
-      - uses: actions/download-artifact@v8
-        with:
-          name: dart-generated
-
-      - uses: dart-lang/setup-dart@v1.8.0
-
-      - run: dart pub get
-
-      - run: dart pub publish --dry-run
-
-      - run: |
-          dart pub global activate pana
-          pana --no-warning --exit-code-threshold 0
+    uses: vrchatapi/vrchatapi-dart/.github/workflows/analyze.yaml@main
+    with:
+      artifact: dart-generated
