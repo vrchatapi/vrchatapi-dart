@@ -13,6 +13,7 @@ on:
 
 jobs:
   generate:
+    if: ${{ !contains(github.event.client_payload.version || '', 'nightly') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
