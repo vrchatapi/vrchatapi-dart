@@ -22,7 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        package: [vrchat_dart, vrchat_dart_generated]
+        include:
+          - package: vrchat_dart
+            analyze: lib tool example
+          - package: vrchat_dart_generated
+            analyze: lib
     defaults:
       run:
         working-directory: ${{ matrix.package }}
@@ -42,20 +46,10 @@ jobs:
           path: ${{ env.PUB_CACHE }}
           key: ${{ env.cache-name }}-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: ${{ env.cache-name }}-
-      - run: |
-          dart pub get
-          if [ -f example/pubspec.yaml ]; then
-            dart pub get --directory example
-          fi
-      - run: |
-          set -- lib
-          if [ -d tool ]; then
-            set -- "$@" tool
-          fi
-          if [ -d example ]; then
-            set -- "$@" example
-          fi
-          dart analyze "$@"
+      - run: dart pub get
+      - if: matrix.package == 'vrchat_dart'
+        run: dart pub get --directory example
+      - run: dart analyze ${{ matrix.analyze }}
       - run: dart pub publish --dry-run
       - run: |
           dart pub global activate pana
