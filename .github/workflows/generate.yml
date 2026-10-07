@@ -4,6 +4,12 @@ on:
   repository_dispatch:
     types: [release]
   workflow_dispatch:
+    inputs:
+      url:
+        description: OpenAPI bundle URL. Release dispatches use the triggering release instead.
+        required: false
+        type: string
+        default: https://github.com/vrchatapi/specification/releases/download/nightly/openapi-3.0.yaml
 
 jobs:
   generate:
@@ -27,6 +33,7 @@ jobs:
       - uses: vrchatapi/specification/.github/actions/download@main
         with:
           bundle: openapi-3.0.yaml
+          url: ${{ github.event_name == 'workflow_dispatch' && inputs.url || '' }}
       - run: |
           mkdir -p ../vrchatapi-specification/dist
           mv openapi-3.0.yaml ../vrchatapi-specification/dist/
