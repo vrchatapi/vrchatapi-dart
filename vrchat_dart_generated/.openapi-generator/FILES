@@ -142,6 +142,7 @@ doc/GroupAnnouncement.md
 doc/GroupAuditLogEntry.md
 doc/GroupAuditLogEntryBase.md
 doc/GroupAuditLogEntryBooleanChange.md
+doc/GroupAuditLogEntryData.md
 doc/GroupAuditLogEntryDataGroupAnnouncement.md
 doc/GroupAuditLogEntryDataGroupCalendarEventCreate.md
 doc/GroupAuditLogEntryDataGroupCalendarEventDelete.md
@@ -163,8 +164,6 @@ doc/GroupAuditLogEntryDataGroupRoleCreate.md
 doc/GroupAuditLogEntryDataGroupRoleDelete.md
 doc/GroupAuditLogEntryDataGroupRoleUpdate.md
 doc/GroupAuditLogEntryDataGroupUpdate.md
-doc/GroupAuditLogEntryEvent.md
-doc/GroupAuditLogEntryEventData.md
 doc/GroupAuditLogEntryFileIDChange.md
 doc/GroupAuditLogEntryGroupAnnouncement.md
 doc/GroupAuditLogEntryGroupCalendarEventCreate.md
@@ -637,6 +636,7 @@ lib/src/model/group_announcement.dart
 lib/src/model/group_audit_log_entry.dart
 lib/src/model/group_audit_log_entry_base.dart
 lib/src/model/group_audit_log_entry_boolean_change.dart
+lib/src/model/group_audit_log_entry_data.dart
 lib/src/model/group_audit_log_entry_data_group_announcement.dart
 lib/src/model/group_audit_log_entry_data_group_calendar_event_create.dart
 lib/src/model/group_audit_log_entry_data_group_calendar_event_delete.dart
@@ -658,8 +658,6 @@ lib/src/model/group_audit_log_entry_data_group_role_create.dart
 lib/src/model/group_audit_log_entry_data_group_role_delete.dart
 lib/src/model/group_audit_log_entry_data_group_role_update.dart
 lib/src/model/group_audit_log_entry_data_group_update.dart
-lib/src/model/group_audit_log_entry_event.dart
-lib/src/model/group_audit_log_entry_event_data.dart
 lib/src/model/group_audit_log_entry_file_id_change.dart
 lib/src/model/group_audit_log_entry_group_announcement.dart
 lib/src/model/group_audit_log_entry_group_calendar_event_create.dart
@@ -1121,8 +1119,7 @@ test/group_audit_log_entry_data_group_role_delete_test.dart
 test/group_audit_log_entry_data_group_role_test.dart
 test/group_audit_log_entry_data_group_role_update_test.dart
 test/group_audit_log_entry_data_group_update_test.dart
-test/group_audit_log_entry_event_data_test.dart
-test/group_audit_log_entry_event_test.dart
+test/group_audit_log_entry_data_test.dart
 test/group_audit_log_entry_file_id_change_test.dart
 test/group_audit_log_entry_group_announcement_test.dart
 test/group_audit_log_entry_group_calendar_event_create_test.dart

@@ -13,9 +13,31 @@ _$GroupAuditLogEntryGroupRequestBlockFromJson(Map<String, dynamic> json) =>
     $checkedCreate('GroupAuditLogEntryGroupRequestBlock', json, (
       $checkedConvert,
     ) {
-      $checkKeys(json, requiredKeys: const ['data', 'eventType', 'targetId']);
+      $checkKeys(
+        json,
+        requiredKeys: const [
+          'actorDisplayName',
+          'actorId',
+          'created_at',
+          'description',
+          'eventType',
+          'groupId',
+          'id',
+          'data',
+          'targetId',
+        ],
+      );
       final val = GroupAuditLogEntryGroupRequestBlock(
-        data: $checkedConvert('data', (v) => v as Object),
+        actorDisplayName: $checkedConvert(
+          'actorDisplayName',
+          (v) => v as String,
+        ),
+        actorId: $checkedConvert('actorId', (v) => v as String),
+        createdAt: $checkedConvert(
+          'created_at',
+          (v) => DateTime.parse(v as String),
+        ),
+        description: $checkedConvert('description', (v) => v as String),
         eventType: $checkedConvert(
           'eventType',
           (v) => $enumDecode(
@@ -23,18 +45,27 @@ _$GroupAuditLogEntryGroupRequestBlockFromJson(Map<String, dynamic> json) =>
             v,
           ),
         ),
+        groupId: $checkedConvert('groupId', (v) => v as String),
+        id: $checkedConvert('id', (v) => v as String),
+        data: $checkedConvert('data', (v) => v as Object),
         targetId: $checkedConvert('targetId', (v) => v as String),
       );
       return val;
-    });
+    }, fieldKeyMap: const {'createdAt': 'created_at'});
 
 Map<String, dynamic> _$GroupAuditLogEntryGroupRequestBlockToJson(
   GroupAuditLogEntryGroupRequestBlock instance,
 ) => <String, dynamic>{
-  'data': instance.data,
+  'actorDisplayName': instance.actorDisplayName,
+  'actorId': instance.actorId,
+  'created_at': instance.createdAt.toIso8601String(),
+  'description': instance.description,
   'eventType':
       _$GroupAuditLogEntryGroupRequestBlockEventTypeEnumEnumMap[instance
           .eventType]!,
+  'groupId': instance.groupId,
+  'id': instance.id,
+  'data': instance.data,
   'targetId': instance.targetId,
 };
 

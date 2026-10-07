@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_event_data.dart';
+import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -63,7 +63,7 @@ class GroupAuditLogEntry {
   final String id;
 
   @JsonKey(name: r'data', required: true, includeIfNull: false)
-  final GroupAuditLogEntryEventData data;
+  final GroupAuditLogEntryData data;
 
   @JsonKey(name: r'targetId', required: true, includeIfNull: false)
   final String targetId;
