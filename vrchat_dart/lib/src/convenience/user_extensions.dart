@@ -27,6 +27,16 @@ extension UserExtension on User {
 
 /// Convenience methods on [UserResponse]
 extension UserResponseExtension on UserResponse {
+  /// Convert a [UserResponse] to a [User]
+  User toUser() {
+    return User.fromJson(toJson());
+  }
+
+  /// Convert a [UserResponse] to a [CurrentUser]
+  CurrentUser toCurrentUser() {
+    return CurrentUser.fromJson(toJson());
+  }
+
   /// Convert a [UserResponse] to a [LimitedUser]
   LimitedUser toLimitedUser() {
     return LimitedUser.fromJson({
