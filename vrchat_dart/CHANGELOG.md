@@ -1,3 +1,9 @@
+## 4.1.0
+
+- Updates `vrchat_dart_generated` to 1.22.0
+- Adds conversions from `UserResponse` and `CurrentUserLoginResponse`
+- Uses the generated `TwoFactorAuthType`
+
 ## 4.0.5
 
 - Makes `StreamedCurrentUser` fields `bio`, `fallbackAvatar`, and `username` optional
