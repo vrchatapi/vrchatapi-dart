@@ -48,29 +48,10 @@ jobs:
             dart pub get --directory=example_flutter
           fi
       - run: dart analyze --fatal-infos
+      - run: dart format --output=none --set-exit-if-changed .
       - run: dart pub publish --dry-run
       - name: Pana
+        if: hashFiles(format('{0}/pubspec_overrides.yaml', matrix.package)) == ''
         run: |
           dart pub global activate pana
-          if [ ! -f pubspec_overrides.yaml ]; then
-            pana --no-warning --exit-code-threshold 0
-            exit
-          fi
-
-          # pana removes pubspec_overrides.yaml and resolves the hosted
-          # constraint. Until that generated version is published, it cannot
-          # resolve, so check formatting instead. dart analyze already used the
-          # sibling package.
-          mv pubspec_overrides.yaml pubspec_overrides.yaml.bak
-          if dart pub get --no-example; then
-            resolved=1
-          else
-            resolved=0
-          fi
-          mv pubspec_overrides.yaml.bak pubspec_overrides.yaml
-          dart pub get --no-example
-          if [ "$resolved" = 1 ]; then
-            pana --no-warning --exit-code-threshold 0
-          else
-            dart format --output=none --set-exit-if-changed .
-          fi
+          pana --no-warning --exit-code-threshold 0
