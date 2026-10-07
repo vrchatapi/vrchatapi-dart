@@ -29,7 +29,10 @@ extension UserExtension on User {
 extension CurrentUserLoginResponseExtension on CurrentUserLoginResponse {
   /// Convert a [CurrentUserLoginResponse] to a [CurrentUser]
   CurrentUser toCurrentUser() {
-    return CurrentUser.fromJson(toJson());
+    return CurrentUser.fromJson({
+      ...toJson(),
+      'last_mobile': lastMobile?.toIso8601String(),
+    });
   }
 }
 
@@ -42,7 +45,10 @@ extension UserResponseExtension on UserResponse {
 
   /// Convert a [UserResponse] to a [CurrentUser]
   CurrentUser toCurrentUser() {
-    return CurrentUser.fromJson(toJson());
+    return CurrentUser.fromJson({
+      ...toJson(),
+      'last_mobile': lastMobile,
+    });
   }
 
   /// Convert a [UserResponse] to a [LimitedUser]
