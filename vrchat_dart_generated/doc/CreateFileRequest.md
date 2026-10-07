@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **extension_** | **String** |  | 
 **mimeType** | [**MIMEType**](MIMEType.md) |  | 
 **name** | **String** |  | 
-**tags** | **List&lt;String&gt;** |   | [optional] 
+**tags** | **List&lt;String&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

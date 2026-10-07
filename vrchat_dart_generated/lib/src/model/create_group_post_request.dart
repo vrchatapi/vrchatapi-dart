@@ -34,7 +34,6 @@ class CreateGroupPostRequest {
   @JsonKey(name: r'imageId', required: false, includeIfNull: false)
   final String? imageId;
 
-  ///
   @JsonKey(name: r'roleIds', required: false, includeIfNull: false)
   final List<String>? roleIds;
 

@@ -19,10 +19,7 @@ FavoriteGroupContentsEntryWorld _$FavoriteGroupContentsEntryWorldFromJson(
       'id',
       'imageUrl',
       'name',
-      'occupants',
-      'releaseStatus',
       'thumbnailImageUrl',
-      'isSecure',
     ],
   );
   final val = FavoriteGroupContentsEntryWorld(
@@ -60,7 +57,7 @@ FavoriteGroupContentsEntryWorld _$FavoriteGroupContentsEntryWorldFromJson(
       (v) => v as String?,
     ),
     name: $checkedConvert('name', (v) => v as String),
-    occupants: $checkedConvert('occupants', (v) => (v as num).toInt()),
+    occupants: $checkedConvert('occupants', (v) => (v as num?)?.toInt()),
     organization: $checkedConvert(
       'organization',
       (v) => v as String? ?? 'vrchat',
@@ -74,7 +71,7 @@ FavoriteGroupContentsEntryWorld _$FavoriteGroupContentsEntryWorldFromJson(
     ),
     releaseStatus: $checkedConvert(
       'releaseStatus',
-      (v) => $enumDecode(_$ReleaseStatusEnumMap, v),
+      (v) => $enumDecodeNullable(_$ReleaseStatusEnumMap, v),
     ),
     storeId: $checkedConvert('storeId', (v) => v as String?),
     tags: $checkedConvert(
@@ -102,7 +99,7 @@ FavoriteGroupContentsEntryWorld _$FavoriteGroupContentsEntryWorldFromJson(
     ),
     version: $checkedConvert('version', (v) => (v as num?)?.toInt()),
     visits: $checkedConvert('visits', (v) => (v as num?)?.toInt() ?? 0),
-    isSecure: $checkedConvert('isSecure', (v) => v as bool),
+    isSecure: $checkedConvert('isSecure', (v) => v as bool?),
   );
   return val;
 }, fieldKeyMap: const {'createdAt': 'created_at', 'updatedAt': 'updated_at'});
@@ -127,13 +124,13 @@ Map<String, dynamic> _$FavoriteGroupContentsEntryWorldToJson(
   'isHypeTrainEligible': ?instance.isHypeTrainEligible,
   'labsPublicationDate': ?instance.labsPublicationDate,
   'name': instance.name,
-  'occupants': instance.occupants,
+  'occupants': ?instance.occupants,
   'organization': ?instance.organization,
   'popularity': ?instance.popularity,
   'previewYoutubeId': ?instance.previewYoutubeId,
   'publicationDate': ?instance.publicationDate,
   'recommendedCapacity': ?instance.recommendedCapacity,
-  'releaseStatus': _$ReleaseStatusEnumMap[instance.releaseStatus]!,
+  'releaseStatus': ?_$ReleaseStatusEnumMap[instance.releaseStatus],
   'storeId': ?instance.storeId,
   'tags': ?instance.tags,
   'thumbnailImageUrl': instance.thumbnailImageUrl,
@@ -143,7 +140,7 @@ Map<String, dynamic> _$FavoriteGroupContentsEntryWorldToJson(
   'urlList': ?instance.urlList,
   'version': ?instance.version,
   'visits': ?instance.visits,
-  'isSecure': instance.isSecure,
+  'isSecure': ?instance.isSecure,
 };
 
 const _$ReleaseStatusEnumMap = {

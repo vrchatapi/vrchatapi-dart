@@ -31,11 +31,11 @@ class LimitedUserInstance {
 
     this.bioLinks,
 
-    required this.currentAvatarImageUrl,
+    this.currentAvatarImageUrl,
 
-    required this.currentAvatarTags,
+    this.currentAvatarTags,
 
-    required this.currentAvatarThumbnailImageUrl,
+    this.currentAvatarThumbnailImageUrl,
 
     required this.dateJoined,
 
@@ -89,24 +89,27 @@ class LimitedUserInstance {
   @JsonKey(name: r'bio', required: false, includeIfNull: false)
   final String? bio;
 
-  ///
   @JsonKey(name: r'bioLinks', required: false, includeIfNull: false)
   final List<String>? bioLinks;
 
   /// When profilePicOverride is not empty, use it instead.
-  @JsonKey(name: r'currentAvatarImageUrl', required: true, includeIfNull: false)
-  final String currentAvatarImageUrl;
+  @JsonKey(
+    name: r'currentAvatarImageUrl',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? currentAvatarImageUrl;
 
-  @JsonKey(name: r'currentAvatarTags', required: true, includeIfNull: false)
-  final List<String> currentAvatarTags;
+  @JsonKey(name: r'currentAvatarTags', required: false, includeIfNull: false)
+  final List<String>? currentAvatarTags;
 
   /// When profilePicOverride is not empty, use it instead.
   @JsonKey(
     name: r'currentAvatarThumbnailImageUrl',
-    required: true,
+    required: false,
     includeIfNull: false,
   )
-  final String currentAvatarThumbnailImageUrl;
+  final String? currentAvatarThumbnailImageUrl;
 
   @JsonKey(name: r'date_joined', required: true, includeIfNull: true)
   final DateTime? dateJoined;

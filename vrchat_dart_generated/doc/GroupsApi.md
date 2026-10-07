@@ -548,7 +548,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createGroupInvite**
-> createGroupInvite(groupId, createGroupInviteRequest)
+> Success createGroupInvite(groupId, createGroupInviteRequest)
 
 Invite User to Group
 
@@ -567,7 +567,8 @@ final String groupId = groupId_example; // String | Must be a valid group ID.
 final CreateGroupInviteRequest createGroupInviteRequest = ; // CreateGroupInviteRequest | 
 
 try {
-    api.createGroupInvite(groupId, createGroupInviteRequest);
+    final response = api.createGroupInvite(groupId, createGroupInviteRequest);
+    print(response);
 } on DioException catch (e) {
     print('Exception when calling GroupsApi->createGroupInvite: $e\n');
 }
@@ -582,7 +583,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Success**](Success.md)
 
 ### Authorization
 
@@ -890,7 +891,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteGroupInvite**
-> deleteGroupInvite(groupId, userId)
+> Success deleteGroupInvite(groupId, userId)
 
 Delete User Invite
 
@@ -909,7 +910,8 @@ final String groupId = groupId_example; // String | Must be a valid group ID.
 final String userId = userId_example; // String | Must be a valid user ID.
 
 try {
-    api.deleteGroupInvite(groupId, userId);
+    final response = api.deleteGroupInvite(groupId, userId);
+    print(response);
 } on DioException catch (e) {
     print('Exception when calling GroupsApi->deleteGroupInvite: $e\n');
 }
@@ -924,7 +926,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Success**](Success.md)
 
 ### Authorization
 
@@ -1293,7 +1295,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getGroupGalleryImages**
-> GetGroupGalleryImages200Response getGroupGalleryImages(groupId, groupGalleryId, n, offset, v, approved)
+> Object getGroupGalleryImages(groupId, groupGalleryId, n, offset, v, approved)
 
 Get Group Gallery Images
 
@@ -1336,7 +1338,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetGroupGalleryImages200Response**](GetGroupGalleryImages200Response.md)
+**Object**
 
 ### Authorization
 
@@ -1599,7 +1601,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getGroupPosts**
-> GetGroupPosts200Response getGroupPosts(groupId, n, offset, publicOnly)
+> GroupPostsResponse getGroupPosts(groupId, n, offset, publicOnly)
 
 Get posts from a Group
 
@@ -1638,7 +1640,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetGroupPosts200Response**](GetGroupPosts200Response.md)
+[**GroupPostsResponse**](GroupPostsResponse.md)
 
 ### Authorization
 
@@ -2140,7 +2142,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **searchGroupMembers**
-> SearchGroupMembers200Response searchGroupMembers(groupId, query, n, offset)
+> GroupMemberSearchResponse searchGroupMembers(groupId, query, n, offset)
 
 Search Group Members
 
@@ -2179,7 +2181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchGroupMembers200Response**](SearchGroupMembers200Response.md)
+[**GroupMemberSearchResponse**](GroupMemberSearchResponse.md)
 
 ### Authorization
 
@@ -2202,6 +2204,10 @@ Searches Groups by name or shortCode
 ### Example
 ```dart
 import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
 
 final api = VrchatDartGenerated().getGroupsApi();
 final String query = query_example; // String | Query to search for, can be either Group Name or Group shortCode
@@ -2230,7 +2236,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authCookie](../README.md#authCookie)
 
 ### HTTP request headers
 

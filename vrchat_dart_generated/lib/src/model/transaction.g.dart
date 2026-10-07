@@ -25,12 +25,7 @@ Transaction _$TransactionFromJson(Map<String, dynamic> json) => $checkedCreate(
       ],
     );
     final val = Transaction(
-      agreement: $checkedConvert(
-        'agreement',
-        (v) => v == null
-            ? null
-            : TransactionAgreement.fromJson(v as Map<String, dynamic>),
-      ),
+      agreement: $checkedConvert('agreement', (v) => v),
       createdAt: $checkedConvert(
         'created_at',
         (v) => DateTime.parse(v as String),
@@ -68,7 +63,7 @@ Transaction _$TransactionFromJson(Map<String, dynamic> json) => $checkedCreate(
 
 Map<String, dynamic> _$TransactionToJson(Transaction instance) =>
     <String, dynamic>{
-      'agreement': ?instance.agreement?.toJson(),
+      'agreement': ?instance.agreement,
       'created_at': instance.createdAt.toIso8601String(),
       'error': instance.error,
       'id': instance.id,

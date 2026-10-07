@@ -36,7 +36,6 @@ class CreateFileRequest {
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
-  ///
   @JsonKey(name: r'tags', required: false, includeIfNull: false)
   final List<String>? tags;
 

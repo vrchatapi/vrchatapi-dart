@@ -28,6 +28,7 @@ class APIConfigProfileDefaults {
     this.themeSubtextColor,
   });
 
+  /// Six hexadecimal digits, without a leading `#`. May be empty.
   @JsonKey(
     name: r'backgroundGradientBottom',
     required: false,
@@ -35,6 +36,7 @@ class APIConfigProfileDefaults {
   )
   final String? backgroundGradientBottom;
 
+  /// Six hexadecimal digits, without a leading `#`. May be empty.
   @JsonKey(
     name: r'backgroundGradientTop',
     required: false,
@@ -42,12 +44,15 @@ class APIConfigProfileDefaults {
   )
   final String? backgroundGradientTop;
 
+  /// Six hexadecimal digits, without a leading `#`. May be empty.
   @JsonKey(name: r'themeButtonColor', required: false, includeIfNull: false)
   final String? themeButtonColor;
 
+  /// Six hexadecimal digits, without a leading `#`. May be empty.
   @JsonKey(name: r'themeIconColor', required: false, includeIfNull: false)
   final String? themeIconColor;
 
+  /// Six hexadecimal digits, without a leading `#`. May be empty.
   @JsonKey(name: r'themeSubtextColor', required: false, includeIfNull: false)
   final String? themeSubtextColor;
 

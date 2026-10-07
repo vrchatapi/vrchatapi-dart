@@ -47,7 +47,6 @@ class Notification {
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  ///
   @JsonKey(name: r'message', required: true, includeIfNull: false)
   final String message;
 

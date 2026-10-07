@@ -25,6 +25,8 @@ class LimitedUserFriend {
 
     this.bannerUrl,
 
+    this.currentAvatarImageUrl,
+
     required this.developerType,
 
     this.discordId,
@@ -64,6 +66,7 @@ class LimitedUserFriend {
     required this.tags,
   });
 
+  /// Six hexadecimal digits, without a leading `#`. May be empty.
   @JsonKey(name: r'bannerColor', required: false, includeIfNull: false)
   final String? bannerColor;
 
@@ -72,6 +75,14 @@ class LimitedUserFriend {
 
   @JsonKey(name: r'bannerUrl', required: false, includeIfNull: false)
   final String? bannerUrl;
+
+  /// When profilePicOverride is not empty, use it instead.
+  @JsonKey(
+    name: r'currentAvatarImageUrl',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? currentAvatarImageUrl;
 
   @JsonKey(name: r'developerType', required: true, includeIfNull: false)
   final DeveloperType developerType;
@@ -141,6 +152,7 @@ class LimitedUserFriend {
           other.bannerColor == bannerColor &&
           other.bannerType == bannerType &&
           other.bannerUrl == bannerUrl &&
+          other.currentAvatarImageUrl == currentAvatarImageUrl &&
           other.developerType == developerType &&
           other.discordId == discordId &&
           other.displayName == displayName &&
@@ -166,6 +178,7 @@ class LimitedUserFriend {
       bannerColor.hashCode +
       bannerType.hashCode +
       bannerUrl.hashCode +
+      currentAvatarImageUrl.hashCode +
       developerType.hashCode +
       discordId.hashCode +
       displayName.hashCode +

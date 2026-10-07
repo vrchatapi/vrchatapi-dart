@@ -8,7 +8,7 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**agreement** | [**TransactionAgreement**](TransactionAgreement.md) |  | [optional] 
+**agreement** | **Object** |  | [optional] 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **error** | **String** |  | 
 **id** | **String** |  | 

@@ -18,16 +18,16 @@ import 'package:vrchat_dart_generated/src/model/create_group_post_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/create_group_role_request.dart';
 import 'package:vrchat_dart_generated/src/model/decline_group_invite_request.dart';
-import 'package:vrchat_dart_generated/src/model/get_group_gallery_images200_response.dart';
-import 'package:vrchat_dart_generated/src/model/get_group_posts200_response.dart';
 import 'package:vrchat_dart_generated/src/model/group.dart';
 import 'package:vrchat_dart_generated/src/model/group_announcement.dart';
 import 'package:vrchat_dart_generated/src/model/group_gallery.dart';
 import 'package:vrchat_dart_generated/src/model/group_gallery_image.dart';
 import 'package:vrchat_dart_generated/src/model/group_instance.dart';
 import 'package:vrchat_dart_generated/src/model/group_member.dart';
+import 'package:vrchat_dart_generated/src/model/group_member_search_response.dart';
 import 'package:vrchat_dart_generated/src/model/group_permission.dart';
 import 'package:vrchat_dart_generated/src/model/group_post.dart';
+import 'package:vrchat_dart_generated/src/model/group_posts_response.dart';
 import 'package:vrchat_dart_generated/src/model/group_role.dart';
 import 'package:vrchat_dart_generated/src/model/group_role_template_values.dart';
 import 'package:vrchat_dart_generated/src/model/group_search_sort.dart';
@@ -36,7 +36,6 @@ import 'package:vrchat_dart_generated/src/model/join_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/limited_group.dart';
 import 'package:vrchat_dart_generated/src/model/paginated_group_audit_log_entry_list.dart';
 import 'package:vrchat_dart_generated/src/model/respond_group_join_request.dart';
-import 'package:vrchat_dart_generated/src/model/search_group_members200_response.dart';
 import 'package:vrchat_dart_generated/src/model/success.dart';
 import 'package:vrchat_dart_generated/src/model/transfer_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_group_gallery_request.dart';
@@ -1012,9 +1011,9 @@ class GroupsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [Success] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> createGroupInvite({
+  Future<Response<Success>> createGroupInvite({
     required String groupId,
     required CreateGroupInviteRequest createGroupInviteRequest,
     CancelToken? cancelToken,
@@ -1070,7 +1069,33 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    Success? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Success, Success>(rawData, 'Success', growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<Success>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Create GroupRole
@@ -1656,9 +1681,9 @@ class GroupsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [Success] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> deleteGroupInvite({
+  Future<Response<Success>> deleteGroupInvite({
     required String groupId,
     required String userId,
     CancelToken? cancelToken,
@@ -1706,7 +1731,33 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    Success? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Success, Success>(rawData, 'Success', growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<Success>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Delete a Group post
@@ -2389,9 +2440,9 @@ class GroupsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [GetGroupGalleryImages200Response] as data
+  /// Returns a [Future] containing a [Response] with a [Object] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GetGroupGalleryImages200Response>> getGroupGalleryImages({
+  Future<Response<Object>> getGroupGalleryImages({
     required String groupId,
     required String groupGalleryId,
     int? n = 60,
@@ -2451,16 +2502,13 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GetGroupGalleryImages200Response? _responseData;
+    Object? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<
-              GetGroupGalleryImages200Response,
-              GetGroupGalleryImages200Response
-            >(rawData, 'GetGroupGalleryImages200Response', growable: true);
+          : deserialize<Object, Object>(rawData, 'Object', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2471,7 +2519,7 @@ class GroupsApi {
       );
     }
 
-    return Response<GetGroupGalleryImages200Response>(
+    return Response<Object>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -2968,9 +3016,9 @@ class GroupsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [GetGroupPosts200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GroupPostsResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GetGroupPosts200Response>> getGroupPosts({
+  Future<Response<GroupPostsResponse>> getGroupPosts({
     required String groupId,
     int? n = 60,
     int? offset,
@@ -3020,15 +3068,15 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GetGroupPosts200Response? _responseData;
+    GroupPostsResponse? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GetGroupPosts200Response, GetGroupPosts200Response>(
+          : deserialize<GroupPostsResponse, GroupPostsResponse>(
               rawData,
-              'GetGroupPosts200Response',
+              'GroupPostsResponse',
               growable: true,
             );
     } catch (error, stackTrace) {
@@ -3041,7 +3089,7 @@ class GroupsApi {
       );
     }
 
-    return Response<GetGroupPosts200Response>(
+    return Response<GroupPostsResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -3980,9 +4028,9 @@ class GroupsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [SearchGroupMembers200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GroupMemberSearchResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SearchGroupMembers200Response>> searchGroupMembers({
+  Future<Response<GroupMemberSearchResponse>> searchGroupMembers({
     required String groupId,
     required String query,
     int? n = 60,
@@ -4032,16 +4080,17 @@ class GroupsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    SearchGroupMembers200Response? _responseData;
+    GroupMemberSearchResponse? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<
-              SearchGroupMembers200Response,
-              SearchGroupMembers200Response
-            >(rawData, 'SearchGroupMembers200Response', growable: true);
+          : deserialize<GroupMemberSearchResponse, GroupMemberSearchResponse>(
+              rawData,
+              'GroupMemberSearchResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -4052,7 +4101,7 @@ class GroupsApi {
       );
     }
 
-    return Response<SearchGroupMembers200Response>(
+    return Response<GroupMemberSearchResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -4095,7 +4144,17 @@ class GroupsApi {
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{...?headers},
-      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
       validateStatus: validateStatus,
     );
 

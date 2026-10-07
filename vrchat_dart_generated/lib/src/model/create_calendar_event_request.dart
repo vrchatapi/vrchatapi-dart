@@ -186,7 +186,7 @@ class CreateCalendarEventRequest {
       occurrenceKind.hashCode +
       parentId.hashCode +
       platforms.hashCode +
-      (recurrence == null ? 0 : recurrence.hashCode) +
+      recurrence.hashCode +
       roleIds.hashCode +
       sendCreationNotification.hashCode +
       startsAt.hashCode +

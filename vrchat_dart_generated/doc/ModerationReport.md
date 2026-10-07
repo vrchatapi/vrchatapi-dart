@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **contentId** | **String** |  | 
 **contentName** | **String** |  | 
 **contentThumbnailImageUrl** | **String** |  | 
+**created** | [**DateTime**](DateTime.md) |  | 
 **description** | **String** | The subjective reason for the report | 
 **evidenceRequired** | **bool** |  | 
 **id** | **String** |  | 

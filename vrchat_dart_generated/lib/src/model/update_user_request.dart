@@ -21,6 +21,8 @@ class UpdateUserRequest {
   UpdateUserRequest({
     this.acceptedTOSVersion,
 
+    this.allowWorldsToCountFriendsInInstance,
+
     this.birthday,
 
     this.contentFilters,
@@ -54,6 +56,14 @@ class UpdateUserRequest {
 
   @JsonKey(name: r'acceptedTOSVersion', required: false, includeIfNull: false)
   final int? acceptedTOSVersion;
+
+  /// The \"Allow Worlds to Count Friends in Instance\" setting, introduced under [Udon Methods for Friend Info](https://ask.vrchat.com/t/developer-update-24-september-2026/48972#p-90922-udon-methods-for-friend-info-13) in the Developer Update of September 24, 2026.
+  @JsonKey(
+    name: r'allowWorldsToCountFriendsInInstance',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? allowWorldsToCountFriendsInInstance;
 
   @JsonKey(name: r'birthday', required: false, includeIfNull: false)
   final DateTime? birthday;
@@ -108,7 +118,6 @@ class UpdateUserRequest {
   @JsonKey(name: r'statusDescription', required: false, includeIfNull: false)
   final String? statusDescription;
 
-  ///
   @JsonKey(name: r'tags', required: false, includeIfNull: false)
   final List<String>? tags;
 
@@ -120,6 +129,8 @@ class UpdateUserRequest {
       identical(this, other) ||
       other is UpdateUserRequest &&
           other.acceptedTOSVersion == acceptedTOSVersion &&
+          other.allowWorldsToCountFriendsInInstance ==
+              allowWorldsToCountFriendsInInstance &&
           other.birthday == birthday &&
           other.contentFilters == contentFilters &&
           other.currentPassword == currentPassword &&
@@ -139,6 +150,7 @@ class UpdateUserRequest {
   @override
   int get hashCode =>
       acceptedTOSVersion.hashCode +
+      allowWorldsToCountFriendsInInstance.hashCode +
       birthday.hashCode +
       contentFilters.hashCode +
       currentPassword.hashCode +

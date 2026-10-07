@@ -9,7 +9,7 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **imageId** | **String** |  | [optional] 
-**roleIds** | **List&lt;String&gt;** |   | [optional] 
+**roleIds** | **List&lt;String&gt;** |  | [optional] 
 **sendNotification** | **bool** | Send notification to group members. | [default to false]
 **text** | **String** | Post text | 
 **title** | **String** | Post title | 

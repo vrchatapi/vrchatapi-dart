@@ -29,7 +29,6 @@ class PaginatedGroupAuditLogEntryList {
   @JsonKey(name: r'hasNext', required: false, includeIfNull: false)
   final bool? hasNext;
 
-  ///
   @JsonKey(name: r'results', required: false, includeIfNull: false)
   final List<GroupAuditLogEntry>? results;
 

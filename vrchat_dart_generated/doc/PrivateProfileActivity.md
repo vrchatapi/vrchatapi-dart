@@ -9,8 +9,8 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **instanceId** | **String** | InstanceID can be \"offline\" on User profiles if you are not friends with that user and \"private\" if you are friends and user is in private instance. | [optional] 
-**lastActivity** | **String** | Either a date-time or an empty string. | [optional] 
-**lastLogin** | **String** | Either a date-time or an empty string. | [optional] 
+**lastActivity** | **String** |  | [optional] 
+**lastLogin** | **String** |  | [optional] 
 **location** | **String** | Represents a unique location, consisting of a world identifier and an instance identifier, or \"offline\" if the user is not on your friends list. | [optional] 
 **platform** | **String** | This is normally `android`, `ios`, `standalonewindows`, `web`, or the empty value ``, but also supposedly can be any random Unity version such as `2019.2.4-801-Release` or `2019.2.2-772-Release` or even `unknownplatform`. | [optional] 
 **state** | [**UserState**](UserState.md) |  | [optional] 

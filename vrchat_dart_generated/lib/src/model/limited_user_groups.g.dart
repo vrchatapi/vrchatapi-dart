@@ -38,6 +38,7 @@ LimitedUserGroups _$LimitedUserGroupsFromJson(
     ownerId: $checkedConvert('ownerId', (v) => v as String?),
     privacy: $checkedConvert('privacy', (v) => v as String?),
     shortCode: $checkedConvert('shortCode', (v) => v as String?),
+    storeId: $checkedConvert('storeId', (v) => v as String?),
   );
   return val;
 });
@@ -64,4 +65,5 @@ Map<String, dynamic> _$LimitedUserGroupsToJson(LimitedUserGroups instance) =>
       'ownerId': ?instance.ownerId,
       'privacy': ?instance.privacy,
       'shortCode': ?instance.shortCode,
+      'storeId': ?instance.storeId,
     };

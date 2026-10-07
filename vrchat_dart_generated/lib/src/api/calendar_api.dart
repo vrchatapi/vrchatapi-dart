@@ -872,7 +872,17 @@ class CalendarApi {
       method: r'GET',
       responseType: ResponseType.bytes,
       headers: <String, dynamic>{...?headers},
-      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
       validateStatus: validateStatus,
     );
 

@@ -9,7 +9,7 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hasNext** | **bool** | Whether there are more results after this page. | [optional] 
-**results** | [**List&lt;GroupAuditLogEntry&gt;**](GroupAuditLogEntry.md) |   | [optional] 
+**results** | [**List&lt;GroupAuditLogEntry&gt;**](GroupAuditLogEntry.md) |  | [optional] 
 **totalCount** | **int** | The total number of results that the query would return if there were no pagination. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

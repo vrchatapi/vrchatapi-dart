@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | 
 **slimInstances** | **List&lt;Object&gt;** |  | [optional] 
 **storeId** | **String** |  | [optional] 
-**tags** | **List&lt;String&gt;** |   | 
+**tags** | **List&lt;String&gt;** |  | 
 **thumbnailImageUrl** | **String** |  | 
 **udonProducts** | **List&lt;String&gt;** |  | [optional] 
 **unityPackages** | [**List&lt;UnityPackage&gt;**](UnityPackage.md) | Empty if unauthenticated. | [optional] 

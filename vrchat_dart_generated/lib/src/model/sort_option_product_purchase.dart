@@ -6,6 +6,10 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum SortOptionProductPurchase {
+  @JsonValue(r'expireDate')
+  expireDate(r'expireDate'),
+  @JsonValue(r'name')
+  name(r'name'),
   @JsonValue(r'purchaseDate')
   purchaseDate(r'purchaseDate');
 

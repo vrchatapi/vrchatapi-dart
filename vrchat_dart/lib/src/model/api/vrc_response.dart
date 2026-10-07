@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:dio_response_validator/dio_response_validator.dart';
 import 'package:meta/meta.dart';
+import 'package:vrchat_dart_generated/vrchat_dart_generated.dart' hide Response;
 
 /// A response from the auth API
 @immutable
@@ -14,18 +15,6 @@ class AuthResponse {
   /// Create an [AuthResponse]
   AuthResponse({this.twoFactorAuthTypes = const []})
     : requiresTwoFactorAuth = twoFactorAuthTypes.isNotEmpty;
-}
-
-/// Types of two factor auth for VRChat
-enum TwoFactorAuthType {
-  /// One time password (probably a backup code)
-  otp,
-
-  /// Timed one time password from an authenticator app
-  totp,
-
-  /// Two factor auth via an email
-  emailOtp,
 }
 
 /// An error returned from the VRChat API

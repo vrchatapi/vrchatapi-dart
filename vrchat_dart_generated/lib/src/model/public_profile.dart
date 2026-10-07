@@ -126,7 +126,7 @@ class PublicProfile {
   @JsonKey(name: r'ageVerified', required: false, includeIfNull: false)
   final bool? ageVerified;
 
-  /// Hex colour without a leading `#`.
+  /// Six hexadecimal digits, without a leading `#`. May be empty.
   @JsonKey(
     name: r'backgroundGradientBottom',
     required: false,
@@ -134,7 +134,7 @@ class PublicProfile {
   )
   final String? backgroundGradientBottom;
 
-  /// Hex colour without a leading `#`.
+  /// Six hexadecimal digits, without a leading `#`. May be empty.
   @JsonKey(
     name: r'backgroundGradientTop',
     required: false,
@@ -154,6 +154,7 @@ class PublicProfile {
   @JsonKey(name: r'badges', required: false, includeIfNull: false)
   final List<Badge>? badges;
 
+  /// Six hexadecimal digits, without a leading `#`. May be empty.
   @JsonKey(name: r'bannerColor', required: false, includeIfNull: false)
   final String? bannerColor;
 
@@ -253,18 +254,18 @@ class PublicProfile {
   @JsonKey(name: r'statusDescription', required: false, includeIfNull: false)
   final String? statusDescription;
 
-  /// Hex colour without a leading `#`.
+  /// Six hexadecimal digits, without a leading `#`. May be empty.
   @JsonKey(name: r'themeButtonColor', required: false, includeIfNull: false)
   final String? themeButtonColor;
 
-  /// Hex colour without a leading `#`.
+  /// Six hexadecimal digits, without a leading `#`. May be empty.
   @JsonKey(name: r'themeIconColor', required: false, includeIfNull: false)
   final String? themeIconColor;
 
   @JsonKey(name: r'themeId', required: false, includeIfNull: false)
   final String? themeId;
 
-  /// Hex colour without a leading `#`.
+  /// Six hexadecimal digits, without a leading `#`. May be empty.
   @JsonKey(name: r'themeSubtextColor', required: false, includeIfNull: false)
   final String? themeSubtextColor;
 

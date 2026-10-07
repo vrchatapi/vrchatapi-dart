@@ -48,7 +48,10 @@ jobs:
             dart pub get --directory=example_flutter
           fi
       - run: dart analyze --fatal-infos
+      - run: dart format --output=none --set-exit-if-changed .
       - run: dart pub publish --dry-run
-      - run: |
+      - name: Pana
+        if: hashFiles(format('{0}/pubspec_overrides.yaml', matrix.package)) == ''
+        run: |
           dart pub global activate pana
           pana --no-warning --exit-code-threshold 0

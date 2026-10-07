@@ -33,10 +33,10 @@ Name | Type | Description | Notes
 **recommendedCapacity** | **int** |  | [optional] 
 **releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | 
 **storeId** | **String** |  | [optional] 
-**tags** | **List&lt;String&gt;** |   | [optional] 
+**tags** | **List&lt;String&gt;** |  | [optional] 
 **thumbnailImageUrl** | **String** |  | 
 **udonProducts** | **List&lt;String&gt;** |  | [optional] 
-**unityPackages** | [**List&lt;UnityPackage&gt;**](UnityPackage.md) |   | [optional] 
+**unityPackages** | [**List&lt;UnityPackage&gt;**](UnityPackage.md) |  | [optional] 
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **urlList** | **List&lt;String&gt;** |  | [optional] 
 **version** | **int** |  | [optional] 

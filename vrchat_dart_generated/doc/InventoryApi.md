@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**consumeOwnInventoryItem**](InventoryApi.md#consumeowninventoryitem) | **PUT** /inventory/{inventoryItemId}/consume | Consume Own Inventory Item
 [**deleteOwnInventoryItem**](InventoryApi.md#deleteowninventoryitem) | **DELETE** /inventory/{inventoryItemId} | Delete Own Inventory Item
 [**equipOwnInventoryItem**](InventoryApi.md#equipowninventoryitem) | **PUT** /inventory/{inventoryItemId}/equip | Equip Own Inventory Item
-[**getCosmeticIndex**](InventoryApi.md#getcosmeticindex) | **GET** /cosmetics/index/{itemType} | List Cosmetics
+[**getCosmetics**](InventoryApi.md#getcosmetics) | **GET** /cosmetics/index/{itemType} | List Cosmetics
 [**getInventory**](InventoryApi.md#getinventory) | **GET** /inventory | Get Inventory
 [**getInventoryCollections**](InventoryApi.md#getinventorycollections) | **GET** /inventory/collections | List Inventory Collections
 [**getInventoryDrops**](InventoryApi.md#getinventorydrops) | **GET** /inventory/drops | List Inventory Drops
@@ -171,8 +171,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getCosmeticIndex**
-> List<InventoryTemplate> getCosmeticIndex(itemType)
+# **getCosmetics**
+> List<InventoryTemplate> getCosmetics(itemType)
 
 List Cosmetics
 
@@ -190,10 +190,10 @@ final api = VrchatDartGenerated().getInventoryApi();
 final String itemType = itemType_example; // String | The kind of cosmetic to list.
 
 try {
-    final response = api.getCosmeticIndex(itemType);
+    final response = api.getCosmetics(itemType);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling InventoryApi->getCosmeticIndex: $e\n');
+    print('Exception when calling InventoryApi->getCosmetics: $e\n');
 }
 ```
 

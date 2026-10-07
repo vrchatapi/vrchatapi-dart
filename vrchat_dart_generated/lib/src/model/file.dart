@@ -86,7 +86,6 @@ class File {
   )
   final String? modifiedThumbnailFileName;
 
-  ///
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
@@ -94,11 +93,9 @@ class File {
   @JsonKey(name: r'ownerId', required: true, includeIfNull: false)
   final String ownerId;
 
-  ///
   @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;
 
-  ///
   @JsonKey(name: r'versions', required: true, includeIfNull: false)
   final Set<FileVersion> versions;
 

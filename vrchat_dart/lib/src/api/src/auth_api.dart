@@ -1,6 +1,8 @@
 import 'dart:convert';
+
 import 'package:dio_response_validator/dio_response_validator.dart';
 import 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
+import 'package:vrchat_dart/src/convenience/user_extensions.dart';
 import 'package:vrchat_dart/src/model/api/vrc_response.dart';
 
 /// Auth convenience methods
@@ -34,31 +36,23 @@ class AuthApi {
         .validateVrc();
 
     if (success != null) {
-      _currentUser = success.data;
+      final twoFactorAuthTypes = success.data.requiresTwoFactorAuth;
+      if (twoFactorAuthTypes != null && twoFactorAuthTypes.isNotEmpty) {
+        return (
+          ValidResponse(
+            AuthResponse(twoFactorAuthTypes: twoFactorAuthTypes),
+            success.response,
+          ),
+          null,
+        );
+      }
+
+      _currentUser = success.data.toCurrentUser();
       return (ValidResponse(AuthResponse(), success.response), null);
-    } else if (failure != null) {
-      final response = failure.response;
-      if (response == null) return (null, failure);
-
-      final data = response.data;
-      if (data is! Map<String, dynamic>) return (null, failure);
-
-      final twoFactorAuthTypes = (data['requiresTwoFactorAuth'] as List?)
-          ?.cast<String>()
-          .map(TwoFactorAuthType.values.byName)
-          .toList();
-      if (twoFactorAuthTypes == null) return (null, failure);
-
-      return (
-        ValidResponse(
-          AuthResponse(twoFactorAuthTypes: twoFactorAuthTypes),
-          response,
-        ),
-        null,
-      );
-    } else {
-      throw StateError('This should never happen');
     }
+
+    if (failure == null) throw StateError('This should never happen');
+    return (null, failure);
   }
 
   /// Verify a 2fa code

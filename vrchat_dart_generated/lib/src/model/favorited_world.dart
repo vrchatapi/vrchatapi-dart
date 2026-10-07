@@ -176,7 +176,6 @@ class FavoritedWorld {
   @JsonKey(name: r'storeId', required: false, includeIfNull: false)
   final String? storeId;
 
-  ///
   @JsonKey(name: r'tags', required: false, includeIfNull: false)
   final List<String>? tags;
 
@@ -186,7 +185,6 @@ class FavoritedWorld {
   @JsonKey(name: r'udonProducts', required: false, includeIfNull: false)
   final List<String>? udonProducts;
 
-  ///
   @JsonKey(name: r'unityPackages', required: false, includeIfNull: false)
   final List<UnityPackage>? unityPackages;
 
