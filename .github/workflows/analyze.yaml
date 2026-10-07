@@ -22,11 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        include:
-          - package: vrchat_dart
-            analyze: lib tool example
-          - package: vrchat_dart_generated
-            analyze: lib
+        package: [vrchat_dart, vrchat_dart_generated]
     defaults:
       run:
         working-directory: ${{ matrix.package }}
@@ -47,7 +43,7 @@ jobs:
           key: ${{ env.cache-name }}-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: ${{ env.cache-name }}-
       - run: dart pub get
-      - run: dart analyze ${{ matrix.analyze }}
+      - run: dart analyze
       - run: dart pub publish --dry-run
       - run: |
           dart pub global activate pana
