@@ -1,0 +1,3 @@
+dependency_overrides:
+  vrchat_dart_generated:
+    path: ../vrchat_dart_generated

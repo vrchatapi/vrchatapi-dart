@@ -1,10 +1,6 @@
-// Newer generated clients export TwoFactorAuthType, which clashes with ours.
-// ignore_for_file: undefined_hidden_name
-
 // base
 export 'src/vrchat_dart_base.dart';
-export 'package:vrchat_dart_generated/vrchat_dart_generated.dart'
-    hide TwoFactorAuthType;
+export 'package:vrchat_dart_generated/vrchat_dart_generated.dart';
 
 // model
 export 'src/model/api/limited_user.dart';
