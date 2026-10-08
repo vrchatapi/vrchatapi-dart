@@ -21,10 +21,10 @@ jobs:
       - uses: vrchatapi/specification/.github/actions/setup-generator@main
       - uses: vrchatapi/specification/.github/actions/download@main
         with:
-          bundle: openapi-3.0.yaml
+          bundle: openapi-3.0.json
       - run: |
           mkdir -p ../vrchatapi-specification/dist
-          mv openapi-3.0.yaml ../vrchatapi-specification/dist/
+          mv openapi-3.0.json ../vrchatapi-specification/dist/
       - run: ./generate.sh local
       - uses: actions/upload-artifact@v7
         with:

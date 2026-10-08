@@ -33,11 +33,11 @@ jobs:
       - uses: vrchatapi/specification/.github/actions/setup-generator@main
       - uses: vrchatapi/specification/.github/actions/download@main
         with:
-          bundle: openapi-3.0.yaml
+          bundle: openapi-3.0.json
           tag: ${{ inputs.tag }}
       - run: |
           mkdir -p ../vrchatapi-specification/dist
-          mv openapi-3.0.yaml ../vrchatapi-specification/dist/
+          mv openapi-3.0.json ../vrchatapi-specification/dist/
       - name: Generate
         run: ./generate.sh local
 

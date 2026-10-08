@@ -32,7 +32,7 @@ Future<Map<String, dynamic>> getSpec({required bool local}) async {
         '..',
         'vrchatapi-specification',
         'dist',
-        'openapi-3.0.yaml',
+        'openapi-3.0.json',
       ),
     );
     final data = await file.readAsString();
