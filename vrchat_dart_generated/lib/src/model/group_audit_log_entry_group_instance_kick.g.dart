@@ -13,14 +13,31 @@ _$GroupAuditLogEntryGroupInstanceKickFromJson(Map<String, dynamic> json) =>
     $checkedCreate('GroupAuditLogEntryGroupInstanceKick', json, (
       $checkedConvert,
     ) {
-      $checkKeys(json, requiredKeys: const ['data', 'eventType', 'targetId']);
-      final val = GroupAuditLogEntryGroupInstanceKick(
-        data: $checkedConvert(
+      $checkKeys(
+        json,
+        requiredKeys: const [
+          'actorDisplayName',
+          'actorId',
+          'created_at',
+          'description',
+          'eventType',
+          'groupId',
+          'id',
           'data',
-          (v) => GroupAuditLogEntryDataGroupInstanceModeration.fromJson(
-            v as Map<String, dynamic>,
-          ),
+          'targetId',
+        ],
+      );
+      final val = GroupAuditLogEntryGroupInstanceKick(
+        actorDisplayName: $checkedConvert(
+          'actorDisplayName',
+          (v) => v as String,
         ),
+        actorId: $checkedConvert('actorId', (v) => v as String),
+        createdAt: $checkedConvert(
+          'created_at',
+          (v) => DateTime.parse(v as String),
+        ),
+        description: $checkedConvert('description', (v) => v as String),
         eventType: $checkedConvert(
           'eventType',
           (v) => $enumDecode(
@@ -28,18 +45,32 @@ _$GroupAuditLogEntryGroupInstanceKickFromJson(Map<String, dynamic> json) =>
             v,
           ),
         ),
+        groupId: $checkedConvert('groupId', (v) => v as String),
+        id: $checkedConvert('id', (v) => v as String),
+        data: $checkedConvert(
+          'data',
+          (v) => GroupAuditLogEntryDataGroupInstanceModeration.fromJson(
+            v as Map<String, dynamic>,
+          ),
+        ),
         targetId: $checkedConvert('targetId', (v) => v as String),
       );
       return val;
-    });
+    }, fieldKeyMap: const {'createdAt': 'created_at'});
 
 Map<String, dynamic> _$GroupAuditLogEntryGroupInstanceKickToJson(
   GroupAuditLogEntryGroupInstanceKick instance,
 ) => <String, dynamic>{
-  'data': instance.data.toJson(),
+  'actorDisplayName': instance.actorDisplayName,
+  'actorId': instance.actorId,
+  'created_at': instance.createdAt.toIso8601String(),
+  'description': instance.description,
   'eventType':
       _$GroupAuditLogEntryGroupInstanceKickEventTypeEnumEnumMap[instance
           .eventType]!,
+  'groupId': instance.groupId,
+  'id': instance.id,
+  'data': instance.data.toJson(),
   'targetId': instance.targetId,
 };
 

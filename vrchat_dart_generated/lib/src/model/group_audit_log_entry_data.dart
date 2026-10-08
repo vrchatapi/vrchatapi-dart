@@ -5,9 +5,9 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/calendar_event_recurrence.dart';
 import 'package:vrchat_dart_generated/src/model/calendar_event_occurrence_kind.dart';
+import 'package:vrchat_dart_generated/src/model/group_post_visibility.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_string_list_change.dart';
 import 'package:vrchat_dart_generated/src/model/calendar_event_access.dart';
-import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_integer_change.dart';
 import 'package:vrchat_dart_generated/src/model/group_access_type.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_join_state_change.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_string_change.dart';
@@ -16,7 +16,7 @@ import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_file_id_ch
 
 import 'package:json_annotation/json_annotation.dart';
 
-part 'group_audit_log_entry_event_data.g.dart';
+part 'group_audit_log_entry_data.g.dart';
 
 @JsonSerializable(
   checked: true,
@@ -24,9 +24,9 @@ part 'group_audit_log_entry_event_data.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class GroupAuditLogEntryEventData {
-  /// Returns a new [GroupAuditLogEntryEventData] instance.
-  GroupAuditLogEntryEventData({
+class GroupAuditLogEntryData {
+  /// Returns a new [GroupAuditLogEntryData] instance.
+  GroupAuditLogEntryData({
     this.authorId,
 
     this.imageId,
@@ -117,17 +117,11 @@ class GroupAuditLogEntryEventData {
 
     this.managerNotes,
 
+    this.visibility,
+
     this.editorId,
 
     this.imageUrl,
-
-    this.groupId,
-
-    this.lastUpdatedByUserId,
-
-    this.defaultRole,
-
-    this.isManagementRole,
 
     this.isAddedOnJoin,
 
@@ -136,6 +130,18 @@ class GroupAuditLogEntryEventData {
     this.order,
 
     this.permissions,
+
+    this.requiresPurchase,
+
+    this.requiresTwoFactor,
+
+    this.groupId,
+
+    this.lastUpdatedByUserId,
+
+    this.defaultRole,
+
+    this.isManagementRole,
 
     this.allowGroupJoinPrompt,
 
@@ -318,12 +324,35 @@ class GroupAuditLogEntryEventData {
   @JsonKey(name: r'managerNotes', required: false, includeIfNull: false)
   final GroupAuditLogEntryStringChange? managerNotes;
 
+  @JsonKey(name: r'visibility', required: false, includeIfNull: false)
+  final GroupPostVisibility? visibility;
+
   @JsonKey(name: r'editorId', required: false, includeIfNull: false)
   final Object? editorId;
 
   /// The URL of the post image.
   @JsonKey(name: r'imageUrl', required: false, includeIfNull: false)
   final String? imageUrl;
+
+  @JsonKey(name: r'isAddedOnJoin', required: false, includeIfNull: false)
+  final Object? isAddedOnJoin;
+
+  @JsonKey(name: r'isSelfAssignable', required: false, includeIfNull: false)
+  final Object? isSelfAssignable;
+
+  @JsonKey(name: r'order', required: false, includeIfNull: false)
+  final Object? order;
+
+  @JsonKey(name: r'permissions', required: false, includeIfNull: false)
+  final Object? permissions;
+
+  /// Whether the role requires a purchase.
+  @JsonKey(name: r'requiresPurchase', required: false, includeIfNull: false)
+  final bool? requiresPurchase;
+
+  /// Whether the role requires two-factor authentication.
+  @JsonKey(name: r'requiresTwoFactor', required: false, includeIfNull: false)
+  final bool? requiresTwoFactor;
 
   @JsonKey(name: r'groupId', required: false, includeIfNull: false)
   final String? groupId;
@@ -339,18 +368,6 @@ class GroupAuditLogEntryEventData {
   /// Whether the role is a management role.
   @JsonKey(name: r'isManagementRole', required: false, includeIfNull: false)
   final bool? isManagementRole;
-
-  @JsonKey(name: r'isAddedOnJoin', required: false, includeIfNull: false)
-  final GroupAuditLogEntryBooleanChange? isAddedOnJoin;
-
-  @JsonKey(name: r'isSelfAssignable', required: false, includeIfNull: false)
-  final GroupAuditLogEntryBooleanChange? isSelfAssignable;
-
-  @JsonKey(name: r'order', required: false, includeIfNull: false)
-  final GroupAuditLogEntryIntegerChange? order;
-
-  @JsonKey(name: r'permissions', required: false, includeIfNull: false)
-  final GroupAuditLogEntryStringListChange? permissions;
 
   @JsonKey(name: r'allowGroupJoinPrompt', required: false, includeIfNull: false)
   final GroupAuditLogEntryBooleanChange? allowGroupJoinPrompt;
@@ -376,7 +393,7 @@ class GroupAuditLogEntryEventData {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is GroupAuditLogEntryEventData &&
+      other is GroupAuditLogEntryData &&
           other.authorId == authorId &&
           other.imageId == imageId &&
           other.sendNotification == sendNotification &&
@@ -422,16 +439,19 @@ class GroupAuditLogEntryEventData {
           other.roleId == roleId &&
           other.roleName == roleName &&
           other.managerNotes == managerNotes &&
+          other.visibility == visibility &&
           other.editorId == editorId &&
           other.imageUrl == imageUrl &&
-          other.groupId == groupId &&
-          other.lastUpdatedByUserId == lastUpdatedByUserId &&
-          other.defaultRole == defaultRole &&
-          other.isManagementRole == isManagementRole &&
           other.isAddedOnJoin == isAddedOnJoin &&
           other.isSelfAssignable == isSelfAssignable &&
           other.order == order &&
           other.permissions == permissions &&
+          other.requiresPurchase == requiresPurchase &&
+          other.requiresTwoFactor == requiresTwoFactor &&
+          other.groupId == groupId &&
+          other.lastUpdatedByUserId == lastUpdatedByUserId &&
+          other.defaultRole == defaultRole &&
+          other.isManagementRole == isManagementRole &&
           other.allowGroupJoinPrompt == allowGroupJoinPrompt &&
           other.bannerId == bannerId &&
           other.iconId == iconId &&
@@ -487,16 +507,19 @@ class GroupAuditLogEntryEventData {
       roleId.hashCode +
       roleName.hashCode +
       managerNotes.hashCode +
+      visibility.hashCode +
       (editorId == null ? 0 : editorId.hashCode) +
       (imageUrl == null ? 0 : imageUrl.hashCode) +
+      (isAddedOnJoin == null ? 0 : isAddedOnJoin.hashCode) +
+      (isSelfAssignable == null ? 0 : isSelfAssignable.hashCode) +
+      (order == null ? 0 : order.hashCode) +
+      (permissions == null ? 0 : permissions.hashCode) +
+      requiresPurchase.hashCode +
+      requiresTwoFactor.hashCode +
       groupId.hashCode +
       lastUpdatedByUserId.hashCode +
       defaultRole.hashCode +
       isManagementRole.hashCode +
-      isAddedOnJoin.hashCode +
-      isSelfAssignable.hashCode +
-      order.hashCode +
-      permissions.hashCode +
       allowGroupJoinPrompt.hashCode +
       bannerId.hashCode +
       iconId.hashCode +
@@ -505,10 +528,10 @@ class GroupAuditLogEntryEventData {
       nameplateId.hashCode +
       rules.hashCode;
 
-  factory GroupAuditLogEntryEventData.fromJson(Map<String, dynamic> json) =>
-      _$GroupAuditLogEntryEventDataFromJson(json);
+  factory GroupAuditLogEntryData.fromJson(Map<String, dynamic> json) =>
+      _$GroupAuditLogEntryDataFromJson(json);
 
-  Map<String, dynamic> toJson() => _$GroupAuditLogEntryEventDataToJson(this);
+  Map<String, dynamic> toJson() => _$GroupAuditLogEntryDataToJson(this);
 
   @override
   String toString() {

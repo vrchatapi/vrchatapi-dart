@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **eventType** | **String** |  | 
 **groupId** | **String** |  | 
 **id** | **String** |  | 
-**data** | [**GroupAuditLogEntryEventData**](GroupAuditLogEntryEventData.md) |  | 
+**data** | [**GroupAuditLogEntryData**](GroupAuditLogEntryData.md) |  | 
 **targetId** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

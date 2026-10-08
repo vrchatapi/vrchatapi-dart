@@ -163,6 +163,7 @@ export 'package:vrchat_dart_generated/src/model/group_announcement.dart';
 export 'package:vrchat_dart_generated/src/model/group_audit_log_entry.dart';
 export 'package:vrchat_dart_generated/src/model/group_audit_log_entry_base.dart';
 export 'package:vrchat_dart_generated/src/model/group_audit_log_entry_boolean_change.dart';
+export 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data.dart';
 export 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_announcement.dart';
 export 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_calendar_event_create.dart';
 export 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_calendar_event_delete.dart';
@@ -184,8 +185,6 @@ export 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group
 export 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_role_delete.dart';
 export 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_role_update.dart';
 export 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_update.dart';
-export 'package:vrchat_dart_generated/src/model/group_audit_log_entry_event.dart';
-export 'package:vrchat_dart_generated/src/model/group_audit_log_entry_event_data.dart';
 export 'package:vrchat_dart_generated/src/model/group_audit_log_entry_file_id_change.dart';
 export 'package:vrchat_dart_generated/src/model/group_audit_log_entry_group_announcement.dart';
 export 'package:vrchat_dart_generated/src/model/group_audit_log_entry_group_calendar_event_create.dart';

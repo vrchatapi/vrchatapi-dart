@@ -115,6 +115,7 @@ import 'package:vrchat_dart_generated/src/model/group_announcement.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_base.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_boolean_change.dart';
+import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_announcement.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_calendar_event_create.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_calendar_event_delete.dart';
@@ -136,8 +137,6 @@ import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_role_delete.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_role_update.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_update.dart';
-import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_event.dart';
-import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_event_data.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_file_id_change.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_group_announcement.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_group_calendar_event_create.dart';
@@ -791,6 +790,9 @@ ReturnType deserialize<ReturnType, BaseType>(
             value as Map<String, dynamic>,
           )
           as ReturnType;
+    case 'GroupAuditLogEntryData':
+      return GroupAuditLogEntryData.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'GroupAuditLogEntryDataGroupAnnouncement':
       return GroupAuditLogEntryDataGroupAnnouncement.fromJson(
             value as Map<String, dynamic>,
@@ -895,12 +897,6 @@ ReturnType deserialize<ReturnType, BaseType>(
       return GroupAuditLogEntryDataGroupUpdate.fromJson(
             value as Map<String, dynamic>,
           )
-          as ReturnType;
-    case 'GroupAuditLogEntryEvent':
-      return GroupAuditLogEntryEvent.fromJson(value as Map<String, dynamic>)
-          as ReturnType;
-    case 'GroupAuditLogEntryEventData':
-      return GroupAuditLogEntryEventData.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'GroupAuditLogEntryFileIDChange':
       return GroupAuditLogEntryFileIDChange.fromJson(

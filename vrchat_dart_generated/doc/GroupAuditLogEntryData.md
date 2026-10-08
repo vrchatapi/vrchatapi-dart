@@ -1,4 +1,4 @@
-# vrchat_dart_generated.model.GroupAuditLogEntryEventData
+# vrchat_dart_generated.model.GroupAuditLogEntryData
 
 ## Load the model package
 ```dart
@@ -53,16 +53,19 @@ Name | Type | Description | Notes
 **roleId** | **String** |  | [optional] 
 **roleName** | **String** | The name of the role that was assigned or unassigned. | [optional] 
 **managerNotes** | [**GroupAuditLogEntryStringChange**](GroupAuditLogEntryStringChange.md) |  | [optional] 
+**visibility** | [**GroupPostVisibility**](GroupPostVisibility.md) |  | [optional] 
 **editorId** | **Object** |  | [optional] 
 **imageUrl** | **String** | The URL of the post image. | [optional] 
+**isAddedOnJoin** | **Object** |  | [optional] 
+**isSelfAssignable** | **Object** |  | [optional] 
+**order** | **Object** |  | [optional] 
+**permissions** | **Object** |  | [optional] 
+**requiresPurchase** | **bool** | Whether the role requires a purchase. | [optional] 
+**requiresTwoFactor** | **bool** | Whether the role requires two-factor authentication. | [optional] 
 **groupId** | **String** |  | [optional] 
 **lastUpdatedByUserId** | **String** | A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed. | [optional] 
 **defaultRole** | **bool** | Whether the role is the group's default role. | [optional] 
 **isManagementRole** | **bool** | Whether the role is a management role. | [optional] 
-**isAddedOnJoin** | [**GroupAuditLogEntryBooleanChange**](GroupAuditLogEntryBooleanChange.md) |  | [optional] 
-**isSelfAssignable** | [**GroupAuditLogEntryBooleanChange**](GroupAuditLogEntryBooleanChange.md) |  | [optional] 
-**order** | [**GroupAuditLogEntryIntegerChange**](GroupAuditLogEntryIntegerChange.md) |  | [optional] 
-**permissions** | [**GroupAuditLogEntryStringListChange**](GroupAuditLogEntryStringListChange.md) |  | [optional] 
 **allowGroupJoinPrompt** | [**GroupAuditLogEntryBooleanChange**](GroupAuditLogEntryBooleanChange.md) |  | [optional] 
 **bannerId** | [**GroupAuditLogEntryFileIDChange**](GroupAuditLogEntryFileIDChange.md) |  | [optional] 
 **iconId** | [**GroupAuditLogEntryFileIDChange**](GroupAuditLogEntryFileIDChange.md) |  | [optional] 

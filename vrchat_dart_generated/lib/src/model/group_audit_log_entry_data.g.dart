@@ -2,16 +2,16 @@
 
 // ignore_for_file: deprecated_member_use_from_same_package
 
-part of 'group_audit_log_entry_event_data.dart';
+part of 'group_audit_log_entry_data.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-GroupAuditLogEntryEventData _$GroupAuditLogEntryEventDataFromJson(
+GroupAuditLogEntryData _$GroupAuditLogEntryDataFromJson(
   Map<String, dynamic> json,
-) => $checkedCreate('GroupAuditLogEntryEventData', json, ($checkedConvert) {
-  final val = GroupAuditLogEntryEventData(
+) => $checkedCreate('GroupAuditLogEntryData', json, ($checkedConvert) {
+  final val = GroupAuditLogEntryData(
     authorId: $checkedConvert('authorId', (v) => v as String?),
     imageId: $checkedConvert('imageId', (v) => v as String?),
     sendNotification: $checkedConvert('sendNotification', (v) => v as bool?),
@@ -127,8 +127,18 @@ GroupAuditLogEntryEventData _$GroupAuditLogEntryEventDataFromJson(
           ? null
           : GroupAuditLogEntryStringChange.fromJson(v as Map<String, dynamic>),
     ),
+    visibility: $checkedConvert(
+      'visibility',
+      (v) => $enumDecodeNullable(_$GroupPostVisibilityEnumMap, v),
+    ),
     editorId: $checkedConvert('editorId', (v) => v),
     imageUrl: $checkedConvert('imageUrl', (v) => v as String?),
+    isAddedOnJoin: $checkedConvert('isAddedOnJoin', (v) => v),
+    isSelfAssignable: $checkedConvert('isSelfAssignable', (v) => v),
+    order: $checkedConvert('order', (v) => v),
+    permissions: $checkedConvert('permissions', (v) => v),
+    requiresPurchase: $checkedConvert('requiresPurchase', (v) => v as bool?),
+    requiresTwoFactor: $checkedConvert('requiresTwoFactor', (v) => v as bool?),
     groupId: $checkedConvert('groupId', (v) => v as String?),
     lastUpdatedByUserId: $checkedConvert(
       'lastUpdatedByUserId',
@@ -136,32 +146,6 @@ GroupAuditLogEntryEventData _$GroupAuditLogEntryEventDataFromJson(
     ),
     defaultRole: $checkedConvert('defaultRole', (v) => v as bool?),
     isManagementRole: $checkedConvert('isManagementRole', (v) => v as bool?),
-    isAddedOnJoin: $checkedConvert(
-      'isAddedOnJoin',
-      (v) => v == null
-          ? null
-          : GroupAuditLogEntryBooleanChange.fromJson(v as Map<String, dynamic>),
-    ),
-    isSelfAssignable: $checkedConvert(
-      'isSelfAssignable',
-      (v) => v == null
-          ? null
-          : GroupAuditLogEntryBooleanChange.fromJson(v as Map<String, dynamic>),
-    ),
-    order: $checkedConvert(
-      'order',
-      (v) => v == null
-          ? null
-          : GroupAuditLogEntryIntegerChange.fromJson(v as Map<String, dynamic>),
-    ),
-    permissions: $checkedConvert(
-      'permissions',
-      (v) => v == null
-          ? null
-          : GroupAuditLogEntryStringListChange.fromJson(
-              v as Map<String, dynamic>,
-            ),
-    ),
     allowGroupJoinPrompt: $checkedConvert(
       'allowGroupJoinPrompt',
       (v) => v == null
@@ -212,8 +196,8 @@ GroupAuditLogEntryEventData _$GroupAuditLogEntryEventDataFromJson(
   return val;
 });
 
-Map<String, dynamic> _$GroupAuditLogEntryEventDataToJson(
-  GroupAuditLogEntryEventData instance,
+Map<String, dynamic> _$GroupAuditLogEntryDataToJson(
+  GroupAuditLogEntryData instance,
 ) => <String, dynamic>{
   'authorId': ?instance.authorId,
   'imageId': ?instance.imageId,
@@ -261,16 +245,19 @@ Map<String, dynamic> _$GroupAuditLogEntryEventDataToJson(
   'roleId': ?instance.roleId,
   'roleName': ?instance.roleName,
   'managerNotes': ?instance.managerNotes?.toJson(),
+  'visibility': ?_$GroupPostVisibilityEnumMap[instance.visibility],
   'editorId': ?instance.editorId,
   'imageUrl': ?instance.imageUrl,
+  'isAddedOnJoin': ?instance.isAddedOnJoin,
+  'isSelfAssignable': ?instance.isSelfAssignable,
+  'order': ?instance.order,
+  'permissions': ?instance.permissions,
+  'requiresPurchase': ?instance.requiresPurchase,
+  'requiresTwoFactor': ?instance.requiresTwoFactor,
   'groupId': ?instance.groupId,
   'lastUpdatedByUserId': ?instance.lastUpdatedByUserId,
   'defaultRole': ?instance.defaultRole,
   'isManagementRole': ?instance.isManagementRole,
-  'isAddedOnJoin': ?instance.isAddedOnJoin?.toJson(),
-  'isSelfAssignable': ?instance.isSelfAssignable?.toJson(),
-  'order': ?instance.order?.toJson(),
-  'permissions': ?instance.permissions?.toJson(),
   'allowGroupJoinPrompt': ?instance.allowGroupJoinPrompt?.toJson(),
   'bannerId': ?instance.bannerId?.toJson(),
   'iconId': ?instance.iconId?.toJson(),
@@ -295,4 +282,9 @@ const _$GroupAccessTypeEnumMap = {
   GroupAccessType.members: 'members',
   GroupAccessType.plus: 'plus',
   GroupAccessType.public: 'public',
+};
+
+const _$GroupPostVisibilityEnumMap = {
+  GroupPostVisibility.group: 'group',
+  GroupPostVisibility.public: 'public',
 };

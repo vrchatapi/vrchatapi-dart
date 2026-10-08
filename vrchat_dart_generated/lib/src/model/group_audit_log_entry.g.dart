@@ -40,8 +40,7 @@ GroupAuditLogEntry _$GroupAuditLogEntryFromJson(Map<String, dynamic> json) =>
         id: $checkedConvert('id', (v) => v as String),
         data: $checkedConvert(
           'data',
-          (v) =>
-              GroupAuditLogEntryEventData.fromJson(v as Map<String, dynamic>),
+          (v) => GroupAuditLogEntryData.fromJson(v as Map<String, dynamic>),
         ),
         targetId: $checkedConvert('targetId', (v) => v as String),
       );
