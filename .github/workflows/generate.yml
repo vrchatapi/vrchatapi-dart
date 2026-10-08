@@ -5,11 +5,11 @@ on:
     types: [release]
   workflow_dispatch:
     inputs:
-      url:
-        description: OpenAPI bundle URL. Release dispatches use the triggering release instead.
+      tag:
+        description: Release to build, such as v1.22.1 or nightly.
         required: false
         type: string
-        default: https://github.com/vrchatapi/specification/releases/download/nightly/openapi-3.0.yaml
+        default: nightly
 
 jobs:
   generate:
@@ -34,7 +34,7 @@ jobs:
       - uses: vrchatapi/specification/.github/actions/download@main
         with:
           bundle: openapi-3.0.yaml
-          url: ${{ github.event_name == 'workflow_dispatch' && inputs.url || '' }}
+          tag: ${{ inputs.tag }}
       - run: |
           mkdir -p ../vrchatapi-specification/dist
           mv openapi-3.0.yaml ../vrchatapi-specification/dist/
