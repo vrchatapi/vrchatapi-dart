@@ -30,8 +30,8 @@ enum MIMEType {
   imageSlashJpg(r'image/jpg'),
   @JsonValue(r'image/png')
   imageSlashPng(r'image/png'),
-  @JsonValue(r'image/svg＋xml')
-  imageSlashSvgxml(r'image/svg＋xml'),
+  @JsonValue(r'image/svg+xml')
+  imageSlashSvgPlusXml(r'image/svg+xml'),
   @JsonValue(r'image/tiff')
   imageSlashTiff(r'image/tiff'),
   @JsonValue(r'image/webp')

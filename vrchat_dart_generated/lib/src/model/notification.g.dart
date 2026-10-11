@@ -14,10 +14,10 @@ Notification _$NotificationFromJson(Map<String, dynamic> json) =>
         json,
         requiredKeys: const [
           'created_at',
-          'details',
           'id',
           'message',
           'senderUserId',
+          'details',
           'type',
         ],
       );
@@ -26,17 +26,14 @@ Notification _$NotificationFromJson(Map<String, dynamic> json) =>
           'created_at',
           (v) => DateTime.parse(v as String),
         ),
-        details: $checkedConvert('details', (v) => v as String? ?? '{}'),
         id: $checkedConvert('id', (v) => v as String),
         message: $checkedConvert('message', (v) => v as String),
         receiverUserId: $checkedConvert('receiverUserId', (v) => v as String?),
         seen: $checkedConvert('seen', (v) => v as bool? ?? false),
         senderUserId: $checkedConvert('senderUserId', (v) => v as String),
         senderUsername: $checkedConvert('senderUsername', (v) => v as String?),
-        type: $checkedConvert(
-          'type',
-          (v) => $enumDecode(_$NotificationTypeEnumMap, v),
-        ),
+        details: $checkedConvert('details', (v) => v as String),
+        type: $checkedConvert('type', (v) => v as String),
       );
       return val;
     }, fieldKeyMap: const {'createdAt': 'created_at'});
@@ -44,23 +41,12 @@ Notification _$NotificationFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$NotificationToJson(Notification instance) =>
     <String, dynamic>{
       'created_at': instance.createdAt.toIso8601String(),
-      'details': instance.details,
       'id': instance.id,
       'message': instance.message,
       'receiverUserId': ?instance.receiverUserId,
       'seen': ?instance.seen,
       'senderUserId': instance.senderUserId,
       'senderUsername': ?instance.senderUsername,
-      'type': _$NotificationTypeEnumMap[instance.type]!,
+      'details': instance.details,
+      'type': instance.type,
     };
-
-const _$NotificationTypeEnumMap = {
-  NotificationType.boop: 'boop',
-  NotificationType.friendRequest: 'friendRequest',
-  NotificationType.invite: 'invite',
-  NotificationType.inviteResponse: 'inviteResponse',
-  NotificationType.message: 'message',
-  NotificationType.requestInvite: 'requestInvite',
-  NotificationType.requestInviteResponse: 'requestInviteResponse',
-  NotificationType.votetokick: 'votetokick',
-};

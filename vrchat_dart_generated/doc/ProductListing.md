@@ -22,10 +22,10 @@ Name | Type | Description | Notes
 **groupIcon** | **String** |  | [optional] 
 **groupId** | **String** |  | [optional] 
 **groupName** | **String** |  | [optional] 
-**hasAvatar** | **bool** |  | 
+**hasAvatar** | **bool** |  | [optional] 
 **hasCompanion** | **bool** |  | [optional] 
 **hasInventory** | **bool** |  | [optional] 
-**hasUdon** | **bool** |  | 
+**hasUdon** | **bool** |  | [optional] 
 **hydratedProducts** | [**List&lt;Product&gt;**](Product.md) |  | [optional] 
 **id** | **String** |  | 
 **imageId** | **String** |  | [optional] 
@@ -37,16 +37,16 @@ Name | Type | Description | Notes
 **productIds** | **List&lt;String&gt;** |  | 
 **productType** | [**ProductType**](ProductType.md) |  | 
 **productTypes** | **List&lt;String&gt;** |  | [optional] 
-**products** | **List&lt;String&gt;** | Product ids. The products themselves arrive in `hydratedProducts`. | 
+**products** | **List&lt;String&gt;** | Product ids. The products themselves arrive in `hydratedProducts`. | [optional] 
 **purchaseCount** | **int** |  | [optional] 
 **purchaseCountQuantity** | **int** |  | [optional] 
 **quantifiable** | **bool** |  | [optional] 
-**recurrable** | **bool** |  | 
+**recurrable** | **bool** |  | [optional] 
 **refundable** | **bool** |  | [optional] 
 **sellerDisplayName** | **String** |  | 
 **sellerId** | **String** |  | 
 **soldByVrc** | **bool** |  | [optional] 
-**stackable** | **bool** |  | 
+**stackable** | **bool** |  | [optional] 
 **storeIds** | **List&lt;String&gt;** |  | [optional] 
 **subtitle** | **String** |  | [optional] 
 **tags** | **List&lt;String&gt;** |  | [optional] 

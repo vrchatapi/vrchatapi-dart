@@ -17,7 +17,7 @@ import 'package:vrchat_dart_generated/src/model/order_option.dart';
 import 'package:vrchat_dart_generated/src/model/release_status.dart';
 import 'package:vrchat_dart_generated/src/model/service_queue_stats.dart';
 import 'package:vrchat_dart_generated/src/model/service_status.dart';
-import 'package:vrchat_dart_generated/src/model/sort_option.dart';
+import 'package:vrchat_dart_generated/src/model/sort_option_avatar.dart';
 import 'package:vrchat_dart_generated/src/model/update_avatar_request.dart';
 
 class AvatarsApi {
@@ -536,7 +536,7 @@ class AvatarsApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<Avatar>>> getFavoritedAvatars({
     bool? featured,
-    SortOption? sort,
+    SortOptionAvatar? sort,
     int? n = 60,
     OrderOption? order,
     int? offset,
@@ -913,7 +913,7 @@ class AvatarsApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<Avatar>>> searchAvatars({
     bool? featured,
-    SortOption? sort,
+    SortOptionAvatar? sort,
     String? user,
     String? userId,
     int? n = 60,

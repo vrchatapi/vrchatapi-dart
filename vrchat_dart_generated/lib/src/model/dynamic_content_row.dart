@@ -243,7 +243,7 @@ class DynamicContentRow {
   int get hashCode =>
       (anyStyle == null ? 0 : anyStyle.hashCode) +
       (anyTag == null ? 0 : anyTag.hashCode) +
-      avatarSpecific.hashCode +
+      (avatarSpecific == null ? 0 : avatarSpecific.hashCode) +
       bannersTag.hashCode +
       categories.hashCode +
       featuredResults.hashCode +

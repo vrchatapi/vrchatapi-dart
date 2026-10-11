@@ -25,7 +25,7 @@ CreateWorldRequest _$CreateWorldRequestFromJson(
     platform: $checkedConvert('platform', (v) => v as String?),
     releaseStatus: $checkedConvert(
       'releaseStatus',
-      (v) => $enumDecodeNullable(_$ReleaseStatusEnumMap, v),
+      (v) => $enumDecodeNullable(_$CreateWorldRequestReleaseStatusEnumMap, v),
     ),
     tags: $checkedConvert(
       'tags',
@@ -52,15 +52,13 @@ Map<String, dynamic> _$CreateWorldRequestToJson(CreateWorldRequest instance) =>
       'imageUrl': instance.imageUrl,
       'name': instance.name,
       'platform': ?instance.platform,
-      'releaseStatus': ?_$ReleaseStatusEnumMap[instance.releaseStatus],
+      'releaseStatus':
+          ?_$CreateWorldRequestReleaseStatusEnumMap[instance.releaseStatus],
       'tags': ?instance.tags,
       'unityPackageUrl': ?instance.unityPackageUrl,
       'unityVersion': ?instance.unityVersion,
     };
 
-const _$ReleaseStatusEnumMap = {
-  ReleaseStatus.all: 'all',
-  ReleaseStatus.hidden: 'hidden',
-  ReleaseStatus.private: 'private',
-  ReleaseStatus.public: 'public',
+const _$CreateWorldRequestReleaseStatusEnumMap = {
+  CreateWorldRequestReleaseStatus.private: 'private',
 };

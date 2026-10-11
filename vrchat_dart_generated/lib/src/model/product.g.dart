@@ -103,8 +103,11 @@ Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
 };
 
 const _$ProductTypeEnumMap = {
+  ProductType.avatar: 'avatar',
+  ProductType.credit: 'credit',
   ProductType.inventory: 'inventory',
   ProductType.listing: 'listing',
-  ProductType.role: 'role',
+  ProductType.testBirdy: 'test_birdy',
   ProductType.udon: 'udon',
+  ProductType.role: 'role',
 };

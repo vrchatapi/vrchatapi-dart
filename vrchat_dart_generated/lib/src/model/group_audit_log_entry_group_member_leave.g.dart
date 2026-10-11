@@ -20,10 +20,10 @@ GroupAuditLogEntryGroupMemberLeave _$GroupAuditLogEntryGroupMemberLeaveFromJson(
       'actorId',
       'created_at',
       'description',
-      'eventType',
       'groupId',
       'id',
       'data',
+      'eventType',
       'targetId',
     ],
   );
@@ -35,6 +35,9 @@ GroupAuditLogEntryGroupMemberLeave _$GroupAuditLogEntryGroupMemberLeaveFromJson(
       (v) => DateTime.parse(v as String),
     ),
     description: $checkedConvert('description', (v) => v as String),
+    groupId: $checkedConvert('groupId', (v) => v as String),
+    id: $checkedConvert('id', (v) => v as String),
+    data: $checkedConvert('data', (v) => v as Object),
     eventType: $checkedConvert(
       'eventType',
       (v) => $enumDecode(
@@ -42,9 +45,6 @@ GroupAuditLogEntryGroupMemberLeave _$GroupAuditLogEntryGroupMemberLeaveFromJson(
         v,
       ),
     ),
-    groupId: $checkedConvert('groupId', (v) => v as String),
-    id: $checkedConvert('id', (v) => v as String),
-    data: $checkedConvert('data', (v) => v as Object),
     targetId: $checkedConvert('targetId', (v) => v as String),
   );
   return val;
@@ -57,12 +57,12 @@ Map<String, dynamic> _$GroupAuditLogEntryGroupMemberLeaveToJson(
   'actorId': instance.actorId,
   'created_at': instance.createdAt.toIso8601String(),
   'description': instance.description,
-  'eventType':
-      _$GroupAuditLogEntryGroupMemberLeaveEventTypeEnumEnumMap[instance
-          .eventType]!,
   'groupId': instance.groupId,
   'id': instance.id,
   'data': instance.data,
+  'eventType':
+      _$GroupAuditLogEntryGroupMemberLeaveEventTypeEnumEnumMap[instance
+          .eventType]!,
   'targetId': instance.targetId,
 };
 

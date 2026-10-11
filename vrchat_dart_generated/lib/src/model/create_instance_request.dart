@@ -5,8 +5,8 @@
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/instance_type.dart';
 import 'package:vrchat_dart_generated/src/model/instance_content_settings.dart';
-import 'package:vrchat_dart_generated/src/model/instance_region.dart';
 import 'package:vrchat_dart_generated/src/model/group_access_type.dart';
+import 'package:vrchat_dart_generated/src/model/create_instance_request_region.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -120,7 +120,7 @@ class CreateInstanceRequest {
   final bool? queueEnabled;
 
   @JsonKey(name: r'region', required: true, includeIfNull: false)
-  final InstanceRegion region;
+  final CreateInstanceRequestRegion region;
 
   /// Group roleIds that are allowed to join if the type is \"group\" and groupAccessType is \"member\"
   @JsonKey(name: r'roleIds', required: false, includeIfNull: false)

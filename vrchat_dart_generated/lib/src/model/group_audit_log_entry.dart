@@ -26,13 +26,13 @@ class GroupAuditLogEntry {
 
     required this.description,
 
-    required this.eventType,
-
     required this.groupId,
 
     required this.id,
 
     required this.data,
+
+    required this.eventType,
 
     required this.targetId,
   });
@@ -53,9 +53,6 @@ class GroupAuditLogEntry {
   @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
 
-  @JsonKey(name: r'eventType', required: true, includeIfNull: false)
-  final String eventType;
-
   @JsonKey(name: r'groupId', required: true, includeIfNull: false)
   final String groupId;
 
@@ -64,6 +61,9 @@ class GroupAuditLogEntry {
 
   @JsonKey(name: r'data', required: true, includeIfNull: false)
   final GroupAuditLogEntryData data;
+
+  @JsonKey(name: r'eventType', required: true, includeIfNull: false)
+  final String eventType;
 
   @JsonKey(name: r'targetId', required: true, includeIfNull: false)
   final String targetId;
@@ -76,10 +76,10 @@ class GroupAuditLogEntry {
           other.actorId == actorId &&
           other.createdAt == createdAt &&
           other.description == description &&
-          other.eventType == eventType &&
           other.groupId == groupId &&
           other.id == id &&
           other.data == data &&
+          other.eventType == eventType &&
           other.targetId == targetId;
 
   @override
@@ -88,10 +88,10 @@ class GroupAuditLogEntry {
       actorId.hashCode +
       createdAt.hashCode +
       description.hashCode +
-      eventType.hashCode +
       groupId.hashCode +
       id.hashCode +
       data.hashCode +
+      eventType.hashCode +
       targetId.hashCode;
 
   factory GroupAuditLogEntry.fromJson(Map<String, dynamic> json) =>

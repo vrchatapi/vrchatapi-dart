@@ -12,6 +12,14 @@ UpdateProfileRequest _$UpdateProfileRequestFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('UpdateProfileRequest', json, ($checkedConvert) {
   final val = UpdateProfileRequest(
+    backgroundGradientBottom: $checkedConvert(
+      'backgroundGradientBottom',
+      (v) => v as String?,
+    ),
+    backgroundGradientTop: $checkedConvert(
+      'backgroundGradientTop',
+      (v) => v as String?,
+    ),
     backgroundTextureId: $checkedConvert(
       'backgroundTextureId',
       (v) => v as String?,
@@ -24,10 +32,10 @@ UpdateProfileRequest _$UpdateProfileRequestFromJson(
       ),
     ),
     bannerColor: $checkedConvert('bannerColor', (v) => v as String?),
+    bannerCustomUrl: $checkedConvert('bannerCustomUrl', (v) => v as String?),
     bannerType: $checkedConvert(
       'bannerType',
-      (v) =>
-          $enumDecodeNullable(_$UpdateProfileRequestBannerTypeEnumEnumMap, v),
+      (v) => $enumDecodeNullable(_$BannerTypeEnumMap, v),
     ),
     bio: $checkedConvert('bio', (v) => v as String?),
     bioLinks: $checkedConvert(
@@ -50,12 +58,14 @@ UpdateProfileRequest _$UpdateProfileRequestFromJson(
 Map<String, dynamic> _$UpdateProfileRequestToJson(
   UpdateProfileRequest instance,
 ) => <String, dynamic>{
+  'backgroundGradientBottom': ?instance.backgroundGradientBottom,
+  'backgroundGradientTop': ?instance.backgroundGradientTop,
   'backgroundTextureId': ?instance.backgroundTextureId,
   'backgroundType':
       ?_$UpdateProfileRequestBackgroundTypeEnumEnumMap[instance.backgroundType],
   'bannerColor': ?instance.bannerColor,
-  'bannerType':
-      ?_$UpdateProfileRequestBannerTypeEnumEnumMap[instance.bannerType],
+  'bannerCustomUrl': ?instance.bannerCustomUrl,
+  'bannerType': ?_$BannerTypeEnumMap[instance.bannerType],
   'bio': ?instance.bio,
   'bioLinks': ?instance.bioLinks,
   'iconFrame': ?instance.iconFrame,
@@ -73,8 +83,8 @@ const _$UpdateProfileRequestBackgroundTypeEnumEnumMap = {
   UpdateProfileRequestBackgroundTypeEnum.texture: 'texture',
 };
 
-const _$UpdateProfileRequestBannerTypeEnumEnumMap = {
-  UpdateProfileRequestBannerTypeEnum.avatarBanner: 'avatarBanner',
-  UpdateProfileRequestBannerTypeEnum.color: 'color',
-  UpdateProfileRequestBannerTypeEnum.customImage: 'customImage',
+const _$BannerTypeEnumMap = {
+  BannerType.avatarBanner: 'avatarBanner',
+  BannerType.color: 'color',
+  BannerType.customImage: 'customImage',
 };

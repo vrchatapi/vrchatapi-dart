@@ -917,7 +917,7 @@ Name | Type | Description  | Notes
 
 Get User Feedback
 
-Get user's submitted feedback
+Get user's submitted feedback. VRChat staff note that [moderation reports](https://vrchat.community/reference/get-moderation-reports) replace the feedback system in [Feedback deprecated](https://github.com/vrchatapi/specification/issues/535), December 5, 2025.
 
 ### Example
 ```dart
@@ -1399,7 +1399,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **searchUsers**
-> List<LimitedUserSearch> searchUsers(search, developerType, n, offset, isInternalVariant)
+> List<LimitedUserSearch> searchUsers(search, developerType, sort, customFields, n, offset, isInternalVariant)
 
 Search All Users
 
@@ -1416,12 +1416,14 @@ import 'package:vrchat_dart_generated/api.dart';
 final api = VrchatDartGenerated().getUsersApi();
 final String search = search_example; // String | Searches by `displayName`. Will return empty array if search query is empty or missing.
 final String developerType = developerType_example; // String | Active user by developer type, none for normal users and internal for moderators
+final UserSearchSort sort = ; // UserSearchSort | The order to return users in.
+final String customFields = customFields_example; // String | A comma-separated list of field names.
 final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final bool isInternalVariant = false; // bool | Not quite sure what this actually does (exists on the website but doesn't seem to be used)
 
 try {
-    final response = api.searchUsers(search, developerType, n, offset, isInternalVariant);
+    final response = api.searchUsers(search, developerType, sort, customFields, n, offset, isInternalVariant);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling UsersApi->searchUsers: $e\n');
@@ -1434,6 +1436,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **search** | **String**| Searches by `displayName`. Will return empty array if search query is empty or missing. | [optional] 
  **developerType** | **String**| Active user by developer type, none for normal users and internal for moderators | [optional] 
+ **sort** | [**UserSearchSort**](.md)| The order to return users in. | [optional] 
+ **customFields** | **String**| A comma-separated list of field names. | [optional] 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
  **isInternalVariant** | **bool**| Not quite sure what this actually does (exists on the website but doesn't seem to be used) | [optional] 

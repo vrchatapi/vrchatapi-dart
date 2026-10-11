@@ -9,7 +9,7 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **extension_** | **String** |  | 
-**mimeType** | [**MIMEType**](MIMEType.md) |  | 
+**mimeType** | [**CreateFileRequestMIMEType**](CreateFileRequestMIMEType.md) |  | 
 **name** | **String** |  | 
 **tags** | **List&lt;String&gt;** |  | [optional] 
 

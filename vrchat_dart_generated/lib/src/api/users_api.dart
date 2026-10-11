@@ -32,6 +32,7 @@ import 'package:vrchat_dart_generated/src/model/user_client_config.dart';
 import 'package:vrchat_dart_generated/src/model/user_group_instance_list_response.dart';
 import 'package:vrchat_dart_generated/src/model/user_note.dart';
 import 'package:vrchat_dart_generated/src/model/user_response.dart';
+import 'package:vrchat_dart_generated/src/model/user_search_sort.dart';
 
 class UsersApi {
   final Dio _dio;
@@ -1594,7 +1595,7 @@ class UsersApi {
   }
 
   /// Get User Feedback
-  /// Get user&#39;s submitted feedback
+  /// Get user&#39;s submitted feedback. VRChat staff note that [moderation reports](https://vrchat.community/reference/get-moderation-reports) replace the feedback system in [Feedback deprecated](https://github.com/vrchatapi/specification/issues/535), December 5, 2025.
   ///
   /// Parameters:
   /// * [userId] - Must be a valid user ID.
@@ -1610,6 +1611,7 @@ class UsersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [List<Feedback>] as data
   /// Throws [DioException] if API call or serialization fails
+  @Deprecated('This operation has been deprecated')
   Future<Response<List<Feedback>>> getUserFeedback({
     required String userId,
     String? contentId,
@@ -2518,6 +2520,8 @@ class UsersApi {
   /// Parameters:
   /// * [search] - Searches by `displayName`. Will return empty array if search query is empty or missing.
   /// * [developerType] - Active user by developer type, none for normal users and internal for moderators
+  /// * [sort] - The order to return users in.
+  /// * [customFields] - A comma-separated list of field names.
   /// * [n] - The number of objects to return.
   /// * [offset] - A zero-based offset from the default object sorting from where search results start.
   /// * [isInternalVariant] - Not quite sure what this actually does (exists on the website but doesn't seem to be used)
@@ -2533,6 +2537,8 @@ class UsersApi {
   Future<Response<List<LimitedUserSearch>>> searchUsers({
     String? search,
     String? developerType,
+    UserSearchSort? sort,
+    String? customFields,
     int? n = 60,
     int? offset,
     bool? isInternalVariant,
@@ -2564,6 +2570,8 @@ class UsersApi {
     final _queryParameters = <String, dynamic>{
       if (search != null) r'search': search,
       if (developerType != null) r'developerType': developerType,
+      if (sort != null) r'sort': sort,
+      if (customFields != null) r'customFields': customFields,
       if (n != null) r'n': n,
       if (offset != null) r'offset': offset,
       if (isInternalVariant != null) r'isInternalVariant': isInternalVariant,

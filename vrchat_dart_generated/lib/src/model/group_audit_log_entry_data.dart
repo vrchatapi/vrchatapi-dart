@@ -4,12 +4,14 @@
 
 // ignore_for_file: unused_element
 import 'package:vrchat_dart_generated/src/model/calendar_event_recurrence.dart';
+import 'package:vrchat_dart_generated/src/model/group_privacy.dart';
 import 'package:vrchat_dart_generated/src/model/calendar_event_occurrence_kind.dart';
+import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_create_discoverability.dart';
 import 'package:vrchat_dart_generated/src/model/group_post_visibility.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_string_list_change.dart';
 import 'package:vrchat_dart_generated/src/model/calendar_event_access.dart';
 import 'package:vrchat_dart_generated/src/model/group_access_type.dart';
-import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_join_state_change.dart';
+import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_create_gallery.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_string_change.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_boolean_change.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_file_id_change.dart';
@@ -91,9 +93,27 @@ class GroupAuditLogEntryData {
 
     this.usesInstanceOverflow,
 
-    this.membersOnly,
+    this.bannerId,
+
+    this.bannerVersion,
+
+    this.discoverability,
+
+    this.galleries,
+
+    this.iconId,
+
+    this.iconVersion,
+
+    this.joinState,
 
     this.name,
+
+    this.privacy,
+
+    this.rules,
+
+    this.membersOnly,
 
     this.roleIdsToAutoApprove,
 
@@ -145,17 +165,9 @@ class GroupAuditLogEntryData {
 
     this.allowGroupJoinPrompt,
 
-    this.bannerId,
-
-    this.iconId,
-
-    this.joinState,
-
     this.links,
 
     this.nameplateId,
-
-    this.rules,
   });
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
@@ -278,11 +290,38 @@ class GroupAuditLogEntryData {
   @JsonKey(name: r'usesInstanceOverflow', required: false, includeIfNull: false)
   final bool? usesInstanceOverflow;
 
-  @JsonKey(name: r'membersOnly', required: false, includeIfNull: false)
-  final Object? membersOnly;
+  @JsonKey(name: r'bannerId', required: false, includeIfNull: false)
+  final Object? bannerId;
+
+  @JsonKey(name: r'bannerVersion', required: false, includeIfNull: false)
+  final int? bannerVersion;
+
+  @JsonKey(name: r'discoverability', required: false, includeIfNull: false)
+  final GroupAuditLogEntryDataGroupCreateDiscoverability? discoverability;
+
+  @JsonKey(name: r'galleries', required: false, includeIfNull: false)
+  final List<GroupAuditLogEntryDataGroupCreateGallery>? galleries;
+
+  @JsonKey(name: r'iconId', required: false, includeIfNull: false)
+  final Object? iconId;
+
+  @JsonKey(name: r'iconVersion', required: false, includeIfNull: false)
+  final int? iconVersion;
+
+  @JsonKey(name: r'joinState', required: false, includeIfNull: false)
+  final Object? joinState;
 
   @JsonKey(name: r'name', required: false, includeIfNull: false)
   final Object? name;
+
+  @JsonKey(name: r'privacy', required: false, includeIfNull: false)
+  final GroupPrivacy? privacy;
+
+  @JsonKey(name: r'rules', required: false, includeIfNull: false)
+  final Object? rules;
+
+  @JsonKey(name: r'membersOnly', required: false, includeIfNull: false)
+  final Object? membersOnly;
 
   /// The role IDs whose submissions are approved automatically.
   @JsonKey(name: r'roleIdsToAutoApprove', required: false, includeIfNull: false)
@@ -350,9 +389,8 @@ class GroupAuditLogEntryData {
   @JsonKey(name: r'requiresPurchase', required: false, includeIfNull: false)
   final bool? requiresPurchase;
 
-  /// Whether the role requires two-factor authentication.
   @JsonKey(name: r'requiresTwoFactor', required: false, includeIfNull: false)
-  final bool? requiresTwoFactor;
+  final Object? requiresTwoFactor;
 
   @JsonKey(name: r'groupId', required: false, includeIfNull: false)
   final String? groupId;
@@ -372,23 +410,11 @@ class GroupAuditLogEntryData {
   @JsonKey(name: r'allowGroupJoinPrompt', required: false, includeIfNull: false)
   final GroupAuditLogEntryBooleanChange? allowGroupJoinPrompt;
 
-  @JsonKey(name: r'bannerId', required: false, includeIfNull: false)
-  final GroupAuditLogEntryFileIDChange? bannerId;
-
-  @JsonKey(name: r'iconId', required: false, includeIfNull: false)
-  final GroupAuditLogEntryFileIDChange? iconId;
-
-  @JsonKey(name: r'joinState', required: false, includeIfNull: false)
-  final GroupAuditLogEntryJoinStateChange? joinState;
-
   @JsonKey(name: r'links', required: false, includeIfNull: false)
   final GroupAuditLogEntryStringListChange? links;
 
   @JsonKey(name: r'nameplateId', required: false, includeIfNull: false)
   final GroupAuditLogEntryFileIDChange? nameplateId;
-
-  @JsonKey(name: r'rules', required: false, includeIfNull: false)
-  final GroupAuditLogEntryStringChange? rules;
 
   @override
   bool operator ==(Object other) =>
@@ -426,8 +452,17 @@ class GroupAuditLogEntryData {
           other.tags == tags &&
           other.updatedAt == updatedAt &&
           other.usesInstanceOverflow == usesInstanceOverflow &&
-          other.membersOnly == membersOnly &&
+          other.bannerId == bannerId &&
+          other.bannerVersion == bannerVersion &&
+          other.discoverability == discoverability &&
+          other.galleries == galleries &&
+          other.iconId == iconId &&
+          other.iconVersion == iconVersion &&
+          other.joinState == joinState &&
           other.name == name &&
+          other.privacy == privacy &&
+          other.rules == rules &&
+          other.membersOnly == membersOnly &&
           other.roleIdsToAutoApprove == roleIdsToAutoApprove &&
           other.roleIdsToManage == roleIdsToManage &&
           other.roleIdsToSubmit == roleIdsToSubmit &&
@@ -453,12 +488,8 @@ class GroupAuditLogEntryData {
           other.defaultRole == defaultRole &&
           other.isManagementRole == isManagementRole &&
           other.allowGroupJoinPrompt == allowGroupJoinPrompt &&
-          other.bannerId == bannerId &&
-          other.iconId == iconId &&
-          other.joinState == joinState &&
           other.links == links &&
-          other.nameplateId == nameplateId &&
-          other.rules == rules;
+          other.nameplateId == nameplateId;
 
   @override
   int get hashCode =>
@@ -494,8 +525,17 @@ class GroupAuditLogEntryData {
       (tags == null ? 0 : tags.hashCode) +
       updatedAt.hashCode +
       usesInstanceOverflow.hashCode +
-      (membersOnly == null ? 0 : membersOnly.hashCode) +
+      (bannerId == null ? 0 : bannerId.hashCode) +
+      bannerVersion.hashCode +
+      discoverability.hashCode +
+      galleries.hashCode +
+      (iconId == null ? 0 : iconId.hashCode) +
+      iconVersion.hashCode +
+      (joinState == null ? 0 : joinState.hashCode) +
       (name == null ? 0 : name.hashCode) +
+      privacy.hashCode +
+      (rules == null ? 0 : rules.hashCode) +
+      (membersOnly == null ? 0 : membersOnly.hashCode) +
       (roleIdsToAutoApprove == null ? 0 : roleIdsToAutoApprove.hashCode) +
       (roleIdsToManage == null ? 0 : roleIdsToManage.hashCode) +
       (roleIdsToSubmit == null ? 0 : roleIdsToSubmit.hashCode) +
@@ -515,18 +555,14 @@ class GroupAuditLogEntryData {
       (order == null ? 0 : order.hashCode) +
       (permissions == null ? 0 : permissions.hashCode) +
       requiresPurchase.hashCode +
-      requiresTwoFactor.hashCode +
+      (requiresTwoFactor == null ? 0 : requiresTwoFactor.hashCode) +
       groupId.hashCode +
       lastUpdatedByUserId.hashCode +
       defaultRole.hashCode +
       isManagementRole.hashCode +
       allowGroupJoinPrompt.hashCode +
-      bannerId.hashCode +
-      iconId.hashCode +
-      joinState.hashCode +
       links.hashCode +
-      nameplateId.hashCode +
-      rules.hashCode;
+      nameplateId.hashCode;
 
   factory GroupAuditLogEntryData.fromJson(Map<String, dynamic> json) =>
       _$GroupAuditLogEntryDataFromJson(json);

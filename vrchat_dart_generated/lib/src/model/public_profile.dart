@@ -6,10 +6,12 @@
 import 'package:vrchat_dart_generated/src/model/limited_world.dart';
 import 'package:vrchat_dart_generated/src/model/profile_represented_group.dart';
 import 'package:vrchat_dart_generated/src/model/world_favorite_list.dart';
+import 'package:vrchat_dart_generated/src/model/banner_type.dart';
 import 'package:vrchat_dart_generated/src/model/user_status.dart';
 import 'package:vrchat_dart_generated/src/model/profile_groups.dart';
 import 'package:vrchat_dart_generated/src/model/badge.dart';
 import 'package:vrchat_dart_generated/src/model/age_verification_status.dart';
+import 'package:vrchat_dart_generated/src/model/profile_theme.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -162,7 +164,7 @@ class PublicProfile {
   final String? bannerCustomUrl;
 
   @JsonKey(name: r'bannerType', required: false, includeIfNull: false)
-  final String? bannerType;
+  final BannerType? bannerType;
 
   @JsonKey(name: r'bannerUrl', required: false, includeIfNull: false)
   final String? bannerUrl;
@@ -270,7 +272,7 @@ class PublicProfile {
   final String? themeSubtextColor;
 
   @JsonKey(name: r'themes', required: false, includeIfNull: false)
-  final List<Object>? themes;
+  final List<ProfileTheme>? themes;
 
   @JsonKey(
     name: r'totalPublicWorldsCount',

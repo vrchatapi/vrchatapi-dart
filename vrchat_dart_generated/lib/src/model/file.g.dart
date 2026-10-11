@@ -139,7 +139,7 @@ const _$MIMETypeEnumMap = {
   MIMEType.imageSlashJpeg: 'image/jpeg',
   MIMEType.imageSlashJpg: 'image/jpg',
   MIMEType.imageSlashPng: 'image/png',
-  MIMEType.imageSlashSvgxml: 'image/svg＋xml',
+  MIMEType.imageSlashSvgPlusXml: 'image/svg+xml',
   MIMEType.imageSlashTiff: 'image/tiff',
   MIMEType.imageSlashWebp: 'image/webp',
 };

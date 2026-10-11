@@ -18,7 +18,6 @@ GroupAuditLogEntryBase _$GroupAuditLogEntryBaseFromJson(
       'actorId',
       'created_at',
       'description',
-      'eventType',
       'groupId',
       'id',
     ],
@@ -31,10 +30,6 @@ GroupAuditLogEntryBase _$GroupAuditLogEntryBaseFromJson(
       (v) => DateTime.parse(v as String),
     ),
     description: $checkedConvert('description', (v) => v as String),
-    eventType: $checkedConvert(
-      'eventType',
-      (v) => v as String? ?? 'group.update',
-    ),
     groupId: $checkedConvert('groupId', (v) => v as String),
     id: $checkedConvert('id', (v) => v as String),
   );
@@ -48,7 +43,6 @@ Map<String, dynamic> _$GroupAuditLogEntryBaseToJson(
   'actorId': instance.actorId,
   'created_at': instance.createdAt.toIso8601String(),
   'description': instance.description,
-  'eventType': instance.eventType,
   'groupId': instance.groupId,
   'id': instance.id,
 };

@@ -53,6 +53,12 @@ _$GroupAuditLogEntryDataGroupRoleUpdateFromJson(
               v as Map<String, dynamic>,
             ),
     ),
+    requiresTwoFactor: $checkedConvert(
+      'requiresTwoFactor',
+      (v) => v == null
+          ? null
+          : GroupAuditLogEntryBooleanChange.fromJson(v as Map<String, dynamic>),
+    ),
   );
   return val;
 });
@@ -66,4 +72,5 @@ Map<String, dynamic> _$GroupAuditLogEntryDataGroupRoleUpdateToJson(
   'name': ?instance.name?.toJson(),
   'order': ?instance.order?.toJson(),
   'permissions': ?instance.permissions?.toJson(),
+  'requiresTwoFactor': ?instance.requiresTwoFactor?.toJson(),
 };

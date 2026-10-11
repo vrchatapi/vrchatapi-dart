@@ -55,7 +55,10 @@ CurrentUserLoginResponse _$CurrentUserLoginResponseFromJson(
       appleId: $checkedConvert('appleId', (v) => v as String?),
       authToken: $checkedConvert('authToken', (v) => v as String?),
       bannerColor: $checkedConvert('bannerColor', (v) => v as String?),
-      bannerType: $checkedConvert('bannerType', (v) => v as String?),
+      bannerType: $checkedConvert(
+        'bannerType',
+        (v) => $enumDecodeNullable(_$BannerTypeEnumMap, v),
+      ),
       bannerUrl: $checkedConvert('bannerUrl', (v) => v as String?),
       completedTutorials: $checkedConvert(
         'completedTutorials',
@@ -317,7 +320,7 @@ Map<String, dynamic> _$CurrentUserLoginResponseToJson(
   'appleId': ?instance.appleId,
   'authToken': ?instance.authToken,
   'bannerColor': ?instance.bannerColor,
-  'bannerType': ?instance.bannerType,
+  'bannerType': ?_$BannerTypeEnumMap[instance.bannerType],
   'bannerUrl': ?instance.bannerUrl,
   'completedTutorials': ?instance.completedTutorials,
   'contentFilters': ?instance.contentFilters,
@@ -416,6 +419,12 @@ const _$AgeVerificationStatusEnumMap = {
   AgeVerificationStatus.plus18: '18+',
   AgeVerificationStatus.hidden: 'hidden',
   AgeVerificationStatus.verified: 'verified',
+};
+
+const _$BannerTypeEnumMap = {
+  BannerType.avatarBanner: 'avatarBanner',
+  BannerType.color: 'color',
+  BannerType.customImage: 'customImage',
 };
 
 const _$DeveloperTypeEnumMap = {

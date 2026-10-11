@@ -8,10 +8,13 @@ import 'package:vrchat_dart_generated/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**backgroundGradientBottom** | **String** | Six hexadecimal digits, without a leading `#`. May be empty. | [optional] 
+**backgroundGradientTop** | **String** | Six hexadecimal digits, without a leading `#`. May be empty. | [optional] 
 **backgroundTextureId** | **String** |  | [optional] 
 **backgroundType** | **String** |  | [optional] 
 **bannerColor** | **String** | Six hexadecimal digits, without a leading `#`. May be empty. | [optional] 
-**bannerType** | **String** |  | [optional] 
+**bannerCustomUrl** | **String** |  | [optional] 
+**bannerType** | [**BannerType**](BannerType.md) |  | [optional] 
 **bio** | **String** |  | [optional] 
 **bioLinks** | **List&lt;String&gt;** |  | [optional] 
 **iconFrame** | **String** |  | [optional] 

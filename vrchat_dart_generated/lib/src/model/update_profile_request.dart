@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/banner_type.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -17,11 +18,17 @@ part 'update_profile_request.g.dart';
 class UpdateProfileRequest {
   /// Returns a new [UpdateProfileRequest] instance.
   UpdateProfileRequest({
+    this.backgroundGradientBottom,
+
+    this.backgroundGradientTop,
+
     this.backgroundTextureId,
 
     this.backgroundType,
 
     this.bannerColor,
+
+    this.bannerCustomUrl,
 
     this.bannerType,
 
@@ -42,6 +49,22 @@ class UpdateProfileRequest {
     this.userIcon,
   });
 
+  /// Six hexadecimal digits, without a leading `#`. May be empty.
+  @JsonKey(
+    name: r'backgroundGradientBottom',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? backgroundGradientBottom;
+
+  /// Six hexadecimal digits, without a leading `#`. May be empty.
+  @JsonKey(
+    name: r'backgroundGradientTop',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? backgroundGradientTop;
+
   @JsonKey(name: r'backgroundTextureId', required: false, includeIfNull: false)
   final String? backgroundTextureId;
 
@@ -52,8 +75,11 @@ class UpdateProfileRequest {
   @JsonKey(name: r'bannerColor', required: false, includeIfNull: false)
   final String? bannerColor;
 
+  @JsonKey(name: r'bannerCustomUrl', required: false, includeIfNull: false)
+  final String? bannerCustomUrl;
+
   @JsonKey(name: r'bannerType', required: false, includeIfNull: false)
-  final UpdateProfileRequestBannerTypeEnum? bannerType;
+  final BannerType? bannerType;
 
   @JsonKey(name: r'bio', required: false, includeIfNull: false)
   final String? bio;
@@ -83,9 +109,12 @@ class UpdateProfileRequest {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is UpdateProfileRequest &&
+          other.backgroundGradientBottom == backgroundGradientBottom &&
+          other.backgroundGradientTop == backgroundGradientTop &&
           other.backgroundTextureId == backgroundTextureId &&
           other.backgroundType == backgroundType &&
           other.bannerColor == bannerColor &&
+          other.bannerCustomUrl == bannerCustomUrl &&
           other.bannerType == bannerType &&
           other.bio == bio &&
           other.bioLinks == bioLinks &&
@@ -98,9 +127,12 @@ class UpdateProfileRequest {
 
   @override
   int get hashCode =>
+      backgroundGradientBottom.hashCode +
+      backgroundGradientTop.hashCode +
       backgroundTextureId.hashCode +
       backgroundType.hashCode +
       bannerColor.hashCode +
+      bannerCustomUrl.hashCode +
       bannerType.hashCode +
       bio.hashCode +
       bioLinks.hashCode +
@@ -133,22 +165,6 @@ enum UpdateProfileRequestBackgroundTypeEnum {
   texture(r'texture');
 
   const UpdateProfileRequestBackgroundTypeEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
-}
-
-enum UpdateProfileRequestBannerTypeEnum {
-  @JsonValue(r'avatarBanner')
-  avatarBanner(r'avatarBanner'),
-  @JsonValue(r'color')
-  color(r'color'),
-  @JsonValue(r'customImage')
-  customImage(r'customImage');
-
-  const UpdateProfileRequestBannerTypeEnum(this.value);
 
   final String value;
 

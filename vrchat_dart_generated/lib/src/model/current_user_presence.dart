@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vrchat_dart_generated/src/model/banner_type.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -82,7 +83,7 @@ class CurrentUserPresence {
   final String? bannerColor;
 
   @JsonKey(name: r'bannerType', required: false, includeIfNull: false)
-  final String? bannerType;
+  final BannerType? bannerType;
 
   @JsonKey(name: r'bannerUrl', required: false, includeIfNull: false)
   final String? bannerUrl;

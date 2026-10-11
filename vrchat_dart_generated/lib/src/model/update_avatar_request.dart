@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:vrchat_dart_generated/src/model/release_status.dart';
+import 'package:vrchat_dart_generated/src/model/update_avatar_request_release_status.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -55,7 +55,7 @@ class UpdateAvatarRequest {
   final String? name;
 
   @JsonKey(name: r'releaseStatus', required: false, includeIfNull: false)
-  final ReleaseStatus? releaseStatus;
+  final UpdateAvatarRequestReleaseStatus? releaseStatus;
 
   @JsonKey(name: r'tags', required: false, includeIfNull: false)
   final List<String>? tags;

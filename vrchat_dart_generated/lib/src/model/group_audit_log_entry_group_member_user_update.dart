@@ -26,13 +26,13 @@ class GroupAuditLogEntryGroupMemberUserUpdate {
 
     required this.description,
 
-    required this.eventType,
-
     required this.groupId,
 
     required this.id,
 
     required this.data,
+
+    required this.eventType,
 
     required this.targetId,
   });
@@ -53,9 +53,6 @@ class GroupAuditLogEntryGroupMemberUserUpdate {
   @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
 
-  @JsonKey(name: r'eventType', required: true, includeIfNull: false)
-  final GroupAuditLogEntryGroupMemberUserUpdateEventTypeEnum eventType;
-
   @JsonKey(name: r'groupId', required: true, includeIfNull: false)
   final String groupId;
 
@@ -64,6 +61,9 @@ class GroupAuditLogEntryGroupMemberUserUpdate {
 
   @JsonKey(name: r'data', required: true, includeIfNull: false)
   final GroupAuditLogEntryDataGroupMemberUserUpdate data;
+
+  @JsonKey(name: r'eventType', required: true, includeIfNull: false)
+  final GroupAuditLogEntryGroupMemberUserUpdateEventTypeEnum eventType;
 
   /// A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.
   @JsonKey(name: r'targetId', required: true, includeIfNull: false)
@@ -77,10 +77,10 @@ class GroupAuditLogEntryGroupMemberUserUpdate {
           other.actorId == actorId &&
           other.createdAt == createdAt &&
           other.description == description &&
-          other.eventType == eventType &&
           other.groupId == groupId &&
           other.id == id &&
           other.data == data &&
+          other.eventType == eventType &&
           other.targetId == targetId;
 
   @override
@@ -89,10 +89,10 @@ class GroupAuditLogEntryGroupMemberUserUpdate {
       actorId.hashCode +
       createdAt.hashCode +
       description.hashCode +
-      eventType.hashCode +
       groupId.hashCode +
       id.hashCode +
       data.hashCode +
+      eventType.hashCode +
       targetId.hashCode;
 
   factory GroupAuditLogEntryGroupMemberUserUpdate.fromJson(

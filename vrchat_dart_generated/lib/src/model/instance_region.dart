@@ -16,16 +16,16 @@ enum InstanceRegion {
   jp(r'jp'),
 
   /// Instance region
-  @JsonValue(r'unknown')
-  unknown(r'unknown'),
-
-  /// Instance region
   @JsonValue(r'us')
   us(r'us'),
 
   /// Instance region
   @JsonValue(r'use')
-  use(r'use');
+  use(r'use'),
+
+  /// Instance region
+  @JsonValue(r'unknown')
+  unknown(r'unknown');
 
   const InstanceRegion(this.value);
 

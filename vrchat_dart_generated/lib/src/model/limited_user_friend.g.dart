@@ -34,7 +34,10 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
         );
         final val = LimitedUserFriend(
           bannerColor: $checkedConvert('bannerColor', (v) => v as String?),
-          bannerType: $checkedConvert('bannerType', (v) => v as String?),
+          bannerType: $checkedConvert(
+            'bannerType',
+            (v) => $enumDecodeNullable(_$BannerTypeEnumMap, v),
+          ),
           bannerUrl: $checkedConvert('bannerUrl', (v) => v as String?),
           currentAvatarImageUrl: $checkedConvert(
             'currentAvatarImageUrl',
@@ -97,7 +100,7 @@ LimitedUserFriend _$LimitedUserFriendFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$LimitedUserFriendToJson(LimitedUserFriend instance) =>
     <String, dynamic>{
       'bannerColor': ?instance.bannerColor,
-      'bannerType': ?instance.bannerType,
+      'bannerType': ?_$BannerTypeEnumMap[instance.bannerType],
       'bannerUrl': ?instance.bannerUrl,
       'currentAvatarImageUrl': ?instance.currentAvatarImageUrl,
       'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
@@ -120,6 +123,12 @@ Map<String, dynamic> _$LimitedUserFriendToJson(LimitedUserFriend instance) =>
       'statusDescription': instance.statusDescription,
       'tags': instance.tags,
     };
+
+const _$BannerTypeEnumMap = {
+  BannerType.avatarBanner: 'avatarBanner',
+  BannerType.color: 'color',
+  BannerType.customImage: 'customImage',
+};
 
 const _$DeveloperTypeEnumMap = {
   DeveloperType.internal: 'internal',

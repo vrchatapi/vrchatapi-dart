@@ -32,6 +32,8 @@ class GroupAuditLogEntryDataGroupRoleUpdate {
     this.order,
 
     this.permissions,
+
+    this.requiresTwoFactor,
   });
 
   @JsonKey(name: r'description', required: false, includeIfNull: false)
@@ -52,6 +54,9 @@ class GroupAuditLogEntryDataGroupRoleUpdate {
   @JsonKey(name: r'permissions', required: false, includeIfNull: false)
   final GroupAuditLogEntryStringListChange? permissions;
 
+  @JsonKey(name: r'requiresTwoFactor', required: false, includeIfNull: false)
+  final GroupAuditLogEntryBooleanChange? requiresTwoFactor;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -61,7 +66,8 @@ class GroupAuditLogEntryDataGroupRoleUpdate {
           other.isSelfAssignable == isSelfAssignable &&
           other.name == name &&
           other.order == order &&
-          other.permissions == permissions;
+          other.permissions == permissions &&
+          other.requiresTwoFactor == requiresTwoFactor;
 
   @override
   int get hashCode =>
@@ -70,7 +76,8 @@ class GroupAuditLogEntryDataGroupRoleUpdate {
       isSelfAssignable.hashCode +
       name.hashCode +
       order.hashCode +
-      permissions.hashCode;
+      permissions.hashCode +
+      requiresTwoFactor.hashCode;
 
   factory GroupAuditLogEntryDataGroupRoleUpdate.fromJson(
     Map<String, dynamic> json,

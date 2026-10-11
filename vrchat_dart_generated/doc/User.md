@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **allowAvatarCopying** | **bool** |  | [default to true]
 **appleDetails** | **Object** | Details of an account on another service linked to this one. | [optional] 
 **bannerColor** | **String** | Six hexadecimal digits, without a leading `#`. May be empty. | [optional] 
-**bannerType** | **String** |  | [optional] 
+**bannerType** | [**BannerType**](BannerType.md) |  | [optional] 
 **bannerUrl** | **String** |  | [optional] 
 **dateJoined** | [**DateTime**](DateTime.md) |  | 
 **developerType** | [**DeveloperType**](DeveloperType.md) |  | 

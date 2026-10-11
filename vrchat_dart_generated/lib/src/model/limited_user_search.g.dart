@@ -26,7 +26,10 @@ LimitedUserSearch _$LimitedUserSearchFromJson(
   );
   final val = LimitedUserSearch(
     bannerColor: $checkedConvert('bannerColor', (v) => v as String?),
-    bannerType: $checkedConvert('bannerType', (v) => v as String?),
+    bannerType: $checkedConvert(
+      'bannerType',
+      (v) => $enumDecodeNullable(_$BannerTypeEnumMap, v),
+    ),
     bannerUrl: $checkedConvert('bannerUrl', (v) => v as String?),
     developerType: $checkedConvert(
       'developerType',
@@ -57,7 +60,7 @@ LimitedUserSearch _$LimitedUserSearchFromJson(
 Map<String, dynamic> _$LimitedUserSearchToJson(LimitedUserSearch instance) =>
     <String, dynamic>{
       'bannerColor': ?instance.bannerColor,
-      'bannerType': ?instance.bannerType,
+      'bannerType': ?_$BannerTypeEnumMap[instance.bannerType],
       'bannerUrl': ?instance.bannerUrl,
       'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
       'displayName': instance.displayName,
@@ -73,6 +76,12 @@ Map<String, dynamic> _$LimitedUserSearchToJson(LimitedUserSearch instance) =>
       'statusDescription': instance.statusDescription,
       'tags': instance.tags,
     };
+
+const _$BannerTypeEnumMap = {
+  BannerType.avatarBanner: 'avatarBanner',
+  BannerType.color: 'color',
+  BannerType.customImage: 'customImage',
+};
 
 const _$DeveloperTypeEnumMap = {
   DeveloperType.internal: 'internal',

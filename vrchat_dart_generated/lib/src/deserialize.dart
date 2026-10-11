@@ -22,6 +22,7 @@ import 'package:vrchat_dart_generated/src/model/api_config_offline_analysis.dart
 import 'package:vrchat_dart_generated/src/model/api_config_profile_defaults.dart';
 import 'package:vrchat_dart_generated/src/model/api_health.dart';
 import 'package:vrchat_dart_generated/src/model/account_deletion_log.dart';
+import 'package:vrchat_dart_generated/src/model/account_standing.dart';
 import 'package:vrchat_dart_generated/src/model/add_favorite_request.dart';
 import 'package:vrchat_dart_generated/src/model/add_group_gallery_image_request.dart';
 import 'package:vrchat_dart_generated/src/model/admin_asset_bundle.dart';
@@ -119,6 +120,9 @@ import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data.dart'
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_announcement.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_calendar_event_create.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_calendar_event_delete.dart';
+import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_create.dart';
+import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_create_discoverability.dart';
+import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_create_gallery.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_gallery_create.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_gallery_delete.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_data_group_gallery_update.dart';
@@ -141,6 +145,7 @@ import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_file_id_ch
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_group_announcement.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_group_calendar_event_create.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_group_calendar_event_delete.dart';
+import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_group_create.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_group_gallery_create.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_group_gallery_delete.dart';
 import 'package:vrchat_dart_generated/src/model/group_audit_log_entry_group_gallery_update.dart';
@@ -217,6 +222,7 @@ import 'package:vrchat_dart_generated/src/model/info_push_ips_query.dart';
 import 'package:vrchat_dart_generated/src/model/instance.dart';
 import 'package:vrchat_dart_generated/src/model/instance_category.dart';
 import 'package:vrchat_dart_generated/src/model/instance_content_settings.dart';
+import 'package:vrchat_dart_generated/src/model/instance_discovery.dart';
 import 'package:vrchat_dart_generated/src/model/instance_platforms.dart';
 import 'package:vrchat_dart_generated/src/model/instance_short_name_response.dart';
 import 'package:vrchat_dart_generated/src/model/instance_vibe.dart';
@@ -243,6 +249,7 @@ import 'package:vrchat_dart_generated/src/model/join_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/license.dart';
 import 'package:vrchat_dart_generated/src/model/license_group.dart';
 import 'package:vrchat_dart_generated/src/model/limited_group.dart';
+import 'package:vrchat_dart_generated/src/model/limited_instance.dart';
 import 'package:vrchat_dart_generated/src/model/limited_unity_package.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user_friend.dart';
 import 'package:vrchat_dart_generated/src/model/limited_user_groups.dart';
@@ -255,12 +262,21 @@ import 'package:vrchat_dart_generated/src/model/moderation_report.dart';
 import 'package:vrchat_dart_generated/src/model/mutual_friend.dart';
 import 'package:vrchat_dart_generated/src/model/mutuals.dart';
 import 'package:vrchat_dart_generated/src/model/notification.dart';
+import 'package:vrchat_dart_generated/src/model/notification_base.dart';
+import 'package:vrchat_dart_generated/src/model/notification_boop.dart';
 import 'package:vrchat_dart_generated/src/model/notification_detail_boop.dart';
 import 'package:vrchat_dart_generated/src/model/notification_detail_invite.dart';
 import 'package:vrchat_dart_generated/src/model/notification_detail_invite_response.dart';
 import 'package:vrchat_dart_generated/src/model/notification_detail_request_invite.dart';
 import 'package:vrchat_dart_generated/src/model/notification_detail_request_invite_response.dart';
 import 'package:vrchat_dart_generated/src/model/notification_detail_vote_to_kick.dart';
+import 'package:vrchat_dart_generated/src/model/notification_friend_request.dart';
+import 'package:vrchat_dart_generated/src/model/notification_invite.dart';
+import 'package:vrchat_dart_generated/src/model/notification_invite_response.dart';
+import 'package:vrchat_dart_generated/src/model/notification_message.dart';
+import 'package:vrchat_dart_generated/src/model/notification_request_invite.dart';
+import 'package:vrchat_dart_generated/src/model/notification_request_invite_response.dart';
+import 'package:vrchat_dart_generated/src/model/notification_unknown.dart';
 import 'package:vrchat_dart_generated/src/model/notification_v2.dart';
 import 'package:vrchat_dart_generated/src/model/notification_v2_data.dart';
 import 'package:vrchat_dart_generated/src/model/notification_v2_data_badge_earned.dart';
@@ -271,6 +287,7 @@ import 'package:vrchat_dart_generated/src/model/notification_v2_data_group_infor
 import 'package:vrchat_dart_generated/src/model/notification_v2_data_group_transfer.dart';
 import 'package:vrchat_dart_generated/src/model/notification_v2_details_boop.dart';
 import 'package:vrchat_dart_generated/src/model/notification_v2_response.dart';
+import 'package:vrchat_dart_generated/src/model/notification_vote_to_kick.dart';
 import 'package:vrchat_dart_generated/src/model/o_auth_redirect_code.dart';
 import 'package:vrchat_dart_generated/src/model/ok_status.dart';
 import 'package:vrchat_dart_generated/src/model/ok_status2.dart';
@@ -302,6 +319,7 @@ import 'package:vrchat_dart_generated/src/model/product_purchase_record.dart';
 import 'package:vrchat_dart_generated/src/model/profile_group.dart';
 import 'package:vrchat_dart_generated/src/model/profile_groups.dart';
 import 'package:vrchat_dart_generated/src/model/profile_represented_group.dart';
+import 'package:vrchat_dart_generated/src/model/profile_theme.dart';
 import 'package:vrchat_dart_generated/src/model/prop.dart';
 import 'package:vrchat_dart_generated/src/model/prop_publish_status.dart';
 import 'package:vrchat_dart_generated/src/model/prop_unity_package.dart';
@@ -363,6 +381,7 @@ import 'package:vrchat_dart_generated/src/model/update_group_member_request.dart
 import 'package:vrchat_dart_generated/src/model/update_group_representation_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_group_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_group_role_request.dart';
+import 'package:vrchat_dart_generated/src/model/update_instance_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_inventory_item_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_invite_message_request.dart';
 import 'package:vrchat_dart_generated/src/model/update_listing_request.dart';
@@ -389,6 +408,63 @@ import 'package:vrchat_dart_generated/src/model/user_subscription_eligible.dart'
 import 'package:vrchat_dart_generated/src/model/verify2_fa_email_code_result.dart';
 import 'package:vrchat_dart_generated/src/model/verify2_fa_result.dart';
 import 'package:vrchat_dart_generated/src/model/verify_auth_token_result.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_clear_notification.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_content_refresh.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_content_refresh_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_friend_active.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_friend_active_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_friend_add.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_friend_add_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_friend_delete.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_friend_delete_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_friend_location.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_friend_location_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_friend_offline.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_friend_offline_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_friend_online.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_friend_online_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_friend_update.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_friend_update_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_group_joined.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_group_joined_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_group_left.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_group_left_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_group_member_updated.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_group_member_updated_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_group_role_updated.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_group_role_updated_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_hide_notification.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_instance_queue_joined.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_instance_queue_joined_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_instance_queue_ready.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_instance_queue_ready_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_message.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_message_unknown.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_notification.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_notification_detail_boop.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_notification_detail_invite.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_notification_detail_invite_response.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_notification_detail_request_invite.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_notification_detail_request_invite_response.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_notification_detail_vote_to_kick.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_notification_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_notification_unknown.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_notification_v2_delete.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_notification_v2_delete_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_notification_v2_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_notification_v2_update.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_notification_v2_update_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_response_notification.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_response_notification_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_see_notification.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_user_badge_assigned.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_user_badge_assigned_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_user_badge_unassigned.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_user_badge_unassigned_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_user_location.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_user_location_encoded.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_user_update.dart';
+import 'package:vrchat_dart_generated/src/model/websocket_user_update_encoded.dart';
 import 'package:vrchat_dart_generated/src/model/world.dart';
 import 'package:vrchat_dart_generated/src/model/world_favorite_list.dart';
 import 'package:vrchat_dart_generated/src/model/world_metadata.dart';
@@ -500,6 +576,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'AccountDeletionLog':
       return AccountDeletionLog.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'AccountStanding':
+      return AccountStanding.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'AddFavoriteRequest':
       return AddFavoriteRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -556,6 +635,7 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'BanGroupMemberRequest':
       return BanGroupMemberRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'BannerType':
     case 'BareError':
       return BareError.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Beta':
@@ -609,12 +689,14 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'CreateAvatarRequest':
       return CreateAvatarRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'CreateAvatarRequestReleaseStatus':
     case 'CreateCalendarEventRequest':
       return CreateCalendarEventRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'CreateFileRequest':
       return CreateFileRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'CreateFileRequestMIMEType':
     case 'CreateFileVersionRequest':
       return CreateFileVersionRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -641,6 +723,7 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'CreateInstanceRequest':
       return CreateInstanceRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'CreateInstanceRequestRegion':
     case 'CreateJamSubmissionRequest':
       return CreateJamSubmissionRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -650,12 +733,14 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'CreateProductRequest':
       return CreateProductRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'CreateProductRequestType':
     case 'CreatePropRequest':
       return CreatePropRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'CreateWorldRequest':
       return CreateWorldRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'CreateWorldRequestReleaseStatus':
     case 'CurrentUser':
       return CurrentUser.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CurrentUserLoginResponse':
@@ -808,6 +893,21 @@ ReturnType deserialize<ReturnType, BaseType>(
             value as Map<String, dynamic>,
           )
           as ReturnType;
+    case 'GroupAuditLogEntryDataGroupCreate':
+      return GroupAuditLogEntryDataGroupCreate.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'GroupAuditLogEntryDataGroupCreateDiscoverability':
+      return GroupAuditLogEntryDataGroupCreateDiscoverability.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'GroupAuditLogEntryDataGroupCreateGallery':
+      return GroupAuditLogEntryDataGroupCreateGallery.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'GroupAuditLogEntryDataGroupGalleryCreate':
       return GroupAuditLogEntryDataGroupGalleryCreate.fromJson(
             value as Map<String, dynamic>,
@@ -915,6 +1015,11 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'GroupAuditLogEntryGroupCalendarEventDelete':
       return GroupAuditLogEntryGroupCalendarEventDelete.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'GroupAuditLogEntryGroupCreate':
+      return GroupAuditLogEntryGroupCreate.fromJson(
             value as Map<String, dynamic>,
           )
           as ReturnType;
@@ -1230,6 +1335,10 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'InstanceContentSettings':
       return InstanceContentSettings.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'InstanceDiscovery':
+      return InstanceDiscovery.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'InstanceDiscoveryPlatform':
     case 'InstancePlatforms':
       return InstancePlatforms.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -1278,6 +1387,7 @@ ReturnType deserialize<ReturnType, BaseType>(
             value as Map<String, dynamic>,
           )
           as ReturnType;
+    case 'InventorySortOrder':
     case 'InventorySpawn':
       return InventorySpawn.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -1316,6 +1426,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'LicenseType':
     case 'LimitedGroup':
       return LimitedGroup.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'LimitedInstance':
+      return LimitedInstance.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'LimitedUnityPackage':
       return LimitedUnityPackage.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -1349,6 +1462,12 @@ ReturnType deserialize<ReturnType, BaseType>(
       return Mutuals.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Notification':
       return Notification.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'NotificationBase':
+      return NotificationBase.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'NotificationBoop':
+      return NotificationBoop.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'NotificationDetailBoop':
       return NotificationDetailBoop.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -1375,7 +1494,30 @@ ReturnType deserialize<ReturnType, BaseType>(
             value as Map<String, dynamic>,
           )
           as ReturnType;
+    case 'NotificationFriendRequest':
+      return NotificationFriendRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'NotificationInvite':
+      return NotificationInvite.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'NotificationInviteResponse':
+      return NotificationInviteResponse.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'NotificationMessage':
+      return NotificationMessage.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'NotificationRequestInvite':
+      return NotificationRequestInvite.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'NotificationRequestInviteResponse':
+      return NotificationRequestInviteResponse.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'NotificationType':
+    case 'NotificationUnknown':
+      return NotificationUnknown.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'NotificationV2':
       return NotificationV2.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -1417,6 +1559,9 @@ ReturnType deserialize<ReturnType, BaseType>(
       return NotificationV2Response.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'NotificationV2Type':
+    case 'NotificationVoteToKick':
+      return NotificationVoteToKick.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'OAuthRedirectCode':
       return OAuthRedirectCode.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -1518,6 +1663,8 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'ProfileRepresentedGroup':
       return ProfileRepresentedGroup.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'ProfileTheme':
+      return ProfileTheme.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Prop':
       return Prop.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'PropPublishStatus':
@@ -1604,6 +1751,7 @@ ReturnType deserialize<ReturnType, BaseType>(
           )
           as ReturnType;
     case 'SortOption':
+    case 'SortOptionAvatar':
     case 'SortOptionProductPurchase':
     case 'SsoProvider':
     case 'SsoToken':
@@ -1687,6 +1835,7 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'UpdateAvatarRequest':
       return UpdateAvatarRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'UpdateAvatarRequestReleaseStatus':
     case 'UpdateCalendarEventRequest':
       return UpdateCalendarEventRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -1709,6 +1858,9 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'UpdateGroupRoleRequest':
       return UpdateGroupRoleRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'UpdateInstanceRequest':
+      return UpdateInstanceRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'UpdateInventoryItemRequest':
       return UpdateInventoryItemRequest.fromJson(value as Map<String, dynamic>)
@@ -1772,6 +1924,7 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'UserResponse':
       return UserResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'UserSearchSort':
     case 'UserState':
     case 'UserStatus':
     case 'UserSubscription':
@@ -1788,6 +1941,240 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'VerifyAuthTokenResult':
       return VerifyAuthTokenResult.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketClearNotification':
+      return WebsocketClearNotification.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketContentRefresh':
+      return WebsocketContentRefresh.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketContentRefreshActionType':
+    case 'WebsocketContentRefreshEncoded':
+      return WebsocketContentRefreshEncoded.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketFriendActive':
+      return WebsocketFriendActive.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketFriendActiveEncoded':
+      return WebsocketFriendActiveEncoded.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketFriendAdd':
+      return WebsocketFriendAdd.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketFriendAddEncoded':
+      return WebsocketFriendAddEncoded.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketFriendDelete':
+      return WebsocketFriendDelete.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketFriendDeleteEncoded':
+      return WebsocketFriendDeleteEncoded.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketFriendLocation':
+      return WebsocketFriendLocation.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketFriendLocationEncoded':
+      return WebsocketFriendLocationEncoded.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketFriendOffline':
+      return WebsocketFriendOffline.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketFriendOfflineEncoded':
+      return WebsocketFriendOfflineEncoded.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketFriendOnline':
+      return WebsocketFriendOnline.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketFriendOnlineEncoded':
+      return WebsocketFriendOnlineEncoded.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketFriendUpdate':
+      return WebsocketFriendUpdate.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketFriendUpdateEncoded':
+      return WebsocketFriendUpdateEncoded.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketGroupJoined':
+      return WebsocketGroupJoined.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketGroupJoinedEncoded':
+      return WebsocketGroupJoinedEncoded.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketGroupLeft':
+      return WebsocketGroupLeft.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketGroupLeftEncoded':
+      return WebsocketGroupLeftEncoded.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketGroupMemberUpdated':
+      return WebsocketGroupMemberUpdated.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketGroupMemberUpdatedEncoded':
+      return WebsocketGroupMemberUpdatedEncoded.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketGroupRoleUpdated':
+      return WebsocketGroupRoleUpdated.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketGroupRoleUpdatedEncoded':
+      return WebsocketGroupRoleUpdatedEncoded.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketHideNotification':
+      return WebsocketHideNotification.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketInstanceQueueJoined':
+      return WebsocketInstanceQueueJoined.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketInstanceQueueJoinedEncoded':
+      return WebsocketInstanceQueueJoinedEncoded.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketInstanceQueueReady':
+      return WebsocketInstanceQueueReady.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketInstanceQueueReadyEncoded':
+      return WebsocketInstanceQueueReadyEncoded.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketMessage':
+      return WebsocketMessage.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketMessageUnknown':
+      return WebsocketMessageUnknown.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketNotification':
+      return WebsocketNotification.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketNotificationDetailBoop':
+      return WebsocketNotificationDetailBoop.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketNotificationDetailInvite':
+      return WebsocketNotificationDetailInvite.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketNotificationDetailInviteResponse':
+      return WebsocketNotificationDetailInviteResponse.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketNotificationDetailRequestInvite':
+      return WebsocketNotificationDetailRequestInvite.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketNotificationDetailRequestInviteResponse':
+      return WebsocketNotificationDetailRequestInviteResponse.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketNotificationDetailVoteToKick':
+      return WebsocketNotificationDetailVoteToKick.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketNotificationEncoded':
+      return WebsocketNotificationEncoded.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketNotificationUnknown':
+      return WebsocketNotificationUnknown.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketNotificationV2Delete':
+      return WebsocketNotificationV2Delete.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketNotificationV2DeleteEncoded':
+      return WebsocketNotificationV2DeleteEncoded.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketNotificationV2Encoded':
+      return WebsocketNotificationV2Encoded.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketNotificationV2Update':
+      return WebsocketNotificationV2Update.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketNotificationV2UpdateEncoded':
+      return WebsocketNotificationV2UpdateEncoded.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketResponseNotification':
+      return WebsocketResponseNotification.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketResponseNotificationEncoded':
+      return WebsocketResponseNotificationEncoded.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketSeeNotification':
+      return WebsocketSeeNotification.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketUserBadgeAssigned':
+      return WebsocketUserBadgeAssigned.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketUserBadgeAssignedEncoded':
+      return WebsocketUserBadgeAssignedEncoded.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketUserBadgeUnassigned':
+      return WebsocketUserBadgeUnassigned.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketUserBadgeUnassignedEncoded':
+      return WebsocketUserBadgeUnassignedEncoded.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketUserLocation':
+      return WebsocketUserLocation.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketUserLocationEncoded':
+      return WebsocketUserLocationEncoded.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'WebsocketUserUpdate':
+      return WebsocketUserUpdate.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WebsocketUserUpdateEncoded':
+      return WebsocketUserUpdateEncoded.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'World':
       return World.fromJson(value as Map<String, dynamic>) as ReturnType;

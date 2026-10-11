@@ -20,10 +20,10 @@ _$GroupAuditLogEntryGroupInstanceCloseFromJson(Map<String, dynamic> json) =>
           'actorId',
           'created_at',
           'description',
-          'eventType',
           'groupId',
           'id',
           'data',
+          'eventType',
           'targetId',
         ],
       );
@@ -38,19 +38,19 @@ _$GroupAuditLogEntryGroupInstanceCloseFromJson(Map<String, dynamic> json) =>
           (v) => DateTime.parse(v as String),
         ),
         description: $checkedConvert('description', (v) => v as String),
-        eventType: $checkedConvert(
-          'eventType',
-          (v) => $enumDecode(
-            _$GroupAuditLogEntryGroupInstanceCloseEventTypeEnumEnumMap,
-            v,
-          ),
-        ),
         groupId: $checkedConvert('groupId', (v) => v as String),
         id: $checkedConvert('id', (v) => v as String),
         data: $checkedConvert(
           'data',
           (v) => GroupAuditLogEntryDataGroupInstanceClose.fromJson(
             v as Map<String, dynamic>,
+          ),
+        ),
+        eventType: $checkedConvert(
+          'eventType',
+          (v) => $enumDecode(
+            _$GroupAuditLogEntryGroupInstanceCloseEventTypeEnumEnumMap,
+            v,
           ),
         ),
         targetId: $checkedConvert('targetId', (v) => v as String),
@@ -65,12 +65,12 @@ Map<String, dynamic> _$GroupAuditLogEntryGroupInstanceCloseToJson(
   'actorId': instance.actorId,
   'created_at': instance.createdAt.toIso8601String(),
   'description': instance.description,
-  'eventType':
-      _$GroupAuditLogEntryGroupInstanceCloseEventTypeEnumEnumMap[instance
-          .eventType]!,
   'groupId': instance.groupId,
   'id': instance.id,
   'data': instance.data.toJson(),
+  'eventType':
+      _$GroupAuditLogEntryGroupInstanceCloseEventTypeEnumEnumMap[instance
+          .eventType]!,
   'targetId': instance.targetId,
 };
 

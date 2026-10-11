@@ -32,7 +32,7 @@ class CreateCalendarEventRequest {
 
     required this.endsAt,
 
-    this.featured,
+    this.featured = false,
 
     this.guestEarlyJoinMinutes,
 
@@ -40,7 +40,7 @@ class CreateCalendarEventRequest {
 
     this.imageId,
 
-    this.isDraft,
+    this.isDraft = true,
 
     this.languages,
 

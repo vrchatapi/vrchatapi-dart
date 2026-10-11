@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:vrchat_dart_generated/src/model/mime_type.dart';
+import 'package:vrchat_dart_generated/src/model/create_file_request_mime_type.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -31,7 +31,7 @@ class CreateFileRequest {
   final String extension_;
 
   @JsonKey(name: r'mimeType', required: true, includeIfNull: false)
-  final MIMEType mimeType;
+  final CreateFileRequestMIMEType mimeType;
 
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;

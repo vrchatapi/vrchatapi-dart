@@ -14,10 +14,19 @@ InfoPushDataPresentation _$InfoPushDataPresentationFromJson(
   $checkKeys(json, requiredKeys: const ['layout']);
   final val = InfoPushDataPresentation(
     layout: $checkedConvert('layout', (v) => v as String),
+    pinnedDescription: $checkedConvert(
+      'pinnedDescription',
+      (v) => v as String?,
+    ),
+    socialDisplay: $checkedConvert('socialDisplay', (v) => v as String?),
   );
   return val;
 });
 
 Map<String, dynamic> _$InfoPushDataPresentationToJson(
   InfoPushDataPresentation instance,
-) => <String, dynamic>{'layout': instance.layout};
+) => <String, dynamic>{
+  'layout': instance.layout,
+  'pinnedDescription': ?instance.pinnedDescription,
+  'socialDisplay': ?instance.socialDisplay,
+};

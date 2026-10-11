@@ -13,7 +13,10 @@ GroupMemberLimitedUser _$GroupMemberLimitedUserFromJson(
 ) => $checkedCreate('GroupMemberLimitedUser', json, ($checkedConvert) {
   final val = GroupMemberLimitedUser(
     bannerColor: $checkedConvert('bannerColor', (v) => v as String?),
-    bannerType: $checkedConvert('bannerType', (v) => v as String?),
+    bannerType: $checkedConvert(
+      'bannerType',
+      (v) => $enumDecodeNullable(_$BannerTypeEnumMap, v),
+    ),
     bannerUrl: $checkedConvert('bannerUrl', (v) => v as String?),
     displayName: $checkedConvert('displayName', (v) => v as String?),
     iconFrame: $checkedConvert('iconFrame', (v) => v as String?),
@@ -29,7 +32,7 @@ Map<String, dynamic> _$GroupMemberLimitedUserToJson(
   GroupMemberLimitedUser instance,
 ) => <String, dynamic>{
   'bannerColor': ?instance.bannerColor,
-  'bannerType': ?instance.bannerType,
+  'bannerType': ?_$BannerTypeEnumMap[instance.bannerType],
   'bannerUrl': ?instance.bannerUrl,
   'displayName': ?instance.displayName,
   'iconFrame': ?instance.iconFrame,
@@ -37,4 +40,10 @@ Map<String, dynamic> _$GroupMemberLimitedUserToJson(
   'id': ?instance.id,
   'nameplateEffect': ?instance.nameplateEffect,
   'profileEffect': ?instance.profileEffect,
+};
+
+const _$BannerTypeEnumMap = {
+  BannerType.avatarBanner: 'avatarBanner',
+  BannerType.color: 'color',
+  BannerType.customImage: 'customImage',
 };

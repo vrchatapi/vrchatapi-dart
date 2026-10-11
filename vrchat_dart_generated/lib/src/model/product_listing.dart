@@ -50,13 +50,13 @@ class ProductListing {
 
     this.groupName,
 
-    required this.hasAvatar,
+    this.hasAvatar,
 
     this.hasCompanion,
 
     this.hasInventory,
 
-    required this.hasUdon,
+    this.hasUdon,
 
     this.hydratedProducts,
 
@@ -80,7 +80,7 @@ class ProductListing {
 
     this.productTypes,
 
-    required this.products,
+    this.products,
 
     this.purchaseCount,
 
@@ -88,7 +88,7 @@ class ProductListing {
 
     this.quantifiable,
 
-    required this.recurrable,
+    this.recurrable,
 
     this.refundable,
 
@@ -98,7 +98,7 @@ class ProductListing {
 
     this.soldByVrc,
 
-    required this.stackable,
+    this.stackable,
 
     this.storeIds,
 
@@ -160,8 +160,8 @@ class ProductListing {
   @JsonKey(name: r'groupName', required: false, includeIfNull: false)
   final String? groupName;
 
-  @JsonKey(name: r'hasAvatar', required: true, includeIfNull: false)
-  final bool hasAvatar;
+  @JsonKey(name: r'hasAvatar', required: false, includeIfNull: false)
+  final bool? hasAvatar;
 
   @JsonKey(name: r'hasCompanion', required: false, includeIfNull: false)
   final bool? hasCompanion;
@@ -169,8 +169,8 @@ class ProductListing {
   @JsonKey(name: r'hasInventory', required: false, includeIfNull: false)
   final bool? hasInventory;
 
-  @JsonKey(name: r'hasUdon', required: true, includeIfNull: false)
-  final bool hasUdon;
+  @JsonKey(name: r'hasUdon', required: false, includeIfNull: false)
+  final bool? hasUdon;
 
   @JsonKey(name: r'hydratedProducts', required: false, includeIfNull: false)
   final List<Product>? hydratedProducts;
@@ -206,8 +206,8 @@ class ProductListing {
   final List<String>? productTypes;
 
   /// Product ids. The products themselves arrive in `hydratedProducts`.
-  @JsonKey(name: r'products', required: true, includeIfNull: false)
-  final List<String> products;
+  @JsonKey(name: r'products', required: false, includeIfNull: false)
+  final List<String>? products;
 
   @JsonKey(name: r'purchaseCount', required: false, includeIfNull: false)
   final int? purchaseCount;
@@ -222,8 +222,8 @@ class ProductListing {
   @JsonKey(name: r'quantifiable', required: false, includeIfNull: false)
   final bool? quantifiable;
 
-  @JsonKey(name: r'recurrable', required: true, includeIfNull: false)
-  final bool recurrable;
+  @JsonKey(name: r'recurrable', required: false, includeIfNull: false)
+  final bool? recurrable;
 
   @JsonKey(name: r'refundable', required: false, includeIfNull: false)
   final bool? refundable;
@@ -237,8 +237,8 @@ class ProductListing {
   @JsonKey(name: r'soldByVrc', required: false, includeIfNull: false)
   final bool? soldByVrc;
 
-  @JsonKey(name: r'stackable', required: true, includeIfNull: false)
-  final bool stackable;
+  @JsonKey(name: r'stackable', required: false, includeIfNull: false)
+  final bool? stackable;
 
   @JsonKey(name: r'storeIds', required: false, includeIfNull: false)
   final List<String>? storeIds;

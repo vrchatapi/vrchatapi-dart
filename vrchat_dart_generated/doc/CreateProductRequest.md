@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | 
 **displayName** | **String** |  | 
 **imageId** | **String** |  | 
-**productType** | [**ProductType**](ProductType.md) |  | 
+**productType** | [**CreateProductRequestType**](CreateProductRequestType.md) |  | 
 **tags** | **List&lt;String&gt;** |  | 
 **useForSubscriberList** | **bool** |  | 
 

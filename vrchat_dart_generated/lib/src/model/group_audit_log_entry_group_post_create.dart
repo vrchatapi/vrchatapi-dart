@@ -26,13 +26,13 @@ class GroupAuditLogEntryGroupPostCreate {
 
     required this.description,
 
-    required this.eventType,
-
     required this.groupId,
 
     required this.id,
 
     required this.data,
+
+    required this.eventType,
 
     required this.targetId,
   });
@@ -53,9 +53,6 @@ class GroupAuditLogEntryGroupPostCreate {
   @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
 
-  @JsonKey(name: r'eventType', required: true, includeIfNull: false)
-  final GroupAuditLogEntryGroupPostCreateEventTypeEnum eventType;
-
   @JsonKey(name: r'groupId', required: true, includeIfNull: false)
   final String groupId;
 
@@ -64,6 +61,9 @@ class GroupAuditLogEntryGroupPostCreate {
 
   @JsonKey(name: r'data', required: true, includeIfNull: false)
   final GroupAuditLogEntryDataGroupPostCreate data;
+
+  @JsonKey(name: r'eventType', required: true, includeIfNull: false)
+  final GroupAuditLogEntryGroupPostCreateEventTypeEnum eventType;
 
   @JsonKey(name: r'targetId', required: true, includeIfNull: false)
   final String targetId;
@@ -76,10 +76,10 @@ class GroupAuditLogEntryGroupPostCreate {
           other.actorId == actorId &&
           other.createdAt == createdAt &&
           other.description == description &&
-          other.eventType == eventType &&
           other.groupId == groupId &&
           other.id == id &&
           other.data == data &&
+          other.eventType == eventType &&
           other.targetId == targetId;
 
   @override
@@ -88,10 +88,10 @@ class GroupAuditLogEntryGroupPostCreate {
       actorId.hashCode +
       createdAt.hashCode +
       description.hashCode +
-      eventType.hashCode +
       groupId.hashCode +
       id.hashCode +
       data.hashCode +
+      eventType.hashCode +
       targetId.hashCode;
 
   factory GroupAuditLogEntryGroupPostCreate.fromJson(

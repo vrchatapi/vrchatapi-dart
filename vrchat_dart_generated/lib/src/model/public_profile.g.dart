@@ -42,7 +42,10 @@ PublicProfile _$PublicProfileFromJson(
     ),
     bannerColor: $checkedConvert('bannerColor', (v) => v as String?),
     bannerCustomUrl: $checkedConvert('bannerCustomUrl', (v) => v as String?),
-    bannerType: $checkedConvert('bannerType', (v) => v as String?),
+    bannerType: $checkedConvert(
+      'bannerType',
+      (v) => $enumDecodeNullable(_$BannerTypeEnumMap, v),
+    ),
     bannerUrl: $checkedConvert('bannerUrl', (v) => v as String?),
     bio: $checkedConvert('bio', (v) => v as String?),
     bioLinks: $checkedConvert(
@@ -118,7 +121,9 @@ PublicProfile _$PublicProfileFromJson(
     ),
     themes: $checkedConvert(
       'themes',
-      (v) => (v as List<dynamic>?)?.map((e) => e as Object).toList(),
+      (v) => (v as List<dynamic>?)
+          ?.map((e) => ProfileTheme.fromJson(e as Map<String, dynamic>))
+          .toList(),
     ),
     totalPublicWorldsCount: $checkedConvert(
       'totalPublicWorldsCount',
@@ -153,7 +158,7 @@ Map<String, dynamic> _$PublicProfileToJson(
   'badges': ?instance.badges?.map((e) => e.toJson()).toList(),
   'bannerColor': ?instance.bannerColor,
   'bannerCustomUrl': ?instance.bannerCustomUrl,
-  'bannerType': ?instance.bannerType,
+  'bannerType': ?_$BannerTypeEnumMap[instance.bannerType],
   'bannerUrl': ?instance.bannerUrl,
   'bio': ?instance.bio,
   'bioLinks': ?instance.bioLinks,
@@ -183,7 +188,7 @@ Map<String, dynamic> _$PublicProfileToJson(
   'themeIconColor': ?instance.themeIconColor,
   'themeId': ?instance.themeId,
   'themeSubtextColor': ?instance.themeSubtextColor,
-  'themes': ?instance.themes,
+  'themes': ?instance.themes?.map((e) => e.toJson()).toList(),
   'totalPublicWorldsCount': ?instance.totalPublicWorldsCount,
   'trustTags': ?instance.trustTags,
   'userIcon': ?instance.userIcon,
@@ -196,6 +201,12 @@ const _$AgeVerificationStatusEnumMap = {
   AgeVerificationStatus.plus18: '18+',
   AgeVerificationStatus.hidden: 'hidden',
   AgeVerificationStatus.verified: 'verified',
+};
+
+const _$BannerTypeEnumMap = {
+  BannerType.avatarBanner: 'avatarBanner',
+  BannerType.color: 'color',
+  BannerType.customImage: 'customImage',
 };
 
 const _$UserStatusEnumMap = {

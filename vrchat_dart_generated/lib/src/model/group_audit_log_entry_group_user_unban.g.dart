@@ -20,10 +20,10 @@ GroupAuditLogEntryGroupUserUnban _$GroupAuditLogEntryGroupUserUnbanFromJson(
       'actorId',
       'created_at',
       'description',
-      'eventType',
       'groupId',
       'id',
       'data',
+      'eventType',
       'targetId',
     ],
   );
@@ -35,6 +35,9 @@ GroupAuditLogEntryGroupUserUnban _$GroupAuditLogEntryGroupUserUnbanFromJson(
       (v) => DateTime.parse(v as String),
     ),
     description: $checkedConvert('description', (v) => v as String),
+    groupId: $checkedConvert('groupId', (v) => v as String),
+    id: $checkedConvert('id', (v) => v as String),
+    data: $checkedConvert('data', (v) => v as Object),
     eventType: $checkedConvert(
       'eventType',
       (v) => $enumDecode(
@@ -42,9 +45,6 @@ GroupAuditLogEntryGroupUserUnban _$GroupAuditLogEntryGroupUserUnbanFromJson(
         v,
       ),
     ),
-    groupId: $checkedConvert('groupId', (v) => v as String),
-    id: $checkedConvert('id', (v) => v as String),
-    data: $checkedConvert('data', (v) => v as Object),
     targetId: $checkedConvert('targetId', (v) => v as String),
   );
   return val;
@@ -57,12 +57,12 @@ Map<String, dynamic> _$GroupAuditLogEntryGroupUserUnbanToJson(
   'actorId': instance.actorId,
   'created_at': instance.createdAt.toIso8601String(),
   'description': instance.description,
-  'eventType':
-      _$GroupAuditLogEntryGroupUserUnbanEventTypeEnumEnumMap[instance
-          .eventType]!,
   'groupId': instance.groupId,
   'id': instance.id,
   'data': instance.data,
+  'eventType':
+      _$GroupAuditLogEntryGroupUserUnbanEventTypeEnumEnumMap[instance
+          .eventType]!,
   'targetId': instance.targetId,
 };
 

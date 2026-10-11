@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **imageUrl** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**releaseStatus** | [**ReleaseStatus**](ReleaseStatus.md) |  | [optional] 
+**releaseStatus** | [**UpdateAvatarRequestReleaseStatus**](UpdateAvatarRequestReleaseStatus.md) |  | [optional] 
 **tags** | **List&lt;String&gt;** |  | [optional] 
 **unityPackageUrl** | **String** |  | [optional] 
 **unityVersion** | **String** |  | [optional] [default to '5.3.4p1']

@@ -17,18 +17,13 @@ ProductListing _$ProductListingFromJson(Map<String, dynamic> json) =>
           'buyerRefundable',
           'description',
           'displayName',
-          'hasAvatar',
-          'hasUdon',
           'id',
           'listingType',
           'priceTokens',
           'productIds',
           'productType',
-          'products',
-          'recurrable',
           'sellerDisplayName',
           'sellerId',
-          'stackable',
         ],
       );
       final val = ProductListing(
@@ -57,10 +52,10 @@ ProductListing _$ProductListingFromJson(Map<String, dynamic> json) =>
         groupIcon: $checkedConvert('groupIcon', (v) => v as String?),
         groupId: $checkedConvert('groupId', (v) => v as String?),
         groupName: $checkedConvert('groupName', (v) => v as String?),
-        hasAvatar: $checkedConvert('hasAvatar', (v) => v as bool),
+        hasAvatar: $checkedConvert('hasAvatar', (v) => v as bool?),
         hasCompanion: $checkedConvert('hasCompanion', (v) => v as bool?),
         hasInventory: $checkedConvert('hasInventory', (v) => v as bool?),
-        hasUdon: $checkedConvert('hasUdon', (v) => v as bool),
+        hasUdon: $checkedConvert('hasUdon', (v) => v as bool?),
         hydratedProducts: $checkedConvert(
           'hydratedProducts',
           (v) => (v as List<dynamic>?)
@@ -99,7 +94,7 @@ ProductListing _$ProductListingFromJson(Map<String, dynamic> json) =>
         ),
         products: $checkedConvert(
           'products',
-          (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
         ),
         purchaseCount: $checkedConvert(
           'purchaseCount',
@@ -110,7 +105,7 @@ ProductListing _$ProductListingFromJson(Map<String, dynamic> json) =>
           (v) => (v as num?)?.toInt(),
         ),
         quantifiable: $checkedConvert('quantifiable', (v) => v as bool?),
-        recurrable: $checkedConvert('recurrable', (v) => v as bool),
+        recurrable: $checkedConvert('recurrable', (v) => v as bool?),
         refundable: $checkedConvert('refundable', (v) => v as bool?),
         sellerDisplayName: $checkedConvert(
           'sellerDisplayName',
@@ -118,7 +113,7 @@ ProductListing _$ProductListingFromJson(Map<String, dynamic> json) =>
         ),
         sellerId: $checkedConvert('sellerId', (v) => v as String),
         soldByVrc: $checkedConvert('soldByVrc', (v) => v as bool?),
-        stackable: $checkedConvert('stackable', (v) => v as bool),
+        stackable: $checkedConvert('stackable', (v) => v as bool?),
         storeIds: $checkedConvert(
           'storeIds',
           (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -161,10 +156,10 @@ Map<String, dynamic> _$ProductListingToJson(
   'groupIcon': ?instance.groupIcon,
   'groupId': ?instance.groupId,
   'groupName': ?instance.groupName,
-  'hasAvatar': instance.hasAvatar,
+  'hasAvatar': ?instance.hasAvatar,
   'hasCompanion': ?instance.hasCompanion,
   'hasInventory': ?instance.hasInventory,
-  'hasUdon': instance.hasUdon,
+  'hasUdon': ?instance.hasUdon,
   'hydratedProducts': ?instance.hydratedProducts
       ?.map((e) => e.toJson())
       .toList(),
@@ -178,16 +173,16 @@ Map<String, dynamic> _$ProductListingToJson(
   'productIds': instance.productIds,
   'productType': _$ProductTypeEnumMap[instance.productType]!,
   'productTypes': ?instance.productTypes,
-  'products': instance.products,
+  'products': ?instance.products,
   'purchaseCount': ?instance.purchaseCount,
   'purchaseCountQuantity': ?instance.purchaseCountQuantity,
   'quantifiable': ?instance.quantifiable,
-  'recurrable': instance.recurrable,
+  'recurrable': ?instance.recurrable,
   'refundable': ?instance.refundable,
   'sellerDisplayName': instance.sellerDisplayName,
   'sellerId': instance.sellerId,
   'soldByVrc': ?instance.soldByVrc,
-  'stackable': instance.stackable,
+  'stackable': ?instance.stackable,
   'storeIds': ?instance.storeIds,
   'subtitle': ?instance.subtitle,
   'tags': ?instance.tags,
@@ -204,8 +199,11 @@ const _$ProductListingTypeEnumMap = {
 };
 
 const _$ProductTypeEnumMap = {
+  ProductType.avatar: 'avatar',
+  ProductType.credit: 'credit',
   ProductType.inventory: 'inventory',
   ProductType.listing: 'listing',
-  ProductType.role: 'role',
+  ProductType.testBirdy: 'test_birdy',
   ProductType.udon: 'udon',
+  ProductType.role: 'role',
 };

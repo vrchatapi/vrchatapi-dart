@@ -247,9 +247,9 @@ const _$RegionEnumMap = {
 const _$InstanceRegionEnumMap = {
   InstanceRegion.eu: 'eu',
   InstanceRegion.jp: 'jp',
-  InstanceRegion.unknown: 'unknown',
   InstanceRegion.us: 'us',
   InstanceRegion.use: 'use',
+  InstanceRegion.unknown: 'unknown',
 };
 
 const _$InstanceTypeEnumMap = {

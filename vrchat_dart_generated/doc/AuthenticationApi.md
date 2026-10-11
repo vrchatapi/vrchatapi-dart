@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**deleteUser**](AuthenticationApi.md#deleteuser) | **PUT** /users/{userId}/delete | Delete User
 [**disable2FA**](AuthenticationApi.md#disable2fa) | **DELETE** /auth/twofactorauth | Disable 2FA
 [**enable2FA**](AuthenticationApi.md#enable2fa) | **POST** /auth/twofactorauth/totp/pending | Enable time-based 2FA codes
+[**getAccountStanding**](AuthenticationApi.md#getaccountstanding) | **GET** /auth/user/accountStanding | Get Account Standing
 [**getCurrentUser**](AuthenticationApi.md#getcurrentuser) | **GET** /auth/user | Login and/or Get Current User Info
 [**getGlobalAvatarModerations**](AuthenticationApi.md#getglobalavatarmoderations) | **GET** /auth/user/avatarmoderations | Get Global Avatar Moderations
 [**getInterestsAndPreferences**](AuthenticationApi.md#getinterestsandpreferences) | **GET** /auth/user/interestsAndPreferences | Get Interests and Preferences
@@ -442,6 +443,49 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**Pending2FAResult**](Pending2FAResult.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAccountStanding**
+> AccountStanding getAccountStanding()
+
+Get Account Standing
+
+Returns the current user's account standing and the sanctions on their account.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getAuthenticationApi();
+
+try {
+    final response = api.getAccountStanding();
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling AuthenticationApi->getAccountStanding: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**AccountStanding**](AccountStanding.md)
 
 ### Authorization
 

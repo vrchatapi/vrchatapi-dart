@@ -13,10 +13,8 @@ UpdateGroupRoleRequest _$UpdateGroupRoleRequestFromJson(
 ) => $checkedCreate('UpdateGroupRoleRequest', json, ($checkedConvert) {
   final val = UpdateGroupRoleRequest(
     description: $checkedConvert('description', (v) => v as String?),
-    isSelfAssignable: $checkedConvert(
-      'isSelfAssignable',
-      (v) => v as bool? ?? false,
-    ),
+    isAddedOnJoin: $checkedConvert('isAddedOnJoin', (v) => v as bool?),
+    isSelfAssignable: $checkedConvert('isSelfAssignable', (v) => v as bool?),
     name: $checkedConvert('name', (v) => v as String?),
     order: $checkedConvert('order', (v) => (v as num?)?.toInt()),
     permissions: $checkedConvert(
@@ -25,6 +23,7 @@ UpdateGroupRoleRequest _$UpdateGroupRoleRequestFromJson(
           ?.map((e) => $enumDecode(_$GroupPermissionsEnumMap, e))
           .toList(),
     ),
+    requiresTwoFactor: $checkedConvert('requiresTwoFactor', (v) => v as bool?),
   );
   return val;
 });
@@ -33,12 +32,14 @@ Map<String, dynamic> _$UpdateGroupRoleRequestToJson(
   UpdateGroupRoleRequest instance,
 ) => <String, dynamic>{
   'description': ?instance.description,
+  'isAddedOnJoin': ?instance.isAddedOnJoin,
   'isSelfAssignable': ?instance.isSelfAssignable,
   'name': ?instance.name,
   'order': ?instance.order,
   'permissions': ?instance.permissions
       ?.map((e) => _$GroupPermissionsEnumMap[e]!)
       .toList(),
+  'requiresTwoFactor': ?instance.requiresTwoFactor,
 };
 
 const _$GroupPermissionsEnumMap = {

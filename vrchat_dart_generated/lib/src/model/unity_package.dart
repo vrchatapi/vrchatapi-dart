@@ -42,6 +42,8 @@ class UnityPackage {
 
     this.scanStatus,
 
+    this.transpilerVersion,
+
     this.unitySortNumber,
 
     this.unityVersion = '5.3.4p1',
@@ -89,6 +91,9 @@ class UnityPackage {
   @JsonKey(name: r'scanStatus', required: false, includeIfNull: false)
   final String? scanStatus;
 
+  @JsonKey(name: r'transpilerVersion', required: false, includeIfNull: false)
+  final String? transpilerVersion;
+
   // minimum: 0
   @JsonKey(name: r'unitySortNumber', required: false, includeIfNull: false)
   final int? unitySortNumber;
@@ -118,6 +123,7 @@ class UnityPackage {
           other.pluginUrl == pluginUrl &&
           other.pluginUrlObject == pluginUrlObject &&
           other.scanStatus == scanStatus &&
+          other.transpilerVersion == transpilerVersion &&
           other.unitySortNumber == unitySortNumber &&
           other.unityVersion == unityVersion &&
           other.variant == variant &&
@@ -134,9 +140,10 @@ class UnityPackage {
       impostorizerVersion.hashCode +
       performanceRating.hashCode +
       platform.hashCode +
-      pluginUrl.hashCode +
+      (pluginUrl == null ? 0 : pluginUrl.hashCode) +
       pluginUrlObject.hashCode +
       scanStatus.hashCode +
+      transpilerVersion.hashCode +
       unitySortNumber.hashCode +
       unityVersion.hashCode +
       variant.hashCode +

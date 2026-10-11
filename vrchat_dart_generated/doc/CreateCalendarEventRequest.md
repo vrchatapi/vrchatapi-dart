@@ -13,11 +13,11 @@ Name | Type | Description | Notes
 **closeInstanceAfterEndMinutes** | **int** |  | [optional] 
 **description** | **String** |  | 
 **endsAt** | [**DateTime**](DateTime.md) | Time the event ends at | 
-**featured** | **bool** |  | [optional] 
+**featured** | **bool** |  | [optional] [default to false]
 **guestEarlyJoinMinutes** | **int** |  | [optional] 
 **hostEarlyJoinMinutes** | **int** |  | [optional] 
 **imageId** | **String** |  | [optional] 
-**isDraft** | **bool** |  | [optional] 
+**isDraft** | **bool** |  | [optional] [default to true]
 **languages** | **List&lt;String&gt;** |  | [optional] 
 **occurrenceKind** | [**CalendarEventOccurrenceKind**](CalendarEventOccurrenceKind.md) |  | [optional] 
 **parentId** | **String** |  | [optional] 
