@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:vrchat_dart_generated/src/model/release_status.dart';
+import 'package:vrchat_dart_generated/src/model/create_world_request_release_status.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -84,7 +84,7 @@ class CreateWorldRequest {
   final String? platform;
 
   @JsonKey(name: r'releaseStatus', required: false, includeIfNull: false)
-  final ReleaseStatus? releaseStatus;
+  final CreateWorldRequestReleaseStatus? releaseStatus;
 
   @JsonKey(name: r'tags', required: false, includeIfNull: false)
   final List<String>? tags;

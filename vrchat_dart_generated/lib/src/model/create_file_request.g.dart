@@ -15,7 +15,7 @@ CreateFileRequest _$CreateFileRequestFromJson(Map<String, dynamic> json) =>
         extension_: $checkedConvert('extension', (v) => v as String),
         mimeType: $checkedConvert(
           'mimeType',
-          (v) => $enumDecode(_$MIMETypeEnumMap, v),
+          (v) => $enumDecode(_$CreateFileRequestMIMETypeEnumMap, v),
         ),
         name: $checkedConvert('name', (v) => v as String),
         tags: $checkedConvert(
@@ -29,25 +29,29 @@ CreateFileRequest _$CreateFileRequestFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$CreateFileRequestToJson(CreateFileRequest instance) =>
     <String, dynamic>{
       'extension': instance.extension_,
-      'mimeType': _$MIMETypeEnumMap[instance.mimeType]!,
+      'mimeType': _$CreateFileRequestMIMETypeEnumMap[instance.mimeType]!,
       'name': instance.name,
       'tags': ?instance.tags,
     };
 
-const _$MIMETypeEnumMap = {
-  MIMEType.applicationSlashGzip: 'application/gzip',
-  MIMEType.applicationSlashOctetStream: 'application/octet-stream',
-  MIMEType.applicationSlashXAvatar: 'application/x-avatar',
-  MIMEType.applicationSlashXProp: 'application/x-prop',
-  MIMEType.applicationSlashXRsyncDelta: 'application/x-rsync-delta',
-  MIMEType.applicationSlashXRsyncSignature: 'application/x-rsync-signature',
-  MIMEType.applicationSlashXWorld: 'application/x-world',
-  MIMEType.imageSlashBmp: 'image/bmp',
-  MIMEType.imageSlashGif: 'image/gif',
-  MIMEType.imageSlashJpeg: 'image/jpeg',
-  MIMEType.imageSlashJpg: 'image/jpg',
-  MIMEType.imageSlashPng: 'image/png',
-  MIMEType.imageSlashSvgxml: 'image/svg＋xml',
-  MIMEType.imageSlashTiff: 'image/tiff',
-  MIMEType.imageSlashWebp: 'image/webp',
+const _$CreateFileRequestMIMETypeEnumMap = {
+  CreateFileRequestMIMEType.applicationSlashGzip: 'application/gzip',
+  CreateFileRequestMIMEType.applicationSlashXAdminassetbundle:
+      'application/x-adminassetbundle',
+  CreateFileRequestMIMEType.applicationSlashXAvatar: 'application/x-avatar',
+  CreateFileRequestMIMEType.applicationSlashXAvatarbuilderresource:
+      'application/x-avatarbuilderresource',
+  CreateFileRequestMIMEType.applicationSlashXAvatarpart:
+      'application/x-avatarpart',
+  CreateFileRequestMIMEType.applicationSlashXProp: 'application/x-prop',
+  CreateFileRequestMIMEType.applicationSlashXWorld: 'application/x-world',
+  CreateFileRequestMIMEType.imageSlashBmp: 'image/bmp',
+  CreateFileRequestMIMEType.imageSlashGif: 'image/gif',
+  CreateFileRequestMIMEType.imageSlashJpeg: 'image/jpeg',
+  CreateFileRequestMIMEType.imageSlashJpg: 'image/jpg',
+  CreateFileRequestMIMEType.imageSlashPng: 'image/png',
+  CreateFileRequestMIMEType.imageSlashSvgPlusXml: 'image/svg+xml',
+  CreateFileRequestMIMEType.imageSlashTiff: 'image/tiff',
+  CreateFileRequestMIMEType.imageSlashWebp: 'image/webp',
+  CreateFileRequestMIMEType.videoSlashMp4: 'video/mp4',
 };

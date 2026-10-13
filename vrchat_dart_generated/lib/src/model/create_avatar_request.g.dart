@@ -23,7 +23,7 @@ CreateAvatarRequest _$CreateAvatarRequestFromJson(
     platform: $checkedConvert('platform', (v) => v as String?),
     releaseStatus: $checkedConvert(
       'releaseStatus',
-      (v) => $enumDecodeNullable(_$ReleaseStatusEnumMap, v),
+      (v) => $enumDecodeNullable(_$CreateAvatarRequestReleaseStatusEnumMap, v),
     ),
     tags: $checkedConvert(
       'tags',
@@ -55,7 +55,8 @@ Map<String, dynamic> _$CreateAvatarRequestToJson(
   'imageUrl': instance.imageUrl,
   'name': instance.name,
   'platform': ?instance.platform,
-  'releaseStatus': ?_$ReleaseStatusEnumMap[instance.releaseStatus],
+  'releaseStatus':
+      ?_$CreateAvatarRequestReleaseStatusEnumMap[instance.releaseStatus],
   'tags': ?instance.tags,
   'thumbnailImageUrl': ?instance.thumbnailImageUrl,
   'unityPackageUrl': ?instance.unityPackageUrl,
@@ -64,9 +65,8 @@ Map<String, dynamic> _$CreateAvatarRequestToJson(
   'version': ?instance.version,
 };
 
-const _$ReleaseStatusEnumMap = {
-  ReleaseStatus.all: 'all',
-  ReleaseStatus.hidden: 'hidden',
-  ReleaseStatus.private: 'private',
-  ReleaseStatus.public: 'public',
+const _$CreateAvatarRequestReleaseStatusEnumMap = {
+  CreateAvatarRequestReleaseStatus.hidden: 'hidden',
+  CreateAvatarRequestReleaseStatus.private: 'private',
+  CreateAvatarRequestReleaseStatus.public: 'public',
 };

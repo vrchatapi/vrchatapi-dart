@@ -16,6 +16,10 @@ UpdateUserRequest _$UpdateUserRequestFromJson(
       'acceptedTOSVersion',
       (v) => (v as num?)?.toInt(),
     ),
+    allowAvatarCopying: $checkedConvert(
+      'allowAvatarCopying',
+      (v) => v as bool?,
+    ),
     allowWorldsToCountFriendsInInstance: $checkedConvert(
       'allowWorldsToCountFriendsInInstance',
       (v) => v as bool?,
@@ -41,6 +45,7 @@ UpdateUserRequest _$UpdateUserRequestFromJson(
       'hasSharedConnectionsOptOut',
       (v) => v as bool?,
     ),
+    homeLocation: $checkedConvert('homeLocation', (v) => v as String?),
     isBoopingEnabled: $checkedConvert('isBoopingEnabled', (v) => v as bool?),
     password: $checkedConvert('password', (v) => v as String?),
     pronouns: $checkedConvert('pronouns', (v) => v as String?),
@@ -65,6 +70,7 @@ UpdateUserRequest _$UpdateUserRequestFromJson(
 Map<String, dynamic> _$UpdateUserRequestToJson(UpdateUserRequest instance) =>
     <String, dynamic>{
       'acceptedTOSVersion': ?instance.acceptedTOSVersion,
+      'allowAvatarCopying': ?instance.allowAvatarCopying,
       'allowWorldsToCountFriendsInInstance':
           ?instance.allowWorldsToCountFriendsInInstance,
       'birthday': ?instance.birthday?.toIso8601String(),
@@ -76,6 +82,7 @@ Map<String, dynamic> _$UpdateUserRequestToJson(UpdateUserRequest instance) =>
       'email': ?instance.email,
       'hasDiscordFriendsOptOut': ?instance.hasDiscordFriendsOptOut,
       'hasSharedConnectionsOptOut': ?instance.hasSharedConnectionsOptOut,
+      'homeLocation': ?instance.homeLocation,
       'isBoopingEnabled': ?instance.isBoopingEnabled,
       'password': ?instance.password,
       'pronouns': ?instance.pronouns,

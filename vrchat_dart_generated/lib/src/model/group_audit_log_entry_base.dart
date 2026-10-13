@@ -25,8 +25,6 @@ class GroupAuditLogEntryBase {
 
     required this.description,
 
-    this.eventType = 'group.update',
-
     required this.groupId,
 
     required this.id,
@@ -48,10 +46,6 @@ class GroupAuditLogEntryBase {
   @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
 
-  /// The type of event that occurred. This is a string that is prefixed with the type of object that the event occurred on. For example, a group role update event would be prefixed with `group.role`.
-  @JsonKey(name: r'eventType', required: true, includeIfNull: false)
-  final String eventType;
-
   @JsonKey(name: r'groupId', required: true, includeIfNull: false)
   final String groupId;
 
@@ -66,7 +60,6 @@ class GroupAuditLogEntryBase {
           other.actorId == actorId &&
           other.createdAt == createdAt &&
           other.description == description &&
-          other.eventType == eventType &&
           other.groupId == groupId &&
           other.id == id;
 
@@ -76,7 +69,6 @@ class GroupAuditLogEntryBase {
       actorId.hashCode +
       createdAt.hashCode +
       description.hashCode +
-      eventType.hashCode +
       groupId.hashCode +
       id.hashCode;
 

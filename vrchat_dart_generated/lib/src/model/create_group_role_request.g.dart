@@ -11,19 +11,28 @@ part of 'create_group_role_request.dart';
 CreateGroupRoleRequest _$CreateGroupRoleRequestFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('CreateGroupRoleRequest', json, ($checkedConvert) {
+  $checkKeys(json, requiredKeys: const ['name']);
   final val = CreateGroupRoleRequest(
     description: $checkedConvert('description', (v) => v as String?),
-    id: $checkedConvert('id', (v) => v as String?),
+    isAddedOnJoin: $checkedConvert('isAddedOnJoin', (v) => v as bool? ?? false),
     isSelfAssignable: $checkedConvert(
       'isSelfAssignable',
       (v) => v as bool? ?? false,
     ),
-    name: $checkedConvert('name', (v) => v as String?),
+    name: $checkedConvert('name', (v) => v as String),
     permissions: $checkedConvert(
       'permissions',
       (v) => (v as List<dynamic>?)
           ?.map((e) => $enumDecode(_$GroupPermissionsEnumMap, e))
           .toList(),
+    ),
+    requiresPurchase: $checkedConvert(
+      'requiresPurchase',
+      (v) => v as bool? ?? false,
+    ),
+    requiresTwoFactor: $checkedConvert(
+      'requiresTwoFactor',
+      (v) => v as bool? ?? false,
     ),
   );
   return val;
@@ -33,12 +42,14 @@ Map<String, dynamic> _$CreateGroupRoleRequestToJson(
   CreateGroupRoleRequest instance,
 ) => <String, dynamic>{
   'description': ?instance.description,
-  'id': ?instance.id,
+  'isAddedOnJoin': ?instance.isAddedOnJoin,
   'isSelfAssignable': ?instance.isSelfAssignable,
-  'name': ?instance.name,
+  'name': instance.name,
   'permissions': ?instance.permissions
       ?.map((e) => _$GroupPermissionsEnumMap[e]!)
       .toList(),
+  'requiresPurchase': ?instance.requiresPurchase,
+  'requiresTwoFactor': ?instance.requiresTwoFactor,
 };
 
 const _$GroupPermissionsEnumMap = {

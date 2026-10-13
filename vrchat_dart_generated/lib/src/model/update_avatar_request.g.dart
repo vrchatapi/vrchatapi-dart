@@ -18,7 +18,8 @@ UpdateAvatarRequest _$UpdateAvatarRequestFromJson(Map<String, dynamic> json) =>
         name: $checkedConvert('name', (v) => v as String?),
         releaseStatus: $checkedConvert(
           'releaseStatus',
-          (v) => $enumDecodeNullable(_$ReleaseStatusEnumMap, v),
+          (v) =>
+              $enumDecodeNullable(_$UpdateAvatarRequestReleaseStatusEnumMap, v),
         ),
         tags: $checkedConvert(
           'tags',
@@ -45,16 +46,16 @@ Map<String, dynamic> _$UpdateAvatarRequestToJson(
   'id': ?instance.id,
   'imageUrl': ?instance.imageUrl,
   'name': ?instance.name,
-  'releaseStatus': ?_$ReleaseStatusEnumMap[instance.releaseStatus],
+  'releaseStatus':
+      ?_$UpdateAvatarRequestReleaseStatusEnumMap[instance.releaseStatus],
   'tags': ?instance.tags,
   'unityPackageUrl': ?instance.unityPackageUrl,
   'unityVersion': ?instance.unityVersion,
   'version': ?instance.version,
 };
 
-const _$ReleaseStatusEnumMap = {
-  ReleaseStatus.all: 'all',
-  ReleaseStatus.hidden: 'hidden',
-  ReleaseStatus.private: 'private',
-  ReleaseStatus.public: 'public',
+const _$UpdateAvatarRequestReleaseStatusEnumMap = {
+  UpdateAvatarRequestReleaseStatus.hidden: 'hidden',
+  UpdateAvatarRequestReleaseStatus.private: 'private',
+  UpdateAvatarRequestReleaseStatus.public: 'public',
 };

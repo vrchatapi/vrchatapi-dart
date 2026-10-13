@@ -238,7 +238,7 @@ final int n = 56; // int | The number of objects to return.
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
 final String holderId = holderId_example; // String | The UserID of the owner of the inventory; defaults to the currently authenticated user.
 final InventoryEquipSlot equipSlot = ; // InventoryEquipSlot | Filter for inventory retrieval.
-final String order = order_example; // String | Sort order for inventory retrieval.
+final InventorySortOrder order = ; // InventorySortOrder | Sort order for inventory retrieval.
 final String tags = tags_example; // String | Filter tags for inventory retrieval (comma-separated).
 final InventoryItemType types = ; // InventoryItemType | Filter for inventory retrieval.
 final InventoryFlag flags = ; // InventoryFlag | Filter flags for inventory retrieval (comma-separated).
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
  **holderId** | **String**| The UserID of the owner of the inventory; defaults to the currently authenticated user. | [optional] 
  **equipSlot** | [**InventoryEquipSlot**](.md)| Filter for inventory retrieval. | [optional] 
- **order** | **String**| Sort order for inventory retrieval. | [optional] 
+ **order** | [**InventorySortOrder**](.md)| Sort order for inventory retrieval. | [optional] 
  **tags** | **String**| Filter tags for inventory retrieval (comma-separated). | [optional] 
  **types** | [**InventoryItemType**](.md)| Filter for inventory retrieval. | [optional] 
  **flags** | [**InventoryFlag**](.md)| Filter flags for inventory retrieval (comma-separated). | [optional] 

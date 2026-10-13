@@ -17,6 +17,7 @@ import 'package:vrchat_dart_generated/src/model/inventory_equip_slot.dart';
 import 'package:vrchat_dart_generated/src/model/inventory_flag.dart';
 import 'package:vrchat_dart_generated/src/model/inventory_item.dart';
 import 'package:vrchat_dart_generated/src/model/inventory_item_type.dart';
+import 'package:vrchat_dart_generated/src/model/inventory_sort_order.dart';
 import 'package:vrchat_dart_generated/src/model/inventory_spawn.dart';
 import 'package:vrchat_dart_generated/src/model/inventory_template.dart';
 import 'package:vrchat_dart_generated/src/model/ok_status.dart';
@@ -427,7 +428,7 @@ class InventoryApi {
     int? offset,
     String? holderId,
     InventoryEquipSlot? equipSlot,
-    String? order,
+    InventorySortOrder? order,
     String? tags,
     InventoryItemType? types,
     InventoryFlag? flags,

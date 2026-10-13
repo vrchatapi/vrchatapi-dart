@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:vrchat_dart_generated/src/model/product_type.dart';
+import 'package:vrchat_dart_generated/src/model/create_product_request_type.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -41,7 +41,7 @@ class CreateProductRequest {
   final String imageId;
 
   @JsonKey(name: r'productType', required: true, includeIfNull: false)
-  final ProductType productType;
+  final CreateProductRequestType productType;
 
   @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<String> tags;

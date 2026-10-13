@@ -21,6 +21,8 @@ class UpdateUserRequest {
   UpdateUserRequest({
     this.acceptedTOSVersion,
 
+    this.allowAvatarCopying,
+
     this.allowWorldsToCountFriendsInInstance,
 
     this.birthday,
@@ -36,6 +38,8 @@ class UpdateUserRequest {
     this.hasDiscordFriendsOptOut,
 
     this.hasSharedConnectionsOptOut,
+
+    this.homeLocation,
 
     this.isBoopingEnabled,
 
@@ -56,6 +60,9 @@ class UpdateUserRequest {
 
   @JsonKey(name: r'acceptedTOSVersion', required: false, includeIfNull: false)
   final int? acceptedTOSVersion;
+
+  @JsonKey(name: r'allowAvatarCopying', required: false, includeIfNull: false)
+  final bool? allowAvatarCopying;
 
   /// The \"Allow Worlds to Count Friends in Instance\" setting, introduced under [Udon Methods for Friend Info](https://ask.vrchat.com/t/developer-update-24-september-2026/48972#p-90922-udon-methods-for-friend-info-13) in the Developer Update of September 24, 2026.
   @JsonKey(
@@ -98,6 +105,10 @@ class UpdateUserRequest {
   )
   final bool? hasSharedConnectionsOptOut;
 
+  /// WorldID be \"offline\" on User profiles if you are not friends with that user.
+  @JsonKey(name: r'homeLocation', required: false, includeIfNull: false)
+  final String? homeLocation;
+
   @JsonKey(name: r'isBoopingEnabled', required: false, includeIfNull: false)
   final bool? isBoopingEnabled;
 
@@ -129,6 +140,7 @@ class UpdateUserRequest {
       identical(this, other) ||
       other is UpdateUserRequest &&
           other.acceptedTOSVersion == acceptedTOSVersion &&
+          other.allowAvatarCopying == allowAvatarCopying &&
           other.allowWorldsToCountFriendsInInstance ==
               allowWorldsToCountFriendsInInstance &&
           other.birthday == birthday &&
@@ -138,6 +150,7 @@ class UpdateUserRequest {
           other.email == email &&
           other.hasDiscordFriendsOptOut == hasDiscordFriendsOptOut &&
           other.hasSharedConnectionsOptOut == hasSharedConnectionsOptOut &&
+          other.homeLocation == homeLocation &&
           other.isBoopingEnabled == isBoopingEnabled &&
           other.password == password &&
           other.pronouns == pronouns &&
@@ -150,6 +163,7 @@ class UpdateUserRequest {
   @override
   int get hashCode =>
       acceptedTOSVersion.hashCode +
+      allowAvatarCopying.hashCode +
       allowWorldsToCountFriendsInInstance.hashCode +
       birthday.hashCode +
       contentFilters.hashCode +
@@ -158,6 +172,7 @@ class UpdateUserRequest {
       email.hashCode +
       hasDiscordFriendsOptOut.hashCode +
       hasSharedConnectionsOptOut.hashCode +
+      homeLocation.hashCode +
       isBoopingEnabled.hashCode +
       password.hashCode +
       pronouns.hashCode +

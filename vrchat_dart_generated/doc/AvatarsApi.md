@@ -319,7 +319,7 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getAvatarsApi();
 final bool featured = true; // bool | Filters on featured results.
-final SortOption sort = ; // SortOption | The sort order of the results.
+final SortOptionAvatar sort = ; // SortOptionAvatar | The sort order of the results.
 final int n = 56; // int | The number of objects to return.
 final OrderOption order = ; // OrderOption | Result ordering
 final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
@@ -345,7 +345,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **featured** | **bool**| Filters on featured results. | [optional] 
- **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] 
+ **sort** | [**SortOptionAvatar**](.md)| The sort order of the results. | [optional] 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **order** | [**OrderOption**](.md)| Result ordering | [optional] 
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
@@ -529,7 +529,7 @@ import 'package:vrchat_dart_generated/api.dart';
 
 final api = VrchatDartGenerated().getAvatarsApi();
 final bool featured = true; // bool | Filters on featured results.
-final SortOption sort = ; // SortOption | The sort order of the results.
+final SortOptionAvatar sort = ; // SortOptionAvatar | The sort order of the results.
 final String user = user_example; // String | Set to `me` for searching own avatars.
 final String userId = userId_example; // String | Filter by UserID.
 final int n = 56; // int | The number of objects to return.
@@ -556,7 +556,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **featured** | **bool**| Filters on featured results. | [optional] 
- **sort** | [**SortOption**](.md)| The sort order of the results. | [optional] 
+ **sort** | [**SortOptionAvatar**](.md)| The sort order of the results. | [optional] 
  **user** | **String**| Set to `me` for searching own avatars. | [optional] 
  **userId** | **String**| Filter by UserID. | [optional] 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]

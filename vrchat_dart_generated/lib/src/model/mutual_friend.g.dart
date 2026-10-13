@@ -17,7 +17,10 @@ MutualFriend _$MutualFriendFromJson(
   );
   final val = MutualFriend(
     bannerColor: $checkedConvert('bannerColor', (v) => v as String?),
-    bannerType: $checkedConvert('bannerType', (v) => v as String?),
+    bannerType: $checkedConvert(
+      'bannerType',
+      (v) => $enumDecodeNullable(_$BannerTypeEnumMap, v),
+    ),
     bannerUrl: $checkedConvert('bannerUrl', (v) => v as String?),
     displayName: $checkedConvert('displayName', (v) => v as String),
     iconFrame: $checkedConvert('iconFrame', (v) => v as String?),
@@ -37,7 +40,7 @@ MutualFriend _$MutualFriendFromJson(
 Map<String, dynamic> _$MutualFriendToJson(MutualFriend instance) =>
     <String, dynamic>{
       'bannerColor': ?instance.bannerColor,
-      'bannerType': ?instance.bannerType,
+      'bannerType': ?_$BannerTypeEnumMap[instance.bannerType],
       'bannerUrl': ?instance.bannerUrl,
       'displayName': instance.displayName,
       'iconFrame': ?instance.iconFrame,
@@ -48,6 +51,12 @@ Map<String, dynamic> _$MutualFriendToJson(MutualFriend instance) =>
       'status': _$UserStatusEnumMap[instance.status]!,
       'statusDescription': instance.statusDescription,
     };
+
+const _$BannerTypeEnumMap = {
+  BannerType.avatarBanner: 'avatarBanner',
+  BannerType.color: 'color',
+  BannerType.customImage: 'customImage',
+};
 
 const _$UserStatusEnumMap = {
   UserStatus.active: 'active',

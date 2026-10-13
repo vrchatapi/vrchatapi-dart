@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:vrchat_dart_generated/src/model/notification_type.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -20,8 +19,6 @@ class Notification {
   Notification({
     required this.createdAt,
 
-    this.details = '{}',
-
     required this.id,
 
     required this.message,
@@ -34,15 +31,13 @@ class Notification {
 
     this.senderUsername,
 
+    required this.details,
+
     required this.type,
   });
 
   @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
-
-  /// **NOTICE:** This is not a JSON object when received from the REST API, but it is when received from the Websocket API. When received from the REST API, this is a json **encoded** object, meaning you have to json-de-encode to get the NotificationDetail object depending on the NotificationType.
-  @JsonKey(name: r'details', required: true, includeIfNull: false)
-  final String details;
 
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
@@ -66,33 +61,37 @@ class Notification {
   @JsonKey(name: r'senderUsername', required: false, includeIfNull: false)
   final String? senderUsername;
 
+  /// A JSON-encoded string.
+  @JsonKey(name: r'details', required: true, includeIfNull: false)
+  final String details;
+
   @JsonKey(name: r'type', required: true, includeIfNull: false)
-  final NotificationType type;
+  final String type;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Notification &&
           other.createdAt == createdAt &&
-          other.details == details &&
           other.id == id &&
           other.message == message &&
           other.receiverUserId == receiverUserId &&
           other.seen == seen &&
           other.senderUserId == senderUserId &&
           other.senderUsername == senderUsername &&
+          other.details == details &&
           other.type == type;
 
   @override
   int get hashCode =>
       createdAt.hashCode +
-      details.hashCode +
       id.hashCode +
       message.hashCode +
       receiverUserId.hashCode +
       seen.hashCode +
       senderUserId.hashCode +
       (senderUsername == null ? 0 : senderUsername.hashCode) +
+      details.hashCode +
       type.hashCode;
 
   factory Notification.fromJson(Map<String, dynamic> json) =>

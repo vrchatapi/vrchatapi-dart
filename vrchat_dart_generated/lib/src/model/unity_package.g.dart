@@ -39,6 +39,10 @@ UnityPackage _$UnityPackageFromJson(Map<String, dynamic> json) =>
         pluginUrl: $checkedConvert('pluginUrl', (v) => v as String?),
         pluginUrlObject: $checkedConvert('pluginUrlObject', (v) => v),
         scanStatus: $checkedConvert('scanStatus', (v) => v as String?),
+        transpilerVersion: $checkedConvert(
+          'transpilerVersion',
+          (v) => v as String?,
+        ),
         unitySortNumber: $checkedConvert(
           'unitySortNumber',
           (v) => (v as num?)?.toInt(),
@@ -68,6 +72,7 @@ Map<String, dynamic> _$UnityPackageToJson(
   'pluginUrl': ?instance.pluginUrl,
   'pluginUrlObject': ?instance.pluginUrlObject,
   'scanStatus': ?instance.scanStatus,
+  'transpilerVersion': ?instance.transpilerVersion,
   'unitySortNumber': ?instance.unitySortNumber,
   'unityVersion': instance.unityVersion,
   'variant': ?instance.variant,

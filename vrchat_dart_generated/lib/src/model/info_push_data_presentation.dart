@@ -16,18 +16,34 @@ part 'info_push_data_presentation.g.dart';
 )
 class InfoPushDataPresentation {
   /// Returns a new [InfoPushDataPresentation] instance.
-  InfoPushDataPresentation({required this.layout});
+  InfoPushDataPresentation({
+    required this.layout,
+
+    this.pinnedDescription,
+
+    this.socialDisplay,
+  });
 
   @JsonKey(name: r'layout', required: true, includeIfNull: false)
   final String layout;
 
+  @JsonKey(name: r'pinnedDescription', required: false, includeIfNull: false)
+  final String? pinnedDescription;
+
+  @JsonKey(name: r'socialDisplay', required: false, includeIfNull: false)
+  final String? socialDisplay;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is InfoPushDataPresentation && other.layout == layout;
+      other is InfoPushDataPresentation &&
+          other.layout == layout &&
+          other.pinnedDescription == pinnedDescription &&
+          other.socialDisplay == socialDisplay;
 
   @override
-  int get hashCode => layout.hashCode;
+  int get hashCode =>
+      layout.hashCode + pinnedDescription.hashCode + socialDisplay.hashCode;
 
   factory InfoPushDataPresentation.fromJson(Map<String, dynamic> json) =>
       _$InfoPushDataPresentationFromJson(json);

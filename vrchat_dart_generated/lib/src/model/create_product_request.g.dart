@@ -28,7 +28,7 @@ CreateProductRequest _$CreateProductRequestFromJson(
     imageId: $checkedConvert('imageId', (v) => v as String),
     productType: $checkedConvert(
       'productType',
-      (v) => $enumDecode(_$ProductTypeEnumMap, v),
+      (v) => $enumDecode(_$CreateProductRequestTypeEnumMap, v),
     ),
     tags: $checkedConvert(
       'tags',
@@ -48,14 +48,16 @@ Map<String, dynamic> _$CreateProductRequestToJson(
   'description': instance.description,
   'displayName': instance.displayName,
   'imageId': instance.imageId,
-  'productType': _$ProductTypeEnumMap[instance.productType]!,
+  'productType': _$CreateProductRequestTypeEnumMap[instance.productType]!,
   'tags': instance.tags,
   'useForSubscriberList': instance.useForSubscriberList,
 };
 
-const _$ProductTypeEnumMap = {
-  ProductType.inventory: 'inventory',
-  ProductType.listing: 'listing',
-  ProductType.role: 'role',
-  ProductType.udon: 'udon',
+const _$CreateProductRequestTypeEnumMap = {
+  CreateProductRequestType.avatar: 'avatar',
+  CreateProductRequestType.credit: 'credit',
+  CreateProductRequestType.inventory: 'inventory',
+  CreateProductRequestType.listing: 'listing',
+  CreateProductRequestType.testBirdy: 'test_birdy',
+  CreateProductRequestType.udon: 'udon',
 };

@@ -9,10 +9,12 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **String** |  | [optional] 
-**id** | **String** |  | [optional] 
+**isAddedOnJoin** | **bool** |  | [optional] [default to false]
 **isSelfAssignable** | **bool** |  | [optional] [default to false]
-**name** | **String** |  | [optional] 
+**name** | **String** |  | 
 **permissions** | [**List&lt;GroupPermissions&gt;**](GroupPermissions.md) |  | [optional] 
+**requiresPurchase** | **bool** |  | [optional] [default to false]
+**requiresTwoFactor** | **bool** |  | [optional] [default to false]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

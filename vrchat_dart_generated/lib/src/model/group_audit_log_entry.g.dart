@@ -17,10 +17,10 @@ GroupAuditLogEntry _$GroupAuditLogEntryFromJson(Map<String, dynamic> json) =>
           'actorId',
           'created_at',
           'description',
-          'eventType',
           'groupId',
           'id',
           'data',
+          'eventType',
           'targetId',
         ],
       );
@@ -35,13 +35,13 @@ GroupAuditLogEntry _$GroupAuditLogEntryFromJson(Map<String, dynamic> json) =>
           (v) => DateTime.parse(v as String),
         ),
         description: $checkedConvert('description', (v) => v as String),
-        eventType: $checkedConvert('eventType', (v) => v as String),
         groupId: $checkedConvert('groupId', (v) => v as String),
         id: $checkedConvert('id', (v) => v as String),
         data: $checkedConvert(
           'data',
           (v) => GroupAuditLogEntryData.fromJson(v as Map<String, dynamic>),
         ),
+        eventType: $checkedConvert('eventType', (v) => v as String),
         targetId: $checkedConvert('targetId', (v) => v as String),
       );
       return val;
@@ -53,9 +53,9 @@ Map<String, dynamic> _$GroupAuditLogEntryToJson(GroupAuditLogEntry instance) =>
       'actorId': instance.actorId,
       'created_at': instance.createdAt.toIso8601String(),
       'description': instance.description,
-      'eventType': instance.eventType,
       'groupId': instance.groupId,
       'id': instance.id,
       'data': instance.data.toJson(),
+      'eventType': instance.eventType,
       'targetId': instance.targetId,
     };

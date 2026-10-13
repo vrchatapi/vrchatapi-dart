@@ -10,10 +10,14 @@ import 'package:vrchat_dart_generated/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:vrchat_dart_generated/src/model/create_instance_request.dart';
+import 'package:vrchat_dart_generated/src/model/create_instance_request_region.dart';
 import 'package:vrchat_dart_generated/src/model/instance.dart';
 import 'package:vrchat_dart_generated/src/model/instance_category.dart';
+import 'package:vrchat_dart_generated/src/model/instance_discovery.dart';
+import 'package:vrchat_dart_generated/src/model/instance_discovery_platform.dart';
 import 'package:vrchat_dart_generated/src/model/instance_short_name_response.dart';
 import 'package:vrchat_dart_generated/src/model/instance_vibe.dart';
+import 'package:vrchat_dart_generated/src/model/update_instance_request.dart';
 
 class InstancesApi {
   final Dio _dio;
@@ -212,6 +216,201 @@ class InstancesApi {
     }
 
     return Response<Instance>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Discover Instances
+  /// Returns instances to discover, in an order that changes between requests.
+  ///
+  /// Parameters:
+  /// * [n] - The number of instances to return.
+  /// * [region] - Return only instances in this region.
+  /// * [platform] - The platform to discover instances for.
+  /// * [worldId] - Return only instances of these worlds.
+  /// * [groupId] - Return only instances of these groups.
+  /// * [vibe]
+  /// * [category]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [InstanceDiscovery] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<InstanceDiscovery>> discoverInstances({
+    int? n,
+    CreateInstanceRequestRegion? region,
+    InstanceDiscoveryPlatform? platform,
+    List<String>? worldId,
+    List<String>? groupId,
+    List<String>? vibe,
+    String? category,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/instances/discover';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (n != null) r'n': n,
+      if (region != null) r'region': region,
+      if (platform != null) r'platform': platform,
+      if (worldId != null) r'worldId': worldId,
+      if (groupId != null) r'groupId': groupId,
+      if (vibe != null) r'vibe': vibe,
+      if (category != null) r'category': category,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    InstanceDiscovery? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<InstanceDiscovery, InstanceDiscovery>(
+              rawData,
+              'InstanceDiscovery',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<InstanceDiscovery>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// List Active Instances
+  /// Returns active instances, the most populated first.
+  ///
+  /// Parameters:
+  /// * [n] - The number of instances to return.
+  /// * [offset] - A zero-based offset from the default object sorting from where search results start.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [List<Instance>] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<List<Instance>>> getActiveInstances({
+    int? n,
+    int? offset,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/instances/active';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (n != null) r'n': n,
+      if (offset != null) r'offset': offset,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    List<Instance>? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<Instance>, Instance>(
+              rawData,
+              'List<Instance>',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<List<Instance>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -741,6 +940,119 @@ class InstancesApi {
     }
 
     return Response<InstanceShortNameResponse>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Update Instance
+  /// Set or remove the calendar event linked to a group instance.  Updating a group instance requires both the &#x60;group-instance-manage&#x60; and &#x60;group-instance-calendar-link&#x60; permissions.  The event must begin within the next six hours or have ended within the previous six hours.
+  ///
+  /// Parameters:
+  /// * [worldId] - Must be a valid world ID.
+  /// * [instanceId] - Must be a valid instance ID.
+  /// * [updateInstanceRequest]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [Instance] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<Instance>> updateInstance({
+    required String worldId,
+    required String instanceId,
+    required UpdateInstanceRequest updateInstanceRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/instances/{worldId}:{instanceId}'
+        .replaceAll(
+          '{'
+          r'worldId'
+          '}',
+          worldId.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'instanceId'
+          '}',
+          instanceId.toString(),
+        );
+    final _options = Options(
+      method: r'PUT',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authCookie',
+            'keyName': 'auth',
+            'where': '',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      _bodyData = jsonEncode(updateInstanceRequest);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(_dio.options, _path),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    Instance? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Instance, Instance>(
+              rawData,
+              'Instance',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<Instance>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

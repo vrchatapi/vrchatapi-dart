@@ -62,7 +62,10 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
       ),
       appleDetails: $checkedConvert('appleDetails', (v) => v),
       bannerColor: $checkedConvert('bannerColor', (v) => v as String?),
-      bannerType: $checkedConvert('bannerType', (v) => v as String?),
+      bannerType: $checkedConvert(
+        'bannerType',
+        (v) => $enumDecodeNullable(_$BannerTypeEnumMap, v),
+      ),
       bannerUrl: $checkedConvert('bannerUrl', (v) => v as String?),
       dateJoined: $checkedConvert(
         'date_joined',
@@ -147,7 +150,7 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
   'allowAvatarCopying': instance.allowAvatarCopying,
   'appleDetails': ?instance.appleDetails,
   'bannerColor': ?instance.bannerColor,
-  'bannerType': ?instance.bannerType,
+  'bannerType': ?_$BannerTypeEnumMap[instance.bannerType],
   'bannerUrl': ?instance.bannerUrl,
   'date_joined': instance.dateJoined.toIso8601String(),
   'developerType': _$DeveloperTypeEnumMap[instance.developerType]!,
@@ -185,6 +188,12 @@ const _$AgeVerificationStatusEnumMap = {
   AgeVerificationStatus.plus18: '18+',
   AgeVerificationStatus.hidden: 'hidden',
   AgeVerificationStatus.verified: 'verified',
+};
+
+const _$BannerTypeEnumMap = {
+  BannerType.avatarBanner: 'avatarBanner',
+  BannerType.color: 'color',
+  BannerType.customImage: 'customImage',
 };
 
 const _$DeveloperTypeEnumMap = {

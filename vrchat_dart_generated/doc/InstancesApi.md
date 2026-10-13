@@ -11,12 +11,15 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**closeInstance**](InstancesApi.md#closeinstance) | **DELETE** /instances/{worldId}:{instanceId} | Close Instance
 [**createInstance**](InstancesApi.md#createinstance) | **POST** /instances | Create Instance
+[**discoverInstances**](InstancesApi.md#discoverinstances) | **GET** /instances/discover | Discover Instances
+[**getActiveInstances**](InstancesApi.md#getactiveinstances) | **GET** /instances/active | List Active Instances
 [**getInstance**](InstancesApi.md#getinstance) | **GET** /instances/{worldId}:{instanceId} | Get Instance
 [**getInstanceByShortName**](InstancesApi.md#getinstancebyshortname) | **GET** /instances/s/{shortName} | Get Instance By Short Name
 [**getInstanceCategories**](InstancesApi.md#getinstancecategories) | **GET** /instanceCategories | List Instance Categories
 [**getInstanceVibes**](InstancesApi.md#getinstancevibes) | **GET** /instanceVibes | List Instance Vibes
 [**getRecentLocations**](InstancesApi.md#getrecentlocations) | **GET** /instances/recent | List Recent Locations
 [**getShortName**](InstancesApi.md#getshortname) | **GET** /instances/{worldId}:{instanceId}/shortName | Get Instance Short Name
+[**updateInstance**](InstancesApi.md#updateinstance) | **PUT** /instances/{worldId}:{instanceId} | Update Instance
 
 
 # **closeInstance**
@@ -115,6 +118,114 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **discoverInstances**
+> InstanceDiscovery discoverInstances(n, region, platform, worldId, groupId, vibe, category)
+
+Discover Instances
+
+Returns instances to discover, in an order that changes between requests.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getInstancesApi();
+final int n = 56; // int | The number of instances to return.
+final CreateInstanceRequestRegion region = ; // CreateInstanceRequestRegion | Return only instances in this region.
+final InstanceDiscoveryPlatform platform = ; // InstanceDiscoveryPlatform | The platform to discover instances for.
+final List<String> worldId = ; // List<String> | Return only instances of these worlds.
+final List<String> groupId = ; // List<String> | Return only instances of these groups.
+final List<String> vibe = ; // List<String> | 
+final String category = category_example; // String | 
+
+try {
+    final response = api.discoverInstances(n, region, platform, worldId, groupId, vibe, category);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling InstancesApi->discoverInstances: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **n** | **int**| The number of instances to return. | [optional] 
+ **region** | [**CreateInstanceRequestRegion**](.md)| Return only instances in this region. | [optional] 
+ **platform** | [**InstanceDiscoveryPlatform**](.md)| The platform to discover instances for. | [optional] 
+ **worldId** | [**List&lt;String&gt;**](String.md)| Return only instances of these worlds. | [optional] 
+ **groupId** | [**List&lt;String&gt;**](String.md)| Return only instances of these groups. | [optional] 
+ **vibe** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **category** | **String**|  | [optional] 
+
+### Return type
+
+[**InstanceDiscovery**](InstanceDiscovery.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getActiveInstances**
+> List<Instance> getActiveInstances(n, offset)
+
+List Active Instances
+
+Returns active instances, the most populated first.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getInstancesApi();
+final int n = 56; // int | The number of instances to return.
+final int offset = 56; // int | A zero-based offset from the default object sorting from where search results start.
+
+try {
+    final response = api.getActiveInstances(n, offset);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling InstancesApi->getActiveInstances: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **n** | **int**| The number of instances to return. | [optional] 
+ **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
+
+### Return type
+
+[**List&lt;Instance&gt;**](Instance.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -395,6 +506,57 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateInstance**
+> Instance updateInstance(worldId, instanceId, updateInstanceRequest)
+
+Update Instance
+
+Set or remove the calendar event linked to a group instance.  Updating a group instance requires both the `group-instance-manage` and `group-instance-calendar-link` permissions.  The event must begin within the next six hours or have ended within the previous six hours.
+
+### Example
+```dart
+import 'package:vrchat_dart_generated/api.dart';
+// TODO Configure API key authorization: authCookie
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authCookie').apiKeyPrefix = 'Bearer';
+
+final api = VrchatDartGenerated().getInstancesApi();
+final String worldId = worldId_example; // String | Must be a valid world ID.
+final String instanceId = instanceId_example; // String | Must be a valid instance ID.
+final UpdateInstanceRequest updateInstanceRequest = ; // UpdateInstanceRequest | 
+
+try {
+    final response = api.updateInstance(worldId, instanceId, updateInstanceRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling InstancesApi->updateInstance: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **worldId** | **String**| Must be a valid world ID. | 
+ **instanceId** | **String**| Must be a valid instance ID. | 
+ **updateInstanceRequest** | [**UpdateInstanceRequest**](UpdateInstanceRequest.md)|  | 
+
+### Return type
+
+[**Instance**](Instance.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

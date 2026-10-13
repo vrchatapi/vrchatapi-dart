@@ -50,7 +50,7 @@ CreateInstanceRequest _$CreateInstanceRequestFromJson(
     queueEnabled: $checkedConvert('queueEnabled', (v) => v as bool? ?? false),
     region: $checkedConvert(
       'region',
-      (v) => $enumDecode(_$InstanceRegionEnumMap, v),
+      (v) => $enumDecode(_$CreateInstanceRequestRegionEnumMap, v),
     ),
     roleIds: $checkedConvert(
       'roleIds',
@@ -84,7 +84,7 @@ Map<String, dynamic> _$CreateInstanceRequestToJson(
   'ownerId': ?instance.ownerId,
   'playerPersistenceEnabled': ?instance.playerPersistenceEnabled,
   'queueEnabled': ?instance.queueEnabled,
-  'region': _$InstanceRegionEnumMap[instance.region]!,
+  'region': _$CreateInstanceRequestRegionEnumMap[instance.region]!,
   'roleIds': ?instance.roleIds,
   'type': _$InstanceTypeEnumMap[instance.type]!,
   'vibeIds': ?instance.vibeIds,
@@ -97,12 +97,11 @@ const _$GroupAccessTypeEnumMap = {
   GroupAccessType.public: 'public',
 };
 
-const _$InstanceRegionEnumMap = {
-  InstanceRegion.eu: 'eu',
-  InstanceRegion.jp: 'jp',
-  InstanceRegion.unknown: 'unknown',
-  InstanceRegion.us: 'us',
-  InstanceRegion.use: 'use',
+const _$CreateInstanceRequestRegionEnumMap = {
+  CreateInstanceRequestRegion.eu: 'eu',
+  CreateInstanceRequestRegion.jp: 'jp',
+  CreateInstanceRequestRegion.us: 'us',
+  CreateInstanceRequestRegion.use: 'use',
 };
 
 const _$InstanceTypeEnumMap = {

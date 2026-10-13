@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **avatarThumbnail** | **String** |  | [optional] 
 **banner** | **String** |  | [optional] 
 **bannerColor** | **String** | Six hexadecimal digits, without a leading `#`. May be empty. | [optional] 
-**bannerType** | **String** |  | [optional] 
+**bannerType** | [**BannerType**](BannerType.md) |  | [optional] 
 **bannerUrl** | **String** |  | [optional] 
 **currentAvatarTags** | **String** |  | [optional] 
 **debugflag** | **String** |  | [optional] 

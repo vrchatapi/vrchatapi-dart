@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **appleId** | **String** |  | [optional] 
 **authToken** | **String** | The auth token for NEWLY REGISTERED ACCOUNTS ONLY (/auth/register) | [optional] 
 **bannerColor** | **String** | Six hexadecimal digits, without a leading `#`. May be empty. | [optional] 
-**bannerType** | **String** |  | [optional] 
+**bannerType** | [**BannerType**](BannerType.md) |  | [optional] 
 **bannerUrl** | **String** |  | [optional] 
 **completedTutorials** | **List&lt;String&gt;** |  | [optional] 
 **contentFilters** | **List&lt;String&gt;** | These tags begin with `content_` and control content gating | [optional] 

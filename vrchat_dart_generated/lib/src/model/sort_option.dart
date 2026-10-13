@@ -10,12 +10,18 @@ enum SortOption {
   createdAt(r'_created_at'),
   @JsonValue(r'_updated_at')
   updatedAt(r'_updated_at'),
+  @JsonValue(r'contains')
+  contains(r'contains'),
   @JsonValue(r'created')
   created(r'created'),
+  @JsonValue(r'exact')
+  exact(r'exact'),
   @JsonValue(r'favorites')
   favorites(r'favorites'),
   @JsonValue(r'heat')
   heat(r'heat'),
+  @JsonValue(r'hotness')
+  hotness(r'hotness'),
   @JsonValue(r'labsPublicationDate')
   labsPublicationDate(r'labsPublicationDate'),
   @JsonValue(r'magic')
@@ -38,6 +44,8 @@ enum SortOption {
   reportScore(r'reportScore'),
   @JsonValue(r'shuffle')
   shuffle(r'shuffle'),
+  @JsonValue(r'trending')
+  trending(r'trending'),
   @JsonValue(r'trust')
   trust(r'trust'),
   @JsonValue(r'updated')

@@ -38,7 +38,7 @@ CreateCalendarEventRequest _$CreateCalendarEventRequestFromJson(
     ),
     description: $checkedConvert('description', (v) => v as String),
     endsAt: $checkedConvert('endsAt', (v) => DateTime.parse(v as String)),
-    featured: $checkedConvert('featured', (v) => v as bool?),
+    featured: $checkedConvert('featured', (v) => v as bool? ?? false),
     guestEarlyJoinMinutes: $checkedConvert(
       'guestEarlyJoinMinutes',
       (v) => (v as num?)?.toInt(),
@@ -48,7 +48,7 @@ CreateCalendarEventRequest _$CreateCalendarEventRequestFromJson(
       (v) => (v as num?)?.toInt(),
     ),
     imageId: $checkedConvert('imageId', (v) => v as String?),
-    isDraft: $checkedConvert('isDraft', (v) => v as bool?),
+    isDraft: $checkedConvert('isDraft', (v) => v as bool? ?? true),
     languages: $checkedConvert(
       'languages',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),

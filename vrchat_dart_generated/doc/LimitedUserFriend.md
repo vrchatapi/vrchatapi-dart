@@ -9,7 +9,7 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bannerColor** | **String** | Six hexadecimal digits, without a leading `#`. May be empty. | [optional] 
-**bannerType** | **String** |  | [optional] 
+**bannerType** | [**BannerType**](BannerType.md) |  | [optional] 
 **bannerUrl** | **String** |  | [optional] 
 **currentAvatarImageUrl** | **String** | When profilePicOverride is not empty, use it instead. | [optional] 
 **developerType** | [**DeveloperType**](DeveloperType.md) |  | 

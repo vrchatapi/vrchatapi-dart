@@ -16,7 +16,10 @@ CurrentUserPresence _$CurrentUserPresenceFromJson(
     avatarThumbnail: $checkedConvert('avatarThumbnail', (v) => v as String?),
     banner: $checkedConvert('banner', (v) => v as String?),
     bannerColor: $checkedConvert('bannerColor', (v) => v as String?),
-    bannerType: $checkedConvert('bannerType', (v) => v as String?),
+    bannerType: $checkedConvert(
+      'bannerType',
+      (v) => $enumDecodeNullable(_$BannerTypeEnumMap, v),
+    ),
     bannerUrl: $checkedConvert('bannerUrl', (v) => v as String?),
     currentAvatarTags: $checkedConvert(
       'currentAvatarTags',
@@ -60,7 +63,7 @@ Map<String, dynamic> _$CurrentUserPresenceToJson(
   'avatarThumbnail': ?instance.avatarThumbnail,
   'banner': ?instance.banner,
   'bannerColor': ?instance.bannerColor,
-  'bannerType': ?instance.bannerType,
+  'bannerType': ?_$BannerTypeEnumMap[instance.bannerType],
   'bannerUrl': ?instance.bannerUrl,
   'currentAvatarTags': ?instance.currentAvatarTags,
   'debugflag': ?instance.debugflag,
@@ -81,4 +84,10 @@ Map<String, dynamic> _$CurrentUserPresenceToJson(
   'travelingToWorld': ?instance.travelingToWorld,
   'userIcon': ?instance.userIcon,
   'world': ?instance.world,
+};
+
+const _$BannerTypeEnumMap = {
+  BannerType.avatarBanner: 'avatarBanner',
+  BannerType.color: 'color',
+  BannerType.customImage: 'customImage',
 };

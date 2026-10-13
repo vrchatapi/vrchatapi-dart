@@ -21,10 +21,10 @@ _$GroupAuditLogEntryGroupMemberRoleUnassignFromJson(
       'actorId',
       'created_at',
       'description',
-      'eventType',
       'groupId',
       'id',
       'data',
+      'eventType',
       'targetId',
     ],
   );
@@ -36,19 +36,19 @@ _$GroupAuditLogEntryGroupMemberRoleUnassignFromJson(
       (v) => DateTime.parse(v as String),
     ),
     description: $checkedConvert('description', (v) => v as String),
-    eventType: $checkedConvert(
-      'eventType',
-      (v) => $enumDecode(
-        _$GroupAuditLogEntryGroupMemberRoleUnassignEventTypeEnumEnumMap,
-        v,
-      ),
-    ),
     groupId: $checkedConvert('groupId', (v) => v as String),
     id: $checkedConvert('id', (v) => v as String),
     data: $checkedConvert(
       'data',
       (v) => GroupAuditLogEntryDataGroupMemberRole.fromJson(
         v as Map<String, dynamic>,
+      ),
+    ),
+    eventType: $checkedConvert(
+      'eventType',
+      (v) => $enumDecode(
+        _$GroupAuditLogEntryGroupMemberRoleUnassignEventTypeEnumEnumMap,
+        v,
       ),
     ),
     targetId: $checkedConvert('targetId', (v) => v as String),
@@ -63,12 +63,12 @@ Map<String, dynamic> _$GroupAuditLogEntryGroupMemberRoleUnassignToJson(
   'actorId': instance.actorId,
   'created_at': instance.createdAt.toIso8601String(),
   'description': instance.description,
-  'eventType':
-      _$GroupAuditLogEntryGroupMemberRoleUnassignEventTypeEnumEnumMap[instance
-          .eventType]!,
   'groupId': instance.groupId,
   'id': instance.id,
   'data': instance.data.toJson(),
+  'eventType':
+      _$GroupAuditLogEntryGroupMemberRoleUnassignEventTypeEnumEnumMap[instance
+          .eventType]!,
   'targetId': instance.targetId,
 };
 

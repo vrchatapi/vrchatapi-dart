@@ -20,17 +20,24 @@ class UpdateGroupRoleRequest {
   UpdateGroupRoleRequest({
     this.description,
 
-    this.isSelfAssignable = false,
+    this.isAddedOnJoin,
+
+    this.isSelfAssignable,
 
     this.name,
 
     this.order,
 
     this.permissions,
+
+    this.requiresTwoFactor,
   });
 
   @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;
+
+  @JsonKey(name: r'isAddedOnJoin', required: false, includeIfNull: false)
+  final bool? isAddedOnJoin;
 
   @JsonKey(name: r'isSelfAssignable', required: false, includeIfNull: false)
   final bool? isSelfAssignable;
@@ -44,23 +51,30 @@ class UpdateGroupRoleRequest {
   @JsonKey(name: r'permissions', required: false, includeIfNull: false)
   final List<GroupPermissions>? permissions;
 
+  @JsonKey(name: r'requiresTwoFactor', required: false, includeIfNull: false)
+  final bool? requiresTwoFactor;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is UpdateGroupRoleRequest &&
           other.description == description &&
+          other.isAddedOnJoin == isAddedOnJoin &&
           other.isSelfAssignable == isSelfAssignable &&
           other.name == name &&
           other.order == order &&
-          other.permissions == permissions;
+          other.permissions == permissions &&
+          other.requiresTwoFactor == requiresTwoFactor;
 
   @override
   int get hashCode =>
       description.hashCode +
+      isAddedOnJoin.hashCode +
       isSelfAssignable.hashCode +
       name.hashCode +
       order.hashCode +
-      permissions.hashCode;
+      permissions.hashCode +
+      requiresTwoFactor.hashCode;
 
   factory UpdateGroupRoleRequest.fromJson(Map<String, dynamic> json) =>
       _$UpdateGroupRoleRequestFromJson(json);

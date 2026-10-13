@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **pluginUrl** | **String** |  | [optional] 
 **pluginUrlObject** | **Object** |  | [optional] 
 **scanStatus** | **String** |  | [optional] 
+**transpilerVersion** | **String** |  | [optional] 
 **unitySortNumber** | **int** |  | [optional] 
 **unityVersion** | **String** |  | [default to '5.3.4p1']
 **variant** | **String** |  | [optional] 

@@ -9,6 +9,7 @@ import 'package:vrchat_dart_generated/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **acceptedTOSVersion** | **int** |  | [optional] 
+**allowAvatarCopying** | **bool** |  | [optional] 
 **allowWorldsToCountFriendsInInstance** | **bool** | The \"Allow Worlds to Count Friends in Instance\" setting, introduced under [Udon Methods for Friend Info](https://ask.vrchat.com/t/developer-update-24-september-2026/48972#p-90922-udon-methods-for-friend-info-13) in the Developer Update of September 24, 2026. | [optional] 
 **birthday** | [**DateTime**](DateTime.md) |  | [optional] 
 **contentFilters** | [**List&lt;ContentFilter&gt;**](ContentFilter.md) | These tags begin with `content_` and control content gating | [optional] 
@@ -17,6 +18,7 @@ Name | Type | Description | Notes
 **email** | **String** |  | [optional] 
 **hasDiscordFriendsOptOut** | **bool** | Opt out of the Discord Friend Connections feature | [optional] 
 **hasSharedConnectionsOptOut** | **bool** | Opt out of the Mutuals feature | [optional] 
+**homeLocation** | **String** | WorldID be \"offline\" on User profiles if you are not friends with that user. | [optional] 
 **isBoopingEnabled** | **bool** |  | [optional] 
 **password** | **String** | MUST specify currentPassword as well to change password | [optional] 
 **pronouns** | **String** |  | [optional] 

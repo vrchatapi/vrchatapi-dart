@@ -94,8 +94,39 @@ GroupAuditLogEntryData _$GroupAuditLogEntryDataFromJson(
       'usesInstanceOverflow',
       (v) => v as bool?,
     ),
-    membersOnly: $checkedConvert('membersOnly', (v) => v),
+    bannerId: $checkedConvert('bannerId', (v) => v),
+    bannerVersion: $checkedConvert(
+      'bannerVersion',
+      (v) => (v as num?)?.toInt(),
+    ),
+    discoverability: $checkedConvert(
+      'discoverability',
+      (v) => v == null
+          ? null
+          : GroupAuditLogEntryDataGroupCreateDiscoverability.fromJson(
+              v as Map<String, dynamic>,
+            ),
+    ),
+    galleries: $checkedConvert(
+      'galleries',
+      (v) => (v as List<dynamic>?)
+          ?.map(
+            (e) => GroupAuditLogEntryDataGroupCreateGallery.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
+          .toList(),
+    ),
+    iconId: $checkedConvert('iconId', (v) => v),
+    iconVersion: $checkedConvert('iconVersion', (v) => (v as num?)?.toInt()),
+    joinState: $checkedConvert('joinState', (v) => v),
     name: $checkedConvert('name', (v) => v),
+    privacy: $checkedConvert(
+      'privacy',
+      (v) => $enumDecodeNullable(_$GroupPrivacyEnumMap, v),
+    ),
+    rules: $checkedConvert('rules', (v) => v),
+    membersOnly: $checkedConvert('membersOnly', (v) => v),
     roleIdsToAutoApprove: $checkedConvert(
       'roleIdsToAutoApprove',
       (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -138,7 +169,7 @@ GroupAuditLogEntryData _$GroupAuditLogEntryDataFromJson(
     order: $checkedConvert('order', (v) => v),
     permissions: $checkedConvert('permissions', (v) => v),
     requiresPurchase: $checkedConvert('requiresPurchase', (v) => v as bool?),
-    requiresTwoFactor: $checkedConvert('requiresTwoFactor', (v) => v as bool?),
+    requiresTwoFactor: $checkedConvert('requiresTwoFactor', (v) => v),
     groupId: $checkedConvert('groupId', (v) => v as String?),
     lastUpdatedByUserId: $checkedConvert(
       'lastUpdatedByUserId',
@@ -151,26 +182,6 @@ GroupAuditLogEntryData _$GroupAuditLogEntryDataFromJson(
       (v) => v == null
           ? null
           : GroupAuditLogEntryBooleanChange.fromJson(v as Map<String, dynamic>),
-    ),
-    bannerId: $checkedConvert(
-      'bannerId',
-      (v) => v == null
-          ? null
-          : GroupAuditLogEntryFileIDChange.fromJson(v as Map<String, dynamic>),
-    ),
-    iconId: $checkedConvert(
-      'iconId',
-      (v) => v == null
-          ? null
-          : GroupAuditLogEntryFileIDChange.fromJson(v as Map<String, dynamic>),
-    ),
-    joinState: $checkedConvert(
-      'joinState',
-      (v) => v == null
-          ? null
-          : GroupAuditLogEntryJoinStateChange.fromJson(
-              v as Map<String, dynamic>,
-            ),
     ),
     links: $checkedConvert(
       'links',
@@ -185,12 +196,6 @@ GroupAuditLogEntryData _$GroupAuditLogEntryDataFromJson(
       (v) => v == null
           ? null
           : GroupAuditLogEntryFileIDChange.fromJson(v as Map<String, dynamic>),
-    ),
-    rules: $checkedConvert(
-      'rules',
-      (v) => v == null
-          ? null
-          : GroupAuditLogEntryStringChange.fromJson(v as Map<String, dynamic>),
     ),
   );
   return val;
@@ -232,8 +237,17 @@ Map<String, dynamic> _$GroupAuditLogEntryDataToJson(
   'tags': ?instance.tags,
   'updatedAt': ?instance.updatedAt?.toIso8601String(),
   'usesInstanceOverflow': ?instance.usesInstanceOverflow,
-  'membersOnly': ?instance.membersOnly,
+  'bannerId': ?instance.bannerId,
+  'bannerVersion': ?instance.bannerVersion,
+  'discoverability': ?instance.discoverability?.toJson(),
+  'galleries': ?instance.galleries?.map((e) => e.toJson()).toList(),
+  'iconId': ?instance.iconId,
+  'iconVersion': ?instance.iconVersion,
+  'joinState': ?instance.joinState,
   'name': ?instance.name,
+  'privacy': ?_$GroupPrivacyEnumMap[instance.privacy],
+  'rules': ?instance.rules,
+  'membersOnly': ?instance.membersOnly,
   'roleIdsToAutoApprove': ?instance.roleIdsToAutoApprove,
   'roleIdsToManage': ?instance.roleIdsToManage,
   'roleIdsToSubmit': ?instance.roleIdsToSubmit,
@@ -259,12 +273,8 @@ Map<String, dynamic> _$GroupAuditLogEntryDataToJson(
   'defaultRole': ?instance.defaultRole,
   'isManagementRole': ?instance.isManagementRole,
   'allowGroupJoinPrompt': ?instance.allowGroupJoinPrompt?.toJson(),
-  'bannerId': ?instance.bannerId?.toJson(),
-  'iconId': ?instance.iconId?.toJson(),
-  'joinState': ?instance.joinState?.toJson(),
   'links': ?instance.links?.toJson(),
   'nameplateId': ?instance.nameplateId?.toJson(),
-  'rules': ?instance.rules?.toJson(),
 };
 
 const _$CalendarEventAccessEnumMap = {
@@ -276,6 +286,11 @@ const _$CalendarEventOccurrenceKindEnumMap = {
   CalendarEventOccurrenceKind.occurrence: 'occurrence',
   CalendarEventOccurrenceKind.series: 'series',
   CalendarEventOccurrenceKind.single: 'single',
+};
+
+const _$GroupPrivacyEnumMap = {
+  GroupPrivacy.default_: 'default',
+  GroupPrivacy.private: 'private',
 };
 
 const _$GroupAccessTypeEnumMap = {

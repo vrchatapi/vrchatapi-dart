@@ -18,10 +18,10 @@ GroupAuditLogEntryGroupUpdate _$GroupAuditLogEntryGroupUpdateFromJson(
       'actorId',
       'created_at',
       'description',
-      'eventType',
       'groupId',
       'id',
       'data',
+      'eventType',
       'targetId',
     ],
   );
@@ -33,17 +33,17 @@ GroupAuditLogEntryGroupUpdate _$GroupAuditLogEntryGroupUpdateFromJson(
       (v) => DateTime.parse(v as String),
     ),
     description: $checkedConvert('description', (v) => v as String),
-    eventType: $checkedConvert(
-      'eventType',
-      (v) =>
-          $enumDecode(_$GroupAuditLogEntryGroupUpdateEventTypeEnumEnumMap, v),
-    ),
     groupId: $checkedConvert('groupId', (v) => v as String),
     id: $checkedConvert('id', (v) => v as String),
     data: $checkedConvert(
       'data',
       (v) =>
           GroupAuditLogEntryDataGroupUpdate.fromJson(v as Map<String, dynamic>),
+    ),
+    eventType: $checkedConvert(
+      'eventType',
+      (v) =>
+          $enumDecode(_$GroupAuditLogEntryGroupUpdateEventTypeEnumEnumMap, v),
     ),
     targetId: $checkedConvert('targetId', (v) => v as String),
   );
@@ -57,11 +57,11 @@ Map<String, dynamic> _$GroupAuditLogEntryGroupUpdateToJson(
   'actorId': instance.actorId,
   'created_at': instance.createdAt.toIso8601String(),
   'description': instance.description,
-  'eventType':
-      _$GroupAuditLogEntryGroupUpdateEventTypeEnumEnumMap[instance.eventType]!,
   'groupId': instance.groupId,
   'id': instance.id,
   'data': instance.data.toJson(),
+  'eventType':
+      _$GroupAuditLogEntryGroupUpdateEventTypeEnumEnumMap[instance.eventType]!,
   'targetId': instance.targetId,
 };
 
