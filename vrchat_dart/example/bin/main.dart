@@ -140,32 +140,21 @@ void main() async {
   api.streaming.start();
 }
 
-void handleVrcEvent(VrcStreamingEvent event) {
-  final String message;
-  switch (event.type) {
-    case VrcStreamingEventType.error:
-    case VrcStreamingEventType.friendOnline:
-    case VrcStreamingEventType.friendOffline:
-    case VrcStreamingEventType.friendActive:
-    case VrcStreamingEventType.friendAdd:
-    case VrcStreamingEventType.friendDelete:
-    case VrcStreamingEventType.friendUpdate:
-    case VrcStreamingEventType.friendLocation:
-    case VrcStreamingEventType.userUpdate:
-    case VrcStreamingEventType.userLocation:
-    case VrcStreamingEventType.notificationReceived:
-    case VrcStreamingEventType.notificationResponse:
-    case VrcStreamingEventType.notificationHide:
-      message = '${event.type.name}: ${jsonEncode(event)}';
-    case VrcStreamingEventType.notificationSeen:
-      event as NotificationSeenEvent;
-      message = 'NotificationSeen: ${event.notificationId}';
-    case VrcStreamingEventType.notificationClear:
-      message = 'NotificationClear';
-    case VrcStreamingEventType.unknown:
-      event as UnknownEvent;
-      message = 'Unknown [VrcStreamingEvent] received: ${event.rawString}';
+void handleVrcEvent(Object event) {
+  switch (event) {
+    case VrcStreamingError(:final message):
+      print('Websocket error: $message');
+    case WebsocketMessageUnknown(:final type):
+      print('Unknown websocket message: $type');
+    case WebsocketFriendOnline(:final userId, :final location):
+      print('Friend online: $userId at $location');
+    case WebsocketSeeNotification(:final content):
+      print('Notification seen: $content');
+    case WebsocketHideNotification(:final content):
+      print('Notification hidden: $content');
+    case WebsocketClearNotification():
+      print('Notifications cleared');
+    default:
+      print(event);
   }
-
-  print(message);
 }
