@@ -77,7 +77,7 @@ class VrcStreaming {
 
   void _handleWebsocketEvent(dynamic websocketEvent) {
     final Map<String, dynamic> json = jsonDecode(websocketEvent);
-    _vrcEventStreamController.add(decodeVrcStreamingMessage(json));
+    _vrcEventStreamController.add(_decodeVrcStreamingMessage(json));
   }
 }
 
@@ -123,7 +123,7 @@ final _decodedContentModels = <String, Object Function(Map<String, dynamic>)>{
 };
 
 /// Decode one websocket frame into the generated model for its `type`.
-Object decodeVrcStreamingMessage(Map<String, dynamic> json) {
+Object _decodeVrcStreamingMessage(Map<String, dynamic> json) {
   if (json.containsKey('err')) {
     return VrcStreamingError(message: '${json['err']}');
   }
