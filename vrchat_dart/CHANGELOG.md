@@ -1,3 +1,8 @@
+## 5.0.0
+
+- BREAKING: Websocket messages are the generated models from `vrchat_dart_generated` 1.23.0. `VrcStreamingEvent` and the hand-written streaming models are removed. `vrcEventStream` emits the model for each `type`, or `VrcStreamingError` for a pipeline error frame.
+- Updates `vrchat_dart_generated` to 1.23.0
+
 ## 4.1.0
 
 - Updates `vrchat_dart_generated` to 1.22.0
